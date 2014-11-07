@@ -19,6 +19,6 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_5_clicked()
 {
     Options op;
-    op.setmodal(true);
+    //op.setmodal(true);
 
 }

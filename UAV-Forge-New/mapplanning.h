@@ -15,6 +15,8 @@ public:
     explicit MapPlanning(QWidget *parent = 0);
     ~MapPlanning();
 
+    void Combobox();
+
 private:
     Ui::MapPlanning *ui;
 };
