@@ -14,7 +14,8 @@ class MissionRecap : public QWidget
 public:
     explicit MissionRecap(QWidget *parent = 0);
     ~MissionRecap();
-
+public slots:
+    void replayMissionClicked();
 private:
     Ui::MissionRecap *ui;
 };

@@ -207,5 +207,25 @@
   <zorder>pushButton_4</zorder>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>MissionRecap</receiver>
+   <slot>replayMissionClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>627</x>
+     <y>566</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>540</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>replayMissionClicked()</slot>
+ </slots>
 </ui>
