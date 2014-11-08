@@ -18,7 +18,7 @@ public:
 private slots:
     void missionPlanningClicked();
     void missionExecutionClicked();
-
+    void missionRecapClicked();
 private:
     Ui::Options *ui;
 };

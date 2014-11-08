@@ -87,9 +87,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>Options</receiver>
+   <slot>missionRecapClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>290</x>
+     <y>315</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>183</x>
+     <y>310</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>missionPlanningClicked()</slot>
   <slot>missionExecutionClicked()</slot>
+  <slot>missionRecapClicked()</slot>
  </slots>
 </ui>
