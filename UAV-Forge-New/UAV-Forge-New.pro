@@ -17,15 +17,21 @@ SOURCES += main.cpp\
     options.cpp \
     mapplanning.cpp \
     tablemodel.cpp \
-    mapexecution.cpp
+    mapexecution.cpp \
+    missionrecap.cpp \
+    tutorial.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
     mapplanning.h \
     tablemodel.h \
-    mapexecution.h
+    mapexecution.h \
+    missionrecap.h \
+    tutorial.h
 
 FORMS    += mainwindow.ui \
     options.ui \
     mapplanning.ui \
-    mapexecution.ui
+    mapexecution.ui \
+    missionrecap.ui \
+    tutorial.ui
