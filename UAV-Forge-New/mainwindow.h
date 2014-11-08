@@ -18,6 +18,7 @@ public:
 
 private slots:
     void openOptions();
+    void openTutorial();
 
 private:
     Ui::MainWindow *ui;

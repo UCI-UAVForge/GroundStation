@@ -21,6 +21,7 @@ private slots:
     void missionRecapClicked();
 private:
     Ui::Options *ui;
+
 };
 
 #endif // OPTIONS_H
