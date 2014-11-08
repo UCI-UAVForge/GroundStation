@@ -31,6 +31,5 @@ void Options:: missionRecapClicked()
 {
     MissionRecap *missionRecap = new MissionRecap();
     missionRecap->show();
-
-
 }
+

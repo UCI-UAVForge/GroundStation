@@ -67,5 +67,60 @@
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>mapexecution</receiver>
+   <slot>finishClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>574</x>
+     <y>234</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>486</x>
+     <y>234</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>mapexecution</receiver>
+   <slot>returnHomeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>574</x>
+     <y>287</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>mapexecution</receiver>
+   <slot>cancelClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>553</x>
+     <y>357</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>447</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>slot1()</slot>
+  <slot>finishClicked()</slot>
+  <slot>returnHomeClicked()</slot>
+  <slot>cancelClicked()</slot>
+ </slots>
 </ui>

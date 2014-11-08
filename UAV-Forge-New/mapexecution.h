@@ -14,7 +14,10 @@ class mapexecution : public QWidget
 public:
     explicit mapexecution(QWidget *parent = 0);
     ~mapexecution();
-
+private slots:
+    void finishClicked();
+    void returnHomeClicked();
+    void cancelClicked();
 private:
     Ui::mapexecution *ui;
 };
