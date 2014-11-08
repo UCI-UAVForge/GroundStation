@@ -9,16 +9,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 }
 
-
-
 MainWindow::~MainWindow()
 {
     delete ui;
 }
 
-void MainWindow::on_pushButton_5_clicked()
+void MainWindow::openOptions()
 {
-    Options op;
-    //op.setmodal(true);
-
+    Options *options = new Options();
+    options -> show();
 }

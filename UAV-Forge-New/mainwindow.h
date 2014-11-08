@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "options.h"
 
 namespace Ui {
 class MainWindow;
@@ -16,7 +17,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButton_5_clicked();
+    void openOptions();
 
 private:
     Ui::MainWindow *ui;

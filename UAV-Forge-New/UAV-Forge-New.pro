@@ -15,12 +15,17 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     options.cpp \
-    mapplanning.cpp
+    mapplanning.cpp \
+    tablemodel.cpp \
+    mapexecution.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
-    mapplanning.h
+    mapplanning.h \
+    tablemodel.h \
+    mapexecution.h
 
 FORMS    += mainwindow.ui \
     options.ui \
-    mapplanning.ui
+    mapplanning.ui \
+    mapexecution.ui

@@ -15,6 +15,10 @@ public:
     explicit Options(QWidget *parent = 0);
     ~Options();
 
+private slots:
+    void missionPlanningClicked();
+    void missionExecutionClicked();
+
 private:
     Ui::Options *ui;
 };
