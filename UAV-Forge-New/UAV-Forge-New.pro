@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     tablemodel.cpp \
     mapexecution.cpp \
     missionrecap.cpp \
-    tutorial.cpp
+    tutorial.cpp \
+    popwindowmp.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
@@ -27,11 +28,13 @@ HEADERS  += mainwindow.h \
     tablemodel.h \
     mapexecution.h \
     missionrecap.h \
-    tutorial.h
+    tutorial.h \
+    popwindowmp.h
 
 FORMS    += mainwindow.ui \
     options.ui \
     mapplanning.ui \
     mapexecution.ui \
     missionrecap.ui \
-    tutorial.ui
+    tutorial.ui \
+    popwindowmp.ui
