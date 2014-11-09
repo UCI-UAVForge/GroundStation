@@ -16,10 +16,10 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>130</y>
+     <x>60</x>
+     <y>150</y>
      <width>121</width>
-     <height>71</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
@@ -29,10 +29,10 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>130</y>
+     <x>190</x>
+     <y>150</y>
      <width>121</width>
-     <height>71</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="text">
@@ -42,11 +42,18 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>39</y>
-     <width>251</width>
+     <x>60</x>
+     <y>40</y>
+     <width>281</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
    </property>
    <property name="text">
     <string>Are you sure you want to execute?</string>
