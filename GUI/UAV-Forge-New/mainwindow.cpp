@@ -2,6 +2,9 @@
 #include "ui_mainwindow.h"
 #include "options.h"
 #include "tutorial.h"
+#include <QtWebKitWidgets/QWebView>
+#include <QUrl>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)

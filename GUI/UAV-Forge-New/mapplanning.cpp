@@ -9,6 +9,7 @@ MapPlanning::MapPlanning(QWidget *parent) :
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
     connect(buttonGroup, SIGNAL(buttonClicked(int)), this, SLOT(buttonWasClicked(int)));
+    ui->webView->load(QUrl("https://www.google.com/maps"));
 }
 
 MapPlanning::~MapPlanning()
