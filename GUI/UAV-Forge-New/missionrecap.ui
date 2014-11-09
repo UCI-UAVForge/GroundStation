@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MissionRecap</class>
+ <widget class="QWidget" name="MissionRecap">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>955</width>
+    <height>587</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>80</y>
+     <width>341</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPlainTextEdit" name="plainTextEdit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>321</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="plainText">
+     <string>Graphical Representation of Results</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame_2">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>290</y>
+     <width>341</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPlainTextEdit" name="plainTextEdit_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>321</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="plainText">
+     <string>Graphical Representation of Results</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame_3">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>80</y>
+     <width>341</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPlainTextEdit" name="plainTextEdit_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>321</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="plainText">
+     <string>Text Results</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame_4">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>290</y>
+     <width>341</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPlainTextEdit" name="plainTextEdit_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>321</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="plainText">
+     <string>Video Playback of Mission</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame_5">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>60</y>
+     <width>761</width>
+     <height>461</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>644</x>
+      <y>430</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Save Results</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>824</x>
+     <y>550</y>
+     <width>111</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>New Mission</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>710</x>
+     <y>550</y>
+     <width>111</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Redo Mission</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>550</y>
+     <width>121</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Replay Mission</string>
+   </property>
+  </widget>
+  <zorder>frame_5</zorder>
+  <zorder>frame</zorder>
+  <zorder>frame_2</zorder>
+  <zorder>frame_3</zorder>
+  <zorder>frame_4</zorder>
+  <zorder>pushButton_2</zorder>
+  <zorder>pushButton_3</zorder>
+  <zorder>pushButton_4</zorder>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>MissionRecap</receiver>
+   <slot>replayMissionClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>627</x>
+     <y>566</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>540</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>replayMissionClicked()</slot>
+ </slots>
+</ui>
