@@ -6,31 +6,18 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>697</width>
-    <height>471</height>
+    <width>1366</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>90</y>
-     <width>291</width>
-     <height>241</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Map Display</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>210</y>
+     <x>940</x>
+     <y>440</y>
      <width>121</width>
      <height>51</height>
     </rect>
@@ -42,8 +29,8 @@
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>270</y>
+     <x>940</x>
+     <y>490</y>
      <width>121</width>
      <height>51</height>
     </rect>
@@ -55,8 +42,8 @@
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
-     <x>530</x>
-     <y>330</y>
+     <x>940</x>
+     <y>540</y>
      <width>121</width>
      <height>51</height>
     </rect>
@@ -65,7 +52,29 @@
     <string>Cancel</string>
    </property>
   </widget>
+  <widget class="QWebView" name="webView">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>70</y>
+     <width>800</width>
+     <height>650</height>
+    </rect>
+   </property>
+   <property name="url">
+    <url>
+     <string>about:blank</string>
+    </url>
+   </property>
+  </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKitWidgets/QWebView</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>

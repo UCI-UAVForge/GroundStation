@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>863</width>
-    <height>475</height>
+    <width>1366</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -104,7 +104,7 @@
    </column>
    <column>
     <property name="text">
-     <string>New Column</string>
+     <string/>
     </property>
    </column>
   </widget>
@@ -126,8 +126,8 @@
     <rect>
      <x>470</x>
      <y>90</y>
-     <width>371</width>
-     <height>321</height>
+     <width>800</width>
+     <height>650</height>
     </rect>
    </property>
    <property name="url">
