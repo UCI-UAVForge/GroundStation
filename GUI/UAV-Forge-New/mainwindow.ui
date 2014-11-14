@@ -113,10 +113,49 @@
      <rect>
       <x>260</x>
       <y>80</y>
-      <width>281</width>
-      <height>271</height>
+      <width>661</width>
+      <height>451</height>
      </rect>
     </property>
+    <widget class="QPushButton" name="pushButton_7">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>250</y>
+       <width>181</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Mission Recap</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_8">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>140</y>
+       <width>181</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Mission Execution</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_9">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>30</y>
+       <width>181</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Mission Planning</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -125,7 +164,7 @@
      <x>0</x>
      <y>0</y>
      <width>1366</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -300,9 +339,60 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>pushButton_9</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>missionPlanningClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>589</x>
+     <y>167</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>585</x>
+     <y>78</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_8</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>missionExecutionClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>669</x>
+     <y>281</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>948</x>
+     <y>301</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_7</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>missionRecapClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>662</x>
+     <y>400</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>946</x>
+     <y>400</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>openOptions()</slot>
   <slot>openTutorial()</slot>
+  <slot>missionPlanningClicked()</slot>
+  <slot>missionExecutionClicked()</slot>
+  <slot>missionRecapClicked()</slot>
  </slots>
 </ui>

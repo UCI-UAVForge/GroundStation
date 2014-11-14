@@ -4,6 +4,9 @@
 #include "tutorial.h"
 #include <QtWebKitWidgets/QWebView>
 #include <QUrl>
+#include "mapplanning.h"
+#include "mapexecution.h"
+#include "missionrecap.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -27,4 +30,22 @@ void MainWindow::openTutorial()
 {
     Tutorial *tutorial = new Tutorial();
     tutorial -> show();
+}
+
+void MainWindow:: missionPlanningClicked()
+{
+    MapPlanning *mapPlanning = new MapPlanning();
+    mapPlanning->show();
+}
+
+void MainWindow:: missionExecutionClicked()
+{
+    mapexecution *mapExecution = new mapexecution();
+    mapExecution->show();
+}
+
+void MainWindow:: missionRecapClicked()
+{
+    MissionRecap *missionRecap = new MissionRecap();
+    missionRecap->show();
 }

@@ -19,6 +19,9 @@ public:
 private slots:
     void openOptions();
     void openTutorial();
+    void missionPlanningClicked();
+    void missionExecutionClicked();
+    void missionRecapClicked();
 
 private:
     Ui::MainWindow *ui;
