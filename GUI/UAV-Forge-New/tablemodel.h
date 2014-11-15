@@ -23,6 +23,7 @@ public:
     bool insertRows(int position, int rows, const QModelIndex &index = QModelIndex());
     bool insertRow(const QModelIndex &index = QModelIndex());
     bool removeRows(int position, int rows, const QModelIndex &index = QModelIndex());
+    bool removeRows(QModelIndexList indexes);
     QList<QList<QString> > getList();
 
 private:
