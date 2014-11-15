@@ -1,5 +1,7 @@
 #include "mapplanning.h"
 #include "ui_mapplanning.h"
+#include "popwindowmp.h"
+#include <QApplication>
 
 
 MapPlanning::MapPlanning(QWidget *parent) :
@@ -9,9 +11,10 @@ MapPlanning::MapPlanning(QWidget *parent) :
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
     connect(buttonGroup, SIGNAL(buttonClicked(int)), this, SLOT(buttonWasClicked(int)));
-    ui->webView->load(QUrl("https://www.google.com/maps"));
-    model = new TableModel();
-    ui->tableView->setModel(model);
+
+    //delete = new  (row)
+
+    ui->webView->load(QUrl("file:///Users/adrianvazquez/Desktop/UAVForge/maps.html"));
 }
 
 MapPlanning::~MapPlanning()

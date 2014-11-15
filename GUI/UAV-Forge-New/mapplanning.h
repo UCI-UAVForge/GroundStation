@@ -28,6 +28,7 @@ private slots:
 private:
     Ui::MapPlanning *ui;
     QButtonGroup *buttonGroup;
+    QPushButton *del;
     TableModel *model;
     PopWindowMP *popup;
 };
