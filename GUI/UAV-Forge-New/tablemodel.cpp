@@ -5,7 +5,7 @@ TableModel::TableModel(QObject *parent)
 {
 }
 
-TableModel::TableModel(QList<QList<QString>> pairs, QObject *parent)
+TableModel::TableModel(QList<QList<QString> > pairs, QObject *parent)
     : QAbstractTableModel(parent)
 {
     listOfPairs = pairs;

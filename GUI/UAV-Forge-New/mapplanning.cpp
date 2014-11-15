@@ -12,9 +12,10 @@ MapPlanning::MapPlanning(QWidget *parent) :
     buttonGroup = new QButtonGroup();
     connect(buttonGroup, SIGNAL(buttonClicked(int)), this, SLOT(buttonWasClicked(int)));
 
-    //delete = new  (row)
-
-    ui->webView->load(QUrl("file:///Users/adrianvazquez/Desktop/UAVForge/maps.html"));
+    //Need to change file path to your own path until we upload the html to a server
+    ui->webView->load(QUrl("file:///Users/adrianvazquez/Desktop/UAVForge/GoogleMap.html"));
+    model = new TableModel();
+    ui->tableView->setModel(model);
 }
 
 MapPlanning::~MapPlanning()
@@ -26,6 +27,7 @@ MapPlanning::~MapPlanning()
 
 void MapPlanning::buttonWasClicked(int buttonID)
 {
+
 }
 
 void MapPlanning::on_pushButton_6_clicked()

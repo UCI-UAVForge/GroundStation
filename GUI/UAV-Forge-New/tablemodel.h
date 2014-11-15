@@ -21,12 +21,12 @@ public:
     Qt::ItemFlags flags(const QModelIndex &index) const;
     bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole);
     bool insertRows(int position, int rows, const QModelIndex &index = QModelIndex());
-    bool TableModel::insertRow(const QModelIndex &index = QModelIndex());
+    bool insertRow(const QModelIndex &index = QModelIndex());
     bool removeRows(int position, int rows, const QModelIndex &index = QModelIndex());
-    QList<QList<QString>> getList();
+    QList<QList<QString > > getList();
 
 private:
-    QList<QList<QString>> listOfPairs;
+    QList<QList<QString > > listOfPairs;
 };
 
 

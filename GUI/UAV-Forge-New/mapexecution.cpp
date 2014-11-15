@@ -7,7 +7,7 @@ mapexecution::mapexecution(QWidget *parent) :
     ui(new Ui::mapexecution)
 {
     ui->setupUi(this);
-    ui->webView->load(QUrl("file:///Users/adrianvazquez/Desktop/UAVForge/maps.html"));
+    ui->webView->load(QUrl("file:///Users/adrianvazquez/Desktop/UAVForge/GoogleMap.html"));
 }
 
 mapexecution::~mapexecution()
