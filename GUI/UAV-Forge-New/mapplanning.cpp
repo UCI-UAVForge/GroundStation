@@ -15,6 +15,8 @@ MapPlanning::MapPlanning(QWidget *parent) :
     //delete = new  (row)
 
     ui->webView->load(QUrl("file:///Users/adrianvazquez/Desktop/UAVForge/maps.html"));
+    model = new TableModel();
+    ui->tableView->setModel(model);
 }
 
 MapPlanning::~MapPlanning()

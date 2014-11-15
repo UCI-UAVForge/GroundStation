@@ -5,7 +5,7 @@ TableModel::TableModel(QObject *parent)
 {
 }
 
-TableModel::TableModel(QList<QList<QString>> pairs, QObject *parent)
+TableModel::TableModel(QList<QList<QString> > pairs, QObject *parent)
     : QAbstractTableModel(parent)
 {
     listOfPairs = pairs;
@@ -87,6 +87,8 @@ bool TableModel::insertRow(const QModelIndex &index)
     endInsertRows();
     return true;
 }
+
+
 
 bool TableModel::removeRows(int position, int rows, const QModelIndex &index)
 {
