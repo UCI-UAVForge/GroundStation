@@ -78,7 +78,7 @@
     <string>+</string>
    </property>
   </widget>
-  <widget class="QTableWidget" name="tableWidget">
+  <widget class="QTableView" name="tableView">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -87,26 +87,6 @@
      <height>311</height>
     </rect>
    </property>
-   <column>
-    <property name="text">
-     <string>Command</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Coordinate</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string>Behavior</string>
-    </property>
-   </column>
-   <column>
-    <property name="text">
-     <string/>
-    </property>
-   </column>
   </widget>
   <widget class="QPushButton" name="pushButton_6">
    <property name="geometry">

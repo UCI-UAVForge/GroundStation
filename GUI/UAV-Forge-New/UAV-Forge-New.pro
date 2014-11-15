@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     mapexecution.cpp \
     missionrecap.cpp \
     tutorial.cpp \
-    popwindowmp.cpp
+    popwindowmp.cpp \
+    qcomboboxdelegate.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
@@ -29,7 +30,8 @@ HEADERS  += mainwindow.h \
     mapexecution.h \
     missionrecap.h \
     tutorial.h \
-    popwindowmp.h
+    popwindowmp.h \
+    qcomboboxdelegate.h
 
 FORMS    += mainwindow.ui \
     options.ui \

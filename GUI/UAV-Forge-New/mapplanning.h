@@ -5,6 +5,8 @@
 #include <QComboBox>
 #include <QPushButton>
 #include <QButtonGroup>
+#include "tablemodel.h"
+#include "popwindowmp.h"
 
 namespace Ui {
 class MapPlanning;
@@ -26,6 +28,8 @@ private slots:
 private:
     Ui::MapPlanning *ui;
     QButtonGroup *buttonGroup;
+    TableModel *model;
+    PopWindowMP *popup;
 };
 
 #endif // MAPPLANNING_H

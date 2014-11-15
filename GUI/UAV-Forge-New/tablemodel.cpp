@@ -5,7 +5,7 @@ TableModel::TableModel(QObject *parent)
 {
 }
 
-TableModel::TableModel(QList<QPair<QString, QString> > pairs, QObject *parent)
+TableModel::TableModel(QList<QList<QString>> pairs, QObject *parent)
     : QAbstractTableModel(parent)
 {
     listOfPairs = pairs;
@@ -20,7 +20,7 @@ int TableModel::rowCount(const QModelIndex &parent) const
 int TableModel::columnCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return 2;
+    return 3;
 }
 
 QVariant TableModel::data(const QModelIndex &index, int role) const
@@ -32,12 +32,9 @@ QVariant TableModel::data(const QModelIndex &index, int role) const
         return QVariant();
 
     if (role == Qt::DisplayRole) {
-        QPair<QString, QString> pair = listOfPairs.at(index.row());
+        QList<QString> pair = listOfPairs.at(index.row());
 
-        if (index.column() == 0)
-            return pair.first;
-        else if (index.column() == 1)
-            return pair.second;
+        return pair.value(index.column());
     }
     return QVariant();
 }
@@ -50,10 +47,13 @@ QVariant TableModel::headerData(int section, Qt::Orientation orientation, int ro
     if (orientation == Qt::Horizontal) {
         switch (section) {
             case 0:
-                return tr("Name");
+                return tr("Action");
 
             case 1:
-                return tr("Address");
+                return tr("Position");
+
+            case 2:
+                return tr("Behavior");
 
             default:
                 return QVariant();
@@ -65,10 +65,10 @@ QVariant TableModel::headerData(int section, Qt::Orientation orientation, int ro
 bool TableModel::insertRows(int position, int rows, const QModelIndex &index)
 {
     Q_UNUSED(index);
-    beginInsertRows(QModelIndex(), position, position + rows - 1);
+    beginInsertRows(index, position, position + rows - 1);
 
     for (int row = 0; row < rows; ++row) {
-        QPair<QString, QString> pair(" ", " ");
+        QList<QString> pair;
         listOfPairs.insert(position, pair);
     }
 
@@ -76,10 +76,22 @@ bool TableModel::insertRows(int position, int rows, const QModelIndex &index)
     return true;
 }
 
+bool TableModel::insertRow(const QModelIndex &index)
+{
+    Q_UNUSED(index);
+    int insertRow = rowCount(index);
+    beginInsertRows(index, insertRow, insertRow);
+    QList<QString> list;
+    list << "" << "" << "";
+    listOfPairs.push_back(list);
+    endInsertRows();
+    return true;
+}
+
 bool TableModel::removeRows(int position, int rows, const QModelIndex &index)
 {
     Q_UNUSED(index);
-    beginRemoveRows(QModelIndex(), position, position + rows - 1);
+    beginRemoveRows(index, position, position + rows - 1);
 
     for (int row = 0; row < rows; ++row) {
         listOfPairs.removeAt(position);
@@ -94,15 +106,8 @@ bool TableModel::setData(const QModelIndex &index, const QVariant &value, int ro
     if (index.isValid() && role == Qt::EditRole) {
         int row = index.row();
 
-        QPair<QString, QString> p = listOfPairs.value(row);
-
-        if (index.column() == 0)
-            p.first = value.toString();
-        else if (index.column() == 1)
-            p.second = value.toString();
-        else
-            return false;
-
+        QList<QString> p = listOfPairs.value(row);
+        p[index.column()] = value.toString();
         listOfPairs.replace(row, p);
         emit(dataChanged(index, index));
 
@@ -120,7 +125,7 @@ Qt::ItemFlags TableModel::flags(const QModelIndex &index) const
     return QAbstractTableModel::flags(index) | Qt::ItemIsEditable;
 }
 
-QList< QPair<QString, QString> > TableModel::getList()
+QList< QList<QString> > TableModel::getList()
 {
     return listOfPairs;
 }

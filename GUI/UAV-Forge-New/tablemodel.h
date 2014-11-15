@@ -12,7 +12,7 @@ class TableModel : public QAbstractTableModel
 
 public:
     TableModel(QObject *parent = 0);
-    TableModel(QList<QPair<QString, QString> > listofPairs, QObject *parent = 0);
+    TableModel(QList<QList<QString> > listofPairs, QObject *parent = 0);
 
     int rowCount(const QModelIndex &parent) const;
     int columnCount(const QModelIndex &parent) const;
@@ -21,11 +21,12 @@ public:
     Qt::ItemFlags flags(const QModelIndex &index) const;
     bool setData(const QModelIndex &index, const QVariant &value, int role = Qt::EditRole);
     bool insertRows(int position, int rows, const QModelIndex &index = QModelIndex());
+    bool TableModel::insertRow(const QModelIndex &index = QModelIndex());
     bool removeRows(int position, int rows, const QModelIndex &index = QModelIndex());
-    QList<QPair<QString, QString> > getList();
+    QList<QList<QString>> getList();
 
 private:
-    QList<QPair<QString, QString> > listOfPairs;
+    QList<QList<QString>> listOfPairs;
 };
 
 

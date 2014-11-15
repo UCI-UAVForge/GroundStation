@@ -1,6 +1,6 @@
 #include "mapplanning.h"
 #include "ui_mapplanning.h"
-#include "popwindowmp.h"
+
 
 MapPlanning::MapPlanning(QWidget *parent) :
     QDialog(parent),
@@ -10,31 +10,28 @@ MapPlanning::MapPlanning(QWidget *parent) :
     buttonGroup = new QButtonGroup();
     connect(buttonGroup, SIGNAL(buttonClicked(int)), this, SLOT(buttonWasClicked(int)));
     ui->webView->load(QUrl("https://www.google.com/maps"));
+    model = new TableModel();
+    ui->tableView->setModel(model);
 }
 
 MapPlanning::~MapPlanning()
 {
     delete ui;
+    delete model;
+    delete popup;
 }
 
 void MapPlanning::buttonWasClicked(int buttonID)
 {
-    ui->tableWidget->removeRow(buttonID);
 }
 
 void MapPlanning::on_pushButton_6_clicked()
 {
-    PopWindowMP *pw = new PopWindowMP();
-    pw->show();
+    popup = new PopWindowMP();
+    popup->show();
 }
 
 void MapPlanning::on_pushButton_5_clicked()
 {
-    int i = 0;
-    ui->tableWidget->insertRow(i);
-    ui->tableWidget->setCellWidget(i, 0, new QComboBox);
-    ui->tableWidget->setCellWidget(i, 2, new QComboBox);
-    ui->tableWidget->setCellWidget(i, 3, new QPushButton("Delete"));
-    //buttonGroup->addButton(*(ui->tableWidget->cellWidget(i, 3)), i);
-    i++;
+    model->insertRow();
 }
