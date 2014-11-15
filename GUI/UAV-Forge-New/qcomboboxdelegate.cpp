@@ -6,7 +6,8 @@ QComboBoxDelegate::QComboBoxDelegate(QObject *parent) :
 }
 
 QWidget* QComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const {
-    return new QWidget();
+    QComboBox* editor = new QComboBox(parent);
+    return editor;
 }
 
 void QComboBoxDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const {

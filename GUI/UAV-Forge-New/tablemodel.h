@@ -23,10 +23,11 @@ public:
     bool insertRows(int position, int rows, const QModelIndex &index = QModelIndex());
     bool insertRow(const QModelIndex &index = QModelIndex());
     bool removeRows(int position, int rows, const QModelIndex &index = QModelIndex());
-    QList<QList<QString > > getList();
+    bool removeRows(QModelIndexList indexes);
+    QList<QList<QString> > getList();
 
 private:
-    QList<QList<QString > > listOfPairs;
+    QList<QList<QString> > listOfPairs;
 };
 
 

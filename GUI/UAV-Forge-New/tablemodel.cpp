@@ -88,6 +88,8 @@ bool TableModel::insertRow(const QModelIndex &index)
     return true;
 }
 
+
+
 bool TableModel::removeRows(int position, int rows, const QModelIndex &index)
 {
     Q_UNUSED(index);
@@ -128,4 +130,12 @@ Qt::ItemFlags TableModel::flags(const QModelIndex &index) const
 QList< QList<QString> > TableModel::getList()
 {
     return listOfPairs;
+}
+bool TableModel::removeRows(QModelIndexList indexes) {
+    beginResetModel();
+    for(QModelIndex index : indexes) {
+        removeRows(index.row(), 1, index);
+    }
+    endResetModel();
+    return true;
 }
