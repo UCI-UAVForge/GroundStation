@@ -7,6 +7,7 @@
 #include <QButtonGroup>
 #include "tablemodel.h"
 #include "popwindowmp.h"
+#include "qcomboboxdelegate.h"
 
 namespace Ui {
 class MapPlanning;
@@ -24,7 +25,7 @@ private slots:
     void on_pushButton_6_clicked();
     void on_pushButton_5_clicked();
     void buttonWasClicked(int);
-    void delete_button_clicked();
+    void on_pushButton_7_clicked();
 
 private:
     Ui::MapPlanning *ui;

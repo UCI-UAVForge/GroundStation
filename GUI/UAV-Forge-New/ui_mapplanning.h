@@ -32,6 +32,7 @@ public:
     QTableView *tableView;
     QPushButton *pushButton_6;
     QWebView *webView;
+    QPushButton *pushButton_7;
 
     void setupUi(QDialog *MapPlanning)
     {
@@ -52,7 +53,7 @@ public:
         pushButton_4->setGeometry(QRect(320, 20, 91, 21));
         pushButton_5 = new QPushButton(MapPlanning);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        pushButton_5->setGeometry(QRect(400, 60, 31, 23));
+        pushButton_5->setGeometry(QRect(400, 50, 31, 31));
         tableView = new QTableView(MapPlanning);
         tableView->setObjectName(QStringLiteral("tableView"));
         tableView->setGeometry(QRect(30, 90, 411, 311));
@@ -63,8 +64,12 @@ public:
         webView->setObjectName(QStringLiteral("webView"));
         webView->setGeometry(QRect(470, 90, 800, 650));
         webView->setUrl(QUrl(QStringLiteral("about:blank")));
+        pushButton_7 = new QPushButton(MapPlanning);
+        pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
+        pushButton_7->setGeometry(QRect(360, 50, 31, 31));
 
         retranslateUi(MapPlanning);
+        QObject::connect(pushButton_7, SIGNAL(clicked()), MapPlanning, SLOT(on_pushButton_7_clicked()));
 
         QMetaObject::connectSlotsByName(MapPlanning);
     } // setupUi
@@ -78,6 +83,7 @@ public:
         pushButton_4->setText(QApplication::translate("MapPlanning", "Tools", 0));
         pushButton_5->setText(QApplication::translate("MapPlanning", "+", 0));
         pushButton_6->setText(QApplication::translate("MapPlanning", "Execute", 0));
+        pushButton_7->setText(QApplication::translate("MapPlanning", "-", 0));
     } // retranslateUi
 
 };

@@ -131,10 +131,12 @@ QList< QList<QString> > TableModel::getList()
 {
     return listOfPairs;
 }
+
 bool TableModel::removeRows(QModelIndexList indexes) {
     beginResetModel();
-    for(QModelIndex index : indexes) {
-        removeRows(index.row(), 1, index);
+    qSort(indexes);
+    for(int i = indexes.size() - 1; i >= 0 ; i--) {
+        listOfPairs.removeAt(indexes.at(i).row());
     }
     endResetModel();
     return true;

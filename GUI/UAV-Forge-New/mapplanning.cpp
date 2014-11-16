@@ -11,12 +11,13 @@ MapPlanning::MapPlanning(QWidget *parent) :
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
     connect(buttonGroup, SIGNAL(buttonClicked(int)), this, SLOT(buttonWasClicked(int)));
-    connect(ui->pushButton_7, SIGNAL(clicked()), this, SLOT(delete_button_clicked()));
     //delete = new  (row)
+    connect(ui->pushButton_7, SIGNAL(clicked()), this, SLOT(on_pushButton_7_clicked()));
 
     ui->webView->load(QUrl("file:///Users/adrianvazquez/Desktop/UAVForge/maps.html"));
     model = new TableModel();
     ui->tableView->setModel(model);
+    ui->tableView->setItemDelegate(new QComboBoxDelegate());
 }
 
 MapPlanning::~MapPlanning()
@@ -42,7 +43,9 @@ void MapPlanning::on_pushButton_5_clicked()
     model->insertRow();
 }
 
-void MapPlanning::delete_button_clicked() {
+
+void MapPlanning::on_pushButton_7_clicked()
+{
     QModelIndexList indexes = ui->tableView->selectionModel()->selectedIndexes();
     model->removeRows(indexes);
 }
