@@ -14,7 +14,7 @@ MapPlanning::MapPlanning(QWidget *parent) :
     //delete = new  (row)
     connect(ui->pushButton_7, SIGNAL(clicked()), this, SLOT(on_pushButton_7_clicked()));
 
-    ui->webView->load(QUrl("file:///Users/adrianvazquez/Desktop/UAVForge/maps.html"));
+    ui->webView->load(QUrl("file:///Users/kelvinwu/UCI-SoftwareDev/GUI/UAV-Forge-New/maps.html"));
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
@@ -41,6 +41,8 @@ void MapPlanning::on_pushButton_6_clicked()
 void MapPlanning::on_pushButton_5_clicked()
 {
     model->insertRow();
+    QWebFrame* frame = ui->webView->page()->mainFrame();
+    frame->evaluateJavaScript("addLatLng()");
 }
 
 

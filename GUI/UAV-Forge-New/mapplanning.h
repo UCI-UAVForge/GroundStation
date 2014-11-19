@@ -5,6 +5,7 @@
 #include <QComboBox>
 #include <QPushButton>
 #include <QButtonGroup>
+#include <QWebFrame>
 #include "tablemodel.h"
 #include "popwindowmp.h"
 #include "qcomboboxdelegate.h"
