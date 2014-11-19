@@ -20,7 +20,7 @@ int TableModel::rowCount(const QModelIndex &parent) const
 int TableModel::columnCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return 3;
+    return 4;
 }
 
 QVariant TableModel::data(const QModelIndex &index, int role) const
@@ -48,13 +48,12 @@ QVariant TableModel::headerData(int section, Qt::Orientation orientation, int ro
         switch (section) {
             case 0:
                 return tr("Action");
-
             case 1:
-                return tr("Position");
-
+                return tr("Longitude (X)");
             case 2:
+                return tr("Latitude (Y)");
+            case 3:
                 return tr("Behavior");
-
             default:
                 return QVariant();
         }
@@ -82,7 +81,9 @@ bool TableModel::insertRow(const QModelIndex &index)
     int insertRow = rowCount(index);
     beginInsertRows(index, insertRow, insertRow);
     QList<QString> list;
-    list << "" << "" << "";
+    for (int i = 0; i < columnCount(QModelIndex()); i++) {
+        list << "";
+    }
     listOfPairs.push_back(list);
     endInsertRows();
     return true;
