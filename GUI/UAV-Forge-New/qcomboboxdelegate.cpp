@@ -24,8 +24,16 @@ QWidget* QComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionView
         comboBox->addItem(QString("Action 1"));
         comboBox->addItem(QString("Action 2"));
         comboBox->addItem(QString("Action 3"));
+    } else if(index.column() == 2)
+    {
+        comboBox->addItem(QString("North"));
+        comboBox->addItem(QString("South"));
+    } else if(index.column() == 4)
+    {
+        comboBox->addItem(QString("East"));
+        comboBox->addItem(QString("West"));
     }
-    else {
+    else if(index.column() == 5){
         comboBox->addItem(QString("Behavior 1"));
         comboBox->addItem(QString("Behavior 2"));
         comboBox->addItem(QString("Behavior 3"));

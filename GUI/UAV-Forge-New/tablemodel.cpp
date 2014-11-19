@@ -46,17 +46,20 @@ QVariant TableModel::headerData(int section, Qt::Orientation orientation, int ro
 
     if (orientation == Qt::Horizontal) {
         switch (section) {
-            case 0:
-                return tr("Action");
-
-            case 1:
-                return tr("Position");
-
-            case 2:
-                return tr("Behavior");
-
-            default:
-                return QVariant();
+        case 0:
+            return tr("Action");
+        case 1:
+            return tr("Lattitude");
+        case 2:
+            return tr("Lattitude Direction");
+        case 3:
+            return tr("Longitude");
+        case 4:
+            return tr("Longitude Direction");
+        case 5:
+            return tr("Behavior");
+        default:
+            return QVariant();
         }
     }
     return QVariant();
