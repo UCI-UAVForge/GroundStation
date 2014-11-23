@@ -28,6 +28,7 @@ public:
 
 private:
     QList<QList<QString> > listOfPairs;
+    QList<QString> columns;
 };
 
 

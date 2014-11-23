@@ -7,30 +7,34 @@ QComboBoxDelegate::QComboBoxDelegate(QObject *parent) :
 
 QWidget* QComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const {
 
-    if(index.column() == 1)
-    {
-        return QItemDelegate::createEditor(parent, option, index);
-    }
-
     // Create the combobox and populate it
     QComboBox *comboBox = new QComboBox(parent);
     QString currentText = index.data(Qt::DisplayRole).toString();
-    if (currentText != 0)
-    {
-        comboBox->addItem(currentText);
-    }
     if (index.column() == 0)
     {
         comboBox->addItem(QString("Action 1"));
         comboBox->addItem(QString("Action 2"));
         comboBox->addItem(QString("Action 3"));
+        return comboBox;
     }
-    else {
+    if (index.column() == 2)
+    {
+        comboBox->addItem(QString("E"));
+        comboBox->addItem(QString("W"));
+        return comboBox;
+    }
+    else if (index.column() == 4){
+        comboBox->addItem(QString("N"));
+        comboBox->addItem(QString("S"));
+        return comboBox;
+    }
+    else if (index.column() == 5) {
         comboBox->addItem(QString("Behavior 1"));
         comboBox->addItem(QString("Behavior 2"));
         comboBox->addItem(QString("Behavior 3"));
+        return comboBox;
     }
-    return comboBox;
+    return QItemDelegate::createEditor(parent, option, index);
 }
 
 void QComboBoxDelegate::setEditorData(QWidget *editor, const QModelIndex &index) const {

@@ -3,6 +3,13 @@
 TableModel::TableModel(QObject *parent)
     : QAbstractTableModel(parent)
 {
+    columns.push_back("Action");
+    columns.push_back("Longitude (X)");
+    columns.push_back("E/W");
+    columns.push_back("Latitude (Y)");
+    columns.push_back("N/S");
+    columns.push_back("Behavior");
+
 }
 
 TableModel::TableModel(QList<QList<QString> > pairs, QObject *parent)
@@ -20,7 +27,7 @@ int TableModel::rowCount(const QModelIndex &parent) const
 int TableModel::columnCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return 4;
+    return columns.length();
 }
 
 QVariant TableModel::data(const QModelIndex &index, int role) const
@@ -45,17 +52,8 @@ QVariant TableModel::headerData(int section, Qt::Orientation orientation, int ro
         return QVariant();
 
     if (orientation == Qt::Horizontal) {
-        switch (section) {
-            case 0:
-                return tr("Action");
-            case 1:
-                return tr("Longitude (X)");
-            case 2:
-                return tr("Latitude (Y)");
-            case 3:
-                return tr("Behavior");
-            default:
-                return QVariant();
+        if (section < columnCount(QModelIndex()) && section >= 0) {
+            return columns[section];
         }
     }
     return QVariant();
