@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.1
+** Created by: Qt User Interface Compiler version 5.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -172,7 +172,7 @@ public:
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
         pushButton_5->setGeometry(QRect(20, 60, 151, 61));
         pushButton_5->setStyleSheet(QLatin1String(" QPushButton { \n"
-"background-color: \"#ffffff\"; \n"
+"background-color: \"#CCD1E9\"; \n"
 "color: \"#434A54\"; \n"
 "border-radius: 10px;\n"
 "font-weight: bold;\n"
@@ -185,7 +185,7 @@ public:
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
         pushButton_6->setGeometry(QRect(20, 160, 151, 61));
         pushButton_6->setStyleSheet(QLatin1String(" QPushButton { \n"
-"background-color: \"#ffffff\"; \n"
+"background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
 "border-radius: 10px;\n"
 "font-weight: bold;\n"
@@ -204,29 +204,31 @@ public:
         QBrush brush9(QColor(67, 74, 84, 255));
         brush9.setStyle(Qt::SolidPattern);
         palette2.setBrush(QPalette::Active, QPalette::WindowText, brush9);
-        palette2.setBrush(QPalette::Active, QPalette::Button, brush2);
+        QBrush brush10(QColor(204, 209, 217, 255));
+        brush10.setStyle(Qt::SolidPattern);
+        palette2.setBrush(QPalette::Active, QPalette::Button, brush10);
         palette2.setBrush(QPalette::Active, QPalette::Midlight, brush6);
         palette2.setBrush(QPalette::Active, QPalette::Text, brush9);
         palette2.setBrush(QPalette::Active, QPalette::ButtonText, brush9);
-        palette2.setBrush(QPalette::Active, QPalette::Base, brush2);
-        palette2.setBrush(QPalette::Active, QPalette::Window, brush2);
+        palette2.setBrush(QPalette::Active, QPalette::Base, brush10);
+        palette2.setBrush(QPalette::Active, QPalette::Window, brush10);
         palette2.setBrush(QPalette::Inactive, QPalette::WindowText, brush9);
-        palette2.setBrush(QPalette::Inactive, QPalette::Button, brush2);
+        palette2.setBrush(QPalette::Inactive, QPalette::Button, brush10);
         palette2.setBrush(QPalette::Inactive, QPalette::Midlight, brush6);
         palette2.setBrush(QPalette::Inactive, QPalette::Text, brush9);
         palette2.setBrush(QPalette::Inactive, QPalette::ButtonText, brush9);
-        palette2.setBrush(QPalette::Inactive, QPalette::Base, brush2);
-        palette2.setBrush(QPalette::Inactive, QPalette::Window, brush2);
+        palette2.setBrush(QPalette::Inactive, QPalette::Base, brush10);
+        palette2.setBrush(QPalette::Inactive, QPalette::Window, brush10);
         palette2.setBrush(QPalette::Disabled, QPalette::WindowText, brush9);
-        palette2.setBrush(QPalette::Disabled, QPalette::Button, brush2);
+        palette2.setBrush(QPalette::Disabled, QPalette::Button, brush10);
         palette2.setBrush(QPalette::Disabled, QPalette::Midlight, brush6);
         palette2.setBrush(QPalette::Disabled, QPalette::Text, brush9);
         palette2.setBrush(QPalette::Disabled, QPalette::ButtonText, brush9);
-        palette2.setBrush(QPalette::Disabled, QPalette::Base, brush2);
-        palette2.setBrush(QPalette::Disabled, QPalette::Window, brush2);
+        palette2.setBrush(QPalette::Disabled, QPalette::Base, brush10);
+        palette2.setBrush(QPalette::Disabled, QPalette::Window, brush10);
         pushButton_7->setPalette(palette2);
         pushButton_7->setStyleSheet(QLatin1String(" QPushButton { \n"
-"background-color: \"#ffffff\"; \n"
+"background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
 "border-radius: 10px;\n"
 "font-weight: bold;\n"
@@ -239,7 +241,7 @@ public:
         pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
         pushButton_8->setGeometry(QRect(250, 140, 181, 81));
         pushButton_8->setStyleSheet(QLatin1String(" QPushButton { \n"
-"background-color: \"#ffffff\"; \n"
+"background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
 "border-radius: 10px;\n"
 "font-weight: bold;\n"
@@ -252,7 +254,7 @@ public:
         pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
         pushButton_9->setGeometry(QRect(250, 30, 181, 81));
         pushButton_9->setStyleSheet(QLatin1String(" QPushButton { \n"
-"background-color: \"#ffffff\"; \n"
+"background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
 "border-radius: 10px;\n"
 "font-weight: bold;\n"

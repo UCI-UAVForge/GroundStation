@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mapplanning.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.1
+** Created by: Qt User Interface Compiler version 5.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -51,7 +51,7 @@ public:
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
         pushButton_5->setGeometry(QRect(400, 50, 31, 31));
         pushButton_5->setStyleSheet(QLatin1String(" QPushButton { \n"
-"background-color: \"#ffffff\"; \n"
+"background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
 "border-radius: 4px;\n"
 "font-weight: bold;\n"
@@ -67,7 +67,7 @@ public:
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
         pushButton_6->setGeometry(QRect(380, 530, 131, 41));
         pushButton_6->setStyleSheet(QLatin1String(" QPushButton { \n"
-"background-color: \"#ffffff\"; \n"
+"background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
 "border-radius: 10px;\n"
 "font-weight: bold;\n"
@@ -84,7 +84,7 @@ public:
         pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
         pushButton_7->setGeometry(QRect(360, 50, 31, 31));
         pushButton_7->setStyleSheet(QLatin1String(" QPushButton { \n"
-"background-color: \"#ffffff\"; \n"
+"background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
 "border-radius: 4px;\n"
 "font-weight: bold;\n"

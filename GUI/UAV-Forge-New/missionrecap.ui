@@ -295,7 +295,7 @@ border: none;
    </property>
    <property name="styleSheet">
     <string notr="true"> QPushButton { 
-background-color: &quot;#ffffff&quot;; 
+background-color: &quot;#CCD1D9&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 4px;
 font-weight: bold;
@@ -320,7 +320,7 @@ border: none;
    </property>
    <property name="styleSheet">
     <string notr="true"> QPushButton { 
-background-color: &quot;#ffffff&quot;; 
+background-color: &quot;#CCD1D9&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 4px;
 font-weight: bold;
@@ -358,9 +358,9 @@ border: none;
       <colorrole role="Button">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
+         <red>204</red>
+         <green>209</green>
+         <blue>217</blue>
         </color>
        </brush>
       </colorrole>
@@ -385,18 +385,18 @@ border: none;
       <colorrole role="Base">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
+         <red>204</red>
+         <green>209</green>
+         <blue>217</blue>
         </color>
        </brush>
       </colorrole>
       <colorrole role="Window">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
+         <red>204</red>
+         <green>209</green>
+         <blue>217</blue>
         </color>
        </brush>
       </colorrole>
@@ -414,9 +414,9 @@ border: none;
       <colorrole role="Button">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
+         <red>204</red>
+         <green>209</green>
+         <blue>217</blue>
         </color>
        </brush>
       </colorrole>
@@ -441,18 +441,18 @@ border: none;
       <colorrole role="Base">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
+         <red>204</red>
+         <green>209</green>
+         <blue>217</blue>
         </color>
        </brush>
       </colorrole>
       <colorrole role="Window">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
+         <red>204</red>
+         <green>209</green>
+         <blue>217</blue>
         </color>
        </brush>
       </colorrole>
@@ -470,9 +470,9 @@ border: none;
       <colorrole role="Button">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
+         <red>204</red>
+         <green>209</green>
+         <blue>217</blue>
         </color>
        </brush>
       </colorrole>
@@ -497,18 +497,18 @@ border: none;
       <colorrole role="Base">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
+         <red>204</red>
+         <green>209</green>
+         <blue>217</blue>
         </color>
        </brush>
       </colorrole>
       <colorrole role="Window">
        <brush brushstyle="SolidPattern">
         <color alpha="255">
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
+         <red>204</red>
+         <green>209</green>
+         <blue>217</blue>
         </color>
        </brush>
       </colorrole>
@@ -517,7 +517,7 @@ border: none;
    </property>
    <property name="styleSheet">
     <string notr="true"> QPushButton { 
-background-color: &quot;#ffffff&quot;; 
+background-color: &quot;#CCD1D9&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 4px;
 font-weight: bold;
