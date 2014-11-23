@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mapplanning.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.2
+** Created by: Qt User Interface Compiler version 5.3.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -24,10 +24,6 @@ QT_BEGIN_NAMESPACE
 class Ui_MapPlanning
 {
 public:
-    QPushButton *pushButton;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton_4;
     QPushButton *pushButton_5;
     QTableView *tableView;
     QPushButton *pushButton_6;
@@ -39,34 +35,64 @@ public:
         if (MapPlanning->objectName().isEmpty())
             MapPlanning->setObjectName(QStringLiteral("MapPlanning"));
         MapPlanning->resize(1366, 768);
-        pushButton = new QPushButton(MapPlanning);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(30, 20, 81, 21));
-        pushButton_3 = new QPushButton(MapPlanning);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(220, 20, 91, 21));
-        pushButton_2 = new QPushButton(MapPlanning);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(120, 20, 91, 21));
-        pushButton_4 = new QPushButton(MapPlanning);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(320, 20, 91, 21));
+        QPalette palette;
+        QBrush brush(QColor(255, 255, 255, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush);
+        QBrush brush1(QColor(67, 74, 84, 255));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
+        MapPlanning->setPalette(palette);
         pushButton_5 = new QPushButton(MapPlanning);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
         pushButton_5->setGeometry(QRect(400, 50, 31, 31));
+        pushButton_5->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: \"#ffffff\"; \n"
+"color: \"#434A54\"; \n"
+"border-radius: 4px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #E6E9ED\n"
+" }"));
         tableView = new QTableView(MapPlanning);
         tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(30, 90, 411, 311));
+        tableView->setGeometry(QRect(30, 90, 691, 411));
         pushButton_6 = new QPushButton(MapPlanning);
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        pushButton_6->setGeometry(QRect(490, 421, 131, 41));
+        pushButton_6->setGeometry(QRect(380, 530, 131, 41));
+        pushButton_6->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: \"#ffffff\"; \n"
+"color: \"#434A54\"; \n"
+"border-radius: 10px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #E6E9ED\n"
+" }"));
         webView = new QWebView(MapPlanning);
         webView->setObjectName(QStringLiteral("webView"));
-        webView->setGeometry(QRect(470, 90, 800, 650));
+        webView->setGeometry(QRect(749, 90, 521, 650));
         webView->setUrl(QUrl(QStringLiteral("about:blank")));
         pushButton_7 = new QPushButton(MapPlanning);
         pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
         pushButton_7->setGeometry(QRect(360, 50, 31, 31));
+        pushButton_7->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: \"#ffffff\"; \n"
+"color: \"#434A54\"; \n"
+"border-radius: 4px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #E6E9ED\n"
+" }"));
 
         retranslateUi(MapPlanning);
         QObject::connect(pushButton_7, SIGNAL(clicked()), MapPlanning, SLOT(on_pushButton_7_clicked()));
@@ -77,10 +103,6 @@ public:
     void retranslateUi(QDialog *MapPlanning)
     {
         MapPlanning->setWindowTitle(QApplication::translate("MapPlanning", "Dialog", 0));
-        pushButton->setText(QApplication::translate("MapPlanning", "File", 0));
-        pushButton_3->setText(QApplication::translate("MapPlanning", "View", 0));
-        pushButton_2->setText(QApplication::translate("MapPlanning", "Edit", 0));
-        pushButton_4->setText(QApplication::translate("MapPlanning", "Tools", 0));
         pushButton_5->setText(QApplication::translate("MapPlanning", "+", 0));
         pushButton_6->setText(QApplication::translate("MapPlanning", "Execute", 0));
         pushButton_7->setText(QApplication::translate("MapPlanning", "-", 0));

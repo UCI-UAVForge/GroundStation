@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mapexecution.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.2
+** Created by: Qt User Interface Compiler version 5.3.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -33,15 +33,57 @@ public:
         if (mapexecution->objectName().isEmpty())
             mapexecution->setObjectName(QStringLiteral("mapexecution"));
         mapexecution->resize(1366, 768);
+        QPalette palette;
+        QBrush brush(QColor(255, 255, 255, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush);
+        QBrush brush1(QColor(67, 74, 84, 255));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
+        mapexecution->setPalette(palette);
         pushButton_2 = new QPushButton(mapexecution);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(940, 440, 121, 51));
+        pushButton_2->setGeometry(QRect(940, 400, 121, 51));
+        pushButton_2->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: \"#ffffff\"; \n"
+"color: \"#434A54\"; \n"
+"border-radius: 10px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #E6E9ED\n"
+" }"));
         pushButton_3 = new QPushButton(mapexecution);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(940, 490, 121, 51));
+        pushButton_3->setGeometry(QRect(940, 470, 121, 51));
+        pushButton_3->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: \"#ffffff\"; \n"
+"color: \"#434A54\"; \n"
+"border-radius: 10px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #E6E9ED\n"
+" }"));
         pushButton_4 = new QPushButton(mapexecution);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setGeometry(QRect(940, 540, 121, 51));
+        pushButton_4->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: \"#ffffff\"; \n"
+"color: \"#434A54\"; \n"
+"border-radius: 10px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #E6E9ED\n"
+" }"));
         webView = new QWebView(mapexecution);
         webView->setObjectName(QStringLiteral("webView"));
         webView->setGeometry(QRect(80, 70, 800, 650));

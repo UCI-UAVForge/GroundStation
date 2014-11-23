@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'missionrecap.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.2
+** Created by: Qt User Interface Compiler version 5.3.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -43,9 +43,29 @@ public:
         if (MissionRecap->objectName().isEmpty())
             MissionRecap->setObjectName(QStringLiteral("MissionRecap"));
         MissionRecap->resize(1366, 768);
+        QPalette palette;
+        QBrush brush(QColor(255, 255, 255, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush);
+        QBrush brush1(QColor(67, 74, 84, 255));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
+        MissionRecap->setPalette(palette);
         frame = new QFrame(MissionRecap);
         frame->setObjectName(QStringLiteral("frame"));
         frame->setGeometry(QRect(210, 80, 341, 191));
+        frame->setStyleSheet(QLatin1String(" QFrame, QLabel, QToolTip {\n"
+"     border: 2px solid grey;\n"
+"     border-radius: 4px;\n"
+"     padding: 2px;\n"
+"	 color: #434A54;\n"
+"	 font-weight: bold;\n"
+"     background-color: #ffffff;\n"
+" }"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
         plainTextEdit = new QPlainTextEdit(frame);
@@ -54,6 +74,14 @@ public:
         frame_2 = new QFrame(MissionRecap);
         frame_2->setObjectName(QStringLiteral("frame_2"));
         frame_2->setGeometry(QRect(210, 290, 341, 191));
+        frame_2->setStyleSheet(QLatin1String(" QFrame, QLabel, QToolTip {\n"
+"     border: 2px solid grey;\n"
+"     border-radius: 4px;\n"
+"     padding: 2px;\n"
+"	 color: #434A54;\n"
+"	 font-weight: bold;\n"
+"     background-color: #ffffff;\n"
+" }"));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
         plainTextEdit_2 = new QPlainTextEdit(frame_2);
@@ -62,6 +90,14 @@ public:
         frame_3 = new QFrame(MissionRecap);
         frame_3->setObjectName(QStringLiteral("frame_3"));
         frame_3->setGeometry(QRect(580, 80, 341, 191));
+        frame_3->setStyleSheet(QLatin1String(" QFrame, QLabel, QToolTip {\n"
+"     border: 2px solid grey;\n"
+"     border-radius: 4px;\n"
+"     padding: 2px;\n"
+"	 color: #434A54;\n"
+"	 font-weight: bold;\n"
+"     background-color: #ffffff;\n"
+" }"));
         frame_3->setFrameShape(QFrame::StyledPanel);
         frame_3->setFrameShadow(QFrame::Raised);
         plainTextEdit_3 = new QPlainTextEdit(frame_3);
@@ -70,6 +106,14 @@ public:
         frame_4 = new QFrame(MissionRecap);
         frame_4->setObjectName(QStringLiteral("frame_4"));
         frame_4->setGeometry(QRect(580, 290, 341, 191));
+        frame_4->setStyleSheet(QLatin1String(" QFrame, QLabel, QToolTip {\n"
+"     border: 2px solid grey;\n"
+"     border-radius: 4px;\n"
+"     padding: 2px;\n"
+"	 color: #434A54;\n"
+"	 font-weight: bold;\n"
+"     background-color: #ffffff;\n"
+" }"));
         frame_4->setFrameShape(QFrame::StyledPanel);
         frame_4->setFrameShadow(QFrame::Raised);
         plainTextEdit_4 = new QPlainTextEdit(frame_4);
@@ -77,21 +121,89 @@ public:
         plainTextEdit_4->setGeometry(QRect(10, 10, 321, 171));
         frame_5 = new QFrame(MissionRecap);
         frame_5->setObjectName(QStringLiteral("frame_5"));
-        frame_5->setGeometry(QRect(180, 60, 761, 461));
+        frame_5->setGeometry(QRect(180, 60, 781, 481));
+        frame_5->setStyleSheet(QLatin1String(" QFrame, QLabel, QToolTip {\n"
+"     border: 2px solid grey;\n"
+"     border-radius: 4px;\n"
+"     padding: 2px;\n"
+"	 color: #434A54;\n"
+"	 font-weight: bold;\n"
+"     background-color: #ffffff;\n"
+" }"));
         frame_5->setFrameShape(QFrame::StyledPanel);
         frame_5->setFrameShadow(QFrame::Raised);
         pushButton = new QPushButton(frame_5);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(644, 430, 101, 23));
+        pushButton->setGeometry(QRect(644, 430, 101, 31));
+        pushButton->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: #434A54;\n"
+"color: \"#ffffff\"; \n"
+"border-radius: 10px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #656D78\n"
+" }"));
         pushButton_2 = new QPushButton(MissionRecap);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(824, 550, 111, 23));
+        pushButton_2->setGeometry(QRect(824, 560, 111, 31));
+        pushButton_2->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: \"#ffffff\"; \n"
+"color: \"#434A54\"; \n"
+"border-radius: 4px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #E6E9ED\n"
+" }"));
         pushButton_3 = new QPushButton(MissionRecap);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(710, 550, 111, 23));
+        pushButton_3->setGeometry(QRect(700, 560, 111, 31));
+        pushButton_3->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: \"#ffffff\"; \n"
+"color: \"#434A54\"; \n"
+"border-radius: 4px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #E6E9ED\n"
+" }"));
         pushButton_4 = new QPushButton(MissionRecap);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(590, 550, 121, 23));
+        pushButton_4->setGeometry(QRect(560, 560, 121, 31));
+        QPalette palette1;
+        palette1.setBrush(QPalette::Active, QPalette::WindowText, brush1);
+        palette1.setBrush(QPalette::Active, QPalette::Button, brush);
+        palette1.setBrush(QPalette::Active, QPalette::Text, brush1);
+        palette1.setBrush(QPalette::Active, QPalette::ButtonText, brush1);
+        palette1.setBrush(QPalette::Active, QPalette::Base, brush);
+        palette1.setBrush(QPalette::Active, QPalette::Window, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::WindowText, brush1);
+        palette1.setBrush(QPalette::Inactive, QPalette::Button, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Text, brush1);
+        palette1.setBrush(QPalette::Inactive, QPalette::ButtonText, brush1);
+        palette1.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Window, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::Button, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::Text, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::ButtonText, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::Base, brush);
+        palette1.setBrush(QPalette::Disabled, QPalette::Window, brush);
+        pushButton_4->setPalette(palette1);
+        pushButton_4->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: \"#ffffff\"; \n"
+"color: \"#434A54\"; \n"
+"border-radius: 4px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #E6E9ED\n"
+" }"));
         frame_5->raise();
         frame->raise();
         frame_2->raise();
