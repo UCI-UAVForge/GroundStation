@@ -40,3 +40,8 @@ FORMS    += mainwindow.ui \
     missionrecap.ui \
     tutorial.ui \
     popwindowmp.ui
+
+OTHER_FILES +=
+
+RESOURCES += \
+    Resources.qrc
