@@ -17,18 +17,21 @@ Options::~Options()
 
 void Options:: missionPlanningClicked()
 {
+    this->close();
     MapPlanning *mapPlanning = new MapPlanning();
     mapPlanning->show();
 }
 
 void Options:: missionExecutionClicked()
 {
+    this->close();
     mapexecution *mapExecution = new mapexecution();
     mapExecution->show();
 }
 
 void Options:: missionRecapClicked()
 {
+    this->close();
     MissionRecap *missionRecap = new MissionRecap();
     missionRecap->show();
 }

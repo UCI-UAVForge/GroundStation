@@ -17,6 +17,7 @@ mapexecution::~mapexecution()
 
 void mapexecution::finishClicked()
 {
+    this->close();
     MissionRecap *missionRecap = new MissionRecap();
     missionRecap->show();
 }
