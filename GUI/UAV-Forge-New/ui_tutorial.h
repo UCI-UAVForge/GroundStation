@@ -45,7 +45,7 @@ public:
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(60, 70, 561, 331));
         pushButton->setStyleSheet(QLatin1String(" QPushButton { \n"
-"background-color: \"#ffffff\"; \n"
+"background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
 "border-radius: 10px;\n"
 "font-weight: bold;\n"

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'missionrecap.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.2
+** Created by: Qt User Interface Compiler version 5.3.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -64,7 +64,7 @@ public:
 "     padding: 2px;\n"
 "	 color: #434A54;\n"
 "	 font-weight: bold;\n"
-"     background-color: #ffffff;\n"
+"     background-color: #CCD1D9;\n"
 " }"));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Raised);
@@ -80,7 +80,7 @@ public:
 "     padding: 2px;\n"
 "	 color: #434A54;\n"
 "	 font-weight: bold;\n"
-"     background-color: #ffffff;\n"
+"     background-color: #CCD1D9;\n"
 " }"));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
@@ -96,7 +96,7 @@ public:
 "     padding: 2px;\n"
 "	 color: #434A54;\n"
 "	 font-weight: bold;\n"
-"     background-color: #ffffff;\n"
+"     background-color: #CCD1D9;\n"
 " }"));
         frame_3->setFrameShape(QFrame::StyledPanel);
         frame_3->setFrameShadow(QFrame::Raised);
@@ -112,7 +112,7 @@ public:
 "     padding: 2px;\n"
 "	 color: #434A54;\n"
 "	 font-weight: bold;\n"
-"     background-color: #ffffff;\n"
+"     background-color: #CCD1D9;\n"
 " }"));
         frame_4->setFrameShape(QFrame::StyledPanel);
         frame_4->setFrameShadow(QFrame::Raised);
@@ -128,7 +128,7 @@ public:
 "     padding: 2px;\n"
 "	 color: #434A54;\n"
 "	 font-weight: bold;\n"
-"     background-color: #ffffff;\n"
+"     background-color: #CCD1D9;\n"
 " }"));
         frame_5->setFrameShape(QFrame::StyledPanel);
         frame_5->setFrameShadow(QFrame::Raised);
