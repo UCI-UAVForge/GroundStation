@@ -1,0 +1,15 @@
+PROJECT(UAV-Forge-New)
+cmake_minimum_required(VERSION 3.0)
+FIND_PACKAGE(Qt4 REQUIRED)
+SET(uavforge_SOURCES main.cpp mainwindow.cpp mapplanning.cpp mapexecution.cpp missionrecap.cpp options.cpp popwindowmp.cpp tutorial.cpp qcomboboxdelegate.cpp tablemodel.cpp)
+SET(uavforge_HEADERS mainwindow.h mappplanning.h mapexecution.h missionrecap.h options.h popwindowmp.h tutorial.h qcomboboxdelegate.h tablemodel.h)
+SET(uavforge_FORMS mainwindow.ui mapplanning.ui mapexecution.ui missionrecap.ui options.ui popwindowmp.ui tutorial.ui)
+# SET(uavforge_RESOURCES images.qrc)
+QT4_WRAP_CPP(uavforge_HEADERS_MOC ${uavforge_HEADERS})
+QT4_WRAP_UI(uavforge_FORMS_HEADERS ${uavforge_FORMS})
+ADD_EXECUTABLE(UAV-Forge-New ${uavforge_SOURCES} 
+	${uavforge_HEADERS_MOC}
+    ${uavforge_FORMS_HEADERS})
+INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR})
+SET(QT_USE_QTOPENGL TRUE)	
+TARGET_LINK_LIBRARIES(UAV-Forge-New ${QT_LIBRARIES})
