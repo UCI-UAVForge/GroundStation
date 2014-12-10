@@ -12,43 +12,41 @@
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
             </script>
         
-        <script>
-            var x= new google.maps.LatLng(33.6454,-117.8426);
-            var uci=new google.maps.LatLng(33.6454,-117.8426);
-            var ucla=new google.maps.LatLng(34.0722,-118.4441);
-            var ucr=new google.maps.LatLng(33.9756,-117.3311);
-            var test=new google.maps.LatLng(33.756,-117);
+        <script>            
+            var uci=new google.maps.LatLng(33.6454,-117.8426); 
             var map;
             var flightPath;
             
-            function addLatLng() {
+            function addLatLng(event) {
                 
                 var path = flightPath.getPath();
                 
                 // Because path is an MVCArray, we can simply append a new coordinate
                 // and it will automatically appear.
-                path.push(test);
+                path.push(event.latLng);
                 return "success";
             }
         
             function initialize() {
                 var mapCanvas = document.getElementById('map_canvas');
                 var mapOptions = {
-                    center: x,
+                    center: uci,
                     zoom: 8,
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
                 map = new google.maps.Map(mapCanvas, mapOptions);
             
-                var myTrip=[uci,ucla,ucr];
+                var startingPoint=[uci];
                 flightPath=new google.maps.Polyline({
-                                                path:myTrip,
+                                                path:startingPoint,
                                                 strokeColor:"#0000FF",
                                                 strokeOpacity:0.8,
                                                 strokeWeight:2
                                                 });
                                                 
                 flightPath.setMap(map);
+
+                google.maps.event.addListener(map, 'click', addLatLng);
             }
         
         
