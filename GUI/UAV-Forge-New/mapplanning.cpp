@@ -51,3 +51,8 @@ void MapPlanning::on_pushButton_7_clicked()
     QModelIndexList indexes = ui->tableView->selectionModel()->selectedIndexes();
     model->removeRows(indexes);
 }
+
+void MapPlanning::on_pushButton_8_clicked()
+{
+     qDebug() << "Widget";
+}

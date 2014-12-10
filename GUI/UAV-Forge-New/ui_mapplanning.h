@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mapplanning.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.2
+** Created by: Qt User Interface Compiler version 5.3.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -29,6 +29,8 @@ public:
     QPushButton *pushButton_6;
     QWebView *webView;
     QPushButton *pushButton_7;
+    QPushButton *pushButton_8;
+    QPushButton *pushButton_9;
 
     void setupUi(QDialog *MapPlanning)
     {
@@ -93,6 +95,32 @@ public:
 " QPushButton:pressed {\n"
 "     background-color: #E6E9ED\n"
 " }"));
+        pushButton_8 = new QPushButton(MapPlanning);
+        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
+        pushButton_8->setGeometry(QRect(200, 530, 131, 41));
+        pushButton_8->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: \"#CCD1D9\"; \n"
+"color: \"#434A54\"; \n"
+"border-radius: 10px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #E6E9ED\n"
+" }"));
+        pushButton_9 = new QPushButton(MapPlanning);
+        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
+        pushButton_9->setGeometry(QRect(550, 530, 131, 41));
+        pushButton_9->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: \"#CCD1D9\"; \n"
+"color: \"#434A54\"; \n"
+"border-radius: 10px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #E6E9ED\n"
+" }"));
 
         retranslateUi(MapPlanning);
         QObject::connect(pushButton_7, SIGNAL(clicked()), MapPlanning, SLOT(on_pushButton_7_clicked()));
@@ -106,6 +134,8 @@ public:
         pushButton_5->setText(QApplication::translate("MapPlanning", "+", 0));
         pushButton_6->setText(QApplication::translate("MapPlanning", "Execute", 0));
         pushButton_7->setText(QApplication::translate("MapPlanning", "-", 0));
+        pushButton_8->setText(QApplication::translate("MapPlanning", "Update Table", 0));
+        pushButton_9->setText(QApplication::translate("MapPlanning", "Execute", 0));
     } // retranslateUi
 
 };

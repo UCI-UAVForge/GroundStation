@@ -177,6 +177,31 @@ border: none;
     <string>-</string>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton_8">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>530</y>
+     <width>131</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> QPushButton { 
+background-color: &quot;#CCD1D9&quot;; 
+color: &quot;#434A54&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #E6E9ED
+ }</string>
+   </property>
+   <property name="text">
+    <string>Update Table</string>
+   </property>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>

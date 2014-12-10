@@ -22,7 +22,7 @@ SOURCES += main.cpp\
     tutorial.cpp \
     popwindowmp.cpp \
     qcomboboxdelegate.cpp
-
+QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \
     mapplanning.h \
