@@ -2,6 +2,7 @@
 #include "ui_mapexecution.h"
 #include "missionrecap.h"
 #include "options.h"
+
 mapexecution::mapexecution(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::mapexecution)

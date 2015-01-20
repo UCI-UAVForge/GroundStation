@@ -17,7 +17,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void openOptions();
+    //void openOptions();
     void openTutorial();
     void missionPlanningClicked();
     void missionExecutionClicked();

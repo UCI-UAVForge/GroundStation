@@ -27,10 +27,10 @@ MapPlanning::~MapPlanning()
     delete popup;
 }
 
-void MapPlanning::buttonWasClicked(int buttonID)
+/*void MapPlanning::buttonWasClicked(int buttonID)
 {
 
-}
+}*/
 
 void MapPlanning::on_pushButton_6_clicked()
 {
