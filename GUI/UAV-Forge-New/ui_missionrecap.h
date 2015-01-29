@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'missionrecap.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.1
+** Created by: Qt User Interface Compiler version 5.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -37,6 +37,7 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
+    QPushButton *pushButton_5;
 
     void setupUi(QWidget *MissionRecap)
     {
@@ -134,7 +135,7 @@ public:
         frame_5->setFrameShadow(QFrame::Raised);
         pushButton = new QPushButton(frame_5);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(644, 430, 101, 31));
+        pushButton->setGeometry(QRect(640, 440, 101, 31));
         pushButton->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: #434A54;\n"
 "color: \"#ffffff\"; \n"
@@ -151,7 +152,7 @@ public:
         pushButton_2->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
-"border-radius: 4px;\n"
+"border-radius: 10px;\n"
 "font-weight: bold;\n"
 "border: none; \n"
 "}\n"
@@ -164,7 +165,7 @@ public:
         pushButton_3->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
-"border-radius: 4px;\n"
+"border-radius: 10px;\n"
 "font-weight: bold;\n"
 "border: none; \n"
 "}\n"
@@ -199,7 +200,20 @@ public:
         pushButton_4->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
-"border-radius: 4px;\n"
+"border-radius: 10px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #E6E9ED\n"
+" }"));
+        pushButton_5 = new QPushButton(MissionRecap);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setGeometry(QRect(180, 20, 75, 23));
+        pushButton_5->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: \"#CCD1D9\"; \n"
+"color: \"#434A54\"; \n"
+"border-radius: 10px;\n"
 "font-weight: bold;\n"
 "border: none; \n"
 "}\n"
@@ -214,6 +228,7 @@ public:
         pushButton_2->raise();
         pushButton_3->raise();
         pushButton_4->raise();
+        pushButton_5->raise();
 
         retranslateUi(MissionRecap);
         QObject::connect(pushButton_4, SIGNAL(clicked()), MissionRecap, SLOT(replayMissionClicked()));
@@ -232,6 +247,7 @@ public:
         pushButton_2->setText(QApplication::translate("MissionRecap", "New Mission", 0));
         pushButton_3->setText(QApplication::translate("MissionRecap", "Redo Mission", 0));
         pushButton_4->setText(QApplication::translate("MissionRecap", "Replay Mission", 0));
+        pushButton_5->setText(QApplication::translate("MissionRecap", "Back", 0));
     } // retranslateUi
 
 };

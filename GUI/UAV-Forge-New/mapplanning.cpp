@@ -2,6 +2,7 @@
 #include "ui_mapplanning.h"
 #include "popwindowmp.h"
 #include <QApplication>
+#include "mainwindow.h"
 
 
 MapPlanning::MapPlanning(QWidget *parent) :
@@ -10,7 +11,7 @@ MapPlanning::MapPlanning(QWidget *parent) :
 {
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
-    connect(buttonGroup, SIGNAL(buttonClicked(int)), this, SLOT(buttonWasClicked(int)));
+    //connect(buttonGroup, SIGNAL(buttonClicked(int)), this, SLOT(buttonWasClicked(int)));
     //delete = new  (row)
     connect(ui->pushButton_7, SIGNAL(clicked()), this, SLOT(on_pushButton_7_clicked()));
 
@@ -55,4 +56,11 @@ void MapPlanning::on_pushButton_7_clicked()
 void MapPlanning::on_pushButton_8_clicked()
 {
      qDebug() << "Widget";
+}
+
+void MapPlanning::on_pushButton_clicked()
+{
+    MainWindow *mainwindow = new MainWindow();
+    this -> close();
+    mainwindow->show();
 }

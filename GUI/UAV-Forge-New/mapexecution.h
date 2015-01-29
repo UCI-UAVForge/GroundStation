@@ -18,6 +18,8 @@ private slots:
     void finishClicked();
     void returnHomeClicked();
     void cancelClicked();
+    void on_pushButton_clicked();
+
 private:
     Ui::mapexecution *ui;
 };
