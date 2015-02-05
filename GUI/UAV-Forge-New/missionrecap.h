@@ -1,7 +1,11 @@
 #ifndef MISSIONRECAP_H
 #define MISSIONRECAP_H
 
-#include <QWidget>
+#include <QtWidgets/QWidget>
+#include <QtMultimediaWidgets>
+#include <QtGui/QMovie>
+#include <QVideoWidget>
+#include <qmediaplayer.h>
 
 namespace Ui {
 class MissionRecap;
@@ -16,6 +20,7 @@ public:
     ~MissionRecap();
 public slots:
     void replayMissionClicked();
+
 private slots:
     void on_pushButton_5_clicked();
 
