@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="UAV-Forge-New" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\GUI\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="C:/Users/kagek_000/Documents/UCI-SoftwareDev/GUI/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="C:/Qt/Tools/mingw491_32/bin/mingw32-make.exe -f &quot;C:/Users/kagek_000/Documents/UCI-SoftwareDev/GUI/build/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="C:/Qt/Tools/mingw491_32/bin/mingw32-make.exe -f &quot;C:/Users/kagek_000/Documents/UCI-SoftwareDev/GUI/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="C:/Qt/Tools/mingw491_32/bin/mingw32-make.exe -f &quot;C:/Users/kagek_000/Documents/UCI-SoftwareDev/GUI/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="C:/Qt/Tools/mingw491_32/bin/mingw32-make.exe -f &quot;C:/Users/kagek_000/Documents/UCI-SoftwareDev/GUI/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="edit_cache">
+         <Option working_dir="C:/Users/kagek_000/Documents/UCI-SoftwareDev/GUI/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="C:/Qt/Tools/mingw491_32/bin/mingw32-make.exe -f &quot;C:/Users/kagek_000/Documents/UCI-SoftwareDev/GUI/build/Makefile&quot;  VERBOSE=1 edit_cache" />
+            <CompileFile command="C:/Qt/Tools/mingw491_32/bin/mingw32-make.exe -f &quot;C:/Users/kagek_000/Documents/UCI-SoftwareDev/GUI/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="C:/Qt/Tools/mingw491_32/bin/mingw32-make.exe -f &quot;C:/Users/kagek_000/Documents/UCI-SoftwareDev/GUI/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="C:/Qt/Tools/mingw491_32/bin/mingw32-make.exe -f &quot;C:/Users/kagek_000/Documents/UCI-SoftwareDev/GUI/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="C:/Users/kagek_000/Documents/UCI-SoftwareDev/GUI/build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="C:/Qt/Tools/mingw491_32/bin/mingw32-make.exe -f &quot;C:/Users/kagek_000/Documents/UCI-SoftwareDev/GUI/build/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="C:/Qt/Tools/mingw491_32/bin/mingw32-make.exe -f &quot;C:/Users/kagek_000/Documents/UCI-SoftwareDev/GUI/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="C:/Qt/Tools/mingw491_32/bin/mingw32-make.exe -f &quot;C:/Users/kagek_000/Documents/UCI-SoftwareDev/GUI/build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="C:/Qt/Tools/mingw491_32/bin/mingw32-make.exe -f &quot;C:/Users/kagek_000/Documents/UCI-SoftwareDev/GUI/build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="C:/Users/kagek_000/Documents/UCI-SoftwareDev/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="C:/Users/kagek_000/Documents/UCI-SoftwareDev/GUI/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\GUI\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

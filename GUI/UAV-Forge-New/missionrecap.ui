@@ -219,17 +219,14 @@
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QPlainTextEdit" name="plainTextEdit_4">
+   <widget class="QVideoWidget" name="VideoWidget" native="true">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>9</x>
       <y>10</y>
       <width>321</width>
       <height>171</height>
      </rect>
-    </property>
-    <property name="plainText">
-     <string>Video Playback of Mission</string>
     </property>
    </widget>
   </widget>
@@ -566,6 +563,14 @@ border: none;
   <zorder>pushButton_4</zorder>
   <zorder>pushButton_5</zorder>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QVideoWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">qvideowidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>

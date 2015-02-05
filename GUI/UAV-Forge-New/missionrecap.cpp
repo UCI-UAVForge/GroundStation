@@ -2,6 +2,7 @@
 #include "ui_missionrecap.h"
 #include "mapexecution.h"
 #include "mainwindow.h"
+#include "videoplayer.h"
 
 MissionRecap::MissionRecap(QWidget *parent) :
     QWidget(parent),
