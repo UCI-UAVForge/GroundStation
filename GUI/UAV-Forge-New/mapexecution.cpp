@@ -2,6 +2,7 @@
 #include "ui_mapexecution.h"
 #include "missionrecap.h"
 #include "options.h"
+#include "mainwindow.h"
 
 mapexecution::mapexecution(QWidget *parent) :
     QWidget(parent),
@@ -31,4 +32,11 @@ void mapexecution::returnHomeClicked()
 void mapexecution::cancelClicked()
 {
     this->close();
+}
+
+void mapexecution::on_pushButton_clicked()
+{
+    MainWindow *mainwindow = new MainWindow();
+    this -> close();
+    mainwindow->show();
 }

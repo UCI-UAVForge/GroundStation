@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'tutorial.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.1
+** Created by: Qt User Interface Compiler version 5.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -23,6 +23,7 @@ class Ui_Tutorial
 {
 public:
     QPushButton *pushButton;
+    QPushButton *pushButton_2;
 
     void setupUi(QWidget *Tutorial)
     {
@@ -54,6 +55,19 @@ public:
 " QPushButton:pressed {\n"
 "     background-color: #E6E9ED\n"
 " }"));
+        pushButton_2 = new QPushButton(Tutorial);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(60, 30, 75, 23));
+        pushButton_2->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: \"#CCD1D9\"; \n"
+"color: \"#434A54\"; \n"
+"border-radius: 10px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #E6E9ED\n"
+" }"));
 
         retranslateUi(Tutorial);
 
@@ -64,6 +78,7 @@ public:
     {
         Tutorial->setWindowTitle(QApplication::translate("Tutorial", "Form", 0));
         pushButton->setText(QApplication::translate("Tutorial", "Tutorial Here", 0));
+        pushButton_2->setText(QApplication::translate("Tutorial", "Back", 0));
     } // retranslateUi
 
 };

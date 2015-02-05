@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mapplanning.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.1
+** Created by: Qt User Interface Compiler version 5.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -30,7 +30,7 @@ public:
     QWebView *webView;
     QPushButton *pushButton_7;
     QPushButton *pushButton_8;
-    QPushButton *pushButton_9;
+    QPushButton *pushButton;
 
     void setupUi(QDialog *MapPlanning)
     {
@@ -108,10 +108,10 @@ public:
 " QPushButton:pressed {\n"
 "     background-color: #E6E9ED\n"
 " }"));
-        pushButton_9 = new QPushButton(MapPlanning);
-        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
-        pushButton_9->setGeometry(QRect(550, 530, 131, 41));
-        pushButton_9->setStyleSheet(QLatin1String(" QPushButton { \n"
+        pushButton = new QPushButton(MapPlanning);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(30, 50, 75, 23));
+        pushButton->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
 "border-radius: 10px;\n"
@@ -135,7 +135,7 @@ public:
         pushButton_6->setText(QApplication::translate("MapPlanning", "Execute", 0));
         pushButton_7->setText(QApplication::translate("MapPlanning", "-", 0));
         pushButton_8->setText(QApplication::translate("MapPlanning", "Update Table", 0));
-        pushButton_9->setText(QApplication::translate("MapPlanning", "Execute", 0));
+        pushButton->setText(QApplication::translate("MapPlanning", "Back", 0));
     } // retranslateUi
 
 };

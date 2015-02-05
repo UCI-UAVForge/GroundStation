@@ -27,6 +27,7 @@ public:
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
     QWebView *webView;
+    QPushButton *pushButton;
 
     void setupUi(QWidget *mapexecution)
     {
@@ -88,6 +89,19 @@ public:
         webView->setObjectName(QStringLiteral("webView"));
         webView->setGeometry(QRect(80, 70, 800, 650));
         webView->setUrl(QUrl(QStringLiteral("about:blank")));
+        pushButton = new QPushButton(mapexecution);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(80, 30, 75, 23));
+        pushButton->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: \"#CCD1D9\"; \n"
+"color: \"#434A54\"; \n"
+"border-radius: 10px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #E6E9ED\n"
+" }"));
 
         retranslateUi(mapexecution);
         QObject::connect(pushButton_2, SIGNAL(clicked()), mapexecution, SLOT(finishClicked()));
@@ -103,6 +117,7 @@ public:
         pushButton_2->setText(QApplication::translate("mapexecution", "Finish", 0));
         pushButton_3->setText(QApplication::translate("mapexecution", "Return home", 0));
         pushButton_4->setText(QApplication::translate("mapexecution", "Cancel", 0));
+        pushButton->setText(QApplication::translate("mapexecution", "Back", 0));
     } // retranslateUi
 
 };

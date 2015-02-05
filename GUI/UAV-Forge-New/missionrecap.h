@@ -16,6 +16,9 @@ public:
     ~MissionRecap();
 public slots:
     void replayMissionClicked();
+private slots:
+    void on_pushButton_5_clicked();
+
 private:
     Ui::MissionRecap *ui;
 };
