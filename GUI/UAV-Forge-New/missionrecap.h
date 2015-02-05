@@ -18,14 +18,18 @@ class MissionRecap : public QWidget
 public:
     explicit MissionRecap(QWidget *parent = 0);
     ~MissionRecap();
+
 public slots:
     void replayMissionClicked();
 
 private slots:
     void on_pushButton_5_clicked();
 
+    void on_VideoWidget_destroyed();
+
 private:
     Ui::MissionRecap *ui;
+    QMediaPlayer mediaPlayer;
 };
 
 #endif // MISSIONRECAP_H

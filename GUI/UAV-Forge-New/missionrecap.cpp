@@ -9,6 +9,12 @@ MissionRecap::MissionRecap(QWidget *parent) :
     ui(new Ui::MissionRecap)
 {
     ui->setupUi(this);
+
+    mediaPlayer.setVideoOutput(ui->VideoWidget);
+    QString fileName = "qrc:/res/videoSample.mp4";
+    mediaPlayer.setMedia(QUrl(fileName));
+    //ui->VideoWidget->show();
+    mediaPlayer.play();
 }
 
 MissionRecap::~MissionRecap()
@@ -28,4 +34,9 @@ void MissionRecap::on_pushButton_5_clicked()
     MainWindow *mainwindow = new MainWindow();
     this -> close();
     mainwindow->show();
+}
+
+void MissionRecap::on_VideoWidget_destroyed()
+{
+
 }

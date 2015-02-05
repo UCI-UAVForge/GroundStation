@@ -18,6 +18,7 @@
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
+#include <qvideowidget.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -31,7 +32,7 @@ public:
     QFrame *frame_3;
     QPlainTextEdit *plainTextEdit_3;
     QFrame *frame_4;
-    QPlainTextEdit *plainTextEdit_4;
+    QVideoWidget *VideoWidget;
     QFrame *frame_5;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
@@ -117,9 +118,9 @@ public:
 " }"));
         frame_4->setFrameShape(QFrame::StyledPanel);
         frame_4->setFrameShadow(QFrame::Raised);
-        plainTextEdit_4 = new QPlainTextEdit(frame_4);
-        plainTextEdit_4->setObjectName(QStringLiteral("plainTextEdit_4"));
-        plainTextEdit_4->setGeometry(QRect(10, 10, 321, 171));
+        VideoWidget = new QVideoWidget(frame_4);
+        VideoWidget->setObjectName(QStringLiteral("VideoWidget"));
+        VideoWidget->setGeometry(QRect(9, 10, 321, 171));
         frame_5 = new QFrame(MissionRecap);
         frame_5->setObjectName(QStringLiteral("frame_5"));
         frame_5->setGeometry(QRect(180, 60, 781, 481));
@@ -242,7 +243,6 @@ public:
         plainTextEdit->setPlainText(QApplication::translate("MissionRecap", "Graphical Representation of Results", 0));
         plainTextEdit_2->setPlainText(QApplication::translate("MissionRecap", "Graphical Representation of Results", 0));
         plainTextEdit_3->setPlainText(QApplication::translate("MissionRecap", "Text Results", 0));
-        plainTextEdit_4->setPlainText(QApplication::translate("MissionRecap", "Video Playback of Mission", 0));
         pushButton->setText(QApplication::translate("MissionRecap", "Save Results", 0));
         pushButton_2->setText(QApplication::translate("MissionRecap", "New Mission", 0));
         pushButton_3->setText(QApplication::translate("MissionRecap", "Redo Mission", 0));

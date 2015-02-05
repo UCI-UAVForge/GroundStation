@@ -21,17 +21,8 @@ public:
     ~VideoPlayer();
 
 public slots:
-    //void openFile();
     void play();
 
-    /*
-private slots:
-    void mediaStateChanged(QMediaPlayer::State state);
-    void positionChanged(qint64 position);
-    void durationChanged(qint64 duration);
-    void setPosition(int position);
-    void handleError();
-*/
 private:
     QMediaPlayer mediaPlayer;
     QAbstractButton *playButton;
