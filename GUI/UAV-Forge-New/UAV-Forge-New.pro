@@ -4,7 +4,11 @@
 #
 #-------------------------------------------------
 
-QT       += core gui webkitwidgets multimedia multimediawidgets
+QT       += core \
+            gui \
+            webkitwidgets \
+            multimedia \
+            multimediawidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -21,8 +25,7 @@ SOURCES += main.cpp\
     missionrecap.cpp \
     tutorial.cpp \
     popwindowmp.cpp \
-    qcomboboxdelegate.cpp \
-    videoplayer.cpp
+    qcomboboxdelegate.cpp
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \
@@ -32,8 +35,7 @@ HEADERS  += mainwindow.h \
     missionrecap.h \
     tutorial.h \
     popwindowmp.h \
-    qcomboboxdelegate.h \
-    videoplayer.h
+    qcomboboxdelegate.h
 
 FORMS    += mainwindow.ui \
     options.ui \

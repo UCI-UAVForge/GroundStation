@@ -54,8 +54,7 @@ SOURCES       = main.cpp \
 		missionrecap.cpp \
 		tutorial.cpp \
 		popwindowmp.cpp \
-		qcomboboxdelegate.cpp \
-		videoplayer.cpp qrc_Resources.cpp \
+		qcomboboxdelegate.cpp qrc_Resources.cpp \
 		moc_mainwindow.cpp \
 		moc_options.cpp \
 		moc_mapplanning.cpp \
@@ -64,8 +63,7 @@ SOURCES       = main.cpp \
 		moc_missionrecap.cpp \
 		moc_tutorial.cpp \
 		moc_popwindowmp.cpp \
-		moc_qcomboboxdelegate.cpp \
-		moc_videoplayer.cpp
+		moc_qcomboboxdelegate.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		options.o \
@@ -76,7 +74,6 @@ OBJECTS       = main.o \
 		tutorial.o \
 		popwindowmp.o \
 		qcomboboxdelegate.o \
-		videoplayer.o \
 		qrc_Resources.o \
 		moc_mainwindow.o \
 		moc_options.o \
@@ -86,8 +83,7 @@ OBJECTS       = main.o \
 		moc_missionrecap.o \
 		moc_tutorial.o \
 		moc_popwindowmp.o \
-		moc_qcomboboxdelegate.o \
-		moc_videoplayer.o
+		moc_qcomboboxdelegate.o
 DIST          = ../../../Qt/5.3/clang_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.3/clang_64/mkspecs/qdevice.pri \
 		../../../Qt/5.3/clang_64/mkspecs/features/device_config.prf \
@@ -213,8 +209,7 @@ DIST          = ../../../Qt/5.3/clang_64/mkspecs/features/spec_pre.prf \
 		missionrecap.cpp \
 		tutorial.cpp \
 		popwindowmp.cpp \
-		qcomboboxdelegate.cpp \
-		videoplayer.cpp
+		qcomboboxdelegate.cpp
 QMAKE_TARGET  = UAV-Forge-New
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = UAV-Forge-New.app/Contents/MacOS/UAV-Forge-New
@@ -530,7 +525,7 @@ UAV-Forge-New.app/Contents/Info.plist:
 	@sed -e "s,@SHORT_VERSION@,1.0,g" -e "s,@TYPEINFO@,????,g" -e "s,@ICON@,,g" -e "s,@BUNDLEIDENTIFIER@,com.Lyllak.UAV-Forge-New,g" -e "s,@EXECUTABLE@,UAV-Forge-New,g" -e "s,@TYPEINFO@,????,g" ../../../Qt/5.3/clang_64/mkspecs/macx-clang/Info.plist.app >UAV-Forge-New.app/Contents/Info.plist
 dist: 
 	@test -d .tmp/UAV-Forge-New1.0.0 || mkdir -p .tmp/UAV-Forge-New1.0.0
-	$(COPY_FILE) --parents $(DIST) .tmp/UAV-Forge-New1.0.0/ && $(COPY_FILE) --parents Resources.qrc .tmp/UAV-Forge-New1.0.0/ && $(COPY_FILE) --parents mainwindow.h options.h mapplanning.h tablemodel.h mapexecution.h missionrecap.h tutorial.h popwindowmp.h qcomboboxdelegate.h videoplayer.h .tmp/UAV-Forge-New1.0.0/ && $(COPY_FILE) --parents main.cpp mainwindow.cpp options.cpp mapplanning.cpp tablemodel.cpp mapexecution.cpp missionrecap.cpp tutorial.cpp popwindowmp.cpp qcomboboxdelegate.cpp videoplayer.cpp .tmp/UAV-Forge-New1.0.0/ && $(COPY_FILE) --parents mainwindow.ui options.ui mapplanning.ui mapexecution.ui missionrecap.ui tutorial.ui popwindowmp.ui .tmp/UAV-Forge-New1.0.0/ && (cd `dirname .tmp/UAV-Forge-New1.0.0` && $(TAR) UAV-Forge-New1.0.0.tar UAV-Forge-New1.0.0 && $(COMPRESS) UAV-Forge-New1.0.0.tar) && $(MOVE) `dirname .tmp/UAV-Forge-New1.0.0`/UAV-Forge-New1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/UAV-Forge-New1.0.0
+	$(COPY_FILE) --parents $(DIST) .tmp/UAV-Forge-New1.0.0/ && $(COPY_FILE) --parents Resources.qrc .tmp/UAV-Forge-New1.0.0/ && $(COPY_FILE) --parents mainwindow.h options.h mapplanning.h tablemodel.h mapexecution.h missionrecap.h tutorial.h popwindowmp.h qcomboboxdelegate.h .tmp/UAV-Forge-New1.0.0/ && $(COPY_FILE) --parents main.cpp mainwindow.cpp options.cpp mapplanning.cpp tablemodel.cpp mapexecution.cpp missionrecap.cpp tutorial.cpp popwindowmp.cpp qcomboboxdelegate.cpp .tmp/UAV-Forge-New1.0.0/ && $(COPY_FILE) --parents mainwindow.ui options.ui mapplanning.ui mapexecution.ui missionrecap.ui tutorial.ui popwindowmp.ui .tmp/UAV-Forge-New1.0.0/ && (cd `dirname .tmp/UAV-Forge-New1.0.0` && $(TAR) UAV-Forge-New1.0.0.tar UAV-Forge-New1.0.0 && $(COMPRESS) UAV-Forge-New1.0.0.tar) && $(MOVE) `dirname .tmp/UAV-Forge-New1.0.0`/UAV-Forge-New1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/UAV-Forge-New1.0.0
 
 
 clean:compiler_clean 
@@ -560,9 +555,9 @@ qrc_Resources.cpp: Resources.qrc \
 		res/html/maps.html
 	/Users/adrianvazquez/Qt/5.3/clang_64/bin/rcc -name Resources Resources.qrc -o qrc_Resources.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_options.cpp moc_mapplanning.cpp moc_tablemodel.cpp moc_mapexecution.cpp moc_missionrecap.cpp moc_tutorial.cpp moc_popwindowmp.cpp moc_qcomboboxdelegate.cpp moc_videoplayer.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_options.cpp moc_mapplanning.cpp moc_tablemodel.cpp moc_mapexecution.cpp moc_missionrecap.cpp moc_tutorial.cpp moc_popwindowmp.cpp moc_qcomboboxdelegate.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_options.cpp moc_mapplanning.cpp moc_tablemodel.cpp moc_mapexecution.cpp moc_missionrecap.cpp moc_tutorial.cpp moc_popwindowmp.cpp moc_qcomboboxdelegate.cpp moc_videoplayer.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_options.cpp moc_mapplanning.cpp moc_tablemodel.cpp moc_mapexecution.cpp moc_missionrecap.cpp moc_tutorial.cpp moc_popwindowmp.cpp moc_qcomboboxdelegate.cpp
 moc_mainwindow.cpp: ../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
 		options.h \
@@ -630,6 +625,7 @@ moc_missionrecap.cpp: ../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework
 		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetsversion.h \
 		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QVideoWidget \
 		../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h \
+		../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qvideosurfaceformat.h \
 		missionrecap.h
 	/Users/adrianvazquez/Qt/5.3/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/adrianvazquez/Qt/5.3/clang_64/mkspecs/macx-clang -I/Users/adrianvazquez/UCI-SoftwareDev/GUI/UAV-Forge-New -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtMultimedia.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtWebKit.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtNetwork.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtGui.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtCore.framework/Headers -F/Users/adrianvazquez/Qt/5.3/clang_64/lib missionrecap.h -o moc_missionrecap.cpp
 
@@ -655,18 +651,6 @@ moc_qcomboboxdelegate.cpp: ../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Vers
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qsize.h \
 		qcomboboxdelegate.h
 	/Users/adrianvazquez/Qt/5.3/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/adrianvazquez/Qt/5.3/clang_64/mkspecs/macx-clang -I/Users/adrianvazquez/UCI-SoftwareDev/GUI/UAV-Forge-New -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtMultimedia.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtWebKit.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtNetwork.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtGui.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtCore.framework/Headers -F/Users/adrianvazquez/Qt/5.3/clang_64/lib qcomboboxdelegate.h -o moc_qcomboboxdelegate.cpp
-
-moc_videoplayer.cpp: ../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QtMultimediaWidgets \
-		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qcameraviewfinder.h \
-		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qgraphicsvideoitem.h \
-		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetdefs.h \
-		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidget.h \
-		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidgetcontrol.h \
-		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetsversion.h \
-		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QVideoWidget \
-		../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h \
-		videoplayer.h
-	/Users/adrianvazquez/Qt/5.3/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/adrianvazquez/Qt/5.3/clang_64/mkspecs/macx-clang -I/Users/adrianvazquez/UCI-SoftwareDev/GUI/UAV-Forge-New -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtMultimedia.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtWebKit.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtNetwork.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtGui.framework/Headers -I/Users/adrianvazquez/Qt/5.3/clang_64/lib/QtCore.framework/Headers -F/Users/adrianvazquez/Qt/5.3/clang_64/lib videoplayer.h -o moc_videoplayer.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -791,7 +775,8 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidgetcontrol.h \
 		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetsversion.h \
 		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QVideoWidget \
-		../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h
+		../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h \
+		../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qvideosurfaceformat.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 
 options.o: options.cpp options.h \
@@ -835,7 +820,8 @@ options.o: options.cpp options.h \
 		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidgetcontrol.h \
 		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetsversion.h \
 		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QVideoWidget \
-		../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h
+		../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h \
+		../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qvideosurfaceformat.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o options.o options.cpp
 
 mapplanning.o: mapplanning.cpp mapplanning.h \
@@ -899,6 +885,7 @@ mapexecution.o: mapexecution.cpp mapexecution.h \
 		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetsversion.h \
 		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QVideoWidget \
 		../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h \
+		../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qvideosurfaceformat.h \
 		options.h \
 		mainwindow.h \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
@@ -915,6 +902,7 @@ missionrecap.o: missionrecap.cpp missionrecap.h \
 		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetsversion.h \
 		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QVideoWidget \
 		../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h \
+		../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qvideosurfaceformat.h \
 		ui_missionrecap.h \
 		mapexecution.h \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
@@ -922,8 +910,7 @@ missionrecap.o: missionrecap.cpp missionrecap.h \
 		mainwindow.h \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
 		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
-		options.h \
-		videoplayer.h
+		options.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o missionrecap.o missionrecap.cpp
 
 tutorial.o: tutorial.cpp tutorial.h \
@@ -955,146 +942,6 @@ qcomboboxdelegate.o: qcomboboxdelegate.cpp qcomboboxdelegate.h \
 		../../../Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qsize.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qcomboboxdelegate.o qcomboboxdelegate.cpp
 
-videoplayer.o: videoplayer.cpp videoplayer.h \
-		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QtMultimediaWidgets \
-		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qcameraviewfinder.h \
-		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qgraphicsvideoitem.h \
-		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetdefs.h \
-		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidget.h \
-		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidgetcontrol.h \
-		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetsversion.h \
-		../../../Qt/5.3/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QVideoWidget \
-		../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QtWidgets \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qaccessiblewidget.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qcolordialog.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdialog.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qerrormessage.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfiledialog.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfilesystemmodel.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfontdialog.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qinputdialog.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmessagebox.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qprogressdialog.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwizard.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicseffect.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsanchorlayout.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsgridlayout.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsitem.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsitemanimation.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicslayout.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicslayoutitem.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicslinearlayout.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsproxywidget.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsscene.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicssceneevent.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicstransform.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicsview.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgraphicswidget.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qabstractitemdelegate.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qabstractitemview.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qcolumnview.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdatawidgetmapper.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdirmodel.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfileiconprovider.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qheaderview.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qitemdelegate.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qitemeditorfactory.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlistview.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlistwidget.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qstyleditemdelegate.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtableview.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtablewidget.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtreeview.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtreewidget.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtreewidgetitemiterator.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qaction.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qactiongroup.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qboxlayout.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdesktopwidget.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qformlayout.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgesture.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgesturerecognizer.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgridlayout.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlayout.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlayoutitem.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qshortcut.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qsizepolicy.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qstackedlayout.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtooltip.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwhatsthis.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidgetaction.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qkeyeventtransition.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmouseeventtransition.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qcommonstyle.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdrawutil.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qproxystyle.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qstyle.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qstylefactory.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qstyleoption.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qstylepainter.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qstyleplugin.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qcolormap.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qcompleter.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qscroller.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qscrollerproperties.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qsystemtrayicon.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qundogroup.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qundostack.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qundoview.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qabstractbutton.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qabstractscrollarea.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qabstractslider.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qabstractspinbox.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qbuttongroup.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qcalendarwidget.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qcheckbox.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qcombobox.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qcommandlinkbutton.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdatetimeedit.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdial.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdialogbuttonbox.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdockwidget.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfocusframe.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qfontcombobox.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qframe.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qgroupbox.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qkeysequenceedit.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlabel.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlcdnumber.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qlineedit.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmdiarea.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmdisubwindow.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmenu.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmenubar.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qplaintextedit.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qprogressbar.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qpushbutton.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qradiobutton.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qrubberband.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qscrollarea.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qscrollbar.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qsizegrip.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qslider.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qspinbox.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qsplashscreen.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qsplitter.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qstackedwidget.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qstatusbar.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtabbar.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtabwidget.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtextbrowser.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtextedit.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtoolbar.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtoolbox.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtoolbutton.h \
-		../../../Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qtwidgetsversion.h \
-		../../../Qt/5.3/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qvideosurfaceformat.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o videoplayer.o videoplayer.cpp
-
 qrc_Resources.o: qrc_Resources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_Resources.o qrc_Resources.cpp
 
@@ -1124,9 +971,6 @@ moc_popwindowmp.o: moc_popwindowmp.cpp
 
 moc_qcomboboxdelegate.o: moc_qcomboboxdelegate.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_qcomboboxdelegate.o moc_qcomboboxdelegate.cpp
-
-moc_videoplayer.o: moc_videoplayer.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_videoplayer.o moc_videoplayer.cpp
 
 ####### Install
 

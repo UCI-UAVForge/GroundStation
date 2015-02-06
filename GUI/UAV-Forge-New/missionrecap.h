@@ -6,6 +6,8 @@
 #include <QtGui/QMovie>
 #include <QVideoWidget>
 #include <qmediaplayer.h>
+#include <qvideowidget.h>
+#include <qvideosurfaceformat.h>
 
 namespace Ui {
 class MissionRecap;
