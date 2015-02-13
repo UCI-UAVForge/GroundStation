@@ -15,6 +15,9 @@ public:
     explicit Tutorial(QWidget *parent = 0);
     ~Tutorial();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::Tutorial *ui;
 };

@@ -4,8 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui webkitwidgets
-
+QT       += core gui multimedia multimediawidgets
+QT       += webkit webkitwidgets
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = UAV-Forge-New
@@ -21,8 +21,10 @@ SOURCES += main.cpp\
     missionrecap.cpp \
     tutorial.cpp \
     popwindowmp.cpp \
-    qcomboboxdelegate.cpp
-
+    qcomboboxdelegate.cpp \
+    videoplayer.cpp \
+    javascriptoperations.cpp
+QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \
     mapplanning.h \
@@ -31,7 +33,9 @@ HEADERS  += mainwindow.h \
     missionrecap.h \
     tutorial.h \
     popwindowmp.h \
-    qcomboboxdelegate.h
+    qcomboboxdelegate.h \
+    videoplayer.h \
+    javascriptoperations.h
 
 FORMS    += mainwindow.ui \
     options.ui \

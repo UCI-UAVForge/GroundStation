@@ -19,14 +19,21 @@ class MapPlanning : public QDialog
     Q_OBJECT
 
 public:
+    void updateMap();
     explicit MapPlanning(QWidget *parent = 0);
     ~MapPlanning();
+
+public slots:
+    Q_INVOKABLE void addPointToTable();
 
 private slots:
     void on_pushButton_6_clicked();
     void on_pushButton_5_clicked();
-    void buttonWasClicked(int);
+    //void buttonWasClicked(int);
     void on_pushButton_7_clicked();
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::MapPlanning *ui;

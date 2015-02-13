@@ -20,32 +20,36 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::openOptions()
+/*void MainWindow::openOptions()
 {
     Options *options = new Options();
     options -> show();
-}
+}*/
 
 void MainWindow::openTutorial()
 {
     Tutorial *tutorial = new Tutorial();
+    this -> close();
     tutorial -> show();
 }
 
 void MainWindow:: missionPlanningClicked()
 {
     MapPlanning *mapPlanning = new MapPlanning();
+    this -> close();
     mapPlanning->show();
 }
 
 void MainWindow:: missionExecutionClicked()
 {
     mapexecution *mapExecution = new mapexecution();
+    this -> close();
     mapExecution->show();
 }
 
 void MainWindow:: missionRecapClicked()
 {
     MissionRecap *missionRecap = new MissionRecap();
+    this -> close();
     missionRecap->show();
 }

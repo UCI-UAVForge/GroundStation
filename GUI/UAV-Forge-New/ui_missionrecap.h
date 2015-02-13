@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'missionrecap.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.1
+** Created by: Qt User Interface Compiler version 5.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -18,6 +18,7 @@
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
+#include <qvideowidget.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -31,12 +32,13 @@ public:
     QFrame *frame_3;
     QPlainTextEdit *plainTextEdit_3;
     QFrame *frame_4;
-    QPlainTextEdit *plainTextEdit_4;
+    QVideoWidget *VideoWidget;
     QFrame *frame_5;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
+    QPushButton *pushButton_5;
 
     void setupUi(QWidget *MissionRecap)
     {
@@ -116,9 +118,9 @@ public:
 " }"));
         frame_4->setFrameShape(QFrame::StyledPanel);
         frame_4->setFrameShadow(QFrame::Raised);
-        plainTextEdit_4 = new QPlainTextEdit(frame_4);
-        plainTextEdit_4->setObjectName(QStringLiteral("plainTextEdit_4"));
-        plainTextEdit_4->setGeometry(QRect(10, 10, 321, 171));
+        VideoWidget = new QVideoWidget(frame_4);
+        VideoWidget->setObjectName(QStringLiteral("VideoWidget"));
+        VideoWidget->setGeometry(QRect(9, 10, 321, 171));
         frame_5 = new QFrame(MissionRecap);
         frame_5->setObjectName(QStringLiteral("frame_5"));
         frame_5->setGeometry(QRect(180, 60, 781, 481));
@@ -134,7 +136,7 @@ public:
         frame_5->setFrameShadow(QFrame::Raised);
         pushButton = new QPushButton(frame_5);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(644, 430, 101, 31));
+        pushButton->setGeometry(QRect(640, 440, 101, 31));
         pushButton->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: #434A54;\n"
 "color: \"#ffffff\"; \n"
@@ -151,7 +153,7 @@ public:
         pushButton_2->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
-"border-radius: 4px;\n"
+"border-radius: 10px;\n"
 "font-weight: bold;\n"
 "border: none; \n"
 "}\n"
@@ -164,7 +166,7 @@ public:
         pushButton_3->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
-"border-radius: 4px;\n"
+"border-radius: 10px;\n"
 "font-weight: bold;\n"
 "border: none; \n"
 "}\n"
@@ -199,7 +201,20 @@ public:
         pushButton_4->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
-"border-radius: 4px;\n"
+"border-radius: 10px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #E6E9ED\n"
+" }"));
+        pushButton_5 = new QPushButton(MissionRecap);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setGeometry(QRect(180, 20, 75, 23));
+        pushButton_5->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: \"#CCD1D9\"; \n"
+"color: \"#434A54\"; \n"
+"border-radius: 10px;\n"
 "font-weight: bold;\n"
 "border: none; \n"
 "}\n"
@@ -214,6 +229,7 @@ public:
         pushButton_2->raise();
         pushButton_3->raise();
         pushButton_4->raise();
+        pushButton_5->raise();
 
         retranslateUi(MissionRecap);
         QObject::connect(pushButton_4, SIGNAL(clicked()), MissionRecap, SLOT(replayMissionClicked()));
@@ -227,11 +243,11 @@ public:
         plainTextEdit->setPlainText(QApplication::translate("MissionRecap", "Graphical Representation of Results", 0));
         plainTextEdit_2->setPlainText(QApplication::translate("MissionRecap", "Graphical Representation of Results", 0));
         plainTextEdit_3->setPlainText(QApplication::translate("MissionRecap", "Text Results", 0));
-        plainTextEdit_4->setPlainText(QApplication::translate("MissionRecap", "Video Playback of Mission", 0));
         pushButton->setText(QApplication::translate("MissionRecap", "Save Results", 0));
         pushButton_2->setText(QApplication::translate("MissionRecap", "New Mission", 0));
         pushButton_3->setText(QApplication::translate("MissionRecap", "Redo Mission", 0));
         pushButton_4->setText(QApplication::translate("MissionRecap", "Replay Mission", 0));
+        pushButton_5->setText(QApplication::translate("MissionRecap", "Back", 0));
     } // retranslateUi
 
 };

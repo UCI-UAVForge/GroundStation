@@ -12,10 +12,10 @@ MAKEFILE      = Makefile
 
 CC            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
-DEFINES       = -DQT_WEBKITWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_WEBKIT_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
-CFLAGS        = -pipe -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -mmacosx-version-min=10.7 -Wall -W -fPIE $(DEFINES)
-CXXFLAGS      = -pipe -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -mmacosx-version-min=10.7 -Wall -W -fPIE $(DEFINES)
-INCPATH       = -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I../UAV-Forge-New -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I. -F/Applications/Qt/5.4/clang_64/lib
+DEFINES       = -DQT_WEBKITWIDGETS_LIB -DQT_WEBKIT_LIB -DQT_MULTIMEDIAWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
+CFLAGS        = -pipe -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.7 -Wall -W -fPIE $(DEFINES)
+CXXFLAGS      = -pipe -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.7 -Wall -W -fPIE $(DEFINES)
+INCPATH       = -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I../UAV-Forge-New -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -I. -F/Applications/Qt/5.4/clang_64/lib
 QMAKE         = /Applications/Qt/5.4/clang_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -33,10 +33,10 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = UAV-Forge-New1.0.0
-DISTDIR = /Users/jordan/Documents/Qt\ Projects/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New/.tmp/UAV-Forge-New1.0.0
+DISTDIR = /Users/jordan/Documents/Qt\ Projects/Uci-UAVForge-GroundStation-master/GUI/UAV-Forge-New/.tmp/UAV-Forge-New1.0.0
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
-LFLAGS        = -headerpad_max_install_names -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk -mmacosx-version-min=10.7 -Wl,-rpath,/Applications/Qt/5.4/clang_64/lib
-LIBS          = $(SUBLIBS) -F/Applications/Qt/5.4/clang_64/lib -framework QtWebKitWidgets -framework QtWidgets -framework QtGui -framework QtCore -framework DiskArbitration -framework IOKit -framework QtWebKit -framework QtNetwork -framework OpenGL -framework AGL 
+LFLAGS        = -headerpad_max_install_names -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.7 -Wl,-rpath,/Applications/Qt/5.4/clang_64/lib
+LIBS          = $(SUBLIBS) -F/Applications/Qt/5.4/clang_64/lib -framework QtWebKitWidgets -framework QtWidgets -framework QtGui -framework QtCore -framework DiskArbitration -framework IOKit -framework QtWebKit -framework QtNetwork -framework QtMultimediaWidgets -framework QtMultimedia -framework OpenGL -framework AGL 
 AR            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar cq
 RANLIB        = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib -s
 SED           = sed
@@ -57,7 +57,9 @@ SOURCES       = ../UAV-Forge-New/main.cpp \
 		../UAV-Forge-New/missionrecap.cpp \
 		../UAV-Forge-New/tutorial.cpp \
 		../UAV-Forge-New/popwindowmp.cpp \
-		../UAV-Forge-New/qcomboboxdelegate.cpp qrc_Resources.cpp \
+		../UAV-Forge-New/qcomboboxdelegate.cpp \
+		../UAV-Forge-New/videoplayer.cpp \
+		../UAV-Forge-New/javascriptoperations.cpp qrc_Resources.cpp \
 		moc_mainwindow.cpp \
 		moc_options.cpp \
 		moc_mapplanning.cpp \
@@ -66,7 +68,9 @@ SOURCES       = ../UAV-Forge-New/main.cpp \
 		moc_missionrecap.cpp \
 		moc_tutorial.cpp \
 		moc_popwindowmp.cpp \
-		moc_qcomboboxdelegate.cpp
+		moc_qcomboboxdelegate.cpp \
+		moc_videoplayer.cpp \
+		moc_javascriptoperations.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		options.o \
@@ -77,6 +81,8 @@ OBJECTS       = main.o \
 		tutorial.o \
 		popwindowmp.o \
 		qcomboboxdelegate.o \
+		videoplayer.o \
+		javascriptoperations.o \
 		qrc_Resources.o \
 		moc_mainwindow.o \
 		moc_options.o \
@@ -86,7 +92,9 @@ OBJECTS       = main.o \
 		moc_missionrecap.o \
 		moc_tutorial.o \
 		moc_popwindowmp.o \
-		moc_qcomboboxdelegate.o
+		moc_qcomboboxdelegate.o \
+		moc_videoplayer.o \
+		moc_javascriptoperations.o
 DIST          = /Applications/Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		/Applications/Qt/5.4/clang_64/mkspecs/qdevice.pri \
 		/Applications/Qt/5.4/clang_64/mkspecs/features/device_config.prf \
@@ -194,6 +202,7 @@ DIST          = /Applications/Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		/Applications/Qt/5.4/clang_64/mkspecs/features/qt_config.prf \
 		/Applications/Qt/5.4/clang_64/mkspecs/macx-clang/qmake.conf \
 		/Applications/Qt/5.4/clang_64/mkspecs/features/spec_post.prf \
+		../UAV-Forge-New/.qmake.stash \
 		/Applications/Qt/5.4/clang_64/mkspecs/features/exclusive_builds.prf \
 		/Applications/Qt/5.4/clang_64/mkspecs/features/default_pre.prf \
 		/Applications/Qt/5.4/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -222,7 +231,9 @@ DIST          = /Applications/Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		../UAV-Forge-New/missionrecap.h \
 		../UAV-Forge-New/tutorial.h \
 		../UAV-Forge-New/popwindowmp.h \
-		../UAV-Forge-New/qcomboboxdelegate.h ../UAV-Forge-New/main.cpp \
+		../UAV-Forge-New/qcomboboxdelegate.h \
+		../UAV-Forge-New/videoplayer.h \
+		../UAV-Forge-New/javascriptoperations.h ../UAV-Forge-New/main.cpp \
 		../UAV-Forge-New/mainwindow.cpp \
 		../UAV-Forge-New/options.cpp \
 		../UAV-Forge-New/mapplanning.cpp \
@@ -231,7 +242,9 @@ DIST          = /Applications/Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		../UAV-Forge-New/missionrecap.cpp \
 		../UAV-Forge-New/tutorial.cpp \
 		../UAV-Forge-New/popwindowmp.cpp \
-		../UAV-Forge-New/qcomboboxdelegate.cpp
+		../UAV-Forge-New/qcomboboxdelegate.cpp \
+		../UAV-Forge-New/videoplayer.cpp \
+		../UAV-Forge-New/javascriptoperations.cpp
 QMAKE_TARGET  = UAV-Forge-New
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = UAV-Forge-New.app/Contents/MacOS/UAV-Forge-New
@@ -240,7 +253,7 @@ TARGET        = UAV-Forge-New.app/Contents/MacOS/UAV-Forge-New
 QMAKE_COMP_QMAKE_OBJECTIVE_CFLAGS = -pipe \
 		-g \
 		-isysroot \
-		/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk \
+		/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk \
 		-mmacosx-version-min=10.7 \
 		-Wall \
 		-W
@@ -380,6 +393,7 @@ Makefile: ../UAV-Forge-New/UAV-Forge-New.pro /Applications/Qt/5.4/clang_64/mkspe
 		/Applications/Qt/5.4/clang_64/mkspecs/features/qt_config.prf \
 		/Applications/Qt/5.4/clang_64/mkspecs/macx-clang/qmake.conf \
 		/Applications/Qt/5.4/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		/Applications/Qt/5.4/clang_64/mkspecs/features/exclusive_builds.prf \
 		/Applications/Qt/5.4/clang_64/mkspecs/features/default_pre.prf \
 		/Applications/Qt/5.4/clang_64/mkspecs/features/mac/default_pre.prf \
@@ -407,7 +421,9 @@ Makefile: ../UAV-Forge-New/UAV-Forge-New.pro /Applications/Qt/5.4/clang_64/mkspe
 		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/QtGui.prl \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/QtCore.prl \
 		/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/QtWebKit.prl \
-		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/QtNetwork.prl
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/QtNetwork.prl \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/QtMultimediaWidgets.prl \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/QtMultimedia.prl
 	$(QMAKE) -spec macx-clang CONFIG+=debug CONFIG+=x86_64 -o Makefile ../UAV-Forge-New/UAV-Forge-New.pro
 /Applications/Qt/5.4/clang_64/mkspecs/features/spec_pre.prf:
 /Applications/Qt/5.4/clang_64/mkspecs/qdevice.pri:
@@ -516,6 +532,7 @@ Makefile: ../UAV-Forge-New/UAV-Forge-New.pro /Applications/Qt/5.4/clang_64/mkspe
 /Applications/Qt/5.4/clang_64/mkspecs/features/qt_config.prf:
 /Applications/Qt/5.4/clang_64/mkspecs/macx-clang/qmake.conf:
 /Applications/Qt/5.4/clang_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 /Applications/Qt/5.4/clang_64/mkspecs/features/exclusive_builds.prf:
 /Applications/Qt/5.4/clang_64/mkspecs/features/default_pre.prf:
 /Applications/Qt/5.4/clang_64/mkspecs/features/mac/default_pre.prf:
@@ -544,6 +561,8 @@ Makefile: ../UAV-Forge-New/UAV-Forge-New.pro /Applications/Qt/5.4/clang_64/mkspe
 /Applications/Qt/5.4/clang_64/lib/QtCore.framework/QtCore.prl:
 /Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/QtWebKit.prl:
 /Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/QtNetwork.prl:
+/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/QtMultimediaWidgets.prl:
+/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/QtMultimedia.prl:
 qmake: FORCE
 	@$(QMAKE) -spec macx-clang CONFIG+=debug CONFIG+=x86_64 -o Makefile ../UAV-Forge-New/UAV-Forge-New.pro
 
@@ -574,8 +593,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../UAV-Forge-New/Resources.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../UAV-Forge-New/mainwindow.h ../UAV-Forge-New/options.h ../UAV-Forge-New/mapplanning.h ../UAV-Forge-New/tablemodel.h ../UAV-Forge-New/mapexecution.h ../UAV-Forge-New/missionrecap.h ../UAV-Forge-New/tutorial.h ../UAV-Forge-New/popwindowmp.h ../UAV-Forge-New/qcomboboxdelegate.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../UAV-Forge-New/main.cpp ../UAV-Forge-New/mainwindow.cpp ../UAV-Forge-New/options.cpp ../UAV-Forge-New/mapplanning.cpp ../UAV-Forge-New/tablemodel.cpp ../UAV-Forge-New/mapexecution.cpp ../UAV-Forge-New/missionrecap.cpp ../UAV-Forge-New/tutorial.cpp ../UAV-Forge-New/popwindowmp.cpp ../UAV-Forge-New/qcomboboxdelegate.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../UAV-Forge-New/mainwindow.h ../UAV-Forge-New/options.h ../UAV-Forge-New/mapplanning.h ../UAV-Forge-New/tablemodel.h ../UAV-Forge-New/mapexecution.h ../UAV-Forge-New/missionrecap.h ../UAV-Forge-New/tutorial.h ../UAV-Forge-New/popwindowmp.h ../UAV-Forge-New/qcomboboxdelegate.h ../UAV-Forge-New/videoplayer.h ../UAV-Forge-New/javascriptoperations.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../UAV-Forge-New/main.cpp ../UAV-Forge-New/mainwindow.cpp ../UAV-Forge-New/options.cpp ../UAV-Forge-New/mapplanning.cpp ../UAV-Forge-New/tablemodel.cpp ../UAV-Forge-New/mapexecution.cpp ../UAV-Forge-New/missionrecap.cpp ../UAV-Forge-New/tutorial.cpp ../UAV-Forge-New/popwindowmp.cpp ../UAV-Forge-New/qcomboboxdelegate.cpp ../UAV-Forge-New/videoplayer.cpp ../UAV-Forge-New/javascriptoperations.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../UAV-Forge-New/mainwindow.ui ../UAV-Forge-New/options.ui ../UAV-Forge-New/mapplanning.ui ../UAV-Forge-New/mapexecution.ui ../UAV-Forge-New/missionrecap.ui ../UAV-Forge-New/tutorial.ui ../UAV-Forge-New/popwindowmp.ui $(DISTDIR)/
 
 
@@ -606,21 +625,21 @@ qrc_Resources.cpp: ../UAV-Forge-New/Resources.qrc \
 		../UAV-Forge-New/res/html/maps.html
 	/Applications/Qt/5.4/clang_64/bin/rcc -name Resources ../UAV-Forge-New/Resources.qrc -o qrc_Resources.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_options.cpp moc_mapplanning.cpp moc_tablemodel.cpp moc_mapexecution.cpp moc_missionrecap.cpp moc_tutorial.cpp moc_popwindowmp.cpp moc_qcomboboxdelegate.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_options.cpp moc_mapplanning.cpp moc_tablemodel.cpp moc_mapexecution.cpp moc_missionrecap.cpp moc_tutorial.cpp moc_popwindowmp.cpp moc_qcomboboxdelegate.cpp moc_videoplayer.cpp moc_javascriptoperations.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_options.cpp moc_mapplanning.cpp moc_tablemodel.cpp moc_mapexecution.cpp moc_missionrecap.cpp moc_tutorial.cpp moc_popwindowmp.cpp moc_qcomboboxdelegate.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_options.cpp moc_mapplanning.cpp moc_tablemodel.cpp moc_mapexecution.cpp moc_missionrecap.cpp moc_tutorial.cpp moc_popwindowmp.cpp moc_qcomboboxdelegate.cpp moc_videoplayer.cpp moc_javascriptoperations.cpp
 moc_mainwindow.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
 		../UAV-Forge-New/options.h \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
 		../UAV-Forge-New/mainwindow.h
-	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/mainwindow.h -o moc_mainwindow.cpp
+	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation-master/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/mainwindow.h -o moc_mainwindow.cpp
 
 moc_options.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
 		../UAV-Forge-New/options.h
-	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/options.h -o moc_options.cpp
+	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation-master/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/options.h -o moc_options.cpp
 
 moc_mapplanning.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDialog \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdialog.h \
@@ -651,7 +670,7 @@ moc_mapplanning.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versi
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QSize \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qsize.h \
 		../UAV-Forge-New/mapplanning.h
-	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/mapplanning.h -o moc_mapplanning.cpp
+	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation-master/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/mapplanning.h -o moc_mapplanning.cpp
 
 moc_tablemodel.cpp: /Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QAbstractTableModel \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qabstractitemmodel.h \
@@ -660,27 +679,34 @@ moc_tablemodel.cpp: /Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QPair \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qpair.h \
 		../UAV-Forge-New/tablemodel.h
-	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/tablemodel.h -o moc_tablemodel.cpp
+	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation-master/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/tablemodel.h -o moc_tablemodel.cpp
 
 moc_mapexecution.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
 		../UAV-Forge-New/mapexecution.h
-	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/mapexecution.h -o moc_mapexecution.cpp
+	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation-master/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/mapexecution.h -o moc_mapexecution.cpp
 
-moc_missionrecap.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
-		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
+moc_missionrecap.cpp: /Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QtMultimediaWidgets \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qcameraviewfinder.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qgraphicsvideoitem.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetdefs.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidget.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidgetcontrol.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetsversion.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QVideoWidget \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h \
 		../UAV-Forge-New/missionrecap.h
-	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/missionrecap.h -o moc_missionrecap.cpp
+	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation-master/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/missionrecap.h -o moc_missionrecap.cpp
 
 moc_tutorial.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
 		../UAV-Forge-New/tutorial.h
-	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/tutorial.h -o moc_tutorial.cpp
+	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation-master/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/tutorial.h -o moc_tutorial.cpp
 
 moc_popwindowmp.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
 		../UAV-Forge-New/popwindowmp.h
-	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/popwindowmp.h -o moc_popwindowmp.cpp
+	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation-master/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/popwindowmp.h -o moc_popwindowmp.cpp
 
 moc_qcomboboxdelegate.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QItemDelegate \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qitemdelegate.h \
@@ -693,7 +719,39 @@ moc_qcomboboxdelegate.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QSize \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qsize.h \
 		../UAV-Forge-New/qcomboboxdelegate.h
-	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/qcomboboxdelegate.h -o moc_qcomboboxdelegate.cpp
+	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation-master/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/qcomboboxdelegate.h -o moc_qcomboboxdelegate.cpp
+
+moc_videoplayer.cpp: /Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QtMultimediaWidgets \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qcameraviewfinder.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qgraphicsvideoitem.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetdefs.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidget.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidgetcontrol.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetsversion.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QVideoWidget \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h \
+		../UAV-Forge-New/videoplayer.h
+	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation-master/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/videoplayer.h -o moc_videoplayer.cpp
+
+moc_javascriptoperations.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QApplication \
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h \
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers/QNetworkAccessManager \
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers/qnetworkaccessmanager.h \
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers/QNetworkRequest \
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers/qnetworkrequest.h \
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers/QNetworkReply \
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers/qnetworkreply.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QUrl \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qurl.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QUrlQuery \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qurlquery.h \
+		/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Versions/5/Headers/QWebSettings \
+		/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Versions/5/Headers/qwebsettings.h \
+		/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Versions/5/Headers/qwebkitglobal.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QVariant \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qvariant.h \
+		../UAV-Forge-New/javascriptoperations.h
+	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/Uci-UAVForge-GroundStation-master/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../UAV-Forge-New/javascriptoperations.h -o moc_javascriptoperations.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -712,7 +770,8 @@ ui_mapplanning.h: ../UAV-Forge-New/mapplanning.ui
 ui_mapexecution.h: ../UAV-Forge-New/mapexecution.ui
 	/Applications/Qt/5.4/clang_64/bin/uic ../UAV-Forge-New/mapexecution.ui -o ui_mapexecution.h
 
-ui_missionrecap.h: ../UAV-Forge-New/missionrecap.ui
+ui_missionrecap.h: ../UAV-Forge-New/missionrecap.ui \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidget.h
 	/Applications/Qt/5.4/clang_64/bin/uic ../UAV-Forge-New/missionrecap.ui -o ui_missionrecap.h
 
 ui_tutorial.h: ../UAV-Forge-New/tutorial.ui
@@ -808,7 +867,16 @@ mainwindow.o: ../UAV-Forge-New/mainwindow.cpp ../UAV-Forge-New/mainwindow.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QSize \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qsize.h \
 		../UAV-Forge-New/mapexecution.h \
-		../UAV-Forge-New/missionrecap.h
+		../UAV-Forge-New/missionrecap.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QtMultimediaWidgets \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qcameraviewfinder.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qgraphicsvideoitem.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetdefs.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidget.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidgetcontrol.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetsversion.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QVideoWidget \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../UAV-Forge-New/mainwindow.cpp
 
 options.o: ../UAV-Forge-New/options.cpp ../UAV-Forge-New/options.h \
@@ -843,7 +911,16 @@ options.o: ../UAV-Forge-New/options.cpp ../UAV-Forge-New/options.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QSize \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qsize.h \
 		../UAV-Forge-New/mapexecution.h \
-		../UAV-Forge-New/missionrecap.h
+		../UAV-Forge-New/missionrecap.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QtMultimediaWidgets \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qcameraviewfinder.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qgraphicsvideoitem.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetdefs.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidget.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidgetcontrol.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetsversion.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QVideoWidget \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o options.o ../UAV-Forge-New/options.cpp
 
 mapplanning.o: ../UAV-Forge-New/mapplanning.cpp ../UAV-Forge-New/mapplanning.h \
@@ -877,7 +954,27 @@ mapplanning.o: ../UAV-Forge-New/mapplanning.cpp ../UAV-Forge-New/mapplanning.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qsize.h \
 		../UAV-Forge-New/ui_mapplanning.h \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QApplication \
-		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h \
+		../UAV-Forge-New/mainwindow.h \
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
+		../UAV-Forge-New/options.h \
+		../UAV-Forge-New/javascriptoperations.h \
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers/QNetworkAccessManager \
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers/qnetworkaccessmanager.h \
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers/QNetworkRequest \
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers/qnetworkrequest.h \
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers/QNetworkReply \
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers/qnetworkreply.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QUrl \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qurl.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QUrlQuery \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qurlquery.h \
+		/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Versions/5/Headers/QWebSettings \
+		/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Versions/5/Headers/qwebsettings.h \
+		/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Versions/5/Headers/qwebkitglobal.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QVariant \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qvariant.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mapplanning.o ../UAV-Forge-New/mapplanning.cpp
 
 tablemodel.o: ../UAV-Forge-New/tablemodel.cpp ../UAV-Forge-New/tablemodel.h \
@@ -894,20 +991,50 @@ mapexecution.o: ../UAV-Forge-New/mapexecution.cpp ../UAV-Forge-New/mapexecution.
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
 		../UAV-Forge-New/ui_mapexecution.h \
 		../UAV-Forge-New/missionrecap.h \
-		../UAV-Forge-New/options.h
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QtMultimediaWidgets \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qcameraviewfinder.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qgraphicsvideoitem.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetdefs.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidget.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidgetcontrol.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetsversion.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QVideoWidget \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h \
+		../UAV-Forge-New/options.h \
+		../UAV-Forge-New/mainwindow.h \
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mapexecution.o ../UAV-Forge-New/mapexecution.cpp
 
 missionrecap.o: ../UAV-Forge-New/missionrecap.cpp ../UAV-Forge-New/missionrecap.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QtMultimediaWidgets \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qcameraviewfinder.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qgraphicsvideoitem.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetdefs.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidget.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidgetcontrol.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetsversion.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QVideoWidget \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h \
+		../UAV-Forge-New/ui_missionrecap.h \
+		../UAV-Forge-New/mapexecution.h \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
-		../UAV-Forge-New/ui_missionrecap.h \
-		../UAV-Forge-New/mapexecution.h
+		../UAV-Forge-New/mainwindow.h \
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
+		../UAV-Forge-New/options.h \
+		../UAV-Forge-New/videoplayer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o missionrecap.o ../UAV-Forge-New/missionrecap.cpp
 
 tutorial.o: ../UAV-Forge-New/tutorial.cpp ../UAV-Forge-New/tutorial.h \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
-		../UAV-Forge-New/ui_tutorial.h
+		../UAV-Forge-New/ui_tutorial.h \
+		../UAV-Forge-New/mainwindow.h \
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
+		../UAV-Forge-New/options.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tutorial.o ../UAV-Forge-New/tutorial.cpp
 
 popwindowmp.o: ../UAV-Forge-New/popwindowmp.cpp ../UAV-Forge-New/popwindowmp.h \
@@ -928,6 +1055,38 @@ qcomboboxdelegate.o: ../UAV-Forge-New/qcomboboxdelegate.cpp ../UAV-Forge-New/qco
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QSize \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qsize.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qcomboboxdelegate.o ../UAV-Forge-New/qcomboboxdelegate.cpp
+
+videoplayer.o: ../UAV-Forge-New/videoplayer.cpp ../UAV-Forge-New/videoplayer.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QtMultimediaWidgets \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qcameraviewfinder.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qgraphicsvideoitem.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetdefs.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidget.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qvideowidgetcontrol.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qtmultimediawidgetsversion.h \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QVideoWidget \
+		/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o videoplayer.o ../UAV-Forge-New/videoplayer.cpp
+
+javascriptoperations.o: ../UAV-Forge-New/javascriptoperations.cpp ../UAV-Forge-New/javascriptoperations.h \
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QApplication \
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h \
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers/QNetworkAccessManager \
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers/qnetworkaccessmanager.h \
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers/QNetworkRequest \
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers/qnetworkrequest.h \
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers/QNetworkReply \
+		/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers/qnetworkreply.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QUrl \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qurl.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QUrlQuery \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qurlquery.h \
+		/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Versions/5/Headers/QWebSettings \
+		/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Versions/5/Headers/qwebsettings.h \
+		/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Versions/5/Headers/qwebkitglobal.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QVariant \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qvariant.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o javascriptoperations.o ../UAV-Forge-New/javascriptoperations.cpp
 
 qrc_Resources.o: qrc_Resources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_Resources.o qrc_Resources.cpp
@@ -958,6 +1117,12 @@ moc_popwindowmp.o: moc_popwindowmp.cpp
 
 moc_qcomboboxdelegate.o: moc_qcomboboxdelegate.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_qcomboboxdelegate.o moc_qcomboboxdelegate.cpp
+
+moc_videoplayer.o: moc_videoplayer.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_videoplayer.o moc_videoplayer.cpp
+
+moc_javascriptoperations.o: moc_javascriptoperations.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_javascriptoperations.o moc_javascriptoperations.cpp
 
 ####### Install
 
