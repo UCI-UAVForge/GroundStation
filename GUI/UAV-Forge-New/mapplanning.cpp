@@ -3,8 +3,6 @@
 #include "popwindowmp.h"
 #include <QApplication>
 #include "mainwindow.h"
-#include "javascriptoperations.h"
-
 
 MapPlanning::MapPlanning(QWidget *parent) :
     QDialog(parent),
@@ -12,14 +10,12 @@ MapPlanning::MapPlanning(QWidget *parent) :
 {
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
-    //connect(buttonGroup, SIGNAL(buttonClicked(int)), this, SLOT(buttonWasClicked(int)));
-    //delete = new  (row)
+
     connect(ui->pushButton_7, SIGNAL(clicked()), this, SLOT(on_pushButton_7_clicked()));
-    JavaScriptOperations *jso = new JavaScriptOperations(ui->webView);
-    ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("myoperations",jso);
+    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
+
     ui->webView->load(QUrl("qrc:/res/html/maps.html"));
 
-    ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("myoperations",jso);
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
@@ -32,10 +28,9 @@ MapPlanning::~MapPlanning()
     delete popup;
 }
 
-/*void MapPlanning::buttonWasClicked(int buttonID)
-{
-
-}*/
+void MapPlanning::addClickListener(){
+    ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("myoperations",this);
+}
 
 void MapPlanning::on_pushButton_6_clicked()
 {
@@ -46,8 +41,6 @@ void MapPlanning::on_pushButton_6_clicked()
 void MapPlanning::on_pushButton_5_clicked()
 {
     model->insertRow();
-    //QWebFrame* frame = ui->webView->page()->mainFrame();
-    //frame->evaluateJavaScript("addLatLng()");
 }
 
 
@@ -59,7 +52,6 @@ void MapPlanning::on_pushButton_7_clicked()
 
 void MapPlanning::on_pushButton_8_clicked()
 {
-     //qDebug() << "Widget";
      updateMap();
 }
 
@@ -85,6 +77,6 @@ void MapPlanning::updateMap(){
     }
 }
 
-void MapPlanning::addPointToTable(){
-    qDebug() << "Called addPointToTable";
+void MapPlanning::addPointToTable(double lat, double lng){
+    model->insertRow(lng,lat);
 }

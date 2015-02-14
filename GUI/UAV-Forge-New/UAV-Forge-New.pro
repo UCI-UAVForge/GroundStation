@@ -22,8 +22,7 @@ SOURCES += main.cpp\
     tutorial.cpp \
     popwindowmp.cpp \
     qcomboboxdelegate.cpp \
-    videoplayer.cpp \
-    javascriptoperations.cpp
+    videoplayer.cpp
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \
@@ -34,8 +33,7 @@ HEADERS  += mainwindow.h \
     tutorial.h \
     popwindowmp.h \
     qcomboboxdelegate.h \
-    videoplayer.h \
-    javascriptoperations.h
+    videoplayer.h
 
 FORMS    += mainwindow.ui \
     options.ui \

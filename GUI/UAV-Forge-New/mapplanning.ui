@@ -236,24 +236,7 @@ border: none;
   </customwidget>
  </customwidgets>
  <resources/>
- <connections>
-  <connection>
-   <sender>pushButton_7</sender>
-   <signal>clicked()</signal>
-   <receiver>MapPlanning</receiver>
-   <slot>on_pushButton_7_clicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>377</x>
-     <y>71</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>307</x>
-     <y>68</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
  <slots>
   <slot>on_pushButton_7_clicked()</slot>
  </slots>

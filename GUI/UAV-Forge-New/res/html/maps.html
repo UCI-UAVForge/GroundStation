@@ -13,20 +13,19 @@
             </script>
     </head>
     <body>
-        <script>
+        <script type="text/javascript">
+        //JavaScript code by Arash and Jordan
             var uci=new google.maps.LatLng(33.6454,-117.8426);
             var map;
             var flightPath;
 
             function addLatLng(myLocation) {
-                var path = flightPath.getPath();
-                // Because path is an MVCArray, we can simply append a new coordinate
-                // and it will automatically appear.
-                path.push(myLocation);
-                array = path.getArray();
+            //Adds a new point to the flightpath by pushing the myLocation tuple to the list.
+                flightPath.getPath().push(myLocation);
             }
 
             function addLatLngCoords(lat,lng) {
+            //Used on the c++ side to add a new point to the map.
                 var location = new google.maps.LatLng(lat,lng);
                 addLatLng(location);
                 return "Adding new point.";
@@ -40,27 +39,24 @@
                 var mapCanvas = document.getElementById('map_canvas');
                 var mapOptions = {
                     center: uci,
-                    zoom: 8,
+                    zoom: 12,
                     mapTypeId: google.maps.MapTypeId.ROADMAP
                 };
                 map = new google.maps.Map(mapCanvas, mapOptions);
 
-                var startingPoint=[uci];
+                var startingPath=[uci];
                 flightPath=new google.maps.Polyline({
-                                                path:startingPoint,
-                                                strokeColor:"#0000FF",
-                                                strokeOpacity:0.8,
-                                                strokeWeight:2
-                                                });
+                        path:startingPath,
+                        strokeColor:"#0000FF",
+                        strokeOpacity:0.8,
+                        strokeWeight:2
+                   });
 
                 flightPath.setMap(map);
 
                 google.maps.event.addListener(map, 'click', function(event){
-                  lat = event.latLng.lat();
-                  long = event.latLng.lng();
-                  var location = new google.maps.LatLng(lat,long);
-                  //myoperations.addPointToTableHi();
-                  addLatLng(location);
+                  addLatLng(event.latLng);
+                  myoperations.addPointToTable(event.latLng.lat(),event.latLng.lng());
                 });
             }
 

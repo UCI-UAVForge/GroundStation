@@ -26,6 +26,11 @@ public:
     bool removeRows(QModelIndexList indexes);
     QList<QList<QString> > getList();
 
+    bool insertRow(double longitude, double latitude,const QModelIndex &index = QModelIndex());
+        //insertRow - Adds a row to the table with pre-entered values.
+        //  longitude - The longitude value added with the row. Negative values denote west direction.
+        //  latitude - The latitude value added with the row. Negative values denote south direction.
+
 private:
     QList<QList<QString> > listOfPairs;
     QList<QString> columns;

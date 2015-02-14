@@ -24,7 +24,7 @@ public:
     ~MapPlanning();
 
 public slots:
-    Q_INVOKABLE void addPointToTable();
+    void addPointToTable(double lat, double lng);
 
 private slots:
     void on_pushButton_6_clicked();
@@ -34,6 +34,7 @@ private slots:
     void on_pushButton_8_clicked();
 
     void on_pushButton_clicked();
+    void addClickListener();
 
 private:
     Ui::MapPlanning *ui;
