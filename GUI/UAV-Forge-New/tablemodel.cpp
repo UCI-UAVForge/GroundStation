@@ -79,7 +79,8 @@ bool TableModel::insertRow(double longitude, double latitude,const QModelIndex &
     coordinates are automatically generated using negative values of longitude and latitude
     to denote West and South respectively. This function always returns true, a feature
     inherited from the other insertRow function. The first part of the function was coppied
-    from the other insertRow function. The second part was written by Jordan Dickson*/
+    from the other insertRow function. The second part was written by Jordan Dickson
+    Feb 9th 2015.*/
 
     //--This is the copied section I don't entirely understand.--
     Q_UNUSED(index);
@@ -103,10 +104,10 @@ bool TableModel::insertRow(double longitude, double latitude,const QModelIndex &
 
     //If statements to remove negative numbers if any and change direction for E/W and N/S
     if(longitude < 0){
-        longitude = abs(longitude);
+        longitude *= -1.0;
         eastWest = "W";
     } if(latitude < 0){
-        latitude = abs(latitude);
+        latitude *= -1.0;
         northSouth = "S";
     }
 

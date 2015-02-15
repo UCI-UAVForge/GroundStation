@@ -25,16 +25,19 @@ public:
 
 public slots:
     void addPointToTable(double lat, double lng);
+    //addPointToTable - used to add an entry with latitude lat and longitude lng to the table.
+    //  lat - the latitude value (usually from the JavaScript program).
+    //  lng - the longitude value (usually from the JavaScript program).
 
 private slots:
     void on_pushButton_6_clicked();
     void on_pushButton_5_clicked();
-    //void buttonWasClicked(int);
     void on_pushButton_7_clicked();
     void on_pushButton_8_clicked();
-
     void on_pushButton_clicked();
+
     void addClickListener();
+    //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame().
 
 private:
     Ui::MapPlanning *ui;
