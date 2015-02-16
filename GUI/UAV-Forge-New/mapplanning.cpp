@@ -10,7 +10,6 @@ MapPlanning::MapPlanning(QWidget *parent) :
     ui(new Ui::MapPlanning) {
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
-    //connect(ui->pushButton_7, SIGNAL(clicked()), this, SLOT(on_pushButton_7_clicked()));
 
     //Recreates the c++/JS bridge when the JavaScript window is refreshed
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
@@ -36,6 +35,7 @@ void MapPlanning::addClickListener() {
 
     //Creates the bridge called cbridge between the java script object and this class.
     ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("cbridge",this);
+
 }
 
 void MapPlanning::on_pushButton_6_clicked() {

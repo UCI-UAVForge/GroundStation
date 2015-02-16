@@ -19,6 +19,8 @@
             var map;
             var flightPath;
 
+            var clickable = false;
+
             function addLatLng(myLocation) {
             //Adds a new point to the flightpath by pushing the myLocation tuple to the list.
                 flightPath.getPath().push(myLocation);
@@ -56,15 +58,16 @@
 
                 flightPath.setMap(map);
 
-                //Click listener for adding points by mouse.
-                google.maps.event.addListener(map, 'click', function(event){
-                  addLatLng(event.latLng);
-                  cbridge.addPointToTable(event.latLng.lat(),event.latLng.lng());
-                });
-            }
+                //Adds the click listener for ploting waypoints
 
-        google.maps.event.addDomListener(window, 'load', initialize);
-            </script>
+                   google.maps.event.addListener(map, 'click', function(event){
+                      addLatLng(event.latLng);
+                      cbridge.addPointToTable(event.latLng.lat(),event.latLng.lng());
+                      });
+
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
         <div id="map_canvas">
         </div>
     </body>
