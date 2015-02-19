@@ -35,12 +35,11 @@ public:
     QVideoWidget *VideoWidget;
     QFrame *frame_5;
     QPushButton *pushButton;
-    QPushButton *playButton;
-    QPushButton *stopButton;
-    QPushButton *newMission;
-    QPushButton *redoMission;
-    QPushButton *replayMission;
-    QPushButton *backButton;
+    QPushButton *pushButton_6;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_4;
+    QPushButton *pushButton_5;
 
     void setupUi(QWidget *MissionRecap)
     {
@@ -149,10 +148,10 @@ public:
 " QPushButton:pressed {\n"
 "     background-color: #656D78\n"
 " }"));
-        playButton = new QPushButton(frame_5);
-        playButton->setObjectName(QStringLiteral("playButton"));
-        playButton->setGeometry(QRect(490, 440, 101, 31));
-        playButton->setStyleSheet(QLatin1String(" QPushButton { \n"
+        pushButton_6 = new QPushButton(frame_5);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setGeometry(QRect(490, 440, 101, 31));
+        pushButton_6->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: #434A54;\n"
 "color: \"#ffffff\"; \n"
 "border-radius: 10px;\n"
@@ -162,23 +161,10 @@ public:
 " QPushButton:pressed {\n"
 "     background-color: #656D78\n"
 " }"));
-        stopButton = new QPushButton(frame_5);
-        stopButton->setObjectName(QStringLiteral("stopButton"));
-        stopButton->setGeometry(QRect(380, 440, 101, 31));
-        stopButton->setStyleSheet(QLatin1String(" QPushButton { \n"
-"background-color: #434A54;\n"
-"color: \"#ffffff\"; \n"
-"border-radius: 10px;\n"
-"font-weight: bold;\n"
-"border: none; \n"
-"}\n"
-" QPushButton:pressed {\n"
-"     background-color: #656D78\n"
-" }"));
-        newMission = new QPushButton(MissionRecap);
-        newMission->setObjectName(QStringLiteral("newMission"));
-        newMission->setGeometry(QRect(824, 560, 111, 31));
-        newMission->setStyleSheet(QLatin1String(" QPushButton { \n"
+        pushButton_2 = new QPushButton(MissionRecap);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(824, 560, 111, 31));
+        pushButton_2->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
 "border-radius: 10px;\n"
@@ -188,10 +174,10 @@ public:
 " QPushButton:pressed {\n"
 "     background-color: #E6E9ED\n"
 " }"));
-        redoMission = new QPushButton(MissionRecap);
-        redoMission->setObjectName(QStringLiteral("redoMission"));
-        redoMission->setGeometry(QRect(700, 560, 111, 31));
-        redoMission->setStyleSheet(QLatin1String(" QPushButton { \n"
+        pushButton_3 = new QPushButton(MissionRecap);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(700, 560, 111, 31));
+        pushButton_3->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
 "border-radius: 10px;\n"
@@ -201,9 +187,9 @@ public:
 " QPushButton:pressed {\n"
 "     background-color: #E6E9ED\n"
 " }"));
-        replayMission = new QPushButton(MissionRecap);
-        replayMission->setObjectName(QStringLiteral("replayMission"));
-        replayMission->setGeometry(QRect(560, 560, 121, 31));
+        pushButton_4 = new QPushButton(MissionRecap);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setGeometry(QRect(560, 560, 121, 31));
         QPalette palette1;
         palette1.setBrush(QPalette::Active, QPalette::WindowText, brush1);
         QBrush brush2(QColor(204, 209, 217, 255));
@@ -225,8 +211,8 @@ public:
         palette1.setBrush(QPalette::Disabled, QPalette::ButtonText, brush1);
         palette1.setBrush(QPalette::Disabled, QPalette::Base, brush2);
         palette1.setBrush(QPalette::Disabled, QPalette::Window, brush2);
-        replayMission->setPalette(palette1);
-        replayMission->setStyleSheet(QLatin1String(" QPushButton { \n"
+        pushButton_4->setPalette(palette1);
+        pushButton_4->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
 "border-radius: 10px;\n"
@@ -236,10 +222,10 @@ public:
 " QPushButton:pressed {\n"
 "     background-color: #E6E9ED\n"
 " }"));
-        backButton = new QPushButton(MissionRecap);
-        backButton->setObjectName(QStringLiteral("backButton"));
-        backButton->setGeometry(QRect(180, 20, 75, 23));
-        backButton->setStyleSheet(QLatin1String(" QPushButton { \n"
+        pushButton_5 = new QPushButton(MissionRecap);
+        pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
+        pushButton_5->setGeometry(QRect(180, 20, 75, 23));
+        pushButton_5->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
 "border-radius: 10px;\n"
@@ -254,13 +240,13 @@ public:
         frame_2->raise();
         frame_3->raise();
         frame_4->raise();
-        newMission->raise();
-        redoMission->raise();
-        replayMission->raise();
-        backButton->raise();
+        pushButton_2->raise();
+        pushButton_3->raise();
+        pushButton_4->raise();
+        pushButton_5->raise();
 
         retranslateUi(MissionRecap);
-        QObject::connect(replayMission, SIGNAL(clicked()), MissionRecap, SLOT(replayMissionClicked()));
+        QObject::connect(pushButton_4, SIGNAL(clicked()), MissionRecap, SLOT(replayMissionClicked()));
 
         QMetaObject::connectSlotsByName(MissionRecap);
     } // setupUi
@@ -272,12 +258,11 @@ public:
         plainTextEdit_2->setPlainText(QApplication::translate("MissionRecap", "Graphical Representation of Results", 0));
         plainTextEdit_3->setPlainText(QApplication::translate("MissionRecap", "Text Results", 0));
         pushButton->setText(QApplication::translate("MissionRecap", "Save Results", 0));
-        playButton->setText(QApplication::translate("MissionRecap", "Play", 0));
-        stopButton->setText(QApplication::translate("MissionRecap", "Stop", 0));
-        newMission->setText(QApplication::translate("MissionRecap", "New Mission", 0));
-        redoMission->setText(QApplication::translate("MissionRecap", "Redo Mission", 0));
-        replayMission->setText(QApplication::translate("MissionRecap", "Replay Mission", 0));
-        backButton->setText(QApplication::translate("MissionRecap", "Back", 0));
+        pushButton_6->setText(QApplication::translate("MissionRecap", "Play", 0));
+        pushButton_2->setText(QApplication::translate("MissionRecap", "New Mission", 0));
+        pushButton_3->setText(QApplication::translate("MissionRecap", "Redo Mission", 0));
+        pushButton_4->setText(QApplication::translate("MissionRecap", "Replay Mission", 0));
+        pushButton_5->setText(QApplication::translate("MissionRecap", "Back", 0));
     } // retranslateUi
 
 };

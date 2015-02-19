@@ -8,13 +8,12 @@ MissionRecap::MissionRecap(QWidget *parent) :
     ui(new Ui::MissionRecap)
 {
     ui->setupUi(this);
+    //ui->VideoWidget->resize(321, 171);
     mediaPlayer.setVideoOutput(ui->VideoWidget);
-    //QString fileName = "qrc:/res/videoSample.avi";
+    //QString fileName = "qrc:/res/videoSample.mp4";
     //mediaPlayer.setMedia(QUrl(fileName));
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open Movie"),QDir::homePath());
     mediaPlayer.setMedia(QUrl::fromLocalFile(fileName));
-    //ui->VideoWidget->show();
-    mediaPlayer.play();
 }
 
 MissionRecap::~MissionRecap()
@@ -29,14 +28,20 @@ void MissionRecap:: replayMissionClicked()
     mapExecution->show();
 }
 
-void MissionRecap::on_pushButton_5_clicked()
+void MissionRecap::on_backButton_clicked()
 {
+    mediaPlayer.stop();
     MainWindow *mainwindow = new MainWindow();
     this -> close();
     mainwindow->show();
 }
 
-void MissionRecap::on_VideoWidget_destroyed()
+void MissionRecap::on_playButton_clicked()
 {
+    mediaPlayer.play();
+}
 
+void MissionRecap::on_stopButton_clicked()
+{
+    mediaPlayer.stop();
 }

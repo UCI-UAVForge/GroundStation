@@ -25,13 +25,15 @@ public slots:
     void replayMissionClicked();
 
 private slots:
-    void on_pushButton_5_clicked();
+    void on_backButton_clicked();
+    void on_playButton_clicked();
 
-    void on_VideoWidget_destroyed();
+    void on_stopButton_clicked();
 
 private:
     Ui::MissionRecap *ui;
     QMediaPlayer mediaPlayer;
+    QVideoFrame currentFrame;
 };
 
 #endif // MISSIONRECAP_H

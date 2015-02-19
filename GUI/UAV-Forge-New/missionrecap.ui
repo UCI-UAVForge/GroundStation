@@ -280,8 +280,58 @@ border: none;
      <string>Save Results</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="playButton">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>440</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> QPushButton { 
+background-color: #434A54;
+color: &quot;#ffffff&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #656D78
+ }</string>
+    </property>
+    <property name="text">
+     <string>Play</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="stopButton">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>440</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> QPushButton { 
+background-color: #434A54;
+color: &quot;#ffffff&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #656D78
+ }</string>
+    </property>
+    <property name="text">
+     <string>Stop</string>
+    </property>
+   </widget>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="newMission">
    <property name="geometry">
     <rect>
      <x>824</x>
@@ -306,7 +356,7 @@ border: none;
     <string>New Mission</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="redoMission">
    <property name="geometry">
     <rect>
      <x>700</x>
@@ -331,7 +381,7 @@ border: none;
     <string>Redo Mission</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_4">
+  <widget class="QPushButton" name="replayMission">
    <property name="geometry">
     <rect>
      <x>560</x>
@@ -528,7 +578,7 @@ border: none;
     <string>Replay Mission</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_5">
+  <widget class="QPushButton" name="backButton">
    <property name="geometry">
     <rect>
      <x>180</x>
@@ -558,10 +608,10 @@ border: none;
   <zorder>frame_2</zorder>
   <zorder>frame_3</zorder>
   <zorder>frame_4</zorder>
-  <zorder>pushButton_2</zorder>
-  <zorder>pushButton_3</zorder>
-  <zorder>pushButton_4</zorder>
-  <zorder>pushButton_5</zorder>
+  <zorder>newMission</zorder>
+  <zorder>redoMission</zorder>
+  <zorder>replayMission</zorder>
+  <zorder>backButton</zorder>
  </widget>
  <customwidgets>
   <customwidget>
@@ -574,7 +624,7 @@ border: none;
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton_4</sender>
+   <sender>replayMission</sender>
    <signal>clicked()</signal>
    <receiver>MissionRecap</receiver>
    <slot>replayMissionClicked()</slot>

@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'missionrecap.h'
+** Meta object code from reading C++ file 'mapexecution.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "missionrecap.h"
+#include "../UAV-Forge-New/mapexecution.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'missionrecap.h' doesn't include <QObject>."
+#error "The header file 'mapexecution.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.4.0. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -18,32 +18,32 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_MissionRecap_t {
+struct qt_meta_stringdata_mapexecution_t {
     QByteArrayData data[6];
-    char stringdata[101];
+    char stringdata[82];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_MissionRecap_t, stringdata) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_mapexecution_t, stringdata) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_MissionRecap_t qt_meta_stringdata_MissionRecap = {
+static const qt_meta_stringdata_mapexecution_t qt_meta_stringdata_mapexecution = {
     {
-QT_MOC_LITERAL(0, 0, 12), // "MissionRecap"
-QT_MOC_LITERAL(1, 13, 20), // "replayMissionClicked"
-QT_MOC_LITERAL(2, 34, 0), // ""
-QT_MOC_LITERAL(3, 35, 21), // "on_backButton_clicked"
-QT_MOC_LITERAL(4, 57, 21), // "on_playButton_clicked"
-QT_MOC_LITERAL(5, 79, 21) // "on_stopButton_clicked"
+QT_MOC_LITERAL(0, 0, 12), // "mapexecution"
+QT_MOC_LITERAL(1, 13, 13), // "finishClicked"
+QT_MOC_LITERAL(2, 27, 0), // ""
+QT_MOC_LITERAL(3, 28, 17), // "returnHomeClicked"
+QT_MOC_LITERAL(4, 46, 13), // "cancelClicked"
+QT_MOC_LITERAL(5, 60, 21) // "on_pushButton_clicked"
 
     },
-    "MissionRecap\0replayMissionClicked\0\0"
-    "on_backButton_clicked\0on_playButton_clicked\0"
-    "on_stopButton_clicked"
+    "mapexecution\0finishClicked\0\0"
+    "returnHomeClicked\0cancelClicked\0"
+    "on_pushButton_clicked"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_MissionRecap[] = {
+static const uint qt_meta_data_mapexecution[] = {
 
  // content:
        7,       // revision
@@ -57,7 +57,7 @@ static const uint qt_meta_data_MissionRecap[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   34,    2, 0x0a /* Public */,
+       1,    0,   34,    2, 0x08 /* Private */,
        3,    0,   35,    2, 0x08 /* Private */,
        4,    0,   36,    2, 0x08 /* Private */,
        5,    0,   37,    2, 0x08 /* Private */,
@@ -71,41 +71,41 @@ static const uint qt_meta_data_MissionRecap[] = {
        0        // eod
 };
 
-void MissionRecap::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void mapexecution::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        MissionRecap *_t = static_cast<MissionRecap *>(_o);
+        mapexecution *_t = static_cast<mapexecution *>(_o);
         switch (_id) {
-        case 0: _t->replayMissionClicked(); break;
-        case 1: _t->on_backButton_clicked(); break;
-        case 2: _t->on_playButton_clicked(); break;
-        case 3: _t->on_stopButton_clicked(); break;
+        case 0: _t->finishClicked(); break;
+        case 1: _t->returnHomeClicked(); break;
+        case 2: _t->cancelClicked(); break;
+        case 3: _t->on_pushButton_clicked(); break;
         default: ;
         }
     }
     Q_UNUSED(_a);
 }
 
-const QMetaObject MissionRecap::staticMetaObject = {
-    { &QWidget::staticMetaObject, qt_meta_stringdata_MissionRecap.data,
-      qt_meta_data_MissionRecap,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+const QMetaObject mapexecution::staticMetaObject = {
+    { &QWidget::staticMetaObject, qt_meta_stringdata_mapexecution.data,
+      qt_meta_data_mapexecution,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
-const QMetaObject *MissionRecap::metaObject() const
+const QMetaObject *mapexecution::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *MissionRecap::qt_metacast(const char *_clname)
+void *mapexecution::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_MissionRecap.stringdata))
-        return static_cast<void*>(const_cast< MissionRecap*>(this));
+    if (!strcmp(_clname, qt_meta_stringdata_mapexecution.stringdata))
+        return static_cast<void*>(const_cast< mapexecution*>(this));
     return QWidget::qt_metacast(_clname);
 }
 
-int MissionRecap::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int mapexecution::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)
