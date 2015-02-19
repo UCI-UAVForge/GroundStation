@@ -29,9 +29,6 @@ private slots:
     void on_playButton_clicked();
 
     void on_stopButton_clicked();
-
-    void on_stopButton_2_clicked();
-
 private:
     Ui::MissionRecap *ui;
     QMediaPlayer mediaPlayer;
