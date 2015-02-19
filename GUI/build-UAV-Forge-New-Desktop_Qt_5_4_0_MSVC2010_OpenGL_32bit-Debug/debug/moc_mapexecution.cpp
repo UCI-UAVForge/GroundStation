@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'mainwindow.h'
+** Meta object code from reading C++ file 'mapexecution.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../mainwindow.h"
+#include "../../UAV-Forge-New/mapexecution.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'mainwindow.h' doesn't include <QObject>."
+#error "The header file 'mapexecution.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.4.0. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -18,32 +18,32 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_MainWindow_t {
+struct qt_meta_stringdata_mapexecution_t {
     QByteArrayData data[6];
-    char stringdata[92];
+    char stringdata[82];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_MainWindow_t, stringdata) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_mapexecution_t, stringdata) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
+static const qt_meta_stringdata_mapexecution_t qt_meta_stringdata_mapexecution = {
     {
-QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
-QT_MOC_LITERAL(1, 11, 12), // "openTutorial"
-QT_MOC_LITERAL(2, 24, 0), // ""
-QT_MOC_LITERAL(3, 25, 22), // "missionPlanningClicked"
-QT_MOC_LITERAL(4, 48, 23), // "missionExecutionClicked"
-QT_MOC_LITERAL(5, 72, 19) // "missionRecapClicked"
+QT_MOC_LITERAL(0, 0, 12), // "mapexecution"
+QT_MOC_LITERAL(1, 13, 13), // "finishClicked"
+QT_MOC_LITERAL(2, 27, 0), // ""
+QT_MOC_LITERAL(3, 28, 17), // "returnHomeClicked"
+QT_MOC_LITERAL(4, 46, 13), // "cancelClicked"
+QT_MOC_LITERAL(5, 60, 21) // "on_pushButton_clicked"
 
     },
-    "MainWindow\0openTutorial\0\0"
-    "missionPlanningClicked\0missionExecutionClicked\0"
-    "missionRecapClicked"
+    "mapexecution\0finishClicked\0\0"
+    "returnHomeClicked\0cancelClicked\0"
+    "on_pushButton_clicked"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_MainWindow[] = {
+static const uint qt_meta_data_mapexecution[] = {
 
  // content:
        7,       // revision
@@ -71,43 +71,43 @@ static const uint qt_meta_data_MainWindow[] = {
        0        // eod
 };
 
-void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void mapexecution::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
-        MainWindow *_t = static_cast<MainWindow *>(_o);
+        mapexecution *_t = static_cast<mapexecution *>(_o);
         switch (_id) {
-        case 0: _t->openTutorial(); break;
-        case 1: _t->missionPlanningClicked(); break;
-        case 2: _t->missionExecutionClicked(); break;
-        case 3: _t->missionRecapClicked(); break;
+        case 0: _t->finishClicked(); break;
+        case 1: _t->returnHomeClicked(); break;
+        case 2: _t->cancelClicked(); break;
+        case 3: _t->on_pushButton_clicked(); break;
         default: ;
         }
     }
     Q_UNUSED(_a);
 }
 
-const QMetaObject MainWindow::staticMetaObject = {
-    { &QMainWindow::staticMetaObject, qt_meta_stringdata_MainWindow.data,
-      qt_meta_data_MainWindow,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+const QMetaObject mapexecution::staticMetaObject = {
+    { &QWidget::staticMetaObject, qt_meta_stringdata_mapexecution.data,
+      qt_meta_data_mapexecution,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
-const QMetaObject *MainWindow::metaObject() const
+const QMetaObject *mapexecution::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *MainWindow::qt_metacast(const char *_clname)
+void *mapexecution::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_MainWindow.stringdata))
-        return static_cast<void*>(const_cast< MainWindow*>(this));
-    return QMainWindow::qt_metacast(_clname);
+    if (!strcmp(_clname, qt_meta_stringdata_mapexecution.stringdata))
+        return static_cast<void*>(const_cast< mapexecution*>(this));
+    return QWidget::qt_metacast(_clname);
 }
 
-int MainWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int mapexecution::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QMainWindow::qt_metacall(_c, _id, _a);
+    _id = QWidget::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

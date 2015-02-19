@@ -37,6 +37,7 @@ public:
     QPushButton *pushButton;
     QPushButton *playButton;
     QPushButton *stopButton;
+    QPushButton *stopButton_2;
     QPushButton *newMission;
     QPushButton *redoMission;
     QPushButton *replayMission;
@@ -151,7 +152,7 @@ public:
 " }"));
         playButton = new QPushButton(frame_5);
         playButton->setObjectName(QStringLiteral("playButton"));
-        playButton->setGeometry(QRect(530, 430, 81, 21));
+        playButton->setGeometry(QRect(490, 440, 101, 31));
         playButton->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: #434A54;\n"
 "color: \"#ffffff\"; \n"
@@ -164,8 +165,21 @@ public:
 " }"));
         stopButton = new QPushButton(frame_5);
         stopButton->setObjectName(QStringLiteral("stopButton"));
-        stopButton->setGeometry(QRect(480, 430, 41, 21));
+        stopButton->setGeometry(QRect(380, 440, 101, 31));
         stopButton->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: #434A54;\n"
+"color: \"#ffffff\"; \n"
+"border-radius: 10px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #656D78\n"
+" }"));
+        stopButton_2 = new QPushButton(frame_5);
+        stopButton_2->setObjectName(QStringLiteral("stopButton_2"));
+        stopButton_2->setGeometry(QRect(260, 440, 101, 31));
+        stopButton_2->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: #434A54;\n"
 "color: \"#ffffff\"; \n"
 "border-radius: 10px;\n"
@@ -272,8 +286,9 @@ public:
         plainTextEdit_2->setPlainText(QApplication::translate("MissionRecap", "Graphical Representation of Results", 0));
         plainTextEdit_3->setPlainText(QApplication::translate("MissionRecap", "Text Results", 0));
         pushButton->setText(QApplication::translate("MissionRecap", "Save Results", 0));
-        playButton->setText(QApplication::translate("MissionRecap", "Play/Pause", 0));
+        playButton->setText(QApplication::translate("MissionRecap", "Play", 0));
         stopButton->setText(QApplication::translate("MissionRecap", "Stop", 0));
+        stopButton_2->setText(QApplication::translate("MissionRecap", "Stop", 0));
         newMission->setText(QApplication::translate("MissionRecap", "New Mission", 0));
         redoMission->setText(QApplication::translate("MissionRecap", "Redo Mission", 0));
         replayMission->setText(QApplication::translate("MissionRecap", "Replay Mission", 0));

@@ -1,16 +1,16 @@
 /****************************************************************************
-** Meta object code from reading C++ file 'tablemodel.h'
+** Meta object code from reading C++ file 'qcomboboxdelegate.h'
 **
 ** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../tablemodel.h"
+#include "../../UAV-Forge-New/qcomboboxdelegate.h"
 #include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
-#error "The header file 'tablemodel.h' doesn't include <QObject>."
+#error "The header file 'qcomboboxdelegate.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
 #error "This file was generated using the moc from 5.4.0. It"
 #error "cannot be used with the include files from this version of Qt."
@@ -18,25 +18,25 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-struct qt_meta_stringdata_TableModel_t {
+struct qt_meta_stringdata_QComboBoxDelegate_t {
     QByteArrayData data[1];
-    char stringdata[11];
+    char stringdata[18];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    qptrdiff(offsetof(qt_meta_stringdata_TableModel_t, stringdata) + ofs \
+    qptrdiff(offsetof(qt_meta_stringdata_QComboBoxDelegate_t, stringdata) + ofs \
         - idx * sizeof(QByteArrayData)) \
     )
-static const qt_meta_stringdata_TableModel_t qt_meta_stringdata_TableModel = {
+static const qt_meta_stringdata_QComboBoxDelegate_t qt_meta_stringdata_QComboBoxDelegate = {
     {
-QT_MOC_LITERAL(0, 0, 10) // "TableModel"
+QT_MOC_LITERAL(0, 0, 17) // "QComboBoxDelegate"
 
     },
-    "TableModel"
+    "QComboBoxDelegate"
 };
 #undef QT_MOC_LITERAL
 
-static const uint qt_meta_data_TableModel[] = {
+static const uint qt_meta_data_QComboBoxDelegate[] = {
 
  // content:
        7,       // revision
@@ -52,7 +52,7 @@ static const uint qt_meta_data_TableModel[] = {
        0        // eod
 };
 
-void TableModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void QComboBoxDelegate::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -60,28 +60,28 @@ void TableModel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     Q_UNUSED(_a);
 }
 
-const QMetaObject TableModel::staticMetaObject = {
-    { &QAbstractTableModel::staticMetaObject, qt_meta_stringdata_TableModel.data,
-      qt_meta_data_TableModel,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+const QMetaObject QComboBoxDelegate::staticMetaObject = {
+    { &QItemDelegate::staticMetaObject, qt_meta_stringdata_QComboBoxDelegate.data,
+      qt_meta_data_QComboBoxDelegate,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
-const QMetaObject *TableModel::metaObject() const
+const QMetaObject *QComboBoxDelegate::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *TableModel::qt_metacast(const char *_clname)
+void *QComboBoxDelegate::qt_metacast(const char *_clname)
 {
     if (!_clname) return Q_NULLPTR;
-    if (!strcmp(_clname, qt_meta_stringdata_TableModel.stringdata))
-        return static_cast<void*>(const_cast< TableModel*>(this));
-    return QAbstractTableModel::qt_metacast(_clname);
+    if (!strcmp(_clname, qt_meta_stringdata_QComboBoxDelegate.stringdata))
+        return static_cast<void*>(const_cast< QComboBoxDelegate*>(this));
+    return QItemDelegate::qt_metacast(_clname);
 }
 
-int TableModel::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int QComboBoxDelegate::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QAbstractTableModel::qt_metacall(_c, _id, _a);
+    _id = QItemDelegate::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     return _id;

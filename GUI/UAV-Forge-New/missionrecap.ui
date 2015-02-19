@@ -283,10 +283,10 @@ border: none;
    <widget class="QPushButton" name="playButton">
     <property name="geometry">
      <rect>
-      <x>490</x>
-      <y>440</y>
-      <width>101</width>
-      <height>31</height>
+      <x>530</x>
+      <y>430</y>
+      <width>81</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -302,16 +302,16 @@ border: none;
  }</string>
     </property>
     <property name="text">
-     <string>Play</string>
+     <string>Play/Pause</string>
     </property>
    </widget>
    <widget class="QPushButton" name="stopButton">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>440</y>
-      <width>101</width>
-      <height>31</height>
+      <x>480</x>
+      <y>430</y>
+      <width>41</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
