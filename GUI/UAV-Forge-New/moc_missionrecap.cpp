@@ -80,6 +80,7 @@ void MissionRecap::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 1: _t->on_backButton_clicked(); break;
         case 2: _t->on_playButton_clicked(); break;
         case 3: _t->on_stopButton_clicked(); break;
+        case 4: _t->on_stopButton_clicked(); break;
         default: ;
         }
     }
