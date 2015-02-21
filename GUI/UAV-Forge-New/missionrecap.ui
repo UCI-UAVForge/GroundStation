@@ -80,8 +80,8 @@
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>80</y>
+     <x>280</x>
+     <y>90</y>
      <width>341</width>
      <height>191</height>
     </rect>
@@ -112,15 +112,15 @@
      </rect>
     </property>
     <property name="plainText">
-     <string>Graphical Representation of Results</string>
+     <string>         Graphical Representation of Results</string>
     </property>
    </widget>
   </widget>
   <widget class="QFrame" name="frame_2">
    <property name="geometry">
     <rect>
-     <x>210</x>
-     <y>290</y>
+     <x>280</x>
+     <y>310</y>
      <width>341</width>
      <height>191</height>
     </rect>
@@ -151,15 +151,15 @@
      </rect>
     </property>
     <property name="plainText">
-     <string>Graphical Representation of Results</string>
+     <string>         Graphical Representation of Results</string>
     </property>
    </widget>
   </widget>
   <widget class="QFrame" name="frame_3">
    <property name="geometry">
     <rect>
-     <x>580</x>
-     <y>80</y>
+     <x>650</x>
+     <y>90</y>
      <width>341</width>
      <height>191</height>
     </rect>
@@ -190,15 +190,15 @@
      </rect>
     </property>
     <property name="plainText">
-     <string>Text Results</string>
+     <string>                                Text Results</string>
     </property>
    </widget>
   </widget>
   <widget class="QFrame" name="frame_4">
    <property name="geometry">
     <rect>
-     <x>580</x>
-     <y>290</y>
+     <x>650</x>
+     <y>310</y>
      <width>341</width>
      <height>191</height>
     </rect>
@@ -222,7 +222,7 @@
    <widget class="QVideoWidget" name="VideoWidget" native="true">
     <property name="geometry">
      <rect>
-      <x>9</x>
+      <x>10</x>
       <y>10</y>
       <width>321</width>
       <height>171</height>
@@ -233,10 +233,10 @@
   <widget class="QFrame" name="frame_5">
    <property name="geometry">
     <rect>
-     <x>180</x>
+     <x>240</x>
      <y>60</y>
      <width>781</width>
-     <height>481</height>
+     <height>511</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -258,8 +258,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>640</x>
-      <y>440</y>
+      <x>650</x>
+      <y>460</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -277,16 +277,16 @@ border: none;
  }</string>
     </property>
     <property name="text">
-     <string>Save Results</string>
+     <string>Save</string>
     </property>
    </widget>
    <widget class="QPushButton" name="playButton">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>430</y>
-      <width>81</width>
-      <height>21</height>
+      <x>410</x>
+      <y>460</y>
+      <width>101</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -302,16 +302,16 @@ border: none;
  }</string>
     </property>
     <property name="text">
-     <string>Play/Pause</string>
+     <string>Play</string>
     </property>
    </widget>
    <widget class="QPushButton" name="stopButton">
     <property name="geometry">
      <rect>
-      <x>480</x>
-      <y>430</y>
-      <width>41</width>
-      <height>21</height>
+      <x>530</x>
+      <y>460</y>
+      <width>101</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -334,10 +334,10 @@ border: none;
   <widget class="QPushButton" name="newMission">
    <property name="geometry">
     <rect>
-     <x>824</x>
-     <y>560</y>
-     <width>111</width>
-     <height>31</height>
+     <x>670</x>
+     <y>610</y>
+     <width>151</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -359,10 +359,10 @@ border: none;
   <widget class="QPushButton" name="redoMission">
    <property name="geometry">
     <rect>
-     <x>700</x>
-     <y>560</y>
-     <width>111</width>
-     <height>31</height>
+     <x>450</x>
+     <y>610</y>
+     <width>151</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -384,10 +384,10 @@ border: none;
   <widget class="QPushButton" name="replayMission">
    <property name="geometry">
     <rect>
-     <x>560</x>
-     <y>560</y>
-     <width>121</width>
-     <height>31</height>
+     <x>870</x>
+     <y>610</y>
+     <width>151</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="palette">
@@ -581,10 +581,10 @@ border: none;
   <widget class="QPushButton" name="backButton">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>20</y>
-     <width>75</width>
-     <height>23</height>
+     <x>240</x>
+     <y>610</y>
+     <width>151</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'mapexecution.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.0)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.3.2)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'mapexecution.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.4.0. It"
+#error "This file was generated using the moc from 5.3.2. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -29,13 +29,12 @@ struct qt_meta_stringdata_mapexecution_t {
     )
 static const qt_meta_stringdata_mapexecution_t qt_meta_stringdata_mapexecution = {
     {
-QT_MOC_LITERAL(0, 0, 12), // "mapexecution"
-QT_MOC_LITERAL(1, 13, 13), // "finishClicked"
-QT_MOC_LITERAL(2, 27, 0), // ""
-QT_MOC_LITERAL(3, 28, 17), // "returnHomeClicked"
-QT_MOC_LITERAL(4, 46, 13), // "cancelClicked"
-QT_MOC_LITERAL(5, 60, 21) // "on_pushButton_clicked"
-
+QT_MOC_LITERAL(0, 0, 12),
+QT_MOC_LITERAL(1, 13, 13),
+QT_MOC_LITERAL(2, 27, 0),
+QT_MOC_LITERAL(3, 28, 17),
+QT_MOC_LITERAL(4, 46, 13),
+QT_MOC_LITERAL(5, 60, 21)
     },
     "mapexecution\0finishClicked\0\0"
     "returnHomeClicked\0cancelClicked\0"
@@ -88,7 +87,7 @@ void mapexecution::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
 
 const QMetaObject mapexecution::staticMetaObject = {
     { &QWidget::staticMetaObject, qt_meta_stringdata_mapexecution.data,
-      qt_meta_data_mapexecution,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
+      qt_meta_data_mapexecution,  qt_static_metacall, 0, 0}
 };
 
 
@@ -99,7 +98,7 @@ const QMetaObject *mapexecution::metaObject() const
 
 void *mapexecution::qt_metacast(const char *_clname)
 {
-    if (!_clname) return Q_NULLPTR;
+    if (!_clname) return 0;
     if (!strcmp(_clname, qt_meta_stringdata_mapexecution.stringdata))
         return static_cast<void*>(const_cast< mapexecution*>(this));
     return QWidget::qt_metacast(_clname);

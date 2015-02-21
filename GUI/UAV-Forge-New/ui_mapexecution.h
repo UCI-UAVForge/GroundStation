@@ -48,7 +48,7 @@ public:
         mapexecution->setPalette(palette);
         pushButton_2 = new QPushButton(mapexecution);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(940, 400, 121, 51));
+        pushButton_2->setGeometry(QRect(720, 320, 121, 61));
         pushButton_2->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
@@ -61,7 +61,7 @@ public:
 " }"));
         pushButton_3 = new QPushButton(mapexecution);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(940, 470, 121, 51));
+        pushButton_3->setGeometry(QRect(720, 210, 121, 61));
         pushButton_3->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
@@ -74,7 +74,7 @@ public:
 " }"));
         pushButton_4 = new QPushButton(mapexecution);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
-        pushButton_4->setGeometry(QRect(940, 540, 121, 51));
+        pushButton_4->setGeometry(QRect(720, 430, 121, 61));
         pushButton_4->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
@@ -87,11 +87,11 @@ public:
 " }"));
         webView = new QWebView(mapexecution);
         webView->setObjectName(QStringLiteral("webView"));
-        webView->setGeometry(QRect(80, 70, 800, 650));
+        webView->setGeometry(QRect(190, 70, 491, 651));
         webView->setUrl(QUrl(QStringLiteral("about:blank")));
         pushButton = new QPushButton(mapexecution);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(80, 30, 75, 23));
+        pushButton->setGeometry(QRect(720, 550, 121, 61));
         pushButton->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"

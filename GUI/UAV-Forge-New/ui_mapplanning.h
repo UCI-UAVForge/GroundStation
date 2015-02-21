@@ -51,7 +51,7 @@ public:
         MapPlanning->setPalette(palette);
         pushButton_5 = new QPushButton(MapPlanning);
         pushButton_5->setObjectName(QStringLiteral("pushButton_5"));
-        pushButton_5->setGeometry(QRect(400, 50, 31, 31));
+        pushButton_5->setGeometry(QRect(380, 70, 31, 31));
         pushButton_5->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
@@ -64,10 +64,10 @@ public:
 " }"));
         tableView = new QTableView(MapPlanning);
         tableView->setObjectName(QStringLiteral("tableView"));
-        tableView->setGeometry(QRect(30, 90, 691, 411));
+        tableView->setGeometry(QRect(100, 120, 531, 521));
         pushButton_6 = new QPushButton(MapPlanning);
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        pushButton_6->setGeometry(QRect(380, 530, 131, 41));
+        pushButton_6->setGeometry(QRect(310, 680, 131, 41));
         pushButton_6->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
@@ -80,11 +80,11 @@ public:
 " }"));
         webView = new QWebView(MapPlanning);
         webView->setObjectName(QStringLiteral("webView"));
-        webView->setGeometry(QRect(749, 90, 521, 650));
+        webView->setGeometry(QRect(700, 70, 521, 650));
         webView->setUrl(QUrl(QStringLiteral("about:blank")));
         pushButton_7 = new QPushButton(MapPlanning);
         pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
-        pushButton_7->setGeometry(QRect(360, 50, 31, 31));
+        pushButton_7->setGeometry(QRect(320, 70, 31, 31));
         pushButton_7->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
@@ -97,7 +97,7 @@ public:
 " }"));
         pushButton_8 = new QPushButton(MapPlanning);
         pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
-        pushButton_8->setGeometry(QRect(200, 530, 131, 41));
+        pushButton_8->setGeometry(QRect(500, 680, 131, 41));
         pushButton_8->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
@@ -110,7 +110,7 @@ public:
 " }"));
         pushButton = new QPushButton(MapPlanning);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(30, 50, 75, 23));
+        pushButton->setGeometry(QRect(100, 680, 131, 41));
         pushButton->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"

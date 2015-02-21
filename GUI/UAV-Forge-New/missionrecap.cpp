@@ -14,7 +14,6 @@ MissionRecap::MissionRecap(QWidget *parent) :
     //mediaPlayer.setMedia(QUrl(fileName));
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open Movie"),QDir::homePath());
     mediaPlayer.setMedia(QUrl::fromLocalFile(fileName));
-    ui->VideoWidget->setAspectRatioMode(Qt::IgnoreAspectRatio);
 }
 
 MissionRecap::~MissionRecap()
@@ -39,10 +38,7 @@ void MissionRecap::on_backButton_clicked()
 
 void MissionRecap::on_playButton_clicked()
 {
-    if(mediaPlayer.state() == QMediaPlayer::PlayingState)
-        mediaPlayer.pause();
-    else
-        mediaPlayer.play();
+    mediaPlayer.play();
 }
 
 void MissionRecap::on_stopButton_clicked()

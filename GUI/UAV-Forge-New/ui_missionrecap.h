@@ -61,7 +61,7 @@ public:
         MissionRecap->setPalette(palette);
         frame = new QFrame(MissionRecap);
         frame->setObjectName(QStringLiteral("frame"));
-        frame->setGeometry(QRect(210, 80, 341, 191));
+        frame->setGeometry(QRect(280, 90, 341, 191));
         frame->setStyleSheet(QLatin1String(" QFrame, QLabel, QToolTip {\n"
 "     border: 2px solid grey;\n"
 "     border-radius: 4px;\n"
@@ -77,7 +77,7 @@ public:
         plainTextEdit->setGeometry(QRect(10, 10, 321, 171));
         frame_2 = new QFrame(MissionRecap);
         frame_2->setObjectName(QStringLiteral("frame_2"));
-        frame_2->setGeometry(QRect(210, 290, 341, 191));
+        frame_2->setGeometry(QRect(280, 310, 341, 191));
         frame_2->setStyleSheet(QLatin1String(" QFrame, QLabel, QToolTip {\n"
 "     border: 2px solid grey;\n"
 "     border-radius: 4px;\n"
@@ -93,7 +93,7 @@ public:
         plainTextEdit_2->setGeometry(QRect(10, 10, 321, 171));
         frame_3 = new QFrame(MissionRecap);
         frame_3->setObjectName(QStringLiteral("frame_3"));
-        frame_3->setGeometry(QRect(580, 80, 341, 191));
+        frame_3->setGeometry(QRect(650, 90, 341, 191));
         frame_3->setStyleSheet(QLatin1String(" QFrame, QLabel, QToolTip {\n"
 "     border: 2px solid grey;\n"
 "     border-radius: 4px;\n"
@@ -109,7 +109,7 @@ public:
         plainTextEdit_3->setGeometry(QRect(10, 10, 321, 171));
         frame_4 = new QFrame(MissionRecap);
         frame_4->setObjectName(QStringLiteral("frame_4"));
-        frame_4->setGeometry(QRect(580, 290, 341, 191));
+        frame_4->setGeometry(QRect(650, 310, 341, 191));
         frame_4->setStyleSheet(QLatin1String(" QFrame, QLabel, QToolTip {\n"
 "     border: 2px solid grey;\n"
 "     border-radius: 4px;\n"
@@ -122,10 +122,10 @@ public:
         frame_4->setFrameShadow(QFrame::Raised);
         VideoWidget = new QVideoWidget(frame_4);
         VideoWidget->setObjectName(QStringLiteral("VideoWidget"));
-        VideoWidget->setGeometry(QRect(9, 10, 321, 171));
+        VideoWidget->setGeometry(QRect(10, 10, 321, 171));
         frame_5 = new QFrame(MissionRecap);
         frame_5->setObjectName(QStringLiteral("frame_5"));
-        frame_5->setGeometry(QRect(180, 60, 781, 481));
+        frame_5->setGeometry(QRect(240, 60, 781, 511));
         frame_5->setStyleSheet(QLatin1String(" QFrame, QLabel, QToolTip {\n"
 "     border: 2px solid grey;\n"
 "     border-radius: 4px;\n"
@@ -138,7 +138,7 @@ public:
         frame_5->setFrameShadow(QFrame::Raised);
         pushButton = new QPushButton(frame_5);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(640, 440, 101, 31));
+        pushButton->setGeometry(QRect(650, 460, 101, 31));
         pushButton->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: #434A54;\n"
 "color: \"#ffffff\"; \n"
@@ -151,7 +151,7 @@ public:
 " }"));
         playButton = new QPushButton(frame_5);
         playButton->setObjectName(QStringLiteral("playButton"));
-        playButton->setGeometry(QRect(530, 430, 81, 21));
+        playButton->setGeometry(QRect(410, 460, 101, 31));
         playButton->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: #434A54;\n"
 "color: \"#ffffff\"; \n"
@@ -164,7 +164,7 @@ public:
 " }"));
         stopButton = new QPushButton(frame_5);
         stopButton->setObjectName(QStringLiteral("stopButton"));
-        stopButton->setGeometry(QRect(480, 430, 41, 21));
+        stopButton->setGeometry(QRect(530, 460, 101, 31));
         stopButton->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: #434A54;\n"
 "color: \"#ffffff\"; \n"
@@ -177,7 +177,7 @@ public:
 " }"));
         newMission = new QPushButton(MissionRecap);
         newMission->setObjectName(QStringLiteral("newMission"));
-        newMission->setGeometry(QRect(824, 560, 111, 31));
+        newMission->setGeometry(QRect(670, 610, 151, 41));
         newMission->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
@@ -190,7 +190,7 @@ public:
 " }"));
         redoMission = new QPushButton(MissionRecap);
         redoMission->setObjectName(QStringLiteral("redoMission"));
-        redoMission->setGeometry(QRect(700, 560, 111, 31));
+        redoMission->setGeometry(QRect(450, 610, 151, 41));
         redoMission->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
@@ -203,7 +203,7 @@ public:
 " }"));
         replayMission = new QPushButton(MissionRecap);
         replayMission->setObjectName(QStringLiteral("replayMission"));
-        replayMission->setGeometry(QRect(560, 560, 121, 31));
+        replayMission->setGeometry(QRect(870, 610, 151, 41));
         QPalette palette1;
         palette1.setBrush(QPalette::Active, QPalette::WindowText, brush1);
         QBrush brush2(QColor(204, 209, 217, 255));
@@ -238,7 +238,7 @@ public:
 " }"));
         backButton = new QPushButton(MissionRecap);
         backButton->setObjectName(QStringLiteral("backButton"));
-        backButton->setGeometry(QRect(180, 20, 75, 23));
+        backButton->setGeometry(QRect(240, 610, 151, 41));
         backButton->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
@@ -268,11 +268,11 @@ public:
     void retranslateUi(QWidget *MissionRecap)
     {
         MissionRecap->setWindowTitle(QApplication::translate("MissionRecap", "Form", 0));
-        plainTextEdit->setPlainText(QApplication::translate("MissionRecap", "Graphical Representation of Results", 0));
-        plainTextEdit_2->setPlainText(QApplication::translate("MissionRecap", "Graphical Representation of Results", 0));
-        plainTextEdit_3->setPlainText(QApplication::translate("MissionRecap", "Text Results", 0));
-        pushButton->setText(QApplication::translate("MissionRecap", "Save Results", 0));
-        playButton->setText(QApplication::translate("MissionRecap", "Play/Pause", 0));
+        plainTextEdit->setPlainText(QApplication::translate("MissionRecap", "         Graphical Representation of Results", 0));
+        plainTextEdit_2->setPlainText(QApplication::translate("MissionRecap", "         Graphical Representation of Results", 0));
+        plainTextEdit_3->setPlainText(QApplication::translate("MissionRecap", "                                Text Results", 0));
+        pushButton->setText(QApplication::translate("MissionRecap", "Save", 0));
+        playButton->setText(QApplication::translate("MissionRecap", "Play", 0));
         stopButton->setText(QApplication::translate("MissionRecap", "Stop", 0));
         newMission->setText(QApplication::translate("MissionRecap", "New Mission", 0));
         redoMission->setText(QApplication::translate("MissionRecap", "Redo Mission", 0));
