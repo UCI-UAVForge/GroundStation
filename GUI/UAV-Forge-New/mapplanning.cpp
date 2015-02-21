@@ -5,6 +5,43 @@
 #include "mainwindow.h"
 #include <QString>
 
+MapPlanning::MapPlanning(QList<QString> mapStrings, QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::MapPlanning) {
+
+    MapPlanning::MapPlanning(parent);
+
+    for (QString string : mapStrings){
+        QList<QString> comps = string.split(",");
+        double lng = comps[1].toDouble();
+        double lat = comps[3].toDouble();
+
+        if(comps[2]=="W"){
+            lng *= -1.0;
+        }
+
+        if (comps[4]=="S"){
+            lat *= -1.0;
+        }
+
+        addPointToTable(lat,lng);
+        updateMap();
+    }
+
+    /*
+    ui->setupUi(this);
+    buttonGroup = new QButtonGroup();
+
+    //Recreates the c++/JS bridge when the JavaScript window is refreshed
+    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
+
+    ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
+
+    model = new TableModel();
+    ui->tableView->setModel(model);
+    ui->tableView->setItemDelegate(new QComboBoxDelegate());*/
+}
+
 MapPlanning::MapPlanning(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::MapPlanning) {
@@ -39,7 +76,8 @@ void MapPlanning::addClickListener() {
 }
 
 void MapPlanning::on_pushButton_6_clicked() {
-    popup = new PopWindowMP(model->getList());
+    popup = new PopWindowMP(getTableAsStrings());
+    connect(popup,SIGNAL(windowClosed()),this,SLOT(closeWindow()));
     popup->show();
 }
 
@@ -109,6 +147,10 @@ QList<QString> MapPlanning::getTableAsStrings(){
         output<<formattedRow;
     }
     return output;
+}
+
+void MapPlanning::closeWindow(){
+    this->close();
 }
 
 void MapPlanning::addPointToTable(double lat, double lng) {

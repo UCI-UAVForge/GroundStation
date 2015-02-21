@@ -15,7 +15,9 @@ public slots:
     void addPoint(QString string);
     void addNewMap();
 public:
+    explicit mapexecution(QList<QString> strings, QWidget *parent = 0);
     explicit mapexecution(QWidget *parent = 0);
+    QList<QString> mapStrings;
     ~mapexecution();
 private slots:
     void finishClicked();
