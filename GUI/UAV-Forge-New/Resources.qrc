@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>res/html/maps.html</file>
+        <file>res/html/mapsExecution.html</file>
+        <file>res/html/mapsPlanning.html</file>
     </qresource>
 </RCC>

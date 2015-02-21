@@ -10,7 +10,10 @@ class mapexecution;
 class mapexecution : public QWidget
 {
     Q_OBJECT
-
+public slots:
+    void setMap(QList<QString> list);
+    void addPoint(QString string);
+    void addNewMap();
 public:
     explicit mapexecution(QWidget *parent = 0);
     ~mapexecution();
@@ -19,6 +22,9 @@ private slots:
     void returnHomeClicked();
     void cancelClicked();
     void on_pushButton_clicked();
+
+    void addClickListener();
+    //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame().
 
 private:
     Ui::mapexecution *ui;

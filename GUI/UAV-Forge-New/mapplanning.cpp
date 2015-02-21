@@ -14,7 +14,7 @@ MapPlanning::MapPlanning(QWidget *parent) :
     //Recreates the c++/JS bridge when the JavaScript window is refreshed
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
 
-    ui->webView->load(QUrl("qrc:/res/html/maps.html"));
+    ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
 
     model = new TableModel();
     ui->tableView->setModel(model);
@@ -39,7 +39,7 @@ void MapPlanning::addClickListener() {
 }
 
 void MapPlanning::on_pushButton_6_clicked() {
-    popup = new PopWindowMP();
+    popup = new PopWindowMP(model->getList());
     popup->show();
 }
 
@@ -86,6 +86,29 @@ void MapPlanning::updateMap() {
         //Sends the add point request with its parameters.
         ui->webView->page()->mainFrame()->evaluateJavaScript("addLatLngCoords("+QString::number(lat)+","+QString::number(lng)+")");
     }
+}
+
+QList<QString> MapPlanning::getTableAsStrings(){
+    /*  Converts the table into a list of strings formatted with each row of the
+    table being its own entry in the list, and each entry on the list represented
+    as (Action,Longitude,LongDirection,Latitude,LatDirection,Behavior). This is
+    the same formatting used in Mission Execution to add waypoints to the map.
+    Function added by Jordan Dickson Feb 21st 2015. */
+
+    QList<QString> output;
+    QList<QList<QString> > table = model->getList();
+    for(QList<QString> row : table){
+        QString formattedRow;
+        for(int i = 0; i < row.length(); i++){
+            if (i == 0){
+                formattedRow += row[i];
+            } else {
+                formattedRow += "," + row[i];
+            }
+        }
+        output<<formattedRow;
+    }
+    return output;
 }
 
 void MapPlanning::addPointToTable(double lat, double lng) {

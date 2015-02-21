@@ -20,6 +20,7 @@ class MapPlanning : public QDialog
 
 public:
     void updateMap();
+    QList<QString> getTableAsStrings();
     explicit MapPlanning(QWidget *parent = 0);
     ~MapPlanning();
 
