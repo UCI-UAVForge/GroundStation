@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
@@ -20,6 +21,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -43,10 +45,15 @@ public:
     QAction *actionOptions;
     QAction *actionHELP_ME;
     QWidget *centralWidget;
+    QHBoxLayout *horizontalLayout;
+    QWidget *widget;
+    QVBoxLayout *verticalLayout_2;
+    QPushButton *pushButton_9;
+    QPushButton *pushButton_7;
+    QWidget *widget_2;
+    QVBoxLayout *verticalLayout_3;
     QPushButton *pushButton_8;
     QPushButton *pushButton_6;
-    QPushButton *pushButton_7;
-    QPushButton *pushButton_9;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuEdit;
@@ -122,17 +129,33 @@ public:
         actionHELP_ME->setObjectName(QStringLiteral("actionHELP_ME"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        pushButton_8 = new QPushButton(centralWidget);
-        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
-        pushButton_8->setGeometry(QRect(590, 170, 181, 81));
-        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        horizontalLayout = new QHBoxLayout(centralWidget);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        widget = new QWidget(centralWidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(pushButton_8->sizePolicy().hasHeightForWidth());
-        pushButton_8->setSizePolicy(sizePolicy);
-        pushButton_8->setMinimumSize(QSize(181, 81));
-        pushButton_8->setMaximumSize(QSize(181, 81));
-        pushButton_8->setStyleSheet(QLatin1String(" QPushButton { \n"
+        sizePolicy.setHeightForWidth(widget->sizePolicy().hasHeightForWidth());
+        widget->setSizePolicy(sizePolicy);
+        verticalLayout_2 = new QVBoxLayout(widget);
+        verticalLayout_2->setSpacing(50);
+        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        verticalLayout_2->setContentsMargins(-1, -1, 50, -1);
+        pushButton_9 = new QPushButton(widget);
+        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
+        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(pushButton_9->sizePolicy().hasHeightForWidth());
+        pushButton_9->setSizePolicy(sizePolicy1);
+        pushButton_9->setMinimumSize(QSize(181, 81));
+        pushButton_9->setMaximumSize(QSize(181, 81));
+        pushButton_9->setSizeIncrement(QSize(0, 0));
+        pushButton_9->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
 "border-radius: 10px;\n"
@@ -142,28 +165,16 @@ public:
 " QPushButton:pressed {\n"
 "     background-color: #E6E9ED\n"
 " }"));
-        pushButton_6 = new QPushButton(centralWidget);
-        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        pushButton_6->setGeometry(QRect(590, 290, 181, 81));
-        sizePolicy.setHeightForWidth(pushButton_6->sizePolicy().hasHeightForWidth());
-        pushButton_6->setSizePolicy(sizePolicy);
-        pushButton_6->setMinimumSize(QSize(181, 81));
-        pushButton_6->setMaximumSize(QSize(181, 81));
-        pushButton_6->setStyleSheet(QLatin1String(" QPushButton { \n"
-"background-color: \"#CCD1D9\"; \n"
-"color: \"#434A54\"; \n"
-"border-radius: 10px;\n"
-"font-weight: bold;\n"
-"border: none; \n"
-"}\n"
-" QPushButton:pressed {\n"
-"     background-color: #E6E9ED\n"
-" }"));
-        pushButton_7 = new QPushButton(centralWidget);
+
+        verticalLayout_2->addWidget(pushButton_9);
+
+        pushButton_7 = new QPushButton(widget);
         pushButton_7->setObjectName(QStringLiteral("pushButton_7"));
-        pushButton_7->setGeometry(QRect(350, 290, 181, 81));
-        sizePolicy.setHeightForWidth(pushButton_7->sizePolicy().hasHeightForWidth());
-        pushButton_7->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(pushButton_7->sizePolicy().hasHeightForWidth());
+        pushButton_7->setSizePolicy(sizePolicy2);
         pushButton_7->setMinimumSize(QSize(181, 81));
         pushButton_7->setMaximumSize(QSize(181, 81));
         QPalette palette1;
@@ -205,15 +216,29 @@ public:
 " QPushButton:pressed {\n"
 "     background-color: #E6E9ED\n"
 " }"));
-        pushButton_9 = new QPushButton(centralWidget);
-        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
-        pushButton_9->setGeometry(QRect(350, 170, 181, 81));
-        sizePolicy.setHeightForWidth(pushButton_9->sizePolicy().hasHeightForWidth());
-        pushButton_9->setSizePolicy(sizePolicy);
-        pushButton_9->setMinimumSize(QSize(181, 81));
-        pushButton_9->setMaximumSize(QSize(181, 81));
-        pushButton_9->setSizeIncrement(QSize(0, 0));
-        pushButton_9->setStyleSheet(QLatin1String(" QPushButton { \n"
+
+        verticalLayout_2->addWidget(pushButton_7);
+
+
+        horizontalLayout->addWidget(widget, 0, Qt::AlignRight|Qt::AlignVCenter);
+
+        widget_2 = new QWidget(centralWidget);
+        widget_2->setObjectName(QStringLiteral("widget_2"));
+        sizePolicy.setHeightForWidth(widget_2->sizePolicy().hasHeightForWidth());
+        widget_2->setSizePolicy(sizePolicy);
+        widget_2->setMinimumSize(QSize(0, 0));
+        verticalLayout_3 = new QVBoxLayout(widget_2);
+        verticalLayout_3->setSpacing(50);
+        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
+        verticalLayout_3->setContentsMargins(50, -1, -1, -1);
+        pushButton_8 = new QPushButton(widget_2);
+        pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
+        sizePolicy1.setHeightForWidth(pushButton_8->sizePolicy().hasHeightForWidth());
+        pushButton_8->setSizePolicy(sizePolicy1);
+        pushButton_8->setMinimumSize(QSize(181, 81));
+        pushButton_8->setMaximumSize(QSize(181, 81));
+        pushButton_8->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
 "border-radius: 10px;\n"
@@ -223,6 +248,31 @@ public:
 " QPushButton:pressed {\n"
 "     background-color: #E6E9ED\n"
 " }"));
+
+        verticalLayout_3->addWidget(pushButton_8);
+
+        pushButton_6 = new QPushButton(widget_2);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        sizePolicy1.setHeightForWidth(pushButton_6->sizePolicy().hasHeightForWidth());
+        pushButton_6->setSizePolicy(sizePolicy1);
+        pushButton_6->setMinimumSize(QSize(181, 81));
+        pushButton_6->setMaximumSize(QSize(181, 81));
+        pushButton_6->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: \"#CCD1D9\"; \n"
+"color: \"#434A54\"; \n"
+"border-radius: 10px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #E6E9ED\n"
+" }"));
+
+        verticalLayout_3->addWidget(pushButton_6);
+
+
+        horizontalLayout->addWidget(widget_2, 0, Qt::AlignLeft|Qt::AlignVCenter);
+
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -296,10 +346,10 @@ public:
         actionTools->setText(QApplication::translate("MainWindow", "Tools", 0));
         actionOptions->setText(QApplication::translate("MainWindow", "Settings", 0));
         actionHELP_ME->setText(QApplication::translate("MainWindow", "HELP ME", 0));
+        pushButton_9->setText(QApplication::translate("MainWindow", "Mission Planning", 0));
+        pushButton_7->setText(QApplication::translate("MainWindow", "Mission Recap", 0));
         pushButton_8->setText(QApplication::translate("MainWindow", "Mission Execution", 0));
         pushButton_6->setText(QApplication::translate("MainWindow", "Tutorials", 0));
-        pushButton_7->setText(QApplication::translate("MainWindow", "Mission Recap", 0));
-        pushButton_9->setText(QApplication::translate("MainWindow", "Mission Planning", 0));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", 0));
         menuEdit->setTitle(QApplication::translate("MainWindow", "Edit", 0));
         menuView->setTitle(QApplication::translate("MainWindow", "View", 0));
