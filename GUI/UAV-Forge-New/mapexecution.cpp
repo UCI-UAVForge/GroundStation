@@ -81,6 +81,11 @@ void mapexecution::addPoint(QString string){
     ui->webView->page()->mainFrame()->evaluateJavaScript("addLatLngCoords("+QString::number(lat)+","+QString::number(lng)+")");
 }
 
+void mapexecution::push_new_point(QString string){
+   Qlist<Qstring> points = string.split(",");
+
+}
+
 void mapexecution::addClickListener() {
     /* Since c++/JS bridges are broken when the JS page refreshes this slot
      is used to rebruild the bridge each time when triggered by a

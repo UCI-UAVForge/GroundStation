@@ -23,11 +23,14 @@ private slots:
     void cancelClicked();
     void on_pushButton_clicked();
 
+    void push_new_point(QString point);
+
     void addClickListener();
     //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame().
 
 private:
     Ui::mapexecution *ui;
+    QList<QString> points_recieved;
 };
 
 #endif // MAPEXECUTION_H
