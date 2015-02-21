@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'missionrecap.ui'
 **
-** Created by: Qt User Interface Compiler version 5.4.0
+** Created by: Qt User Interface Compiler version 5.3.2
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -37,6 +37,7 @@ public:
     QPushButton *pushButton;
     QPushButton *playButton;
     QPushButton *stopButton;
+    QPushButton *openFileButton;
     QPushButton *newMission;
     QPushButton *redoMission;
     QPushButton *replayMission;
@@ -175,6 +176,19 @@ public:
 " QPushButton:pressed {\n"
 "     background-color: #656D78\n"
 " }"));
+        openFileButton = new QPushButton(frame_5);
+        openFileButton->setObjectName(QStringLiteral("openFileButton"));
+        openFileButton->setGeometry(QRect(280, 460, 101, 31));
+        openFileButton->setStyleSheet(QLatin1String(" QPushButton { \n"
+"background-color: #434A54;\n"
+"color: \"#ffffff\"; \n"
+"border-radius: 10px;\n"
+"font-weight: bold;\n"
+"border: none; \n"
+"}\n"
+" QPushButton:pressed {\n"
+"     background-color: #656D78\n"
+" }"));
         newMission = new QPushButton(MissionRecap);
         newMission->setObjectName(QStringLiteral("newMission"));
         newMission->setGeometry(QRect(670, 610, 151, 41));
@@ -274,6 +288,7 @@ public:
         pushButton->setText(QApplication::translate("MissionRecap", "Save", 0));
         playButton->setText(QApplication::translate("MissionRecap", "Play", 0));
         stopButton->setText(QApplication::translate("MissionRecap", "Stop", 0));
+        openFileButton->setText(QApplication::translate("MissionRecap", "Open File", 0));
         newMission->setText(QApplication::translate("MissionRecap", "New Mission", 0));
         redoMission->setText(QApplication::translate("MissionRecap", "Redo Mission", 0));
         replayMission->setText(QApplication::translate("MissionRecap", "Replay Mission", 0));

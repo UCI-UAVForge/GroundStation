@@ -330,6 +330,31 @@ border: none;
      <string>Stop</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="openFileButton">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>460</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> QPushButton { 
+background-color: #434A54;
+color: &quot;#ffffff&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #656D78
+ }</string>
+    </property>
+    <property name="text">
+     <string>Open File</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QPushButton" name="newMission">
    <property name="geometry">

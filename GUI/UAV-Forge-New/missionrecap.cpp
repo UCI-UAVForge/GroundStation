@@ -2,7 +2,7 @@
 #include "ui_missionrecap.h"
 #include "mapexecution.h"
 #include "mainwindow.h"
-
+#include <iostream>
 MissionRecap::MissionRecap(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MissionRecap)
@@ -43,5 +43,14 @@ void MissionRecap::on_playButton_clicked()
 
 void MissionRecap::on_stopButton_clicked()
 {
+
+
     mediaPlayer.stop();
+}
+
+void MissionRecap::on_openFileButton_clicked()
+{
+
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open Movie"),QDir::homePath());
+    mediaPlayer.setMedia(QUrl::fromLocalFile(fileName));
 }
