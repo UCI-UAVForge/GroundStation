@@ -92,7 +92,7 @@ void mapexecution::addPoint(QString string){
 }
 
 void mapexecution::push_new_point(QString string){
-   Qlist<Qstring> points = string.split(",");
+   QList<QString> points = string.split(",");
 
 }
 
@@ -108,7 +108,7 @@ void mapexecution::addClickListener() {
 }
 
 void mapexecution::addNewMap(){
-    /*  Function called by the JavaScript
+    /*  Function called by the JavaScript to add map
     */
     setMap(mapStrings);
 }

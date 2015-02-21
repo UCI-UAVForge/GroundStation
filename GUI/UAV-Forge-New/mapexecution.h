@@ -18,6 +18,7 @@ public:
     explicit mapexecution(QList<QString> strings, QWidget *parent = 0);
     explicit mapexecution(QWidget *parent = 0);
     QList<QString> mapStrings;
+    void plotPosition(double lat, double lng);
     ~mapexecution();
 private slots:
     void finishClicked();
