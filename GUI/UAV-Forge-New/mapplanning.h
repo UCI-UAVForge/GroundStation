@@ -21,6 +21,7 @@ class MapPlanning : public QDialog
 public:
     void updateMap();
     QList<QString> getTableAsStrings();
+    explicit MapPlanning(QList<QString> mapStrings,QWidget *parent = 0);
     explicit MapPlanning(QWidget *parent = 0);
     ~MapPlanning();
 
@@ -39,6 +40,7 @@ private slots:
 
     void addClickListener();
     //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame().
+    void closeWindow();
 
 private:
     Ui::MapPlanning *ui;

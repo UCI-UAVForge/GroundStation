@@ -5,6 +5,16 @@
 #include "mainwindow.h"
 #include <QWebFrame>
 
+mapexecution::mapexecution(QList<QString> strings, QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::mapexecution)
+{
+    ui->setupUi(this);
+    mapStrings = strings;
+    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
+    ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
+}
+
 mapexecution::mapexecution(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::mapexecution)
@@ -93,11 +103,14 @@ void mapexecution::addClickListener() {
 }
 
 void mapexecution::addNewMap(){
-    /*  Test function used to add points to the mission execution map.
-    Delete later.
+    /*  Function called by the JavaScript
     */
-    QList<QString> newMap;
-    newMap<<"Action 1,50,W,40,N,Behavior 1"<<"Action 1,55,W,42,N,Behavior 1";
-    setMap(newMap);
+    setMap(mapStrings);
+}
+
+void mapexecution::plotPosition(double lat, double lng){
+    /*  Sends a (latitude,longitude) pair to the map to be plotted.
+    Used for telemetry. */
+    ui->webView->page()->mainFrame()->evaluateJavaScript("addActualPath("+QString::number(lat)+","+QString::number(lng)+")");
 }
 
