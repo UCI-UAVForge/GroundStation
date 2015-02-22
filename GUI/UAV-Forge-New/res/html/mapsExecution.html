@@ -23,7 +23,7 @@
             //Actual flight path of the UAV, Constructed from data Recieved from UAV/test machine
             var flightPath_actual;
 
-            var clickable = false;
+            //var clickable = false;
 
             function addLatLng(myLocation) {
             //Adds a new point to the flightpath by pushing the myLocation tuple to the list.
@@ -33,11 +33,11 @@
             //Adds a point to the actual flight path of the UAV to track differences from planned route
             // -Nbrannon
             function add_actual_loc(myLocation){
-                flightPath_actual.getPath.push(myLocation);
+                flightPath_actual.getPath().push(myLocation);
             }
 
-            function addAcutalPath(lat, lng){
-                var location = new.google.maps.LatLng(lat, lng);
+            function addActualPath(lat, lng){
+                var location = new google.maps.LatLng(lat,lng);
                 add_actual_loc(location);
                 //move_icon)();
             }
@@ -65,6 +65,34 @@
                 map.setZoom(zoom);
             }
 
+
+
+            //-------------------
+            //Test code to see the table's ability to update. Fun for now. Delete later.
+            // Jordan Feb 21 2015
+
+            var simx = -117.8;
+            var simy = 33.6;
+
+            function simulateInput(){
+                if(flightPath.getPath().getAt(0)){
+                    simx = flightPath.getPath().getAt(0).lng();
+                    simy = flightPath.getPath().getAt(0).lat();
+                }
+                simuInput = setInterval(disturbPath,1000);
+            }
+
+            function disturbPath(){
+                simx = simx + 0.001;
+                simy = simy + 0.0015;
+                addActualPath(simy,simx);
+            }
+
+            // End of Test Code
+            //-----------------
+
+
+
             //function move_icon(myLocation){
             //Recieveing
 
@@ -80,7 +108,7 @@
                 map = new google.maps.Map(mapCanvas, mapOptions);
 
                 var startingPath=[uci];
-                flightPath=new google.maps.Polyline({
+                flightPath = new google.maps.Polyline({
                         //path:startingPath,
                         strokeColor:"#0000FF",
                         strokeOpacity:0.8,

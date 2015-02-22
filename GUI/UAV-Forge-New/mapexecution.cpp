@@ -93,7 +93,6 @@ void mapexecution::addPoint(QString string){
 
 void mapexecution::push_new_point(QString string){
    QList<QString> points = string.split(",");
-
 }
 
 void mapexecution::addClickListener() {
@@ -108,9 +107,11 @@ void mapexecution::addClickListener() {
 }
 
 void mapexecution::addNewMap(){
-    /*  Function called by the JavaScript to add map
-    */
+    /*  Function called by the JavaScript to add the map data from mission planning.
+    This is necessary because data cannot be added until the html file is completely
+    loaded. Jordan 2/21/2015 */
     setMap(mapStrings);
+    ui->webView->page()->mainFrame()->evaluateJavaScript("simulateInput()");
 }
 
 void mapexecution::plotPosition(double lat, double lng){
@@ -118,4 +119,3 @@ void mapexecution::plotPosition(double lat, double lng){
     Used for telemetry. */
     ui->webView->page()->mainFrame()->evaluateJavaScript("addActualPath("+QString::number(lat)+","+QString::number(lng)+")");
 }
-
