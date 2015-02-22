@@ -3,6 +3,7 @@
 #include "missionrecap.h"
 #include "options.h"
 #include "mainwindow.h"
+#include "uavcon.h"
 #include <QWebFrame>
 
 mapexecution::mapexecution(QList<QString> strings, QWidget *parent) :
@@ -13,6 +14,9 @@ mapexecution::mapexecution(QList<QString> strings, QWidget *parent) :
     mapStrings = strings;
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
     ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
+    GsClient my_client;
+        my_client.connect_start();
+    GsServer my_server;
 }
 
 mapexecution::mapexecution(QWidget *parent) :

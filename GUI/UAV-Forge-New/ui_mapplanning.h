@@ -123,7 +123,6 @@ public:
 " }"));
 
         retranslateUi(MapPlanning);
-        QObject::connect(pushButton_7, SIGNAL(clicked()), MapPlanning, SLOT(on_pushButton_7_clicked()));
 
         QMetaObject::connectSlotsByName(MapPlanning);
     } // setupUi
