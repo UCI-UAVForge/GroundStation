@@ -31,6 +31,8 @@ public:
     QPushButton *pushButton_7;
     QPushButton *pushButton_8;
     QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
 
     void setupUi(QDialog *MapPlanning)
     {
@@ -121,9 +123,14 @@ public:
 " QPushButton:pressed {\n"
 "     background-color: #E6E9ED\n"
 " }"));
+        pushButton_2 = new QPushButton(MapPlanning);
+        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButton_2->setGeometry(QRect(590, 520, 75, 23));
+        pushButton_3 = new QPushButton(MapPlanning);
+        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButton_3->setGeometry(QRect(590, 560, 75, 23));
 
         retranslateUi(MapPlanning);
-        QObject::connect(pushButton_7, SIGNAL(clicked()), MapPlanning, SLOT(on_pushButton_7_clicked()));
 
         QMetaObject::connectSlotsByName(MapPlanning);
     } // setupUi
@@ -136,6 +143,8 @@ public:
         pushButton_7->setText(QApplication::translate("MapPlanning", "-", 0));
         pushButton_8->setText(QApplication::translate("MapPlanning", "Update Table", 0));
         pushButton->setText(QApplication::translate("MapPlanning", "Back", 0));
+        pushButton_2->setText(QApplication::translate("MapPlanning", "Clear Table", 0));
+        pushButton_3->setText(QApplication::translate("MapPlanning", "Clear Map", 0));
     } // retranslateUi
 
 };

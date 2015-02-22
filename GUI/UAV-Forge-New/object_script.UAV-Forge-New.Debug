@@ -9,6 +9,7 @@ INPUT(
 ./debug\tutorial.o
 ./debug\popwindowmp.o
 ./debug\qcomboboxdelegate.o
+./debug\videoplayer.o
 ./debug\qrc_Resources.o
 ./debug\moc_mainwindow.o
 ./debug\moc_options.o
@@ -19,4 +20,5 @@ INPUT(
 ./debug\moc_tutorial.o
 ./debug\moc_popwindowmp.o
 ./debug\moc_qcomboboxdelegate.o
+./debug\moc_videoplayer.o
 );

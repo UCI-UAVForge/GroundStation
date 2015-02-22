@@ -38,31 +38,48 @@ void MapPlanning::addClickListener() {
 
 }
 
-void MapPlanning::on_pushButton_6_clicked() {
+void MapPlanning::on_pushButton_6_clicked() {   // execute button
     popup = new PopWindowMP(getTableAsStrings());
     connect(popup,SIGNAL(windowClosed()),this,SLOT(closeWindow()));
     popup->show();
 }
 
-void MapPlanning::on_pushButton_5_clicked() {
+void MapPlanning::on_pushButton_5_clicked() {    // + button
     model->insertRow();
 }
 
-
-void MapPlanning::on_pushButton_7_clicked() {
+//everytime a row is removed it updates the map, let's add an update button instead
+void MapPlanning::on_pushButton_7_clicked() {   // - button
     QModelIndexList indexes = ui->tableView->selectionModel()->selectedIndexes();
     model->removeRows(indexes);
     updateMap();
 }
 
-void MapPlanning::on_pushButton_8_clicked() {
+void MapPlanning::on_pushButton_8_clicked() {    // update buttun
      updateMap();
 }
 
-void MapPlanning::on_pushButton_clicked() {
+void MapPlanning::on_pushButton_clicked() {     // back button
     MainWindow *mainwindow = new MainWindow();
     this -> close();
     mainwindow->show();
+}
+
+void MapPlanning::on_pushButton_2_clicked() {   // clear table button
+    /* Clears all the rows in the table
+     * Arash
+     */
+    model = new TableModel();
+    ui->tableView->setModel(model);
+    ui->tableView->setItemDelegate(new QComboBoxDelegate());
+}
+
+void MapPlanning::on_pushButton_3_clicked() {   //clear map button
+    /* Clears the map
+     * Arash
+     */
+     ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
+     ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
 }
 
 void MapPlanning::updateMap() {
@@ -98,7 +115,8 @@ QList<QString> MapPlanning::getTableAsStrings(){
 
     QList<QString> output;
     QList<QList<QString> > table = model->getList();
-    for(QList<QString> row : table){
+    for(int i = 0;i < table.length();i++) {
+        QList<QString> row = table[i];
         QString formattedRow;
         for(int i = 0; i < row.length(); i++){
             if (i == 0){
@@ -110,6 +128,34 @@ QList<QString> MapPlanning::getTableAsStrings(){
         output<<formattedRow;
     }
     return output;
+}
+
+QList<QList<QString> > MapPlanning::getTableData(){
+    /* A function to get the data of the table and send it to database.
+     * This function iterates through each row, gets each string, cancatinates them
+     * and appends them to a new list(tableData list). Returns  [[strings],[strings]...]
+     * Arash
+     * Overlapped with Jordan's getTabelAsStrings function
+     */
+
+    for (int i = 0; i < model->getList().size(); i++){
+
+        QList<QString> tableRow = model->getList()[i];
+
+        QString action = tableRow[0];
+        QString lng = tableRow[1];
+        QString eastWest = tableRow[2];
+        QString lat = tableRow[3];
+        QString northSouth = tableRow[4];
+        QString behavior = tableRow[5];
+
+        QList<QString> rowString;
+        rowString<<action<<lng<<eastWest<<lat<<northSouth<<behavior;
+
+        tableData.append(rowString);
+
+    }
+    return tableData;
 }
 
 void MapPlanning::closeWindow(){

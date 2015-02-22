@@ -36,10 +36,14 @@ private slots:
     void on_pushButton_7_clicked();
     void on_pushButton_8_clicked();
     void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
+    void on_pushButton_3_clicked();
 
     void addClickListener();
     //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame().
     void closeWindow();
+
+    QList<QList<QString> > getTableData();
 
 private:
     Ui::MapPlanning *ui;
@@ -47,6 +51,7 @@ private:
     QPushButton *del;
     TableModel *model;
     PopWindowMP *popup;
+    QList<QList<QString> > tableData;
 };
 
 #endif // MAPPLANNING_H
