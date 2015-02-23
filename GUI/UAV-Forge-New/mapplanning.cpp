@@ -66,7 +66,7 @@ void MapPlanning::on_pushButton_clicked() {     // back button
 }
 
 void MapPlanning::on_pushButton_2_clicked() {   // clear table button
-    /* Clears all the rows in the table
+    /* Clears all the rows in the table, basically makes a new table
      * Arash
      */
     model = new TableModel();
@@ -78,7 +78,7 @@ void MapPlanning::on_pushButton_3_clicked() {   //clear map button
     /* Clears the map
      * Arash
      */
-     ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
+     //ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
      ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
 }
 

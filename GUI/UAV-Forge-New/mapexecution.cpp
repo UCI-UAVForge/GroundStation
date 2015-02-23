@@ -38,8 +38,11 @@ void mapexecution::finishClicked()
 }
 
 void mapexecution::returnHomeClicked()
+/* would not return back to home, it is now fixed. Arash */
 {
-    this->close();
+    MainWindow *mainwindow = new MainWindow();
+    this -> close();
+    mainwindow->show();
 }
 
 void mapexecution::cancelClicked()
