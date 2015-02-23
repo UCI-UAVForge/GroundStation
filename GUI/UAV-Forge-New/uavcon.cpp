@@ -10,7 +10,7 @@ GsServer::GsServer()
 
 int GsServer::connect_start(){
     if(!net::InitializeSockets()){
-        std:cout << "failed to initialize sockets" << std::endl;
+        std::cout << "failed to initialize sockets" << std::endl;
         return 1;
     }
 
@@ -23,7 +23,7 @@ int GsServer::connect_start(){
 
     net::Socket socket;
 
-    if (!net::socket.Open(port)){
+    if (!socket.Open(port)){
         std::cout << "fialed to create socket!" << std::endl;
         return 1;
     }
@@ -35,9 +35,10 @@ int GsServer::connect_start(){
 void GsServer::recieve_message(){
     net::Address sender;
     unsigned char buffer[BUFSIZ];
-    int bytes_read = net::socket.Recieve(sender, buffer, sizeof(buffer));
-    if(!byte_read)
-        break;
+    int bytes_read = socket.Recieve(sender, buffer, sizeof(buffer));
+    if(!bytes_read)
+        std::cout << "No bytes to read";
+        //break;
     std::cout << sender.GetA(), sender.GetB(), sender.GetC(), sender.GetD(), buffer << std::endl;
 
 
@@ -57,9 +58,9 @@ int GsClient::connect_start(){
 //    unsigned int sendport = 30005;
 
     std::cout << "Enter address to send: ";
-    getline(cin, addressline);
+    getline(std::cin, addressLine);
     std::cout << "Enter port number to send to";
-    std::cin >> sendPort;
+    std::cin >> sendport;
 
     std::stringstream addressStream(addressLine);
 
@@ -70,11 +71,11 @@ int GsClient::connect_start(){
 
 
     for (int i = 0; i < 4; i++)
-        addressPartsInt[i] = std::stoi(addressParts[i]);
+        addressPartsInt[i] = std::atoi(addressParts[i]);
 
     // initialize socket layer
 
-    if (!InitializeSockets())
+    if (!net::InitializeSockets())
     {
         std::cout << "failed to initialize sockets" << std::endl;
         return 1;
@@ -89,7 +90,7 @@ int GsClient::connect_start(){
 
     std::cout << "creating socket on port" <<  port << std::endl;
 
-    Socket socket;
+    net::Socket socket;
 
     if (!socket.Open(port))
     {
@@ -104,10 +105,10 @@ int GsClient::connect_start(){
 void GsClient::send_message(){
     char data[BUFSIZ];
 
-    cin.getline(data , BUFSIZ);
+    std::cin.getline(data , BUFSIZ);
 
-    net::socket.Send(net::Address((addressPartsInt[0], addressPartsInt[1],
-                addressPartsInt[2], addressPartsInt[3], sendPort), data, sizeof(data)));
+    socket.Send(net::Address((addressPartsInt[0], addressPartsInt[1],
+                addressPartsInt[2], addressPartsInt[3], sendport), data, sizeof(data)));
 
 }
 
