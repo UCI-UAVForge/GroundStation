@@ -14,7 +14,7 @@ CC            = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefau
 CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 DEFINES       = -DQT_MULTIMEDIAWIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_WEBKITWIDGETS_LIB -DQT_WIDGETS_LIB -DQT_WEBKIT_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.7 -Wall -W -fPIE $(DEFINES)
-CXXFLAGS      = -pipe -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.7 -Wall -W -fPIE $(DEFINES)
+CXXFLAGS      = -pipe -v -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.7 -Wall -W -fPIE $(DEFINES)
 INCPATH       = -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I. -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Versions/5/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers -I. -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib
 QMAKE         = /Applications/Qt/5.4/clang_64/bin/qmake
 DEL_FILE      = rm -f
@@ -59,7 +59,8 @@ SOURCES       = main.cpp \
 		popwindowmp.cpp \
 		qcomboboxdelegate.cpp \
 		videoplayer.cpp \
-		uavcon.cpp qrc_Resources.cpp \
+		gsserver.cpp \
+		gsclient.cpp qrc_Resources.cpp \
 		moc_mainwindow.cpp \
 		moc_options.cpp \
 		moc_mapplanning.cpp \
@@ -81,7 +82,8 @@ OBJECTS       = main.o \
 		popwindowmp.o \
 		qcomboboxdelegate.o \
 		videoplayer.o \
-		uavcon.o \
+		gsserver.o \
+		gsclient.o \
 		qrc_Resources.o \
 		moc_mainwindow.o \
 		moc_options.o \
@@ -231,8 +233,9 @@ DIST          = /Applications/Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		popwindowmp.h \
 		qcomboboxdelegate.h \
 		videoplayer.h \
-		uavcon.h \
-		net.h main.cpp \
+		net.h \
+		gsserver.h \
+		gsclient.h main.cpp \
 		mainwindow.cpp \
 		options.cpp \
 		mapplanning.cpp \
@@ -243,7 +246,8 @@ DIST          = /Applications/Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		popwindowmp.cpp \
 		qcomboboxdelegate.cpp \
 		videoplayer.cpp \
-		uavcon.cpp
+		gsserver.cpp \
+		gsclient.cpp
 QMAKE_TARGET  = UAV-Forge-New
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = UAV-Forge-New.app/Contents/MacOS/UAV-Forge-New
@@ -592,8 +596,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents Resources.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h options.h mapplanning.h tablemodel.h mapexecution.h missionrecap.h tutorial.h popwindowmp.h qcomboboxdelegate.h videoplayer.h uavcon.h net.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp options.cpp mapplanning.cpp tablemodel.cpp mapexecution.cpp missionrecap.cpp tutorial.cpp popwindowmp.cpp qcomboboxdelegate.cpp videoplayer.cpp uavcon.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h options.h mapplanning.h tablemodel.h mapexecution.h missionrecap.h tutorial.h popwindowmp.h qcomboboxdelegate.h videoplayer.h net.h gsserver.h gsclient.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp options.cpp mapplanning.cpp tablemodel.cpp mapexecution.cpp missionrecap.cpp tutorial.cpp popwindowmp.cpp qcomboboxdelegate.cpp videoplayer.cpp gsserver.cpp gsclient.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui options.ui mapplanning.ui mapexecution.ui missionrecap.ui tutorial.ui popwindowmp.ui $(DISTDIR)/
 
 
@@ -970,7 +974,6 @@ mapexecution.o: mapexecution.cpp mapexecution.h \
 		mainwindow.h \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
-		uavcon.h \
 		net.h \
 		/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Versions/5/Headers/QWebFrame \
 		/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Versions/5/Headers/qwebframe.h
@@ -1043,9 +1046,13 @@ videoplayer.o: videoplayer.cpp videoplayer.h \
 		/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Versions/5/Headers/qmediaplayer.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o videoplayer.o videoplayer.cpp
 
-uavcon.o: uavcon.cpp uavcon.h \
+gsserver.o: gsserver.cpp gsserver.h \
 		net.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o uavcon.o uavcon.cpp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gsserver.o gsserver.cpp
+
+gsclient.o: gsclient.cpp gsclient.h \
+		net.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gsclient.o gsclient.cpp
 
 qrc_Resources.o: qrc_Resources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_Resources.o qrc_Resources.cpp

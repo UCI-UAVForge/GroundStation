@@ -2,6 +2,7 @@
 #define MAPEXECUTION_H
 
 #include <QWidget>
+//#include "uavcon.h"
 
 namespace Ui {
 class mapexecution;
@@ -20,6 +21,8 @@ public:
     QList<QString> mapStrings;
     void plotPosition(double lat, double lng);
     ~mapexecution();
+    //GsServer myServer;
+    //GsServer myClient;
 private slots:
     void finishClicked();
     void returnHomeClicked();

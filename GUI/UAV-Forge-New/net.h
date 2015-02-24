@@ -1,5 +1,7 @@
 #ifndef NET_H
 #define NET_H
+
+#pragma once
 /*
 This is the gafferon games example of the Net header file.
 We are using this because initializing ports, setting up addresses, sending/receiving etc.
@@ -10,32 +12,32 @@ Source: http://www.gaffer.org/networking-for-game-programmers
 
 // platform detection
 
-#define PLATFORM_WINDOWS  1
+//#define PLATFORM_WINDOWS  1
 #define PLATFORM_MAC      2
 #define PLATFORM_UNIX     3
 
 #if defined(_WIN32)
-#define PLATFORM PLAT FORM_WINDOWS
+#define PLATFORM PLATFORM_WINDOWS
 #elif defined(__APPLE__)
 #define PLATFORM PLATFORM_MAC
 #else
 #define PLATFORM PLATFORM_UNIX
 #endif
 
-#if PLATFORM == PLATFORM_WINDOWS
+/*#if PLATFORM == PLATFORM_WINDOWS
 #include <winsock2.h>
 #pragma comment( lib, "wsock32.lib" )
 #elif PLATFORM == PLATFORM_MAC || PLATFORM == PLATFORM_UNIX
-
+*/
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <fcntl.h>
 
-#else
+//#else
 
-#error unknown platform!
+//#error unknown platform!
 
-#endif
+//#endif
 
 #include <assert.h>
 #include <stdio.h>
@@ -44,39 +46,39 @@ namespace net
 {
     // platform independent wait for n seconds
 
-#if PLATFORM == PLATFORM_WINDOWS
+/*#if PLATFORM == PLATFORM_WINDOWS
 
     void wait(float seconds)
     {
         Sleep((int)(seconds * 1000.0f));
     }
 
-#else
+#else*/
 
 #include <unistd.h>
     void wait(float seconds) { usleep((int)(seconds * 1000000.0f)); }
 
-#endif
+//#endif
 
     // internet address
 
-    class Address
+    class GS_Address
     {
     public:
 
-        Address()
+        GS_Address()
         {
             address = 0;
             port = 0;
         }
 
-        Address(unsigned char a, unsigned char b, unsigned char c, unsigned char d, unsigned short port)
+        GS_Address(unsigned char a, unsigned char b, unsigned char c, unsigned char d, unsigned short port)
         {
             this->address = (a << 24) | (b << 16) | (c << 8) | d;
             this->port = port;
         }
 
-        Address(unsigned int address, unsigned short port)
+        GS_Address(unsigned int address, unsigned short port)
         {
             this->address = address;
             this->port = port;
@@ -112,12 +114,12 @@ namespace net
             return port;
         }
 
-        bool operator == (const Address & other) const
+        bool operator == (const GS_Address & other) const
         {
             return address == other.address && port == other.port;
         }
 
-        bool operator != (const Address & other) const
+        bool operator != (const GS_Address & other) const
         {
             return !(*this == other);
         }
@@ -132,31 +134,31 @@ namespace net
 
     inline bool InitializeSockets()
     {
-#if PLATFORM == PLATFORM_WINDOWS
+/*#if PLATFORM == PLATFORM_WINDOWS
         WSADATA WsaData;
         return WSAStartup(MAKEWORD(2, 2), &WsaData) == NO_ERROR;
 #else
-        return true;
-#endif
+*/        return true;
+//#endif
     }
 
     inline void ShutdownSockets()
     {
-#if PLATFORM == PLATFORM_WINDOWS
+/*#if PLATFORM == PLATFORM_WINDOWS
         WSACleanup();
-#endif
+#endif*/
     }
 
-    class Socket
+    class GS_Socket
     {
     public:
 
-        Socket()
+        GS_Socket()
         {
             socket = 0;
         }
 
-        ~Socket()
+        ~GS_Socket()
         {
             Close();
         }
@@ -202,7 +204,7 @@ namespace net
                 return false;
             }
 
-#elif PLATFORM == PLATFORM_WINDOWS
+/*#elif PLATFORM == PLATFORM_WINDOWS
 
             DWORD nonBlocking = 1;
             if (ioctlsocket(socket, FIONBIO, &nonBlocking) != 0)
@@ -211,7 +213,7 @@ namespace net
                 Close();
                 return false;
             }
-
+*/
 #endif
 
             return true;
@@ -223,9 +225,9 @@ namespace net
             {
 #if PLATFORM == PLATFORM_MAC || PLATFORM == PLATFORM_UNIX
                 close(socket);
-#elif PLATFORM == PLATFORM_WINDOWS
+/*#elif PLATFORM == PLATFORM_WINDOWS
                 closesocket(socket);
-#endif
+*/#endif
                 socket = 0;
             }
         }
@@ -235,7 +237,7 @@ namespace net
             return socket != 0;
         }
 
-        bool Send(const Address & destination, const void * data, int size)
+        bool Send(const GS_Address & destination, const void * data, int size)
         {
             assert(data);
             assert(size > 0);
@@ -253,7 +255,7 @@ namespace net
             return sent_bytes == size;
         }
 
-        int Receive(Address & sender, void * data, int size)
+        int Receive(GS_Address & sender, void * data, int size)
         {
             assert(data);
             assert(size > 0);
@@ -261,9 +263,9 @@ namespace net
             if (socket == 0)
                 return false;
 
-#if PLATFORM == PLATFORM_WINDOWS
+/*#if PLATFORM == PLATFORM_WINDOWS
             typedef int socklen_t;
-#endif
+#endif*/
 
             sockaddr_in from;
             socklen_t fromLength = sizeof(from);
@@ -276,7 +278,7 @@ namespace net
             unsigned int address = ntohl(from.sin_addr.s_addr);
             unsigned int port = ntohs(from.sin_port);
 
-            sender = Address(address, port);
+            sender = GS_Address(address, port);
 
             return received_bytes;
         }
