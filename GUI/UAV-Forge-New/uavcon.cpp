@@ -21,7 +21,7 @@ int GsServer::connect_start(){
 
     std::cout << "creating socket on port " << port << std::endl;
 
-    net::Socket socket;
+    //snet::Socket socket;
 
     if (!socket.Open(port)){
         std::cout << "fialed to create socket!" << std::endl;
@@ -35,11 +35,11 @@ int GsServer::connect_start(){
 void GsServer::recieve_message(){
     net::Address sender;
     unsigned char buffer[BUFSIZ];
-    int bytes_read = socket.Recieve(sender, buffer, sizeof(buffer));
+    int bytes_read = socket.Receive(sender, buffer, sizeof(buffer));
     if(!bytes_read)
         std::cout << "No bytes to read";
         //break;
-    std::cout << sender.GetA(), sender.GetB(), sender.GetC(), sender.GetD(), buffer << std::endl;
+    std::cout << sender.GetA() << sender.GetB() << sender.GetC() << sender.GetD() << buffer << std::endl;
 
 
 }
@@ -71,7 +71,7 @@ int GsClient::connect_start(){
 
 
     for (int i = 0; i < 4; i++)
-        addressPartsInt[i] = std::atoi(addressParts[i]);
+        addressPartsInt[i] = std::atoi(addressParts[i].c_str());
 
     // initialize socket layer
 
@@ -106,9 +106,10 @@ void GsClient::send_message(){
     char data[BUFSIZ];
 
     std::cin.getline(data , BUFSIZ);
+    net::Address myAddress = net::Address(addressPartsInt[0], addressPartsInt[1],
+            addressPartsInt[2], addressPartsInt[3], sendport);
 
-    socket.Send(net::Address((addressPartsInt[0], addressPartsInt[1],
-                addressPartsInt[2], addressPartsInt[3], sendport), data, sizeof(data)));
+    socket.Send(myAddress , data, sizeof(data));
 
 }
 

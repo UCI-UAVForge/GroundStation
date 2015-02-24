@@ -34,6 +34,7 @@ public:
 private:
      int addressPartsInt[4];
      unsigned int recieveport;
+     net::Socket socket;
 
 
 };
