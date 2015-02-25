@@ -1,0 +1,1 @@
+compile Client1.cpp with Net.h and everything in rapidjson folder
