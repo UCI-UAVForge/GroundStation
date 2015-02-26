@@ -64,3 +64,13 @@ void MapPlanning::on_pushButton_clicked()
     this -> close();
     mainwindow->show();
 }
+
+void MapPlanning::on_clearTable_clicked()
+{
+
+}
+
+void MapPlanning::on_clearMap_clicked()
+{
+
+}

@@ -43,14 +43,11 @@ void MissionRecap::on_playButton_clicked()
 
 void MissionRecap::on_stopButton_clicked()
 {
-
-
     mediaPlayer.stop();
 }
 
 void MissionRecap::on_openFileButton_clicked()
 {
-
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open Movie"),QDir::homePath());
     mediaPlayer.setMedia(QUrl::fromLocalFile(fileName));
 }

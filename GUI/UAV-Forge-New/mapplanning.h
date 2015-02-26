@@ -31,6 +31,10 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_clearTable_clicked();
+
+    void on_clearMap_clicked();
+
 private:
     Ui::MapPlanning *ui;
     QButtonGroup *buttonGroup;
