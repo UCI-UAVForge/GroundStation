@@ -20,6 +20,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -46,6 +47,7 @@ public:
     QAction *actionHELP_ME;
     QWidget *centralWidget;
     QHBoxLayout *horizontalLayout;
+    QTextBrowser *textBrowser;
     QWidget *widget;
     QVBoxLayout *verticalLayout_2;
     QPushButton *pushButton_9;
@@ -133,13 +135,24 @@ public:
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        widget = new QWidget(centralWidget);
-        widget->setObjectName(QStringLiteral("widget"));
-        QSizePolicy sizePolicy(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        textBrowser = new QTextBrowser(centralWidget);
+        textBrowser->setObjectName(QStringLiteral("textBrowser"));
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(widget->sizePolicy().hasHeightForWidth());
-        widget->setSizePolicy(sizePolicy);
+        sizePolicy.setHeightForWidth(textBrowser->sizePolicy().hasHeightForWidth());
+        textBrowser->setSizePolicy(sizePolicy);
+        textBrowser->setMinimumSize(QSize(300, 300));
+
+        horizontalLayout->addWidget(textBrowser);
+
+        widget = new QWidget(centralWidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Minimum);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(widget->sizePolicy().hasHeightForWidth());
+        widget->setSizePolicy(sizePolicy1);
         verticalLayout_2 = new QVBoxLayout(widget);
         verticalLayout_2->setSpacing(50);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -147,11 +160,8 @@ public:
         verticalLayout_2->setContentsMargins(-1, -1, 50, -1);
         pushButton_9 = new QPushButton(widget);
         pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
-        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(pushButton_9->sizePolicy().hasHeightForWidth());
-        pushButton_9->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(pushButton_9->sizePolicy().hasHeightForWidth());
+        pushButton_9->setSizePolicy(sizePolicy);
         pushButton_9->setMinimumSize(QSize(181, 81));
         pushButton_9->setMaximumSize(QSize(181, 81));
         pushButton_9->setSizeIncrement(QSize(0, 0));
@@ -224,8 +234,8 @@ public:
 
         widget_2 = new QWidget(centralWidget);
         widget_2->setObjectName(QStringLiteral("widget_2"));
-        sizePolicy.setHeightForWidth(widget_2->sizePolicy().hasHeightForWidth());
-        widget_2->setSizePolicy(sizePolicy);
+        sizePolicy1.setHeightForWidth(widget_2->sizePolicy().hasHeightForWidth());
+        widget_2->setSizePolicy(sizePolicy1);
         widget_2->setMinimumSize(QSize(0, 0));
         verticalLayout_3 = new QVBoxLayout(widget_2);
         verticalLayout_3->setSpacing(50);
@@ -234,8 +244,8 @@ public:
         verticalLayout_3->setContentsMargins(50, -1, -1, -1);
         pushButton_8 = new QPushButton(widget_2);
         pushButton_8->setObjectName(QStringLiteral("pushButton_8"));
-        sizePolicy1.setHeightForWidth(pushButton_8->sizePolicy().hasHeightForWidth());
-        pushButton_8->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(pushButton_8->sizePolicy().hasHeightForWidth());
+        pushButton_8->setSizePolicy(sizePolicy);
         pushButton_8->setMinimumSize(QSize(181, 81));
         pushButton_8->setMaximumSize(QSize(181, 81));
         pushButton_8->setStyleSheet(QLatin1String(" QPushButton { \n"
@@ -253,8 +263,8 @@ public:
 
         pushButton_6 = new QPushButton(widget_2);
         pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        sizePolicy1.setHeightForWidth(pushButton_6->sizePolicy().hasHeightForWidth());
-        pushButton_6->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(pushButton_6->sizePolicy().hasHeightForWidth());
+        pushButton_6->setSizePolicy(sizePolicy);
         pushButton_6->setMinimumSize(QSize(181, 81));
         pushButton_6->setMaximumSize(QSize(181, 81));
         pushButton_6->setStyleSheet(QLatin1String(" QPushButton { \n"
