@@ -259,7 +259,7 @@
     <property name="geometry">
      <rect>
       <x>650</x>
-      <y>460</y>
+      <y>470</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -284,7 +284,7 @@ border: none;
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>460</y>
+      <y>470</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -302,14 +302,14 @@ border: none;
  }</string>
     </property>
     <property name="text">
-     <string>Play</string>
+     <string>Play/Pause</string>
     </property>
    </widget>
    <widget class="QPushButton" name="stopButton">
     <property name="geometry">
      <rect>
       <x>530</x>
-      <y>460</y>
+      <y>470</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -353,6 +353,25 @@ border: none;
     </property>
     <property name="text">
      <string>Open File</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>448</y>
+      <width>341</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBothSides</enum>
+    </property>
+    <property name="tickInterval">
+     <number>25</number>
     </property>
    </widget>
   </widget>

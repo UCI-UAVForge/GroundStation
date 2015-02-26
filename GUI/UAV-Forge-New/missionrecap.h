@@ -32,6 +32,8 @@ private slots:
 
     void on_openFileButton_clicked();
 
+    void on_horizontalSlider_sliderPressed();
+
 private:
     Ui::MissionRecap *ui;
     QMediaPlayer mediaPlayer;

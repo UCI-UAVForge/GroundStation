@@ -14,6 +14,8 @@ MissionRecap::MissionRecap(QWidget *parent) :
     //mediaPlayer.setMedia(QUrl(fileName));
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open Movie"),QDir::homePath());
     mediaPlayer.setMedia(QUrl::fromLocalFile(fileName));
+    ui->VideoWidget->setAspectRatioMode(Qt::IgnoreAspectRatio);
+    //ui->horizontalSlider->setRange(0, mediaPlayer.duration()/1000);
 }
 
 MissionRecap::~MissionRecap()
@@ -38,19 +40,24 @@ void MissionRecap::on_backButton_clicked()
 
 void MissionRecap::on_playButton_clicked()
 {
-    mediaPlayer.play();
+    if(mediaPlayer.state() == QMediaPlayer::PlayingState)
+        mediaPlayer.pause();
+    else
+        mediaPlayer.play();
 }
 
 void MissionRecap::on_stopButton_clicked()
 {
-
-
     mediaPlayer.stop();
 }
 
 void MissionRecap::on_openFileButton_clicked()
 {
-
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open Movie"),QDir::homePath());
     mediaPlayer.setMedia(QUrl::fromLocalFile(fileName));
+}
+
+void MissionRecap::on_horizontalSlider_sliderPressed()
+{
+    this->close();
 }

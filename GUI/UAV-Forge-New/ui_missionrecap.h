@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'missionrecap.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.2
+** Created by: Qt User Interface Compiler version 5.4.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -17,6 +17,7 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSlider>
 #include <QtWidgets/QWidget>
 #include <qvideowidget.h>
 
@@ -38,6 +39,7 @@ public:
     QPushButton *playButton;
     QPushButton *stopButton;
     QPushButton *openFileButton;
+    QSlider *horizontalSlider;
     QPushButton *newMission;
     QPushButton *redoMission;
     QPushButton *replayMission;
@@ -139,7 +141,7 @@ public:
         frame_5->setFrameShadow(QFrame::Raised);
         pushButton = new QPushButton(frame_5);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(650, 460, 101, 31));
+        pushButton->setGeometry(QRect(650, 470, 101, 31));
         pushButton->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: #434A54;\n"
 "color: \"#ffffff\"; \n"
@@ -152,7 +154,7 @@ public:
 " }"));
         playButton = new QPushButton(frame_5);
         playButton->setObjectName(QStringLiteral("playButton"));
-        playButton->setGeometry(QRect(410, 460, 101, 31));
+        playButton->setGeometry(QRect(410, 470, 101, 31));
         playButton->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: #434A54;\n"
 "color: \"#ffffff\"; \n"
@@ -165,7 +167,7 @@ public:
 " }"));
         stopButton = new QPushButton(frame_5);
         stopButton->setObjectName(QStringLiteral("stopButton"));
-        stopButton->setGeometry(QRect(530, 460, 101, 31));
+        stopButton->setGeometry(QRect(530, 470, 101, 31));
         stopButton->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: #434A54;\n"
 "color: \"#ffffff\"; \n"
@@ -189,6 +191,12 @@ public:
 " QPushButton:pressed {\n"
 "     background-color: #656D78\n"
 " }"));
+        horizontalSlider = new QSlider(frame_5);
+        horizontalSlider->setObjectName(QStringLiteral("horizontalSlider"));
+        horizontalSlider->setGeometry(QRect(410, 448, 341, 21));
+        horizontalSlider->setOrientation(Qt::Horizontal);
+        horizontalSlider->setTickPosition(QSlider::TicksBothSides);
+        horizontalSlider->setTickInterval(25);
         newMission = new QPushButton(MissionRecap);
         newMission->setObjectName(QStringLiteral("newMission"));
         newMission->setGeometry(QRect(670, 610, 151, 41));
@@ -286,7 +294,7 @@ public:
         plainTextEdit_2->setPlainText(QApplication::translate("MissionRecap", "         Graphical Representation of Results", 0));
         plainTextEdit_3->setPlainText(QApplication::translate("MissionRecap", "                                Text Results", 0));
         pushButton->setText(QApplication::translate("MissionRecap", "Save", 0));
-        playButton->setText(QApplication::translate("MissionRecap", "Play", 0));
+        playButton->setText(QApplication::translate("MissionRecap", "Play/Pause", 0));
         stopButton->setText(QApplication::translate("MissionRecap", "Stop", 0));
         openFileButton->setText(QApplication::translate("MissionRecap", "Open File", 0));
         newMission->setText(QApplication::translate("MissionRecap", "New Mission", 0));
