@@ -170,10 +170,10 @@ int main(int argc, char * argv[])
 
 	// create socket
 
-	int port = 30000;
+	int port = 30001;
 
-	cout << "Enter port number to open: ";
-	cin >> port;
+	//cout << "Enter port number to open: ";
+	//cin >> port;
 
 	printf("creating socket on port %d\n", port);
 
@@ -191,18 +191,25 @@ int main(int argc, char * argv[])
 	for (i = 0; i < sendLen; i++)
 		to_send_c[i] = to_send[i];
 	to_send_c[i] = '\0';
-	while (true)
+	char buffer[256];
+	int recvBytes = 0;
+
+	while (recvBytes == 0)
 	{
 		//char data[256];
 
 		//cin.getline(data, 256);
 		Address addra = Address(addressPartsInt[0], addressPartsInt[1], addressPartsInt[2], addressPartsInt[3], sendPort);
+		Address sender;
 
+		recvBytes = socket.Receive(sender, buffer, sizeof(buffer));
 		socket.Send(addra, to_send_c, sizeof(to_send_c));
+
 
 
 		wait(0.25f);
 	}
+	std::cout << " \"UAV\" received coordinates" << std::endl;
 
 
 	// shutdown socket layer
