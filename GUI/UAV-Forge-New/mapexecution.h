@@ -2,7 +2,8 @@
 #define MAPEXECUTION_H
 
 #include <QWidget>
-//#include "uavcon.h"
+#include "gsclient.h"
+#include "gsserver.h"
 
 namespace Ui {
 class mapexecution;
@@ -22,7 +23,7 @@ public:
     void plotPosition(double lat, double lng);
     ~mapexecution();
     //GsServer myServer;
-    //GsServer myClient;
+    GsClient myClient;
 private slots:
     void finishClicked();
     void returnHomeClicked();

@@ -974,7 +974,9 @@ mapexecution.o: mapexecution.cpp mapexecution.h \
 		mainwindow.h \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
+		gsclient.h \
 		net.h \
+		gsserver.h \
 		/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Versions/5/Headers/QWebFrame \
 		/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Versions/5/Headers/qwebframe.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mapexecution.o mapexecution.cpp

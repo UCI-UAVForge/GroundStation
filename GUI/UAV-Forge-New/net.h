@@ -1,7 +1,7 @@
 #ifndef NET_H
 #define NET_H
 
-#pragma once
+//#pragma once
 /*
 This is the gafferon games example of the Net header file.
 We are using this because initializing ports, setting up addresses, sending/receiving etc.
@@ -12,7 +12,7 @@ Source: http://www.gaffer.org/networking-for-game-programmers
 
 // platform detection
 
-//#define PLATFORM_WINDOWS  1
+#define PLATFORM_WINDOWS  1
 #define PLATFORM_MAC      2
 #define PLATFORM_UNIX     3
 
@@ -24,20 +24,20 @@ Source: http://www.gaffer.org/networking-for-game-programmers
 #define PLATFORM PLATFORM_UNIX
 #endif
 
-/*#if PLATFORM == PLATFORM_WINDOWS
+#if PLATFORM == PLATFORM_WINDOWS
 #include <winsock2.h>
 #pragma comment( lib, "wsock32.lib" )
 #elif PLATFORM == PLATFORM_MAC || PLATFORM == PLATFORM_UNIX
-*/
+
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <fcntl.h>
 
-//#else
+#else
 
-//#error unknown platform!
+#error unknown platform!
 
-//#endif
+#endif
 
 #include <assert.h>
 #include <stdio.h>
@@ -46,19 +46,19 @@ namespace net
 {
     // platform independent wait for n seconds
 
-/*#if PLATFORM == PLATFORM_WINDOWS
+#if PLATFORM == PLATFORM_WINDOWS
 
-    void wait(float seconds)
+    /*void wait(float seconds)
     {
         Sleep((int)(seconds * 1000.0f));
-    }
+    }*/
 
-#else*/
+#else
 
 #include <unistd.h>
-    void wait(float seconds) { usleep((int)(seconds * 1000000.0f)); }
+    //void wait(float seconds) { usleep((int)(seconds * 1000000.0f)); }
 
-//#endif
+#endif
 
     // internet address
 
@@ -134,19 +134,19 @@ namespace net
 
     inline bool InitializeSockets()
     {
-/*#if PLATFORM == PLATFORM_WINDOWS
+#if PLATFORM == PLATFORM_WINDOWS
         WSADATA WsaData;
         return WSAStartup(MAKEWORD(2, 2), &WsaData) == NO_ERROR;
 #else
-*/        return true;
-//#endif
+        return true;
+#endif
     }
 
     inline void ShutdownSockets()
     {
-/*#if PLATFORM == PLATFORM_WINDOWS
+#if PLATFORM == PLATFORM_WINDOWS
         WSACleanup();
-#endif*/
+#endif
     }
 
     class GS_Socket
@@ -204,7 +204,7 @@ namespace net
                 return false;
             }
 
-/*#elif PLATFORM == PLATFORM_WINDOWS
+#elif PLATFORM == PLATFORM_WINDOWS
 
             DWORD nonBlocking = 1;
             if (ioctlsocket(socket, FIONBIO, &nonBlocking) != 0)
@@ -213,7 +213,6 @@ namespace net
                 Close();
                 return false;
             }
-*/
 #endif
 
             return true;
@@ -225,9 +224,9 @@ namespace net
             {
 #if PLATFORM == PLATFORM_MAC || PLATFORM == PLATFORM_UNIX
                 close(socket);
-/*#elif PLATFORM == PLATFORM_WINDOWS
+#elif PLATFORM == PLATFORM_WINDOWS
                 closesocket(socket);
-*/#endif
+#endif
                 socket = 0;
             }
         }
@@ -263,9 +262,9 @@ namespace net
             if (socket == 0)
                 return false;
 
-/*#if PLATFORM == PLATFORM_WINDOWS
+#if PLATFORM == PLATFORM_WINDOWS
             typedef int socklen_t;
-#endif*/
+#endif
 
             sockaddr_in from;
             socklen_t fromLength = sizeof(from);

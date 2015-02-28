@@ -8,6 +8,7 @@ QT       += core gui multimedia multimediawidgets
 QT       += webkit webkitwidgets
 QMAKE_CXXFLAGS += -v
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+CONFIG += console
 
 TARGET = UAV-Forge-New
 TEMPLATE = app

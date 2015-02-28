@@ -16,7 +16,8 @@ mapexecution::mapexecution(QList<QString> strings, QWidget *parent) :
     mapStrings = strings;
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
     ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
-    //myClient.connect_start();
+    myClient.gsc_connect_start();
+    myClient.gsc_send_message();
 }
 
 mapexecution::mapexecution(QWidget *parent) :
