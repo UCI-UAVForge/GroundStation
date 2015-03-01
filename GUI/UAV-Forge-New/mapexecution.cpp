@@ -7,6 +7,8 @@
 #include "gsclient.h"
 #include "gsserver.h"
 #include <QWebFrame>
+#include <QPair>
+#include <QList>
 
 mapexecution::mapexecution(QList<QString> strings, QWidget *parent) :
     QWidget(parent),
@@ -16,8 +18,15 @@ mapexecution::mapexecution(QList<QString> strings, QWidget *parent) :
     mapStrings = strings;
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
     ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
+    std::cout<<"PREPARE" << std::endl;
+    QList <QPair<double, double > > h;
+    h << QPair<double, double >(32, 32);
+    myClient.set_list(getDoublePairs(mapStrings));
+    std::cout<<"FOR" << std::endl;
     myClient.gsc_connect_start();
+    std::cout<<"THE DEVOURING," << std::endl;
     myClient.gsc_send_message();
+    std::cout<<"PUNY HUMANS" << std::endl;
 }
 
 mapexecution::mapexecution(QWidget *parent) :
@@ -72,6 +81,29 @@ void mapexecution::setMap(QList<QString> list) {
     for(int i = 0; i < list.length(); i++){
         addPoint(list[i]);
     }
+}
+
+QList<QPair<double,double> > mapexecution::getDoublePairs(QList<QString> strings){
+    QList<QPair<double,double> > returnList;
+    int i = 0;
+    for(QString string: strings){
+        QList<QString> comps = string.split(",");
+
+        //Converts West and South coordinates to negative numbers.
+        double lat = comps[3].toDouble();
+        double lng = comps[1].toDouble();
+        if(comps[2] == "W"){
+            lng *= -1.0;
+        }
+        if(comps[4] == "S"){
+            lat *= -1.0;
+        }
+
+        returnList.append(QPair<double,double>(lat,lng));
+    }
+
+    return returnList;
+
 }
 
 void mapexecution::addPoint(QString string){

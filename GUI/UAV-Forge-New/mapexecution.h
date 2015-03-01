@@ -24,6 +24,7 @@ public:
     ~mapexecution();
     //GsServer myServer;
     GsClient myClient;
+    QList<QPair<double,double> > getDoublePairs(QList<QString> strings);
 private slots:
     void finishClicked();
     void returnHomeClicked();

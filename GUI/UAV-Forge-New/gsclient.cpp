@@ -1,5 +1,69 @@
 #include "gsclient.h"
+#include <QQueue>
 
+using namespace std;
+using namespace net;
+
+using namespace rapidjson;
+
+struct Msg{
+    std::string  userName;
+    std::string  msg;
+};
+
+struct Coordinates{
+    double latitude;
+    double longitude;
+};
+
+class jsonObj{
+public:
+    jsonObj();
+    void addCoordinate(struct Coordinates);
+
+    std::string coordinatesExtractString();
+
+private:
+    std::vector<std::string> varName;
+    std::vector<std::string> value;
+    std::vector<double> latitude;
+    std::vector<double> longitude;
+};
+
+jsonObj::jsonObj(){
+}
+
+
+void jsonObj::addCoordinate(struct Coordinates coordinate)
+{
+    latitude.push_back(coordinate.latitude);
+    longitude.push_back(coordinate.longitude);
+}
+
+
+std::string jsonObj::coordinatesExtractString() {
+    std::string jsonMsg;
+    std::stringstream ss;
+    int varSize = latitude.size();
+    jsonMsg.append("[");
+    for (int i = 0; i < varSize; i++)
+    {
+        jsonMsg.append("{\"latitude\":");
+        ss << latitude[i];
+//        std::string lat = std::to_string(latitude[i]);
+
+        jsonMsg.append(ss.str());
+        jsonMsg.append(" , \"longitude\":");
+//        std::string lon = std::to_string(longitude[i]);
+        ss.str("");
+        ss << longitude[i];
+        jsonMsg.append(ss.str() + "},");
+        ss.str("");
+    }
+    jsonMsg.erase(jsonMsg.length() - 1); //gets rid of the last comma
+    jsonMsg.append("]");
+    return jsonMsg;
+}
 
 GsClient::GsClient()
     :sendport(30005){
@@ -9,9 +73,52 @@ GsClient::GsClient()
     std::cout << "Please dont devour my mortal soul" << std::endl;
 }
 
+
+void GsClient::set_list(QList<QPair<double , double > > cl){
+    cor_list = cl;
+}
+
+
+void GsClient::getCoordinates(QList<QPair<double, double> > cl){
+
+    QQueue<Coordinates> cor_queue;
+    jsonObj coordJ;
+
+    Coordinates tempC;
+    for(QPair<double,double> pair : cl){
+        tempC.latitude = pair.first;
+        tempC.longitude = pair.second;
+        cor_queue.enqueue(tempC);
+    }
+
+    while(!cor_queue.empty())
+        coordJ.addCoordinate(cor_queue.dequeue());
+
+    std::string coords = coordJ.coordinatesExtractString();
+    int len = coords.length();
+    char ccoords[4096];
+    int i;
+    for (i = 0; i < len; i++)
+        ccoords[i] = coords[i];
+    ccoords[i] = '\0';
+    const char* jsonStrC = ccoords;
+    std::cout << ccoords << std::endl;
+
+    Document documentC;
+    documentC.Parse(jsonStrC);
+    PrettyWriter<StringBuffer> writerC(bufferC);
+    documentC.Accept(writerC);
+
+    std::cout << "rapidJson version:" << std::endl;
+    std::cout << bufferC.GetString() << std::endl;
+}
+
+
+
 int GsClient::gsc_connect_start(){
-    std::string addressLine;
-    std::string addressParts[4];
+    getCoordinates(cor_list);
+//    std::string addressLine;
+//    std::string addressParts[4];
 //    int addressPartsInt[4] = {0};
 //    unsigned int sendport = 30005;
 
@@ -46,7 +153,7 @@ int GsClient::gsc_connect_start(){
 
     // create socket
 
-    int port = 30001;
+    int port = 31100;
 
 //    std::cout << "Enter port number to open: ";
 //    std::cin >> port;
@@ -66,14 +173,36 @@ int GsClient::gsc_connect_start(){
 }
 
 void GsClient::gsc_send_message(){
-    char data[BUFSIZ];
-    strcpy(data, "Mortal soul devaoured");
+//    char data[4096];
+//    strcpy(data, "Mortal soul devaoured");
 
-   // std::cin.getline(data , BUFSIZ);
-    net::GS_Address myAddress = net::GS_Address(addressPartsInt[0], addressPartsInt[1],
-            addressPartsInt[2], addressPartsInt[3], sendport);
+//   // std::cin.getline(data , BUFSIZ);
+//    net::GS_Address myAddress = net::GS_Address(addressPartsInt[0], addressPartsInt[1],
+//            addressPartsInt[2], addressPartsInt[3], sendport);
 
-    my_socket.Send(myAddress , data, sizeof(data));
+//    my_socket.Send(myAddress , data, sizeof(data));
+    string to_send = bufferC.GetString();
+    char to_send_c[BUFSIZ];
+    int sendLen = to_send.length();
+    int i;
+    for (i = 0; i < sendLen; i++)
+        to_send_c[i] = to_send[i];
+    to_send_c[i] = '\0';
+    std::cout << to_send_c << std::endl;
+    char buffer[BUFSIZ];
+   // int recvBytes = 0;
+
+    for(int i = 0; i < 100; i++)
+    {
+        //char data[256];
+
+        //cin.getline(data, 256);
+        net::GS_Address addra = net::GS_Address(addressPartsInt[0], addressPartsInt[1], addressPartsInt[2], addressPartsInt[3], sendport);
+       // Address sender;
+        strcpy(buffer, "Mortal soul devoured.");
+    //	recvBytes = socket.Receive(sender, buffer, sizeof(buffer));  //receive currently not working
+        my_socket.Send(addra, to_send_c, sizeof(to_send_c));
+    }
 
 }
 
