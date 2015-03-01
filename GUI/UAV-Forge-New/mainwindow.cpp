@@ -7,9 +7,12 @@
 #include "mapplanning.h"
 #include "mapexecution.h"
 #include "missionrecap.h"
-//erase later
+#include <iostream>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
+
+
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
@@ -28,7 +31,18 @@ MainWindow::~MainWindow()
 
 void MainWindow::openTutorial()
 {
+
     Tutorial *tutorial = new Tutorial();
+
+//    QPropertyAnimation *animation = new QPropertyAnimation(this, "size");
+//    std::cout << "New animation" << std::endl;
+//    animation->setDuration(10000);
+//    animation->setStartValue(QSize(width, window_height_min));
+//    animation->setEndValue(QSize(width, window_height_min+expand_general_to));
+//    animation->setEasingCurve(QEasingCurve::InBack);
+
+//    animation->start();
+//    std::cout << "Animation start" << std::endl;
     this -> close();
     tutorial -> show();
 }
