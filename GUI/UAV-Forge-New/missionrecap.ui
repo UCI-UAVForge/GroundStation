@@ -333,8 +333,8 @@ border: none;
    <widget class="QPushButton" name="openFileButton">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>460</y>
+      <x>290</x>
+      <y>470</y>
       <width>101</width>
       <height>31</height>
      </rect>
