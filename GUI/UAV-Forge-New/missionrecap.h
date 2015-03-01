@@ -1,6 +1,7 @@
 #ifndef MISSIONRECAP_H
 #define MISSIONRECAP_H
 
+#include <QObject>
 #include <QtWidgets/QWidget>
 #include <QtMultimediaWidgets>
 #include <QtGui/QMovie>
@@ -22,16 +23,15 @@ public:
     ~MissionRecap();
 
 public slots:
+    void updateSlider(qint64 position);
+    void updateMediaPlayer(int position);
     void replayMissionClicked();
 
 private slots:
     void on_backButton_clicked();
     void on_playButton_clicked();
-
     void on_stopButton_clicked();
-
     void on_openFileButton_clicked();
-
     void on_horizontalSlider_sliderPressed();
 
 private:
