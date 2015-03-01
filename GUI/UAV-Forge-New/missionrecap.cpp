@@ -3,6 +3,7 @@
 #include "mapexecution.h"
 #include "mainwindow.h"
 #include <iostream>
+
 MissionRecap::MissionRecap(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MissionRecap)
@@ -15,12 +16,21 @@ MissionRecap::MissionRecap(QWidget *parent) :
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open Movie"),QDir::homePath());
     mediaPlayer.setMedia(QUrl::fromLocalFile(fileName));
     ui->VideoWidget->setAspectRatioMode(Qt::IgnoreAspectRatio);
-    //ui->horizontalSlider->setRange(0, mediaPlayer.duration()/1000);
+    connect(ui->horizontalSlider, SIGNAL(sliderMoved(int)), this, SLOT(updateMediaPlayer(int)));
+    connect(&mediaPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(updateSlider(qint64)));
 }
 
 MissionRecap::~MissionRecap()
 {
     delete ui;
+}
+
+void MissionRecap:: updateSlider(qint64 position){
+    ui->horizontalSlider->setValue(position);
+}
+
+void MissionRecap:: updateMediaPlayer(int position){
+    mediaPlayer.setPosition(position);
 }
 
 void MissionRecap:: replayMissionClicked()
@@ -40,6 +50,7 @@ void MissionRecap::on_backButton_clicked()
 
 void MissionRecap::on_playButton_clicked()
 {
+    ui->horizontalSlider->setRange(0, mediaPlayer.duration());
     if(mediaPlayer.state() == QMediaPlayer::PlayingState)
         mediaPlayer.pause();
     else
@@ -59,5 +70,5 @@ void MissionRecap::on_openFileButton_clicked()
 
 void MissionRecap::on_horizontalSlider_sliderPressed()
 {
-    this->close();
+
 }
