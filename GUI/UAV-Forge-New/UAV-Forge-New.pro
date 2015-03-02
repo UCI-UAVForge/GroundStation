@@ -26,7 +26,8 @@ SOURCES += main.cpp\
     qcomboboxdelegate.cpp \
     videoplayer.cpp \
     gsserver.cpp \
-    gsclient.cpp
+    gsclient.cpp \
+    jsonobject.cpp
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \
@@ -40,7 +41,8 @@ HEADERS  += mainwindow.h \
     videoplayer.h \
     net.h \
     gsserver.h \
-    gsclient.h
+    gsclient.h \
+    jsonobject.h
 
 FORMS    += mainwindow.ui \
     options.ui \

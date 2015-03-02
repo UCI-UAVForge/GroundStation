@@ -8,16 +8,11 @@
 #include <vector>
 #include <QList>
 #include <QPair>
-
 #include "net.h"
-
 #include "rapidjson/document.h"
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
 #include "rapidjson/prettywriter.h"
-
-
-
 
 class GsClient{
 public:

@@ -60,7 +60,8 @@ SOURCES       = main.cpp \
 		qcomboboxdelegate.cpp \
 		videoplayer.cpp \
 		gsserver.cpp \
-		gsclient.cpp qrc_Resources.cpp \
+		gsclient.cpp \
+		jsonobject.cpp qrc_Resources.cpp \
 		moc_mainwindow.cpp \
 		moc_options.cpp \
 		moc_mapplanning.cpp \
@@ -84,6 +85,7 @@ OBJECTS       = main.o \
 		videoplayer.o \
 		gsserver.o \
 		gsclient.o \
+		jsonobject.o \
 		qrc_Resources.o \
 		moc_mainwindow.o \
 		moc_options.o \
@@ -235,7 +237,8 @@ DIST          = /Applications/Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		videoplayer.h \
 		net.h \
 		gsserver.h \
-		gsclient.h main.cpp \
+		gsclient.h \
+		jsonobject.h main.cpp \
 		mainwindow.cpp \
 		options.cpp \
 		mapplanning.cpp \
@@ -247,7 +250,8 @@ DIST          = /Applications/Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		qcomboboxdelegate.cpp \
 		videoplayer.cpp \
 		gsserver.cpp \
-		gsclient.cpp
+		gsclient.cpp \
+		jsonobject.cpp
 QMAKE_TARGET  = UAV-Forge-New
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = UAV-Forge-New.app/Contents/MacOS/UAV-Forge-New
@@ -596,8 +600,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents Resources.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h options.h mapplanning.h tablemodel.h mapexecution.h missionrecap.h tutorial.h popwindowmp.h qcomboboxdelegate.h videoplayer.h net.h gsserver.h gsclient.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp options.cpp mapplanning.cpp tablemodel.cpp mapexecution.cpp missionrecap.cpp tutorial.cpp popwindowmp.cpp qcomboboxdelegate.cpp videoplayer.cpp gsserver.cpp gsclient.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h options.h mapplanning.h tablemodel.h mapexecution.h missionrecap.h tutorial.h popwindowmp.h qcomboboxdelegate.h videoplayer.h net.h gsserver.h gsclient.h jsonobject.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp options.cpp mapplanning.cpp tablemodel.cpp mapexecution.cpp missionrecap.cpp tutorial.cpp popwindowmp.cpp qcomboboxdelegate.cpp videoplayer.cpp gsserver.cpp gsclient.cpp jsonobject.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui options.ui mapplanning.ui mapexecution.ui missionrecap.ui tutorial.ui popwindowmp.ui $(DISTDIR)/
 
 
@@ -687,6 +691,34 @@ moc_tablemodel.cpp: /Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/
 
 moc_mapexecution.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
+		gsclient.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QList \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qlist.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QPair \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qpair.h \
+		net.h \
+		rapidjson/document.h \
+		rapidjson/reader.h \
+		rapidjson/rapidjson.h \
+		rapidjson/msinttypes/stdint.h \
+		rapidjson/msinttypes/inttypes.h \
+		rapidjson/allocators.h \
+		rapidjson/encodings.h \
+		rapidjson/internal/meta.h \
+		rapidjson/internal/stack.h \
+		rapidjson/internal/strtod.h \
+		rapidjson/internal/ieee754.h \
+		rapidjson/internal/biginteger.h \
+		rapidjson/internal/diyfp.h \
+		rapidjson/internal/pow10.h \
+		rapidjson/error/error.h \
+		rapidjson/internal/strfunc.h \
+		rapidjson/writer.h \
+		rapidjson/internal/dtoa.h \
+		rapidjson/internal/itoa.h \
+		rapidjson/stringbuffer.h \
+		rapidjson/prettywriter.h \
+		gsserver.h \
 		mapexecution.h
 	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/OldUAVBuilds/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New' -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -F/Applications/Qt/5.4/clang_64/lib mapexecution.h -o moc_mapexecution.cpp
 
@@ -851,6 +883,30 @@ mainwindow.o: mainwindow.cpp mainwindow.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QSize \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qsize.h \
 		mapexecution.h \
+		gsclient.h \
+		net.h \
+		rapidjson/document.h \
+		rapidjson/reader.h \
+		rapidjson/rapidjson.h \
+		rapidjson/msinttypes/stdint.h \
+		rapidjson/msinttypes/inttypes.h \
+		rapidjson/allocators.h \
+		rapidjson/encodings.h \
+		rapidjson/internal/meta.h \
+		rapidjson/internal/stack.h \
+		rapidjson/internal/strtod.h \
+		rapidjson/internal/ieee754.h \
+		rapidjson/internal/biginteger.h \
+		rapidjson/internal/diyfp.h \
+		rapidjson/internal/pow10.h \
+		rapidjson/error/error.h \
+		rapidjson/internal/strfunc.h \
+		rapidjson/writer.h \
+		rapidjson/internal/dtoa.h \
+		rapidjson/internal/itoa.h \
+		rapidjson/stringbuffer.h \
+		rapidjson/prettywriter.h \
+		gsserver.h \
 		missionrecap.h \
 		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QtMultimediaWidgets \
 		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qcameraviewfinder.h \
@@ -895,6 +951,30 @@ options.o: options.cpp options.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QSize \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qsize.h \
 		mapexecution.h \
+		gsclient.h \
+		net.h \
+		rapidjson/document.h \
+		rapidjson/reader.h \
+		rapidjson/rapidjson.h \
+		rapidjson/msinttypes/stdint.h \
+		rapidjson/msinttypes/inttypes.h \
+		rapidjson/allocators.h \
+		rapidjson/encodings.h \
+		rapidjson/internal/meta.h \
+		rapidjson/internal/stack.h \
+		rapidjson/internal/strtod.h \
+		rapidjson/internal/ieee754.h \
+		rapidjson/internal/biginteger.h \
+		rapidjson/internal/diyfp.h \
+		rapidjson/internal/pow10.h \
+		rapidjson/error/error.h \
+		rapidjson/internal/strfunc.h \
+		rapidjson/writer.h \
+		rapidjson/internal/dtoa.h \
+		rapidjson/internal/itoa.h \
+		rapidjson/stringbuffer.h \
+		rapidjson/prettywriter.h \
+		gsserver.h \
 		missionrecap.h \
 		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QtMultimediaWidgets \
 		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/qcameraviewfinder.h \
@@ -959,6 +1039,34 @@ tablemodel.o: tablemodel.cpp tablemodel.h \
 mapexecution.o: mapexecution.cpp mapexecution.h \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
+		gsclient.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QList \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qlist.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QPair \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qpair.h \
+		net.h \
+		rapidjson/document.h \
+		rapidjson/reader.h \
+		rapidjson/rapidjson.h \
+		rapidjson/msinttypes/stdint.h \
+		rapidjson/msinttypes/inttypes.h \
+		rapidjson/allocators.h \
+		rapidjson/encodings.h \
+		rapidjson/internal/meta.h \
+		rapidjson/internal/stack.h \
+		rapidjson/internal/strtod.h \
+		rapidjson/internal/ieee754.h \
+		rapidjson/internal/biginteger.h \
+		rapidjson/internal/diyfp.h \
+		rapidjson/internal/pow10.h \
+		rapidjson/error/error.h \
+		rapidjson/internal/strfunc.h \
+		rapidjson/writer.h \
+		rapidjson/internal/dtoa.h \
+		rapidjson/internal/itoa.h \
+		rapidjson/stringbuffer.h \
+		rapidjson/prettywriter.h \
+		gsserver.h \
 		ui_mapexecution.h \
 		missionrecap.h \
 		/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Versions/5/Headers/QtMultimediaWidgets \
@@ -974,9 +1082,6 @@ mapexecution.o: mapexecution.cpp mapexecution.h \
 		mainwindow.h \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
-		gsclient.h \
-		net.h \
-		gsserver.h \
 		/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Versions/5/Headers/QWebFrame \
 		/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Versions/5/Headers/qwebframe.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mapexecution.o mapexecution.cpp
@@ -995,6 +1100,34 @@ missionrecap.o: missionrecap.cpp missionrecap.h \
 		mapexecution.h \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
+		gsclient.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QList \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qlist.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QPair \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qpair.h \
+		net.h \
+		rapidjson/document.h \
+		rapidjson/reader.h \
+		rapidjson/rapidjson.h \
+		rapidjson/msinttypes/stdint.h \
+		rapidjson/msinttypes/inttypes.h \
+		rapidjson/allocators.h \
+		rapidjson/encodings.h \
+		rapidjson/internal/meta.h \
+		rapidjson/internal/stack.h \
+		rapidjson/internal/strtod.h \
+		rapidjson/internal/ieee754.h \
+		rapidjson/internal/biginteger.h \
+		rapidjson/internal/diyfp.h \
+		rapidjson/internal/pow10.h \
+		rapidjson/error/error.h \
+		rapidjson/internal/strfunc.h \
+		rapidjson/writer.h \
+		rapidjson/internal/dtoa.h \
+		rapidjson/internal/itoa.h \
+		rapidjson/stringbuffer.h \
+		rapidjson/prettywriter.h \
+		gsserver.h \
 		mainwindow.h \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
@@ -1020,7 +1153,35 @@ popwindowmp.o: popwindowmp.cpp popwindowmp.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
-		mapexecution.h
+		mapexecution.h \
+		gsclient.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QList \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qlist.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QPair \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qpair.h \
+		net.h \
+		rapidjson/document.h \
+		rapidjson/reader.h \
+		rapidjson/rapidjson.h \
+		rapidjson/msinttypes/stdint.h \
+		rapidjson/msinttypes/inttypes.h \
+		rapidjson/allocators.h \
+		rapidjson/encodings.h \
+		rapidjson/internal/meta.h \
+		rapidjson/internal/stack.h \
+		rapidjson/internal/strtod.h \
+		rapidjson/internal/ieee754.h \
+		rapidjson/internal/biginteger.h \
+		rapidjson/internal/diyfp.h \
+		rapidjson/internal/pow10.h \
+		rapidjson/error/error.h \
+		rapidjson/internal/strfunc.h \
+		rapidjson/writer.h \
+		rapidjson/internal/dtoa.h \
+		rapidjson/internal/itoa.h \
+		rapidjson/stringbuffer.h \
+		rapidjson/prettywriter.h \
+		gsserver.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o popwindowmp.o popwindowmp.cpp
 
 qcomboboxdelegate.o: qcomboboxdelegate.cpp qcomboboxdelegate.h \
@@ -1053,8 +1214,39 @@ gsserver.o: gsserver.cpp gsserver.h \
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gsserver.o gsserver.cpp
 
 gsclient.o: gsclient.cpp gsclient.h \
-		net.h
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QList \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qlist.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QPair \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qpair.h \
+		net.h \
+		rapidjson/document.h \
+		rapidjson/reader.h \
+		rapidjson/rapidjson.h \
+		rapidjson/msinttypes/stdint.h \
+		rapidjson/msinttypes/inttypes.h \
+		rapidjson/allocators.h \
+		rapidjson/encodings.h \
+		rapidjson/internal/meta.h \
+		rapidjson/internal/stack.h \
+		rapidjson/internal/strtod.h \
+		rapidjson/internal/ieee754.h \
+		rapidjson/internal/biginteger.h \
+		rapidjson/internal/diyfp.h \
+		rapidjson/internal/pow10.h \
+		rapidjson/error/error.h \
+		rapidjson/internal/strfunc.h \
+		rapidjson/writer.h \
+		rapidjson/internal/dtoa.h \
+		rapidjson/internal/itoa.h \
+		rapidjson/stringbuffer.h \
+		rapidjson/prettywriter.h \
+		jsonobject.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QQueue \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qqueue.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gsclient.o gsclient.cpp
+
+jsonobject.o: jsonobject.cpp jsonobject.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o jsonobject.o jsonobject.cpp
 
 qrc_Resources.o: qrc_Resources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_Resources.o qrc_Resources.cpp

@@ -85,20 +85,18 @@ void mapexecution::setMap(QList<QString> list) {
 
 QList<QPair<double,double> > mapexecution::getDoublePairs(QList<QString> strings){
     QList<QPair<double,double> > returnList;
-    int i = 0;
     for(QString string: strings){
         QList<QString> comps = string.split(",");
 
         //Converts West and South coordinates to negative numbers.
         double lat = comps[3].toDouble();
         double lng = comps[1].toDouble();
-        if(comps[2] == "W"){
+        if(comps[2] == "W") {
             lng *= -1.0;
         }
-        if(comps[4] == "S"){
+        if(comps[4] == "S") {
             lat *= -1.0;
         }
-
         returnList.append(QPair<double,double>(lat,lng));
     }
 

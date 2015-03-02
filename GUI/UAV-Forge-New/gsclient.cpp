@@ -1,69 +1,10 @@
 #include "gsclient.h"
+#include "jsonobject.h"
 #include <QQueue>
 
 using namespace std;
 using namespace net;
-
 using namespace rapidjson;
-
-struct Msg{
-    std::string  userName;
-    std::string  msg;
-};
-
-struct Coordinates{
-    double latitude;
-    double longitude;
-};
-
-class jsonObj{
-public:
-    jsonObj();
-    void addCoordinate(struct Coordinates);
-
-    std::string coordinatesExtractString();
-
-private:
-    std::vector<std::string> varName;
-    std::vector<std::string> value;
-    std::vector<double> latitude;
-    std::vector<double> longitude;
-};
-
-jsonObj::jsonObj(){
-}
-
-
-void jsonObj::addCoordinate(struct Coordinates coordinate)
-{
-    latitude.push_back(coordinate.latitude);
-    longitude.push_back(coordinate.longitude);
-}
-
-
-std::string jsonObj::coordinatesExtractString() {
-    std::string jsonMsg;
-    std::stringstream ss;
-    int varSize = latitude.size();
-    jsonMsg.append("[");
-    for (int i = 0; i < varSize; i++)
-    {
-        jsonMsg.append("{\"latitude\":");
-        ss << latitude[i];
-//        std::string lat = std::to_string(latitude[i]);
-
-        jsonMsg.append(ss.str());
-        jsonMsg.append(" , \"longitude\":");
-//        std::string lon = std::to_string(longitude[i]);
-        ss.str("");
-        ss << longitude[i];
-        jsonMsg.append(ss.str() + "},");
-        ss.str("");
-    }
-    jsonMsg.erase(jsonMsg.length() - 1); //gets rid of the last comma
-    jsonMsg.append("]");
-    return jsonMsg;
-}
 
 GsClient::GsClient()
     :sendport(30005){
