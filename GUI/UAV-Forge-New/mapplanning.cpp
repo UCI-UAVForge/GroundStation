@@ -3,6 +3,7 @@
 #include "popwindowmp.h"
 #include <QApplication>
 #include "mainwindow.h"
+#include "mapexecution.h"
 
 
 MapPlanning::MapPlanning(QWidget *parent) :
@@ -35,8 +36,11 @@ MapPlanning::~MapPlanning()
 
 void MapPlanning::on_pushButton_6_clicked()
 {
-    popup = new PopWindowMP();
-    popup->show();
+    //popup = new PopWindowMP();
+    //popup->show();
+    mapexecution *mapExecution = new mapexecution();
+    this -> close();
+    mapExecution->showFullScreen();
 }
 
 void MapPlanning::on_pushButton_5_clicked()
@@ -62,7 +66,7 @@ void MapPlanning::on_pushButton_clicked()
 {
     MainWindow *mainwindow = new MainWindow();
     this -> close();
-    mainwindow->show();
+    mainwindow->showFullScreen();
 }
 
 void MapPlanning::on_clearTable_clicked()

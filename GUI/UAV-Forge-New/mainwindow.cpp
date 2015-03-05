@@ -8,6 +8,7 @@
 #include "mapexecution.h"
 #include "missionrecap.h"
 //erase later
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -29,27 +30,32 @@ MainWindow::~MainWindow()
 void MainWindow::openTutorial()
 {
     Tutorial *tutorial = new Tutorial();
-    this -> close();
-    tutorial -> show();
+    this->close();
+    tutorial->showFullScreen();
 }
 
 void MainWindow:: missionPlanningClicked()
 {
     MapPlanning *mapPlanning = new MapPlanning();
-    this -> close();
-    mapPlanning->show();
+    this->close();
+    mapPlanning->showFullScreen();
 }
 
 void MainWindow:: missionExecutionClicked()
 {
     mapexecution *mapExecution = new mapexecution();
-    this -> close();
-    mapExecution->show();
+    this->close();
+    mapExecution->showFullScreen();
 }
 
 void MainWindow:: missionRecapClicked()
 {
     MissionRecap *missionRecap = new MissionRecap();
-    this -> close();
-    missionRecap->show();
+    this->close();
+    missionRecap->showFullScreen();
+}
+
+void MainWindow::on_actionQuit_triggered()
+{
+    this->close();
 }
