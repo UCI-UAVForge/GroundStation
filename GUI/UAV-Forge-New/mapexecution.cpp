@@ -84,6 +84,8 @@ void mapexecution::setMap(QList<QString> list) {
 }
 
 QList<QPair<double,double> > mapexecution::getDoublePairs(QList<QString> strings){
+
+
     QList<QPair<double,double> > returnList;
     for(QString string: strings){
         QList<QString> comps = string.split(",");
