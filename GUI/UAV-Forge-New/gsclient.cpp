@@ -11,7 +11,7 @@ GsClient::GsClient()
     for (int i = 0; i < 4; ++i){
         addressPartsInt[i] = 0;
     }
-    std::cout << "Please dont devour my mortal soul" << std::endl;
+    //std::cout << "Please dont devour my mortal soul" << std::endl;
 }
 
 
@@ -57,7 +57,7 @@ void GsClient::getCoordinates(QList<QPair<double, double> > cl){
 
 
 int GsClient::gsc_connect_start(){
-    getCoordinates(cor_list);
+//    getCoordinates(cor_list);
 //    std::string addressLine;
 //    std::string addressParts[4];
 //    int addressPartsInt[4] = {0};
@@ -114,6 +114,7 @@ int GsClient::gsc_connect_start(){
 }
 
 void GsClient::gsc_send_message(){
+    getCoordinates(cor_list);
 //    char data[4096];
 //    strcpy(data, "Mortal soul devaoured");
 
@@ -146,6 +147,27 @@ void GsClient::gsc_send_message(){
     }
 
 }
+
+/*void GsClient::sendStopMessage(){
+    bufferC << "Empty String";
+    qDebug() << bufferC;
+    string to_send = bufferC.GetString();
+    char to_send_c[BUFSIZ];
+    int sendLen = to_send.length();
+    int i;
+    for (i = 0; i < sendLen; i++)
+        to_send_c[i] = to_send[i];
+    to_send_c[i] = '\0';
+    std::cout << to_send_c << std::endl;
+    char buffer[BUFSIZ];
+    //int recvBytes = 0;
+    for(int i = 0; i < 100; i++) {
+        net::GS_Address addra = net::GS_Address(addressPartsInt[0], addressPartsInt[1], addressPartsInt[2], addressPartsInt[3], sendport);
+        // Address sender;
+        strcpy(buffer, "Mortal soul devoured.");
+        my_socket.Send(addra, to_send_c, sizeof(to_send_c));
+    }
+}*/
 
 void GsClient::gsc_close_connection(){
     net::ShutdownSockets();

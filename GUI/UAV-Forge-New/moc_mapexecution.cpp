@@ -20,8 +20,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_mapexecution_t {
-    QByteArrayData data[15];
-    char stringdata[173];
+    QByteArrayData data[16];
+    char stringdata[185];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -41,17 +41,19 @@ QT_MOC_LITERAL(7, 57, 9), // "addNewMap"
 QT_MOC_LITERAL(8, 67, 13), // "finishClicked"
 QT_MOC_LITERAL(9, 81, 17), // "returnHomeClicked"
 QT_MOC_LITERAL(10, 99, 13), // "cancelClicked"
-QT_MOC_LITERAL(11, 113, 21), // "on_pushButton_clicked"
-QT_MOC_LITERAL(12, 135, 14), // "push_new_point"
-QT_MOC_LITERAL(13, 150, 5), // "point"
-QT_MOC_LITERAL(14, 156, 16) // "addClickListener"
+QT_MOC_LITERAL(11, 113, 11), // "stopClicked"
+QT_MOC_LITERAL(12, 125, 21), // "on_pushButton_clicked"
+QT_MOC_LITERAL(13, 147, 14), // "push_new_point"
+QT_MOC_LITERAL(14, 162, 5), // "point"
+QT_MOC_LITERAL(15, 168, 16) // "addClickListener"
 
     },
     "mapexecution\0setMap\0\0QList<QString>\0"
     "list\0addPoint\0string\0addNewMap\0"
     "finishClicked\0returnHomeClicked\0"
-    "cancelClicked\0on_pushButton_clicked\0"
-    "push_new_point\0point\0addClickListener"
+    "cancelClicked\0stopClicked\0"
+    "on_pushButton_clicked\0push_new_point\0"
+    "point\0addClickListener"
 };
 #undef QT_MOC_LITERAL
 
@@ -61,7 +63,7 @@ static const uint qt_meta_data_mapexecution[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
+      10,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -69,15 +71,16 @@ static const uint qt_meta_data_mapexecution[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    1,   59,    2, 0x0a /* Public */,
-       5,    1,   62,    2, 0x0a /* Public */,
-       7,    0,   65,    2, 0x0a /* Public */,
-       8,    0,   66,    2, 0x08 /* Private */,
-       9,    0,   67,    2, 0x08 /* Private */,
-      10,    0,   68,    2, 0x08 /* Private */,
-      11,    0,   69,    2, 0x08 /* Private */,
-      12,    1,   70,    2, 0x08 /* Private */,
-      14,    0,   73,    2, 0x08 /* Private */,
+       1,    1,   64,    2, 0x0a /* Public */,
+       5,    1,   67,    2, 0x0a /* Public */,
+       7,    0,   70,    2, 0x0a /* Public */,
+       8,    0,   71,    2, 0x08 /* Private */,
+       9,    0,   72,    2, 0x08 /* Private */,
+      10,    0,   73,    2, 0x08 /* Private */,
+      11,    0,   74,    2, 0x08 /* Private */,
+      12,    0,   75,    2, 0x08 /* Private */,
+      13,    1,   76,    2, 0x08 /* Private */,
+      15,    0,   79,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void, 0x80000000 | 3,    4,
@@ -87,7 +90,8 @@ static const uint qt_meta_data_mapexecution[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   13,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,   14,
     QMetaType::Void,
 
        0        // eod
@@ -104,9 +108,10 @@ void mapexecution::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         case 3: _t->finishClicked(); break;
         case 4: _t->returnHomeClicked(); break;
         case 5: _t->cancelClicked(); break;
-        case 6: _t->on_pushButton_clicked(); break;
-        case 7: _t->push_new_point((*reinterpret_cast< QString(*)>(_a[1]))); break;
-        case 8: _t->addClickListener(); break;
+        case 6: _t->stopClicked(); break;
+        case 7: _t->on_pushButton_clicked(); break;
+        case 8: _t->push_new_point((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 9: _t->addClickListener(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -148,13 +153,13 @@ int mapexecution::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 10;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 10;
     }
     return _id;
 }

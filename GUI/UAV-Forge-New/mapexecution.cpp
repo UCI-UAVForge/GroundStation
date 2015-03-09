@@ -17,7 +17,11 @@ mapexecution::mapexecution(QList<QString> strings, QWidget *parent) :
     ui->setupUi(this);
     mapStrings = strings;
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
+    connect(ui->pushBtnStop,SIGNAL(clicked()),this,SLOT(stopClicked()));
     ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
+
+
+
     std::cout<<"PREPARE" << std::endl;
     QList <QPair<double, double > > h;
     h << QPair<double, double >(32, 32);
@@ -49,6 +53,13 @@ void mapexecution::finishClicked()
     this->close();
     MissionRecap *missionRecap = new MissionRecap();
     missionRecap->show();
+}
+
+void mapexecution::stopClicked(){
+    QList <QPair<double, double > > h;
+    h << QPair<double, double >(999.99,999.99);
+    myClient.set_list(h);
+    myClient.gsc_send_message();
 }
 
 void mapexecution::returnHomeClicked()

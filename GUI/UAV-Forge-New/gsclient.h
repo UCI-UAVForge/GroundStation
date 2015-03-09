@@ -20,6 +20,7 @@ public:
     void set_list(QList<QPair<double , double > > cl);
     int gsc_connect_start();
     void gsc_send_message();
+    //void sendStopMessage();
     void gsc_close_connection();
     void getCoordinates(QList<QPair<double, double> > cl);
 

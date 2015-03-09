@@ -29,6 +29,7 @@ private slots:
     void finishClicked();
     void returnHomeClicked();
     void cancelClicked();
+    void stopClicked();
     void on_pushButton_clicked();
 
     void push_new_point(QString point);
