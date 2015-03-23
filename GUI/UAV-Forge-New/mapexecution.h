@@ -2,6 +2,8 @@
 #define MAPEXECUTION_H
 
 #include <QWidget>
+#include "gsclient.h"
+#include "gsserver.h"
 
 namespace Ui {
 class mapexecution;
@@ -20,10 +22,14 @@ public:
     QList<QString> mapStrings;
     void plotPosition(double lat, double lng);
     ~mapexecution();
+    //GsServer myServer;
+    GsClient myClient;
+    QList<QPair<double,double> > getDoublePairs(QList<QString> strings);
 private slots:
     void finishClicked();
     void returnHomeClicked();
     void cancelClicked();
+    void stopClicked();
     void on_pushButton_clicked();
 
     void push_new_point(QString point);

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'options.h'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.3.2)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.4.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'options.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.3.2. It"
+#error "This file was generated using the moc from 5.4.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -29,11 +29,12 @@ struct qt_meta_stringdata_Options_t {
     )
 static const qt_meta_stringdata_Options_t qt_meta_stringdata_Options = {
     {
-QT_MOC_LITERAL(0, 0, 7),
-QT_MOC_LITERAL(1, 8, 22),
-QT_MOC_LITERAL(2, 31, 0),
-QT_MOC_LITERAL(3, 32, 23),
-QT_MOC_LITERAL(4, 56, 19)
+QT_MOC_LITERAL(0, 0, 7), // "Options"
+QT_MOC_LITERAL(1, 8, 22), // "missionPlanningClicked"
+QT_MOC_LITERAL(2, 31, 0), // ""
+QT_MOC_LITERAL(3, 32, 23), // "missionExecutionClicked"
+QT_MOC_LITERAL(4, 56, 19) // "missionRecapClicked"
+
     },
     "Options\0missionPlanningClicked\0\0"
     "missionExecutionClicked\0missionRecapClicked"
@@ -82,7 +83,7 @@ void Options::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
 
 const QMetaObject Options::staticMetaObject = {
     { &QWidget::staticMetaObject, qt_meta_stringdata_Options.data,
-      qt_meta_data_Options,  qt_static_metacall, 0, 0}
+      qt_meta_data_Options,  qt_static_metacall, Q_NULLPTR, Q_NULLPTR}
 };
 
 
@@ -93,7 +94,7 @@ const QMetaObject *Options::metaObject() const
 
 void *Options::qt_metacast(const char *_clname)
 {
-    if (!_clname) return 0;
+    if (!_clname) return Q_NULLPTR;
     if (!strcmp(_clname, qt_meta_stringdata_Options.stringdata))
         return static_cast<void*>(const_cast< Options*>(this));
     return QWidget::qt_metacast(_clname);

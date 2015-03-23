@@ -7,6 +7,7 @@
 QT       += core gui multimedia multimediawidgets
 QT       += webkit webkitwidgets
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+CONFIG += console
 
 TARGET = UAV-Forge-New
 TEMPLATE = app
@@ -22,7 +23,10 @@ SOURCES += main.cpp\
     tutorial.cpp \
     popwindowmp.cpp \
     qcomboboxdelegate.cpp \
-    videoplayer.cpp
+    videoplayer.cpp \
+    gsserver.cpp \
+    gsclient.cpp \
+    jsonobject.cpp
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \
@@ -33,7 +37,11 @@ HEADERS  += mainwindow.h \
     tutorial.h \
     popwindowmp.h \
     qcomboboxdelegate.h \
-    videoplayer.h
+    videoplayer.h \
+    net.h \
+    gsserver.h \
+    gsclient.h \
+    jsonobject.h
 
 FORMS    += mainwindow.ui \
     options.ui \
