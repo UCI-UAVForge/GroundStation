@@ -36,7 +36,7 @@ void GsClient::getCoordinates(QList<QPair<double, double> > cl){
         coordJ.addCoordinate(cor_queue.dequeue());
 
     std::string coords = coordJ.coordinatesExtractString();
-    int len = coords.length();
+    size_t len = coords.length();
     char ccoords[4096];
     int i;
     for (i = 0; i < len; i++)
@@ -125,7 +125,7 @@ void GsClient::gsc_send_message(){
 //    my_socket.Send(myAddress , data, sizeof(data));
     string to_send = bufferC.GetString();
     char to_send_c[BUFSIZ];
-    int sendLen = to_send.length();
+    size_t sendLen = to_send.length();
     int i;
     for (i = 0; i < sendLen; i++)
         to_send_c[i] = to_send[i];

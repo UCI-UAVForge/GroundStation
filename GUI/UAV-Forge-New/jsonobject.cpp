@@ -16,7 +16,7 @@ void jsonObj::addCoordinate(struct Coordinates coordinate)
 std::string jsonObj::coordinatesExtractString() {
     std::string jsonMsg;
     std::stringstream ss;
-    int varSize = latitude.size();
+    size_t varSize = latitude.size();
     jsonMsg.append("[");
     for (int i = 0; i < varSize; i++)
     {

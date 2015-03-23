@@ -25,7 +25,8 @@ Source: http://www.gaffer.org/networking-for-game-programmers
 #endif
 
 #if PLATFORM == PLATFORM_WINDOWS
-#include <winsock2.h>
+//#include <winsock2.h>
+#include <windows.h>
 #pragma comment( lib, "wsock32.lib" )
 #elif PLATFORM == PLATFORM_MAC || PLATFORM == PLATFORM_UNIX
 
