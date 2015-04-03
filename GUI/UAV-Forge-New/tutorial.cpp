@@ -18,5 +18,5 @@ void Tutorial::on_pushButton_2_clicked()
 {
     MainWindow *mainwindow = new MainWindow();
     this -> close();
-    mainwindow->show();
+    mainwindow->showFullScreen();
 }

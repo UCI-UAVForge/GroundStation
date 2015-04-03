@@ -19,24 +19,19 @@ mapexecution::~mapexecution()
 
 void mapexecution::finishClicked()
 {
-    this->close();
     MissionRecap *missionRecap = new MissionRecap();
-    missionRecap->show();
+    this->close();
+    missionRecap->showFullScreen();
 }
 
 void mapexecution::returnHomeClicked()
 {
-    this->close();
+    MainWindow *mainwindow = new MainWindow();
+    this -> close();
+    mainwindow->showFullScreen();
 }
 
 void mapexecution::cancelClicked()
 {
     this->close();
-}
-
-void mapexecution::on_pushButton_clicked()
-{
-    MainWindow *mainwindow = new MainWindow();
-    this -> close();
-    mainwindow->show();
 }

@@ -7,7 +7,11 @@
 #include "mapplanning.h"
 #include "mapexecution.h"
 #include "missionrecap.h"
+// <<<<<<< HEAD
 #include <iostream>
+// =======
+//erase later
+// >>>>>>> GUI
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -33,6 +37,7 @@ void MainWindow::openTutorial()
 {
 
     Tutorial *tutorial = new Tutorial();
+// <<<<<<< HEAD
 
 //    QPropertyAnimation *animation = new QPropertyAnimation(this, "size");
 //    std::cout << "New animation" << std::endl;
@@ -45,25 +50,34 @@ void MainWindow::openTutorial()
 //    std::cout << "Animation start" << std::endl;
     this -> close();
     tutorial -> show();
+// =======
+//     this->close();
+//     tutorial->showFullScreen();
+// >>>>>>> GUI
 }
 
 void MainWindow:: missionPlanningClicked()
 {
     MapPlanning *mapPlanning = new MapPlanning();
-    this -> close();
-    mapPlanning->show();
+    this->close();
+    mapPlanning->showFullScreen();
 }
 
 void MainWindow:: missionExecutionClicked()
 {
     mapexecution *mapExecution = new mapexecution();
-    this -> close();
-    mapExecution->show();
+    this->close();
+    mapExecution->showFullScreen();
 }
 
 void MainWindow:: missionRecapClicked()
 {
     MissionRecap *missionRecap = new MissionRecap();
-    this -> close();
-    missionRecap->show();
+    this->close();
+    missionRecap->showFullScreen();
+}
+
+void MainWindow::on_actionQuit_triggered()
+{
+    this->close();
 }

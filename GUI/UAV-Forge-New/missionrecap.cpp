@@ -3,6 +3,7 @@
 #include "mapexecution.h"
 #include "mainwindow.h"
 #include <iostream>
+#include "mapplanning.h"
 
 MissionRecap::MissionRecap(QWidget *parent) :
     QWidget(parent),
@@ -37,7 +38,7 @@ void MissionRecap:: replayMissionClicked()
 {
     this->close();
     mapexecution *mapExecution = new mapexecution();
-    mapExecution->show();
+    mapExecution->showFullScreen();
 }
 
 void MissionRecap::on_backButton_clicked()
@@ -45,7 +46,7 @@ void MissionRecap::on_backButton_clicked()
     mediaPlayer.stop();
     MainWindow *mainwindow = new MainWindow();
     this -> close();
-    mainwindow->show();
+    mainwindow->showFullScreen();
 }
 
 void MissionRecap::on_playButton_clicked()
@@ -71,4 +72,11 @@ void MissionRecap::on_openFileButton_clicked()
 void MissionRecap::on_horizontalSlider_sliderPressed()
 {
 
+}
+
+void MissionRecap::on_newMission_clicked()
+{
+    MapPlanning *mapPlanning = new MapPlanning();
+    this -> close();
+    mapPlanning->showFullScreen();
 }

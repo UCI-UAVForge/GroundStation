@@ -23,6 +23,8 @@ private slots:
     void missionExecutionClicked();
     void missionRecapClicked();
 
+    void on_actionQuit_triggered();
+
 private:
     Ui::MainWindow *ui;
     QPropertyAnimation *animation;
