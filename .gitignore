@@ -106,6 +106,7 @@ release/
 /dist/gdb/source/
 /dist/gdb/staging/
 /dist/gdb/*.gz
+/build-*
 .moc/
 .obj/
 .pch/
@@ -517,8 +518,4 @@ pip-log.txt
 *.mo
 
 #Mr Developer
-<<<<<<< HEAD
 .mr.developer.cfg
-=======
-.mr.developer.cfg
->>>>>>> origin/Back-End
