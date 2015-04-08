@@ -73,6 +73,62 @@ bool TableModel::insertRows(int position, int rows, const QModelIndex &index)
     return true;
 }
 
+bool TableModel::insertRow(double longitude, double latitude,const QModelIndex &index){
+    /*This function takes two double-type inputs longitude and latitude, which are used
+    to add a new row the the TableModel with pre-entered values. East/West and North/South
+    coordinates are automatically generated using negative values of longitude and latitude
+    to denote West and South respectively. This function always returns true, a feature
+    inherited from the other insertRow function. The first part of the function was coppied
+    from the other insertRow function. The second part was written by Jordan Dickson
+    Feb 9th 2015.*/
+
+    //--This is the copied section I don't entirely understand.--
+    Q_UNUSED(index);
+    int insertRow = rowCount(index);
+    beginInsertRows(index, insertRow, insertRow);
+    QList<QString> list;
+    for (int i = 0; i < columnCount(QModelIndex()); i++) {
+        list << "";
+    }
+    listOfPairs.push_back(list);
+    endInsertRows();
+
+    //--This is the section coded and documetned by Jordan (me)--
+
+    //'i' used to denote the last row of the table (most recently added row)
+    const int i = listOfPairs.size()-1;
+
+    //Variables used in the table to denote East/West and North/South
+    QString eastWest = "E";
+    QString northSouth = "N";
+
+    //If statements to remove negative numbers if any and change direction for E/W and N/S
+    if(longitude < 0){
+        longitude *= -1.0;
+        eastWest = "W";
+    } if(latitude < 0){
+        latitude *= -1.0;
+        northSouth = "S";
+    }
+
+    //Prepare variables to be assembled into the list
+    QString action = "Action 1";
+    QString longString = QString::number(longitude);
+    QString latString = QString::number(latitude);
+    QString behaviorString = "Behavior 1";
+
+    //Assemble the new QList
+    QList<QString> newList;
+    newList<<action<<longString<<eastWest<<latString<<northSouth<<behaviorString;
+
+    //Replace the newest row(empty) with one that has pre-entered values
+    listOfPairs[i] = newList;
+
+    //This function always returns ture
+    return true;
+}
+
+
 bool TableModel::insertRow(const QModelIndex &index)
 {
     Q_UNUSED(index);

@@ -4,6 +4,7 @@
 #include "mainwindow.h"
 #include <iostream>
 #include "mapplanning.h"
+#include "videoplayer.h"
 
 MissionRecap::MissionRecap(QWidget *parent) :
     QWidget(parent),
@@ -79,4 +80,11 @@ void MissionRecap::on_newMission_clicked()
     MapPlanning *mapPlanning = new MapPlanning();
     this -> close();
     mapPlanning->showFullScreen();
+}
+
+void MissionRecap::on_pushButton_5_clicked()
+{
+    MainWindow *mainwindow = new MainWindow();
+    this -> close();
+    mainwindow->show();
 }

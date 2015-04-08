@@ -28,6 +28,7 @@ public slots:
     void replayMissionClicked();
 
 private slots:
+
     void on_backButton_clicked();
     void on_playButton_clicked();
     void on_stopButton_clicked();
@@ -35,6 +36,7 @@ private slots:
     void on_horizontalSlider_sliderPressed();
 
     void on_newMission_clicked();
+    void on_pushButton_5_clicked();
 
 private:
     Ui::MissionRecap *ui;

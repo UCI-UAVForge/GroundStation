@@ -4,13 +4,19 @@
 #
 #-------------------------------------------------
 
+<<<<<<< HEAD
 QT       += core \
             gui \
             webkitwidgets \
             multimedia \
             multimediawidgets
 
+=======
+QT       += core gui multimedia multimediawidgets
+QT       += webkit webkitwidgets
+>>>>>>> origin/Back-End
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+CONFIG += console
 
 TARGET = UAV-Forge-New
 TEMPLATE = app
@@ -25,7 +31,15 @@ SOURCES += main.cpp\
     missionrecap.cpp \
     tutorial.cpp \
     popwindowmp.cpp \
+<<<<<<< HEAD
     qcomboboxdelegate.cpp
+=======
+    qcomboboxdelegate.cpp \
+    videoplayer.cpp \
+    gsserver.cpp \
+    gsclient.cpp \
+    jsonobject.cpp
+>>>>>>> origin/Back-End
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \
@@ -35,7 +49,12 @@ HEADERS  += mainwindow.h \
     missionrecap.h \
     tutorial.h \
     popwindowmp.h \
-    qcomboboxdelegate.h
+    qcomboboxdelegate.h \
+    videoplayer.h \
+    net.h \
+    gsserver.h \
+    gsclient.h \
+    jsonobject.h
 
 FORMS    += mainwindow.ui \
     options.ui \

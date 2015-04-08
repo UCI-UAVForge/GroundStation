@@ -37,7 +37,6 @@ void MainWindow::openTutorial()
 {
 
     Tutorial *tutorial = new Tutorial();
-// <<<<<<< HEAD
 
 //    QPropertyAnimation *animation = new QPropertyAnimation(this, "size");
 //    std::cout << "New animation" << std::endl;
@@ -56,21 +55,21 @@ void MainWindow::openTutorial()
 // >>>>>>> GUI
 }
 
-void MainWindow:: missionPlanningClicked()
+void MainWindow::missionPlanningClicked()
 {
     MapPlanning *mapPlanning = new MapPlanning();
     this->close();
     mapPlanning->showFullScreen();
 }
 
-void MainWindow:: missionExecutionClicked()
+void MainWindow::missionExecutionClicked()
 {
     mapexecution *mapExecution = new mapexecution();
     this->close();
     mapExecution->showFullScreen();
 }
 
-void MainWindow:: missionRecapClicked()
+void MainWindow::missionRecapClicked()
 {
     MissionRecap *missionRecap = new MissionRecap();
     this->close();

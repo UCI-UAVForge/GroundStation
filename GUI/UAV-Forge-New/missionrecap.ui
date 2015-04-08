@@ -222,7 +222,7 @@
    <widget class="QVideoWidget" name="VideoWidget" native="true">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>9</x>
       <y>10</y>
       <width>321</width>
       <height>171</height>
@@ -258,6 +258,7 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
+<!-- <<<<<<< HEAD -->
       <x>650</x>
       <y>470</y>
       <width>101</width>
@@ -335,6 +336,10 @@ border: none;
      <rect>
       <x>290</x>
       <y>470</y>
+<!-- =======
+      <x>640</x>
+      <y>440</y>
+>>>>>>> origin/Back-End -->
       <width>101</width>
       <height>31</height>
      </rect>
@@ -625,6 +630,7 @@ border: none;
     <string>Replay Mission</string>
    </property>
   </widget>
+<<<<<<< HEAD
   <widget class="QPushButton" name="backButton">
    <property name="geometry">
     <rect>
@@ -632,6 +638,15 @@ border: none;
      <y>610</y>
      <width>151</width>
      <height>41</height>
+=======
+<!--   <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>20</y>
+     <width>75</width>
+     <height>23</height> -->
+<!-- >>>>>>> origin/Back-End -->
     </rect>
    </property>
    <property name="styleSheet">
@@ -655,10 +670,17 @@ border: none;
   <zorder>frame_2</zorder>
   <zorder>frame_3</zorder>
   <zorder>frame_4</zorder>
+<!-- <<<<<<< HEAD -->
   <zorder>newMission</zorder>
   <zorder>redoMission</zorder>
   <zorder>replayMission</zorder>
   <zorder>backButton</zorder>
+<!-- =======
+  <zorder>pushButton_2</zorder>
+  <zorder>pushButton_3</zorder>
+  <zorder>pushButton_4</zorder>
+  <zorder>pushButton_5</zorder>
+>>>>>>> origin/Back-End -->
  </widget>
  <customwidgets>
   <customwidget>

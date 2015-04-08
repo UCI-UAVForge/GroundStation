@@ -517,4 +517,8 @@ pip-log.txt
 *.mo
 
 #Mr Developer
+<<<<<<< HEAD
 .mr.developer.cfg
+=======
+.mr.developer.cfg
+>>>>>>> origin/Back-End

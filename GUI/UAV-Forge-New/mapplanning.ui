@@ -180,9 +180,15 @@ border: none;
   <widget class="QPushButton" name="pushButton_8">
    <property name="geometry">
     <rect>
+<!-- <<<<<<< HEAD
      <x>310</x>
      <y>680</y>
      <width>101</width>
+======= -->
+     <x>200</x>
+     <y>530</y>
+     <width>131</width>
+<!-- >>>>>>> origin/Back-End -->
      <height>41</height>
     </rect>
    </property>
@@ -205,10 +211,17 @@ border: none;
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
+<!-- <<<<<<< HEAD
      <x>70</x>
      <y>680</y>
      <width>101</width>
      <height>41</height>
+======= -->
+     <x>30</x>
+     <y>50</y>
+     <width>75</width>
+     <height>23</height>
+<!-- >>>>>>> origin/Back-End -->
     </rect>
    </property>
    <property name="styleSheet">
@@ -227,6 +240,7 @@ border: none;
     <string>Back</string>
    </property>
   </widget>
+<!-- <<<<<<< HEAD -->
   <widget class="QPushButton" name="clearTable">
    <property name="geometry">
     <rect>
@@ -248,10 +262,22 @@ border: none;
      background-color: #E6E9ED
  }</string>
    </property>
+<!-- =======
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>520</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+>>>>>>> origin/Back-End -->
    <property name="text">
     <string>Clear Table</string>
    </property>
   </widget>
+<!-- <<<<<<< HEAD -->
   <widget class="QPushButton" name="clearMap">
    <property name="geometry">
     <rect>
@@ -273,6 +299,17 @@ border: none;
      background-color: #E6E9ED
  }</string>
    </property>
+<!-- =======
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>560</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+>>>>>>> origin/Back-End -->
    <property name="text">
     <string>Clear Map</string>
    </property>
@@ -286,24 +323,7 @@ border: none;
   </customwidget>
  </customwidgets>
  <resources/>
- <connections>
-  <connection>
-   <sender>pushButton_7</sender>
-   <signal>clicked()</signal>
-   <receiver>MapPlanning</receiver>
-   <slot>on_pushButton_7_clicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>377</x>
-     <y>71</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>307</x>
-     <y>68</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
  <slots>
   <slot>on_pushButton_7_clicked()</slot>
  </slots>
