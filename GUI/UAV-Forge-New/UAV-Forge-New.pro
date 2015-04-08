@@ -4,17 +4,15 @@
 #
 #-------------------------------------------------
 
-<<<<<<< HEAD
 QT       += core \
             gui \
             webkitwidgets \
             multimedia \
             multimediawidgets
 
-=======
 QT       += core gui multimedia multimediawidgets
 QT       += webkit webkitwidgets
->>>>>>> origin/Back-End
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 CONFIG += console
 
@@ -31,15 +29,11 @@ SOURCES += main.cpp\
     missionrecap.cpp \
     tutorial.cpp \
     popwindowmp.cpp \
-<<<<<<< HEAD
-    qcomboboxdelegate.cpp
-=======
     qcomboboxdelegate.cpp \
     videoplayer.cpp \
     gsserver.cpp \
     gsclient.cpp \
     jsonobject.cpp
->>>>>>> origin/Back-End
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \

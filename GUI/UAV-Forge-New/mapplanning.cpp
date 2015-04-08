@@ -32,9 +32,9 @@ MapPlanning::~MapPlanning() {
     delete popup;
 }
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 //void MapPlanning::buttonWasClicked(int buttonID)
-{
+//{
 void MapPlanning::addClickListener() {
     /* Since c++/JS bridges are broken when the JS page refreshes this slot
      is used to rebruild the bridge each time when triggered by a
@@ -188,17 +188,17 @@ void MapPlanning::addPointToTable(double lat, double lng) {
     model->insertRow(lng,lat);
 }
 
-void MapPlanning::on_pushButton_8_clicked()
-{
-     qDebug() << "Widget";
-}
+//void MapPlanning::on_pushButton_8_clicked()
+//{
+//     qDebug() << "Widget";
+//}
 
-void MapPlanning::on_pushButton_clicked()
-{
-    MainWindow *mainwindow = new MainWindow();
-    this -> close();
-    mainwindow->showFullScreen();
-}
+//void MapPlanning::on_pushButton_clicked()
+//{
+//    MainWindow *mainwindow = new MainWindow();
+//    this -> close();
+//    mainwindow->showFullScreen();
+//}
 
 void MapPlanning::on_clearTable_clicked()
 {

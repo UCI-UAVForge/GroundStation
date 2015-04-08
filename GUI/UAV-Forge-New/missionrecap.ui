@@ -630,7 +630,7 @@ border: none;
     <string>Replay Mission</string>
    </property>
   </widget>
-<<<<<<< HEAD
+<!-- <<<<<<< HEAD -->
   <widget class="QPushButton" name="backButton">
    <property name="geometry">
     <rect>
@@ -638,7 +638,7 @@ border: none;
      <y>610</y>
      <width>151</width>
      <height>41</height>
-=======
+<!-- ======= -->
 <!--   <widget class="QPushButton" name="pushButton_5">
    <property name="geometry">
     <rect>
