@@ -7,11 +7,7 @@
 #include "mapplanning.h"
 #include "mapexecution.h"
 #include "missionrecap.h"
-// <<<<<<< HEAD
 #include <iostream>
-// =======
-//erase later
-// >>>>>>> GUI
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
