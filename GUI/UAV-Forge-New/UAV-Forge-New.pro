@@ -14,8 +14,10 @@ QT       += core gui multimedia multimediawidgets
 QT       += webkit webkitwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-CONFIG += console
+#CONFIG += console
 
+CONFIG += c++11
+LIBS += -lws2_32
 TARGET = UAV-Forge-New
 TEMPLATE = app
 

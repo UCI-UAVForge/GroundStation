@@ -9,6 +9,10 @@ INPUT(
 ./release\tutorial.o
 ./release\popwindowmp.o
 ./release\qcomboboxdelegate.o
+./release\videoplayer.o
+./release\gsserver.o
+./release\gsclient.o
+./release\jsonobject.o
 ./release\qrc_Resources.o
 ./release\moc_mainwindow.o
 ./release\moc_options.o
@@ -19,4 +23,5 @@ INPUT(
 ./release\moc_tutorial.o
 ./release\moc_popwindowmp.o
 ./release\moc_qcomboboxdelegate.o
+./release\moc_videoplayer.o
 );
