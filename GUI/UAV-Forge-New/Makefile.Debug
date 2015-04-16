@@ -268,7 +268,7 @@ debug/moc_mainwindow.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QMainWindow \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qeasingcurve.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractanimation.h \
 		mainwindow.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore mainwindow.h -o debug\moc_mainwindow.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore mainwindow.h -o debug\moc_mainwindow.cpp
 
 debug/moc_options.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
@@ -371,7 +371,7 @@ debug/moc_options.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
 		options.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore options.h -o debug\moc_options.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore options.h -o debug\moc_options.cpp
 
 debug/moc_mapplanning.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QDialog \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdialog.h \
@@ -523,7 +523,7 @@ debug/moc_mapplanning.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QDialog \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QModelIndex \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QSize \
 		mapplanning.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore mapplanning.h -o debug\moc_mapplanning.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore mapplanning.h -o debug\moc_mapplanning.cpp
 
 debug/moc_tablemodel.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QAbstractTableModel \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractitemmodel.h \
@@ -595,7 +595,7 @@ debug/moc_tablemodel.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QAbstractTableMod
 		C:/Qt/5.3/mingw482_32/include/QtCore/QList \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QPair \
 		tablemodel.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore tablemodel.h -o debug\moc_tablemodel.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore tablemodel.h -o debug\moc_tablemodel.cpp
 
 debug/moc_mapexecution.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
@@ -724,7 +724,7 @@ debug/moc_mapexecution.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		rapidjson/prettywriter.h \
 		gsserver.h \
 		mapexecution.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore mapexecution.h -o debug\moc_mapexecution.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore mapexecution.h -o debug\moc_mapexecution.cpp
 
 debug/moc_missionrecap.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qobject.h \
@@ -1289,7 +1289,7 @@ debug/moc_missionrecap.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QMovie \
 		C:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets/QVideoWidget \
 		missionrecap.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore missionrecap.h -o debug\moc_missionrecap.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore missionrecap.h -o debug\moc_missionrecap.cpp
 
 debug/moc_tutorial.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
@@ -1392,7 +1392,7 @@ debug/moc_tutorial.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
 		tutorial.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore tutorial.h -o debug\moc_tutorial.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore tutorial.h -o debug\moc_tutorial.cpp
 
 debug/moc_popwindowmp.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
@@ -1495,7 +1495,7 @@ debug/moc_popwindowmp.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
 		popwindowmp.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore popwindowmp.h -o debug\moc_popwindowmp.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore popwindowmp.h -o debug\moc_popwindowmp.cpp
 
 debug/moc_qcomboboxdelegate.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QItemDelegate \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qitemdelegate.h \
@@ -1618,7 +1618,7 @@ debug/moc_qcomboboxdelegate.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QItemDe
 		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QSize \
 		qcomboboxdelegate.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore qcomboboxdelegate.h -o debug\moc_qcomboboxdelegate.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore qcomboboxdelegate.h -o debug\moc_qcomboboxdelegate.cpp
 
 debug/moc_videoplayer.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
@@ -2183,7 +2183,7 @@ debug/moc_videoplayer.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QMovie \
 		C:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets/QVideoWidget \
 		videoplayer.h
-	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore videoplayer.h -o debug\moc_videoplayer.cpp
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore videoplayer.h -o debug\moc_videoplayer.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -2610,61 +2610,6 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qeasingcurve.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractanimation.h \
 		ui_mainwindow.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QVariant \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QAction \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qaction.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QApplication \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qapplication.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qcoreapplication.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qeventloop.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qguiapplication.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qinputmethod.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QButtonGroup \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qbuttongroup.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QHBoxLayout \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qboxlayout.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlayout.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlayoutitem.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgridlayout.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QHeaderView \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qheaderview.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qframe.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qitemselectionmodel.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qvalidator.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qregularexpression.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qslider.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyle.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qrubberband.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QMenu \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmenu.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QMenuBar \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmenubar.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QPushButton \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qpushbutton.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QStatusBar \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstatusbar.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QTextBrowser \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtextbrowser.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtextedit.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qtextdocument.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qtextoption.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qtextcursor.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qtextformat.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QToolBar \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtoolbar.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QVBoxLayout \
 		tutorial.h \
 		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/QWebView \
 		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/qwebview.h \
@@ -2672,6 +2617,8 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/qwebpage.h \
 		C:/Qt/5.3/mingw482_32/include/QtWebKit/qwebsettings.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpainter.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qtextoption.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
 		C:/Qt/5.3/mingw482_32/include/QtNetwork/qnetworkaccessmanager.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtNetwork/QSslConfiguration \
@@ -2691,6 +2638,23 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdialog.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QComboBox \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qcombobox.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qvalidator.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qregularexpression.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qslider.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyle.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qframe.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QPushButton \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qpushbutton.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QButtonGroup \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qbuttongroup.h \
 		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/QWebFrame \
 		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/qwebframe.h \
 		tablemodel.h \
@@ -2759,6 +2723,7 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qtemporaryfile.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractproxymodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qidentityproxymodel.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qsortfilterproxymodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qstringlistmodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qjsonarray.h \
@@ -2766,8 +2731,10 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qjsondocument.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qjsonobject.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qabstracteventdispatcher.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qeventloop.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractnativeeventfilter.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qbasictimer.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qcoreapplication.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmath.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmetaobject.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmimedata.h \
@@ -2848,6 +2815,8 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qdrag.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qgenericplugin.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qgenericpluginfactory.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qguiapplication.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qinputmethod.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qoffscreensurface.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qsurface.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qsurfaceformat.h \
@@ -2891,9 +2860,12 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpdfwriter.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qabstracttextdocumentlayout.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtextlayout.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qtextformat.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qglyphrun.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qrawfont.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qfontdatabase.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qtextcursor.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qtextdocument.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qstatictext.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qsyntaxhighlighter.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtextobject.h \
@@ -2910,6 +2882,7 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtNetwork/qabstractnetworkcache.h \
 		C:/Qt/5.3/mingw482_32/include/QtNetwork/qnetworkrequest.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QString \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QVariant \
 		C:/Qt/5.3/mingw482_32/include/QtNetwork/qhttpmultipart.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QByteArray \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QIODevice \
@@ -3045,10 +3018,13 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QMatrix4x4 \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qscrollarea.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qcolumnview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdatawidgetmapper.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdirmodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qfileiconprovider.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qheaderview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qitemeditorfactory.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlistview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlistwidget.h \
@@ -3058,6 +3034,14 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtreeview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtreewidget.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtreewidgetitemiterator.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qaction.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qapplication.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qboxlayout.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlayout.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgridlayout.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qformlayout.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QLayout \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgesture.h \
@@ -3101,7 +3085,10 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlcdnumber.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmdiarea.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmdisubwindow.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmenu.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmenubar.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qplaintextedit.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtextedit.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qprogressbar.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qradiobutton.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qscrollbar.h \
@@ -3110,6 +3097,9 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qsplashscreen.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qsplitter.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstackedwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstatusbar.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtextbrowser.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtoolbar.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtoolbox.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtoolbutton.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtwidgetsversion.h \
@@ -3225,46 +3215,30 @@ debug/options.o: options.cpp options.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
 		ui_options.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QVariant \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QAction \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qaction.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qicon.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QApplication \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qapplication.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qcoreapplication.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qeventloop.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qguiapplication.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qinputmethod.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QButtonGroup \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qbuttongroup.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QHeaderView \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qheaderview.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qframe.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qitemselectionmodel.h \
+		mapplanning.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QDialog \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdialog.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QComboBox \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qcombobox.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemdelegate.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyleoption.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractspinbox.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qvalidator.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qregularexpression.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qicon.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qslider.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractslider.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyle.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabbar.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabwidget.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qframe.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractitemmodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QPushButton \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractbutton.h \
-		mapplanning.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QDialog \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdialog.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QComboBox \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qcombobox.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QButtonGroup \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qbuttongroup.h \
 		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/QWebFrame \
 		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/qwebframe.h \
 		C:/Qt/5.3/mingw482_32/include/QtNetwork/qnetworkaccessmanager.h \
@@ -3351,6 +3325,7 @@ debug/options.o: options.cpp options.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qtemporaryfile.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractproxymodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qidentityproxymodel.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qsortfilterproxymodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qstringlistmodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qjsonarray.h \
@@ -3358,8 +3333,10 @@ debug/options.o: options.cpp options.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qjsondocument.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qjsonobject.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qabstracteventdispatcher.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qeventloop.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractnativeeventfilter.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qbasictimer.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qcoreapplication.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmath.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmetaobject.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmimedata.h \
@@ -3440,6 +3417,8 @@ debug/options.o: options.cpp options.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qdrag.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qgenericplugin.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qgenericpluginfactory.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qguiapplication.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qinputmethod.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qoffscreensurface.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qsurface.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qsurfaceformat.h \
@@ -3509,6 +3488,7 @@ debug/options.o: options.cpp options.h \
 		C:/Qt/5.3/mingw482_32/include/QtNetwork/qnetworkrequest.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QString \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QUrl \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QVariant \
 		C:/Qt/5.3/mingw482_32/include/QtNetwork/qhttpmultipart.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QByteArray \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QIODevice \
@@ -3644,10 +3624,13 @@ debug/options.o: options.cpp options.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QMatrix4x4 \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qscrollarea.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qcolumnview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdatawidgetmapper.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdirmodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qfileiconprovider.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qheaderview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qitemeditorfactory.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlistview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlistwidget.h \
@@ -3657,6 +3640,10 @@ debug/options.o: options.cpp options.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtreeview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtreewidget.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtreewidgetitemiterator.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qaction.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qapplication.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qboxlayout.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlayout.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlayoutitem.h \
@@ -3884,17 +3871,6 @@ debug/mapplanning.o: mapplanning.cpp mapplanning.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QModelIndex \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QSize \
 		ui_mapplanning.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QVariant \
-		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/QWebView \
-		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/qwebview.h \
-		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/qwebpage.h \
-		C:/Qt/5.3/mingw482_32/include/QtWebKit/qwebsettings.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qpainter.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qtextoption.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QAction \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qaction.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qactiongroup.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QApplication \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qapplication.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qcoreapplication.h \
@@ -3902,13 +3878,6 @@ debug/mapplanning.o: mapplanning.cpp mapplanning.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qguiapplication.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qinputmethod.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QHeaderView \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qheaderview.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qitemselectionmodel.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QTableView \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtableview.h \
 		mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QMainWindow \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmainwindow.h \
@@ -4146,63 +4115,8 @@ debug/mapexecution.o: mapexecution.cpp mapexecution.h \
 		rapidjson/prettywriter.h \
 		gsserver.h \
 		ui_mapexecution.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QVariant \
-		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/QWebView \
-		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/qwebview.h \
-		C:/Qt/5.3/mingw482_32/include/QtWebKit/qwebkitglobal.h \
-		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/qwebpage.h \
-		C:/Qt/5.3/mingw482_32/include/QtWebKit/qwebsettings.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qicon.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qpainter.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qtextoption.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
-		C:/Qt/5.3/mingw482_32/include/QtNetwork/qnetworkaccessmanager.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
-		C:/Qt/5.3/mingw482_32/include/QtNetwork/QSslConfiguration \
-		C:/Qt/5.3/mingw482_32/include/QtNetwork/qsslconfiguration.h \
-		C:/Qt/5.3/mingw482_32/include/QtNetwork/qsslsocket.h \
-		C:/Qt/5.3/mingw482_32/include/QtNetwork/qtcpsocket.h \
-		C:/Qt/5.3/mingw482_32/include/QtNetwork/qabstractsocket.h \
-		C:/Qt/5.3/mingw482_32/include/QtNetwork/qsslerror.h \
-		C:/Qt/5.3/mingw482_32/include/QtNetwork/qsslcertificate.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qcryptographichash.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qdatetime.h \
-		C:/Qt/5.3/mingw482_32/include/QtNetwork/qssl.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QFlags \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QAction \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qaction.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QApplication \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qapplication.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qcoreapplication.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qeventloop.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qguiapplication.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qinputmethod.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QButtonGroup \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qbuttongroup.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QHeaderView \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qheaderview.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qframe.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qitemselectionmodel.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qvalidator.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qregularexpression.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qslider.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyle.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabwidget.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qrubberband.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QPushButton \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qpushbutton.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractbutton.h \
 		missionrecap.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets/QtMultimediaWidgets \
 		C:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets/QtMultimediaWidgetsDepends \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QtCore \
@@ -4218,6 +4132,7 @@ debug/mapexecution.o: mapexecution.cpp mapexecution.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qtextcodec.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qendian.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qlibraryinfo.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qdatetime.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qbuffer.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qdir.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qfileinfo.h \
@@ -4235,8 +4150,10 @@ debug/mapexecution.o: mapexecution.cpp mapexecution.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qtemporarydir.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QScopedPointer \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qtemporaryfile.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractitemmodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractproxymodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qidentityproxymodel.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qsortfilterproxymodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qstringlistmodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qjsonarray.h \
@@ -4244,8 +4161,10 @@ debug/mapexecution.o: mapexecution.cpp mapexecution.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qjsondocument.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qjsonobject.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qabstracteventdispatcher.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qeventloop.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractnativeeventfilter.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qbasictimer.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qcoreapplication.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmath.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmetaobject.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmimedata.h \
@@ -4294,10 +4213,12 @@ debug/mapexecution.o: mapexecution.cpp mapexecution.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qcollator.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qcommandlineoption.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qcommandlineparser.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qcryptographichash.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qelapsedtimer.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qlinkedlist.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmessageauthenticationcode.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qqueue.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qregularexpression.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qscopedvaluerollback.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qstack.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qtextboundaryfinder.h \
@@ -4312,6 +4233,7 @@ debug/mapexecution.o: mapexecution.cpp mapexecution.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qaccessibleobject.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qaccessibleplugin.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qbitmap.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qicon.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qiconengine.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qiconengineplugin.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qimageiohandler.h \
@@ -4326,6 +4248,8 @@ debug/mapexecution.o: mapexecution.cpp mapexecution.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qdrag.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qgenericplugin.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qgenericpluginfactory.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qguiapplication.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qinputmethod.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qoffscreensurface.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qsurface.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qsurfaceformat.h \
@@ -4367,6 +4291,9 @@ debug/mapexecution.o: mapexecution.cpp mapexecution.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpagelayout.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpagesize.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpaintengine.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qpainter.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qtextoption.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qpen.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qpdfwriter.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qabstracttextdocumentlayout.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtextlayout.h \
@@ -4384,6 +4311,7 @@ debug/mapexecution.o: mapexecution.cpp mapexecution.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtextlist.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtexttable.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qdesktopservices.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qvalidator.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtguiversion.h \
 		C:/Qt/5.3/mingw482_32/include/QtMultimedia/QtMultimedia \
 		C:/Qt/5.3/mingw482_32/include/QtMultimedia/QtMultimediaDepends \
@@ -4393,10 +4321,21 @@ debug/mapexecution.o: mapexecution.cpp mapexecution.h \
 		C:/Qt/5.3/mingw482_32/include/QtNetwork/qnetworkrequest.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QString \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QUrl \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QVariant \
 		C:/Qt/5.3/mingw482_32/include/QtNetwork/qhttpmultipart.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QByteArray \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QIODevice \
 		C:/Qt/5.3/mingw482_32/include/QtNetwork/QNetworkRequest \
+		C:/Qt/5.3/mingw482_32/include/QtNetwork/qnetworkaccessmanager.h \
+		C:/Qt/5.3/mingw482_32/include/QtNetwork/QSslConfiguration \
+		C:/Qt/5.3/mingw482_32/include/QtNetwork/qsslconfiguration.h \
+		C:/Qt/5.3/mingw482_32/include/QtNetwork/qsslsocket.h \
+		C:/Qt/5.3/mingw482_32/include/QtNetwork/qtcpsocket.h \
+		C:/Qt/5.3/mingw482_32/include/QtNetwork/qabstractsocket.h \
+		C:/Qt/5.3/mingw482_32/include/QtNetwork/qsslerror.h \
+		C:/Qt/5.3/mingw482_32/include/QtNetwork/qsslcertificate.h \
+		C:/Qt/5.3/mingw482_32/include/QtNetwork/qssl.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QFlags \
 		C:/Qt/5.3/mingw482_32/include/QtNetwork/qnetworkcookie.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QMetaType \
 		C:/Qt/5.3/mingw482_32/include/QtNetwork/qnetworkcookiejar.h \
@@ -4509,6 +4448,7 @@ debug/mapexecution.o: mapexecution.cpp mapexecution.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qfontdialog.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qinputdialog.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlineedit.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qframe.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmessagebox.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qprogressdialog.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwizard.h \
@@ -4529,10 +4469,22 @@ debug/mapexecution.o: mapexecution.cpp mapexecution.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QMatrix4x4 \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qscrollarea.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qslider.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyle.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qcolumnview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdatawidgetmapper.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdirmodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qfileiconprovider.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qheaderview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qitemdelegate.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qitemeditorfactory.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlistview.h \
@@ -4543,6 +4495,10 @@ debug/mapexecution.o: mapexecution.cpp mapexecution.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtreeview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtreewidget.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtreewidgetitemiterator.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qaction.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qapplication.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdesktopwidget.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qboxlayout.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlayout.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlayoutitem.h \
@@ -4575,10 +4531,13 @@ debug/mapexecution.o: mapexecution.cpp mapexecution.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qundogroup.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qundostack.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qundoview.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qbuttongroup.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qcalendarwidget.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qcheckbox.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qcombobox.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qcommandlinkbutton.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdatetimeedit.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdial.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdialogbuttonbox.h \
@@ -4623,7 +4582,8 @@ debug/mapexecution.o: mapexecution.cpp mapexecution.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QMainWindow \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QPropertyAnimation \
 		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/QWebFrame \
-		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/qwebframe.h
+		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/qwebframe.h \
+		C:/Qt/5.3/mingw482_32/include/QtWebKit/qwebkitglobal.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mapexecution.o mapexecution.cpp
 
 debug/missionrecap.o: missionrecap.cpp missionrecap.h \
@@ -5190,14 +5150,6 @@ debug/missionrecap.o: missionrecap.cpp missionrecap.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QMovie \
 		C:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets/QVideoWidget \
 		ui_missionrecap.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QAction \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QApplication \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QButtonGroup \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QFrame \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QHeaderView \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QPlainTextEdit \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QPushButton \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QSlider \
 		mapexecution.h \
 		gsclient.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QPair \
@@ -5231,6 +5183,8 @@ debug/missionrecap.o: missionrecap.cpp missionrecap.h \
 		mapplanning.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QDialog \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QComboBox \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QPushButton \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QButtonGroup \
 		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/QWebFrame \
 		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/qwebframe.h \
 		C:/Qt/5.3/mingw482_32/include/QtWebKit/qwebkitglobal.h \
@@ -5345,44 +5299,11 @@ debug/tutorial.o: tutorial.cpp tutorial.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
 		ui_tutorial.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QVariant \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QAction \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qaction.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qicon.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QApplication \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qapplication.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qcoreapplication.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qeventloop.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qguiapplication.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qinputmethod.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QButtonGroup \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qbuttongroup.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QHeaderView \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qheaderview.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qframe.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qitemselectionmodel.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qvalidator.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qregularexpression.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qslider.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyle.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabwidget.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qrubberband.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QPushButton \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qpushbutton.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractbutton.h \
 		mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QMainWindow \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmainwindow.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qicon.h \
 		options.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QPropertyAnimation \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qpropertyanimation.h \
@@ -5493,43 +5414,6 @@ debug/popwindowmp.o: popwindowmp.cpp popwindowmp.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
 		ui_popwindowmp.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QVariant \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QAction \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qaction.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qicon.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QApplication \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qapplication.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qcoreapplication.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qeventloop.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qguiapplication.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qinputmethod.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QButtonGroup \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qbuttongroup.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QHeaderView \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qheaderview.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qframe.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qitemselectionmodel.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qvalidator.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qregularexpression.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qslider.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyle.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabwidget.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qrubberband.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QLabel \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlabel.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QPushButton \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qpushbutton.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractbutton.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QString \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QDebug \
 		mapexecution.h \

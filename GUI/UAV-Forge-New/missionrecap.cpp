@@ -86,5 +86,5 @@ void MissionRecap::on_pushButton_5_clicked()
 {
     MainWindow *mainwindow = new MainWindow();
     this -> close();
-    mainwindow->show();
+    mainwindow->showFullScreen();
 }

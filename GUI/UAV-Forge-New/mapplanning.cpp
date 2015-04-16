@@ -59,7 +59,9 @@ void MapPlanning::addClickListener() {
 void MapPlanning::on_pushButton_6_clicked() {   // execute button
     popup = new PopWindowMP(getTableAsStrings());
     connect(popup,SIGNAL(windowClosed()),this,SLOT(closeWindow()));
-    popup->show();
+    mapexecution *mapExecution = new mapexecution();
+    this->close();
+    mapExecution->showFullScreen();
 // >>>>>>> origin/Back-End
 }
 
@@ -81,7 +83,7 @@ void MapPlanning::on_pushButton_8_clicked() {    // update buttun
 void MapPlanning::on_pushButton_clicked() {     // back button
     MainWindow *mainwindow = new MainWindow();
     this -> close();
-    mainwindow->show();
+    mainwindow->showFullScreen();
 }
 
 void MapPlanning::on_pushButton_2_clicked() {   // clear table button

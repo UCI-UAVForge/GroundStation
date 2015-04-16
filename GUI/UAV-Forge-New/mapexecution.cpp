@@ -83,7 +83,7 @@ void mapexecution::on_pushButton_clicked()
 {
     MainWindow *mainwindow = new MainWindow();
     this -> close();
-    mainwindow->show();
+    mainwindow->showFullScreen();
 }
 
 void mapexecution::setMap(QList<QString> list) {
