@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1366</width>
-    <height>768</height>
+    <width>1666</width>
+    <height>919</height>
    </rect>
   </property>
   <property name="palette">
@@ -77,166 +77,13 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QFrame" name="frame">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>90</y>
-     <width>341</width>
-     <height>191</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"> QFrame, QLabel, QToolTip {
-     border: 2px solid grey;
-     border-radius: 4px;
-     padding: 2px;
-	 color: #434A54;
-	 font-weight: bold;
-     background-color: #CCD1D9;
- }</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <widget class="QPlainTextEdit" name="plainTextEdit">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>321</width>
-      <height>171</height>
-     </rect>
-    </property>
-    <property name="plainText">
-     <string>         Graphical Representation of Results</string>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QFrame" name="frame_2">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>310</y>
-     <width>341</width>
-     <height>191</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"> QFrame, QLabel, QToolTip {
-     border: 2px solid grey;
-     border-radius: 4px;
-     padding: 2px;
-	 color: #434A54;
-	 font-weight: bold;
-     background-color: #CCD1D9;
- }</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <widget class="QPlainTextEdit" name="plainTextEdit_2">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>321</width>
-      <height>171</height>
-     </rect>
-    </property>
-    <property name="plainText">
-     <string>         Graphical Representation of Results</string>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QFrame" name="frame_3">
-   <property name="geometry">
-    <rect>
-     <x>650</x>
-     <y>90</y>
-     <width>341</width>
-     <height>191</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"> QFrame, QLabel, QToolTip {
-     border: 2px solid grey;
-     border-radius: 4px;
-     padding: 2px;
-	 color: #434A54;
-	 font-weight: bold;
-     background-color: #CCD1D9;
- }</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <widget class="QPlainTextEdit" name="plainTextEdit_3">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>321</width>
-      <height>171</height>
-     </rect>
-    </property>
-    <property name="plainText">
-     <string>                                Text Results</string>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QFrame" name="frame_4">
-   <property name="geometry">
-    <rect>
-     <x>650</x>
-     <y>310</y>
-     <width>341</width>
-     <height>191</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"> QFrame, QLabel, QToolTip {
-     border: 2px solid grey;
-     border-radius: 4px;
-     padding: 2px;
-	 color: #434A54;
-	 font-weight: bold;
-     background-color: #CCD1D9;
- }</string>
-   </property>
-   <property name="frameShape">
-    <enum>QFrame::StyledPanel</enum>
-   </property>
-   <property name="frameShadow">
-    <enum>QFrame::Raised</enum>
-   </property>
-   <widget class="QVideoWidget" name="VideoWidget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>9</x>
-      <y>10</y>
-      <width>321</width>
-      <height>171</height>
-     </rect>
-    </property>
-   </widget>
-  </widget>
   <widget class="QFrame" name="frame_5">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>0</x>
      <y>60</y>
-     <width>781</width>
-     <height>511</height>
+     <width>1601</width>
+     <height>751</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -258,9 +105,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-<!-- <<<<<<< HEAD -->
-      <x>650</x>
-      <y>470</y>
+      <x>1490</x>
+      <y>340</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -284,8 +130,8 @@ border: none;
    <widget class="QPushButton" name="playButton">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>470</y>
+      <x>1030</x>
+      <y>340</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -309,8 +155,8 @@ border: none;
    <widget class="QPushButton" name="stopButton">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>470</y>
+      <x>1240</x>
+      <y>340</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -334,12 +180,8 @@ border: none;
    <widget class="QPushButton" name="openFileButton">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>470</y>
-<!-- =======
-      <x>640</x>
-      <y>440</y>
->>>>>>> origin/Back-End -->
+      <x>810</x>
+      <y>340</y>
       <width>101</width>
       <height>31</height>
      </rect>
@@ -360,12 +202,165 @@ border: none;
      <string>Open File</string>
     </property>
    </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>400</y>
+      <width>781</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> QFrame, QLabel, QToolTip {
+     border: 2px solid grey;
+     border-radius: 4px;
+     padding: 2px;
+	 color: #434A54;
+	 font-weight: bold;
+     background-color: #CCD1D9;
+ }</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPlainTextEdit" name="plainTextEdit_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>761</width>
+       <height>311</height>
+      </rect>
+     </property>
+     <property name="plainText">
+      <string>         Graphical Representation of Results</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_4">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>10</y>
+      <width>781</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> QFrame, QLabel, QToolTip {
+     border: 2px solid grey;
+     border-radius: 4px;
+     padding: 2px;
+	 color: #434A54;
+	 font-weight: bold;
+     background-color: #CCD1D9;
+ }</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QVideoWidget" name="VideoWidget" native="true">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>761</width>
+       <height>291</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_3">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>400</y>
+      <width>781</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> QFrame, QLabel, QToolTip {
+     border: 2px solid grey;
+     border-radius: 4px;
+     padding: 2px;
+	 color: #434A54;
+	 font-weight: bold;
+     background-color: #CCD1D9;
+ }</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPlainTextEdit" name="plainTextEdit_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>761</width>
+       <height>311</height>
+      </rect>
+     </property>
+     <property name="plainText">
+      <string>                                         Status</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>781</width>
+      <height>331</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> QFrame, QLabel, QToolTip {
+     border: 2px solid grey;
+     border-radius: 4px;
+     padding: 2px;
+	 color: #434A54;
+	 font-weight: bold;
+     background-color: #CCD1D9;
+ }</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QPlainTextEdit" name="plainTextEdit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>761</width>
+       <height>311</height>
+      </rect>
+     </property>
+     <property name="plainText">
+      <string>           	              Map</string>
+     </property>
+    </widget>
+   </widget>
    <widget class="QSlider" name="horizontalSlider">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>448</y>
-      <width>341</width>
+      <x>810</x>
+      <y>320</y>
+      <width>771</width>
       <height>21</height>
      </rect>
     </property>
@@ -386,8 +381,8 @@ border: none;
   <widget class="QPushButton" name="newMission">
    <property name="geometry">
     <rect>
-     <x>670</x>
-     <y>610</y>
+     <x>1260</x>
+     <y>830</y>
      <width>151</width>
      <height>41</height>
     </rect>
@@ -411,8 +406,8 @@ border: none;
   <widget class="QPushButton" name="redoMission">
    <property name="geometry">
     <rect>
-     <x>450</x>
-     <y>610</y>
+     <x>1080</x>
+     <y>830</y>
      <width>151</width>
      <height>41</height>
     </rect>
@@ -436,8 +431,8 @@ border: none;
   <widget class="QPushButton" name="replayMission">
    <property name="geometry">
     <rect>
-     <x>870</x>
-     <y>610</y>
+     <x>1440</x>
+     <y>830</y>
      <width>151</width>
      <height>41</height>
     </rect>
@@ -630,23 +625,13 @@ border: none;
     <string>Replay Mission</string>
    </property>
   </widget>
-<!-- <<<<<<< HEAD -->
   <widget class="QPushButton" name="backButton">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>610</y>
-     <width>151</width>
-     <height>41</height>
-<!-- ======= -->
-<!--   <widget class="QPushButton" name="pushButton_5">
-   <property name="geometry">
-    <rect>
-     <x>180</x>
+     <x>20</x>
      <y>20</y>
      <width>75</width>
-     <height>23</height> -->
-<!-- >>>>>>> origin/Back-End -->
+     <height>23</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -665,22 +650,6 @@ border: none;
     <string>Back</string>
    </property>
   </widget>
-  <zorder>frame_5</zorder>
-  <zorder>frame</zorder>
-  <zorder>frame_2</zorder>
-  <zorder>frame_3</zorder>
-  <zorder>frame_4</zorder>
-<!-- <<<<<<< HEAD -->
-  <zorder>newMission</zorder>
-  <zorder>redoMission</zorder>
-  <zorder>replayMission</zorder>
-  <zorder>backButton</zorder>
-<!-- =======
-  <zorder>pushButton_2</zorder>
-  <zorder>pushButton_3</zorder>
-  <zorder>pushButton_4</zorder>
-  <zorder>pushButton_5</zorder>
->>>>>>> origin/Back-End -->
  </widget>
  <customwidgets>
   <customwidget>

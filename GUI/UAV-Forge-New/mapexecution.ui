@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1366</width>
-    <height>768</height>
+    <width>1512</width>
+    <height>978</height>
    </rect>
   </property>
   <property name="palette">
@@ -80,10 +80,10 @@
   <widget class="QPushButton" name="pushBtnStop">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>410</y>
+     <x>1150</x>
+     <y>820</y>
      <width>121</width>
-     <height>61</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -105,10 +105,10 @@ border: none;
   <widget class="QPushButton" name="pushBtnReturnHome">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>290</y>
+     <x>850</x>
+     <y>820</y>
      <width>121</width>
-     <height>61</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -130,10 +130,10 @@ border: none;
   <widget class="QPushButton" name="pushBtnCancel">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>530</y>
+     <x>1300</x>
+     <y>820</y>
      <width>121</width>
-     <height>61</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -155,10 +155,10 @@ border: none;
   <widget class="QWebView" name="webView">
    <property name="geometry">
     <rect>
-     <x>190</x>
+     <x>120</x>
      <y>70</y>
-     <width>491</width>
-     <height>651</height>
+     <width>1331</width>
+     <height>711</height>
     </rect>
    </property>
    <property name="url">
@@ -170,7 +170,7 @@ border: none;
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>20</x>
      <y>30</y>
      <width>75</width>
      <height>23</height>
@@ -195,8 +195,8 @@ border: none;
   <widget class="QPushButton" name="pushBtnFinish">
    <property name="geometry">
     <rect>
-     <x>940</x>
-     <y>330</y>
+     <x>1000</x>
+     <y>820</y>
      <width>121</width>
      <height>51</height>
     </rect>

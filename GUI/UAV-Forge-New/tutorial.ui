@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>720</width>
-    <height>482</height>
+    <width>1475</width>
+    <height>923</height>
    </rect>
   </property>
   <property name="palette">
@@ -80,10 +80,10 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>70</y>
-     <width>561</width>
-     <height>331</height>
+     <x>350</x>
+     <y>180</y>
+     <width>851</width>
+     <height>561</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -105,8 +105,8 @@ border: none;
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>30</y>
+     <x>40</x>
+     <y>40</y>
      <width>75</width>
      <height>23</height>
     </rect>
