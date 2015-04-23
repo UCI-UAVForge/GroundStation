@@ -341,7 +341,7 @@ border: none;
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPlainTextEdit" name="plainTextEdit">
+    <widget class="QWebView" name="webView">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -350,8 +350,10 @@ border: none;
        <height>311</height>
       </rect>
      </property>
-     <property name="plainText">
-      <string>           	              Map</string>
+     <property name="url">
+      <url>
+       <string>about:blank</string>
+      </url>
      </property>
     </widget>
    </widget>
@@ -652,6 +654,11 @@ border: none;
   </widget>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKitWidgets/QWebView</header>
+  </customwidget>
   <customwidget>
    <class>QVideoWidget</class>
    <extends>QWidget</extends>

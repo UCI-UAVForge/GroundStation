@@ -20,6 +20,10 @@ MissionRecap::MissionRecap(QWidget *parent) :
     ui->VideoWidget->setAspectRatioMode(Qt::IgnoreAspectRatio);
     connect(ui->horizontalSlider, SIGNAL(sliderMoved(int)), this, SLOT(updateMediaPlayer(int)));
     connect(&mediaPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(updateSlider(qint64)));
+
+    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
+    ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
+
 }
 
 MissionRecap::~MissionRecap()
