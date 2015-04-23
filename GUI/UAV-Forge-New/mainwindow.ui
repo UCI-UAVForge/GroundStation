@@ -585,16 +585,23 @@ border: none;
      <x>0</x>
      <y>0</y>
      <width>1366</width>
-     <height>21</height>
+     <height>31</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>File</string>
     </property>
+    <widget class="QMenu" name="menuRecent_Missions">
+     <property name="title">
+      <string>Recent Missions</string>
+     </property>
+     <addaction name="separator"/>
+    </widget>
     <addaction name="actionNew"/>
     <addaction name="actionOpen"/>
     <addaction name="actionSave"/>
+    <addaction name="menuRecent_Missions"/>
     <addaction name="actionImport"/>
     <addaction name="actionExport"/>
     <addaction name="actionQuit"/>
@@ -651,7 +658,7 @@ border: none;
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew">
    <property name="text">
-    <string>New</string>
+    <string>New Mission</string>
    </property>
   </action>
   <action name="actionTest">
@@ -661,27 +668,30 @@ border: none;
   </action>
   <action name="actionOpen">
    <property name="text">
-    <string>Open</string>
+    <string>Open Mission</string>
    </property>
   </action>
   <action name="actionSave">
    <property name="text">
-    <string>Save</string>
+    <string>Save Mission</string>
    </property>
   </action>
   <action name="actionImport">
    <property name="text">
-    <string>Import</string>
+    <string>Import Mission</string>
    </property>
   </action>
   <action name="actionExport">
    <property name="text">
-    <string>Export</string>
+    <string>Export Mission</string>
    </property>
   </action>
   <action name="actionQuit">
    <property name="text">
     <string>Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Backspace</string>
    </property>
   </action>
   <action name="actionCopy">
@@ -697,6 +707,9 @@ border: none;
   <action name="actionMap_Planning">
    <property name="text">
     <string>Map Planning</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+P</string>
    </property>
   </action>
   <action name="actionMission_Execution">
