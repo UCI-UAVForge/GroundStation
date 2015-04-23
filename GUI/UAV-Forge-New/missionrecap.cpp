@@ -5,6 +5,8 @@
 #include <iostream>
 #include "mapplanning.h"
 #include "videoplayer.h"
+#define QCUSTOMPLOT_COMPILE_LIBRARY
+#include "qcustomplot.h"
 
 MissionRecap::MissionRecap(QWidget *parent) :
     QWidget(parent),
