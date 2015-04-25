@@ -134,6 +134,8 @@ void GsClient::gsc_send_message(){
     char buffer[BUFSIZ];
    // int recvBytes = 0;
 
+
+
     for(int i = 0; i < 100; i++)
     {
         //char data[256];
@@ -145,6 +147,7 @@ void GsClient::gsc_send_message(){
     //	recvBytes = socket.Receive(sender, buffer, sizeof(buffer));  //receive currently not working
         my_socket.Send(addra, to_send_c, sizeof(to_send_c));
     }
+    std::cout << "WORKING JUST FINE";
 
 }
 

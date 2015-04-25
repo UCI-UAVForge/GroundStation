@@ -20,17 +20,15 @@ mapexecution::mapexecution(QList<QString> strings, QWidget *parent) :
     connect(ui->pushBtnStop,SIGNAL(clicked()),this,SLOT(stopClicked()));
     ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
 
-
-
-    std::cout<<"PREPARE" << std::endl;
-    QList <QPair<double, double > > h;
-    h << QPair<double, double >(32, 32);
-    myClient.set_list(getDoublePairs(mapStrings));
-    std::cout<<"FOR" << std::endl;
     myClient.gsc_connect_start();
-    std::cout<<"THE DEVOURING," << std::endl;
-    myClient.gsc_send_message();
-    std::cout<<"PUNY HUMANS" << std::endl;
+    QList <QPair<double, double > > coords;
+    coords = getDoublePairs(mapStrings);
+    for (QPair<double, double> coord : coords){
+        QList <QPair<double, double > > h;
+        h << coord;
+        myClient.set_list(h);
+        myClient.gsc_send_message();  //ERROR gsc_send_message causes stack overflow with many waypoints
+    }
 }
 
 mapexecution::mapexecution(QWidget *parent) :
@@ -56,6 +54,9 @@ void mapexecution::finishClicked()
 }
 
 void mapexecution::stopClicked(){
+    /* Sends the point (999.99,999.99) to the UAV. Used as a code for stop.
+    Function added by Jordan Dickson March 9th 2015. */
+
     QList <QPair<double, double > > h;
     h << QPair<double, double >(999.99,999.99);
     myClient.set_list(h);
@@ -95,7 +96,9 @@ void mapexecution::setMap(QList<QString> list) {
 }
 
 QList<QPair<double,double> > mapexecution::getDoublePairs(QList<QString> strings){
-
+    /* Takes a list of strings, each string formatted (Action,Longitude,LongDirection,
+    Latitude,LatDirection,Behavior), and returns a new list of double pairs formatted
+    <latitude,longitude>. Function added by Jordan Dickson Feb 21st 2015. */
 
     QList<QPair<double,double> > returnList;
     for(QString string: strings){
@@ -139,9 +142,9 @@ void mapexecution::addPoint(QString string){
     ui->webView->page()->mainFrame()->evaluateJavaScript("addLatLngCoords("+QString::number(lat)+","+QString::number(lng)+")");
 }
 
-void mapexecution::push_new_point(QString string){
+/*void mapexecution::push_new_point(QString string){
    QList<QString> points = string.split(",");
-}
+}*/
 
 void mapexecution::addClickListener() {
     /* Since c++/JS bridges are broken when the JS page refreshes this slot
@@ -165,5 +168,6 @@ void mapexecution::addNewMap(){
 void mapexecution::plotPosition(double lat, double lng){
     /*  Sends a (latitude,longitude) pair to the map to be plotted.
     Used for telemetry. */
+    //qDebug() << "Plotting current location (" << QString::number(lat) << "," << QString::number(lng)<<").";
     ui->webView->page()->mainFrame()->evaluateJavaScript("addActualPath("+QString::number(lat)+","+QString::number(lng)+")");
 }

@@ -7,6 +7,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <QPair>
 
 #include "net.h"
 
@@ -22,7 +23,8 @@ private:
      unsigned int recieveport;
      net::GS_Socket my_socket;
 
-
+/*signals:
+     QPair<double, double> pointRecieved();*/
 };
 #endif // GSSERVER_H
 
