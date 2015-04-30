@@ -272,7 +272,11 @@ release/moc_mainwindow.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QMainWindow 
 		C:/Qt/5.3/mingw482_32/include/QtCore/qeasingcurve.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractanimation.h \
 		mainwindow.h
+<<<<<<< HEAD
 	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore mainwindow.h -o release\moc_mainwindow.cpp
+=======
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore mainwindow.h -o release\moc_mainwindow.cpp
+>>>>>>> 601d88152b49629287d969a798ffd987fec5f59b
 
 release/moc_options.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
@@ -375,7 +379,11 @@ release/moc_options.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
 		options.h
+<<<<<<< HEAD
 	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore options.h -o release\moc_options.cpp
+=======
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore options.h -o release\moc_options.cpp
+>>>>>>> 601d88152b49629287d969a798ffd987fec5f59b
 
 release/moc_mapplanning.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QDialog \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdialog.h \
@@ -527,7 +535,11 @@ release/moc_mapplanning.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QDialog \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QModelIndex \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QSize \
 		mapplanning.h
+<<<<<<< HEAD
 	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore mapplanning.h -o release\moc_mapplanning.cpp
+=======
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore mapplanning.h -o release\moc_mapplanning.cpp
+>>>>>>> 601d88152b49629287d969a798ffd987fec5f59b
 
 release/moc_tablemodel.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QAbstractTableModel \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractitemmodel.h \
@@ -599,7 +611,11 @@ release/moc_tablemodel.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QAbstractTableM
 		C:/Qt/5.3/mingw482_32/include/QtCore/QList \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QPair \
 		tablemodel.h
+<<<<<<< HEAD
 	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore tablemodel.h -o release\moc_tablemodel.cpp
+=======
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore tablemodel.h -o release\moc_tablemodel.cpp
+>>>>>>> 601d88152b49629287d969a798ffd987fec5f59b
 
 release/moc_mapexecution.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
@@ -728,7 +744,11 @@ release/moc_mapexecution.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		rapidjson/prettywriter.h \
 		gsserver.h \
 		mapexecution.h
+<<<<<<< HEAD
 	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore mapexecution.h -o release\moc_mapexecution.cpp
+=======
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore mapexecution.h -o release\moc_mapexecution.cpp
+>>>>>>> 601d88152b49629287d969a798ffd987fec5f59b
 
 release/moc_missionrecap.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qobject.h \
@@ -1293,7 +1313,11 @@ release/moc_missionrecap.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QMovie \
 		C:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets/QVideoWidget \
 		missionrecap.h
+<<<<<<< HEAD
 	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore missionrecap.h -o release\moc_missionrecap.cpp
+=======
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore missionrecap.h -o release\moc_missionrecap.cpp
+>>>>>>> 601d88152b49629287d969a798ffd987fec5f59b
 
 release/moc_tutorial.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
@@ -1396,7 +1420,11 @@ release/moc_tutorial.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
 		tutorial.h
+<<<<<<< HEAD
 	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore tutorial.h -o release\moc_tutorial.cpp
+=======
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore tutorial.h -o release\moc_tutorial.cpp
+>>>>>>> 601d88152b49629287d969a798ffd987fec5f59b
 
 release/moc_popwindowmp.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
@@ -1499,7 +1527,11 @@ release/moc_popwindowmp.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qvector2d.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qtouchdevice.h \
 		popwindowmp.h
+<<<<<<< HEAD
 	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore popwindowmp.h -o release\moc_popwindowmp.cpp
+=======
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore popwindowmp.h -o release\moc_popwindowmp.cpp
+>>>>>>> 601d88152b49629287d969a798ffd987fec5f59b
 
 release/moc_qcomboboxdelegate.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QItemDelegate \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qitemdelegate.h \
@@ -1622,7 +1654,11 @@ release/moc_qcomboboxdelegate.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QItem
 		C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QSize \
 		qcomboboxdelegate.h
+<<<<<<< HEAD
 	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore qcomboboxdelegate.h -o release\moc_qcomboboxdelegate.cpp
+=======
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore qcomboboxdelegate.h -o release\moc_qcomboboxdelegate.cpp
+>>>>>>> 601d88152b49629287d969a798ffd987fec5f59b
 
 release/moc_videoplayer.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qwidget.h \
@@ -2187,7 +2223,11 @@ release/moc_videoplayer.cpp: C:/Qt/5.3/mingw482_32/include/QtWidgets/QWidget \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QMovie \
 		C:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets/QVideoWidget \
 		videoplayer.h
+<<<<<<< HEAD
 	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore videoplayer.h -o release\moc_videoplayer.cpp
+=======
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore videoplayer.h -o release\moc_videoplayer.cpp
+>>>>>>> 601d88152b49629287d969a798ffd987fec5f59b
 
 release/moc_qcustomplot.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qobject.h \
@@ -2650,7 +2690,11 @@ release/moc_qcustomplot.cpp: C:/Qt/5.3/mingw482_32/include/QtCore/QObject \
 		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/qprintpreviewwidget.h \
 		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/qtprintsupportversion.h \
 		qcustomplot.h
+<<<<<<< HEAD
 	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/Efrain/Documents/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore qcustomplot.h -o release\moc_qcustomplot.cpp
+=======
+	C:\Qt\5.3\mingw482_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IC:/Qt/5.3/mingw482_32/mkspecs/win32-g++ -IC:/Users/William/Documents/UAV/Uci-UAVForge-GroundStation/GUI/UAV-Forge-New -IC:/Qt/5.3/mingw482_32/include -IC:/Qt/5.3/mingw482_32/include/QtMultimediaWidgets -IC:/Qt/5.3/mingw482_32/include/QtWebKitWidgets -IC:/Qt/5.3/mingw482_32/include/QtPrintSupport -IC:/Qt/5.3/mingw482_32/include/QtMultimedia -IC:/Qt/5.3/mingw482_32/include/QtWebKit -IC:/Qt/5.3/mingw482_32/include/QtWidgets -IC:/Qt/5.3/mingw482_32/include/QtNetwork -IC:/Qt/5.3/mingw482_32/include/QtGui -IC:/Qt/5.3/mingw482_32/include/QtCore qcustomplot.h -o release\moc_qcustomplot.cpp
+>>>>>>> 601d88152b49629287d969a798ffd987fec5f59b
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -6132,9 +6176,43 @@ release/missionrecap.o: missionrecap.cpp missionrecap.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QPlainTextEdit \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QPushButton \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QSlider \
+<<<<<<< HEAD
 		mapexecution.h \
 		gsclient.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QPair \
+=======
+		qcustomplot.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QPointer \
+		C:/Qt/5.3/mingw482_32/include/QtGui/QPainter \
+		C:/Qt/5.3/mingw482_32/include/QtGui/QPaintEvent \
+		C:/Qt/5.3/mingw482_32/include/QtGui/QMouseEvent \
+		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QVector \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QDateTime \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QMultiMap \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QDebug \
+		C:/Qt/5.3/mingw482_32/include/QtGui/QVector2D \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QStack \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QCache \
+		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/QPrinter \
+		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/qprinter.h \
+		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/qtprintsupportglobal.h \
+		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/QPrintEngine \
+		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/qprintengine.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QtNumeric \
+		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/QtPrintSupport \
+		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/QtPrintSupportDepends \
+		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/qabstractprintdialog.h \
+		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/qpagesetupdialog.h \
+		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/qprintdialog.h \
+		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/qprintpreviewdialog.h \
+		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/qprinterinfo.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QPair \
+		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/qprintpreviewwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/qtprintsupportversion.h \
+		mapexecution.h \
+		gsclient.h \
+>>>>>>> 601d88152b49629287d969a798ffd987fec5f59b
 		net.h \
 		rapidjson/document.h \
 		rapidjson/reader.h \
@@ -6173,6 +6251,7 @@ release/missionrecap.o: missionrecap.cpp missionrecap.h \
 		qcomboboxdelegate.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QItemDelegate \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QModelIndex \
+<<<<<<< HEAD
 		videoplayer.h \
 		qcustomplot.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QPointer \
@@ -6202,6 +6281,9 @@ release/missionrecap.o: missionrecap.cpp missionrecap.h \
 		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/qprinterinfo.h \
 		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/qprintpreviewwidget.h \
 		C:/Qt/5.3/mingw482_32/include/QtPrintSupport/qtprintsupportversion.h
+=======
+		videoplayer.h
+>>>>>>> 601d88152b49629287d969a798ffd987fec5f59b
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\missionrecap.o missionrecap.cpp
 
 release/tutorial.o: tutorial.cpp tutorial.h \
