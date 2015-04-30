@@ -4,6 +4,9 @@
 #include <QMainWindow>
 #include "options.h"
 #include <QPropertyAnimation>
+#include <QShortcut>
+#include <QPixmap>
+#include <QDebug>
 namespace Ui {
 class MainWindow;
 }

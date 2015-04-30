@@ -166,7 +166,7 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
+    <item alignment="Qt::AlignLeft">
      <widget class="QWidget" name="widget" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -724,8 +724,8 @@ border: none;
    <slot>missionPlanningClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>204</x>
-     <y>354</y>
+     <x>202</x>
+     <y>179</y>
     </hint>
     <hint type="destinationlabel">
      <x>585</x>
@@ -740,8 +740,8 @@ border: none;
    <slot>missionExecutionClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>204</x>
-     <y>201</y>
+     <x>202</x>
+     <y>347</y>
     </hint>
     <hint type="destinationlabel">
      <x>948</x>
@@ -756,8 +756,8 @@ border: none;
    <slot>missionRecapClicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>204</x>
-     <y>507</y>
+     <x>202</x>
+     <y>515</y>
     </hint>
     <hint type="destinationlabel">
      <x>946</x>
