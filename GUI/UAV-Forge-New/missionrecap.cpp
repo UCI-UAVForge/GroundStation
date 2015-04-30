@@ -23,9 +23,23 @@ MissionRecap::MissionRecap(QWidget *parent) :
     connect(ui->horizontalSlider, SIGNAL(sliderMoved(int)), this, SLOT(updateMediaPlayer(int)));
     connect(&mediaPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(updateSlider(qint64)));
 
-    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
+    //connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
     ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
 
+
+    int size = 10;
+    QVector<double> x(size), y(size);
+
+    for(int i = 0; i < size; i++) {
+        x[i] = i;
+        y[i] = i;
+    }
+
+    ui->plot->addGraph();
+    ui->plot->graph(0)->setData(x,y);
+    ui->plot->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle));
+    ui->plot->xAxis->setRange(0,10);
+    ui->plot->yAxis->setRange(0,10);
 }
 
 MissionRecap::~MissionRecap()

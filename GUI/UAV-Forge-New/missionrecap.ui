@@ -227,7 +227,7 @@ border: none;
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QCustomPlot" name="widget" native="true">
+    <widget class="QCustomPlot" name="plot" native="true">
      <property name="geometry">
       <rect>
        <x>10</x>
