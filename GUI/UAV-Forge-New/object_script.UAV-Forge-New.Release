@@ -13,6 +13,7 @@ INPUT(
 ./release\gsserver.o
 ./release\gsclient.o
 ./release\jsonobject.o
+./release\qcustomplot.o
 ./release\qrc_Resources.o
 ./release\moc_mainwindow.o
 ./release\moc_options.o
@@ -24,4 +25,5 @@ INPUT(
 ./release\moc_popwindowmp.o
 ./release\moc_qcomboboxdelegate.o
 ./release\moc_videoplayer.o
+./release\moc_qcustomplot.o
 );
