@@ -1,7 +1,6 @@
 #include "mapexecution.h"
 #include "ui_mapexecution.h"
 #include "missionrecap.h"
-#include "options.h"
 #include "mainwindow.h"
 //#include "net.h"
 #include "gsclient.h"
@@ -22,15 +21,15 @@ mapexecution::mapexecution(QList<QString> strings, QWidget *parent) :
 
 
 
-    std::cout<<"PREPARE" << std::endl;
+    //std::cout<<"PREPARE" << std::endl;
     QList <QPair<double, double > > h;
     h << QPair<double, double >(32, 32);
     myClient.set_list(getDoublePairs(mapStrings));
-    std::cout<<"FOR" << std::endl;
+    //std::cout<<"FOR" << std::endl;
     myClient.gsc_connect_start();
-    std::cout<<"THE DEVOURING," << std::endl;
+    //std::cout<<"THE DEVOURING," << std::endl;
     myClient.gsc_send_message();
-    std::cout<<"PUNY HUMANS" << std::endl;
+    //std::cout<<"PUNY HUMANS" << std::endl;
 }
 
 mapexecution::mapexecution(QWidget *parent) :
@@ -56,6 +55,8 @@ void mapexecution::finishClicked()
 }
 
 void mapexecution::stopClicked(){
+    /* Sends the point (999.99,999.99) to the UAV. Used as a code for stop.
+    Function added by Jordan Dickson March 9th 2015. */
     QList <QPair<double, double > > h;
     h << QPair<double, double >(999.99,999.99);
     myClient.set_list(h);

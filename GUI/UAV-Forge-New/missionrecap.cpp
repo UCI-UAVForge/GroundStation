@@ -82,9 +82,9 @@ void MissionRecap::on_newMission_clicked()
     mapPlanning->showFullScreen();
 }
 
-void MissionRecap::on_pushButton_5_clicked()
+/*void MissionRecap::on_pushButton_5_clicked()
 {
     MainWindow *mainwindow = new MainWindow();
     this -> close();
     mainwindow->show();
-}
+}*/

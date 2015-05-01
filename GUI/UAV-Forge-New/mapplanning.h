@@ -1,3 +1,9 @@
+/* For more information about the MapPlanning class and its functions, see
+ * the comments in MapPlanning.cpp file.
+ *
+ * File added sometime prior to April 30 2015.
+ */
+
 #ifndef MAPPLANNING_H
 #define MAPPLANNING_H
 
@@ -19,33 +25,30 @@ class MapPlanning : public QDialog
     Q_OBJECT
 
 public:
-    void updateMap();
-    QList<QString> getTableAsStrings();
     explicit MapPlanning(QWidget *parent = 0);
     ~MapPlanning();
+    void updateMap();
+    QList<QString> getTableAsStrings();
 
 public slots:
-    void addPointToTable(double lat, double lng);
     //addPointToTable - used to add an entry with latitude lat and longitude lng to the table.
     //  lat - the latitude value (usually from the JavaScript program).
     //  lng - the longitude value (usually from the JavaScript program).
+    void addPointToTable(double lat, double lng);
 
 private slots:
-    void on_pushButton_6_clicked();
-    void on_pushButton_5_clicked();
-    //void buttonWasClicked(int);
+    //button action slots
+    void on_back_clicked();
+    void on_addRow_clicked();
+    void on_removeRow_clicked();
+    void on_execute_clicked();
+    void on_update_clicked();
+    void on_clearPath_clicked();
 
-    void on_pushButton_clicked();
-    void on_clearTable_clicked();
-    void on_clearMap_clicked();
-    void on_pushButton_7_clicked();
-    void on_pushButton_8_clicked();
-//    void on_pushButton_clicked();
-    void on_pushButton_2_clicked();
-    void on_pushButton_3_clicked();
-
+    //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame()
     void addClickListener();
-    //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame().
+
+    //closeWindow - Slot used by popupWindowMP to close this window once Mission Execution starts
     void closeWindow();
 
     QList<QList<QString> > getTableData();
@@ -57,7 +60,6 @@ private:
     QPushButton *del;
     TableModel *model;
     PopWindowMP *popup;
-    QList<QList<QString> > tableData;
 };
 
 #endif // MAPPLANNING_H

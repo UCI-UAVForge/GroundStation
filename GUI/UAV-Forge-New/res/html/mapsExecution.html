@@ -65,27 +65,48 @@
                 map.setZoom(zoom);
             }
 
-
-
             //-------------------
             //Test code to see the table's ability to update. Fun for now. Delete later.
-            // Jordan Feb 21 2015
+            // Jordan April 23 2015
 
             var simx = -117.8;
             var simy = 33.6;
+            var count = 1;
+            var flying = true;
+            var wx = .0002;
+            var wy = .00015;
 
             function simulateInput(){
                 if(flightPath.getPath().getAt(0)){
                     simx = flightPath.getPath().getAt(0).lng();
                     simy = flightPath.getPath().getAt(0).lat();
+                    simuInput = setInterval(disturbPath,25);
                 }
-                simuInput = setInterval(disturbPath,1000);
             }
 
             function disturbPath(){
-                simx = simx + 0.001;
-                simy = simy + 0.0015;
-                addActualPath(simy,simx);
+                if(flying){
+                    var dx = flightPath.getPath().getAt(count).lng() - simx;
+                    var dy = flightPath.getPath().getAt(count).lat() - simy;
+                    var dist = Math.sqrt(dx*dx+dy*dy);
+                    var stepx = dx/dist/1800;
+                    var stepy = dy/dist/1800;
+                    if(dist > Math.sqrt(stepx*stepx+stepy*stepy)){
+                        simx = simx + stepx + wx;
+                        simy = simy + stepy + wy;
+                    } else {
+                        count = count + 1;
+                        if(count == flightPath.getPath().getLength()){
+                            flying = false;
+                        }
+                    }
+
+                    // Use cbridge.plotPosition line for more computationaly realistic simulation;
+                    // Use addActualPath line for nicer looking results
+
+                    cbridge.plotPosition(simy,simx);
+                    //addActualPath(simy,simx);
+                }
             }
 
             // End of Test Code
@@ -97,6 +118,7 @@
             //Recieveing
 
             //}
+
             function initialize() {
             //Setup function that creates the initial map state.
                 var mapCanvas = document.getElementById('map_canvas');

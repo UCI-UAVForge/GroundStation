@@ -1,9 +1,15 @@
+/* This is the header file for the MainWindow class. For information about
+ * this class and its functions, see comments on the top of mainwindow.cpp.
+ *
+ * File added sometime prior to April 30 2015.
+ */
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "options.h"
 #include <QPropertyAnimation>
+
 namespace Ui {
 class MainWindow;
 }
@@ -17,12 +23,13 @@ public:
     ~MainWindow();
 
 private slots:
-    //void openOptions();
+    //button actions
     void openTutorial();
     void missionPlanningClicked();
     void missionExecutionClicked();
     void missionRecapClicked();
 
+    //quit command
     void on_actionQuit_triggered();
 
 private:

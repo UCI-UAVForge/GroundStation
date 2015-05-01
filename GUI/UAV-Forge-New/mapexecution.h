@@ -16,13 +16,13 @@ public slots:
     void setMap(QList<QString> list);
     void addPoint(QString string);
     void addNewMap();
+    void plotPosition(double lat, double lng);
 public:
     explicit mapexecution(QList<QString> strings, QWidget *parent = 0);
     explicit mapexecution(QWidget *parent = 0);
     QList<QString> mapStrings;
-    void plotPosition(double lat, double lng);
     ~mapexecution();
-    //GsServer myServer;
+    GsServer myServer;
     GsClient myClient;
     QList<QPair<double,double> > getDoublePairs(QList<QString> strings);
 private slots:

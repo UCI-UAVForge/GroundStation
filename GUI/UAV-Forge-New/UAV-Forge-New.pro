@@ -17,14 +17,13 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 #CONFIG += console
 
 CONFIG += c++11
-LIBS += -lws2_32
+#LIBS += -lws2_32
 TARGET = UAV-Forge-New
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    options.cpp \
     mapplanning.cpp \
     tablemodel.cpp \
     mapexecution.cpp \
@@ -38,7 +37,6 @@ SOURCES += main.cpp\
     jsonobject.cpp
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
-    options.h \
     mapplanning.h \
     tablemodel.h \
     mapexecution.h \
@@ -53,7 +51,6 @@ HEADERS  += mainwindow.h \
     jsonobject.h
 
 FORMS    += mainwindow.ui \
-    options.ui \
     mapplanning.ui \
     mapexecution.ui \
     missionrecap.ui \
