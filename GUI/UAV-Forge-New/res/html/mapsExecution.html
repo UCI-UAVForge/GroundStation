@@ -23,6 +23,8 @@
             //Actual flight path of the UAV, Constructed from data Recieved from UAV/test machine
             var flightPath_actual;
 
+            var marker;
+
             //var clickable = false;
 
             function addLatLng(myLocation) {
@@ -39,7 +41,7 @@
             function addActualPath(lat, lng){
                 var location = new google.maps.LatLng(lat,lng);
                 add_actual_loc(location);
-                //move_icon)();
+                moveIcon(location);
             }
 
             function addLatLngCoords(lat,lng) {
@@ -73,8 +75,8 @@
             var simy = 33.6;
             var count = 1;
             var flying = true;
-            var wx = .0002;
-            var wy = .00015;
+            var wx = 0;//.0002;
+            var wy = 0;//.00015;
 
             function simulateInput(){
                 if(flightPath.getPath().getAt(0)){
@@ -114,10 +116,9 @@
 
 
 
-            //function move_icon(myLocation){
-            //Recieveing
-
-            //}
+            function moveIcon(myLocation){
+                marker.setPosition(myLocation);
+            }
 
             function initialize() {
             //Setup function that creates the initial map state.
@@ -145,6 +146,11 @@
 
                 flightPath.setMap(map);
                 flightPath_actual.setMap(map);
+                marker = new google.maps.Marker({
+                    position: flightPath.getPath().getAt(0),
+                    map: map,
+                    icon: "qrc:/res/Plane.png"
+                });
                 cbridge.addNewMap();
             }
             google.maps.event.addDomListener(window, 'load', initialize);
