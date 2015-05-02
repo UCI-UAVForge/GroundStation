@@ -209,7 +209,8 @@
          </property>
          <property name="styleSheet">
           <string notr="true"> QPushButton { 
-background-color: &quot;#CCD1D9&quot;; 
+	image: url(:/res/Type 3/Mission_Planning_Button_Type_3.png);
+background-color: &quot;#FFFFFF&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 10px;
 font-weight: bold;
@@ -220,7 +221,7 @@ border: none;
  }</string>
          </property>
          <property name="text">
-          <string>Mission Planning</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -246,7 +247,8 @@ border: none;
          </property>
          <property name="styleSheet">
           <string notr="true"> QPushButton { 
-background-color: &quot;#CCD1D9&quot;; 
+	image: url(:/res/Type 3/Mission_Execution_Button_Type_3.png);
+background-color: &quot;#FFFFFF&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 10px;
 font-weight: bold;
@@ -257,7 +259,7 @@ border: none;
  }</string>
          </property>
          <property name="text">
-          <string>Mission Execution</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -296,9 +298,9 @@ border: none;
             <colorrole role="Button">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>204</red>
-               <green>209</green>
-               <blue>217</blue>
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
               </color>
              </brush>
             </colorrole>
@@ -332,18 +334,18 @@ border: none;
             <colorrole role="Base">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>204</red>
-               <green>209</green>
-               <blue>217</blue>
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
               </color>
              </brush>
             </colorrole>
             <colorrole role="Window">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>204</red>
-               <green>209</green>
-               <blue>217</blue>
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
               </color>
              </brush>
             </colorrole>
@@ -361,9 +363,9 @@ border: none;
             <colorrole role="Button">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>204</red>
-               <green>209</green>
-               <blue>217</blue>
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
               </color>
              </brush>
             </colorrole>
@@ -397,18 +399,18 @@ border: none;
             <colorrole role="Base">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>204</red>
-               <green>209</green>
-               <blue>217</blue>
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
               </color>
              </brush>
             </colorrole>
             <colorrole role="Window">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>204</red>
-               <green>209</green>
-               <blue>217</blue>
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
               </color>
              </brush>
             </colorrole>
@@ -426,9 +428,9 @@ border: none;
             <colorrole role="Button">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>204</red>
-               <green>209</green>
-               <blue>217</blue>
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
               </color>
              </brush>
             </colorrole>
@@ -462,18 +464,18 @@ border: none;
             <colorrole role="Base">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>204</red>
-               <green>209</green>
-               <blue>217</blue>
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
               </color>
              </brush>
             </colorrole>
             <colorrole role="Window">
              <brush brushstyle="SolidPattern">
               <color alpha="255">
-               <red>204</red>
-               <green>209</green>
-               <blue>217</blue>
+               <red>255</red>
+               <green>255</green>
+               <blue>255</blue>
               </color>
              </brush>
             </colorrole>
@@ -482,7 +484,8 @@ border: none;
          </property>
          <property name="styleSheet">
           <string notr="true"> QPushButton { 
-background-color: &quot;#CCD1D9&quot;; 
+	image: url(:/res/Type 3/Mission_Recap_Button_Type_3.png);
+background-color: &quot;#FFFFFF&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 10px;
 font-weight: bold;
@@ -493,7 +496,7 @@ border: none;
  }</string>
          </property>
          <property name="text">
-          <string>Mission Recap</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -519,7 +522,8 @@ border: none;
          </property>
          <property name="styleSheet">
           <string notr="true"> QPushButton { 
-background-color: &quot;#CCD1D9&quot;; 
+	image: url(:/res/Type 3/Tutorial_Button_Type_3.png);
+background-color: &quot;#FFFFFF&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 10px;
 font-weight: bold;
@@ -530,7 +534,7 @@ border: none;
  }</string>
          </property>
          <property name="text">
-          <string>Tutorials</string>
+          <string/>
          </property>
         </widget>
        </item>
@@ -545,7 +549,7 @@ border: none;
      <x>0</x>
      <y>0</y>
      <width>1366</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
