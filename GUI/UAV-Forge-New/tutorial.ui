@@ -115,6 +115,14 @@ border: none;
     <string/>
    </property>
   </widget>
+  <action name="back_button">
+   <property name="text">
+    <string>backButton</string>
+   </property>
+   <property name="shortcut">
+    <string>Backspace</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
