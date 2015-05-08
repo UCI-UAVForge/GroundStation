@@ -628,7 +628,7 @@ compiler_rcc_make_all: qrc_Resources.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) qrc_Resources.cpp
 qrc_Resources.cpp: ../UAV-Forge-New/Resources.qrc \
-		../UAV-Forge-New/res/Plane.png \
+		../UAV-Forge-New/res/Drone.png \
 		../UAV-Forge-New/res/html/mapsPlanning.html \
 		../UAV-Forge-New/res/html/mapsExecution.html
 	/Applications/Qt/5.4/clang_64/bin/rcc -name Resources ../UAV-Forge-New/Resources.qrc -o qrc_Resources.cpp
