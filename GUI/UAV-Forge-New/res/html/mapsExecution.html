@@ -149,7 +149,10 @@
                 marker = new google.maps.Marker({
                     position: flightPath.getPath().getAt(0),
                     map: map,
-                    icon: "qrc:/res/Plane.png"
+                    icon:{
+                        url: "qrc:/res/Drone.png",
+                        anchor: new google.maps.Point(20,20)
+                    }
                 });
                 cbridge.addNewMap();
             }

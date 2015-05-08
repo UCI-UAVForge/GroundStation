@@ -2,6 +2,6 @@
     <qresource prefix="/">
         <file>res/html/mapsExecution.html</file>
         <file>res/html/mapsPlanning.html</file>
-        <file>res/Plane.png</file>
+        <file>res/Drone.png</file>
     </qresource>
 </RCC>
