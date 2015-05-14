@@ -37,6 +37,7 @@ void MainWindow::openTutorial()
     Tutorial *tutorial = new Tutorial();
     this -> close();
     tutorial -> showFullScreen();
+
 }
 
 void MainWindow::missionPlanningClicked()
