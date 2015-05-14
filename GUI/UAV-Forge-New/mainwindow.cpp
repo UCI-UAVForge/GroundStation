@@ -18,6 +18,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     //ui->pushButton_8->setIcon(QIcon(":/res/longButtons/Mission_Execution_Button_Type_2.png"));
     //ui->pushButton_8->setIconSize(QSize(181,101));
+    QPixmap pixmap(":/res/longButtons/Mission_Execution_Button_Type_2.png");
+    QIcon ButtonIcon(pixmap);
+    ui->pushButton_8->setIcon(ButtonIcon);
+    ui->pushButton_8->setIconSize(pixmap.rect().size()/6);//QSize(ui->pushButton_8->width()+100,ui->pushButton_8->height()+200));
+
 }
 
 MainWindow::~MainWindow()
