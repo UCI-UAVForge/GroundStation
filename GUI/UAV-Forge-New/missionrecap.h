@@ -41,7 +41,7 @@ private slots:
     void on_horizontalSlider_sliderPressed();
 
     void on_newMission_clicked();
-    void on_pushButton_5_clicked();
+    //void on_pushButton_5_clicked();
 
 private:
     Ui::MissionRecap *ui;

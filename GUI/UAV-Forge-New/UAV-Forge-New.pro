@@ -24,7 +24,6 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    options.cpp \
     mapplanning.cpp \
     tablemodel.cpp \
     mapexecution.cpp \
@@ -39,7 +38,6 @@ SOURCES += main.cpp\
     qcustomplot.cpp
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
-    options.h \
     mapplanning.h \
     tablemodel.h \
     mapexecution.h \
@@ -55,7 +53,6 @@ HEADERS  += mainwindow.h \
     qcustomplot.h
 
 FORMS    += mainwindow.ui \
-    options.ui \
     mapplanning.ui \
     mapexecution.ui \
     missionrecap.ui \

@@ -241,9 +241,14 @@ void MissionRecap::on_newMission_clicked()
     mapPlanning->showFullScreen();
 }
 
-void MissionRecap::on_pushButton_5_clicked()
+/*void MissionRecap::on_pushButton_5_clicked()
 {
     MainWindow *mainwindow = new MainWindow();
     this -> close();
+<<<<<<< HEAD
     mainwindow->showFullScreen();
 }
+=======
+    mainwindow->show();
+}*/
+// >>>>>>> 4657e7a59454d03e9c48944178e4cdad163200a6

@@ -1,5 +1,8 @@
 QMAKE_XCODE_DEVELOPER_PATH = /Applications/Xcode.app/Contents/Developer
+
 QMAKE_XCODE_VERSION = 6.3
+
+
 QMAKE_MAC_SDK.macosx10.9.path = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk
 QMAKE_MAC_SDK.macx-clang.macosx10.9.QMAKE_CC = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
 QMAKE_MAC_SDK.macx-clang.macosx10.9.QMAKE_CXX = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
