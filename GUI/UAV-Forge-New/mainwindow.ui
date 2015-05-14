@@ -170,8 +170,8 @@
      <rect>
       <x>11</x>
       <y>11</y>
-      <width>242</width>
-      <height>651</height>
+      <width>203</width>
+      <height>641</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -555,8 +555,21 @@ border: none;
       <height>351</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"> QPushButton { 
+	image: url(:/res/images/UAVMissionPlanningPreview.jpg);
+background-color: &quot;#FFFFFF&quot;; 
+color: &quot;#434A54&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #E6E9ED
+ }</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string/>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -568,8 +581,21 @@ border: none;
       <height>351</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"> QPushButton { 
+	image: url(:/res/images/UAVMissionRecapTest.png);
+background-color: &quot;#FFFFFF&quot;; 
+color: &quot;#434A54&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #E6E9ED
+ }</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string/>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_3">
@@ -581,15 +607,49 @@ border: none;
       <height>351</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"> QPushButton { 
+	image: url(:/res/images/UAVMissionExecutionTest.jpg);
+background-color: &quot;#FFFFFF&quot;; 
+color: &quot;#434A54&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #E6E9ED
+ }</string>
+    </property>
     <property name="text">
-     <string>PushButton</string>
+     <string/>
     </property>
    </widget>
-   <zorder>widget</zorder>
-   <zorder>pushButton_9</zorder>
-   <zorder>pushButton</zorder>
-   <zorder>pushButton_2</zorder>
-   <zorder>pushButton_3</zorder>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>350</y>
+      <width>501</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> QPushButton { 
+	image: url(:/res/images/UAVLogo.png);
+background-color: &quot;#FFFFFF&quot;; 
+color: &quot;#434A54&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #E6E9ED
+ }</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -814,6 +874,54 @@ border: none;
     <hint type="destinationlabel">
      <x>946</x>
      <y>400</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>missionPlanningClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>610</x>
+     <y>215</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>682</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>missionExecutionClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1110</x>
+     <y>215</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>682</x>
+     <y>383</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>missionRecapClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>610</x>
+     <y>565</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>682</x>
+     <y>383</y>
     </hint>
    </hints>
   </connection>
