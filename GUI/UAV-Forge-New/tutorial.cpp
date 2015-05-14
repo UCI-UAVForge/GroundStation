@@ -7,7 +7,7 @@ Tutorial::Tutorial(QWidget *parent) :
     ui(new Ui::Tutorial)
 {
     ui->setupUi(this);
-    QPixmap picture("UAVTutorialTest.png");
+    QPixmap picture("Images/UAVTutorialTest.png");
     ui->label_picture->setPixmap(picture);
 }
 
