@@ -9,6 +9,9 @@
 #include <qmediaplayer.h>
 #include <qvideowidget.h>
 #include <qvideosurfaceformat.h>
+#define QCUSTOMPLOT_COMPILE_LIBRARY
+#include "qcustomplot.h"
+#include <QTimer>
 
 namespace Ui {
 class MissionRecap;
@@ -26,9 +29,11 @@ public slots:
     void updateSlider(qint64 position);
     void updateMediaPlayer(int position);
     void replayMissionClicked();
+    void setupRealtimeDataDemo(QCustomPlot *customPlot);
+
 
 private slots:
-
+    void realtimeDataSlot();
     void on_backButton_clicked();
     void on_playButton_clicked();
     void on_stopButton_clicked();
@@ -42,6 +47,7 @@ private:
     Ui::MissionRecap *ui;
     QMediaPlayer mediaPlayer;
     QVideoFrame currentFrame;
+    QTimer dataTimer;
 };
 
 #endif // MISSIONRECAP_H
