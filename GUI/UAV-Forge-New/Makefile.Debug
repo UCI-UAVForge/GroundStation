@@ -154,6 +154,12 @@ compiler_rcc_make_all: debug/qrc_Resources.cpp
 compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_Resources.cpp
 debug/qrc_Resources.cpp: Resources.qrc \
+		res/images/UAVMissionRecapTest.png \
+		res/images/UAVMissionPlanningPreview.jpg \
+		res/images/UAVTutorialTest.png \
+		res/images/UAVLogo.png \
+		res/images/UAVMissionExecutionTest.jpg \
+		res/images/UAVMissionPlanningTest.jpg \
 		res/longButtons/Mission_Planning_Button_Type_2.png \
 		res/longButtons/Tutorial_Button_Type_2.png \
 		res/longButtons/Mission_Recap_Button_Type_2.png \
@@ -3590,53 +3596,6 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QPixmap \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QDebug \
 		ui_mainwindow.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/QVariant \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QAction \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qaction.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qactiongroup.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QApplication \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qapplication.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qcoreapplication.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qeventloop.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdesktopwidget.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qguiapplication.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qinputmethod.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QButtonGroup \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qbuttongroup.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QHBoxLayout \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qboxlayout.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlayout.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlayoutitem.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgridlayout.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QHeaderView \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qheaderview.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qframe.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractitemmodel.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qitemselectionmodel.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemdelegate.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyleoption.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractspinbox.h \
-		C:/Qt/5.3/mingw482_32/include/QtGui/qvalidator.h \
-		C:/Qt/5.3/mingw482_32/include/QtCore/qregularexpression.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qslider.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractslider.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyle.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabbar.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qrubberband.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QMenu \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmenu.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QMenuBar \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmenubar.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QPushButton \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qpushbutton.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QStatusBar \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstatusbar.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QToolBar \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtoolbar.h \
-		C:/Qt/5.3/mingw482_32/include/QtWidgets/QVBoxLayout \
 		tutorial.h \
 		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/QWebView \
 		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/qwebview.h \
@@ -3665,6 +3624,23 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdialog.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QComboBox \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qcombobox.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyleoption.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qvalidator.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qregularexpression.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qslider.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractslider.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstyle.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtabbar.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qrubberband.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qframe.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QPushButton \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qpushbutton.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractbutton.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/QButtonGroup \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qbuttongroup.h \
 		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/QWebFrame \
 		C:/Qt/5.3/mingw482_32/include/QtWebKitWidgets/qwebframe.h \
 		tablemodel.h \
@@ -3733,6 +3709,7 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qtemporaryfile.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractproxymodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qidentityproxymodel.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qsortfilterproxymodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qstringlistmodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qjsonarray.h \
@@ -3740,8 +3717,10 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qjsondocument.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qjsonobject.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qabstracteventdispatcher.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qeventloop.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qabstractnativeeventfilter.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qbasictimer.h \
+		C:/Qt/5.3/mingw482_32/include/QtCore/qcoreapplication.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmath.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmetaobject.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/qmimedata.h \
@@ -3822,6 +3801,8 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qdrag.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qgenericplugin.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qgenericpluginfactory.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qguiapplication.h \
+		C:/Qt/5.3/mingw482_32/include/QtGui/qinputmethod.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qoffscreensurface.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qsurface.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/qsurfaceformat.h \
@@ -3887,6 +3868,7 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtNetwork/qabstractnetworkcache.h \
 		C:/Qt/5.3/mingw482_32/include/QtNetwork/qnetworkrequest.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QString \
+		C:/Qt/5.3/mingw482_32/include/QtCore/QVariant \
 		C:/Qt/5.3/mingw482_32/include/QtNetwork/qhttpmultipart.h \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QByteArray \
 		C:/Qt/5.3/mingw482_32/include/QtCore/QIODevice \
@@ -4022,10 +4004,13 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtGui/QMatrix4x4 \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgraphicsview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qscrollarea.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qabstractitemview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qcolumnview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdatawidgetmapper.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdirmodel.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qfileiconprovider.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qheaderview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qitemeditorfactory.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlistview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlistwidget.h \
@@ -4035,6 +4020,14 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtreeview.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtreewidget.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtreewidgetitemiterator.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qaction.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qactiongroup.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qapplication.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qdesktopwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qboxlayout.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlayout.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlayoutitem.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgridlayout.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qformlayout.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/QLayout \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qgesture.h \
@@ -4077,6 +4070,8 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qlcdnumber.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmdiarea.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmdisubwindow.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmenu.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qmenubar.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qplaintextedit.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtextedit.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qprogressbar.h \
@@ -4087,7 +4082,9 @@ debug/mainwindow.o: mainwindow.cpp mainwindow.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qsplashscreen.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qsplitter.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstackedwidget.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qstatusbar.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtextbrowser.h \
+		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtoolbar.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtoolbox.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtoolbutton.h \
 		C:/Qt/5.3/mingw482_32/include/QtWidgets/qtwidgetsversion.h \

@@ -30,6 +30,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
 /*void MainWindow::openOptions()
 {
     Options *options = new Options();
