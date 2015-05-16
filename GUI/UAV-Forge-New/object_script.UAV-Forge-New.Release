@@ -1,7 +1,6 @@
 INPUT(
 ./release\main.o
 ./release\mainwindow.o
-./release\options.o
 ./release\mapplanning.o
 ./release\tablemodel.o
 ./release\mapexecution.o
@@ -16,7 +15,6 @@ INPUT(
 ./release\qcustomplot.o
 ./release\qrc_Resources.o
 ./release\moc_mainwindow.o
-./release\moc_options.o
 ./release\moc_mapplanning.o
 ./release\moc_tablemodel.o
 ./release\moc_mapexecution.o

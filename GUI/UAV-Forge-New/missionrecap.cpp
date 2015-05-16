@@ -23,13 +23,13 @@ MissionRecap::MissionRecap(QWidget *parent) :
     connect(ui->horizontalSlider, SIGNAL(sliderMoved(int)), this, SLOT(updateMediaPlayer(int)));
     connect(&mediaPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(updateSlider(qint64)));
 
-    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
-    ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
+//    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
+//    ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
 
-    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
-    ui->webView->load(QUrl("qrc:/res/html/missionRecap.html"));
+//    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
+//    ui->webView->load(QUrl("qrc:/res/html/missionRecap.html"));
 
-    setupRealtimeDataDemo(ui->customPlot);
+//    setupRealtimeDataDemo(ui->customPlot);
 }
 
 MissionRecap::~MissionRecap()
@@ -101,24 +101,24 @@ void MissionRecap::realtimeDataSlot()
     double value0 = qSin(key); //qSin(key*1.6+qCos(key*1.7)*2)*10 + qSin(key*1.2+0.56)*20 + 26;
     double value1 = qCos(key); //qSin(key*1.3+qCos(key*1.2)*1.2)*7 + qSin(key*0.9+0.26)*24 + 26;
     // add data to lines:
-    ui->customPlot->graph(0)->addData(key, value0);
-    ui->customPlot->graph(1)->addData(key, value1);
-    // set data of dots:
-    ui->customPlot->graph(2)->clearData();
-    ui->customPlot->graph(2)->addData(key, value0);
-    ui->customPlot->graph(3)->clearData();
-    ui->customPlot->graph(3)->addData(key, value1);
-    // remove data of lines that's outside visible range:
-    ui->customPlot->graph(0)->removeDataBefore(key-8);
-    ui->customPlot->graph(1)->removeDataBefore(key-8);
-    // rescale value (vertical) axis to fit the current data:
-    ui->customPlot->graph(0)->rescaleValueAxis();
-    ui->customPlot->graph(1)->rescaleValueAxis(true);
+//    ui->customPlot->graph(0)->addData(key, value0);
+//    ui->customPlot->graph(1)->addData(key, value1);
+//    // set data of dots:
+//    ui->customPlot->graph(2)->clearData();
+//    ui->customPlot->graph(2)->addData(key, value0);
+//    ui->customPlot->graph(3)->clearData();
+//    ui->customPlot->graph(3)->addData(key, value1);
+//    // remove data of lines that's outside visible range:
+//    ui->customPlot->graph(0)->removeDataBefore(key-8);
+//    ui->customPlot->graph(1)->removeDataBefore(key-8);
+//    // rescale value (vertical) axis to fit the current data:
+//    ui->customPlot->graph(0)->rescaleValueAxis();
+//    ui->customPlot->graph(1)->rescaleValueAxis(true);
     lastPointKey = key;
   }
   // make key axis range scroll with the data (at a constant range size of 8):
-  ui->customPlot->xAxis->setRange(key+0.25, 8, Qt::AlignRight);
-  ui->customPlot->replot();
+//  ui->customPlot->xAxis->setRange(key+0.25, 8, Qt::AlignRight);
+//  ui->customPlot->replot();
 
   // calculate frames per second:
   static double lastFpsKey;
