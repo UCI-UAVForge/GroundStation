@@ -17,6 +17,7 @@ namespace Ui {
 class MissionRecap;
 }
 
+
 class MissionRecap : public QWidget
 {
     Q_OBJECT
