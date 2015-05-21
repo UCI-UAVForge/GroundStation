@@ -12,6 +12,13 @@ TableModel::TableModel(QObject *parent)
 
 }
 
+//TableModel::TableModel(QObject *parent, String title1, String title2)
+//    : QAbstractTableModel(parent)
+//{
+//    columns.push_back(title1);
+//    columns.push_back(title2);
+//}
+
 TableModel::TableModel(QList<QList<QString> > pairs, QObject *parent)
     : QAbstractTableModel(parent)
 {
@@ -46,8 +53,7 @@ QVariant TableModel::data(const QModelIndex &index, int role) const
     return QVariant();
 }
 
-QVariant TableModel::headerData(int section, Qt::Orientation orientation, int role) const
-{
+QVariant TableModel::headerData(int section, Qt::Orientation orientation, int role) const {
     if (role != Qt::DisplayRole)
         return QVariant();
 
@@ -59,8 +65,7 @@ QVariant TableModel::headerData(int section, Qt::Orientation orientation, int ro
     return QVariant();
 }
 
-bool TableModel::insertRows(int position, int rows, const QModelIndex &index)
-{
+bool TableModel::insertRows(int position, int rows, const QModelIndex &index) {
     Q_UNUSED(index);
     beginInsertRows(index, position, position + rows - 1);
 
@@ -129,8 +134,7 @@ bool TableModel::insertRow(double longitude, double latitude,const QModelIndex &
 }
 
 
-bool TableModel::insertRow(const QModelIndex &index)
-{
+bool TableModel::insertRow(const QModelIndex &index) {
     Q_UNUSED(index);
     int insertRow = rowCount(index);
     beginInsertRows(index, insertRow, insertRow);

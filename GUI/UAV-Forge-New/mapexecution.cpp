@@ -10,11 +10,26 @@
 #include <QPair>
 #include <QList>
 
-mapexecution::mapexecution(QList<QString> strings, QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::mapexecution)
-{
+mapexecution::mapexecution(QWidget *parent) : QWidget(parent), ui(new Ui::mapexecution) {
+    buttonGroup = new QButtonGroup();
+    model = new TableModel();
+
     ui->setupUi(this);
+    ui->tableView->setModel(model);
+    ui->tableView->setItemDelegate(new QComboBoxDelegate());
+
+    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
+    ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
+}
+
+mapexecution::mapexecution(QList<QString> strings, QWidget *parent) : QWidget(parent), ui(new Ui::mapexecution) {
+    ui->setupUi(this);
+    buttonGroup = new QButtonGroup();
+
+    model = new TableModel();
+    ui->tableView->setModel(model);
+    ui->tableView->setItemDelegate(new QComboBoxDelegate());
+
     mapStrings = strings;
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
     connect(ui->pushBtnStop,SIGNAL(clicked()),this,SLOT(stopClicked()));
@@ -31,16 +46,6 @@ mapexecution::mapexecution(QList<QString> strings, QWidget *parent) :
     std::cout<<"THE DEVOURING," << std::endl;
     myClient.gsc_send_message();
     std::cout<<"PUNY HUMANS" << std::endl;
-}
-
-mapexecution::mapexecution(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::mapexecution)
-{
-    ui->setupUi(this);
-    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
-    ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
-
 }
 
 mapexecution::~mapexecution()
@@ -161,7 +166,7 @@ void mapexecution::addClickListener() {
 
 }
 
-void mapexecution::addNewMap(){
+void mapexecution::addNewMap() {
     /*  Function called by the JavaScript to add the map data from mission planning.
     This is necessary because data cannot be added until the html file is completely
     loaded. Jordan 2/21/2015 */
@@ -169,8 +174,14 @@ void mapexecution::addNewMap(){
     ui->webView->page()->mainFrame()->evaluateJavaScript("simulateInput()");
 }
 
-void mapexecution::plotPosition(double lat, double lng){
+void mapexecution::plotPosition(double lat, double lng) {
     /*  Sends a (latitude,longitude) pair to the map to be plotted.
     Used for telemetry. */
     ui->webView->page()->mainFrame()->evaluateJavaScript("addActualPath("+QString::number(lat)+","+QString::number(lng)+")");
+}
+
+void mapexecution::updateTable(int lat, int lng) {
+    model->insertRow(lng, lat);
+//    ui->tableView->update;
+    ui->tableView->scrollToBottom();
 }
