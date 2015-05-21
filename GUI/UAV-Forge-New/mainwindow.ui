@@ -564,9 +564,13 @@ border-radius: 10px;
 font-weight: bold;
 border: none; 
 }
+QPushButton:hover {
+	background-color: #E6E9ED
+}
  QPushButton:pressed {
-     background-color: #E6E9ED
- }</string>
+     background-color: #505050
+ }
+</string>
     </property>
     <property name="text">
      <string/>
@@ -590,8 +594,11 @@ border-radius: 10px;
 font-weight: bold;
 border: none; 
 }
+QPushButton:hover {
+	background-color: #E6E9ED
+}
  QPushButton:pressed {
-     background-color: #E6E9ED
+     background-color: #505050
  }</string>
     </property>
     <property name="text">
@@ -616,8 +623,11 @@ border-radius: 10px;
 font-weight: bold;
 border: none; 
 }
+QPushButton:hover {
+	background-color: #E6E9ED
+}
  QPushButton:pressed {
-     background-color: #E6E9ED
+     background-color: #505050
  }</string>
     </property>
     <property name="text">
@@ -642,8 +652,11 @@ border-radius: 10px;
 font-weight: bold;
 border: none; 
 }
+QPushButton:hover {
+	background-color: #E6E9ED
+}
  QPushButton:pressed {
-     background-color: #E6E9ED
+     background-color: #505050
  }</string>
     </property>
     <property name="text">
@@ -657,7 +670,7 @@ border: none;
      <x>0</x>
      <y>0</y>
      <width>1366</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
