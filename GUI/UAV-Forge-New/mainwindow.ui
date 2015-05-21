@@ -557,7 +557,7 @@ QPushButton:hover{
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>350</x>
       <y>0</y>
       <width>501</width>
       <height>351</height>
@@ -583,8 +583,8 @@ border: none;
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>350</y>
+      <x>350</x>
+      <y>360</y>
       <width>501</width>
       <height>351</height>
      </rect>
@@ -609,7 +609,7 @@ border: none;
    <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
-      <x>860</x>
+      <x>870</x>
       <y>0</y>
       <width>501</width>
       <height>351</height>
@@ -635,8 +635,8 @@ border: none;
    <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
-      <x>860</x>
-      <y>350</y>
+      <x>870</x>
+      <y>360</y>
       <width>501</width>
       <height>351</height>
      </rect>
