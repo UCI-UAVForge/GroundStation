@@ -19,8 +19,6 @@ mapexecution::mapexecution(QList<QString> strings, QWidget *parent) :
     connect(ui->pushBtnStop,SIGNAL(clicked()),this,SLOT(stopClicked()));
     ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
 
-
-
     //std::cout<<"PREPARE" << std::endl;
     QList <QPair<double, double > > h;
     h << QPair<double, double >(32, 32);
@@ -167,11 +165,15 @@ void mapexecution::addNewMap(){
     This is necessary because data cannot be added until the html file is completely
     loaded. Jordan 2/21/2015 */
     setMap(mapStrings);
+
+    //used to initiate the simulated imput -- delete later
     ui->webView->page()->mainFrame()->evaluateJavaScript("simulateInput()");
 }
 
 void mapexecution::plotPosition(double lat, double lng){
     /*  Sends a (latitude,longitude) pair to the map to be plotted.
-    Used for telemetry. */
+    Used for telemetry. Keeps track of every point sent by appending it
+    to the flightPath list. Jordan 2/21/2015 */
+    flightPath << QPair<double, double>(lat,lng);
     ui->webView->page()->mainFrame()->evaluateJavaScript("addActualPath("+QString::number(lat)+","+QString::number(lng)+")");
 }
