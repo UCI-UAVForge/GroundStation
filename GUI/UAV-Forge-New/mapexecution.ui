@@ -80,8 +80,8 @@
   <widget class="QPushButton" name="pushBtnStop">
    <property name="geometry">
     <rect>
-     <x>1150</x>
-     <y>820</y>
+     <x>1200</x>
+     <y>570</y>
      <width>121</width>
      <height>51</height>
     </rect>
@@ -105,8 +105,8 @@ border: none;
   <widget class="QPushButton" name="pushBtnReturnHome">
    <property name="geometry">
     <rect>
-     <x>850</x>
-     <y>820</y>
+     <x>940</x>
+     <y>570</y>
      <width>121</width>
      <height>51</height>
     </rect>
@@ -130,8 +130,8 @@ border: none;
   <widget class="QPushButton" name="pushBtnCancel">
    <property name="geometry">
     <rect>
-     <x>1300</x>
-     <y>820</y>
+     <x>1330</x>
+     <y>570</y>
      <width>121</width>
      <height>51</height>
     </rect>
@@ -158,7 +158,7 @@ border: none;
      <x>120</x>
      <y>70</y>
      <width>1331</width>
-     <height>711</height>
+     <height>491</height>
     </rect>
    </property>
    <property name="url">
@@ -195,8 +195,8 @@ border: none;
   <widget class="QPushButton" name="pushBtnFinish">
    <property name="geometry">
     <rect>
-     <x>1000</x>
-     <y>820</y>
+     <x>1070</x>
+     <y>570</y>
      <width>121</width>
      <height>51</height>
     </rect>
@@ -215,6 +215,16 @@ border: none;
    </property>
    <property name="text">
     <string>Finish</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableView">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>650</y>
+     <width>851</width>
+     <height>221</height>
+    </rect>
    </property>
   </widget>
  </widget>

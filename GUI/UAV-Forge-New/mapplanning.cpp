@@ -6,20 +6,18 @@
 #include "mapexecution.h"
 #include <QString>
 
-MapPlanning::MapPlanning(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::MapPlanning) {
+MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlanning) {
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
 
-    //connect(buttonGroup, SIGNAL(buttonClicked(int)), this, SLOT(buttonWasClicked(int)));
-    //delete = new  (row)
-    connect(ui->pushButton_7, SIGNAL(clicked()), this, SLOT(on_pushButton_7_clicked()));
+//    //connect(buttonGroup, SIGNAL(buttonClicked(int)), this, SLOT(buttonWasClicked(int)));
+//    //delete = new  (row)
+//    connect(ui->pushButton_7, SIGNAL(clicked()), this, SLOT(on_pushButton_7_clicked()));
 
-    //Recreates the c++/JS bridge when the JavaScript window is refreshed
-    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
+//    //Recreates the c++/JS bridge when the JavaScript window is refreshed
+//    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
 
-    ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
+//    ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
 
     model = new TableModel();
     ui->tableView->setModel(model);
@@ -111,7 +109,7 @@ void MapPlanning::updateMap() {
     //Sends clearMap request.
     ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
     //Loops through table entries
-    for(int i = 0; i < model->getList().size(); i++){
+    for(int i = 0; i < model->getList().size(); i++) {
         QList<QString> list = model->getList()[i];
         //Converts West and South coordinates to negative numbers.
         double lat = list[3].toDouble();

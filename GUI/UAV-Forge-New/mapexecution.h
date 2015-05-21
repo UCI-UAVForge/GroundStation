@@ -2,8 +2,14 @@
 #define MAPEXECUTION_H
 
 #include <QWidget>
+#include <QDialog>
+#include <QComboBox>
+#include <QPushButton>
+#include <QButtonGroup>
 #include "gsclient.h"
 #include "gsserver.h"
+#include "tablemodel.h"
+#include "qcomboboxdelegate.h"
 
 namespace Ui {
 class mapexecution;
@@ -16,6 +22,7 @@ public slots:
     void setMap(QList<QString> list);
     void addPoint(QString string);
     void addNewMap();
+    void updateTable(int lat, int lng);
 public:
     explicit mapexecution(QList<QString> strings, QWidget *parent = 0);
     explicit mapexecution(QWidget *parent = 0);
@@ -41,6 +48,8 @@ private slots:
 private:
     Ui::mapexecution *ui;
     QList<QString> points_recieved;
+    TableModel *model;
+    QButtonGroup *buttonGroup;
 };
 
 #endif // MAPEXECUTION_H
