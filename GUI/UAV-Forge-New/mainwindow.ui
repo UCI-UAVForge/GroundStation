@@ -216,14 +216,16 @@
        <property name="styleSheet">
         <string notr="true"> QPushButton { 
 	image: url(:/res/Type 3/Mission_Planning_Button_Type_3.png);
-background-color: &quot;#FFFFFF&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 10px;
 font-weight: bold;
 border: none; 
 }
+QPushButton:hover{
+ 	background-color: #505050
+}
  QPushButton:pressed {
-     background-color: #E6E9ED
+     background-color: #000000
  }</string>
        </property>
        <property name="text">
@@ -254,14 +256,16 @@ border: none;
        <property name="styleSheet">
         <string notr="true"> QPushButton { 
 	image: url(:/res/Type 3/Mission_Execution_Button_Type_3.png);
-background-color: &quot;#FFFFFF&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 10px;
 font-weight: bold;
 border: none; 
 }
+QPushButton:hover{
+ 	background-color: #505050
+}
  QPushButton:pressed {
-     background-color: #E6E9ED
+     background-color: #000000
  }</string>
        </property>
        <property name="text">
@@ -491,14 +495,16 @@ border: none;
        <property name="styleSheet">
         <string notr="true"> QPushButton { 
 	image: url(:/res/Type 3/Mission_Recap_Button_Type_3.png);
-background-color: &quot;#FFFFFF&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 10px;
 font-weight: bold;
 border: none; 
 }
+QPushButton:hover{
+ 	background-color: #505050
+}
  QPushButton:pressed {
-     background-color: #E6E9ED
+     background-color: #000000
  }</string>
        </property>
        <property name="text">
@@ -529,14 +535,16 @@ border: none;
        <property name="styleSheet">
         <string notr="true"> QPushButton { 
 	image: url(:/res/Type 3/Tutorial_Button_Type_3.png);
-background-color: &quot;#FFFFFF&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 10px;
 font-weight: bold;
 border: none; 
 }
+QPushButton:hover{
+ 	background-color: #505050
+}
  QPushButton:pressed {
-     background-color: #E6E9ED
+     background-color: #000000
  }</string>
        </property>
        <property name="text">
@@ -657,7 +665,7 @@ border: none;
      <x>0</x>
      <y>0</y>
      <width>1366</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
