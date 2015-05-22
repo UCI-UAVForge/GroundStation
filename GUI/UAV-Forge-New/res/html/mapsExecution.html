@@ -77,7 +77,7 @@
             var flying = true;
             var wx = 0;//.0002;
             var wy = 0;//.00015;
-
+            
             function simulateInput(){
                 if(flightPath.getPath().getAt(0)){
                     simx = flightPath.getPath().getAt(0).lng();
@@ -102,8 +102,8 @@
                             flying = false;
                         }
                     }
-
                     // Use cbridge.plotPosition line for more computationaly realistic simulation;
+                    // Use cbridge line for more computationaly realistic simulation;
                     // Use addActualPath line for nicer looking results
 
                     cbridge.plotPosition(simy,simx);

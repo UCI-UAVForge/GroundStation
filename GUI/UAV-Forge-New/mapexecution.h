@@ -32,7 +32,7 @@ private slots:
     void stopClicked();
     void on_pushButton_clicked();
 
-    void push_new_point(QString point);
+    //void push_new_point(QString point);
 
     void addClickListener();
     //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame().
