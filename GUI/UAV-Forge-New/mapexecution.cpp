@@ -19,15 +19,15 @@ mapexecution::mapexecution(QList<QString> strings, QWidget *parent) :
     connect(ui->pushBtnStop,SIGNAL(clicked()),this,SLOT(stopClicked()));
     ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
 
-    //std::cout<<"PREPARE" << std::endl;
+
+    // Error when sending more than 14 points - crashes with a stack overflow
+    //  Update - the crash occurs when the total number points sent is 15 or greater
+    //      Ex: 10 points and pressing the 'stop' button 5 times makes it crash
     QList <QPair<double, double > > h;
     h << QPair<double, double >(32, 32);
     myClient.set_list(getDoublePairs(mapStrings));
-    //std::cout<<"FOR" << std::endl;
     myClient.gsc_connect_start();
-    //std::cout<<"THE DEVOURING," << std::endl;
     myClient.gsc_send_message();
-    //std::cout<<"PUNY HUMANS" << std::endl;
 }
 
 mapexecution::mapexecution(QWidget *parent) :
@@ -65,17 +65,15 @@ void mapexecution::returnHomeClicked()
 /* would not return back to home, it is now fixed. Arash */
 {
     MainWindow *mainwindow = new MainWindow();
-    this -> close();
-// <<<<<<< HEAD
     mainwindow->showFullScreen();
-// =======
-//     mainwindow->show();
-// >>>>>>> origin/Back-End
+    this -> close();
 }
 
 void mapexecution::cancelClicked()
 {
-    this->close();
+    MainWindow *mainwindow = new MainWindow();
+    mainwindow->showFullScreen();
+    this -> close();
 }
 
 void mapexecution::on_pushButton_clicked()

@@ -21,7 +21,7 @@
     MapPlanning planner = new MapPlanning();
     planner.showMaximized();
 
-No parameters necessary. The window will now appear until one of the show
+No parameters necessary. The window will not appear until one of the show
 functions is called. */
 MapPlanning::MapPlanning(QWidget *parent) :
     QDialog(parent),
@@ -53,12 +53,6 @@ MapPlanning::~MapPlanning() {
     delete popup;
 }
 
-
-// I don't know what the following three lines mean, so I won't delete them    -Jordan
-//<<<<<<< HEAD
-//void MapPlanning::buttonWasClicked(int buttonID)
-//{
-
 /* Since c++/JS bridges are broken when the JS page refreshes this slot is used
  to rebuild the bridge each time when triggered by a javaScriptWindowObjectCleared
  signal from the page frame.
@@ -69,15 +63,6 @@ void MapPlanning::addClickListener() {
     ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("cbridge",this);
 }
 
-// <<<<<<< HEAD
-// void MapPlanning::on_pushButton_6_clicked()
-// {
-//     //popup = new PopWindowMP();
-//     //popup->show();
-//     mapexecution *mapExecution = new mapexecution();
-//     this -> close();
-//     mapExecution->showFullScreen();
-// =======
 
 /* Triggered by the "Execute" button. This function creates a popup window
  asking for confirmation before sending corrdinates to the UAV and continuing
@@ -88,12 +73,11 @@ void MapPlanning::addClickListener() {
 
  Function added sometime prior to April 30 2015. */
 void MapPlanning::on_execute_clicked() {
-    popup = new PopWindowMP(getTableAsStrings());
-    connect(popup,SIGNAL(windowClosed()),this,SLOT(closeWindow()));
-    mapexecution *mapExecution = new mapexecution();
+    //popup = new PopWindowMP(getTableAsStrings());
+    //connect(popup,SIGNAL(windowClosed()),this,SLOT(closeWindow()));
+    mapexecution *mapExecution = new mapexecution(getTableAsStrings());
     this->close();
     mapExecution->showFullScreen();
-// >>>>>>> origin/Back-End
 }
 
 /* Triggered by the "+" button. Causes an map update and adds a new empty row
@@ -149,7 +133,8 @@ void MapPlanning::on_clearPath_clicked() {
 
 /* Sends a request for the map to clear itself, causing the JavaScript page
  to reload itself with an empty map. This function then cycles through each
- entry on the table and enters the coordinates on the map one by one in order.
+ entry currently on the table and enters the coordinates on the map one by
+ one in order.
 
  Function added by Jordan Dickson Feb 14 2015. */
 void MapPlanning::updateMap() {
