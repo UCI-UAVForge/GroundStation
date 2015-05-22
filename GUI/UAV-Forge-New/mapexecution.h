@@ -24,7 +24,8 @@ public:
     ~mapexecution();
     GsServer myServer;
     GsClient myClient;
-    QList<QPair<double,double> > getDoublePairs(QList<QString> strings);
+    QList<QPair<double, double> > getDoublePairs(QList<QString> strings);
+    QList<QPair<double, double> > flightPath;
 private slots:
     void finishClicked();
     void returnHomeClicked();
