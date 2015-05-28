@@ -72,11 +72,7 @@ void mapexecution::returnHomeClicked()
 {
     MainWindow *mainwindow = new MainWindow();
     this -> close();
-// <<<<<<< HEAD
     mainwindow->showFullScreen();
-// =======
-//     mainwindow->show();
-// >>>>>>> origin/Back-End
 }
 
 void mapexecution::cancelClicked()
