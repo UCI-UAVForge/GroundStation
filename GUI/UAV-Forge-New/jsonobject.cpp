@@ -1,18 +1,19 @@
-#include "jsonobject.h"
+﻿#include "jsonobject.h"
 #include <fstream>
 #include <sstream>
 
 jsonObj::jsonObj(){
 }
 
-
+//adding coordinates from the Coordinates struct to latitude and longitude vectors
 void jsonObj::addCoordinate(struct Coordinates coordinate)
 {
     latitude.push_back(coordinate.latitude);
     longitude.push_back(coordinate.longitude);
 }
 
-
+//takes latitude and logngitude values from their respective vectors
+//and then puts the data into a json array string
 std::string jsonObj::coordinatesExtractString() {
     std::string jsonMsg;
     std::stringstream ss;
@@ -22,11 +23,9 @@ std::string jsonObj::coordinatesExtractString() {
     {
         jsonMsg.append("{\"latitude\":");
         ss << latitude[i];
-//        std::string lat = std::to_string(latitude[i]);
 
         jsonMsg.append(ss.str());
         jsonMsg.append(" , \"longitude\":");
-//        std::string lon = std::to_string(longitude[i]);
         ss.str("");
         ss << longitude[i];
         jsonMsg.append(ss.str() + "},");
