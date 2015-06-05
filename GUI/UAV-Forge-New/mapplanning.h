@@ -6,9 +6,18 @@
 #include <QPushButton>
 #include <QButtonGroup>
 #include <QWebFrame>
+#include <QString>
+#include <QApplication>
+
 #include "tablemodel.h"
 #include "popwindowmp.h"
 #include "qcomboboxdelegate.h"
+#include "popwindowmp.h"
+#include "mainwindow.h"
+#include "mapexecution.h"
+
+
+#include "ui_mapplanning.h"
 
 namespace Ui {
 class MapPlanning;

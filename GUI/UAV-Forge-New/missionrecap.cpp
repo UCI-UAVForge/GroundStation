@@ -1,17 +1,6 @@
 #include "missionrecap.h"
-#include "ui_missionrecap.h"
-#include "mapexecution.h"
-#include "mainwindow.h"
-#include <iostream>
-#include "mapplanning.h"
-#include "videoplayer.h"
-#define QCUSTOMPLOT_COMPILE_LIBRARY
-#include "qcustomplot.h"
 
-MissionRecap::MissionRecap(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::MissionRecap)
-{
+MissionRecap::MissionRecap(QWidget *parent) : QWidget(parent), ui(new Ui::MissionRecap) {
     ui->setupUi(this);
     //ui->VideoWidget->resize(321, 171);
     mediaPlayer.setVideoOutput(ui->VideoWidget);
@@ -32,15 +21,13 @@ MissionRecap::MissionRecap(QWidget *parent) :
     setupRealtimeDataDemo(ui->customPlot);
 }
 
-MissionRecap::~MissionRecap()
-{
+MissionRecap::~MissionRecap() {
     delete ui;
 }
 
 
 
-void MissionRecap::setupRealtimeDataDemo(QCustomPlot *customPlot)
-{
+void MissionRecap::setupRealtimeDataDemo(QCustomPlot *customPlot) {
 #if QT_VERSION < QT_VERSION_CHECK(4, 7, 0)
   QMessageBox::critical(this, "", "You're using Qt < 4.7, the realtime data demo needs functions that are available with Qt 4.7 to work properly");
 #endif
@@ -87,8 +74,7 @@ void MissionRecap::setupRealtimeDataDemo(QCustomPlot *customPlot)
   dataTimer.start(0); // Interval 0 means to refresh as fast as possible
 }
 
-void MissionRecap::realtimeDataSlot()
-{
+void MissionRecap::realtimeDataSlot() {
   // calculate two new data points:
 #if QT_VERSION < QT_VERSION_CHECK(4, 7, 0)
   double key = 0;
@@ -136,31 +122,28 @@ void MissionRecap::realtimeDataSlot()
   }*/
 }
 
-void MissionRecap:: updateSlider(qint64 position){
+void MissionRecap:: updateSlider(qint64 position) {
     ui->horizontalSlider->setValue(position);
 }
 
-void MissionRecap:: updateMediaPlayer(int position){
+void MissionRecap:: updateMediaPlayer(int position) {
     mediaPlayer.setPosition(position);
 }
 
-void MissionRecap:: replayMissionClicked()
-{
+void MissionRecap:: replayMissionClicked() {
     this->close();
     mapexecution *mapExecution = new mapexecution();
     mapExecution->showFullScreen();
 }
 
-void MissionRecap::on_backButton_clicked()
-{
+void MissionRecap::on_backButton_clicked() {
     mediaPlayer.stop();
     MainWindow *mainwindow = new MainWindow();
     this -> close();
     mainwindow->showFullScreen();
 }
 
-void MissionRecap::on_playButton_clicked()
-{
+void MissionRecap::on_playButton_clicked() {
     ui->horizontalSlider->setRange(0, mediaPlayer.duration());
     if(mediaPlayer.state() == QMediaPlayer::PlayingState)
         mediaPlayer.pause();
@@ -201,8 +184,7 @@ void MissionRecap::on_playButton_clicked()
     */
 }
 
-void MissionRecap::on_stopButton_clicked()
-{
+void MissionRecap::on_stopButton_clicked() {
     mediaPlayer.stop();
 
     /*
@@ -223,26 +205,22 @@ void MissionRecap::on_stopButton_clicked()
     */
 }
 
-void MissionRecap::on_openFileButton_clicked()
-{
+void MissionRecap::on_openFileButton_clicked() {
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open Movie"),QDir::homePath());
     mediaPlayer.setMedia(QUrl::fromLocalFile(fileName));
 }
 
-void MissionRecap::on_horizontalSlider_sliderPressed()
-{
+void MissionRecap::on_horizontalSlider_sliderPressed() {
 
 }
 
-void MissionRecap::on_newMission_clicked()
-{
+void MissionRecap::on_newMission_clicked() {
     MapPlanning *mapPlanning = new MapPlanning();
     this -> close();
     mapPlanning->showFullScreen();
 }
 
-void MissionRecap::on_pushButton_5_clicked()
-{
+void MissionRecap::on_pushButton_5_clicked() {
     MainWindow *mainwindow = new MainWindow();
     this -> close();
     mainwindow->showFullScreen();

@@ -6,10 +6,21 @@
 #include <QComboBox>
 #include <QPushButton>
 #include <QButtonGroup>
+#include <QWebFrame>
+#include <QPair>
+#include <QList>
+
 #include "gsclient.h"
 #include "gsserver.h"
 #include "tablemodel.h"
 #include "qcomboboxdelegate.h"
+#include "missionrecap.h"
+#include "options.h"
+#include "mainwindow.h"
+//#include "net.h"
+
+#include "ui_mapexecution.h"
+
 
 namespace Ui {
 class mapexecution;

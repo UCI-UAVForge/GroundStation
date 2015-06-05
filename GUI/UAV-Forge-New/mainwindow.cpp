@@ -1,24 +1,9 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include "options.h"
-#include "tutorial.h"
-#include <QtWebKitWidgets/QWebView>
-#include <QUrl>
-#include "mapplanning.h"
-#include "mapexecution.h"
-#include "missionrecap.h"
-#include <iostream>
-
 
 /**
  * Constructor for the main window
  */
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-
-
-    ui(new Ui::MainWindow)
-{
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
     //Resize the image for the Mission Execution button
@@ -49,8 +34,7 @@ MainWindow::MainWindow(QWidget *parent) :
 /**
  * Deconstrutor for the main window
  */
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
     delete ui;
 }
 
@@ -58,8 +42,7 @@ MainWindow::~MainWindow()
  * When the tutorial button is clicked, create a new tutorial window,
  * close the main window, and open the tutorial window in full screen
  */
-void MainWindow::openTutorial()
-{
+void MainWindow::openTutorial() {
 
     Tutorial *tutorial = new Tutorial();
     this -> close();
@@ -70,8 +53,7 @@ void MainWindow::openTutorial()
  * When the mission planning button is clicked, create a new mission planning
  * window, close the main window, and open the mission planning window in full screen
  */
-void MainWindow::missionPlanningClicked()
-{
+void MainWindow::missionPlanningClicked() {
     MapPlanning *mapPlanning = new MapPlanning();
     this->close();
     mapPlanning->showFullScreen();
@@ -81,8 +63,7 @@ void MainWindow::missionPlanningClicked()
  * When the mission execution button is clicked, create a new mission execution
  * window, close the main window, and open the mission execution window in full screen
  */
-void MainWindow::missionExecutionClicked()
-{
+void MainWindow::missionExecutionClicked() {
     mapexecution *mapExecution = new mapexecution();
     this->close();
     mapExecution->showFullScreen();
@@ -92,8 +73,7 @@ void MainWindow::missionExecutionClicked()
  * When the mission recap buttion is clicked, create a new mission recap window,
  * close the main window, and open the mission recap window in full screen
  */
-void MainWindow::missionRecapClicked()
-{
+void MainWindow::missionRecapClicked() {
     MissionRecap *missionRecap = new MissionRecap();
     this->close();
     missionRecap->showFullScreen();
@@ -102,7 +82,6 @@ void MainWindow::missionRecapClicked()
 /**
  * Close the main window when ALT + Q is clicked
  */
-void MainWindow::on_actionQuit_triggered()
-{
+void MainWindow::on_actionQuit_triggered() {
     this->close();
 }

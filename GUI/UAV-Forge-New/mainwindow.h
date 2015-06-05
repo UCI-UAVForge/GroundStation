@@ -7,6 +7,18 @@
 #include <QShortcut>
 #include <QPixmap>
 #include <QDebug>
+#include <iostream>
+#include <QtWebKitWidgets/QWebView>
+#include <QUrl>
+
+#include "options.h"
+#include "tutorial.h"
+#include "mapplanning.h"
+#include "mapexecution.h"
+#include "missionrecap.h"
+
+#include "ui_mainwindow.h"
+
 namespace Ui {
 class MainWindow;
 }

@@ -77,17 +77,11 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="pushBtnStop">
-   <property name="geometry">
-    <rect>
-     <x>1200</x>
-     <y>570</y>
-     <width>121</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"> QPushButton { 
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QPushButton" name="pushButton">
+     <property name="styleSheet">
+      <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 10px;
@@ -97,22 +91,25 @@ border: none;
  QPushButton:pressed {
      background-color: #E6E9ED
  }</string>
-   </property>
-   <property name="text">
-    <string>Stop</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushBtnReturnHome">
-   <property name="geometry">
-    <rect>
-     <x>940</x>
-     <y>570</y>
-     <width>121</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"> QPushButton { 
+     </property>
+     <property name="text">
+      <string>Back</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="4">
+    <widget class="QWebView" name="webView">
+     <property name="url">
+      <url>
+       <string>about:blank</string>
+      </url>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QPushButton" name="pushBtnReturnHome">
+     <property name="styleSheet">
+      <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 10px;
@@ -122,22 +119,16 @@ border: none;
  QPushButton:pressed {
      background-color: #E6E9ED
  }</string>
-   </property>
-   <property name="text">
-    <string>Return home</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushBtnCancel">
-   <property name="geometry">
-    <rect>
-     <x>1330</x>
-     <y>570</y>
-     <width>121</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"> QPushButton { 
+     </property>
+     <property name="text">
+      <string>Return home</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QPushButton" name="pushBtnFinish">
+     <property name="styleSheet">
+      <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 10px;
@@ -147,37 +138,16 @@ border: none;
  QPushButton:pressed {
      background-color: #E6E9ED
  }</string>
-   </property>
-   <property name="text">
-    <string>Cancel</string>
-   </property>
-  </widget>
-  <widget class="QWebView" name="webView">
-   <property name="geometry">
-    <rect>
-     <x>120</x>
-     <y>70</y>
-     <width>1331</width>
-     <height>491</height>
-    </rect>
-   </property>
-   <property name="url">
-    <url>
-     <string>about:blank</string>
-    </url>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>30</y>
-     <width>75</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"> QPushButton { 
+     </property>
+     <property name="text">
+      <string>Finish</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QPushButton" name="pushBtnStop">
+     <property name="styleSheet">
+      <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 10px;
@@ -187,22 +157,16 @@ border: none;
  QPushButton:pressed {
      background-color: #E6E9ED
  }</string>
-   </property>
-   <property name="text">
-    <string>Back</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushBtnFinish">
-   <property name="geometry">
-    <rect>
-     <x>1070</x>
-     <y>570</y>
-     <width>121</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"> QPushButton { 
+     </property>
+     <property name="text">
+      <string>Stop</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="4">
+    <widget class="QPushButton" name="pushBtnCancel">
+     <property name="styleSheet">
+      <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 10px;
@@ -212,21 +176,16 @@ border: none;
  QPushButton:pressed {
      background-color: #E6E9ED
  }</string>
-   </property>
-   <property name="text">
-    <string>Finish</string>
-   </property>
-  </widget>
-  <widget class="QTableView" name="tableView">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>650</y>
-     <width>851</width>
-     <height>221</height>
-    </rect>
-   </property>
-  </widget>
+     </property>
+     <property name="text">
+      <string>Cancel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QTableView" name="tableView"/>
+   </item>
+  </layout>
  </widget>
  <customwidgets>
   <customwidget>

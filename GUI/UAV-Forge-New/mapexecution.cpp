@@ -1,14 +1,4 @@
 #include "mapexecution.h"
-#include "ui_mapexecution.h"
-#include "missionrecap.h"
-#include "options.h"
-#include "mainwindow.h"
-//#include "net.h"
-#include "gsclient.h"
-#include "gsserver.h"
-#include <QWebFrame>
-#include <QPair>
-#include <QList>
 
 mapexecution::mapexecution(QWidget *parent) : QWidget(parent), ui(new Ui::mapexecution) {
     buttonGroup = new QButtonGroup();
@@ -48,40 +38,35 @@ mapexecution::mapexecution(QList<QString> strings, QWidget *parent) : QWidget(pa
     std::cout<<"PUNY HUMANS" << std::endl;
 }
 
-mapexecution::~mapexecution()
-{
+mapexecution::~mapexecution() {
     delete ui;
 }
 
-void mapexecution::finishClicked()
-{
+void mapexecution::finishClicked() {
     MissionRecap *missionRecap = new MissionRecap();
     this->close();
     missionRecap->showFullScreen();
 }
 
-void mapexecution::stopClicked(){
+void mapexecution::stopClicked() {
     QList <QPair<double, double > > h;
     h << QPair<double, double >(999.99,999.99);
     myClient.set_list(h);
     myClient.gsc_send_message();
 }
 
-void mapexecution::returnHomeClicked()
 /* would not return back to home, it is now fixed. Arash */
-{
+void mapexecution::returnHomeClicked() {
     MainWindow *mainwindow = new MainWindow();
     this -> close();
     mainwindow->showFullScreen();
 }
 
-void mapexecution::cancelClicked()
-{
+void mapexecution::cancelClicked() {
     this->close();
 }
 
-void mapexecution::on_pushButton_clicked()
-{
+void mapexecution::on_pushButton_clicked() {
     MainWindow *mainwindow = new MainWindow();
     this -> close();
     mainwindow->showFullScreen();
@@ -102,9 +87,7 @@ void mapexecution::setMap(QList<QString> list) {
     }
 }
 
-QList<QPair<double,double> > mapexecution::getDoublePairs(QList<QString> strings){
-
-
+QList<QPair<double,double> > mapexecution::getDoublePairs(QList<QString> strings) {
     QList<QPair<double,double> > returnList;
     for(QString string: strings){
         QList<QString> comps = string.split(",");
@@ -125,7 +108,7 @@ QList<QPair<double,double> > mapexecution::getDoublePairs(QList<QString> strings
 
 }
 
-void mapexecution::addPoint(QString string){
+void mapexecution::addPoint(QString string) {
     /*  Takes a QString formated (Action,Longitude,LongDirection,Latitude,
     LatDirection,Behavior) and extracts the (lat,lng) pair needed to add
     a new point to the map. Function added by Jordan Dickson Feb 21st 2015. */
@@ -147,7 +130,7 @@ void mapexecution::addPoint(QString string){
     ui->webView->page()->mainFrame()->evaluateJavaScript("addLatLngCoords("+QString::number(lat)+","+QString::number(lng)+")");
 }
 
-void mapexecution::push_new_point(QString string){
+void mapexecution::push_new_point(QString string) {
    QList<QString> points = string.split(",");
 }
 

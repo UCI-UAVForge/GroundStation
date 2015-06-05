@@ -9,9 +9,19 @@
 #include <qmediaplayer.h>
 #include <qvideowidget.h>
 #include <qvideosurfaceformat.h>
-#define QCUSTOMPLOT_COMPILE_LIBRARY
-#include "qcustomplot.h"
+#include <iostream>
 #include <QTimer>
+
+#include "mapexecution.h"
+#include "mainwindow.h"
+#include "qcustomplot.h"
+#include "mapplanning.h"
+#include "videoplayer.h"
+#include "qcustomplot.h"
+
+#include "ui_missionrecap.h"
+
+#define QCUSTOMPLOT_COMPILE_LIBRARY
 
 namespace Ui {
 class MissionRecap;

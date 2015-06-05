@@ -1,10 +1,4 @@
 #include "mapplanning.h"
-#include "ui_mapplanning.h"
-#include "popwindowmp.h"
-#include <QApplication>
-#include "mainwindow.h"
-#include "mapexecution.h"
-#include <QString>
 
 MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlanning) {
     ui->setupUi(this);
@@ -125,7 +119,7 @@ void MapPlanning::updateMap() {
     }
 }
 
-QList<QString> MapPlanning::getTableAsStrings(){
+QList<QString> MapPlanning::getTableAsStrings() {
     /*  Converts the table into a list of strings formatted with each row of the
     table being its own entry in the list, and each entry on the list represented
     as (Action,Longitude,LongDirection,Latitude,LatDirection,Behavior). This is
@@ -149,7 +143,7 @@ QList<QString> MapPlanning::getTableAsStrings(){
     return output;
 }
 
-QList<QList<QString> > MapPlanning::getTableData(){
+QList<QList<QString> > MapPlanning::getTableData() {
     /* A function to get the data of the table and send it to database.
      * This function iterates through each row, gets each string, cancatinates them
      * and appends them to a new list(tableData list). Returns  [[strings],[strings]...]
@@ -177,7 +171,7 @@ QList<QList<QString> > MapPlanning::getTableData(){
     return tableData;
 }
 
-void MapPlanning::closeWindow(){
+void MapPlanning::closeWindow() {
     this->close();
 }
 
@@ -200,12 +194,10 @@ void MapPlanning::addPointToTable(double lat, double lng) {
 //    mainwindow->showFullScreen();
 //}
 
-void MapPlanning::on_clearTable_clicked()
-{
+void MapPlanning::on_clearTable_clicked() {
 
 }
 
-void MapPlanning::on_clearMap_clicked()
-{
+void MapPlanning::on_clearMap_clicked() {
 
 }
