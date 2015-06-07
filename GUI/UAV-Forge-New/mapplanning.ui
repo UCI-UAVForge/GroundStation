@@ -79,7 +79,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="backButton">
      <property name="styleSheet">
       <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
@@ -107,7 +107,7 @@ border: none;
     </widget>
    </item>
    <item row="2" column="1">
-    <widget class="QPushButton" name="pushButton_6">
+    <widget class="QPushButton" name="executeButton">
      <property name="styleSheet">
       <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
@@ -126,7 +126,7 @@ border: none;
     </widget>
    </item>
    <item row="2" column="2">
-    <widget class="QPushButton" name="pushButton_8">
+    <widget class="QPushButton" name="updateTableButton">
      <property name="styleSheet">
       <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
@@ -145,7 +145,7 @@ border: none;
     </widget>
    </item>
    <item row="2" column="3">
-    <widget class="QPushButton" name="clearTable">
+    <widget class="QPushButton" name="clearTableButton">
      <property name="styleSheet">
       <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
@@ -164,7 +164,7 @@ border: none;
     </widget>
    </item>
    <item row="2" column="4">
-    <widget class="QPushButton" name="clearMap">
+    <widget class="QPushButton" name="clearMapButton">
      <property name="styleSheet">
       <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
@@ -183,7 +183,7 @@ border: none;
     </widget>
    </item>
    <item row="2" column="5">
-    <widget class="QPushButton" name="pushButton_7">
+    <widget class="QPushButton" name="deleteButton">
      <property name="styleSheet">
       <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
@@ -202,7 +202,7 @@ border: none;
     </widget>
    </item>
    <item row="2" column="6">
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="addButton">
      <property name="styleSheet">
       <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
