@@ -225,3 +225,8 @@ void MissionRecap::on_pushButton_5_clicked() {
     this -> close();
     mainwindow->showFullScreen();
 }
+
+//Creates the bridge called cbridge between the java script object and this class.
+void MissionRecap::addClickListener() {
+    ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("cbridge",this);
+}

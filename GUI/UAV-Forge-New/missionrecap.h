@@ -54,6 +54,8 @@ private slots:
     void on_newMission_clicked();
     void on_pushButton_5_clicked();
 
+    void addClickListener();
+
 private:
     Ui::MissionRecap *ui;
     QMediaPlayer mediaPlayer;

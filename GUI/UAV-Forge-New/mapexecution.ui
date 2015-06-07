@@ -79,7 +79,7 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="backButton">
      <property name="styleSheet">
       <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
@@ -107,7 +107,7 @@ border: none;
     </widget>
    </item>
    <item row="2" column="1">
-    <widget class="QPushButton" name="pushBtnReturnHome">
+    <widget class="QPushButton" name="returnHomeButton">
      <property name="styleSheet">
       <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
@@ -126,7 +126,7 @@ border: none;
     </widget>
    </item>
    <item row="2" column="2">
-    <widget class="QPushButton" name="pushBtnFinish">
+    <widget class="QPushButton" name="finishButton">
      <property name="styleSheet">
       <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
@@ -145,7 +145,7 @@ border: none;
     </widget>
    </item>
    <item row="2" column="3">
-    <widget class="QPushButton" name="pushBtnStop">
+    <widget class="QPushButton" name="stopButton">
      <property name="styleSheet">
       <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
@@ -164,7 +164,7 @@ border: none;
     </widget>
    </item>
    <item row="2" column="4">
-    <widget class="QPushButton" name="pushBtnCancel">
+    <widget class="QPushButton" name="cancelButton">
      <property name="styleSheet">
       <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
@@ -195,56 +195,7 @@ border: none;
   </customwidget>
  </customwidgets>
  <resources/>
- <connections>
-  <connection>
-   <sender>pushBtnFinish</sender>
-   <signal>clicked()</signal>
-   <receiver>mapexecution</receiver>
-   <slot>finishClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1000</x>
-     <y>355</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>486</x>
-     <y>234</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushBtnReturnHome</sender>
-   <signal>clicked()</signal>
-   <receiver>mapexecution</receiver>
-   <slot>returnHomeClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>574</x>
-     <y>287</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>474</x>
-     <y>287</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pushBtnCancel</sender>
-   <signal>clicked()</signal>
-   <receiver>mapexecution</receiver>
-   <slot>cancelClicked()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>553</x>
-     <y>357</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>447</x>
-     <y>357</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
  <slots>
   <slot>slot1()</slot>
   <slot>finishClicked()</slot>

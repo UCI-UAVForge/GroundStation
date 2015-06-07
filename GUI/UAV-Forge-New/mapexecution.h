@@ -44,11 +44,11 @@ public:
     GsClient myClient;
     QList<QPair<double,double> > getDoublePairs(QList<QString> strings);
 private slots:
-    void finishClicked();
-    void returnHomeClicked();
-    void cancelClicked();
-    void stopClicked();
-    void on_pushButton_clicked();
+    void on_finishButton_clicked();
+    void on_returnHomeButton_clicked();
+    void on_cancelButton_clicked();
+    void on_stopButton_clicked();
+    void on_backButton_clicked();
 
     void push_new_point(QString point);
 

@@ -10,6 +10,12 @@ mapexecution::mapexecution(QWidget *parent) : QWidget(parent), ui(new Ui::mapexe
 
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
     ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
+
+    connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()));
+    connect(ui->cancelButton, SIGNAL(clicked()), this, SLOT(on_cancelButton_clicked()));
+    connect(ui->finishButton, SIGNAL(clicked()), this, SLOT(on_finishButton_clicked()));
+    connect(ui->returnHomeButton, SIGNAL(clicked()), this, SLOT(on_returnHomeButton_clicked()));
+    connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(on_stopButton_clicked()));
 }
 
 mapexecution::mapexecution(QList<QString> strings, QWidget *parent) : QWidget(parent), ui(new Ui::mapexecution) {
@@ -22,10 +28,13 @@ mapexecution::mapexecution(QList<QString> strings, QWidget *parent) : QWidget(pa
 
     mapStrings = strings;
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
-    connect(ui->pushBtnStop,SIGNAL(clicked()),this,SLOT(stopClicked()));
     ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
 
-
+    connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()));
+    connect(ui->cancelButton, SIGNAL(clicked()), this, SLOT(on_cancelButton_clicked()));
+    connect(ui->finishButton, SIGNAL(clicked()), this, SLOT(on_finishButton_clicked()));
+    connect(ui->returnHomeButton, SIGNAL(clicked()), this, SLOT(on_returnHomeButton_clicked()));
+    connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(on_stopButton_clicked()));
 
     std::cout<<"PREPARE" << std::endl;
     QList <QPair<double, double > > h;
@@ -42,13 +51,13 @@ mapexecution::~mapexecution() {
     delete ui;
 }
 
-void mapexecution::finishClicked() {
+void mapexecution::on_finishButton_clicked() {
     MissionRecap *missionRecap = new MissionRecap();
     this->close();
     missionRecap->showFullScreen();
 }
 
-void mapexecution::stopClicked() {
+void mapexecution::on_stopButton_clicked() {
     QList <QPair<double, double > > h;
     h << QPair<double, double >(999.99,999.99);
     myClient.set_list(h);
@@ -56,17 +65,17 @@ void mapexecution::stopClicked() {
 }
 
 /* would not return back to home, it is now fixed. Arash */
-void mapexecution::returnHomeClicked() {
+void mapexecution::on_returnHomeButton_clicked() {
     MainWindow *mainwindow = new MainWindow();
     this -> close();
     mainwindow->showFullScreen();
 }
 
-void mapexecution::cancelClicked() {
+void mapexecution::on_cancelButton_clicked() {
     this->close();
 }
 
-void mapexecution::on_pushButton_clicked() {
+void mapexecution::on_backButton_clicked() {
     MainWindow *mainwindow = new MainWindow();
     this -> close();
     mainwindow->showFullScreen();
