@@ -1,6 +1,6 @@
 #include "missionrecap.h"
 
-MissionRecap::MissionRecap(QWidget *parent) : QWidget(parent), ui(new Ui::MissionRecap) {
+MissionRecap::MissionRecap(QWidget *parent) : QDialog(parent), ui(new Ui::MissionRecap) {
     ui->setupUi(this);
     //ui->VideoWidget->resize(321, 171);
     mediaPlayer.setVideoOutput(ui->VideoWidget);
@@ -132,15 +132,15 @@ void MissionRecap:: updateMediaPlayer(int position) {
 
 void MissionRecap:: replayMissionClicked() {
     this->close();
-    mapexecution *mapExecution = new mapexecution();
+    MapExecution *mapExecution = new MapExecution();
     mapExecution->showFullScreen();
 }
 
 void MissionRecap::on_backButton_clicked() {
     mediaPlayer.stop();
-    MainWindow *mainwindow = new MainWindow();
+//    MainWindow *mainwindow = new MainWindow();
     this -> close();
-    mainwindow->showFullScreen();
+//    mainwindow->showFullScreen();
 }
 
 void MissionRecap::on_playButton_clicked() {

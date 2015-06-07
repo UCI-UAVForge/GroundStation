@@ -4,28 +4,23 @@
 #include <QDebug>
 #include "mapexecution.h"
 
-PopWindowMP::PopWindowMP(QList<QString> strings, QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::PopWindowMP)
-{
+PopWindowMP::PopWindowMP(QList<QString> strings, QWidget *parent) : QWidget(parent), ui(new Ui::PopWindowMP) {
     ui->setupUi(this);
     mapStrings = strings;
     connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(yesButtonClicked()));
 }
 
-PopWindowMP::~PopWindowMP()
-{
+PopWindowMP::~PopWindowMP() {
     delete ui;
 }
 
-void PopWindowMP::yesButtonClicked(){
-    mapexecution *mapExecution = new mapexecution(mapStrings);
+void PopWindowMP::yesButtonClicked() {
+    MapExecution *mapExecution = new MapExecution(mapStrings);
     mapExecution->show();
     emit(windowClosed());
     this -> close();
 }
 
-void PopWindowMP::on_pushButton_2_clicked()
-{
+void PopWindowMP::on_pushButton_2_clicked() {
     this->close();
 }

@@ -25,7 +25,7 @@ void Options:: missionPlanningClicked()
 void Options:: missionExecutionClicked()
 {
     this->close();
-    mapexecution *mapExecution = new mapexecution();
+    MapExecution *mapExecution = new MapExecution();
     mapExecution->show();
 }
 

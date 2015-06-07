@@ -23,11 +23,10 @@
 
 
 namespace Ui {
-class mapexecution;
+class MapExecution;
 }
 
-class mapexecution : public QWidget
-{
+class MapExecution : public QDialog {
     Q_OBJECT
 public slots:
     void setMap(QList<QString> list);
@@ -35,11 +34,11 @@ public slots:
     void addNewMap();
     void updateTable(int lat, int lng);
 public:
-    explicit mapexecution(QList<QString> strings, QWidget *parent = 0);
-    explicit mapexecution(QWidget *parent = 0);
+    explicit MapExecution(QList<QString> strings, QWidget *parent = 0);
+    explicit MapExecution(QWidget *parent = 0);
     QList<QString> mapStrings;
     void plotPosition(double lat, double lng);
-    ~mapexecution();
+    ~MapExecution();
     //GsServer myServer;
     GsClient myClient;
     QList<QPair<double,double> > getDoublePairs(QList<QString> strings);
@@ -57,7 +56,7 @@ private slots:
 
 
 private:
-    Ui::mapexecution *ui;
+    Ui::MapExecution *ui;
     QList<QString> points_recieved;
     TableModel *model;
     QButtonGroup *buttonGroup;

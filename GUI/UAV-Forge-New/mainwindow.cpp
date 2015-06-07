@@ -55,7 +55,7 @@ void MainWindow::openTutorial() {
  */
 void MainWindow::missionPlanningClicked() {
     MapPlanning *mapPlanning = new MapPlanning();
-    this->close();
+//    this->close();
     mapPlanning->showFullScreen();
 }
 
@@ -64,8 +64,8 @@ void MainWindow::missionPlanningClicked() {
  * window, close the main window, and open the mission execution window in full screen
  */
 void MainWindow::missionExecutionClicked() {
-    mapexecution *mapExecution = new mapexecution();
-    this->close();
+    MapExecution *mapExecution = new MapExecution();
+//    this->close();
     mapExecution->showFullScreen();
 }
 
@@ -75,7 +75,7 @@ void MainWindow::missionExecutionClicked() {
  */
 void MainWindow::missionRecapClicked() {
     MissionRecap *missionRecap = new MissionRecap();
-    this->close();
+//    this->close();
     missionRecap->showFullScreen();
 }
 

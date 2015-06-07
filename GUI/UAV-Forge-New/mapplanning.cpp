@@ -57,7 +57,7 @@ void MapPlanning::addClickListener() {
 void MapPlanning::on_executeButton_clicked() {
     popup = new PopWindowMP(getTableAsStrings());
     connect(popup,SIGNAL(windowClosed()),this,SLOT(closeWindow()));
-    mapexecution *mapExecution = new mapexecution();
+    MapExecution *mapExecution = new MapExecution();
     this->close();
     mapExecution->showFullScreen();
 // >>>>>>> origin/Back-End
@@ -68,7 +68,6 @@ void MapPlanning::on_addButton_clicked() {
     model->insertRow();
 }
 
-//everytime a row is removed it updates the map, let's add an update button instead
 // - button
 void MapPlanning::on_deleteButton_clicked() {
     QModelIndexList indexes = ui->tableView->selectionModel()->selectedIndexes();
@@ -83,9 +82,9 @@ void MapPlanning::on_updateTableButton_clicked() {
 
 // back button
 void MapPlanning::on_backButton_clicked() {
-    MainWindow *mainwindow = new MainWindow();
+//    MainWindow *mainwindow = new MainWindow();
     this -> close();
-    mainwindow->showFullScreen();
+//    mainwindow->showFullScreen();
 }
 
 // clear table button

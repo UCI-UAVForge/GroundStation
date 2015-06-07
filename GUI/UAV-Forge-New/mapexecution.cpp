@@ -1,6 +1,6 @@
 #include "mapexecution.h"
 
-mapexecution::mapexecution(QWidget *parent) : QWidget(parent), ui(new Ui::mapexecution) {
+MapExecution::MapExecution(QWidget *parent) : QDialog(parent), ui(new Ui::MapExecution) {
     buttonGroup = new QButtonGroup();
     model = new TableModel();
 
@@ -18,7 +18,7 @@ mapexecution::mapexecution(QWidget *parent) : QWidget(parent), ui(new Ui::mapexe
     connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(on_stopButton_clicked()));
 }
 
-mapexecution::mapexecution(QList<QString> strings, QWidget *parent) : QWidget(parent), ui(new Ui::mapexecution) {
+MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(parent), ui(new Ui::MapExecution) {
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
 
@@ -47,17 +47,17 @@ mapexecution::mapexecution(QList<QString> strings, QWidget *parent) : QWidget(pa
     std::cout<<"PUNY HUMANS" << std::endl;
 }
 
-mapexecution::~mapexecution() {
+MapExecution::~MapExecution() {
     delete ui;
 }
 
-void mapexecution::on_finishButton_clicked() {
-    MissionRecap *missionRecap = new MissionRecap();
+void MapExecution::on_finishButton_clicked() {
     this->close();
+    MissionRecap *missionRecap = new MissionRecap();
     missionRecap->showFullScreen();
 }
 
-void mapexecution::on_stopButton_clicked() {
+void MapExecution::on_stopButton_clicked() {
     QList <QPair<double, double > > h;
     h << QPair<double, double >(999.99,999.99);
     myClient.set_list(h);
@@ -65,23 +65,23 @@ void mapexecution::on_stopButton_clicked() {
 }
 
 /* would not return back to home, it is now fixed. Arash */
-void mapexecution::on_returnHomeButton_clicked() {
-    MainWindow *mainwindow = new MainWindow();
+void MapExecution::on_returnHomeButton_clicked() {
+//    MainWindow *mainwindow = new MainWindow();
     this -> close();
-    mainwindow->showFullScreen();
+//    mainwindow->showFullScreen();
 }
 
-void mapexecution::on_cancelButton_clicked() {
+void MapExecution::on_cancelButton_clicked() {
     this->close();
 }
 
-void mapexecution::on_backButton_clicked() {
-    MainWindow *mainwindow = new MainWindow();
+void MapExecution::on_backButton_clicked() {
+//    MainWindow *mainwindow = new MainWindow();
     this -> close();
-    mainwindow->showFullScreen();
+//    mainwindow->showFullScreen();
 }
 
-void mapexecution::setMap(QList<QString> list) {
+void MapExecution::setMap(QList<QString> list) {
     /* Sends a request for the map to clear itself, causing the JavaScript page
     to reload itself. This function then cycles through each entry in the string
     list and sends it to the addPoint(QString) function to be added to the map.
@@ -96,7 +96,7 @@ void mapexecution::setMap(QList<QString> list) {
     }
 }
 
-QList<QPair<double,double> > mapexecution::getDoublePairs(QList<QString> strings) {
+QList<QPair<double,double> > MapExecution::getDoublePairs(QList<QString> strings) {
     QList<QPair<double,double> > returnList;
     for(QString string: strings){
         QList<QString> comps = string.split(",");
@@ -117,7 +117,7 @@ QList<QPair<double,double> > mapexecution::getDoublePairs(QList<QString> strings
 
 }
 
-void mapexecution::addPoint(QString string) {
+void MapExecution::addPoint(QString string) {
     /*  Takes a QString formated (Action,Longitude,LongDirection,Latitude,
     LatDirection,Behavior) and extracts the (lat,lng) pair needed to add
     a new point to the map. Function added by Jordan Dickson Feb 21st 2015. */
@@ -139,11 +139,11 @@ void mapexecution::addPoint(QString string) {
     ui->webView->page()->mainFrame()->evaluateJavaScript("addLatLngCoords("+QString::number(lat)+","+QString::number(lng)+")");
 }
 
-void mapexecution::push_new_point(QString string) {
+void MapExecution::push_new_point(QString string) {
    QList<QString> points = string.split(",");
 }
 
-void mapexecution::addClickListener() {
+void MapExecution::addClickListener() {
     /* Since c++/JS bridges are broken when the JS page refreshes this slot
      is used to rebruild the bridge each time when triggered by a
      javaScriptWindowObjectCleared signal from the page frame. Function
@@ -154,7 +154,7 @@ void mapexecution::addClickListener() {
 
 }
 
-void mapexecution::addNewMap() {
+void MapExecution::addNewMap() {
     /*  Function called by the JavaScript to add the map data from mission planning.
     This is necessary because data cannot be added until the html file is completely
     loaded. Jordan 2/21/2015 */
@@ -162,13 +162,13 @@ void mapexecution::addNewMap() {
     ui->webView->page()->mainFrame()->evaluateJavaScript("simulateInput()");
 }
 
-void mapexecution::plotPosition(double lat, double lng) {
+void MapExecution::plotPosition(double lat, double lng) {
     /*  Sends a (latitude,longitude) pair to the map to be plotted.
     Used for telemetry. */
     ui->webView->page()->mainFrame()->evaluateJavaScript("addActualPath("+QString::number(lat)+","+QString::number(lng)+")");
 }
 
-void mapexecution::updateTable(int lat, int lng) {
+void MapExecution::updateTable(int lat, int lng) {
     model->insertRow(lng, lat);
 //    ui->tableView->update;
     ui->tableView->scrollToBottom();

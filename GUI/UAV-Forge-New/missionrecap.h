@@ -28,7 +28,7 @@ class MissionRecap;
 }
 
 
-class MissionRecap : public QWidget
+class MissionRecap : public QDialog
 {
     Q_OBJECT
 
