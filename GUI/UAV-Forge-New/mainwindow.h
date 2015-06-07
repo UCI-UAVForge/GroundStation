@@ -40,6 +40,13 @@ private slots:
 
     void on_actionQuit_triggered();
 
+    void checkFinishStatus(int status);
+
+    void showMissionPlanning();
+    void showMissionExecution();
+    void showMissionRecap();
+    void showTutorial();
+
 private:
     Ui::MainWindow *ui;
     QPropertyAnimation *animation;

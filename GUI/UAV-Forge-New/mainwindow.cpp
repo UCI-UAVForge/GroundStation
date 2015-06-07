@@ -43,40 +43,28 @@ MainWindow::~MainWindow() {
  * close the main window, and open the tutorial window in full screen
  */
 void MainWindow::openTutorial() {
-
-    Tutorial *tutorial = new Tutorial();
-    this -> close();
-    tutorial -> showFullScreen();
+    this->showTutorial();
 }
 
 /**
- * When the mission planning button is clicked, create a new mission planning
- * window, close the main window, and open the mission planning window in full screen
+ * When the mission planning button is clicked, create a new mission planning window
  */
 void MainWindow::missionPlanningClicked() {
-    MapPlanning *mapPlanning = new MapPlanning();
-//    this->close();
-    mapPlanning->showFullScreen();
+    this->showMissionPlanning();
 }
 
 /**
- * When the mission execution button is clicked, create a new mission execution
- * window, close the main window, and open the mission execution window in full screen
+ * When the mission execution button is clicked, create a new mission execution window
  */
 void MainWindow::missionExecutionClicked() {
-    MapExecution *mapExecution = new MapExecution();
-//    this->close();
-    mapExecution->showFullScreen();
+    this->showMissionExecution();
 }
 
 /**
- * When the mission recap buttion is clicked, create a new mission recap window,
- * close the main window, and open the mission recap window in full screen
+ * When the mission recap buttion is clicked, create a new mission recap window
  */
 void MainWindow::missionRecapClicked() {
-    MissionRecap *missionRecap = new MissionRecap();
-//    this->close();
-    missionRecap->showFullScreen();
+    this->showMissionRecap();
 }
 
 /**
@@ -84,4 +72,50 @@ void MainWindow::missionRecapClicked() {
  */
 void MainWindow::on_actionQuit_triggered() {
     this->close();
+}
+
+/**
+ * The callback function to check for return status and redirect to corresponded new window
+ * 0 == main window (default)
+ * 1 == mission planning
+ * 2 == mission execution
+ * 3 == mission recap
+ * 4 == tutorial
+ */
+void MainWindow::checkFinishStatus(int status) {
+    if(status == 1) {
+        this->showMissionPlanning();
+    } else if(status == 2) {
+        this->showMissionExecution();
+    } else if(status == 3) {
+        this->showMissionRecap();
+    } else if(status == 4) {
+        this->showTutorial();
+    }
+}
+
+// helper functions
+
+void MainWindow::showMissionPlanning() {
+    MapPlanning *mapPlanning = new MapPlanning();
+    QObject::connect(mapPlanning, SIGNAL(finished(int)), this, SLOT(checkFinishStatus(int)), Qt::UniqueConnection);
+    mapPlanning->showFullScreen();
+}
+
+void MainWindow::showMissionExecution() {
+    MapExecution *mapExecution = new MapExecution();
+    QObject::connect(mapExecution, SIGNAL(finished(int)), this, SLOT(checkFinishStatus(int)), Qt::UniqueConnection);
+    mapExecution->showFullScreen();
+}
+
+void MainWindow::showMissionRecap() {
+    MissionRecap *missionRecap = new MissionRecap();
+    QObject::connect(missionRecap, SIGNAL(finished(int)), this, SLOT(checkFinishStatus(int)), Qt::UniqueConnection);
+    missionRecap->showFullScreen();
+}
+
+void MainWindow::showTutorial() {
+    Tutorial *tutorial = new Tutorial();
+    QObject::connect(tutorial, SIGNAL(finished(int)), this, SLOT(checkFinishStatus(int)), Qt::UniqueConnection);
+    tutorial -> showFullScreen();
 }

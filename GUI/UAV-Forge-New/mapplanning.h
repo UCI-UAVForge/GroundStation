@@ -13,7 +13,7 @@
 #include "popwindowmp.h"
 #include "qcomboboxdelegate.h"
 #include "popwindowmp.h"
-#include "mainwindow.h"
+//#include "mainwindow.h"
 #include "mapexecution.h"
 
 

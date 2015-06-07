@@ -9,13 +9,13 @@ MissionRecap::MissionRecap(QWidget *parent) : QDialog(parent), ui(new Ui::Missio
     QString fileName = QFileDialog::getOpenFileName(this, tr("Open Movie"),QDir::homePath());
     mediaPlayer.setMedia(QUrl::fromLocalFile(fileName));
     ui->VideoWidget->setAspectRatioMode(Qt::IgnoreAspectRatio);
-    connect(ui->horizontalSlider, SIGNAL(sliderMoved(int)), this, SLOT(updateMediaPlayer(int)));
-    connect(&mediaPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(updateSlider(qint64)));
+    connect(ui->horizontalSlider, SIGNAL(sliderMoved(int)), this, SLOT(updateMediaPlayer(int)), Qt::UniqueConnection);
+    connect(&mediaPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(updateSlider(qint64)), Qt::UniqueConnection);
 
-    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
+    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
     ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
 
-    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
+    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
     ui->webView->load(QUrl("qrc:/res/html/missionRecap.html"));
 
     setupRealtimeDataDemo(ui->customPlot);
@@ -24,8 +24,6 @@ MissionRecap::MissionRecap(QWidget *parent) : QDialog(parent), ui(new Ui::Missio
 MissionRecap::~MissionRecap() {
     delete ui;
 }
-
-
 
 void MissionRecap::setupRealtimeDataDemo(QCustomPlot *customPlot) {
 #if QT_VERSION < QT_VERSION_CHECK(4, 7, 0)
@@ -130,19 +128,21 @@ void MissionRecap:: updateMediaPlayer(int position) {
     mediaPlayer.setPosition(position);
 }
 
+// replay button
+// redirect to mission execution
 void MissionRecap:: replayMissionClicked() {
-    this->close();
-    MapExecution *mapExecution = new MapExecution();
-    mapExecution->showFullScreen();
+    this->done(2);
 }
 
+// back button
+// redirect to main window
 void MissionRecap::on_backButton_clicked() {
     mediaPlayer.stop();
-//    MainWindow *mainwindow = new MainWindow();
-    this -> close();
-//    mainwindow->showFullScreen();
+
+    this->done(0);
 }
 
+// play button
 void MissionRecap::on_playButton_clicked() {
     ui->horizontalSlider->setRange(0, mediaPlayer.duration());
     if(mediaPlayer.state() == QMediaPlayer::PlayingState)
@@ -184,6 +184,7 @@ void MissionRecap::on_playButton_clicked() {
     */
 }
 
+// stop button
 void MissionRecap::on_stopButton_clicked() {
     mediaPlayer.stop();
 
@@ -214,16 +215,15 @@ void MissionRecap::on_horizontalSlider_sliderPressed() {
 
 }
 
+// new mission button
+// redirect to mission planning window
 void MissionRecap::on_newMission_clicked() {
-    MapPlanning *mapPlanning = new MapPlanning();
-    this -> close();
-    mapPlanning->showFullScreen();
+    this->done(1);
 }
 
+// redirect to main window
 void MissionRecap::on_pushButton_5_clicked() {
-    MainWindow *mainwindow = new MainWindow();
-    this -> close();
-    mainwindow->showFullScreen();
+    this->done(0);
 }
 
 //Creates the bridge called cbridge between the java script object and this class.

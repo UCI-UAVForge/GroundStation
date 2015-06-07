@@ -9,7 +9,7 @@ MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlann
 //    connect(ui->pushButton_7, SIGNAL(clicked()), this, SLOT(on_pushButton_7_clicked()));
 
 //    //Recreates the c++/JS bridge when the JavaScript window is refreshed
-    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
+    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
 
     ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
 
@@ -17,19 +17,17 @@ MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlann
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
 
-    connect(ui->addButton, SIGNAL(clicked()), this, SLOT(on_addButton_clicked()));
-    connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()));
-    connect(ui->clearMapButton, SIGNAL(clicked()), this, SLOT(on_clearMapButton_clicked()));
-    connect(ui->clearTableButton, SIGNAL(clicked()), this, SLOT(on_clearTableButton_clicked()));
-    connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(on_deleteButton_clicked()));
-    connect(ui->executeButton, SIGNAL(clicked()), this, SLOT(on_executeButton_clicked()));
-    connect(ui->updateTableButton, SIGNAL(clicked()), this, SLOT(on_updateTableButton_clicked()));
+    connect(ui->addButton, SIGNAL(clicked()), this, SLOT(on_addButton_clicked()), Qt::UniqueConnection);
+    connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()), Qt::UniqueConnection);
+    connect(ui->clearMapButton, SIGNAL(clicked()), this, SLOT(on_clearMapButton_clicked()), Qt::UniqueConnection);
+    connect(ui->clearTableButton, SIGNAL(clicked()), this, SLOT(on_clearTableButton_clicked()), Qt::UniqueConnection);
+    connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(on_deleteButton_clicked()), Qt::UniqueConnection);
+    connect(ui->executeButton, SIGNAL(clicked()), this, SLOT(on_executeButton_clicked()), Qt::UniqueConnection);
+    connect(ui->updateTableButton, SIGNAL(clicked()), this, SLOT(on_updateTableButton_clicked()), Qt::UniqueConnection);
 }
 
 MapPlanning::~MapPlanning() {
     delete ui;
-    delete model;
-    delete popup;
 }
 
 //<<<<<<< HEAD
@@ -44,23 +42,10 @@ void MapPlanning::addClickListener() {
     ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("cbridge",this);
 }
 
-// <<<<<<< HEAD
-// void MapPlanning::on_pushButton_6_clicked()
-// {
-//     //popup = new PopWindowMP();
-//     //popup->show();
-//     mapexecution *mapExecution = new mapexecution();
-//     this -> close();
-//     mapExecution->showFullScreen();
-// =======
-// execute button
+// execution button
+// redirect to mission execution window
 void MapPlanning::on_executeButton_clicked() {
-    popup = new PopWindowMP(getTableAsStrings());
-    connect(popup,SIGNAL(windowClosed()),this,SLOT(closeWindow()));
-    MapExecution *mapExecution = new MapExecution();
-    this->close();
-    mapExecution->showFullScreen();
-// >>>>>>> origin/Back-End
+    this->done(2);
 }
 
 // + button
@@ -81,10 +66,9 @@ void MapPlanning::on_updateTableButton_clicked() {
 }
 
 // back button
+// redirect to main window
 void MapPlanning::on_backButton_clicked() {
-//    MainWindow *mainwindow = new MainWindow();
-    this -> close();
-//    mainwindow->showFullScreen();
+    this->done(0);
 }
 
 // clear table button
@@ -190,15 +174,3 @@ Added by Jordan Dickson Feb 14th 2015.*/
 void MapPlanning::addPointToTable(double lat, double lng) {
     model->insertRow(lng,lat);
 }
-
-//void MapPlanning::on_pushButton_8_clicked()
-//{
-//     qDebug() << "Widget";
-//}
-
-//void MapPlanning::on_pushButton_clicked()
-//{
-//    MainWindow *mainwindow = new MainWindow();
-//    this -> close();
-//    mainwindow->showFullScreen();
-//}

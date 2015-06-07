@@ -16,7 +16,7 @@
 #include "qcomboboxdelegate.h"
 #include "missionrecap.h"
 #include "options.h"
-#include "mainwindow.h"
+//#include "mainwindow.h"
 //#include "net.h"
 
 #include "ui_mapexecution.h"
