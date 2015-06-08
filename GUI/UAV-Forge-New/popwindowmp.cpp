@@ -19,7 +19,7 @@ PopWindowMP::~PopWindowMP()
 }
 
 void PopWindowMP::yesButtonClicked(){
-    mapexecution *mapExecution = new mapexecution(mapStrings);
+    MapExecution *mapExecution = new MapExecution(mapStrings);
     mapExecution->show();
     emit(windowClosed());
     this -> close();

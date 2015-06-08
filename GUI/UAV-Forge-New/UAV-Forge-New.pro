@@ -17,7 +17,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 #CONFIG += console
 
 CONFIG += c++11
-#LIBS += -lws2_32
+win32{
+    LIBS += -lws2_32
+}
 TARGET = UAV-Forge-New
 TEMPLATE = app
 

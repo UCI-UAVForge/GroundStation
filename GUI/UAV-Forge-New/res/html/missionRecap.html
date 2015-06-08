@@ -1,53 +1,131 @@
 <html>
-    <head>
-        <style>
-            #map_canvas {
-                width: 100%;
-                height: 100%;
-                margin: 0px;
-                background-color: #CCC;
-            }
-        </style>
-
-        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
-            </script>
-    </head>
-    <body>
-        <script type="text/javascript">
-
-        //JavaScript code edited by Arash and Jordan for UCI UAV Forge. Feb 14th 2015.
-
-            var uci=new google.maps.LatLng(33.6454,-117.8426);
-            var map;
-            var flightPath;
-            var clickable = false;
-
-            //Setup function that creates the initial map state.
-            function initialize()
-            {
-                var featureOpts = [{
-                    elementType: 'labels',
-                    stylers:[
-                        {visibility: 'off'}
-                    ]
-                }];
-
-                var mapCanvas = document.getElementById('map_canvas');
-                var mapOptions = {
-                    center: uci,
-                    zoom: 13,
-                    mapTypeId: google.maps.MapTypeId.SATELLITE
-                };
-
-                map = new google.maps.Map(mapCanvas, mapOptions);
-
-                            }
-
-            google.maps.event.addDomListener(window, 'load', initialize);
-
-        </script>
-        <div id="map_canvas">
-        </div>
-    </body>
+  <head>
+    <style>
+      #map_canvas {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        background-color: #CCC;
+      }
+    </style>
+    
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
+      </script>
+  </head>
+  <body>
+    <script type="text/javascript">
+    
+    //JavaScript code edited by Arash and Jordan for UCI UAV Forge. Feb 14th 2015.
+    
+    var uci=new google.maps.LatLng(33.6454,-117.8426);
+    var map;
+    
+    //This is the planned flight path associated with the mission (blue line)
+    var flightPath;
+    
+    //This is the GPS telemetry path associated with the mission (red line)
+    var telemPath;
+    
+    var marker; //UAV Icon
+    
+    //================
+    // Coppied from mapsExecution.html
+    
+    function addLatLng(myLocation) {
+      //Adds a new point to the flightpath by pushing the myLocation tuple to the list.
+      flightPath.getPath().push(myLocation);
+    }
+    
+    
+    //Adds a point to the actual flight path of the UAV to track differences from planned route
+    // -Nbrannon
+    function add_actual_loc(myLocation){
+      telemPath.getPath().push(myLocation);
+    }
+    
+    function addActualPath(lat, lng){
+      var location = new google.maps.LatLng(lat,lng);
+      add_actual_loc(location);
+      moveIcon(location);
+    }
+    
+    function addLatLngCoords(lat,lng) {
+      //Used on the c++ side to add a new point to the map.
+      var location = new google.maps.LatLng(lat,lng);
+      addLatLng(location);
+    }
+    
+    function clearMap(){
+      //Called from the c++ side to refresh the map.
+      flightPath.getPath().clear();
+    }
+    
+    function getMapSettings(){
+      var center = map.getCenter();
+      var zoom = map.getZoom();
+      return (center.lat(),center.lng(),zoom);
+    }
+    
+    function setMapSettings(lat,lng,zoom){
+      map.setCenter(new google.maps.LatLng(lat,lng));
+      map.setZoom(zoom);
+    }
+    
+    function moveIcon(myLocation){
+      marker.setPosition(myLocation);
+    }
+  
+    //==============================
+    
+    //Setup function that creates the initial map state.
+    function initialize() {
+      var featureOpts = [{
+        elementType: 'labels',
+        stylers:[
+                {visibility: 'off'}
+                ]
+      }];
+      
+      var mapCanvas = document.getElementById('map_canvas');
+      var mapOptions = {
+        center: uci,
+        zoom: 13,
+        mapTypeId: google.maps.MapTypeId.SATELLITE
+      };
+       
+      map = new google.maps.Map(mapCanvas, mapOptions);
+       
+      flightPath = new google.maps.Polyline({
+        strokeColor:"#0000FF",
+        strokeOpacity:0.8,
+        strokeWeight:2
+      });
+    
+      telemPath = new google.maps.Polyline({
+        strokeColor: "#FF0000",
+        strokeOpacity:0.8,
+        strokeWeight:2
+        });
+      flightPath.setMap(map);
+      telemPath.setMap(map);
+      marker = new google.maps.Marker({
+        position: flightPath.getPath().getAt(0),
+        map: map,
+        icon: {
+        url: "qrc:/res/Drone.png",
+        anchor: new google.maps.Point(20,20)
+        }
+      });
+        
+      cbridge.addNewMap();
+    
+    }
+    
+    google.maps.event.addDomListener(window, 'load', initialize);
+  
+    </script>
+    <div id="map_canvas">
+    </div>
+  </body>
 </html>
 

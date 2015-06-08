@@ -9,13 +9,10 @@
 
 #include <QMainWindow>
 #include <QPropertyAnimation>
-// <<<<<<< HEAD
 #include <QShortcut>
 #include <QPixmap>
 #include <QDebug>
-// =======
 
-// >>>>>>> 4657e7a59454d03e9c48944178e4cdad163200a6
 namespace Ui {
 class MainWindow;
 }
@@ -28,6 +25,10 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private:
+    Ui::MainWindow *ui;
+    QPropertyAnimation *animation;
+
 private slots:
     //button actions
     void openTutorial();
@@ -37,10 +38,6 @@ private slots:
 
     //quit command
     void on_actionQuit_triggered();
-
-private:
-    Ui::MainWindow *ui;
-    QPropertyAnimation *animation;
 };
 
 #endif // MAINWINDOW_H

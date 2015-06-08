@@ -72,13 +72,8 @@
             //Called from the c++ side to refresh the map.
             //modified by Arash on 2/23/15: it will now clear the map without
             //changing the zoom level or center of the map
-                var center = map.getCenter();
-                lat = center.lat();
-                lng = center.lng();
-                currentZoom = map.getZoom();
-                initialize();
-                map.setCenter(new google.maps.LatLng(lat,lng));
-                map.setZoom(currentZoom);
+            //modified by Jordan 5/22/15: no longer needs to reinitialize
+                flightPath.getPath().clear();
             }
 
             google.maps.event.addDomListener(window, 'load', initialize);

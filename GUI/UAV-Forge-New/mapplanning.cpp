@@ -50,7 +50,7 @@ MapPlanning::MapPlanning(QWidget *parent) :
 MapPlanning::~MapPlanning() {
     delete ui;
     delete model;
-    delete popup;
+    //delete popup;
 }
 
 /* Since c++/JS bridges are broken when the JS page refreshes this slot is used
@@ -75,7 +75,7 @@ void MapPlanning::addClickListener() {
 void MapPlanning::on_execute_clicked() {
     //popup = new PopWindowMP(getTableAsStrings());
     //connect(popup,SIGNAL(windowClosed()),this,SLOT(closeWindow()));
-    mapexecution *mapExecution = new mapexecution(getTableAsStrings());
+    MapExecution *mapExecution = new MapExecution(getTableAsStrings());
     this->close();
     mapExecution->showFullScreen();
 }
@@ -163,6 +163,8 @@ void MapPlanning::updateMap() {
  as (Action,Longitude,E/W,Latitude,N/S,Behavior). This is the same formatting
  used in Mission Execution to add waypoints to the map. Very similar to
  getTableData().
+
+ Example String: "Action 1,113.15,W,33.5,N,Behavior 1"
 
  Returns a QList of QStrings.
 

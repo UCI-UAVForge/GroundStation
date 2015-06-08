@@ -24,8 +24,8 @@
     window->showMaximized();
 
 No parameters necessary. The window will not appear until one of the show
-functions is run such as showMaximized(), showFullScreen(), or show().
-*/
+functions is run such as showMaximized(), showFullScreen(), or show(). */
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -46,9 +46,10 @@ MainWindow::~MainWindow() {
 Function added sometime prior to April 30 2015.*/
 void MainWindow::openTutorial() {
     Tutorial *tutorial = new Tutorial();
-// <<<<<<< HEAD
-    this -> close();
     tutorial -> showFullScreen();
+    this -> close();
+
+    //Epic GUI stuff I don't understand
 // =======
 
 //    QPropertyAnimation *animation = new QPropertyAnimation(this, "size");
@@ -65,8 +66,7 @@ void MainWindow::openTutorial() {
 // =======
 //     tutorial->showFullScreen();
 //     this->close();
-// >>>>>>> GUI
-// >>>>>>> 4657e7a59454d03e9c48944178e4cdad163200a6
+
 }
 
 /* Triggered by the button "Mission Planning". This function opens a new window
@@ -86,7 +86,7 @@ void MainWindow::missionPlanningClicked() {
 
 Function added sometime prior to April 30 2015.*/
 void MainWindow::missionExecutionClicked() {
-    mapexecution *mapExecution = new mapexecution();
+    MapExecution *mapExecution = new MapExecution();
     mapExecution->showFullScreen();
     this->close();
 }

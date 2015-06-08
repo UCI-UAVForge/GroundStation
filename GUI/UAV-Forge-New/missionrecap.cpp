@@ -147,7 +147,7 @@ void MissionRecap:: updateMediaPlayer(int position){
 void MissionRecap:: replayMissionClicked()
 {
     this->close();
-    mapexecution *mapExecution = new mapexecution();
+    MapExecution *mapExecution = new MapExecution();
     mapExecution->showFullScreen();
 }
 

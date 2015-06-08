@@ -20,7 +20,7 @@
 
 QT_BEGIN_NAMESPACE
 
-class Ui_mapexecution
+class Ui_MapExecution
 {
 public:
     QPushButton *pushBtnStop;
@@ -30,11 +30,11 @@ public:
     QPushButton *pushButton;
     QPushButton *pushBtnFinish;
 
-    void setupUi(QWidget *mapexecution)
+    void setupUi(QWidget *MapExecution)
     {
-        if (mapexecution->objectName().isEmpty())
-            mapexecution->setObjectName(QStringLiteral("mapexecution"));
-        mapexecution->resize(1366, 768);
+        if (MapExecution->objectName().isEmpty())
+            MapExecution->setObjectName(QStringLiteral("MapExecution"));
+        MapExecution->resize(1512, 978);
         QPalette palette;
         QBrush brush(QColor(255, 255, 255, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -46,10 +46,10 @@ public:
         palette.setBrush(QPalette::Inactive, QPalette::Window, brush1);
         palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
         palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
-        mapexecution->setPalette(palette);
-        pushBtnStop = new QPushButton(mapexecution);
+        MapExecution->setPalette(palette);
+        pushBtnStop = new QPushButton(MapExecution);
         pushBtnStop->setObjectName(QStringLiteral("pushBtnStop"));
-        pushBtnStop->setGeometry(QRect(720, 410, 121, 61));
+        pushBtnStop->setGeometry(QRect(1150, 820, 121, 51));
         pushBtnStop->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
@@ -60,9 +60,9 @@ public:
 " QPushButton:pressed {\n"
 "     background-color: #E6E9ED\n"
 " }"));
-        pushBtnReturnHome = new QPushButton(mapexecution);
+        pushBtnReturnHome = new QPushButton(MapExecution);
         pushBtnReturnHome->setObjectName(QStringLiteral("pushBtnReturnHome"));
-        pushBtnReturnHome->setGeometry(QRect(720, 290, 121, 61));
+        pushBtnReturnHome->setGeometry(QRect(850, 820, 121, 51));
         pushBtnReturnHome->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
@@ -73,9 +73,9 @@ public:
 " QPushButton:pressed {\n"
 "     background-color: #E6E9ED\n"
 " }"));
-        pushBtnCancel = new QPushButton(mapexecution);
+        pushBtnCancel = new QPushButton(MapExecution);
         pushBtnCancel->setObjectName(QStringLiteral("pushBtnCancel"));
-        pushBtnCancel->setGeometry(QRect(720, 530, 121, 61));
+        pushBtnCancel->setGeometry(QRect(1300, 820, 121, 51));
         pushBtnCancel->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
@@ -86,13 +86,13 @@ public:
 " QPushButton:pressed {\n"
 "     background-color: #E6E9ED\n"
 " }"));
-        webView = new QWebView(mapexecution);
+        webView = new QWebView(MapExecution);
         webView->setObjectName(QStringLiteral("webView"));
-        webView->setGeometry(QRect(190, 70, 491, 651));
+        webView->setGeometry(QRect(120, 70, 1331, 711));
         webView->setUrl(QUrl(QStringLiteral("about:blank")));
-        pushButton = new QPushButton(mapexecution);
+        pushButton = new QPushButton(MapExecution);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(80, 30, 75, 23));
+        pushButton->setGeometry(QRect(20, 30, 75, 23));
         pushButton->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
@@ -103,9 +103,9 @@ public:
 " QPushButton:pressed {\n"
 "     background-color: #E6E9ED\n"
 " }"));
-        pushBtnFinish = new QPushButton(mapexecution);
+        pushBtnFinish = new QPushButton(MapExecution);
         pushBtnFinish->setObjectName(QStringLiteral("pushBtnFinish"));
-        pushBtnFinish->setGeometry(QRect(940, 330, 121, 51));
+        pushBtnFinish->setGeometry(QRect(1000, 820, 121, 51));
         pushBtnFinish->setStyleSheet(QLatin1String(" QPushButton { \n"
 "background-color: \"#CCD1D9\"; \n"
 "color: \"#434A54\"; \n"
@@ -117,28 +117,28 @@ public:
 "     background-color: #E6E9ED\n"
 " }"));
 
-        retranslateUi(mapexecution);
-        QObject::connect(pushBtnFinish, SIGNAL(clicked()), mapexecution, SLOT(finishClicked()));
-        QObject::connect(pushBtnReturnHome, SIGNAL(clicked()), mapexecution, SLOT(returnHomeClicked()));
-        QObject::connect(pushBtnCancel, SIGNAL(clicked()), mapexecution, SLOT(cancelClicked()));
+        retranslateUi(MapExecution);
+        QObject::connect(pushBtnFinish, SIGNAL(clicked()), MapExecution, SLOT(finishClicked()));
+        QObject::connect(pushBtnReturnHome, SIGNAL(clicked()), MapExecution, SLOT(returnHomeClicked()));
+        QObject::connect(pushBtnCancel, SIGNAL(clicked()), MapExecution, SLOT(cancelClicked()));
 
-        QMetaObject::connectSlotsByName(mapexecution);
+        QMetaObject::connectSlotsByName(MapExecution);
     } // setupUi
 
-    void retranslateUi(QWidget *mapexecution)
+    void retranslateUi(QWidget *MapExecution)
     {
-        mapexecution->setWindowTitle(QApplication::translate("mapexecution", "Form", 0));
-        pushBtnStop->setText(QApplication::translate("mapexecution", "Stop", 0));
-        pushBtnReturnHome->setText(QApplication::translate("mapexecution", "Return home", 0));
-        pushBtnCancel->setText(QApplication::translate("mapexecution", "Cancel", 0));
-        pushButton->setText(QApplication::translate("mapexecution", "Back", 0));
-        pushBtnFinish->setText(QApplication::translate("mapexecution", "Finish", 0));
+        MapExecution->setWindowTitle(QApplication::translate("MapExecution", "Form", 0));
+        pushBtnStop->setText(QApplication::translate("MapExecution", "Stop", 0));
+        pushBtnReturnHome->setText(QApplication::translate("MapExecution", "Return home", 0));
+        pushBtnCancel->setText(QApplication::translate("MapExecution", "Cancel", 0));
+        pushButton->setText(QApplication::translate("MapExecution", "Back", 0));
+        pushBtnFinish->setText(QApplication::translate("MapExecution", "Finish", 0));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class mapexecution: public Ui_mapexecution {};
+    class MapExecution: public Ui_MapExecution {};
 } // namespace Ui
 
 QT_END_NAMESPACE
