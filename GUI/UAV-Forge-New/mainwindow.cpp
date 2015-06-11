@@ -42,7 +42,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 
 /**
- * Deconstrutor for the main window
+ * Destructor for the main window
  */
 MainWindow::~MainWindow() {
     delete ui;
@@ -54,6 +54,16 @@ MainWindow::~MainWindow() {
  * close the main window, and open the tutorial window in full screen
  */
 void MainWindow::openTutorial() {
+    //    QPropertyAnimation *animation = new QPropertyAnimation(this, "size");
+    //    std::cout << "New animation" << std::endl;
+    //    animation->setDuration(10000);
+    //    animation->setStartValue(QSize(width, window_height_min));
+    //    animation->setEndValue(QSize(width, window_height_min+expand_general_to));
+    //    animation->setEasingCurve(QEasingCurve::InBack);
+
+    //    animation->start();
+    //    std::cout << "Animation start" << std::endl;
+
     this->showTutorial();
 }
 
@@ -92,6 +102,7 @@ void MainWindow::on_actionQuit_triggered() {
  * 2 == mission execution
  * 3 == mission recap
  * 4 == tutorial
+ * Advice for improvement: can use stack data structure to handle the callbacks
  */
 void MainWindow::checkFinishStatus(int status) {
     if(status == 1) {

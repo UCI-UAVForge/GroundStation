@@ -61,6 +61,8 @@ void MapExecution::on_finishButton_clicked() {
 
 
 // stop button
+/* Sends the point (999.99,999.99) to the UAV. Used as a code for stop.
+Function added by Jordan Dickson March 9th 2015. */
 void MapExecution::on_stopButton_clicked() {
     QList <QPair<double, double > > h;
     h << QPair<double, double >(999.99,999.99);
