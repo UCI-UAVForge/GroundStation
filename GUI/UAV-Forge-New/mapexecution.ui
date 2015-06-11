@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MapExecution</class>
- <widget class="QWidget" name="MapExecution">
+ <class>mapexecution</class>
+ <widget class="QWidget" name="mapexecution">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -77,11 +77,17 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QPushButton" name="backButton">
-     <property name="styleSheet">
-      <string notr="true"> QPushButton { 
+  <widget class="QPushButton" name="pushBtnStop">
+   <property name="geometry">
+    <rect>
+     <x>1150</x>
+     <y>820</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 10px;
@@ -91,25 +97,22 @@ border: none;
  QPushButton:pressed {
      background-color: #E6E9ED
  }</string>
-     </property>
-     <property name="text">
-      <string>Back</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1" colspan="4">
-    <widget class="QWebView" name="webView">
-     <property name="url">
-      <url>
-       <string>about:blank</string>
-      </url>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="1">
-    <widget class="QPushButton" name="returnHomeButton">
-     <property name="styleSheet">
-      <string notr="true"> QPushButton { 
+   </property>
+   <property name="text">
+    <string>Stop</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushBtnReturnHome">
+   <property name="geometry">
+    <rect>
+     <x>850</x>
+     <y>820</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 10px;
@@ -119,16 +122,22 @@ border: none;
  QPushButton:pressed {
      background-color: #E6E9ED
  }</string>
-     </property>
-     <property name="text">
-      <string>Return home</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="2">
-    <widget class="QPushButton" name="finishButton">
-     <property name="styleSheet">
-      <string notr="true"> QPushButton { 
+   </property>
+   <property name="text">
+    <string>Return home</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushBtnCancel">
+   <property name="geometry">
+    <rect>
+     <x>1300</x>
+     <y>820</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 10px;
@@ -138,16 +147,37 @@ border: none;
  QPushButton:pressed {
      background-color: #E6E9ED
  }</string>
-     </property>
-     <property name="text">
-      <string>Finish</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="3">
-    <widget class="QPushButton" name="stopButton">
-     <property name="styleSheet">
-      <string notr="true"> QPushButton { 
+   </property>
+   <property name="text">
+    <string>Cancel</string>
+   </property>
+  </widget>
+  <widget class="QWebView" name="webView">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>70</y>
+     <width>1331</width>
+     <height>711</height>
+    </rect>
+   </property>
+   <property name="url">
+    <url>
+     <string>about:blank</string>
+    </url>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>30</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 10px;
@@ -157,16 +187,22 @@ border: none;
  QPushButton:pressed {
      background-color: #E6E9ED
  }</string>
-     </property>
-     <property name="text">
-      <string>Stop</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="4">
-    <widget class="QPushButton" name="cancelButton">
-     <property name="styleSheet">
-      <string notr="true"> QPushButton { 
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushBtnFinish">
+   <property name="geometry">
+    <rect>
+     <x>1000</x>
+     <y>820</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
 color: &quot;#434A54&quot;; 
 border-radius: 10px;
@@ -176,16 +212,11 @@ border: none;
  QPushButton:pressed {
      background-color: #E6E9ED
  }</string>
-     </property>
-     <property name="text">
-      <string>Cancel</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1">
-    <widget class="QTableView" name="tableView"/>
-   </item>
-  </layout>
+   </property>
+   <property name="text">
+    <string>Finish</string>
+   </property>
+  </widget>
  </widget>
  <customwidgets>
   <customwidget>
@@ -195,7 +226,56 @@ border: none;
   </customwidget>
  </customwidgets>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>pushBtnFinish</sender>
+   <signal>clicked()</signal>
+   <receiver>mapexecution</receiver>
+   <slot>finishClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1000</x>
+     <y>355</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>486</x>
+     <y>234</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtnReturnHome</sender>
+   <signal>clicked()</signal>
+   <receiver>mapexecution</receiver>
+   <slot>returnHomeClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>574</x>
+     <y>287</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>474</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushBtnCancel</sender>
+   <signal>clicked()</signal>
+   <receiver>mapexecution</receiver>
+   <slot>cancelClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>553</x>
+     <y>357</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>447</x>
+     <y>357</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
  <slots>
   <slot>slot1()</slot>
   <slot>finishClicked()</slot>

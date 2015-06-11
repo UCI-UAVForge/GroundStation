@@ -6,27 +6,14 @@
  */
 
 #include <QApplication>
-#include "mainwindow.h"
-#include "mapplanning.h"
-#include <QApplication>
-#include <QSplashScreen>
 
 #include "mainwindow.h"
+#include "mapplanning.h"
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
-
-    QPixmap pixmap(":/res/UAV_FORGE_LOGO_2.png");
-    QSplashScreen splash(pixmap);
-    splash.show();
-
     MainWindow x;
     x.showFullScreen();
-
     //x.showMaximized();  //Personally, I like this one better  :P
-
-    splash.finish(&x);
-
-
     return a.exec();
 }

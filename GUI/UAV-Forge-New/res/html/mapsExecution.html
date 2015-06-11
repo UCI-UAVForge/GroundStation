@@ -9,7 +9,8 @@
             }
         </style>
 
-        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
+            </script>
     </head>
     <body>
         <script type="text/javascript">
@@ -85,7 +86,6 @@
                 }
             }
 
-<<<<<<< HEAD
             function disturbPath(){
                 if(flying){
                     var dx = flightPath.getPath().getAt(count).lng() - simx;
@@ -109,13 +109,6 @@
                     cbridge.plotPosition(simy,simx);
                     //addActualPath(simy,simx);
                 }
-=======
-            function disturbPath() {
-                cbridge.updateTable(simy, simx);
-                simx = simx + 0.001;
-                simy = simy + 0.0015;
-                addActualPath(simy,simx);
->>>>>>> GUIS15
             }
 
             // End of Test Code

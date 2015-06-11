@@ -9,26 +9,15 @@
 #include <qmediaplayer.h>
 #include <qvideowidget.h>
 #include <qvideosurfaceformat.h>
-#include <iostream>
-#include <QTimer>
-
-#include "mapexecution.h"
-//#include "mainwindow.h"
-#include "qcustomplot.h"
-#include "mapplanning.h"
-#include "videoplayer.h"
-#include "qcustomplot.h"
-
-#include "ui_missionrecap.h"
-
 #define QCUSTOMPLOT_COMPILE_LIBRARY
+#include "qcustomplot.h"
+#include <QTimer>
 
 namespace Ui {
 class MissionRecap;
 }
 
-
-class MissionRecap : public QDialog
+class MissionRecap : public QWidget
 {
     Q_OBJECT
 
@@ -52,9 +41,7 @@ private slots:
     void on_horizontalSlider_sliderPressed();
 
     void on_newMission_clicked();
-    void on_pushButton_5_clicked();
-
-    void addClickListener();
+    //void on_pushButton_5_clicked();
 
 private:
     Ui::MissionRecap *ui;

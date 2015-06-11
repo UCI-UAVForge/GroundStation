@@ -7,143 +7,103 @@
 
 #include <iostream>
 #include "mainwindow.h"
+#include "ui_mainwindow.h"
+#include "tutorial.h"
+#include "mapplanning.h"
+#include "mapexecution.h"
+#include "missionrecap.h"
 
+/* MainWindow class usage:
 
-/**
- * Constructor for the main window
- */
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
+    MainWindow window;
+    window.showMaximized();
+
+    ========OR=========
+
+    MainWindow *window = new MainWindow();
+    window->showMaximized();
+
+No parameters necessary. The window will not appear until one of the show
+functions is run such as showMaximized(), showFullScreen(), or show().
+*/
+MainWindow::MainWindow(QWidget *parent) :
+    QMainWindow(parent),
+    ui(new Ui::MainWindow)
+{
     ui->setupUi(this);
-
-    //Resize the image for the Mission Execution button
-    QPixmap pixmap(":/res/longButtons/Mission_Execution_Button_Type_2.png");
-    QIcon ButtonIcon(pixmap);
-    ui->pushButton_8->setIcon(ButtonIcon);
-    ui->pushButton_8->setIconSize(pixmap.rect().size()/13);
-
-    //Resize the image for the Mission Planning button
-    QPixmap pixmap2(":/res/longButtons/Mission_Planning_Button_Type_2.png");
-    QIcon ButtonIcon2(pixmap2);
-    ui->pushButton_9->setIcon(ButtonIcon2);
-    ui->pushButton_9->setIconSize(pixmap2.rect().size()/13);
-
-    //Resize the image for the Mission Recap button
-    QPixmap pixmap3(":/res/longButtons/Mission_Recap_Button_Type_2.png");
-    QIcon ButtonIcon3(pixmap3);
-    ui->pushButton_7->setIcon(ButtonIcon3);
-    ui->pushButton_7->setIconSize(pixmap3.rect().size()/13);
-
-    //Resize the image for the Tutorial button
-    QPixmap pixmap4(":/res/longButtons/Tutorial_Button_Type_2.png");
-    QIcon ButtonIcon4(pixmap4);
-    ui->pushButton_6->setIcon(ButtonIcon4);
-    ui->pushButton_6->setIconSize(pixmap4.rect().size()/13);
+    //ui->pushButton_8->setIcon(QIcon(":/res/longButtons/Mission_Execution_Button_Type_2.png"));
+    //ui->pushButton_8->setIconSize(QSize(181,101));
 }
 
-
-/**
- * Destructor for the main window
- */
+/* Class destructor. */
 MainWindow::~MainWindow() {
     delete ui;
 }
 
+/* Triggered by the button "Tutorials". This function opens a new window
+ displaying user tutorials. Will also close the current MainWindow object.
 
-/**
- * When the tutorial button is clicked, create a new tutorial window,
- * close the main window, and open the tutorial window in full screen
- */
+Function added sometime prior to April 30 2015.*/
 void MainWindow::openTutorial() {
-    //    QPropertyAnimation *animation = new QPropertyAnimation(this, "size");
-    //    std::cout << "New animation" << std::endl;
-    //    animation->setDuration(10000);
-    //    animation->setStartValue(QSize(width, window_height_min));
-    //    animation->setEndValue(QSize(width, window_height_min+expand_general_to));
-    //    animation->setEasingCurve(QEasingCurve::InBack);
+    Tutorial *tutorial = new Tutorial();
+// <<<<<<< HEAD
+    this -> close();
+    tutorial -> showFullScreen();
+// =======
 
-    //    animation->start();
-    //    std::cout << "Animation start" << std::endl;
+//    QPropertyAnimation *animation = new QPropertyAnimation(this, "size");
+//    std::cout << "New animation" << std::endl;
+//    animation->setDuration(10000);
+//    animation->setStartValue(QSize(width, window_height_min));
+//    animation->setEndValue(QSize(width, window_height_min+expand_general_to));
+//    animation->setEasingCurve(QEasingCurve::InBack);
 
-    this->showTutorial();
+//    animation->start();
+//    std::cout << "Animation start" << std::endl;
+    // tutorial -> show();
+    // this -> close();
+// =======
+//     tutorial->showFullScreen();
+//     this->close();
+// >>>>>>> GUI
+// >>>>>>> 4657e7a59454d03e9c48944178e4cdad163200a6
 }
 
-/**
- * When the mission planning button is clicked, create a new mission planning window
- */
+/* Triggered by the button "Mission Planning". This function opens a new window
+ displaying the mission planing UI. Will also close the current MainWindow
+ object.
+
+Function added sometime prior to April 30 2015.*/
 void MainWindow::missionPlanningClicked() {
-    this->showMissionPlanning();
-}
-
-/**
- * When the mission execution button is clicked, create a new mission execution window
- */
-void MainWindow::missionExecutionClicked() {
-    this->showMissionExecution();
-}
-
-/**
- * When the mission recap buttion is clicked, create a new mission recap window
- */
-void MainWindow::missionRecapClicked() {
-    this->showMissionRecap();
-}
-
-/**
- * Close the main window when ALT + Q is clicked
- */
-void MainWindow::on_actionQuit_triggered() {
-    this->close();
-}
-
-/**
- * The callback function to check for return status and redirect to corresponded new window
- * 0 == main window (default)
- * 1 == mission planning
- * 2 == mission execution
- * 3 == mission recap
- * 4 == tutorial
- * Advice for improvement: can use stack data structure to handle the callbacks
- */
-void MainWindow::checkFinishStatus(int status) {
-    if(status == 1) {
-        this->showMissionPlanning();
-    } else if(status == 2) {
-        this->showMissionExecution();
-    } else if(status == 3) {
-        this->showMissionRecap();
-    } else if(status == 4) {
-        this->showTutorial();
-    }
-}
-
-// helper functions
-
-void MainWindow::showMissionPlanning() {
     MapPlanning *mapPlanning = new MapPlanning();
-    QObject::connect(mapPlanning, SIGNAL(finished(int)), this, SLOT(checkFinishStatus(int)), Qt::UniqueConnection);
     mapPlanning->showFullScreen();
     this->close();
 }
 
+/* Triggered by the button "Mission Execution". This function opens a new window
+ displaying the mission execution UI. By default, there will be no mission
+ loaded in the new window. Will also close the current MainWindow object.
 
-void MainWindow::showMissionExecution() {
-    MapExecution *mapExecution = new MapExecution();
-    QObject::connect(mapExecution, SIGNAL(finished(int)), this, SLOT(checkFinishStatus(int)), Qt::UniqueConnection);
+Function added sometime prior to April 30 2015.*/
+void MainWindow::missionExecutionClicked() {
+    mapexecution *mapExecution = new mapexecution();
     mapExecution->showFullScreen();
     this->close();
 }
 
+/* Triggered by the button "Mission Recap". This function opens a new window
+ displaying the mission recap UI. Will also close the current MainWindow object.
 
-void MainWindow::showMissionRecap() {
+Function added sometime prior to April 30 2015.*/
+void MainWindow::missionRecapClicked() {
     MissionRecap *missionRecap = new MissionRecap();
-    QObject::connect(missionRecap, SIGNAL(finished(int)), this, SLOT(checkFinishStatus(int)), Qt::UniqueConnection);
     missionRecap->showFullScreen();
     this->close();
 }
 
+/* Enables OS quit commands such as Command-Q.
 
-void MainWindow::showTutorial() {
-    Tutorial *tutorial = new Tutorial();
-    QObject::connect(tutorial, SIGNAL(finished(int)), this, SLOT(checkFinishStatus(int)), Qt::UniqueConnection);
-    tutorial -> showFullScreen();
+ Function added sometime prior to April 30 2015.*/
+void MainWindow::on_actionQuit_triggered() {
+    this->close();
 }

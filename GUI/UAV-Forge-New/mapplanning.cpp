@@ -11,7 +11,10 @@
 #include <QString>
 #include <QApplication>
 #include "mapplanning.h"
-
+#include "ui_mapplanning.h"
+#include "popwindowmp.h"
+#include "mainwindow.h"
+#include "mapexecution.h"
 
 /* MapPlanning usage:
 
@@ -20,49 +23,41 @@
 
 No parameters necessary. The window will not appear until one of the show
 functions is called. */
-
-
-MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlanning) {
+MapPlanning::MapPlanning(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::MapPlanning) {
     ui->setupUi(this);
 
+    //Couldn't get automatic signals/slots working... need to connect manually.
+    connect(ui->AddRow,SIGNAL(clicked()),this,SLOT(on_addRow_clicked()));
+    connect(ui->RemoveRow,SIGNAL(clicked()),this,SLOT(on_removeRow_clicked()));
+    connect(ui->Back,SIGNAL(clicked()),this,SLOT(on_back_clicked()));
+    connect(ui->Execute,SIGNAL(clicked()),this,SLOT(on_execute_clicked()));
+    connect(ui->ClearPath,SIGNAL(clicked()),this,SLOT(on_clearPath_clicked()));
+    connect(ui->Update,SIGNAL(clicked()),this,SLOT(on_update_clicked()));
 
-//    //connect(buttonGroup, SIGNAL(buttonClicked(int)), this, SLOT(buttonWasClicked(int)));
-//    //delete = new  (row)
-//    connect(ui->pushButton_7, SIGNAL(clicked()), this, SLOT(on_pushButton_7_clicked()));
-
-//    //Recreates the c++/JS bridge when the JavaScript window is refreshed
-    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
+    //Recreates the c++/JS bridge when the JavaScript window is refreshed
+    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()));
 
     ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
 
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
-
-    connect(ui->addButton, SIGNAL(clicked()), this, SLOT(on_addButton_clicked()), Qt::UniqueConnection);
-    connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()), Qt::UniqueConnection);
-    connect(ui->clearMapButton, SIGNAL(clicked()), this, SLOT(on_clearMapButton_clicked()), Qt::UniqueConnection);
-    connect(ui->clearTableButton, SIGNAL(clicked()), this, SLOT(on_clearTableButton_clicked()), Qt::UniqueConnection);
-    connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(on_deleteButton_clicked()), Qt::UniqueConnection);
-    connect(ui->executeButton, SIGNAL(clicked()), this, SLOT(on_executeButton_clicked()), Qt::UniqueConnection);
-    connect(ui->updateTableButton, SIGNAL(clicked()), this, SLOT(on_updateTableButton_clicked()), Qt::UniqueConnection);
 }
 
 /* Class destructor */
 MapPlanning::~MapPlanning() {
     delete ui;
+    delete model;
+    delete popup;
 }
 
+/* Since c++/JS bridges are broken when the JS page refreshes this slot is used
+ to rebuild the bridge each time when triggered by a javaScriptWindowObjectCleared
+ signal from the page frame.
 
-//<<<<<<< HEAD
-//void MapPlanning::buttonWasClicked(int buttonID)
-//{
-
-
-/* Since c++/JS bridges are broken when the JS page refreshes this slot
- is used to rebruild the bridge each time when triggered by a
- javaScriptWindowObjectCleared signal from the page frame. Function
- added by Jordan Dickson Feb 14th 2015. */
+ Function added by Jordan Dickson Feb 14th 2015. */
 void MapPlanning::addClickListener() {
     //Creates the bridge called cbridge between the java script object and this class.
     ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("cbridge",this);
@@ -77,8 +72,12 @@ void MapPlanning::addClickListener() {
  window.
 
  Function added sometime prior to April 30 2015. */
-void MapPlanning::on_executeButton_clicked() {
-    this->done(2);
+void MapPlanning::on_execute_clicked() {
+    //popup = new PopWindowMP(getTableAsStrings());
+    //connect(popup,SIGNAL(windowClosed()),this,SLOT(closeWindow()));
+    mapexecution *mapExecution = new mapexecution(getTableAsStrings());
+    this->close();
+    mapExecution->showFullScreen();
 }
 
 /* Triggered by the "+" button. Causes an map update and adds a new empty row
@@ -86,7 +85,8 @@ void MapPlanning::on_executeButton_clicked() {
  appear on the map until the next map update.
 
  Function added sometime prior to April 30 2015. */
-void MapPlanning::on_addButton_clicked() {
+void MapPlanning::on_addRow_clicked() {
+    updateMap();
     model->insertRow();
 }
 
@@ -94,36 +94,16 @@ void MapPlanning::on_addButton_clicked() {
  table and causes a map update.
 
  Function added sometime prior to April 30 2015. */
-void MapPlanning::on_deleteButton_clicked() {
+void MapPlanning::on_removeRow_clicked() {
     QModelIndexList indexes = ui->tableView->selectionModel()->selectedIndexes();
     model->removeRows(indexes);
     updateMap();
 }
 
-
-
-
-///* Triggered by the "Clear Path" button. Removes all the rows in the table,
-// then causes a map update.
-
-// Function added by Arash sometime prior to April 30 2015.
-// Edited by Jordan Dickson April 30 2015. */
-//void MapPlanning::on_clearPath_clicked() {
-//    model->removeRows(0,model->getList().length());
-//    updateMap();
-//}
-
-/* Sends a request for the map to clear itself, causing the JavaScript page
- to reload itself with an empty map. This function then cycles through each
- entry currently on the table and enters the coordinates on the map one by
- one in order.
-
- Function added by Jordan Dickson Feb 14 2015. */
-
 /* Triggered by the "Update" button. Causes a map update.
 
  Function added sometime prior to April 30 2015. */
-void MapPlanning::on_updateTableButton_clicked() {
+void MapPlanning::on_update_clicked() {
      updateMap();
 }
 
@@ -131,38 +111,38 @@ void MapPlanning::on_updateTableButton_clicked() {
  user to the MainWindow UI. All data stored in the table and map will be lost.
 
  Function added sometime prior to April 30 2015. */
-void MapPlanning::on_backButton_clicked() {
-    this->done(0);
+void MapPlanning::on_back_clicked() {
+    MainWindow *mainwindow = new MainWindow();
+    mainwindow->showFullScreen();
+    this -> close();
+// <<<<<<< HEAD
+    mainwindow->showFullScreen();
+// =======
+// >>>>>>> 4657e7a59454d03e9c48944178e4cdad163200a6
 }
 
-// clear table button
-/* Clears all the rows in the table, basically makes a new table
- * Arash
- */
-void MapPlanning::on_clearTableButton_clicked() {
-    model = new TableModel();
-    ui->tableView->setModel(model);
-    ui->tableView->setItemDelegate(new QComboBoxDelegate());
-}
+/* Triggered by the "Clear Path" button. Removes all the rows in the table,
+ then causes a map update.
 
-//clear map button
-/* Clears the map
- * Arash
- */
-void MapPlanning::on_clearMapButton_clicked() {
-     //ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
-     ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
+ Function added by Arash sometime prior to April 30 2015.
+ Edited by Jordan Dickson April 30 2015. */
+void MapPlanning::on_clearPath_clicked() {
+    model->removeRows(0,model->getList().length());
+    updateMap();
 }
 
 /* Sends a request for the map to clear itself, causing the JavaScript page
-to reload itself. This function then cycles through each entry on the table
-and enters the coordinates on the map one by one in order. Function added by
-Jordan Dickson Feb 14th 2015. */
-//Sends clearMap request.
+ to reload itself with an empty map. This function then cycles through each
+ entry currently on the table and enters the coordinates on the map one by
+ one in order.
+
+ Function added by Jordan Dickson Feb 14 2015. */
 void MapPlanning::updateMap() {
+
+    //Sends clearMap request.
     ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
     //Loops through table entries
-    for(int i = 0; i < model->getList().size(); i++) {
+    for(int i = 0; i < model->getList().size(); i++){
         QList<QString> list = model->getList()[i];
         //Converts West and South coordinates to negative numbers.
         double lat = list[3].toDouble();
@@ -178,13 +158,16 @@ void MapPlanning::updateMap() {
     }
 }
 
+/* Converts the table into a list of strings formatted with each row of the
+ table being its own entry in the list, and each entry on the list represented
+ as (Action,Longitude,E/W,Latitude,N/S,Behavior). This is the same formatting
+ used in Mission Execution to add waypoints to the map. Very similar to
+ getTableData().
 
-/*  Converts the table into a list of strings formatted with each row of the
-table being its own entry in the list, and each entry on the list represented
-as (Action,Longitude,LongDirection,Latitude,LatDirection,Behavior). This is
-the same formatting used in Mission Execution to add waypoints to the map.
-Function added by Jordan Dickson Feb 21st 2015. */
-QList<QString> MapPlanning::getTableAsStrings() {
+ Returns a QList of QStrings.
+
+ Function added by Jordan Dickson Feb 21 2015. */
+QList<QString> MapPlanning::getTableAsStrings(){
     QList<QString> output;
     QList<QList<QString> > table = model->getList();
     for(int i = 0;i < table.length();i++) {
@@ -202,14 +185,16 @@ QList<QString> MapPlanning::getTableAsStrings() {
     return output;
 }
 
+/* Gets the data of the table and formats it for the database. This function
+ iterates through each row, gets each string, cancatinates them and appends
+ them to a new list(tableData list). Very similar to getTableAsStrings().
 
-/* A function to get the data of the table and send it to database.
- * This function iterates through each row, gets each string, cancatinates them
- * and appends them to a new list(tableData list). Returns  [[strings],[strings]...]
- * Arash
- * Overlapped with Jordan's getTabelAsStrings function
- */
-QList<QList<QString> > MapPlanning::getTableData() {
+ Returns [[string,string...],[string,string...]...]
+
+ Function added by Arash sometime prior to April 30 2015*/
+QList<QList<QString> > MapPlanning::getTableData(){
+    QList<QList<QString> > tableData;
+
     for (int i = 0; i < model->getList().size(); i++){
 
         QList<QString> tableRow = model->getList()[i];
@@ -234,19 +219,15 @@ QList<QList<QString> > MapPlanning::getTableData() {
  the panned mission.
 
  Function added by Jordan Dickson sometime prior to April 30 2015. */
-
-void MapPlanning::closeWindow() {
-
+void MapPlanning::closeWindow(){
     this->close();
 }
 
 /* Passer function for adding entries to the table with coordinates recived
-<<<<<<< HEAD
  from the JavaScript file. See tablemodel.cpp file for more information on
  how the points are added, and see mapsPlanning.html for this function's calls.
 
  Function added by Jordan Dickson Feb 14th 2015.*/
-
 void MapPlanning::addPointToTable(double lat, double lng) {
     model->insertRow(lng,lat);
 }
