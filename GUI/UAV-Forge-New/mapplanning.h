@@ -12,16 +12,24 @@
 #include <QPushButton>
 #include <QButtonGroup>
 #include <QWebFrame>
+#include <QString>
+#include <QApplication>
+
 #include "tablemodel.h"
 #include "popwindowmp.h"
 #include "qcomboboxdelegate.h"
+#include "popwindowmp.h"
+//#include "mainwindow.h"
+#include "mapexecution.h"
+
+
+#include "ui_mapplanning.h"
 
 namespace Ui {
 class MapPlanning;
 }
 
-class MapPlanning : public QDialog
-{
+class MapPlanning : public QDialog {
     Q_OBJECT
 
 public:
@@ -37,13 +45,14 @@ public slots:
     void addPointToTable(double lat, double lng);
 
 private slots:
-    //button action slots
-    void on_back_clicked();
-    void on_addRow_clicked();
-    void on_removeRow_clicked();
-    void on_execute_clicked();
-    void on_update_clicked();
-    void on_clearPath_clicked();
+
+    void on_executeButton_clicked();
+    void on_addButton_clicked();
+    void on_backButton_clicked();
+    void on_clearTableButton_clicked();
+    void on_clearMapButton_clicked();
+    void on_deleteButton_clicked();
+    void on_updateTableButton_clicked();
 
     //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame()
     void addClickListener();
@@ -60,6 +69,8 @@ private:
     QPushButton *del;
     TableModel *model;
     PopWindowMP *popup;
+    QList<QList<QString> > tableData;
+
 };
 
 #endif // MAPPLANNING_H

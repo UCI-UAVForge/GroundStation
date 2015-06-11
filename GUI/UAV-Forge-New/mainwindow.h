@@ -13,9 +13,19 @@
 #include <QShortcut>
 #include <QPixmap>
 #include <QDebug>
-// =======
 
-// >>>>>>> 4657e7a59454d03e9c48944178e4cdad163200a6
+#include <iostream>
+#include <QtWebKitWidgets/QWebView>
+#include <QUrl>
+
+#include "options.h"
+#include "tutorial.h"
+#include "mapplanning.h"
+#include "mapexecution.h"
+#include "missionrecap.h"
+
+#include "ui_mainwindow.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -37,6 +47,13 @@ private slots:
 
     //quit command
     void on_actionQuit_triggered();
+
+    void checkFinishStatus(int status);
+
+    void showMissionPlanning();
+    void showMissionExecution();
+    void showMissionRecap();
+    void showTutorial();
 
 private:
     Ui::MainWindow *ui;

@@ -2,36 +2,55 @@
 #define MAPEXECUTION_H
 
 #include <QWidget>
+#include <QDialog>
+#include <QComboBox>
+#include <QPushButton>
+#include <QButtonGroup>
+#include <QWebFrame>
+#include <QPair>
+#include <QList>
+
 #include "gsclient.h"
 #include "gsserver.h"
+#include "tablemodel.h"
+#include "qcomboboxdelegate.h"
+#include "missionrecap.h"
+#include "options.h"
+//#include "mainwindow.h"
+//#include "net.h"
+
+#include "ui_mapexecution.h"
+
 
 namespace Ui {
-class mapexecution;
+class MapExecution;
 }
 
-class mapexecution : public QWidget
-{
+class MapExecution : public QDialog {
     Q_OBJECT
 public slots:
     void setMap(QList<QString> list);
     void addPoint(QString string);
     void addNewMap();
-    void plotPosition(double lat, double lng);
+
+    void updateTable(int lat, int lng);
 public:
-    explicit mapexecution(QList<QString> strings, QWidget *parent = 0);
-    explicit mapexecution(QWidget *parent = 0);
+    explicit MapExecution(QList<QString> strings, QWidget *parent = 0);
+    explicit MapExecution(QWidget *parent = 0);
     QList<QString> mapStrings;
-    ~mapexecution();
-    GsServer myServer;
+
+    void plotPosition(double lat, double lng);
+    ~MapExecution();
+    //GsServer myServer;
     GsClient myClient;
     QList<QPair<double, double> > getDoublePairs(QList<QString> strings);
     QList<QPair<double, double> > flightPath;
 private slots:
-    void finishClicked();
-    void returnHomeClicked();
-    void cancelClicked();
-    void stopClicked();
-    void on_pushButton_clicked();
+    void on_finishButton_clicked();
+    void on_returnHomeButton_clicked();
+    void on_cancelButton_clicked();
+    void on_stopButton_clicked();
+    void on_backButton_clicked();
 
     //void push_new_point(QString point);
 
@@ -40,8 +59,10 @@ private slots:
 
 
 private:
-    Ui::mapexecution *ui;
+    Ui::MapExecution *ui;
     QList<QString> points_recieved;
+    TableModel *model;
+    QButtonGroup *buttonGroup;
 };
 
 #endif // MAPEXECUTION_H
