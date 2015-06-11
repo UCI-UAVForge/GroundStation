@@ -81,6 +81,7 @@ void MainWindow::on_actionQuit_triggered() {
  * 2 == mission execution
  * 3 == mission recap
  * 4 == tutorial
+ * Advice for improvement: can use stack data structure to handle the callbacks
  */
 void MainWindow::checkFinishStatus(int status) {
     if(status == 1) {
