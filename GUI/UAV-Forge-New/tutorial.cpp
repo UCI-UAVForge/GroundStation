@@ -7,6 +7,8 @@ Tutorial::Tutorial(QWidget *parent) :
     ui(new Ui::Tutorial)
 {
     ui->setupUi(this);
+    QPixmap picture("res/images/UAVTutorialTest.png");
+    ui->label_picture->setPixmap(picture);
 }
 
 Tutorial::~Tutorial()
@@ -16,11 +18,9 @@ Tutorial::~Tutorial()
 
 void Tutorial::on_pushButton_2_clicked()
 {
+
     MainWindow *mainwindow = new MainWindow();
     this -> close();
-// <<<<<<< HEAD
     mainwindow->showFullScreen();
-// =======
-//     mainwindow->show();
-// >>>>>>> origin/Back-End
+
 }

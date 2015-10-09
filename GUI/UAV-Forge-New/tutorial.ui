@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>720</width>
-    <height>482</height>
+    <width>1475</width>
+    <height>923</height>
    </rect>
   </property>
   <property name="palette">
@@ -77,36 +77,11 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>70</y>
-     <width>561</width>
-     <height>331</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"> QPushButton { 
-background-color: &quot;#CCD1D9&quot;; 
-color: &quot;#434A54&quot;; 
-border-radius: 10px;
-font-weight: bold;
-border: none; 
-}
- QPushButton:pressed {
-     background-color: #E6E9ED
- }</string>
-   </property>
-   <property name="text">
-    <string>Tutorial Here</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>30</y>
+     <x>40</x>
+     <y>40</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -127,6 +102,27 @@ border: none;
     <string>Back</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_picture">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>100</y>
+     <width>1221</width>
+     <height>741</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <action name="back_button">
+   <property name="text">
+    <string>backButton</string>
+   </property>
+   <property name="shortcut">
+    <string>Backspace</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

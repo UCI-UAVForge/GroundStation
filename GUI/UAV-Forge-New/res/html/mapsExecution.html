@@ -9,8 +9,7 @@
             }
         </style>
 
-        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
-            </script>
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
     </head>
     <body>
         <script type="text/javascript">
@@ -82,7 +81,8 @@
                 simuInput = setInterval(disturbPath,1000);
             }
 
-            function disturbPath(){
+            function disturbPath() {
+                cbridge.updateTable(simy, simx);
                 simx = simx + 0.001;
                 simy = simy + 0.0015;
                 addActualPath(simy,simx);
@@ -103,7 +103,7 @@
                 var mapOptions = {
                     center: uci,
                     zoom: 12,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                    mapTypeId: google.maps.MapTypeId.SATELLITE
                 };
                 map = new google.maps.Map(mapCanvas, mapOptions);
 

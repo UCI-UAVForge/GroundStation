@@ -12,6 +12,7 @@ class TableModel : public QAbstractTableModel
 
 public:
     TableModel(QObject *parent = 0);
+//    TableModel(QObject *parent = 0, String title1, String title2);
     TableModel(QList<QList<QString> > listofPairs, QObject *parent = 0);
 
     int rowCount(const QModelIndex &parent) const;

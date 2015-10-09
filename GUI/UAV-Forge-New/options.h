@@ -3,6 +3,10 @@
 
 #include <QWidget>
 
+#include "mapplanning.h"
+#include "mapexecution.h"
+#include "missionrecap.h"
+
 namespace Ui {
 class Options;
 }
