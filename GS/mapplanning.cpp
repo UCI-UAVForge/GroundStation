@@ -30,9 +30,6 @@ MapPlanning::~MapPlanning() {
     delete ui;
 }
 
-//<<<<<<< HEAD
-//void MapPlanning::buttonWasClicked(int buttonID)
-//{
 /* Since c++/JS bridges are broken when the JS page refreshes this slot
  is used to rebruild the bridge each time when triggered by a
  javaScriptWindowObjectCleared signal from the page frame. Function
@@ -45,7 +42,11 @@ void MapPlanning::addClickListener() {
 // execution button
 // redirect to mission execution window
 void MapPlanning::on_executeButton_clicked() {
-    this->done(2);
+    MapExecution *mapExecution = new MapExecution(getTableAsStrings());
+    this->close();
+    mapExecution->showFullScreen();
+
+    //this->done(2);
 }
 
 // + button
