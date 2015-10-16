@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MapExecution</class>
+ <widget class="QWidget" name="MapExecution">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1512</width>
+    <height>978</height>
+   </rect>
+  </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>67</red>
+        <green>74</green>
+        <blue>84</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>67</red>
+        <green>74</green>
+        <blue>84</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>67</red>
+        <green>74</green>
+        <blue>84</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>67</red>
+        <green>74</green>
+        <blue>84</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QPushButton" name="backButton">
+     <property name="styleSheet">
+      <string notr="true"> QPushButton { 
+background-color: &quot;#CCD1D9&quot;; 
+color: &quot;#434A54&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #E6E9ED
+ }</string>
+     </property>
+     <property name="text">
+      <string>Back</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="4">
+    <widget class="QWebView" name="webView">
+     <property name="url">
+      <url>
+       <string>about:blank</string>
+      </url>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QPushButton" name="returnHomeButton">
+     <property name="styleSheet">
+      <string notr="true"> QPushButton { 
+background-color: &quot;#CCD1D9&quot;; 
+color: &quot;#434A54&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #E6E9ED
+ }</string>
+     </property>
+     <property name="text">
+      <string>Return home</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QPushButton" name="finishButton">
+     <property name="styleSheet">
+      <string notr="true"> QPushButton { 
+background-color: &quot;#CCD1D9&quot;; 
+color: &quot;#434A54&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #E6E9ED
+ }</string>
+     </property>
+     <property name="text">
+      <string>Finish</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3">
+    <widget class="QPushButton" name="stopButton">
+     <property name="styleSheet">
+      <string notr="true"> QPushButton { 
+background-color: &quot;#CCD1D9&quot;; 
+color: &quot;#434A54&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #E6E9ED
+ }</string>
+     </property>
+     <property name="text">
+      <string>Stop</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="4">
+    <widget class="QPushButton" name="cancelButton">
+     <property name="styleSheet">
+      <string notr="true"> QPushButton { 
+background-color: &quot;#CCD1D9&quot;; 
+color: &quot;#434A54&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #E6E9ED
+ }</string>
+     </property>
+     <property name="text">
+      <string>Cancel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QTableView" name="tableView"/>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKitWidgets/QWebView</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+ <slots>
+  <slot>slot1()</slot>
+  <slot>finishClicked()</slot>
+  <slot>returnHomeClicked()</slot>
+  <slot>cancelClicked()</slot>
+ </slots>
+</ui>
