@@ -83,6 +83,7 @@
 
             function disturbPath() {
                 cbridge.updateTable(simy, simx);
+                cbridge.updatePosition(simy, simx, 0.0, 0.0);
                 simx = simx + 0.001;
                 simy = simy + 0.0015;
                 addActualPath(simy,simx);

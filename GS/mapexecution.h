@@ -33,6 +33,7 @@ public slots:
     void addPoint(QString string);
     void addNewMap();
     void updateTable(int lat, int lng);
+    void updatePosition(double lat, double lng, double alt, double spd);
 public:
     explicit MapExecution(QList<QString> strings, QWidget *parent = 0);
     explicit MapExecution(QWidget *parent = 0);
@@ -53,13 +54,17 @@ private slots:
 
     void addClickListener();
     //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame().
-
+    void initCurrentData();
 
 private:
     Ui::MapExecution *ui;
     QList<QString> points_recieved;
     TableModel *model;
     QButtonGroup *buttonGroup;
+    double prevLat, prevLng, prevAlt;
+    QTime prevTime;
+    QTableWidget *CurrentData;
+    QTableWidgetItem *LatLabel, *LngLabel, *AltLabel, *SpdLabel;
 };
 
 #endif // MAPEXECUTION_H
