@@ -9,18 +9,22 @@
             }
         </style>
 
-        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
+            </script>
     </head>
     <body>
         <script type="text/javascript">
         //JavaScript code edited Jordan for UCI UAV Forge. Feb 18th 2015.
         //Additional edits by Nathan. Feb 21st 2015.
+
             var uci=new google.maps.LatLng(33.6454,-117.8426);
             var map;
             //Path of the planned mission that wil be sent to the UAV
             var flightPath;
             //Actual flight path of the UAV, Constructed from data Recieved from UAV/test machine
             var flightPath_actual;
+
+            var marker;
 
             //var clickable = false;
 
@@ -38,19 +42,22 @@
             function addActualPath(lat, lng){
                 var location = new google.maps.LatLng(lat,lng);
                 add_actual_loc(location);
-                //move_icon)();
+                moveIcon(location);
             }
 
             function addLatLngCoords(lat,lng) {
             //Used on the c++ side to add a new point to the map.
                 var location = new google.maps.LatLng(lat,lng);
                 addLatLng(location);
-                return "Adding new point.";
             }
 
-            function clearMap(){
+            function clearMap() {
             //Called from the c++ side to refresh the map.
-                //initialize()
+            //modified by Arash on 2/23/15: it will now clear the map without
+            //changing the zoom level or center of the map
+            //modified by Jordan 5/22/15: no longer requires a reinitialize
+                flightPath.getPath().clear();
+                flightPath_actual.getPath().clear();
             }
 
             function getMapSettings(){
@@ -64,10 +71,12 @@
                 map.setZoom(zoom);
             }
 
-            //function move_icon(myLocation){
-            //Recieveing
+            function moveIcon(myLocation){
+            //used to move the UAV Icon to the location myLocation
+            //Jordan Dickson May 8th, 2015
+                marker.setPosition(myLocation);
+            }
 
-            //}
             function initialize() {
             //Setup function that creates the initial map state.
                 var mapCanvas = document.getElementById('map_canvas');
@@ -78,24 +87,34 @@
                 };
                 map = new google.maps.Map(mapCanvas, mapOptions);
 
-                var startingPath=[uci];
+                //var startingPath=[uci];
                 flightPath = new google.maps.Polyline({
                         //path:startingPath,
                         strokeColor:"#0000FF",
                         strokeOpacity:0.8,
                         strokeWeight:2
-                   });
+                });
                 flightPath_actual = new google.maps.Polyline({
                         //path:startingPath
                         strokeColor: "#FF0000",
                         strokeOpacity:0.8,
                         strokeWeight:2
-                    });
+                });
 
                 flightPath.setMap(map);
                 flightPath_actual.setMap(map);
+                marker = new google.maps.Marker({
+                    position: flightPath.getPath().getAt(0),
+                    map: map,
+                    icon:{
+                        url: "qrc:/res/Quad.png",
+                        anchor: new google.maps.Point(20,20)
+                    }
+                });
+
                 cbridge.addNewMap();
             }
+
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
         <div id="map_canvas">

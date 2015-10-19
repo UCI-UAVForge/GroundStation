@@ -31,10 +31,11 @@ class MapExecution : public QDialog {
 public slots:
     void setMap(QList<QString> list);
     void addNewMap();
+  
     void updateTable(double lat, double lng);
-
     void newTelemCoord(QString coordString);
     void sendFlightPlan();
+    void updatePosition(double lat, double lng, double alt, double spd);
 public:
     explicit MapExecution(QList<QString> strings, QWidget *parent = 0);
     explicit MapExecution(QWidget *parent = 0);
@@ -54,7 +55,7 @@ private slots:
 
     void addClickListener();
     //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame().
-
+    void initCurrentData();
 
 private:
     void addPoint(QString string);
@@ -63,6 +64,10 @@ private:
     QList<QString> points_recieved;
     TableModel *model;
     QButtonGroup *buttonGroup;
+    double prevLat, prevLng, prevAlt;
+    QTime prevTime;
+    QTableWidget *CurrentData;
+    QTableWidgetItem *LatLabel, *LngLabel, *AltLabel, *SpdLabel;
 };
 
 #endif // MAPEXECUTION_H

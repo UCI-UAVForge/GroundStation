@@ -1,12 +1,16 @@
 #include "mapexecution.h"
 
-MapExecution::MapExecution(QWidget *parent) : QDialog(parent), ui(new Ui::MapExecution) {
+MapExecution::MapExecution(QWidget *parent) : QDialog(parent), ui(new Ui::MapExecution), prevTime() {
     buttonGroup = new QButtonGroup();
     model = new TableModel();
 
     ui->setupUi(this);
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
+    //prevTime = QTime();
+    prevLat = prevLng = 0.0;
+    CurrentData = ui->CurrentData;
+    initCurrentData();
 
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
     ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
@@ -188,4 +192,51 @@ void MapExecution::plotPosition(double lat, double lng) {
 void MapExecution::updateTable(double lat, double lng) {
     model->insertRow(lng, lat);
     ui->tableView->scrollToBottom();
+}
+
+void MapExecution::updatePosition(double lat, double lng, double alt, double spd)
+{
+    //std::cerr << "updatePosition(" << lat << ", " << lng << ", " << alt << ", " << spd << ")" << std::endl;
+    //updateTable(lat,lng);
+    if(prevTime.isNull())
+    {
+        prevTime = QTime::currentTime();
+        prevLat = lat;
+        prevLng = lng;
+        prevAlt = alt;
+    }
+    else
+    {
+        LatLabel->setText(QString::number(lat));
+        LngLabel->setText(QString::number(lng));
+        AltLabel->setText(QString::number(alt));
+        SpdLabel->setText(QString::number(spd));
+    }
+}
+void MapExecution::initCurrentData()
+{
+//    CurrentData->insertRow(0);
+//    CurrentData->insertRow(1);
+//    CurrentData->insertRow(2);
+//    CurrentData->insertRow(3);
+//    CurrentData->insertColumn(0);
+//    CurrentData->insertColumn(1);
+
+    LatLabel = new QTableWidgetItem("LatLabel");
+    LngLabel = new QTableWidgetItem("LngLabel");
+    AltLabel = new QTableWidgetItem("AltLabel");
+    SpdLabel = new QTableWidgetItem("SpdLabel");
+
+    CurrentData->setItem(0,0,new QTableWidgetItem("Latitude"));
+    CurrentData->setItem(1,0,new QTableWidgetItem("Longitude"));
+    CurrentData->setItem(2,0,new QTableWidgetItem("Altitude"));
+    CurrentData->setItem(3,0,new QTableWidgetItem("Speed"));
+
+    CurrentData->setItem(0,1,LatLabel);
+    CurrentData->setItem(1,1,LngLabel);
+    CurrentData->setItem(2,1,AltLabel);
+    CurrentData->setItem(3,1,SpdLabel);
+
+
+
 }
