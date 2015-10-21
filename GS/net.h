@@ -47,7 +47,6 @@ namespace net
     // platform independent wait for n seconds
 
 #if PLATFORM == PLATFORM_WINDOWS
-#include <
     /*extern void waitNet(float seconds) {
         Sleep((int)(seconds * 1.0f));
     }*/
