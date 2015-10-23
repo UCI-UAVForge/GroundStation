@@ -9,6 +9,7 @@ QT       += core \
             webkitwidgets \
             multimedia \
             multimediawidgets
+QT       += svg
 
 QT       += core gui multimedia multimediawidgets
 QT       += webkit webkitwidgets
