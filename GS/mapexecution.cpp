@@ -7,7 +7,6 @@ MapExecution::MapExecution(QWidget *parent) : QDialog(parent), ui(new Ui::MapExe
     ui->setupUi(this);
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
-    //prevTime = QTime();
     prevLat = prevLng = 0.0;
     CurrentData = ui->CurrentData;
     initCurrentData();
@@ -39,6 +38,13 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
     connect(ui->finishButton, SIGNAL(clicked()), this, SLOT(on_finishButton_clicked()), Qt::UniqueConnection);
     connect(ui->returnHomeButton, SIGNAL(clicked()), this, SLOT(on_returnHomeButton_clicked()), Qt::UniqueConnection);
     connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(on_stopButton_clicked()), Qt::UniqueConnection);
+
+/**
+ *  No idea what this is, server code??
+ *  If not necessary, please get rid of later! (10/23/15)
+ *
+ */
+
 
     std::cout<<"PREPARE" << std::endl;
     QList <QPair<double, double > > h;
@@ -174,14 +180,12 @@ void MapExecution::plotPosition(double lat, double lng) {
 
 void MapExecution::updateTable(int lat, int lng) {
     model->insertRow(lng, lat);
-//    ui->tableView->update;
     ui->tableView->scrollToBottom();
 }
 
 void MapExecution::updatePosition(double lat, double lng, double alt, double spd)
 {
-    //std::cerr << "updatePosition(" << lat << ", " << lng << ", " << alt << ", " << spd << ")" << std::endl;
-    //updateTable(lat,lng);
+
     if(prevTime.isNull())
     {
         prevTime = QTime::currentTime();
@@ -199,12 +203,6 @@ void MapExecution::updatePosition(double lat, double lng, double alt, double spd
 }
 void MapExecution::initCurrentData()
 {
-//    CurrentData->insertRow(0);
-//    CurrentData->insertRow(1);
-//    CurrentData->insertRow(2);
-//    CurrentData->insertRow(3);
-//    CurrentData->insertColumn(0);
-//    CurrentData->insertColumn(1);
 
     LatLabel = new QTableWidgetItem("LatLabel");
     LngLabel = new QTableWidgetItem("LngLabel");
@@ -220,7 +218,5 @@ void MapExecution::initCurrentData()
     CurrentData->setItem(1,1,LngLabel);
     CurrentData->setItem(2,1,AltLabel);
     CurrentData->setItem(3,1,SpdLabel);
-
-
 
 }
