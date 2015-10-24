@@ -1,23 +1,39 @@
 #include "gsserver.h"
 #include <errno.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <netdb.h>
-#include <arpa/inet.h>
-#include <sys/wait.h>
+//#include <sys/types.h>
+//#include <sys/socket.h>
+//#include <netinet/in.h>
+//#include <netdb.h>
+//#include <arpa/inet.h>
+//#include <sys/wait.h>
 #include <signal.h>
 #include <iostream>
 #include <string>
 
 #ifdef _WIN32
+#include <winsock.h>
 #include <windows.h>
 
+#include<stdio.h>
+#include<string.h>
+#include<winsock2.h>
+#include<Ws2tcpip.h>
+#include<signal.h>
+
+#ifndef INET6_ADDRSTRLEN
+#define INET6_ADDRSTRLEN 46
+#endif
+
 void GsServer::waitNet(unsigned millis){
-  Sleep(milliseconds);
+  Sleep(millis);
 }
 #else
 #include <unistd.h>
+//#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#include <arpa/inet.h>
+#include <sys/wait.h>
 void GsServer::waitNet(unsigned millis){
     net::usleep(millis * 1000);
 }
@@ -110,8 +126,8 @@ int GsServer::openServer(){
     struct addrinfo hints, *servinfo, *p;
     struct sockaddr_storage their_addr; // connector's address information
     socklen_t sin_size;
-    struct sigaction sa;
-    int yes=1;
+    //struct sigaction sa;
+    const char yes=1;
     char s[INET6_ADDRSTRLEN];
     int rv;
     memset(&hints, 0, sizeof hints);
@@ -154,12 +170,12 @@ int GsServer::openServer(){
         exit(1);
     }
     //sa.sa_handler = sigchldHandler; // reap all dead processes
-    sigemptyset(&sa.sa_mask);
-    sa.sa_flags = SA_RESTART;
-    if (sigaction(SIGCHLD, &sa, NULL) == -1) {
-        perror("sigaction");
-        exit(1);
-    }
+    //sigemptyset(&sa.sa_mask);
+    //sa.sa_flags = SA_RESTART;
+   // if (sigaction(SIGCHLD, &sa, NULL) == -1) {
+    //    perror("sigaction");
+    //    exit(1);
+   // }
 
     ///@todo move from this line to end into a seperate accept thread
 
@@ -173,7 +189,7 @@ int GsServer::openServer(){
             perror("accept");
             //continue;
         }
-        inet_ntop(their_addr.ss_family, get_in_addr((struct sockaddr *)&their_addr), s, sizeof s);
+        //inet_ntop(their_addr.ss_family, get_in_addr((struct sockaddr *)&their_addr), s, sizeof s);
         std::cout << "server: got connection from " << s << std::endl;
         networkListener.setId(uav_fd);
         networkListener.start();
@@ -203,7 +219,7 @@ int GsServer::formatCoord(char *charArr, QPair<double, double> coord){
     double lat = coord.first;
     double lng = coord.second;
     std::string coordString = std::to_string(lat) + "," + std::to_string(lng);
-    std::strcpy(charArr, (coordString).c_str());
+    strcpy(charArr, (coordString).c_str());
     return coordString.length();
 }
 

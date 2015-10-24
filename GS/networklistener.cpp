@@ -9,6 +9,20 @@
 
 using namespace std;
 
+#ifdef _WIN32
+    void NetworkListener::netWait(int millis) {
+        Sleep(millis);
+    }
+
+#else
+
+#include <unistd.h>
+   void NetworkListener::netWait(int millis) {
+       usleep(millis*1000);
+   }
+
+#endif
+
 NetworkListener::NetworkListener(int UAVid) {
     this->UAVid = UAVid;
     listening = true;
@@ -29,7 +43,8 @@ void NetworkListener::setId(int UAVid){
 
 void NetworkListener::run() {
     while (listening){
-        net::sleep(1);
+
+        netWait(1);
         long numbytes = 0;
         char buffer[BUFSIZE];
         numbytes = reciveMessage(buffer);

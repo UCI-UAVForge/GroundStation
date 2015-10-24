@@ -24,7 +24,7 @@ Source: http://www.gaffer.org/networking-for-game-programmers
 #endif
 
 #if PLATFORM == PLATFORM_WINDOWS
-//#include <winsock2.h>
+#include <winsock2.h>
 #include <windows.h>
 //#pragma comment( lib, "wsock32.lib" )
 #elif PLATFORM == PLATFORM_MAC || PLATFORM == PLATFORM_UNIX
@@ -45,20 +45,6 @@ Source: http://www.gaffer.org/networking-for-game-programmers
 namespace net
 {
     // platform independent wait for n seconds
-
-#if PLATFORM == PLATFORM_WINDOWS
-    /*extern void waitNet(float seconds) {
-        Sleep((int)(seconds * 1.0f));
-    }*/
-
-#else
-
-#include <unistd.h>
-   /*extern void waitNet(float seconds) {
-       usleep((int)(seconds * 1000.0f));
-   }*/
-
-#endif
 
     // internet address
 
