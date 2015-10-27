@@ -30,6 +30,7 @@ void NetworkListener::setId(int UAVid){
 void NetworkListener::run() {
     while (listening){
         net::sleep(1);
+        net::sleep(1);
         long numbytes = 0;
         char buffer[BUFSIZE];
         numbytes = reciveMessage(buffer);

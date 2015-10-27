@@ -14,7 +14,7 @@
 #include <windows.h>
 
 void GsServer::waitNet(unsigned millis){
-  Sleep(milliseconds);
+  Sleep(millis);
 }
 #else
 #include <unistd.h>

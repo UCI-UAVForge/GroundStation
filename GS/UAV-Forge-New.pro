@@ -18,11 +18,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 #CONFIG += console
 
 CONFIG += c++11
-
-win32{
+win32 {
     LIBS += -lws2_32
 }
-
 TARGET = UAV-Forge-New
 TEMPLATE = app
 
@@ -42,7 +40,8 @@ SOURCES += main.cpp\
     gsclient.cpp \
     jsonobject.cpp \
     qcustomplot.cpp\
-    networklistener.cpp
+    networklistener.cpp\
+    Packet.pb.cc
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \
@@ -59,7 +58,8 @@ HEADERS  += mainwindow.h \
     gsclient.h \
     jsonobject.h \
     qcustomplot.h\
-    networklistener.h
+    networklistener.h\
+    Packet.pb.h
 
 FORMS    += mainwindow.ui \
     options.ui \
