@@ -35,6 +35,8 @@ private:
 public:
     NetworkListener(int UAVid);
     NetworkListener();
+
+    void netWait(int millis);
     //~NetworkListener();
     long reciveMessage(char* buf);
     void messageRecieved(char* msg);
