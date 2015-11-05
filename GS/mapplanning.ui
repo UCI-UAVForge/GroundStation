@@ -78,26 +78,7 @@
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QPushButton" name="backButton">
-     <property name="styleSheet">
-      <string notr="true"> QPushButton { 
-background-color: &quot;#CCD1D9&quot;; 
-color: &quot;#434A54&quot;; 
-border-radius: 10px;
-font-weight: bold;
-border: none; 
-}
- QPushButton:pressed {
-     background-color: #E6E9ED
- }</string>
-     </property>
-     <property name="text">
-      <string>Back</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1" colspan="6">
+   <item row="1" column="1" colspan="7">
     <widget class="QWebView" name="webView">
      <property name="url">
       <url>
@@ -106,83 +87,7 @@ border: none;
      </property>
     </widget>
    </item>
-   <item row="2" column="1">
-    <widget class="QPushButton" name="executeButton">
-     <property name="styleSheet">
-      <string notr="true"> QPushButton { 
-background-color: &quot;#CCD1D9&quot;; 
-color: &quot;#434A54&quot;; 
-border-radius: 10px;
-font-weight: bold;
-border: none; 
-}
- QPushButton:pressed {
-     background-color: #E6E9ED
- }</string>
-     </property>
-     <property name="text">
-      <string>Execute</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="2">
-    <widget class="QPushButton" name="updateTableButton">
-     <property name="styleSheet">
-      <string notr="true"> QPushButton { 
-background-color: &quot;#CCD1D9&quot;; 
-color: &quot;#434A54&quot;; 
-border-radius: 10px;
-font-weight: bold;
-border: none; 
-}
- QPushButton:pressed {
-     background-color: #E6E9ED
- }</string>
-     </property>
-     <property name="text">
-      <string>Update Table</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="3">
-    <widget class="QPushButton" name="clearTableButton">
-     <property name="styleSheet">
-      <string notr="true"> QPushButton { 
-background-color: &quot;#CCD1D9&quot;; 
-color: &quot;#434A54&quot;; 
-border-radius: 10px;
-font-weight: bold;
-border: none; 
-}
- QPushButton:pressed {
-     background-color: #E6E9ED
- }</string>
-     </property>
-     <property name="text">
-      <string>Clear Table</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="4">
-    <widget class="QPushButton" name="clearMapButton">
-     <property name="styleSheet">
-      <string notr="true"> QPushButton { 
-background-color: &quot;#CCD1D9&quot;; 
-color: &quot;#434A54&quot;; 
-border-radius: 10px;
-font-weight: bold;
-border: none; 
-}
- QPushButton:pressed {
-     background-color: #E6E9ED
- }</string>
-     </property>
-     <property name="text">
-      <string>Clear Map</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="5">
+   <item row="4" column="6">
     <widget class="QPushButton" name="deleteButton">
      <property name="styleSheet">
       <string notr="true"> QPushButton { 
@@ -201,7 +106,7 @@ border: none;
      </property>
     </widget>
    </item>
-   <item row="2" column="6">
+   <item row="4" column="7">
     <widget class="QPushButton" name="addButton">
      <property name="styleSheet">
       <string notr="true"> QPushButton { 
@@ -220,7 +125,102 @@ border: none;
      </property>
     </widget>
    </item>
-   <item row="3" column="1" colspan="6">
+   <item row="4" column="3">
+    <widget class="QPushButton" name="updateTableButton">
+     <property name="styleSheet">
+      <string notr="true"> QPushButton { 
+background-color: &quot;#CCD1D9&quot;; 
+color: &quot;#434A54&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #E6E9ED
+ }</string>
+     </property>
+     <property name="text">
+      <string>Update Table</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="2">
+    <widget class="QPushButton" name="executeButton">
+     <property name="styleSheet">
+      <string notr="true"> QPushButton { 
+background-color: &quot;#CCD1D9&quot;; 
+color: &quot;#434A54&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #E6E9ED
+ }</string>
+     </property>
+     <property name="text">
+      <string>Execute</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QPushButton" name="backButton">
+     <property name="styleSheet">
+      <string notr="true"> QPushButton { 
+background-color: &quot;#CCD1D9&quot;; 
+color: &quot;#434A54&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #E6E9ED
+ }</string>
+     </property>
+     <property name="text">
+      <string>Back</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="5">
+    <widget class="QPushButton" name="clearMapButton">
+     <property name="styleSheet">
+      <string notr="true"> QPushButton { 
+background-color: &quot;#CCD1D9&quot;; 
+color: &quot;#434A54&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #E6E9ED
+ }</string>
+     </property>
+     <property name="text">
+      <string>Clear Map</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="4">
+    <widget class="QPushButton" name="clearTableButton">
+     <property name="styleSheet">
+      <string notr="true"> QPushButton { 
+background-color: &quot;#CCD1D9&quot;; 
+color: &quot;#434A54&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #E6E9ED
+ }</string>
+     </property>
+     <property name="text">
+      <string>Clear Table</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1" colspan="7">
     <widget class="QTableView" name="tableView"/>
    </item>
   </layout>
