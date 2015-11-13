@@ -12,7 +12,7 @@ QT       += core \
 
 QT       += core gui multimedia multimediawidgets
 QT       += webkit webkitwidgets
-
+QT       += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 #CONFIG += console
@@ -39,7 +39,8 @@ SOURCES += main.cpp\
     gsserver.cpp \
     gsclient.cpp \
     jsonobject.cpp \
-    qcustomplot.cpp
+    qcustomplot.cpp \
+    database.cpp
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \
@@ -55,7 +56,8 @@ HEADERS  += mainwindow.h \
     gsserver.h \
     gsclient.h \
     jsonobject.h \
-    qcustomplot.h
+    qcustomplot.h \
+    database.h
 
 FORMS    += mainwindow.ui \
     options.ui \

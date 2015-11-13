@@ -29,6 +29,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QIcon ButtonIcon4(pixmap4);
     ui->pushButton_6->setIcon(ButtonIcon4);
     ui->pushButton_6->setIconSize(pixmap4.rect().size()/13);
+
+    //Initialize/Test database connection
 }
 
 /**

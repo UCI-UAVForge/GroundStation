@@ -16,6 +16,7 @@
 #include "mapplanning.h"
 #include "mapexecution.h"
 #include "missionrecap.h"
+#include "database.h"
 
 #include "ui_mainwindow.h"
 
