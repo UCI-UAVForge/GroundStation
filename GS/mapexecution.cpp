@@ -7,7 +7,6 @@ MapExecution::MapExecution(QWidget *parent) : QDialog(parent), ui(new Ui::MapExe
     ui->setupUi(this);
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
-    //prevTime = QTime();
     prevLat = prevLng = 0.0;
     CurrentData = ui->CurrentData;
     initCurrentData();
@@ -20,6 +19,7 @@ MapExecution::MapExecution(QWidget *parent) : QDialog(parent), ui(new Ui::MapExe
     connect(ui->finishButton, SIGNAL(clicked()), this, SLOT(on_finishButton_clicked()), Qt::UniqueConnection);
     connect(ui->returnHomeButton, SIGNAL(clicked()), this, SLOT(on_returnHomeButton_clicked()), Qt::UniqueConnection);
     connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(on_stopButton_clicked()), Qt::UniqueConnection);
+
 }
 
 MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(parent), ui(new Ui::MapExecution) {
@@ -40,15 +40,25 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
     connect(ui->returnHomeButton, SIGNAL(clicked()), this, SLOT(on_returnHomeButton_clicked()), Qt::UniqueConnection);
     connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(on_stopButton_clicked()), Qt::UniqueConnection);
 
-    std::cout<<"PREPARE" << std::endl;
-    QList <QPair<double, double > > h;
-    h << QPair<double, double >(32, 32);
-    myClient.set_list(getDoublePairs(mapStrings));
-    std::cout<<"FOR" << std::endl;
-    myClient.gsc_connect_start();
-    std::cout<<"THE DEVOURING," << std::endl;
-    myClient.gsc_send_message();
-    std::cout<<"PUNY HUMANS" << std::endl;
+    myServer.start();
+    connect(&myServer.networkListener,SIGNAL(sendCoordinates()),this,SLOT(sendFlightPlan()));
+    connect(&myServer.networkListener,SIGNAL(logTelemetry(QString)),this,SLOT(newTelemCoord(QString)));
+/**
+ *  No idea what this is, server code??
+ *  If not necessary, please get rid of later! (10/23/15)
+ *
+ */
+
+// Old server debug code
+    // std::cout<<"PREPARE" << std::endl;
+    // QList <QPair<double, double > > h;
+    // h << QPair<double, double >(32, 32);
+    // myClient.set_list(getDoublePairs(mapStrings));
+    // std::cout<<"FOR" << std::endl;
+    // myClient.gsc_connect_start();
+    // std::cout<<"THE DEVOURING," << std::endl;
+    // myClient.gsc_send_message();
+    // std::cout<<"PUNY HUMANS" << std::endl;
 }
 
 MapExecution::~MapExecution() {
@@ -87,6 +97,26 @@ void MapExecution::on_cancelButton_clicked() {
 // redirect to mission planning
 void MapExecution::on_backButton_clicked() {
     this->done(1);
+}
+
+void MapExecution::newTelemCoord(QString msgString){
+    double lat = msgString.split(',').at(0).toDouble();
+    double lng = msgString.split(',').at(1).toDouble();
+    long time = msgString.split(',').at(2).toLong();
+    std::cout << time << std::endl;
+
+    plotPosition(lat,lng);
+}
+
+
+void MapExecution::sendFlightPlan(){
+    std::cout << "Sending..." << std::endl;
+    QList<QPair<double,double> > coords = getDoublePairs(mapStrings);
+    myServer.sendMessage((char*)std::to_string(coords.length()).c_str(), 10, 11, myServer.uav_fd);
+    char msgBuffer[4096];
+    myServer.formatCoordinatesToSend(msgBuffer, 4096, coords);
+    myServer.sendMessage(msgBuffer,strlen(msgBuffer),myServer.maxPackSize,myServer.uav_fd);
+    std::cout << "done!" << std::endl;
 }
 
 /* Sends a request for the map to clear itself, causing the JavaScript page
@@ -169,19 +199,18 @@ void MapExecution::addNewMap() {
 /*  Sends a (latitude,longitude) pair to the map to be plotted.
 Used for telemetry. */
 void MapExecution::plotPosition(double lat, double lng) {
+    updateTable(lat,lng);
     ui->webView->page()->mainFrame()->evaluateJavaScript("addActualPath("+QString::number(lat)+","+QString::number(lng)+")");
 }
 
-void MapExecution::updateTable(int lat, int lng) {
+void MapExecution::updateTable(double lat, double lng) {
     model->insertRow(lng, lat);
-//    ui->tableView->update;
     ui->tableView->scrollToBottom();
 }
 
 void MapExecution::updatePosition(double lat, double lng, double alt, double spd)
 {
-    //std::cerr << "updatePosition(" << lat << ", " << lng << ", " << alt << ", " << spd << ")" << std::endl;
-    //updateTable(lat,lng);
+
     if(prevTime.isNull())
     {
         prevTime = QTime::currentTime();
@@ -199,12 +228,6 @@ void MapExecution::updatePosition(double lat, double lng, double alt, double spd
 }
 void MapExecution::initCurrentData()
 {
-//    CurrentData->insertRow(0);
-//    CurrentData->insertRow(1);
-//    CurrentData->insertRow(2);
-//    CurrentData->insertRow(3);
-//    CurrentData->insertColumn(0);
-//    CurrentData->insertColumn(1);
 
     LatLabel = new QTableWidgetItem("LatLabel");
     LngLabel = new QTableWidgetItem("LngLabel");
@@ -220,7 +243,5 @@ void MapExecution::initCurrentData()
     CurrentData->setItem(1,1,LngLabel);
     CurrentData->setItem(2,1,AltLabel);
     CurrentData->setItem(3,1,SpdLabel);
-
-
 
 }
