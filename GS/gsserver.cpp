@@ -35,7 +35,7 @@ void GsServer::waitNet(unsigned millis){
 #include <arpa/inet.h>
 #include <sys/wait.h>
 void GsServer::waitNet(unsigned millis){
-    net::usleep(millis * 1000);
+    usleep(millis * 1000);
 }
 #endif
 
