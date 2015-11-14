@@ -57,6 +57,9 @@ private slots:
     //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame().
     void initCurrentData();
 
+    void updateStatusIndicator(int x);
+    void on_colorTester_clicked();
+
 private:
     void addPoint(QString string);
     QList<QString> mapStrings;
