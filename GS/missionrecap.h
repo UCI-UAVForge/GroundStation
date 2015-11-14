@@ -13,6 +13,7 @@
 #include <QTimer>
 
 #include "mapexecution.h"
+//#include "mainwindow.h"
 #include "qcustomplot.h"
 #include "mapplanning.h"
 #include "videoplayer.h"
@@ -48,8 +49,10 @@ private slots:
     void on_playButton_clicked();
     void on_stopButton_clicked();
     void on_openFileButton_clicked();
+    void on_horizontalSlider_sliderPressed();
 
     void on_newMission_clicked();
+    void on_pushButton_5_clicked();
 
     void addClickListener();
 

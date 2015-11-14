@@ -1,14 +1,19 @@
 #ifndef GSCLIENT_H
 #define GSCLIENT_H
 
+
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <vector>
 #include <QList>
 #include <QPair>
 #include "net.h"
-#include "rapidjson/stringbuffer.h"
 #include "rapidjson/document.h"
 #include "rapidjson/writer.h"
+#include "rapidjson/stringbuffer.h"
 #include "rapidjson/prettywriter.h"
-
 
 class GsClient{
 public:
