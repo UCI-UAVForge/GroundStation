@@ -13,14 +13,17 @@ QT       += svg
 
 QT       += core gui multimedia multimediawidgets
 QT       += webkit webkitwidgets
-
+QT       += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 #CONFIG += console
 
 CONFIG += c++11
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> UCI-UAVForge/master
 win32{
     LIBS += -lws2_32
 }
@@ -43,9 +46,15 @@ SOURCES += main.cpp\
     gsserver.cpp \
     gsclient.cpp \
     jsonobject.cpp \
+<<<<<<< HEAD
     qcustomplot.cpp\
     networklistener.cpp\
     Packet.pb.cc
+=======
+    qcustomplot.cpp \
+    database.cpp \
+    networklistener.cpp
+>>>>>>> UCI-UAVForge/master
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \
@@ -61,9 +70,16 @@ HEADERS  += mainwindow.h \
     gsserver.h \
     gsclient.h \
     jsonobject.h \
+<<<<<<< HEAD
     qcustomplot.h\
     networklistener.h\
     Packet.pb.h
+=======
+    qcustomplot.h \
+    database.h \
+    networklistener.h
+>>>>>>> UCI-UAVForge/master
+
 
 FORMS    += mainwindow.ui \
     options.ui \
