@@ -13,7 +13,7 @@ QT       += svg
 
 QT       += core gui multimedia multimediawidgets
 QT       += webkit webkitwidgets
-QT       += sql
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 #CONFIG += console
@@ -40,9 +40,9 @@ SOURCES += main.cpp\
     gsserver.cpp \
     gsclient.cpp \
     jsonobject.cpp \
-    qcustomplot.cpp \
-    database.cpp \
-    networklistener.cpp
+    qcustomplot.cpp\
+    networklistener.cpp \
+    connectiondialog.cpp
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \
@@ -58,10 +58,9 @@ HEADERS  += mainwindow.h \
     gsserver.h \
     gsclient.h \
     jsonobject.h \
-    qcustomplot.h \
-    database.h \
-    networklistener.h
-
+    qcustomplot.h\
+    networklistener.h \
+    connectiondialog.h
 
 FORMS    += mainwindow.ui \
     options.ui \
@@ -69,7 +68,8 @@ FORMS    += mainwindow.ui \
     mapexecution.ui \
     missionrecap.ui \
     tutorial.ui \
-    popwindowmp.ui
+    popwindowmp.ui \
+    connectiondialog.ui
 
 OTHER_FILES +=
 

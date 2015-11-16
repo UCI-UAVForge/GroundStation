@@ -29,8 +29,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QIcon ButtonIcon4(pixmap4);
     ui->pushButton_6->setIcon(ButtonIcon4);
     ui->pushButton_6->setIconSize(pixmap4.rect().size()/13);
-
-    //Initialize/Test database connection
 }
 
 /**
@@ -109,6 +107,10 @@ void MainWindow::showMissionExecution() {
     MapExecution *mapExecution = new MapExecution();
     QObject::connect(mapExecution, SIGNAL(finished(int)), this, SLOT(checkFinishStatus(int)), Qt::UniqueConnection);
     mapExecution->showFullScreen();
+
+    //Open ConnectionDialog when MissionExecution is opened
+    ConnectionDialog * connectionDialog = new ConnectionDialog();
+    connectionDialog -> show();
 }
 
 void MainWindow::showMissionRecap() {
