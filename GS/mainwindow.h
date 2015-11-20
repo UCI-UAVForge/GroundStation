@@ -17,6 +17,8 @@
 #include "mapexecution.h"
 #include "missionrecap.h"
 
+#include "connectiondialog.h"
+
 #include "ui_mainwindow.h"
 
 namespace Ui {

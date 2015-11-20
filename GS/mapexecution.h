@@ -30,17 +30,18 @@ class MapExecution : public QDialog {
     Q_OBJECT
 public slots:
     void setMap(QList<QString> list);
-    void addPoint(QString string);
     void addNewMap();
-    void updateTable(int lat, int lng);
+  
+    void updateTable(double lat, double lng);
+    void newTelemCoord(QString coordString);
+    void sendFlightPlan();
     void updatePosition(double lat, double lng, double alt, double spd);
 public:
     explicit MapExecution(QList<QString> strings, QWidget *parent = 0);
     explicit MapExecution(QWidget *parent = 0);
-    QList<QString> mapStrings;
     void plotPosition(double lat, double lng);
     ~MapExecution();
-    //GsServer myServer;
+    GsServer myServer;
     GsClient myClient;
     QList<QPair<double,double> > getDoublePairs(QList<QString> strings);
 private slots:
@@ -56,7 +57,12 @@ private slots:
     //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame().
     void initCurrentData();
 
+    void updateStatusIndicator(int x);
+    void on_colorTester_clicked();
+
 private:
+    void addPoint(QString string);
+    QList<QString> mapStrings;
     Ui::MapExecution *ui;
     QList<QString> points_recieved;
     TableModel *model;

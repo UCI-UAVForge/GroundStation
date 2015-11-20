@@ -4,15 +4,12 @@ MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlann
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
 
-//    //connect(buttonGroup, SIGNAL(buttonClicked(int)), this, SLOT(buttonWasClicked(int)));
-//    //delete = new  (row)
-//    connect(ui->pushButton_7, SIGNAL(clicked()), this, SLOT(on_pushButton_7_clicked()));
+/**
+ * Recreates the C++/JS bridge when the JavaScript window is refreshed
+ */
 
-//    //Recreates the c++/JS bridge when the JavaScript window is refreshed
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-
     ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
-
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
@@ -30,13 +27,14 @@ MapPlanning::~MapPlanning() {
     delete ui;
 }
 
-//<<<<<<< HEAD
-//void MapPlanning::buttonWasClicked(int buttonID)
-//{
-/* Since c++/JS bridges are broken when the JS page refreshes this slot
- is used to rebruild the bridge each time when triggered by a
- javaScriptWindowObjectCleared signal from the page frame. Function
- added by Jordan Dickson Feb 14th 2015. */
+/**
+ * Since C++/JS bridges are broken when the JS page refreshes this slot
+ * is used to rebruild the bridge each time when triggered by a
+ * javaScriptWindowObjectCleared signal from the page frame. Function
+ * added by Jordan Dickson Feb 14th 2015.
+ */
+
+
 void MapPlanning::addClickListener() {
     //Creates the bridge called cbridge between the java script object and this class.
     ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("cbridge",this);
@@ -45,7 +43,11 @@ void MapPlanning::addClickListener() {
 // execution button
 // redirect to mission execution window
 void MapPlanning::on_executeButton_clicked() {
-    this->done(2);
+    MapExecution *mapExecution = new MapExecution(getTableAsStrings());
+    this->close();
+    mapExecution->showFullScreen();
+
+    //this->done(2);
 }
 
 // + button
@@ -60,7 +62,7 @@ void MapPlanning::on_deleteButton_clicked() {
     updateMap();
 }
 
-// update buttun
+// update button
 void MapPlanning::on_updateTableButton_clicked() {
      updateMap();
 }

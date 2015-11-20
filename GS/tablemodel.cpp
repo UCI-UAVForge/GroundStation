@@ -12,13 +12,6 @@ TableModel::TableModel(QObject *parent)
 
 }
 
-//TableModel::TableModel(QObject *parent, String title1, String title2)
-//    : QAbstractTableModel(parent)
-//{
-//    columns.push_back(title1);
-//    columns.push_back(title2);
-//}
-
 TableModel::TableModel(QList<QList<QString> > pairs, QObject *parent)
     : QAbstractTableModel(parent)
 {
