@@ -32,6 +32,7 @@ Source: http://www.gaffer.org/networking-for-game-programmers
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <fcntl.h>
+#include <unistd.h>
 
 
 #include <stdio.h>

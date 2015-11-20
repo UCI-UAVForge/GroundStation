@@ -18,6 +18,8 @@
 #include "missionrecap.h"
 #include "database.h"
 
+#include "connectiondialog.h"
+
 #include "ui_mainwindow.h"
 
 namespace Ui {

@@ -109,6 +109,10 @@ void MainWindow::showMissionExecution() {
     MapExecution *mapExecution = new MapExecution();
     QObject::connect(mapExecution, SIGNAL(finished(int)), this, SLOT(checkFinishStatus(int)), Qt::UniqueConnection);
     mapExecution->showFullScreen();
+
+    //Open ConnectionDialog when MissionExecution is opened
+    ConnectionDialog * connectionDialog = new ConnectionDialog();
+    connectionDialog -> show();
 }
 
 void MainWindow::showMissionRecap() {

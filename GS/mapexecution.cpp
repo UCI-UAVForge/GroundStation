@@ -244,4 +244,32 @@ void MapExecution::initCurrentData()
     CurrentData->setItem(2,1,AltLabel);
     CurrentData->setItem(3,1,SpdLabel);
 
+<<<<<<< HEAD
+=======
+}
+
+/*Change status indicator using inputted x */
+void MapExecution::updateStatusIndicator(int x)
+{
+    switch(x)
+    {
+        case 0:
+            ui->StatusIndicator->setStyleSheet("background-color:green");
+            break;
+        case 1:
+            ui->StatusIndicator->setStyleSheet("background-color:yellow");
+            break;
+        case 2:
+            ui->StatusIndicator->setStyleSheet("background-color:red");
+            break;
+        default:
+            ui->StatusIndicator->setStyleSheet("background-color:black;");
+    }
+}
+
+void MapExecution::on_colorTester_clicked()
+{
+    ui->StatusConsole->appendPlainText("Update");
+    MapExecution::updateStatusIndicator(rand() % 3);
+>>>>>>> UCI-UAVForge/master
 }

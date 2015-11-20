@@ -19,7 +19,10 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 #CONFIG += console
 
 CONFIG += c++11
+<<<<<<< HEAD
 
+=======
+>>>>>>> UCI-UAVForge/master
 win32{
     LIBS += -lws2_32
 }
@@ -42,10 +45,16 @@ SOURCES += main.cpp\
     gsserver.cpp \
     gsclient.cpp \
     jsonobject.cpp \
+<<<<<<< HEAD
     Packet.pb.cc \
     database.cpp \
     networklistener.cpp
 
+=======
+    qcustomplot.cpp\
+    networklistener.cpp \
+    connectiondialog.cpp
+>>>>>>> UCI-UAVForge/master
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \
@@ -61,10 +70,16 @@ HEADERS  += mainwindow.h \
     gsserver.h \
     gsclient.h \
     jsonobject.h \
+<<<<<<< HEAD
     Packet.pb.h \
     qcustomplot.h \
     database.h \
     networklistener.h
+=======
+    qcustomplot.h\
+    networklistener.h \
+    connectiondialog.h
+>>>>>>> UCI-UAVForge/master
 
 FORMS    += mainwindow.ui \
     options.ui \
@@ -72,7 +87,8 @@ FORMS    += mainwindow.ui \
     mapexecution.ui \
     missionrecap.ui \
     tutorial.ui \
-    popwindowmp.ui
+    popwindowmp.ui \
+    connectiondialog.ui
 
 OTHER_FILES +=
 
