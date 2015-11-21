@@ -9,7 +9,18 @@
 
 #pragma comment (lib, "Ws2_32.lib")
 
+/*int recfromUDP(SOCKET socket, long sec, long usec)
+{
+	timeval timeout; 
+	timeout.tv_sec = sec;
+	timeout.tv_usec = usec;
 
+	fd_set fds;
+
+	FD_ZERO(&fds);
+	FD_SET(socket, &fds);
+	return select(0, &fds, 0, 0, &timeout); 
+}*/ 
 
 int main()
 {
@@ -32,8 +43,8 @@ int main()
 
 	ZeroMemory(&hints, sizeof(hints));
 	hints.ai_family = AF_UNSPEC;
-	hints.ai_socktype = SOCK_STREAM;
-	hints.ai_protocol = IPPROTO_TCP;
+	hints.ai_socktype = SOCK_DGRAM;
+	hints.ai_protocol = IPPROTO_UDP;
 	hints.ai_flags = AI_PASSIVE;
 
 	start_Result = getaddrinfo(NULL, DEFAULT_PORT, &hints, &result);
@@ -66,15 +77,15 @@ int main()
 		return 1;
 	}
 
-	if (listen(Rec_Socket, SOMAXCONN) == SOCKET_ERROR)
+	/*if (listen(Rec_Socket, SOMAXCONN) == SOCKET_ERROR)
 	{
 		printf("Listen failed with error: %ld\n", WSAGetLastError());
 		closesocket(Rec_Socket);
 		WSACleanup();
 		return 1; 
-	}
+	}*/
 
-	SOCKET clientSocket = INVALID_SOCKET;
+	/*SOCKET clientSocket = INVALID_SOCKET;
 
 	clientSocket = accept(Rec_Socket, NULL, NULL);
 	if (clientSocket == INVALID_SOCKET)
@@ -83,8 +94,8 @@ int main()
 		closesocket(Rec_Socket);
 		WSACleanup();
 		return 1; 
-	}
-	do
+	}/*
+	/*do
 	{
 		recResult = recv(clientSocket, recbuf, recbuflen, 0);
 
@@ -114,8 +125,16 @@ int main()
 			return 1; 
 		}
 
-	} while (recResult > 0);
+	} while (recResult > 0);*/
 
+	while (1)
+	{
+		printf("Waiting for data...");
+		fflush(stdout);
+		memset(recbuf, '\0', DEFAULT_BUFLEN);
+
+		if (recbuflen = recvfrom())
+	}
 	recResult = shutdown(clientSocket, SD_SEND);
 	if (recResult == SOCKET_ERROR)
 	{
