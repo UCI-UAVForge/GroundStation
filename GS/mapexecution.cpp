@@ -244,8 +244,6 @@ void MapExecution::initCurrentData()
     CurrentData->setItem(2,1,AltLabel);
     CurrentData->setItem(3,1,SpdLabel);
 
-<<<<<<< HEAD
-=======
 }
 
 /*Change status indicator using inputted x */
@@ -271,5 +269,4 @@ void MapExecution::on_colorTester_clicked()
 {
     ui->StatusConsole->appendPlainText("Update");
     MapExecution::updateStatusIndicator(rand() % 3);
->>>>>>> UCI-UAVForge/master
 }

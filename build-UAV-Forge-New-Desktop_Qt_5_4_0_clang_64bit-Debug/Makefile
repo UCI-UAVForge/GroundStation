@@ -61,10 +61,11 @@ SOURCES       = ../GS/main.cpp \
 		../GS/videoplayer.cpp \
 		../GS/gsserver.cpp \
 		../GS/gsclient.cpp \
-		../GS/jsonobject.cpp \
 		../GS/Packet.pb.cc \
-		../GS/database.cpp \
-		../GS/networklistener.cpp qrc_Resources.cpp \
+		database.cpp \
+		../GS/networklistener.cpp \
+		../GS/qcustomplot.cpp \
+		../GS/connectiondialog.cpp qrc_Resources.cpp \
 		moc_mainwindow.cpp \
 		moc_options.cpp \
 		moc_mapplanning.cpp \
@@ -77,7 +78,8 @@ SOURCES       = ../GS/main.cpp \
 		moc_videoplayer.cpp \
 		moc_qcustomplot.cpp \
 		moc_database.cpp \
-		moc_networklistener.cpp
+		moc_networklistener.cpp \
+		moc_connectiondialog.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		options.o \
@@ -91,10 +93,11 @@ OBJECTS       = main.o \
 		videoplayer.o \
 		gsserver.o \
 		gsclient.o \
-		jsonobject.o \
 		Packet.pb.o \
 		database.o \
 		networklistener.o \
+		qcustomplot.o \
+		connectiondialog.o \
 		qrc_Resources.o \
 		moc_mainwindow.o \
 		moc_options.o \
@@ -108,7 +111,8 @@ OBJECTS       = main.o \
 		moc_videoplayer.o \
 		moc_qcustomplot.o \
 		moc_database.o \
-		moc_networklistener.o
+		moc_networklistener.o \
+		moc_connectiondialog.o
 DIST          = /Applications/Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		/Applications/Qt/5.4/clang_64/mkspecs/qdevice.pri \
 		/Applications/Qt/5.4/clang_64/mkspecs/features/device_config.prf \
@@ -251,11 +255,12 @@ DIST          = /Applications/Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		../GS/net.h \
 		../GS/gsserver.h \
 		../GS/gsclient.h \
-		../GS/jsonobject.h \
 		../GS/Packet.pb.h \
 		../GS/qcustomplot.h \
 		../GS/database.h \
-		../GS/networklistener.h ../GS/main.cpp \
+		../GS/qcustomplot.h \
+		../GS/networklistener.h \
+		../GS/connectiondialog.h ../GS/main.cpp \
 		../GS/mainwindow.cpp \
 		../GS/options.cpp \
 		../GS/mapplanning.cpp \
@@ -268,10 +273,11 @@ DIST          = /Applications/Qt/5.4/clang_64/mkspecs/features/spec_pre.prf \
 		../GS/videoplayer.cpp \
 		../GS/gsserver.cpp \
 		../GS/gsclient.cpp \
-		../GS/jsonobject.cpp \
 		../GS/Packet.pb.cc \
-		../GS/database.cpp \
-		../GS/networklistener.cpp
+		database.cpp \
+		../GS/networklistener.cpp \
+		../GS/qcustomplot.cpp \
+		../GS/connectiondialog.cpp
 QMAKE_TARGET  = UAV-Forge-New
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = UAV-Forge-New.app/Contents/MacOS/UAV-Forge-New
@@ -311,7 +317,7 @@ first: all
 
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h ui_options.h ui_mapplanning.h ui_mapexecution.h ui_missionrecap.h ui_tutorial.h ui_popwindowmp.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_options.h ui_mapplanning.h ui_mapexecution.h ui_missionrecap.h ui_tutorial.h ui_popwindowmp.h ui_connectiondialog.h $(OBJECTS)  
 	@test -d UAV-Forge-New.app/Contents/MacOS/ || mkdir -p UAV-Forge-New.app/Contents/MacOS/
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
@@ -630,9 +636,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../GS/Resources.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents ../GS/mainwindow.h ../GS/options.h ../GS/mapplanning.h ../GS/tablemodel.h ../GS/mapexecution.h ../GS/missionrecap.h ../GS/tutorial.h ../GS/popwindowmp.h ../GS/qcomboboxdelegate.h ../GS/videoplayer.h ../GS/net.h ../GS/gsserver.h ../GS/gsclient.h ../GS/jsonobject.h ../GS/Packet.pb.h ../GS/qcustomplot.h ../GS/database.h ../GS/networklistener.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../GS/main.cpp ../GS/mainwindow.cpp ../GS/options.cpp ../GS/mapplanning.cpp ../GS/tablemodel.cpp ../GS/mapexecution.cpp ../GS/missionrecap.cpp ../GS/tutorial.cpp ../GS/popwindowmp.cpp ../GS/qcomboboxdelegate.cpp ../GS/videoplayer.cpp ../GS/gsserver.cpp ../GS/gsclient.cpp ../GS/jsonobject.cpp ../GS/Packet.pb.cc ../GS/database.cpp ../GS/networklistener.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../GS/mainwindow.ui ../GS/options.ui ../GS/mapplanning.ui ../GS/mapexecution.ui ../GS/missionrecap.ui ../GS/tutorial.ui ../GS/popwindowmp.ui $(DISTDIR)/
+	$(COPY_FILE) --parents ../GS/mainwindow.h ../GS/options.h ../GS/mapplanning.h ../GS/tablemodel.h ../GS/mapexecution.h ../GS/missionrecap.h ../GS/tutorial.h ../GS/popwindowmp.h ../GS/qcomboboxdelegate.h ../GS/videoplayer.h ../GS/net.h ../GS/gsserver.h ../GS/gsclient.h ../GS/Packet.pb.h ../GS/qcustomplot.h ../GS/database.h ../GS/qcustomplot.h ../GS/networklistener.h ../GS/connectiondialog.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../GS/main.cpp ../GS/mainwindow.cpp ../GS/options.cpp ../GS/mapplanning.cpp ../GS/tablemodel.cpp ../GS/mapexecution.cpp ../GS/missionrecap.cpp ../GS/tutorial.cpp ../GS/popwindowmp.cpp ../GS/qcomboboxdelegate.cpp ../GS/videoplayer.cpp ../GS/gsserver.cpp ../GS/gsclient.cpp ../GS/Packet.pb.cc database.cpp ../GS/networklistener.cpp ../GS/qcustomplot.cpp ../GS/connectiondialog.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../GS/mainwindow.ui ../GS/options.ui ../GS/mapplanning.ui ../GS/mapexecution.ui ../GS/missionrecap.ui ../GS/tutorial.ui ../GS/popwindowmp.ui ../GS/connectiondialog.ui $(DISTDIR)/
 
 
 clean:compiler_clean 
@@ -680,9 +686,9 @@ qrc_Resources.cpp: ../GS/Resources.qrc \
 		../GS/res/html/mapsExecution.html
 	/Applications/Qt/5.4/clang_64/bin/rcc -name Resources ../GS/Resources.qrc -o qrc_Resources.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_options.cpp moc_mapplanning.cpp moc_tablemodel.cpp moc_mapexecution.cpp moc_missionrecap.cpp moc_tutorial.cpp moc_popwindowmp.cpp moc_qcomboboxdelegate.cpp moc_videoplayer.cpp moc_qcustomplot.cpp moc_database.cpp moc_networklistener.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_options.cpp moc_mapplanning.cpp moc_tablemodel.cpp moc_mapexecution.cpp moc_missionrecap.cpp moc_tutorial.cpp moc_popwindowmp.cpp moc_qcomboboxdelegate.cpp moc_videoplayer.cpp moc_qcustomplot.cpp moc_database.cpp moc_qcustomplot.cpp moc_networklistener.cpp moc_connectiondialog.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_options.cpp moc_mapplanning.cpp moc_tablemodel.cpp moc_mapexecution.cpp moc_missionrecap.cpp moc_tutorial.cpp moc_popwindowmp.cpp moc_qcomboboxdelegate.cpp moc_videoplayer.cpp moc_qcustomplot.cpp moc_database.cpp moc_networklistener.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_options.cpp moc_mapplanning.cpp moc_tablemodel.cpp moc_mapexecution.cpp moc_missionrecap.cpp moc_tutorial.cpp moc_popwindowmp.cpp moc_qcomboboxdelegate.cpp moc_videoplayer.cpp moc_qcustomplot.cpp moc_database.cpp moc_qcustomplot.cpp moc_networklistener.cpp moc_connectiondialog.cpp
 moc_mainwindow.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
 		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
 		../GS/options.h \
@@ -722,27 +728,6 @@ moc_mainwindow.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versio
 		../GS/mapexecution.h \
 		../GS/gsclient.h \
 		../GS/net.h \
-		../GS/rapidjson/stringbuffer.h \
-		../GS/rapidjson/rapidjson.h \
-		../GS/rapidjson/msinttypes/stdint.h \
-		../GS/rapidjson/msinttypes/inttypes.h \
-		../GS/rapidjson/allocators.h \
-		../GS/rapidjson/encodings.h \
-		../GS/rapidjson/internal/stack.h \
-		../GS/rapidjson/document.h \
-		../GS/rapidjson/reader.h \
-		../GS/rapidjson/internal/meta.h \
-		../GS/rapidjson/internal/strtod.h \
-		../GS/rapidjson/internal/ieee754.h \
-		../GS/rapidjson/internal/biginteger.h \
-		../GS/rapidjson/internal/diyfp.h \
-		../GS/rapidjson/internal/pow10.h \
-		../GS/rapidjson/error/error.h \
-		../GS/rapidjson/internal/strfunc.h \
-		../GS/rapidjson/writer.h \
-		../GS/rapidjson/internal/dtoa.h \
-		../GS/rapidjson/internal/itoa.h \
-		../GS/rapidjson/prettywriter.h \
 		../GS/gsserver.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QThread \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qthread.h \
@@ -816,6 +801,7 @@ moc_mainwindow.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versio
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qurl.h \
 		../GS/tutorial.h \
 		../GS/database.h \
+		../GS/connectiondialog.h \
 		ui_mainwindow.h \
 		../GS/mainwindow.h
 	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/JordanDickson-GroundStation/GS' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtSvg.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtSql.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../GS/mainwindow.h -o moc_mainwindow.cpp
@@ -856,27 +842,6 @@ moc_options.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/
 		../GS/mapexecution.h \
 		../GS/gsclient.h \
 		../GS/net.h \
-		../GS/rapidjson/stringbuffer.h \
-		../GS/rapidjson/rapidjson.h \
-		../GS/rapidjson/msinttypes/stdint.h \
-		../GS/rapidjson/msinttypes/inttypes.h \
-		../GS/rapidjson/allocators.h \
-		../GS/rapidjson/encodings.h \
-		../GS/rapidjson/internal/stack.h \
-		../GS/rapidjson/document.h \
-		../GS/rapidjson/reader.h \
-		../GS/rapidjson/internal/meta.h \
-		../GS/rapidjson/internal/strtod.h \
-		../GS/rapidjson/internal/ieee754.h \
-		../GS/rapidjson/internal/biginteger.h \
-		../GS/rapidjson/internal/diyfp.h \
-		../GS/rapidjson/internal/pow10.h \
-		../GS/rapidjson/error/error.h \
-		../GS/rapidjson/internal/strfunc.h \
-		../GS/rapidjson/writer.h \
-		../GS/rapidjson/internal/dtoa.h \
-		../GS/rapidjson/internal/itoa.h \
-		../GS/rapidjson/prettywriter.h \
 		../GS/gsserver.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QThread \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qthread.h \
@@ -981,27 +946,6 @@ moc_mapplanning.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versi
 		../GS/mapexecution.h \
 		../GS/gsclient.h \
 		../GS/net.h \
-		../GS/rapidjson/stringbuffer.h \
-		../GS/rapidjson/rapidjson.h \
-		../GS/rapidjson/msinttypes/stdint.h \
-		../GS/rapidjson/msinttypes/inttypes.h \
-		../GS/rapidjson/allocators.h \
-		../GS/rapidjson/encodings.h \
-		../GS/rapidjson/internal/stack.h \
-		../GS/rapidjson/document.h \
-		../GS/rapidjson/reader.h \
-		../GS/rapidjson/internal/meta.h \
-		../GS/rapidjson/internal/strtod.h \
-		../GS/rapidjson/internal/ieee754.h \
-		../GS/rapidjson/internal/biginteger.h \
-		../GS/rapidjson/internal/diyfp.h \
-		../GS/rapidjson/internal/pow10.h \
-		../GS/rapidjson/error/error.h \
-		../GS/rapidjson/internal/strfunc.h \
-		../GS/rapidjson/writer.h \
-		../GS/rapidjson/internal/dtoa.h \
-		../GS/rapidjson/internal/itoa.h \
-		../GS/rapidjson/prettywriter.h \
 		../GS/gsserver.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QThread \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qthread.h \
@@ -1099,27 +1043,6 @@ moc_mapexecution.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Vers
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qlist.h \
 		../GS/gsclient.h \
 		../GS/net.h \
-		../GS/rapidjson/stringbuffer.h \
-		../GS/rapidjson/rapidjson.h \
-		../GS/rapidjson/msinttypes/stdint.h \
-		../GS/rapidjson/msinttypes/inttypes.h \
-		../GS/rapidjson/allocators.h \
-		../GS/rapidjson/encodings.h \
-		../GS/rapidjson/internal/stack.h \
-		../GS/rapidjson/document.h \
-		../GS/rapidjson/reader.h \
-		../GS/rapidjson/internal/meta.h \
-		../GS/rapidjson/internal/strtod.h \
-		../GS/rapidjson/internal/ieee754.h \
-		../GS/rapidjson/internal/biginteger.h \
-		../GS/rapidjson/internal/diyfp.h \
-		../GS/rapidjson/internal/pow10.h \
-		../GS/rapidjson/error/error.h \
-		../GS/rapidjson/internal/strfunc.h \
-		../GS/rapidjson/writer.h \
-		../GS/rapidjson/internal/dtoa.h \
-		../GS/rapidjson/internal/itoa.h \
-		../GS/rapidjson/prettywriter.h \
 		../GS/gsserver.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QThread \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qthread.h \
@@ -1240,27 +1163,6 @@ moc_missionrecap.cpp: /Applications/Qt/5.4/clang_64/lib/QtCore.framework/Version
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qlist.h \
 		../GS/gsclient.h \
 		../GS/net.h \
-		../GS/rapidjson/stringbuffer.h \
-		../GS/rapidjson/rapidjson.h \
-		../GS/rapidjson/msinttypes/stdint.h \
-		../GS/rapidjson/msinttypes/inttypes.h \
-		../GS/rapidjson/allocators.h \
-		../GS/rapidjson/encodings.h \
-		../GS/rapidjson/internal/stack.h \
-		../GS/rapidjson/document.h \
-		../GS/rapidjson/reader.h \
-		../GS/rapidjson/internal/meta.h \
-		../GS/rapidjson/internal/strtod.h \
-		../GS/rapidjson/internal/ieee754.h \
-		../GS/rapidjson/internal/biginteger.h \
-		../GS/rapidjson/internal/diyfp.h \
-		../GS/rapidjson/internal/pow10.h \
-		../GS/rapidjson/error/error.h \
-		../GS/rapidjson/internal/strfunc.h \
-		../GS/rapidjson/writer.h \
-		../GS/rapidjson/internal/dtoa.h \
-		../GS/rapidjson/internal/itoa.h \
-		../GS/rapidjson/prettywriter.h \
 		../GS/gsserver.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QThread \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qthread.h \
@@ -1427,6 +1329,58 @@ moc_database.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions
 		../GS/database.h
 	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/JordanDickson-GroundStation/GS' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtSvg.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtSql.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../GS/database.h -o moc_database.cpp
 
+moc_qcustomplot.cpp: /Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QObject \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qobject.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QPointer \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qpointer.h \
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
+		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QPainter \
+		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qpainter.h \
+		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QPaintEvent \
+		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qevent.h \
+		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QMouseEvent \
+		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QPixmap \
+		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qpixmap.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QVector \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qvector.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qdatetime.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QMultiMap \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qmap.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QFlags \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qflags.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
+		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QVector2D \
+		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qvector2d.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QStack \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qstack.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QCache \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qcache.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QMargins \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qmargins.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qmath.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qnumeric.h \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/QPrinter \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qprinter.h \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/QPrintEngine \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qprintengine.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QtNumeric \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/QtPrintSupport \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qabstractprintdialog.h \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qpagesetupdialog.h \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qprintdialog.h \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qprintpreviewdialog.h \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qprinterinfo.h \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qtprintsupportglobal.h \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qprintpreviewwidget.h \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qtprintsupportversion.h \
+		../GS/qcustomplot.h
+	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/JordanDickson-GroundStation/GS' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtSvg.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtSql.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../GS/qcustomplot.h -o moc_qcustomplot.cpp
+
 moc_networklistener.cpp: /Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QObject \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qobject.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QThread \
@@ -1436,11 +1390,16 @@ moc_networklistener.cpp: /Applications/Qt/5.4/clang_64/lib/QtCore.framework/Vers
 		../GS/networklistener.h
 	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/JordanDickson-GroundStation/GS' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtSvg.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtSql.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../GS/networklistener.h -o moc_networklistener.cpp
 
+moc_connectiondialog.cpp: /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDialog \
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdialog.h \
+		../GS/connectiondialog.h
+	/Applications/Qt/5.4/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Applications/Qt/5.4/clang_64/mkspecs/macx-clang -I'/Users/jordan/Documents/Qt Projects/JordanDickson-GroundStation/GS' -I/Applications/Qt/5.4/clang_64/lib/QtWebKitWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimediaWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtSvg.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtWebKit.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtMultimedia.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtNetwork.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtSql.framework/Headers -I/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Headers -I. -F/Applications/Qt/5.4/clang_64/lib ../GS/connectiondialog.h -o moc_connectiondialog.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h ui_options.h ui_mapplanning.h ui_mapexecution.h ui_missionrecap.h ui_tutorial.h ui_popwindowmp.h
+compiler_uic_make_all: ui_mainwindow.h ui_options.h ui_mapplanning.h ui_mapexecution.h ui_missionrecap.h ui_tutorial.h ui_popwindowmp.h ui_connectiondialog.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h ui_options.h ui_mapplanning.h ui_mapexecution.h ui_missionrecap.h ui_tutorial.h ui_popwindowmp.h
+	-$(DEL_FILE) ui_mainwindow.h ui_options.h ui_mapplanning.h ui_mapexecution.h ui_missionrecap.h ui_tutorial.h ui_popwindowmp.h ui_connectiondialog.h
 ui_mainwindow.h: ../GS/mainwindow.ui
 	/Applications/Qt/5.4/clang_64/bin/uic ../GS/mainwindow.ui -o ui_mainwindow.h
 
@@ -1513,6 +1472,9 @@ ui_tutorial.h: ../GS/tutorial.ui
 ui_popwindowmp.h: ../GS/popwindowmp.ui
 	/Applications/Qt/5.4/clang_64/bin/uic ../GS/popwindowmp.ui -o ui_popwindowmp.h
 
+ui_connectiondialog.h: ../GS/connectiondialog.ui
+	/Applications/Qt/5.4/clang_64/bin/uic ../GS/connectiondialog.ui -o ui_connectiondialog.h
+
 compiler_rez_source_make_all:
 compiler_rez_source_clean:
 compiler_yacc_decl_make_all:
@@ -1574,27 +1536,6 @@ main.o: ../GS/main.cpp /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Ver
 		../GS/mapexecution.h \
 		../GS/gsclient.h \
 		../GS/net.h \
-		../GS/rapidjson/stringbuffer.h \
-		../GS/rapidjson/rapidjson.h \
-		../GS/rapidjson/msinttypes/stdint.h \
-		../GS/rapidjson/msinttypes/inttypes.h \
-		../GS/rapidjson/allocators.h \
-		../GS/rapidjson/encodings.h \
-		../GS/rapidjson/internal/stack.h \
-		../GS/rapidjson/document.h \
-		../GS/rapidjson/reader.h \
-		../GS/rapidjson/internal/meta.h \
-		../GS/rapidjson/internal/strtod.h \
-		../GS/rapidjson/internal/ieee754.h \
-		../GS/rapidjson/internal/biginteger.h \
-		../GS/rapidjson/internal/diyfp.h \
-		../GS/rapidjson/internal/pow10.h \
-		../GS/rapidjson/error/error.h \
-		../GS/rapidjson/internal/strfunc.h \
-		../GS/rapidjson/writer.h \
-		../GS/rapidjson/internal/dtoa.h \
-		../GS/rapidjson/internal/itoa.h \
-		../GS/rapidjson/prettywriter.h \
 		../GS/gsserver.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QThread \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qthread.h \
@@ -1668,6 +1609,7 @@ main.o: ../GS/main.cpp /Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Ver
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qurl.h \
 		../GS/tutorial.h \
 		../GS/database.h \
+		../GS/connectiondialog.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../GS/main.cpp
 
@@ -1711,27 +1653,6 @@ mainwindow.o: ../GS/mainwindow.cpp ../GS/mainwindow.h \
 		../GS/mapexecution.h \
 		../GS/gsclient.h \
 		../GS/net.h \
-		../GS/rapidjson/stringbuffer.h \
-		../GS/rapidjson/rapidjson.h \
-		../GS/rapidjson/msinttypes/stdint.h \
-		../GS/rapidjson/msinttypes/inttypes.h \
-		../GS/rapidjson/allocators.h \
-		../GS/rapidjson/encodings.h \
-		../GS/rapidjson/internal/stack.h \
-		../GS/rapidjson/document.h \
-		../GS/rapidjson/reader.h \
-		../GS/rapidjson/internal/meta.h \
-		../GS/rapidjson/internal/strtod.h \
-		../GS/rapidjson/internal/ieee754.h \
-		../GS/rapidjson/internal/biginteger.h \
-		../GS/rapidjson/internal/diyfp.h \
-		../GS/rapidjson/internal/pow10.h \
-		../GS/rapidjson/error/error.h \
-		../GS/rapidjson/internal/strfunc.h \
-		../GS/rapidjson/writer.h \
-		../GS/rapidjson/internal/dtoa.h \
-		../GS/rapidjson/internal/itoa.h \
-		../GS/rapidjson/prettywriter.h \
 		../GS/gsserver.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QThread \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qthread.h \
@@ -1805,6 +1726,7 @@ mainwindow.o: ../GS/mainwindow.cpp ../GS/mainwindow.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qurl.h \
 		../GS/tutorial.h \
 		../GS/database.h \
+		../GS/connectiondialog.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../GS/mainwindow.cpp
 
@@ -1845,27 +1767,6 @@ options.o: ../GS/options.cpp ../GS/options.h \
 		../GS/mapexecution.h \
 		../GS/gsclient.h \
 		../GS/net.h \
-		../GS/rapidjson/stringbuffer.h \
-		../GS/rapidjson/rapidjson.h \
-		../GS/rapidjson/msinttypes/stdint.h \
-		../GS/rapidjson/msinttypes/inttypes.h \
-		../GS/rapidjson/allocators.h \
-		../GS/rapidjson/encodings.h \
-		../GS/rapidjson/internal/stack.h \
-		../GS/rapidjson/document.h \
-		../GS/rapidjson/reader.h \
-		../GS/rapidjson/internal/meta.h \
-		../GS/rapidjson/internal/strtod.h \
-		../GS/rapidjson/internal/ieee754.h \
-		../GS/rapidjson/internal/biginteger.h \
-		../GS/rapidjson/internal/diyfp.h \
-		../GS/rapidjson/internal/pow10.h \
-		../GS/rapidjson/error/error.h \
-		../GS/rapidjson/internal/strfunc.h \
-		../GS/rapidjson/writer.h \
-		../GS/rapidjson/internal/dtoa.h \
-		../GS/rapidjson/internal/itoa.h \
-		../GS/rapidjson/prettywriter.h \
 		../GS/gsserver.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QThread \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qthread.h \
@@ -1970,27 +1871,6 @@ mapplanning.o: ../GS/mapplanning.cpp ../GS/mapplanning.h \
 		../GS/mapexecution.h \
 		../GS/gsclient.h \
 		../GS/net.h \
-		../GS/rapidjson/stringbuffer.h \
-		../GS/rapidjson/rapidjson.h \
-		../GS/rapidjson/msinttypes/stdint.h \
-		../GS/rapidjson/msinttypes/inttypes.h \
-		../GS/rapidjson/allocators.h \
-		../GS/rapidjson/encodings.h \
-		../GS/rapidjson/internal/stack.h \
-		../GS/rapidjson/document.h \
-		../GS/rapidjson/reader.h \
-		../GS/rapidjson/internal/meta.h \
-		../GS/rapidjson/internal/strtod.h \
-		../GS/rapidjson/internal/ieee754.h \
-		../GS/rapidjson/internal/biginteger.h \
-		../GS/rapidjson/internal/diyfp.h \
-		../GS/rapidjson/internal/pow10.h \
-		../GS/rapidjson/error/error.h \
-		../GS/rapidjson/internal/strfunc.h \
-		../GS/rapidjson/writer.h \
-		../GS/rapidjson/internal/dtoa.h \
-		../GS/rapidjson/internal/itoa.h \
-		../GS/rapidjson/prettywriter.h \
 		../GS/gsserver.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QThread \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qthread.h \
@@ -2087,27 +1967,6 @@ mapexecution.o: ../GS/mapexecution.cpp ../GS/mapexecution.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qlist.h \
 		../GS/gsclient.h \
 		../GS/net.h \
-		../GS/rapidjson/stringbuffer.h \
-		../GS/rapidjson/rapidjson.h \
-		../GS/rapidjson/msinttypes/stdint.h \
-		../GS/rapidjson/msinttypes/inttypes.h \
-		../GS/rapidjson/allocators.h \
-		../GS/rapidjson/encodings.h \
-		../GS/rapidjson/internal/stack.h \
-		../GS/rapidjson/document.h \
-		../GS/rapidjson/reader.h \
-		../GS/rapidjson/internal/meta.h \
-		../GS/rapidjson/internal/strtod.h \
-		../GS/rapidjson/internal/ieee754.h \
-		../GS/rapidjson/internal/biginteger.h \
-		../GS/rapidjson/internal/diyfp.h \
-		../GS/rapidjson/internal/pow10.h \
-		../GS/rapidjson/error/error.h \
-		../GS/rapidjson/internal/strfunc.h \
-		../GS/rapidjson/writer.h \
-		../GS/rapidjson/internal/dtoa.h \
-		../GS/rapidjson/internal/itoa.h \
-		../GS/rapidjson/prettywriter.h \
 		../GS/gsserver.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QThread \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qthread.h \
@@ -2227,27 +2086,6 @@ missionrecap.o: ../GS/missionrecap.cpp ../GS/missionrecap.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qlist.h \
 		../GS/gsclient.h \
 		../GS/net.h \
-		../GS/rapidjson/stringbuffer.h \
-		../GS/rapidjson/rapidjson.h \
-		../GS/rapidjson/msinttypes/stdint.h \
-		../GS/rapidjson/msinttypes/inttypes.h \
-		../GS/rapidjson/allocators.h \
-		../GS/rapidjson/encodings.h \
-		../GS/rapidjson/internal/stack.h \
-		../GS/rapidjson/document.h \
-		../GS/rapidjson/reader.h \
-		../GS/rapidjson/internal/meta.h \
-		../GS/rapidjson/internal/strtod.h \
-		../GS/rapidjson/internal/ieee754.h \
-		../GS/rapidjson/internal/biginteger.h \
-		../GS/rapidjson/internal/diyfp.h \
-		../GS/rapidjson/internal/pow10.h \
-		../GS/rapidjson/error/error.h \
-		../GS/rapidjson/internal/strfunc.h \
-		../GS/rapidjson/writer.h \
-		../GS/rapidjson/internal/dtoa.h \
-		../GS/rapidjson/internal/itoa.h \
-		../GS/rapidjson/prettywriter.h \
 		../GS/gsserver.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QThread \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qthread.h \
@@ -2360,27 +2198,6 @@ tutorial.o: ../GS/tutorial.cpp ../GS/tutorial.h \
 		../GS/mapexecution.h \
 		../GS/gsclient.h \
 		../GS/net.h \
-		../GS/rapidjson/stringbuffer.h \
-		../GS/rapidjson/rapidjson.h \
-		../GS/rapidjson/msinttypes/stdint.h \
-		../GS/rapidjson/msinttypes/inttypes.h \
-		../GS/rapidjson/allocators.h \
-		../GS/rapidjson/encodings.h \
-		../GS/rapidjson/internal/stack.h \
-		../GS/rapidjson/document.h \
-		../GS/rapidjson/reader.h \
-		../GS/rapidjson/internal/meta.h \
-		../GS/rapidjson/internal/strtod.h \
-		../GS/rapidjson/internal/ieee754.h \
-		../GS/rapidjson/internal/biginteger.h \
-		../GS/rapidjson/internal/diyfp.h \
-		../GS/rapidjson/internal/pow10.h \
-		../GS/rapidjson/error/error.h \
-		../GS/rapidjson/internal/strfunc.h \
-		../GS/rapidjson/writer.h \
-		../GS/rapidjson/internal/dtoa.h \
-		../GS/rapidjson/internal/itoa.h \
-		../GS/rapidjson/prettywriter.h \
 		../GS/gsserver.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QThread \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qthread.h \
@@ -2453,6 +2270,7 @@ tutorial.o: ../GS/tutorial.cpp ../GS/tutorial.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QUrl \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qurl.h \
 		../GS/database.h \
+		../GS/connectiondialog.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o tutorial.o ../GS/tutorial.cpp
 
@@ -2481,27 +2299,6 @@ popwindowmp.o: ../GS/popwindowmp.cpp ../GS/popwindowmp.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qlist.h \
 		../GS/gsclient.h \
 		../GS/net.h \
-		../GS/rapidjson/stringbuffer.h \
-		../GS/rapidjson/rapidjson.h \
-		../GS/rapidjson/msinttypes/stdint.h \
-		../GS/rapidjson/msinttypes/inttypes.h \
-		../GS/rapidjson/allocators.h \
-		../GS/rapidjson/encodings.h \
-		../GS/rapidjson/internal/stack.h \
-		../GS/rapidjson/document.h \
-		../GS/rapidjson/reader.h \
-		../GS/rapidjson/internal/meta.h \
-		../GS/rapidjson/internal/strtod.h \
-		../GS/rapidjson/internal/ieee754.h \
-		../GS/rapidjson/internal/biginteger.h \
-		../GS/rapidjson/internal/diyfp.h \
-		../GS/rapidjson/internal/pow10.h \
-		../GS/rapidjson/error/error.h \
-		../GS/rapidjson/internal/strfunc.h \
-		../GS/rapidjson/writer.h \
-		../GS/rapidjson/internal/dtoa.h \
-		../GS/rapidjson/internal/itoa.h \
-		../GS/rapidjson/prettywriter.h \
 		../GS/gsserver.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QThread \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qthread.h \
@@ -2628,34 +2425,9 @@ gsclient.o: ../GS/gsclient.cpp ../GS/gsclient.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QPair \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qpair.h \
 		../GS/net.h \
-		../GS/rapidjson/stringbuffer.h \
-		../GS/rapidjson/rapidjson.h \
-		../GS/rapidjson/msinttypes/stdint.h \
-		../GS/rapidjson/msinttypes/inttypes.h \
-		../GS/rapidjson/allocators.h \
-		../GS/rapidjson/encodings.h \
-		../GS/rapidjson/internal/stack.h \
-		../GS/rapidjson/document.h \
-		../GS/rapidjson/reader.h \
-		../GS/rapidjson/internal/meta.h \
-		../GS/rapidjson/internal/strtod.h \
-		../GS/rapidjson/internal/ieee754.h \
-		../GS/rapidjson/internal/biginteger.h \
-		../GS/rapidjson/internal/diyfp.h \
-		../GS/rapidjson/internal/pow10.h \
-		../GS/rapidjson/error/error.h \
-		../GS/rapidjson/internal/strfunc.h \
-		../GS/rapidjson/writer.h \
-		../GS/rapidjson/internal/dtoa.h \
-		../GS/rapidjson/internal/itoa.h \
-		../GS/rapidjson/prettywriter.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QQueue \
-		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qqueue.h \
-		../GS/jsonobject.h
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qqueue.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o gsclient.o ../GS/gsclient.cpp
-
-jsonobject.o: ../GS/jsonobject.cpp ../GS/jsonobject.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o jsonobject.o ../GS/jsonobject.cpp
 
 Packet.pb.o: ../GS/Packet.pb.cc ../GS/Packet.pb.h \
 		../GS/google/protobuf/stubs/common.h \
@@ -2693,12 +2465,8 @@ Packet.pb.o: ../GS/Packet.pb.cc ../GS/Packet.pb.h \
 		../GS/google/protobuf/descriptor.pb.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Packet.pb.o ../GS/Packet.pb.cc
 
-database.o: ../GS/database.cpp ../GS/database.h \
-		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QApplication \
-		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h \
-		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
-		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o database.o ../GS/database.cpp
+database.o: database.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o database.o database.cpp
 
 networklistener.o: ../GS/networklistener.cpp ../GS/networklistener.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QObject \
@@ -2871,6 +2639,64 @@ networklistener.o: ../GS/networklistener.cpp ../GS/networklistener.h \
 		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o networklistener.o ../GS/networklistener.cpp
 
+qcustomplot.o: ../GS/qcustomplot.cpp ../GS/qcustomplot.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QObject \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qobject.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QPointer \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qpointer.h \
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QWidget \
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qwidget.h \
+		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QPainter \
+		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qpainter.h \
+		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QPaintEvent \
+		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qevent.h \
+		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QMouseEvent \
+		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QPixmap \
+		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qpixmap.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QVector \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qvector.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QString \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qstring.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QDateTime \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qdatetime.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QMultiMap \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qmap.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QFlags \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qflags.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QDebug \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qdebug.h \
+		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/QVector2D \
+		/Applications/Qt/5.4/clang_64/lib/QtGui.framework/Versions/5/Headers/qvector2d.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QStack \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qstack.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QCache \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qcache.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QMargins \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qmargins.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qmath.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/qnumeric.h \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/QPrinter \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qprinter.h \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/QPrintEngine \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qprintengine.h \
+		/Applications/Qt/5.4/clang_64/lib/QtCore.framework/Versions/5/Headers/QtNumeric \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/QtPrintSupport \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qabstractprintdialog.h \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qpagesetupdialog.h \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qprintdialog.h \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qprintpreviewdialog.h \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qprinterinfo.h \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qtprintsupportglobal.h \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qprintpreviewwidget.h \
+		/Applications/Qt/5.4/clang_64/lib/QtPrintSupport.framework/Versions/5/Headers/qtprintsupportversion.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qcustomplot.o ../GS/qcustomplot.cpp
+
+connectiondialog.o: ../GS/connectiondialog.cpp ../GS/connectiondialog.h \
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QDialog \
+		/Applications/Qt/5.4/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qdialog.h \
+		ui_connectiondialog.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o connectiondialog.o ../GS/connectiondialog.cpp
+
 qrc_Resources.o: qrc_Resources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_Resources.o qrc_Resources.cpp
 
@@ -2912,6 +2738,9 @@ moc_database.o: moc_database.cpp
 
 moc_networklistener.o: moc_networklistener.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_networklistener.o moc_networklistener.cpp
+
+moc_connectiondialog.o: moc_connectiondialog.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_connectiondialog.o moc_connectiondialog.cpp
 
 ####### Install
 
