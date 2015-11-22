@@ -122,5 +122,5 @@ void MainWindow::showMissionRecap() {
 void MainWindow::showTutorial() {
     Tutorial *tutorial = new Tutorial();
     QObject::connect(tutorial, SIGNAL(finished(int)), this, SLOT(checkFinishStatus(int)), Qt::UniqueConnection);
-    tutorial -> showFullScreen();
+    tutorial->showFullScreen();
 }

@@ -77,7 +77,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="yesButton">
    <property name="geometry">
     <rect>
      <x>60</x>
@@ -103,7 +103,7 @@ border: none;
     <string>Yes</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="noButton">
    <property name="geometry">
     <rect>
      <x>220</x>
@@ -155,5 +155,42 @@ font-weight: bold;
   </widget>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>yesButton</sender>
+   <signal>clicked()</signal>
+   <receiver>PopWindowMP</receiver>
+   <slot>on_yesButton_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>147</x>
+     <y>175</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>144</x>
+     <y>225</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>noButton</sender>
+   <signal>clicked()</signal>
+   <receiver>PopWindowMP</receiver>
+   <slot>on_noButton_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>267</x>
+     <y>165</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>270</x>
+     <y>122</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>on_yesButton_clicked()</slot>
+  <slot>on_noButton_clicked()</slot>
+ </slots>
 </ui>

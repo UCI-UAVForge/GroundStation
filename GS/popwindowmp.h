@@ -16,8 +16,8 @@ public:
     ~PopWindowMP();
 
 private slots:
-    void yesButtonClicked();
-    void on_pushButton_2_clicked();
+    void on_yesButton_clicked();
+    void on_noButton_clicked();
 
 private:
     Ui::PopWindowMP *ui;
