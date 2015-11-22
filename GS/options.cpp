@@ -10,19 +10,19 @@ Options::~Options() {
     delete ui;
 }
 
-void Options:: missionPlanningClicked() {
+void Options:: on_missionPlanningButton_clicked() {
     this->close();
     MapPlanning *mapPlanning = new MapPlanning();
     mapPlanning->show();
 }
 
-void Options:: missionExecutionClicked() {
+void Options:: on_missionExecutionButton_clicked() {
     this->close();
     MapExecution *mapExecution = new MapExecution();
     mapExecution->show();
 }
 
-void Options:: missionRecapClicked() {
+void Options:: on_missionRecapButton_clicked() {
     this->close();
     MissionRecap *missionRecap = new MissionRecap();
     missionRecap->show();

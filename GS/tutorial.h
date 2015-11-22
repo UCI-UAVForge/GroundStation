@@ -16,7 +16,7 @@ public:
     ~Tutorial();
 
 private slots:
-    void on_pushButton_2_clicked();
+    void on_backButton_clicked();
 
 private:
     Ui::Tutorial *ui;

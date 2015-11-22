@@ -77,7 +77,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="backButton">
    <property name="geometry">
     <rect>
      <x>40</x>
@@ -115,15 +115,27 @@ border: none;
     <string/>
    </property>
   </widget>
-  <action name="back_button">
-   <property name="text">
-    <string>backButton</string>
-   </property>
-   <property name="shortcut">
-    <string>Backspace</string>
-   </property>
-  </action>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>backButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Tutorial</receiver>
+   <slot>on_backButton_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>77</x>
+     <y>51</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>737</x>
+     <y>461</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>on_backButton_clicked()</slot>
+ </slots>
 </ui>
