@@ -2,10 +2,10 @@
 #define MESSAGEBOX_H
 
 
-class messageBox
+class messagebox
 {
 public:
-    messageBox();
+    messagebox();
 
 signals:
 

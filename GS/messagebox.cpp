@@ -1,6 +1,6 @@
 #include "messagebox.h"
 
-messageBox::messageBox()
+messagebox::messagebox()
 {
 
 }
