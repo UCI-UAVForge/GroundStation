@@ -75,7 +75,7 @@
    </palette>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>GroundStation: Mission Planning</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
