@@ -81,7 +81,7 @@
    </palette>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>GroundStation: Mission Execution</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="4" column="1">
@@ -210,10 +210,6 @@
        <bool>true</bool>
       </property>
      </widget>
-     <zorder>StatusIndicator</zorder>
-     <zorder>colorTester</zorder>
-     <zorder>StatusConsole</zorder>
-     <zorder>CurrentData</zorder>
     </widget>
    </item>
    <item row="4" column="0">
