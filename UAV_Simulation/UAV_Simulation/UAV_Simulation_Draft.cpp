@@ -133,7 +133,7 @@ int main()
 		fflush(stdout);
 		memset(recbuf, '\0', DEFAULT_BUFLEN);
 
-		if (recbuflen = recvfrom())
+		if (recbuflen = recvfrom(Rec_Socket, recbuf, recbuflen, 0, ))
 	}
 	recResult = shutdown(clientSocket, SD_SEND);
 	if (recResult == SOCKET_ERROR)
