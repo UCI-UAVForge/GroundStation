@@ -155,10 +155,11 @@ QList<QList<QString> > MapPlanning::getTableData() {
         QString eastWest = tableRow[2];
         QString lat = tableRow[3];
         QString northSouth = tableRow[4];
-        QString behavior = tableRow[5];
+        QString alt = tableRow[5];
+        QString behavior = tableRow[6];
 
         QList<QString> rowString;
-        rowString<<action<<lng<<eastWest<<lat<<northSouth<<behavior;
+        rowString<<action<<lng<<eastWest<<lat<<northSouth<<alt<<behavior;
 
         tableData.append(rowString);
 
@@ -174,5 +175,7 @@ void MapPlanning::closeWindow() {
 from the JavaScript file. See tablemodel.cpp file for more information.
 Added by Jordan Dickson Feb 14th 2015.*/
 void MapPlanning::addPointToTable(double lat, double lng) {
-    model->insertRow(lng,lat);
+    double alt;
+    alt = 100;//dont know where you want to get the altitude from
+    model->insertRow(lng,lat,alt);
 }

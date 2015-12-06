@@ -28,7 +28,7 @@ QWidget* QComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionView
         comboBox->addItem(QString("S"));
         return comboBox;
     }
-    else if (index.column() == 5) {
+    else if (index.column() == 6) {
         comboBox->addItem(QString("Behavior 1"));
         comboBox->addItem(QString("Behavior 2"));
         comboBox->addItem(QString("Behavior 3"));

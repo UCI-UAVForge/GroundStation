@@ -8,6 +8,7 @@ TableModel::TableModel(QObject *parent)
     columns.push_back("E/W");
     columns.push_back("Latitude (Y)");
     columns.push_back("N/S");
+    columns.push_back("Altitude");
     columns.push_back("Behavior");
 
 }
@@ -71,7 +72,7 @@ bool TableModel::insertRows(int position, int rows, const QModelIndex &index) {
     return true;
 }
 
-bool TableModel::insertRow(double longitude, double latitude,const QModelIndex &index){
+bool TableModel::insertRow(double longitude, double latitude,double altitude,const QModelIndex &index){
     /*This function takes two double-type inputs longitude and latitude, which are used
     to add a new row the the TableModel with pre-entered values. East/West and North/South
     coordinates are automatically generated using negative values of longitude and latitude
@@ -113,11 +114,12 @@ bool TableModel::insertRow(double longitude, double latitude,const QModelIndex &
     QString action = "Action 1";
     QString longString = QString::number(longitude);
     QString latString = QString::number(latitude);
+    QString altString = QString::number(altitude);
     QString behaviorString = "Behavior 1";
 
     //Assemble the new QList
     QList<QString> newList;
-    newList<<action<<longString<<eastWest<<latString<<northSouth<<behaviorString;
+    newList<<action<<longString<<eastWest<<latString<<northSouth<<altString<<behaviorString;
 
     //Replace the newest row(empty) with one that has pre-entered values
     listOfPairs[i] = newList;

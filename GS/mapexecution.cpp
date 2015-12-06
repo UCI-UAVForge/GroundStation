@@ -104,7 +104,6 @@ void MapExecution::newTelemCoord(QString msgString){
     double lng = msgString.split(',').at(1).toDouble();
     long time = msgString.split(',').at(2).toLong();
     std::cout << time << std::endl;
-
     plotPosition(lat,lng);
 }
 
@@ -204,7 +203,8 @@ void MapExecution::plotPosition(double lat, double lng) {
 }
 
 void MapExecution::updateTable(double lat, double lng) {
-    model->insertRow(lng, lat);
+    double alt = 100;
+    model->insertRow(lng, lat, alt);
     ui->tableView->scrollToBottom();
 }
 
