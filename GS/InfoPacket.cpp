@@ -15,6 +15,7 @@
 
 #include "InfoPacket.h"
 
+
 Protocol::InfoPacket::InfoPacket(uint8_t* buffer, size_t len) : InfoPacket()
 {
 	size_t offset = this->ReadHeader(buffer, len);
@@ -24,7 +25,7 @@ Protocol::InfoPacket::InfoPacket(uint8_t* buffer, size_t len) : InfoPacket()
 	uint16_t otherLen = *((uint16_t*)(buffer + offset + 4));
 	char* otherBytes = new char[otherLen + 1];
 	strncpy(otherBytes, (char*)(buffer + 6), otherLen);
-	this->other = String((char*)otherBytes);
+    this->other = std::string((char*)otherBytes);
 }
 
 void Protocol::InfoPacket::SetStorable(uint16_t s)
@@ -37,7 +38,7 @@ void Protocol::InfoPacket::SetBattery(uint16_t b)
 	this->batteryState = b;
 }
 
-void Protocol::InfoPacket::SetOther(String s)
+void Protocol::InfoPacket::SetOther(std::string s)
 {
 	this->other = s;
 }
@@ -52,7 +53,7 @@ uint16_t Protocol::InfoPacket::GetBattery()
 	return this->batteryState;
 }
 
-String Protocol::InfoPacket::GetOther()
+std::string Protocol::InfoPacket::GetOther()
 {
 	return this->other;
 }
