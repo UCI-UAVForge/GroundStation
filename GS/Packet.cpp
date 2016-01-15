@@ -18,6 +18,7 @@
 #include "ActionPacket.h"
 #include "InfoPacket.h"
 #include "TelemetryPacket.h"
+#include "stdint.h"
 
 // Statically allocate space for one of each type of packet for use with
 // Packet::Parse.
@@ -28,7 +29,8 @@ static Protocol::TelemetryPacket telem;
 
 Protocol::Packet::Packet(Protocol::PacketType t)
 {
-	this->timestamp = millis();
+    //@TODO: Need to create timestamp from creation of program or messaage box
+    //this->timestamp = millis();
 	this->type = t;
 }
 
@@ -57,8 +59,7 @@ size_t Protocol::Packet::SetChecksum(uint8_t* buffer, size_t len, size_t offset)
 	// checksum over the entire packet will yield 0 for both sums.
 	if (len - offset < 2)
 	{
-		Serial.println("ERROR: Unable to append checksum.");
-		return offset;
+        fprintf(stderr, "ERROR: Unable to append checksum.");
 	}
 
 	uint16_t sum1 = 0;
@@ -93,12 +94,12 @@ Protocol::Packet* Protocol::Packet::Parse(uint8_t* buffer, size_t len)
 {
 	if (len < 1)
 	{
-		Serial.println("ERROR: Packet length must be greater than 0.");
+        fprintf(stderr, "ERROR: Packet length must be greater than 0.");
 		return nullptr;
 	}
 	if (!ValidateChecksum(buffer, len))
 	{
-		Serial.println("Warning: Packet Checksum failed.");
+        fprintf(stderr, "Warning: Packet Checksum failed.");
 		return nullptr;
 	}
 
@@ -118,7 +119,7 @@ Protocol::Packet* Protocol::Packet::Parse(uint8_t* buffer, size_t len)
 		info = InfoPacket(buffer, len);
 		return &info;
 	default:
-		Serial.println("Warning: Unknown packet type.");
+        fprintf(stderr, "Warning: Unknown packet type.");
 		return nullptr;
 	}
 }
