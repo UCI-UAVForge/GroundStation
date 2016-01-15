@@ -65,7 +65,8 @@ size_t Protocol::InfoPacket::GetBytes(uint8_t* buffer, size_t len)
 	*((uint16_t*)(buffer + offset)) = this->pointsStorable;
 	*((uint16_t*)(buffer + offset + 2)) = this->batteryState;
 	*((uint16_t*)(buffer + offset + 4)) = (uint16_t)this->other.length();
-	this->other.getBytes(buffer + 6, len, offset + 6);
+    //@TODO: Figure out what to do with this
+//	this->other.getBytes(buffer + 6, len, offset + 6);
 	offset += 6;
 
 	return this->SetChecksum(buffer, len, offset);
