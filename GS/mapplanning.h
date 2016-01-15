@@ -15,6 +15,7 @@
 #include "popwindowmp.h"
 //#include "mainwindow.h"
 #include "mapexecution.h"
+#include "messagebox.h"
 
 
 #include "ui_mapplanning.h"
