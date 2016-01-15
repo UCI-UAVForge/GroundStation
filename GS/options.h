@@ -20,9 +20,9 @@ public:
     ~Options();
 
 private slots:
-    void missionPlanningClicked();
-    void missionExecutionClicked();
-    void missionRecapClicked();
+    void on_missionPlanningButton_clicked();
+    void on_missionExecutionButton_clicked();
+    void on_missionRecapButton_clicked();
 private:
     Ui::Options *ui;
 

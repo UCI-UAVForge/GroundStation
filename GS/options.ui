@@ -77,7 +77,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="missionPlanningButton">
    <property name="geometry">
     <rect>
      <x>230</x>
@@ -102,7 +102,7 @@ border: none;
     <string>Mission Planning</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="missionExecutionButton">
    <property name="geometry">
     <rect>
      <x>230</x>
@@ -127,7 +127,7 @@ border: none;
     <string>Mission Execution</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_3">
+  <widget class="QPushButton" name="missionRecapButton">
    <property name="geometry">
     <rect>
      <x>230</x>
@@ -156,57 +156,57 @@ border: none;
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton</sender>
+   <sender>missionPlanningButton</sender>
    <signal>clicked()</signal>
    <receiver>Options</receiver>
-   <slot>missionPlanningClicked()</slot>
+   <slot>on_missionPlanningButton_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>244</x>
-     <y>87</y>
+     <x>264</x>
+     <y>91</y>
     </hint>
     <hint type="destinationlabel">
-     <x>139</x>
-     <y>114</y>
+     <x>468</x>
+     <y>111</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_2</sender>
+   <sender>missionExecutionButton</sender>
    <signal>clicked()</signal>
    <receiver>Options</receiver>
-   <slot>missionExecutionClicked()</slot>
+   <slot>on_missionExecutionButton_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>254</x>
-     <y>200</y>
+     <x>374</x>
+     <y>196</y>
     </hint>
     <hint type="destinationlabel">
-     <x>145</x>
-     <y>212</y>
+     <x>450</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_3</sender>
+   <sender>missionRecapButton</sender>
    <signal>clicked()</signal>
    <receiver>Options</receiver>
-   <slot>missionRecapClicked()</slot>
+   <slot>on_missionRecapButton_clicked()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>290</x>
-     <y>315</y>
+     <x>377</x>
+     <y>309</y>
     </hint>
     <hint type="destinationlabel">
-     <x>183</x>
-     <y>310</y>
+     <x>454</x>
+     <y>304</y>
     </hint>
    </hints>
   </connection>
  </connections>
  <slots>
-  <slot>missionPlanningClicked()</slot>
-  <slot>missionExecutionClicked()</slot>
-  <slot>missionRecapClicked()</slot>
+  <slot>on_missionPlanningButton_clicked()</slot>
+  <slot>on_missionExecutionButton_clicked()</slot>
+  <slot>on_missionRecapButton_clicked()</slot>
  </slots>
 </ui>
