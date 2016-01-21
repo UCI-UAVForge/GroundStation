@@ -64,12 +64,12 @@ HEADERS  += mainwindow.h \
     qcustomplot.h\
     networklistener.h \
     connectiondialog.h \
+    actionpacket.h \
     ackpacket.h \
     infopacket.h \
     messagebox.h \
     packet.h \
     telemetrypacket.h \
-    actionpacket.h
 
 FORMS    += mainwindow.ui \
     options.ui \
