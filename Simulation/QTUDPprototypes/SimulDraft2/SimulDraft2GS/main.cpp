@@ -4,6 +4,8 @@
 
 
 #include <groundstation.h>
+#include "Packet.h"
+#include "telemetrypacket.h"
 
 int main(int argc, char *argv[])
 {
@@ -14,6 +16,7 @@ int main(int argc, char *argv[])
 
 
     GroundStation station;
+
 
 //    return 0;
    return a.exec();

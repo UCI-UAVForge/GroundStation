@@ -1,5 +1,10 @@
 #include "uav.h"
 #include <QDateTime>
+
+#include "Packet.h"
+#include "TelemetryPacket.h"
+#include "ActionPacket.h"
+
 UAV::UAV(QWidget *parent)
 //    : QDialog(parent)
 {
@@ -16,19 +21,33 @@ UAV::UAV(QWidget *parent)
 void UAV::processPendingDatagrams()
 {
     QByteArray datagram;
-        QTextStream(stdout) << "run this shit";
+        QTextStream(stdout) << "Processing started";
+
+
 
     do {
         datagram.resize(udpSocket.pendingDatagramSize());
         udpSocket.readDatagram(datagram.data(), datagram.size());
     } while (udpSocket.hasPendingDatagrams());
 
-    double altitude;
     QDataStream in(&datagram, QIODevice::ReadOnly);
     in.setVersion(QDataStream::Qt_4_3);
-    in >> altitude;
-        QTextStream(stdout) << "run this shit";
+
+    u_int8_t packetFormed[1000];
 
 
-    QTextStream(stdout) << altitude;
+    Protocol::ActionPacket test((u_int8_t*)datagram.data(), 1000);
+    Protocol::Waypoint waypoint;
+
+    waypoint = test.GetWaypoint();
+
+    QTextStream(stdout) << "Action: " << (u_int8_t)test.GetAction();
+    QTextStream(stdout) << "\nWaypoint: " << waypoint.lat << " ," << waypoint.lon << " ," <<
+                           waypoint.alt << " ," << waypoint.speed;
+
+//    QTextStream(stdout) << test;
+//        QTextStream(stdout) << "run this shit";
+
+
+//    QTextStream(stdout) << altitude;
 }
