@@ -17,7 +17,7 @@
 #include <iostream>
 #include <vector>
 #include <QApplication>
-#include <Qpair>
+#include <QPair>
 #include <QList>
 
 
@@ -40,6 +40,18 @@ public:
     std::vector<Protocol::ActionPacket> get_action_packets();
     std::vector<Protocol::InfoPacket> get_info_packets();
     std::vector<Protocol::TelemetryPacket> get_telem_packets();
+
+    /**
+      * \brief Adds fully formed or empty packet into the proper packet container in messagebox
+      * \param <type>Packet	-> A formed or empty Packets
+      *
+      * \author Alvin Truong
+      * \date 2016-1-20
+    **/
+    void addAckPacket(const Protocol::AckPacket& ackPacket);
+    void addActionPacket(const Protocol::ActionPacket& actionPacket);
+    void addTelemetryPacket(const Protocol::TelemetryPacket& telemPacket);
+    void addInfoPacket(const Protocol::InfoPacket& infoPacket);
 
 private:
     void set_initial_timestamp();
