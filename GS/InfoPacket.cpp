@@ -15,6 +15,7 @@
 
 #include "InfoPacket.h"
 
+
 Protocol::InfoPacket::InfoPacket(uint8_t* buffer, size_t len) : InfoPacket()
 {
 	size_t offset = this->ReadHeader(buffer, len);

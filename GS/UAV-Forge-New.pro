@@ -39,13 +39,12 @@ SOURCES += main.cpp\
     videoplayer.cpp \
     gsserver.cpp \
     gsclient.cpp \
-    jsonobject.cpp \
     qcustomplot.cpp\
     networklistener.cpp \
     connectiondialog.cpp \
+    ActionPacket.cpp \
     InfoPacket.cpp \
     messagebox.cpp \
-    ActionPacket.cpp \
     Packet.cpp \
     TelemetryPacket.cpp
 QMAKE_MAC_SDK = macosx10.9
@@ -62,16 +61,15 @@ HEADERS  += mainwindow.h \
     net.h \
     gsserver.h \
     gsclient.h \
-    jsonobject.h \
     qcustomplot.h\
     networklistener.h \
     connectiondialog.h \
     actionpacket.h \
+    ackpacket.h \
     infopacket.h \
     messagebox.h \
     packet.h \
     telemetrypacket.h \
-    ackpacket.h
 
 FORMS    += mainwindow.ui \
     options.ui \
@@ -86,3 +84,5 @@ OTHER_FILES +=
 
 RESOURCES += \
     Resources.qrc
+
+DISTFILES +=

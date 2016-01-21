@@ -9,7 +9,7 @@ messagebox::messagebox()
 
 }
 
-void messagebox::fetch_from_table(QList<std::string> tableList){
+void messagebox::fetch_from_table(QList<QString> tableList){
 
 }
 
@@ -17,7 +17,7 @@ void messagebox::load_ack_packet(uint8_t* buffer, size_t len){
     addAckPacket(Protocol::AckPacket(buffer, len));
 }
 
-void messagebox::loack_action_packet(Protocol::ActionType at, double lat, double lon, float alt, float spd){
+void messagebox::load_action_packet(Protocol::ActionType at, double lat, double lon, float alt, float spd){
     Protocol::Waypoint wp;
     wp.lat = lat;
     wp.lon = lon;

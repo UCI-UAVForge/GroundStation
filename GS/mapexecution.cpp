@@ -43,22 +43,6 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
     myServer.start();
     connect(&myServer.networkListener,SIGNAL(sendCoordinates()),this,SLOT(sendFlightPlan()));
     connect(&myServer.networkListener,SIGNAL(logTelemetry(QString)),this,SLOT(newTelemCoord(QString)));
-/**
- *  No idea what this is, server code??
- *  If not necessary, please get rid of later! (10/23/15)
- *
- */
-
-// Old server debug code
-    // std::cout<<"PREPARE" << std::endl;
-    // QList <QPair<double, double > > h;
-    // h << QPair<double, double >(32, 32);
-    // myClient.set_list(getDoublePairs(mapStrings));
-    // std::cout<<"FOR" << std::endl;
-    // myClient.gsc_connect_start();
-    // std::cout<<"THE DEVOURING," << std::endl;
-    // myClient.gsc_send_message();
-    // std::cout<<"PUNY HUMANS" << std::endl;
 }
 
 MapExecution::~MapExecution() {

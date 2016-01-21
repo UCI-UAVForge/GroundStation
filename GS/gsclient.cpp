@@ -7,8 +7,6 @@
 #include <vector>
 #include <QQueue>
 
-#include "jsonobject.h"
-
 using namespace std;
 //using namespace net;
 using namespace rapidjson;
@@ -32,37 +30,37 @@ void GsClient::set_list(QList<QPair<double , double > > cl){
 // A helper function to gsc_send_message(); Input is field cor_list    
 void GsClient::getCoordinates(QList<QPair<double, double> > cl){
 
-    QQueue<Coordinates> cor_queue;
-    jsonObj coordJ;
+    //QQueue<Coordinates> cor_queue;
+    //jsonObj coordJ;
     // Transfer elements of cl to the queue cor_queue
-    Coordinates tempC;
-    for(QPair<double,double> pair : cl){
-        tempC.latitude = pair.first;
-        tempC.longitude = pair.second;
-        cor_queue.enqueue(tempC);
-    }
+    //Coordinates tempC;
+    //for(QPair<double,double> pair : cl){
+        //tempC.latitude = pair.first;
+        //tempC.longitude = pair.second;
+        //cor_queue.enqueue(tempC);
+    //}
 
     // Transfer cor_queue elements to the jsonObj coordj
-    while(!cor_queue.empty())
-        coordJ.addCoordinate(cor_queue.dequeue());
-
+    //while(!cor_queue.empty()){
+        //coordJ.addCoordinate(cor_queue.dequeue());
+    //}
     // Receive coordinates in JSON format
-    std::string coords = coordJ.coordinatesExtractString();
+    //std::string coords = coordJ.coordinatesExtractString();
     // Converts the string coords to C-string
-    size_t len = coords.length();
-    char ccoords[4096];
-    u_int i;
-    for (i = 0; i < len; i++)
-        ccoords[i] = coords[i];
-    ccoords[i] = '\0';
-    const char* jsonStrC = ccoords;
+    //size_t len = coords.length();
+    //char ccoords[4096];
+    //u_int i;
+    //for (i = 0; i < len; i++)
+    //    ccoords[i] = coords[i];
+    //ccoords[i] = '\0';
+    //const char* jsonStrC = ccoords;
     //std::cout << ccoords << std::endl;
 
     // Document Orientated Modeling: have document read JSONobj and then have a writer format the JSONobj onto document
-    Document documentC;
-    documentC.Parse(jsonStrC);
-    PrettyWriter<StringBuffer> writerC(bufferC);
-    documentC.Accept(writerC);
+    //Document documentC;
+    //documentC.Parse(jsonStrC);
+    //PrettyWriter<StringBuffer> writerC(bufferC);
+    //documentC.Accept(writerC);
 
     //std::cout << "rapidJson version:" << std::endl;
     //std::cout << bufferC.GetString() << std::endl;
