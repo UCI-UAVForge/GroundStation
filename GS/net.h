@@ -34,6 +34,15 @@ Source: http://www.gaffer.org/networking-for-game-programmers
 #include <fcntl.h>
 #include <unistd.h>
 
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <netdb.h>
+
+
 #else
 
 #error unknown platform!

@@ -7,11 +7,11 @@
 #include <vector>
 #include <QQueue>
 
-#include "jsonobject.h"
+//#include "jsonobject.h"
 
 using namespace std;
 //using namespace net;
-using namespace rapidjson;
+//using namespace rapidjson;
 
 #define BUFSIZE 256
 
@@ -32,37 +32,37 @@ void GsClient::set_list(QList<QPair<double , double > > cl){
 // A helper function to gsc_send_message(); Input is field cor_list    
 void GsClient::getCoordinates(QList<QPair<double, double> > cl){
 
-    QQueue<Coordinates> cor_queue;
-    jsonObj coordJ;
+    //QQueue<Coordinates> cor_queue;
+    //jsonObj coordJ;
     // Transfer elements of cl to the queue cor_queue
-    Coordinates tempC;
-    for(QPair<double,double> pair : cl){
-        tempC.latitude = pair.first;
-        tempC.longitude = pair.second;
-        cor_queue.enqueue(tempC);
-    }
+    //Coordinates tempC;
+    //for(QPair<double,double> pair : cl){
+    //    tempC.latitude = pair.first;
+    //    tempC.longitude = pair.second;
+    //    cor_queue.enqueue(tempC);
+    //}
 
     // Transfer cor_queue elements to the jsonObj coordj
-    while(!cor_queue.empty())
-        coordJ.addCoordinate(cor_queue.dequeue());
+    //while(!cor_queue.empty())
+    //    coordJ.addCoordinate(cor_queue.dequeue());
 
     // Receive coordinates in JSON format
-    std::string coords = coordJ.coordinatesExtractString();
+    //std::string coords = coordJ.coordinatesExtractString();
     // Converts the string coords to C-string
-    size_t len = coords.length();
+    //size_t len = coords.length();
     char ccoords[4096];
     u_int i;
-    for (i = 0; i < len; i++)
-        ccoords[i] = coords[i];
+    //for (i = 0; i < len; i++)
+    //    ccoords[i] = coords[i];
     ccoords[i] = '\0';
     const char* jsonStrC = ccoords;
     //std::cout << ccoords << std::endl;
 
     // Document Orientated Modeling: have document read JSONobj and then have a writer format the JSONobj onto document
-    Document documentC;
-    documentC.Parse(jsonStrC);
-    PrettyWriter<StringBuffer> writerC(bufferC);
-    documentC.Accept(writerC);
+    //Document documentC;
+    //documentC.Parse(jsonStrC);
+    //PrettyWriter<StringBuffer> writerC(bufferC);
+    //documentC.Accept(writerC);
 
     //std::cout << "rapidJson version:" << std::endl;
     //std::cout << bufferC.GetString() << std::endl;
@@ -114,14 +114,14 @@ void GsClient::gsc_send_message(){
 
     //convert string from json string buffer to c string
     //"Send" function uses c function "sendto" which only accepts c strings
-    string to_send = bufferC.GetString();
-    char to_send_c[BUFSIZE];
-    size_t sendLen = to_send.length();
+    //string to_send = bufferC.GetString();
+    //char to_send_c[BUFSIZE];
+    //size_t sendLen = to_send.length();
 
-    int packets = sendLen / BUFSIZE + 1;
-    std::cout << packets << " packets required to send."<< std::endl;
+    //int packets = sendLen / BUFSIZE + 1;
+    //std::cout << packets << " packets required to send."<< std::endl;
 
-    for(int p = 0; p <packets; p++){
+    /*for(int p = 0; p <packets; p++){
         int first = p * (BUFSIZE-1);
         int last = (p+1) * (BUFSIZE-1) - 1;
         for (int i = first; i < last; i++){
@@ -188,7 +188,8 @@ void GsClient::gsc_send_message(){
         strcpy(buffer, "Mortal soul devoured.");
         my_socket.Send(addra, to_send_c, sizeof(to_send_c));
     }
-}*/
+    */
+}
 
 //close the socket connection
 void GsClient::gsc_close_connection(){

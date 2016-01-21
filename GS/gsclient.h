@@ -4,10 +4,10 @@
 #include <QList>
 #include <QPair>
 #include "net.h"
-#include "rapidjson/stringbuffer.h"
-#include "rapidjson/document.h"
-#include "rapidjson/writer.h"
-#include "rapidjson/prettywriter.h"
+//#include "rapidjson/stringbuffer.h"
+//#include "rapidjson/document.h"
+//#include "rapidjson/writer.h"
+//#include "rapidjson/prettywriter.h"
 
 
 class GsClient{
@@ -25,7 +25,7 @@ private:
     unsigned int sendport;
     net::GS_Socket my_socket;
     QList<QPair<double , double > > cor_list;
-    rapidjson::StringBuffer bufferC;
+    //rapidjson::StringBuffer bufferC;
 };
 
 #endif // GSCLIENT_H

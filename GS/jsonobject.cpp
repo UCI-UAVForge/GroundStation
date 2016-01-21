@@ -18,7 +18,7 @@ std::string jsonObj::coordinatesExtractString() {
     std::stringstream ss;
     size_t varSize = latitude.size();
     jsonMsg.append("[");
-    for (int i = 0; i < varSize; i++)
+    for (unsigned int i = 0; i < varSize; i++)
     {
         jsonMsg.append("{\"latitude\":");
         ss << latitude[i];

@@ -13,18 +13,21 @@ QT       += svg
 
 QT       += core gui multimedia multimediawidgets
 QT       += webkit webkitwidgets
-
+QT       += sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 #CONFIG += console
 
 CONFIG += c++11
+
 win32{
     LIBS += -lws2_32
 }
+
 TARGET = UAV-Forge-New
 TEMPLATE = app
 
+LIBS += -L/usr/local/lib -lprotobuf -lz
 
 SOURCES += main.cpp\
         mainwindow.cpp \
@@ -39,10 +42,11 @@ SOURCES += main.cpp\
     videoplayer.cpp \
     gsserver.cpp \
     gsclient.cpp \
-    jsonobject.cpp \
-    qcustomplot.cpp\
+    Packet.pb.cc \
     networklistener.cpp \
+    qcustomplot.cpp\
     connectiondialog.cpp
+
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \
@@ -57,7 +61,8 @@ HEADERS  += mainwindow.h \
     net.h \
     gsserver.h \
     gsclient.h \
-    jsonobject.h \
+    Packet.pb.h \
+    qcustomplot.h \
     qcustomplot.h\
     networklistener.h \
     connectiondialog.h
