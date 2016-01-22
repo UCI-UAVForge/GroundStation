@@ -16,8 +16,7 @@
 #include "qcomboboxdelegate.h"
 #include "missionrecap.h"
 #include "options.h"
-//#include "mainwindow.h"
-//#include "net.h"
+#include "messagebox.h"
 
 #include "ui_mapexecution.h"
 
@@ -43,6 +42,7 @@ public:
     ~MapExecution();
     GsServer myServer;
     GsClient myClient;
+    messagebox MyMessageBox;
     QList<QPair<double,double> > getDoublePairs(QList<QString> strings);
 private slots:
     void on_finishButton_clicked();
