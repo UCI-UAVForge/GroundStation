@@ -50,6 +50,8 @@ namespace Protocol
 
 		void SetLocation(double lat, double lon, float alt);
 
+		void SetLocation(double lat, double lon);
+
 		void SetHeading(float h);
 
 		void GetVelocity(float* x, float* y, float* z);

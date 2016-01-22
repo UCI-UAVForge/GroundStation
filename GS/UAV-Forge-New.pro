@@ -42,11 +42,11 @@ SOURCES += main.cpp\
     qcustomplot.cpp\
     networklistener.cpp \
     connectiondialog.cpp \
+    messagebox.cpp \
     ActionPacket.cpp \
     InfoPacket.cpp \
-    messagebox.cpp \
-    Packet.cpp \
-    TelemetryPacket.cpp
+    TelemetryPacket.cpp \
+    Packet.cpp
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \
@@ -64,12 +64,12 @@ HEADERS  += mainwindow.h \
     qcustomplot.h\
     networklistener.h \
     connectiondialog.h \
-    actionpacket.h \
-    ackpacket.h \
-    infopacket.h \
     messagebox.h \
-    packet.h \
+    actionpacket.h \
+    infopacket.h \
     telemetrypacket.h \
+    ackpacket.h \
+    packet.h
 
 FORMS    += mainwindow.ui \
     options.ui \
