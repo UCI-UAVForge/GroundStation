@@ -31,7 +31,7 @@ class messagebox
 {
 public:
     messagebox();
-    void fetch_from_table(QList<std::string> tableList);
+    void fetch_from_table(QList<QString> tableList);
     void load_ack_packet(uint8_t* buffer, size_t len);
     void loack_action_packet(Protocol::ActionType at, double lat, double lon, float alt, float spd);
     void load_info_packet(std::string other);
