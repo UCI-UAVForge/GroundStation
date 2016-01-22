@@ -12,13 +12,13 @@ messagebox::messagebox()
 /* Uses code from MapExecution::getDoublePairs
 takes input from MapPlanning::getTableAsStrings()
 -Aaron Ko 1/19/2016 */
-void messagebox::fetch_from_table(QList<std::string> tableList){
+void messagebox::fetch_from_table(QList<QString> tableList){
     for(QString string : tableList){
         QList<QString> comps = string.split(",");
         double lat = comps[3].toDouble();
         double lon = comps[1].toDouble();
         if(comps[2] == "W") {
-            lng *= -1.0;
+            lon *= -1.0;
         }
         if(comps[4] == "S") {
             lat *= -1.0;
@@ -49,7 +49,7 @@ void messagebox::load_info_packet(std::string other){
 
 void messagebox::load_telem_packet(double lat, double lon){
     telemetryPackets.push_back(Protocol::TelemetryPacket());
-    telemetryPackets.back().SetLocation(lat, lon, alt);
+    telemetryPackets.back().SetLocation(lat, lon);
 }
 
 void messagebox::load_telem_packet(float x, float y, float z, float p, float r, float yaw, double lat, double lon, float alt, float heading){
