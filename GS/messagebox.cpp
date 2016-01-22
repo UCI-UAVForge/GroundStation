@@ -4,9 +4,9 @@
 #include "messagebox.h"
 
 messagebox::messagebox()
-    :timestamp_init(0)
 {
-
+   timer = QTime();
+   timer.start();
 }
 /* Uses code from MapExecution::getDoublePairs
 takes input from MapPlanning::getTableAsStrings()
@@ -59,6 +59,11 @@ void messagebox::load_telem_packet(float x, float y, float z, float p, float r, 
     telemetryPackets.back().SetHeading(heading);
 }
 
+void messagebox::recieve_initial_info(Protocol::InfoPacket intip){
+    uint32_t initial_timestamp = intip.get_timestamp();
+    timestamp_offset = initial_timestamp - ((uint32_t)timer.elapsed());
+}
+
 std::vector<Protocol::AckPacket> messagebox::get_ack_packets(){
     return ackPackets;
 }
@@ -73,6 +78,10 @@ std::vector<Protocol::InfoPacket> messagebox::get_info_packets(){
 
 std::vector<Protocol::TelemetryPacket> messagebox::get_telem_packets(){
     return telemetryPackets;
+}
+
+uint32_t messagebox::gs_to_uav_timestamp(){
+    return ((uint32_t)timer.elapsed()) - timestamp_offset;
 }
 
 
