@@ -55,6 +55,12 @@ void Protocol::TelemetryPacket::SetLocation(double lat, double lon, float alt)
 	this->alt = alt;
 }
 
+void Protocol::TelemetryPacket::SetLocation(double lat, double lon)
+{
+	this->lat = lat;
+	this->lon = lon;
+}
+
 void Protocol::TelemetryPacket::SetHeading(float h)
 {
 	this->heading = h;
