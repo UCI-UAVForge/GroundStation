@@ -19,6 +19,8 @@
 #include "messagebox.h"
 
 #include "ui_mapexecution.h"
+#include "messagebox.h"
+#include "connectiondialog.h"
 
 
 namespace Ui {
