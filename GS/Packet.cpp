@@ -13,6 +13,8 @@
 // ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 // OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+#include <QDateTime>
+
 #include "Packet.h"
 #include "AckPacket.h"
 #include "ActionPacket.h"
@@ -49,6 +51,10 @@ size_t Protocol::Packet::ReadHeader(uint8_t* buffer, size_t len)
 	this->timestamp = *((uint32_t*)(buffer + 1));
 
 	return 5;
+}
+
+uint32_t Protocol::Packet::get_timestamp(){
+    return this->timestamp;
 }
 
 size_t Protocol::Packet::SetChecksum(uint8_t* buffer, size_t len, size_t offset)
