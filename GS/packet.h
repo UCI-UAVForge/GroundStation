@@ -32,6 +32,8 @@ namespace Protocol
 
 	class Packet
 	{
+    public:
+        uint32_t get_timestamp();
 	private:
 		uint32_t timestamp;
 		PacketType type;
