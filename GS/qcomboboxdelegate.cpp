@@ -17,6 +17,18 @@ QWidget* QComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionView
         comboBox->addItem(QString("Action 3"));
         return comboBox;
     }
+    //This checks the validation for the Longitude
+    if(index.column() == 1)
+    {
+        QLineEdit *longValEdit = new QLineEdit;
+        QDoubleValidator *longVal = new QDoubleValidator( -90.0, 90.0, 3, comboBox);
+        longVal->setNotation(QDoubleValidator::StandardNotation);
+        longVal->setLocale(QLocale::C);
+        longValEdit->setValidator( longVal );
+        comboBox->setLineEdit(longValEdit);
+        return comboBox;
+
+    }
     if (index.column() == 2)
     {
         comboBox->addItem(QString("E"));

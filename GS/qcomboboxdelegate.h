@@ -6,7 +6,8 @@
 #include <QModelIndex>
 #include <QObject>
 #include <QSize>
-
+#include <QDoubleValidator>
+#include <QLineEdit>
 
 class QComboBoxDelegate : public QItemDelegate
 {
