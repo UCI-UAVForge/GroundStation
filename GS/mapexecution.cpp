@@ -73,8 +73,8 @@ Function added by Jordan Dickson March 9th 2015. */
 void MapExecution::on_stopButton_clicked() {
     QList <QPair<double, double > > h;
     h << QPair<double, double >(999.99,999.99);
-    myClient.set_list(h);
-    myClient.gsc_send_message();
+//    myClient.set_list(h);
+//    myClient.gsc_send_message();
 }
 
 // return home button
