@@ -26,6 +26,10 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
 
+    messagebox messagebox;
+    messagebox.fetch_from_table(strings);
+
+
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
