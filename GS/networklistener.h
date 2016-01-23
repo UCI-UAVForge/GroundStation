@@ -4,6 +4,9 @@
 #include <QObject>
 #include <QThread>
 #include <QString>
+#include "messagebox.h"
+
+#include "packet.h"
 
 /**
  * @brief The NetworkListener class is used to continuously listen for and
@@ -31,10 +34,11 @@ signals:
 private:
     bool listening = true;
     int UAVid;
+    messagebox *myMessageBox;
     //char buffer[];
 public:
-    NetworkListener(int UAVid);
-    NetworkListener();
+    NetworkListener(messagebox *myMessageBox, int UAVid);
+    NetworkListener(messagebox *myMessageBox);
 
     void netWait(int millis);
     //~NetworkListener();

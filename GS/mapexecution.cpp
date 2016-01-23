@@ -1,9 +1,8 @@
 #include "mapexecution.h"
 
-MapExecution::MapExecution(QWidget *parent) : QDialog(parent), ui(new Ui::MapExecution), prevTime() {
+MapExecution::MapExecution(QWidget *parent) : QDialog(parent), myServer(&MyMessageBox), ui(new Ui::MapExecution), prevTime() {
     buttonGroup = new QButtonGroup();
     model = new TableModel();
-
     ui->setupUi(this);
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
@@ -22,12 +21,11 @@ MapExecution::MapExecution(QWidget *parent) : QDialog(parent), ui(new Ui::MapExe
 
 }
 
-MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(parent), ui(new Ui::MapExecution) {
+MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(parent), myServer(&MyMessageBox), ui(new Ui::MapExecution) {
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
 
-    messagebox messagebox;
-    messagebox.fetch_from_table(strings);
+    MyMessageBox.fetch_from_table(strings);
 
 
     model = new TableModel();
