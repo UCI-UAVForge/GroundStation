@@ -1,8 +1,6 @@
 //Created by Nathan Brannon 11/20/15
 //Used to handle packets between windows of ground station
 //TODO:
-//      Create alternate constructor with time_t as param to allow for inital time when mesage box was
-//          created to help replace the millis() function in ack_packet
 //      Integrate with networked end
 //      Write function to intake table from mapplanning and create vector of telem/action packets
 //          rather than load 1 by 1 externally
@@ -35,7 +33,7 @@ public:
     messagebox();
     void fetch_from_table(QList<QString> tableList);
     void load_ack_packet(uint8_t* buffer, size_t len);
-    void load_action_packet(Protocol::ActionType at, double lat, double lon, float alt, float spd);
+    void load_action_packet(double lat, double lon, float alt, float spd);
     void load_info_packet(std::string other);
     void load_telem_packet(double lat, double lon);
     void load_telem_packet(float x, float y, float z, float p, float r, float yaw, double lat, double lon, float alt, float heading);
