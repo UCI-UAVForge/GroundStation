@@ -43,7 +43,7 @@ public:
     void plotPosition(double lat, double lng);
     ~MapExecution();
     GsServer myServer;
-
+    messagebox MyMessageBox;
     QList<QPair<double,double> > getDoublePairs(QList<QString> strings);
 private slots:
     void on_finishButton_clicked();

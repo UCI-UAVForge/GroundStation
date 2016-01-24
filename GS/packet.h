@@ -86,8 +86,6 @@ namespace Protocol
 		virtual size_t GetBytes(uint8_t* buffer, size_t len) = 0;
 
 		static Packet* Parse(uint8_t* buffer, size_t len);
-
-        uint32_t get_timestamp();
 	};
 }
 

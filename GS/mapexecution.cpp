@@ -24,10 +24,8 @@ MapExecution::MapExecution(QWidget *parent) : QDialog(parent), myServer(&MyMessa
 MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(parent), myServer(&MyMessageBox), ui(new Ui::MapExecution) {
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
-
-    messagebox MyMessageBox;
     MyMessageBox.fetch_from_table(strings);
-    std::vector<Protocol::ActionPacket> test_actions = messagebox.get_action_packets();
+    std::vector<Protocol::ActionPacket> test_actions = MyMessageBox.get_action_packets();
     int pack_number = 1;
     for(auto i : test_actions){
         Protocol::Waypoint test_wp;
