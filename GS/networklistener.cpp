@@ -5,6 +5,12 @@
 #include <iostream>
 #include <QString>
 
+#include "ackpacket.h"
+#include "actionpacket.h"
+#include "telemetrypacket.h"
+#include "infopacket.h"
+#include "packet.h"
+
 #define BUFSIZE 4096
 
 using namespace std;
@@ -23,13 +29,14 @@ using namespace std;
 
 #endif
 
-NetworkListener::NetworkListener(int UAVid) {
+NetworkListener::NetworkListener(messagebox *myMessagebox, int UAVid) {
+    this->myMessageBox = myMessagebox;
     this->UAVid = UAVid;
     listening = true;
 }
 
-NetworkListener::NetworkListener(){
-
+NetworkListener::NetworkListener(messagebox *myMessagebox){
+    this->myMessageBox = myMessagebox;
 }
 
 NetworkListener::~NetworkListener() {
@@ -91,6 +98,46 @@ long NetworkListener::reciveMessage(char* buf){
 }*/
 
 void NetworkListener::messageRecieved(char *msg){
+    int len = strlen(msg);
+    unsigned char unsigned_msg[len+1];
+    for(int i = 0; i < len; i ++){
+        unsigned_msg[i] = (char)(msg[i]+128);
+    }
+    unsigned_msg[len] = 0;
+
+
+
+    Protocol::Packet *incPacket = Protocol::Packet::Parse(unsigned_msg,len+1);
+    Protocol::PacketType type = (Protocol::PacketType)unsigned_msg[0];
+    switch (type) {
+    case Protocol::PacketType::Ack:{
+        std::cout<< "AckPacket Recieved";
+        Protocol::AckPacket *ackPacket = (Protocol::AckPacket*)incPacket;
+        myMessageBox->addAckPacket(*ackPacket);
+        break;}
+    case Protocol::PacketType::Action:{
+        std::cout<< "ActionPacket Recieved";
+        Protocol::ActionPacket *actionPacket = (Protocol::ActionPacket*)incPacket;
+        myMessageBox->addActionPacket(*actionPacket);
+        break;}
+    case Protocol::PacketType::Telem:{
+        std::cout<< "TelemPacket Recieved";
+        Protocol::TelemetryPacket *telemPacket = (Protocol::TelemetryPacket*)incPacket;
+        myMessageBox->addTelemetryPacket(*telemPacket);
+        break;}
+    case Protocol::PacketType::Info:{
+        std::cout<< "InfoPacket Recieved";
+        Protocol::InfoPacket *infoPacket = (Protocol::InfoPacket*)incPacket;
+        myMessageBox->addInfoPacket(*infoPacket);
+        break;}
+    default:
+        std::cout<< "UNKNOWN PACKET TYPE RECIEVED!";
+        break;
+    }
+
+    return;
+
+    //old recieve code
     QString msgString = msg;
     if (msgString == "init"){
         cout<< "Sending coordinates!" << endl;

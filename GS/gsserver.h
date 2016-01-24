@@ -6,6 +6,7 @@
 #include <QThread>
 #include "net.h"
 #include "networklistener.h"
+#include "messagebox.h"
 
 /**
   GsServer is the server object for the ground station. The current
@@ -23,18 +24,21 @@ class GsServer : public QThread{
     //Q_OBJECT
 public:
     /**
-     Creates a new server hosted on the localhost (127.0.0.1) on port 3495
+     Creates a new server hosted on the localhost (127.0.0.1) on port 3495.
+
+     @param myMessageBox the messagebox used for outgoing packets
      */
-    GsServer();
+    GsServer(messagebox *myMessageBox);
 
     /**
      Creates a new server and immediately attatches it to
-     the IP address and port stored in myAddress
+     the IP address and port stored in myAddress.
 
      @param myAddress the object containing the address and port to host
      the server on.
+     @param myMessageBox the messagebox used for outgoing packets
      */
-    GsServer(net::GS_Address myAddress);
+    GsServer(net::GS_Address myAddress,messagebox *myMessageBox);
 
     /**
       Destructor for GsServer
@@ -130,6 +134,12 @@ private:
        Stores the port number of this server.
      */
      unsigned short port;
+
+     /**
+      * @brief myMessageBox is the messagebox from mapexecution that will be used for
+      * outgoing packets.
+      */
+     messagebox *myMessageBox;
 };
 #endif // GSSERVER_H
 
