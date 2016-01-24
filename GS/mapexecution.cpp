@@ -25,8 +25,16 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
 
+    messagebox MyMessageBox;
     MyMessageBox.fetch_from_table(strings);
-
+    std::vector<Protocol::ActionPacket> test_actions = messagebox.get_action_packets();
+    int pack_number = 1;
+    for(auto i : test_actions){
+        Protocol::Waypoint test_wp;
+        test_wp = i.GetWaypoint();
+        std::cout << pack_number << " Latitude: " << test_wp.lat << " Longitude: " << test_wp.lon << std::endl;
+        ++pack_number;
+    }
 
     model = new TableModel();
     ui->tableView->setModel(model);
@@ -63,8 +71,8 @@ Function added by Jordan Dickson March 9th 2015. */
 void MapExecution::on_stopButton_clicked() {
     QList <QPair<double, double > > h;
     h << QPair<double, double >(999.99,999.99);
-    myClient.set_list(h);
-    myClient.gsc_send_message();
+//    myClient.set_list(h);
+//    myClient.gsc_send_message();
 }
 
 // return home button
