@@ -7,6 +7,12 @@
 #include <QDialog>
 #include <QLineEdit>
 
+#include "packet.h"
+#include "ackpacket.h"
+#include "actionpacket.h"
+#include "infopacket.h"
+#include "telemetrypacket.h"
+
 class UAV : public QObject
 {
     Q_OBJECT

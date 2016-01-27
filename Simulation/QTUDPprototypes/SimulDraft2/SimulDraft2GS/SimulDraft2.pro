@@ -13,7 +13,8 @@ SOURCES += main.cpp \
     ActionPacket.cpp \
     InfoPacket.cpp \
     Packet.cpp \
-    TelemetryPacket.cpp
+    TelemetryPacket.cpp \
+    messagebox.cpp
 
 HEADERS += \
     groundstation.h \
@@ -21,7 +22,9 @@ HEADERS += \
     actionpacket.h \
     infopacket.h \
     packet.h \
-    telemetrypacket.h
+    telemetrypacket.h \
+    ActionPacket.h \
+    messagebox.h
 
 FORMS += \
     dialog.ui
