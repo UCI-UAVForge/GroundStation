@@ -14,6 +14,7 @@ GroundStation::GroundStation(QWidget *parent)
 
 void GroundStation::sendAllActionPackets(std::vector<Protocol::ActionPacket> packets)
 {
+    //QTextStream(stdout) << "The size of the vector is " << packets.size() << endl;
     for(auto i = packets.begin(); i != packets.end(); ++i)
     {
         sendAPacket(&*i);
