@@ -17,16 +17,18 @@ QWidget* QComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionView
         comboBox->addItem(QString("Action 3"));
         return comboBox;
     }
-    //This checks the validation for the Longitude
+    //This checks the validation for the Longitude input
     if(index.column() == 1)
     {
-        QLineEdit *longValEdit = new QLineEdit;
-        QDoubleValidator *longVal = new QDoubleValidator( -90.0, 90.0, 3, comboBox);
-        longVal->setNotation(QDoubleValidator::StandardNotation);
-        longVal->setLocale(QLocale::C);
+
+        QLineEdit *longValEdit = new QLineEdit(parent);
+        MapValidator *longVal = new MapValidator( -180.0, 180.0, 3, longValEdit);
+        //longVal->setNotation(QDoubleValidator::StandardNotation);
+        //longVal->setLocale(QLocale::C);
         longValEdit->setValidator( longVal );
-        comboBox->setLineEdit(longValEdit);
-        return comboBox;
+        //comboBox->setLineEdit(longValEdit);
+
+        return longValEdit;
 
     }
     if (index.column() == 2)
@@ -34,6 +36,18 @@ QWidget* QComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionView
         comboBox->addItem(QString("E"));
         comboBox->addItem(QString("W"));
         return comboBox;
+    }
+
+    //this checks the validation for the Latitude input
+    if(index.column() == 3)
+    {
+        QLineEdit *latValEdit = new QLineEdit(parent);
+        MapValidator *latVal = new MapValidator( -90.0, 90.0, 3, latValEdit);
+        //latVal->setNotation(QDoubleValidator::StandardNotation);
+        //latVal->setLocale(QLocale::C);
+        latValEdit->setValidator( latVal );
+
+        return latValEdit;
     }
     else if (index.column() == 4){
         comboBox->addItem(QString("N"));

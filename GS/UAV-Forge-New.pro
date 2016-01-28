@@ -60,7 +60,8 @@ HEADERS  += mainwindow.h \
     jsonobject.h \
     qcustomplot.h\
     networklistener.h \
-    connectiondialog.h
+    connectiondialog.h \
+    mapvalidator.h
 
 FORMS    += mainwindow.ui \
     options.ui \
