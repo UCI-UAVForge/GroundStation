@@ -12,7 +12,7 @@ GroundStation::GroundStation(QWidget *parent)
     //sendDatagram();
 }
 
-void GroundStation::sendAllActionPackets(std::vector<Protocol::ActionPacket> packets)
+void GroundStation::sendAllActionPackets(std::vector<Protocol::Packet*> packets)
 {
     //QTextStream(stdout) << "The size of the vector is " << packets.size() << endl;
     for(auto i = packets.begin(); i != packets.end(); ++i)

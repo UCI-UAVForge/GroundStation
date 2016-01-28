@@ -33,7 +33,7 @@ public:
      * \date    16-1-27
      *
      **/
-    void sendAllActionPackets(std::vector<Protocol::ActionPacket> packets);
+    void sendAllActionPackets(std::vector<Protocol::Packet*> packets);
     /**
      * \brief   Function takes a single packet or a child of packet and sends it through UDP.
      * \param   packet represents a single packet or child of packet.
