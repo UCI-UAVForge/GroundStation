@@ -22,6 +22,8 @@ class GroundStation : public QObject
 
     /* Alvin Truong added on 16-1-27*/
     const static int PACKET_LENGTH = 1000;
+    const static int GS_PORT_NUM = 27015;
+    const static int UAV_PORT_NUM = 27020;
 
 public:
     GroundStation(QWidget *parent = 0);
@@ -47,9 +49,12 @@ public:
     void altitude(u_int8_t* storage, int len) const;
 
 private slots:
-       void sendDatagram();
+    void sendDatagram();
+    void processPendingDatagrams();
+        
 private:
-       QUdpSocket udpSocket;
+       QUdpSocket sendUdpSocket;
+       QUdpSocket recvUdpSocket;
        QTimer timer;
 
 signals:

@@ -17,16 +17,39 @@ class UAV : public QObject
 {
     Q_OBJECT
 public:
-    const static int length = 1000;
+
+    /* Alvin Truong added on 16-1-27*/
+    const static int PACKET_LENGTH = 1000;
+    const static int GS_PORT_NUM = 27015;
+    const static int UAV_PORT_NUM = 27020;
     static int NUM_RECV_PACKETS = 0;
     UAV(QWidget *parent = 0);
+
+    /**
+     * \brief   Member function takes a vector of packets and sends them all to the uav through UDP.
+     * \param   packets represents a vector of action packets.
+     *
+     * \author  Alvin Truong
+     * \date    16-1-27
+     *
+     **/
+    void sendAllActionPackets(std::vector<Protocol::Packet*> packets);
+    /**
+     * \brief   Function takes a single packet or a child of packet and sends it through UDP.
+     * \param   packet represents a single packet or child of packet.
+     *
+     * \author  Alvin Truong
+     * \date    16-1-27
+     *
+     **/
+    void sendAPacket(Protocol::Packet* packet);
 
 private slots:
     void processPendingDatagrams();
 
 private:
-    QUdpSocket udpSocket;
-
+    QUdpSocket sendUdpSocket;
+    QUdpSocket recvUdpSocket;
 signals:
 
 public slots:

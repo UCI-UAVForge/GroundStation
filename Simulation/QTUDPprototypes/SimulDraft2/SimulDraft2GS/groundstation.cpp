@@ -10,6 +10,14 @@ GroundStation::GroundStation(QWidget *parent)
 
 //    timer.start(2 * 1000);
     //sendDatagram();
+    udpSocket.bind(GS_PORT_NUM);
+
+    connect(&udpSocket, SIGNAL(readyRead()),
+                this, SLOT(processPendingDatagrams()));
+
+    QTextStream(stdout) << "Listening for packets.." << endl;
+
+
 }
 
 void GroundStation::sendAllActionPackets(std::vector<Protocol::Packet*> packets)
@@ -42,7 +50,7 @@ void GroundStation::sendAPacket(Protocol::Packet* packet)
     }
 
     // Send datagram through UDP socket
-    udpSocket.writeDatagram(datagram, QHostAddress::LocalHost, 27015);
+    udpSocket.writeDatagram(datagram, QHostAddress::LocalHost, GS.UAV_PORT_NUM);
 }
 
 
@@ -82,3 +90,59 @@ void GroundStation::altitude(u_int8_t* storage, int len) const
 //    return 4;
 }
 
+void GroundStation::processPendingDatagrams()
+{
+
+    while(udpSocket.hasPendingDatagrams())
+    {
+        QTextStream(stdout) << "Processing started" << endl;
+        QByteArray datagram;
+        datagram.resize(udpSocket.pendingDatagramSize());
+        
+        // Read from the udpSocket while there is a datagram and store into datagram.
+        udpSocket.readDatagram(datagram.data(), datagram.size());
+
+
+        //do {
+            //datagram.resize(udpSocket.pendingDatagramSize());
+            //udpSocket.readDatagram(datagram.data(), datagram.size());
+        //} while (udpSocket.hasPendingDatagrams());
+
+        //QDataStream in(&datagram, QIODevice::ReadOnly);
+        //in.setVersion(QDataStream::Qt_4_3);
+        
+        
+       // Convert Datagram into proper packet.
+        Protocol::Packet* packet = Protocol::Packet::Parse((u_int8_t*)datagram.data(), 1000);
+        Protocol::Packet::Type packet_type = packet.getPacketType();
+
+        // Depending on the type call the proper method to extract packet's information and print
+        if(packet != nullptr)
+        {
+            QTextStream(stdout) << "Packet number " << UAV.NUM_RECV_PACKETS + 1 << endl;
+            switch(packet_type)
+            {
+                case Protocol::PacketType::ActionPacket:
+                    print_action_packet(*packet);
+                    break;
+                case Protocol::PacketType::AckPacket:
+                    print_ack_packet(*packet);
+                    break;
+                case Protocol::PacketType::InfoPacket:
+                    print_info_packet(*packet);
+                    break;
+                case Protocol::PacketType::TelemetryPacket:
+                    print_telemetry_packet(*packet);
+                    break;
+                default:
+            }
+
+            QTextStream(stdout) << endl;
+            ++UAV.NUM_RECV_PACKETS;
+        }
+        else
+        {
+            QTextStream(stdout) << "ERROR: Packet is invalid" << endl;
+        }
+    }
+}

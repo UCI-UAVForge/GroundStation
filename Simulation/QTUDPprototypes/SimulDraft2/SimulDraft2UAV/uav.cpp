@@ -4,13 +4,46 @@
 UAV::UAV(QWidget *parent)
 //    : QDialog(parent)
 {
-    udpSocket.bind(27015);
+    udpSocket.bind(UAV.UAV_PORT_NUM);
 
     connect(&udpSocket, SIGNAL(readyRead()),
                 this, SLOT(processPendingDatagrams()));
 
     QTextStream(stdout) << "Listening for packets.." << endl;
 
+}
+
+void UAV::sendAllActionPackets(std::vector<Protocol::Packet*> packets)
+{
+    //QTextStream(stdout) << "The size of the vector is " << packets.size() << endl;
+    for(auto i = packets.begin(); i != packets.end(); ++i)
+    {
+        sendAPacket(&*i);
+    }
+
+}
+
+
+void UAV::sendAPacket(Protocol::Packet* packet)
+{
+    QByteArray datagram;
+    QDataStream out(&datagram, QIODevice::WriteOnly);
+    out.setVersion(QDataStream::Qt_4_3);
+    
+    // Allocate storage for the packet in the for of u_int8_t
+    u_int8_t storage[GroundStation::PACKET_LENGTH];
+    
+    // Convert the packet into bytes and store into storage
+    packet->GetBytes(storage, GroundStation::PACKET_LENGTH);
+
+    // Send bytes inside storage to out datastream
+    for(int i =0; i < GroundStation::PACKET_LENGTH; i++)
+    {
+        out << storage[i];
+    }
+
+    // Send datagram through UDP socket
+    udpSocket.writeDatagram(datagram, QHostAddress::LocalHost, UAV.GS_PORT_NUM);
 }
 
 
