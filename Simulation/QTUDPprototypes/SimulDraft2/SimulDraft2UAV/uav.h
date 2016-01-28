@@ -18,6 +18,7 @@ class UAV : public QObject
     Q_OBJECT
 public:
     const static int length = 1000;
+    static int NUM_RECV_PACKETS = 0;
     UAV(QWidget *parent = 0);
 
 private slots:

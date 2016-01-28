@@ -8,7 +8,8 @@ UAV::UAV(QWidget *parent)
 
     connect(&udpSocket, SIGNAL(readyRead()),
                 this, SLOT(processPendingDatagrams()));
-//    QTextStream(stdout) << "run this shit";
+
+    QTextStream(stdout) << "Listening for packets.." << endl;
 
 }
 
@@ -16,10 +17,10 @@ UAV::UAV(QWidget *parent)
 
 void UAV::processPendingDatagrams()
 {
-    QTextStream(stdout) << "Processing started" << endl;
 
     while(udpSocket.hasPendingDatagrams())
     {
+        QTextStream(stdout) << "Processing started" << endl;
         QByteArray datagram;
         datagram.resize(udpSocket.pendingDatagramSize());
         
@@ -34,32 +35,69 @@ void UAV::processPendingDatagrams()
 
         //QDataStream in(&datagram, QIODevice::ReadOnly);
         //in.setVersion(QDataStream::Qt_4_3);
+        
+        
+       // Convert Datagram into proper packet.
+        Protocol::Packet* packet = Protocol::Packet::Parse((u_int8_t*)datagram.data(), 1000);
+        Protocol::Packet::Type packet_type = packet.getPacketType();
 
+        // Depending on the type call the proper method to extract packet's information and print
+        if(packet != nullptr)
+        {
+            QTextStream(stdout) << "Packet number " << UAV.NUM_RECV_PACKETS + 1 << endl;
+            switch(packet_type)
+            {
+                case Protocol::PacketType::ActionPacket:
+                    print_action_packet(*packet);
+                    break;
+                case Protocol::PacketType::AckPacket:
+                    print_ack_packet(*packet);
+                    break;
+                case Protocol::PacketType::InfoPacket:
+                    print_info_packet(*packet);
+                    break;
+                case Protocol::PacketType::TelemetryPacket:
+                    print_telemetry_packet(*packet);
+                    break;
+                default:
+            }
 
-        //u_int8_t packetFormed[1000];
-        //for(int i = 0; in.status() != QDataStream::ReadPastEnd  ; ++i)
-        //{
-            //in >> packetFormed[i];
-        //}
-
-
-        // Convert datagram into an actionpacket
-        Protocol::ActionPacket action_packet((u_int8_t*)datagram.data(), 1000);
-        //Protocol::ActionPacket test(packetFormed, 1000);
-        Protocol::Waypoint waypoint;
-
-        waypoint = action_packet.GetWaypoint();
-
-        QTextStream(stdout) << "Action: "       << (u_int8_t)action_packet.GetAction() << endl;
-        QTextStream(stdout) << "Latitude: "     << waypoint.lat << endl
-                            << "Longitude: "    << waypoint.lon << endl
-                            << "Altitude: "     <<  waypoint.alt << endl
-                            << "Speed: "        << waypoint.speed << endl << endl;
-
+            QTextStream(stdout) << endl;
+            ++UAV.NUM_RECV_PACKETS;
+        }
+        else
+        {
+            QTextStream(stdout) << "ERROR: Packet is invalid" << endl;
+        }
     }
-//    QTextStream(stdout) << test;
-//        QTextStream(stdout) << "run this shit";
-
-
-//    QTextStream(stdout) << altitude;
 }
+
+void UAV::print_telemetry_packet(const Protocol::TelemetryPacket& packet)
+{
+    float   vx, vy, vz,
+            pitch, roll, yaw,
+            heading;
+
+    double  lat, lon, alt; 
+    
+    // Extract all information from telemetry packet into variables
+    packet.GetVelocity(&vx, &vy, &vz);
+    packet.GetOrientation(&pitch, &roll, &yaw);
+    packet.GetLocation(&lat, &lon, &alt);
+    packet.GetHeading(&heading);
+
+    // Print out information
+    QTextStream(stdout) << "Type: Telemetry Packet" << std::endl;
+    QTextStream(stdout) << "Velocity x: "   << vx << endl
+                        << "Velocity y: "   << vy << endl
+                        << "Velocity z: "   << vz << endl;
+    QTextStream(stdout) << "Pitch: "        << pitch << endl
+                        << "Roll: "         << roll << endl
+                        << "Yaw: "          << yaw << endl;
+    QTextStream(stdout) << "Latitude: "     << lat << endl
+                        << "Longitude: "    << lon << endl
+                        << "Altitude: "     << alt << endl;
+    QTextStream(stdout) << "Heading: "      << heading << endl;
+
+}
+
