@@ -27,9 +27,11 @@
 #include "infopacket.h"
 #include "telemetrypacket.h"
 
+
 class messagebox
 {
 public:
+    friend class DigitalClock;
     messagebox();
     void fetch_from_table(QList<QString> tableList);
     void load_ack_packet(uint8_t* buffer, size_t len);
@@ -63,9 +65,10 @@ public:
     void addActionPacket(const Protocol::ActionPacket& actionPacket);
     void addTelemetryPacket(const Protocol::TelemetryPacket& telemPacket);
     void addInfoPacket(const Protocol::InfoPacket& infoPacket);
+    QTime timer; //Qtime that starts when message box is created
 
 private:
-    QTime timer; //Qtime that starts when message box is created
+
 
     /**
      * @brief Takes timestamp form timer and subtracts the offset determined form UAV timestamp
