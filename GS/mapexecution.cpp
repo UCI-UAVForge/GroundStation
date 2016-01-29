@@ -1,9 +1,8 @@
 #include "mapexecution.h"
 
-MapExecution::MapExecution(QWidget *parent) : QDialog(parent), ui(new Ui::MapExecution), prevTime() {
+MapExecution::MapExecution(QWidget *parent) : QDialog(parent), myServer(&MyMessageBox), ui(new Ui::MapExecution), prevTime() {
     buttonGroup = new QButtonGroup();
     model = new TableModel();
-
     ui->setupUi(this);
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
@@ -22,13 +21,11 @@ MapExecution::MapExecution(QWidget *parent) : QDialog(parent), ui(new Ui::MapExe
 
 }
 
-MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(parent), ui(new Ui::MapExecution) {
+MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(parent), myServer(&MyMessageBox), ui(new Ui::MapExecution) {
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
-
-    messagebox messagebox;
-    messagebox.fetch_from_table(strings);
-    std::vector<Protocol::ActionPacket> test_actions = messagebox.get_action_packets();
+    MyMessageBox.fetch_from_table(strings);
+    std::vector<Protocol::ActionPacket> test_actions = MyMessageBox.get_action_packets();
     int pack_number = 1;
     for(auto i : test_actions){
         Protocol::Waypoint test_wp;
@@ -36,7 +33,6 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
         std::cout << pack_number << " Latitude: " << test_wp.lat << " Longitude: " << test_wp.lon << std::endl;
         ++pack_number;
     }
-
 
     model = new TableModel();
     ui->tableView->setModel(model);
