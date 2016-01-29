@@ -27,6 +27,8 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
     buttonGroup = new QButtonGroup();
 
     messagebox messagebox;
+    //initate clock timer
+    ui->clock->initiate(messagebox.timer);
     messagebox.fetch_from_table(strings);
     std::vector<Protocol::ActionPacket> test_actions = messagebox.get_action_packets();
     int pack_number = 1;
