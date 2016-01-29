@@ -10,6 +10,7 @@
 #include <QPair>
 #include <QList>
 
+#include "digitalclock.h"
 #include "gsclient.h"
 #include "gsserver.h"
 #include "tablemodel.h"
