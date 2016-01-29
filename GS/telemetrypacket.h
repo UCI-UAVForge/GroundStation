@@ -62,6 +62,7 @@ namespace Protocol
 
 		void GetHeading(float* h);
 
+
 		virtual size_t GetBytes(uint8_t* buffer, size_t len);
 	};
 }

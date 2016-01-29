@@ -39,7 +39,6 @@ SOURCES += main.cpp\
     videoplayer.cpp \
     gsserver.cpp \
     gsclient.cpp \
-    jsonobject.cpp \
     qcustomplot.cpp\
     networklistener.cpp \
     connectiondialog.cpp \
@@ -62,7 +61,6 @@ HEADERS  += mainwindow.h \
     net.h \
     gsserver.h \
     gsclient.h \
-    jsonobject.h \
     qcustomplot.h\
     networklistener.h \
     connectiondialog.h \
@@ -86,3 +84,5 @@ OTHER_FILES +=
 
 RESOURCES += \
     Resources.qrc
+
+DISTFILES +=
