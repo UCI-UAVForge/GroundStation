@@ -16,7 +16,9 @@
 #ifndef COORDINATOR_PACKET_H
 #define COORDINATOR_PACKET_H
 
+#include "time.h"
 #include "stdio.h"
+#include "stdint.h"
 
 namespace Protocol
 {
@@ -33,6 +35,7 @@ namespace Protocol
 	private:
 		uint32_t timestamp;
 		PacketType type;
+
 
 	protected:
 		Packet(PacketType t);
