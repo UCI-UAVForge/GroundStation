@@ -26,6 +26,20 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
 
+    messagebox messagebox;
+    //initate clock timer
+    ui->clock->initiate(messagebox.timer);
+    messagebox.fetch_from_table(strings);
+    std::vector<Protocol::ActionPacket> test_actions = messagebox.get_action_packets();
+    int pack_number = 1;
+    for(auto i : test_actions){
+        Protocol::Waypoint test_wp;
+        test_wp = i.GetWaypoint();
+        std::cout << pack_number << " Latitude: " << test_wp.lat << " Longitude: " << test_wp.lon << std::endl;
+        ++pack_number;
+    }
+
+
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
@@ -43,22 +57,6 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
     myServer.start();
     connect(&myServer.networkListener,SIGNAL(sendCoordinates()),this,SLOT(sendFlightPlan()));
     connect(&myServer.networkListener,SIGNAL(logTelemetry(QString)),this,SLOT(newTelemCoord(QString)));
-/**
- *  No idea what this is, server code??
- *  If not necessary, please get rid of later! (10/23/15)
- *
- */
-
-// Old server debug code
-    // std::cout<<"PREPARE" << std::endl;
-    // QList <QPair<double, double > > h;
-    // h << QPair<double, double >(32, 32);
-    // myClient.set_list(getDoublePairs(mapStrings));
-    // std::cout<<"FOR" << std::endl;
-    // myClient.gsc_connect_start();
-    // std::cout<<"THE DEVOURING," << std::endl;
-    // myClient.gsc_send_message();
-    // std::cout<<"PUNY HUMANS" << std::endl;
 }
 
 MapExecution::~MapExecution() {
@@ -77,8 +75,8 @@ Function added by Jordan Dickson March 9th 2015. */
 void MapExecution::on_stopButton_clicked() {
     QList <QPair<double, double > > h;
     h << QPair<double, double >(999.99,999.99);
-    myClient.set_list(h);
-    myClient.gsc_send_message();
+//    myClient.set_list(h);
+//    myClient.gsc_send_message();
 }
 
 // return home button

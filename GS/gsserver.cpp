@@ -1,11 +1,5 @@
 #include "gsserver.h"
 #include <errno.h>
-//#include <sys/types.h>
-//#include <sys/socket.h>
-//#include <netinet/in.h>
-//#include <netdb.h>
-//#include <arpa/inet.h>
-//#include <sys/wait.h>
 #include <signal.h>
 #include <iostream>
 #include <string>
@@ -29,7 +23,6 @@ void GsServer::waitNet(unsigned millis){
 }
 #else
 #include <unistd.h>
-//#include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
 #include <arpa/inet.h>

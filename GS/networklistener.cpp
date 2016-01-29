@@ -40,7 +40,6 @@ void NetworkListener::setId(int UAVid){
     this->UAVid = UAVid;
 }
 
-
 void NetworkListener::run() {
     while (listening){
 
@@ -53,9 +52,6 @@ void NetworkListener::run() {
         }
     }
 }
-
-
-
 
 long NetworkListener::reciveMessage(char* buf){
   long len = BUFSIZE;
@@ -82,8 +78,6 @@ long NetworkListener::reciveMessage(char* buf){
   }
   return numbytes;
 }
-
-
 
 /*long NetworkListener::reciveMessage(char* buf){
   long numbytes = 0;
