@@ -23,10 +23,7 @@ QWidget* QComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionView
 
         QLineEdit *longValEdit = new QLineEdit(parent);
         MapValidator *longVal = new MapValidator( -180.0, 180.0, 3, longValEdit);
-        //longVal->setNotation(QDoubleValidator::StandardNotation);
-        //longVal->setLocale(QLocale::C);
         longValEdit->setValidator( longVal );
-        //comboBox->setLineEdit(longValEdit);
 
         return longValEdit;
 
@@ -43,12 +40,10 @@ QWidget* QComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionView
     {
         QLineEdit *latValEdit = new QLineEdit(parent);
         MapValidator *latVal = new MapValidator( -90.0, 90.0, 3, latValEdit);
-        //latVal->setNotation(QDoubleValidator::StandardNotation);
-        //latVal->setLocale(QLocale::C);
         latValEdit->setValidator( latVal );
-
         return latValEdit;
     }
+
     else if (index.column() == 4){
         comboBox->addItem(QString("N"));
         comboBox->addItem(QString("S"));

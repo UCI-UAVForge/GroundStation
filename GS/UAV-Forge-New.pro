@@ -42,7 +42,8 @@ SOURCES += main.cpp\
     jsonobject.cpp \
     qcustomplot.cpp\
     networklistener.cpp \
-    connectiondialog.cpp
+    connectiondialog.cpp \
+    mapvalidator.cpp
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \
