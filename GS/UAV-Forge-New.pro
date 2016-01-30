@@ -47,7 +47,10 @@ SOURCES += main.cpp\
     ActionPacket.cpp \
     InfoPacket.cpp \
     TelemetryPacket.cpp \
-    Packet.cpp
+    Packet.cpp \
+    digitalclock.cpp \
+    mapvalidator.cpp
+
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \
@@ -70,7 +73,9 @@ HEADERS  += mainwindow.h \
     infopacket.h \
     telemetrypacket.h \
     ackpacket.h \
-    packet.h
+    packet.h \
+    digitalclock.h \
+    mapvalidator.h \
 
 FORMS    += mainwindow.ui \
     options.ui \

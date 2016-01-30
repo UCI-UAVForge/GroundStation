@@ -56,6 +56,13 @@ size_t Protocol::Packet::ReadHeader(uint8_t* buffer, size_t len)
 uint32_t Protocol::Packet::get_timestamp(){
     return this->timestamp;
 }
+void Protocol::Packet::set_type(Protocol::PacketType a){
+    this->type = a;
+}
+
+Protocol::PacketType Protocol::Packet::get_type(){
+    return this->type;
+}
 
 size_t Protocol::Packet::SetChecksum(uint8_t* buffer, size_t len, size_t offset)
 {

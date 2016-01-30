@@ -18,6 +18,7 @@
 Protocol::ActionPacket::ActionPacket(uint8_t* buffer, size_t len) : ActionPacket()
 {
 	size_t offset = this->ReadHeader(buffer, len);
+    Protocol::Packet::set_type(Protocol::PacketType::Action);
 
 	this->action = *((ActionType*)(buffer + offset));
 	this->waypoint.lat = *((double*)(buffer + offset + 1));

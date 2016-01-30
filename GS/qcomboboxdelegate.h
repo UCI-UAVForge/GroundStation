@@ -6,8 +6,8 @@
 #include <QModelIndex>
 #include <QObject>
 #include <QSize>
-
-
+#include <QLineEdit>
+#include "mapvalidator.h"
 class QComboBoxDelegate : public QItemDelegate
 {
     Q_OBJECT
