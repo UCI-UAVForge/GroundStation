@@ -8,7 +8,8 @@ QT       += core \
             gui \
             webkitwidgets \
             multimedia \
-            multimediawidgets
+            multimediawidgets \
+            network
 QT       += svg
 
 QT       += core gui multimedia multimediawidgets

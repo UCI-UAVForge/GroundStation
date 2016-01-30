@@ -29,17 +29,46 @@ using namespace std;
 
 #endif
 
-NetworkListener::NetworkListener(messagebox *myMessagebox, int UAVid) {
-    this->myMessageBox = myMessagebox;
+NetworkListener::NetworkListener(messagebox *myMessagebox){
+     this->myMessageBox = myMessagebox;
+
+    std::cout << "New NetworkListener created." << std::endl;
+    udpSocket.bind(27015);
+
+    connect(&udpSocket, SIGNAL(readyRead()), this, SLOT(processPendingDatagrams()));
+}
+
+NetworkListener::NetworkListener(messagebox *myMessagebox, int UAVid):NetworkListener(myMessagebox) {
     this->UAVid = UAVid;
     listening = true;
 }
 
-NetworkListener::NetworkListener(messagebox *myMessagebox){
-    this->myMessageBox = myMessagebox;
+NetworkListener::~NetworkListener() {
+
 }
 
-NetworkListener::~NetworkListener() {
+void NetworkListener::processPendingDatagrams(){
+
+    //Coppied dirrectly from Avionics simulation
+    QByteArray datagram;
+    std::cout << "running!" << std::endl;
+
+
+    do {
+        datagram.resize(udpSocket.pendingDatagramSize());
+        udpSocket.readDatagram(datagram.data(), datagram.size());
+        std::cout<< "loop!" << std::endl;
+    } while (udpSocket.hasPendingDatagrams());
+
+    QByteArray altitude;
+    QDataStream in(&datagram, QIODevice::ReadOnly);
+    in.setVersion(QDataStream::Qt_4_3);
+    in >> altitude;
+
+    std::cout << "running...";
+
+
+    std::cout << altitude.toStdString();
 
 }
 
@@ -48,6 +77,9 @@ void NetworkListener::setId(int UAVid){
 }
 
 void NetworkListener::run() {
+    //----test code----
+    listening = false;
+
     while (listening){
 
         netWait(1);

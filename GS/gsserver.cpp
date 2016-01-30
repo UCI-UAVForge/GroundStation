@@ -84,6 +84,9 @@ void GsServer::run(){
 }
 
 int GsServer::openServer(){
+
+
+    /*
     std::cout<< "Starting Server..." << std::endl;
     unsigned short listenPort = port;
     int sockfd;  // listen on sock_fd, new connection on uav_fd
@@ -157,7 +160,7 @@ int GsServer::openServer(){
         std::cout << "server: got connection from " << s << std::endl;
         networkListener.setId(uav_fd);
         networkListener.start();
-        return 0;
+        return 0;*/
 }
 
 void GsServer::formatCoordinatesToSend(char *charArr, int len, QList<QPair<double, double> > coords){

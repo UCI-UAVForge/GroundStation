@@ -4,6 +4,7 @@
 #include <QList>
 #include <QPair>
 #include <QThread>
+#include <QUdpSocket>
 #include "net.h"
 #include "networklistener.h"
 #include "messagebox.h"
@@ -17,8 +18,8 @@
   stable.
 
   @author Jordan Dickson
-  @date 10-3-2015
-  @version 1.0
+  @date 1-29-1016
+  @version 2.0
 */
 class GsServer : public QThread{
     //Q_OBJECT
@@ -134,6 +135,12 @@ private:
        Stores the port number of this server.
      */
      unsigned short port;
+
+     /**
+       Sends the most significant datagram.
+     */
+     void sendDatagram();
+
 
      /**
       * @brief myMessageBox is the messagebox from mapexecution that will be used for
