@@ -17,12 +17,33 @@ QWidget* QComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionView
         comboBox->addItem(QString("Action 3"));
         return comboBox;
     }
+    //This checks the validation for the Longitude input
+    if(index.column() == 1)
+    {
+
+        QLineEdit *longValEdit = new QLineEdit(parent);
+        MapValidator *longVal = new MapValidator( -180.0, 180.0, 3, longValEdit);
+        longValEdit->setValidator( longVal );
+
+        return longValEdit;
+
+    }
     if (index.column() == 2)
     {
         comboBox->addItem(QString("E"));
         comboBox->addItem(QString("W"));
         return comboBox;
     }
+
+    //this checks the validation for the Latitude input
+    if(index.column() == 3)
+    {
+        QLineEdit *latValEdit = new QLineEdit(parent);
+        MapValidator *latVal = new MapValidator( -90.0, 90.0, 3, latValEdit);
+        latValEdit->setValidator( latVal );
+        return latValEdit;
+    }
+
     else if (index.column() == 4){
         comboBox->addItem(QString("N"));
         comboBox->addItem(QString("S"));
