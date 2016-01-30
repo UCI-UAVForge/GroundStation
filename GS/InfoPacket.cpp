@@ -19,7 +19,7 @@
 Protocol::InfoPacket::InfoPacket(uint8_t* buffer, size_t len) : InfoPacket()
 {
 	size_t offset = this->ReadHeader(buffer, len);
-
+    Protocol::Packet::set_type(Protocol::PacketType::Info);
 	this->pointsStorable = *((uint16_t*)(buffer + offset));
 	this->batteryState = *((uint16_t*)(buffer + offset + 2));
 	uint16_t otherLen = *((uint16_t*)(buffer + offset + 4));
