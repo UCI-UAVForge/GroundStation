@@ -19,6 +19,7 @@
 
 Protocol::TelemetryPacket::TelemetryPacket() : Packet(PacketType::Telem)
 {
+    Protocol::Packet::set_type(Protocol::PacketType::Telem);
 	static uint32_t sequence = 0;
 	this->sequenceNumber = ++sequence;
 }
