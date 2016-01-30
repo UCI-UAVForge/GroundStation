@@ -27,6 +27,7 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
     MyMessageBox.fetch_from_table(strings);
     std::vector<Protocol::ActionPacket> test_actions = MyMessageBox.get_action_packets();
     int pack_number = 1;
+
     for(auto i : test_actions){
         Protocol::Waypoint test_wp;
         test_wp = i.GetWaypoint();
