@@ -78,6 +78,18 @@
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="1" colspan="6">
+    <widget class="QWebView" name="webView">
+     <property name="url">
+      <url>
+       <string>about:blank</string>
+      </url>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" colspan="6">
+    <widget class="QTableView" name="tableView"/>
+   </item>
    <item row="0" column="0">
     <widget class="QPushButton" name="backButton">
      <property name="styleSheet">
@@ -94,15 +106,6 @@ border: none;
      </property>
      <property name="text">
       <string>Back</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="1" colspan="6">
-    <widget class="QWebView" name="webView">
-     <property name="url">
-      <url>
-       <string>about:blank</string>
-      </url>
      </property>
     </widget>
    </item>
@@ -219,9 +222,6 @@ border: none;
       <string>+</string>
      </property>
     </widget>
-   </item>
-   <item row="3" column="1" colspan="6">
-    <widget class="QTableView" name="tableView"/>
    </item>
   </layout>
  </widget>
