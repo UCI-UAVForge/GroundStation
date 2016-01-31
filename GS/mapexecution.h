@@ -46,6 +46,7 @@ public:
     ~MapExecution();
     GsServer myServer;
     QList<QPair<double,double> > getDoublePairs(QList<QString> strings);
+    messagebox MessageBox;
 private slots:
     void on_finishButton_clicked();
     void on_returnHomeButton_clicked();
@@ -73,6 +74,8 @@ private:
     QTime prevTime;
     QTableWidget *CurrentData;
     QTableWidgetItem *LatLabel, *LngLabel, *AltLabel, *SpdLabel;
+signals:
+    void uav_Connected();
 };
 
 #endif // MAPEXECUTION_H

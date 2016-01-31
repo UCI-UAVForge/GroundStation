@@ -6,6 +6,8 @@
 #include <QTime>
 #include <QTimer>
 
+#include "messagebox.h"
+
 /**
  * @brief The DigitalClock class
  * inherits from QPlainTextEdit
@@ -20,11 +22,14 @@ public:
 
     QTime time;
     QString start;
+    messagebox mb;
 
     void initiate(QTime timein);
+    void initiate(messagebox mbin);
 
 private slots:
     void showTime();
+    void showStatus();
 };
 
 #endif // DIGITALCLOCK_H

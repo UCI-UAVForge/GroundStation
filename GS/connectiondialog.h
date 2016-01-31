@@ -21,6 +21,9 @@ public:
     explicit ConnectionDialog(QWidget *parent = 0);
     ~ConnectionDialog();
 
+public slots:
+    void closeWindow();
+
 private slots:
     void closeConnectionDialog();
     void on_OK_button_clicked();

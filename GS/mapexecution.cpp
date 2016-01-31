@@ -25,12 +25,12 @@ MapExecution::MapExecution(QWidget *parent) : QDialog(parent), ui(new Ui::MapExe
 MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(parent), ui(new Ui::MapExecution) {
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
-
-    messagebox messagebox;
     //initate clock timer
-    ui->clock->initiate(messagebox.timer);
-    messagebox.fetch_from_table(strings);
-    std::vector<Protocol::ActionPacket> test_actions = messagebox.get_action_packets();
+    ui->clock->initiate(MessageBox.timer);
+    ui->StatusConsole->initiate(MessageBox);
+    //display widgets
+    MessageBox.fetch_from_table(strings);
+    std::vector<Protocol::ActionPacket> test_actions = MessageBox.get_action_packets();
     int pack_number = 1;
     for(auto i : test_actions){
         Protocol::Waypoint test_wp;
