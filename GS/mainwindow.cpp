@@ -109,8 +109,10 @@ void MainWindow::showMissionExecution() {
     mapExecution->showFullScreen();
 
     //Open ConnectionDialog when MissionExecution is opened
-    ConnectionDialog * connectionDialog = new ConnectionDialog();
-    connectionDialog -> show();
+
+    //
+    //ConnectionDialog * connectionDialog = new ConnectionDialog();
+    //connectionDialog -> show();
 }
 
 void MainWindow::showMissionRecap() {

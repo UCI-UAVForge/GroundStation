@@ -28,6 +28,7 @@ namespace Protocol
 
 		AckPacket(uint8_t* buffer, size_t len) : Packet(PacketType::Ack)
 		{
+            Protocol::Packet::set_type(Protocol::PacketType::Ack);
 			this->ReadHeader(buffer, len);
 		}
 

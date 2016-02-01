@@ -175,26 +175,13 @@
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QPushButton" name="colorTester">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>40</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Test</string>
-      </property>
-     </widget>
      <widget class="QPlainTextEdit" name="StatusConsole">
       <property name="geometry">
        <rect>
-        <x>3</x>
-        <y>70</y>
-        <width>191</width>
-        <height>211</height>
+        <x>0</x>
+        <y>90</y>
+        <width>201</width>
+        <height>241</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -210,10 +197,28 @@
        <bool>true</bool>
       </property>
      </widget>
-     <zorder>StatusIndicator</zorder>
-     <zorder>colorTester</zorder>
-     <zorder>StatusConsole</zorder>
-     <zorder>CurrentData</zorder>
+     <widget class="DigitalClock" name="clock">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>40</y>
+        <width>201</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustIgnored</enum>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </widget>
    </item>
    <item row="4" column="0">
@@ -399,6 +404,11 @@ border: none;
    <class>QWebView</class>
    <extends>QWidget</extends>
    <header>QtWebKitWidgets/QWebView</header>
+  </customwidget>
+  <customwidget>
+   <class>DigitalClock</class>
+   <extends>QPlainTextEdit</extends>
+   <header>digitalclock.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

@@ -10,14 +10,14 @@
 #include <QPair>
 #include <QList>
 
+#include "digitalclock.h"
 #include "gsclient.h"
 #include "gsserver.h"
 #include "tablemodel.h"
 #include "qcomboboxdelegate.h"
 #include "missionrecap.h"
 #include "options.h"
-//#include "mainwindow.h"
-//#include "net.h"
+#include "messagebox.h"
 
 #include "ui_mapexecution.h"
 #include "messagebox.h"
@@ -44,6 +44,7 @@ public:
     void plotPosition(double lat, double lng);
     ~MapExecution();
     GsServer myServer;
+    messagebox MyMessageBox;
     QList<QPair<double,double> > getDoublePairs(QList<QString> strings);
 private slots:
     void on_finishButton_clicked();
