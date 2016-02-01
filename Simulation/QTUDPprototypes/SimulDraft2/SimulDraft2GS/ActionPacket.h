@@ -17,7 +17,7 @@
 #define COORDINATOR_ACTIONPACKET_H
 
 #include  <string>
-#include "packet.h"
+#include "Packet.h"
 
 namespace Protocol
 {
@@ -47,7 +47,7 @@ namespace Protocol
 		Waypoint waypoint;
 
 	public:
-                ActionPacket() : Packet(PacketType::Action) {}
+		ActionPacket() : Packet(PacketType::Action) {}
 
 		ActionPacket(uint8_t* buffer, size_t len);
 
