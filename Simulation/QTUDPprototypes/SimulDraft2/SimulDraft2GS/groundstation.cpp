@@ -56,7 +56,7 @@ void GroundStation::sendAPacket(Protocol::Packet* packet)
     sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, GroundStation::UAV_PORT_NUM);
 }
 
-
+/*
 void GroundStation::sendDatagram()
 {
     QByteArray datagram;
@@ -92,6 +92,7 @@ void GroundStation::altitude(u_int8_t* storage, int len) const
 
 //    return 4;
 }
+*/
 
 void GroundStation::processPendingDatagrams()
 {
@@ -115,7 +116,7 @@ void GroundStation::processPendingDatagrams()
         //in.setVersion(QDataStream::Qt_4_3);
         
         // Validates check sum first and then convert Datagram into proper packet.
-        Protocol::Packet* packet = Protocol::Packet::Parse((u_int8_t*)datagram.data(), 1000);
+        Protocol::Packet* packet = Protocol::Packet::Parse((uint8_t*)datagram.data(), datagram.size());
         Protocol::PacketType packet_type = packet->get_type();
 
         // Depending on the type call the proper method to extract packet's information and print
@@ -198,6 +199,19 @@ void GroundStation::print_action_packet(Protocol::ActionPacket& packet){
         case Protocol::ActionType::Shutdown : QTextStream(stdout) << "Shutdown: " << (uint8_t)type << endl; break;
         default :   QTextStream(stdout) << "Unknown Type: " << (uint8_t)type << endl; break;
     }
+
+    Protocol::Waypoint waypoint = packet.GetWaypoint();
+    lat = waypoint.lat;
+    lon = waypoint.lon;
+    alt = waypoint.alt;
+    speed = waypoint.speed;
+
+    QTextStream(stdout) << "Latitude: " << lat << endl;
+    QTextStream(stdout) << "Longitude: " << lon << endl;
+    QTextStream(stdout) << "Altitude: " << alt << endl;
+    QTextStream(stdout) << "Speed: " << speed << endl;
+
+
 }
 
 void GroundStation::print_info_packet(Protocol::InfoPacket &packet){

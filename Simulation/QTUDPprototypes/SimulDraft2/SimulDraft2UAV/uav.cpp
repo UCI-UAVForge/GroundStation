@@ -30,15 +30,15 @@ void UAV::sendAPacket(Protocol::Packet* packet)
     QByteArray datagram;
     QDataStream out(&datagram, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_4_3);
-
+    
     // Allocate storage for the packet in the for of u_int8_t
     u_int8_t storage[UAV::PACKET_LENGTH];
-
+    
     // Convert the packet into bytes and store into storage
-    packet->GetBytes(storage, UAV::PACKET_LENGTH);
+    size_t packet_size = packet->GetBytes(storage, UAV::PACKET_LENGTH);
 
     // Send bytes inside storage to out datastream
-    for(int i =0; i < UAV::PACKET_LENGTH; i++)
+    for(size_t i =0; i < packet_size; i++)
     {
         out << storage[i];
     }
