@@ -4,7 +4,7 @@
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    QTextStream(stdout) << "run this shit";
+//    QTextStream(stdout) << "run this shit";
 
     UAV uav;
 //    uav.show();

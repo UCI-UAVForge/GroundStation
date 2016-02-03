@@ -67,20 +67,14 @@ void UAV::processPendingDatagrams()
             //udpSocket.readDatagram(datagram.data(), datagram.size());
         //} while (udpSocket.hasPendingDatagrams());
 
-        QDataStream in(&datagram, QIODevice::ReadOnly);
-        in.setVersion(QDataStream::Qt_4_3);
-
-
-        uint8_t uint_packet[UAV::PACKET_LENGTH];
-        for(int i = 0;i < UAV::PACKET_LENGTH; ++i)
-            in >> uint_packet[i];
-
+        //QDataStream in(&datagram, QIODevice::ReadOnly);
+        //in.setVersion(QDataStream::Qt_4_3);
 
         // Validates check sum first and then convert Datagram into proper packet.
-//        datagram.replace('\0', "");
-//        uint_8 uint_packet[UAV::PACKET_LENGTH] = datagram.toUI
-        Protocol::Packet* packet = Protocol::Packet::Parse(uint_packet, UAV::PACKET_LENGTH);
+        Protocol::Packet* packet = Protocol::Packet::Parse((uint8_t*)datagram.data(), datagram.size());
         Protocol::PacketType packet_type = packet->get_type();
+
+            
 
         // Depending on the type call the proper method to extract packet's information and print
         if(packet != nullptr)
@@ -92,7 +86,7 @@ void UAV::processPendingDatagrams()
                     print_action_packet(*dynamic_cast<Protocol::ActionPacket*>(packet));
                     break;
                 case Protocol::PacketType::Ack:
-                    print_action_packet(*dynamic_cast<Protocol::ActionPacket*>(packet));
+                    print_ack_packet(*dynamic_cast<Protocol::AckPacket*>(packet));
                     break;
                 case Protocol::PacketType::Info:
                     print_info_packet(*dynamic_cast<Protocol::InfoPacket*>(packet));

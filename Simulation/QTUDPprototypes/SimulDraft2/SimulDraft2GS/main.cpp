@@ -24,13 +24,13 @@ int main(int argc, char *argv[])
     mb.load_action_packet(9,10,11,12);
 
     std::vector<Protocol::ActionPacket> actionPacket = mb.get_action_packets();
-//    std::vector<Protocol::Packet*> packets_to_send;
+    std::vector<Protocol::Packet*> packets_to_send;
 
-//    for (auto& action : actionPacket)
-//        packets_to_send.push_back(&action);
+    for (auto& action : actionPacket)
+        packets_to_send.push_back(&action);
 
-//    station.sendAllActionPackets(packets_to_send);
-    station.sendAllActionPackets(actionPacket);
+    station.sendAllActionPackets(packets_to_send);
+//    station.sendAllActionPackets(actionPacket);
 
 
 //    return 0;

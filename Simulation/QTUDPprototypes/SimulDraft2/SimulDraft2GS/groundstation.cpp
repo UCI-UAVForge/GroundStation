@@ -23,12 +23,12 @@ GroundStation::GroundStation(QWidget *parent)
 
 }
 
-void GroundStation::sendAllActionPackets(std::vector<Protocol::ActionPacket> packets)
+void GroundStation::sendAllActionPackets(std::vector<Protocol::Packet*> packets)
 {
     //QTextStream(stdout) << "The size of the vector is " << packets.size() << endl;
     for(auto i = packets.begin(); i != packets.end(); ++i)
     {
-        sendAPacket(&*i);
+        sendAPacket(*i);
     }
 
 }
@@ -44,14 +44,10 @@ void GroundStation::sendAPacket(Protocol::Packet* packet)
     u_int8_t storage[GroundStation::PACKET_LENGTH];
     
     // Convert the packet into bytes and store into storage
-    size_t packet_size = (dynamic_cast<Protocol::ActionPacket*>(packet))->GetBytes(storage, GroundStation::PACKET_LENGTH);
-
-    // Set checksum onto packet
-    // Apparently, offset should be 2 less than packet length.
-//    packet->SetChecksum(storage, GroundStation::PACKET_LENGTH, GroundStation::PACKET_LENGTH - 2);
+    size_t packet_size = packet->GetBytes(storage, GroundStation::PACKET_LENGTH);
 
     // Send bytes inside storage to out datastream
-    for(size_t i =0; i <= GroundStation::PACKET_LENGTH; i++)
+    for(size_t i =0; i < packet_size; i++)
     {
         out << storage[i];
     }
