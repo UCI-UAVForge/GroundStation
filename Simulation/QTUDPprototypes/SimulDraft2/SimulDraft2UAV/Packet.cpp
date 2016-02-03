@@ -110,11 +110,11 @@ Protocol::Packet* Protocol::Packet::Parse(uint8_t* buffer, size_t len)
         fprintf(stderr, "ERROR: Packet length must be greater than 0.");
 		return nullptr;
 	}
-	if (!ValidateChecksum(buffer, len))
-	{
-        fprintf(stderr, "Warning: Packet Checksum failed.");
-		return nullptr;
-	}
+//	if (!ValidateChecksum(buffer, len))
+//	{
+//        fprintf(stderr, "Warning: Packet Checksum failed.");
+//		return nullptr;
+//	}
 
 	PacketType type = (PacketType)buffer[0];
 	switch (type)

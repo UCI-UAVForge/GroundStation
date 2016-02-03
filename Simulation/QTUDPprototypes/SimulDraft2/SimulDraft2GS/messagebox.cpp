@@ -41,6 +41,7 @@ void messagebox::load_action_packet(double lat, double lon, float alt, float spd
     addActionPacket(Protocol::ActionPacket());
 //    actionPackets.back().SetAction(at);
     actionPackets.back().SetWaypoint(wp);
+    actionPackets.back().SetAction(Protocol::ActionType::Start);
 }
 
 void messagebox::load_info_packet(std::string other){

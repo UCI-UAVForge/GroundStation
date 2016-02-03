@@ -3,6 +3,8 @@
 #include <QDateTime>
 
 
+int GroundStation::NUM_RECV_PACKETS = 0;
+
 GroundStation::GroundStation(QWidget *parent)
 //    : QPushButton(tr("Quit"), parent)
 {
@@ -10,9 +12,10 @@ GroundStation::GroundStation(QWidget *parent)
 
 //    timer.start(2 * 1000);
     //sendDatagram();
-    udpSocket.bind(GS_PORT_NUM);
+    //
+    recvUdpSocket.bind(GS_PORT_NUM);
 
-    connect(&udpSocket, SIGNAL(readyRead()),
+    connect(&recvUdpSocket, SIGNAL(readyRead()),
                 this, SLOT(processPendingDatagrams()));
 
     QTextStream(stdout) << "Listening for packets.." << endl;
@@ -20,7 +23,7 @@ GroundStation::GroundStation(QWidget *parent)
 
 }
 
-void GroundStation::sendAllActionPackets(std::vector<Protocol::Packet*> packets)
+void GroundStation::sendAllActionPackets(std::vector<Protocol::ActionPacket> packets)
 {
     //QTextStream(stdout) << "The size of the vector is " << packets.size() << endl;
     for(auto i = packets.begin(); i != packets.end(); ++i)
@@ -41,16 +44,20 @@ void GroundStation::sendAPacket(Protocol::Packet* packet)
     u_int8_t storage[GroundStation::PACKET_LENGTH];
     
     // Convert the packet into bytes and store into storage
-    packet->GetBytes(storage, GroundStation::PACKET_LENGTH);
+    size_t packet_size = (dynamic_cast<Protocol::ActionPacket*>(packet))->GetBytes(storage, GroundStation::PACKET_LENGTH);
+
+    // Set checksum onto packet
+    // Apparently, offset should be 2 less than packet length.
+//    packet->SetChecksum(storage, GroundStation::PACKET_LENGTH, GroundStation::PACKET_LENGTH - 2);
 
     // Send bytes inside storage to out datastream
-    for(int i =0; i < GroundStation::PACKET_LENGTH; i++)
+    for(size_t i =0; i <= GroundStation::PACKET_LENGTH; i++)
     {
         out << storage[i];
     }
 
     // Send datagram through UDP socket
-    udpSocket.writeDatagram(datagram, QHostAddress::LocalHost, GS.UAV_PORT_NUM);
+    sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, GroundStation::UAV_PORT_NUM);
 }
 
 
@@ -68,7 +75,7 @@ void GroundStation::sendDatagram()
 
     QTextStream(stdout) << storage;
 
-    udpSocket.writeDatagram(datagram, QHostAddress::LocalHost, 27015);
+    sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, 27015);
 }
 
 //double GroundStation::altitude() const
@@ -93,14 +100,14 @@ void GroundStation::altitude(u_int8_t* storage, int len) const
 void GroundStation::processPendingDatagrams()
 {
 
-    while(udpSocket.hasPendingDatagrams())
+    while(recvUdpSocket.hasPendingDatagrams())
     {
         QTextStream(stdout) << "Processing started" << endl;
         QByteArray datagram;
-        datagram.resize(udpSocket.pendingDatagramSize());
+        datagram.resize(recvUdpSocket.pendingDatagramSize());
         
         // Read from the udpSocket while there is a datagram and store into datagram.
-        udpSocket.readDatagram(datagram.data(), datagram.size());
+        recvUdpSocket.readDatagram(datagram.data(), datagram.size());
 
 
         //do {
@@ -111,38 +118,95 @@ void GroundStation::processPendingDatagrams()
         //QDataStream in(&datagram, QIODevice::ReadOnly);
         //in.setVersion(QDataStream::Qt_4_3);
         
-        
-       // Convert Datagram into proper packet.
+        // Validates check sum first and then convert Datagram into proper packet.
         Protocol::Packet* packet = Protocol::Packet::Parse((u_int8_t*)datagram.data(), 1000);
-        Protocol::Packet::Type packet_type = packet.getPacketType();
+        Protocol::PacketType packet_type = packet->get_type();
 
         // Depending on the type call the proper method to extract packet's information and print
         if(packet != nullptr)
         {
-            QTextStream(stdout) << "Packet number " << UAV.NUM_RECV_PACKETS + 1 << endl;
+            QTextStream(stdout) << "Packet number " << GroundStation::NUM_RECV_PACKETS + 1 << endl;
             switch(packet_type)
             {
-                case Protocol::PacketType::ActionPacket:
-                    print_action_packet(*packet);
+                case Protocol::PacketType::Action:
+                    print_action_packet(*dynamic_cast<Protocol::ActionPacket*>(packet));
                     break;
-                case Protocol::PacketType::AckPacket:
-                    print_ack_packet(*packet);
+                case Protocol::PacketType::Ack:
+                    print_ack_packet(*dynamic_cast<Protocol::AckPacket*>(packet));
                     break;
-                case Protocol::PacketType::InfoPacket:
-                    print_info_packet(*packet);
+                case Protocol::PacketType::Info:
+                    print_info_packet(*dynamic_cast<Protocol::InfoPacket*>(packet));
                     break;
-                case Protocol::PacketType::TelemetryPacket:
-                    print_telemetry_packet(*packet);
+                case Protocol::PacketType::Telem:
+                    print_telemetry_packet(*dynamic_cast<Protocol::TelemetryPacket*>(packet));
                     break;
                 default:
+                    break;
             }
 
-            QTextStream(stdout) << endl;
-            ++UAV.NUM_RECV_PACKETS;
-        }
+            QTextStream(stdout) << ""<< endl;
+            ++GroundStation::NUM_RECV_PACKETS;        }
         else
         {
             QTextStream(stdout) << "ERROR: Packet is invalid" << endl;
         }
     }
 }
+
+void GroundStation::print_telemetry_packet(Protocol::TelemetryPacket& packet)
+{
+    float   vx, vy, vz,
+            pitch, roll, yaw,
+            heading, alt;
+
+    double  lat, lon;
+
+    // Extract all information from telemetry packet into variables
+    packet.GetVelocity(&vx, &vy, &vz);
+    packet.GetOrientation(&pitch, &roll, &yaw);
+    packet.GetLocation(&lat, &lon, &alt);
+    packet.GetHeading(&heading);
+
+    // Print out information
+    QTextStream(stdout) << "Type: Telemetry Packet" << endl;
+    QTextStream(stdout) << "Velocity x: "   << vx << endl
+                        << "Velocity y: "   << vy << endl
+                        << "Velocity z: "   << vz << endl;
+    QTextStream(stdout) << "Pitch: "        << pitch << endl
+                        << "Roll: "         << roll << endl
+                        << "Yaw: "          << yaw << endl;
+    QTextStream(stdout) << "Latitude: "     << lat << endl
+                        << "Longitude: "    << lon << endl
+                        << "Altitude: "     << alt << endl;
+    QTextStream(stdout) << "Heading: "      << heading << endl;
+
+}
+
+//    QTextStream(stdout) << altitude;
+
+void GroundStation::print_ack_packet(Protocol::AckPacket& packet){
+    QTextStream(stdout) << "Type: AckPacket" << endl;
+
+}
+void GroundStation::print_action_packet(Protocol::ActionPacket& packet){
+    QTextStream(stdout) << "Type: ActionPacket" << endl;
+    Protocol::ActionType type = packet.GetAction();
+    switch(type)
+    {
+        case Protocol::ActionType::Start : QTextStream(stdout) << "Start: " << (uint8_t)type << endl; break;
+        case Protocol::ActionType::RequestInfo : QTextStream(stdout) << "Request Info: " << (uint8_t)type << endl; break;
+        case Protocol::ActionType::AddWaypoint : QTextStream(stdout) << "Add Waypoint: " << (uint8_t)type << endl; break;
+        case Protocol::ActionType::SetHome : QTextStream(stdout) << "Set Home: " << (uint8_t)type << endl; break;
+        case Protocol::ActionType::RemoveWaypoint : QTextStream(stdout) << "Remove Waypoint: " << (uint8_t)type << endl; break;
+        case Protocol::ActionType::Stop : QTextStream(stdout) << "Stop: " << (uint8_t)type << endl; break;
+        case Protocol::ActionType::Shutdown : QTextStream(stdout) << "Shutdown: " << (uint8_t)type << endl; break;
+        default :   QTextStream(stdout) << "Unknown Type: " << (uint8_t)type << endl; break;
+    }
+}
+
+void GroundStation::print_info_packet(Protocol::InfoPacket &packet){
+    QTextStream(stdout) << "Type: InfoPacket" << endl;
+    QTextStream(stdout) << "Points Storable: " << packet.GetStorable() << endl;
+    QTextStream(stdout) << "Battery State: " << packet.GetBattery() << endl;
+    QTextStream(stdout) << "Other : " << QString::fromStdString(packet.GetOther()) << endl;
+ }

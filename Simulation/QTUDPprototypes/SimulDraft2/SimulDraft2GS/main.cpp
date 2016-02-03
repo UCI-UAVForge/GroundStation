@@ -7,6 +7,7 @@
 
 #include "Messagebox.h"
 
+#include <vector>
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
@@ -16,12 +17,20 @@ int main(int argc, char *argv[])
 
 
     GroundStation station;
+
     messagebox mb; 
     mb.load_action_packet(1,2,3,4);
     mb.load_action_packet(5,6,7,8);
     mb.load_action_packet(9,10,11,12);
 
-    station.sendAllActionPackets(mb.get_action_packets());
+    std::vector<Protocol::ActionPacket> actionPacket = mb.get_action_packets();
+//    std::vector<Protocol::Packet*> packets_to_send;
+
+//    for (auto& action : actionPacket)
+//        packets_to_send.push_back(&action);
+
+//    station.sendAllActionPackets(packets_to_send);
+    station.sendAllActionPackets(actionPacket);
 
 
 //    return 0;

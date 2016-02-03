@@ -1,12 +1,13 @@
 #include "uav.h"
 #include <QDateTime>
 
+int UAV::NUM_RECV_PACKETS = 0;
 UAV::UAV(QWidget *parent)
 //    : QDialog(parent)
 {
-    udpSocket.bind(UAV.UAV_PORT_NUM);
+    recvUdpSocket.bind(UAV::UAV_PORT_NUM);
 
-    connect(&udpSocket, SIGNAL(readyRead()),
+    connect(&recvUdpSocket, SIGNAL(readyRead()),
                 this, SLOT(processPendingDatagrams()));
 
     QTextStream(stdout) << "Listening for packets.." << endl;
@@ -18,7 +19,7 @@ void UAV::sendAllActionPackets(std::vector<Protocol::Packet*> packets)
     //QTextStream(stdout) << "The size of the vector is " << packets.size() << endl;
     for(auto i = packets.begin(); i != packets.end(); ++i)
     {
-        sendAPacket(&*i);
+        sendAPacket(*i);
     }
 
 }
@@ -29,21 +30,21 @@ void UAV::sendAPacket(Protocol::Packet* packet)
     QByteArray datagram;
     QDataStream out(&datagram, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_4_3);
-    
+
     // Allocate storage for the packet in the for of u_int8_t
-    u_int8_t storage[GroundStation::PACKET_LENGTH];
-    
+    u_int8_t storage[UAV::PACKET_LENGTH];
+
     // Convert the packet into bytes and store into storage
-    packet->GetBytes(storage, GroundStation::PACKET_LENGTH);
+    packet->GetBytes(storage, UAV::PACKET_LENGTH);
 
     // Send bytes inside storage to out datastream
-    for(int i =0; i < GroundStation::PACKET_LENGTH; i++)
+    for(int i =0; i < UAV::PACKET_LENGTH; i++)
     {
         out << storage[i];
     }
 
     // Send datagram through UDP socket
-    udpSocket.writeDatagram(datagram, QHostAddress::LocalHost, UAV.GS_PORT_NUM);
+    sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, UAV::GS_PORT_NUM);
 }
 
 
@@ -51,14 +52,14 @@ void UAV::sendAPacket(Protocol::Packet* packet)
 void UAV::processPendingDatagrams()
 {
 
-    while(udpSocket.hasPendingDatagrams())
+    while(recvUdpSocket.hasPendingDatagrams())
     {
         QTextStream(stdout) << "Processing started" << endl;
         QByteArray datagram;
-        datagram.resize(udpSocket.pendingDatagramSize());
-        
+        datagram.resize(recvUdpSocket.pendingDatagramSize());
+
         // Read from the udpSocket while there is a datagram and store into datagram.
-        udpSocket.readDatagram(datagram.data(), datagram.size());
+        recvUdpSocket.readDatagram(datagram.data(), datagram.size());
 
 
         //do {
@@ -66,37 +67,45 @@ void UAV::processPendingDatagrams()
             //udpSocket.readDatagram(datagram.data(), datagram.size());
         //} while (udpSocket.hasPendingDatagrams());
 
-        //QDataStream in(&datagram, QIODevice::ReadOnly);
-        //in.setVersion(QDataStream::Qt_4_3);
-        
-        
-       // Convert Datagram into proper packet.
-        Protocol::Packet* packet = Protocol::Packet::Parse((u_int8_t*)datagram.data(), 1000);
-        Protocol::Packet::Type packet_type = packet.get_type();
+        QDataStream in(&datagram, QIODevice::ReadOnly);
+        in.setVersion(QDataStream::Qt_4_3);
+
+
+        uint8_t uint_packet[UAV::PACKET_LENGTH];
+        for(int i = 0;i < UAV::PACKET_LENGTH; ++i)
+            in >> uint_packet[i];
+
+
+        // Validates check sum first and then convert Datagram into proper packet.
+//        datagram.replace('\0', "");
+//        uint_8 uint_packet[UAV::PACKET_LENGTH] = datagram.toUI
+        Protocol::Packet* packet = Protocol::Packet::Parse(uint_packet, UAV::PACKET_LENGTH);
+        Protocol::PacketType packet_type = packet->get_type();
 
         // Depending on the type call the proper method to extract packet's information and print
         if(packet != nullptr)
         {
-            QTextStream(stdout) << "Packet number " << UAV.NUM_RECV_PACKETS + 1 << endl;
+            QTextStream(stdout) << "Packet number " << UAV::NUM_RECV_PACKETS + 1 << endl;
             switch(packet_type)
             {
-                case Protocol::PacketType::ActionPacket:
-                    print_action_packet(*packet);
+                case Protocol::PacketType::Action:
+                    print_action_packet(*dynamic_cast<Protocol::ActionPacket*>(packet));
                     break;
-                case Protocol::PacketType::AckPacket:
-                    print_ack_packet(*packet);
+                case Protocol::PacketType::Ack:
+                    print_action_packet(*dynamic_cast<Protocol::ActionPacket*>(packet));
                     break;
-                case Protocol::PacketType::InfoPacket:
-                    print_info_packet(*packet);
+                case Protocol::PacketType::Info:
+                    print_info_packet(*dynamic_cast<Protocol::InfoPacket*>(packet));
                     break;
-                case Protocol::PacketType::TelemetryPacket:
-                    print_telemetry_packet(*packet);
+                case Protocol::PacketType::Telem:
+                    print_telemetry_packet(*dynamic_cast<Protocol::TelemetryPacket*>(packet));
                     break;
                 default:
+                    break;
             }
 
-            QTextStream(stdout) << endl;
-            ++UAV.NUM_RECV_PACKETS;
+            QTextStream(stdout) << ""<< endl;
+            ++UAV::NUM_RECV_PACKETS;
         }
         else
         {
@@ -105,14 +114,14 @@ void UAV::processPendingDatagrams()
     }
 }
 
-void UAV::print_telemetry_packet(const Protocol::TelemetryPacket& packet)
+void UAV::print_telemetry_packet(Protocol::TelemetryPacket& packet)
 {
     float   vx, vy, vz,
             pitch, roll, yaw,
-            heading;
+            heading, alt;
 
-    double  lat, lon, alt; 
-    
+    double  lat, lon;
+
     // Extract all information from telemetry packet into variables
     packet.GetVelocity(&vx, &vy, &vz);
     packet.GetOrientation(&pitch, &roll, &yaw);
@@ -120,7 +129,7 @@ void UAV::print_telemetry_packet(const Protocol::TelemetryPacket& packet)
     packet.GetHeading(&heading);
 
     // Print out information
-    QTextStream(stdout) << "Type: Telemetry Packet" << std::endl;
+    QTextStream(stdout) << "Type: Telemetry Packet" << endl;
     QTextStream(stdout) << "Velocity x: "   << vx << endl
                         << "Velocity y: "   << vy << endl
                         << "Velocity z: "   << vz << endl;
@@ -136,30 +145,43 @@ void UAV::print_telemetry_packet(const Protocol::TelemetryPacket& packet)
 
 //    QTextStream(stdout) << altitude;
 
-}
-void UAV::print_ack_packet(const Protocol::AckPacket& packet){
+void UAV::print_ack_packet(Protocol::AckPacket& packet){
     QTextStream(stdout) << "Type: AckPacket" << endl;
 
 }
-void UAV::print_action_packet(const Protocol::ActionPacket& packet){
+void UAV::print_action_packet(Protocol::ActionPacket& packet){
     QTextStream(stdout) << "Type: ActionPacket" << endl;
     Protocol::ActionType type = packet.GetAction();
+    double 	lat, lon;
+    float	alt, speed;
     switch(type)
     {
-        case ActionType::Start : QTextStream(stdout) << "Start: " << type << endl; break;
-        case ActionType::RequestInfo : QTextStream(stdout) << "Request Info: " << type << endl; break;
-        case ActionType::AddWaypoint : QTextStream(stdout) << "Add Waypoint: " << type << endl; break;
-        case ActionType::SetHome : QTextStream(stdout) << "Set Home: " << type << endl; break;
-        case ActionType::RemoveWaypoint : QTextStream(stdout) << "Remove Waypoint: " << type << endl; break;
-        case ActionType::Stop : QTextStream(stdout) << "Stop: " << type << endl; break;
-        case ActionType::Shutdown : QTextStream(stdout) << "Shutdown: " << type << endl; break;
-        default :   QTextStream(stdout) << "Unknown Type: " << type << endl; break;
+        case Protocol::ActionType::Start : QTextStream(stdout) << "Start: " << (uint8_t)type << endl; break;
+        case Protocol::ActionType::RequestInfo : QTextStream(stdout) << "Request Info: " << (uint8_t)type << endl; break;
+        case Protocol::ActionType::AddWaypoint : QTextStream(stdout) << "Add Waypoint: " << (uint8_t)type << endl; break;
+        case Protocol::ActionType::SetHome : QTextStream(stdout) << "Set Home: " << (uint8_t)type << endl; break;
+        case Protocol::ActionType::RemoveWaypoint : QTextStream(stdout) << "Remove Waypoint: " << (uint8_t)type << endl; break;
+        case Protocol::ActionType::Stop : QTextStream(stdout) << "Stop: " << (uint8_t)type << endl; break;
+        case Protocol::ActionType::Shutdown : QTextStream(stdout) << "Shutdown: " << (uint8_t)type << endl; break;
+        default :   QTextStream(stdout) << "Unknown Type: " << (uint8_t)type << endl; break;
     }
+
+    Protocol::Waypoint waypoint = packet.GetWaypoint();
+    lat = waypoint.lat;
+    lon = waypoint.lon;
+    alt = waypoint.alt;
+    speed = waypoint.speed;
+
+    QTextStream(stdout) << "Latitude: " << lat << endl;
+    QTextStream(stdout) << "Longitude: " << lon << endl;
+    QTextStream(stdout) << "Altitude: " << alt << endl;
+    QTextStream(stdout) << "Speed: " << speed << endl;
+
 }
 
-void UAV::print_info_packet(const Protocol::InfoPacket &packet){
+void UAV::print_info_packet(Protocol::InfoPacket &packet){
     QTextStream(stdout) << "Type: InfoPacket" << endl;
     QTextStream(stdout) << "Points Storable: " << packet.GetStorable() << endl;
     QTextStream(stdout) << "Battery State: " << packet.GetBattery() << endl;
-    QTextStream(stdout) << "Other : " << packet.GetOther() << endl;
+    QTextStream(stdout) << "Other : " << QString::fromStdString(packet.GetOther()) << endl;
  }

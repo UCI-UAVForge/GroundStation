@@ -15,7 +15,7 @@
 #include "infopacket.h"
 #include "telemetrypacket.h"
 
-/*
+/**
  * Protocol
  *
  * Start
@@ -39,8 +39,8 @@
  *      - GS needs to send an ACK Packet
  * - GS can stop UAV with Action(stop)
  * - GS can shutdown with Action(shutdown)
- * /
- *
+ */
+ 
 class GroundStation : public QObject
 {
     Q_OBJECT
@@ -50,6 +50,7 @@ class GroundStation : public QObject
     const static int PACKET_LENGTH = 1000;
     const static int GS_PORT_NUM = 27015;
     const static int UAV_PORT_NUM = 27020;
+    static int NUM_RECV_PACKETS;
 
 public:
     GroundStation(QWidget *parent = 0);
@@ -61,7 +62,7 @@ public:
      * \date    16-1-27
      *
      **/
-    void sendAllActionPackets(std::vector<Protocol::Packet*> packets);
+    void sendAllActionPackets(std::vector<Protocol::ActionPacket> packets);
     /**
      * \brief   Function takes a single packet or a child of packet and sends it through UDP.
      * \param   packet represents a single packet or child of packet.
@@ -73,6 +74,17 @@ public:
     void sendAPacket(Protocol::Packet* packet);
 //    double altitude() const;
     void altitude(u_int8_t* storage, int len) const;
+
+     /* Created Functions to print out information about packets
+     * parameters(Packet type packet)
+     * return void
+     * created by: Daniel Ortega
+     *
+     **/
+    void print_ack_packet(Protocol::AckPacket& packet);
+    void print_action_packet(Protocol::ActionPacket& packet);
+    void print_info_packet(Protocol::InfoPacket& packet);
+    void print_telemetry_packet(Protocol::TelemetryPacket& packet);
 
 private slots:
     void sendDatagram();

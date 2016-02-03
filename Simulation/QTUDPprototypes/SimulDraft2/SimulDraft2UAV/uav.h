@@ -44,7 +44,7 @@ public:
     const static int PACKET_LENGTH = 1000;
     const static int GS_PORT_NUM = 27015;
     const static int UAV_PORT_NUM = 27020;
-    static int NUM_RECV_PACKETS = 0;
+    static int NUM_RECV_PACKETS;
     UAV(QWidget *parent = 0);
 
     /**
@@ -72,10 +72,10 @@ public:
      * created by: Daniel Ortega
      *
      **/
-    void print_ack_packet(const Protocol::AckPacket& packet);
-    void print_action_packet(const Protocol::ActionPacket& packet);
-    void print_info_packet(const Protocol::InfoPacket& packet);
-    void print_telemtry_packet(const Protocol::TelemtryPacket& packet);
+    void print_ack_packet(Protocol::AckPacket& packet);
+    void print_action_packet(Protocol::ActionPacket& packet);
+    void print_info_packet(Protocol::InfoPacket& packet);
+    void print_telemetry_packet(Protocol::TelemetryPacket& packet);
 
 private:
     /*
@@ -85,7 +85,7 @@ private:
      * \author  Alvin Truong
      * \date    16-2-1
      */
-    void print_packet_sent(const Protoco::Packet* packet);
+    void print_packet_sent(const Protocol::Packet* packet);
 
     /*
      * \brief   Generate a random telemetry packet to simulate actual scenario of
@@ -95,7 +95,7 @@ private:
      * \author
      * \date
      */
-    Protocol::TelemtryPacket createRandomTelem();
+    Protocol::TelemetryPacket createRandomTelem();
 
 private:
     // True when uav needs to keep sending Telemetry packets every 200ms until shutdown.
