@@ -72,7 +72,7 @@ void UAV::processPendingDatagrams()
         
        // Convert Datagram into proper packet.
         Protocol::Packet* packet = Protocol::Packet::Parse((u_int8_t*)datagram.data(), 1000);
-        Protocol::Packet::Type packet_type = packet.getPacketType();
+        Protocol::Packet::Type packet_type = packet.get_type();
 
         // Depending on the type call the proper method to extract packet's information and print
         if(packet != nullptr)

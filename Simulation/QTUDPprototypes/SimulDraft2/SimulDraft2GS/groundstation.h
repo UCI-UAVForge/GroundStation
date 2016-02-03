@@ -15,6 +15,32 @@
 #include "infopacket.h"
 #include "telemetrypacket.h"
 
+/*
+ * Protocol
+ *
+ * Start
+ * ----------------------------------------------------------------
+ * 1) After connection, GS sends Action(request):info packet
+ * 2) UAV responds with Info Packet
+ *
+ *
+ * Sending UAV on its path
+ * ----------------------------------------------------------------
+ * - GS will send numbered waypoint packets to program UAV route
+ *      - Each waypoint packet NEEDS to receive an ACK
+ *  - When ready, GS sends Action(start)
+ *      - An ack should be expected
+ *
+ *
+ * Rest of the time
+ * ----------------------------------------------------------------
+ * - Receives telemetry packet every 200ms.
+ * - UAV will respond with a waypoint packet once it reaches wapyoint.
+ *      - GS needs to send an ACK Packet
+ * - GS can stop UAV with Action(stop)
+ * - GS can shutdown with Action(shutdown)
+ * /
+ *
 class GroundStation : public QObject
 {
     Q_OBJECT

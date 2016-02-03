@@ -14,6 +14,27 @@
 #include "infopacket.h"
 #include "telemetrypacket.h"
 
+/*
+ * Protocol for sending packets.
+ *
+ * Startup
+ * ----------------------------------------------------------------
+ * 1) UAV Starts up.
+ * 2) UAV receives Action(request)  signal from GS.
+ * 3) UAV sends info packet to GS.
+ * 4) UAV sends telemetry packet every 200ms until shutdown
+ *
+ * Rest of the time 
+ * ----------------------------------------------------------------
+ * - UAV must send an ACK packet to every received packet from GS.
+ * - UAV sends waypoint packet when waypoint is reached
+ * - As soon as a Action(Stop) is received
+ *      - Stop every task.
+ *      - UAV goes home.
+ * - If Action(Shutdown) received
+ *      - UAV does not do anything upon receiving any other packets.
+ */
+
 class UAV : public QObject
 {
     Q_OBJECT
@@ -56,8 +77,33 @@ public:
     void print_info_packet(const Protocol::InfoPacket& packet);
     void print_telemtry_packet(const Protocol::TelemtryPacket& packet);
 
+private:
+    /*
+     * \brief   Outputs to stdout what type of packet is being sent to the ground station.
+     * \param   packet takes any packet that is subclass of Packet class.
+     *
+     * \author  Alvin Truong
+     * \date    16-2-1
+     */
+    void print_packet_sent(const Protoco::Packet* packet);
+
+    /*
+     * \brief   Generate a random telemetry packet to simulate actual scenario of
+     *          uav sending telemetry packet ever 200ms.
+     * \param   
+     *
+     * \author
+     * \date
+     */
+    Protocol::TelemtryPacket createRandomTelem();
+
+private:
+    // True when uav needs to keep sending Telemetry packets every 200ms until shutdown.
+    bool startSendingTelem;
+
 private slots:
     void processPendingDatagrams();
+
 
 private:
     QUdpSocket sendUdpSocket;
