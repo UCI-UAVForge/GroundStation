@@ -8,6 +8,7 @@
 #include "Messagebox.h"
 
 #include <vector>
+#include <queue>
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
@@ -24,10 +25,10 @@ int main(int argc, char *argv[])
     mb.load_action_packet(9,10,11,12);
 
     std::vector<Protocol::ActionPacket> actionPacket = mb.get_action_packets();
-    std::vector<Protocol::Packet*> packets_to_send;
+    std::queue<Protocol::Packet*> packets_to_send;
 
     for (auto& action : actionPacket)
-        packets_to_send.push_back(&action);
+        packets_to_send.push(&action);
 
     station.sendAllActionPackets(packets_to_send);
 //    station.sendAllActionPackets(actionPacket);

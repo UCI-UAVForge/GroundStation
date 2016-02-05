@@ -5,8 +5,18 @@ int UAV::NUM_RECV_PACKETS = 0;
 UAV::UAV(QWidget *parent)
 //    : QDialog(parent)
 {
+    // Set booleans to simulate UAV state
+    uavOn = true;
+    initialInfoPacketSucessful = false;
+    uavWaypointsReady = false;
+    uavFlying = false;
+    stopAction = false;
+    shutdownAction = false;
+
+    // Connect receiving socket to the specified received port
     recvUdpSocket.bind(UAV::UAV_PORT_NUM);
 
+    // Connect receive socket to call the method to process pending datagrams
     connect(&recvUdpSocket, SIGNAL(readyRead()),
                 this, SLOT(processPendingDatagrams()));
 
@@ -24,6 +34,18 @@ void UAV::sendAllActionPackets(std::vector<Protocol::Packet*> packets)
 
 }
 
+
+void UAV::sendAllActionPackets(std::queue<Protocol::Packet*> packets)
+{
+    //QTextStream(stdout) << "The size of the vector is " << packets.size() << endl;
+    int size = packets.size();
+    for(int i = 0; i < size; ++i)
+    {
+        sendAPacket(packets.front());
+        packets.pop();
+    }
+
+}
 
 void UAV::sendAPacket(Protocol::Packet* packet)
 {
@@ -144,10 +166,12 @@ void UAV::print_ack_packet(Protocol::AckPacket& packet){
 
 }
 void UAV::print_action_packet(Protocol::ActionPacket& packet){
-    QTextStream(stdout) << "Type: ActionPacket" << endl;
-    Protocol::ActionType type = packet.GetAction();
     double 	lat, lon;
     float	alt, speed;
+ 
+    QTextStream(stdout) << "Type: ActionPacket" << endl;
+    Protocol::ActionType type = packet.GetAction();
+
     switch(type)
     {
         case Protocol::ActionType::Start : QTextStream(stdout) << "Start: " << (uint8_t)type << endl; break;

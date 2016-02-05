@@ -13,8 +13,11 @@ GroundStation::GroundStation(QWidget *parent)
 //    timer.start(2 * 1000);
     //sendDatagram();
     //
+
+    // Connect receiving udp socket to groundstation port
     recvUdpSocket.bind(GS_PORT_NUM);
 
+    // Trigger processPendinDatagrams() when a datagram comes in
     connect(&recvUdpSocket, SIGNAL(readyRead()),
                 this, SLOT(processPendingDatagrams()));
 
@@ -29,6 +32,18 @@ void GroundStation::sendAllActionPackets(std::vector<Protocol::Packet*> packets)
     for(auto i = packets.begin(); i != packets.end(); ++i)
     {
         sendAPacket(*i);
+    }
+
+}
+
+void GroundStation::sendAllActionPackets(std::queue<Protocol::Packet*> packets)
+{
+    //QTextStream(stdout) << "The size of the vector is " << packets.size() << endl;
+    int size = packets.size();
+    for(int i = 0; i < size; ++i)
+    {
+        sendAPacket(packets.front());
+        packets.pop();
     }
 
 }
@@ -186,8 +201,12 @@ void GroundStation::print_ack_packet(Protocol::AckPacket& packet){
 
 }
 void GroundStation::print_action_packet(Protocol::ActionPacket& packet){
+    double 	lat, lon;
+    float	alt, speed;
+
     QTextStream(stdout) << "Type: ActionPacket" << endl;
     Protocol::ActionType type = packet.GetAction();
+
     switch(type)
     {
         case Protocol::ActionType::Start : QTextStream(stdout) << "Start: " << (uint8_t)type << endl; break;

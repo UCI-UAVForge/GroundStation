@@ -15,6 +15,8 @@
 #include "infopacket.h"
 #include "telemetrypacket.h"
 
+#include <queue>
+
 /**
  * Protocol
  *
@@ -62,6 +64,7 @@ public:
      * \date    16-1-27
      *
      **/
+    void sendAllActionPackets(std::queue<Protocol::Packet*> packets);
     void sendAllActionPackets(std::vector<Protocol::Packet*> packets);
     /**
      * \brief   Function takes a single packet or a child of packet and sends it through UDP.
@@ -73,7 +76,7 @@ public:
      **/
     void sendAPacket(Protocol::Packet* packet);
 //    double altitude() const;
-    void altitude(u_int8_t* storage, int len) const;
+    //void altitude(u_int8_t* storage, int len) const;
 
      /* Created Functions to print out information about packets
      * parameters(Packet type packet)
@@ -87,7 +90,7 @@ public:
     void print_telemetry_packet(Protocol::TelemetryPacket& packet);
 
 private slots:
-    void sendDatagram();
+    //void sendDatagram();
     void processPendingDatagrams();
         
 private:

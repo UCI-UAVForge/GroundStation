@@ -64,6 +64,7 @@ public:
      * \date    16-1-27
      *
      **/
+    void sendAllActionPackets(std::vector<Protocol::Packet*> packets);
     void sendAPacket(Protocol::Packet* packet);
 
     /* Created Functions to print out information about packets
@@ -99,7 +100,8 @@ private:
 
 private:
     // True when uav needs to keep sending Telemetry packets every 200ms until shutdown.
-    bool startSendingTelem;
+    bool initialInfoPacketSuccessful, uavWaypointsReady, uavFlying, stopAction, shutdownAction,
+         uavOn;
 
 private slots:
     void processPendingDatagrams();
