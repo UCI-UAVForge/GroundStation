@@ -13,9 +13,23 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    uav.cpp
+    uav.cpp \
+    Packet.cpp \
+    ActionPacket.cpp \
+    InfoPacket.cpp \
+    TelemetryPacket.cpp
 
 HEADERS  += \
-    uav.h
+    uav.h \
+    packet.h \
+    ackpacket.h \
+    actionpacket.h \
+    infopacket.h \
+    telemetrypacket.h
 
 FORMS    += dialog.ui
+
+DISTFILES += \
+    SimulDraft2UAV.pro.user
+
+CONFIG += c++11
