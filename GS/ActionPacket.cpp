@@ -56,7 +56,7 @@ size_t Protocol::ActionPacket::GetBytes(uint8_t* buffer, size_t len)
 	*((double*)(buffer + offset + 9)) = this->waypoint.lon;
 	*((float*)(buffer + offset + 17)) = this->waypoint.alt;
 	*((float*)(buffer + offset + 21)) = this->waypoint.speed;
-	offset += 21;
+	offset += 25;
 
 	return this->SetChecksum(buffer, len, offset);
 }
