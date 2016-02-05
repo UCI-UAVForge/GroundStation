@@ -54,11 +54,11 @@ void NetworkListener::processPendingDatagrams(){
     std::cout << "running!" << std::endl;
 
 
-    do {
+    while (udpSocket.hasPendingDatagrams()){
         datagram.resize(udpSocket.pendingDatagramSize());
         udpSocket.readDatagram(datagram.data(), datagram.size());
         std::cout<< "loop!" << std::endl;
-    } while (udpSocket.hasPendingDatagrams());
+    }
 
     QByteArray altitude;
     QDataStream in(&datagram, QIODevice::ReadOnly);
