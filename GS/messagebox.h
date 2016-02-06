@@ -35,6 +35,7 @@ public:
     messagebox();
     void fetch_from_table(QList<QString> tableList);
     void load_ack_packet(uint8_t* buffer, size_t len);
+    void load_action_packet(Protocol::ActionType atype, double lat, double lon, float alt, float spd);
     void load_action_packet(double lat, double lon, float alt, float spd);
     void load_info_packet(std::string other);
     void load_telem_packet(double lat, double lon);

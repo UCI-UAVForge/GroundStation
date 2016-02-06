@@ -75,7 +75,7 @@ HEADERS  += mainwindow.h \
     ackpacket.h \
     packet.h \
     digitalclock.h \
-    mapvalidator.h \
+    mapvalidator.h
 
 FORMS    += mainwindow.ui \
     options.ui \
