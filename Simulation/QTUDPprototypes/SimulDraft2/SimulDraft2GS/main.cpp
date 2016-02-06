@@ -30,9 +30,22 @@ int main(int argc, char *argv[])
     for (auto& action : actionPacket)
         packets_to_send.push(&action);
 
-    station.sendAllPackets(packets_to_send);
-//    station.sendAllActionPackets(actionPacket);
+    Protocol::InfoPacket info;
+    info.SetBattery(150);
+//    info.SetOther("Im");
+    info.SetStorable(300);
+    packets_to_send.push(&info);
 
+    Protocol::AckPacket ack;
+    packets_to_send.push(&ack);
+//    station.sendAllActionPackets(actionPacket);
+    Protocol::TelemetryPacket tel;
+    tel.SetVelocity(1,2,3);
+    tel.SetOrientation(4,5,6);
+    tel.SetLocation(7,8,9);
+    tel.SetHeading(10);
+    packets_to_send.push(&tel);
+    station.sendAllPackets(packets_to_send);
 
 //    return 0;
    return a.exec();

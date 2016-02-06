@@ -68,7 +68,8 @@ void GroundStation::sendAPacket(Protocol::Packet* packet)
     }
 
     // Send datagram through UDP socket
-    sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, GroundStation::UAV_PORT_NUM);
+//    sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, GroundStation::UAV_PORT_NUM);
+    sendUdpSocket.writeDatagram(datagram, QHostAddress("169.234.31.214"), GroundStation::UAV_PORT_NUM);
 }
 
 /*
