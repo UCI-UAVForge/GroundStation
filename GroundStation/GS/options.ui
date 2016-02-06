@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Options</class>
+ <widget class="QWidget" name="Options">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>688</width>
+    <height>458</height>
+   </rect>
+  </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>51</red>
+        <green>57</green>
+        <blue>66</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>51</red>
+        <green>57</green>
+        <blue>66</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Base">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>51</red>
+        <green>57</green>
+        <blue>66</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Window">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>51</red>
+        <green>57</green>
+        <blue>66</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="missionPlanningButton">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>50</y>
+     <width>181</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> QPushButton { 
+background-color: &quot;#CCD1D9&quot;; 
+color: &quot;#434A54&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #E6E9ED
+ }</string>
+   </property>
+   <property name="text">
+    <string>Mission Planning</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="missionExecutionButton">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>160</y>
+     <width>181</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> QPushButton { 
+background-color: &quot;#CCD1D9&quot;; 
+color: &quot;#434A54&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #E6E9ED
+ }</string>
+   </property>
+   <property name="text">
+    <string>Mission Execution</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="missionRecapButton">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>270</y>
+     <width>181</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> QPushButton { 
+background-color: &quot;#CCD1D9&quot;; 
+color: &quot;#434A54&quot;; 
+border-radius: 10px;
+font-weight: bold;
+border: none; 
+}
+ QPushButton:pressed {
+     background-color: #E6E9ED
+ }</string>
+   </property>
+   <property name="text">
+    <string>Mission Recap</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>missionPlanningButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Options</receiver>
+   <slot>on_missionPlanningButton_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>264</x>
+     <y>91</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>468</x>
+     <y>111</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>missionExecutionButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Options</receiver>
+   <slot>on_missionExecutionButton_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>374</x>
+     <y>196</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>450</x>
+     <y>196</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>missionRecapButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Options</receiver>
+   <slot>on_missionRecapButton_clicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>377</x>
+     <y>309</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>454</x>
+     <y>304</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>on_missionPlanningButton_clicked()</slot>
+  <slot>on_missionExecutionButton_clicked()</slot>
+  <slot>on_missionRecapButton_clicked()</slot>
+ </slots>
+</ui>
