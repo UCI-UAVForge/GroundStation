@@ -40,25 +40,25 @@ void messagebox::load_action_packet(double lat, double lon, float alt, float spd
     wp.speed = spd;
     addActionPacket(Protocol::ActionPacket());
 //    actionPackets.back().SetAction(at);
-    actionPackets.back().SetWaypoint(wp);
+    actionPackets_incoming.back().SetWaypoint(wp);
 }
 
 void messagebox::load_info_packet(std::string other){
     addInfoPacket(Protocol::InfoPacket());
-    infoPackets.back().SetOther(other);
+    infoPackets_incoming.back().SetOther(other);
 }
 
 void messagebox::load_telem_packet(double lat, double lon){
-    telemetryPackets.push_back(Protocol::TelemetryPacket());
-    telemetryPackets.back().SetLocation(lat, lon);
+    telemetryPackets_incoming.push_back(Protocol::TelemetryPacket());
+    telemetryPackets_incoming.back().SetLocation(lat, lon);
 }
 
 void messagebox::load_telem_packet(float x, float y, float z, float p, float r, float yaw, double lat, double lon, float alt, float heading){
     addTelemetryPacket(Protocol::TelemetryPacket());
-    telemetryPackets.back().SetVelocity(x, y, z);
-    telemetryPackets.back().SetOrientation(p, r, yaw);
-    telemetryPackets.back().SetLocation(lat, lon, alt);
-    telemetryPackets.back().SetHeading(heading);
+    telemetryPackets_incoming.back().SetVelocity(x, y, z);
+    telemetryPackets_incoming.back().SetOrientation(p, r, yaw);
+    telemetryPackets_incoming.back().SetLocation(lat, lon, alt);
+    telemetryPackets_incoming.back().SetHeading(heading);
 }
 
 void messagebox::recieve_initial_info(Protocol::InfoPacket intip){
@@ -67,19 +67,19 @@ void messagebox::recieve_initial_info(Protocol::InfoPacket intip){
 }
 
 std::vector<Protocol::AckPacket> messagebox::get_ack_packets(){
-    return ackPackets;
+    return ackPackets_incoming;
 }
 
 std::vector<Protocol::ActionPacket> messagebox::get_action_packets(){
-    return actionPackets;
+    return actionPackets_incoming;
 }
 
 std::vector<Protocol::InfoPacket> messagebox::get_info_packets(){
-    return infoPackets;
+    return infoPackets_incoming;
 }
 
 std::vector<Protocol::TelemetryPacket> messagebox::get_telem_packets(){
-    return telemetryPackets;
+    return telemetryPackets_incoming;
 }
 
 uint32_t messagebox::gs_to_uav_timestamp(){
@@ -90,27 +90,27 @@ uint32_t messagebox::gs_to_uav_timestamp(){
 /// \see messagebox.h for more info
 void messagebox::addAckPacket(const Protocol::AckPacket& ackPacket)
 {
-    ackPackets.push_back(ackPacket);
+    ackPackets_incoming.push_back(ackPacket);
 }
 
 
 /// \see messagebox.h for more info
 void messagebox::addActionPacket(const Protocol::ActionPacket& actionPacket)
 {
-    actionPackets.push_back(actionPacket);
+    actionPackets_incoming.push_back(actionPacket);
 }
 
 
 /// \see messagebox.h for more info
 void messagebox::addTelemetryPacket(const Protocol::TelemetryPacket& telemPacket)
 {
-    telemetryPackets.push_back(telemPacket);
+    telemetryPackets_incoming.push_back(telemPacket);
 }
 
 
 /// \see messagebox.h for more info
 void messagebox::addInfoPacket(const Protocol::InfoPacket& infoPacket)
 {
-    infoPackets.push_back(infoPacket);
+    infoPackets_incoming.push_back(infoPacket);
 }
 #endif // UAV_MESSAGEBOX_CPP

@@ -9,6 +9,8 @@
 #include "networklistener.h"
 #include "messagebox.h"
 
+#define DEFAULT_PRIORITY 10
+
 /**
   GsServer is the server object for the ground station. The current
   implementation will be changing, but this is the first working version.
@@ -100,6 +102,26 @@ public:
     int sendMessage(char* charArr, int len, int packSize, int target);
 
     /**
+     * @brief sendPacket adds a packet to the send queue for this server. The
+     * default priority is 10. The packet will be sent as soon as the socket
+     * is free for sending. Lowest prioirty is sent first.
+     * @param packet the packet to be added into the send queue
+     * @author Jordan Dickson
+     * @date Feb 5 2016
+     */
+    void sendPacket(Protocol::Packet* packet);
+
+    /**
+     * @brief sendPacket adds a packet to the send queue for this server. The
+     * packet will be sent as soon as the socket is free for sending. Lowest
+     * priority is sent first.
+     * @param packet the packet to be added into the send queue
+     * @param priority the priority of the packet (lowest number sent first)
+     * @date Feb 5 2016
+     */
+    void sendPacket(Protocol::Packet* packet, unsigned int priority);
+
+    /**
      file descriptor for the UAV. Used to send information over the network.
      */
     int uav_fd;
@@ -141,12 +163,17 @@ private:
      */
      void sendDatagram();
 
-
      /**
       * @brief myMessageBox is the messagebox from mapexecution that will be used for
       * outgoing packets.
       */
      messagebox *myMessageBox;
+
+     /**
+      * @brief outPackets is the list of packets waiting to be sent by the server.
+      * each packet is paired with a priority. (low numbers sent first)
+      */
+     QList<QPair<Protocol::Packet,unsigned int> > outPackets;
 };
 #endif // GSSERVER_H
 
