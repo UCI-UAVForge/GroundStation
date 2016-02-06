@@ -46,6 +46,7 @@ public:
     GsServer myServer;
     messagebox MyMessageBox;
     QList<QPair<double,double> > getDoublePairs(QList<QString> strings);
+    messagebox MessageBox;
 private slots:
     void on_finishButton_clicked();
     void on_returnHomeButton_clicked();
@@ -60,7 +61,7 @@ private slots:
     void initCurrentData();
 
     void updateStatusIndicator(int x);
-    void on_colorTester_clicked();
+    //void on_colorTester_clicked();
 
 private:
     void addPoint(QString string);
@@ -73,6 +74,8 @@ private:
     QTime prevTime;
     QTableWidget *CurrentData;
     QTableWidgetItem *LatLabel, *LngLabel, *AltLabel, *SpdLabel;
+signals:
+    void uav_Connected();
 };
 
 #endif // MAPEXECUTION_H

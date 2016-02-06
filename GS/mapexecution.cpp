@@ -26,9 +26,11 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
     buttonGroup = new QButtonGroup();
     messagebox messagebox;
     //initate clock timer
-    ui->clock->initiate(messagebox.timer);
-    messagebox.fetch_from_table(strings);
-    std::vector<Protocol::ActionPacket> test_actions = messagebox.get_action_packets();
+    ui->clock->initiate(MessageBox.timer);
+    ui->StatusConsole->initiate(MessageBox);
+    //display widgets
+    MessageBox.fetch_from_table(strings);
+    std::vector<Protocol::ActionPacket> test_actions = MessageBox.get_action_packets();
     int pack_number = 1;
 
     for(auto i : test_actions){
@@ -37,7 +39,7 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
         std::cout << pack_number << " Latitude: " << test_wp.lat << " Longitude: " << test_wp.lon << std::endl;
         ++pack_number;
     }
-
+    std::cout << "HELLO?" << std::endl;
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
@@ -261,8 +263,8 @@ void MapExecution::updateStatusIndicator(int x)
     }
 }
 
-void MapExecution::on_colorTester_clicked()
-{
-    ui->StatusConsole->appendPlainText("Update");
-    MapExecution::updateStatusIndicator(rand() % 3);
-}
+//void MapExecution::on_colorTester_clicked()
+//{
+//    ui->StatusConsole->appendPlainText("Update");
+//    MapExecution::updateStatusIndicator(rand() % 3);
+//}

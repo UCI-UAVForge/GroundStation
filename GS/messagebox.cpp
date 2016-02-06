@@ -61,7 +61,7 @@ void messagebox::load_info_packet(std::string other){
 }
 
 void messagebox::load_telem_packet(double lat, double lon){
-    telemetryPackets.push_back(Protocol::TelemetryPacket());
+    addTelemetryPacket(Protocol::TelemetryPacket());
     telemetryPackets.back().SetLocation(lat, lon);
 }
 
