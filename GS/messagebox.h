@@ -84,6 +84,7 @@ private:
     std::vector<Protocol::TelemetryPacket> telemetryPackets;
     uint32_t timestamp_offset; //Offset between GS timer and the UAV timer
 
+    std::vector<Protocol::Packet*> outPackets;
 //signals:
 
 //public slots:

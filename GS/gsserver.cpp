@@ -207,3 +207,51 @@ int GsServer::sendMessage(char *charArr, int len, int packSize, int target){
     }
     return 0;
 }
+
+
+void GroundStation::sendActionPackets(std::vector<Protocol::Packet*> packets)
+{
+    //QTextStream(stdout) << "The size of the vector is " << packets.size() << endl;
+    for(auto i = packets.begin(); i != packets.end(); ++i)
+    {
+        sendAPacket(*i);
+    }
+
+}
+
+void GroundStation::sendActionPackets(std::queue<Protocol::Packet*> packets)
+{
+    //QTextStream(stdout) << "The size of the vector is " << packets.size() << endl;
+    int size = packets.size();
+    for(int i = 0; i < size; ++i)
+    {
+        sendAPacket(packets.front());
+        packets.pop();
+    }
+
+}
+
+
+void GroundStation::sendAPacket(Protocol::Packet* packet)
+{
+    QByteArray datagram;
+    QDataStream out(&datagram, QIODevice::WriteOnly);
+    out.setVersion(QDataStream::Qt_4_3);
+    
+    // Allocate storage for the packet in the for of u_int8_t
+    u_int8_t storage[GroundStation::PACKET_LENGTH];
+    
+    // Convert the packet into bytes and store into storage
+    size_t packet_size = packet->GetBytes(storage, GroundStation::PACKET_LENGTH);
+
+    // Send bytes inside storage to out datastream
+    for(size_t i =0; i < packet_size; i++)
+    {
+        out << storage[i];
+    }
+
+    // Send datagram through UDP socket
+    sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, GroundStation::UAV_PORT_NUM);
+}
+
+

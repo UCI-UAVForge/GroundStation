@@ -64,8 +64,8 @@ public:
      * \date    16-1-27
      *
      **/
-    void sendAllActionPackets(std::queue<Protocol::Packet*> packets);
-    void sendAllActionPackets(std::vector<Protocol::Packet*> packets);
+    void sendAllPackets(std::queue<Protocol::Packet*> packets);
+    void sendAllPackets(std::vector<Protocol::Packet*> packets);
     /**
      * \brief   Function takes a single packet or a child of packet and sends it through UDP.
      * \param   packet represents a single packet or child of packet.

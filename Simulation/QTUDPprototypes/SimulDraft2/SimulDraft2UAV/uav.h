@@ -14,6 +14,9 @@
 #include "infopacket.h"
 #include "telemetrypacket.h"
 
+#include <queue>
+#include <vector>
+
 /*
  * Protocol for sending packets.
  *
@@ -56,6 +59,7 @@ public:
      *
      **/
     void sendAllActionPackets(std::vector<Protocol::Packet*> packets);
+    void sendAllActionPackets(std::queue<Protocol::Packet*> packets);
     /**
      * \brief   Function takes a single packet or a child of packet and sends it through UDP.
      * \param   packet represents a single packet or child of packet.
@@ -64,7 +68,6 @@ public:
      * \date    16-1-27
      *
      **/
-    void sendAllActionPackets(std::vector<Protocol::Packet*> packets);
     void sendAPacket(Protocol::Packet* packet);
 
     /* Created Functions to print out information about packets

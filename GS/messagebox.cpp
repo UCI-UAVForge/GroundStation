@@ -24,7 +24,19 @@ void messagebox::fetch_from_table(QList<QString> tableList){
         if(comps[4] == "S") {
             lat *= -1.0;
         }
-        load_action_packet(lat, lon, 0.0, 0.0);
+        //load_action_packet(lat, lon, 0.0, 0.0);
+
+
+
+        Protocol::Waypoint* waypoint = new Protocol::Waypoint();
+        waypoint->lon = lon;
+        waypoint->lat = lat;
+        waypoint->speed = 0.0;
+        waypoint->alt = 0.0;
+
+        Protocol::ActionPacket* action = new Protocol::ActionPacket();
+        action->SetWaypoint(*waypoint);
+        outPacket.push_back(action);
     }
 }
 

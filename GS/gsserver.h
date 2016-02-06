@@ -114,6 +114,26 @@ public:
     */
     NetworkListener networkListener;
 
+    /**
+     * \brief   Member function takes a vector of packets and sends them all to the uav through UDP.
+     * \param   packets represents a vector of action packets.
+     *
+     * \author  Alvin Truong
+     * \date    16-1-27
+     *
+     **/
+    void sendAllPackets(std::queue<Protocol::Packet*> packets);
+    void sendAllPackets(std::vector<Protocol::Packet*> packets);
+    /**
+     * \brief   Function takes a single packet or a child of packet and sends it through UDP.
+     * \param   packet represents a single packet or child of packet.
+     *
+     * \author  Alvin Truong
+     * \date    16-1-27
+     *
+     **/
+    void sendAPacket(Protocol::Packet* packet);
+
 private:
     /**
      Function used to format a single coordinate for sendingover the network.

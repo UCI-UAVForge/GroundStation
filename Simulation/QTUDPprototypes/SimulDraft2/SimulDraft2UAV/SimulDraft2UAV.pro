@@ -25,7 +25,9 @@ HEADERS  += \
     actionpacket.h \
     infopacket.h \
     packet.h \
-    telemetrypacket.h
+    telemetrypacket.h \
+    actionpacket.h \
+    infopacket.h
 
 FORMS    += dialog.ui
 

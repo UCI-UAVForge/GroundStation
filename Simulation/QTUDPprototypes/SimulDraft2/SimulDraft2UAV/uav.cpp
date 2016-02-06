@@ -7,7 +7,7 @@ UAV::UAV(QWidget *parent)
 {
     // Set booleans to simulate UAV state
     uavOn = true;
-    initialInfoPacketSucessful = false;
+//    initialInfoPacketSucessful = false;
     uavWaypointsReady = false;
     uavFlying = false;
     stopAction = false;

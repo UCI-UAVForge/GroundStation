@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     for (auto& action : actionPacket)
         packets_to_send.push(&action);
 
-    station.sendAllActionPackets(packets_to_send);
+    station.sendAllPackets(packets_to_send);
 //    station.sendAllActionPackets(actionPacket);
 
 
