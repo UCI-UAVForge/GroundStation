@@ -8,7 +8,8 @@ QT       += core \
             gui \
             webkitwidgets \
             multimedia \
-            multimediawidgets
+            multimediawidgets \
+            network
 QT       += svg
 
 QT       += core gui multimedia multimediawidgets
@@ -39,10 +40,17 @@ SOURCES += main.cpp\
     videoplayer.cpp \
     gsserver.cpp \
     gsclient.cpp \
-    jsonobject.cpp \
     qcustomplot.cpp\
     networklistener.cpp \
-    connectiondialog.cpp
+    connectiondialog.cpp \
+    messagebox.cpp \
+    ActionPacket.cpp \
+    InfoPacket.cpp \
+    TelemetryPacket.cpp \
+    Packet.cpp \
+    digitalclock.cpp \
+    mapvalidator.cpp
+
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \
@@ -57,10 +65,17 @@ HEADERS  += mainwindow.h \
     net.h \
     gsserver.h \
     gsclient.h \
-    jsonobject.h \
     qcustomplot.h\
     networklistener.h \
-    connectiondialog.h
+    connectiondialog.h \
+    messagebox.h \
+    actionpacket.h \
+    infopacket.h \
+    telemetrypacket.h \
+    ackpacket.h \
+    packet.h \
+    digitalclock.h \
+    mapvalidator.h \
 
 FORMS    += mainwindow.ui \
     options.ui \
@@ -75,3 +90,5 @@ OTHER_FILES +=
 
 RESOURCES += \
     Resources.qrc
+
+DISTFILES +=

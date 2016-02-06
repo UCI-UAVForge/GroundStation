@@ -50,6 +50,8 @@ namespace Protocol
 
 		void SetLocation(double lat, double lon, float alt);
 
+		void SetLocation(double lat, double lon);
+
 		void SetHeading(float h);
 
 		void GetVelocity(float* x, float* y, float* z);
@@ -59,6 +61,7 @@ namespace Protocol
 		void GetLocation(double* lat, double* lon, float* alt);
 
 		void GetHeading(float* h);
+
 
 		virtual size_t GetBytes(uint8_t* buffer, size_t len);
 	};

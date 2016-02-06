@@ -52,7 +52,9 @@
                 //Adds the click listener for ploting waypoints
                 google.maps.event.addListener(map, 'click', function(event){
                       addLatLng(event.latLng);
-                      cbridge.addPointToTable(event.latLng.lat(),event.latLng.lng());
+                      var lat = event.latLng.lat();
+                      var lng = event.latLng.lng();
+                      cbridge.addPointToTable(lat,lng);
                       });
             }
 

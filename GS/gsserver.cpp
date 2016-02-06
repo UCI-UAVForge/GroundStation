@@ -1,11 +1,5 @@
 #include "gsserver.h"
 #include <errno.h>
-//#include <sys/types.h>
-//#include <sys/socket.h>
-//#include <netinet/in.h>
-//#include <netdb.h>
-//#include <arpa/inet.h>
-//#include <sys/wait.h>
 #include <signal.h>
 #include <iostream>
 #include <string>
@@ -29,7 +23,6 @@ void GsServer::waitNet(unsigned millis){
 }
 #else
 #include <unistd.h>
-//#include <sys/socket.h>
 #include <netinet/in.h>
 #include <netdb.h>
 #include <arpa/inet.h>
@@ -46,53 +39,24 @@ void GsServer::waitNet(unsigned millis){
 char listenPort[10];  // the port users will be connecting to
 char sendPort[10];
 char buf[BUFSIZE];
-//---------------------
 
-/*
-waypoint needs lat,lng,alt
+//--------
 
-telemetry points need lat,lng,alt,velocity
-timestamp on each packet
-
-need a time since last packet recieved
-need msg confirmation for periodic waypoint updates
-    maybe UDP to appear at app level
-    msg ids and timestamps
-
-need a msg flag to identify packet types
-    add point, cancel, return home, etc
-    switch statment to determine how to parse each type
-
-establish an upper bound
-
-think about implementable protocalls
-
-need to talk to radio comms team
-
-what if GS dies?
-
-next meeting at 12:30
-
-alternatives to json
-    Google ProtoBuff - binary packing
-        read up
-    Custom format to pack data
-
-*/
-
-GsServer::GsServer(){
+GsServer::GsServer(messagebox *myMessageBox): networkListener(myMessageBox){
+    this->myMessageBox = myMessageBox;
     myAddressInt = (127 << 24) | 1;
     port = 3495;
 }
 
-GsServer::GsServer(net::GS_Address myAddress){
+GsServer::GsServer(net::GS_Address myAddress, messagebox *myMessageBox): networkListener(myMessageBox){
+    this->myMessageBox = myMessageBox;
     myAddressInt = myAddress.GetAddress();
     port = myAddress.GetPort();
 }
 
 GsServer::~GsServer(){
     networkListener.stop();
-    //delete networkListener;
+    delete myMessageBox;
     free(this);
 }
 
@@ -120,6 +84,9 @@ void GsServer::run(){
 }
 
 int GsServer::openServer(){
+
+
+    /*
     std::cout<< "Starting Server..." << std::endl;
     unsigned short listenPort = port;
     int sockfd;  // listen on sock_fd, new connection on uav_fd
@@ -193,7 +160,7 @@ int GsServer::openServer(){
         std::cout << "server: got connection from " << s << std::endl;
         networkListener.setId(uav_fd);
         networkListener.start();
-        return 0;
+        return 0;*/
 }
 
 void GsServer::formatCoordinatesToSend(char *charArr, int len, QList<QPair<double, double> > coords){

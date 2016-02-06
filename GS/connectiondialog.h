@@ -3,6 +3,12 @@
 
 #include <QDialog>
 
+/*
+ * connection to simulation
+ * google doc (multiple) protocal notes
+ * 1-2 weeks
+*/
+
 namespace Ui {
 class ConnectionDialog;
 }

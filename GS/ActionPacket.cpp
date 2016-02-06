@@ -18,6 +18,7 @@
 Protocol::ActionPacket::ActionPacket(uint8_t* buffer, size_t len) : ActionPacket()
 {
 	size_t offset = this->ReadHeader(buffer, len);
+    Protocol::Packet::set_type(Protocol::PacketType::Action);
 
 	this->action = *((ActionType*)(buffer + offset));
 	this->waypoint.lat = *((double*)(buffer + offset + 1));
@@ -55,7 +56,7 @@ size_t Protocol::ActionPacket::GetBytes(uint8_t* buffer, size_t len)
 	*((double*)(buffer + offset + 9)) = this->waypoint.lon;
 	*((float*)(buffer + offset + 17)) = this->waypoint.alt;
 	*((float*)(buffer + offset + 21)) = this->waypoint.speed;
-	offset += 21;
+	offset += 25;
 
 	return this->SetChecksum(buffer, len, offset);
 }

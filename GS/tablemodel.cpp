@@ -111,8 +111,8 @@ bool TableModel::insertRow(double longitude, double latitude,const QModelIndex &
 
     //Prepare variables to be assembled into the list
     QString action = "Action 1";
-    QString longString = QString::number(longitude);
-    QString latString = QString::number(latitude);
+    QString longString = QString::number(longitude,'g',10);
+    QString latString = QString::number(latitude,'g',10);
     QString behaviorString = "Behavior 1";
 
     //Assemble the new QList

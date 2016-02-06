@@ -19,6 +19,7 @@
 
 Protocol::TelemetryPacket::TelemetryPacket() : Packet(PacketType::Telem)
 {
+    Protocol::Packet::set_type(Protocol::PacketType::Telem);
 	static uint32_t sequence = 0;
 	this->sequenceNumber = ++sequence;
 }
@@ -53,6 +54,12 @@ void Protocol::TelemetryPacket::SetLocation(double lat, double lon, float alt)
 	this->lat = lat;
 	this->lon = lon;
 	this->alt = alt;
+}
+
+void Protocol::TelemetryPacket::SetLocation(double lat, double lon)
+{
+	this->lat = lat;
+	this->lon = lon;
 }
 
 void Protocol::TelemetryPacket::SetHeading(float h)

@@ -17,6 +17,8 @@
 #define COORDINATOR_INFOPACKET_H
 
 #include <string>
+#include "string.h"
+#include "stdint.h"
 #include "Packet.h"
 
 namespace Protocol

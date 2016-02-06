@@ -5,6 +5,12 @@
 #include <iostream>
 #include <QString>
 
+#include "ackpacket.h"
+#include "actionpacket.h"
+#include "telemetrypacket.h"
+#include "infopacket.h"
+#include "packet.h"
+
 #define BUFSIZE 4096
 
 using namespace std;
@@ -23,16 +29,46 @@ using namespace std;
 
 #endif
 
-NetworkListener::NetworkListener(int UAVid) {
+NetworkListener::NetworkListener(messagebox *myMessagebox){
+     this->myMessageBox = myMessagebox;
+
+    std::cout << "New NetworkListener created." << std::endl;
+    udpSocket.bind(27015);
+
+    connect(&udpSocket, SIGNAL(readyRead()), this, SLOT(processPendingDatagrams()));
+}
+
+NetworkListener::NetworkListener(messagebox *myMessagebox, int UAVid):NetworkListener(myMessagebox) {
     this->UAVid = UAVid;
     listening = true;
 }
 
-NetworkListener::NetworkListener(){
+NetworkListener::~NetworkListener() {
 
 }
 
-NetworkListener::~NetworkListener() {
+void NetworkListener::processPendingDatagrams(){
+
+    //Coppied dirrectly from Avionics simulation
+    QByteArray datagram;
+    std::cout << "running!" << std::endl;
+
+
+    while (udpSocket.hasPendingDatagrams()){
+        datagram.resize(udpSocket.pendingDatagramSize());
+        udpSocket.readDatagram(datagram.data(), datagram.size());
+        std::cout<< "loop!" << std::endl;
+    }
+
+    QByteArray altitude;
+    QDataStream in(&datagram, QIODevice::ReadOnly);
+    in.setVersion(QDataStream::Qt_4_3);
+    in >> altitude;
+
+    std::cout << "running...";
+
+
+    std::cout << altitude.toStdString();
 
 }
 
@@ -40,8 +76,10 @@ void NetworkListener::setId(int UAVid){
     this->UAVid = UAVid;
 }
 
-
 void NetworkListener::run() {
+    //----test code----
+    listening = false;
+
     while (listening){
 
         netWait(1);
@@ -53,9 +91,6 @@ void NetworkListener::run() {
         }
     }
 }
-
-
-
 
 long NetworkListener::reciveMessage(char* buf){
   long len = BUFSIZE;
@@ -83,8 +118,6 @@ long NetworkListener::reciveMessage(char* buf){
   return numbytes;
 }
 
-
-
 /*long NetworkListener::reciveMessage(char* buf){
   long numbytes = 0;
   if ((numbytes = recv(UAVid, buf, BUFSIZE-1, 0)) == -1) {
@@ -97,6 +130,46 @@ long NetworkListener::reciveMessage(char* buf){
 }*/
 
 void NetworkListener::messageRecieved(char *msg){
+    int len = strlen(msg);
+    unsigned char unsigned_msg[len+1];
+    for(int i = 0; i < len; i ++){
+        unsigned_msg[i] = (char)(msg[i]+128);
+    }
+    unsigned_msg[len] = 0;
+
+
+
+    Protocol::Packet *incPacket = Protocol::Packet::Parse(unsigned_msg,len+1);
+    Protocol::PacketType type = (Protocol::PacketType)unsigned_msg[0];
+    switch (type) {
+    case Protocol::PacketType::Ack:{
+        std::cout<< "AckPacket Recieved";
+        Protocol::AckPacket *ackPacket = (Protocol::AckPacket*)incPacket;
+        myMessageBox->addAckPacket(*ackPacket);
+        break;}
+    case Protocol::PacketType::Action:{
+        std::cout<< "ActionPacket Recieved";
+        Protocol::ActionPacket *actionPacket = (Protocol::ActionPacket*)incPacket;
+        myMessageBox->addActionPacket(*actionPacket);
+        break;}
+    case Protocol::PacketType::Telem:{
+        std::cout<< "TelemPacket Recieved";
+        Protocol::TelemetryPacket *telemPacket = (Protocol::TelemetryPacket*)incPacket;
+        myMessageBox->addTelemetryPacket(*telemPacket);
+        break;}
+    case Protocol::PacketType::Info:{
+        std::cout<< "InfoPacket Recieved";
+        Protocol::InfoPacket *infoPacket = (Protocol::InfoPacket*)incPacket;
+        myMessageBox->addInfoPacket(*infoPacket);
+        break;}
+    default:
+        std::cout<< "UNKNOWN PACKET TYPE RECIEVED!";
+        break;
+    }
+
+    return;
+
+    //old recieve code
     QString msgString = msg;
     if (msgString == "init"){
         cout<< "Sending coordinates!" << endl;
