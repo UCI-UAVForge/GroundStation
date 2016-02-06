@@ -9,7 +9,6 @@ messagebox::messagebox()
    timer = QTime();
    timer.start();
     std::cout << "Timer started at " << timer.currentTime << std::endl;
-    load_telem_packet(5.0, 2.0);
 }
 /* Uses code from MapExecution::getDoublePairs
 takes input from MapPlanning::getTableAsStrings()

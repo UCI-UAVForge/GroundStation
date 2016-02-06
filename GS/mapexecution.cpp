@@ -263,8 +263,8 @@ void MapExecution::updateStatusIndicator(int x)
     }
 }
 
-void MapExecution::on_colorTester_clicked()
-{
-    ui->StatusConsole->appendPlainText("Update");
-    MapExecution::updateStatusIndicator(rand() % 3);
-}
+//void MapExecution::on_colorTester_clicked()
+//{
+//    ui->StatusConsole->appendPlainText("Update");
+//    MapExecution::updateStatusIndicator(rand() % 3);
+//}
