@@ -173,7 +173,7 @@ private:
       * @brief outPackets is the list of packets waiting to be sent by the server.
       * each packet is paired with a priority. (low numbers sent first)
       */
-     QList<QPair<Protocol::Packet,unsigned int> > outPackets;
+     QList<QPair<Protocol::Packet*,unsigned int> > outPackets;
 };
 #endif // GSSERVER_H
 
