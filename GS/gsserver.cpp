@@ -46,12 +46,14 @@ GsServer::GsServer(messagebox *myMessageBox): networkListener(myMessageBox){
     this->myMessageBox = myMessageBox;
     myAddressInt = (127 << 24) | 1;
     port = 3495;
+    networkListener.start();
 }
 
 GsServer::GsServer(net::GS_Address myAddress, messagebox *myMessageBox): networkListener(myMessageBox){
     this->myMessageBox = myMessageBox;
     myAddressInt = myAddress.GetAddress();
     port = myAddress.GetPort();
+    networkListener.start();
 }
 
 GsServer::~GsServer(){

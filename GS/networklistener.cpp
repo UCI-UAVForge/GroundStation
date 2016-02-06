@@ -34,8 +34,9 @@ NetworkListener::NetworkListener(messagebox *myMessagebox){
 
     std::cout << "New NetworkListener created." << std::endl;
     udpSocket.bind(27015);
+    listening = true;
 
-    connect(&udpSocket, SIGNAL(readyRead()), this, SLOT(processPendingDatagrams()));
+    //connect(&udpSocket, SIGNAL(readyRead()), this, SLOT(processPendingDatagrams()));
 }
 
 NetworkListener::NetworkListener(messagebox *myMessagebox, int UAVid):NetworkListener(myMessagebox) {
@@ -53,12 +54,11 @@ void NetworkListener::processPendingDatagrams(){
     QByteArray datagram;
     std::cout << "running!" << std::endl;
 
-
-    while (udpSocket.hasPendingDatagrams()){
+    //while (udpSocket.hasPendingDatagrams()){
         datagram.resize(udpSocket.pendingDatagramSize());
         udpSocket.readDatagram(datagram.data(), datagram.size());
-        std::cout<< "loop!" << std::endl;
-    }
+        //std::cout<< "loop!" << std::endl;
+    //}
 
     QByteArray altitude;
     QDataStream in(&datagram, QIODevice::ReadOnly);
@@ -78,17 +78,20 @@ void NetworkListener::setId(int UAVid){
 
 void NetworkListener::run() {
     //----test code----
-    listening = false;
+    listening = true;
 
     while (listening){
-
-        netWait(1);
+        //std::cout << "listening..." << std::endl;
+        if (udpSocket.hasPendingDatagrams()) {
+            processPendingDatagrams();
+        }
+        /*netWait(1);
         long numbytes = 0;
         char buffer[BUFSIZE];
         numbytes = reciveMessage(buffer);
         if (listening){
             messageRecieved(buffer);
-        }
+        }*/
     }
 }
 
