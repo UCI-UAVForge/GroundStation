@@ -11,7 +11,7 @@
 #include <QList>
 
 #include "digitalclock.h"
-#include "gsclient.h"
+//#include "gsclient.h"
 #include "gsserver.h"
 #include "tablemodel.h"
 #include "qcomboboxdelegate.h"

@@ -8,7 +8,7 @@ messagebox::messagebox()
     std::cout << "Message box succesfully created" << std::endl;
    timer = QTime();
    timer.start();
-    std::cout << "Timer started at " << timer.currentTime << std::endl;
+    std::cout << "Timer started at " << timer.currentTime().msec()<< std::endl;
 }
 /* Uses code from MapExecution::getDoublePairs
 takes input from MapPlanning::getTableAsStrings()
