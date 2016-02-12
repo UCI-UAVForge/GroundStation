@@ -31,7 +31,7 @@ void DigitalClock::initiate(QTime timein)
     showTime();
 }
 
-void DigitalClock::initiate(messagebox mbin)
+void DigitalClock::initiate(messagebox* mbin)
 {
     mb = mbin;
     QTimer *timer2 = new QTimer(this);
@@ -72,7 +72,7 @@ void DigitalClock::showStatus()
     double lon;
     float alt;
 //    float heading;
-    if (mb.get_telem_packets().empty())
+    if (mb->get_telem_packets().empty())
     {
         clear();
         appendPlainText("Empty: ");
@@ -80,17 +80,17 @@ void DigitalClock::showStatus()
     }
     else
     {
-        Protocol::TelemetryPacket last = mb.get_telem_packets().back();
+        Protocol::TelemetryPacket last = mb->get_telem_packets().back();
         last.GetVelocity(&vX, &vY,&vZ);
         last.GetLocation(&lat, &lon, &alt );
         last.GetOrientation(&pitch, &roll, & yaw);
         QString text;
         text.append("Location: ");
-        text.append(QString::number(lat,'f',2) + ', ' + QString::number(lon,'f',2) + ', ' + QString::number(alt,'f',2));
+        text.append(QString::number(lat,'f',2) + ", " + QString::number(lon,'f',2) + ", " + QString::number(alt,'f',2));
         text.append("\nVelocity: ");
-        text.append(QString::number(vX,'f',2) + ', ' + QString::number(vY,'f',2) + ', ' + QString::number(vZ,'f',2));
+        text.append(QString::number(vX,'f',2) + ", " + QString::number(vY,'f',2) + ", " + QString::number(vZ,'f',2));
         text.append("\nOrientation: ");
-        text.append(QString::number(pitch,'f',2) + ', ' + QString::number(roll,'f',2) + ', ' + QString::number(yaw,'f',2));
+        text.append(QString::number(pitch,'f',2) + ", " + QString::number(roll,'f',2) + ", " + QString::number(yaw,'f',2));
         clear();
         appendPlainText(text);
     }
