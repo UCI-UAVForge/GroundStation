@@ -22,10 +22,10 @@ public:
 
     QTime time;
     QString start;
-    messagebox mb;
+    messagebox* mb;
 
     void initiate(QTime timein);
-    void initiate(messagebox mbin);
+    void initiate(messagebox* mbin);
 
 private slots:
     void showTime();

@@ -48,8 +48,8 @@ void MapPlanning::on_executeButton_clicked() {
     this->close();
     mapExecution->showFullScreen();
 
-    ConnectionDialog * connectionDialog = new ConnectionDialog();
-    connectionDialog -> show();
+//    ConnectionDialog * connectionDialog = new ConnectionDialog();
+//    connectionDialog -> show();
 
     //this->done(2);
 }
