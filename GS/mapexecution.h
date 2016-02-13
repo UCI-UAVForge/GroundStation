@@ -33,7 +33,7 @@ class MapExecution : public QDialog {
 public slots:
     void setMap(QList<QString> list);
     void addNewMap();
-  
+    void plotPosition(double lat, double lng);
     void updateTable(double lat, double lng);
     void newTelemCoord(QString coordString);
     void sendFlightPlan();
@@ -41,7 +41,6 @@ public slots:
 public:
     explicit MapExecution(QList<QString> strings, QWidget *parent = 0);
     explicit MapExecution(QWidget *parent = 0);
-    void plotPosition(double lat, double lng);
     ~MapExecution();
     GsServer myServer;
     messagebox MyMessageBox;
