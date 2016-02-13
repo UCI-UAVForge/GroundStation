@@ -28,7 +28,7 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
     MyMessageBox.fetch_from_table(strings);
     //initate clock timer
     ui->clock->initiate(MyMessageBox.timer);
-    ui->StatusConsole->initiate(&MyMessageBox);
+    ui->StatusConsole->initiate(&MyMessageBox, this);
     //display widgets
 
     std::vector<Protocol::ActionPacket> test_actions = MyMessageBox.get_action_packets();
@@ -62,6 +62,7 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
     myServer.start();
     connect(&myServer.networkListener,SIGNAL(sendCoordinates()),this,SLOT(sendFlightPlan()));
     connect(&myServer.networkListener,SIGNAL(logTelemetry(QString)),this,SLOT(newTelemCoord(QString)));
+
 }
 
 MapExecution::~MapExecution() {
