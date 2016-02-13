@@ -1,13 +1,18 @@
 #ifndef GSSERVER_H
 #define GSSERVER_H
 
-#include <QList>
+#include <QQueue>
 #include <QPair>
 #include <QThread>
 #include <QUdpSocket>
-#include "net.h"
+//#include "net.h"
 #include "networklistener.h"
 #include "messagebox.h"
+
+#define DEFAULT_PRIORITY 10
+
+const static QString UAV_IP_ADDRESS = "localhost";
+
 
 /**
   GsServer is the server object for the ground station. The current
@@ -32,16 +37,6 @@ public:
     GsServer(messagebox *myMessageBox);
 
     /**
-     Creates a new server and immediately attatches it to
-     the IP address and port stored in myAddress.
-
-     @param myAddress the object containing the address and port to host
-     the server on.
-     @param myMessageBox the messagebox used for outgoing packets
-     */
-    GsServer(net::GS_Address myAddress,messagebox *myMessageBox);
-
-    /**
       Destructor for GsServer
      */
     ~GsServer();
@@ -55,7 +50,7 @@ public:
       Opens ther server by hosting it on a socket and listening for
       connections.
      */
-    int openServer();
+    void openServer();
 
     /**
       Closes the server by dropping all current connections and ending the
@@ -84,7 +79,7 @@ public:
 
      @see formatCoord(char*, QPair<double,double>)
      */
-    void formatCoordinatesToSend(char* charArr, int len, QList<QPair<double, double> > coords);
+    //void formatCoordinatesToSend(char* charArr, int len, QList<QPair<double, double> > coords);
 
     /**
      sends the first len characters in charArr to the target specified by
@@ -97,7 +92,27 @@ public:
 
      @returns 0 if the process was successful.
      */
-    int sendMessage(char* charArr, int len, int packSize, int target);
+    //int sendMessage(char* charArr, int len, int packSize, int target);
+
+    /**
+     * @brief sendPacket adds a packet to the send queue for this server. The
+     * default priority is 10. The packet will be sent as soon as the socket
+     * is free for sending. Lowest prioirty is sent first.
+     * @param packet the packet to be added into the send queue
+     * @author Jordan Dickson
+     * @date Feb 5 2016
+     */
+    void sendPacket(Protocol::Packet* packet);
+
+    /**
+     * @brief sendPacket adds a packet to the send queue for this server. The
+     * packet will be sent as soon as the socket is free for sending. Lowest
+     * priority is sent first.
+     * @param packet the packet to be added into the send queue
+     * @param priority the priority of the packet (lowest number sent first)
+     * @date Feb 5 2016
+     */
+    void sendPacket(Protocol::Packet* packet, unsigned int priority);
 
     /**
      file descriptor for the UAV. Used to send information over the network.
@@ -115,6 +130,15 @@ public:
     NetworkListener networkListener;
 
 private:
+
+    bool running;
+
+    /* Alvin Truong added on 16-1-27*/
+    const static int PACKET_LENGTH = 1000;
+    const static int SEND_PORT = 20715;
+    const static int LISTEN_PORT = 20715;
+    static int NUM_RECV_PACKETS;
+
     /**
      Function used to format a single coordinate for sendingover the network.
 
@@ -127,11 +151,6 @@ private:
      int formatCoord(char* charArr, QPair<double,double> coord);
 
      /**
-       Stores the IP address of this server.
-     */
-     unsigned long myAddressInt;
-
-     /**
        Stores the port number of this server.
      */
      unsigned short port;
@@ -139,14 +158,26 @@ private:
      /**
        Sends the most significant datagram.
      */
-     void sendDatagram();
+     void sendNextPacket();
 
+     Protocol::Packet* getNextPacket();
 
      /**
       * @brief myMessageBox is the messagebox from mapexecution that will be used for
       * outgoing packets.
       */
      messagebox *myMessageBox;
+
+     QUdpSocket outSocket;
+
+
+     QQueue<Protocol::Packet*> outPackets;
+
+     /**
+      * @brief outPackets is the list of packets waiting to be sent by the server.
+      * each packet is paired with a priority. (low numbers sent first)
+      */
+     //QList<QPair<Protocol::Packet*,unsigned int> > outPackets;
 };
 #endif // GSSERVER_H
 

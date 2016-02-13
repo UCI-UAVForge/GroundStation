@@ -79,10 +79,13 @@ private:
      * @date 2016-1-22
      */
     uint32_t gs_to_uav_timestamp();
-    std::vector<Protocol::AckPacket> ackPackets;
-    std::vector<Protocol::ActionPacket> actionPackets;
-    std::vector<Protocol::InfoPacket> infoPackets;
-    std::vector<Protocol::TelemetryPacket> telemetryPackets;
+    std::vector<Protocol::AckPacket> ackPackets_incoming;
+    std::vector<Protocol::ActionPacket> actionPackets_incoming;
+    std::vector<Protocol::InfoPacket> infoPackets_incoming;
+    std::vector<Protocol::TelemetryPacket> telemetryPackets_incoming;
+
+    std::vector<Protocol::Packet> packets_outgoing;
+
     uint32_t timestamp_offset; //Offset between GS timer and the UAV timer
 
 //signals:

@@ -1,36 +1,18 @@
 #include "mapexecution.h"
 
-MapExecution::MapExecution(QWidget *parent) : QDialog(parent), myServer(&MyMessageBox), ui(new Ui::MapExecution), prevTime() {
-    buttonGroup = new QButtonGroup();
-    model = new TableModel();
-    ui->setupUi(this);
-    ui->tableView->setModel(model);
-    ui->tableView->setItemDelegate(new QComboBoxDelegate());
-    prevLat = prevLng = 0.0;
-    CurrentData = ui->CurrentData;
-    initCurrentData();
+MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
+        QDialog(parent),
+        myServer(&MyMessageBox),
+        ui(new Ui::MapExecution),
+        prevTime() {
 
-    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
-
-    connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()), Qt::UniqueConnection);
-    connect(ui->cancelButton, SIGNAL(clicked()), this, SLOT(on_cancelButton_clicked()), Qt::UniqueConnection);
-    connect(ui->finishButton, SIGNAL(clicked()), this, SLOT(on_finishButton_clicked()), Qt::UniqueConnection);
-    connect(ui->returnHomeButton, SIGNAL(clicked()), this, SLOT(on_returnHomeButton_clicked()), Qt::UniqueConnection);
-    connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(on_stopButton_clicked()), Qt::UniqueConnection);
-
-}
-
-MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(parent), myServer(&MyMessageBox), ui(new Ui::MapExecution) {
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
-    messagebox messagebox;
     //initate clock timer
-    ui->clock->initiate(MessageBox.timer);
-    ui->StatusConsole->initiate(MessageBox);
-    //display widgets
-    MessageBox.fetch_from_table(strings);
-    std::vector<Protocol::ActionPacket> test_actions = MessageBox.get_action_packets();
+
+    ui->clock->initiate(MyMessageBox.timer);
+    MyMessageBox.fetch_from_table(strings);
+    std::vector<Protocol::ActionPacket> test_actions = MyMessageBox.get_action_packets();
     int pack_number = 1;
 
     for(auto i : test_actions){
@@ -39,7 +21,7 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
         std::cout << pack_number << " Latitude: " << test_wp.lat << " Longitude: " << test_wp.lon << std::endl;
         ++pack_number;
     }
-    std::cout << "HELLO?" << std::endl;
+
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
@@ -54,13 +36,18 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
     connect(ui->returnHomeButton, SIGNAL(clicked()), this, SLOT(on_returnHomeButton_clicked()), Qt::UniqueConnection);
     connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(on_stopButton_clicked()), Qt::UniqueConnection);
 
-    myServer.start();
-    connect(&myServer.networkListener,SIGNAL(sendCoordinates()),this,SLOT(sendFlightPlan()));
-    connect(&myServer.networkListener,SIGNAL(logTelemetry(QString)),this,SLOT(newTelemCoord(QString)));
+    myServer.openServer();
+    //connect(&myServer.networkListener,SIGNAL(sendCoordinates()),this,SLOT(sendFlightPlan()));
+    //connect(&myServer.networkListener,SIGNAL(logTelemetry(QString)),this,SLOT(newTelemCoord(QString)));
+    sendFlightPlan();
+}
+
+MapExecution::MapExecution(QWidget *parent) : MapExecution(QList<QString>(),parent){
 }
 
 MapExecution::~MapExecution() {
     delete ui;
+    delete model;
 }
 
 // finish button
@@ -108,13 +95,20 @@ void MapExecution::newTelemCoord(QString msgString){
 
 
 void MapExecution::sendFlightPlan(){
-    std::cout << "Sending..." << std::endl;
-    QList<QPair<double,double> > coords = getDoublePairs(mapStrings);
-    myServer.sendMessage((char*)std::to_string(coords.length()).c_str(), 10, 11, myServer.uav_fd);
-    char msgBuffer[4096];
-    myServer.formatCoordinatesToSend(msgBuffer, 4096, coords);
-    myServer.sendMessage(msgBuffer,strlen(msgBuffer),myServer.maxPackSize,myServer.uav_fd);
-    std::cout << "done!" << std::endl;
+
+    std::vector<Protocol::ActionPacket> packets = MyMessageBox.get_action_packets();
+
+    for (Protocol::ActionPacket pack : packets){
+        Protocol::ActionPacket *ap = new Protocol::ActionPacket;
+        Protocol::Waypoint *wp = new Protocol::Waypoint;
+
+        wp->alt = pack.GetWaypoint().alt;
+        wp->lat = pack.GetWaypoint().lat;
+        wp->lon = pack.GetWaypoint().lon;
+        wp->speed = pack.GetWaypoint().speed;
+        ap->SetWaypoint(*wp);
+        myServer.sendPacket(ap);
+    }
 }
 
 /* Sends a request for the map to clear itself, causing the JavaScript page
