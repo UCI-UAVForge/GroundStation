@@ -43,12 +43,25 @@ void messagebox::load_action_packet(double lat, double lon, float alt, float spd
     actionPackets_incoming.back().SetWaypoint(wp);
 }
 
+void messagebox::load_action_packet(Protocol::ActionType atype, double lat, double lon, float alt, float spd){
+    Protocol::Waypoint wp;
+    wp.lat = lat;
+    wp.lon = lon;
+    wp.alt = alt;
+    wp.speed = spd;
+    addActionPacket(Protocol::ActionPacket());
+    actionPackets_incoming.back().SetAction(atype);
+    actionPackets_incoming.back().SetWaypoint(wp);
+
+}
+
 void messagebox::load_info_packet(std::string other){
     addInfoPacket(Protocol::InfoPacket());
     infoPackets_incoming.back().SetOther(other);
 }
 
 void messagebox::load_telem_packet(double lat, double lon){
+
     telemetryPackets_incoming.push_back(Protocol::TelemetryPacket());
     telemetryPackets_incoming.back().SetLocation(lat, lon);
 }
