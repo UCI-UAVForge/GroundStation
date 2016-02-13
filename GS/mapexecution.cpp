@@ -1,5 +1,27 @@
 #include "mapexecution.h"
 
+
+MapExecution::MapExecution(QWidget *parent) : QDialog(parent), myServer(&MyMessageBox), ui(new Ui::MapExecution), prevTime() {
+    buttonGroup = new QButtonGroup();
+    model = new TableModel();
+    ui->setupUi(this);
+    ui->tableView->setModel(model);
+    ui->tableView->setItemDelegate(new QComboBoxDelegate());
+    prevLat = prevLng = 0.0;
+//    CurrentData = ui->CurrentData;
+//    initCurrentData();
+
+    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
+    ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
+
+    connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()), Qt::UniqueConnection);
+    connect(ui->cancelButton, SIGNAL(clicked()), this, SLOT(on_cancelButton_clicked()), Qt::UniqueConnection);
+    connect(ui->finishButton, SIGNAL(clicked()), this, SLOT(on_finishButton_clicked()), Qt::UniqueConnection);
+    connect(ui->returnHomeButton, SIGNAL(clicked()), this, SLOT(on_returnHomeButton_clicked()), Qt::UniqueConnection);
+    connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(on_stopButton_clicked()), Qt::UniqueConnection);
+
+}
+
 MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
         QDialog(parent),
         myServer(&MyMessageBox),
@@ -8,11 +30,18 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
 
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
-    //initate clock timer
-
-    ui->clock->initiate(MyMessageBox.timer);
+    //messagebox Messagebox;
     MyMessageBox.fetch_from_table(strings);
+    //initate clock timer
+    ui->clock->initiate(MyMessageBox.timer);
+    ui->StatusConsole->initiate(&MyMessageBox);
+    //display widgets
+
     std::vector<Protocol::ActionPacket> test_actions = MyMessageBox.get_action_packets();
+    QTimer *conTime = new QTimer(this);
+    connect(conTime, SIGNAL(timeout()), this, SLOT(updateStatusIndicator()));
+    conTime->start(1000);
+    //display widgets
     int pack_number = 1;
 
     for(auto i : test_actions){
@@ -42,8 +71,6 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
     sendFlightPlan();
 }
 
-MapExecution::MapExecution(QWidget *parent) : MapExecution(QList<QString>(),parent){
-}
 
 MapExecution::~MapExecution() {
     delete ui;
@@ -200,57 +227,65 @@ void MapExecution::updateTable(double lat, double lng) {
     ui->tableView->scrollToBottom();
 }
 
-void MapExecution::updatePosition(double lat, double lng, double alt, double spd)
-{
+//void MapExecution::updatePosition(double lat, double lng, double alt, double spd)
+//{
 
-    if(prevTime.isNull())
-    {
-        prevTime = QTime::currentTime();
-        prevLat = lat;
-        prevLng = lng;
-        prevAlt = alt;
-    }
-    else
-    {
-        LatLabel->setText(QString::number(lat));
-        LngLabel->setText(QString::number(lng));
-        AltLabel->setText(QString::number(alt));
-        SpdLabel->setText(QString::number(spd));
-    }
-}
-void MapExecution::initCurrentData()
-{
+//    if(prevTime.isNull())
+//    {
+//        prevTime = QTime::currentTime();
+//        prevLat = lat;
+//        prevLng = lng;
+//        prevAlt = alt;
+//    }
+//    else
+//    {
+//        LatLabel->setText(QString::number(lat));
+//        LngLabel->setText(QString::number(lng));
+//        AltLabel->setText(QString::number(alt));
+//        SpdLabel->setText(QString::number(spd));
+//    }
+//}
+//void MapExecution::initCurrentData()
+//{
 
-    LatLabel = new QTableWidgetItem("LatLabel");
-    LngLabel = new QTableWidgetItem("LngLabel");
-    AltLabel = new QTableWidgetItem("AltLabel");
-    SpdLabel = new QTableWidgetItem("SpdLabel");
+//    LatLabel = new QTableWidgetItem("LatLabel");
+//    LngLabel = new QTableWidgetItem("LngLabel");
+//    AltLabel = new QTableWidgetItem("AltLabel");
+//    SpdLabel = new QTableWidgetItem("SpdLabel");
 
-    CurrentData->setItem(0,0,new QTableWidgetItem("Latitude"));
-    CurrentData->setItem(1,0,new QTableWidgetItem("Longitude"));
-    CurrentData->setItem(2,0,new QTableWidgetItem("Altitude"));
-    CurrentData->setItem(3,0,new QTableWidgetItem("Speed"));
+//    CurrentData->setItem(0,0,new QTableWidgetItem("Latitude"));
+//    CurrentData->setItem(1,0,new QTableWidgetItem("Longitude"));
+//    CurrentData->setItem(2,0,new QTableWidgetItem("Altitude"));
+//    CurrentData->setItem(3,0,new QTableWidgetItem("Speed"));
 
-    CurrentData->setItem(0,1,LatLabel);
-    CurrentData->setItem(1,1,LngLabel);
-    CurrentData->setItem(2,1,AltLabel);
-    CurrentData->setItem(3,1,SpdLabel);
+//    CurrentData->setItem(0,1,LatLabel);
+//    CurrentData->setItem(1,1,LngLabel);
+//    CurrentData->setItem(2,1,AltLabel);
+//    CurrentData->setItem(3,1,SpdLabel);
 
-}
+//}
 
 /*Change status indicator using inputted x */
-void MapExecution::updateStatusIndicator(int x)
+void MapExecution::updateStatusIndicator()
 {
+    int x;
+    if (MyMessageBox.get_telem_packets().empty())
+        x = 2;
+    else
+        x = 0;
+    ui->StatusIndicator->clear();
     switch(x)
     {
         case 0:
             ui->StatusIndicator->setStyleSheet("background-color:green");
+            ui->StatusIndicator->appendPlainText("\nConnected to UAV");
             break;
         case 1:
             ui->StatusIndicator->setStyleSheet("background-color:yellow");
             break;
         case 2:
             ui->StatusIndicator->setStyleSheet("background-color:red");
+            ui->StatusIndicator->appendPlainText("\nNo Connection to UAV " + QString::number(MyMessageBox.timer.elapsed()/1000));
             break;
         default:
             ui->StatusIndicator->setStyleSheet("background-color:black;");

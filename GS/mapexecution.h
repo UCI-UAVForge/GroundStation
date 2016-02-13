@@ -37,7 +37,8 @@ public slots:
     void updateTable(double lat, double lng);
     void newTelemCoord(QString coordString);
     void sendFlightPlan();
-    void updatePosition(double lat, double lng, double alt, double spd);
+    void updateStatusIndicator();
+    //void updatePosition(double lat, double lng, double alt, double spd);
 public:
     explicit MapExecution(QList<QString> strings, QWidget *parent = 0);
     explicit MapExecution(QWidget *parent = 0);
@@ -58,9 +59,9 @@ private slots:
 
     void addClickListener();
     //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame().
-    void initCurrentData();
+//    void initCurrentData();
 
-    void updateStatusIndicator(int x);
+
     //void on_colorTester_clicked();
 
 private:
@@ -72,10 +73,8 @@ private:
     QButtonGroup *buttonGroup;
     double prevLat, prevLng, prevAlt;
     QTime prevTime;
-    QTableWidget *CurrentData;
-    QTableWidgetItem *LatLabel, *LngLabel, *AltLabel, *SpdLabel;
-signals:
-    void uav_Connected();
+    //QTableWidget *CurrentData;
+    //QTableWidgetItem *LatLabel, *LngLabel, *AltLabel, *SpdLabel;
 };
 
 #endif // MAPEXECUTION_H
