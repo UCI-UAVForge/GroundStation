@@ -27,8 +27,7 @@ public:
     MapExecution* map_exec_ptr;
 
     void initiate(QTime timein);
-    // Added mapexection pointer so that digital clock can connect to mapexecution.
-    // Allows for connection to slots in mapexecution
+    // Added mapexection pointer so that mapexecution can be updated
     void initiate(messagebox* mbin, MapExecution* mapexec_ptr);
 
 private slots:

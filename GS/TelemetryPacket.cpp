@@ -32,7 +32,20 @@ Protocol::TelemetryPacket::TelemetryPacket(uint32_t seqNo) : Packet(PacketType::
 Protocol::TelemetryPacket::TelemetryPacket(uint8_t* buffer, size_t len)
 	: Packet(PacketType::Telem)
 {
+    size_t offset = this->ReadHeader(buffer, len);
 
+    this->vX = *((float*)(buffer + offset));// = this->vX;
+    this->vY = *((float*)(buffer + offset + 4));// = this->vY;
+    this->vZ = *((float*)(buffer + offset + 8));// = this->vZ;
+    this->pitch = *((float*)(buffer + offset + 12));// = this->pitch;
+    this->roll = *((float*)(buffer + offset + 16));// = this->roll;
+    this->yaw = *((float*)(buffer + offset + 20));// = this->yaw;
+    this->lat = *((double*)(buffer + offset + 24));// = this->lat;
+    this->lon = *((double*)(buffer + offset + 32));// = this->lon;
+    this->alt = *((float*)(buffer + offset + 40));// = this->alt;
+    this->heading = *((float*)(buffer + offset + 44));// = this->heading;
+    offset += 48;
+    //return this->SetChecksum(buffer, len, offset);
 }
 
 void Protocol::TelemetryPacket::SetVelocity(float x, float y, float z)

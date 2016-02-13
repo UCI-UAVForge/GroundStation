@@ -42,6 +42,9 @@ private slots:
     void processPendingDatagrams();
 
 public:
+
+    const static int LISTEN_PORT = 20715;
+
     NetworkListener(messagebox *myMessageBox, int UAVid);
     NetworkListener(messagebox *myMessageBox);
     QUdpSocket udpSocket;

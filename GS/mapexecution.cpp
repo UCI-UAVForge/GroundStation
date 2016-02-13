@@ -1,5 +1,6 @@
 #include "mapexecution.h"
 
+
 MapExecution::MapExecution(QWidget *parent) : QDialog(parent), myServer(&MyMessageBox), ui(new Ui::MapExecution), prevTime() {
     buttonGroup = new QButtonGroup();
     model = new TableModel();
@@ -21,7 +22,12 @@ MapExecution::MapExecution(QWidget *parent) : QDialog(parent), myServer(&MyMessa
 
 }
 
-MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(parent), myServer(&MyMessageBox), ui(new Ui::MapExecution) {
+MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
+        QDialog(parent),
+        myServer(&MyMessageBox),
+        ui(new Ui::MapExecution),
+        prevTime() {
+
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
     //messagebox Messagebox;
@@ -44,7 +50,7 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
         std::cout << pack_number << " Latitude: " << test_wp.lat << " Longitude: " << test_wp.lon << std::endl;
         ++pack_number;
     }
-    std::cout << "HELLO?" << std::endl;
+
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
@@ -59,14 +65,16 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
     connect(ui->returnHomeButton, SIGNAL(clicked()), this, SLOT(on_returnHomeButton_clicked()), Qt::UniqueConnection);
     connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(on_stopButton_clicked()), Qt::UniqueConnection);
 
-    myServer.start();
-    connect(&myServer.networkListener,SIGNAL(sendCoordinates()),this,SLOT(sendFlightPlan()));
-    connect(&myServer.networkListener,SIGNAL(logTelemetry(QString)),this,SLOT(newTelemCoord(QString)));
-
+    myServer.openServer();
+    //connect(&myServer.networkListener,SIGNAL(sendCoordinates()),this,SLOT(sendFlightPlan()));
+    //connect(&myServer.networkListener,SIGNAL(logTelemetry(QString)),this,SLOT(newTelemCoord(QString)));
+    sendFlightPlan();
 }
+
 
 MapExecution::~MapExecution() {
     delete ui;
+    delete model;
 }
 
 // finish button
@@ -114,13 +122,28 @@ void MapExecution::newTelemCoord(QString msgString){
 
 
 void MapExecution::sendFlightPlan(){
-    std::cout << "Sending..." << std::endl;
-    QList<QPair<double,double> > coords = getDoublePairs(mapStrings);
-    myServer.sendMessage((char*)std::to_string(coords.length()).c_str(), 10, 11, myServer.uav_fd);
-    char msgBuffer[4096];
-    myServer.formatCoordinatesToSend(msgBuffer, 4096, coords);
-    myServer.sendMessage(msgBuffer,strlen(msgBuffer),myServer.maxPackSize,myServer.uav_fd);
-    std::cout << "done!" << std::endl;
+
+    std::vector<Protocol::ActionPacket> packets = MyMessageBox.get_action_packets();
+
+    for (Protocol::ActionPacket pack : packets){
+        /*Protocol::ActionPacket *ap = new Protocol::ActionPacket;
+        Protocol::Waypoint *wp = new Protocol::Waypoint;
+
+        wp->alt = pack.GetWaypoint().alt;
+        wp->lat = pack.GetWaypoint().lat;
+        wp->lon = pack.GetWaypoint().lon;
+        wp->speed = pack.GetWaypoint().speed;
+        ap->SetWaypoint(*wp);
+        myServer.sendPacket(ap);*/
+
+
+
+        Protocol::TelemetryPacket *tp = new Protocol::TelemetryPacket;
+        //Protocol::Waypoint *wp = new Protocol::Waypoint;
+
+        tp->SetLocation(pack.GetWaypoint().lat,pack.GetWaypoint().lon);
+        myServer.sendPacket(tp);
+    }
 }
 
 /* Sends a request for the map to clear itself, causing the JavaScript page
