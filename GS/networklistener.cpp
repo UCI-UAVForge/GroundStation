@@ -71,6 +71,8 @@ void NetworkListener::processPendingDatagrams(){
     } else if (type == Protocol::PacketType::Telem){
         std::cout<< "TelemPacket Recieved" << std::endl;
         Protocol::TelemetryPacket *telemPacket = (Protocol::TelemetryPacket*)incPack;
+        //std::cout << pack_number << " Latitude: " << telemPacket << " Longitude: " << telemPacket->lon << std::endl;
+        ++pack_number;
         myMessageBox->addTelemetryPacket(*telemPacket);
     } else if (type == Protocol::PacketType::Info){
         std::cout<< "InfoPacket Recieved" << std::endl;
