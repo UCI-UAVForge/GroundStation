@@ -98,7 +98,7 @@ void MapExecution::sendFlightPlan(){
     std::vector<Protocol::ActionPacket> packets = MyMessageBox.get_action_packets();
 
     for (Protocol::ActionPacket pack : packets){
-        Protocol::ActionPacket *ap = new Protocol::ActionPacket;
+        /*Protocol::ActionPacket *ap = new Protocol::ActionPacket;
         Protocol::Waypoint *wp = new Protocol::Waypoint;
 
         wp->alt = pack.GetWaypoint().alt;
@@ -106,7 +106,15 @@ void MapExecution::sendFlightPlan(){
         wp->lon = pack.GetWaypoint().lon;
         wp->speed = pack.GetWaypoint().speed;
         ap->SetWaypoint(*wp);
-        myServer.sendPacket(ap);
+        myServer.sendPacket(ap);*/
+
+
+
+        Protocol::TelemetryPacket *tp = new Protocol::TelemetryPacket;
+        //Protocol::Waypoint *wp = new Protocol::Waypoint;
+
+        tp->SetLocation(pack.GetWaypoint().lat,pack.GetWaypoint().lon);
+        myServer.sendPacket(tp);
     }
 }
 
