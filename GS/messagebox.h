@@ -27,19 +27,26 @@
 #include "infopacket.h"
 #include "telemetrypacket.h"
 
-
 class messagebox
 {
 public:
-    friend class DigitalClock;
     messagebox();
     void fetch_from_table(QList<QString> tableList);
     void load_ack_packet(uint8_t* buffer, size_t len);
-    void load_action_packet(Protocol::ActionType atype, double lat, double lon, float alt, float spd);
     void load_action_packet(double lat, double lon, float alt, float spd);
     void load_info_packet(std::string other);
     void load_telem_packet(double lat, double lon);
     void load_telem_packet(float x, float y, float z, float p, float r, float yaw, double lat, double lon, float alt, float heading);
+
+    /**
+      * @brief Fetches the packets from table and stores them into the outbox where they will sent back
+      * @param <type> double,double,float,float -> sets the waypoint
+      *
+      * @author Kevin Phan
+      * @date 2016-2-05
+      */
+    void load_outAction_packets(double lat,double lon,float alt, float spd);
+    void addOutActionPacket(const Protocol::ActionPacket &actionPacket);
 
     /**
      * @brief Takes initial info packet and sets timestamp based on it
@@ -56,6 +63,18 @@ public:
     std::vector<Protocol::TelemetryPacket> get_telem_packets();
 
     /**
+     * \brief returns the packets from the sending side of messagebox
+     *
+     * \author Kevin Phan
+     * \date 2016/1/29
+    **/
+
+    std::vector<Protocol::AckPacket> get_out_ack_packets();
+    std::vector<Protocol::ActionPacket> get_out_action_packets();
+    std::vector<Protocol::InfoPacket> get_out_info_packets();
+    std::vector<Protocol::TelemetryPacket> get_out_telem_packets();
+
+    /**
       * \brief Adds fully formed or empty packet into the proper packet container in messagebox
       * \param <type>Packet	-> A formed or empty Packets
       *
@@ -66,10 +85,9 @@ public:
     void addActionPacket(const Protocol::ActionPacket& actionPacket);
     void addTelemetryPacket(const Protocol::TelemetryPacket& telemPacket);
     void addInfoPacket(const Protocol::InfoPacket& infoPacket);
-    QTime timer; //Qtime that starts when message box is created
 
 private:
-
+    QTime timer; //Qtime that starts when message box is created
 
     /**
      * @brief Takes timestamp form timer and subtracts the offset determined form UAV timestamp
@@ -83,6 +101,18 @@ private:
     std::vector<Protocol::ActionPacket> actionPackets;
     std::vector<Protocol::InfoPacket> infoPackets;
     std::vector<Protocol::TelemetryPacket> telemetryPackets;
+
+    /**
+     * @brief Initialization of vectors that will store outgoing packets which will be sent to the server
+     *
+     * @author Kevin Phan
+     * @date 2016-2-05
+     */
+    std::vector<Protocol::AckPacket> outAckPackets;
+    std::vector<Protocol::ActionPacket> outActionPackets;
+    std::vector<Protocol::InfoPacket> outInfoPackets;
+    std::vector<Protocol::TelemetryPacket> outTelemPackets;
+
     uint32_t timestamp_offset; //Offset between GS timer and the UAV timer
 
 //signals:
