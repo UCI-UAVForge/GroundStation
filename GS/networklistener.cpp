@@ -16,6 +16,7 @@
 using namespace std;
 
 #ifdef _WIN32
+#include <windows.h>
     void NetworkListener::netWait(int millis) {
         Sleep(millis);
     }

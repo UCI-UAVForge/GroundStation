@@ -122,7 +122,7 @@ public:
     /**
      the maximum size of a packet that will be sent by this server.
      */
-    u_int maxPackSize = 255;
+    unsigned char maxPackSize = 255;
 
     /**
       The NetworkListener used by this server to process incoming signals.

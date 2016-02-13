@@ -104,7 +104,7 @@ void GsServer::sendNextPacket() {
     out.setVersion(QDataStream::Qt_4_3);
 
     // Allocate storage for the packet in the for of u_int8_t
-    u_int8_t storage[PACKET_LENGTH];
+    unsigned char storage[PACKET_LENGTH];
 
     // Convert the packet into bytes and store into storage
     size_t packet_size = packet->GetBytes(storage, PACKET_LENGTH);
