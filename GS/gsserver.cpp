@@ -57,6 +57,11 @@ void GsServer::openServer(){
     networkListener.start();
 }
 
+void GsServer::openServer(QHostAddress target, unsigned int port){
+    this->target = target;
+    this->port = port;
+}
+
 void GsServer::closeServer(){
 
 }
@@ -117,5 +122,6 @@ void GsServer::sendNextPacket() {
     // Send datagram through UDP socket
     //sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, GroundStation::UAV_PORT_NUM);
     outSocket.writeDatagram(datagram, QHostAddress::LocalHost, SEND_PORT);
+    outSocket.writeDatagram()
     //delete packet;
 }

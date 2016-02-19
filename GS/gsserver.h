@@ -170,6 +170,7 @@ private:
 
      QUdpSocket outSocket;
 
+     QHostAddress target;
 
      QQueue<Protocol::Packet*> outPackets;
 
