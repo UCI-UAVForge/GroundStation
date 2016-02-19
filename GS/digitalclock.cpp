@@ -3,6 +3,7 @@
 #include <QtWidgets>
 
 #include "digitalclock.h"
+#include "mapexecution.h"
 
 DigitalClock::DigitalClock(QWidget *parent)
     : QPlainTextEdit(parent)
@@ -31,9 +32,10 @@ void DigitalClock::initiate(QTime timein)
     showTime();
 }
 
-void DigitalClock::initiate(messagebox* mbin)
+void DigitalClock::initiate(messagebox* mbin, MapExecution* me_ptr)
 {
     mb = mbin;
+    map_exec_ptr = me_ptr;
     QTimer *timer2 = new QTimer(this);
     connect(timer2, SIGNAL(timeout()), this, SLOT(showStatus()));
     timer2->start(200);
@@ -93,5 +95,7 @@ void DigitalClock::showStatus()
         text.append(QString::number(pitch,'f',2) + ", " + QString::number(roll,'f',2) + ", " + QString::number(yaw,'f',2));
         clear();
         appendPlainText(text);
+
+        map_exec_ptr->plotPosition(lat, lon);
     }
 }
