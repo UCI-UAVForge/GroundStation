@@ -7,6 +7,7 @@
 #include <QTimer>
 
 #include "messagebox.h"
+class MapExecution;
 
 /**
  * @brief The DigitalClock class
@@ -23,9 +24,11 @@ public:
     QTime time;
     QString start;
     messagebox* mb;
+    MapExecution* map_exec_ptr;
 
     void initiate(QTime timein);
-    void initiate(messagebox* mbin);
+    // Added mapexection pointer so that mapexecution can be updated
+    void initiate(messagebox* mbin, MapExecution* mapexec_ptr);
 
 private slots:
     void showTime();

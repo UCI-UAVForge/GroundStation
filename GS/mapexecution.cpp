@@ -12,7 +12,9 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
 
     //initate clock timer
     ui->clock->initiate(MyMessageBox.timer);
-    ui->StatusConsole->initiate(&MyMessageBox);
+
+    ui->StatusConsole->initiate(&MyMessageBox, this);
+    //display widgets
 
     std::vector<Protocol::ActionPacket> test_actions = MyMessageBox.get_action_packets();
     QTimer *conTime = new QTimer(this);
