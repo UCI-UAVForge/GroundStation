@@ -1,5 +1,6 @@
 #include "mapexecution.h"
 
+
 MapExecution::MapExecution(QWidget *parent) : QDialog(parent), myServer(&MyMessageBox), ui(new Ui::MapExecution), prevTime() {
     buttonGroup = new QButtonGroup();
     model = new TableModel();
@@ -7,8 +8,8 @@ MapExecution::MapExecution(QWidget *parent) : QDialog(parent), myServer(&MyMessa
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
     prevLat = prevLng = 0.0;
-    CurrentData = ui->CurrentData;
-    initCurrentData();
+//    CurrentData = ui->CurrentData;
+//    initCurrentData();
 
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
     ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
@@ -21,14 +22,26 @@ MapExecution::MapExecution(QWidget *parent) : QDialog(parent), myServer(&MyMessa
 
 }
 
-MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(parent), myServer(&MyMessageBox), ui(new Ui::MapExecution) {
+MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
+        QDialog(parent),
+        myServer(&MyMessageBox),
+        ui(new Ui::MapExecution),
+        prevTime() {
+
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
-    messagebox messagebox;
+    //messagebox Messagebox;
+    MyMessageBox.fetch_from_table(strings);
     //initate clock timer
-    ui->clock->initiate(messagebox.timer);
-    messagebox.fetch_from_table(strings);
-    std::vector<Protocol::ActionPacket> test_actions = messagebox.get_action_packets();
+    ui->clock->initiate(MyMessageBox.timer);
+    ui->StatusConsole->initiate(&MyMessageBox, this);
+    //display widgets
+
+    std::vector<Protocol::ActionPacket> test_actions = MyMessageBox.get_action_packets();
+    QTimer *conTime = new QTimer(this);
+    connect(conTime, SIGNAL(timeout()), this, SLOT(updateStatusIndicator()));
+    conTime->start(1000);
+    //display widgets
     int pack_number = 1;
 
     for(auto i : test_actions){
@@ -52,13 +65,16 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) : QDialog(pa
     connect(ui->returnHomeButton, SIGNAL(clicked()), this, SLOT(on_returnHomeButton_clicked()), Qt::UniqueConnection);
     connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(on_stopButton_clicked()), Qt::UniqueConnection);
 
-    myServer.start();
-    connect(&myServer.networkListener,SIGNAL(sendCoordinates()),this,SLOT(sendFlightPlan()));
-    connect(&myServer.networkListener,SIGNAL(logTelemetry(QString)),this,SLOT(newTelemCoord(QString)));
+    myServer.openServer();
+    //connect(&myServer.networkListener,SIGNAL(sendCoordinates()),this,SLOT(sendFlightPlan()));
+    //connect(&myServer.networkListener,SIGNAL(logTelemetry(QString)),this,SLOT(newTelemCoord(QString)));
+    sendFlightPlan();
 }
+
 
 MapExecution::~MapExecution() {
     delete ui;
+    delete model;
 }
 
 // finish button
@@ -106,13 +122,28 @@ void MapExecution::newTelemCoord(QString msgString){
 
 
 void MapExecution::sendFlightPlan(){
-    std::cout << "Sending..." << std::endl;
-    QList<QPair<double,double> > coords = getDoublePairs(mapStrings);
-    myServer.sendMessage((char*)std::to_string(coords.length()).c_str(), 10, 11, myServer.uav_fd);
-    char msgBuffer[4096];
-    myServer.formatCoordinatesToSend(msgBuffer, 4096, coords);
-    myServer.sendMessage(msgBuffer,strlen(msgBuffer),myServer.maxPackSize,myServer.uav_fd);
-    std::cout << "done!" << std::endl;
+
+    std::vector<Protocol::ActionPacket> packets = MyMessageBox.get_action_packets();
+
+    for (Protocol::ActionPacket pack : packets){
+        /*Protocol::ActionPacket *ap = new Protocol::ActionPacket;
+        Protocol::Waypoint *wp = new Protocol::Waypoint;
+
+        wp->alt = pack.GetWaypoint().alt;
+        wp->lat = pack.GetWaypoint().lat;
+        wp->lon = pack.GetWaypoint().lon;
+        wp->speed = pack.GetWaypoint().speed;
+        ap->SetWaypoint(*wp);
+        myServer.sendPacket(ap);*/
+
+
+
+        Protocol::TelemetryPacket *tp = new Protocol::TelemetryPacket;
+        //Protocol::Waypoint *wp = new Protocol::Waypoint;
+
+        tp->SetLocation(pack.GetWaypoint().lat,pack.GetWaypoint().lon);
+        myServer.sendPacket(tp);
+    }
 }
 
 /* Sends a request for the map to clear itself, causing the JavaScript page
@@ -204,65 +235,73 @@ void MapExecution::updateTable(double lat, double lng) {
     ui->tableView->scrollToBottom();
 }
 
-void MapExecution::updatePosition(double lat, double lng, double alt, double spd)
-{
+//void MapExecution::updatePosition(double lat, double lng, double alt, double spd)
+//{
 
-    if(prevTime.isNull())
-    {
-        prevTime = QTime::currentTime();
-        prevLat = lat;
-        prevLng = lng;
-        prevAlt = alt;
-    }
-    else
-    {
-        LatLabel->setText(QString::number(lat));
-        LngLabel->setText(QString::number(lng));
-        AltLabel->setText(QString::number(alt));
-        SpdLabel->setText(QString::number(spd));
-    }
-}
-void MapExecution::initCurrentData()
-{
+//    if(prevTime.isNull())
+//    {
+//        prevTime = QTime::currentTime();
+//        prevLat = lat;
+//        prevLng = lng;
+//        prevAlt = alt;
+//    }
+//    else
+//    {
+//        LatLabel->setText(QString::number(lat));
+//        LngLabel->setText(QString::number(lng));
+//        AltLabel->setText(QString::number(alt));
+//        SpdLabel->setText(QString::number(spd));
+//    }
+//}
+//void MapExecution::initCurrentData()
+//{
 
-    LatLabel = new QTableWidgetItem("LatLabel");
-    LngLabel = new QTableWidgetItem("LngLabel");
-    AltLabel = new QTableWidgetItem("AltLabel");
-    SpdLabel = new QTableWidgetItem("SpdLabel");
+//    LatLabel = new QTableWidgetItem("LatLabel");
+//    LngLabel = new QTableWidgetItem("LngLabel");
+//    AltLabel = new QTableWidgetItem("AltLabel");
+//    SpdLabel = new QTableWidgetItem("SpdLabel");
 
-    CurrentData->setItem(0,0,new QTableWidgetItem("Latitude"));
-    CurrentData->setItem(1,0,new QTableWidgetItem("Longitude"));
-    CurrentData->setItem(2,0,new QTableWidgetItem("Altitude"));
-    CurrentData->setItem(3,0,new QTableWidgetItem("Speed"));
+//    CurrentData->setItem(0,0,new QTableWidgetItem("Latitude"));
+//    CurrentData->setItem(1,0,new QTableWidgetItem("Longitude"));
+//    CurrentData->setItem(2,0,new QTableWidgetItem("Altitude"));
+//    CurrentData->setItem(3,0,new QTableWidgetItem("Speed"));
 
-    CurrentData->setItem(0,1,LatLabel);
-    CurrentData->setItem(1,1,LngLabel);
-    CurrentData->setItem(2,1,AltLabel);
-    CurrentData->setItem(3,1,SpdLabel);
+//    CurrentData->setItem(0,1,LatLabel);
+//    CurrentData->setItem(1,1,LngLabel);
+//    CurrentData->setItem(2,1,AltLabel);
+//    CurrentData->setItem(3,1,SpdLabel);
 
-}
+//}
 
 /*Change status indicator using inputted x */
-void MapExecution::updateStatusIndicator(int x)
+void MapExecution::updateStatusIndicator()
 {
+    int x;
+    if (MyMessageBox.get_telem_packets().empty())
+        x = 2;
+    else
+        x = 0;
+    ui->StatusIndicator->clear();
     switch(x)
     {
         case 0:
             ui->StatusIndicator->setStyleSheet("background-color:green");
+            ui->StatusIndicator->appendPlainText("\nConnected to UAV");
             break;
         case 1:
             ui->StatusIndicator->setStyleSheet("background-color:yellow");
             break;
         case 2:
             ui->StatusIndicator->setStyleSheet("background-color:red");
+            ui->StatusIndicator->appendPlainText("\nNo Connection to UAV " + QString::number(MyMessageBox.timer.elapsed()/1000));
             break;
         default:
             ui->StatusIndicator->setStyleSheet("background-color:black;");
     }
 }
 
-void MapExecution::on_colorTester_clicked()
-{
-    ui->StatusConsole->appendPlainText("Update");
-    MapExecution::updateStatusIndicator(rand() % 3);
-}
+//void MapExecution::on_colorTester_clicked()
+//{
+//    ui->StatusConsole->appendPlainText("Update");
+//    MapExecution::updateStatusIndicator(rand() % 3);
+//}

@@ -11,7 +11,7 @@
 #include <QList>
 
 #include "digitalclock.h"
-#include "gsclient.h"
+//#include "gsclient.h"
 #include "gsserver.h"
 #include "tablemodel.h"
 #include "qcomboboxdelegate.h"
@@ -37,7 +37,8 @@ public slots:
     void updateTable(double lat, double lng);
     void newTelemCoord(QString coordString);
     void sendFlightPlan();
-    void updatePosition(double lat, double lng, double alt, double spd);
+    void updateStatusIndicator();
+    //void updatePosition(double lat, double lng, double alt, double spd);
 public:
     explicit MapExecution(QList<QString> strings, QWidget *parent = 0);
     explicit MapExecution(QWidget *parent = 0);
@@ -46,6 +47,7 @@ public:
     GsServer myServer;
     messagebox MyMessageBox;
     QList<QPair<double,double> > getDoublePairs(QList<QString> strings);
+    messagebox MessageBox;
 private slots:
     void on_finishButton_clicked();
     void on_returnHomeButton_clicked();
@@ -57,10 +59,10 @@ private slots:
 
     void addClickListener();
     //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame().
-    void initCurrentData();
+//    void initCurrentData();
 
-    void updateStatusIndicator(int x);
-    void on_colorTester_clicked();
+
+    //void on_colorTester_clicked();
 
 private:
     void addPoint(QString string);
@@ -71,8 +73,8 @@ private:
     QButtonGroup *buttonGroup;
     double prevLat, prevLng, prevAlt;
     QTime prevTime;
-    QTableWidget *CurrentData;
-    QTableWidgetItem *LatLabel, *LngLabel, *AltLabel, *SpdLabel;
+    //QTableWidget *CurrentData;
+    //QTableWidgetItem *LatLabel, *LngLabel, *AltLabel, *SpdLabel;
 };
 
 #endif // MAPEXECUTION_H

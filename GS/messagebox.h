@@ -35,6 +35,7 @@ public:
     messagebox();
     void fetch_from_table(QList<QString> tableList);
     void load_ack_packet(uint8_t* buffer, size_t len);
+    void load_action_packet(Protocol::ActionType atype, double lat, double lon, float alt, float spd);
     void load_action_packet(double lat, double lon, float alt, float spd);
     void load_info_packet(std::string other);
     void load_telem_packet(double lat, double lon);
@@ -78,10 +79,13 @@ private:
      * @date 2016-1-22
      */
     uint32_t gs_to_uav_timestamp();
-    std::vector<Protocol::AckPacket> ackPackets;
-    std::vector<Protocol::ActionPacket> actionPackets;
-    std::vector<Protocol::InfoPacket> infoPackets;
-    std::vector<Protocol::TelemetryPacket> telemetryPackets;
+    std::vector<Protocol::AckPacket> ackPackets_incoming;
+    std::vector<Protocol::ActionPacket> actionPackets_incoming;
+    std::vector<Protocol::InfoPacket> infoPackets_incoming;
+    std::vector<Protocol::TelemetryPacket> telemetryPackets_incoming;
+
+    std::vector<Protocol::Packet *> packets_outgoing;
+
     uint32_t timestamp_offset; //Offset between GS timer and the UAV timer
 
     std::vector<Protocol::Packet*> outPackets;
