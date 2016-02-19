@@ -7,12 +7,14 @@
 #include <QDialog>
 #include <QLineEdit>
 #include <QTextStream>
+#include <QTimer>
 
 #include "packet.h"
 #include "ackpacket.h"
 #include "actionpacket.h"
 #include "infopacket.h"
 #include "telemetrypacket.h"
+//#include "messagebox.h"
 
 #include <queue>
 #include <vector>
@@ -23,7 +25,7 @@
  * Startup
  * ----------------------------------------------------------------
  * 1) UAV Starts up.
- * 2) UAV receives Action(request)  signal from GS.
+ * 2) UAV receives Action(request info) signal from GS.
  * 3) UAV sends info packet to GS.
  * 4) UAV sends telemetry packet every 200ms until shutdown
  *
@@ -83,32 +85,38 @@ public:
 
 private:
     /*
-     * \brief   Outputs to stdout what type of packet is being sent to the ground station.
-     * \param   packet takes any packet that is subclass of Packet class.
+     * \brief   Determines what response should be given depending on packet received from GS. 
+     * \param   ap is of type action packet.
      *
      * \author  Alvin Truong
-     * \date    16-2-1
+     * \date    16-2-19
      */
-    void print_packet_sent(const Protocol::Packet* packet);
+    void respond_to_action_packet(Protocol::ActionPacket ap);
 
-    /*
-     * \brief   Generate a random telemetry packet to simulate actual scenario of
-     *          uav sending telemetry packet ever 200ms.
-     * \param   
-     *
-     * \author
-     * \date
-     */
-    Protocol::TelemetryPacket createRandomTelem();
-
-private:
+    private:
     // True when uav needs to keep sending Telemetry packets every 200ms until shutdown.
-    bool initialInfoPacketSuccessful, uavWaypointsReady, uavFlying, stopAction, shutdownAction,
+    bool receivedInfoPacketReq, uavWaypointsReady, uavFlying, stopAction, shutdownAction,
          uavOn;
+
+    // Hard coded constants for uav simulation
+    int battery, pointsStorable;
+    int telemSeqNumber;
+
+    // Timer needed for telemetry every 200ms
+    QTimer *timer;
 
 private slots:
     void processPendingDatagrams();
 
+    /*
+     * \brief   Generate a telemetry packet to simulate actual scenario of
+     *          uav sending telemetry packet ever 200ms.
+     * \param   None 
+     *
+     * \author  Alvin Truong
+     * \date    20160219
+     */
+    void sendCurrentTelem();
 
 private:
     QUdpSocket sendUdpSocket;

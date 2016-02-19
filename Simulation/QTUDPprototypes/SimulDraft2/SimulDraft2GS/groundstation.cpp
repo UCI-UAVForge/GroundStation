@@ -15,7 +15,7 @@ GroundStation::GroundStation(QWidget *parent)
     //
 
     // Connect receiving udp socket to groundstation port
-    recvUdpSocket.bind(GS_PORT_NUM);
+    recvUdpSocket.bind(GroundStation::GS_PORT_NUM);
 
     // Trigger processPendinDatagrams() when a datagram comes in
     connect(&recvUdpSocket, SIGNAL(readyRead()),
@@ -68,8 +68,8 @@ void GroundStation::sendAPacket(Protocol::Packet* packet)
     }
 
     // Send datagram through UDP socket
-//    sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, GroundStation::UAV_PORT_NUM);
-    sendUdpSocket.writeDatagram(datagram, QHostAddress("169.234.31.214"), GroundStation::UAV_PORT_NUM);
+    sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, GroundStation::UAV_PORT_NUM);
+//    sendUdpSocket.writeDatagram(datagram, QHostAddress("169.234.31.214"), GroundStation::UAV_PORT_NUM);
 }
 
 /*

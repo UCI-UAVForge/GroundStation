@@ -7,11 +7,20 @@ UAV::UAV(QWidget *parent)
 {
     // Set booleans to simulate UAV state
     uavOn = true;
-//    initialInfoPacketSucessful = false;
+    receivedInfoPacketReq = false;
     uavWaypointsReady = false;
     uavFlying = false;
     stopAction = false;
     shutdownAction = false;
+
+    // Set constants for packets
+    battery = 100;
+    pointsStorable = 20;
+    telemSeqNumber = 1;
+
+    // Set up qtimer for telemetry packets every 200 ms
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(sendCurrentTelem()));
 
     // Connect receiving socket to the specified received port
     recvUdpSocket.bind(UAV::UAV_PORT_NUM);
@@ -105,7 +114,10 @@ void UAV::processPendingDatagrams()
             switch(packet_type)
             {
                 case Protocol::PacketType::Action:
+//                    Protocol::ActionPacket recv_action = *dynamic_cast<Protocol::ActionPacket*>(packet);
                     print_action_packet(*dynamic_cast<Protocol::ActionPacket*>(packet));
+//                    print_action_packet(recv_action);
+                    respond_to_action_packet(*dynamic_cast<Protocol::ActionPacket*>(packet));
                     break;
                 case Protocol::PacketType::Ack:
                     print_ack_packet(*dynamic_cast<Protocol::AckPacket*>(packet));
@@ -203,3 +215,50 @@ void UAV::print_info_packet(Protocol::InfoPacket &packet){
     QTextStream(stdout) << "Battery State: " << packet.GetBattery() << endl;
     QTextStream(stdout) << "Other : " << QString::fromStdString(packet.GetOther()) << endl;
  }
+
+
+void UAV::respond_to_action_packet(Protocol::ActionPacket ap)
+{
+    Protocol::ActionType ap_type = ap.GetAction();
+
+    // Simple one packet send first.
+    Protocol::InfoPacket ip;
+    switch(ap_type)
+    {
+        case Protocol::ActionType::RequestInfo:
+            ip.SetBattery(battery);
+            ip.SetStorable(pointsStorable);
+            if(!receivedInfoPacketReq)
+            {
+                receivedInfoPacketReq = true;
+                timer->start(200);                
+            }
+            sendAPacket(dynamic_cast<Protocol::Packet*>(&ip));
+            break;
+        case Protocol::ActionType::AddWaypoint:
+            break;
+        case Protocol::ActionType::SetHome:
+            break;
+        case Protocol::ActionType::Stop:
+            break;
+        case Protocol::ActionType::Start:
+            break;
+        case Protocol::ActionType::Shutdown:
+            break;
+        default:
+            break;
+
+    }
+}
+
+void UAV::sendCurrentTelem()
+{
+    Protocol::TelemetryPacket tp(telemSeqNumber++);
+    tp.SetVelocity(1,2,3);
+    tp.SetOrientation(4,5,6);
+    tp.SetLocation(7,8,9);
+    tp.SetHeading(10);
+
+    sendAPacket(&tp);
+    
+}
