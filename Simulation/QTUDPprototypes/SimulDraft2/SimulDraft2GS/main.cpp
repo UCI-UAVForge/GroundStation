@@ -15,8 +15,6 @@ int main(int argc, char *argv[])
 
     QTextStream(stdout) << "run this";
 
-
-
     GroundStation station;
 
 //    messagebox mb;

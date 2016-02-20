@@ -1,27 +1,5 @@
 #include "mapexecution.h"
 
-
-MapExecution::MapExecution(QWidget *parent) : QDialog(parent), myServer(&MyMessageBox), ui(new Ui::MapExecution), prevTime() {
-    buttonGroup = new QButtonGroup();
-    model = new TableModel();
-    ui->setupUi(this);
-    ui->tableView->setModel(model);
-    ui->tableView->setItemDelegate(new QComboBoxDelegate());
-    prevLat = prevLng = 0.0;
-//    CurrentData = ui->CurrentData;
-//    initCurrentData();
-
-    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
-
-    connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()), Qt::UniqueConnection);
-    connect(ui->cancelButton, SIGNAL(clicked()), this, SLOT(on_cancelButton_clicked()), Qt::UniqueConnection);
-    connect(ui->finishButton, SIGNAL(clicked()), this, SLOT(on_finishButton_clicked()), Qt::UniqueConnection);
-    connect(ui->returnHomeButton, SIGNAL(clicked()), this, SLOT(on_returnHomeButton_clicked()), Qt::UniqueConnection);
-    connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(on_stopButton_clicked()), Qt::UniqueConnection);
-
-}
-
 MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
         QDialog(parent),
         myServer(&MyMessageBox),
@@ -30,10 +8,11 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
 
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
-    //messagebox Messagebox;
     MyMessageBox.fetch_from_table(strings);
+
     //initate clock timer
     ui->clock->initiate(MyMessageBox.timer);
+
     ui->StatusConsole->initiate(&MyMessageBox, this);
     //display widgets
 
@@ -41,7 +20,6 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
     QTimer *conTime = new QTimer(this);
     connect(conTime, SIGNAL(timeout()), this, SLOT(updateStatusIndicator()));
     conTime->start(1000);
-    //display widgets
     int pack_number = 1;
 
     for(auto i : test_actions){
@@ -69,6 +47,9 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
     //connect(&myServer.networkListener,SIGNAL(sendCoordinates()),this,SLOT(sendFlightPlan()));
     //connect(&myServer.networkListener,SIGNAL(logTelemetry(QString)),this,SLOT(newTelemCoord(QString)));
     sendFlightPlan();
+}
+
+MapExecution::MapExecution(QWidget *parent) :MapExecution(QList<QString>(),parent){
 }
 
 

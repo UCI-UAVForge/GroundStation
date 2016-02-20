@@ -131,7 +131,6 @@ void UAV::processPendingDatagrams()
                 default:
                     break;
             }
-
             QTextStream(stdout) << ""<< endl;
             ++UAV::NUM_RECV_PACKETS;
         }
