@@ -24,6 +24,7 @@ UAV::UAV(QWidget *parent)
 
     // Connect receiving socket to the specified received port
     recvUdpSocket.bind(UAV::UAV_PORT_NUM);
+//    recvUdpSocket.bind(20175);
 
     // Connect receive socket to call the method to process pending datagrams
     connect(&recvUdpSocket, SIGNAL(readyRead()),
@@ -75,7 +76,8 @@ void UAV::sendAPacket(Protocol::Packet* packet)
     }
 
     // Send datagram through UDP socket
-    sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, UAV::GS_PORT_NUM);
+//    sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, UAV::GS_PORT_NUM);
+    sendUdpSocket.writeDatagram(datagram, QHostAddress('10.0.2.15'), UAV::GS_PORT_NUM);
 }
 
 
@@ -131,6 +133,7 @@ void UAV::processPendingDatagrams()
                 default:
                     break;
             }
+
             QTextStream(stdout) << ""<< endl;
             ++UAV::NUM_RECV_PACKETS;
         }

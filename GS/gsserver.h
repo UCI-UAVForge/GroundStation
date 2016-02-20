@@ -137,7 +137,7 @@ public:
      * \date    16-1-27
      *
      **/
-    void sendAllPackets(std::queue<Protocol::Packet*> packets);
+//    void sendAllPackets(std::queue<Protocol::Packet*> packets);
     void sendAllPackets(std::vector<Protocol::Packet*> packets);
     /**
      * \brief   Function takes a single packet or a child of packet and sends it through UDP.
