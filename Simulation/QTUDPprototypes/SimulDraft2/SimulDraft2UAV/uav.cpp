@@ -17,6 +17,9 @@ UAV::UAV(QWidget *parent)
     battery = 100;
     pointsStorable = 20;
     telemSeqNumber = 1;
+    currentNumOfPoints = 0;
+    uavLat = 33.6454;
+    uavLng = -117.8426;
 
     // Set up qtimer for telemetry packets every 200 ms
     timer = new QTimer(this);
@@ -76,8 +79,8 @@ void UAV::sendAPacket(Protocol::Packet* packet)
     }
 
     // Send datagram through UDP socket
-//    sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, UAV::GS_PORT_NUM);
-    sendUdpSocket.writeDatagram(datagram, QHostAddress('10.0.2.15'), UAV::GS_PORT_NUM);
+    sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, UAV::GS_PORT_NUM);
+//    sendUdpSocket.writeDatagram(datagram, QHostAddress('10.0.2.15'), UAV::GS_PORT_NUM);
 }
 
 
@@ -224,33 +227,54 @@ void UAV::respond_to_action_packet(Protocol::ActionPacket ap)
     Protocol::ActionType ap_type = ap.GetAction();
 
     // Simple one packet send first.
-    Protocol::InfoPacket ip;
     switch(ap_type)
     {
         case Protocol::ActionType::RequestInfo:
-            ip.SetBattery(battery);
-            ip.SetStorable(pointsStorable);
-            if(!receivedInfoPacketReq)
-            {
-                receivedInfoPacketReq = true;
-                timer->start(200);                
-            }
-            sendAPacket(dynamic_cast<Protocol::Packet*>(&ip));
+            if(uavOn)
+                send_info_packet();
+            
             break;
         case Protocol::ActionType::AddWaypoint:
+            if(uavOn && can_add_waypoints())
+            {
+                uavWaypointsReady = true;
+                ++currentNumOfPoints;
+                addWaypoint(ap);
+            }
+            else
+                QTextStream(stdout) << "Cannot add waypoint." << endl;
             break;
         case Protocol::ActionType::SetHome:
             break;
         case Protocol::ActionType::Stop:
+            uavFlying = false;
+            stopAction = true;
             break;
         case Protocol::ActionType::Start:
+            if(uavOn && !receivedInfoPacketReq && uavWayPointsReady)
+            {
+                uavFlying = true;
+                receivedInfoPacketReq = true;
+                timer->start(200);                
+            }
             break;
         case Protocol::ActionType::Shutdown:
+            shutdownAction = true;
+            uavOn = false;
             break;
         default:
             break;
 
     }
+}
+
+void UAV::send_info_packet()
+{
+    Protocol::InfoPacket ip;
+    ip.SetBattery(battery);
+    ip.SetStorable(pointsStroable);
+
+    sendAPacket(dynamic_cast<Protocol::Packet*>(&ip));
 }
 
 void UAV::sendCurrentTelem()
@@ -263,4 +287,9 @@ void UAV::sendCurrentTelem()
 
     sendAPacket(&tp);
     
+}
+
+bool UAV::can_add_waypoint()
+{
+    return currentNumOfPoints + 1 == pointsStorable;
 }

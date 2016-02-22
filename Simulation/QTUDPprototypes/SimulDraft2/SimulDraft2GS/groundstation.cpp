@@ -1,6 +1,5 @@
 #include "groundstation.h"
-#include "unistd.h"
-#include <iostream>
+
 #include <QDateTime>
 
 
@@ -12,9 +11,7 @@ GroundStation::GroundStation(QWidget *parent)
 //    connect(&timer, SIGNAL(timeout()), this, SLOT(sendDatagram()));
 
 //    timer.start(2 * 1000);
-<<<<<<< HEAD
     //sendDatagram();
-    //
 
     // Connect receiving udp socket to groundstation port
     recvUdpSocket.bind(GroundStation::GS_PORT_NUM);
@@ -70,14 +67,13 @@ void GroundStation::sendAPacket(Protocol::Packet* packet)
     }
 
     // Send datagram through UDP socket
-    sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, GroundStation::UAV_PORT_NUM);
-//    sendUdpSocket.writeDatagram(datagram, QHostAddress("169.234.31.214"), GroundStation::UAV_PORT_NUM);
+//    sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, GroundStation::UAV_PORT_NUM);
+    sendUdpSocket.writeDatagram(datagram, QHostAddress("169.234.57.192"), GroundStation::UAV_PORT_NUM);
 }
 
 /*
 void GroundStation::sendDatagram()
 {
-    static int count = 0;
     QByteArray datagram;
     QDataStream out(&datagram, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_4_3);
@@ -167,9 +163,6 @@ void GroundStation::processPendingDatagrams()
             QTextStream(stdout) << "ERROR: Packet is invalid" << endl;
         }
     }
-
-    udpSocket.writeDatagram(datagram, QHostAddress::LocalHost, 27015);
-    //udpSocket.writeDatagram(datagram, QHostAddress("192.168.1.4"), 27015);
 }
 
 void GroundStation::print_telemetry_packet(Protocol::TelemetryPacket& packet)

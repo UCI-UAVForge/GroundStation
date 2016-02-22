@@ -93,15 +93,44 @@ private:
      */
     void respond_to_action_packet(Protocol::ActionPacket ap);
 
-    private:
+    /*
+     * \brief  Send info packet requested
+     *
+     * \author Alvin Truong
+     * \date 20160221
+     */
+    void send_info_packet();
+
+    /*
+     * \brief  Add waypoint based on action packet
+     * \param  ap: Action packet contains the waypoint to store
+     *
+     * \author Alvin Truong
+     * \date   20160221
+     */
+    void addWaypoint(Protocol::ActionPacket ap);
+
+    /*
+     * \brief  Ensure uav can handle the waypoints added
+     *
+     * \author Alvin Truong
+     * \date   20160221
+     */
+    bool can_add_waypoint();
+
+
+private:
     // True when uav needs to keep sending Telemetry packets every 200ms until shutdown.
     bool receivedInfoPacketReq, uavWaypointsReady, uavFlying, stopAction, shutdownAction,
          uavOn;
 
+    std::vector<Protocol::Waypoint> pointOfInterest;
+
     // Hard coded constants for uav simulation
-    int battery, pointsStorable;
+    int battery, pointsStorable, currentNumOfPoints;
     int telemSeqNumber;
 
+    float uavLat, uavLng;
     // Timer needed for telemetry every 200ms
     QTimer *timer;
 
