@@ -293,3 +293,10 @@ bool UAV::can_add_waypoint()
 {
     return currentNumOfPoints + 1 == pointsStorable;
 }
+
+void UAV::addWaypoint(Protocol::ActionPacket ap)
+{
+    Procotcol::Waypoint wp = ap.GetWaypoint();
+    
+    pointOfInterest.push_back(wp);
+}
