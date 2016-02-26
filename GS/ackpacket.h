@@ -32,6 +32,10 @@ namespace Protocol
 			this->ReadHeader(buffer, len);
 		}
 
+        void set_timestamp(unsigned long time){
+            this->timestamp = time;
+        }
+
 		size_t GetBytes(uint8_t* buffer, size_t len)
 		{
 			size_t offset = this->WriteHeader(buffer, len);
