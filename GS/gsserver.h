@@ -5,6 +5,7 @@
 #include <QPair>
 #include <QThread>
 #include <QUdpSocket>
+#include "serverqueue.h"
 //#include "net.h"
 #include "networklistener.h"
 #include "messagebox.h"
@@ -46,11 +47,19 @@ public:
      */
     void run();
 
+    void startServer();
+
+    /**
+      Opens ther server by hosting it on the default port and listening for
+      connections.
+     */
+    void openServer();
+
     /**
       Opens ther server by hosting it on a socket and listening for
       connections.
      */
-    void openServer();
+    void openServer(QHostAddress target, unsigned int port);
 
     /**
       Closes the server by dropping all current connections and ending the
@@ -64,35 +73,6 @@ public:
       @param millis the number of milliseconds to wait
     */
     void waitNet(unsigned millis);
-
-    /**
-     packs charArr with the a formatted version of the coordinates stored in
-     coords up to the length specified by len. Use this to format
-     coordinates before sending to UAV via network.
-
-     @param charArr pointer to the start of the character array to be packed
-     @param len the maximum number of characters to pack into charArr. This
-     function will never split coordinates, so the coodinate that would have
-     exceeded len will be omitted entirely.
-     @param coords the QList of QPairs containing <latitude,longitude> for
-     each coordinate.
-
-     @see formatCoord(char*, QPair<double,double>)
-     */
-    //void formatCoordinatesToSend(char* charArr, int len, QList<QPair<double, double> > coords);
-
-    /**
-     sends the first len characters in charArr to the target specified by
-     target. Will break up long messages into packets of packSize size.
-
-     @param charArr pointer to the start of the character array to be sent.
-     @param len number of characters to send from charArr.
-     @param packSize the maximum packet size to be sent.
-     @param target the ID number cooresponding with the intended recipient.
-
-     @returns 0 if the process was successful.
-     */
-    //int sendMessage(char* charArr, int len, int packSize, int target);
 
     /**
      * @brief sendPacket adds a packet to the send queue for this server. The
@@ -139,16 +119,6 @@ private:
     const static int LISTEN_PORT = 20715;
     static int NUM_RECV_PACKETS;
 
-    /**
-     Function used to format a single coordinate for sendingover the network.
-
-     @param charArr the character array to write the formatted coorinate to.
-     @param coord the QPair of doubles represnting the latitude and longitude
-     of the coordinate.
-
-     @returns The length (in characters/bytes) of the formatted coordinate.
-    */
-     int formatCoord(char* charArr, QPair<double,double> coord);
 
      /**
        Stores the port number of this server.
@@ -160,8 +130,6 @@ private:
      */
      void sendNextPacket();
 
-     Protocol::Packet* getNextPacket();
-
      /**
       * @brief myMessageBox is the messagebox from mapexecution that will be used for
       * outgoing packets.
@@ -172,13 +140,7 @@ private:
 
      QHostAddress target;
 
-     QQueue<Protocol::Packet*> outPackets;
-
-     /**
-      * @brief outPackets is the list of packets waiting to be sent by the server.
-      * each packet is paired with a priority. (low numbers sent first)
-      */
-     //QList<QPair<Protocol::Packet*,unsigned int> > outPackets;
+     ServerQueue outPackets;
 };
 #endif // GSSERVER_H
 

@@ -72,6 +72,7 @@ private:
     QButtonGroup *buttonGroup;
     double prevLat, prevLng, prevAlt;
     QTime prevTime;
+    bool missionStarted;
     //QTableWidget *CurrentData;
     //QTableWidgetItem *LatLabel, *LngLabel, *AltLabel, *SpdLabel;
 };
