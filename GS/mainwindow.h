@@ -41,7 +41,16 @@ private slots:
     void missionRecapClicked();
 
     void on_actionQuit_triggered();
-
+     /**
+      * @brief implemented the four menubar options: (Save,Map Planning,Mission Execution, Mission Recap)
+      *
+      * @author Kevin Phan
+      * @date 2016-2-26
+      */
+    void on_actionSave_triggered();
+    void on_actionMap_Planning_triggered();
+    void on_actionMission_Execution_triggered();
+    void on_actionMission_Recap_triggered();
     void checkFinishStatus(int status);
 
     void showMissionPlanning();
