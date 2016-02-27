@@ -3,6 +3,8 @@
 
 #include <QDoubleValidator>
 #include <QValidator>
+
+
 //This class is used for the Latitude and Longitude input validation
 //but we have to override the validate function so that values are within the range specified by the users
 //credit: http://stackoverflow.com/questions/19571033/allow-entry-in-qlineedit-only-within-range-of-qdoublevalidator

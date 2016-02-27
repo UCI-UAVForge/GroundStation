@@ -10,7 +10,7 @@
 #include "telemetrypacket.h"
 #include "infopacket.h"
 #include "packet.h"
-
+#include "gsserver.h"
 #define BUFSIZE 4096
 
 using namespace std;
@@ -30,19 +30,21 @@ using namespace std;
 
 #endif
 
-NetworkListener::NetworkListener(messagebox *myMessagebox){
+NetworkListener::NetworkListener(GsServer* server, messagebox *myMessagebox){
      this->myMessageBox = myMessagebox;
 
     std::cout << "New NetworkListener created." << std::endl;
     udpSocket.bind(NetworkListener::LISTEN_PORT);
     listening = true;
+    this->backToServer = server;
 
     //connect(&udpSocket, SIGNAL(readyRead()), this, SLOT(processPendingDatagrams()));
 }
 
-NetworkListener::NetworkListener(messagebox *myMessagebox, int UAVid):NetworkListener(myMessagebox) {
+NetworkListener::NetworkListener(GsServer* server,messagebox *myMessagebox, int UAVid):NetworkListener(server,myMessagebox) {
     this->UAVid = UAVid;
     listening = true;
+    this->backToServer = server;
 }
 
 NetworkListener::~NetworkListener() {
@@ -68,6 +70,7 @@ void NetworkListener::processPendingDatagrams(){
         std::cout << pack_number << " Latitude: " << test_wp.lat << " Longitude: " << test_wp.lon << std::endl;
         ++pack_number;
         myMessageBox->addActionPacket(*actionPacket);
+        sendAckPacket(1); // hard coded time stamp, should be udpated with a real timestamp
     } else if (type == Protocol::PacketType::Telem){
         std::cout<< "TelemPacket Recieved" << std::endl;
         Protocol::TelemetryPacket *telemPacket = (Protocol::TelemetryPacket*)incPack;
@@ -78,11 +81,20 @@ void NetworkListener::processPendingDatagrams(){
         std::cout<< "InfoPacket Recieved" << std::endl;
         Protocol::InfoPacket *infoPacket = (Protocol::InfoPacket*)incPack;
         myMessageBox->addInfoPacket(*infoPacket);
+        sendAckPacket(2); //hard coded time stamp, should be updated with a real timestamp
+        //send an ack back to server
     } else {
         std::cout<< "UNKNOWN PACKET TYPE RECIEVED!" << std::endl;
     }
     return;
 }
+
+void NetworkListener::sendAckPacket(unsigned long time){
+    Protocol::AckPacket *ackPacket = new Protocol::AckPacket();
+    //ackPacket->set_timestamp(time);
+    backToServer->sendPacket(ackPacket);
+}
+
 void NetworkListener::run() {
     std::cout << "NetworkListener started listening!" << std::endl;
     while (listening){

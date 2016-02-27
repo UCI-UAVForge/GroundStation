@@ -32,6 +32,8 @@ namespace Protocol
 			this->ReadHeader(buffer, len);
 		}
 
+
+
 		size_t GetBytes(uint8_t* buffer, size_t len)
 		{
 			size_t offset = this->WriteHeader(buffer, len);

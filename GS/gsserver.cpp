@@ -42,7 +42,7 @@ char buf[BUFSIZE];
 
 //--------
 
-GsServer::GsServer(messagebox *myMessageBox): networkListener(myMessageBox){
+GsServer::GsServer(messagebox *myMessageBox): networkListener(this,myMessageBox){
     this->myMessageBox = myMessageBox;
     port = 27015;
 }

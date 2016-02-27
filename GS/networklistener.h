@@ -6,7 +6,7 @@
 #include <QString>
 #include <QUdpSocket>
 #include "messagebox.h"
-
+class GsServer;
 #include "packet.h"
 
 /**
@@ -36,6 +36,7 @@ private:
     bool listening = true;
     int UAVid;
     messagebox *myMessageBox;
+    GsServer* backToServer;
     //char buffer[];
 
 private slots:
@@ -45,13 +46,23 @@ public:
 
     const static int LISTEN_PORT = 20715;
 
-    NetworkListener(messagebox *myMessageBox, int UAVid);
-    NetworkListener(messagebox *myMessageBox);
+
+    NetworkListener(GsServer* server, messagebox *myMessageBox, int UAVid);
+    NetworkListener(GsServer* server, messagebox *myMessageBox);
     QUdpSocket udpSocket;
 
 
     void netWait(int millis);
     //~NetworkListener();
+    /**
+     * \brief   Function takes a timestamp and sends an ackPacket back to theServer
+     * \param   unsigned long timestamp which represents the time we received a packet
+     *
+     * \author  Daniel Ortega
+     * \date    16-2-19
+     *
+     * */
+    void sendAckPacket(unsigned long time);
     long reciveMessage(char* buf);
     void messageRecieved(char* msg);
     void run();
