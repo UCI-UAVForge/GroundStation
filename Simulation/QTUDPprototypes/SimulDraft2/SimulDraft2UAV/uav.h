@@ -47,8 +47,8 @@ public:
 
     /* Alvin Truong added on 16-1-27*/
     const static int PACKET_LENGTH = 1000;
-    const static int GS_PORT_NUM = 27015;
-    const static int UAV_PORT_NUM = 27020;
+    const static int GS_PORT_NUM = 20715;
+    const static int UAV_PORT_NUM = 27015;
     static int NUM_RECV_PACKETS;
     UAV(QWidget *parent = 0);
 
@@ -118,19 +118,27 @@ private:
      */
     bool can_add_waypoint();
 
+    /*
+     * \brief  Move towards waypoints
+     *
+     * \author Alvin Truong
+     * \date   20160226
+     */
+    void updateUavLatLng();
 
 private:
     // True when uav needs to keep sending Telemetry packets every 200ms until shutdown.
     bool receivedInfoPacketReq, uavWaypointsReady, uavFlying, stopAction, shutdownAction,
          uavOn;
 
-    std::vector<Protocol::Waypoint> pointOfInterest;
+    std::queue<Protocol::Waypoint> pointOfInterest;
 
     // Hard coded constants for uav simulation
     int battery, pointsStorable, currentNumOfPoints;
     int telemSeqNumber;
+    double latLngSpd;
 
-    float uavLat, uavLng;
+    double uavLat, uavLng;
     // Timer needed for telemetry every 200ms
     QTimer *timer;
 

@@ -24,19 +24,8 @@ void messagebox::fetch_from_table(QList<QString> tableList){
         if(comps[4] == "S") {
             lat *= -1.0;
         }
-        //load_action_packet(lat, lon, 0.0, 0.0);
-
-
-
-        Protocol::Waypoint* waypoint = new Protocol::Waypoint();
-        waypoint->lon = lon;
-        waypoint->lat = lat;
-        waypoint->speed = 0.0;
-        waypoint->alt = 0.0;
-
-        Protocol::ActionPacket* action = new Protocol::ActionPacket();
-        action->SetWaypoint(*waypoint);
-        outPacket.push_back(action);
+        load_action_packet(lat, lon, 0.0, 0.0);
+        load_outAction_packets(lat,lon,0.0,0.0);
     }
 }
 
@@ -65,6 +54,16 @@ void messagebox::load_action_packet(Protocol::ActionType atype, double lat, doub
     actionPackets_incoming.back().SetAction(atype);
     actionPackets_incoming.back().SetWaypoint(wp);
 
+}
+
+void messagebox::load_outAction_packets(double lat, double lon, float alt, float spd) {
+    Protocol::Waypoint wp;
+    wp.lat = lat;
+    wp.lon = lon;
+    wp.alt = alt;
+    wp.speed = spd;
+    addOutActionPacket(Protocol::ActionPacket());
+    outActionPackets.back().SetWaypoint(wp);
 }
 
 void messagebox::load_info_packet(std::string other){
@@ -107,6 +106,22 @@ std::vector<Protocol::TelemetryPacket> messagebox::get_telem_packets(){
     return telemetryPackets_incoming;
 }
 
+std::vector<Protocol::AckPacket> messagebox::get_out_ack_packets(){
+    return outAckPackets;
+}
+
+std::vector<Protocol::ActionPacket> messagebox::get_out_action_packets(){
+    return outActionPackets;
+}
+
+std::vector<Protocol::InfoPacket> messagebox::get_out_info_packets(){
+    return outInfoPackets;
+}
+
+std::vector<Protocol::TelemetryPacket> messagebox::get_out_telem_packets(){
+    return outTelemPackets;
+}
+
 uint32_t messagebox::gs_to_uav_timestamp(){
     return ((uint32_t)timer.elapsed()) - timestamp_offset;
 }
@@ -125,6 +140,9 @@ void messagebox::addActionPacket(const Protocol::ActionPacket& actionPacket)
     actionPackets_incoming.push_back(actionPacket);
 }
 
+void messagebox::addOutActionPacket(const Protocol::ActionPacket &actionPacket) {
+    outActionPackets.push_back(actionPacket);
+}
 
 /// \see messagebox.h for more info
 void messagebox::addTelemetryPacket(const Protocol::TelemetryPacket& telemPacket)

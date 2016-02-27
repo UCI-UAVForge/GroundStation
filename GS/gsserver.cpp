@@ -32,19 +32,11 @@ void GsServer::waitNet(unsigned millis){
 }
 #endif
 
-#define BACKLOG 10   // how many pending connections queue will hold
-
-#define BUFSIZE 256
-
-char listenPort[10];  // the port users will be connecting to
-char sendPort[10];
-char buf[BUFSIZE];
-
-//--------
 
 GsServer::GsServer(messagebox *myMessageBox): networkListener(myMessageBox){
     this->myMessageBox = myMessageBox;
     port = 27015;
+    target = QHostAddress::LocalHost;
 }
 
 GsServer::~GsServer(){
@@ -53,6 +45,20 @@ GsServer::~GsServer(){
 
 void GsServer::openServer(){
     running = true;
+}
+
+void GsServer::openServer(QHostAddress target, unsigned int port){
+    this->target = target;
+    this->port = port;
+    openServer();
+}
+
+void GsServer::startServer(){
+    std::cout << "Server starting..." << std::endl;
+    if (running == false){
+        std::cout << "Need to open server before it can start" << std::endl;
+        return;
+    }
     this->start();
     networkListener.start();
 }
@@ -63,12 +69,21 @@ void GsServer::closeServer(){
 
 void GsServer::run(){
     running = true;
+
+    Protocol::ActionPacket setHome;
+    setHome.SetAction(Protocol::ActionType::SetHome);
+
+    Protocol::ActionPacket start;
+    start.SetAction(Protocol::ActionType::Start);
+
+    sendPacket(&setHome,0);
+    sendPacket(&start,1);
+
     while (running){
         if (!outPackets.isEmpty()){
-            //std::cout << "Sending message..." << std::endl;
             sendNextPacket();
         }
-        //QThread::msleep(1);
+        QThread::msleep(2000);
     }
 }
 
@@ -77,28 +92,13 @@ void GsServer::sendPacket(Protocol::Packet* packet){
 }
 
 void GsServer::sendPacket(Protocol::Packet* packet, unsigned int priority){
-    priority = 0; //to suppress unused param warning
-    outPackets.enqueue(packet);
-    //outPackets.append(QPair<Protocol::Packet*,int>(packet,priority));
-}
-
-Protocol::Packet* GsServer::getNextPacket(){
-    return outPackets.dequeue();
-
-    /// \todo implement priority system
-    /*unsigned int callID = 0;
-    unsigned int prevHigh = 0;
-    for (int i = 0; i < outPackets.length(); i++){
-        if (outPackets.at(i).second>prevHigh){
-            callID = i;
-            prevHigh = outPackets.at(i).second;
-        }
-    }
-    return outPackets.at(callID).first;*/
+    outPackets.enqueue(packet,priority);
 }
 
 void GsServer::sendNextPacket() {
-    Protocol::Packet* packet = getNextPacket();
+    printf("sending message!\n");
+
+    Protocol::Packet* packet = outPackets.getNextPacket();
     QByteArray datagram;
     QDataStream out(&datagram, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_4_3);
@@ -115,55 +115,17 @@ void GsServer::sendNextPacket() {
     }
 
     // Send datagram through UDP socket
-    //sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, GroundStation::UAV_PORT_NUM);
-    outSocket.writeDatagram(datagram, QHostAddress::LocalHost, SEND_PORT);
-    //delete packet;
+    outSocket.writeDatagram(datagram, target, port);
+
+
+    //TEST CODE TO SIMULATE INCOMING ACK PACKETS
+    //COMMENT OUT TO USE ACTUAL ACK PACKETS
+
+    ///@todo implement actual ack packet transfer from message box to outPackets.recievAckPacket(AckPacket)
+
+    Protocol::AckPacket *ack = new Protocol::AckPacket;
+    ack->set_timestamp(packet->get_timestamp());
+    outPackets.recieveAckPacket(ack);
+
+    //END TEST CODE
 }
-
-
-void GroundStation::sendActionPackets(std::vector<Protocol::Packet*> packets)
-{
-    //QTextStream(stdout) << "The size of the vector is " << packets.size() << endl;
-    for(auto i = packets.begin(); i != packets.end(); ++i)
-    {
-        sendAPacket(*i);
-    }
-
-}
-
-void GroundStation::sendActionPackets(std::queue<Protocol::Packet*> packets)
-{
-    //QTextStream(stdout) << "The size of the vector is " << packets.size() << endl;
-    int size = packets.size();
-    for(int i = 0; i < size; ++i)
-    {
-        sendAPacket(packets.front());
-        packets.pop();
-    }
-
-}
-
-
-void GroundStation::sendAPacket(Protocol::Packet* packet)
-{
-    QByteArray datagram;
-    QDataStream out(&datagram, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_3);
-    
-    // Allocate storage for the packet in the for of u_int8_t
-    u_int8_t storage[GroundStation::PACKET_LENGTH];
-    
-    // Convert the packet into bytes and store into storage
-    size_t packet_size = packet->GetBytes(storage, GroundStation::PACKET_LENGTH);
-
-    // Send bytes inside storage to out datastream
-    for(size_t i =0; i < packet_size; i++)
-    {
-        out << storage[i];
-    }
-
-    // Send datagram through UDP socket
-    sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, GroundStation::UAV_PORT_NUM);
-}
-
-

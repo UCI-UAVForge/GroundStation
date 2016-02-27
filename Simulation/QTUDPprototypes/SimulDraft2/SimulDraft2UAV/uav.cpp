@@ -20,6 +20,7 @@ UAV::UAV(QWidget *parent)
     currentNumOfPoints = 0;
     uavLat = 33.6454;
     uavLng = -117.8426;
+    latLngSpd = .004;
 
     // Set up qtimer for telemetry packets every 200 ms
     timer = new QTimer(this);
@@ -235,7 +236,7 @@ void UAV::respond_to_action_packet(Protocol::ActionPacket ap)
             
             break;
         case Protocol::ActionType::AddWaypoint:
-            if(uavOn && can_add_waypoints())
+            if(uavOn && can_add_waypoint())
             {
                 uavWaypointsReady = true;
                 ++currentNumOfPoints;
@@ -251,7 +252,7 @@ void UAV::respond_to_action_packet(Protocol::ActionPacket ap)
             stopAction = true;
             break;
         case Protocol::ActionType::Start:
-            if(uavOn && !receivedInfoPacketReq && uavWayPointsReady)
+            if(uavOn && !receivedInfoPacketReq && uavWaypointsReady)
             {
                 uavFlying = true;
                 receivedInfoPacketReq = true;
@@ -272,17 +273,22 @@ void UAV::send_info_packet()
 {
     Protocol::InfoPacket ip;
     ip.SetBattery(battery);
-    ip.SetStorable(pointsStroable);
+    ip.SetStorable(pointsStorable);
 
     sendAPacket(dynamic_cast<Protocol::Packet*>(&ip));
 }
 
 void UAV::sendCurrentTelem()
 {
+    updateUavLatLng();
     Protocol::TelemetryPacket tp(telemSeqNumber++);
-    tp.SetVelocity(1,2,3);
+    double velocity_x = qrand() % 30 + 80;
+    double velocity_y = qrand() % 30 + 80;
+    double velocity_z = qrand() % 30 + 80;
+    double altitude = qrand() % 75 + 150;
+    tp.SetVelocity(velocity_x, velocity_y, velocity_z);
     tp.SetOrientation(4,5,6);
-    tp.SetLocation(7,8,9);
+    tp.SetLocation(uavLat, uavLng, altitude);
     tp.SetHeading(10);
 
     sendAPacket(&tp);
@@ -291,12 +297,53 @@ void UAV::sendCurrentTelem()
 
 bool UAV::can_add_waypoint()
 {
-    return currentNumOfPoints + 1 == pointsStorable;
+    return currentNumOfPoints + 1 < pointsStorable;
 }
 
 void UAV::addWaypoint(Protocol::ActionPacket ap)
 {
-    Procotcol::Waypoint wp = ap.GetWaypoint();
+    QTextStream(stdout) << "Waypoint added" << endl;
+    Protocol::Waypoint wp = ap.GetWaypoint();
     
-    pointOfInterest.push_back(wp);
+    pointOfInterest.push(wp);
 }
+
+void UAV::updateUavLatLng()
+{
+    Protocol::Waypoint nextPoint = pointOfInterest.front();
+
+    if(uavLat < nextPoint.lat && (uavLat + latLngSpd) < nextPoint.lat)
+        uavLat += latLngSpd;
+    else if(uavLat > nextPoint.lat && (uavLat - latLngSpd) > nextPoint.lat)
+        uavLat -= latLngSpd;
+    else if(uavLat < nextPoint.lat && (uavLat + latLngSpd) >= nextPoint.lat)
+        uavLat = nextPoint.lat;
+    else if(uavLat > nextPoint.lat && (uavLat - latLngSpd) <= nextPoint.lat)
+        uavLat = nextPoint.lat;
+
+    if(uavLng < nextPoint.lon && (uavLng + latLngSpd) < nextPoint.lon)
+        uavLng += latLngSpd;
+    else if(uavLng > nextPoint.lon && (uavLng - latLngSpd) > nextPoint.lon)
+        uavLng -= latLngSpd;
+    else if(uavLng < nextPoint.lon && (uavLng + latLngSpd) >= nextPoint.lon)
+        uavLng = nextPoint.lon;
+    else if(uavLng > nextPoint.lon && (uavLng -latLngSpd) <= nextPoint.lon)
+        uavLng = nextPoint.lon;
+
+    QTextStream(stdout) << "UavLat: " << uavLat << endl;
+    QTextStream(stdout) << "UavLon: " << uavLng << endl;
+    QTextStream(stdout) << "nextLat: " << nextPoint.lat << endl;
+    QTextStream(stdout) << "nextLong: " << nextPoint.lon << endl;
+    QTextStream(stdout) << "queue size: " << pointOfInterest.size() << endl;
+    if(uavLng == nextPoint.lon && uavLat == nextPoint.lat && pointOfInterest.size() > 0)
+    {
+        Protocol::ActionPacket waypointPacket;
+        waypointPacket.SetAction(Protocol::ActionType::AddWaypoint);
+        waypointPacket.SetWaypoint(nextPoint);
+        sendAPacket(&waypointPacket);
+        QTextStream(stdout) << "Destination reached. Sent waypoint packet" << endl;
+        pointOfInterest.pop();
+    }
+
+}
+

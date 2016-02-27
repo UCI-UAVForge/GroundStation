@@ -5,7 +5,7 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
         myServer(&MyMessageBox),
         ui(new Ui::MapExecution),
         prevTime() {
-
+    missionStarted = false;
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
     MyMessageBox.fetch_from_table(strings);
@@ -43,10 +43,10 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
     connect(ui->returnHomeButton, SIGNAL(clicked()), this, SLOT(on_returnHomeButton_clicked()), Qt::UniqueConnection);
     connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(on_stopButton_clicked()), Qt::UniqueConnection);
 
-    myServer.openServer();
+//    myServer.openServer(QHostAddress::LocalHost,20715);
+    myServer.openServer(QHostAddress::LocalHost,27015);
     //connect(&myServer.networkListener,SIGNAL(sendCoordinates()),this,SLOT(sendFlightPlan()));
     //connect(&myServer.networkListener,SIGNAL(logTelemetry(QString)),this,SLOT(newTelemCoord(QString)));
-    sendFlightPlan();
 }
 
 MapExecution::MapExecution(QWidget *parent) :MapExecution(QList<QString>(),parent){
@@ -68,16 +68,17 @@ void MapExecution::on_finishButton_clicked() {
 /* Sends the point (999.99,999.99) to the UAV. Used as a code for stop.
 Function added by Jordan Dickson March 9th 2015. */
 void MapExecution::on_stopButton_clicked() {
-    QList <QPair<double, double > > h;
-    h << QPair<double, double >(999.99,999.99);
-//    myClient.set_list(h);
-//    myClient.gsc_send_message();
+    Protocol::ActionPacket stop;
+    stop.SetAction(Protocol::ActionType::Stop);
+    myServer.sendPacket(&stop,0);
 }
 
 // return home button
 // redirect to main window
 void MapExecution::on_returnHomeButton_clicked() {
-    this->done(0);
+    Protocol::ActionPacket rtnHome;
+    rtnHome.SetAction(Protocol::ActionType::AddWaypoint);
+    myServer.sendPacket(&rtnHome,0);
 }
 
 // cancel button
@@ -88,8 +89,18 @@ void MapExecution::on_cancelButton_clicked() {
 
 // back button
 // redirect to mission planning
+// REPURPOSED TO BE A MISSION START BUTTON
 void MapExecution::on_backButton_clicked() {
-    this->done(1);
+
+    //-old code-
+    //this->done(1);
+
+    //-start button code-
+    if (!missionStarted){
+        missionStarted = true;
+        sendFlightPlan();
+        myServer.startServer();
+    }
 }
 
 void MapExecution::newTelemCoord(QString msgString){
@@ -103,28 +114,17 @@ void MapExecution::newTelemCoord(QString msgString){
 
 
 void MapExecution::sendFlightPlan(){
-
     std::vector<Protocol::ActionPacket> packets = MyMessageBox.get_action_packets();
 
     for (Protocol::ActionPacket pack : packets){
-        /*Protocol::ActionPacket *ap = new Protocol::ActionPacket;
-        Protocol::Waypoint *wp = new Protocol::Waypoint;
-
-        wp->alt = pack.GetWaypoint().alt;
-        wp->lat = pack.GetWaypoint().lat;
-        wp->lon = pack.GetWaypoint().lon;
-        wp->speed = pack.GetWaypoint().speed;
-        ap->SetWaypoint(*wp);
-        myServer.sendPacket(ap);*/
-
-
-
-        Protocol::TelemetryPacket *tp = new Protocol::TelemetryPacket;
-        //Protocol::Waypoint *wp = new Protocol::Waypoint;
-
-        tp->SetLocation(pack.GetWaypoint().lat,pack.GetWaypoint().lon);
-        myServer.sendPacket(tp);
+        pack.SetAction(Protocol::ActionType::AddWaypoint);
+        myServer.sendPacket(&pack);
     }
+
+    // Start mission
+    Protocol::ActionPacket startP;
+    startP.SetAction(Protocol::ActionType::Start);
+    myServer.sendPacket(&startP);
 }
 
 /* Sends a request for the map to clear itself, causing the JavaScript page
@@ -201,7 +201,7 @@ This is necessary because data cannot be added until the html file is completely
 loaded. Jordan 2/21/2015 */
 void MapExecution::addNewMap() {
     setMap(mapStrings);
-    ui->webView->page()->mainFrame()->evaluateJavaScript("simulateInput()");
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("simulateInput()");
 }
 
 /*  Sends a (latitude,longitude) pair to the map to be plotted.

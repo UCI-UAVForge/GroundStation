@@ -46,6 +46,24 @@ int main(int argc, char *argv[])
 //    tel.SetLocation(7,8,9);
 //    tel.SetHeading(10);
 //    packets_to_send.push(&tel);
+    Protocol::ActionPacket waypoint1, waypoint2;
+    waypoint1.SetAction(Protocol::ActionType::AddWaypoint);
+    Protocol::Waypoint wp;
+    wp.lon = -117;
+    wp.lat = 33.6;
+    waypoint1.SetWaypoint(wp);
+    packets_to_send.push(&waypoint1);
+
+    wp.lon = -115;
+    wp.lat = 37;
+    waypoint2.SetAction(Protocol::ActionType::AddWaypoint);
+    waypoint2.SetWaypoint(wp);
+    packets_to_send.push(&waypoint2);
+
+    Protocol::ActionPacket start;
+    start.SetAction(Protocol::ActionType::Start);
+
+    packets_to_send.push(&start);
     station.sendAllPackets(packets_to_send);
 
 //    return 0;

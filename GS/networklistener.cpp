@@ -67,6 +67,13 @@ void NetworkListener::processPendingDatagrams(){
         test_wp = actionPacket->GetWaypoint();
         std::cout << pack_number << " Latitude: " << test_wp.lat << " Longitude: " << test_wp.lon << std::endl;
         ++pack_number;
+
+        if (actionPacket->GetAction() == Protocol::ActionType::AddWaypoint){
+            Protocol::TelemetryPacket telem;
+            telem.SetLocation(test_wp.lat,test_wp.lon,200);
+            myMessageBox->addTelemetryPacket(telem);
+        }
+
         myMessageBox->addActionPacket(*actionPacket);
     } else if (type == Protocol::PacketType::Telem){
         std::cout<< "TelemPacket Recieved" << std::endl;
