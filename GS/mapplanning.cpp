@@ -92,7 +92,6 @@ void MapPlanning::on_clearTableButton_clicked() {
     model = new TableModel();
     ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
     ui->tableView->setModel(model);
-    ui->tableView->setItemDelegate(new QComboBoxDelegate());
 }
 
 //clear map button
