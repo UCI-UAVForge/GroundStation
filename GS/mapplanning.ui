@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1360</width>
-    <height>1097</height>
+    <width>1366</width>
+    <height>768</height>
    </rect>
   </property>
   <property name="palette">
@@ -78,37 +78,6 @@
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="1" column="1" colspan="6">
-    <widget class="QWebView" name="webView">
-     <property name="url">
-      <url>
-       <string>about:blank</string>
-      </url>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="1" colspan="6">
-    <widget class="QTableView" name="tableView"/>
-   </item>
-   <item row="0" column="0">
-    <widget class="QPushButton" name="backButton">
-     <property name="styleSheet">
-      <string notr="true"> QPushButton { 
-background-color: &quot;#CCD1D9&quot;; 
-color: &quot;#434A54&quot;; 
-border-radius: 10px;
-font-weight: bold;
-border: none; 
-}
- QPushButton:pressed {
-     background-color: #E6E9ED
- }</string>
-     </property>
-     <property name="text">
-      <string>Back</string>
-     </property>
-    </widget>
-   </item>
    <item row="2" column="1">
     <widget class="QPushButton" name="executeButton">
      <property name="styleSheet">
@@ -129,25 +98,6 @@ border: none;
     </widget>
    </item>
    <item row="2" column="2">
-    <widget class="QPushButton" name="updateTableButton">
-     <property name="styleSheet">
-      <string notr="true"> QPushButton { 
-background-color: &quot;#CCD1D9&quot;; 
-color: &quot;#434A54&quot;; 
-border-radius: 10px;
-font-weight: bold;
-border: none; 
-}
- QPushButton:pressed {
-     background-color: #E6E9ED
- }</string>
-     </property>
-     <property name="text">
-      <string>Update Table</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="3">
     <widget class="QPushButton" name="clearTableButton">
      <property name="styleSheet">
       <string notr="true"> QPushButton { 
@@ -162,12 +112,12 @@ border: none;
  }</string>
      </property>
      <property name="text">
-      <string>Clear Table</string>
+      <string>Clear Points</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="4">
-    <widget class="QPushButton" name="clearMapButton">
+   <item row="2" column="3">
+    <widget class="QPushButton" name="backButton">
      <property name="styleSheet">
       <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 
@@ -181,45 +131,35 @@ border: none;
  }</string>
      </property>
      <property name="text">
-      <string>Clear Map</string>
+      <string>Exit</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="5">
-    <widget class="QPushButton" name="deleteButton">
-     <property name="styleSheet">
-      <string notr="true"> QPushButton { 
-background-color: &quot;#CCD1D9&quot;; 
-color: &quot;#434A54&quot;; 
-border-radius: 4px;
-font-weight: bold;
-border: none; 
-}
- QPushButton:pressed {
-     background-color: #E6E9ED
- }</string>
-     </property>
-     <property name="text">
-      <string>-</string>
+   <item row="1" column="1" colspan="3">
+    <widget class="QWebView" name="webView">
+     <property name="url">
+      <url>
+       <string>about:blank</string>
+      </url>
      </property>
     </widget>
    </item>
-   <item row="2" column="6">
-    <widget class="QPushButton" name="addButton">
-     <property name="styleSheet">
-      <string notr="true"> QPushButton { 
-background-color: &quot;#CCD1D9&quot;; 
-color: &quot;#434A54&quot;; 
-border-radius: 4px;
-font-weight: bold;
-border: none; 
-}
- QPushButton:pressed {
-     background-color: #E6E9ED
- }</string>
+   <item row="1" column="0" rowspan="2">
+    <widget class="QTableView" name="tableView">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
-     <property name="text">
-      <string>+</string>
+     <property name="minimumSize">
+      <size>
+       <width>290</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
      </property>
     </widget>
    </item>

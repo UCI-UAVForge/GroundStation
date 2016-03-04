@@ -19,12 +19,15 @@ class DigitalClock : public QPlainTextEdit
     Q_OBJECT
 
 public:
+    ~DigitalClock();
     DigitalClock(QWidget *parent = 0);
 
     QTime time;
     QString start;
     messagebox* mb;
     MapExecution* map_exec_ptr;
+    QTimer* StatusTimer;
+    QTimer* TimeTimer;
 
     void initiate(QTime timein);
     // Added mapexection pointer so that mapexecution can be updated

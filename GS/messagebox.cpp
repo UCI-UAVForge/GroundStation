@@ -25,7 +25,7 @@ void messagebox::fetch_from_table(QList<QString> tableList){
             lat *= -1.0;
         }
         load_action_packet(lat, lon, 0.0, 0.0);
-        laod_outAction_packets(lat,lon,0.0,0.0);
+        load_outAction_packets(lat,lon,0.0,0.0);
     }
 }
 

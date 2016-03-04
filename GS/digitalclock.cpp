@@ -16,6 +16,12 @@ DigitalClock::DigitalClock(QWidget *parent)
     //resize(150, 60);
 }
 
+DigitalClock::~DigitalClock()
+{
+    delete StatusTimer;
+    delete TimeTimer;
+}
+
 /**
  * @brief DigitalClock::initiate
  * saves start time (need to fix to get from message box)
@@ -25,9 +31,9 @@ void DigitalClock::initiate(QTime timein)
 {
     start = QTime::currentTime().toString("hh:mm:ss");
     time = timein;
-    QTimer *timer = new QTimer(this);
-    connect(timer, SIGNAL(timeout()), this, SLOT(showTime()));
-    timer->start(1000);
+    TimeTimer = new QTimer(this);
+    connect(TimeTimer, SIGNAL(timeout()), this, SLOT(showTime()));
+    TimeTimer->start(1000);
 
     showTime();
 }
@@ -36,9 +42,9 @@ void DigitalClock::initiate(messagebox* mbin, MapExecution* me_ptr)
 {
     mb = mbin;
     map_exec_ptr = me_ptr;
-    QTimer *timer2 = new QTimer(this);
-    connect(timer2, SIGNAL(timeout()), this, SLOT(showStatus()));
-    timer2->start(200);
+    StatusTimer = new QTimer(this);
+    connect(StatusTimer, SIGNAL(timeout()), this, SLOT(showStatus()));
+    StatusTimer->start(200);
 
     showStatus();
 }
