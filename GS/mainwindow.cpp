@@ -73,7 +73,18 @@ void MainWindow::missionRecapClicked() {
 void MainWindow::on_actionQuit_triggered() {
     this->close();
 }
-
+void MainWindow::on_actionSave_triggered() {
+    this->close();
+}
+void MainWindow::on_actionMap_Planning_triggered() {
+    this->showMissionPlanning();
+}
+void MainWindow::on_actionMission_Execution_triggered(){
+    this->showMissionExecution();
+}
+void MainWindow::on_actionMission_Recap_triggered(){
+    this->showMissionRecap();
+}
 /**
  * The callback function to check for return status and redirect to corresponded new window
  * 0 == main window (default)

@@ -13,14 +13,19 @@ MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlann
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
+    ui->tableView->setColumnHidden(0, true);
+    ui->tableView->setColumnHidden(5, true);
+    ui->tableView->setColumnWidth(2, 42);
+    ui->tableView->setColumnWidth(4, 42);
 
-    connect(ui->addButton, SIGNAL(clicked()), this, SLOT(on_addButton_clicked()), Qt::UniqueConnection);
+
+    //connect(ui->addButton, SIGNAL(clicked()), this, SLOT(on_addButton_clicked()), Qt::UniqueConnection);
     connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()), Qt::UniqueConnection);
-    connect(ui->clearMapButton, SIGNAL(clicked()), this, SLOT(on_clearMapButton_clicked()), Qt::UniqueConnection);
+    //connect(ui->clearMapButton, SIGNAL(clicked()), this, SLOT(on_clearMapButton_clicked()), Qt::UniqueConnection);
     connect(ui->clearTableButton, SIGNAL(clicked()), this, SLOT(on_clearTableButton_clicked()), Qt::UniqueConnection);
-    connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(on_deleteButton_clicked()), Qt::UniqueConnection);
+    //connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(on_deleteButton_clicked()), Qt::UniqueConnection);
     connect(ui->executeButton, SIGNAL(clicked()), this, SLOT(on_executeButton_clicked()), Qt::UniqueConnection);
-    connect(ui->updateTableButton, SIGNAL(clicked()), this, SLOT(on_updateTableButton_clicked()), Qt::UniqueConnection);
+    //connect(ui->updateTableButton, SIGNAL(clicked()), this, SLOT(on_updateTableButton_clicked()), Qt::UniqueConnection);
 }
 
 MapPlanning::~MapPlanning() {
@@ -43,8 +48,7 @@ void MapPlanning::addClickListener() {
 // execution button
 // redirect to mission execution window
 void MapPlanning::on_executeButton_clicked() {
-    MapExecution *mapExecution = new MapExecution(getTableAsStrings());
-
+    MapExecution* mapExecution = new MapExecution(getTableAsStrings());
     this->close();
     mapExecution->showFullScreen();
 
@@ -84,9 +88,10 @@ void MapPlanning::on_backButton_clicked() {
  * Arash
  */
 void MapPlanning::on_clearTableButton_clicked() {
+    delete model;
     model = new TableModel();
+    ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
     ui->tableView->setModel(model);
-    ui->tableView->setItemDelegate(new QComboBoxDelegate());
 }
 
 //clear map button
