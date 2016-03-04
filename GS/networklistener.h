@@ -55,7 +55,7 @@ public:
     void netWait(int millis);
     //~NetworkListener();
     /**
-     * \brief   Function takes a timestamp and sends an ackPacket back to theServer
+     * \brief   Function takes a timestamp and sends an ackPacket back to the Server
      * \param   unsigned long timestamp which represents the time we received a packet
      *
      * \author  Daniel Ortega

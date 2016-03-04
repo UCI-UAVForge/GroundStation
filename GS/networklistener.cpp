@@ -69,20 +69,31 @@ void NetworkListener::processPendingDatagrams(){
         test_wp = actionPacket->GetWaypoint();
         std::cout << pack_number << " Latitude: " << test_wp.lat << " Longitude: " << test_wp.lon << std::endl;
         ++pack_number;
+
+        if (actionPacket->GetAction() == Protocol::ActionType::AddWaypoint){
+            Protocol::TelemetryPacket telem;
+            telem.SetLocation(test_wp.lat,test_wp.lon,200);
+            myMessageBox->addTelemetryPacket(telem);
+        }
+
         myMessageBox->addActionPacket(*actionPacket);
-        sendAckPacket(1); // hard coded time stamp, should be udpated with a real timestamp
+        // sends back a ackpacket to the server hard coded time stamp, should be udpated with a real timestamp
+        sendAckPacket(9000);
     } else if (type == Protocol::PacketType::Telem){
         std::cout<< "TelemPacket Recieved" << std::endl;
         Protocol::TelemetryPacket *telemPacket = (Protocol::TelemetryPacket*)incPack;
         //std::cout << pack_number << " Latitude: " << telemPacket << " Longitude: " << telemPacket->lon << std::endl;
         ++pack_number;
+
         myMessageBox->addTelemetryPacket(*telemPacket);
     } else if (type == Protocol::PacketType::Info){
         std::cout<< "InfoPacket Recieved" << std::endl;
         Protocol::InfoPacket *infoPacket = (Protocol::InfoPacket*)incPack;
         myMessageBox->addInfoPacket(*infoPacket);
-        sendAckPacket(2); //hard coded time stamp, should be updated with a real timestamp
-        //send an ack back to server
+         // sends back a ackpacket to the server hard coded time stamp, should be udpated with a real timestamp
+        //QTextStream(stdout) << "sending back ack packet to server" << endl;
+        sendAckPacket(9001);
+
     } else {
         std::cout<< "UNKNOWN PACKET TYPE RECIEVED!" << std::endl;
     }
@@ -91,7 +102,7 @@ void NetworkListener::processPendingDatagrams(){
 
 void NetworkListener::sendAckPacket(unsigned long time){
     Protocol::AckPacket *ackPacket = new Protocol::AckPacket();
-    //ackPacket->set_timestamp(time);
+    ackPacket->set_timestamp(time);
     backToServer->sendPacket(ackPacket);
 }
 

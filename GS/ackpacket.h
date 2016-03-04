@@ -33,6 +33,10 @@ namespace Protocol
 		}
 
 
+        void set_timestamp(unsigned long time){
+            this->timestamp = time;
+        }
+
 
 		size_t GetBytes(uint8_t* buffer, size_t len)
 		{
