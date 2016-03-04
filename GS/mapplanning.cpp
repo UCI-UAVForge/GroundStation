@@ -15,8 +15,8 @@ MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlann
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
     ui->tableView->setColumnHidden(0, true);
     ui->tableView->setColumnHidden(5, true);
-    ui->tableView->setColumnWidth(2, 44);
-    ui->tableView->setColumnWidth(4, 44);
+    ui->tableView->setColumnWidth(2, 42);
+    ui->tableView->setColumnWidth(4, 42);
 
 
     //connect(ui->addButton, SIGNAL(clicked()), this, SLOT(on_addButton_clicked()), Qt::UniqueConnection);
@@ -48,8 +48,7 @@ void MapPlanning::addClickListener() {
 // execution button
 // redirect to mission execution window
 void MapPlanning::on_executeButton_clicked() {
-    MapExecution *mapExecution = new MapExecution(getTableAsStrings());
-
+    MapExecution* mapExecution = new MapExecution(getTableAsStrings());
     this->close();
     mapExecution->showFullScreen();
 
