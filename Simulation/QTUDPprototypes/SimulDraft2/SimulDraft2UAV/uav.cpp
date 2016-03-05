@@ -1,6 +1,8 @@
 #include "uav.h"
 #include <QDateTime>
 
+typedef unsigned char     u_int8_t;
+
 int UAV::NUM_RECV_PACKETS = 0;
 UAV::UAV(QWidget *parent)
 //    : QDialog(parent)
@@ -24,7 +26,7 @@ UAV::UAV(QWidget *parent)
     uavHomeLat = uavLat;
     uavHomeLng = uavLng;
 
-    latLngSpd = .004;
+    latLngSpd = .002;
 
     // Set up qtimer for telemetry packets every 200 ms
     timer = new QTimer(this);
@@ -334,18 +336,18 @@ void UAV::updateUavLatLng()
     else if(uavLng > nextPoint.lon && (uavLng -latLngSpd) <= nextPoint.lon)
         uavLng = nextPoint.lon;
 
-    QTextStream(stdout) << "UavLat: " << uavLat << endl;
-    QTextStream(stdout) << "UavLon: " << uavLng << endl;
-    QTextStream(stdout) << "nextLat: " << nextPoint.lat << endl;
-    QTextStream(stdout) << "nextLong: " << nextPoint.lon << endl;
-    QTextStream(stdout) << "queue size: " << pointOfInterest.size() << endl;
+//    QTextStream(stdout) << "UavLat: " << uavLat << endl;
+//    QTextStream(stdout) << "UavLon: " << uavLng << endl;
+//    QTextStream(stdout) << "nextLat: " << nextPoint.lat << endl;
+//    QTextStream(stdout) << "nextLong: " << nextPoint.lon << endl;
+//    QTextStream(stdout) << "queue size: " << pointOfInterest.size() << endl;
     if(!uavFlyingHome && uavLng == nextPoint.lon && uavLat == nextPoint.lat && pointOfInterest.size() > 0)
     {
         Protocol::ActionPacket waypointPacket;
         waypointPacket.SetAction(Protocol::ActionType::AddWaypoint);
         waypointPacket.SetWaypoint(nextPoint);
         sendAPacket(&waypointPacket);
-        QTextStream(stdout) << "Destination reached. Sent waypoint packet" << endl;
+        QTextStream(stdout) << "Destination reached: (" << nextPoint.lat << ", " << nextPoint.lon << "). Sent waypoint packet" << endl;
         pointOfInterest.pop();
     }
     else if(!uavFlyingHome && pointOfInterest.size() == 0)
@@ -356,13 +358,13 @@ void UAV::updateUavLatLng()
         homePoint.lon = uavHomeLng;
         pointOfInterest.push(homePoint);
     }
-    else if(uavFlyingHome && pointOfInterest.size() > 0)
+    else if(uavFlyingHome && uavLng == nextPoint.lon && uavLat == nextPoint.lat && pointOfInterest.size() > 0)
     {
         Protocol::ActionPacket waypointPacket;
         waypointPacket.SetAction(Protocol::ActionType::AddWaypoint);
         waypointPacket.SetWaypoint(nextPoint);
         sendAPacket(&waypointPacket);
-        QTextStream(stdout) << "Destination reached. Sent waypoint packet" << endl;
+        QTextStream(stdout) << "Home reached. Sent waypoint packet" << endl;
         pointOfInterest.pop();
     }
     else if(uavFlyingHome && pointOfInterest.size() == 0)

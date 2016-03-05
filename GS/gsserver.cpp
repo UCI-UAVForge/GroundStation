@@ -49,7 +49,8 @@ void GsServer::openServer(){
 
 void GsServer::openServer(QHostAddress target, unsigned int port){
     this->target = target;
-    this->port = port;
+//    this->port = port;
+    this->port = 27015;
     openServer();
 }
 
@@ -78,7 +79,7 @@ void GsServer::run(){
     start.SetAction(Protocol::ActionType::Start);
 
     sendPacket(&setHome,0);
-    sendPacket(&start,1);
+    sendPacket(&start,100);
 
     while (running){
         if (!outPackets.isEmpty()){
@@ -86,6 +87,7 @@ void GsServer::run(){
         }
         QThread::msleep(2000);
     }
+
 }
 
 void GsServer::sendPacket(Protocol::Packet* packet){
