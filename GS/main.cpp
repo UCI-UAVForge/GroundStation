@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
     splash.show();
 
     //construct and show the main window
-    MainWindow x;
+    MapPlanning x;
     x.showFullScreen();
     //Hide the splash screen.
     splash.finish(&x);
