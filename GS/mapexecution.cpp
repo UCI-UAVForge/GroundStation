@@ -32,6 +32,10 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
+    ui->tableView->setColumnHidden(0, true);
+    ui->tableView->setColumnHidden(5, true);
+    ui->tableView->setColumnWidth(2, 42);
+    ui->tableView->setColumnWidth(4, 42);
 
     mapStrings = strings;
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
@@ -40,11 +44,10 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
     connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()), Qt::UniqueConnection);
     connect(ui->cancelButton, SIGNAL(clicked()), this, SLOT(on_cancelButton_clicked()), Qt::UniqueConnection);
     connect(ui->finishButton, SIGNAL(clicked()), this, SLOT(on_finishButton_clicked()), Qt::UniqueConnection);
-    connect(ui->returnHomeButton, SIGNAL(clicked()), this, SLOT(on_returnHomeButton_clicked()), Qt::UniqueConnection);
-    connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(on_stopButton_clicked()), Qt::UniqueConnection);
+    //connect(ui->returnHomeButton, SIGNAL(clicked()), this, SLOT(on_returnHomeButton_clicked()), Qt::UniqueConnection);
+    //connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(on_stopButton_clicked()), Qt::UniqueConnection);
 
-//    myServer.openServer(QHostAddress::LocalHost,20715);
-    myServer.openServer(QHostAddress::LocalHost,27015);
+    myServer.openServer(QHostAddress::LocalHost,20715);
     //connect(&myServer.networkListener,SIGNAL(sendCoordinates()),this,SLOT(sendFlightPlan()));
     //connect(&myServer.networkListener,SIGNAL(logTelemetry(QString)),this,SLOT(newTelemCoord(QString)));
 }
@@ -61,7 +64,10 @@ MapExecution::~MapExecution() {
 // finish button
 // redirect to mission recap window
 void MapExecution::on_finishButton_clicked() {
-    this->done(3);
+    this->close();
+    myServer.closeServer();
+    MissionRecap* x = new MissionRecap();
+    x->showFullScreen();
 }
 
 // stop button
@@ -120,11 +126,6 @@ void MapExecution::sendFlightPlan(){
         pack.SetAction(Protocol::ActionType::AddWaypoint);
         myServer.sendPacket(&pack);
     }
-
-    // Start mission
-    Protocol::ActionPacket startP;
-    startP.SetAction(Protocol::ActionType::Start);
-    myServer.sendPacket(&startP);
 }
 
 /* Sends a request for the map to clear itself, causing the JavaScript page

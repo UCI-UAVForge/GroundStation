@@ -10,6 +10,7 @@ UAV::UAV(QWidget *parent)
     receivedInfoPacketReq = false;
     uavWaypointsReady = false;
     uavFlying = false;
+    uavFlyingHome = false;
     stopAction = false;
     shutdownAction = false;
 
@@ -20,6 +21,9 @@ UAV::UAV(QWidget *parent)
     currentNumOfPoints = 0;
     uavLat = 33.6454;
     uavLng = -117.8426;
+    uavHomeLat = uavLat;
+    uavHomeLng = uavLng;
+
     latLngSpd = .004;
 
     // Set up qtimer for telemetry packets every 200 ms
@@ -335,7 +339,7 @@ void UAV::updateUavLatLng()
     QTextStream(stdout) << "nextLat: " << nextPoint.lat << endl;
     QTextStream(stdout) << "nextLong: " << nextPoint.lon << endl;
     QTextStream(stdout) << "queue size: " << pointOfInterest.size() << endl;
-    if(uavLng == nextPoint.lon && uavLat == nextPoint.lat && pointOfInterest.size() > 0)
+    if(!uavFlyingHome && uavLng == nextPoint.lon && uavLat == nextPoint.lat && pointOfInterest.size() > 0)
     {
         Protocol::ActionPacket waypointPacket;
         waypointPacket.SetAction(Protocol::ActionType::AddWaypoint);
@@ -343,6 +347,29 @@ void UAV::updateUavLatLng()
         sendAPacket(&waypointPacket);
         QTextStream(stdout) << "Destination reached. Sent waypoint packet" << endl;
         pointOfInterest.pop();
+    }
+    else if(!uavFlyingHome && pointOfInterest.size() == 0)
+    {
+        uavFlyingHome = true;
+        Protocol::Waypoint homePoint;
+        homePoint.lat = uavHomeLat;
+        homePoint.lon = uavHomeLng;
+        pointOfInterest.push(homePoint);
+    }
+    else if(uavFlyingHome && pointOfInterest.size() > 0)
+    {
+        Protocol::ActionPacket waypointPacket;
+        waypointPacket.SetAction(Protocol::ActionType::AddWaypoint);
+        waypointPacket.SetWaypoint(nextPoint);
+        sendAPacket(&waypointPacket);
+        QTextStream(stdout) << "Destination reached. Sent waypoint packet" << endl;
+        pointOfInterest.pop();
+    }
+    else if(uavFlyingHome && pointOfInterest.size() == 0)
+    {
+        timer->stop();
+        uavFlying = false;
+        uavWaypointsReady = false;
     }
 
 }

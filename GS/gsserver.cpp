@@ -40,7 +40,7 @@ GsServer::GsServer(messagebox *myMessageBox): networkListener(myMessageBox){
 }
 
 GsServer::~GsServer(){
-
+    closeServer();
 }
 
 void GsServer::openServer(){
@@ -64,7 +64,8 @@ void GsServer::startServer(){
 }
 
 void GsServer::closeServer(){
-
+    networkListener.stop();
+    running = false;
 }
 
 void GsServer::run(){

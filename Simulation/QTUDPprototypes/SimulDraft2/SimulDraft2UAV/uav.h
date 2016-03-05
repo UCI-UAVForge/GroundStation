@@ -129,7 +129,7 @@ private:
 private:
     // True when uav needs to keep sending Telemetry packets every 200ms until shutdown.
     bool receivedInfoPacketReq, uavWaypointsReady, uavFlying, stopAction, shutdownAction,
-         uavOn;
+         uavOn, uavFlyingHome;
 
     std::queue<Protocol::Waypoint> pointOfInterest;
 
@@ -139,6 +139,7 @@ private:
     double latLngSpd;
 
     double uavLat, uavLng;
+    double uavHomeLat, uavHomeLng;
     // Timer needed for telemetry every 200ms
     QTimer *timer;
 

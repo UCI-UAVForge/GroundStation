@@ -9,8 +9,8 @@
 MissionRecap::MissionRecap(QWidget *parent) : QDialog(parent), ui(new Ui::MissionRecap) {
     ui->setupUi(this);
     mediaPlayer.setVideoOutput(ui->VideoWidget);
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open Movie"),QDir::homePath());
-    mediaPlayer.setMedia(QUrl::fromLocalFile(fileName));
+    //QString fileName = QFileDialog::getOpenFileName(this, tr("Open Movie"),QDir::homePath());
+    //mediaPlayer.setMedia(QUrl::fromLocalFile(fileName));
     ui->VideoWidget->setAspectRatioMode(Qt::IgnoreAspectRatio);
     connect(ui->horizontalSlider, SIGNAL(sliderMoved(int)), this, SLOT(updateMediaPlayer(int)), Qt::UniqueConnection);
     connect(&mediaPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(updateSlider(qint64)), Qt::UniqueConnection);
@@ -157,6 +157,8 @@ void MissionRecap::on_openFileButton_clicked() {
 // redirect to mission planning window
 void MissionRecap::on_newMission_clicked() {
     this->done(1);
+    MapPlanning* x = new MapPlanning;
+    x->showFullScreen();
 }
 
 //Creates the bridge called cbridge between the java script object and this class.
