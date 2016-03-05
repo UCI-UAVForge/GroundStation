@@ -4,6 +4,7 @@
 #include <QDebug>
 #include <iostream>
 #include <QString>
+#include "gsserver.h"
 
 #include "ackpacket.h"
 #include "actionpacket.h"
@@ -30,17 +31,19 @@ using namespace std;
 
 #endif
 
-NetworkListener::NetworkListener(messagebox *myMessagebox){
+NetworkListener::NetworkListener(messagebox *myMessagebox, GsServer* server){
      this->myMessageBox = myMessagebox;
-
+    this->server = server;
     std::cout << "New NetworkListener created." << std::endl;
-    udpSocket.bind(NetworkListener::LISTEN_PORT);
+    bind(NetworkListener::LISTEN_PORT);
     listening = true;
+
+    //connect(server,SIGNAL(shutdownListener()),this,SLOT(stop()));
 
     //connect(&udpSocket, SIGNAL(readyRead()), this, SLOT(processPendingDatagrams()));
 }
 
-NetworkListener::NetworkListener(messagebox *myMessagebox, int UAVid):NetworkListener(myMessagebox) {
+NetworkListener::NetworkListener(messagebox *myMessagebox, int UAVid, GsServer* server):NetworkListener(myMessagebox, server) {
     this->UAVid = UAVid;
     listening = true;
 }
@@ -52,8 +55,8 @@ NetworkListener::~NetworkListener() {
 void NetworkListener::processPendingDatagrams(){
     static int pack_number = 1;
     QByteArray datagram;
-    datagram.resize(udpSocket.pendingDatagramSize());
-    udpSocket.readDatagram(datagram.data(), datagram.size());
+    datagram.resize(pendingDatagramSize());
+    readDatagram(datagram.data(), datagram.size());
 
     Protocol::Packet* incPack = Protocol::Packet::Parse((uint8_t*)datagram.data(), datagram.size());
     Protocol::PacketType type = incPack->get_type();
@@ -91,20 +94,15 @@ void NetworkListener::processPendingDatagrams(){
     }
     return;
 }
-void NetworkListener::run() {
-    std::cout << "NetworkListener started listening!" << std::endl;
-    while (listening){
-        if (udpSocket.isValid()){
-            if (udpSocket.hasPendingDatagrams()) {
-                processPendingDatagrams();
-            }
-        }
-    }
-    udpSocket.disconnectFromHost();
-    std::cout << "NetworkListener stopped listening!" << std::endl;
+void NetworkListener::start(){
+    connect(this,SIGNAL(readyRead()),this,SLOT(processPendingDatagrams()));
 }
 
 void NetworkListener::stop(){
+    //if(isOpen()){
+        abort();
+    //}
+    disconnect(this,SIGNAL(readyRead()),this,SLOT(processPendingDatagrams()));
     listening = false;
     std::cout << "Stopping NetworkListener...";
 }

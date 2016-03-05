@@ -44,6 +44,7 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
     connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()), Qt::UniqueConnection);
     connect(ui->cancelButton, SIGNAL(clicked()), this, SLOT(on_cancelButton_clicked()), Qt::UniqueConnection);
     connect(ui->finishButton, SIGNAL(clicked()), this, SLOT(on_finishButton_clicked()), Qt::UniqueConnection);
+
     //connect(ui->returnHomeButton, SIGNAL(clicked()), this, SLOT(on_returnHomeButton_clicked()), Qt::UniqueConnection);
     //connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(on_stopButton_clicked()), Qt::UniqueConnection);
 
@@ -64,6 +65,7 @@ MapExecution::~MapExecution() {
 // finish button
 // redirect to mission recap window
 void MapExecution::on_finishButton_clicked() {
+    std::cout<<"Finish button clicked!" << std::endl;
     this->close();
     myServer.closeServer();
     MissionRecap* x = new MissionRecap();
