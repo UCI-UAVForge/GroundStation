@@ -46,6 +46,7 @@ NetworkListener::NetworkListener(messagebox *myMessagebox, int UAVid):NetworkLis
 }
 
 NetworkListener::~NetworkListener() {
+    stop();
 }
 
 void NetworkListener::processPendingDatagrams(){
@@ -99,6 +100,7 @@ void NetworkListener::run() {
             }
         }
     }
+    udpSocket.disconnectFromHost();
     std::cout << "NetworkListener stopped listening!" << std::endl;
 }
 
