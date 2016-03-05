@@ -65,6 +65,7 @@ MapExecution::~MapExecution() {
 // redirect to mission recap window
 void MapExecution::on_finishButton_clicked() {
     this->close();
+    myServer.closeServer();
     MissionRecap* x = new MissionRecap();
     x->showFullScreen();
 }
