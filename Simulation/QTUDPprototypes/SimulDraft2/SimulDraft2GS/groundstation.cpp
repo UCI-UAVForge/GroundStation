@@ -4,7 +4,7 @@
 
 
 int GroundStation::NUM_RECV_PACKETS = 0;
-
+typedef unsigned char u_int8_t;
 GroundStation::GroundStation(QWidget *parent)
 //    : QPushButton(tr("Quit"), parent)
 {

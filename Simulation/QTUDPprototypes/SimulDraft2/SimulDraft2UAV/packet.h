@@ -36,12 +36,13 @@ namespace Protocol
         uint32_t get_timestamp();
         void set_type(PacketType a);
         PacketType get_type();
-	private:
-		uint32_t timestamp;
+    private:
 		PacketType type;
 
 
 	protected:
+        uint32_t timestamp;
+
 		Packet(PacketType t);
 
 		/// Writes information shared by all packets to the given buffer.

@@ -40,6 +40,17 @@
  *      - UAV does not do anything upon receiving any other packets.
  */
 
+
+/* What this simulation handles
+ * ----------------------------------
+ *  -> First simple approach for simulating flying from point to point.
+ *  -> Will fly based on number of waypoints provided. After reaching final waypoint
+ *  fly back home.
+ *  -> Will only work with one mission plan. The simulation needs to be restarted everytime a new
+ *  set of mission waypoints are to be provided.
+ *  -> Simulation will send ack packets for any packet received.
+ */
+
 class UAV : public QObject
 {
     Q_OBJECT
@@ -125,6 +136,16 @@ private:
      * \date   20160226
      */
     void updateUavLatLng();
+
+    /*
+     * \brief  Send Ackpacket based on received timestamp's packet
+     * \param  p : A Protocol::Packet.
+     *         pt: Used to print a nice message in simulation
+     * 
+     * \author Alvin Truong
+     * \date   20160306
+     */
+    void sendAckPacket(Protocol::Packet* p, const QString& pt);
 
 private:
     // True when uav needs to keep sending Telemetry packets every 200ms until shutdown.

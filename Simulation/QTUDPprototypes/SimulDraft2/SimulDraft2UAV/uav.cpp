@@ -104,15 +104,6 @@ void UAV::processPendingDatagrams()
         // Read from the udpSocket while there is a datagram and store into datagram.
         recvUdpSocket.readDatagram(datagram.data(), datagram.size());
 
-
-        //do {
-            //datagram.resize(udpSocket.pendingDatagramSize());
-            //udpSocket.readDatagram(datagram.data(), datagram.size());
-        //} while (udpSocket.hasPendingDatagrams());
-
-        //QDataStream in(&datagram, QIODevice::ReadOnly);
-        //in.setVersion(QDataStream::Qt_4_3);
-
         // Validates check sum first and then convert Datagram into proper packet.
         Protocol::Packet* packet = Protocol::Packet::Parse((uint8_t*)datagram.data(), datagram.size());
         Protocol::PacketType packet_type = packet->get_type();
@@ -126,19 +117,20 @@ void UAV::processPendingDatagrams()
             switch(packet_type)
             {
                 case Protocol::PacketType::Action:
-//                    Protocol::ActionPacket recv_action = *dynamic_cast<Protocol::ActionPacket*>(packet);
                     print_action_packet(*dynamic_cast<Protocol::ActionPacket*>(packet));
-//                    print_action_packet(recv_action);
                     respond_to_action_packet(*dynamic_cast<Protocol::ActionPacket*>(packet));
+                    sendAckPacket(packet, "Action Packet");
                     break;
                 case Protocol::PacketType::Ack:
                     print_ack_packet(*dynamic_cast<Protocol::AckPacket*>(packet));
                     break;
                 case Protocol::PacketType::Info:
                     print_info_packet(*dynamic_cast<Protocol::InfoPacket*>(packet));
+                    sendAckPacket(packet, "Info Packet");
                     break;
                 case Protocol::PacketType::Telem:
                     print_telemetry_packet(*dynamic_cast<Protocol::TelemetryPacket*>(packet));
+                    sendAckPacket(packet, "Telemetry Packet");
                     break;
                 default:
                     break;
@@ -336,11 +328,6 @@ void UAV::updateUavLatLng()
     else if(uavLng > nextPoint.lon && (uavLng -latLngSpd) <= nextPoint.lon)
         uavLng = nextPoint.lon;
 
-//    QTextStream(stdout) << "UavLat: " << uavLat << endl;
-//    QTextStream(stdout) << "UavLon: " << uavLng << endl;
-//    QTextStream(stdout) << "nextLat: " << nextPoint.lat << endl;
-//    QTextStream(stdout) << "nextLong: " << nextPoint.lon << endl;
-//    QTextStream(stdout) << "queue size: " << pointOfInterest.size() << endl;
     if(!uavFlyingHome && uavLng == nextPoint.lon && uavLat == nextPoint.lat && pointOfInterest.size() > 0)
     {
         Protocol::ActionPacket waypointPacket;
@@ -376,3 +363,14 @@ void UAV::updateUavLatLng()
 
 }
 
+
+void UAV::sendAckPacket(Protocol::Packet* p, const QString& pt)
+{
+    Protocol::AckPacket ack;
+
+    ack.set_timestamp(p->get_timestamp());
+     
+    QTextStream(stdout) << "Sending ack packet " << pt << " and time: " << p->get_timestamp() << endl;
+
+    sendAPacket(&ack);
+}
