@@ -78,6 +78,9 @@ void GsServer::run(){
     start.SetAction(Protocol::ActionType::Start);
 
     sendPacket(&setHome,0);
+
+    // The priority of this packet needs to be 100 if you want to work with simulation
+    // sendPacket(&start, 100);
     sendPacket(&start,1);
 
     while (running){
@@ -86,6 +89,7 @@ void GsServer::run(){
         }
         QThread::msleep(2000);
     }
+
 }
 
 void GsServer::sendPacket(Protocol::Packet* packet){
