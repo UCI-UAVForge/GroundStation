@@ -1,7 +1,7 @@
 #include "uav.h"
 #include <QDateTime>
 
-typedef unsigned char     u_int8_t;
+//typedef unsigned char     u_int8_t;
 
 int UAV::NUM_RECV_PACKETS = 0;
 UAV::UAV(QWidget *parent)
