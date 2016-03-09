@@ -48,7 +48,6 @@ NetworkListener::NetworkListener(GsServer* server,messagebox *myMessagebox, int 
 }
 
 NetworkListener::~NetworkListener() {
-    stop();
 }
 
 void NetworkListener::processPendingDatagrams(){
@@ -116,7 +115,6 @@ void NetworkListener::run() {
             }
         }
     }
-    udpSocket.disconnectFromHost();
     std::cout << "NetworkListener stopped listening!" << std::endl;
 }
 
