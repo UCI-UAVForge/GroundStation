@@ -33,7 +33,7 @@ void GsServer::waitNet(unsigned millis){
 #endif
 
 
-GsServer::GsServer(messagebox *myMessageBox): networkListener(myMessageBox){
+GsServer::GsServer(messagebox *myMessageBox): networkListener(myMessageBox,this){
     this->myMessageBox = myMessageBox;
     port = 27015;
     target = QHostAddress::LocalHost;
