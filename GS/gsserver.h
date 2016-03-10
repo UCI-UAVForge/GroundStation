@@ -6,6 +6,7 @@
 #include <QThread>
 #include <QUdpSocket>
 #include "serverqueue.h"
+#include <QObject>
 //#include "net.h"
 #include "networklistener.h"
 #include "messagebox.h"
@@ -28,7 +29,7 @@ const static QString UAV_IP_ADDRESS = "localhost";
   @version 2.0
 */
 class GsServer : public QThread{
-    //Q_OBJECT
+    Q_OBJECT
 public:
     /**
      Creates a new server hosted on the localhost (127.0.0.1) on port 3495.
@@ -109,9 +110,11 @@ public:
     */
     NetworkListener networkListener;
 
-private:
 
     bool running;
+private:
+
+
 
     /* Alvin Truong added on 16-1-27*/
     const static int PACKET_LENGTH = 1000;

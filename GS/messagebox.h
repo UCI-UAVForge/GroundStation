@@ -28,8 +28,7 @@
 #include "telemetrypacket.h"
 
 
-class messagebox
-{
+class messagebox {
 public:
     friend class DigitalClock;
     messagebox();
@@ -123,7 +122,8 @@ private:
 
 //signals:
 
-//public slots:
+public slots:
+    void recieve_packet(Protocol::Packet *packet);
 };
 
 #endif // UAV_MESSAGEBOX_H

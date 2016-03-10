@@ -156,4 +156,9 @@ void messagebox::addInfoPacket(const Protocol::InfoPacket& infoPacket)
 {
     infoPackets_incoming.push_back(infoPacket);
 }
+
+void recieve_packet(Protocol::Packet *packet){
+    std::cout << (packet->get_type()==Protocol::PacketType::Action?"Action":"Not Action") << std::endl;
+}
+
 #endif // UAV_MESSAGEBOX_CPP
