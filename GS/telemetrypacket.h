@@ -38,7 +38,9 @@ namespace Protocol
 		float heading;
 
 	public:
-		TelemetryPacket();
+        TelemetryPacket();
+
+        ~TelemetryPacket();
 
 		TelemetryPacket(uint8_t* buffer, size_t len);
 
