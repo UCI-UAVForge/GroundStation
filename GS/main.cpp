@@ -3,6 +3,7 @@
 #include <QtSvg>
 
 #include "mainwindow.h"
+#include "mission.h"
 
 int main(int argc, char *argv[]) {
     static const int splash_width = 600;

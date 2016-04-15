@@ -48,6 +48,10 @@ Protocol::TelemetryPacket::TelemetryPacket(uint8_t* buffer, size_t len)
     //return this->SetChecksum(buffer, len, offset);
 }
 
+Protocol::TelemetryPacket::~TelemetryPacket(){
+
+}
+
 void Protocol::TelemetryPacket::SetVelocity(float x, float y, float z)
 {
 	this->vX = x;

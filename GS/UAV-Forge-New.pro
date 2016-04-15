@@ -50,7 +50,9 @@ SOURCES += main.cpp\
     Packet.cpp \
     digitalclock.cpp \
     mapvalidator.cpp \
-    serverqueue.cpp
+    serverqueue.cpp \
+    mission.cpp \
+    flightpath.cpp
 
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
@@ -77,7 +79,9 @@ HEADERS  += mainwindow.h \
     packet.h \
     digitalclock.h \
     mapvalidator.h \
-    serverqueue.h
+    serverqueue.h \
+    mission.h \
+    flightpath.h
 
 FORMS    += mainwindow.ui \
     options.ui \
