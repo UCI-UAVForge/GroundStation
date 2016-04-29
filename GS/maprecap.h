@@ -33,11 +33,8 @@ public:
     void updateMap();
     void plotPosition(double lat, double lng);
     void addPoint(QString string);
-
-    void addNewMap();
-
-
 public slots:
+    void addNewMap();
     void addPointToTable(double lat, double lng);
     //addPointToTable - used to add an entry with latitude lat and longitude lng to the table.
     //  lat - the latitude value (usually from the JavaScript program).

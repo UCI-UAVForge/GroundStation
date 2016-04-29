@@ -27,7 +27,6 @@ void MapRecap::addClickListener() {
     std::cout << "listenerAdded!" << std::endl;
     //Creates the bridge called cbridge between the java script object and this class.
     ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("cbridge",this);
-    addNewMap();
 }
 
 
@@ -82,6 +81,7 @@ void MapRecap::updateMap() {
         }
         //Sends the add point request with its parameters.
         ui->webView->page()->mainFrame()->evaluateJavaScript("addLatLngCoords("+QString::number(lat)+","+QString::number(lng)+")");
+
     }
 }
 
@@ -97,12 +97,13 @@ loaded. Jordan 2/21/2015 */
 void MapRecap::addNewMap() {
 
     std::cout << "adding new map" << std::endl;
+    updateMap();
 
-    plotPosition(-117.8637,33.6283);
-    plotPosition(-117.8658,33.6254);
-    plotPosition(-117.8381,33.6236);
-    plotPosition(-117.8049,33.6291);
-    plotPosition(-117.8637,33.6283);
+    plotPosition(33.6283,-117.8637);
+    plotPosition(33.6554,-117.8683);
+    plotPosition(33.6760,-117.8320);
+    plotPosition(33.6522,-117.8085);
+    plotPosition(33.6283,-117.8637);
 
     addPoint("NONE,117.8637,W,33.6283,N,NONE");
     addPoint("NONE,117.8685,W,33.6554,N,NONE");

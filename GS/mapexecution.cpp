@@ -203,7 +203,18 @@ void MapExecution::addClickListener() {
 This is necessary because data cannot be added until the html file is completely
 loaded. Jordan 2/21/2015 */
 void MapExecution::addNewMap() {
-    setMap(mapStrings);
+    plotPosition(33.6283,-117.8637);
+    plotPosition(33.6254,-117.8658);
+    plotPosition(33.6236,-117.8381);
+    plotPosition(33.6291,-117.8049);
+    plotPosition(33.6283,-117.8637);
+
+    addPoint("NONE,117.8637,W,33.6283,N,NONE");
+    addPoint("NONE,117.8685,W,33.6554,N,NONE");
+    addPoint("NONE,117.8318,W,33.6763,N,NONE");
+    addPoint("NONE,117.8094,W,33.6519,N,NONE");
+
+    //setMap(mapStrings);
     //ui->webView->page()->mainFrame()->evaluateJavaScript("simulateInput()");
 }
 
