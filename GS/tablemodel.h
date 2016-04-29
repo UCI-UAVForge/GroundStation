@@ -1,7 +1,6 @@
 #ifndef TABLEMODEL_H
 #define TABLEMODEL_H
 
-#include "tablemodel.h"
 #include <QAbstractTableModel>
 #include <QList>
 #include <QPair>

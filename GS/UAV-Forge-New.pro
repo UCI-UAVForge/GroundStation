@@ -52,7 +52,8 @@ SOURCES += main.cpp\
     mapvalidator.cpp \
     serverqueue.cpp \
     mission.cpp \
-    flightpath.cpp
+    flightpath.cpp \
+    maprecap.cpp
 
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
@@ -81,7 +82,8 @@ HEADERS  += mainwindow.h \
     mapvalidator.h \
     serverqueue.h \
     mission.h \
-    flightpath.h
+    flightpath.h \
+    maprecap.h
 
 FORMS    += mainwindow.ui \
     options.ui \
@@ -90,7 +92,8 @@ FORMS    += mainwindow.ui \
     missionrecap.ui \
     tutorial.ui \
     popwindowmp.ui \
-    connectiondialog.ui
+    connectiondialog.ui \
+    maprecap.ui
 
 OTHER_FILES +=
 
