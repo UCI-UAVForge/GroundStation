@@ -31,7 +31,7 @@ QList<Protocol::Waypoint>* FlightPath::getOrderedWaypoints(){
     }
 
     while (!waypointActions.empty()){
-        double earliestTime = 10e15;
+        double earliestTime = std::numeric_limits<double>::infinity();
         TimedAction* earliestAction;
         for(int i = 0; i < waypointActions.length(); i++){
             TimedAction* currentAction = waypointActions.at(i);
