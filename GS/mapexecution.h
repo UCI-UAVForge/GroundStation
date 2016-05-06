@@ -17,6 +17,7 @@
 #include "missionrecap.h"
 #include "options.h"
 #include "messagebox.h"
+#include "mission.h"
 
 #include "ui_mapexecution.h"
 #include "messagebox.h"
@@ -65,7 +66,8 @@ private:
     double prevLat, prevLng, prevAlt;
     QTime prevTime;
 
-    FlightPath *myFlightPath;
+    FlightPath myFlightPath;
+    Mission myMission;
 
     bool missionStarted;
 };

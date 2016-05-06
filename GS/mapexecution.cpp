@@ -1,4 +1,5 @@
 #include "mapexecution.h"
+#include "maprecap.h"
 #include <iostream>
 
 MapExecution::MapExecution(QWidget *parent) :MapExecution(new FlightPath,parent){}
@@ -7,16 +8,17 @@ MapExecution::MapExecution(FlightPath* flightPath, QWidget *parent):
     QDialog(parent),
     myServer(&MyMessageBox),
     ui(new Ui::MapExecution),
-    prevTime(){
+    prevTime(),
+    myFlightPath(*flightPath),
+    myMission(myFlightPath){
 
-    myFlightPath = flightPath;
     missionStarted = false;
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
 
     //MyMessageBox.fetch_from_table(strings);
 
-    for (TimedAction *a : *myFlightPath){
+    for (TimedAction *a : myFlightPath){
         MyMessageBox.addActionPacket(*(a->first));
     }
 
@@ -61,7 +63,6 @@ MapExecution::MapExecution(FlightPath* flightPath, QWidget *parent):
 MapExecution::~MapExecution() {
     delete ui;
     delete model;
-    delete myFlightPath;
 }
 
 // finish button
@@ -70,7 +71,7 @@ void MapExecution::on_finishButton_clicked() {
     std::cout<<"Finish button clicked!" << std::endl;
     this->close();
     myServer.closeServer();
-    MissionRecap* x = new MissionRecap();
+    MapRecap* x = new MapRecap(&myMission);
     x->showFullScreen();
 }
 
@@ -146,7 +147,7 @@ loaded. Jordan 2/21/2015 */
 void MapExecution::addNewMap() {
     //setMap(mapStrings);
     std::cout << "Add new map called!" << std::endl;
-    drawFlightPath(myFlightPath);
+    drawFlightPath(&myFlightPath);
 }
 
 /*  Sends a (latitude,longitude) pair to the map to be plotted.

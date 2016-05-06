@@ -2,8 +2,6 @@
 #include <QVector>
 #include <iostream>
 
-
-
 FlightPath::FlightPath()  {
 
 }
