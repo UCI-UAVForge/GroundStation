@@ -10,24 +10,6 @@ messagebox::messagebox()
    timer.start();
     std::cout << "Timer started at " << timer.currentTime().msec()<< std::endl;
 }
-/* Uses code from MapExecution::getDoublePairs
-takes input from MapPlanning::getTableAsStrings()
--Aaron Ko 1/19/2016 */
-void messagebox::fetch_from_table(QList<QString> tableList){
-    for(QString string : tableList){
-        QList<QString> comps = string.split(",");
-        double lat = comps[3].toDouble();
-        double lon = comps[1].toDouble();
-        if(comps[2] == "W") {
-            lon *= -1.0;
-        }
-        if(comps[4] == "S") {
-            lat *= -1.0;
-        }
-        load_action_packet(lat, lon, 0.0, 0.0);
-        load_outAction_packets(lat,lon,0.0,0.0);
-    }
-}
 
 void messagebox::load_ack_packet(uint8_t* buffer, size_t len){
     addAckPacket(Protocol::AckPacket(buffer, len));

@@ -7,7 +7,7 @@
 
 class TimedAction;
 
-class FlightPath: QList<TimedAction*>{
+class FlightPath: public QList<TimedAction*>{
 public:
     FlightPath();
     ~FlightPath();

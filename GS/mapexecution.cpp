@@ -1,14 +1,24 @@
 #include "mapexecution.h"
+#include <iostream>
 
-MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
-        QDialog(parent),
-        myServer(&MyMessageBox),
-        ui(new Ui::MapExecution),
-        prevTime() {
+MapExecution::MapExecution(QWidget *parent) :MapExecution(new FlightPath,parent){}
+
+MapExecution::MapExecution(FlightPath* flightPath, QWidget *parent):
+    QDialog(parent),
+    myServer(&MyMessageBox),
+    ui(new Ui::MapExecution),
+    prevTime(){
+
+    myFlightPath = flightPath;
     missionStarted = false;
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
-    MyMessageBox.fetch_from_table(strings);
+
+    //MyMessageBox.fetch_from_table(strings);
+
+    for (TimedAction *a : *myFlightPath){
+        MyMessageBox.addActionPacket(*(a->first));
+    }
 
     //initate clock timer
     ui->clock->initiate(MyMessageBox.timer);
@@ -37,7 +47,6 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
     ui->tableView->setColumnWidth(2, 42);
     ui->tableView->setColumnWidth(4, 42);
 
-    mapStrings = strings;
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
     ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
 
@@ -45,21 +54,14 @@ MapExecution::MapExecution(QList<QString> strings, QWidget *parent) :
     connect(ui->cancelButton, SIGNAL(clicked()), this, SLOT(on_cancelButton_clicked()), Qt::UniqueConnection);
     connect(ui->finishButton, SIGNAL(clicked()), this, SLOT(on_finishButton_clicked()), Qt::UniqueConnection);
 
-    //connect(ui->returnHomeButton, SIGNAL(clicked()), this, SLOT(on_returnHomeButton_clicked()), Qt::UniqueConnection);
-    //connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(on_stopButton_clicked()), Qt::UniqueConnection);
-
     myServer.openServer(QHostAddress::LocalHost,20715);
-    //connect(&myServer.networkListener,SIGNAL(sendCoordinates()),this,SLOT(sendFlightPlan()));
-    //connect(&myServer.networkListener,SIGNAL(logTelemetry(QString)),this,SLOT(newTelemCoord(QString)));
-}
-
-MapExecution::MapExecution(QWidget *parent) :MapExecution(QList<QString>(),parent){
 }
 
 
 MapExecution::~MapExecution() {
     delete ui;
     delete model;
+    delete myFlightPath;
 }
 
 // finish button
@@ -111,16 +113,6 @@ void MapExecution::on_backButton_clicked() {
     }
 }
 
-void MapExecution::newTelemCoord(QString msgString){
-    double lat = msgString.split(',').at(0).toDouble();
-    double lng = msgString.split(',').at(1).toDouble();
-    long time = msgString.split(',').at(2).toLong();
-    std::cout << time << std::endl;
-
-    plotPosition(lat,lng);
-}
-
-
 void MapExecution::sendFlightPlan(){
     std::vector<Protocol::ActionPacket> packets = MyMessageBox.get_action_packets();
 
@@ -130,64 +122,13 @@ void MapExecution::sendFlightPlan(){
     }
 }
 
-/* Sends a request for the map to clear itself, causing the JavaScript page
-to reload itself. This function then cycles through each entry in the string
-list and sends it to the addPoint(QString) function to be added to the map.
-Function added by Jordan Dickson Feb 21st 2015. */
-void MapExecution::setMap(QList<QString> list) {
-    //Sends clearMap request.
+void MapExecution::drawFlightPath(FlightPath *flightPath) {
     ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
-
-    //Loops through list entries
-    for(int i = 0; i < list.length(); i++){
-        addPoint(list[i]);
+    QList<Protocol::Waypoint> *points = flightPath->getOrderedWaypoints();
+    for (Protocol::Waypoint wp : *points){
+        sendCoordToJSMap(wp.lat,wp.lon,0);
     }
-}
-
-QList<QPair<double,double> > MapExecution::getDoublePairs(QList<QString> strings) {
-    QList<QPair<double,double> > returnList;
-    for(QString string: strings){
-        QList<QString> comps = string.split(",");
-
-        //Converts West and South coordinates to negative numbers.
-        double lat = comps[3].toDouble();
-        double lng = comps[1].toDouble();
-        if(comps[2] == "W") {
-            lng *= -1.0;
-        }
-        if(comps[4] == "S") {
-            lat *= -1.0;
-        }
-        returnList.append(QPair<double,double>(lat,lng));
-    }
-
-    return returnList;
-
-}
-
-/*  Takes a QString formated (Action,Longitude,LongDirection,Latitude,
-LatDirection,Behavior) and extracts the (lat,lng) pair needed to add
-a new point to the map. Function added by Jordan Dickson Feb 21st 2015. */
-void MapExecution::addPoint(QString string) {
-    //Split the string into a list of components separated by ','
-    QList<QString> comps = string.split(",");
-
-    //Converts West and South coordinates to negative numbers.
-    double lat = comps[3].toDouble();
-    double lng = comps[1].toDouble();
-    if(comps[2] == "W"){
-        lng *= -1.0;
-    }
-    if(comps[4] == "S"){
-        lat *= -1.0;
-    }
-
-    //Sends the add point request with its parameters.
-    ui->webView->page()->mainFrame()->evaluateJavaScript("addLatLngCoords("+QString::number(lat)+","+QString::number(lng)+")");
-}
-
-void MapExecution::push_new_point(QString string) {
-   QList<QString> points = string.split(",");
+    delete points;
 }
 
 /* Since c++/JS bridges are broken when the JS page refreshes this slot
@@ -203,70 +144,26 @@ void MapExecution::addClickListener() {
 This is necessary because data cannot be added until the html file is completely
 loaded. Jordan 2/21/2015 */
 void MapExecution::addNewMap() {
-    plotPosition(33.6283,-117.8637);
-    plotPosition(33.6254,-117.8658);
-    plotPosition(33.6236,-117.8381);
-    plotPosition(33.6291,-117.8049);
-    plotPosition(33.6283,-117.8637);
-
-    addPoint("NONE,117.8637,W,33.6283,N,NONE");
-    addPoint("NONE,117.8685,W,33.6554,N,NONE");
-    addPoint("NONE,117.8318,W,33.6763,N,NONE");
-    addPoint("NONE,117.8094,W,33.6519,N,NONE");
-
     //setMap(mapStrings);
-    //ui->webView->page()->mainFrame()->evaluateJavaScript("simulateInput()");
+    std::cout << "Add new map called!" << std::endl;
+    drawFlightPath(myFlightPath);
 }
 
 /*  Sends a (latitude,longitude) pair to the map to be plotted.
 Used for telemetry. */
 void MapExecution::plotPosition(double lat, double lng) {
     updateTable(lat,lng);
-    ui->webView->page()->mainFrame()->evaluateJavaScript("addActualPath("+QString::number(lat)+","+QString::number(lng)+")");
+    sendCoordToJSMap(lat,lng,1);
+}
+
+void MapExecution::sendCoordToJSMap(double lat, double lng, int mapID){
+    ui->webView->page()->mainFrame()->evaluateJavaScript("plotPointOnMap("+QString::number(lat)+","+QString::number(lng)+","+QString::number(mapID)+")");
 }
 
 void MapExecution::updateTable(double lat, double lng) {
     model->insertRow(lng, lat);
     ui->tableView->scrollToBottom();
 }
-
-//void MapExecution::updatePosition(double lat, double lng, double alt, double spd)
-//{
-
-//    if(prevTime.isNull())
-//    {
-//        prevTime = QTime::currentTime();
-//        prevLat = lat;
-//        prevLng = lng;
-//        prevAlt = alt;
-//    }
-//    else
-//    {
-//        LatLabel->setText(QString::number(lat));
-//        LngLabel->setText(QString::number(lng));
-//        AltLabel->setText(QString::number(alt));
-//        SpdLabel->setText(QString::number(spd));
-//    }
-//}
-//void MapExecution::initCurrentData()
-//{
-
-//    LatLabel = new QTableWidgetItem("LatLabel");
-//    LngLabel = new QTableWidgetItem("LngLabel");
-//    AltLabel = new QTableWidgetItem("AltLabel");
-//    SpdLabel = new QTableWidgetItem("SpdLabel");
-
-//    CurrentData->setItem(0,0,new QTableWidgetItem("Latitude"));
-//    CurrentData->setItem(1,0,new QTableWidgetItem("Longitude"));
-//    CurrentData->setItem(2,0,new QTableWidgetItem("Altitude"));
-//    CurrentData->setItem(3,0,new QTableWidgetItem("Speed"));
-
-//    CurrentData->setItem(0,1,LatLabel);
-//    CurrentData->setItem(1,1,LngLabel);
-//    CurrentData->setItem(2,1,AltLabel);
-//    CurrentData->setItem(3,1,SpdLabel);
-
-//}
 
 /*Change status indicator using inputted x */
 void MapExecution::updateStatusIndicator()
@@ -294,9 +191,3 @@ void MapExecution::updateStatusIndicator()
             ui->StatusIndicator->setStyleSheet("background-color:black;");
     }
 }
-
-//void MapExecution::on_colorTester_clicked()
-//{
-//    ui->StatusConsole->appendPlainText("Update");
-//    MapExecution::updateStatusIndicator(rand() % 3);
-//}

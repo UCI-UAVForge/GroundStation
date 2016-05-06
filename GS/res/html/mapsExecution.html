@@ -51,6 +51,16 @@
                 addLatLng(location);
             }
 
+            function plotPointOnMap(lat,lng,mapID){
+                var location = new google.maps.LatLng(lat,lng);
+                if(mapID == 0){
+                    flightPath.getPath().push(location);
+                } else if (mapID == 1){
+                    flightPath_actual.getPath().push(location);
+                    moveIcon(location);
+                }
+            }
+
             function clearMap() {
             //Called from the c++ side to refresh the map.
             //modified by Arash on 2/23/15: it will now clear the map without

@@ -1,5 +1,8 @@
 #include "flightpath.h"
 #include <QVector>
+#include <iostream>
+
+
 
 FlightPath::FlightPath()  {
 
@@ -27,8 +30,19 @@ QList<Protocol::Waypoint>* FlightPath::getOrderedWaypoints(){
         }
     }
 
-    //work with the lists here to filter out all non waypoint packets
-    //and get the rest in order -Jordan
+    while (!waypointActions.empty()){
+        double earliestTime = 10e15;
+        TimedAction* earliestAction;
+        for(int i = 0; i < waypointActions.length(); i++){
+            TimedAction* currentAction = waypointActions.at(i);
+            if(currentAction->second < earliestTime){
+                earliestTime = currentAction->second;
+                earliestAction = currentAction;
+            }
+        }
+        waypointActions.removeOne(earliestAction);
+        rtnList->append(earliestAction->first->GetWaypoint());
+    }
 
     return rtnList;
 }

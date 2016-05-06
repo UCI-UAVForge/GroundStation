@@ -14,7 +14,7 @@
 #include "popwindowmp.h"
 #include "qcomboboxdelegate.h"
 #include "popwindowmp.h"
-//#include "mainwindow.h"
+#include "flightpath.h"
 #include "mapexecution.h"
 #include "messagebox.h"
 
@@ -30,7 +30,7 @@ class MapPlanning : public QDialog {
 
 public:
     void updateMap();
-    QList<QString> getTableAsStrings();
+    FlightPath *getTableAsFlightPath();
     explicit MapPlanning(QWidget *parent = 0);
     ~MapPlanning();
 
@@ -53,16 +53,13 @@ private slots:
     //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame().
     void closeWindow();
 
-    QList<QList<QString> > getTableData();
-
-
 private:
     Ui::MapPlanning *ui;
     QButtonGroup *buttonGroup;
     QPushButton *del;
     TableModel *model;
     PopWindowMP *popup;
-    QList<QList<QString> > tableData;
+    //QList<QList<QString> > tableData;
 };
 
 #endif // MAPPLANNING_H
