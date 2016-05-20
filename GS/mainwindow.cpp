@@ -114,8 +114,42 @@ void MainWindow::showMissionPlanning() {
     mapPlanning->showFullScreen();
 }
 
-void MainWindow::showMissionExecution() {
-    MapExecution *mapExecution = new MapExecution();
+void MainWindow::showMissionExecution(){
+    //Temporary FlightPath code - Remove Later
+
+    std::cout << "Attempting to create FlightPath" << std::endl;
+    FlightPath *myFlightPath = new FlightPath();
+
+
+    std::cout << "Filling point 1" << std::endl;
+    Protocol::Waypoint wp;
+    wp.alt = 10;
+    wp.lat = 33;
+    wp.lon = -111;
+    wp.speed = 10;
+    myFlightPath->addNavAction(wp,10);
+
+    std::cout << "Filling point 2" << std::endl;
+    wp.alt = 10;
+    wp.lat = 34;
+    wp.lon = -111;
+    wp.speed = 10;
+    myFlightPath->addNavAction(wp,20);
+
+    std::cout << "Filling point 3" << std::endl;
+    wp.alt = 10;
+    wp.lat = 34;
+    wp.lon = -110;
+    wp.speed = 10;
+    myFlightPath->addNavAction(wp,30);
+
+    std::cout << "Done creating FlightPath" << std::endl;
+
+    //End temporary FlightPath code
+
+
+
+    MapExecution *mapExecution = new MapExecution(myFlightPath);
     QObject::connect(mapExecution, SIGNAL(finished(int)), this, SLOT(checkFinishStatus(int)), Qt::UniqueConnection);
     mapExecution->showFullScreen();
 
@@ -127,9 +161,13 @@ void MainWindow::showMissionExecution() {
 }
 
 void MainWindow::showMissionRecap() {
-    MissionRecap *missionRecap = new MissionRecap();
+
+
+    //MissionRecap *missionRecap = new MissionRecap();
+    MapRecap *missionRecap = new MapRecap();
     QObject::connect(missionRecap, SIGNAL(finished(int)), this, SLOT(checkFinishStatus(int)), Qt::UniqueConnection);
     missionRecap->showFullScreen();
+
 }
 
 void MainWindow::showTutorial() {

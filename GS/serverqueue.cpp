@@ -3,23 +3,35 @@
 #include <iostream>
 
 const unsigned int DEFAULT_PRIORITY = 10;
+const unsigned int DEFAULT_WINDOW_LEN = 5;
 const unsigned int SEND_BUMP = 10;
-ServerQueue::ServerQueue() {
+
+
+ServerQueue::ServerQueue(int windowLen) {
+    this->windowLen = windowLen;
+}
+
+ServerQueue::ServerQueue():ServerQueue(DEFAULT_WINDOW_LEN){
 
 }
 
 ServerQueue::~ServerQueue() {
-    for (int i = 0; i < pendingPackets.length(); i++){
-        delete pendingPackets[i];
+    while (!pendingPackets.isEmpty()){
+        delete pendingPackets.first();
+        pendingPackets.removeFirst();
     }
 }
 
-void ServerQueue::bumpPriorities(int amount){
-    for(QueueEntry *entry : pendingPackets){
-        if(((int)entry->priority + amount) > 0){
-            entry->priority += amount;
-        } else {
-            entry->priority += amount-((int)entry->priority + amount);
+void ServerQueue::updateWindow(){
+    window.clear();
+    int winCt = 0;
+    for(QueueEntry *e:pendingPackets){
+        if(window.size() == windowLen){
+            break;
+        }
+        if(e->waitingForAck){
+            window.append(e);
+            winCt++;
         }
     }
 }
@@ -30,7 +42,6 @@ bool ServerQueue::isEmpty(){
 
 void ServerQueue::enqueue(Protocol::Packet *packet, unsigned int priority){
     QueueEntry *newEntry = (QueueEntry*)malloc(sizeof(QueueEntry));
-
 
     unsigned char str[1024];
     size_t length = packet->GetBytes(str,1024);
@@ -57,9 +68,15 @@ void ServerQueue::enqueue(Protocol::Packet *packet, unsigned int priority){
 
     newEntry->packet = newPacket;
     newEntry->priority = priority;
-    newEntry->waitingForAck = false;
-    bumpPriorities(-1);
-    pendingPackets.append(newEntry);
+    newEntry->waitingForAck = true;
+
+    QLinkedList<QueueEntry*>::iterator i;
+    for(i = pendingPackets.begin();i!=pendingPackets.end(); ++i){
+        if((*i)->priority >= newEntry->priority){
+            break;
+        }
+    }
+    pendingPackets.insert(i,newEntry);
 }
 
 void ServerQueue::enqueue(Protocol::Packet *packet){
@@ -87,10 +104,14 @@ void ServerQueue::forceDequeue(Protocol::Packet *packet){
 }
 
 bool ServerQueue::recieveAckPacket(Protocol::AckPacket *ack_pack){
-    for (QueueEntry *entry : pendingPackets){
+    std::cout << "Ack Packet Recieved!" << std::endl;
+    for (QueueEntry *entry : window){
         if (entry->waitingForAck == true){
+            int entryTS = entry->packet->get_timestamp();
+            int ackTS = ack_pack->get_timestamp();
+            std::cout << entryTS << "==" << ackTS << std::endl;
             if (entry->packet->get_timestamp() == ack_pack->get_timestamp()){
-                pendingPackets.removeOne(entry);
+                entry->waitingForAck = false;
                 return true;
             }
         }
@@ -99,20 +120,17 @@ bool ServerQueue::recieveAckPacket(Protocol::AckPacket *ack_pack){
 }
 
 Protocol::Packet *ServerQueue::getNextPacket(){
-    unsigned int highestPriority = 100000;
-    QueueEntry *nextSend = NULL;
+    static int sentCt = 0;
+    if(sentCt == 0){
+        updateWindow();
+        std::cout << "refreshing output packet window!" << std::endl;
+    }
 
-    for (QueueEntry *entry : pendingPackets){
-        if (entry->priority < highestPriority){
-            highestPriority = entry->priority;
-            nextSend = entry;
-        }
+    Protocol::Packet *rtnPacket = NULL;
+    if(window.size() > sentCt) {
+        rtnPacket = window.at(sentCt++)->packet;
+        sentCt = sentCt%window.size();
     }
-    if(nextSend){
-        nextSend->waitingForAck = true;
-        nextSend->priority += SEND_BUMP;
-        bumpPriorities(-1);
-        return nextSend->packet;
-    }
-    return NULL;
+
+   return rtnPacket;
 }

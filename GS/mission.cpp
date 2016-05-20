@@ -4,10 +4,16 @@ Mission::Mission(){
 
 }
 
-Mission::Mission(QList<Protocol::Waypoint> flightPath) {
+Mission::Mission(FlightPath flightPath) : myFlightPath(flightPath){
+
 }
 
 Mission::~Mission() {
+
+}
+
+FlightPath *Mission::getFlightPath(){
+    return &myFlightPath;
 }
 
 void Mission::addPacket(Protocol::TelemetryPacket telemPacket){
@@ -28,7 +34,7 @@ void Mission::addPacket(Protocol::TelemetryPacket telemPacket){
             values.append(new QVector<double>);
         }
     }
-    values.at(0)->append(headingF);
+    values.at(0)->append(headingD);
     values.at(1)->append(lat);
     values.at(2)->append(lon);
     values.at(3)->append(alt);

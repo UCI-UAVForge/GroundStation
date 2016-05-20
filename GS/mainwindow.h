@@ -16,6 +16,7 @@
 #include "mapplanning.h"
 #include "mapexecution.h"
 #include "missionrecap.h"
+#include "maprecap.h"
 
 #include "connectiondialog.h"
 

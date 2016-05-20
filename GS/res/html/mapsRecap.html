@@ -49,16 +49,7 @@
             //Used on the c++ side to add a new point to the map.
                 var location = new google.maps.LatLng(lat,lng);
                 addLatLng(location);
-            }
-
-            function plotPointOnMap(lat,lng,mapID){
-                var location = new google.maps.LatLng(lat,lng);
-                if(mapID == 0){
-                    flightPath.getPath().push(location);
-                } else if (mapID == 1){
-                    flightPath_actual.getPath().push(location);
-                    moveIcon(location);
-                }
+                window.alert("adding point");
             }
 
             function clearMap() {
@@ -89,6 +80,7 @@
 
             function initialize() {
             //Setup function that creates the initial map state.
+                window.alert("initializing");
                 var mapCanvas = document.getElementById('map_canvas');
                 var mapOptions = {
                     center: uci,

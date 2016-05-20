@@ -26,9 +26,13 @@ int main(int argc, char *argv[]) {
     QSplashScreen splash(pixmap);
     splash.show();
 
-    //construct and show the main window
-    MapPlanning x;
+
+    MainWindow x;
     x.showFullScreen();
+
+    //construct and show the main window
+    //MapPlanning x;
+    //x.showFullScreen();
     //Hide the splash screen.
     splash.finish(&x);
 

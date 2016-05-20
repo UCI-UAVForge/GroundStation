@@ -1,5 +1,5 @@
-#ifndef MAPPLANNING_H
-#define MAPPLANNING_H
+#ifndef MAPRECAP_H
+#define MAPRECAP_H
 
 #include <QDialog>
 #include <QComboBox>
@@ -18,48 +18,42 @@
 #include "mapexecution.h"
 #include "messagebox.h"
 
-
-#include "ui_mapplanning.h"
+#include "ui_maprecap.h"
+#include "mission.h"
 
 namespace Ui {
-class MapPlanning;
+    class MapRecap;
 }
 
-class MapPlanning : public QDialog {
+class MapRecap : public QDialog {
     Q_OBJECT
 
 public:
+    explicit MapRecap(Mission *mission, QWidget *parent = 0);
+    explicit MapRecap(QWidget *parent = 0);
+    ~MapRecap();
     void updateMap();
-    FlightPath *getTableAsFlightPath();
-    explicit MapPlanning(QWidget *parent = 0);
-    ~MapPlanning();
+    void plotPosition(double lat, double lng);
+    void addPoint(QString string);
+    void drawFlightPath(FlightPath *flightPath);
+    void sendCoordToJSMap(double lat, double lng, int mapID);
 
 public slots:
+    void addNewMap();
     void addPointToTable(double lat, double lng);
     //addPointToTable - used to add an entry with latitude lat and longitude lng to the table.
     //  lat - the latitude value (usually from the JavaScript program).
     //  lng - the longitude value (usually from the JavaScript program).
 
 private slots:
-    void on_executeButton_clicked();
-    void on_addButton_clicked();
     void on_backButton_clicked();
-    void on_clearTableButton_clicked();
-    void on_clearMapButton_clicked();
-    void on_deleteButton_clicked();
-    void on_updateTableButton_clicked();
-
     void addClickListener();
-    //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame().
     void closeWindow();
 
 private:
-    Ui::MapPlanning *ui;
-    QButtonGroup *buttonGroup;
-    QPushButton *del;
+    Ui::MapRecap *ui;
     TableModel *model;
-    PopWindowMP *popup;
-    //QList<QList<QString> > tableData;
+    Mission myMission;
 };
 
-#endif // MAPPLANNING_H
+#endif // MAPRECAP_H

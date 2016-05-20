@@ -2,6 +2,7 @@
 #define SERVERQUEUE_H
 
 #include <QList>
+#include <QLinkedList>
 
 #include "packet.h"
 #include "ackpacket.h"
@@ -17,17 +18,26 @@ typedef struct QUEUE_ENTRY{
 
 class ServerQueue {
 private:
-    void bumpPriorities(int amount);
-    QList<QueueEntry*> pendingPackets;
+    QLinkedList<QueueEntry*> pendingPackets;
+    QList<QueueEntry*> window;
+
+    int windowLen;
+
+    void updateWindow();
 
 public:
     ServerQueue();
+    ServerQueue(int windowLen);
     ~ServerQueue();
     bool isEmpty();
+
     void enqueue(Protocol::Packet *packet);
     void enqueue(Protocol::Packet *packet, unsigned int priority);
+
     void dequeue(Protocol::Packet *packet);
+
     void forceDequeue(Protocol::Packet *packet);
+
     bool recieveAckPacket(Protocol::AckPacket *ack_pack);
     Protocol::Packet *getNextPacket();
 };
