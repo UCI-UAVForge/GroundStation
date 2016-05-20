@@ -100,6 +100,12 @@ void GsServer::sendNextPacket() {
     printf("sending message!\n");
 
     Protocol::Packet* packet = outPackets.getNextPacket();
+
+    if(packet == NULL){
+        std::cout<<"No packets left to send!" << std::endl;
+        return;
+    }
+
     QByteArray datagram;
     QDataStream out(&datagram, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_4_3);
