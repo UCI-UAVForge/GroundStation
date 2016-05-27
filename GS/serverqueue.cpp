@@ -72,7 +72,7 @@ void ServerQueue::enqueue(Protocol::Packet *packet, unsigned int priority){
 
     QLinkedList<QueueEntry*>::iterator i;
     for(i = pendingPackets.begin();i!=pendingPackets.end(); ++i){
-        if((*i)->priority >= newEntry->priority){
+        if((*i)->priority > newEntry->priority){
             break;
         }
     }
