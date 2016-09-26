@@ -17,7 +17,6 @@ MapRecap::MapRecap(QWidget *parent):QDialog(parent), ui(new Ui::MapRecap) {
 
 MapRecap::MapRecap(Mission *mission, QWidget *parent):QDialog(parent), ui(new Ui::MapRecap) {
     ui->setupUi(this);
-    //buttonGroup = new QButtonGroup();
 
     myMission = Mission(*mission);
 
