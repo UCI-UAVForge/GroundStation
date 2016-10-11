@@ -3,7 +3,7 @@
 
 #include <QList>
 #include <QPair>
-#include "actionpacket.h"
+#include "ActionPacket.h"
 
 class TimedAction;
 

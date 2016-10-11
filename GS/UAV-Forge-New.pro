@@ -53,7 +53,8 @@ SOURCES += main.cpp\
     serverqueue.cpp \
     mission.cpp \
     flightpath.cpp \
-    maprecap.cpp
+    maprecap.cpp \
+    AckPacket.cpp
 
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
@@ -73,17 +74,17 @@ HEADERS  += mainwindow.h \
     networklistener.h \
     connectiondialog.h \
     messagebox.h \
-    actionpacket.h \
-    infopacket.h \
-    telemetrypacket.h \
-    ackpacket.h \
-    packet.h \
     digitalclock.h \
     mapvalidator.h \
     serverqueue.h \
     mission.h \
     flightpath.h \
-    maprecap.h
+    maprecap.h \
+    Packet.h \
+    AckPacket.h \
+    ActionPacket.h \
+    InfoPacket.h \
+    TelemetryPacket.h
 
 FORMS    += mainwindow.ui \
     options.ui \

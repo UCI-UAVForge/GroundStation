@@ -104,13 +104,13 @@ void ServerQueue::forceDequeue(Protocol::Packet *packet){
 }
 
 bool ServerQueue::recieveAckPacket(Protocol::AckPacket *ack_pack){
-    std::cout << "Ack Packet Recieved!" << std::endl;
+    std::cout << "AckPacket Received!" << std::endl;
     for (QueueEntry *entry : window){
         if (entry->waitingForAck == true){
             int entryTS = entry->packet->get_timestamp();
             int ackTS = ack_pack->get_timestamp();
             std::cout << entryTS << "==" << ackTS << std::endl;
-            if (entry->packet->get_timestamp() == ack_pack->get_timestamp()){
+            if (entryTS == ackTS){
                 entry->waitingForAck = false;
                 return true;
             }

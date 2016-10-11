@@ -106,7 +106,7 @@ void GsServer::sendNextPacket() {
     Protocol::Packet* packet = outPackets.getNextPacket();
 
     if(packet == NULL){
-        std::cout<<"No packets left to send!" << std::endl;
+        std::cout<< "No packets left to send!" << std::endl;
         return;
     }
 

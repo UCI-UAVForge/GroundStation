@@ -5,8 +5,8 @@
 #include <QVector>
 #include <QPair>
 #include <QMap>
-#include "actionpacket.h"
-#include "telemetrypacket.h"
+#include "ActionPacket.h"
+#include "TelemetryPacket.h"
 #include "flightpath.h"
 
 class Mission {

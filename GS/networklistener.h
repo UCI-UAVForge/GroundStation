@@ -9,7 +9,7 @@
 
 class GsServer;
 
-#include "packet.h"
+#include "Packet.h"
 
 /**
  * @brief The NetworkListener class is used to continuously listen for and

@@ -4,11 +4,11 @@
 #include <QList>
 #include <QLinkedList>
 
-#include "packet.h"
-#include "ackpacket.h"
-#include "actionpacket.h"
-#include "infopacket.h"
-#include "telemetrypacket.h"
+#include "Packet.h"
+#include "AckPacket.h"
+#include "ActionPacket.h"
+#include "InfoPacket.h"
+#include "TelemetryPacket.h"
 
 typedef struct QUEUE_ENTRY{
     Protocol::Packet *packet = NULL;

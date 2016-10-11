@@ -26,21 +26,11 @@ namespace Protocol
 	public:
 		AckPacket() : Packet(PacketType::Ack) {}
 
-		AckPacket(uint8_t* buffer, size_t len) : Packet(PacketType::Ack)
-		{
-            Protocol::Packet::set_type(Protocol::PacketType::Ack);
-			this->ReadHeader(buffer, len);
-		}
+        AckPacket(uint8_t* buffer, size_t len);
 
-        void set_timestamp(unsigned long time){
-            this->timestamp = time;
-        }
+        void set_timestamp(unsigned long time);
 
-		size_t GetBytes(uint8_t* buffer, size_t len)
-		{
-			size_t offset = this->WriteHeader(buffer, len);
-			return this->SetChecksum(buffer, len, offset);
-		}
+        virtual size_t GetBytes(uint8_t* buffer, size_t len);
 	};
 }
 

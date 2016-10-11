@@ -6,11 +6,11 @@
 #include <QString>
 #include "gsserver.h"
 
-#include "ackpacket.h"
-#include "actionpacket.h"
-#include "telemetrypacket.h"
-#include "infopacket.h"
-#include "packet.h"
+#include "AckPacket.h"
+#include "ActionPacket.h"
+#include "TelemetryPacket.h"
+#include "InfoPacket.h"
+#include "Packet.h"
 
 #define BUFSIZE 4096
 
@@ -32,7 +32,7 @@ using namespace std;
 #endif
 
 NetworkListener::NetworkListener(messagebox *myMessagebox, GsServer* server){
-     this->myMessageBox = myMessagebox;
+    this->myMessageBox = myMessagebox;
     this->server = server;
     std::cout << "New NetworkListener created." << std::endl;
     bind(NetworkListener::LISTEN_PORT);
@@ -61,11 +61,11 @@ void NetworkListener::processPendingDatagrams(){
     Protocol::Packet* incPack = Protocol::Packet::Parse((uint8_t*)datagram.data(), datagram.size());
     Protocol::PacketType type = incPack->get_type();
     if (type == Protocol::PacketType::Ack){
-        std::cout<< "AckPacket Recieved" << std::endl;
+        std::cout<< "AckPacket Received" << std::endl;
         Protocol::AckPacket *ackPacket = (Protocol::AckPacket*)incPack;
         myMessageBox->addAckPacket(*ackPacket);
     } else if (type == Protocol::PacketType::Action){
-        std::cout<< "ActionPacket Recieved" << std::endl;
+        std::cout<< "ActionPacket Received" << std::endl;
         Protocol::ActionPacket *actionPacket = (Protocol::ActionPacket*)incPack;
         Protocol::Waypoint test_wp;
         test_wp = actionPacket->GetWaypoint();
