@@ -1,0 +1,2 @@
+Won't compile successfully on Qt 5.4.0 - Windows - MSVC. There are issues with a lot of Winapi and Networking
+files. I'm currently just developing on 5.3.1, but this issue may need to be looked into more.
