@@ -133,7 +133,7 @@ private:
 
     /* Alvin Truong added on 16-1-27*/
     const static int PACKET_LENGTH = 1000;
-    const static int SEND_PORT = 20715;
+    const static int SEND_PORT = 27015;
     const static int LISTEN_PORT = 20715;
     static int NUM_RECV_PACKETS;
 
