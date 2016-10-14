@@ -6,7 +6,7 @@ MapExecution::MapExecution(QWidget *parent) :MapExecution(new FlightPath,parent)
 
 MapExecution::MapExecution(FlightPath* flightPath, QWidget *parent):
     QDialog(parent),
-    myServer(&MyMessageBox),
+    myServer(&MyMessageBox,&myMission),
     ui(new Ui::MapExecution),
     prevTime(),
     myFlightPath(*flightPath),
@@ -145,7 +145,6 @@ void MapExecution::addClickListener() {
 This is necessary because data cannot be added until the html file is completely
 loaded. Jordan 2/21/2015 */
 void MapExecution::addNewMap() {
-    //setMap(mapStrings);
     std::cout << "Add new map called!" << std::endl;
     drawFlightPath(&myFlightPath);
 }

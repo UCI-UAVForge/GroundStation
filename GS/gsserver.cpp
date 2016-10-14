@@ -33,8 +33,9 @@ void GsServer::waitNet(unsigned millis){
 #endif
 
 
-GsServer::GsServer(messagebox *myMessageBox): networkListener(myMessageBox,this){
+GsServer::GsServer(messagebox *myMessageBox, Mission *myMission): networkListener(myMessageBox,this){
     this->myMessageBox = myMessageBox;
+    this->myMission = myMission;
     port = 27015;
     target = QHostAddress::LocalHost;
 }
@@ -66,6 +67,10 @@ void GsServer::startServer(){
 void GsServer::closeServer(){
     networkListener.stop();
     running = false;
+}
+
+void GsServer::recieveAckPacket(Protocol::AckPacket* ack){
+    outPackets.recieveAckPacket(ack);
 }
 
 void GsServer::run(){
@@ -100,6 +105,10 @@ void GsServer::sendPacket(Protocol::Packet* packet, unsigned int priority){
     outPackets.enqueue(packet,priority);
 }
 
+void GsServer::packetRecieved(Protocol::TelemetryPacket packet){
+    myMission->addPacket(packet);
+}
+
 void GsServer::sendNextPacket() {
     printf("sending message!\n");
 
@@ -107,6 +116,17 @@ void GsServer::sendNextPacket() {
 
     if(packet == NULL){
         std::cout<<"No packets left to send!" << std::endl;
+
+
+        //TEST retrieving data from the mission object
+        QVector<double> *startValues = myMission->getValuesForID(1);
+        std::cout<<"Start Values: ";
+        for(double entry: *startValues){
+            std::cout<<entry << ",";
+        }
+        std::cout<<std::endl;
+        //end retrieval test
+
         return;
     }
 

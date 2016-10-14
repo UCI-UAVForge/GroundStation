@@ -4,7 +4,7 @@ Mission::Mission(){
 
 }
 
-Mission::Mission(FlightPath flightPath) : myFlightPath(flightPath){
+Mission::Mission(FlightPath flightPath):myFlightPath(flightPath){
 
 }
 
@@ -17,6 +17,7 @@ FlightPath *Mission::getFlightPath(){
 }
 
 void Mission::addPacket(Protocol::TelemetryPacket telemPacket){
+    std::cout<<"MISSION: Recieving new telem packet" << std::endl;
     float headingF;
     double lat,lon;
     float alt;
@@ -48,7 +49,6 @@ void Mission::addPacket(Protocol::TelemetryPacket telemPacket){
 
 
 // values[id][index] = some value (double)
-
 QVector<double> *Mission::getValuesForID(int id){
     return values.at(id);
 }

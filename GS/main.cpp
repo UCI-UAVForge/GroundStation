@@ -26,7 +26,6 @@ int main(int argc, char *argv[]) {
     QSplashScreen splash(pixmap);
     splash.show();
 
-
     MainWindow x;
     x.showFullScreen();
 
@@ -35,7 +34,6 @@ int main(int argc, char *argv[]) {
     //x.showFullScreen();
     //Hide the splash screen.
     splash.finish(&x);
-
 
     return a.exec();
 }
