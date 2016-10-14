@@ -6,14 +6,14 @@
 
 QT       += core \
             gui \
-            webkitwidgets \
             multimedia \
             multimediawidgets \
             network
 QT       += svg
 
-QT       += core gui multimedia multimediawidgets
+QT       += webengine webenginewidgets
 QT       += webkit webkitwidgets
+
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
