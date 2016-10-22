@@ -6,6 +6,7 @@ MapValidator::MapValidator(double bottom, double top, int decimals, QObject * pa
 }
 MapValidator::QValidator::State MapValidator::validate(QString &s, int &i) const
 {
+    qDebug()<<"validating table input";
     if (s.isEmpty() || s == "-") {
         return QValidator::Intermediate;
     }

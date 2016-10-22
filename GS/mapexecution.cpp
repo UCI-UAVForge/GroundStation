@@ -44,10 +44,13 @@ MapExecution::MapExecution(FlightPath* flightPath, QWidget *parent):
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
+
+    /*
     ui->tableView->setColumnHidden(0, true);
     ui->tableView->setColumnHidden(5, true);
     ui->tableView->setColumnWidth(2, 42);
     ui->tableView->setColumnWidth(4, 42);
+    */
 
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
     ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
