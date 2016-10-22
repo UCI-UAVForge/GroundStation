@@ -14,10 +14,10 @@ MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlann
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
-    ui->tableView->setColumnHidden(0, true);
-    ui->tableView->setColumnHidden(5, true);
-    ui->tableView->setColumnWidth(2, 42);
-    ui->tableView->setColumnWidth(4, 42);
+    //ui->tableView->setColumnHidden(0, true);
+    //ui->tableView->setColumnHidden(5, true);
+    //ui->tableView->setColumnWidth(2, 42);
+    //ui->tableView->setColumnWidth(4, 42);
 
     connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()), Qt::UniqueConnection);
     connect(ui->clearTableButton, SIGNAL(clicked()), this, SLOT(on_clearTableButton_clicked()), Qt::UniqueConnection);
@@ -133,6 +133,11 @@ FlightPath *MapPlanning::getTableAsFlightPath(){
 
         wp.lat = row[3].toDouble();
         wp.lat *= (row[4].at(0)=='N')?1:-1;
+
+        wp.alt = row[5].toDouble();
+
+        wp.speed = row[6].toDouble();
+
         newFP->addNavAction(wp,i*10);
     }
 
