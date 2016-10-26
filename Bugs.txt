@@ -5,3 +5,5 @@ In MissionRecap constructor in missionrecap.cpp, when running QtTabTest, the tab
 fine if you comment out "mediaPlayer.setVideoOutput...". If you leave it uncommented, it doesn't work.
 
 The 'Exit' button simply causes a program crash.
+
+Also, this isn't really a bug, but I would like to change the name of the QtTabTest class.
