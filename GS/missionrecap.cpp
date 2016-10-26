@@ -8,20 +8,26 @@
  */
 MissionRecap::MissionRecap(QWidget *parent) : QDialog(parent), ui(new Ui::MissionRecap) {
     ui->setupUi(this);
-    mediaPlayer.setVideoOutput(ui->VideoWidget);
+
+    //Roman Parise - You get bugs if you turn this on. I have no idea why.
+
+    //mediaPlayer.setVideoOutput(ui->VideoWidget);
+
     //QString fileName = QFileDialog::getOpenFileName(this, tr("Open Movie"),QDir::homePath());
     //mediaPlayer.setMedia(QUrl::fromLocalFile(fileName));
+
     ui->VideoWidget->setAspectRatioMode(Qt::IgnoreAspectRatio);
     connect(ui->horizontalSlider, SIGNAL(sliderMoved(int)), this, SLOT(updateMediaPlayer(int)), Qt::UniqueConnection);
     connect(&mediaPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(updateSlider(qint64)), Qt::UniqueConnection);
 
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
+    ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));//
 
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    ui->webView->load(QUrl("qrc:/res/html/missionRecap.html"));
+    ui->webView->load(QUrl("qrc:/res/html/missionRecap.html"));//
 
     setupRealtimeDataDemo(ui->customPlot);
+
 }
 
 MissionRecap::~MissionRecap() {

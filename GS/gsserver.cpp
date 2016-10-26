@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 
+/*
 #ifdef _WIN32
 #include <winsock.h>
 #include <windows.h>
@@ -31,7 +32,7 @@ void GsServer::waitNet(unsigned millis){
     usleep(millis * 1000);
 }
 #endif
-
+*/
 
 GsServer::GsServer(messagebox *myMessageBox): networkListener(myMessageBox,this){
     this->myMessageBox = myMessageBox;

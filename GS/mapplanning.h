@@ -18,15 +18,21 @@
 #include "mapexecution.h"
 #include "messagebox.h"
 
-
 #include "ui_mapplanning.h"
 
 namespace Ui {
-class MapPlanning;
+
+    class MapPlanning;
+
 }
 
 class MapPlanning : public QDialog {
+
     Q_OBJECT
+
+    /* Roman Parise - Maybe just make friend functions or something.
+     * MainMDIDisplay is able to access private class variables of MapPlanning. */
+    friend class MainMDIDisplay;
 
 public:
     void updateMap();
@@ -54,12 +60,20 @@ private slots:
     void closeWindow();
 
 private:
-    Ui::MapPlanning *ui;
+    //Ui::MapPlanning *ui;
     QButtonGroup *buttonGroup;
     QPushButton *del;
     TableModel *model;
     PopWindowMP *popup;
     //QList<QList<QString> > tableData;
+
+    Ui::MapPlanning *ui;
+
+signals:
+
+    /* Roman Parise - added to tell external classes and functions that we're ready to start map execution */
+    void timeToStartMapExecution();
+
 };
 
 #endif // MAPPLANNING_H

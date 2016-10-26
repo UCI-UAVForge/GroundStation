@@ -1,0 +1,50 @@
+#include "mainmdidisplay.h"
+#include "ui_mainmdidisplay.h"
+
+MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainMDIDisplay) {
+
+    ui->setupUi(this);
+
+    this->tempMapPlanningUIWidget = new MapPlanning();
+
+    this->qttWidget = new QtTabTest();
+
+    this->mapBackgroundSubwindow = new QMdiSubWindow( this->tempMapPlanningUIWidget->ui->webView );
+
+    this->addWindow( this->mapBackgroundSubwindow );
+
+    ( ui->mdiArea->subWindowList().at( 0 ) )->showFullScreen();
+
+    //this->mapBackgroundSubwindow->showMaximized();
+
+    //this->addWindow( qttWidget );
+
+    //( ui->mdiArea->subWindowList().at( 1 ) )->showNormal();
+
+    //this->addWindow( this->tempMapPlanningUIWidget );
+
+}
+
+MainMDIDisplay::~MainMDIDisplay() {
+
+    delete ui;
+
+}
+
+QtTabTest * MainMDIDisplay::getQttWidget() const {
+
+    return qttWidget;
+
+}
+
+void MainMDIDisplay::setQttWidget( QtTabTest * value) {
+
+    qttWidget = value;
+
+}
+
+void MainMDIDisplay::addWindow( QWidget * myNewWindowWidget ) {
+
+    ui->mdiArea->addSubWindow( myNewWindowWidget );
+
+}

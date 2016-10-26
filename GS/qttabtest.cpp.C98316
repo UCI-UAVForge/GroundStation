@@ -1,21 +1,24 @@
 #include "qttabtest.h"
 #include "ui_qttabtest.h"
 
-//TODO Somebody please fix all the memory leaks in this project. We want a clean program close.
-//This doesn't seem to work lol
-
 /**
  * Constructor for the main window
  */
-QtTabTest::QtTabTest(QWidget *parent) : QMainWindow( parent ) , ui( new Ui::QtTabTest ) , isFirstTabEmpty( true ) {
+QtTabTest::QtTabTest(QWidget *parent) : QMainWindow(parent) , ui(new Ui::QtTabTest) {
 
-    //this->MapPlanningUIWidget = new MapPlanning();
+    this->MapPlanningUIWidget = new MapPlanning();
 
-    ui->setupUi( this );
+    this->MapExecutionUIWidget = new MapExecution();
 
-    //this->ui->mdiArea->addSubWindow( this->MapPlanningUIWidget );
+    this->MissionRecapUIWidget = new MissionRecap();
 
-    //this->MapPlanningUIWidget->showMaximized();
+    ui->setupUi(this);
+
+    this->ui->mdiArea->addSubWindow(this->MapPlanningUIWidget);
+
+    this->ui->mdiArea_2->addSubWindow(this->MapExecutionUIWidget);
+
+    this->ui->mdiArea_3->addSubWindow(this->MissionRecapUIWidget);
 
 }
 
@@ -25,126 +28,6 @@ QtTabTest::QtTabTest(QWidget *parent) : QMainWindow( parent ) , ui( new Ui::QtTa
 QtTabTest::~QtTabTest() {
 
     delete ui;
-
-}
-
-/**
- * @brief Ready to begin map execution. Replace the MapPlanning widget with a new MapExecution widget.
- */
-void QtTabTest::startMapExecution() {
-
-    /* PRIVATE SLOT */
-
-    this->MapExecutionUIWidget = new MapExecution( this->MapPlanningUIWidget->getTableAsFlightPath() );
-
-    this->addNewTab( this->MapExecutionUIWidget , QString( "Mission Execution" ) );
-
-    connect( this->MapExecutionUIWidget , SIGNAL( timeToStartMapRecap() ) , this , SLOT ( startMapRecap() ) );
-
-}
-
-void QtTabTest::startMapRecap() {
-
-    //Instantiate MapRecapUIWidget
-
-    this->MapRecapUIWidget = this->MapExecutionUIWidget->getMapRecap();
-
-    MapRecapUI_MapTab = this->MapRecapUIWidget->getTab( 0 );
-
-    MapRecapUI_TableTab = this->MapRecapUIWidget->getTab( 1 );
-
-    MapRecapUI_GraphTab = this->MapRecapUIWidget->getTab( 2 );
-
-    this->addNewTab( this->MapRecapUI_MapTab , QString( "Map (Recap)" ) );
-
-    this->addNewTab( this->MapRecapUI_TableTab , QString( "Table (Recap)" ) );
-
-    this->addNewTab( this->MapRecapUI_GraphTab , QString( "Graph (Recap)" ) );
-
-}
-
-MapExecution * QtTabTest::getMapExecutionUIWidget() const {
-
-    return MapExecutionUIWidget;
-
-}
-
-void QtTabTest::setMapExecutionUIWidget(MapExecution *value) {
-
-    MapExecutionUIWidget = value;
-
-}
-
-
-MapPlanning * QtTabTest::getMapPlanningUIWidget() const {
-
-    return MapPlanningUIWidget;
-
-}
-
-void QtTabTest::setMapPlanningUIWidget( MapPlanning * MapPlanningUIWidget ) {
-
-    if ( this->MapPlanningUIWidget == NULL ) {
-
-        this->MapPlanningUIWidget = MapPlanningUIWidget;
-
-        //this->addNewTab( this->MapPlanningUIWidget , QString( "Mission Planning" ) );
-
-        //When the MapPlanning widget says to start map execution, call the startMapExecution slot.
-
-        //connect( this->MapPlanningUIWidget , SIGNAL( timeToStartMapExecution() ) , this , SLOT( startMapExecution() ) );
-
-    }
-
-    else {
-
-        qDebug() << "You already have a MapPlanningUIWidget in QtTabTest!";
-
-    }
-
-}
-
-/* Roman Parise - Temporary function for adding a new tab to the window. Eventually,
- *
- * have a special QWidget with this function */
-
-void QtTabTest::addNewTab( QWidget * myNewTabWidget , QString label ) {
-
-    //The tab itself
-
-    QGridLayout * newTab = new QGridLayout();
-
-    QMdiArea * newMdiArea = new QMdiArea();
-
-    newMdiArea->addSubWindow( myNewTabWidget );
-
-    myNewTabWidget->showMaximized();
-
-    newTab->addWidget( newMdiArea );
-
-    this->ui->tabWidget->addTab( myNewTabWidget , label );
-
-    if ( isFirstTabEmpty == true ) {
-
-        /* If we're still stuck with the default empty first tab in tabWidget, delete it. */
-
-        this->ui->tabWidget->removeTab( 0 );
-
-        isFirstTabEmpty = false;
-
-    }
-
-    else {
-
-        /* Do nothing */
-
-    }
-
-}
-
-void QtTabTest::deleteTabIndex( int index ) {
-
-    this->ui->tabWidget->removeTab( index );
 
 }
 

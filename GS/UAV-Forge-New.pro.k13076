@@ -53,9 +53,7 @@ SOURCES += main.cpp\
     mission.cpp \
     flightpath.cpp \
     maprecap.cpp \
-    qttabtest.cpp \
-    mainmdidisplay.cpp \
-    missionplanningwindow.cpp
+    qttabtest.cpp
 
 QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
@@ -86,9 +84,7 @@ HEADERS  += mainwindow.h \
     mission.h \
     flightpath.h \
     maprecap.h \
-    qttabtest.h \
-    mainmdidisplay.h \
-    missionplanningwindow.h
+    qttabtest.h
 
 FORMS    += mainwindow.ui \
     options.ui \
@@ -99,8 +95,7 @@ FORMS    += mainwindow.ui \
     popwindowmp.ui \
     connectiondialog.ui \
     maprecap.ui \
-    qttabtest.ui \
-    mainmdidisplay.ui
+    qttabtest.ui
 
 OTHER_FILES +=
 

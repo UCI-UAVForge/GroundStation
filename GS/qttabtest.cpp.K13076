@@ -1,13 +1,10 @@
 #include "qttabtest.h"
 #include "ui_qttabtest.h"
 
-//TODO Somebody please fix all the memory leaks in this project. We want a clean program close.
-//This doesn't seem to work lol
-
 /**
  * Constructor for the main window
  */
-QtTabTest::QtTabTest(QWidget *parent) : QMainWindow( parent ) , ui( new Ui::QtTabTest ) , isFirstTabEmpty( true ) {
+QtTabTest::QtTabTest(QWidget *parent) : QMainWindow(parent) , ui(new Ui::QtTabTest) {
 
     //this->MapPlanningUIWidget = new MapPlanning();
 
@@ -37,6 +34,12 @@ void QtTabTest::startMapExecution() {
 
     this->MapExecutionUIWidget = new MapExecution( this->MapPlanningUIWidget->getTableAsFlightPath() );
 
+    //TODO Make this a function. It happens much too frequently.
+
+    //this->ui->mdiArea_2->addSubWindow( this->MapExecutionUIWidget );
+
+    //this->MapExecutionUIWidget->showMaximized();
+
     this->addNewTab( this->MapExecutionUIWidget , QString( "Mission Execution" ) );
 
     connect( this->MapExecutionUIWidget , SIGNAL( timeToStartMapRecap() ) , this , SLOT ( startMapRecap() ) );
@@ -63,20 +66,7 @@ void QtTabTest::startMapRecap() {
 
 }
 
-MapExecution * QtTabTest::getMapExecutionUIWidget() const {
-
-    return MapExecutionUIWidget;
-
-}
-
-void QtTabTest::setMapExecutionUIWidget(MapExecution *value) {
-
-    MapExecutionUIWidget = value;
-
-}
-
-
-MapPlanning * QtTabTest::getMapPlanningUIWidget() const {
+MapPlanning *QtTabTest::getMapPlanningUIWidget() const {
 
     return MapPlanningUIWidget;
 
@@ -88,11 +78,11 @@ void QtTabTest::setMapPlanningUIWidget( MapPlanning * MapPlanningUIWidget ) {
 
         this->MapPlanningUIWidget = MapPlanningUIWidget;
 
-        //this->addNewTab( this->MapPlanningUIWidget , QString( "Mission Planning" ) );
+        this->addNewTab( this->MapPlanningUIWidget );
 
         //When the MapPlanning widget says to start map execution, call the startMapExecution slot.
 
-        //connect( this->MapPlanningUIWidget , SIGNAL( timeToStartMapExecution() ) , this , SLOT( startMapExecution() ) );
+        connect( this->MapPlanningUIWidget , SIGNAL( timeToStartMapExecution() ) , this , SLOT( startMapExecution() ) );
 
     }
 
@@ -103,6 +93,7 @@ void QtTabTest::setMapPlanningUIWidget( MapPlanning * MapPlanningUIWidget ) {
     }
 
 }
+
 
 /* Roman Parise - Temporary function for adding a new tab to the window. Eventually,
  *
@@ -124,29 +115,9 @@ void QtTabTest::addNewTab( QWidget * myNewTabWidget , QString label ) {
 
     this->ui->tabWidget->addTab( myNewTabWidget , label );
 
-    if ( isFirstTabEmpty == true ) {
-
-        /* If we're still stuck with the default empty first tab in tabWidget, delete it. */
-
-        this->ui->tabWidget->removeTab( 0 );
-
-        isFirstTabEmpty = false;
-
-    }
-
-    else {
-
-        /* Do nothing */
-
-    }
-
 }
 
-void QtTabTest::deleteTabIndex( int index ) {
 
-    this->ui->tabWidget->removeTab( index );
-
-}
 
 ///**
 // * When the mission planning button is clicked, create a new mission planning window

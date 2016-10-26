@@ -1,2 +1,7 @@
 Won't compile successfully on Qt 5.4.0 - Windows - MSVC. There are issues with a lot of Winapi and Networking
 files. I'm currently just developing on 5.3.1, but this issue may need to be looked into more.
+
+In MissionRecap constructor in missionrecap.cpp, when running QtTabTest, the tabs are
+fine if you comment out "mediaPlayer.setVideoOutput...". If you leave it uncommented, it doesn't work.
+
+The 'Exit' button simply causes a program crash.

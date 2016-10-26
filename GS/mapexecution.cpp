@@ -1,5 +1,4 @@
 #include "mapexecution.h"
-#include "maprecap.h"
 #include <iostream>
 
 MapExecution::MapExecution(QWidget *parent) :MapExecution(new FlightPath,parent){}
@@ -50,7 +49,9 @@ MapExecution::MapExecution(FlightPath* flightPath, QWidget *parent):
     ui->tableView->setColumnWidth(4, 42);
 
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
+    ui->webView->setUrl(QUrl("qrc:/res/html/mapsExecution.html"));
+
+    qDebug() << "Map Execution Constructor URL: " << ui->webView->url();
 
     connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()), Qt::UniqueConnection);
     connect(ui->cancelButton, SIGNAL(clicked()), this, SLOT(on_cancelButton_clicked()), Qt::UniqueConnection);
@@ -69,10 +70,19 @@ MapExecution::~MapExecution() {
 // redirect to mission recap window
 void MapExecution::on_finishButton_clicked() {
     std::cout<<"Finish button clicked!" << std::endl;
+
+    myServer.closeServer();
+
+    emit timeToStartMapRecap();
+
+    /* Commented out for QtTabTest.cpp
     this->close();
     myServer.closeServer();
+
+
     MapRecap* x = new MapRecap(&myMission);
     x->showFullScreen();
+    */
 }
 
 // stop button
@@ -140,6 +150,17 @@ void MapExecution::addClickListener() {
     //Creates the bridge called cbridge between the java script object and this class.
     ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("cbridge",this);
 }
+Mission MapExecution::getMyMission() const
+{
+    return myMission;
+}
+
+void MapExecution::setMyMission(const Mission &value)
+{
+    myMission = value;
+}
+
+
 
 /*  Function called by the JavaScript to add the map data from mission planning.
 This is necessary because data cannot be added until the html file is completely
@@ -191,4 +212,10 @@ void MapExecution::updateStatusIndicator()
         default:
             ui->StatusIndicator->setStyleSheet("background-color:black;");
     }
+}
+
+MapRecap * MapExecution::getMapRecap() {
+
+    return new MapRecap( &myMission );
+
 }

@@ -41,9 +41,14 @@ void MapPlanning::addClickListener() {
 // execution button
 // redirect to mission execution window
 void MapPlanning::on_executeButton_clicked() {
+
+    emit timeToStartMapExecution();
+
+    /* Commented out for QtTabTest.cpp
     MapExecution* mapExecution = new MapExecution(getTableAsFlightPath());
     this->close();
     mapExecution->showFullScreen();
+    */
 
 
 //    ConnectionDialog * connectionDialog = new ConnectionDialog();
@@ -146,5 +151,11 @@ void MapPlanning::closeWindow() {
 from the JavaScript file. See tablemodel.cpp file for more information.
 Added by Jordan Dickson Feb 14th 2015.*/
 void MapPlanning::addPointToTable(double lat, double lng) {
+
     model->insertRow(lng,lat);
+
+    //David Moe
+
+    ui->tableView->scrollToBottom();
+
 }

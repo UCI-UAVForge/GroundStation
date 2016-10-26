@@ -29,8 +29,6 @@ class QtTabTest : public QMainWindow {
 
     Q_OBJECT
 
-    friend class MainMDIDisplay;
-
 public:
 
     explicit QtTabTest(QWidget *parent = 0);
@@ -39,15 +37,9 @@ public:
 
     void addNewTab( QWidget * , QString );
 
-    void deleteTabIndex( int );
+    //It could work:
 
-    MapPlanning * getMapPlanningUIWidget() const;
-
-    void setMapPlanningUIWidget( MapPlanning * );
-
-    MapExecution * getMapExecutionUIWidget() const;
-
-    void setMapExecutionUIWidget( MapExecution * );
+    //bool addTabToWindow(QDialog *);
 
 private slots:
 
@@ -102,21 +94,13 @@ private:
 
     MapPlanning * testMAP;
 
-    MapPlanning * MapPlanningUIWidget = NULL;
+    MapPlanning * MapPlanningUIWidget;
 
     MapExecution * MapExecutionUIWidget;
 
     MapRecap * MapRecapUIWidget;
 
-    QWidget * MapRecapUI_MapTab;
-
-    QWidget * MapRecapUI_TableTab;
-
-    QWidget * MapRecapUI_GraphTab;
-
-    bool isFirstTabEmpty;
-
-    //QPropertyAnimation *animation;
+    QPropertyAnimation *animation;
 
 };
 

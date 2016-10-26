@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>QtTabTest</class>
- <widget class="QMainWindow" name="QtTabTest">
+ <class>MainMDIDisplay</class>
+ <widget class="QMainWindow" name="MainMDIDisplay">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1006</width>
-    <height>738</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,17 +16,10 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="QTabWidget" name="tabWidget">
-      <property name="currentIndex">
-       <number>0</number>
-      </property>
-      <widget class="QWidget" name="tab">
-       <attribute name="title">
-        <string/>
-       </attribute>
-       <layout class="QGridLayout" name="gridLayout_2"/>
-      </widget>
-     </widget>
+     <widget class="QMdiArea" name="mdiArea"/>
+    </item>
+    <item row="1" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout"/>
     </item>
    </layout>
   </widget>
@@ -35,7 +28,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1006</width>
+     <width>800</width>
      <height>21</height>
     </rect>
    </property>
