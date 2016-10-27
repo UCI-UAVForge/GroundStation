@@ -12,7 +12,7 @@
 #include <iostream>
 #include <QTimer>
 
-#include "mapexecution.h"
+//#include "mapexecution.h"
 #include "qcustomplot.h"
 #include "mapplanning.h"
 #include "videoplayer.h"
