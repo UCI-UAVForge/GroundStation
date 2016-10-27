@@ -5,7 +5,7 @@
 #include <QComboBox>
 #include <QPushButton>
 #include <QButtonGroup>
-#include <QWebFrame>
+#include <QWebEnginePage>
 #include <QString>
 #include <QApplication>
 #include <QDoubleValidator>

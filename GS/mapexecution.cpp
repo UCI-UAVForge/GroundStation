@@ -5,7 +5,7 @@ MapExecution::MapExecution(QWidget *parent) :MapExecution(new FlightPath,parent)
 
 MapExecution::MapExecution(FlightPath* flightPath, QWidget *parent):
     QDialog(parent),
-    myServer(&MyMessageBox),
+    myServer(&MyMessageBox,&myMission),
     ui(new Ui::MapExecution),
     prevTime(),
     myFlightPath(*flightPath),
@@ -43,10 +43,13 @@ MapExecution::MapExecution(FlightPath* flightPath, QWidget *parent):
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
+
+    /*
     ui->tableView->setColumnHidden(0, true);
     ui->tableView->setColumnHidden(5, true);
     ui->tableView->setColumnWidth(2, 42);
     ui->tableView->setColumnWidth(4, 42);
+    */
 
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
     ui->webView->setUrl(QUrl("qrc:/res/html/mapsExecution.html"));
@@ -166,7 +169,6 @@ void MapExecution::setMyMission(const Mission &value)
 This is necessary because data cannot be added until the html file is completely
 loaded. Jordan 2/21/2015 */
 void MapExecution::addNewMap() {
-    //setMap(mapStrings);
     std::cout << "Add new map called!" << std::endl;
     drawFlightPath(&myFlightPath);
 }

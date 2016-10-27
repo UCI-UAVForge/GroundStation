@@ -10,6 +10,7 @@
 //#include "net.h"
 #include "networklistener.h"
 #include "messagebox.h"
+#include "mission.h"
 
 #define DEFAULT_PRIORITY 10
 
@@ -36,7 +37,7 @@ public:
 
      @param myMessageBox the messagebox used for outgoing packets
      */
-    GsServer(messagebox *myMessageBox);
+    GsServer(messagebox *myMessageBox, Mission *myMission);
 
     /**
       Destructor for GsServer
@@ -47,6 +48,13 @@ public:
       Override run to implement thread as a server.
      */
     void run();
+
+    /**
+     * @brief recieveAckPacket
+     * @param ack
+     */
+    void recieveAckPacket(Protocol::AckPacket* ack);
+
 
     void startServer();
 
@@ -96,6 +104,13 @@ public:
     void sendPacket(Protocol::Packet* packet, unsigned int priority);
 
     /**
+     * @brief packetRecieved adds a TelemetryPacket to this server's Mission
+     * object.
+     * @param packet The telemetryPacket being added.
+     */
+    void packetRecieved(Protocol::TelemetryPacket packet);
+
+    /**
      file descriptor for the UAV. Used to send information over the network.
      */
     int uav_fd;
@@ -138,6 +153,8 @@ private:
       * outgoing packets.
       */
      messagebox *myMessageBox;
+
+     Mission *myMission;
 
      QUdpSocket outSocket;
 

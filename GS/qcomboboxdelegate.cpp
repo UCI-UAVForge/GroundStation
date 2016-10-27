@@ -22,7 +22,7 @@ QWidget* QComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionView
     {
 
         QLineEdit *longValEdit = new QLineEdit(parent);
-        MapValidator *longVal = new MapValidator( -180.0, 180.0, 3, longValEdit);
+        MapValidator *longVal = new MapValidator( -180.0, 180.0, 8, longValEdit);
         longValEdit->setValidator( longVal );
 
         return longValEdit;
@@ -39,7 +39,7 @@ QWidget* QComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionView
     if(index.column() == 3)
     {
         QLineEdit *latValEdit = new QLineEdit(parent);
-        MapValidator *latVal = new MapValidator( -90.0, 90.0, 3, latValEdit);
+        MapValidator *latVal = new MapValidator( -90.0, 90.0, 8, latValEdit);
         latValEdit->setValidator( latVal );
         return latValEdit;
     }
@@ -49,7 +49,21 @@ QWidget* QComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionView
         comboBox->addItem(QString("S"));
         return comboBox;
     }
-    else if (index.column() == 5) {
+
+    else if (index.column() == 5){
+        QLineEdit *altValEdit = new QLineEdit(parent);
+        MapValidator *altVal = new MapValidator( 0.0, 30000.0, 8, altValEdit);
+        altValEdit->setValidator( altVal );
+        return altValEdit;
+    }
+
+    else if (index.column() == 6){
+        QLineEdit *velValEdit = new QLineEdit(parent);
+        MapValidator *velVal = new MapValidator( 0.0, 30000000.0, 8, velValEdit);
+        velValEdit->setValidator( velVal );
+        return velValEdit;
+    }
+    else if (index.column() == 7) {
         comboBox->addItem(QString("Behavior 1"));
         comboBox->addItem(QString("Behavior 2"));
         comboBox->addItem(QString("Behavior 3"));

@@ -6,7 +6,7 @@
 #include <QComboBox>
 #include <QPushButton>
 #include <QButtonGroup>
-#include <QWebFrame>
+#include <QWebEnginePage>
 #include <QPair>
 #include <QList>
 

@@ -28,11 +28,15 @@ int main(int argc, char *argv[]) {
     QSplashScreen splash(pixmap);
     splash.show();
 
+<<<<<<< HEAD
 
     /*MainWindow*/ /*QtTabTest x;*/
 
     MainMDIDisplay x;
 
+=======
+    MainWindow x;
+>>>>>>> 7a72bb6e20f819e688e1917019874825319d2145
     x.showFullScreen();
 
     //construct and show the main window
@@ -40,7 +44,6 @@ int main(int argc, char *argv[]) {
     //x.showFullScreen();
     //Hide the splash screen.
     splash.finish(&x);
-
 
     return a.exec();
 
