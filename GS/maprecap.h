@@ -15,7 +15,7 @@
 #include "qcomboboxdelegate.h"
 #include "popwindowmp.h"
 #include "flightpath.h"
-#include "mapexecution.h"
+//#include "mapexecution.h"
 #include "messagebox.h"
 
 #include "ui_maprecap.h"
@@ -37,6 +37,8 @@ public:
     void addPoint(QString string);
     void drawFlightPath(FlightPath *flightPath);
     void sendCoordToJSMap(double lat, double lng, int mapID);
+
+    QWidget * getTab( int );
 
 public slots:
     void addNewMap();
