@@ -8,6 +8,8 @@ TableModel::TableModel(QObject *parent)
     columns.push_back("E/W");
     columns.push_back("Latitude (Y)");
     columns.push_back("N/S");
+    columns.push_back("Altitude (m)");
+    columns.push_back("Speed (mph)");
     columns.push_back("Behavior");
 
 }
@@ -80,7 +82,6 @@ bool TableModel::insertRow(double longitude, double latitude,const QModelIndex &
     from the other insertRow function. The second part was written by Jordan Dickson
     Feb 9th 2015.*/
 
-    //--This is the copied section I don't entirely understand.--
     Q_UNUSED(index);
     int insertRow = rowCount(index);
     beginInsertRows(index, insertRow, insertRow);
@@ -90,8 +91,6 @@ bool TableModel::insertRow(double longitude, double latitude,const QModelIndex &
     }
     listOfPairs.push_back(list);
     endInsertRows();
-
-    //--This is the section coded and documetned by Jordan (me)--
 
     //'i' used to denote the last row of the table (most recently added row)
     const int i = listOfPairs.size()-1;
@@ -109,15 +108,24 @@ bool TableModel::insertRow(double longitude, double latitude,const QModelIndex &
         northSouth = "S";
     }
 
+    //set altitude
+    double alt = 25;
+
+    //set velocity
+    double vel = 20;
+
     //Prepare variables to be assembled into the list
     QString action = "Action 1";
     QString longString = QString::number(longitude,'g',10);
     QString latString = QString::number(latitude,'g',10);
+    QString altString = QString::number(alt,'g',3);
+    QString velString = QString::number(vel,'g',3);
     QString behaviorString = "Behavior 1";
+
 
     //Assemble the new QList
     QList<QString> newList;
-    newList<<action<<longString<<eastWest<<latString<<northSouth<<behaviorString;
+    newList<<action<<longString<<eastWest<<latString<<northSouth<<altString<<velString<<behaviorString;
 
     //Replace the newest row(empty) with one that has pre-entered values
     listOfPairs[i] = newList;

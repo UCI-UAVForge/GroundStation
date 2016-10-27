@@ -6,17 +6,17 @@
 
 QT       += core \
             gui \
-            webkitwidgets \
             multimedia \
             multimediawidgets \
             network
 QT       += svg
 
-QT       += core gui multimedia multimediawidgets
-QT       += webkit webkitwidgets
 
+QT       += webkit webkitwidgets
+QT       += webengine webenginewidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
+
 #CONFIG += console
 
 CONFIG += c++11
@@ -26,9 +26,8 @@ win32{
 TARGET = UAV-Forge-New
 TEMPLATE = app
 
-
 SOURCES += main.cpp\
-        mainwindow.cpp \
+    mainwindow.cpp \
     options.cpp \
     mapplanning.cpp \
     tablemodel.cpp \
@@ -56,7 +55,6 @@ SOURCES += main.cpp\
     maprecap.cpp \
     AckPacket.cpp
 
-QMAKE_MAC_SDK = macosx10.9
 HEADERS  += mainwindow.h \
     options.h \
     mapplanning.h \

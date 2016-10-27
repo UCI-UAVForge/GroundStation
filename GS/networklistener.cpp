@@ -64,6 +64,7 @@ void NetworkListener::processPendingDatagrams(){
         std::cout<< "AckPacket Received" << std::endl;
         Protocol::AckPacket *ackPacket = (Protocol::AckPacket*)incPack;
         myMessageBox->addAckPacket(*ackPacket);
+        server->recieveAckPacket(ackPacket);
     } else if (type == Protocol::PacketType::Action){
         std::cout<< "ActionPacket Received" << std::endl;
         Protocol::ActionPacket *actionPacket = (Protocol::ActionPacket*)incPack;
@@ -72,11 +73,18 @@ void NetworkListener::processPendingDatagrams(){
         std::cout << pack_number << " Latitude: " << test_wp.lat << " Longitude: " << test_wp.lon << std::endl;
         ++pack_number;
 
+        ///\todo remove this so that the red line in dependent on telem packets rather than action packets
+
         if (actionPacket->GetAction() == Protocol::ActionType::AddWaypoint){
             Protocol::TelemetryPacket telem;
             telem.SetLocation(test_wp.lat,test_wp.lon,200);
-            myMessageBox->addTelemetryPacket(telem);
+            telem.SetHeading(0.45);
+            telem.SetOrientation(1,2,3);
+            telem.SetVelocity(-10.0,10.0,13241235123);
+            //myMessageBox->addTelemetryPacket(telem);
+            server->sendPacket(&telem,8);
         }
+
 
         myMessageBox->addActionPacket(*actionPacket);
     } else if (type == Protocol::PacketType::Telem){
@@ -85,6 +93,7 @@ void NetworkListener::processPendingDatagrams(){
         //std::cout << pack_number << " Latitude: " << telemPacket << " Longitude: " << telemPacket->lon << std::endl;
         ++pack_number;
         myMessageBox->addTelemetryPacket(*telemPacket);
+        server->packetRecieved(*telemPacket);
     } else if (type == Protocol::PacketType::Info){
         std::cout<< "InfoPacket Recieved" << std::endl;
         Protocol::InfoPacket *infoPacket = (Protocol::InfoPacket*)incPack;

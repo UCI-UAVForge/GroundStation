@@ -8,6 +8,7 @@
 #include "ActionPacket.h"
 #include "TelemetryPacket.h"
 #include "flightpath.h"
+#include "messagebox.h"
 
 class Mission {
 public:

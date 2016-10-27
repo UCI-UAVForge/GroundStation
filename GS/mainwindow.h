@@ -43,7 +43,8 @@ private slots:
 
     void on_actionQuit_triggered();
      /**
-      * @brief implemented the four menubar options: (Save,Map Planning,Mission Execution, Mission Recap)
+      * @brief implemented the four menubar options: (Save,Map Planning,
+      * Mission Execution, Mission Recap)
       *
       * @author Kevin Phan
       * @date 2016-2-26
