@@ -14,6 +14,7 @@
 #include "gsserver.h"
 #include "tablemodel.h"
 #include "qcomboboxdelegate.h"
+#include "maprecap.h"
 #include "missionrecap.h"
 #include "options.h"
 #include "messagebox.h"
@@ -31,7 +32,11 @@ class MapExecution;
 }
 
 class MapExecution : public QDialog {
+
     Q_OBJECT
+
+    friend class MainMDIDisplay;
+
 public slots:
     void addNewMap();
     void plotPosition(double lat, double lng);
@@ -47,8 +52,16 @@ public:
     ~MapExecution();
 
     GsServer myServer;
+
     messagebox MyMessageBox;
+
     messagebox MessageBox;
+
+    Mission getMyMission() const;
+
+    MapRecap * getMapRecap();
+
+    void setMyMission(const Mission &value);
 
 private slots:
     void on_finishButton_clicked();
@@ -70,6 +83,11 @@ private:
     Mission myMission;
 
     bool missionStarted;
+
+signals:
+
+    void timeToStartMapRecap();
+
 };
 
 #endif // MAPEXECUTION_H

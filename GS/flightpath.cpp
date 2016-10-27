@@ -44,3 +44,4 @@ QList<Protocol::Waypoint>* FlightPath::getOrderedWaypoints(){
 
     return rtnList;
 }
+

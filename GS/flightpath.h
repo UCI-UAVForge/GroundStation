@@ -16,6 +16,7 @@ public:
     void addNavAction(Protocol::Waypoint, double delay);
 
     QList<Protocol::Waypoint>* getOrderedWaypoints();
+
 private:
 };
 
