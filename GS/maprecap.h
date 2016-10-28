@@ -17,6 +17,7 @@
 #include "flightpath.h"
 //#include "mapexecution.h"
 #include "messagebox.h"
+#include "qwebframe.h"
 
 #include "ui_maprecap.h"
 #include "mission.h"
