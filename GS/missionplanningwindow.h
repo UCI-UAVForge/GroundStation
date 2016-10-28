@@ -32,7 +32,7 @@ private:
     QVBoxLayout * superLayout;
 
 private slots:
-    void setExecutionButtonEnabled();
+    //void setExecutionButtonEnabled();
 };
 
 #endif // MISSIONPLANNINGWINDOW_H
