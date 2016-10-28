@@ -19,7 +19,7 @@ MissionPlanningWindow::MissionPlanningWindow(QWidget *parent) : QDialog(parent)
     uavComboBox->addItem("UAV 1");
     uavComboBox->addItem("UAV 2");
     uavComboBox->addItem("UAV 3");
-    QObject::connect(uavComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setExecutionButtonEnabled()));
+    //QObject::connect(uavComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setExecutionButtonEnabled()));
 
     // Mission Plan ComboBox
     missionPlanComboBox = new QComboBox();
@@ -27,7 +27,7 @@ MissionPlanningWindow::MissionPlanningWindow(QWidget *parent) : QDialog(parent)
     missionPlanComboBox->addItem("Mission 1");
     missionPlanComboBox->addItem("Mission 2");
     missionPlanComboBox->addItem("Mission 3");
-    QObject::connect(missionPlanComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setExecutionButtonEnabled()));
+    //QObject::connect(missionPlanComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(setExecutionButtonEnabled()));
 
     // Layout
     layout = new QGridLayout;
@@ -50,6 +50,7 @@ MissionPlanningWindow::MissionPlanningWindow(QWidget *parent) : QDialog(parent)
     this->setLayout( this->superLayout );
 } // MissionPlanningWindow(QWidget *parent)
 
+/*
 void MissionPlanningWindow::setExecutionButtonEnabled()
 {
     if (uavComboBox->currentIndex() != 0 && missionPlanComboBox->currentIndex() != 0)
@@ -57,6 +58,7 @@ void MissionPlanningWindow::setExecutionButtonEnabled()
     else
         executeButton->setEnabled(false);
 } // setExecutionButtonEnabled()
+*/
 
 /* Roman Parise - used to integrate this window into MainMDIDisplay */
 
