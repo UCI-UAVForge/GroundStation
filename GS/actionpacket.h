@@ -32,19 +32,27 @@ namespace Protocol
 		Shutdown = 15
 	};
 
-	typedef struct
-	{
+    /*Roman Parise (10/10/2016) - had to change
+    from "typedef struct { ... } Waypoint;" to
+    "struct Waypoint {...}; typedef struct Waypoint Waypoint."
+
+    For some reason, it won't compile on Windows in Qt 5.4.0 otherwise.
+    Maybe it's because the MSVC compiler won't recognize it. Who knows.*/
+
+    struct Waypoint {
         double lat = 0;
         double lon = 0;
         float alt = 0;
         float speed = 0;
-	} Waypoint;
+    };
 
-	class ActionPacket : public Packet
-	{
-	private:
-		ActionType action;
-		Waypoint waypoint;
+    typedef struct Waypoint Waypoint;
+
+    class ActionPacket : public Packet
+    {
+    private:
+        ActionType action;
+        Waypoint waypoint;
 
 	public:
         ActionPacket() : Packet(PacketType::Action){}

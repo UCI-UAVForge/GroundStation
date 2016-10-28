@@ -21,7 +21,7 @@
 #include "InfoPacket.h"
 #include "TelemetryPacket.h"
 #include "stdint.h"
-#include "messagebox.h"
+//#include "messagebox.h"
 
 // Statically allocate space for one of each type of packet for use with
 // Packet::Parse.

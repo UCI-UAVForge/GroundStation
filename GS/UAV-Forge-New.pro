@@ -20,9 +20,9 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 #CONFIG += console
 
 CONFIG += c++11
-win32{
-    LIBS += -lws2_32
-}
+#win32{
+#    LIBS += -lws2_32
+#}
 TARGET = UAV-Forge-New
 TEMPLATE = app
 
@@ -52,7 +52,10 @@ SOURCES += main.cpp\
     serverqueue.cpp \
     mission.cpp \
     flightpath.cpp \
-    maprecap.cpp
+    maprecap.cpp \
+    qttabtest.cpp \
+    mainmdidisplay.cpp \
+    missionplanningwindow.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
@@ -81,7 +84,10 @@ HEADERS  += mainwindow.h \
     serverqueue.h \
     mission.h \
     flightpath.h \
-    maprecap.h
+    maprecap.h \
+    qttabtest.h \
+    mainmdidisplay.h \
+    missionplanningwindow.h
 
 FORMS    += mainwindow.ui \
     options.ui \
@@ -91,7 +97,9 @@ FORMS    += mainwindow.ui \
     tutorial.ui \
     popwindowmp.ui \
     connectiondialog.ui \
-    maprecap.ui
+    maprecap.ui \
+    qttabtest.ui \
+    mainmdidisplay.ui
 
 OTHER_FILES +=
 

@@ -95,4 +95,12 @@ void MapRecap::addPointToTable(double lat, double lng) {
     model->insertRow(lng,lat);
 }
 
+/*
+ * Return a pointer to the QWidget object of the tab at the index given by the tabIndex parameter.
+*/
 
+QWidget * MapRecap::getTab( int tabIndex ) {
+
+    return ui->tabWidget->widget( tabIndex );
+
+}
