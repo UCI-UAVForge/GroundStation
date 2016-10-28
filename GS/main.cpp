@@ -28,9 +28,10 @@ int main(int argc, char *argv[]) {
     QSplashScreen splash(pixmap);
     splash.show();
 
+    /*MainWindow*/ /*QtTabTest x;*/
+  //MainWindow x;
     MainMDIDisplay x;
 
-    //MainWindow x;
     x.showFullScreen();
 
     //construct and show the main window

@@ -4,36 +4,6 @@
 #include <iostream>
 #include <string>
 
-/*
-#ifdef _WIN32
-#include <winsock.h>
-#include <windows.h>
-
-#include<stdio.h>
-#include<string.h>
-#include<winsock2.h>
-#include<Ws2tcpip.h>
-#include<signal.h>
-
-#ifndef INET6_ADDRSTRLEN
-#define INET6_ADDRSTRLEN 46
-#endif
-
-void GsServer::waitNet(unsigned millis){
-  Sleep(millis);
-}
-#else
-#include <unistd.h>
-#include <netinet/in.h>
-#include <netdb.h>
-#include <arpa/inet.h>
-#include <sys/wait.h>
-void GsServer::waitNet(unsigned millis){
-    usleep(millis * 1000);
-}
-#endif
-*/
-
 GsServer::GsServer(messagebox *myMessageBox, Mission *myMission): networkListener(myMessageBox,this){
     this->myMessageBox = myMessageBox;
     this->myMission = myMission;
