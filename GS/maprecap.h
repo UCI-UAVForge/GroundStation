@@ -9,6 +9,7 @@
 #include <QString>
 #include <QApplication>
 #include <QDoubleValidator>
+#include <QWebFrame>
 
 #include "tablemodel.h"
 #include "popwindowmp.h"
