@@ -5,7 +5,7 @@
 #include <QComboBox>
 #include <QPushButton>
 #include <QButtonGroup>
-#include <QWebEnginePage>
+#include <QWebFrame>
 #include <QString>
 #include <QApplication>
 #include <QDoubleValidator>
@@ -18,6 +18,7 @@
 #include "flightpath.h"
 //#include "mapexecution.h"
 #include "messagebox.h"
+#include "qwebframe.h"
 
 #include "ui_maprecap.h"
 #include "mission.h"
