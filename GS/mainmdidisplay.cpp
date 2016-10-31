@@ -51,7 +51,7 @@ MainMDIDisplay::~MainMDIDisplay() {
 
     delete qttWidget;
 
-    delete tempMapPlanningUIWidget;
+    //delete tempMapPlanningUIWidget;
 
     delete ui;
 

@@ -43,13 +43,14 @@ void MapPlanning::addClickListener() {
 // redirect to mission execution window
 void MapPlanning::on_executeButton_clicked() {
 
-    emit timeToStartMapExecution();
+    //emit timeToStartMapExecution();
 
     /* Commented out for QtTabTest.cpp
+     */
     MapExecution* mapExecution = new MapExecution(getTableAsFlightPath());
     this->close();
     mapExecution->showFullScreen();
-    */
+
 
 
 //    ConnectionDialog * connectionDialog = new ConnectionDialog();

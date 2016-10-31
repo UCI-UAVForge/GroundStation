@@ -125,9 +125,9 @@ void GsServer::sendNextPacket() {
 
     ///@todo implement actual ack packet transfer from message box to outPackets.recievAckPacket(AckPacket)
 
-    Protocol::AckPacket *ack = new Protocol::AckPacket;
-    ack->set_timestamp(packet->get_timestamp());
-    outPackets.recieveAckPacket(ack);
+    //Protocol::AckPacket *ack = new Protocol::AckPacket;
+    //ack->set_timestamp(packet->get_timestamp());
+    //outPackets.recieveAckPacket(ack);
 
     //END TEST CODE
 }

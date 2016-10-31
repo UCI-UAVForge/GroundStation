@@ -73,17 +73,19 @@ void NetworkListener::processPendingDatagrams(){
         std::cout << pack_number << " Latitude: " << test_wp.lat << " Longitude: " << test_wp.lon << std::endl;
         ++pack_number;
 
-        ///\todo remove this so that the red line in dependent on telem packets rather than action packets
+        ///\todo remove this so that the red line is dependent on telem packets rather than action packets
 
+        /*
         if (actionPacket->GetAction() == Protocol::ActionType::AddWaypoint){
             Protocol::TelemetryPacket telem;
-            telem.SetLocation(test_wp.lat,test_wp.lon,200);
+            telem.SetLocation(test_wp.lat,test_wp.lon,test_wp.alt);
             telem.SetHeading(0.45);
             telem.SetOrientation(1,2,3);
-            telem.SetVelocity(-10.0,10.0,13241235123);
+            telem.SetVelocity(-10.0,10.0,0);
             //myMessageBox->addTelemetryPacket(telem);
             server->sendPacket(&telem,8);
         }
+*/
 
 
         myMessageBox->addActionPacket(*actionPacket);

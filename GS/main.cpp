@@ -2,7 +2,7 @@
 #include <QSplashScreen>
 #include <QtSvg>
 
-//#include "mainwindow.h"
+#include "mainwindow.h"
 //#include "qttabtest.h"
 #include "mainmdidisplay.h"
 #include "mission.h"
