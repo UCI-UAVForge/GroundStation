@@ -16,31 +16,12 @@
 
 using namespace std;
 
-#ifdef _WIN32
-#include <windows.h>
-    void NetworkListener::netWait(int millis) {
-        Sleep(millis);
-    }
-
-#else
-
-#include <unistd.h>
-   void NetworkListener::netWait(int millis) {
-       usleep(millis*1000);
-   }
-
-#endif
-
 NetworkListener::NetworkListener(messagebox *myMessagebox, GsServer* server){
-     this->myMessageBox = myMessagebox;
+    this->myMessageBox = myMessagebox;
     this->server = server;
     std::cout << "New NetworkListener created." << std::endl;
-    bind(NetworkListener::LISTEN_PORT);
+    bind(NET::LISTEN_PORT);
     listening = true;
-
-    //connect(server,SIGNAL(shutdownListener()),this,SLOT(stop()));
-
-    //connect(&udpSocket, SIGNAL(readyRead()), this, SLOT(processPendingDatagrams()));
 }
 
 NetworkListener::NetworkListener(messagebox *myMessagebox, int UAVid, GsServer* server):NetworkListener(myMessagebox, server) {
@@ -70,13 +51,12 @@ void NetworkListener::processPendingDatagrams(){
         Protocol::ActionPacket *actionPacket = (Protocol::ActionPacket*)incPack;
         Protocol::Waypoint test_wp;
         test_wp = actionPacket->GetWaypoint();
-        std::cout << pack_number << " Latitude: " << test_wp.lat << " Longitude: " << test_wp.lon << std::endl;
+        std::cout << pack_number << " Latitude: " << test_wp.lat << " Longitude: " << test_wp.lon <<  " Alt: " <<  test_wp.alt  << std::endl;
         ++pack_number;
 
         ///\todo remove this so that the red line is dependent on telem packets rather than action packets
 
-        /*
-        if (actionPacket->GetAction() == Protocol::ActionType::AddWaypoint){
+        /*if (actionPacket->GetAction() == Protocol::ActionType::AddWaypoint){
             Protocol::TelemetryPacket telem;
             telem.SetLocation(test_wp.lat,test_wp.lon,test_wp.alt);
             telem.SetHeading(0.45);
@@ -84,10 +64,7 @@ void NetworkListener::processPendingDatagrams(){
             telem.SetVelocity(-10.0,10.0,0);
             //myMessageBox->addTelemetryPacket(telem);
             server->sendPacket(&telem,8);
-        }
-*/
-
-
+        }*/
         myMessageBox->addActionPacket(*actionPacket);
     } else if (type == Protocol::PacketType::Telem){
         std::cout<< "TelemPacket Recieved" << std::endl;

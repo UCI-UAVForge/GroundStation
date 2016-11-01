@@ -29,8 +29,8 @@ int main(int argc, char *argv[]) {
     splash.show();
 
     /*MainWindow*/ /*QtTabTest x;*/
-  //MainWindow x;
-    MainMDIDisplay x;
+    MainWindow x;
+    //MainMDIDisplay x;
 
     x.showFullScreen();
 
