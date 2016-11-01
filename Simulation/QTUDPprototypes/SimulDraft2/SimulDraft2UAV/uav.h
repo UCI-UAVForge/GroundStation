@@ -58,9 +58,10 @@ public:
 
     /* Alvin Truong added on 16-1-27*/
     const static int PACKET_LENGTH = 1000;
-    const static int GS_PORT_NUM = 20715;
-    const static int UAV_PORT_NUM = 27015;
+    const static int GS_PORT_NUM = 20725;
+    const static int UAV_PORT_NUM = 20735;
     static int NUM_RECV_PACKETS;
+
     UAV(QWidget *parent = 0);
 
     /**
