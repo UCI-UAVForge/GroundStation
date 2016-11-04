@@ -107,6 +107,7 @@ to reload itself. This function then cycles through each entry on the table
 and enters the coordinates on the map one by one in order. Function added by
 Jordan Dickson Feb 14th 2015. */
 //Sends clearMap request.
+
 void MapPlanning::updateMap() {
     ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
     //Loops through table entries
@@ -125,7 +126,6 @@ void MapPlanning::updateMap() {
         ui->webView->page()->mainFrame()->evaluateJavaScript("addLatLngCoords("+QString::number(lat)+","+QString::number(lng)+")");
     }
 }
-
 FlightPath *MapPlanning::getTableAsFlightPath(){
     FlightPath *newFP = new FlightPath();
 
@@ -164,4 +164,10 @@ void MapPlanning::addPointToTable(double lat, double lng) {
 
     ui->tableView->scrollToBottom();
 
+}
+
+void MapPlanning::clearTable() {
+    delete model;
+    model = new TableModel();
+    ui->tableView->setModel(model);
 }
