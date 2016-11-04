@@ -14,8 +14,6 @@
 
 #define DEFAULT_PRIORITY 10
 
-const static QString UAV_IP_ADDRESS = "localhost";
-
 
 /**
   GsServer is the server object for the ground station. The current
@@ -128,16 +126,6 @@ public:
 
     bool running;
 private:
-
-
-
-    /* Alvin Truong added on 16-1-27*/
-    const static int PACKET_LENGTH = 1000;
-    const static int SEND_PORT = 27015;
-    const static int LISTEN_PORT = 20715;
-    static int NUM_RECV_PACKETS;
-
-
      /**
        Stores the port number of this server.
      */

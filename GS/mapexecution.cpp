@@ -27,18 +27,19 @@ MapExecution::MapExecution(FlightPath* flightPath, QWidget *parent):
     ui->StatusConsole->initiate(&MyMessageBox, this);
     //display widgets
 
-    std::vector<Protocol::ActionPacket> test_actions = MyMessageBox.get_action_packets();
-    QTimer *conTime = new QTimer(this);
+    //std::vector<Protocol::ActionPacket> test_actions = MyMessageBox.get_action_packets();
+
+    conTime = new QTimer(this);
     connect(conTime, SIGNAL(timeout()), this, SLOT(updateStatusIndicator()));
     conTime->start(1000);
     int pack_number = 1;
 
-    for(auto i : test_actions){
-        Protocol::Waypoint test_wp;
-        test_wp = i.GetWaypoint();
-        std::cout << pack_number << " Latitude: " << test_wp.lat << " Longitude: " << test_wp.lon << std::endl;
-        ++pack_number;
-    }
+    //for(auto i : test_actions){
+    //    Protocol::Waypoint test_wp;
+    //    test_wp = i.GetWaypoint();
+    //    std::cout << pack_number << " Latitude: " << test_wp.lat << " Longitude: " << test_wp.lon << std::endl;
+    //    ++pack_number;
+    //}
 
     model = new TableModel();
     ui->tableView->setModel(model);
@@ -67,6 +68,8 @@ MapExecution::MapExecution(FlightPath* flightPath, QWidget *parent):
 MapExecution::~MapExecution() {
     delete ui;
     delete model;
+    conTime->disconnect();
+    conTime->deleteLater();
 }
 
 // finish button
@@ -218,6 +221,6 @@ void MapExecution::updateStatusIndicator()
 
 MapRecap * MapExecution::getMapRecap() {
 
-    return new MapRecap( &myMission );
+    return new MapRecap(&myMission);
 
 }

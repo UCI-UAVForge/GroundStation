@@ -8,7 +8,7 @@ UAV::UAV(QWidget *parent)
 //    : QDialog(parent)
 {
     // Set booleans to simulate UAV state
-    uavOn = true;
+    uavOn = false;
     receivedInfoPacketReq = false;
     uavWaypointsReady = false;
     uavFlying = false;
@@ -41,7 +41,6 @@ UAV::UAV(QWidget *parent)
                 this, SLOT(processPendingDatagrams()));
 
     QTextStream(stdout) << "Listening for packets.." << endl;
-
 }
 
 void UAV::sendAllActionPackets(std::vector<Protocol::Packet*> packets)
@@ -94,7 +93,7 @@ void UAV::sendAPacket(Protocol::Packet* packet)
 
 void UAV::processPendingDatagrams()
 {
-
+    QTextStream(stdout) << "data recieved!" << endl;
     while(recvUdpSocket.hasPendingDatagrams())
     {
         QTextStream(stdout) << "Processing started" << endl;
@@ -236,6 +235,7 @@ void UAV::respond_to_action_packet(Protocol::ActionPacket ap)
         case Protocol::ActionType::AddWaypoint:
             if(uavOn && can_add_waypoint())
             {
+                QTextStream(stdout) << "Adding new waypoint" << endl;
                 uavWaypointsReady = true;
                 ++currentNumOfPoints;
                 addWaypoint(ap);
@@ -244,14 +244,24 @@ void UAV::respond_to_action_packet(Protocol::ActionPacket ap)
                 QTextStream(stdout) << "Cannot add waypoint." << endl;
             break;
         case Protocol::ActionType::SetHome:
+            {
+            Protocol::Waypoint newHome = ap.GetWaypoint();
+            QTextStream(stdout) << "Setting Home: (" << newHome.lat << "," << newHome.lon << ")" << endl;
+            uavHomeLat = newHome.lat;
+            uavHomeLng = newHome.lon;
+            }
             break;
         case Protocol::ActionType::Stop:
+            QTextStream(stdout) << "STOPPING" << endl;
             uavFlying = false;
             stopAction = true;
             break;
         case Protocol::ActionType::Start:
-            if(uavOn && !receivedInfoPacketReq && uavWaypointsReady)
+            //if(uavOn && !receivedInfoPacketReq && uavWaypointsReady)
+            if(!uavOn)
             {
+                QTextStream(stdout) << "STARTING... "<< endl;
+                uavOn = true;
                 uavFlying = true;
                 receivedInfoPacketReq = true;
                 timer->start(200);                
@@ -260,6 +270,7 @@ void UAV::respond_to_action_packet(Protocol::ActionPacket ap)
         case Protocol::ActionType::Shutdown:
             shutdownAction = true;
             uavOn = false;
+            timer->stop();
             break;
         default:
             break;
@@ -300,7 +311,7 @@ bool UAV::can_add_waypoint()
 
 void UAV::addWaypoint(Protocol::ActionPacket ap)
 {
-    QTextStream(stdout) << "Waypoint added" << endl;
+    //QTextStream(stdout) << "Waypoint added" << endl;
     Protocol::Waypoint wp = ap.GetWaypoint();
     
     pointOfInterest.push(wp);
@@ -308,6 +319,11 @@ void UAV::addWaypoint(Protocol::ActionPacket ap)
 
 void UAV::updateUavLatLng()
 {
+
+    if(pointOfInterest.empty()){
+        return;
+    }
+
     Protocol::Waypoint nextPoint = pointOfInterest.front();
 
     if(uavLat < nextPoint.lat && (uavLat + latLngSpd) < nextPoint.lat)
@@ -339,6 +355,7 @@ void UAV::updateUavLatLng()
     }
     else if(!uavFlyingHome && pointOfInterest.size() == 0)
     {
+        QTextStream(stdout) << "Nowhere else to go... Heading Home." << endl;
         uavFlyingHome = true;
         Protocol::Waypoint homePoint;
         homePoint.lat = uavHomeLat;
