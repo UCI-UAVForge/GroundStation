@@ -12,7 +12,8 @@ osm.addTo(map);
 
 //Drawing tools options
 var drawControl = new L.Control.Draw(
-            {edit: {featureGroup: drawnItems,
+            {position:'topright',
+                edit: {featureGroup: drawnItems,
                     allowIntersection: true
                 },
                 draw: { polygon : false,
@@ -31,7 +32,18 @@ map.addControl(drawControl);
 
 //Fixes a bug where it draws double the points.
 map.on('click');
-var allPoints;
+
+
+var allPoints,
+    lastLayer;
+
+//Changes color of line selected to red
+function selectColor(layer) {
+    drawnItems.eachLayer(function(l){
+        l.setStyle({color:'blue'});
+    });
+    layer.setStyle({color:'red'});
+}
 
 function updateTable(layer) {
     var allPoints = layer.getLatLngs();
@@ -43,11 +55,14 @@ function updateTable(layer) {
 
 function addClickListener(layer) {
     layer.on('click', function(){
+        allPoints = layer.getLatLngs();
         updateTable(layer);
-        drawnItems.eachLayer(function(l){
-            l.setStyle({color:'blue'});
-        });
-        layer.setStyle({color:'red'});
+        selectColor(layer);
+        lastLayer = layer;
+        var startPopup = L.popup()
+            .setLatLng(allPoints[0])
+            .setContent("Start")
+            .openOn(map);
     });
 }
 
@@ -55,23 +70,35 @@ function addClickListener(layer) {
 map.on('draw:created', function(event) {
     var layer = event.layer;
     allPoints = layer.getLatLngs();
+    var newpopup = L.popup({ closeOnClick: false }).setContent("Start");
+    var marker = L.marker(allPoints[0], {
+          draggable: true,
+    }).addTo(map);
+    selectColor(layer);
+    lastLayer = layer;
     drawnItems.addLayer(layer);
     addClickListener(layer);
     updateTable(layer);
 });
 
 map.on('draw:editstop', function(event){
-    drawnItems.eachLayer(function(l){
-        l.setStyle({color:'blue'});
+    updateTable(lastLayer);
+    selectColor(lastLayer);
+});
+
+map.on('draw:deleted', function(event){
+    var layers = event.layers;
+    layers.eachLayer(function(layer) {
+        if (layer === lastLayer) {
+            cbridge.clearTable();
+        }
     });
 });
 
 
-
 function clearMap() {
     //Called from the c++ side to refresh the map.
-    //modified by Arash on 2/23/15: it will now clear the map without
-    //changing the zoom level or center of the map
+    //pretty redundant button
     drawnItems.clearLayers();
 }
 
