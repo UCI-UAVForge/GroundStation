@@ -69,6 +69,10 @@ void MainMDIDisplay::switchToPlanningWindow() {
 
     this->tempMapPlanningUIWidget->ui->executeButton->show();
 
+    this->missionPlanningWindowUIWidget->uavComboBox->show();
+
+    this->missionPlanningWindowUIWidget->missionPlanComboBox->show();
+
     this->missionPlanningWindowUIWidget->addButton( this->tempMapPlanningUIWidget->ui->backButton );
 
     this->missionPlanningWindowUIWidget->addButton( this->tempMapPlanningUIWidget->ui->clearTableButton );
@@ -198,6 +202,10 @@ void MainMDIDisplay::changePlanningToExecutionWindow() {
     tempMapPlanningUIWidget->loadMissionButton->hide();
 
     tempMapPlanningUIWidget->saveMissionButton->hide();
+
+    this->missionPlanningWindowUIWidget->uavComboBox->hide();
+
+    this->missionPlanningWindowUIWidget->missionPlanComboBox->hide();
 
     //delete tempMapPlanningUIWidget ;
 

@@ -15,6 +15,8 @@ class MissionPlanningWindow : public QDialog
 {
     Q_OBJECT
 
+    friend class MainMDIDisplay;
+
 public:
     MissionPlanningWindow(QWidget *parent = 0);
     ~MissionPlanningWindow();
