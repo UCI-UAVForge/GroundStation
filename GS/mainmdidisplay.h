@@ -31,6 +31,8 @@ public:
 
     void addWindow( QWidget * );
 
+    void addWindow( QWidget * , QString );
+
     ~MainMDIDisplay();
 
     QtTabTest * getQttWidget() const;
@@ -38,6 +40,8 @@ public:
     void setQttWidget( QtTabTest * );
 
     void clearMapExecution();
+
+    void clearMapRecap();
 
     //TODO Make this a switch to execution function
     void changePlanningToExecutionWindow();
@@ -55,6 +59,8 @@ private slots:
     void clickedFinishButton_MainDisplay();
 
     void clickedCancelButton_MainDisplay();
+
+    void clickedBackToPlanningButton_MainDisplay();
 
     //void clickedBackButton_MainDisplay();
 
@@ -80,6 +86,12 @@ private:
     QWidget * mapExecutionStatusUIWidget;
 
     QVBoxLayout * MapExecutionStatusVBoxLayout;
+
+    /* Buttons */
+
+    //TODO Put all the buttons/other UI elements for the GUI here to organize everything in one spot
+
+    QPushButton * backToPlanningButton ;
 
 };
 

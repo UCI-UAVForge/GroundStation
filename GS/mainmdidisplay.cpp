@@ -9,7 +9,7 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new U
 
     this->qttWidget = new QtTabTest();
 
-    this->addWindow( qttWidget );
+    this->addWindow( qttWidget /* , QString( "Data" ) */ );
 
     this->tempMapPlanningUIWidget = new MapPlanning();
 
@@ -91,9 +91,27 @@ void MainMDIDisplay::setQttWidget( QtTabTest * value) {
 
 void MainMDIDisplay::addWindow( QWidget * myNewWindowWidget ) {
 
+    /* TODO Default window style should go here by making all of the windows conform to the same
+     * stylesheet - Roman Parise */
+
     /* Second argument - turns off the 'X' in the subwindows */
 
     ui->mdiArea->addSubWindow( myNewWindowWidget , Qt::CustomizeWindowHint | Qt::WindowMinMaxButtonsHint );
+
+}
+
+//TODO Right now this function doesn't work due to issues with Qt's private constructors for QMdiSubWindow. - Roman Parise
+void MainMDIDisplay::addWindow( QWidget * myNewWindowWidget , QString windowTitle ) {
+
+    /* Second argument - turns off the 'X' in the subwindows */
+
+    QMdiSubWindow tempSubWindow ;
+
+    tempSubWindow.setWidget( myNewWindowWidget );
+
+    tempSubWindow.setWindowTitle( windowTitle );
+
+    this->addWindow( &tempSubWindow );
 
 }
 
@@ -209,7 +227,23 @@ void MainMDIDisplay::switchToRecapWindow() {
 
     this->qttWidget->addNewTab( MapRecapUI_GraphTab , QString( "Graph (Recap)" ) );
 
-    this->missionPlanningWindowUIWidget->addButton( this->tempMapRecapUIWidget->ui->backButton );
+    this->backToPlanningButton = this->tempMapRecapUIWidget->ui->backButton /* this->tempMapRecapUIWidget->getBackToPlanningButton() */ ;
+
+    this->missionPlanningWindowUIWidget->addButton( this->backToPlanningButton );
+
+    connect( this->backToPlanningButton , SIGNAL( clicked() ) , this , SLOT ( clickedBackToPlanningButton_MainDisplay() ) ) ;
+
+    this->missionPlanningWindowUIWidget->changeTitle( QString( "Mission Recap" ) ) ;
+
+}
+
+void MainMDIDisplay::clickedBackToPlanningButton_MainDisplay() {
+
+    this->clearMapRecap();
+
+    this->switchToPlanningWindow();
+
+    /* this->clearMapRecap(); */
 
 }
 
@@ -218,6 +252,14 @@ void MainMDIDisplay::clickedFinishButton_MainDisplay() {
     this->switchToRecapWindow();
 
     this->clearMapExecution();
+
+}
+
+void MainMDIDisplay::clearMapRecap() {
+
+    delete this->backToPlanningButton ;
+
+    this->backToPlanningButton = NULL ;
 
 }
 

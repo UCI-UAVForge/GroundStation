@@ -110,9 +110,12 @@ QWidget * MapRecap::getTab( int tabIndex ) {
 
 }
 
+//TODO For some reason, this function doesn't work - Roman Parise
 QPushButton * MapRecap::getBackToPlanningButton() {
 
     if ( this->backToPlanningButton == NULL ) {
+
+        qDebug() << "BACK TO PLANNING BUTTON IS BEING CREATED!!!";
 
         this->backToPlanningButton = new QPushButton( QString( "Back to Planning" ) );
 
@@ -121,7 +124,7 @@ QPushButton * MapRecap::getBackToPlanningButton() {
         //TODO Implement a default QPushButton stylesheet in this class and force all buttons
         //in this UI to conform to it. Embrace conformity...
 
-        this->backToPlanningButton->setStyleSheet( this->ui->backButton->styleSheet() );
+        //this->backToPlanningButton->setStyleSheet( this->ui->backButton->styleSheet() );
 
     }
 
