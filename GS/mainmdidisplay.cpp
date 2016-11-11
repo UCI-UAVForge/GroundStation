@@ -1,7 +1,9 @@
 #include "mainmdidisplay.h"
 #include "ui_mainmdidisplay.h"
 
-MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainMDIDisplay) {
+MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainMDIDisplay),
+
+    MapExecutionStatusVBoxLayout(NULL) , mapExecutionStatusUIWidget(NULL) {
 
     ui->setupUi(this);
 
@@ -19,7 +21,7 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new U
 
     qttWidget->setMapPlanningUIWidget( this->tempMapPlanningUIWidget );
 
-    qttWidget->addNewTab( this->tempMapPlanningUIWidget->ui->tableView , QString( "Table (Mission Planning) " ) );
+    qttWidget->addNewTab( this->tempMapPlanningUIWidget->ui->tableView , QString( "Table (Mission Planning)" ) );
 
     //Add the three buttons from MapPlanning to the Mission Planning window
 
@@ -39,7 +41,7 @@ MainMDIDisplay::~MainMDIDisplay() {
 
     delete qttWidget;
 
-    //delete tempMapPlanningUIWidget;
+    delete tempMapPlanningUIWidget;
 
     delete ui;
 
@@ -48,6 +50,8 @@ MainMDIDisplay::~MainMDIDisplay() {
 }
 
 void MainMDIDisplay::switchToPlanningWindow() {
+
+    this->missionPlanningWindowUIWidget->changeTitle( QString( "Mission Planning" ) );
 
     // Delete default buttons
 
@@ -124,9 +128,29 @@ void MainMDIDisplay::beginMapExecution() {
     /* TODO Maybe replace all these pointers and just pass things by reference.
             Will that work? Cuz dynamic memory allocation sucks - Roman */
 
-    this->MapExecutionStatusVBoxLayout = new QVBoxLayout();
+    if ( this->MapExecutionStatusVBoxLayout == NULL ) {
 
-    this->mapExecutionStatusUIWidget = new QWidget();
+        this->MapExecutionStatusVBoxLayout = new QVBoxLayout();
+
+    }
+
+    else {
+
+        /* Do nothing. */
+
+    }
+
+    if ( this->mapExecutionStatusUIWidget == NULL ) {
+
+        this->mapExecutionStatusUIWidget = new QWidget();
+
+    }
+
+    else {
+
+        /* Do nothing. */
+
+    }
 
     this->tempMapExecutionUIWidget = new MapExecution( this->tempMapPlanningUIWidget->getTableAsFlightPath() );
 
@@ -189,7 +213,7 @@ void MainMDIDisplay::changePlanningToExecutionWindow() {
 
     this->missionPlanningWindowUIWidget->changeTitle( QString( "Mission Execution" ) ) ;
 
-    //connect( this->tempMapExecutionUIWidget->ui->backButton, SIGNAL(clicked()), this, SLOT(clickedBackButton_MainDisplay()) );
+    connect( this->tempMapExecutionUIWidget->ui->backButton, SIGNAL(clicked()), this, SLOT(clickedBackButton_MainDisplay()) );
 
     connect( this->tempMapExecutionUIWidget->ui->cancelButton, SIGNAL(clicked()), this, SLOT(clickedCancelButton_MainDisplay()) );
 
@@ -207,8 +231,6 @@ void MainMDIDisplay::destroy() {
 
 void MainMDIDisplay::switchToRecapWindow() {
 
-    QWidget * MapRecapUI_TableTab , * MapRecapUI_GraphTab ;
-
     this->tempMapRecapUIWidget = this->tempMapExecutionUIWidget->getMapRecap();
 
     //TODO May not be necessary since the URL appears to be the same before and after
@@ -219,13 +241,13 @@ void MainMDIDisplay::switchToRecapWindow() {
 
     qDebug() << "URL AFTER: " << this->MapPlanningMapUIWidget->url() ;
 
-    MapRecapUI_TableTab = this->tempMapRecapUIWidget->getTab( 1 );
+    this->MapRecapUI_TableTab = this->tempMapRecapUIWidget->getTab( 1 );
 
-    MapRecapUI_GraphTab = this->tempMapRecapUIWidget->getTab( 2 );
+    this->MapRecapUI_GraphTab = this->tempMapRecapUIWidget->getTab( 2 );
 
-    this->qttWidget->addNewTab( MapRecapUI_TableTab , QString( "Table (Recap)" ) );
+    this->qttWidget->addNewTab( this->MapRecapUI_TableTab , QString( "Table (Recap)" ) );
 
-    this->qttWidget->addNewTab( MapRecapUI_GraphTab , QString( "Graph (Recap)" ) );
+    this->qttWidget->addNewTab( this->MapRecapUI_GraphTab , QString( "Graph (Recap)" ) );
 
     this->backToPlanningButton = this->tempMapRecapUIWidget->ui->backButton /* this->tempMapRecapUIWidget->getBackToPlanningButton() */ ;
 
@@ -255,59 +277,109 @@ void MainMDIDisplay::clickedFinishButton_MainDisplay() {
 
 }
 
+//TODO Add error messages that pop up under else
 void MainMDIDisplay::clearMapRecap() {
 
-    delete this->backToPlanningButton ;
+    if ( this->qttWidget->ui->tabWidget->tabText( 1 ) == QString( "Table (Recap)" ) ) {
 
-    this->backToPlanningButton = NULL ;
+        this->qttWidget->ui->tabWidget->removeTab( 1 ) ;
+
+    }
+
+    else {
+
+        /* Do nothing */
+
+    }
+
+    if ( this->qttWidget->ui->tabWidget->tabText( 1 ) == QString( "Graph (Recap)" ) ) {
+
+        this->qttWidget->ui->tabWidget->removeTab( 1 ) ;
+
+    }
+
+    else {
+
+        /* Do nothing */
+
+    }
+
+    if ( this->backToPlanningButton != NULL ) {
+
+        this->backToPlanningButton->hide();
+
+    }
+
+    else {
+
+        /* Do nothing */
+
+    }
 
 }
 
+//TODO Add error messages that pop up under else
 void MainMDIDisplay::clearMapExecution() {
 
-    delete this->tempMapExecutionUIWidget->ui->cancelButton ;
+    if ( this->qttWidget->ui->tabWidget->tabText( 1 ) == QString( "Network Status (Execution)" ) ) {
 
-    this->tempMapExecutionUIWidget->ui->cancelButton = NULL ;
+        this->qttWidget->ui->tabWidget->removeTab( 1 );
 
-    delete this->tempMapExecutionUIWidget->ui->finishButton ;
+    }
 
-    this->tempMapExecutionUIWidget->ui->finishButton = NULL ;
+    else {
 
-    delete this->tempMapExecutionUIWidget->ui->backButton ;
+        /* Do nothing */
 
-    this->tempMapExecutionUIWidget->ui->backButton = NULL ;
+    }
 
-    /*
+    if ( this->qttWidget->ui->tabWidget->tabText( 1 ) == QString( "Table (Execution)" ) ) {
 
-    delete this->tempMapExecutionUIWidget->ui->clock ;
+        this->qttWidget->ui->tabWidget->removeTab( 1 );
 
-    this->tempMapExecutionUIWidget->ui->clock = NULL ;
+    }
 
-    delete this->tempMapExecutionUIWidget->ui->StatusIndicator ;
+    else {
 
-    this->tempMapExecutionUIWidget->ui->StatusIndicator = NULL ;
+        /* Do nothing */
 
-    delete this->tempMapExecutionUIWidget->ui->StatusConsole ;
+    }
 
-    this->tempMapExecutionUIWidget->ui->StatusConsole = NULL ;
+    if ( this->tempMapExecutionUIWidget->ui->cancelButton != NULL ) {
 
-    delete this->tempMapExecutionUIWidget->ui->clock ;
+        this->tempMapExecutionUIWidget->ui->cancelButton->hide() ;
 
-    this->tempMapExecutionUIWidget->ui->clock = NULL ;
+    }
 
-    delete this->mapExecutionStatusUIWidget ;
+    else {
 
-    this->mapExecutionStatusUIWidget = NULL ;
+        /* Do nothing */
 
-    delete this->MapExecutionStatusVBoxLayout ;
+    }
 
-    this->MapExecutionStatusVBoxLayout = NULL ;
+    if ( this->tempMapExecutionUIWidget->ui->finishButton != NULL ) {
 
-    delete this->tempMapExecutionUIWidget ;
+        this->tempMapExecutionUIWidget->ui->finishButton->hide() ;
 
-    this->tempMapExecutionUIWidget = NULL ;
+    }
 
-    */
+    else {
+
+        /* Do nothing */
+
+    }
+
+    if ( this->tempMapExecutionUIWidget->ui->backButton != NULL ) {
+
+        this->tempMapExecutionUIWidget->ui->backButton->hide() ;
+
+    }
+
+    else {
+
+        /* Do nothing */
+
+    }
 
 }
 
@@ -316,5 +388,11 @@ void MainMDIDisplay::clickedCancelButton_MainDisplay() {
     this->switchToPlanningWindow();
 
     this->clearMapExecution();
+
+}
+
+void MainMDIDisplay::clickedBackButton_MainDisplay() {
+
+    this->destroy() ;
 
 }

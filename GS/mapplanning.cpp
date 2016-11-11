@@ -47,14 +47,15 @@ void MapPlanning::addClickListener() {
 // redirect to mission execution window
 void MapPlanning::on_executeButton_clicked() {
 
-    //emit timeToStartMapExecution();
+    emit timeToStartMapExecution();
 
-    /* Commented out for QtTabTest.cpp
-     */
+    //Define the OLD_GUI macro to use the old version of the Ground Station. - Roman Parise
+
+    #ifdef OLD_GUI
     MapExecution* mapExecution = new MapExecution(getTableAsFlightPath());
     this->close();
     mapExecution->showFullScreen();
-
+    #endif
 
 
 //    ConnectionDialog * connectionDialog = new ConnectionDialog();

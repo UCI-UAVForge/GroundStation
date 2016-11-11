@@ -1,5 +1,4 @@
 #include "qttabtest.h"
-#include "ui_qttabtest.h"
 
 //TODO Somebody please fix all the memory leaks in this project. We want a clean program close.
 //This doesn't seem to work lol

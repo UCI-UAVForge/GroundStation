@@ -62,7 +62,7 @@ private slots:
 
     void clickedBackToPlanningButton_MainDisplay();
 
-    //void clickedBackButton_MainDisplay();
+    void clickedBackButton_MainDisplay();
 
 private:
 
@@ -92,6 +92,10 @@ private:
     //TODO Put all the buttons/other UI elements for the GUI here to organize everything in one spot
 
     QPushButton * backToPlanningButton ;
+
+    /* Tabs */
+
+    QWidget * MapRecapUI_TableTab , * MapRecapUI_GraphTab ;
 
 };
 

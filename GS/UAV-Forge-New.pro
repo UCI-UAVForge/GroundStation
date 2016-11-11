@@ -103,5 +103,8 @@ FORMS    += mainwindow.ui \
 
 OTHER_FILES +=
 
+#Uncomment this line, clean the build, run qmake, and then rebuild to use the old GUI.
+#DEFINES += OLD_GUI
+
 RESOURCES += \
     Resources.qrc
