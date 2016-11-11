@@ -59,7 +59,7 @@ public:
 
     Mission getMyMission() const;
 
-    MapRecap * getMapRecap();
+    MapRecap *getMapRecap();
 
     void setMyMission(const Mission &value);
 
@@ -83,6 +83,7 @@ private:
     Mission myMission;
 
     bool missionStarted;
+    QTimer *conTime;
 
 signals:
 
