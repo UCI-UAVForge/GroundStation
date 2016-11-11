@@ -31,6 +31,7 @@ QtTabTest::~QtTabTest() {
 /**
  * @brief Ready to begin map execution. Replace the MapPlanning widget with a new MapExecution widget.
  */
+//Old function. No longer used.
 void QtTabTest::startMapExecution() {
 
     /* PRIVATE SLOT */
@@ -43,6 +44,7 @@ void QtTabTest::startMapExecution() {
 
 }
 
+//Old function. No longer used.
 void QtTabTest::startMapRecap() {
 
     //Instantiate MapRecapUIWidget
@@ -69,6 +71,7 @@ MapExecution * QtTabTest::getMapExecutionUIWidget() const {
 
 }
 
+//Old function. No longer used. - Roman Parise
 void QtTabTest::setMapExecutionUIWidget(MapExecution *value) {
 
     MapExecutionUIWidget = value;

@@ -7,6 +7,7 @@
 #include "QVBoxLayout"
 #include "QGridLayout"
 #include "qcombobox.h"
+#include <QDebug>
 
 //Code by David Moe
 
@@ -23,6 +24,14 @@ public:
 
     void addButton( QPushButton * );
 
+    void addComboBox( QComboBox * );
+
+    void dumpButtons();
+
+    void dumpComboBoxes();
+
+    void changeTitle( QString ) ;
+
 private:
     QPushButton *executeButton;
     QComboBox *uavComboBox;
@@ -30,6 +39,10 @@ private:
     QGridLayout *layout;
     QHBoxLayout * buttonLayout;
     QVBoxLayout * superLayout;
+
+    QList<QPushButton *> buttonList;
+
+    QList<QComboBox *> comboBoxList;
 
 private slots:
     //void setExecutionButtonEnabled();

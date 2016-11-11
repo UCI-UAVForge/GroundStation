@@ -29,6 +29,8 @@ namespace Ui {
 class MapRecap : public QDialog {
     Q_OBJECT
 
+    friend class MainMDIDisplay;
+
 public:
     explicit MapRecap(Mission *mission, QWidget *parent = 0);
     explicit MapRecap(QWidget *parent = 0);
@@ -40,6 +42,10 @@ public:
     void sendCoordToJSMap(double lat, double lng, int mapID);
 
     QWidget * getTab( int );
+
+    QPushButton * getBackToPlanningButton();
+
+    void setBackToPlanningButton( QPushButton * );
 
 public slots:
     void addNewMap();
@@ -57,6 +63,9 @@ private:
     Ui::MapRecap *ui;
     TableModel *model;
     Mission myMission;
+
+    QPushButton * backToPlanningButton ;
+
 };
 
 #endif // MAPRECAP_H

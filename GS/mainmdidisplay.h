@@ -6,8 +6,14 @@
 #include "missionplanningwindow.h"
 #include "ui_mainmdidisplay.h"
 
+#include <assert.h>
+
 //FOR NOW...
 #include "mapplanning.h"
+
+#include "maprecap.h"
+
+//TODO Getters and setters. C'mon...
 
 namespace Ui {
 
@@ -31,11 +37,26 @@ public:
 
     void setQttWidget( QtTabTest * );
 
+    void clearMapExecution();
+
+    //TODO Make this a switch to execution function
+    void changePlanningToExecutionWindow();
+
+    void switchToPlanningWindow();
+
+    void switchToRecapWindow();
+
 private slots:
 
     void destroy();
 
     void beginMapExecution();
+
+    void clickedFinishButton_MainDisplay();
+
+    void clickedCancelButton_MainDisplay();
+
+    //void clickedBackButton_MainDisplay();
 
 private:
 
@@ -53,6 +74,8 @@ private:
     MissionPlanningWindow * missionPlanningWindowUIWidget;
 
     MapExecution * tempMapExecutionUIWidget;
+
+    MapRecap * tempMapRecapUIWidget ;
 
     QWidget * mapExecutionStatusUIWidget;
 

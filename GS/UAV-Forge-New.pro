@@ -105,5 +105,3 @@ OTHER_FILES +=
 
 RESOURCES += \
     Resources.qrc
-
-DISTFILES +=

@@ -5,7 +5,7 @@ MapRecap::MapRecap(QWidget *parent):QDialog(parent), ui(new Ui::MapRecap) {
     //buttonGroup = new QButtonGroup();
 
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
+    ui->webView->setUrl(QUrl("qrc:/res/html/mapsExecution.html"));
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
@@ -13,6 +13,11 @@ MapRecap::MapRecap(QWidget *parent):QDialog(parent), ui(new Ui::MapRecap) {
     ui->tableView->setColumnHidden(5, true);
     ui->tableView->setColumnWidth(2, 42);
     ui->tableView->setColumnWidth(4, 42);
+
+    //Initialized to NULL to prevent wasted space since the original GUI does not use these. - Roman Parise
+
+    backToPlanningButton = NULL ;
+
 }
 
 MapRecap::MapRecap(Mission *mission, QWidget *parent):QDialog(parent), ui(new Ui::MapRecap) {
@@ -21,7 +26,7 @@ MapRecap::MapRecap(Mission *mission, QWidget *parent):QDialog(parent), ui(new Ui
     myMission = Mission(*mission);
 
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));
+    ui->webView->setUrl(QUrl("qrc:/res/html/mapsExecution.html"));
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
@@ -102,5 +107,46 @@ void MapRecap::addPointToTable(double lat, double lng) {
 QWidget * MapRecap::getTab( int tabIndex ) {
 
     return ui->tabWidget->widget( tabIndex );
+
+}
+
+QPushButton * MapRecap::getBackToPlanningButton() {
+
+    if ( this->backToPlanningButton == NULL ) {
+
+        this->backToPlanningButton = new QPushButton( QString( "Back to Planning" ) );
+
+        //Have the backToPlanningButton take on the default button style sheet
+
+        //TODO Implement a default QPushButton stylesheet in this class and force all buttons
+        //in this UI to conform to it. Embrace conformity...
+
+        this->backToPlanningButton->setStyleSheet( this->ui->backButton->styleSheet() );
+
+    }
+
+    else {
+
+        // Do nothing.
+
+    }
+
+    return this->backToPlanningButton ;
+
+}
+
+void MapRecap::setBackToPlanningButton( QPushButton * backToPlanningButton ) {
+
+    if ( backToPlanningButton != NULL ) {
+
+        this->backToPlanningButton = backToPlanningButton ;
+
+    }
+
+    else {
+
+        //Do nothing.
+
+    }
 
 }
