@@ -2,7 +2,7 @@
 #include <QSplashScreen>
 #include <QtSvg>
 
-//#include "mainwindow.h"
+#include "mainwindow.h"
 //#include "qttabtest.h"
 #include "mainmdidisplay.h"
 #include "mission.h"
@@ -28,9 +28,10 @@ int main(int argc, char *argv[]) {
     QSplashScreen splash(pixmap);
     splash.show();
 
-    MainMDIDisplay x;
+    /*MainWindow*/ /*QtTabTest x;*/
+    MainWindow x;
+    //MainMDIDisplay x;
 
-    //MainWindow x;
     x.showFullScreen();
 
     //construct and show the main window

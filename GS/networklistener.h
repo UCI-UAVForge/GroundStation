@@ -45,8 +45,6 @@ private:
 private slots:
     void processPendingDatagrams();
 public:
-
-    const static int LISTEN_PORT = 20715;
     void start();
     NetworkListener(messagebox *myMessageBox, int UAVid, GsServer* server);
     NetworkListener(messagebox *myMessageBox, GsServer* server);
