@@ -10,6 +10,7 @@ QT       += core \
             multimediawidgets \
             network
 QT       += svg
+QT       += sql
 
 
 QT       += webkit webkitwidgets
@@ -55,7 +56,8 @@ SOURCES += main.cpp\
     maprecap.cpp \
     qttabtest.cpp \
     mainmdidisplay.cpp \
-    missionplanningwindow.cpp
+    missionplanningwindow.cpp \
+    dbmanager.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
@@ -87,7 +89,8 @@ HEADERS  += mainwindow.h \
     maprecap.h \
     qttabtest.h \
     mainmdidisplay.h \
-    missionplanningwindow.h
+    missionplanningwindow.h \
+    dbmanager.h
 
 FORMS    += mainwindow.ui \
     options.ui \
