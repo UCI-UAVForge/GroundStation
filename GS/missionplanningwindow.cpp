@@ -11,7 +11,7 @@ MissionPlanningWindow::MissionPlanningWindow(QWidget *parent) : QDialog(parent)
     buttonLayout = new QHBoxLayout();
     executeButton = new QPushButton("Execute");
 
-    buttonLayout->addWidget( executeButton );
+    this->addButton( executeButton );
 
     // UAV ComboBox
     uavComboBox = new QComboBox();
@@ -44,7 +44,7 @@ MissionPlanningWindow::MissionPlanningWindow(QWidget *parent) : QDialog(parent)
     if (this->objectName().isEmpty())
         this->setObjectName(QStringLiteral("Mission Planning"));
     this->setWindowTitle(QStringLiteral("Mission Planning"));
-    this->resize(250,100);
+    this->resize(300,150);
     this->setSizeGripEnabled(true);
     this->setModal(false);
     this->setLayout( this->superLayout );
@@ -60,7 +60,11 @@ void MissionPlanningWindow::setExecutionButtonEnabled()
 } // setExecutionButtonEnabled()
 */
 
-/* Roman Parise - used to integrate this window into MainMDIDisplay */
+/* Roman Parise - used to integrate this window into MainMDIDisplay
+Rendered obsolete by dumpButtons.
+
+TODO Add dumpButton(QPushButton *) function
+*/
 
 void MissionPlanningWindow::deleteExecuteButton() {
 
@@ -73,6 +77,101 @@ void MissionPlanningWindow::deleteExecuteButton() {
 void MissionPlanningWindow::addButton( QPushButton * newButton) {
 
     this->buttonLayout->addWidget( newButton );
+
+    this->buttonList.append( newButton );
+
+}
+
+void MissionPlanningWindow::addComboBox( QComboBox * newComboBox ) {
+
+    //TODO Give "layout" the name "comboBoxLayout"
+
+    this->layout->addWidget( newComboBox );
+
+    this->comboBoxList.append( newComboBox );
+
+}
+
+/* Delete all the buttons */
+void MissionPlanningWindow::dumpButtons() {
+
+    int i , currentLength ;
+
+    QPushButton * tempButton ;
+
+    //Save before loop since it may change as we go through and delete items
+
+    currentLength = buttonList.length();
+
+    for ( i = 0 ; i < currentLength ; i++ ) {
+
+        tempButton = this->buttonList.first() ;
+
+        this->buttonLayout->removeWidget( tempButton ) ;
+
+        this->buttonList.removeFirst() ;
+
+        if ( tempButton == this->executeButton ) {
+
+            delete this->executeButton;
+
+            this->executeButton = NULL;
+
+        }
+
+        //TODO Make sure this is called at some point: delete tempButton ; for the specific button
+
+    }
+
+}
+
+void MissionPlanningWindow::dumpComboBoxes() {
+
+    int i , currentLength ;
+
+    QComboBox * tempComboBox ;
+
+    //Save before loop since it may change as we go through and delete items
+
+    currentLength = comboBoxList.length();
+
+    qDebug() << "Current Length is " << currentLength ;
+
+    for ( i = 0 ; i < currentLength ; i++ ) {
+
+        tempComboBox = this->comboBoxList.first() ;
+
+        this->layout->removeWidget( tempComboBox ) ;
+
+        this->comboBoxList.removeFirst() ;
+
+        //TODO Potentially get rid of this once we make use of uav and mission plan combo box
+
+        if ( tempComboBox == this->uavComboBox ) {
+
+            delete this->uavComboBox;
+
+            this->uavComboBox = NULL;
+
+        }
+
+        else if ( tempComboBox == this->missionPlanComboBox ) {
+
+            delete this->missionPlanComboBox;
+
+            this->missionPlanComboBox = NULL;
+
+        }
+
+        //TODO Make sure this is called at some point: delete tempComboBox ; for the specific ComboBox
+
+    }
+
+}
+
+void MissionPlanningWindow::changeTitle( QString newWindowTitle ) {
+
+    this->setWindowTitle( newWindowTitle );
 
 }
 
