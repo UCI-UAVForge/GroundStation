@@ -101,13 +101,6 @@ function clearMap() {
 function addLatLngCoords(lat, lng) {
 }
 
-function onExecute() {
-    map.removeControl(drawControl);
-    allPoints = selectedLayer.getLatLngs();
-    map.fitBounds(selectedLayer.getBounds(), {padding:[20,20]});
-    var marker = L.Marker.movingMarker(allPoints, 20000).addTo(map);
-    setTimeout(function(){marker.start()},1000);
-}
 /////execution
 var flightPath = [];
 //Actual flight path of the UAV, Constructed from data Recieved from UAV/test machine
@@ -122,7 +115,7 @@ function plotPointOnMap(lat,lng,mapID){
 
 function plotPolyline() {
     flightPath_actual = L.polyline(flightPath).addTo(map);
-    map.removeControl("drawControl");
+    map.removeControl(drawControl);
     map.fitBounds(flightPath_actual.getBounds(), {padding:[50, 50]});
 }
 
