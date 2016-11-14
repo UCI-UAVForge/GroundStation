@@ -1,5 +1,4 @@
 #include "qttabtest.h"
-#include "ui_qttabtest.h"
 
 //TODO Somebody please fix all the memory leaks in this project. We want a clean program close.
 //This doesn't seem to work lol
@@ -31,6 +30,7 @@ QtTabTest::~QtTabTest() {
 /**
  * @brief Ready to begin map execution. Replace the MapPlanning widget with a new MapExecution widget.
  */
+//Old function. No longer used.
 void QtTabTest::startMapExecution() {
 
     /* PRIVATE SLOT */
@@ -43,6 +43,7 @@ void QtTabTest::startMapExecution() {
 
 }
 
+//Old function. No longer used.
 void QtTabTest::startMapRecap() {
 
     //Instantiate MapRecapUIWidget
@@ -69,6 +70,7 @@ MapExecution * QtTabTest::getMapExecutionUIWidget() const {
 
 }
 
+//Old function. No longer used. - Roman Parise
 void QtTabTest::setMapExecutionUIWidget(MapExecution *value) {
 
     MapExecutionUIWidget = value;

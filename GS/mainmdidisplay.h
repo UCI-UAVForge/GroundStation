@@ -6,8 +6,14 @@
 #include "missionplanningwindow.h"
 #include "ui_mainmdidisplay.h"
 
+#include <assert.h>
+
 //FOR NOW...
 #include "mapplanning.h"
+
+#include "maprecap.h"
+
+//TODO Getters and setters. C'mon...
 
 namespace Ui {
 
@@ -25,17 +31,38 @@ public:
 
     void addWindow( QWidget * );
 
+    void addWindow( QWidget * , QString );
+
     ~MainMDIDisplay();
 
     QtTabTest * getQttWidget() const;
 
     void setQttWidget( QtTabTest * );
 
+    void clearMapExecution();
+
+    void clearMapRecap();
+
+    //TODO Make this a switch to execution function
+    void changePlanningToExecutionWindow();
+
+    void switchToPlanningWindow();
+
+    void switchToRecapWindow();
+
 private slots:
 
     void destroy();
 
     void beginMapExecution();
+
+    void clickedFinishButton_MainDisplay();
+
+    void clickedCancelButton_MainDisplay();
+
+    void clickedBackToPlanningButton_MainDisplay();
+
+    void clickedBackButton_MainDisplay();
 
 private:
 
@@ -54,9 +81,21 @@ private:
 
     MapExecution * tempMapExecutionUIWidget;
 
+    MapRecap * tempMapRecapUIWidget ;
+
     QWidget * mapExecutionStatusUIWidget;
 
     QVBoxLayout * MapExecutionStatusVBoxLayout;
+
+    /* Buttons */
+
+    //TODO Put all the buttons/other UI elements for the GUI here to organize everything in one spot
+
+    QPushButton * backToPlanningButton ;
+
+    /* Tabs */
+
+    QWidget * MapRecapUI_TableTab , * MapRecapUI_GraphTab ;
 
 };
 
