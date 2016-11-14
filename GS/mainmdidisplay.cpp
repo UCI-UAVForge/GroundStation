@@ -92,7 +92,7 @@ void MainMDIDisplay::beginMapExecution() {
 
     this->mapExecutionStatusUIWidget = new QWidget();
 
-    this->tempMapExecutionUIWidget = new MapExecution( this->tempMapPlanningUIWidget->getTableAsFlightPath() );
+    this->tempMapExecutionUIWidget = new MapExecution( this->tempMapPlanningUIWidget->getTableAsFlightPath());
 
     this->qttWidget->setMapExecutionUIWidget( this->tempMapExecutionUIWidget );
 

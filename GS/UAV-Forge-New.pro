@@ -107,4 +107,5 @@ OTHER_FILES +=
 RESOURCES += \
     Resources.qrc
 
-DISTFILES +=
+DISTFILES += \
+    res/js/newthing

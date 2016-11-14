@@ -1,111 +1,54 @@
 //JavaScript code edited Jordan for UCI UAV Forge. Feb 18th 2015.
 //Additional edits by Nathan. Feb 21st 2015.
+var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        osm = L.tileLayer(osmUrl, {maxZoom: 20, attribution: osmAttrib}),
+        map = new L.Map('map', {center: new L.LatLng(33.6454,-117.8426), zoom: 13});
 
-var uci=new google.maps.LatLng(33.6454,-117.8426);
-var map;
-//Path of the planned mission that wil be sent to the UAV
-var flightPath;
+var drawnItems = new L.FeatureGroup().addTo(map);
+
+osm.addTo(map);
+
+var flightPath = [];
 //Actual flight path of the UAV, Constructed from data Recieved from UAV/test machine
 var flightPath_actual;
 
-var marker;
-
-//var clickable = false;
-
-function addLatLng(myLocation) {
-    //Adds a new point to the flightpath by pushing the myLocation tuple to the list.
-    flightPath.getPath().push(myLocation);
-}
-
-//Adds a point to the actual flight path of the UAV to track differences from planned route
-// -Nbrannon
-function add_actual_loc(myLocation){
-    flightPath_actual.getPath().push(myLocation);
-}
-
-function addActualPath(lat, lng){
-    var location = new google.maps.LatLng(lat,lng);
-    add_actual_loc(location);
-    moveIcon(location);
-}
-
-function addLatLngCoords(lat,lng) {
-    //Used on the c++ side to add a new point to the map.
-    var location = new google.maps.LatLng(lat,lng);
-    addLatLng(location);
-}
+var i = 0;
 
 function plotPointOnMap(lat,lng,mapID){
-    var location = new google.maps.LatLng(lat,lng);
-    if(mapID == 0){
-        flightPath.getPath().push(location);
-    } else if (mapID == 1){
-        flightPath_actual.getPath().push(location);
-        moveIcon(location);
-    }
+    flightPath.push([lat, lng]);
+    document.getElementById("ok").innerHTML = flightPath.toString();
 }
+
+function plotPolyline() {
+    flightPath_actual = L.polyline(flightPath).addTo(map);
+    map.fitBounds(flightPath_actual.getBounds(), {padding:[50, 50]});
+}
+
+function startUAV() {
+    var marker = L.Marker.movingMarker(flightPath, 20000).addTo(map);
+    marker.start();
+}
+
+var readyStateCheckInterval = setInterval(function() {
+    if (document.readyState === "complete") {
+        clearInterval(readyStateCheckInterval);
+        cbridge.addNewMap();
+    }
+}, 10);
+
 
 function clearMap() {
     //Called from the c++ side to refresh the map.
     //modified by Arash on 2/23/15: it will now clear the map without
     //changing the zoom level or center of the map
     //modified by Jordan 5/22/15: no longer requires a reinitialize
-    flightPath.getPath().clear();
-    flightPath_actual.getPath().clear();
 }
 
-function getMapSettings(){
-    var center = map.getCenter();
-    var zoom = map.getZoom();
-    return (center.lat(),center.lng(),zoom);
-}
 
-function setMapSettings(lat,lng,zoom){
-    map.setCenter(new google.maps.LatLng(lat,lng));
-    map.setZoom(zoom);
-}
 
-function moveIcon(myLocation){
-    //used to move the UAV Icon to the location myLocation
-    //Jordan Dickson May 8th, 2015
-    marker.setPosition(myLocation);
-}
 
-function initialize() {
-    //Setup function that creates the initial map state.
-    var mapCanvas = document.getElementById('map_canvas');
-    var mapOptions = {
-        center: uci,
-        zoom: 12,
-        mapTypeId: google.maps.MapTypeId.SATELLITE
-    };
-    map = new google.maps.Map(mapCanvas, mapOptions);
 
-    //var startingPath=[uci];
-    flightPath = new google.maps.Polyline({
-                                              //path:startingPath,
-                                              strokeColor:"#0000FF",
-                                              strokeOpacity:0.8,
-                                              strokeWeight:2
-                                          });
-    flightPath_actual = new google.maps.Polyline({
-                                                     //path:startingPath
-                                                     strokeColor: "#FF0000",
-                                                     strokeOpacity:0.8,
-                                                     strokeWeight:2
-                                                 });
 
-    flightPath.setMap(map);
-    flightPath_actual.setMap(map);
-    marker = new google.maps.Marker({
-                                        position: flightPath.getPath().getAt(0),
-                                        map: map,
-                                        icon:{
-                                            url: "qrc:/res/Quad.png",
-                                            anchor: new google.maps.Point(20,20)
-                                        }
-                                    });
-    cbridge.addNewMap();
-}
 
-google.maps.event.addDomListener(window, 'load', initialize);
+

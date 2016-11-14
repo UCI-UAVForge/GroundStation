@@ -35,7 +35,7 @@ map.on('click');
 
 
 var allPoints,
-    lastLayer;
+    selectedLayer;
 
 //Changes color of line selected to red
 function selectColor(layer) {
@@ -58,7 +58,7 @@ function addClickListener(layer) {
         allPoints = layer.getLatLngs();
         updateTable(layer);
         selectColor(layer);
-        lastLayer = layer;
+        selectedLayer = layer;
         var startPopup = L.popup()
             .setLatLng(allPoints[0])
             .setContent("Start")
@@ -70,26 +70,22 @@ function addClickListener(layer) {
 map.on('draw:created', function(event) {
     var layer = event.layer;
     allPoints = layer.getLatLngs();
-    var newpopup = L.popup({ closeOnClick: false }).setContent("Start");
-    var marker = L.marker(allPoints[0], {
-          draggable: true,
-    }).addTo(map);
     selectColor(layer);
-    lastLayer = layer;
+    selectedLayer = layer;
     drawnItems.addLayer(layer);
     addClickListener(layer);
     updateTable(layer);
 });
 
 map.on('draw:editstop', function(event){
-    updateTable(lastLayer);
-    selectColor(lastLayer);
+    updateTable(selectedLayer);
+    selectColor(selectedLayer);
 });
 
 map.on('draw:deleted', function(event){
     var layers = event.layers;
     layers.eachLayer(function(layer) {
-        if (layer === lastLayer) {
+        if (layer === selectedLayer) {
             cbridge.clearTable();
         }
     });
@@ -104,3 +100,43 @@ function clearMap() {
 
 function addLatLngCoords(lat, lng) {
 }
+
+function onExecute() {
+    map.removeControl(drawControl);
+    allPoints = selectedLayer.getLatLngs();
+    map.fitBounds(selectedLayer.getBounds(), {padding:[20,20]});
+    var marker = L.Marker.movingMarker(allPoints, 20000).addTo(map);
+    setTimeout(function(){marker.start()},1000);
+}
+/////execution
+var flightPath = [];
+//Actual flight path of the UAV, Constructed from data Recieved from UAV/test machine
+var flightPath_actual;
+
+var i = 0;
+
+function plotPointOnMap(lat,lng,mapID){
+    flightPath.push([lat, lng]);
+    document.getElementById("ok").innerHTML = flightPath.toString();
+}
+
+function plotPolyline() {
+    flightPath_actual = L.polyline(flightPath).addTo(map);
+    map.removeControl("drawControl");
+    map.fitBounds(flightPath_actual.getBounds(), {padding:[50, 50]});
+}
+
+function startUAV() {
+    var marker = L.Marker.movingMarker(flightPath, 20000).addTo(map);
+    marker.start();
+}
+
+var readyStateCheckInterval = setInterval(function() {
+    if (document.readyState === "complete") {
+        clearInterval(readyStateCheckInterval);
+        cbridge.addNewMap();
+    }
+}, 10);
+
+
+

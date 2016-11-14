@@ -47,10 +47,11 @@ void MapPlanning::on_executeButton_clicked() {
 
     /* Commented out for QtTabTest.cpp
      */
-    MapExecution* mapExecution = new MapExecution(getTableAsFlightPath());
+
+    MapExecution* mapExecution = new MapExecution(getTableAsFlightPath(), ui->webView);
     this->close();
     mapExecution->showFullScreen();
-
+//    ui->webView->page()->mainFrame()->evaluateJavaScript("onExecute()");
 
 
 //    ConnectionDialog * connectionDialog = new ConnectionDialog();

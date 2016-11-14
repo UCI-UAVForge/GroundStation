@@ -69,7 +69,6 @@ private slots:
     void on_cancelButton_clicked();
     void on_stopButton_clicked();
     void on_backButton_clicked();
-
     void addClickListener();
 
 private:
