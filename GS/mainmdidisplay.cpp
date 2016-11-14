@@ -156,14 +156,14 @@ void MainMDIDisplay::beginMapExecution() {
 
     }
 
-    this->tempMapExecutionUIWidget = new MapExecution( this->tempMapPlanningUIWidget->getTableAsFlightPath() );
-
+    FlightPath* fp = this->tempMapPlanningUIWidget->getTableAsFlightPath();
+    this->tempMapExecutionUIWidget = new MapExecution(fp);
     //this->qttWidget->setMapExecutionUIWidget( this->tempMapExecutionUIWidget );
 
     qDebug() << "URL BEFORE: " << this->MapPlanningMapUIWidget->url();
-
-    this->MapPlanningMapUIWidget = this->tempMapExecutionUIWidget->ui->webView ;
-
+    this->MapPlanningMapUIWidget->setUrl(QUrl("qrc:/res/html/mapsExecution.html"));
+    this->tempMapExecutionUIWidget->ui->webView = this->MapPlanningMapUIWidget;
+    this->tempMapExecutionUIWidget->addNewMap();
     qDebug() << "URL AFTER: " << this->MapPlanningMapUIWidget->url();
 
     this->MapExecutionStatusVBoxLayout->addWidget( this->tempMapExecutionUIWidget->ui->StatusIndicator );
