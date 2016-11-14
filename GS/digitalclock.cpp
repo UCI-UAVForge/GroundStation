@@ -18,8 +18,17 @@ DigitalClock::DigitalClock(QWidget *parent)
 
 DigitalClock::~DigitalClock()
 {
-    delete StatusTimer;
-    delete TimeTimer;
+
+    /* Roman Parise - I know that nobody will ever read this comment, but please be aware
+     * that the deleteLater method is the best ever. I think the way that it works is it
+     * waits until the object is done emitting signals and being used and stuff like that and
+     * then deletes it. If you just do "delete StatusTimer" the whole universe implodes.
+     * Sorry. I needed to tell somebody this :) */
+
+    StatusTimer->deleteLater();
+
+    TimeTimer->deleteLater();
+
 }
 
 /**

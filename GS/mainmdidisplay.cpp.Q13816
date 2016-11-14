@@ -329,6 +329,54 @@ void MainMDIDisplay::clearMapRecap() {
 //TODO Add error messages that pop up under else
 void MainMDIDisplay::clearMapExecution() {
 
+    /*
+
+    this->MapExecutionStatusVBoxLayout->addWidget( this->tempMapExecutionUIWidget->ui->StatusIndicator );
+
+    this->MapExecutionStatusVBoxLayout->addWidget( this->tempMapExecutionUIWidget->ui->StatusConsole );
+
+    this->MapExecutionStatusVBoxLayout->addWidget( this->tempMapExecutionUIWidget->ui->clock );
+
+    */
+
+    if ( this->tempMapExecutionUIWidget->ui->StatusIndicator != NULL ) {
+
+        delete this->tempMapExecutionUIWidget->ui->StatusIndicator ;
+
+        this->tempMapExecutionUIWidget->ui->StatusIndicator = NULL ;
+
+    }
+
+    else {
+
+        /* Do nothing. */
+
+    }
+
+    if ( this->qttWidget->ui->tabWidget->tabText( 1 ) == QString( "Network Status (Execution)" ) ) {
+
+        this->qttWidget->ui->tabWidget->removeTab( 1 );
+
+    }
+
+    else {
+
+        /* Do nothing */
+
+    }
+
+    if ( this->qttWidget->ui->tabWidget->tabText( 1 ) == QString( "Table (Execution)" ) ) {
+
+        this->qttWidget->ui->tabWidget->removeTab( 1 );
+
+    }
+
+    else {
+
+        /* Do nothing */
+
+    }
+
     if ( this->tempMapExecutionUIWidget->ui->cancelButton != NULL ) {
 
         this->tempMapExecutionUIWidget->ui->cancelButton->hide() ;
@@ -356,58 +404,6 @@ void MainMDIDisplay::clearMapExecution() {
     if ( this->tempMapExecutionUIWidget->ui->backButton != NULL ) {
 
         this->tempMapExecutionUIWidget->ui->backButton->hide() ;
-
-    }
-
-    else {
-
-        /* Do nothing */
-
-    }
-
-    if ( this->tempMapExecutionUIWidget->conTime != NULL ) {
-
-        this->tempMapExecutionUIWidget->conTime->deleteLater() ;
-
-        this->tempMapExecutionUIWidget->conTime = NULL ;
-
-    }
-
-    else {
-
-        /* Do nothing. */
-
-    }
-
-    if ( this->tempMapExecutionUIWidget->ui != NULL ) {
-
-        delete this->tempMapExecutionUIWidget->ui ;
-
-        this->tempMapExecutionUIWidget = NULL ;
-
-    }
-
-    else {
-
-        /* Do nothing. */
-
-    }
-
-    if ( this->qttWidget->ui->tabWidget->tabText( 1 ) == QString( "Network Status (Execution)" ) ) {
-
-        this->qttWidget->ui->tabWidget->removeTab( 1 );
-
-    }
-
-    else {
-
-        /* Do nothing */
-
-    }
-
-    if ( this->qttWidget->ui->tabWidget->tabText( 1 ) == QString( "Table (Execution)" ) ) {
-
-        this->qttWidget->ui->tabWidget->removeTab( 1 );
 
     }
 
