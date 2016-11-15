@@ -20,10 +20,8 @@ MapRecap::MapRecap(QWidget *parent):QDialog(parent), ui(new Ui::MapRecap) {
 
 }
 
-MapRecap::MapRecap(Mission *mission, QWidget *parent):QDialog(parent), ui(new Ui::MapRecap) {
+MapRecap::MapRecap(Mission *mission, QWidget *parent):QDialog(parent), ui(new Ui::MapRecap), myMission(*mission) {
     ui->setupUi(this);
-
-    myMission = Mission(*mission);
 
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
     ui->webView->setUrl(QUrl("qrc:/res/html/mapsExecution.html"));

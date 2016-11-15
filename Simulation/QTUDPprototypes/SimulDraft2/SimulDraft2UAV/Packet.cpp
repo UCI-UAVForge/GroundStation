@@ -32,7 +32,7 @@ static Protocol::TelemetryPacket telem;
 
 Protocol::Packet::Packet(Protocol::PacketType t)
 {
-    //@TODO: Need to create timestamp from creation of program or messaage box
+    /// \todo Need to create timestamp from creation of program or messaage box
     //this->timestamp = millis();
 	this->type = t;
 }
