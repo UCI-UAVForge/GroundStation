@@ -19,6 +19,8 @@
 #include "maprecap.h"
 #include "connectiondialog.h"
 
+#include "ui_qttabtest.h"
+
 namespace Ui {
 
     class QtTabTest;

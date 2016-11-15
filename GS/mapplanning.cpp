@@ -9,7 +9,7 @@ MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlann
  */
     //connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
+    ui->webView->setUrl(QUrl("qrc:/res/html/mapsPlanning.html"));
 
     model = new TableModel();
     ui->tableView->setModel(model);
@@ -22,6 +22,10 @@ MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlann
     connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()), Qt::UniqueConnection);
     connect(ui->clearTableButton, SIGNAL(clicked()), this, SLOT(on_clearTableButton_clicked()), Qt::UniqueConnection);
     connect(ui->executeButton, SIGNAL(clicked()), this, SLOT(on_executeButton_clicked()), Qt::UniqueConnection);
+
+    //Initialized to NULL to prevent wasted space since the original GUI does not use these. - Roman Parise
+    loadMissionButton = saveMissionButton = NULL ;
+
 }
 
 MapPlanning::~MapPlanning() {
@@ -43,16 +47,12 @@ void MapPlanning::addClickListener() {
 // redirect to mission execution window
 void MapPlanning::on_executeButton_clicked() {
 
-    //emit timeToStartMapExecution();
-
-    /* Commented out for QtTabTest.cpp
-     */
-
-    MapExecution* mapExecution = new MapExecution(getTableAsFlightPath(), ui->webView);
+    emit timeToStartMapExecution();
+    #ifdef OLD_GUI
+    MapExecution* mapExecution = new MapExecution(getTableAsFlightPath());
     this->close();
     mapExecution->showFullScreen();
-//    ui->webView->page()->mainFrame()->evaluateJavaScript("onExecute()");
-
+    #endif
 
 //    ConnectionDialog * connectionDialog = new ConnectionDialog();
 //    connectionDialog -> show();
@@ -172,4 +172,88 @@ void MapPlanning::clearTable() {
     delete model;
     model = new TableModel();
     ui->tableView->setModel(model);
+}
+//Functions for the loadMission and saveMission buttons. These are buttons that have been added for
+//the new GUI that supports loading and saving missions.
+
+//- Roman Parise
+
+/**
+ * @brief Get a pointer to the QPushButton object, loadMissionButton. If it doesn't exist (i.e. NULL pointer),
+ * then make it.
+ */
+QPushButton * MapPlanning::getLoadMissionButton() {
+
+    if ( this->loadMissionButton == NULL ) {
+
+        this->loadMissionButton = new QPushButton( QString( "Load Mission" ) );
+
+        //Have the loadMissionButton take on the default button style sheet
+
+        //TODO Implement a default QPushButton stylesheet in this class and force all buttons
+        //in this UI to conform to it. Embrace conformity...
+
+        this->loadMissionButton->setStyleSheet( this->ui->executeButton->styleSheet() );
+
+    }
+
+    else {
+
+        // Do nothing.
+
+    }
+
+    return this->loadMissionButton ;
+
+}
+
+QPushButton * MapPlanning::getSaveMissionButton() {
+
+    if ( this->saveMissionButton == NULL ) {
+
+        this->saveMissionButton = new QPushButton( QString( "Save Mission" ) );
+
+        this->saveMissionButton->setStyleSheet( this->ui->executeButton->styleSheet() );
+
+    }
+
+    else {
+
+        //Do nothing.
+
+    }
+
+    return this->saveMissionButton ;
+
+}
+
+void MapPlanning::setLoadMissionButton( QPushButton * loadMissionButton ) {
+
+    if ( loadMissionButton != NULL ) {
+
+        this->loadMissionButton = loadMissionButton ;
+
+    }
+
+    else {
+
+        //Do nothing.
+
+    }
+
+}
+
+void MapPlanning::setSaveMissionButton( QPushButton * saveMissionButton ) {
+
+    if ( saveMissionButton != NULL ) {
+
+        this->saveMissionButton = saveMissionButton ;
+
+    }
+
+    else {
+
+        //Do nothing.
+
+    }
 }

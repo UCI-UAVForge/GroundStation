@@ -10,6 +10,7 @@ QT       += core \
             multimediawidgets \
             network
 QT       += svg
+QT       += sql
 
 QT       += webengine
 QT += webenginewidgets
@@ -56,7 +57,8 @@ SOURCES += main.cpp\
     maprecap.cpp \
     qttabtest.cpp \
     mainmdidisplay.cpp \
-    missionplanningwindow.cpp
+    missionplanningwindow.cpp \
+    dbmanager.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
@@ -88,7 +90,8 @@ HEADERS  += mainwindow.h \
     maprecap.h \
     qttabtest.h \
     mainmdidisplay.h \
-    missionplanningwindow.h
+    missionplanningwindow.h \
+    dbmanager.h
 
 FORMS    += mainwindow.ui \
     options.ui \
@@ -104,8 +107,9 @@ FORMS    += mainwindow.ui \
 
 OTHER_FILES +=
 
+#Uncomment this line, clean the build, run qmake, and then rebuild to use the old GUI.
+#DEFINES += OLD_GUI
+
 RESOURCES += \
     Resources.qrc
 
-DISTFILES += \
-    res/js/newthing

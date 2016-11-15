@@ -41,6 +41,14 @@ public:
     explicit MapPlanning(QWidget *parent = 0);
     ~MapPlanning();
 
+    QPushButton * getLoadMissionButton() ;
+
+    QPushButton * getSaveMissionButton() ;
+
+    void setLoadMissionButton( QPushButton * ) ;
+
+    void setSaveMissionButton( QPushButton * ) ;
+
 public slots:
     void addPointToTable(double lat, double lng);
     //addPointToTable - used to add an entry with latitude lat and longitude lng to the table.
@@ -67,6 +75,8 @@ private:
     TableModel *model;
     PopWindowMP *popup;
     //QList<QList<QString> > tableData;
+
+    QPushButton * loadMissionButton , * saveMissionButton ;
 
     Ui::MapPlanning *ui;
 

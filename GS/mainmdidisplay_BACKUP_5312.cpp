@@ -136,7 +136,11 @@ void MainMDIDisplay::beginMapExecution() {
 
         this->MapExecutionStatusVBoxLayout = new QVBoxLayout();
 
+<<<<<<< HEAD
+    this->tempMapExecutionUIWidget = new MapExecution( this->tempMapPlanningUIWidget->getTableAsFlightPath());
+=======
     }
+>>>>>>> upstream/master
 
     else {
 

@@ -217,6 +217,8 @@ void MapExecution::updateStatusIndicator()
     }
 }
 
+//TODO Make this function a little safer. Do we really wanna make a new object every damn time?
+//- Roman Parise
 MapRecap * MapExecution::getMapRecap() {
 
     return new MapRecap(&myMission);
