@@ -161,8 +161,6 @@ void MainWindow::showMissionExecution(){
 }
 
 void MainWindow::showMissionRecap() {
-
-
     //MissionRecap *missionRecap = new MissionRecap();
     MapRecap *missionRecap = new MapRecap();
     QObject::connect(missionRecap, SIGNAL(finished(int)), this, SLOT(checkFinishStatus(int)), Qt::UniqueConnection);
