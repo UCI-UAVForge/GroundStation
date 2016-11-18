@@ -160,11 +160,11 @@ void MainMDIDisplay::beginMapExecution() {
     this->tempMapExecutionUIWidget = new MapExecution(fp);
     //this->qttWidget->setMapExecutionUIWidget( this->tempMapExecutionUIWidget );
 
-    qDebug() << "URL BEFORE: " << this->MapPlanningMapUIWidget->url();
-    this->MapPlanningMapUIWidget->setUrl(QUrl("qrc:/res/html/mapsExecution.html"));
+ //   qDebug() << "URL BEFORE: " << this->MapPlanningMapUIWidget->url();
+ //   this->MapPlanningMapUIWidget->setUrl(QUrl("qrc:/res/html/mapsPlanning.html"));
     this->tempMapExecutionUIWidget->ui->webView = this->MapPlanningMapUIWidget;
     this->tempMapExecutionUIWidget->addNewMap();
-    qDebug() << "URL AFTER: " << this->MapPlanningMapUIWidget->url();
+ //   qDebug() << "URL AFTER: " << this->MapPlanningMapUIWidget->url();
 
     this->MapExecutionStatusVBoxLayout->addWidget( this->tempMapExecutionUIWidget->ui->StatusIndicator );
 
@@ -270,7 +270,6 @@ void MainMDIDisplay::switchToRecapWindow() {
 void MainMDIDisplay::clickedBackToPlanningButton_MainDisplay() {
 
     this->clearMapRecap();
-
     this->switchToPlanningWindow();
 
     /* this->clearMapRecap(); */

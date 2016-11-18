@@ -66,8 +66,7 @@ function addClickListener(layer) {
     });
 }
 
-
-map.on('draw:created', function(event) {
+function onDraw(event) {
     var layer = event.layer;
     allPoints = layer.getLatLngs();
     selectColor(layer);
@@ -75,7 +74,9 @@ map.on('draw:created', function(event) {
     drawnItems.addLayer(layer);
     addClickListener(layer);
     updateTable(layer);
-});
+}
+
+map.on('draw:created', onDraw);
 
 map.on('draw:editstop', function(event){
     updateTable(selectedLayer);
@@ -107,6 +108,7 @@ var flightPath = [];
 var flightPath_actual;
 
 var i = 0;
+var marker;
 
 function plotPointOnMap(lat,lng,mapID){
     flightPath.push([lat, lng]);
@@ -114,22 +116,30 @@ function plotPointOnMap(lat,lng,mapID){
 }
 
 function plotPolyline() {
-    flightPath_actual = L.polyline(flightPath).addTo(map);
+    flightPath_actual = L.polyline(flightPath);
+    drawnItems.addLayer(flightPath_actual).addTo(map);
     map.removeControl(drawControl);
     map.fitBounds(flightPath_actual.getBounds(), {padding:[50, 50]});
 }
 
-function startUAV() {
-    var marker = L.Marker.movingMarker(flightPath, 20000).addTo(map);
+function startFlight() {
+    marker = L.Marker.movingMarker(flightPath, 20000).addTo(map);
+    drawnItems.addLayer(marker);
     marker.start();
 }
 
-var readyStateCheckInterval = setInterval(function() {
-    if (document.readyState === "complete") {
-        clearInterval(readyStateCheckInterval);
-        cbridge.addNewMap();
-    }
-}, 10);
+function cancelFlight() {
+    marker.stop();
+    drawnItems.removeLayer(marker);
+    map.addControl(drawControl);
 
+}
 
+//In case a reload is necessary
+//var readyStateCheckInterval = setInterval(function() {
+//    if (document.readyState === "complete") {
+//        clearInterval(readyStateCheckInterval);
+//        cbridge.addNewMap();
+//    }
+//}, 10);
 

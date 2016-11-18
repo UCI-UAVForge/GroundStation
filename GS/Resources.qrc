@@ -1,6 +1,5 @@
 <RCC>
     <qresource prefix="/">
-        <file>res/html/mapsExecution.html</file>
         <file>res/html/mapsPlanning.html</file>
         <file>res/html/missionRecap.html</file>
         <file>res/buttons/Mission_Execution_Button_Type_1.png</file>
@@ -25,7 +24,6 @@
         <file>res/UAV_FORGE_LOGO_2.png</file>
         <file>res/images/UAV Forge Logo 2015.svg</file>
         <file>res/html/mapsRecap.html</file>
-        <file>res/js/mapsExecution.js</file>
         <file>res/js/mapsPlanning.js</file>
         <file>res/js/movingMarker.js</file>
     </qresource>

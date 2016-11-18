@@ -109,6 +109,7 @@ void MapExecution::on_returnHomeButton_clicked() {
 // cancel button
 // redirect to mission planning
 void MapExecution::on_cancelButton_clicked() {
+    ui->webView->page()->mainFrame()->evaluateJavaScript("cancelFlight()");
     this->done(1);
 }
 
@@ -124,7 +125,7 @@ void MapExecution::on_backButton_clicked() {
     if (!missionStarted){
         missionStarted = true;
         sendFlightPlan();
-        ui->webView->page()->mainFrame()->evaluateJavaScript("startUAV()");
+        ui->webView->page()->mainFrame()->evaluateJavaScript("startFlight()");
         myServer.startServer();
     }
 }
