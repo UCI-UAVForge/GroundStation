@@ -3,7 +3,13 @@
 
 MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainMDIDisplay),
 
-    MapExecutionStatusVBoxLayout(NULL) , mapExecutionStatusUIWidget(NULL) {
+    qttWidget(NULL) , MapSubWindow(NULL) , missionPlanningWindowUIWidget(NULL),
+
+    tempMapExecutionUIWidget(NULL) , tempMapRecapUIWidget(NULL), backToPlanningButton(NULL),
+
+    MapRecapUI_GraphTab(NULL) , MapRecapUI_TableTab(NULL) , currentMenu( Startup ) ,
+
+    MapExecutionStatusVBoxLayout(NULL) , mapExecutionStatusUIWidget(NULL) , tempMapPlanningUIWidget(NULL) {
 
     ui->setupUi(this);
 
@@ -13,27 +19,17 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new U
 
     this->addWindow( qttWidget /* , QString( "Data" ) */ );
 
-    this->tempMapPlanningUIWidget = new MapPlanning();
-
     this->missionPlanningWindowUIWidget = new MissionPlanningWindow();
 
-    //Add the map planning table to the tab widget window
+    //MapSubWindow will start off as window with an empty QWidget
 
-    qttWidget->setMapPlanningUIWidget( this->tempMapPlanningUIWidget );
+    this->MapSubWindow = this->addWindow( &QWidget() );
 
-    qttWidget->addNewTab( this->tempMapPlanningUIWidget->ui->tableView , QString( "Table (Mission Planning)" ) );
+    this->switchToPlanningWindow() ;
 
-    //Add the three buttons from MapPlanning to the Mission Planning window
+    //TODO Rename MissionPlanningWindow class to MissionControlWindow class
 
-    connect ( this->tempMapPlanningUIWidget->ui->backButton , SIGNAL( clicked() ) , this , SLOT( destroy() ) ) ;
-
-    connect ( this->tempMapPlanningUIWidget->ui->executeButton , SIGNAL( clicked() ) , this , SLOT ( beginMapExecution() ) );
-
-    this->switchToPlanningWindow();
-
-    this->addWindow( this->MapPlanningMapUIWidget );
-
-    this->addWindow( this->missionPlanningWindowUIWidget );
+    this->MissionControlSubWindow = this->addWindow( this->missionPlanningWindowUIWidget );
 
 }
 
@@ -57,9 +53,53 @@ void MainMDIDisplay::switchToPlanningWindow() {
 
     this->missionPlanningWindowUIWidget->dumpButtons();
 
-    //Add the map in the background
+    if ( this->currentMenu == Recap || this->currentMenu == Startup ) {
 
-    this->MapPlanningMapUIWidget = this->tempMapPlanningUIWidget->ui->webView;
+        this->tempMapPlanningUIWidget = new MapPlanning();
+
+        //Add the map planning table to the tab widget window
+
+        //TODO Is the line below necessary anymore?
+
+        this->qttWidget->setMapPlanningUIWidget( this->tempMapPlanningUIWidget ) ;
+
+        this->qttWidget->addNewTab( this->tempMapPlanningUIWidget->ui->tableView , QString( "Table (Mission Planning)" ) );
+
+        // Remove the old Mission Planning table in favor of the new one if we just completed a mission.
+
+        // The mission planning table tab added above would have a tab index of 1 and not 0.
+
+        if ( ( this->currentMenu == Recap ) &&
+
+             ( this->qttWidget->ui->tabWidget->tabText( 0 ) == QString( "Table (Mission Planning)" ) ) ) {
+
+            qDebug() << "NEW MAP PLANNING!" ;
+
+            this->qttWidget->ui->tabWidget->removeTab( 0 ) ;
+
+        }
+
+        else {
+
+            /* Do nothing */
+
+        }
+
+        //Add the three buttons from MapPlanning to the Mission Planning window
+
+        connect ( this->tempMapPlanningUIWidget->ui->backButton , SIGNAL( clicked() ) , this , SLOT( destroy() ) ) ;
+
+        connect ( this->tempMapPlanningUIWidget->ui->executeButton , SIGNAL( clicked() ) , this , SLOT ( beginMapExecution() ) ) ;
+
+    }
+
+    else {
+
+        /* Do nothing. */
+
+    }
+
+    this->MapSubWindow->setWidget( this->tempMapPlanningUIWidget->ui->webView );
 
     //Add the buttons from MapPlanning to the Mission Planning window
 
@@ -83,6 +123,8 @@ void MainMDIDisplay::switchToPlanningWindow() {
 
     this->missionPlanningWindowUIWidget->addButton( this->tempMapPlanningUIWidget->getSaveMissionButton() );
 
+    this->currentMenu = Planning ;
+
 }
 
 QtTabTest * MainMDIDisplay::getQttWidget() const {
@@ -97,14 +139,18 @@ void MainMDIDisplay::setQttWidget( QtTabTest * value) {
 
 }
 
-void MainMDIDisplay::addWindow( QWidget * myNewWindowWidget ) {
+QMdiSubWindow * MainMDIDisplay::addWindow( QWidget * myNewWindowWidget ) {
 
     /* TODO Default window style should go here by making all of the windows conform to the same
      * stylesheet - Roman Parise */
 
     /* Second argument - turns off the 'X' in the subwindows */
 
-    ui->mdiArea->addSubWindow( myNewWindowWidget , Qt::CustomizeWindowHint | Qt::WindowMinMaxButtonsHint );
+    QMdiSubWindow * mdiSubWindowToReturn = NULL ;
+
+    mdiSubWindowToReturn = ui->mdiArea->addSubWindow( myNewWindowWidget , Qt::CustomizeWindowHint | Qt::WindowMinMaxButtonsHint );
+
+    return mdiSubWindowToReturn ;
 
 }
 
@@ -157,28 +203,76 @@ void MainMDIDisplay::beginMapExecution() {
     }
 
     FlightPath* fp = this->tempMapPlanningUIWidget->getTableAsFlightPath();
+
     this->tempMapExecutionUIWidget = new MapExecution(fp);
+
     //this->qttWidget->setMapExecutionUIWidget( this->tempMapExecutionUIWidget );
 
-    qDebug() << "URL BEFORE: " << this->MapPlanningMapUIWidget->url();
-    this->MapPlanningMapUIWidget->setUrl(QUrl("qrc:/res/html/mapsExecution.html"));
-    this->tempMapExecutionUIWidget->ui->webView = this->MapPlanningMapUIWidget;
-    this->tempMapExecutionUIWidget->addNewMap();
-    qDebug() << "URL AFTER: " << this->MapPlanningMapUIWidget->url();
+    /* 15 second timer. If the page is not loaded after 15 seconds, then just give up. */
 
-    this->MapExecutionStatusVBoxLayout->addWidget( this->tempMapExecutionUIWidget->ui->StatusIndicator );
+    QTime timeToStopWaiting = QTime::currentTime().addSecs( 15 ) ;
 
-    this->MapExecutionStatusVBoxLayout->addWidget( this->tempMapExecutionUIWidget->ui->StatusConsole );
+    bool urlLoadSuccessStatus = false ;
 
-    this->MapExecutionStatusVBoxLayout->addWidget( this->tempMapExecutionUIWidget->ui->clock );
+    qDebug() << "Map execution trying to load at: " << QTime::currentTime() ;
 
-    this->mapExecutionStatusUIWidget->setLayout( MapExecutionStatusVBoxLayout );
+    while ( QTime::currentTime() < timeToStopWaiting ) {
 
-    this->qttWidget->addNewTab( this->mapExecutionStatusUIWidget , QString( "Network Status (Execution)" ) );
+        if ( this->tempMapExecutionUIWidget->ui->webView->page()->mainFrame()->toHtml().contains( "</html>" ) ) {
 
-    this->qttWidget->addNewTab( this->tempMapExecutionUIWidget->ui->tableView , QString( "Table (Execution)" ) );
+            qDebug() << "Map execution load succeeded at time: " << QTime::currentTime() ;
 
-    this->changePlanningToExecutionWindow();
+            urlLoadSuccessStatus = true ;
+
+            break ;
+
+        }
+
+        else {
+
+            /* Do nothing. */
+
+        }
+
+    }
+
+    if ( urlLoadSuccessStatus == true ) {
+
+        //TODO Add error checking for if it isn't a webView object and therefore will have no url
+
+        //qDebug() << "URL BEFORE: " << this->MapSubWindow->widget()->url();
+
+        //this->MapPlanningMapUIWidget->setUrl(QUrl("qrc:/res/html/mapsExecution.html"));
+
+        this->MapSubWindow->setWidget( this->tempMapExecutionUIWidget->ui->webView ) ;
+
+        this->tempMapExecutionUIWidget->addNewMap();
+
+        //qDebug() << "URL AFTER: " << this->MapSubWindow->widget()->url();
+
+        this->MapExecutionStatusVBoxLayout->addWidget( this->tempMapExecutionUIWidget->ui->StatusIndicator );
+
+        this->MapExecutionStatusVBoxLayout->addWidget( this->tempMapExecutionUIWidget->ui->StatusConsole );
+
+        this->MapExecutionStatusVBoxLayout->addWidget( this->tempMapExecutionUIWidget->ui->clock );
+
+        this->mapExecutionStatusUIWidget->setLayout( MapExecutionStatusVBoxLayout );
+
+        this->qttWidget->addNewTab( this->mapExecutionStatusUIWidget , QString( "Network Status (Execution)" ) );
+
+        this->qttWidget->addNewTab( this->tempMapExecutionUIWidget->ui->tableView , QString( "Table (Execution)" ) );
+
+        this->changePlanningToExecutionWindow();
+
+    }
+
+    else {
+
+        /* TODO LOL PLEASE FIX THIS */
+
+        qDebug() << "Map execution load failed." ;
+
+    }
 
 }
 
@@ -227,6 +321,8 @@ void MainMDIDisplay::changePlanningToExecutionWindow() {
 
     connect( this->tempMapExecutionUIWidget->ui->finishButton, SIGNAL(clicked()), this, SLOT(clickedFinishButton_MainDisplay()) );
 
+    this->currentMenu = Execution ;
+
 }
 
 void MainMDIDisplay::destroy() {
@@ -241,13 +337,9 @@ void MainMDIDisplay::switchToRecapWindow() {
 
     this->tempMapRecapUIWidget = this->tempMapExecutionUIWidget->getMapRecap();
 
-    //TODO May not be necessary since the URL appears to be the same before and after
+    this->MapSubWindow->setWidget( this->tempMapRecapUIWidget->ui->webView );
 
-    qDebug() << "URL BEFORE: " << this->MapPlanningMapUIWidget->url() ;
-
-    this->MapPlanningMapUIWidget = this->tempMapRecapUIWidget->ui->webView ;
-
-    qDebug() << "URL AFTER: " << this->MapPlanningMapUIWidget->url() ;
+    //TODO Change to for loop and search. Make a function to search the tabs.
 
     this->MapRecapUI_TableTab = this->tempMapRecapUIWidget->getTab( 1 );
 
@@ -264,6 +356,8 @@ void MainMDIDisplay::switchToRecapWindow() {
     connect( this->backToPlanningButton , SIGNAL( clicked() ) , this , SLOT ( clickedBackToPlanningButton_MainDisplay() ) ) ;
 
     this->missionPlanningWindowUIWidget->changeTitle( QString( "Mission Recap" ) ) ;
+
+    this->currentMenu = Recap ;
 
 }
 
@@ -375,7 +469,21 @@ void MainMDIDisplay::clearMapExecution() {
 
     else {
 
-        /* Do nothing. */
+        // Do nothing.
+
+    }
+
+    if ( this->tempMapExecutionUIWidget->ui->StatusConsole != NULL ) {
+
+        this->tempMapExecutionUIWidget->ui->StatusConsole->deleteLater();
+
+        this->tempMapExecutionUIWidget->ui->StatusConsole = NULL ;
+
+    }
+
+    else {
+
+        //Do nothing.
 
     }
 
@@ -414,6 +522,22 @@ void MainMDIDisplay::clearMapExecution() {
     else {
 
         /* Do nothing */
+
+    }
+
+    //TODO If tempMapExecutionUIWidget is NULL, then wouldn't you get errors above. Maybe assert or check this at the beginning?
+
+    if ( this->tempMapExecutionUIWidget != NULL ) {
+
+        this->tempMapExecutionUIWidget->deleteLater();
+
+        this->tempMapExecutionUIWidget = NULL ;
+
+    }
+
+    else {
+
+        /* Do nothing. */
 
     }
 

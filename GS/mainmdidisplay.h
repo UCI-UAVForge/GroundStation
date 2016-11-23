@@ -15,6 +15,8 @@
 
 //TODO Getters and setters. C'mon...
 
+enum Menu { Startup , Planning , Execution , Recap } ;
+
 namespace Ui {
 
     class MainMDIDisplay;
@@ -29,7 +31,7 @@ public:
 
     explicit MainMDIDisplay(QWidget *parent = 0);
 
-    void addWindow( QWidget * );
+    QMdiSubWindow * addWindow( QWidget * );
 
     void addWindow( QWidget * , QString );
 
@@ -68,6 +70,8 @@ private:
 
     Ui::MainMDIDisplay *ui;
 
+    Menu currentMenu ;
+
     QtTabTest * qttWidget;
 
     /* Figure out a way so that we only have one MapPlanning object instead of a pointer to one
@@ -75,7 +79,7 @@ private:
 
     MapPlanning * tempMapPlanningUIWidget;
 
-    QWebView * MapPlanningMapUIWidget;
+    //QWebView * MapPlanningMapUIWidget;
 
     MissionPlanningWindow * missionPlanningWindowUIWidget;
 
@@ -96,6 +100,8 @@ private:
     /* Tabs */
 
     QWidget * MapRecapUI_TableTab , * MapRecapUI_GraphTab ;
+
+    QMdiSubWindow * MapSubWindow , * MissionControlSubWindow ;
 
 };
 
