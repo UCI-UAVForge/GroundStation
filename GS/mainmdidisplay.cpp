@@ -487,6 +487,34 @@ void MainMDIDisplay::clearMapExecution() {
 
     }
 
+    if ( this->tempMapExecutionUIWidget->ui->StatusIndicator != NULL ) {
+
+        this->tempMapExecutionUIWidget->ui->StatusIndicator->deleteLater();
+
+        this->tempMapExecutionUIWidget->ui->StatusIndicator = NULL ;
+
+    }
+
+    else {
+
+        //Do nothing.
+
+    }
+
+    if ( this->tempMapExecutionUIWidget->ui->clock != NULL ) {
+
+        this->tempMapExecutionUIWidget->ui->clock->deleteLater();
+
+        this->tempMapExecutionUIWidget->ui->clock = NULL ;
+
+    }
+
+    else {
+
+        //Do nothing.
+
+    }
+
     if ( this->tempMapExecutionUIWidget->ui != NULL ) {
 
         delete this->tempMapExecutionUIWidget->ui ;
