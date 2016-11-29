@@ -9,7 +9,9 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new U
 
     MapRecapUI_GraphTab(NULL) , MapRecapUI_TableTab(NULL) , currentMenu( Startup ) ,
 
-    MapExecutionStatusVBoxLayout(NULL) , mapExecutionStatusUIWidget(NULL) , tempMapPlanningUIWidget(NULL) {
+    MapExecutionStatusVBoxLayout(NULL) , mapExecutionStatusUIWidget(NULL) , tempMapPlanningUIWidget(NULL),
+
+    missionPlanningFlightPath( NULL ) , saveMissionButton( NULL ) , loadMissionButton( NULL ) {
 
     ui->setupUi(this);
 
@@ -30,6 +32,8 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new U
     //TODO Rename MissionPlanningWindow class to MissionControlWindow class
 
     this->MissionControlSubWindow = this->addWindow( this->missionPlanningWindowUIWidget );
+
+    connect( this->tempMapPlanningUIWidget , SIGNAL( tableUpdated() ) , this , SLOT( onMapUpdated() ) ) ;
 
 }
 
@@ -73,8 +77,6 @@ void MainMDIDisplay::switchToPlanningWindow() {
 
              ( this->qttWidget->ui->tabWidget->tabText( 0 ) == QString( "Table (Mission Planning)" ) ) ) {
 
-            qDebug() << "NEW MAP PLANNING!" ;
-
             this->qttWidget->ui->tabWidget->removeTab( 0 ) ;
 
         }
@@ -103,6 +105,9 @@ void MainMDIDisplay::switchToPlanningWindow() {
 
     //Add the buttons from MapPlanning to the Mission Planning window
 
+    //TODO Make a list of all widgets associated with Mission Planning and just write a function to
+    //go through the list and automatically do all of this.
+
     this->tempMapPlanningUIWidget->ui->backButton->show();
 
     this->tempMapPlanningUIWidget->ui->clearTableButton->show();
@@ -119,11 +124,25 @@ void MainMDIDisplay::switchToPlanningWindow() {
 
     this->missionPlanningWindowUIWidget->addButton( this->tempMapPlanningUIWidget->ui->executeButton );
 
-    this->missionPlanningWindowUIWidget->addButton( this->tempMapPlanningUIWidget->getLoadMissionButton() );
+    this->loadMissionButton = this->tempMapPlanningUIWidget->getLoadMissionButton() ;
 
-    this->missionPlanningWindowUIWidget->addButton( this->tempMapPlanningUIWidget->getSaveMissionButton() );
+    this->saveMissionButton = this->tempMapPlanningUIWidget->getSaveMissionButton() ;
+
+    this->saveMissionByNameLineEdit = this->tempMapPlanningUIWidget->getSaveMissionByNameLineEdit() ;
+
+    this->missionPlanningWindowUIWidget->addButton( this->loadMissionButton );
+
+    this->missionPlanningWindowUIWidget->addButton( this->saveMissionButton );
+
+    this->missionPlanningWindowUIWidget->addTextBox( this->saveMissionByNameLineEdit , QString( "Mission name: " ) );
+
+    connect( this->loadMissionButton , SIGNAL( clicked() ) , this , SLOT( clickedLoadMissionButton_MainDisplay() ) ) ;
+
+    connect( this->saveMissionButton , SIGNAL( clicked() ) , this , SLOT( clickedSaveMissionButton_MainDisplay() ) ) ;
 
     this->currentMenu = Planning ;
+
+    emit switchedToPlanning() ;
 
 }
 
@@ -202,9 +221,9 @@ void MainMDIDisplay::beginMapExecution() {
 
     }
 
-    FlightPath* fp = this->tempMapPlanningUIWidget->getTableAsFlightPath();
+    this->missionPlanningFlightPath = this->tempMapPlanningUIWidget->getTableAsFlightPath();
 
-    this->tempMapExecutionUIWidget = new MapExecution(fp);
+    this->tempMapExecutionUIWidget = new MapExecution( this->missionPlanningFlightPath );
 
     //this->qttWidget->setMapExecutionUIWidget( this->tempMapExecutionUIWidget );
 
@@ -285,8 +304,6 @@ void MainMDIDisplay::changePlanningToExecutionWindow() {
 
     this->missionPlanningWindowUIWidget->dumpComboBoxes() ;
 
-    //TODO CLEAN UP THESE GODDAMN MEMORY LEAKS
-
     tempMapPlanningUIWidget->ui->executeButton->hide();
 
     tempMapPlanningUIWidget->ui->backButton->hide();
@@ -323,6 +340,8 @@ void MainMDIDisplay::changePlanningToExecutionWindow() {
 
     this->currentMenu = Execution ;
 
+    this->switchedToExecution();
+
 }
 
 void MainMDIDisplay::destroy() {
@@ -358,6 +377,8 @@ void MainMDIDisplay::switchToRecapWindow() {
     this->missionPlanningWindowUIWidget->changeTitle( QString( "Mission Recap" ) ) ;
 
     this->currentMenu = Recap ;
+
+    emit switchedToRecap() ;
 
 }
 
@@ -431,7 +452,7 @@ void MainMDIDisplay::clearMapExecution() {
 
     else {
 
-        /* Do nothing */
+        // Do nothing.
 
     }
 
@@ -584,5 +605,88 @@ void MainMDIDisplay::clickedCancelButton_MainDisplay() {
 void MainMDIDisplay::clickedBackButton_MainDisplay() {
 
     //this->destroy() ;
+
+}
+
+//Slot called whenever the map is updated to see if we need to update the GUI.
+void MainMDIDisplay::onMapUpdated() {
+
+    /* PRIVATE SLOT */
+
+    qDebug() << "MAP UPDATED!" ;
+
+}
+
+void MainMDIDisplay::clickedSaveMissionButton_MainDisplay() {
+
+    /* PRIVATE SLOT */
+
+    if ( this->saveMissionByNameLineEdit->text() != BLANK_QSTRING &&
+
+         this->tempMapPlanningUIWidget != NULL ) {
+
+        bool saveStatus = false ;
+
+        this->missionPlanningFlightPath = this->tempMapPlanningUIWidget->getTableAsFlightPath() ;
+
+        //TODO Check for empty flight paths and return an error message
+
+        saveStatus = this->missionPlanningFlightPath->save( this->saveMissionByNameLineEdit->text() ) ;
+
+        if ( saveStatus == SAVE_SUCCESSFUL ) {
+
+            qDebug() << "Saved successfully!";
+
+        }
+
+        else {
+
+            qDebug() << "Save failed." ;
+
+        }
+
+    }
+
+    else {
+
+        qDebug() << "Could not save. Blank file name/MapPlanning object is NULL." ;
+
+    }
+
+}
+
+void MainMDIDisplay::clickedLoadMissionButton_MainDisplay() {
+
+    /* PRIVATE SLOT */
+
+    //TODO Add error checking for invalid file names? This might have to go in the FlightPath class though.
+
+    if ( this->missionPlanningWindowUIWidget->getMission() != QString( "Select Mission" ) ) {
+
+        this->missionPlanningFlightPath = new FlightPath( this->missionPlanningWindowUIWidget->getMission() ) ;
+
+        //Maybe this check is unnecessary, but just in case ;)
+
+        if ( this->missionPlanningFlightPath != NULL ) {
+
+            //TODO Add the FlightPath points to the table.
+
+            qDebug() << "Successfully loaded mission!" ;
+
+        }
+
+        else {
+
+            qDebug() << "Failed to load mission." ;
+
+        }
+
+    }
+
+    else {
+
+        qDebug() << "Please select a mission." ;
+
+    }
 
 }

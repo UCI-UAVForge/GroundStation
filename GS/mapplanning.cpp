@@ -1,6 +1,7 @@
 #include "mapplanning.h"
 
-MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlanning) {
+MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlanning) ,
+    loadMissionButton( NULL ) , saveMissionButton( NULL ) , saveMissionByNameLineEdit( NULL ) {
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
 
@@ -22,9 +23,6 @@ MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlann
     connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()), Qt::UniqueConnection);
     connect(ui->clearTableButton, SIGNAL(clicked()), this, SLOT(on_clearTableButton_clicked()), Qt::UniqueConnection);
     connect(ui->executeButton, SIGNAL(clicked()), this, SLOT(on_executeButton_clicked()), Qt::UniqueConnection);
-
-    //Initialized to NULL to prevent wasted space since the original GUI does not use these. - Roman Parise
-    loadMissionButton = saveMissionButton = NULL ;
 
 }
 
@@ -130,6 +128,7 @@ void MapPlanning::updateMap() {
         //Sends the add point request with its parameters.
         ui->webView->page()->mainFrame()->evaluateJavaScript("addLatLngCoords("+QString::number(lat)+","+QString::number(lng)+")");
     }
+
 }
 
 FlightPath *MapPlanning::getTableAsFlightPath(){
@@ -247,6 +246,42 @@ void MapPlanning::setSaveMissionButton( QPushButton * saveMissionButton ) {
     if ( saveMissionButton != NULL ) {
 
         this->saveMissionButton = saveMissionButton ;
+
+    }
+
+    else {
+
+        //Do nothing.
+
+    }
+
+}
+
+QLineEdit * MapPlanning::getSaveMissionByNameLineEdit() {
+
+    if ( this->saveMissionByNameLineEdit == NULL ) {
+
+        this->saveMissionByNameLineEdit = new QLineEdit();
+
+        this->saveMissionByNameLineEdit->setPlaceholderText( QString( DEFAULT_MISSION_NAME_PLACEHOLDER ) );
+
+    }
+
+    else {
+
+        //Do nothing.
+
+    }
+
+    return this->saveMissionByNameLineEdit ;
+
+}
+
+void MapPlanning::setSaveMissionByNameLineEdit( QLineEdit * saveMissionByNameLineEdit ) {
+
+    if ( saveMissionByNameLineEdit != NULL ) {
+
+        this->saveMissionByNameLineEdit = saveMissionByNameLineEdit ;
 
     }
 

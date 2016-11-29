@@ -1,6 +1,8 @@
 #ifndef MAINMDIDISPLAY_H
 #define MAINMDIDISPLAY_H
 
+#define MINIMUM_NUMBER_OF_POINTS 1
+
 #include <QMainWindow>
 #include "qttabtest.h"
 #include "missionplanningwindow.h"
@@ -14,6 +16,10 @@
 #include "maprecap.h"
 
 //TODO Getters and setters. C'mon...
+
+#define BLANK_QSTRING QString( "" )
+
+#define SAVE_SUCCESSFUL true
 
 enum Menu { Startup , Planning , Execution , Recap } ;
 
@@ -66,6 +72,12 @@ private slots:
 
     void clickedBackButton_MainDisplay();
 
+    void clickedLoadMissionButton_MainDisplay() ;
+
+    void clickedSaveMissionButton_MainDisplay() ;
+
+    void onMapUpdated() ;
+
 private:
 
     Ui::MainMDIDisplay *ui;
@@ -95,13 +107,25 @@ private:
 
     //TODO Put all the buttons/other UI elements for the GUI here to organize everything in one spot
 
-    QPushButton * backToPlanningButton ;
+    QPushButton * backToPlanningButton , * saveMissionButton , * loadMissionButton ;
+
+    QLineEdit * saveMissionByNameLineEdit ;
 
     /* Tabs */
 
     QWidget * MapRecapUI_TableTab , * MapRecapUI_GraphTab ;
 
     QMdiSubWindow * MapSubWindow , * MissionControlSubWindow ;
+
+    FlightPath * missionPlanningFlightPath ;
+
+signals:
+
+    void switchedToPlanning() ;
+
+    void switchedToRecap() ;
+
+    void switchedToExecution() ;
 
 };
 

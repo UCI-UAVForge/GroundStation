@@ -21,6 +21,8 @@
 
 #include "ui_mapplanning.h"
 
+#define DEFAULT_MISSION_NAME_PLACEHOLDER "SomeMission"
+
 namespace Ui {
 
     class MapPlanning;
@@ -45,9 +47,13 @@ public:
 
     QPushButton * getSaveMissionButton() ;
 
+    QLineEdit * getSaveMissionByNameLineEdit() ;
+
     void setLoadMissionButton( QPushButton * ) ;
 
     void setSaveMissionButton( QPushButton * ) ;
+
+    void setSaveMissionByNameLineEdit( QLineEdit * ) ;
 
 public slots:
     void addPointToTable(double lat, double lng);
@@ -78,12 +84,16 @@ private:
 
     QPushButton * loadMissionButton , * saveMissionButton ;
 
+    QLineEdit * saveMissionByNameLineEdit ;
+
     Ui::MapPlanning *ui;
 
 signals:
 
     /* Roman Parise - added to tell external classes and functions that we're ready to start map execution */
     void timeToStartMapExecution();
+
+    void tableUpdated() ;
 
 };
 

@@ -8,6 +8,8 @@
 #include "QGridLayout"
 #include "qcombobox.h"
 #include <QDebug>
+#include <QLineEdit>
+#include <QLabel>
 
 //Code by David Moe
 
@@ -28,11 +30,21 @@ public:
 
     void addComboBox( QComboBox * );
 
+    void addTextBox( QLineEdit * );
+
+    void addTextBox( QLineEdit * , QString );
+
     void dumpButtons();
 
     void dumpComboBoxes();
 
     void changeTitle( QString ) ;
+
+    //Return value of uavComboBox
+    QString getUAV() ;
+
+    //Return value of missionPlanComboBox
+    QString getMission() ;
 
 private:
     QPushButton *executeButton;
@@ -40,11 +52,16 @@ private:
     QComboBox *missionPlanComboBox;
     QGridLayout *layout;
     QHBoxLayout * buttonLayout;
+    QHBoxLayout * textBoxLayout;
     QVBoxLayout * superLayout;
 
     QList<QPushButton *> buttonList;
 
     QList<QComboBox *> comboBoxList;
+
+    QList<QLineEdit *> textBoxList;
+
+    QList<QLabel *> textBoxLabelList;
 
 private slots:
     //void setExecutionButtonEnabled();
