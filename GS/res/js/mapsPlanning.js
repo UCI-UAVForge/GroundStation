@@ -132,14 +132,13 @@ function cancelFlight() {
     marker.stop();
     drawnItems.removeLayer(marker);
     map.addControl(drawControl);
-
 }
 
 //In case a reload is necessary
-//var readyStateCheckInterval = setInterval(function() {
-//    if (document.readyState === "complete") {
-//        clearInterval(readyStateCheckInterval);
-//        cbridge.addNewMap();
-//    }
-//}, 10);
+var readyStateCheckInterval = setInterval(function() {
+    if (document.readyState === "complete") {
+        clearInterval(readyStateCheckInterval);
+        cbridge.addNewMap();
+    }
+}, 10);
 

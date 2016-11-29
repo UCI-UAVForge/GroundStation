@@ -161,7 +161,7 @@ void MainMDIDisplay::beginMapExecution() {
     //this->qttWidget->setMapExecutionUIWidget( this->tempMapExecutionUIWidget );
 
  //   qDebug() << "URL BEFORE: " << this->MapPlanningMapUIWidget->url();
- //   this->MapPlanningMapUIWidget->setUrl(QUrl("qrc:/res/html/mapsPlanning.html"));
+ //   this->MapPlanningMapUIWidget->load(QUrl("qrc:/res/html/mapsPlanning.html"));
     this->tempMapExecutionUIWidget->ui->webView = this->MapPlanningMapUIWidget;
     this->tempMapExecutionUIWidget->addNewMap();
  //   qDebug() << "URL AFTER: " << this->MapPlanningMapUIWidget->url();
@@ -415,7 +415,7 @@ void MainMDIDisplay::clearMapExecution() {
         /* Do nothing */
 
     }
-
+    this->tempMapExecutionUIWidget->deleteLater();
 }
 
 void MainMDIDisplay::clickedCancelButton_MainDisplay() {

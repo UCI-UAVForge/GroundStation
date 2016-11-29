@@ -168,6 +168,14 @@ void MapPlanning::addPointToTable(double lat, double lng) {
 
 }
 
+//void MapPlanning::getTable() {
+//    QList<Protocol::Waypoint> *points = flightPath->getOrderedWaypoints();
+//    for (Protocol::Waypoint wp : *points){
+//        (wp.lat,wp.lon);
+//    }
+//}
+
+
 void MapPlanning::clearTable() {
     delete model;
     model = new TableModel();
