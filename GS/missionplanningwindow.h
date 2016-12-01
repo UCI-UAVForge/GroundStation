@@ -32,7 +32,7 @@ public:
 
     void addTextBox( QLineEdit * );
 
-    void addTextBox( QLineEdit * , QString );
+    void addTextBox( QLineEdit * , QLabel * );
 
     void dumpButtons();
 

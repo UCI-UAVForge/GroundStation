@@ -23,6 +23,8 @@
 
 #define DEFAULT_MISSION_NAME_PLACEHOLDER "SomeMission"
 
+#define DEFAULT_MISSION_NAME_LINEEDIT_CAPTION "Save mission as: "
+
 namespace Ui {
 
     class MapPlanning;
@@ -49,11 +51,15 @@ public:
 
     QLineEdit * getSaveMissionByNameLineEdit() ;
 
+    QLabel * getSaveMissionByNameLabel() ;
+
     void setLoadMissionButton( QPushButton * ) ;
 
     void setSaveMissionButton( QPushButton * ) ;
 
     void setSaveMissionByNameLineEdit( QLineEdit * ) ;
+
+    void setSaveMissionByNameLabel( QLabel * ) ;
 
 public slots:
     void addPointToTable(double lat, double lng);
@@ -85,6 +91,8 @@ private:
     QPushButton * loadMissionButton , * saveMissionButton ;
 
     QLineEdit * saveMissionByNameLineEdit ;
+
+    QLabel * saveMissionByNameLabel ;
 
     Ui::MapPlanning *ui;
 

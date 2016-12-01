@@ -1,7 +1,7 @@
 #include "mapplanning.h"
 
 MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlanning) ,
-    loadMissionButton( NULL ) , saveMissionButton( NULL ) , saveMissionByNameLineEdit( NULL ) {
+    loadMissionButton( NULL ) , saveMissionButton( NULL ) , saveMissionByNameLineEdit( NULL ) , saveMissionByNameLabel( NULL ) {
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
 
@@ -288,6 +288,40 @@ void MapPlanning::setSaveMissionByNameLineEdit( QLineEdit * saveMissionByNameLin
     else {
 
         //Do nothing.
+
+    }
+
+}
+
+QLabel * MapPlanning::getSaveMissionByNameLabel() {
+
+    if ( this->saveMissionByNameLabel == NULL ) {
+
+        this->saveMissionByNameLabel = new QLabel( DEFAULT_MISSION_NAME_LINEEDIT_CAPTION ) ;
+
+    }
+
+    else {
+
+        /* Do nothing. */
+
+    }
+
+    return this->saveMissionByNameLabel ;
+
+}
+
+void MapPlanning::setSaveMissionByNameLabel( QLabel * saveMissionByNameLabel ) {
+
+    if ( saveMissionByNameLabel != NULL ) {
+
+        this->saveMissionByNameLabel = saveMissionByNameLabel ;
+
+    }
+
+    else {
+
+        /* Do nothing. */
 
     }
 

@@ -103,14 +103,12 @@ void MissionPlanningWindow::addTextBox( QLineEdit * newLineEdit ) {
 }
 
 //Add textbox with caption written to the left of it.
-//Ex. caption = QString("Enter your name: "). In the window: "Enter your name: (newLineEdit goes here)"
-void MissionPlanningWindow::addTextBox( QLineEdit * newLineEdit , QString caption ) {
+//Ex. caption -> "Enter your name: ". In the window: "Enter your name: (newLineEdit goes here)"
+void MissionPlanningWindow::addTextBox( QLineEdit * newLineEdit , QLabel * caption ) {
 
-    QLabel * newCaption = new QLabel( caption ) ;
+    this->textBoxLabelList.append( caption ) ;
 
-    this->textBoxLabelList.append( newCaption ) ;
-
-    this->textBoxLayout->addWidget( newCaption );
+    this->textBoxLayout->addWidget( caption );
 
     this->addTextBox( newLineEdit );
 

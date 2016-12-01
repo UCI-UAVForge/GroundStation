@@ -11,7 +11,7 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new U
 
     MapExecutionStatusVBoxLayout(NULL) , mapExecutionStatusUIWidget(NULL) , tempMapPlanningUIWidget(NULL),
 
-    missionPlanningFlightPath( NULL ) , saveMissionButton( NULL ) , loadMissionButton( NULL ) {
+    missionPlanningFlightPath( NULL ) , saveMissionButton( NULL ) , loadMissionButton( NULL ) , saveMissionByNameLabel( NULL ) {
 
     ui->setupUi(this);
 
@@ -130,11 +130,13 @@ void MainMDIDisplay::switchToPlanningWindow() {
 
     this->saveMissionByNameLineEdit = this->tempMapPlanningUIWidget->getSaveMissionByNameLineEdit() ;
 
+    this->saveMissionByNameLabel = this->tempMapPlanningUIWidget->getSaveMissionByNameLabel() ;
+
     this->missionPlanningWindowUIWidget->addButton( this->loadMissionButton );
 
     this->missionPlanningWindowUIWidget->addButton( this->saveMissionButton );
 
-    this->missionPlanningWindowUIWidget->addTextBox( this->saveMissionByNameLineEdit , QString( "Mission name: " ) );
+    this->missionPlanningWindowUIWidget->addTextBox( this->saveMissionByNameLineEdit , this->saveMissionByNameLabel );
 
     connect( this->loadMissionButton , SIGNAL( clicked() ) , this , SLOT( clickedLoadMissionButton_MainDisplay() ) ) ;
 
@@ -314,6 +316,10 @@ void MainMDIDisplay::changePlanningToExecutionWindow() {
 
     tempMapPlanningUIWidget->saveMissionButton->hide();
 
+    tempMapPlanningUIWidget->saveMissionByNameLineEdit->hide();
+
+    this->saveMissionByNameLabel->hide();
+
     this->missionPlanningWindowUIWidget->uavComboBox->hide();
 
     this->missionPlanningWindowUIWidget->missionPlanComboBox->hide();
@@ -356,29 +362,69 @@ void MainMDIDisplay::switchToRecapWindow() {
 
     this->tempMapRecapUIWidget = this->tempMapExecutionUIWidget->getMapRecap();
 
-    this->MapSubWindow->setWidget( this->tempMapRecapUIWidget->ui->webView );
+    /* 15 second timer. If the page is not loaded after 15 seconds, then just give up. */
 
-    //TODO Change to for loop and search. Make a function to search the tabs.
+    QTime timeToStopWaiting = QTime::currentTime().addSecs( 15 ) ;
 
-    this->MapRecapUI_TableTab = this->tempMapRecapUIWidget->getTab( 1 );
+    bool urlLoadSuccessStatus = false ;
 
-    this->MapRecapUI_GraphTab = this->tempMapRecapUIWidget->getTab( 2 );
+    qDebug() << "Map recap trying to load at: " << QTime::currentTime() ;
 
-    this->qttWidget->addNewTab( this->MapRecapUI_TableTab , QString( "Table (Recap)" ) );
+    while ( QTime::currentTime() < timeToStopWaiting ) {
 
-    this->qttWidget->addNewTab( this->MapRecapUI_GraphTab , QString( "Graph (Recap)" ) );
+        if ( this->tempMapRecapUIWidget->ui->webView->page()->mainFrame()->toHtml().contains( "</html>" ) ) {
 
-    this->backToPlanningButton = this->tempMapRecapUIWidget->ui->backButton /* this->tempMapRecapUIWidget->getBackToPlanningButton() */ ;
+            qDebug() << "Map recap load succeeded at time: " << QTime::currentTime() ;
 
-    this->missionPlanningWindowUIWidget->addButton( this->backToPlanningButton );
+            urlLoadSuccessStatus = true ;
 
-    connect( this->backToPlanningButton , SIGNAL( clicked() ) , this , SLOT ( clickedBackToPlanningButton_MainDisplay() ) ) ;
+            break ;
 
-    this->missionPlanningWindowUIWidget->changeTitle( QString( "Mission Recap" ) ) ;
+        }
 
-    this->currentMenu = Recap ;
+        else {
 
-    emit switchedToRecap() ;
+            /* Do nothing. */
+
+        }
+
+    }
+
+    if ( urlLoadSuccessStatus == true ) {
+
+        this->MapSubWindow->setWidget( this->tempMapRecapUIWidget->ui->webView );
+
+        //TODO Change to for loop and search. Make a function to search the tabs.
+
+        this->MapRecapUI_TableTab = this->tempMapRecapUIWidget->getTab( 1 );
+
+        this->MapRecapUI_GraphTab = this->tempMapRecapUIWidget->getTab( 2 );
+
+        this->qttWidget->addNewTab( this->MapRecapUI_TableTab , QString( "Table (Recap)" ) );
+
+        this->qttWidget->addNewTab( this->MapRecapUI_GraphTab , QString( "Graph (Recap)" ) );
+
+        this->backToPlanningButton = this->tempMapRecapUIWidget->ui->backButton /* this->tempMapRecapUIWidget->getBackToPlanningButton() */ ;
+
+        this->missionPlanningWindowUIWidget->addButton( this->backToPlanningButton );
+
+        connect( this->backToPlanningButton , SIGNAL( clicked() ) , this , SLOT ( clickedBackToPlanningButton_MainDisplay() ) ) ;
+
+        this->missionPlanningWindowUIWidget->changeTitle( QString( "Mission Recap" ) ) ;
+
+        this->currentMenu = Recap ;
+
+        emit switchedToRecap() ;
+
+    }
+
+    else {
+
+        /* TODO LOL PLEASE CHANGE THIS */
+
+        qDebug() << "Map recap loading failed." ;
+
+    }
 
 }
 

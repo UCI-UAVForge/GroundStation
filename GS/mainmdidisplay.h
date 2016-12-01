@@ -111,6 +111,8 @@ private:
 
     QLineEdit * saveMissionByNameLineEdit ;
 
+    QLabel * saveMissionByNameLabel ;
+
     /* Tabs */
 
     QWidget * MapRecapUI_TableTab , * MapRecapUI_GraphTab ;
