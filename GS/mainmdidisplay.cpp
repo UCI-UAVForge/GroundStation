@@ -244,8 +244,11 @@ void MainMDIDisplay::switchToRecapWindow() {
     //TODO May not be necessary since the URL appears to be the same before and after
 
     qDebug() << "URL BEFORE: " << this->MapPlanningMapUIWidget->url() ;
+    this->tempMapRecapUIWidget->ui->webView = this->MapPlanningMapUIWidget;
+    this->tempMapRecapUIWidget->updateMap();
 
-    this->MapPlanningMapUIWidget = this->tempMapRecapUIWidget->ui->webView ;
+//    this->MapPlanningMapUIWidget = this->tempMapRecapUIWidget->ui->webView ;
+//    this->tempMapRecapUIWidget->updateMap();
 
     qDebug() << "URL AFTER: " << this->MapPlanningMapUIWidget->url() ;
 
@@ -421,7 +424,6 @@ void MainMDIDisplay::clearMapExecution() {
 void MainMDIDisplay::clickedCancelButton_MainDisplay() {
 
     this->switchToPlanningWindow();
-
     this->clearMapExecution();
 
     /* TODO DELETE MAP EXECUTION */

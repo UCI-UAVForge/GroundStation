@@ -128,10 +128,10 @@ function startFlight() {
     marker.start();
 }
 
-function cancelFlight() {
+function stopFlight() {
     marker.stop();
     drawnItems.removeLayer(marker);
-    map.addControl(drawControl);
+//    map.addControl(drawControl);
 }
 
 //In case a reload is necessary

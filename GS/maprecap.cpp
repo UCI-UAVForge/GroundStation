@@ -5,7 +5,7 @@ MapRecap::MapRecap(QWidget *parent):QDialog(parent), ui(new Ui::MapRecap) {
     //buttonGroup = new QButtonGroup();
 
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    ui->webView->setUrl(QUrl("qrc:/res/html/mapsExecution.html"));
+    ui->webView->setUrl(QUrl("qrc:/res/html/mapsPlanning.html"));
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
@@ -26,7 +26,7 @@ MapRecap::MapRecap(Mission *mission, QWidget *parent):QDialog(parent), ui(new Ui
     myMission = Mission(*mission);
 
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    ui->webView->setUrl(QUrl("qrc:/res/html/mapsExecution.html"));
+    ui->webView->setUrl(QUrl("qrc:/res/html/mapsPlanning.html"));
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
@@ -55,14 +55,14 @@ void MapRecap::on_backButton_clicked() {
     this->done(0);
 }
 
-
 /* Sends a request for the map to clear itself, causing the JavaScript page
 to reload itself. This function then cycles through each entry on the table
 and enters the coordinates on the map one by one in order. Function added by
 Jordan Dickson Feb 14th 2015. */
 //Sends clearMap request.
 void MapRecap::updateMap() {
-    ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
+//    ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
+    ui->webView->page()->mainFrame()->evaluateJavaScript("stopFlight()");
     drawFlightPath(myMission.getFlightPath());
 }
 
@@ -141,15 +141,11 @@ QPushButton * MapRecap::getBackToPlanningButton() {
 void MapRecap::setBackToPlanningButton( QPushButton * backToPlanningButton ) {
 
     if ( backToPlanningButton != NULL ) {
-
         this->backToPlanningButton = backToPlanningButton ;
-
     }
 
     else {
-
         //Do nothing.
-
     }
 
 }
