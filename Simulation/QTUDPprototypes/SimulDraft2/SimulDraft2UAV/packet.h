@@ -36,6 +36,7 @@ namespace Protocol
         uint32_t get_timestamp();
         void set_type(PacketType a);
         PacketType get_type();
+        void setTimestamp();
     private:
 		PacketType type;
 

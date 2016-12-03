@@ -13,6 +13,9 @@
 class Mission {
 public:
     Mission();
+
+    Mission(QString filename);
+
     Mission(FlightPath flightPath);
 
     ~Mission();
@@ -31,7 +34,10 @@ public:
     QVector<double> *getValuesForIndex(int index);
     double getValueForIndexAndID(int index,int id);
 
+    bool save(QString filename);
+
 private:
+    void initValues();
     FlightPath myFlightPath;
 
     QVector<QVector<double>* > values;
