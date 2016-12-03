@@ -18,7 +18,7 @@
 #define COORDINATOR_TELEMETRYPACKET_H
 
 #include <string>
-#include "Packet.h"
+#include "packet.h"
 
 namespace Protocol
 {

@@ -48,15 +48,11 @@ void MapPlanning::addClickListener() {
 void MapPlanning::on_executeButton_clicked() {
 
     emit timeToStartMapExecution();
-
-    //Define the OLD_GUI macro to use the old version of the Ground Station. - Roman Parise
-
     #ifdef OLD_GUI
     MapExecution* mapExecution = new MapExecution(getTableAsFlightPath());
     this->close();
     mapExecution->showFullScreen();
     #endif
-
 
 //    ConnectionDialog * connectionDialog = new ConnectionDialog();
 //    connectionDialog -> show();
@@ -113,8 +109,10 @@ to reload itself. This function then cycles through each entry on the table
 and enters the coordinates on the map one by one in order. Function added by
 Jordan Dickson Feb 14th 2015. */
 //Sends clearMap request.
+
 void MapPlanning::updateMap() {
     ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
+    ui->webView->page()->mainFrame()->evaluateJavaScript("addDrawControl()");
     //Loops through table entries
     for(int i = 0; i < model->getList().size(); i++) {
         QList<QString> list = model->getList()[i];
@@ -131,7 +129,6 @@ void MapPlanning::updateMap() {
         ui->webView->page()->mainFrame()->evaluateJavaScript("addLatLngCoords("+QString::number(lat)+","+QString::number(lng)+")");
     }
 }
-
 FlightPath *MapPlanning::getTableAsFlightPath(){
     FlightPath *newFP = new FlightPath();
 
@@ -172,6 +169,19 @@ void MapPlanning::addPointToTable(double lat, double lng) {
 
 }
 
+//void MapPlanning::getTable() {
+//    QList<Protocol::Waypoint> *points = flightPath->getOrderedWaypoints();
+//    for (Protocol::Waypoint wp : *points){
+//        (wp.lat,wp.lon);
+//    }
+//}
+
+
+void MapPlanning::clearTable() {
+    delete model;
+    model = new TableModel();
+    ui->tableView->setModel(model);
+}
 //Functions for the loadMission and saveMission buttons. These are buttons that have been added for
 //the new GUI that supports loading and saving missions.
 
@@ -255,5 +265,4 @@ void MapPlanning::setSaveMissionButton( QPushButton * saveMissionButton ) {
         //Do nothing.
 
     }
-
 }

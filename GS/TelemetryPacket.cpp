@@ -15,7 +15,7 @@
 // OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 #include <iostream>
-#include "TelemetryPacket.h"
+#include "telemetrypacket.h"
 
 Protocol::TelemetryPacket::TelemetryPacket() : Packet(PacketType::Telem)
 {

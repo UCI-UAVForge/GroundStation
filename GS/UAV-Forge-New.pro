@@ -12,9 +12,10 @@ QT       += core \
 QT       += svg
 QT       += sql
 
-
+QT       += webengine
+QT += webenginewidgets
 QT       += webkit webkitwidgets
-QT       += webengine webenginewidgets
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
@@ -111,3 +112,4 @@ OTHER_FILES +=
 
 RESOURCES += \
     Resources.qrc
+
