@@ -19,6 +19,8 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new U
 
     this->qttWidget = new QtTabTest();
 
+    this->qttWidget->setWindowTitle( "Mission Intel" );
+
     this->addWindow( qttWidget /* , QString( "Data" ) */ );
 
     this->missionPlanningWindowUIWidget = new MissionPlanningWindow();
@@ -131,6 +133,14 @@ void MainMDIDisplay::switchToPlanningWindow() {
     this->saveMissionByNameLineEdit = this->tempMapPlanningUIWidget->getSaveMissionByNameLineEdit() ;
 
     this->saveMissionByNameLabel = this->tempMapPlanningUIWidget->getSaveMissionByNameLabel() ;
+
+    this->loadMissionButton->show();
+
+    this->saveMissionButton->show();
+
+    this->saveMissionByNameLineEdit->show();
+
+    this->saveMissionByNameLabel->show();
 
     this->missionPlanningWindowUIWidget->addButton( this->loadMissionButton );
 
@@ -441,6 +451,14 @@ void MainMDIDisplay::clickedBackToPlanningButton_MainDisplay() {
 void MainMDIDisplay::clickedFinishButton_MainDisplay() {
 
     this->switchToRecapWindow();
+
+    /*
+
+    QTime dieTime = QTime::currentTime().addSecs( 10 ) ;
+
+    while ( QTime::currentTime() < dieTime ) ;
+
+    */
 
     this->clearMapExecution();
 
