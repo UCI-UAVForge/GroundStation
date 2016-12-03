@@ -110,7 +110,7 @@ void MapExecution::on_returnHomeButton_clicked() {
 // redirect to mission planning
 void MapExecution::on_cancelButton_clicked() {
     //ui->webView->page()->mainFrame()->evaluateJavaScript("cancelFlight()");
-    ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
+//    ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
     this->done(1);
 }
 

@@ -112,6 +112,7 @@ Jordan Dickson Feb 14th 2015. */
 
 void MapPlanning::updateMap() {
     ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
+    ui->webView->page()->mainFrame()->evaluateJavaScript("addDrawControl()");
     //Loops through table entries
     for(int i = 0; i < model->getList().size(); i++) {
         QList<QString> list = model->getList()[i];

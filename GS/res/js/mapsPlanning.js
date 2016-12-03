@@ -128,9 +128,13 @@ function startFlight() {
     marker.start();
 }
 
+function addDrawControl() {
+    map.addControl(drawControl);
+}
+
 function stopFlight() {
     marker.stop();
-    drawnItems.removeLayer(marker);
+//    drawnItems.removeLayer(marker);
 //    map.addControl(drawControl);
 }
 

@@ -63,7 +63,7 @@ Jordan Dickson Feb 14th 2015. */
 void MapRecap::updateMap() {
 //    ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
     ui->webView->page()->mainFrame()->evaluateJavaScript("stopFlight()");
-    drawFlightPath(myMission.getFlightPath());
+//    drawFlightPath(myMission.getFlightPath());
 }
 
 
@@ -81,7 +81,7 @@ void MapRecap::addNewMap() {
 }
 
 void MapRecap::drawFlightPath(FlightPath *flightPath) {
-    ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
+//    ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
     QList<Protocol::Waypoint> *points = flightPath->getOrderedWaypoints();
     for (Protocol::Waypoint wp : *points){
         sendCoordToJSMap(wp.lat,wp.lon,0);
@@ -133,7 +133,8 @@ QPushButton * MapRecap::getBackToPlanningButton() {
         // Do nothing.
 
     }
-
+    //Reset map
+//    ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
     return this->backToPlanningButton ;
 
 }
@@ -147,5 +148,4 @@ void MapRecap::setBackToPlanningButton( QPushButton * backToPlanningButton ) {
     else {
         //Do nothing.
     }
-
 }

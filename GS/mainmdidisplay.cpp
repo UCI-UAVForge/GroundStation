@@ -60,7 +60,8 @@ void MainMDIDisplay::switchToPlanningWindow() {
     //Add the map in the background
 
     this->MapPlanningMapUIWidget = this->tempMapPlanningUIWidget->ui->webView;
-
+    this->tempMapPlanningUIWidget->ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
+    this->tempMapPlanningUIWidget->clearTable();
     //Add the buttons from MapPlanning to the Mission Planning window
 
     this->tempMapPlanningUIWidget->ui->backButton->show();
