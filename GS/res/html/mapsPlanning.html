@@ -1,92 +1,24 @@
 <html>
     <head>
-        <style>
-            #map_canvas {
-                width: 100%;
-                height: 100%;
-                margin: 0px;
-                background-color: #CCC;
-            }
-        </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@0.4.1/dist/leaflet.draw.css" />
+    <script src="https://unpkg.com/leaflet-draw@0.4.1/dist/leaflet.draw.js"></script>
+    <script src="qrc:/res/js/movingMarker.js" type="text/javascript"></script>
 
-        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
-            </script>
+    <style>
+        #map {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            background-color: #CCC;
+        }
+    </style>
     </head>
     <body>
-        <script type="text/javascript">
-
-        //JavaScript code edited by Arash and Jordan for UCI UAV Forge. Feb 14th 2015.
-
-            var uci=new google.maps.LatLng(33.6454,-117.8426);
-            var map;
-            var flightPath;
-            var clickable = false;
-
-            //Setup function that creates the initial map state.
-            function initialize()
-            {
-                var featureOpts = [{
-                    elementType: 'labels',
-                    stylers:[
-                        {visibility: 'off'}
-                    ]
-                }];
-
-                var mapCanvas = document.getElementById('map_canvas');
-                var mapOptions = {
-                    center: uci,
-                    zoom: 13,
-                    mapTypeId: google.maps.MapTypeId.SATELLITE
-                };
-
-                map = new google.maps.Map(mapCanvas, mapOptions);
-
-                flightPath = new google.maps.Polyline({
-                        strokeColor:"#0000FF",
-                        strokeOpacity:0.8,
-                        strokeWeight:2
-                   });
-
-                flightPath.setMap(map);
-
-                //Adds the click listener for ploting waypoints
-                google.maps.event.addListener(map, 'click', function(event){
-                      addLatLng(event.latLng);
-                      var lat = event.latLng.lat();
-                      var lng = event.latLng.lng();
-                      cbridge.addPointToTable(lat,lng);
-                      });
-            }
-
-            function addLatLngCoords(lat,lng) {
-            //Used on the c++ side to add a new point to the map.
-                var location = new google.maps.LatLng(lat,lng);
-                addLatLng(location);
-                return "Adding new point.";
-            }
-
-            function addLatLng(myLocation) {
-            //Adds a new point to the flightpath list by pushing the myLocation tuple to the list.
-                flightPath.getPath().push(myLocation);
-            }
-
-            function clearMap() {
-            //Called from the c++ side to refresh the map.
-            //modified by Arash on 2/23/15: it will now clear the map without
-            //changing the zoom level or center of the map
-                var center = map.getCenter();
-                lat = center.lat();
-                lng = center.lng();
-                currentZoom = map.getZoom();
-                initialize();
-                map.setCenter(new google.maps.LatLng(lat,lng));
-                map.setZoom(currentZoom);
-            }
-
-            google.maps.event.addDomListener(window, 'load', initialize);
-
-        </script>
-        <div id="map_canvas">
+        <div id="map">
         </div>
+        <script src="qrc:/res/js/mapsPlanning.js" type="text/javascript"></script>
+        <p id="ok">sdgfhdfg</p>
     </body>
 </html>

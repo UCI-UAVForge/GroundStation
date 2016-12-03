@@ -60,8 +60,7 @@ void MainMDIDisplay::switchToPlanningWindow() {
     //Add the map in the background
 
     this->MapPlanningMapUIWidget = this->tempMapPlanningUIWidget->ui->webView;
-    this->tempMapPlanningUIWidget->ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
-    this->tempMapPlanningUIWidget->clearTable();
+
     //Add the buttons from MapPlanning to the Mission Planning window
 
     this->tempMapPlanningUIWidget->ui->backButton->show();
@@ -161,11 +160,11 @@ void MainMDIDisplay::beginMapExecution() {
     this->tempMapExecutionUIWidget = new MapExecution(fp);
     //this->qttWidget->setMapExecutionUIWidget( this->tempMapExecutionUIWidget );
 
- //   qDebug() << "URL BEFORE: " << this->MapPlanningMapUIWidget->url();
- //   this->MapPlanningMapUIWidget->load(QUrl("qrc:/res/html/mapsPlanning.html"));
+    qDebug() << "URL BEFORE: " << this->MapPlanningMapUIWidget->url();
+    this->MapPlanningMapUIWidget->setUrl(QUrl("qrc:/res/html/mapsExecution.html"));
     this->tempMapExecutionUIWidget->ui->webView = this->MapPlanningMapUIWidget;
     this->tempMapExecutionUIWidget->addNewMap();
- //   qDebug() << "URL AFTER: " << this->MapPlanningMapUIWidget->url();
+    qDebug() << "URL AFTER: " << this->MapPlanningMapUIWidget->url();
 
     this->MapExecutionStatusVBoxLayout->addWidget( this->tempMapExecutionUIWidget->ui->StatusIndicator );
 
@@ -245,11 +244,8 @@ void MainMDIDisplay::switchToRecapWindow() {
     //TODO May not be necessary since the URL appears to be the same before and after
 
     qDebug() << "URL BEFORE: " << this->MapPlanningMapUIWidget->url() ;
-    this->tempMapRecapUIWidget->ui->webView = this->MapPlanningMapUIWidget;
-    this->tempMapRecapUIWidget->updateMap();
 
-//    this->MapPlanningMapUIWidget = this->tempMapRecapUIWidget->ui->webView ;
-//    this->tempMapRecapUIWidget->updateMap();
+    this->MapPlanningMapUIWidget = this->tempMapRecapUIWidget->ui->webView ;
 
     qDebug() << "URL AFTER: " << this->MapPlanningMapUIWidget->url() ;
 
@@ -274,6 +270,7 @@ void MainMDIDisplay::switchToRecapWindow() {
 void MainMDIDisplay::clickedBackToPlanningButton_MainDisplay() {
 
     this->clearMapRecap();
+
     this->switchToPlanningWindow();
 
     /* this->clearMapRecap(); */
@@ -419,12 +416,13 @@ void MainMDIDisplay::clearMapExecution() {
         /* Do nothing */
 
     }
-    this->tempMapExecutionUIWidget->deleteLater();
+
 }
 
 void MainMDIDisplay::clickedCancelButton_MainDisplay() {
 
     this->switchToPlanningWindow();
+
     this->clearMapExecution();
 
     /* TODO DELETE MAP EXECUTION */

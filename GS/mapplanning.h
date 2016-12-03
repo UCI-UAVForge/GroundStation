@@ -54,7 +54,7 @@ public slots:
     //addPointToTable - used to add an entry with latitude lat and longitude lng to the table.
     //  lat - the latitude value (usually from the JavaScript program).
     //  lng - the longitude value (usually from the JavaScript program).
-
+    void clearTable();
 private slots:
     void on_executeButton_clicked();
     void on_addButton_clicked();

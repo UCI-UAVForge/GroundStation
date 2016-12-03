@@ -45,7 +45,6 @@ public slots:
     void updateTable(double lat, double lng);
     void sendFlightPlan();
     void updateStatusIndicator();
-    void addClickListener();
 
 public:
     MapExecution(FlightPath* flightPath, QWidget *parent = 0);
@@ -70,6 +69,7 @@ private slots:
     void on_cancelButton_clicked();
     void on_stopButton_clicked();
     void on_backButton_clicked();
+    void addClickListener();
 
 private:
     Ui::MapExecution *ui;

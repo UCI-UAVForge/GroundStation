@@ -53,14 +53,12 @@ MapExecution::MapExecution(FlightPath* flightPath, QWidget *parent):
     */
 
     connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    ui->webView->setUrl(QUrl("qrc:/res/html/mapsExecution.html"));
-
+    ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
     qDebug() << "Map Execution Constructor URL: " << ui->webView->url();
 
     connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()), Qt::UniqueConnection);
     connect(ui->cancelButton, SIGNAL(clicked()), this, SLOT(on_cancelButton_clicked()), Qt::UniqueConnection);
     connect(ui->finishButton, SIGNAL(clicked()), this, SLOT(on_finishButton_clicked()), Qt::UniqueConnection);
-
     myServer.openServer(QHostAddress::LocalHost,20715);
 }
 
@@ -111,6 +109,8 @@ void MapExecution::on_returnHomeButton_clicked() {
 // cancel button
 // redirect to mission planning
 void MapExecution::on_cancelButton_clicked() {
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("cancelFlight()");
+//    ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
     this->done(1);
 }
 
@@ -126,6 +126,7 @@ void MapExecution::on_backButton_clicked() {
     if (!missionStarted){
         missionStarted = true;
         sendFlightPlan();
+        ui->webView->page()->mainFrame()->evaluateJavaScript("startFlight()");
         myServer.startServer();
     }
 }
@@ -145,6 +146,7 @@ void MapExecution::drawFlightPath(FlightPath *flightPath) {
     for (Protocol::Waypoint wp : *points){
         sendCoordToJSMap(wp.lat,wp.lon,0);
     }
+    ui->webView->page()->mainFrame()->evaluateJavaScript("plotPolyline()");
     delete points;
 }
 
@@ -165,8 +167,6 @@ void MapExecution::setMyMission(const Mission &value)
 {
     myMission = value;
 }
-
-
 
 /*  Function called by the JavaScript to add the map data from mission planning.
 This is necessary because data cannot be added until the html file is completely

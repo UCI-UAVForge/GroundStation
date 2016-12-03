@@ -17,7 +17,7 @@
 #define COORDINATOR_ACTIONPACKET_H
 
 #include  <string>
-#include "Packet.h"
+#include "packet.h"
 
 namespace Protocol
 {
