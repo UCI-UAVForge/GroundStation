@@ -25,6 +25,9 @@ CONFIG += c++11
 #win32{
 #    LIBS += -lws2_32
 #}
+macx {
+    QMAKE_MAC_SDK = macosx10.12
+}
 TARGET = UAV-Forge-New
 TEMPLATE = app
 
