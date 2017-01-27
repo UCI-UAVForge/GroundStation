@@ -45,6 +45,7 @@ function selectColor(layer) {
     layer.setStyle({color:'red'});
 }
 
+//Adds selected points to the table when line is saved.
 function updateTable(layer) {
     var allPoints = layer.getLatLngs();
     cbridge.clearTable();
@@ -52,6 +53,7 @@ function updateTable(layer) {
         cbridge.addPointToTable(allPoints[i].lat, allPoints[i].lng);
     }
 }
+
 
 function addClickListener(layer) {
     layer.on('click', function(){
@@ -106,9 +108,13 @@ function addLatLngCoords(lat, lng) {
 var flightPath = [];
 //Actual flight path of the UAV, Constructed from data Recieved from UAV/test machine
 var flightPath_actual;
-
 var i = 0;
 var marker;
+
+function plotPoint(lat, lng) {
+    L.marker([lat, lng]).addTo(map);
+    map.redraw();
+}
 
 function plotPointOnMap(lat,lng,mapID){
     flightPath.push([lat, lng]);

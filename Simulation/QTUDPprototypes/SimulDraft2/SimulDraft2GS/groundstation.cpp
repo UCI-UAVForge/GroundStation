@@ -55,7 +55,7 @@ void GroundStation::sendAPacket(Protocol::Packet* packet)
     out.setVersion(QDataStream::Qt_4_3);
     
     // Allocate storage for the packet in the for of u_int8_t
-    u_int8_t storage[GroundStation::PACKET_LENGTH];
+    uint8_t storage[GroundStation::PACKET_LENGTH];
     
     // Convert the packet into bytes and store into storage
     size_t packet_size = packet->GetBytes(storage, GroundStation::PACKET_LENGTH);

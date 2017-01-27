@@ -181,6 +181,7 @@ Used for telemetry. */
 void MapExecution::plotPosition(double lat, double lng) {
     updateTable(lat,lng);
     sendCoordToJSMap(lat,lng,1);
+    ui->webView->page()->mainFrame()->evaluateJavaScript("plotPoint(" + QString::number(lat) + "," + QString::number(lng) + ")");
 }
 
 void MapExecution::sendCoordToJSMap(double lat, double lng, int mapID){
