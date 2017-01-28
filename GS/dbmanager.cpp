@@ -20,7 +20,9 @@ DbManager::DbManager(const QString& fileName, const QString& directory)
         qDebug() << "Database: connection ok";
 
         // Load data from tables. Create new tables if they don't already exist.
+        this->initializeDatabaseSettings();
         this->createOrLoadMissionTable();
+        this->createOrLoadFlightPathTable();
     }
 }
 
@@ -30,32 +32,12 @@ DbManager::~DbManager()
         this->m_db.close();
 }
 
-////=== General Commands ===////
-
-bool DbManager::isOpen() const
+void DbManager::initializeDatabase()
 {
-    return this->m_db.isOpen();
+    QSqlQuery query;
+    query.prepare("PRAGMA foreign_keys = ON;");
+    query.exec();
 }
-
-bool DbManager::open(const QString& fileName, const QString& directory)
-{
-    QString fileDirectory;
-    if (directory == "")
-        fileDirectory = fileName + this->kFileExtension;
-    else
-        fileDirectory = directory + this->kPathSeparator + fileName + this->kFileExtension;
-
-    this->m_db = QSqlDatabase::addDatabase("QSQLITE");
-    this->m_db.setDatabaseName(fileDirectory);
-    return this->m_db.open();
-}
-
-void DbManager::close()
-{
-    this->m_db.close();
-}
-
-////=== Mission Commands ===////
 
 void DbManager::createOrLoadMissionTable()
 {
@@ -63,7 +45,7 @@ void DbManager::createOrLoadMissionTable()
 
     // Creates table if it doesn't exist.
     QString queryStatement;
-    queryStatement += "CREATE TABLE Mission(";
+    queryStatement += "CREATE TABLE Mission (";
     queryStatement += "heading  REAL,";
     queryStatement += "lat      REAL,";
     queryStatement += "lan      REAL,";
@@ -97,6 +79,94 @@ void DbManager::createOrLoadMissionTable()
     }
 }
 
+void DbManager::createOrLoadFlightPathTable()
+{
+    QSqlQuery query;
+    QString queryStatement;
+
+    // Create tables if they doesn't exist.
+    queryStatement += "CREATE TABLE FlightPath (";
+    queryStatement += "flight_id    INTEGER PRIMARY KEY,";
+    queryStatement += "delay        REAL";
+    queryStatement += ");";
+    query.prepare(queryStatement);
+    query.exec();
+
+    queryStatement = "CREATE TABLE Data (";
+    queryStatement += "data_id     INTEGER PRIMARY KEY,";
+    queryStatement += "flight_id   INTEGER NOT NULL,";
+    queryStatement += "content     UNSIGNED TINYINT,";
+    queryStatement += "FOREIGN KEY (flight_id) REFERENCES FlightPath (flight_id)";
+    queryStatement += ");";
+    query.prepare(queryStatement);
+    query.exec();
+
+    // Parse data into objects.
+    query.prepare("SELECT * FROM FlightPath ORDER BY flight_id ASC");
+    query.exec();
+    while (query.next())
+    {
+        FlightPathData data;
+        data.actionNum = query.value(0).toString();
+        data.delay = query.value(1).toDouble();
+        this->flightPath.push_back(data);
+    }
+
+    foreach (FlightPathData flightPath, this->flightPath)
+    {
+        queryStatement = "SELECT * FROM Data ";
+        queryStatement += "WHERE Data.flight_id = :actionNum ";
+        queryStatement += "ORDER BY Data.flight_id ASC;";
+        query.prepare(queryStatement);
+        query.addBindValue(":actionNum", flightPath.actionNum);
+        query.exec();
+
+        int index = 0;
+        while (query.next())
+        {
+            flightPath.data[index] = query.value(2).toChar();
+        }
+    }
+}
+
+////=== General Commands ===////
+
+void DbManager::saveAll()
+{
+    this->saveMissionToFile();
+    this->saveFlightPathToFile();
+}
+
+bool DbManager::isOpen() const
+{
+    return this->m_db.isOpen();
+}
+
+bool DbManager::open(const QString& fileName)
+{
+    this->open(fileName, "");
+}
+
+bool DbManager::open(const QString& fileName, const QString& directory)
+{          
+    QString fileDirectory;
+    if (directory == "")
+        fileDirectory = fileName + this->kFileExtension;
+    else
+        fileDirectory = directory + this->kPathSeparator + fileName + this->kFileExtension;
+
+    this->m_db = QSqlDatabase::addDatabase("QSQLITE");
+    this->m_db.setDatabaseName(fileDirectory);
+    return this->m_db.open();
+}
+
+void DbManager::close()
+{
+    this->m_db.close();
+}
+
+////=== Mission Commands ===////
+
 void DbManager::addMissionData(MissionData newData)
 {
     this->mission.push_back(newData);
@@ -111,7 +181,7 @@ void DbManager::saveMissionToFile()
 {
     QSqlQuery query;
 
-    this->clearMissionTable(); // First remove old data.
+    this->clearMissionTable(); // First remove old data in the table.
 
     // TODO: if performance is slow, try to optimise here to insert all at once.
     foreach (MissionData mission, mission) {
@@ -138,14 +208,50 @@ void DbManager::clearMissionTable()
     query.exec();
 }
 
+////=== FlightPath Commands ===////
 
+void DbManager::addFlightPathData(FlightPathData newData)
+{
+    this->flightPath.push_back(newData);
+}
 
+const QVector<FlightPathData> getFlightPath() const
+{
+    return this->flightPath;
+}
 
+void saveFlightPathToFile()
+{
+    QSqlQuery query;
 
+    this->clearFlightPathTable(); // First remove old data in the table.
 
+    // STILL TODO.
+    foreach (FlightPathData flightPath, this->flightPath) {
+        query.prepare("INSERT INTO FlightPath (heading, lat, lan, alt, pitch, roll, yaw, xvel, yvel, zvel)"
+                      "VALUES (:heading, :lat, :lan, :alt, :pitch, :roll, :yaw, :xvel, :yvel, :zvel)");
+        query.bindValue(":heading", mission.heading);
+        query.bindValue(":lat",     mission.lat);
+        query.bindValue(":lan",     mission.lan);
+        query.bindValue(":alt",     mission.alt);
+        query.bindValue(":pitch",   mission.pitch);
+        query.bindValue(":roll",    mission.roll);
+        query.bindValue(":yaw",     mission.yaw);
+        query.bindValue(":xvel",    mission.xvel);
+        query.bindValue(":yvel",    mission.yvel);
+        query.bindValue(":zvel",    mission.zvel);
+        query.exec();
+    }
+}
 
+void DbManager::clearFlightPathTable()
+{
+    QSqlQuery query;
+    query.prepare("DELETE FROM FlightPath; DELETE FROM Data");
+    query.exec();
+}
 
-
+void DbManager::
 
 //void DbManager::createFlightPathTable()
 //{
