@@ -184,7 +184,7 @@ void MapExecution::addNewMap() {
 Used for telemetry. */
 void MapExecution::plotPosition(double lat, double lng) {
     updateTable(lat,lng);
-    ui->webView->page()->mainFrame()->evaluateJavaScript("plotUAVPosition(" + QString::number(lat) + "," + QString::number(lng) + ")");
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("plotUAVPosition(" + QString::number(lat) + "," + QString::number(lng) + ")");
 }
 
 void MapExecution::sendCoordToJSMap(double lat, double lng, int mapID){
