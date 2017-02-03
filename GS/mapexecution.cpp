@@ -149,11 +149,8 @@ void MapExecution::drawFlightPath(FlightPath *flightPath) {
     for (Protocol::Waypoint wp : *points){
         sendCoordToJSMap(wp.lat,wp.lon,0);
     }
-<<<<<<< HEAD
-    ui->webView->page()->mainFrame()->evaluateJavaScript("plotFlightPlan()");
-=======
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("plotFlightPlan()");
     //ui->webView->page()->mainFrame()->evaluateJavaScript("plotPolyline()");
->>>>>>> master
     delete points;
 }
 
@@ -191,11 +188,8 @@ void MapExecution::plotPosition(double lat, double lng) {
 }
 
 void MapExecution::sendCoordToJSMap(double lat, double lng, int mapID){
-<<<<<<< HEAD
-    ui->webView->page()->mainFrame()->evaluateJavaScript("addFlightPlan("+QString::number(lat)+","+QString::number(lng)+","+QString::number(mapID)+")");
-=======
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("addFlightPlan("+QString::number(lat)+","+QString::number(lng)+","+QString::number(mapID)+")");
     //ui->webView->page()->mainFrame()->evaluateJavaScript("plotPointOnMap("+QString::number(lat)+","+QString::number(lng)+","+QString::number(mapID)+")");
->>>>>>> master
 }
 
 void MapExecution::updateTable(double lat, double lng) {
