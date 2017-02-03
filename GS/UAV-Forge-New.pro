@@ -16,7 +16,7 @@ QT       += webengine
 QT       += webenginewidgets
 QT       += webchannel
 QT       += websockets
-QT +=   widgets
+QT       += widgets
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
@@ -126,6 +126,6 @@ DEFINES += OLD_GUI
 RESOURCES += \
     Resources.qrc
 
-DISTFILES += \
-    res/html/mapsPlanningGoogle.html
+#DISTFILES += \
+#    res/html/mapsPlanningGoogle.html
 

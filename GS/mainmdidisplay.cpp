@@ -10,34 +10,27 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new U
 
     ui->mdiArea->setBackground( QBrush( QPixmap( ":/res/images/UAVLogo.png" ) ) );
 
+    ///\todo 'dismemberment' is no longer an option for the new custom widget-based GUI -Jordan
+
     this->qttWidget = new QtTabTest();
-
     this->addWindow( qttWidget /* , QString( "Data" ) */ );
-
-    this->tempMapPlanningUIWidget = new MapPlanning();
-
+    //this->tempMapPlanningUIWidget = new MapPlanning(); // <-- Ceating MapPlanings/Executions will cause a crash
     this->missionPlanningWindowUIWidget = new MissionPlanningWindow();
 
     //Add the map planning table to the tab widget window
-
-    qttWidget->setMapPlanningUIWidget( this->tempMapPlanningUIWidget );
-
-    qttWidget->addNewTab( this->tempMapPlanningUIWidget->ui->tableView , QString( "Table (Mission Planning)" ) );
+    //qttWidget->setMapPlanningUIWidget( this->tempMapPlanningUIWidget );
+    //qttWidget->addNewTab( this->tempMapPlanningUIWidget->ui->tableView , QString( "Table (Mission Planning)" ) );
 
     //Add the three buttons from MapPlanning to the Mission Planning window
+    //connect ( this->tempMapPlanningUIWidget->ui->backButton , SIGNAL( clicked() ) , this , SLOT( destroy() ) ) ;
+    //connect ( this->tempMapPlanningUIWidget->ui->executeButton , SIGNAL( clicked() ) , this , SLOT ( beginMapExecution() ) );
 
-    connect ( this->tempMapPlanningUIWidget->ui->backButton , SIGNAL( clicked() ) , this , SLOT( destroy() ) ) ;
-
-    connect ( this->tempMapPlanningUIWidget->ui->executeButton , SIGNAL( clicked() ) , this , SLOT ( beginMapExecution() ) );
-
-    this->switchToPlanningWindow();
+    //this->switchToPlanningWindow();
 
     //this->addWindow( this->MapPlanningMapUIWidget );
 
+    //delete tempMapPlanningUIWidget;
     map = new MapWidget();
-    while(!map->ready()){
-        //wait for the map to be ready
-    }
     addWindow(map);
 
     this->addWindow( this->missionPlanningWindowUIWidget );
