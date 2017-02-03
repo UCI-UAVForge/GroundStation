@@ -1,3 +1,4 @@
+
 #ifndef MAPEXECUTION_H
 #define MAPEXECUTION_H
 
@@ -6,7 +7,7 @@
 #include <QComboBox>
 #include <QPushButton>
 #include <QButtonGroup>
-#include <QWebEnginePage>
+#include <QWebEngineView>
 #include <QPair>
 #include <QList>
 
@@ -19,6 +20,7 @@
 #include "options.h"
 #include "messagebox.h"
 #include "mission.h"
+#include "mapwidget.h"
 
 #include "ui_mapexecution.h"
 #include "messagebox.h"
@@ -55,7 +57,7 @@ public:
 
     messagebox MyMessageBox;
 
-    messagebox MessageBox;
+    //messagebox MessageBox;
 
     Mission getMyMission() const;
 
@@ -80,6 +82,7 @@ private:
 
     FlightPath myFlightPath;
     Mission myMission;
+    MapWidget* map;
 
     bool missionStarted;
     QTimer *conTime;

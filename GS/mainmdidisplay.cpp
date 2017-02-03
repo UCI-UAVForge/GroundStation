@@ -1,5 +1,6 @@
 #include "mainmdidisplay.h"
 #include "ui_mainmdidisplay.h"
+#include "mapwidget.h"
 
 MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainMDIDisplay),
 
@@ -9,29 +10,28 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new U
 
     ui->mdiArea->setBackground( QBrush( QPixmap( ":/res/images/UAVLogo.png" ) ) );
 
+    ///\todo 'dismemberment' is no longer an option for the new custom widget-based GUI -Jordan
+
     this->qttWidget = new QtTabTest();
-
     this->addWindow( qttWidget /* , QString( "Data" ) */ );
-
-    this->tempMapPlanningUIWidget = new MapPlanning();
-
+    //this->tempMapPlanningUIWidget = new MapPlanning(); // <-- Ceating MapPlanings/Executions will cause a crash
     this->missionPlanningWindowUIWidget = new MissionPlanningWindow();
 
     //Add the map planning table to the tab widget window
-
-    qttWidget->setMapPlanningUIWidget( this->tempMapPlanningUIWidget );
-
-    qttWidget->addNewTab( this->tempMapPlanningUIWidget->ui->tableView , QString( "Table (Mission Planning)" ) );
+    //qttWidget->setMapPlanningUIWidget( this->tempMapPlanningUIWidget );
+    //qttWidget->addNewTab( this->tempMapPlanningUIWidget->ui->tableView , QString( "Table (Mission Planning)" ) );
 
     //Add the three buttons from MapPlanning to the Mission Planning window
+    //connect ( this->tempMapPlanningUIWidget->ui->backButton , SIGNAL( clicked() ) , this , SLOT( destroy() ) ) ;
+    //connect ( this->tempMapPlanningUIWidget->ui->executeButton , SIGNAL( clicked() ) , this , SLOT ( beginMapExecution() ) );
 
-    connect ( this->tempMapPlanningUIWidget->ui->backButton , SIGNAL( clicked() ) , this , SLOT( destroy() ) ) ;
+    //this->switchToPlanningWindow();
 
-    connect ( this->tempMapPlanningUIWidget->ui->executeButton , SIGNAL( clicked() ) , this , SLOT ( beginMapExecution() ) );
+    //this->addWindow( this->MapPlanningMapUIWidget );
 
-    this->switchToPlanningWindow();
-
-    this->addWindow( this->MapPlanningMapUIWidget );
+    //delete tempMapPlanningUIWidget;
+    map = new MapWidget();
+    addWindow(map);
 
     this->addWindow( this->missionPlanningWindowUIWidget );
 
@@ -59,8 +59,8 @@ void MainMDIDisplay::switchToPlanningWindow() {
 
     //Add the map in the background
 
-    this->MapPlanningMapUIWidget = this->tempMapPlanningUIWidget->ui->webView;
-    this->tempMapPlanningUIWidget->ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
+    //this->MapPlanningMapUIWidget = this->tempMapPlanningUIWidget->ui->webView;
+    //this->tempMapPlanningUIWidget->ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
     this->tempMapPlanningUIWidget->clearTable();
     //Add the buttons from MapPlanning to the Mission Planning window
 
@@ -163,7 +163,7 @@ void MainMDIDisplay::beginMapExecution() {
 
  //   qDebug() << "URL BEFORE: " << this->MapPlanningMapUIWidget->url();
  //   this->MapPlanningMapUIWidget->load(QUrl("qrc:/res/html/mapsPlanning.html"));
-    this->tempMapExecutionUIWidget->ui->webView = this->MapPlanningMapUIWidget;
+    //this->tempMapExecutionUIWidget->ui->webView = this->MapPlanningMapUIWidget;
     this->tempMapExecutionUIWidget->addNewMap();
  //   qDebug() << "URL AFTER: " << this->MapPlanningMapUIWidget->url();
 
@@ -244,14 +244,14 @@ void MainMDIDisplay::switchToRecapWindow() {
 
     //TODO May not be necessary since the URL appears to be the same before and after
 
-    qDebug() << "URL BEFORE: " << this->MapPlanningMapUIWidget->url() ;
-    this->tempMapRecapUIWidget->ui->webView = this->MapPlanningMapUIWidget;
+    //qDebug() << "URL BEFORE: " << this->MapPlanningMapUIWidget->url() ;
+    //this->tempMapRecapUIWidget->ui->webView = this->MapPlanningMapUIWidget;
     this->tempMapRecapUIWidget->updateMap();
 
 //    this->MapPlanningMapUIWidget = this->tempMapRecapUIWidget->ui->webView ;
 //    this->tempMapRecapUIWidget->updateMap();
 
-    qDebug() << "URL AFTER: " << this->MapPlanningMapUIWidget->url() ;
+    //qDebug() << "URL AFTER: " << this->MapPlanningMapUIWidget->url() ;
 
     this->MapRecapUI_TableTab = this->tempMapRecapUIWidget->getTab( 1 );
 

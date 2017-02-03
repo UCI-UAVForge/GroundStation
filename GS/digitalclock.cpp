@@ -25,7 +25,7 @@ DigitalClock::~DigitalClock()
      * then deletes it. If you just do "delete StatusTimer" the whole universe implodes.
      * Sorry. I needed to tell somebody this :) */
 
-    StatusTimer->deleteLater();
+    //StatusTimer->deleteLater();
 
     TimeTimer->deleteLater();
 
@@ -111,6 +111,8 @@ void DigitalClock::showStatus()
         clear();
         appendPlainText(text);
 
-        map_exec_ptr->plotPosition(lat, lon);
+
+        /// \todo fix this NullPointerException!
+        //map_exec_ptr->plotPosition(lat, lon);
     }
 }
