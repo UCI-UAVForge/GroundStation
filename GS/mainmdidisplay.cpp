@@ -1,5 +1,6 @@
 #include "mainmdidisplay.h"
 #include "ui_mainmdidisplay.h"
+#include "mapwidget.h"
 
 MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainMDIDisplay),
 
@@ -31,7 +32,13 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new U
 
     this->switchToPlanningWindow();
 
-    this->addWindow( this->MapPlanningMapUIWidget );
+    //this->addWindow( this->MapPlanningMapUIWidget );
+
+    map = new MapWidget();
+    while(!map->ready()){
+        //wait for the map to be ready
+    }
+    addWindow(map);
 
     this->addWindow( this->missionPlanningWindowUIWidget );
 
@@ -59,8 +66,8 @@ void MainMDIDisplay::switchToPlanningWindow() {
 
     //Add the map in the background
 
-    this->MapPlanningMapUIWidget = this->tempMapPlanningUIWidget->ui->webView;
-    this->tempMapPlanningUIWidget->ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
+    //this->MapPlanningMapUIWidget = this->tempMapPlanningUIWidget->ui->webView;
+    //this->tempMapPlanningUIWidget->ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
     this->tempMapPlanningUIWidget->clearTable();
     //Add the buttons from MapPlanning to the Mission Planning window
 
@@ -163,7 +170,7 @@ void MainMDIDisplay::beginMapExecution() {
 
  //   qDebug() << "URL BEFORE: " << this->MapPlanningMapUIWidget->url();
  //   this->MapPlanningMapUIWidget->load(QUrl("qrc:/res/html/mapsPlanning.html"));
-    this->tempMapExecutionUIWidget->ui->webView = this->MapPlanningMapUIWidget;
+    //this->tempMapExecutionUIWidget->ui->webView = this->MapPlanningMapUIWidget;
     this->tempMapExecutionUIWidget->addNewMap();
  //   qDebug() << "URL AFTER: " << this->MapPlanningMapUIWidget->url();
 
@@ -244,14 +251,14 @@ void MainMDIDisplay::switchToRecapWindow() {
 
     //TODO May not be necessary since the URL appears to be the same before and after
 
-    qDebug() << "URL BEFORE: " << this->MapPlanningMapUIWidget->url() ;
-    this->tempMapRecapUIWidget->ui->webView = this->MapPlanningMapUIWidget;
+    //qDebug() << "URL BEFORE: " << this->MapPlanningMapUIWidget->url() ;
+    //this->tempMapRecapUIWidget->ui->webView = this->MapPlanningMapUIWidget;
     this->tempMapRecapUIWidget->updateMap();
 
 //    this->MapPlanningMapUIWidget = this->tempMapRecapUIWidget->ui->webView ;
 //    this->tempMapRecapUIWidget->updateMap();
 
-    qDebug() << "URL AFTER: " << this->MapPlanningMapUIWidget->url() ;
+    //qDebug() << "URL AFTER: " << this->MapPlanningMapUIWidget->url() ;
 
     this->MapRecapUI_TableTab = this->tempMapRecapUIWidget->getTab( 1 );
 

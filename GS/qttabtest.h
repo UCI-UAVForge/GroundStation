@@ -8,7 +8,6 @@
 #include <QPixmap>
 #include <QDebug>
 #include <iostream>
-#include <QtWebKitWidgets/QWebView>
 #include <QUrl>
 
 #include "options.h"
@@ -68,7 +67,7 @@ private slots:
     void missionRecapClicked();
 
     void on_actionQuit_triggered();
-
+*/
     /**
       * @brief implemented the four menubar options: (Save,Map Planning,Mission Execution, Mission Recap)
       *

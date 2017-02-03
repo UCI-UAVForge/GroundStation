@@ -15,6 +15,7 @@ int main(int argc, char *argv[]) {
     static const int splash_width = 600;
     static const int splash_height = 450;
     static const QString filename(":/res/images/UAV Forge Logo 2015.svg");
+
     QApplication a(argc, argv);
 
     //Construct and load the SVG image
@@ -50,3 +51,4 @@ int main(int argc, char *argv[]) {
     return a.exec();
 
 }
+

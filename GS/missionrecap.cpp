@@ -20,11 +20,11 @@ MissionRecap::MissionRecap(QWidget *parent) : QDialog(parent), ui(new Ui::Missio
     connect(ui->horizontalSlider, SIGNAL(sliderMoved(int)), this, SLOT(updateMediaPlayer(int)), Qt::UniqueConnection);
     connect(&mediaPlayer, SIGNAL(positionChanged(qint64)), this, SLOT(updateSlider(qint64)), Qt::UniqueConnection);
 
-    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));//
+    //connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
+    //ui->webView->load(QUrl("qrc:/res/html/mapsExecution.html"));//
 
-    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    ui->webView->load(QUrl("qrc:/res/html/missionRecap.html"));//
+    //connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
+    //ui->webView->load(QUrl("qrc:/res/html/missionRecap.html"));//
 
     setupRealtimeDataDemo(ui->customPlot);
 
@@ -169,5 +169,5 @@ void MissionRecap::on_newMission_clicked() {
 
 //Creates the bridge called cbridge between the java script object and this class.
 void MissionRecap::addClickListener() {
-    ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("cbridge",this);
+    //ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("cbridge",this);
 }
