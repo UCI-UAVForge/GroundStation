@@ -31,6 +31,5 @@ HEADERS  += \
 
 FORMS    += dialog.ui
 
-DISTFILES += \
-    SimulDraft2UAV.pro.user
+DISTFILES +=
 CONFIG += c++11

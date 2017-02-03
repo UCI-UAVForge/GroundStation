@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="qrc:///qtwebchannel/qwebchannel.js"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM"></script>
+        <script type="text/javascript" src="qrc:/res/js/mapsPlanningGoogle.js"></script>
+        <script type="text/javascript" src="qrc:/res/js/Cbridge.js"></script>
+
+        <!--<script type="text/javasvript">
+        window.onload = function() {
+          alert("loading!");
+            if (location.search != "")
+                var baseUrl = (/[?&]webChannelBaseUrl=([A-Za-z0-9\-:/\.]+)/.exec(location.search)[1]);
+            else
+                var baseUrl = "ws://localhost:20270";
+            alert(baseUrl);
+            var socket = new WebSocket(baseUrl);
+            alert("Starting Socket!");
+            socket.onclose = function() {
+                console.error("web channel closed");
+            };
+
+            socket.onerror = function(error) {
+                console.error("web channel error: " + error);
+            };
+            socket.onopen = function() {
+                alert("Socket open!");
+                new QWebChannel(socket, function(channel) {
+                    // make dialog object accessible globally
+                    window.cbridge = channel.objects.cbridge;
+
+                    cbridge.sendPoint.connect(function(lat,lng) {
+                        addLatLngCoords(lat,lng);
+                    });
+                });
+                initializeMap();
+            };
+        }
+        </script> -->
+
+      <style type="text/css">
+        #map_canvas {
+            width: 100%;
+            height: 100%;
+            margin: 0px;
+            background-color: #CCC;
+        }
+        </style>
+    </head>
+    <body>
+        <div id="map_canvas"></div>
+    </body>
+</html>
