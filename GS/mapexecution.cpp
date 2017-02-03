@@ -149,6 +149,7 @@ void MapExecution::drawFlightPath(FlightPath *flightPath) {
     for (Protocol::Waypoint wp : *points){
         sendCoordToJSMap(wp.lat,wp.lon,0);
     }
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("plotFlightPlan()");
     //ui->webView->page()->mainFrame()->evaluateJavaScript("plotPolyline()");
     delete points;
 }
@@ -183,10 +184,11 @@ void MapExecution::addNewMap() {
 Used for telemetry. */
 void MapExecution::plotPosition(double lat, double lng) {
     updateTable(lat,lng);
-    sendCoordToJSMap(lat,lng,1);
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("plotUAVPosition(" + QString::number(lat) + "," + QString::number(lng) + ")");
 }
 
 void MapExecution::sendCoordToJSMap(double lat, double lng, int mapID){
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("addFlightPlan("+QString::number(lat)+","+QString::number(lng)+","+QString::number(mapID)+")");
     //ui->webView->page()->mainFrame()->evaluateJavaScript("plotPointOnMap("+QString::number(lat)+","+QString::number(lng)+","+QString::number(mapID)+")");
 }
 

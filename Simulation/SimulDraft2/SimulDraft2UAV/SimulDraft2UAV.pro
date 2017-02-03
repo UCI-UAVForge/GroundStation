@@ -21,13 +21,11 @@ SOURCES += main.cpp \
 
 HEADERS  += \
     uav.h \
-    ackpacket.h \
-    actionpacket.h \
-    infopacket.h \
-    packet.h \
-    telemetrypacket.h \
-    actionpacket.h \
-    infopacket.h
+    Packet.h \
+    TelemetryPacket.h \
+    ActionPacket.h \
+    AckPacket.h \
+    InfoPacket.h
 
 FORMS    += dialog.ui
 
