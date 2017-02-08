@@ -1,31 +1,22 @@
 #include "mapplanning.h"
+#include <QWebEngineView>
+#include <QWebSocketServer>
+#include "mapwidget.h"
+#include <iostream>
 
 MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlanning) {
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
 
-/*
- * Recreates the C++/JS bridge when the JavaScript window is refreshed
- */
-    //connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    ui->webView->setUrl(QUrl("qrc:/res/html/mapsPlanning.html"));
-
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
-    //ui->tableView->setColumnHidden(0, true);
-    //ui->tableView->setColumnHidden(5, true);
-    //ui->tableView->setColumnWidth(2, 42);
-    //ui->tableView->setColumnWidth(4, 42);
 
-    connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()), Qt::UniqueConnection);
-    connect(ui->clearTableButton, SIGNAL(clicked()), this, SLOT(on_clearTableButton_clicked()), Qt::UniqueConnection);
-    connect(ui->executeButton, SIGNAL(clicked()), this, SLOT(on_executeButton_clicked()), Qt::UniqueConnection);
 
-    //Initialized to NULL to prevent wasted space since the original GUI does not use these. - Roman Parise
-    loadMissionButton = saveMissionButton = NULL ;
+    map = new MapWidget();
+    ui->graphicsView->setViewport(map);
 
+    this->connect(map,&MapWidget::pointAddedToMap,this,&MapPlanning::addPointToTable);
 }
 
 MapPlanning::~MapPlanning() {
@@ -37,16 +28,17 @@ MapPlanning::~MapPlanning() {
  * is used to rebruild the bridge each time when triggered by a
  * javaScriptWindowObjectCleared signal from the page frame. Function
  * added by Jordan Dickson Feb 14th 2015.
+ * Unused -Jordan Dickson Feb 3 2017
  */
 void MapPlanning::addClickListener() {
     //Creates the bridge called cbridge between the java script object and this class.
-    ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("cbridge",this);
+    //ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("cbridge",this);
 }
 
 // execution button
 // redirect to mission execution window
 void MapPlanning::on_executeButton_clicked() {
-
+    delete map;
     emit timeToStartMapExecution();
     #ifdef OLD_GUI
     MapExecution* mapExecution = new MapExecution(getTableAsFlightPath());
@@ -91,7 +83,7 @@ void MapPlanning::on_backButton_clicked() {
 void MapPlanning::on_clearTableButton_clicked() {
     delete model;
     model = new TableModel();
-    ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
     ui->tableView->setModel(model);
 }
 
@@ -101,7 +93,7 @@ void MapPlanning::on_clearTableButton_clicked() {
  */
 void MapPlanning::on_clearMapButton_clicked() {
      //ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
-     ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
+     //ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
 }
 
 /* Sends a request for the map to clear itself, causing the JavaScript page
@@ -111,8 +103,8 @@ Jordan Dickson Feb 14th 2015. */
 //Sends clearMap request.
 
 void MapPlanning::updateMap() {
-    ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
-    ui->webView->page()->mainFrame()->evaluateJavaScript("addDrawControl()");
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("addDrawControl()");
     //Loops through table entries
     for(int i = 0; i < model->getList().size(); i++) {
         QList<QString> list = model->getList()[i];
@@ -126,7 +118,7 @@ void MapPlanning::updateMap() {
             lat *= -1.0;
         }
         //Sends the add point request with its parameters.
-        ui->webView->page()->mainFrame()->evaluateJavaScript("addLatLngCoords("+QString::number(lat)+","+QString::number(lng)+")");
+        //ui->webView->page()->mainFrame()->evaluateJavaScript("addLatLngCoords("+QString::number(lat)+","+QString::number(lng)+")");
     }
 }
 FlightPath *MapPlanning::getTableAsFlightPath(){

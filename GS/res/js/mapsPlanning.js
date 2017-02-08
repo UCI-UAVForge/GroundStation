@@ -45,6 +45,7 @@ function selectColor(layer) {
     layer.setStyle({color:'red'});
 }
 
+//Adds selected points to the table when line is saved.
 function updateTable(layer) {
     var allPoints = layer.getLatLngs();
     cbridge.clearTable();
@@ -52,6 +53,7 @@ function updateTable(layer) {
         cbridge.addPointToTable(allPoints[i].lat, allPoints[i].lng);
     }
 }
+
 
 function addClickListener(layer) {
     layer.on('click', function(){
@@ -103,40 +105,50 @@ function addLatLngCoords(lat, lng) {
 }
 
 /////execution
-var flightPath = [];
+var flightPlan = [];
 //Actual flight path of the UAV, Constructed from data Recieved from UAV/test machine
-var flightPath_actual;
-
+var flightPlanLine;
 var i = 0;
-var marker;
+// Current position of the UAV
+var uavPos;
+// Array containing path of UAV
+var uavPath = [];
+// Polyline used to draw UAV path on map
+var uavPathLine;
+// Layer containing uavPos, uavPath, and uavPathLine
+var positionLayer = new L.FeatureGroup().addTo(map);
 
-function plotPointOnMap(lat,lng,mapID){
-    flightPath.push([lat, lng]);
-    document.getElementById("ok").innerHTML = flightPath.toString();
+//Adds flight plan to array
+function addFlightPlan(lat,lng,mapID){
+    flightPlan.push([lat, lng]);
 }
 
-function plotPolyline() {
-    flightPath_actual = L.polyline(flightPath);
-    drawnItems.addLayer(flightPath_actual).addTo(map);
+//Plots the planned route that the UAV should follow
+function plotFlightPlan() {
+    flightPlanLine = L.polyline(flightPlan, {opacity:0.6});
+    drawnItems.addLayer(flightPlanLine).addTo(map);
     map.removeControl(drawControl);
-    map.fitBounds(flightPath_actual.getBounds(), {padding:[50, 50]});
+    map.fitBounds(flightPlanLine.getBounds(), {padding:[50, 50]});
 }
 
-function startFlight() {
-    marker = L.Marker.movingMarker(flightPath, 20000).addTo(map);
-    drawnItems.addLayer(marker);
-    marker.start();
+//Plots actual position and route of the UAV
+function plotUAVPosition(lat, lng) {
+    positionLayer.clearLayers();
+    uavPath.push([lat, lng]);
+    if (uavPath.length > 1) {
+        uavPathLine = L.polyline(uavPath, {color: 'red', opacity: 0.9}).addTo(map);
+    }
+    uavPos = new L.Marker([lat, lng]).addTo(map);
+    positionLayer.addLayer(uavPos);
+    positionLayer.addLayer(uavPathLine);
+    map.redraw();
 }
 
+// Adds draw controls back when moving from flight execution to flight planning
 function addDrawControl() {
     map.addControl(drawControl);
 }
 
-function stopFlight() {
-    marker.stop();
-//    drawnItems.removeLayer(marker);
-//    map.addControl(drawControl);
-}
 
 //In case a reload is necessary
 var readyStateCheckInterval = setInterval(function() {

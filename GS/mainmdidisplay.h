@@ -5,6 +5,7 @@
 #include "qttabtest.h"
 #include "missionplanningwindow.h"
 #include "ui_mainmdidisplay.h"
+#include "mapwidget.h"
 
 #include <assert.h>
 
@@ -75,7 +76,7 @@ private:
 
     MapPlanning * tempMapPlanningUIWidget;
 
-    QWebView * MapPlanningMapUIWidget;
+    MapWidget *map;
 
     MissionPlanningWindow * missionPlanningWindowUIWidget;
 

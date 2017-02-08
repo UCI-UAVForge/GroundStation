@@ -11,10 +11,11 @@ QT       += core \
             network
 QT       += svg
 QT       += sql
-
-#QT       += webengine
-#QT += webenginewidgets
-QT       += webkit webkitwidgets
+QT       += webengine
+QT       += webenginewidgets
+QT       += webchannel
+QT       += websockets
+QT       += widgets
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
@@ -61,7 +62,10 @@ SOURCES += main.cpp\
     qttabtest.cpp \
     mainmdidisplay.cpp \
     missionplanningwindow.cpp \
-    dbmanager.cpp
+    dbmanager.cpp \
+    mapwidget.cpp \
+    websocketclientwrapper.cpp \
+    websockettransport.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
@@ -94,7 +98,11 @@ HEADERS  += mainwindow.h \
     qttabtest.h \
     mainmdidisplay.h \
     missionplanningwindow.h \
-    dbmanager.h
+    dbmanager.h \
+    mapwidget.h \
+    websocketclientwrapper.h \
+    websockettransport.h \
+    dialog.h
 
 FORMS    += mainwindow.ui \
     options.ui \
@@ -106,13 +114,17 @@ FORMS    += mainwindow.ui \
     connectiondialog.ui \
     maprecap.ui \
     qttabtest.ui \
-    mainmdidisplay.ui
+    mainmdidisplay.ui \
+    dialog.ui
 
 OTHER_FILES +=
 
 #Uncomment this line, clean the build, run qmake, and then rebuild to use the old GUI.
-#DEFINES += OLD_GUI
+DEFINES += OLD_GUI
 
 RESOURCES += \
     Resources.qrc
+
+#DISTFILES += \
+#    res/html/mapsPlanningGoogle.html
 

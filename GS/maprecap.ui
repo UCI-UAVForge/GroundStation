@@ -44,7 +44,7 @@
     <attribute name="title">
      <string>Map</string>
     </attribute>
-    <widget class="QWebView" name="webView">
+    <widget class="QWidget" name="widget" native="true">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -58,11 +58,6 @@
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
-     </property>
-     <property name="url">
-      <url>
-       <string>about:blank</string>
-      </url>
      </property>
     </widget>
    </widget>
@@ -101,13 +96,6 @@
    </property>
   </widget>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>QWebView</class>
-   <extends>QWidget</extends>
-   <header>QtWebKitWidgets/QWebView</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -10,6 +10,7 @@ FlightPath::FlightPath(QString filename)  {
 
     /// @todo any database initialization and error checking if necesary
 
+
     /// @todo get actual database length
     int length = 10;
 
@@ -82,6 +83,7 @@ bool FlightPath::save(QString filename){
         ap->GetBytes(data,40);
 
         /// @todo write "actionNum", "delay", and "data" variables to the database
+
     }
 
     /// @todo any remaining database functions for safe file handling if needed

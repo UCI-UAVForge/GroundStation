@@ -5,8 +5,7 @@
 #include <QComboBox>
 #include <QPushButton>
 #include <QButtonGroup>
-#include <QWebEnginePage>
-#include <QWebFrame>
+#include <QWebEngineView>
 #include <QString>
 #include <QApplication>
 #include <QDoubleValidator>
@@ -18,6 +17,7 @@
 #include "flightpath.h"
 #include "mapexecution.h"
 #include "messagebox.h"
+#include "mapwidget.h"
 
 #include "ui_mapplanning.h"
 
@@ -79,6 +79,7 @@ private:
     QPushButton * loadMissionButton , * saveMissionButton ;
 
     Ui::MapPlanning *ui;
+    MapWidget *map;
 
 signals:
 

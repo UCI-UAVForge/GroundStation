@@ -15,12 +15,14 @@ MapExecution::MapExecution(FlightPath* flightPath, QWidget *parent):
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
 
+    map = new MapWidget();
+    ui->graphicsView->setViewport(map);
+
     //MyMessageBox.fetch_from_table(strings);
 
     for (TimedAction *a : myFlightPath){
         MyMessageBox.addActionPacket(*(a->first));
     }
-
     //initate clock timer
     ui->clock->initiate(MyMessageBox.timer);
 
@@ -52,9 +54,9 @@ MapExecution::MapExecution(FlightPath* flightPath, QWidget *parent):
     ui->tableView->setColumnWidth(4, 42);
     */
 
-    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
-    qDebug() << "Map Execution Constructor URL: " << ui->webView->url();
+    //connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
+    //ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
+    //qDebug() << "Map Execution Constructor URL: " << ui->webView->url();
 
     connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()), Qt::UniqueConnection);
     connect(ui->cancelButton, SIGNAL(clicked()), this, SLOT(on_cancelButton_clicked()), Qt::UniqueConnection);
@@ -66,6 +68,7 @@ MapExecution::MapExecution(FlightPath* flightPath, QWidget *parent):
 MapExecution::~MapExecution() {
     delete ui;
     delete model;
+    delete map;
     conTime->disconnect();
     conTime->deleteLater();
 }
@@ -126,7 +129,7 @@ void MapExecution::on_backButton_clicked() {
     if (!missionStarted){
         missionStarted = true;
         sendFlightPlan();
-        ui->webView->page()->mainFrame()->evaluateJavaScript("startFlight()");
+        //ui->webView->page()->mainFrame()->evaluateJavaScript("startFlight()");
         myServer.startServer();
     }
 }
@@ -141,12 +144,13 @@ void MapExecution::sendFlightPlan(){
 }
 
 void MapExecution::drawFlightPath(FlightPath *flightPath) {
-    ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
     QList<Protocol::Waypoint> *points = flightPath->getOrderedWaypoints();
     for (Protocol::Waypoint wp : *points){
         sendCoordToJSMap(wp.lat,wp.lon,0);
     }
-    ui->webView->page()->mainFrame()->evaluateJavaScript("plotPolyline()");
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("plotFlightPlan()");
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("plotPolyline()");
     delete points;
 }
 
@@ -156,7 +160,7 @@ void MapExecution::drawFlightPath(FlightPath *flightPath) {
  added by Jordan Dickson Feb 21st 2015. */
 void MapExecution::addClickListener() {
     //Creates the bridge called cbridge between the java script object and this class.
-    ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("cbridge",this);
+    //ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("cbridge",this);
 }
 Mission MapExecution::getMyMission() const
 {
@@ -180,11 +184,12 @@ void MapExecution::addNewMap() {
 Used for telemetry. */
 void MapExecution::plotPosition(double lat, double lng) {
     updateTable(lat,lng);
-    sendCoordToJSMap(lat,lng,1);
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("plotUAVPosition(" + QString::number(lat) + "," + QString::number(lng) + ")");
 }
 
 void MapExecution::sendCoordToJSMap(double lat, double lng, int mapID){
-    ui->webView->page()->mainFrame()->evaluateJavaScript("plotPointOnMap("+QString::number(lat)+","+QString::number(lng)+","+QString::number(mapID)+")");
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("addFlightPlan("+QString::number(lat)+","+QString::number(lng)+","+QString::number(mapID)+")");
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("plotPointOnMap("+QString::number(lat)+","+QString::number(lng)+","+QString::number(mapID)+")");
 }
 
 void MapExecution::updateTable(double lat, double lng) {
