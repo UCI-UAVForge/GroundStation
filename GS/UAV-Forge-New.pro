@@ -66,7 +66,8 @@ SOURCES += main.cpp\
     dbmanager.cpp \
     mapwidget.cpp \
     websocketclientwrapper.cpp \
-    websockettransport.cpp
+    websockettransport.cpp \
+    tablewidget.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
@@ -103,7 +104,8 @@ HEADERS  += mainwindow.h \
     mapwidget.h \
     websocketclientwrapper.h \
     websockettransport.h \
-    dialog.h
+    dialog.h \
+    tablewidget.h
 
 FORMS    += mainwindow.ui \
     options.ui \

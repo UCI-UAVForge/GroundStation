@@ -3,20 +3,14 @@
 #include <QWebSocketServer>
 #include "mapwidget.h"
 #include <iostream>
+#include "tablewidget.h"
 
 MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlanning) {
     ui->setupUi(this);
-    buttonGroup = new QButtonGroup();
 
-    model = new TableModel();
-    ui->tableView->setModel(model);
-    ui->tableView->setItemDelegate(new QComboBoxDelegate());
-
-
-    map = new MapWidget();
-    ui->graphicsView->setViewport(map);
-
-    this->connect(map,&MapWidget::pointAddedToMap,this,&MapPlanning::addPointToTable);
+    this->connect(ui->mapView, &MapWidget::pointAddedToMap, ui->tableView, &TableWidget::appendRow);
+    this->connect(ui->clearTableButton, &QPushButton::clicked, ui->tableView, &TableWidget::clearTable);
+    this->connect(ui->clearTableButton, &QPushButton::clicked, ui->mapView, &MapWidget::clearMap);
 }
 
 MapPlanning::~MapPlanning() {
@@ -38,31 +32,24 @@ void MapPlanning::addClickListener() {
 // execution button
 // redirect to mission execution window
 void MapPlanning::on_executeButton_clicked() {
-    delete map;
+    /// \todo need a way of closing the MapView server so that it won't crash here -Jordan
+    //delete map;
     emit timeToStartMapExecution();
     #ifdef OLD_GUI
     MapExecution* mapExecution = new MapExecution(getTableAsFlightPath());
     this->close();
     mapExecution->showFullScreen();
     #endif
-
-//    ConnectionDialog * connectionDialog = new ConnectionDialog();
-//    connectionDialog -> show();
-
-
-    //this->done(2);
 }
 
 // + button
 void MapPlanning::on_addButton_clicked() {
-    model->insertRow();
+    //model->insertRow();
 }
 
 // - button
 void MapPlanning::on_deleteButton_clicked() {
-    QModelIndexList indexes = ui->tableView->selectionModel()->selectedIndexes();
-    model->removeRows(indexes);
-    updateMap();
+    ui->tableView->removeSelectedRows();
 }
 
 // update button
@@ -76,36 +63,13 @@ void MapPlanning::on_backButton_clicked() {
     this->done(0);
 }
 
-// clear table button
-/* Clears all the rows in the table, basically makes a new table
- * Arash
- */
-void MapPlanning::on_clearTableButton_clicked() {
-    delete model;
-    model = new TableModel();
-    //ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
-    ui->tableView->setModel(model);
-}
-
-//clear map button
-/* Clears the map
- * Arash
- */
-void MapPlanning::on_clearMapButton_clicked() {
-     //ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
-     //ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
-}
-
 /* Sends a request for the map to clear itself, causing the JavaScript page
 to reload itself. This function then cycles through each entry on the table
 and enters the coordinates on the map one by one in order. Function added by
 Jordan Dickson Feb 14th 2015. */
-//Sends clearMap request.
-
 void MapPlanning::updateMap() {
-    //ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
-    //ui->webView->page()->mainFrame()->evaluateJavaScript("addDrawControl()");
     //Loops through table entries
+    TableModel *model = ui->tableView->getModel();
     for(int i = 0; i < model->getList().size(); i++) {
         QList<QString> list = model->getList()[i];
         //Converts West and South coordinates to negative numbers.
@@ -118,12 +82,11 @@ void MapPlanning::updateMap() {
             lat *= -1.0;
         }
         //Sends the add point request with its parameters.
-        //ui->webView->page()->mainFrame()->evaluateJavaScript("addLatLngCoords("+QString::number(lat)+","+QString::number(lng)+")");
     }
 }
 FlightPath *MapPlanning::getTableAsFlightPath(){
     FlightPath *newFP = new FlightPath();
-
+    TableModel *model = ui->tableView->getModel();
     QList<QList<QString> > table = model->getList();
     for(int i = 0; i < table.length(); i++) {
         QList<QString> row = table[i];
@@ -152,27 +115,12 @@ void MapPlanning::closeWindow() {
 from the JavaScript file. See tablemodel.cpp file for more information.
 Added by Jordan Dickson Feb 14th 2015.*/
 void MapPlanning::addPointToTable(double lat, double lng) {
-
-    model->insertRow(lng,lat);
-
-    //David Moe
-
-    ui->tableView->scrollToBottom();
-
+    ui->tableView->appendRow(lat,lng);
 }
 
-//void MapPlanning::getTable() {
-//    QList<Protocol::Waypoint> *points = flightPath->getOrderedWaypoints();
-//    for (Protocol::Waypoint wp : *points){
-//        (wp.lat,wp.lon);
-//    }
-//}
-
-
 void MapPlanning::clearTable() {
-    delete model;
-    model = new TableModel();
-    ui->tableView->setModel(model);
+    ui->tableView->clearTable();
+    ui->mapView->clearMap();
 }
 //Functions for the loadMission and saveMission buttons. These are buttons that have been added for
 //the new GUI that supports loading and saving missions.

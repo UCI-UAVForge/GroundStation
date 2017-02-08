@@ -22,9 +22,7 @@
 #include "ui_mapplanning.h"
 
 namespace Ui {
-
     class MapPlanning;
-
 }
 
 class MapPlanning : public QDialog {
@@ -36,10 +34,12 @@ class MapPlanning : public QDialog {
     friend class MainMDIDisplay;
 
 public:
-    void updateMap();
-    FlightPath *getTableAsFlightPath();
     explicit MapPlanning(QWidget *parent = 0);
     ~MapPlanning();
+
+    void updateMap();
+
+    FlightPath *getTableAsFlightPath();
 
     QPushButton * getLoadMissionButton() ;
 
@@ -59,8 +59,6 @@ private slots:
     void on_executeButton_clicked();
     void on_addButton_clicked();
     void on_backButton_clicked();
-    void on_clearTableButton_clicked();
-    void on_clearMapButton_clicked();
     void on_deleteButton_clicked();
     void on_updateTableButton_clicked();
 
@@ -69,17 +67,11 @@ private slots:
     void closeWindow();
 
 private:
-    //Ui::MapPlanning *ui;
-    QButtonGroup *buttonGroup;
-    QPushButton *del;
-    TableModel *model;
-    PopWindowMP *popup;
-    //QList<QList<QString> > tableData;
-
-    QPushButton * loadMissionButton , * saveMissionButton ;
-
     Ui::MapPlanning *ui;
-    MapWidget *map;
+    QPushButton *del;
+    PopWindowMP *popup;
+    QPushButton *loadMissionButton;
+    QPushButton *saveMissionButton;
 
 signals:
 

@@ -1,6 +1,7 @@
 #include "mainmdidisplay.h"
 #include "ui_mainmdidisplay.h"
 #include "mapwidget.h"
+#include "tablewidget.h"
 
 MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainMDIDisplay),
 
@@ -12,10 +13,10 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new U
 
     ///\todo 'dismemberment' is no longer an option for the new custom widget-based GUI -Jordan
 
-    this->qttWidget = new QtTabTest();
-    this->addWindow( qttWidget /* , QString( "Data" ) */ );
+    //this->qttWidget = new QtTabTest();
+    //this->addWindow( qttWidget /* , QString( "Data" ) */ );
     //this->tempMapPlanningUIWidget = new MapPlanning(); // <-- Ceating MapPlanings/Executions will cause a crash
-    this->missionPlanningWindowUIWidget = new MissionPlanningWindow();
+    //this->missionPlanningWindowUIWidget = new MissionPlanningWindow();
 
     //Add the map planning table to the tab widget window
     //qttWidget->setMapPlanningUIWidget( this->tempMapPlanningUIWidget );
@@ -30,8 +31,17 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new U
     //this->addWindow( this->MapPlanningMapUIWidget );
 
     //delete tempMapPlanningUIWidget;
+
+
+    ///\note widget-based gui here. Non-dismembered
+
     map = new MapWidget();
     addWindow(map);
+
+    TableWidget *tw = new TableWidget();
+    addWindow(tw);
+
+    connect(map, &MapWidget::pointAddedToMap, tw, &TableWidget::appendRow);
 
     this->addWindow( this->missionPlanningWindowUIWidget );
 

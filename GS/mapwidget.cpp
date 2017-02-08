@@ -8,7 +8,7 @@
 #include <iostream>
 #include <QTimer>
 
-MapWidget::MapWidget():
+MapWidget::MapWidget(QWidget *parent): QWebEngineView(parent),
     server(QStringLiteral("MapServer"), QWebSocketServer::NonSecureMode),
     clientWrapper(&server)
 {
@@ -66,4 +66,8 @@ void MapWidget::loadStartedSlot() {
 void MapWidget::addPointToTable(double lat, double lng){
     //QTextStream(stdout)<<lat << "," << lng;
     emit pointAddedToMap(lat,lng,0);
+}
+
+void MapWidget::clearMap(){
+    emit clearFlightpath(0);
 }

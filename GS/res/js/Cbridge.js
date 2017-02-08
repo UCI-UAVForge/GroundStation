@@ -21,6 +21,10 @@ window.onload = function() {
             cbridge.sendPointToMap.connect(function(lat,lng,id) {
                 addLatLngCoords(lat,lng);
             });
+
+            cbridge.clearFlightpath.connect(function(id) {
+                clearMap();
+            });
         });
         initializeMap();
     }

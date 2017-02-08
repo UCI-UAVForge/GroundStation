@@ -29,7 +29,7 @@ private:
 
 
 public:
-    MapWidget();
+    MapWidget(QWidget *parent = 0);
     ~MapWidget();
 
     /**
@@ -83,6 +83,11 @@ public slots:
      */
     void addPointToTable(double lat, double lng);
 
+    /**
+     * @brief clearMap
+     */
+    void clearMap();
+
 signals:
     /**
      * @brief sendPointToMap
@@ -98,6 +103,12 @@ signals:
      * @param lng
      */
     void pointAddedToMap(double lat, double lng, int pathID);
+
+    /**
+     * @brief clearFlightpath
+     * @param pathID
+     */
+    void clearFlightpath(int pathID);
 };
 
 #endif // MAPWIDGET_H
