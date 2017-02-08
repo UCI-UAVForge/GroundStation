@@ -251,7 +251,7 @@ void DbManager::clearFlightPathTable()
     query.exec();
 }
 
-void DbManager::
+
 
 //void DbManager::createFlightPathTable()
 //{

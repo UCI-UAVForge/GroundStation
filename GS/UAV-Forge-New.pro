@@ -12,8 +12,8 @@ QT       += core \
 QT       += svg
 QT       += sql
 
-QT       += webengine
-QT += webenginewidgets
+#QT       += webengine
+#QT += webenginewidgets
 QT       += webkit webkitwidgets
 
 
