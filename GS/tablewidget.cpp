@@ -10,10 +10,6 @@ TableWidget::~TableWidget(){
     //QTableView::~QTableView();
 }
 
-TableModel* TableWidget::getModel(){
-    return &model;
-}
-
 void TableWidget::appendRow(double lat, double lng){
     model.insertRow(lng,lat);
     this->scrollToBottom();
@@ -30,4 +26,28 @@ void TableWidget::clearTable(){
         model.removeRow(0);
     }
     emit tableUpdated();
+}
+
+/// \todo look for optimizations here now that we can access all of the table
+/// methods -Jordan
+FlightPath* TableWidget::getTableAsFlightPath(){
+    FlightPath *newFP = new FlightPath();
+    QList<QList<QString> > table = model.getList();
+    for(int i = 0; i < table.length(); i++) {
+        QList<QString> row = table[i];
+        Protocol::Waypoint wp;
+        wp.lon = row[1].toDouble();
+        wp.lon *= (row[2].at(0)=='E')?1:-1;
+
+        wp.lat = row[3].toDouble();
+        wp.lat *= (row[4].at(0)=='N')?1:-1;
+
+        wp.alt = row[5].toDouble();
+
+        wp.speed = row[6].toDouble();
+
+        newFP->addNavAction(wp,i*10);
+    }
+
+    return newFP;
 }

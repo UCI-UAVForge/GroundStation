@@ -90,9 +90,9 @@ void MainMDIDisplay::switchToPlanningWindow() {
 
     this->missionPlanningWindowUIWidget->addButton( this->tempMapPlanningUIWidget->ui->executeButton );
 
-    this->missionPlanningWindowUIWidget->addButton( this->tempMapPlanningUIWidget->getLoadMissionButton() );
+    //this->missionPlanningWindowUIWidget->addButton( this->tempMapPlanningUIWidget->getLoadMissionButton() );
 
-    this->missionPlanningWindowUIWidget->addButton( this->tempMapPlanningUIWidget->getSaveMissionButton() );
+    //this->missionPlanningWindowUIWidget->addButton( this->tempMapPlanningUIWidget->getSaveMissionButton() );
 
 }
 
@@ -433,16 +433,12 @@ void MainMDIDisplay::clearMapExecution() {
 }
 
 void MainMDIDisplay::clickedCancelButton_MainDisplay() {
-
     this->switchToPlanningWindow();
     this->clearMapExecution();
 
     /* TODO DELETE MAP EXECUTION */
-
 }
 
 void MainMDIDisplay::clickedBackButton_MainDisplay() {
-
     //this->destroy() ;
-
 }

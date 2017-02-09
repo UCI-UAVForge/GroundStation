@@ -10,7 +10,7 @@
 #include "actionpacket.h"
 #include "websocketclientwrapper.h"
 #include "websockettransport.h"
-
+#include "flightpath.h"
 
 /**
  * @brief The MapWidget class
@@ -88,6 +88,20 @@ public slots:
      */
     void clearMap();
 
+    /**
+     * @brief disconnectWebSocket must be called before opening another MapWidget
+     * Later we'll work a solution that allows for multiple MapWidgets to be "open"
+     * at the same time.
+     */
+    void disconnectWebSocket();
+
+    /**
+     * @brief addFlightpath
+     * @param fp
+     * @param index
+     */
+    void addFlightPath(FlightPath* fp, int index = 0);
+
 signals:
     /**
      * @brief sendPointToMap
@@ -108,7 +122,7 @@ signals:
      * @brief clearFlightpath
      * @param pathID
      */
-    void clearFlightpath(int pathID);
+    void clearFlightPath(int pathID);
 };
 
 #endif // MAPWIDGET_H

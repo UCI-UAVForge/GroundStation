@@ -5,6 +5,7 @@
 #include <QTableView>
 #include "qcomboboxdelegate.h"
 #include "tablemodel.h"
+#include "flightpath.h"
 
 class TableWidget : public QTableView
 {
@@ -15,10 +16,10 @@ public:
     ~TableWidget();
 
     /**
-     * @brief getModel
-     * @return A pointer to this object's TableModel object.
+     * @brief MapPlanning::getTableAsFlightPath
+     * @return
      */
-    TableModel* getModel();
+    FlightPath *getTableAsFlightPath();
 
 private:
     /**

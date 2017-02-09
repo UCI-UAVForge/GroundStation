@@ -1,4 +1,3 @@
-
 #ifndef MAPEXECUTION_H
 #define MAPEXECUTION_H
 
@@ -88,9 +87,7 @@ private:
     QTimer *conTime;
 
 signals:
-
     void timeToStartMapRecap();
-
 };
 
 #endif // MAPEXECUTION_H

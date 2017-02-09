@@ -41,13 +41,13 @@ public:
 
     FlightPath *getTableAsFlightPath();
 
-    QPushButton * getLoadMissionButton() ;
+    //QPushButton * getLoadMissionButton() ;
 
-    QPushButton * getSaveMissionButton() ;
+    //QPushButton * getSaveMissionButton() ;
 
-    void setLoadMissionButton( QPushButton * ) ;
+    //void setLoadMissionButton( QPushButton * ) ;
 
-    void setSaveMissionButton( QPushButton * ) ;
+    //void setSaveMissionButton( QPushButton * ) ;
 
 public slots:
     void addPointToTable(double lat, double lng);
@@ -55,6 +55,7 @@ public slots:
     //  lat - the latitude value (usually from the JavaScript program).
     //  lng - the longitude value (usually from the JavaScript program).
     void clearTable();
+
 private slots:
     void on_executeButton_clicked();
     void on_addButton_clicked();
