@@ -7,8 +7,11 @@
 #include <QWebSocketServer>
 #include <iostream>
 #include <QTimer>
+#include <QList>
 
-MapWidget::MapWidget():
+#include "ackpacket.h"
+
+MapWidget::MapWidget(QWidget *parent): QWebEngineView(parent),
     server(QStringLiteral("MapServer"), QWebSocketServer::NonSecureMode),
     clientWrapper(&server)
 {
@@ -66,4 +69,23 @@ void MapWidget::loadStartedSlot() {
 void MapWidget::addPointToTable(double lat, double lng){
     //QTextStream(stdout)<<lat << "," << lng;
     emit pointAddedToMap(lat,lng,0);
+}
+
+void MapWidget::clearMap(){
+    emit clearFlightPath(0);
+}
+
+void MapWidget::disconnectWebSocket(){
+    server.close();
+}
+
+void MapWidget::addFlightPath(FlightPath* fp, int index){
+    QList<Protocol::Waypoint> *list = fp->getOrderedWaypoints();
+
+    for(int i = 0; i < list->length(); i++){
+        Protocol::Waypoint wp = list->at(i);
+        emit sendPointToMap(wp.lat,wp.alt,index);
+    }
+
+    delete list;
 }

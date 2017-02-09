@@ -10,7 +10,7 @@
 #include "actionpacket.h"
 #include "websocketclientwrapper.h"
 #include "websockettransport.h"
-
+#include "flightpath.h"
 
 /**
  * @brief The MapWidget class
@@ -29,7 +29,7 @@ private:
 
 
 public:
-    MapWidget();
+    MapWidget(QWidget *parent = 0);
     ~MapWidget();
 
     /**
@@ -83,6 +83,25 @@ public slots:
      */
     void addPointToTable(double lat, double lng);
 
+    /**
+     * @brief clearMap
+     */
+    void clearMap();
+
+    /**
+     * @brief disconnectWebSocket must be called before opening another MapWidget
+     * Later we'll work a solution that allows for multiple MapWidgets to be "open"
+     * at the same time.
+     */
+    void disconnectWebSocket();
+
+    /**
+     * @brief addFlightpath
+     * @param fp
+     * @param index
+     */
+    void addFlightPath(FlightPath* fp, int index = 0);
+
 signals:
     /**
      * @brief sendPointToMap
@@ -98,6 +117,12 @@ signals:
      * @param lng
      */
     void pointAddedToMap(double lat, double lng, int pathID);
+
+    /**
+     * @brief clearFlightpath
+     * @param pathID
+     */
+    void clearFlightPath(int pathID);
 };
 
 #endif // MAPWIDGET_H

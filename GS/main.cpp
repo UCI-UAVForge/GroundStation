@@ -1,7 +1,7 @@
 #include <QApplication>
 #include <QSplashScreen>
 #include <QtSvg>
-
+//#include "mainmdidisplay.h"
 #ifndef OLD_GUI
 #include "mainmdidisplay.h"
 #else

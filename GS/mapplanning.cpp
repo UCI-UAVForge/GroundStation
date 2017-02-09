@@ -3,20 +3,13 @@
 #include <QWebSocketServer>
 #include "mapwidget.h"
 #include <iostream>
+#include "tablewidget.h"
 
 MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlanning) {
     ui->setupUi(this);
-    buttonGroup = new QButtonGroup();
-
-    model = new TableModel();
-    ui->tableView->setModel(model);
-    ui->tableView->setItemDelegate(new QComboBoxDelegate());
-
-
-    map = new MapWidget();
-    ui->graphicsView->setViewport(map);
-
-    this->connect(map,&MapWidget::pointAddedToMap,this,&MapPlanning::addPointToTable);
+    this->connect(ui->mapView, &MapWidget::pointAddedToMap, ui->tableView, &TableWidget::appendRow);
+    this->connect(ui->clearTableButton, &QPushButton::clicked, ui->tableView, &TableWidget::clearTable);
+    this->connect(ui->clearTableButton, &QPushButton::clicked, ui->mapView, &MapWidget::clearMap);
 }
 
 MapPlanning::~MapPlanning() {
@@ -28,7 +21,7 @@ MapPlanning::~MapPlanning() {
  * is used to rebruild the bridge each time when triggered by a
  * javaScriptWindowObjectCleared signal from the page frame. Function
  * added by Jordan Dickson Feb 14th 2015.
- * Unused -Jordan Dickson Feb 3 2017
+ * Unused after 5.7 update -Jordan Dickson Feb 3 2017
  */
 void MapPlanning::addClickListener() {
     //Creates the bridge called cbridge between the java script object and this class.
@@ -38,31 +31,20 @@ void MapPlanning::addClickListener() {
 // execution button
 // redirect to mission execution window
 void MapPlanning::on_executeButton_clicked() {
-    delete map;
-    emit timeToStartMapExecution();
-    #ifdef OLD_GUI
+    ui->mapView->disconnectWebSocket();
     MapExecution* mapExecution = new MapExecution(getTableAsFlightPath());
     this->close();
     mapExecution->showFullScreen();
-    #endif
-
-//    ConnectionDialog * connectionDialog = new ConnectionDialog();
-//    connectionDialog -> show();
-
-
-    //this->done(2);
 }
 
 // + button
 void MapPlanning::on_addButton_clicked() {
-    model->insertRow();
+    //model->insertRow();
 }
 
 // - button
 void MapPlanning::on_deleteButton_clicked() {
-    QModelIndexList indexes = ui->tableView->selectionModel()->selectedIndexes();
-    model->removeRows(indexes);
-    updateMap();
+    ui->tableView->removeSelectedRows();
 }
 
 // update button
@@ -76,72 +58,18 @@ void MapPlanning::on_backButton_clicked() {
     this->done(0);
 }
 
-// clear table button
-/* Clears all the rows in the table, basically makes a new table
- * Arash
- */
-void MapPlanning::on_clearTableButton_clicked() {
-    delete model;
-    model = new TableModel();
-    //ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
-    ui->tableView->setModel(model);
-}
-
-//clear map button
-/* Clears the map
- * Arash
- */
-void MapPlanning::on_clearMapButton_clicked() {
-     //ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
-     //ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
-}
-
 /* Sends a request for the map to clear itself, causing the JavaScript page
 to reload itself. This function then cycles through each entry on the table
 and enters the coordinates on the map one by one in order. Function added by
 Jordan Dickson Feb 14th 2015. */
-//Sends clearMap request.
-
 void MapPlanning::updateMap() {
-    //ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
-    //ui->webView->page()->mainFrame()->evaluateJavaScript("addDrawControl()");
-    //Loops through table entries
-    for(int i = 0; i < model->getList().size(); i++) {
-        QList<QString> list = model->getList()[i];
-        //Converts West and South coordinates to negative numbers.
-        double lat = list[3].toDouble();
-        double lng = list[1].toDouble();
-        if(list[2] == "W"){
-            lng *= -1.0;
-        }
-        if(list[4] == "S"){
-            lat *= -1.0;
-        }
-        //Sends the add point request with its parameters.
-        //ui->webView->page()->mainFrame()->evaluateJavaScript("addLatLngCoords("+QString::number(lat)+","+QString::number(lng)+")");
-    }
+    FlightPath *fp = ui->tableView->getTableAsFlightPath();
+    ui->mapView->addFlightPath(fp);
+    delete fp;
 }
+
 FlightPath *MapPlanning::getTableAsFlightPath(){
-    FlightPath *newFP = new FlightPath();
-
-    QList<QList<QString> > table = model->getList();
-    for(int i = 0; i < table.length(); i++) {
-        QList<QString> row = table[i];
-        Protocol::Waypoint wp;
-        wp.lon = row[1].toDouble();
-        wp.lon *= (row[2].at(0)=='E')?1:-1;
-
-        wp.lat = row[3].toDouble();
-        wp.lat *= (row[4].at(0)=='N')?1:-1;
-
-        wp.alt = row[5].toDouble();
-
-        wp.speed = row[6].toDouble();
-
-        newFP->addNavAction(wp,i*10);
-    }
-
-    return newFP;
+    return ui->tableView->getTableAsFlightPath();
 }
 
 void MapPlanning::closeWindow() {
@@ -152,109 +80,10 @@ void MapPlanning::closeWindow() {
 from the JavaScript file. See tablemodel.cpp file for more information.
 Added by Jordan Dickson Feb 14th 2015.*/
 void MapPlanning::addPointToTable(double lat, double lng) {
-
-    model->insertRow(lng,lat);
-
-    //David Moe
-
-    ui->tableView->scrollToBottom();
-
+    ui->tableView->appendRow(lat,lng);
 }
-
-//void MapPlanning::getTable() {
-//    QList<Protocol::Waypoint> *points = flightPath->getOrderedWaypoints();
-//    for (Protocol::Waypoint wp : *points){
-//        (wp.lat,wp.lon);
-//    }
-//}
-
 
 void MapPlanning::clearTable() {
-    delete model;
-    model = new TableModel();
-    ui->tableView->setModel(model);
-}
-//Functions for the loadMission and saveMission buttons. These are buttons that have been added for
-//the new GUI that supports loading and saving missions.
-
-//- Roman Parise
-
-/**
- * @brief Get a pointer to the QPushButton object, loadMissionButton. If it doesn't exist (i.e. NULL pointer),
- * then make it.
- */
-QPushButton * MapPlanning::getLoadMissionButton() {
-
-    if ( this->loadMissionButton == NULL ) {
-
-        this->loadMissionButton = new QPushButton( QString( "Load Mission" ) );
-
-        //Have the loadMissionButton take on the default button style sheet
-
-        //TODO Implement a default QPushButton stylesheet in this class and force all buttons
-        //in this UI to conform to it. Embrace conformity...
-
-        this->loadMissionButton->setStyleSheet( this->ui->executeButton->styleSheet() );
-
-    }
-
-    else {
-
-        // Do nothing.
-
-    }
-
-    return this->loadMissionButton ;
-
-}
-
-QPushButton * MapPlanning::getSaveMissionButton() {
-
-    if ( this->saveMissionButton == NULL ) {
-
-        this->saveMissionButton = new QPushButton( QString( "Save Mission" ) );
-
-        this->saveMissionButton->setStyleSheet( this->ui->executeButton->styleSheet() );
-
-    }
-
-    else {
-
-        //Do nothing.
-
-    }
-
-    return this->saveMissionButton ;
-
-}
-
-void MapPlanning::setLoadMissionButton( QPushButton * loadMissionButton ) {
-
-    if ( loadMissionButton != NULL ) {
-
-        this->loadMissionButton = loadMissionButton ;
-
-    }
-
-    else {
-
-        //Do nothing.
-
-    }
-
-}
-
-void MapPlanning::setSaveMissionButton( QPushButton * saveMissionButton ) {
-
-    if ( saveMissionButton != NULL ) {
-
-        this->saveMissionButton = saveMissionButton ;
-
-    }
-
-    else {
-
-        //Do nothing.
-
-    }
+    ui->tableView->clearTable();
+    ui->mapView->clearMap();
 }
