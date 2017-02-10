@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
 
-    QTextStream(stdout) << "run this";
+    //QTextStream(stdout) << "run this";
 
     GroundStation station;
 
