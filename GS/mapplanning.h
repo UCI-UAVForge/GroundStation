@@ -26,13 +26,7 @@ namespace Ui {
 }
 
 class MapPlanning : public QDialog {
-
     Q_OBJECT
-
-    /* Roman Parise - Maybe just make friend functions or something.
-     * MainMDIDisplay is able to access private class variables of MapPlanning. */
-    friend class MainMDIDisplay;
-
 public:
     explicit MapPlanning(QWidget *parent = 0);
     ~MapPlanning();
@@ -40,14 +34,6 @@ public:
     void updateMap();
 
     FlightPath *getTableAsFlightPath();
-
-    //QPushButton * getLoadMissionButton() ;
-
-    //QPushButton * getSaveMissionButton() ;
-
-    //void setLoadMissionButton( QPushButton * ) ;
-
-    //void setSaveMissionButton( QPushButton * ) ;
 
 public slots:
     void addPointToTable(double lat, double lng);

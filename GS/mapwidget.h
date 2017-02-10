@@ -48,21 +48,16 @@ public:
      * @brief appendGPSCoordToPath
      * @param lat
      * @param lng
-     * @param pathID
+     * @param pathID - The ID of the path the point is to be added to.
      */
     void appendGPSCoordToPath(double lat, double lng, int pathID);
 
     /**
      * @brief getPath
-     * @param pathID
+     * @param pathID - The of the path to be returned
      * @return An ordered list of all the waypoints in a certain path
      */
     QList<Protocol::Waypoint>* getPath(int pathID);
-
-    /**
-     * @brief MapURL
-     */
-    //const QUrl MapURL = QUrl("qrc:/res/html/mapsPlanningGoogle.html");
 
 private slots:
     /**
@@ -103,24 +98,30 @@ public slots:
     void addFlightPath(FlightPath* fp, int index = 0);
 
 signals:
+    //Qt Signals for use with C++
     /**
-     * @brief sendPointToMap
-     * @param lat
-     * @param lng
-     * @param pathID
+     * @brief pointAddedToMap is emitted each time a new point is added to
+     * the map.
+     * @param lat - the latitude of the new point
+     * @param lng - the longitude of the new point
+     * @param pathID - the ID of the path the point is a member of
+     */
+    void pointAddedToMap(double lat, double lng, int pathID);
+
+    //JavaScript Signals for use with Cbridge.js
+    /**
+     * @brief sendPointToMap Tells the mapping script to append a new waypoint
+     * with (lat,lng) to a the path with ID equal to pathID
+     * @param lat - the latitude of the new waypoint
+     * @param lng - the longitude of the new waypoint
+     * @param pathID - the ID of the path to be appended to
      */
     void sendPointToMap(double lat, double lng, int pathID);
 
     /**
-     * @brief pointAddedToMap
-     * @param lat
-     * @param lng
-     */
-    void pointAddedToMap(double lat, double lng, int pathID);
-
-    /**
-     * @brief clearFlightpath
-     * @param pathID
+     * @brief clearFlightpath Tells the mapping script to delete all of the
+     * points in the path with ID equal to pathID.
+     * @param pathID - The ID of the flight path to be cleared.
      */
     void clearFlightPath(int pathID);
 };

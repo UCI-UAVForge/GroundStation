@@ -67,7 +67,6 @@ void MapWidget::loadStartedSlot() {
 }
 
 void MapWidget::addPointToTable(double lat, double lng){
-    //QTextStream(stdout)<<lat << "," << lng;
     emit pointAddedToMap(lat,lng,0);
 }
 
