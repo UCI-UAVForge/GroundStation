@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_pop_window_m_p" kind="class" language="C++" prot="public">
+    <compoundname>PopWindowMP</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QWidget</basecompoundref>
+    <includes refid="popwindowmp_8h" local="no">popwindowmp.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_pop_window_m_p_1a95b9fb0c455dce6924a1a7282fd13b00" prot="public" static="no" mutable="no">
+        <type>QList&lt; QString &gt;</type>
+        <definition>QList&lt;QString&gt; PopWindowMP::mapStrings</definition>
+        <argsstring></argsstring>
+        <name>mapStrings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" line="15" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_pop_window_m_p_1aef548231d76ceff64373ae91af3ce2d9" prot="private" static="no" mutable="no">
+        <type>Ui::PopWindowMP *</type>
+        <definition>Ui::PopWindowMP* PopWindowMP::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" line="23" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_pop_window_m_p_1a3298919d76ea83d8bab145bbfaba7668" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PopWindowMP::PopWindowMP</definition>
+        <argsstring>(QList&lt; QString &gt; strings, QWidget *parent=0)</argsstring>
+        <name>PopWindowMP</name>
+        <param>
+          <type>QList&lt; QString &gt;</type>
+          <declname>strings</declname>
+        </param>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" line="14" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.cpp" bodystart="7" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pop_window_m_p_1aa58c893a6ddb936e79d4ee329dab11c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>PopWindowMP::~PopWindowMP</definition>
+        <argsstring>()</argsstring>
+        <name>~PopWindowMP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" line="16" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.cpp" bodystart="13" bodyend="15"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_pop_window_m_p_1aebbe674886f81dc8113ced549e07b570" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopWindowMP::on_yesButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_yesButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" line="19" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.cpp" bodystart="17" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_pop_window_m_p_1ac2daaca87599a4b34188ced95fe27f95" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopWindowMP::on_noButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_noButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" line="20" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.cpp" bodystart="24" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_pop_window_m_p_1aea9a78b6f0f6bb6536c7481ed67ad66d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PopWindowMP::windowClosed</definition>
+        <argsstring>()</argsstring>
+        <name>windowClosed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" line="26" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="155">
+        <label>PopWindowMP</label>
+        <link refid="class_pop_window_m_p"/>
+        <childnode refid="156" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="156">
+        <label>QWidget</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="157">
+        <label>PopWindowMP</label>
+        <link refid="class_pop_window_m_p"/>
+        <childnode refid="158" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="158">
+        <label>QWidget</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" line="11" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" bodystart="10" bodyend="27"/>
+    <listofallmembers>
+      <member refid="class_pop_window_m_p_1a95b9fb0c455dce6924a1a7282fd13b00" prot="public" virt="non-virtual"><scope>PopWindowMP</scope><name>mapStrings</name></member>
+      <member refid="class_pop_window_m_p_1ac2daaca87599a4b34188ced95fe27f95" prot="private" virt="non-virtual"><scope>PopWindowMP</scope><name>on_noButton_clicked</name></member>
+      <member refid="class_pop_window_m_p_1aebbe674886f81dc8113ced549e07b570" prot="private" virt="non-virtual"><scope>PopWindowMP</scope><name>on_yesButton_clicked</name></member>
+      <member refid="class_pop_window_m_p_1a3298919d76ea83d8bab145bbfaba7668" prot="public" virt="non-virtual"><scope>PopWindowMP</scope><name>PopWindowMP</name></member>
+      <member refid="class_pop_window_m_p_1aef548231d76ceff64373ae91af3ce2d9" prot="private" virt="non-virtual"><scope>PopWindowMP</scope><name>ui</name></member>
+      <member refid="class_pop_window_m_p_1aea9a78b6f0f6bb6536c7481ed67ad66d" prot="public" virt="non-virtual"><scope>PopWindowMP</scope><name>windowClosed</name></member>
+      <member refid="class_pop_window_m_p_1aa58c893a6ddb936e79d4ee329dab11c6" prot="public" virt="non-virtual"><scope>PopWindowMP</scope><name>~PopWindowMP</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

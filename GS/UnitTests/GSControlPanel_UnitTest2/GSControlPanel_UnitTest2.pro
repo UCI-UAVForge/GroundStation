@@ -4,15 +4,17 @@
 #
 #-------------------------------------------------
 
-QT       += core
-
-QT       -= gui
+QT       += core gui widgets
 
 TARGET = GSControlPanel_UnitTest2
-CONFIG   += console
-CONFIG   -= app_bundle
 
 TEMPLATE = app
 
+SOURCES += main.cpp \
+    gscontrolpanel.cpp
 
-SOURCES += main.cpp
+FORMS += \
+    gscontrolpanel.ui
+
+HEADERS += \
+    gscontrolpanel.h

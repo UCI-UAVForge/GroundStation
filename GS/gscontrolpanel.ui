@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>GSControlPanel</class>
  <widget class="QDialog" name="GSControlPanel">
@@ -5,13 +6,130 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>456</width>
+    <height>190</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="WindowLayout">
+     <item>
+      <layout class="QHBoxLayout" name="ButtonLayout">
+       <item>
+        <layout class="QVBoxLayout" name="StartFinishMissionButtonLayout">
+         <item>
+          <widget class="QPushButton" name="StartMissionButton">
+           <property name="text">
+            <string>Start Mission</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="FinishMissionButton">
+           <property name="text">
+            <string>Finish Mission</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="LoadMissionButtonLayout">
+         <item>
+          <widget class="QPushButton" name="LoadMissionButton">
+           <property name="text">
+            <string>Load Mission</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="SaveMissionButtonLayout">
+         <item>
+          <widget class="QPushButton" name="SaveMissionButton">
+           <property name="text">
+            <string>Save Mission</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="ClearPointsButtonLayout">
+         <item>
+          <widget class="QPushButton" name="ClearPointsButton">
+           <property name="text">
+            <string>Clear Points</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="ExitButtonLayout">
+         <item>
+          <widget class="QPushButton" name="ExitButton">
+           <property name="text">
+            <string>Exit</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="MissionChoiceLayout">
+       <item>
+        <layout class="QVBoxLayout" name="LoadMissionDropdownLayout">
+         <item>
+          <widget class="QLabel" name="LoadMissionLabel">
+           <property name="minimumSize">
+            <size>
+             <width>212</width>
+             <height>52</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Select Mission to Load&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="scaledContents">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="LoadMissionDropdown"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="SaveMissionTextBoxLayout">
+         <item>
+          <widget class="QLabel" name="SaveMissionLabel">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Save Mission by Name&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="SaveMissionTextBox">
+           <property name="placeholderText">
+            <string>Enter name of mission here...</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

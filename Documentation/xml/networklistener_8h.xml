@@ -1,0 +1,413 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="networklistener_8h" kind="file" language="C++">
+    <compoundname>networklistener.h</compoundname>
+    <includes local="no">QObject</includes>
+    <includes local="no">QThread</includes>
+    <includes local="no">QString</includes>
+    <includes local="no">QUdpSocket</includes>
+    <includes refid="messagebox_8h" local="yes">messagebox.h</includes>
+    <includes refid="packet_8h" local="yes">packet.h</includes>
+    <includedby refid="gsserver_8h" local="yes">C:/Users/Roman/Documents/GroundStation/GS/gsserver.h</includedby>
+    <includedby refid="networklistener_8cpp" local="yes">C:/Users/Roman/Documents/GroundStation/GS/networklistener.cpp</includedby>
+    <incdepgraph>
+      <node id="2110">
+        <label>QObject</label>
+      </node>
+      <node id="2109">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/networklistener.h</label>
+        <link refid="networklistener.h"/>
+        <childnode refid="2110" relation="include">
+        </childnode>
+        <childnode refid="2111" relation="include">
+        </childnode>
+        <childnode refid="2112" relation="include">
+        </childnode>
+        <childnode refid="2113" relation="include">
+        </childnode>
+        <childnode refid="2114" relation="include">
+        </childnode>
+        <childnode refid="2133" relation="include">
+        </childnode>
+      </node>
+      <node id="2119">
+        <label>QList</label>
+      </node>
+      <node id="2121">
+        <label>stdint.h</label>
+      </node>
+      <node id="2135">
+        <label>actionpacket.h</label>
+        <link refid="actionpacket_8h"/>
+        <childnode refid="2136" relation="include">
+        </childnode>
+        <childnode refid="2133" relation="include">
+        </childnode>
+      </node>
+      <node id="2111">
+        <label>QThread</label>
+      </node>
+      <node id="2118">
+        <label>QPair</label>
+      </node>
+      <node id="2136">
+        <label>string</label>
+      </node>
+      <node id="2125">
+        <label>QModelIndex</label>
+      </node>
+      <node id="2131">
+        <label>ackpacket.h</label>
+        <link refid="ackpacket_8h"/>
+        <childnode refid="2132" relation="include">
+        </childnode>
+        <childnode refid="2133" relation="include">
+        </childnode>
+      </node>
+      <node id="2133">
+        <label>Packet.h</label>
+        <link refid="packet_8h"/>
+        <childnode refid="2134" relation="include">
+        </childnode>
+        <childnode refid="2132" relation="include">
+        </childnode>
+        <childnode refid="2121" relation="include">
+        </childnode>
+      </node>
+      <node id="2137">
+        <label>infopacket.h</label>
+        <link refid="infopacket_8h"/>
+        <childnode refid="2136" relation="include">
+        </childnode>
+        <childnode refid="2138" relation="include">
+        </childnode>
+        <childnode refid="2121" relation="include">
+        </childnode>
+        <childnode refid="2133" relation="include">
+        </childnode>
+      </node>
+      <node id="2138">
+        <label>string.h</label>
+      </node>
+      <node id="2120">
+        <label>QTime</label>
+      </node>
+      <node id="2117">
+        <label>QApplication</label>
+      </node>
+      <node id="2139">
+        <label>telemetrypacket.h</label>
+        <link refid="telemetrypacket_8h"/>
+        <childnode refid="2136" relation="include">
+        </childnode>
+        <childnode refid="2133" relation="include">
+        </childnode>
+      </node>
+      <node id="2130">
+        <label>QValidator</label>
+      </node>
+      <node id="2116">
+        <label>vector</label>
+      </node>
+      <node id="2127">
+        <label>QLineEdit</label>
+      </node>
+      <node id="2112">
+        <label>QString</label>
+      </node>
+      <node id="2113">
+        <label>QUdpSocket</label>
+      </node>
+      <node id="2126">
+        <label>QSize</label>
+      </node>
+      <node id="2128">
+        <label>mapvalidator.h</label>
+        <link refid="mapvalidator_8h"/>
+        <childnode refid="2129" relation="include">
+        </childnode>
+        <childnode refid="2130" relation="include">
+        </childnode>
+      </node>
+      <node id="2134">
+        <label>time.h</label>
+      </node>
+      <node id="2122">
+        <label>qcomboboxdelegate.h</label>
+        <link refid="qcomboboxdelegate_8h"/>
+        <childnode refid="2123" relation="include">
+        </childnode>
+        <childnode refid="2124" relation="include">
+        </childnode>
+        <childnode refid="2125" relation="include">
+        </childnode>
+        <childnode refid="2110" relation="include">
+        </childnode>
+        <childnode refid="2126" relation="include">
+        </childnode>
+        <childnode refid="2127" relation="include">
+        </childnode>
+        <childnode refid="2128" relation="include">
+        </childnode>
+      </node>
+      <node id="2124">
+        <label>QComboBox</label>
+      </node>
+      <node id="2115">
+        <label>iostream</label>
+      </node>
+      <node id="2123">
+        <label>QItemDelegate</label>
+      </node>
+      <node id="2129">
+        <label>QDoubleValidator</label>
+      </node>
+      <node id="2132">
+        <label>stdio.h</label>
+      </node>
+      <node id="2114">
+        <label>messagebox.h</label>
+        <link refid="messagebox_8h"/>
+        <childnode refid="2115" relation="include">
+        </childnode>
+        <childnode refid="2116" relation="include">
+        </childnode>
+        <childnode refid="2117" relation="include">
+        </childnode>
+        <childnode refid="2118" relation="include">
+        </childnode>
+        <childnode refid="2119" relation="include">
+        </childnode>
+        <childnode refid="2120" relation="include">
+        </childnode>
+        <childnode refid="2121" relation="include">
+        </childnode>
+        <childnode refid="2122" relation="include">
+        </childnode>
+        <childnode refid="2131" relation="include">
+        </childnode>
+        <childnode refid="2135" relation="include">
+        </childnode>
+        <childnode refid="2137" relation="include">
+        </childnode>
+        <childnode refid="2139" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2155">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/options.cpp</label>
+        <link refid="options_8cpp"/>
+      </node>
+      <node id="2143">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/digitalclock.cpp</label>
+        <link refid="digitalclock_8cpp"/>
+      </node>
+      <node id="2159">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapexecution.cpp</label>
+        <link refid="mapexecution_8cpp"/>
+      </node>
+      <node id="2148">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h</label>
+        <link refid="mainmdidisplay_8h"/>
+        <childnode refid="2149" relation="include">
+        </childnode>
+        <childnode refid="2150" relation="include">
+        </childnode>
+      </node>
+      <node id="2140">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/networklistener.h</label>
+        <link refid="networklistener.h"/>
+        <childnode refid="2141" relation="include">
+        </childnode>
+        <childnode refid="2162" relation="include">
+        </childnode>
+      </node>
+      <node id="2158">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapvalidator.cpp</label>
+        <link refid="mapvalidator_8cpp"/>
+      </node>
+      <node id="2150">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp</label>
+        <link refid="mainmdidisplay_8cpp"/>
+      </node>
+      <node id="2144">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h</label>
+        <link refid="mapplanning_8h"/>
+        <childnode refid="2145" relation="include">
+        </childnode>
+        <childnode refid="2146" relation="include">
+        </childnode>
+        <childnode refid="2147" relation="include">
+        </childnode>
+        <childnode refid="2148" relation="include">
+        </childnode>
+        <childnode refid="2152" relation="include">
+        </childnode>
+        <childnode refid="2157" relation="include">
+        </childnode>
+        <childnode refid="2158" relation="include">
+        </childnode>
+      </node>
+      <node id="2149">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="2146">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/options.h</label>
+        <link refid="options_8h"/>
+        <childnode refid="2142" relation="include">
+        </childnode>
+        <childnode refid="2147" relation="include">
+        </childnode>
+        <childnode refid="2152" relation="include">
+        </childnode>
+        <childnode refid="2155" relation="include">
+        </childnode>
+      </node>
+      <node id="2147">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h</label>
+        <link refid="qttabtest_8h"/>
+        <childnode refid="2148" relation="include">
+        </childnode>
+        <childnode refid="2151" relation="include">
+        </childnode>
+      </node>
+      <node id="2152">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="2153" relation="include">
+        </childnode>
+        <childnode refid="2154" relation="include">
+        </childnode>
+      </node>
+      <node id="2162">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/networklistener.cpp</label>
+        <link refid="networklistener_8cpp"/>
+      </node>
+      <node id="2157">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp</label>
+        <link refid="mapplanning_8cpp"/>
+      </node>
+      <node id="2141">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/gsserver.h</label>
+        <link refid="gsserver_8h"/>
+        <childnode refid="2142" relation="include">
+        </childnode>
+        <childnode refid="2161" relation="include">
+        </childnode>
+        <childnode refid="2162" relation="include">
+        </childnode>
+      </node>
+      <node id="2145">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h</label>
+        <link refid="missionrecap_8h"/>
+        <childnode refid="2142" relation="include">
+        </childnode>
+        <childnode refid="2146" relation="include">
+        </childnode>
+        <childnode refid="2147" relation="include">
+        </childnode>
+        <childnode refid="2152" relation="include">
+        </childnode>
+        <childnode refid="2156" relation="include">
+        </childnode>
+      </node>
+      <node id="2142">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapexecution.h</label>
+        <link refid="mapexecution_8h"/>
+        <childnode refid="2143" relation="include">
+        </childnode>
+        <childnode refid="2144" relation="include">
+        </childnode>
+        <childnode refid="2146" relation="include">
+        </childnode>
+        <childnode refid="2147" relation="include">
+        </childnode>
+        <childnode refid="2152" relation="include">
+        </childnode>
+        <childnode refid="2159" relation="include">
+        </childnode>
+        <childnode refid="2160" relation="include">
+        </childnode>
+      </node>
+      <node id="2156">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp</label>
+        <link refid="missionrecap_8cpp"/>
+      </node>
+      <node id="2160">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.cpp</label>
+        <link refid="popwindowmp_8cpp"/>
+      </node>
+      <node id="2154">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/tutorial.cpp</label>
+        <link refid="tutorial_8cpp"/>
+      </node>
+      <node id="2161">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/gsserver.cpp</label>
+        <link refid="gsserver_8cpp"/>
+      </node>
+      <node id="2153">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="2151">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp</label>
+        <link refid="qttabtest_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_network_listener" prot="public">NetworkListener</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>NETWORKLISTENER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NETWORKLISTENER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QThread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QString&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QUdpSocket&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="messagebox_8h" kindref="compound">messagebox.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_gs_server" kindref="compound">GsServer</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="packet_8h" kindref="compound">packet.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="class_network_listener" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_network_listener" kindref="compound">NetworkListener</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QUdpSocket{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">signals:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1ac280873f9f90c046460b908fdb4a7883" kindref="member">sendCoordinates</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1a233d51dcc4d8945021d1b4043515e098" kindref="member">logTelemetry</ref>(QString<sp/>coordString);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1aa695d0b565bb61dea1d03715b9f22e4b" kindref="member">packetRecieved</ref>(<ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref><sp/>*packet);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40" refid="class_network_listener_1a3192d69724315464c95ae1f63db0b127" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1a3192d69724315464c95ae1f63db0b127" kindref="member">listening</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41" refid="class_network_listener_1a0e88317c2a9ea0bc836df6fe28337eeb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1a0e88317c2a9ea0bc836df6fe28337eeb" kindref="member">UAVid</ref>;</highlight></codeline>
+<codeline lineno="42" refid="class_network_listener_1abd438db9a3d37b505f711993c1db7239" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmessagebox" kindref="compound">messagebox</ref><sp/>*<ref refid="class_network_listener_1abd438db9a3d37b505f711993c1db7239" kindref="member">myMessageBox</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//char<sp/>buffer[];</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>slots:</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1a831238cc68f68ecac14a9a5b3d330f1b" kindref="member">processPendingDatagrams</ref>();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1aae655a7afbd74bbe193612f2b7638958" kindref="member">start</ref>();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_network_listener_1a47d3f9cbc646f4accac24d9e9e7669cc" kindref="member">NetworkListener</ref>(<ref refid="classmessagebox" kindref="compound">messagebox</ref><sp/>*myMessageBox,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>UAVid,<sp/><ref refid="class_gs_server" kindref="compound">GsServer</ref>*<sp/><ref refid="class_network_listener_1a18b48fbd5b2df44baa73e4b332981a56" kindref="member">server</ref>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_network_listener_1a47d3f9cbc646f4accac24d9e9e7669cc" kindref="member">NetworkListener</ref>(<ref refid="classmessagebox" kindref="compound">messagebox</ref><sp/>*myMessageBox,<sp/><ref refid="class_gs_server" kindref="compound">GsServer</ref>*<sp/><ref refid="class_network_listener_1a18b48fbd5b2df44baa73e4b332981a56" kindref="member">server</ref>);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//QUdpSocket<sp/>udpSocket;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1abffa3dbc0d6b31e53a638655f7efa9ee" kindref="member">netWait</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>millis);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//~NetworkListener();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1a12862b1a35cb8ba6c2ac8c7f1df9b1bf" kindref="member">reciveMessage</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>buf);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1a3174e591844d73c16e559804fa3a4ac6" kindref="member">messageRecieved</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>msg);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1ab1dda7d270a90847a1537d04009c912b" kindref="member">setId</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>UAVid);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1a258e0ef8e6e4de827e652a43186c6a07" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_network_listener_1a18ad1d8973011f8bdceb5fc6d5cd81c1" kindref="member">~NetworkListener</ref>();</highlight></codeline>
+<codeline lineno="59" refid="class_network_listener_1a18b48fbd5b2df44baa73e4b332981a56" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_gs_server" kindref="compound">GsServer</ref><sp/>*<ref refid="class_network_listener_1a18b48fbd5b2df44baa73e4b332981a56" kindref="member">server</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>NETWORKLISTENER_H</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/networklistener.h"/>
+  </compounddef>
+</doxygen>

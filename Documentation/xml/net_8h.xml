@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="net_8h" kind="file" language="C++">
+    <compoundname>net.h</compoundname>
+    <includes local="no">QHostAddress</includes>
+    <includedby refid="gsserver_8cpp" local="yes">C:/Users/Roman/Documents/GroundStation/GS/gsserver.cpp</includedby>
+    <includedby refid="networklistener_8cpp" local="yes">C:/Users/Roman/Documents/GroundStation/GS/networklistener.cpp</includedby>
+    <incdepgraph>
+      <node id="2059">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/net.h</label>
+        <link refid="net.h"/>
+        <childnode refid="2060" relation="include">
+        </childnode>
+      </node>
+      <node id="2060">
+        <label>QHostAddress</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2061">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/net.h</label>
+        <link refid="net.h"/>
+        <childnode refid="2062" relation="include">
+        </childnode>
+        <childnode refid="2063" relation="include">
+        </childnode>
+      </node>
+      <node id="2063">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/networklistener.cpp</label>
+        <link refid="networklistener_8cpp"/>
+      </node>
+      <node id="2062">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/gsserver.cpp</label>
+        <link refid="gsserver_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespace_n_e_t">NET</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>NET_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>NET_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QHostAddress&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="namespace_n_e_t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_n_e_t" kindref="compound">NET</ref>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="namespace_n_e_t_1a06f4ca39727c72129964425f6758e9f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespace_n_e_t_1a06f4ca39727c72129964425f6758e9f5" kindref="member">LISTEN_PORT</ref><sp/>=<sp/>20725;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="namespace_n_e_t_1a436caa39d4051e512ca92a29a3aecb73" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespace_n_e_t_1a436caa39d4051e512ca92a29a3aecb73" kindref="member">SEND_PORT</ref><sp/>=<sp/>20735;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="namespace_n_e_t_1a51a2332141527f7e79ffd71728f139dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="namespace_n_e_t_1a51a2332141527f7e79ffd71728f139dd" kindref="member">PACKET_LENGTH</ref><sp/>=<sp/>1000;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="namespace_n_e_t_1a1afde57c61ec70002a412fb1ecbc8c97" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QHostAddress<sp/><ref refid="namespace_n_e_t_1a1afde57c61ec70002a412fb1ecbc8c97" kindref="member">TARGET_ADDR</ref><sp/>=<sp/>QHostAddress::LocalHost;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="namespace_n_e_t_1a059efed63e62ead2db86eab043957a46" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="namespace_n_e_t_1a059efed63e62ead2db86eab043957a46" kindref="member">UAV_IP_ADDRESS</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;localhost&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>NET_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/net.h"/>
+  </compounddef>
+</doxygen>

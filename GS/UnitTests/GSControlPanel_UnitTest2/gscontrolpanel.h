@@ -19,7 +19,14 @@ public:
 
     ~GSControlPanel();
 
+    QString getMissionNameToSave() ;
+
+    QString getMissionNameToLoad() ;
+
+    void addMissionToLoad( QString ) ;
+
 private slots:
+
     void on_StartMissionButton_clicked();
 
     void on_FinishMissionButton_clicked();

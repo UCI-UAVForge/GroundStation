@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="videoplayer_8h" kind="file" language="C++">
+    <compoundname>videoplayer.h</compoundname>
+    <includes local="no">QtWidgets/QWidget</includes>
+    <includes local="no">QtMultimediaWidgets</includes>
+    <includes local="no">QtGui/QMovie</includes>
+    <includes local="no">QVideoWidget</includes>
+    <includes local="no">qmediaplayer.h</includes>
+    <includedby refid="missionrecap_8h" local="yes">C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h</includedby>
+    <includedby refid="videoplayer_8cpp" local="yes">C:/Users/Roman/Documents/GroundStation/GS/videoplayer.cpp</includedby>
+    <incdepgraph>
+      <node id="3150">
+        <label>QtWidgets/QWidget</label>
+      </node>
+      <node id="3149">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h</label>
+        <link refid="videoplayer.h"/>
+        <childnode refid="3150" relation="include">
+        </childnode>
+        <childnode refid="3151" relation="include">
+        </childnode>
+        <childnode refid="3152" relation="include">
+        </childnode>
+        <childnode refid="3153" relation="include">
+        </childnode>
+        <childnode refid="3154" relation="include">
+        </childnode>
+      </node>
+      <node id="3154">
+        <label>qmediaplayer.h</label>
+      </node>
+      <node id="3151">
+        <label>QtMultimediaWidgets</label>
+      </node>
+      <node id="3152">
+        <label>QtGui/QMovie</label>
+      </node>
+      <node id="3153">
+        <label>QVideoWidget</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3169">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/options.cpp</label>
+        <link refid="options_8cpp"/>
+      </node>
+      <node id="3158">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/digitalclock.cpp</label>
+        <link refid="digitalclock_8cpp"/>
+      </node>
+      <node id="3172">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapexecution.cpp</label>
+        <link refid="mapexecution_8cpp"/>
+      </node>
+      <node id="3162">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h</label>
+        <link refid="mainmdidisplay_8h"/>
+        <childnode refid="3163" relation="include">
+        </childnode>
+        <childnode refid="3164" relation="include">
+        </childnode>
+      </node>
+      <node id="3155">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h</label>
+        <link refid="videoplayer.h"/>
+        <childnode refid="3156" relation="include">
+        </childnode>
+        <childnode refid="3175" relation="include">
+        </childnode>
+      </node>
+      <node id="3171">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapvalidator.cpp</label>
+        <link refid="mapvalidator_8cpp"/>
+      </node>
+      <node id="3164">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp</label>
+        <link refid="mainmdidisplay_8cpp"/>
+      </node>
+      <node id="3159">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h</label>
+        <link refid="mapplanning_8h"/>
+        <childnode refid="3156" relation="include">
+        </childnode>
+        <childnode refid="3160" relation="include">
+        </childnode>
+        <childnode refid="3161" relation="include">
+        </childnode>
+        <childnode refid="3162" relation="include">
+        </childnode>
+        <childnode refid="3166" relation="include">
+        </childnode>
+        <childnode refid="3170" relation="include">
+        </childnode>
+        <childnode refid="3171" relation="include">
+        </childnode>
+      </node>
+      <node id="3163">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="3160">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/options.h</label>
+        <link refid="options_8h"/>
+        <childnode refid="3157" relation="include">
+        </childnode>
+        <childnode refid="3161" relation="include">
+        </childnode>
+        <childnode refid="3166" relation="include">
+        </childnode>
+        <childnode refid="3169" relation="include">
+        </childnode>
+      </node>
+      <node id="3161">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h</label>
+        <link refid="qttabtest_8h"/>
+        <childnode refid="3162" relation="include">
+        </childnode>
+        <childnode refid="3165" relation="include">
+        </childnode>
+      </node>
+      <node id="3175">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/videoplayer.cpp</label>
+        <link refid="videoplayer_8cpp"/>
+      </node>
+      <node id="3166">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="3167" relation="include">
+        </childnode>
+        <childnode refid="3168" relation="include">
+        </childnode>
+      </node>
+      <node id="3170">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp</label>
+        <link refid="mapplanning_8cpp"/>
+      </node>
+      <node id="3156">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h</label>
+        <link refid="missionrecap_8h"/>
+        <childnode refid="3157" relation="include">
+        </childnode>
+        <childnode refid="3160" relation="include">
+        </childnode>
+        <childnode refid="3161" relation="include">
+        </childnode>
+        <childnode refid="3166" relation="include">
+        </childnode>
+        <childnode refid="3174" relation="include">
+        </childnode>
+      </node>
+      <node id="3157">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapexecution.h</label>
+        <link refid="mapexecution_8h"/>
+        <childnode refid="3158" relation="include">
+        </childnode>
+        <childnode refid="3159" relation="include">
+        </childnode>
+        <childnode refid="3160" relation="include">
+        </childnode>
+        <childnode refid="3161" relation="include">
+        </childnode>
+        <childnode refid="3166" relation="include">
+        </childnode>
+        <childnode refid="3172" relation="include">
+        </childnode>
+        <childnode refid="3173" relation="include">
+        </childnode>
+      </node>
+      <node id="3174">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp</label>
+        <link refid="missionrecap_8cpp"/>
+      </node>
+      <node id="3173">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.cpp</label>
+        <link refid="popwindowmp_8cpp"/>
+      </node>
+      <node id="3168">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/tutorial.cpp</label>
+        <link refid="tutorial_8cpp"/>
+      </node>
+      <node id="3167">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="3165">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp</label>
+        <link refid="qttabtest_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_video_player" prot="public">VideoPlayer</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>VIDEOPLAYER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>VIDEOPLAYER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QtWidgets/QWidget&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QtMultimediaWidgets&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QtGui/QMovie&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QVideoWidget&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;qmediaplayer.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">QT_BEGIN_NAMESPACE</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QAbstractButton;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QSlider;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QLabel;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">QT_END_NAMESPACE</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_video_player" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_video_player" kindref="compound">VideoPlayer</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QWidget</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_video_player_1a1d43337dac90ba3ec1ba178f4b1ddceb" kindref="member">VideoPlayer</ref>(QWidget<sp/>*parent<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_video_player_1a84982600649b54d2fa2ddb4efee2349f" kindref="member">~VideoPlayer</ref>();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>slots:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_video_player_1a13ba0d270e849566f33ceffd7fb425c0" kindref="member">play</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="26" refid="class_video_player_1ac8db33eca4b05bbfed4ce5dd2a9cfab7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QMediaPlayer<sp/><ref refid="class_video_player_1ac8db33eca4b05bbfed4ce5dd2a9cfab7" kindref="member">mediaPlayer</ref>;</highlight></codeline>
+<codeline lineno="27" refid="class_video_player_1a453a5b692dd5415c20de08c51e955088" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QAbstractButton<sp/>*<ref refid="class_video_player_1a453a5b692dd5415c20de08c51e955088" kindref="member">playButton</ref>;</highlight></codeline>
+<codeline lineno="28" refid="class_video_player_1a04f7f93d7b602fe8f9f507956ba54852" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QSlider<sp/>*<ref refid="class_video_player_1a04f7f93d7b602fe8f9f507956ba54852" kindref="member">positionSlider</ref>;</highlight></codeline>
+<codeline lineno="29" refid="class_video_player_1a97c127c74e38d0b4523fe66cb608e83c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QLabel<sp/>*<ref refid="class_video_player_1a97c127c74e38d0b4523fe66cb608e83c" kindref="member">errorLabel</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h"/>
+  </compounddef>
+</doxygen>

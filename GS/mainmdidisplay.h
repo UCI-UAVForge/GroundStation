@@ -57,27 +57,7 @@ public:
     void switchToPlanningWindow();
 
     void switchToRecapWindow();
-
-private slots:
-
-    void destroy();
-
-    void beginMapExecution();
-
-    void clickedFinishButton_MainDisplay();
-
-    void clickedCancelButton_MainDisplay();
-
-    void clickedBackToPlanningButton_MainDisplay();
-
-    void clickedBackButton_MainDisplay();
-
-    void clickedLoadMissionButton_MainDisplay() ;
-
-    void clickedSaveMissionButton_MainDisplay() ;
-
-    void onMapUpdated() ;
-
+	
 private:
 
     Ui::MainMDIDisplay *ui;
@@ -120,6 +100,26 @@ private:
     QMdiSubWindow * MapSubWindow , * MissionControlSubWindow ;
 
     FlightPath * missionPlanningFlightPath ;
+	
+private slots:
+
+    void destroy();
+
+    void beginMapExecution();
+
+    void clickedFinishButton_MainDisplay();
+
+    void clickedCancelButton_MainDisplay();
+
+	void clickedBackButton_MainDisplay();
+	
+    void clickedBackToPlanningButton_MainDisplay();
+
+    void clickedLoadMissionButton_MainDisplay() ;
+
+    void clickedSaveMissionButton_MainDisplay() ;
+
+    void onMapUpdated() ;
 
 signals:
 

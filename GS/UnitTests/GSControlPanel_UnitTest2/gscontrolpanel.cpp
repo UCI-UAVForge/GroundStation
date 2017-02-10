@@ -105,3 +105,33 @@ void GSControlPanel::on_ExitButton_clicked()
     QApplication::quit() ;
 
 }
+
+/**
+ * @brief Get the name of the mission the user put in SaveMissionTextBox.
+ * @return QString of the mission name to save
+ */
+QString GSControlPanel::getMissionNameToSave() {
+
+    return this->ui->SaveMissionTextBox->text() ;
+
+}
+
+/**
+ * @brief Get the name of the mission the user selected in LoadMissionDropdown.
+ * @return QString of the mission name to load
+ */
+QString GSControlPanel::getMissionNameToLoad() {
+
+    return this->ui->LoadMissionDropdown->itemData( this->ui->LoadMissionDropdown->currentIndex() ) ;
+
+}
+
+/**
+ * @brief Add a mission to LoadMissionDropdown.
+ * @param newMissionToLoad - name of mission being added to the dropdown menu
+ */
+void GSControlPanel::addMissionToLoad( QString newMissionToLoad ) {
+
+    this->ui->LoadMissionDropdown->insertItem( this->ui->LoadMissionDropdown->count() , newMissionToLoad );
+
+}

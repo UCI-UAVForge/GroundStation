@@ -1,0 +1,408 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_mission_planning_window" kind="class" language="C++" prot="public">
+    <compoundname>MissionPlanningWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QDialog</basecompoundref>
+    <includes refid="missionplanningwindow_8h" local="no">missionplanningwindow.h</includes>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_mission_planning_window_1a337398c114f638b5a3e2fdc4529936c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class MainMDIDisplay</definition>
+        <argsstring></argsstring>
+        <name>MainMDIDisplay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="20" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_mission_planning_window_1ae75ab3c897bd85ddffd68e4b2ab2c722" prot="private" static="no" mutable="no">
+        <type>QPushButton *</type>
+        <definition>QPushButton* MissionPlanningWindow::executeButton</definition>
+        <argsstring></argsstring>
+        <name>executeButton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="50" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mission_planning_window_1a956e20879bcb91222b053aec6ec5ecab" prot="private" static="no" mutable="no">
+        <type>QComboBox *</type>
+        <definition>QComboBox* MissionPlanningWindow::uavComboBox</definition>
+        <argsstring></argsstring>
+        <name>uavComboBox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="51" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mission_planning_window_1a6b52e7d7e81c92d652d1acbbb1a381da" prot="private" static="no" mutable="no">
+        <type>QComboBox *</type>
+        <definition>QComboBox* MissionPlanningWindow::missionPlanComboBox</definition>
+        <argsstring></argsstring>
+        <name>missionPlanComboBox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="52" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mission_planning_window_1a32befd8dba0065fd33f12900e8ca59d1" prot="private" static="no" mutable="no">
+        <type>QGridLayout *</type>
+        <definition>QGridLayout* MissionPlanningWindow::layout</definition>
+        <argsstring></argsstring>
+        <name>layout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="53" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mission_planning_window_1a0045be95220d1939ea5f0206265f9e52" prot="private" static="no" mutable="no">
+        <type>QHBoxLayout *</type>
+        <definition>QHBoxLayout* MissionPlanningWindow::buttonLayout</definition>
+        <argsstring></argsstring>
+        <name>buttonLayout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="54" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mission_planning_window_1af52013df0814d527015b042b7e4cbff6" prot="private" static="no" mutable="no">
+        <type>QHBoxLayout *</type>
+        <definition>QHBoxLayout* MissionPlanningWindow::textBoxLayout</definition>
+        <argsstring></argsstring>
+        <name>textBoxLayout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="55" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mission_planning_window_1af3a070e0315b9741a7e578001ca308f1" prot="private" static="no" mutable="no">
+        <type>QVBoxLayout *</type>
+        <definition>QVBoxLayout* MissionPlanningWindow::superLayout</definition>
+        <argsstring></argsstring>
+        <name>superLayout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="56" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mission_planning_window_1aa1eb6565feff4115e69b4fe927fa24db" prot="private" static="no" mutable="no">
+        <type>QList&lt; QPushButton * &gt;</type>
+        <definition>QList&lt;QPushButton *&gt; MissionPlanningWindow::buttonList</definition>
+        <argsstring></argsstring>
+        <name>buttonList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="58" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mission_planning_window_1ab1dff11dc51d5919c79bdfe94e333119" prot="private" static="no" mutable="no">
+        <type>QList&lt; QComboBox * &gt;</type>
+        <definition>QList&lt;QComboBox *&gt; MissionPlanningWindow::comboBoxList</definition>
+        <argsstring></argsstring>
+        <name>comboBoxList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="60" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mission_planning_window_1a05b7d3b96dae27deccf067bb47c66a06" prot="private" static="no" mutable="no">
+        <type>QList&lt; QLineEdit * &gt;</type>
+        <definition>QList&lt;QLineEdit *&gt; MissionPlanningWindow::textBoxList</definition>
+        <argsstring></argsstring>
+        <name>textBoxList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="62" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mission_planning_window_1a4706b5c1aee414b3b1377943b2ac692a" prot="private" static="no" mutable="no">
+        <type>QList&lt; QLabel * &gt;</type>
+        <definition>QList&lt;QLabel *&gt; MissionPlanningWindow::textBoxLabelList</definition>
+        <argsstring></argsstring>
+        <name>textBoxLabelList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="64" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_mission_planning_window_1a4ce75f53873c10f1053e7aff288f42ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MissionPlanningWindow::MissionPlanningWindow</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>MissionPlanningWindow</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="23" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.cpp" bodystart="8" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_planning_window_1a2dd1e975fa9ab1f843dc4440436d066b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MissionPlanningWindow::~MissionPlanningWindow</definition>
+        <argsstring>()</argsstring>
+        <name>~MissionPlanningWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="24" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.cpp" bodystart="216" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_planning_window_1a995569fb123c9df67ba52db675543ab0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionPlanningWindow::deleteExecuteButton</definition>
+        <argsstring>()</argsstring>
+        <name>deleteExecuteButton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="27" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.cpp" bodystart="71" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_planning_window_1af3cb4549864921d72a3919412c1a9565" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionPlanningWindow::addButton</definition>
+        <argsstring>(QPushButton *)</argsstring>
+        <name>addButton</name>
+        <param>
+          <type>QPushButton *</type>
+          <defname>newButton</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="29" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.cpp" bodystart="79" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_planning_window_1a69829c310643543db1a5c5b3c6c72359" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionPlanningWindow::addComboBox</definition>
+        <argsstring>(QComboBox *)</argsstring>
+        <name>addComboBox</name>
+        <param>
+          <type>QComboBox *</type>
+          <defname>newComboBox</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="31" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.cpp" bodystart="87" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_planning_window_1a8e9b70111f19163564d843ff8e793fed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionPlanningWindow::addTextBox</definition>
+        <argsstring>(QLineEdit *)</argsstring>
+        <name>addTextBox</name>
+        <param>
+          <type>QLineEdit *</type>
+          <defname>newLineEdit</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="33" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.cpp" bodystart="97" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_planning_window_1a88ca96262bcc0a0c52603667ab7a70e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionPlanningWindow::addTextBox</definition>
+        <argsstring>(QLineEdit *, QLabel *)</argsstring>
+        <name>addTextBox</name>
+        <param>
+          <type>QLineEdit *</type>
+          <defname>newLineEdit</defname>
+        </param>
+        <param>
+          <type>QLabel *</type>
+          <defname>caption</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="35" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.cpp" bodystart="107" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_planning_window_1a015cb8e3949a82535ec53a30520622e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionPlanningWindow::dumpButtons</definition>
+        <argsstring>()</argsstring>
+        <name>dumpButtons</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="37" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.cpp" bodystart="118" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_planning_window_1a87d851bd04f183dabdd8b95d0bcd5e52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionPlanningWindow::dumpComboBoxes</definition>
+        <argsstring>()</argsstring>
+        <name>dumpComboBoxes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="39" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.cpp" bodystart="150" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_planning_window_1a685f4ba0b024f1eff55329bd21b9b397" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionPlanningWindow::changeTitle</definition>
+        <argsstring>(QString)</argsstring>
+        <name>changeTitle</name>
+        <param>
+          <type>QString</type>
+          <defname>newWindowTitle</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="41" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.cpp" bodystart="194" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_planning_window_1a8ee76a6437678b6a37b34c05a3e829b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString MissionPlanningWindow::getUAV</definition>
+        <argsstring>()</argsstring>
+        <name>getUAV</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="44" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.cpp" bodystart="201" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_planning_window_1abc58ee19268e6038dae8e9c8cf103d6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString MissionPlanningWindow::getMission</definition>
+        <argsstring>()</argsstring>
+        <name>getMission</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="47" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.cpp" bodystart="208" bodyend="212"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="126">
+        <label>MissionPlanningWindow</label>
+        <link refid="class_mission_planning_window"/>
+        <childnode refid="127" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="127">
+        <label>QDialog</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="128">
+        <label>MissionPlanningWindow</label>
+        <link refid="class_mission_planning_window"/>
+        <childnode refid="129" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="129">
+        <label>QDialog</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" line="17" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h" bodystart="16" bodyend="68"/>
+    <listofallmembers>
+      <member refid="class_mission_planning_window_1af3cb4549864921d72a3919412c1a9565" prot="public" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>addButton</name></member>
+      <member refid="class_mission_planning_window_1a69829c310643543db1a5c5b3c6c72359" prot="public" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>addComboBox</name></member>
+      <member refid="class_mission_planning_window_1a8e9b70111f19163564d843ff8e793fed" prot="public" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>addTextBox</name></member>
+      <member refid="class_mission_planning_window_1a88ca96262bcc0a0c52603667ab7a70e3" prot="public" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>addTextBox</name></member>
+      <member refid="class_mission_planning_window_1a0045be95220d1939ea5f0206265f9e52" prot="private" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>buttonLayout</name></member>
+      <member refid="class_mission_planning_window_1aa1eb6565feff4115e69b4fe927fa24db" prot="private" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>buttonList</name></member>
+      <member refid="class_mission_planning_window_1a685f4ba0b024f1eff55329bd21b9b397" prot="public" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>changeTitle</name></member>
+      <member refid="class_mission_planning_window_1ab1dff11dc51d5919c79bdfe94e333119" prot="private" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>comboBoxList</name></member>
+      <member refid="class_mission_planning_window_1a995569fb123c9df67ba52db675543ab0" prot="public" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>deleteExecuteButton</name></member>
+      <member refid="class_mission_planning_window_1a015cb8e3949a82535ec53a30520622e9" prot="public" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>dumpButtons</name></member>
+      <member refid="class_mission_planning_window_1a87d851bd04f183dabdd8b95d0bcd5e52" prot="public" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>dumpComboBoxes</name></member>
+      <member refid="class_mission_planning_window_1ae75ab3c897bd85ddffd68e4b2ab2c722" prot="private" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>executeButton</name></member>
+      <member refid="class_mission_planning_window_1abc58ee19268e6038dae8e9c8cf103d6e" prot="public" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>getMission</name></member>
+      <member refid="class_mission_planning_window_1a8ee76a6437678b6a37b34c05a3e829b9" prot="public" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>getUAV</name></member>
+      <member refid="class_mission_planning_window_1a32befd8dba0065fd33f12900e8ca59d1" prot="private" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>layout</name></member>
+      <member refid="class_mission_planning_window_1a337398c114f638b5a3e2fdc4529936c5" prot="private" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>MainMDIDisplay</name></member>
+      <member refid="class_mission_planning_window_1a6b52e7d7e81c92d652d1acbbb1a381da" prot="private" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>missionPlanComboBox</name></member>
+      <member refid="class_mission_planning_window_1a4ce75f53873c10f1053e7aff288f42ce" prot="public" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>MissionPlanningWindow</name></member>
+      <member refid="class_mission_planning_window_1af3a070e0315b9741a7e578001ca308f1" prot="private" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>superLayout</name></member>
+      <member refid="class_mission_planning_window_1a4706b5c1aee414b3b1377943b2ac692a" prot="private" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>textBoxLabelList</name></member>
+      <member refid="class_mission_planning_window_1af52013df0814d527015b042b7e4cbff6" prot="private" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>textBoxLayout</name></member>
+      <member refid="class_mission_planning_window_1a05b7d3b96dae27deccf067bb47c66a06" prot="private" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>textBoxList</name></member>
+      <member refid="class_mission_planning_window_1a956e20879bcb91222b053aec6ec5ecab" prot="private" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>uavComboBox</name></member>
+      <member refid="class_mission_planning_window_1a2dd1e975fa9ab1f843dc4440436d066b" prot="public" virt="non-virtual"><scope>MissionPlanningWindow</scope><name>~MissionPlanningWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

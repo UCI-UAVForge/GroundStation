@@ -57,7 +57,8 @@ SOURCES += main.cpp\
     qttabtest.cpp \
     mainmdidisplay.cpp \
     missionplanningwindow.cpp \
-    dbmanager.cpp
+    dbmanager.cpp \
+    gscontrolpanel.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
@@ -90,7 +91,8 @@ HEADERS  += mainwindow.h \
     qttabtest.h \
     mainmdidisplay.h \
     missionplanningwindow.h \
-    dbmanager.h
+    dbmanager.h \
+    gscontrolpanel.h
 
 FORMS    += mainwindow.ui \
     options.ui \
@@ -102,7 +104,8 @@ FORMS    += mainwindow.ui \
     connectiondialog.ui \
     maprecap.ui \
     qttabtest.ui \
-    mainmdidisplay.ui
+    mainmdidisplay.ui \
+    gscontrolpanel.ui
 
 OTHER_FILES +=
 
