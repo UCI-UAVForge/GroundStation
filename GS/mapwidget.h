@@ -54,7 +54,7 @@ public:
 
     /**
      * @brief getPath
-     * @param pathID - The of the path to be returned
+     * @param pathID - The ID of the path to be returned
      * @return An ordered list of all the waypoints in a certain path
      */
     QList<Protocol::Waypoint>* getPath(int pathID);
@@ -117,6 +117,13 @@ signals:
      * @param pathID - the ID of the path to be appended to
      */
     void sendPointToMap(double lat, double lng, int pathID);
+
+    /**
+     * @brief removePointFromMap
+     * @param index
+     * @param pathID
+     */
+    void removePointFromMap(int index, int pathID);
 
     /**
      * @brief clearFlightpath Tells the mapping script to delete all of the
