@@ -41,7 +41,7 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new U
     TableWidget *tw = new TableWidget();
     addWindow(tw);
 
-    connect(map, &MapWidget::pointAddedToMap, tw, &TableWidget::appendRow);
+    connect(map, &MapWidget::pointAdded, tw, &TableWidget::appendRow);
 
     this->addWindow( this->missionPlanningWindowUIWidget );
 
@@ -73,7 +73,7 @@ void MainMDIDisplay::switchToPlanningWindow() {
     //this->tempMapPlanningUIWidget->ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
     this->tempMapPlanningUIWidget->clearTable();
     //Add the buttons from MapPlanning to the Mission Planning window
-
+/*
     this->tempMapPlanningUIWidget->ui->backButton->show();
 
     this->tempMapPlanningUIWidget->ui->clearTableButton->show();
@@ -93,7 +93,7 @@ void MainMDIDisplay::switchToPlanningWindow() {
     //this->missionPlanningWindowUIWidget->addButton( this->tempMapPlanningUIWidget->getLoadMissionButton() );
 
     //this->missionPlanningWindowUIWidget->addButton( this->tempMapPlanningUIWidget->getSaveMissionButton() );
-
+*/
 }
 
 QtTabTest * MainMDIDisplay::getQttWidget() const {
@@ -203,7 +203,7 @@ void MainMDIDisplay::changePlanningToExecutionWindow() {
     this->missionPlanningWindowUIWidget->dumpComboBoxes() ;
 
     //TODO CLEAN UP THESE GODDAMN MEMORY LEAKS
-
+/*
     tempMapPlanningUIWidget->ui->executeButton->hide();
 
     tempMapPlanningUIWidget->ui->backButton->hide();
@@ -213,7 +213,7 @@ void MainMDIDisplay::changePlanningToExecutionWindow() {
     tempMapPlanningUIWidget->loadMissionButton->hide();
 
     tempMapPlanningUIWidget->saveMissionButton->hide();
-
+*/
     this->missionPlanningWindowUIWidget->uavComboBox->hide();
 
     this->missionPlanningWindowUIWidget->missionPlanComboBox->hide();

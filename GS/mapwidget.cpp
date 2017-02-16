@@ -67,7 +67,7 @@ void MapWidget::loadStartedSlot() {
 }
 
 void MapWidget::addPointToTable(double lat, double lng){
-    emit pointAddedToMap(lat,lng,0);
+    emit pointAdded(lat,lng,0);
 }
 
 void MapWidget::clearMap(){
@@ -83,8 +83,20 @@ void MapWidget::addFlightPath(FlightPath* fp, int index){
 
     for(int i = 0; i < list->length(); i++){
         Protocol::Waypoint wp = list->at(i);
-        emit sendPointToMap(wp.lat,wp.alt,index);
+        //emit sendPointToMap(wp.lat,wp.alt,index);
     }
 
     delete list;
+}
+
+void MapWidget::pointAddedToMap(double lat, double lng, int pathID){
+
+}
+
+void MapWidget::pathCleared(int pathID){
+
+}
+
+void MapWidget::pointRemovedFromMap(int index, int pathID){
+
 }

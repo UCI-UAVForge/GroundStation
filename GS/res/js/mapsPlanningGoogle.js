@@ -1,7 +1,10 @@
 var uci=new google.maps.LatLng(33.6454,-117.8426);
 var map;
 var flightPath;
-var clickable = false;
+var editable = false;
+var activePathID = 0;
+var activePath = paths[0];
+var paths = [];
 
 //Setup function that creates the initial map state.
 function initializeMap() {
@@ -22,19 +25,18 @@ function initializeMap() {
 
     map = new google.maps.Map(mapCanvas, mapOptions);
 
-    flightPath = new google.maps.Polyline({
-                                              strokeColor:"#0000FF",
-                                              strokeOpacity:0.8,
-                                              strokeWeight:2
-                                          });
+    //flightPath = new google.maps.Polyline({
+    //                                          strokeColor:"#0000FF",
+    //                                          strokeOpacity:0.8,
+    //                                          strokeWeight:2
+    //                                      });
 
-    flightPath.setMap(map);
+    //flightPath.setMap(map);
 
     //Adds the click listener for ploting waypoints
     google.maps.event.addListener(map, 'click', function(event){
         addLatLng(event.latLng);
-        //cbridge.addPointToTable(event.latLng.lat(),event.latLng.lng());
-        cbridge.addPointToTable(event.latLng.lat(),event.latLng.lng());
+        cbridge.pointAddedToMap(event.latLng.lat(),event.latLng.lng(),(paths[activePathID]).getPath().getLength(),activePathID);
     });
 }
 
@@ -57,3 +59,36 @@ function clearMap() {
     //modified by Jordan 5/22/15: no longer needs to reinitialize
     flightPath.getPath().clear();
 }
+
+//Interface functions for working with Cbridge.js
+
+/*
+  @brief createNewPath Creates a new GoogleMaps Polyline to act as a flightPath
+  and gives it the specified id.
+  @param id - the id the new path will have
+  @author Jordan Dickson - Feb 15, 2017
+*/
+function createNewPath(id){
+    if(paths[id] === undefined){
+        //@todo give paths different colors
+        var fp = new google.maps.Polyline({
+                                              strokeColor:"#0000FF",
+                                              strokeOpacity:0.8,
+                                              strokeWeight:2
+                                          });
+        paths.splice(id,0,fp);
+        paths[id].setMap(map);
+    }
+}
+
+
+function setActivePath(id){
+    activePathID = id;
+    activePath = paths[activePathID];
+    editable = true;
+}
+
+function disableEditing(){
+    editable = false;
+}
+
