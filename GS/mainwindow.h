@@ -54,7 +54,7 @@ private slots:
     void checkFinishStatus(int status);
 
     void showMissionPlanning();
-    void showMissionExecution();
+    void showMissionExecution(FlightPath *path = 0);
     void showMissionRecap();
     void showTutorial();
 

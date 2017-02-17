@@ -44,7 +44,6 @@ SOURCES += main.cpp\
     qcomboboxdelegate.cpp \
     videoplayer.cpp \
     gsserver.cpp \
-    gsclient.cpp \
     qcustomplot.cpp\
     networklistener.cpp \
     connectiondialog.cpp \
@@ -65,7 +64,8 @@ SOURCES += main.cpp\
     dbmanager.cpp \
     mapwidget.cpp \
     websocketclientwrapper.cpp \
-    websockettransport.cpp
+    websockettransport.cpp \
+    tablewidget.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
@@ -79,7 +79,6 @@ HEADERS  += mainwindow.h \
     videoplayer.h \
     net.h \
     gsserver.h \
-    gsclient.h \
     qcustomplot.h\
     networklistener.h \
     connectiondialog.h \
@@ -102,7 +101,8 @@ HEADERS  += mainwindow.h \
     mapwidget.h \
     websocketclientwrapper.h \
     websockettransport.h \
-    dialog.h
+    dialog.h \
+    tablewidget.h
 
 FORMS    += mainwindow.ui \
     options.ui \

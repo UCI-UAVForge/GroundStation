@@ -8,10 +8,10 @@ QComboBoxDelegate::QComboBoxDelegate(QObject *parent) :
 QWidget* QComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const {
 
     // Create the combobox and populate it
-    QComboBox *comboBox = new QComboBox(parent);
     QString currentText = index.data(Qt::DisplayRole).toString();
     if (index.column() == 0)
     {
+        QComboBox *comboBox = new QComboBox(parent);
         comboBox->addItem(QString("Action 1"));
         comboBox->addItem(QString("Action 2"));
         comboBox->addItem(QString("Action 3"));
@@ -20,16 +20,14 @@ QWidget* QComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionView
     //This checks the validation for the Longitude input
     if(index.column() == 1)
     {
-
         QLineEdit *longValEdit = new QLineEdit(parent);
         MapValidator *longVal = new MapValidator( -180.0, 180.0, 8, longValEdit);
         longValEdit->setValidator( longVal );
-
         return longValEdit;
-
     }
     if (index.column() == 2)
     {
+        QComboBox *comboBox = new QComboBox(parent);
         comboBox->addItem(QString("E"));
         comboBox->addItem(QString("W"));
         return comboBox;
@@ -45,6 +43,7 @@ QWidget* QComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionView
     }
 
     else if (index.column() == 4){
+        QComboBox *comboBox = new QComboBox(parent);
         comboBox->addItem(QString("N"));
         comboBox->addItem(QString("S"));
         return comboBox;
@@ -64,6 +63,7 @@ QWidget* QComboBoxDelegate::createEditor(QWidget *parent, const QStyleOptionView
         return velValEdit;
     }
     else if (index.column() == 7) {
+        QComboBox *comboBox = new QComboBox(parent);
         comboBox->addItem(QString("Behavior 1"));
         comboBox->addItem(QString("Behavior 2"));
         comboBox->addItem(QString("Behavior 3"));

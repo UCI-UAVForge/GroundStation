@@ -7,13 +7,18 @@
 #include <QWebSocketServer>
 #include <iostream>
 #include <QTimer>
+#include <QList>
 
-MapWidget::MapWidget():
+#include "ackpacket.h"
+
+MapWidget::MapWidget(QWidget *parent): QWebEngineView(parent),
     server(QStringLiteral("MapServer"), QWebSocketServer::NonSecureMode),
     clientWrapper(&server)
 {
     this->connect(this, &MapWidget::loadStarted, this, &MapWidget::loadStartedSlot);
     this->connect(this, &MapWidget::loadStarted, this, &MapWidget::loadFinishedSlot);
+
+    loading = true;
 
     lists = new QList<QList<Protocol::Waypoint> >;
 
@@ -43,10 +48,6 @@ bool MapWidget::ready() {
     return !loading;
 }
 
-int MapWidget::createNewPath() {
-    return 0;
-}
-
 void MapWidget::appendGPSCoordToPath(double lat, double lng, int pathID) {
 
 }
@@ -56,14 +57,61 @@ QList<Protocol::Waypoint> *MapWidget::getPath(int pathID) {
 }
 
 void MapWidget::loadFinishedSlot() {
-    loading = false;
+    //loading = false;
 }
 
 void MapWidget::loadStartedSlot() {
     loading= true;
 }
 
-void MapWidget::addPointToTable(double lat, double lng){
-    //QTextStream(stdout)<<lat << "," << lng;
-    emit pointAddedToMap(lat,lng,0);
+void MapWidget::addPointToMap(double lat, double lng, int index, int pathID){
+    emit insertPointToMap(lat,lng,index,pathID);
+}
+
+void MapWidget::sendCreateNewPath(int id){
+    emit createNewPath(id);
+}
+
+void MapWidget::sendSetActivePath(int id){
+    emit setActivePath(id);
+}
+
+void MapWidget::sendClearFlightPath(int pathID){
+    emit clearFlightPath(pathID);
+}
+
+void MapWidget::disconnectWebSocket(){
+    server.close();
+}
+
+void MapWidget::addFlightPath(FlightPath* fp, int id){
+    QList<Protocol::Waypoint> *list = fp->getOrderedWaypoints();
+
+    for(int i = 0; i < list->length(); i++){
+        Protocol::Waypoint wp = list->at(i);
+        //addPointToMap(wp.lat,wp.alt,i,id);
+        emit appendPointToPath(wp.lat,wp.lon,id);
+    }
+
+    delete list;
+}
+
+//Public slots called by JavaScript
+
+void MapWidget::pointAddedToMap(double lat, double lng, int index, int pathID){
+    /// \todo include index in this signal
+    emit pointAdded(lat,lng,pathID);
+}
+
+void MapWidget::pathCleared(int pathID){
+
+}
+
+void MapWidget::pointRemovedFromMap(int index, int pathID){
+
+}
+
+void MapWidget::finishedLoading() {
+    loading = false;
+    emit JSInitialized();
 }
