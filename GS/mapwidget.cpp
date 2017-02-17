@@ -84,12 +84,13 @@ void MapWidget::disconnectWebSocket(){
     server.close();
 }
 
-void MapWidget::addFlightPath(FlightPath* fp, int index){
+void MapWidget::addFlightPath(FlightPath* fp, int id){
     QList<Protocol::Waypoint> *list = fp->getOrderedWaypoints();
 
     for(int i = 0; i < list->length(); i++){
         Protocol::Waypoint wp = list->at(i);
-        //emit sendPointToMap(wp.lat,wp.alt,index);
+        //addPointToMap(wp.lat,wp.alt,i,id);
+        emit appendPointToPath(wp.lat,wp.lon,id);
     }
 
     delete list;

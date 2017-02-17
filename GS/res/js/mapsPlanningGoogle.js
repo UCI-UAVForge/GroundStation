@@ -51,13 +51,19 @@ function initializeMap() {
   @author Jordan Dickson - Feb 15, 2017
 */
 
+var colors = [
+    "#0000FF",
+    "#FF0000",
+    "#00FF00",
+    "#FF00FF",
+];
 
 function createNewPath(id){
     console.log("creating new path");
     if(!paths[id]){
         //@todo give paths different colors
         var fp = new google.maps.Polyline({
-                                              strokeColor:"#FF00FF",
+                                              strokeColor:colors[id],
                                               strokeOpacity:0.8,
                                               strokeWeight:2
                                           });

@@ -83,7 +83,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" stretch="12,1">
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="12,2">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,5">
      <item>
@@ -210,7 +210,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
-      <widget class="QPushButton" name="backButton">
+      <widget class="QPushButton" name="startButton">
        <property name="styleSheet">
         <string notr="true"> QPushButton { 
 background-color: &quot;#CCD1D9&quot;; 

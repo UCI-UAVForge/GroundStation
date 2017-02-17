@@ -114,50 +114,11 @@ void MainWindow::showMissionPlanning() {
     mapPlanning->showFullScreen();
 }
 
-void MainWindow::showMissionExecution(){
-    //Temporary FlightPath code - Remove Later
-
-    std::cout << "Attempting to create FlightPath" << std::endl;
-    FlightPath *myFlightPath = new FlightPath();
-
-
-    std::cout << "Filling point 1" << std::endl;
-    Protocol::Waypoint wp;
-    wp.alt = 10;
-    wp.lat = 33;
-    wp.lon = -111;
-    wp.speed = 10;
-    myFlightPath->addNavAction(wp,10);
-
-    std::cout << "Filling point 2" << std::endl;
-    wp.alt = 10;
-    wp.lat = 34;
-    wp.lon = -111;
-    wp.speed = 10;
-    myFlightPath->addNavAction(wp,20);
-
-    std::cout << "Filling point 3" << std::endl;
-    wp.alt = 10;
-    wp.lat = 34;
-    wp.lon = -110;
-    wp.speed = 10;
-    myFlightPath->addNavAction(wp,30);
-
-    std::cout << "Done creating FlightPath" << std::endl;
-
-    //End temporary FlightPath code
-
-
-
-    MapExecution *mapExecution = new MapExecution(myFlightPath);
+void MainWindow::showMissionExecution(FlightPath *path){
+    if(!path) path = new FlightPath();
+    MapExecution *mapExecution = new MapExecution(path);
     QObject::connect(mapExecution, SIGNAL(finished(int)), this, SLOT(checkFinishStatus(int)), Qt::UniqueConnection);
     mapExecution->showFullScreen();
-
-    //Open ConnectionDialog when MissionExecution is opened
-
-    //
-    //ConnectionDialog * connectionDialog = new ConnectionDialog();
-    //connectionDialog -> show();
 }
 
 void MainWindow::showMissionRecap() {

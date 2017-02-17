@@ -223,7 +223,8 @@ void MainMDIDisplay::changePlanningToExecutionWindow() {
 
     //TODO Add addButtons function to take a list of buttons in the missionplanningwindow class
 
-    this->missionPlanningWindowUIWidget->addButton( this->tempMapExecutionUIWidget->ui->backButton ) ;
+
+    //this->missionPlanningWindowUIWidget->addButton( this->tempMapExecutionUIWidget->ui->backButton ) ;
 
     this->missionPlanningWindowUIWidget->addButton( this->tempMapExecutionUIWidget->ui->cancelButton );
 
@@ -231,7 +232,7 @@ void MainMDIDisplay::changePlanningToExecutionWindow() {
 
     this->missionPlanningWindowUIWidget->changeTitle( QString( "Mission Execution" ) ) ;
 
-    connect( this->tempMapExecutionUIWidget->ui->backButton, SIGNAL(clicked()), this, SLOT(clickedBackButton_MainDisplay()) );
+    //connect( this->tempMapExecutionUIWidget->ui->backButton, SIGNAL(clicked()), this, SLOT(clickedBackButton_MainDisplay()) );
 
     connect( this->tempMapExecutionUIWidget->ui->cancelButton, SIGNAL(clicked()), this, SLOT(clickedCancelButton_MainDisplay()) );
 
@@ -365,17 +366,17 @@ void MainMDIDisplay::clearMapExecution() {
 
     }
 
-    if ( this->tempMapExecutionUIWidget->ui->backButton != NULL ) {
+    //if ( this->tempMapExecutionUIWidget->ui->backButton != NULL ) {
 
-        this->tempMapExecutionUIWidget->ui->backButton->hide() ;
+    //    this->tempMapExecutionUIWidget->ui->backButton->hide() ;
 
-    }
+    //}
 
-    else {
+    //else {
 
         /* Do nothing */
 
-    }
+    //}
 
     if ( this->tempMapExecutionUIWidget->conTime != NULL ) {
 

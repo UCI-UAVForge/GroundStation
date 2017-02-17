@@ -113,7 +113,7 @@ public slots:
      * @param fp
      * @param index
      */
-    void addFlightPath(FlightPath* fp, int index = 0);
+    void addFlightPath(FlightPath* fp, int id = 0);
 
     //JavaScript public slots for use with Cbridge.js
     /**

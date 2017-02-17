@@ -106,7 +106,7 @@ public:
      * object.
      * @param packet The telemetryPacket being added.
      */
-    void packetRecieved(Protocol::TelemetryPacket packet);
+    void addPacketToMission(Protocol::TelemetryPacket packet);
 
     /**
      file descriptor for the UAV. Used to send information over the network.
@@ -149,6 +149,12 @@ private:
      QHostAddress target;
 
      ServerQueue outPackets;
+
+private slots:
+     void recivePacket(Protocol::Packet* packet);
+
+signals:
+     void packetRecieved(Protocol::Packet* packet);
 };
 #endif // GSSERVER_H
 

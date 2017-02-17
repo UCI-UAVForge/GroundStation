@@ -21,6 +21,7 @@ MapPlanning::~MapPlanning() {
 // redirect to mission execution window
 void MapPlanning::on_executeButton_clicked() {
     ui->mapView->disconnectWebSocket();
+    //this->done(2);
     MapExecution* mapExecution = new MapExecution(getTableAsFlightPath());
     this->close();
     mapExecution->showFullScreen();

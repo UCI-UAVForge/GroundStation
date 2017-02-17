@@ -32,7 +32,7 @@ window.onload = function() {
             });
 
             cbridge.appendPointToPath.connect(function(lat, lng, id) {
-                appendPointToMap(lat,lng,id);
+                appendPointToPath(lat,lng,id);
             });
 
             cbridge.insertPointToMap.connect(function(lat, lng, index, id) {

@@ -24,67 +24,47 @@ MapExecution::MapExecution(FlightPath* flightPath, QWidget *parent):
     ui->StatusConsole->initiate(&MyMessageBox, this);
     //display widgets
 
-    //std::vector<Protocol::ActionPacket> test_actions = MyMessageBox.get_action_packets();
-
     conTime = new QTimer(this);
     connect(conTime, SIGNAL(timeout()), this, SLOT(updateStatusIndicator()));
     conTime->start(1000);
-    int pack_number = 1;
 
-    //for(auto i : test_actions){
-    //    Protocol::Waypoint test_wp;
-    //    test_wp = i.GetWaypoint();
-    //    std::cout << pack_number << " Latitude: " << test_wp.lat << " Longitude: " << test_wp.lon << std::endl;
-    //    ++pack_number;
-    //}
-
-    model = new TableModel();
-    ui->tableView->setModel(model);
-    ui->tableView->setItemDelegate(new QComboBoxDelegate());
-
-    /*
-    ui->tableView->setColumnHidden(0, true);
-    ui->tableView->setColumnHidden(5, true);
-    ui->tableView->setColumnWidth(2, 42);
-    ui->tableView->setColumnWidth(4, 42);
-    */
-
-    //connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    //ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
-    //qDebug() << "Map Execution Constructor URL: " << ui->webView->url();
-
-    connect(ui->backButton, SIGNAL(clicked()), this, SLOT(on_backButton_clicked()), Qt::UniqueConnection);
-    connect(ui->cancelButton, SIGNAL(clicked()), this, SLOT(on_cancelButton_clicked()), Qt::UniqueConnection);
-    connect(ui->finishButton, SIGNAL(clicked()), this, SLOT(on_finishButton_clicked()), Qt::UniqueConnection);
+    connect(ui->startButton, &QPushButton::clicked, this, &MapExecution::onStartButtonClicked);
+    connect(ui->cancelButton, &QPushButton::clicked, this, &MapExecution::onCancelButtonClicked);
+    connect(ui->finishButton, &QPushButton::clicked, this, &MapExecution::onFinishButtonClicked);
     myServer.openServer(QHostAddress::LocalHost,20715);
+
+    connect(ui->mapView, &MapWidget::JSInitialized, this, &MapExecution::setupMapPaths);
+    connect(&myServer, &GsServer::packetRecieved, this, &MapExecution::receivePacket);
 }
 
 
 MapExecution::~MapExecution() {
+    ui->mapView->disconnectWebSocket();
     delete ui;
     delete model;
     delete map;
-    conTime->disconnect();
     conTime->deleteLater();
+}
+
+void MapExecution::setupMapPaths(){
+    ui->mapView->sendCreateNewPath(0);
+    ui->mapView->addFlightPath(&myFlightPath,0);
+
+    ui->mapView->sendCreateNewPath(1);
 }
 
 // finish button
 // redirect to mission recap window
-void MapExecution::on_finishButton_clicked() {
+void MapExecution::onFinishButtonClicked() {
     std::cout<<"Finish button clicked!" << std::endl;
-
+    ui->mapView->disconnectWebSocket();
     myServer.closeServer();
-
-    emit timeToStartMapRecap();
-
-    /* Commented out for QtTabTest.cpp
     this->close();
-    myServer.closeServer();
 
+    //MapRecap* x = new MapRecap(&myMission);
+    //x->showFullScreen();
 
-    MapRecap* x = new MapRecap(&myMission);
-    x->showFullScreen();
-    */
+    //this->deleteLater();
 }
 
 // stop button
@@ -106,7 +86,7 @@ void MapExecution::on_returnHomeButton_clicked() {
 
 // cancel button
 // redirect to mission planning
-void MapExecution::on_cancelButton_clicked() {
+void MapExecution::onCancelButtonClicked() {
     //ui->webView->page()->mainFrame()->evaluateJavaScript("cancelFlight()");
 //    ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
     this->done(1);
@@ -115,11 +95,10 @@ void MapExecution::on_cancelButton_clicked() {
 // back button
 // redirect to mission planning
 // REPURPOSED TO BE A MISSION START BUTTON
-void MapExecution::on_backButton_clicked() {
+void MapExecution::onStartButtonClicked() {
 
     //-old code-
     //this->done(1);
-
     //-start button code-
     if (!missionStarted){
         missionStarted = true;
@@ -140,13 +119,13 @@ void MapExecution::sendFlightPlan(){
 
 void MapExecution::drawFlightPath(FlightPath *flightPath) {
     //ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
-    QList<Protocol::Waypoint> *points = flightPath->getOrderedWaypoints();
-    for (Protocol::Waypoint wp : *points){
-        sendCoordToJSMap(wp.lat,wp.lon,0);
-    }
+    //QList<Protocol::Waypoint> *points = flightPath->getOrderedWaypoints();
+    //for (Protocol::Waypoint wp : *points){
+    //    sendCoordToJSMap(wp.lat,wp.lon,0);
+    //}
     //ui->webView->page()->mainFrame()->evaluateJavaScript("plotFlightPlan()");
     //ui->webView->page()->mainFrame()->evaluateJavaScript("plotPolyline()");
-    delete points;
+    //delete points;
 }
 
 /* Since c++/JS bridges are broken when the JS page refreshes this slot
@@ -171,14 +150,16 @@ void MapExecution::setMyMission(const Mission &value)
 This is necessary because data cannot be added until the html file is completely
 loaded. Jordan 2/21/2015 */
 void MapExecution::addNewMap() {
-    std::cout << "Add new map called!" << std::endl;
-    drawFlightPath(&myFlightPath);
+    //std::cout << "Add new map called!" << std::endl;
+    //drawFlightPath(&myFlightPath);
 }
 
 /*  Sends a (latitude,longitude) pair to the map to be plotted.
 Used for telemetry. */
 void MapExecution::plotPosition(double lat, double lng) {
-    updateTable(lat,lng);
+    //updateTable(lat,lng);
+    ui->tableView->appendRow(lat,lng);
+    ui->mapView->appendPointToPath(lat,lng,1);
     //ui->webView->page()->mainFrame()->evaluateJavaScript("plotUAVPosition(" + QString::number(lat) + "," + QString::number(lng) + ")");
 }
 
@@ -190,6 +171,30 @@ void MapExecution::sendCoordToJSMap(double lat, double lng, int mapID){
 void MapExecution::updateTable(double lat, double lng) {
     model->insertRow(lng, lat);
     ui->tableView->scrollToBottom();
+}
+
+void MapExecution::receivePacket(Protocol::Packet *packet){
+    Protocol::Packet* incPack = packet;
+    Protocol::PacketType type = incPack->get_type();
+    if (type == Protocol::PacketType::Ack){
+        std::cout<< "AckPacket Recieved" << std::endl;
+        Protocol::AckPacket *ackPacket = (Protocol::AckPacket*)incPack;
+        //myMessageBox->addAckPacket(*ackPacket);
+    } else if (type == Protocol::PacketType::Telem){
+        std::cout<< "TelemPacket Recieved" << std::endl;
+        Protocol::TelemetryPacket *telemPacket = (Protocol::TelemetryPacket*)incPack;
+        //myMessageBox->addTelemetryPacket(*telemPacket);
+        double lat, lng;
+        float alt;
+        telemPacket->GetLocation(&lat,&lng,&alt);
+        plotPosition(lat,lng);
+    } else if (type == Protocol::PacketType::Info){
+        std::cout<< "InfoPacket Recieved" << std::endl;
+        Protocol::InfoPacket *infoPacket = (Protocol::InfoPacket*)incPack;
+        //myMessageBox->addInfoPacket(*infoPacket);
+    } else {
+        std::cout<< "UNEXPECTED PACKET TYPE RECIEVED!" << std::endl;
+    }
 }
 
 /*Change status indicator using inputted x */
