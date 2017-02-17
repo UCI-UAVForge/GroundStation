@@ -73,17 +73,33 @@ private slots:
 public slots:
 
     //Qt public slots for general use in C++
+
     /**
-     * @brief addPointToTable
+     * @brief sendCreateNewPath
+     * @param id
+     */
+    void sendCreateNewPath(int id);
+
+    /**
+     * @brief sendSetActivePath
+     * @param id
+     */
+    void sendSetActivePath(int id);
+
+    /**
+     * @brief addPointToMap
      * @param lat
      * @param lng
+     * @param index
+     * @param pathID
      */
-    void addPointToTable(double lat, double lng);
+    void addPointToMap(double lat, double lng, int index, int pathID);
 
     /**
      * @brief clearMap
+     * @param pathID
      */
-    void clearMap();
+    void sendClearFlightPath(int pathID);
 
     /**
      * @brief disconnectWebSocket must be called before opening another MapWidget
@@ -109,7 +125,7 @@ public slots:
      * @param index - the index the point was added at
      * @param pathID - the ID for the path the point was added to
      */
-    void pointAddedToMap(double lat, double lng, int pathID);
+    void pointAddedToMap(double lat, double lng, int index, int pathID);
 
     /**
      * @brief pathCleared Tells MapWidget that the user has cleared a
@@ -126,6 +142,11 @@ public slots:
      */
     void pointRemovedFromMap(int index, int pathID);
 
+    /**
+     * @brief finishedLoading
+     */
+    void finishedLoading();
+
 signals:
     //Qt Signals for general use in C++
     /**
@@ -136,6 +157,11 @@ signals:
      * @param pathID - the ID of the path the point is a member of
      */
     void pointAdded(double lat, double lng, int pathID);
+
+    /**
+     * @brief JSInitialized
+     */
+    void JSInitialized();
 
     //JavaScript Signals for use with Cbridge.js
     /**

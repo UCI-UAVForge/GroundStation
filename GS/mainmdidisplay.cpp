@@ -3,9 +3,8 @@
 #include "mapwidget.h"
 #include "tablewidget.h"
 
-MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainMDIDisplay),
-
-    MapExecutionStatusVBoxLayout(NULL) , mapExecutionStatusUIWidget(NULL) {
+MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
+    ui(new Ui::MainMDIDisplay) {
 
     ui->setupUi(this);
 

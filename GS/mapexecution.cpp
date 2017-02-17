@@ -1,7 +1,7 @@
 #include "mapexecution.h"
 #include <iostream>
 
-MapExecution::MapExecution(QWidget *parent) :MapExecution(new FlightPath,parent){}
+MapExecution::MapExecution(QWidget *parent) :MapExecution(new FlightPath(),parent){}
 
 MapExecution::MapExecution(FlightPath* flightPath, QWidget *parent):
     QDialog(parent),
@@ -14,11 +14,6 @@ MapExecution::MapExecution(FlightPath* flightPath, QWidget *parent):
     missionStarted = false;
     ui->setupUi(this);
     buttonGroup = new QButtonGroup();
-
-    map = new MapWidget();
-    ui->graphicsView->setViewport(map);
-
-    //MyMessageBox.fetch_from_table(strings);
 
     for (TimedAction *a : myFlightPath){
         MyMessageBox.addActionPacket(*(a->first));

@@ -86,7 +86,7 @@
   <property name="modal">
    <bool>false</bool>
   </property>
-  <layout class="QGridLayout" name="gridLayout" rowstretch="3">
+  <layout class="QVBoxLayout" name="verticalLayout_2" stretch="4,1">
    <property name="sizeConstraint">
     <enum>QLayout::SetNoConstraint</enum>
    </property>
@@ -102,15 +102,21 @@
    <property name="bottomMargin">
     <number>12</number>
    </property>
-   <item row="0" column="0">
-    <layout class="QGridLayout" name="gridLayout_2" rowstretch="5,2" columnstretch="4,1">
-     <property name="sizeConstraint">
-      <enum>QLayout::SetNoConstraint</enum>
-     </property>
+   <item>
+    <widget class="MapWidget" name="mapView" native="true"/>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="4,1">
      <property name="spacing">
       <number>-1</number>
      </property>
-     <item row="1" column="1">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetNoConstraint</enum>
+     </property>
+     <item>
+      <widget class="TableWidget" name="tableView"/>
+     </item>
+     <item>
       <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0">
        <property name="spacing">
         <number>-1</number>
@@ -191,12 +197,6 @@ border: none;
         </widget>
        </item>
       </layout>
-     </item>
-     <item row="1" column="0">
-      <widget class="TableWidget" name="tableView"/>
-     </item>
-     <item row="0" column="0">
-      <widget class="MapWidget" name="mapView" native="true"/>
      </item>
     </layout>
    </item>

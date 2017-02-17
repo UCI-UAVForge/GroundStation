@@ -18,6 +18,8 @@ MapWidget::MapWidget(QWidget *parent): QWebEngineView(parent),
     this->connect(this, &MapWidget::loadStarted, this, &MapWidget::loadStartedSlot);
     this->connect(this, &MapWidget::loadStarted, this, &MapWidget::loadFinishedSlot);
 
+    loading = true;
+
     lists = new QList<QList<Protocol::Waypoint> >;
 
     // setup the QWebSocketServer
@@ -46,10 +48,6 @@ bool MapWidget::ready() {
     return !loading;
 }
 
-int MapWidget::createNewPath() {
-    return 0;
-}
-
 void MapWidget::appendGPSCoordToPath(double lat, double lng, int pathID) {
 
 }
@@ -59,19 +57,27 @@ QList<Protocol::Waypoint> *MapWidget::getPath(int pathID) {
 }
 
 void MapWidget::loadFinishedSlot() {
-    loading = false;
+    //loading = false;
 }
 
 void MapWidget::loadStartedSlot() {
     loading= true;
 }
 
-void MapWidget::addPointToTable(double lat, double lng){
-    emit pointAdded(lat,lng,0);
+void MapWidget::addPointToMap(double lat, double lng, int index, int pathID){
+    emit insertPointToMap(lat,lng,index,pathID);
 }
 
-void MapWidget::clearMap(){
-    emit clearFlightPath(0);
+void MapWidget::sendCreateNewPath(int id){
+    emit createNewPath(id);
+}
+
+void MapWidget::sendSetActivePath(int id){
+    emit setActivePath(id);
+}
+
+void MapWidget::sendClearFlightPath(int pathID){
+    emit clearFlightPath(pathID);
 }
 
 void MapWidget::disconnectWebSocket(){
@@ -89,8 +95,11 @@ void MapWidget::addFlightPath(FlightPath* fp, int index){
     delete list;
 }
 
-void MapWidget::pointAddedToMap(double lat, double lng, int pathID){
+//Public slots called by JavaScript
 
+void MapWidget::pointAddedToMap(double lat, double lng, int index, int pathID){
+    /// \todo include index in this signal
+    emit pointAdded(lat,lng,pathID);
 }
 
 void MapWidget::pathCleared(int pathID){
@@ -99,4 +108,9 @@ void MapWidget::pathCleared(int pathID){
 
 void MapWidget::pointRemovedFromMap(int index, int pathID){
 
+}
+
+void MapWidget::finishedLoading() {
+    loading = false;
+    emit JSInitialized();
 }
