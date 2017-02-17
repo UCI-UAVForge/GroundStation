@@ -17,18 +17,22 @@ public:
 
     /**
      * @brief MapPlanning::getTableAsFlightPath
-     * @return
+     * @return A pointer to a new FlightPath object based on the data
+     * in the TableWidget. The FlightPath will contain the points in
+     * the same (top-to-bottom) order as they appear in the table.
      */
     FlightPath *getTableAsFlightPath();
 
 private:
     /**
-     * @brief model
+     * @brief model - The TableModel we get our column names, types,
+     * and validator from.
      */
     TableModel model;
 
     /**
-     * @brief delegate
+     * @brief delegate - The QComboBoxDelegate used to control the
+     * E/W and N/S drop-down menues embedded in the table.
      */
     QComboBoxDelegate delegate;
 

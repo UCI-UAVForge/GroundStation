@@ -25,9 +25,7 @@ DigitalClock::~DigitalClock()
      * then deletes it. If you just do "delete StatusTimer" the whole universe implodes.
      * Sorry. I needed to tell somebody this :) */
 
-    //StatusTimer->deleteLater();
-
-    TimeTimer->deleteLater();
+    myTimer->deleteLater();
 
 }
 
@@ -41,6 +39,7 @@ void DigitalClock::initiate(QTime timein)
     start = QTime::currentTime().toString("hh:mm:ss");
     time = timein;
     TimeTimer = new QTimer(this);
+    myTimer = TimeTimer;
     connect(TimeTimer, SIGNAL(timeout()), this, SLOT(showTime()));
     TimeTimer->start(1000);
 
@@ -52,6 +51,7 @@ void DigitalClock::initiate(messagebox* mbin, MapExecution* me_ptr)
     mb = mbin;
     map_exec_ptr = me_ptr;
     StatusTimer = new QTimer(this);
+    myTimer = StatusTimer;
     connect(StatusTimer, SIGNAL(timeout()), this, SLOT(showStatus()));
     StatusTimer->start(200);
 
