@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_g_s_control_panel" kind="class" language="C++" prot="public">
+    <compoundname>GSControlPanel</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QDialog</basecompoundref>
+    <includes refid="gscontrolpanel_8h" local="no">gscontrolpanel.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_g_s_control_panel_1ab016ceef3792e4accd6f9cb1f071d1af" prot="private" static="no" mutable="no">
+        <type>Ui::GSControlPanel *</type>
+        <definition>Ui::GSControlPanel* GSControlPanel::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/gscontrolpanel.h" line="19" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/gscontrolpanel.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_g_s_control_panel_1af4fcf695b7372dce0d53cb6aab6f614c" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GSControlPanel::GSControlPanel</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>GSControlPanel</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/gscontrolpanel.h" line="15" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/gscontrolpanel.cpp" bodystart="4" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_g_s_control_panel_1a52c9acf2d18ced290a5128e5577d71c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GSControlPanel::~GSControlPanel</definition>
+        <argsstring>()</argsstring>
+        <name>~GSControlPanel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/gscontrolpanel.h" line="16" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/gscontrolpanel.cpp" bodystart="11" bodyend="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="31">
+        <label>GSControlPanel</label>
+        <link refid="class_g_s_control_panel"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>QDialog</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="33">
+        <label>GSControlPanel</label>
+        <link refid="class_g_s_control_panel"/>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>QDialog</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/gscontrolpanel.h" line="11" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/gscontrolpanel.h" bodystart="10" bodyend="20"/>
+    <listofallmembers>
+      <member refid="class_g_s_control_panel_1af4fcf695b7372dce0d53cb6aab6f614c" prot="public" virt="non-virtual"><scope>GSControlPanel</scope><name>GSControlPanel</name></member>
+      <member refid="class_g_s_control_panel_1ab016ceef3792e4accd6f9cb1f071d1af" prot="private" virt="non-virtual"><scope>GSControlPanel</scope><name>ui</name></member>
+      <member refid="class_g_s_control_panel_1a52c9acf2d18ced290a5128e5577d71c7" prot="public" virt="non-virtual"><scope>GSControlPanel</scope><name>~GSControlPanel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

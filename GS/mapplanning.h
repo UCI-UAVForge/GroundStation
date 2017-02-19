@@ -5,8 +5,7 @@
 #include <QComboBox>
 #include <QPushButton>
 #include <QButtonGroup>
-#include <QWebEnginePage>
-#include <QWebFrame>
+#include <QWebEngineView>
 #include <QString>
 #include <QApplication>
 #include <QDoubleValidator>
@@ -18,90 +17,44 @@
 #include "flightpath.h"
 #include "mapexecution.h"
 #include "messagebox.h"
+#include "mapwidget.h"
 
 #include "ui_mapplanning.h"
 
-#define DEFAULT_MISSION_NAME_PLACEHOLDER "SomeMission"
-
-#define DEFAULT_MISSION_NAME_LINEEDIT_CAPTION "Save mission as: "
-
 namespace Ui {
-
     class MapPlanning;
-
 }
 
 class MapPlanning : public QDialog {
-
     Q_OBJECT
-
-    /* Roman Parise - Maybe just make friend functions or something.
-     * MainMDIDisplay is able to access private class variables of MapPlanning. */
-    friend class MainMDIDisplay;
-
 public:
-    void updateMap();
-    FlightPath *getTableAsFlightPath();
     explicit MapPlanning(QWidget *parent = 0);
     ~MapPlanning();
 
-    QPushButton * getLoadMissionButton() ;
+    void updateMap();
 
-    QPushButton * getSaveMissionButton() ;
-
-    QLineEdit * getSaveMissionByNameLineEdit() ;
-
-    QLabel * getSaveMissionByNameLabel() ;
-
-    void setLoadMissionButton( QPushButton * ) ;
-
-    void setSaveMissionButton( QPushButton * ) ;
-
-    void setSaveMissionByNameLineEdit( QLineEdit * ) ;
-
-    void setSaveMissionByNameLabel( QLabel * ) ;
+    FlightPath* getTableAsFlightPath();
 
 public slots:
     void addPointToTable(double lat, double lng);
     //addPointToTable - used to add an entry with latitude lat and longitude lng to the table.
     //  lat - the latitude value (usually from the JavaScript program).
     //  lng - the longitude value (usually from the JavaScript program).
+    void clearTable();
+
+    void setupMapPaths();
 
 private slots:
     void on_executeButton_clicked();
     void on_addButton_clicked();
     void on_backButton_clicked();
-    void on_clearTableButton_clicked();
-    void on_clearMapButton_clicked();
     void on_deleteButton_clicked();
     void on_updateTableButton_clicked();
 
-    void addClickListener();
-    //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame().
     void closeWindow();
 
 private:
-    //Ui::MapPlanning *ui;
-    QButtonGroup *buttonGroup;
-    QPushButton *del;
-    TableModel *model;
-    PopWindowMP *popup;
-    //QList<QList<QString> > tableData;
-
-    QPushButton * loadMissionButton , * saveMissionButton ;
-
-    QLineEdit * saveMissionByNameLineEdit ;
-
-    QLabel * saveMissionByNameLabel ;
-
     Ui::MapPlanning *ui;
-
-signals:
-
-    /* Roman Parise - added to tell external classes and functions that we're ready to start map execution */
-    void timeToStartMapExecution();
-
-    void tableUpdated() ;
 
 };
 

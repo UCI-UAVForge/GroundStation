@@ -1,0 +1,253 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="mapwidget_8cpp" kind="file" language="C++">
+    <compoundname>mapwidget.cpp</compoundname>
+    <includes refid="mapwidget_8h" local="yes">mapwidget.h</includes>
+    <includes local="no">QWebSocket</includes>
+    <includes local="no">QWebSocketServer</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">QTimer</includes>
+    <includes local="no">QList</includes>
+    <includes refid="ackpacket_8h" local="yes">ackpacket.h</includes>
+    <incdepgraph>
+      <node id="1735">
+        <label>websockettransport.h</label>
+        <link refid="websockettransport_8h"/>
+        <childnode refid="1736" relation="include">
+        </childnode>
+      </node>
+      <node id="1724">
+        <label>QWebChannel</label>
+      </node>
+      <node id="1733">
+        <label>websocketclientwrapper.h</label>
+        <link refid="websocketclientwrapper_8h"/>
+        <childnode refid="1734" relation="include">
+        </childnode>
+      </node>
+      <node id="1734">
+        <label>QObject</label>
+      </node>
+      <node id="1722">
+        <label>QWebEngineView</label>
+      </node>
+      <node id="1743">
+        <label>ackpacket.h</label>
+        <link refid="ackpacket_8h"/>
+        <childnode refid="1731" relation="include">
+        </childnode>
+        <childnode refid="1729" relation="include">
+        </childnode>
+      </node>
+      <node id="1721">
+        <label>QList</label>
+      </node>
+      <node id="1732">
+        <label>stdint.h</label>
+      </node>
+      <node id="1738">
+        <label>QPair</label>
+      </node>
+      <node id="1728">
+        <label>string</label>
+      </node>
+      <node id="1736">
+        <label>QtWebChannel/QWebChannelAbstractTransport</label>
+      </node>
+      <node id="1723">
+        <label>QUrl</label>
+      </node>
+      <node id="1740">
+        <label>QWebSocket</label>
+      </node>
+      <node id="1719">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp</label>
+        <link refid="mapwidget.cpp"/>
+        <childnode refid="1720" relation="include">
+        </childnode>
+        <childnode refid="1740" relation="include">
+        </childnode>
+        <childnode refid="1725" relation="include">
+        </childnode>
+        <childnode refid="1741" relation="include">
+        </childnode>
+        <childnode refid="1742" relation="include">
+        </childnode>
+        <childnode refid="1721" relation="include">
+        </childnode>
+        <childnode refid="1743" relation="include">
+        </childnode>
+      </node>
+      <node id="1742">
+        <label>QTimer</label>
+      </node>
+      <node id="1729">
+        <label>packet.h</label>
+        <link refid="packet_8h"/>
+        <childnode refid="1730" relation="include">
+        </childnode>
+        <childnode refid="1731" relation="include">
+        </childnode>
+        <childnode refid="1732" relation="include">
+        </childnode>
+      </node>
+      <node id="1739">
+        <label>QString</label>
+      </node>
+      <node id="1720">
+        <label>mapwidget.h</label>
+        <link refid="mapwidget_8h"/>
+        <childnode refid="1721" relation="include">
+        </childnode>
+        <childnode refid="1722" relation="include">
+        </childnode>
+        <childnode refid="1723" relation="include">
+        </childnode>
+        <childnode refid="1724" relation="include">
+        </childnode>
+        <childnode refid="1725" relation="include">
+        </childnode>
+        <childnode refid="1726" relation="include">
+        </childnode>
+        <childnode refid="1727" relation="include">
+        </childnode>
+        <childnode refid="1733" relation="include">
+        </childnode>
+        <childnode refid="1735" relation="include">
+        </childnode>
+        <childnode refid="1737" relation="include">
+        </childnode>
+      </node>
+      <node id="1726">
+        <label>QWebChannelAbstractTransport</label>
+      </node>
+      <node id="1725">
+        <label>QWebSocketServer</label>
+      </node>
+      <node id="1730">
+        <label>time.h</label>
+      </node>
+      <node id="1741">
+        <label>iostream</label>
+      </node>
+      <node id="1737">
+        <label>flightpath.h</label>
+        <link refid="flightpath_8h"/>
+        <childnode refid="1721" relation="include">
+        </childnode>
+        <childnode refid="1738" relation="include">
+        </childnode>
+        <childnode refid="1739" relation="include">
+        </childnode>
+        <childnode refid="1727" relation="include">
+        </childnode>
+      </node>
+      <node id="1731">
+        <label>stdio.h</label>
+      </node>
+      <node id="1727">
+        <label>actionpacket.h</label>
+        <link refid="actionpacket_8h"/>
+        <childnode refid="1728" relation="include">
+        </childnode>
+        <childnode refid="1729" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="5"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mapwidget_8h" kindref="compound">mapwidget.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QWebSocket&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QWebSocketServer&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QTimer&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ackpacket_8h" kindref="compound">ackpacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><ref refid="class_map_widget_1a713e505662adb701530212e7a2d78362" kindref="member">MapWidget::MapWidget</ref>(QWidget<sp/>*parent):<sp/>QWebEngineView(parent),</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>server(QStringLiteral(</highlight><highlight class="stringliteral">&quot;MapServer&quot;</highlight><highlight class="normal">),<sp/>QWebSocketServer::NonSecureMode),</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>clientWrapper(&amp;server)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;MapWidget::loadStarted,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;MapWidget::loadStartedSlot);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;MapWidget::loadStarted,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;MapWidget::loadFinishedSlot);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>lists<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QList&lt;QList&lt;Protocol::Waypoint&gt;<sp/>&gt;;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>setup<sp/>the<sp/>QWebSocketServer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!server.listen(QHostAddress::LocalHost,<sp/>20270))<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qFatal(</highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>open<sp/>web<sp/>socket<sp/>server.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>setup<sp/>the<sp/>channel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>QObject::connect(&amp;clientWrapper,<sp/>&amp;<ref refid="class_web_socket_client_wrapper_1a67624fd48603482dd0631f699d19e87e" kindref="member">WebSocketClientWrapper::clientConnected</ref>,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;channel,<sp/>&amp;QWebChannel::connectTo);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>setup<sp/>the<sp/>dialog<sp/>and<sp/>publish<sp/>it<sp/>to<sp/>the<sp/>QWebChannel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>channel.registerObject(QStringLiteral(</highlight><highlight class="stringliteral">&quot;cbridge&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>open<sp/>a<sp/>browser<sp/>window<sp/>with<sp/>the<sp/>client<sp/>HTML<sp/>page</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>load(MapURL);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><ref refid="class_map_widget_1a2be5ffdc125d85aa0ccdb4f552e393cc" kindref="member">MapWidget::~MapWidget</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//we<sp/>might<sp/>need<sp/>the<sp/>destructor<sp/>to<sp/>delete<sp/>each<sp/>of<sp/>the<sp/>inner<sp/>lists...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//but<sp/>then<sp/>again<sp/>maybe<sp/>not...<sp/>that&apos;s<sp/>what<sp/>testing<sp/>is<sp/>for</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>lists;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_map_widget_1ab74d0f96d17ac84330c1ad9128fa3043" kindref="member">MapWidget::ready</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>!loading;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_map_widget_1a74413ad372d073726adaafa0e4b23a88" kindref="member">MapWidget::createNewPath</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_widget_1a4ce8b29f199770cbbfb619409d03b64a" kindref="member">MapWidget::appendGPSCoordToPath</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lat,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lng,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pathID)<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">QList&lt;Protocol::Waypoint&gt;<sp/>*<ref refid="class_map_widget_1ade38deed1067391a63e190a129de6503" kindref="member">MapWidget::getPath</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pathID)<sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QList&lt;Protocol::Waypoint&gt;();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MapWidget::loadFinishedSlot()<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>loading<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>MapWidget::loadStartedSlot()<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>loading=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_widget_1a2f3f6349372d8d625526ee5ebb69abbb" kindref="member">MapWidget::addPointToTable</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lat,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lng){</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//QTextStream(stdout)&lt;&lt;lat<sp/>&lt;&lt;<sp/>&quot;,&quot;<sp/>&lt;&lt;<sp/>lng;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_map_widget_1a89b74a366c4f6958d448283621357622" kindref="member">pointAddedToMap</ref>(lat,lng,0);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_widget_1a6d02fd8c98000b25d65c18860dd24798" kindref="member">MapWidget::clearMap</ref>(){</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_map_widget_1a9ad5615b0a835998172b61de2e61a12c" kindref="member">clearFlightPath</ref>(0);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_widget_1a1334377e2cdd9b97c499880a3327c25d" kindref="member">MapWidget::disconnectWebSocket</ref>(){</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>server.close();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_widget_1a28767584fd020d5a2bdd634812de4ac9" kindref="member">MapWidget::addFlightPath</ref>(<ref refid="class_flight_path" kindref="compound">FlightPath</ref>*<sp/>fp,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index){</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;Protocol::Waypoint&gt;<sp/>*list<sp/>=<sp/>fp-&gt;<ref refid="class_flight_path_1a3ffe0a2832e0e0e48e15b181ace42870" kindref="member">getOrderedWaypoints</ref>();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>list-&gt;length();<sp/>i++){</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_protocol_1_1_waypoint" kindref="compound">Protocol::Waypoint</ref><sp/>wp<sp/>=<sp/>list-&gt;at(i);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_map_widget_1afb12c166145f973d1278270628a9faf6" kindref="member">sendPointToMap</ref>(wp.<ref refid="struct_protocol_1_1_waypoint_1a29b254ffa54a87da980aa2d0a6dd8e1e" kindref="member">lat</ref>,wp.<ref refid="struct_protocol_1_1_waypoint_1a69b7b1c0eeb8629e07fc929a902a91aa" kindref="member">alt</ref>,index);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>list;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,535 @@
+\hypertarget{class_q_c_p_layout_grid}{}\section{Q\+C\+P\+Layout\+Grid Class Reference}
+\label{class_q_c_p_layout_grid}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+
+
+A layout that arranges child elements in a grid.  
+
+
+
+
+{\ttfamily \#include $<$qcustomplot.\+h$>$}
+
+Inheritance diagram for Q\+C\+P\+Layout\+Grid\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{class_q_c_p_layout_grid}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_c_p_layout_grid_ab2a4c1587dc8aed4c41c509c8d8d2a64}{Q\+C\+P\+Layout\+Grid} ()
+\item 
+virtual \hyperlink{class_q_c_p_layout_grid_af859f4a4db693a21056a9e615f6c4a90}{$\sim$\+Q\+C\+P\+Layout\+Grid} ()
+\item 
+int \hyperlink{class_q_c_p_layout_grid_af8e6c7a05864ebe610c87756c7b9079c}{row\+Count} () const 
+\item 
+int \hyperlink{class_q_c_p_layout_grid_ac39074eafd148b82d0762090f258189e}{column\+Count} () const 
+\item 
+Q\+List$<$ double $>$ \hyperlink{class_q_c_p_layout_grid_a39bd7994d00687d1b9defef6f1bda835}{column\+Stretch\+Factors} () const 
+\item 
+Q\+List$<$ double $>$ \hyperlink{class_q_c_p_layout_grid_a3744496abf73c8e3b464181d63bb20a7}{row\+Stretch\+Factors} () const 
+\item 
+int \hyperlink{class_q_c_p_layout_grid_a3de19753fdca81194458cb15156f7315}{column\+Spacing} () const 
+\item 
+int \hyperlink{class_q_c_p_layout_grid_abccdd33c1b284feb6df90fa02f23d9a3}{row\+Spacing} () const 
+\item 
+void \hyperlink{class_q_c_p_layout_grid_ae38f31a71687b9d7ee3104852528fb50}{set\+Column\+Stretch\+Factor} (int column, double factor)
+\item 
+void \hyperlink{class_q_c_p_layout_grid_a6c2591d1a7e2534ce036989543b49e57}{set\+Column\+Stretch\+Factors} (const Q\+List$<$ double $>$ \&factors)
+\item 
+void \hyperlink{class_q_c_p_layout_grid_a7b0273de5369bd93d942edbaf5b166ec}{set\+Row\+Stretch\+Factor} (int row, double factor)
+\item 
+void \hyperlink{class_q_c_p_layout_grid_a200b45f9c908f96ebadaa3c8d87a2782}{set\+Row\+Stretch\+Factors} (const Q\+List$<$ double $>$ \&factors)
+\item 
+void \hyperlink{class_q_c_p_layout_grid_a3a49272aba32bb0fddc3bb2a45a3dba0}{set\+Column\+Spacing} (int pixels)
+\item 
+void \hyperlink{class_q_c_p_layout_grid_aaef2cd2d456197ee06a208793678e436}{set\+Row\+Spacing} (int pixels)
+\item 
+virtual void \hyperlink{class_q_c_p_layout_grid_a07f8dd7d3d61d7345026621d446042a4}{update\+Layout} ()
+\item 
+virtual int \hyperlink{class_q_c_p_layout_grid_aa682b1d36660478f665bab3c64e956a9}{element\+Count} () const 
+\item 
+virtual \hyperlink{class_q_c_p_layout_element}{Q\+C\+P\+Layout\+Element} $\ast$ \hyperlink{class_q_c_p_layout_grid_a26849ee5c47b4c940e8d65e8462f1065}{element\+At} (int index) const 
+\item 
+virtual \hyperlink{class_q_c_p_layout_element}{Q\+C\+P\+Layout\+Element} $\ast$ \hyperlink{class_q_c_p_layout_grid_acc1277394ff8a6432e111ff9463e6375}{take\+At} (int index)
+\item 
+virtual bool \hyperlink{class_q_c_p_layout_grid_a666a9fe9e92054436f9b66eba25cca0c}{take} (\hyperlink{class_q_c_p_layout_element}{Q\+C\+P\+Layout\+Element} $\ast$\hyperlink{class_q_c_p_layout_grid_a525f25e6ba43ee228151d074251b4e6a}{element})
+\item 
+virtual Q\+List$<$ \hyperlink{class_q_c_p_layout_element}{Q\+C\+P\+Layout\+Element} $\ast$ $>$ \hyperlink{class_q_c_p_layout_grid_ae9e24e01552f6667b6d05b12a54a4caa}{elements} (bool recursive) const 
+\item 
+virtual void \hyperlink{class_q_c_p_layout_grid_a08bba60e4acd20165526a8fd7f986b58}{simplify} ()
+\item 
+virtual Q\+Size \hyperlink{class_q_c_p_layout_grid_a67aae235fb4dd9a479aafe07462ef9ee}{minimum\+Size\+Hint} () const 
+\item 
+virtual Q\+Size \hyperlink{class_q_c_p_layout_grid_a1ec4bf5914900a51829a7919f74aa58c}{maximum\+Size\+Hint} () const 
+\item 
+\hyperlink{class_q_c_p_layout_element}{Q\+C\+P\+Layout\+Element} $\ast$ \hyperlink{class_q_c_p_layout_grid_a525f25e6ba43ee228151d074251b4e6a}{element} (int row, int column) const 
+\item 
+bool \hyperlink{class_q_c_p_layout_grid_adff1a2ca691ed83d2d24a4cd1fe17012}{add\+Element} (int row, int column, \hyperlink{class_q_c_p_layout_element}{Q\+C\+P\+Layout\+Element} $\ast$\hyperlink{class_q_c_p_layout_grid_a525f25e6ba43ee228151d074251b4e6a}{element})
+\item 
+bool \hyperlink{class_q_c_p_layout_grid_ab0cf4f7edc9414a3bfaddac0f46dc0a0}{has\+Element} (int row, int column)
+\item 
+void \hyperlink{class_q_c_p_layout_grid_a886c0dcbabd51a45da399e044552b685}{expand\+To} (int new\+Row\+Count, int new\+Column\+Count)
+\item 
+void \hyperlink{class_q_c_p_layout_grid_a48af3dd7c3a653d9c3d7dd99bd02e838}{insert\+Row} (int new\+Index)
+\item 
+void \hyperlink{class_q_c_p_layout_grid_a1e880a321dbe8b43b471ccd764433dc4}{insert\+Column} (int new\+Index)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_q_c_p_layout_grid_ac645fb9b1c4257b08a9f09dee10b9b3f}{get\+Minimum\+Row\+Col\+Sizes} (Q\+Vector$<$ int $>$ $\ast$min\+Col\+Widths, Q\+Vector$<$ int $>$ $\ast$min\+Row\+Heights) const 
+\item 
+void \hyperlink{class_q_c_p_layout_grid_af348d903e3b8bc416f1fe1b8125d1173}{get\+Maximum\+Row\+Col\+Sizes} (Q\+Vector$<$ int $>$ $\ast$max\+Col\+Widths, Q\+Vector$<$ int $>$ $\ast$max\+Row\+Heights) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+List$<$ Q\+List$<$ \hyperlink{class_q_c_p_layout_element}{Q\+C\+P\+Layout\+Element} $\ast$ $>$ $>$ \hyperlink{class_q_c_p_layout_grid_a3577d3855bf8ad20ef9079291a49f397}{m\+Elements}
+\item 
+Q\+List$<$ double $>$ \hyperlink{class_q_c_p_layout_grid_ac6aabe62339f94f18b9f8adab94b1840}{m\+Column\+Stretch\+Factors}
+\item 
+Q\+List$<$ double $>$ \hyperlink{class_q_c_p_layout_grid_a36c85a7eaf342680fb9b8a4977486f16}{m\+Row\+Stretch\+Factors}
+\item 
+int \hyperlink{class_q_c_p_layout_grid_ae9ac48f0791be07ead0a96dbd5622770}{m\+Column\+Spacing}
+\item 
+int \hyperlink{class_q_c_p_layout_grid_a8b67f183f4645739cc4c794d75843b40}{m\+Row\+Spacing}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A layout that arranges child elements in a grid. 
+
+Elements are laid out in a grid with configurable stretch factors (\hyperlink{class_q_c_p_layout_grid_ae38f31a71687b9d7ee3104852528fb50}{set\+Column\+Stretch\+Factor}, \hyperlink{class_q_c_p_layout_grid_a7b0273de5369bd93d942edbaf5b166ec}{set\+Row\+Stretch\+Factor}) and spacing (\hyperlink{class_q_c_p_layout_grid_a3a49272aba32bb0fddc3bb2a45a3dba0}{set\+Column\+Spacing}, \hyperlink{class_q_c_p_layout_grid_aaef2cd2d456197ee06a208793678e436}{set\+Row\+Spacing}).
+
+Elements can be added to cells via \hyperlink{class_q_c_p_layout_grid_adff1a2ca691ed83d2d24a4cd1fe17012}{add\+Element}. The grid is expanded if the specified row or column doesn\textquotesingle{}t exist yet. Whether a cell contains a valid layout element can be checked with \hyperlink{class_q_c_p_layout_grid_ab0cf4f7edc9414a3bfaddac0f46dc0a0}{has\+Element}, that element can be retrieved with \hyperlink{class_q_c_p_layout_grid_a525f25e6ba43ee228151d074251b4e6a}{element}. If rows and columns that only have empty cells shall be removed, call \hyperlink{class_q_c_p_layout_grid_a08bba60e4acd20165526a8fd7f986b58}{simplify}. Removal of elements is either done by just adding the element to a different layout or by using the \hyperlink{class_q_c_p_layout}{Q\+C\+P\+Layout} interface \hyperlink{class_q_c_p_layout_grid_a666a9fe9e92054436f9b66eba25cca0c}{take} or \hyperlink{class_q_c_p_layout_a6c58f537d8086f352576ab7c5b15d0bc}{remove}.
+
+Row and column insertion can be performed with \hyperlink{class_q_c_p_layout_grid_a48af3dd7c3a653d9c3d7dd99bd02e838}{insert\+Row} and \hyperlink{class_q_c_p_layout_grid_a1e880a321dbe8b43b471ccd764433dc4}{insert\+Column}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_q_c_p_layout_grid_ab2a4c1587dc8aed4c41c509c8d8d2a64}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{Q\+C\+P\+Layout\+Grid}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Layout\+Grid\+::\+Q\+C\+P\+Layout\+Grid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_q_c_p_layout_grid_ab2a4c1587dc8aed4c41c509c8d8d2a64}
+Creates an instance of \hyperlink{class_q_c_p_layout_grid}{Q\+C\+P\+Layout\+Grid} and sets default values. \hypertarget{class_q_c_p_layout_grid_af859f4a4db693a21056a9e615f6c4a90}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!````~Q\+C\+P\+Layout\+Grid@{$\sim$\+Q\+C\+P\+Layout\+Grid}}
+\index{````~Q\+C\+P\+Layout\+Grid@{$\sim$\+Q\+C\+P\+Layout\+Grid}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{$\sim$\+Q\+C\+P\+Layout\+Grid}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Layout\+Grid\+::$\sim$\+Q\+C\+P\+Layout\+Grid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_layout_grid_af859f4a4db693a21056a9e615f6c4a90}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_q_c_p_layout_grid_adff1a2ca691ed83d2d24a4cd1fe17012}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!add\+Element@{add\+Element}}
+\index{add\+Element@{add\+Element}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{add\+Element}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Layout\+Grid\+::add\+Element (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{column, }
+\item[{{\bf Q\+C\+P\+Layout\+Element} $\ast$}]{element}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_layout_grid_adff1a2ca691ed83d2d24a4cd1fe17012}
+Adds the {\itshape element} to cell with {\itshape row} and {\itshape column}. If {\itshape element} is already in a layout, it is first removed from there. If {\itshape row} or {\itshape column} don\textquotesingle{}t exist yet, the layout is expanded accordingly.
+
+Returns true if the element was added successfully, i.\+e. if the cell at {\itshape row} and {\itshape column} didn\textquotesingle{}t already have an element.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_layout_grid_a525f25e6ba43ee228151d074251b4e6a}{element}, \hyperlink{class_q_c_p_layout_grid_ab0cf4f7edc9414a3bfaddac0f46dc0a0}{has\+Element}, \hyperlink{class_q_c_p_layout_grid_a666a9fe9e92054436f9b66eba25cca0c}{take}, \hyperlink{class_q_c_p_layout_a6c58f537d8086f352576ab7c5b15d0bc}{remove} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_layout_grid_ac39074eafd148b82d0762090f258189e}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!column\+Count@{column\+Count}}
+\index{column\+Count@{column\+Count}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{column\+Count}]{\setlength{\rightskip}{0pt plus 5cm}int Q\+C\+P\+Layout\+Grid\+::column\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_q_c_p_layout_grid_ac39074eafd148b82d0762090f258189e}
+Returns the number of columns in the layout.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_layout_grid_af8e6c7a05864ebe610c87756c7b9079c}{row\+Count} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_layout_grid_a3de19753fdca81194458cb15156f7315}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!column\+Spacing@{column\+Spacing}}
+\index{column\+Spacing@{column\+Spacing}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{column\+Spacing}]{\setlength{\rightskip}{0pt plus 5cm}int Q\+C\+P\+Layout\+Grid\+::column\+Spacing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_layout_grid_a3de19753fdca81194458cb15156f7315}
+\hypertarget{class_q_c_p_layout_grid_a39bd7994d00687d1b9defef6f1bda835}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!column\+Stretch\+Factors@{column\+Stretch\+Factors}}
+\index{column\+Stretch\+Factors@{column\+Stretch\+Factors}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{column\+Stretch\+Factors}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$double$>$ Q\+C\+P\+Layout\+Grid\+::column\+Stretch\+Factors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_layout_grid_a39bd7994d00687d1b9defef6f1bda835}
+\hypertarget{class_q_c_p_layout_grid_a525f25e6ba43ee228151d074251b4e6a}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!element@{element}}
+\index{element@{element}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{element}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Layout\+Element} $\ast$ Q\+C\+P\+Layout\+Grid\+::element (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{column}
+\end{DoxyParamCaption}
+) const}\label{class_q_c_p_layout_grid_a525f25e6ba43ee228151d074251b4e6a}
+Returns the element in the cell in {\itshape row} and {\itshape column}.
+
+Returns 0 if either the row/column is invalid or if the cell is empty. In those cases, a q\+Debug message is printed. To check whether a cell exists and isn\textquotesingle{}t empty, use \hyperlink{class_q_c_p_layout_grid_ab0cf4f7edc9414a3bfaddac0f46dc0a0}{has\+Element}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_layout_grid_adff1a2ca691ed83d2d24a4cd1fe17012}{add\+Element}, \hyperlink{class_q_c_p_layout_grid_ab0cf4f7edc9414a3bfaddac0f46dc0a0}{has\+Element} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_layout_grid_a26849ee5c47b4c940e8d65e8462f1065}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!element\+At@{element\+At}}
+\index{element\+At@{element\+At}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{element\+At}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Layout\+Element} $\ast$ Q\+C\+P\+Layout\+Grid\+::element\+At (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_layout_grid_a26849ee5c47b4c940e8d65e8462f1065}
+Returns the element in the cell with the given {\itshape index}. If {\itshape index} is invalid, returns 0.
+
+Note that even if {\itshape index} is valid, the respective cell may be empty in some layouts (e.\+g. \hyperlink{class_q_c_p_layout_grid}{Q\+C\+P\+Layout\+Grid}), so this function may return 0 in those cases. You may use this function to check whether a cell is empty or not.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_layout_grid_ae9e24e01552f6667b6d05b12a54a4caa}{elements}, \hyperlink{class_q_c_p_layout_grid_aa682b1d36660478f665bab3c64e956a9}{element\+Count}, \hyperlink{class_q_c_p_layout_grid_acc1277394ff8a6432e111ff9463e6375}{take\+At} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{class_q_c_p_layout_afa73ca7d859f8a3ee5c73c9b353d2a56}{Q\+C\+P\+Layout}.
+
+\hypertarget{class_q_c_p_layout_grid_aa682b1d36660478f665bab3c64e956a9}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!element\+Count@{element\+Count}}
+\index{element\+Count@{element\+Count}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{element\+Count}]{\setlength{\rightskip}{0pt plus 5cm}int Q\+C\+P\+Layout\+Grid\+::element\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_layout_grid_aa682b1d36660478f665bab3c64e956a9}
+Returns the number of elements/cells in the layout.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_layout_grid_ae9e24e01552f6667b6d05b12a54a4caa}{elements}, \hyperlink{class_q_c_p_layout_grid_a26849ee5c47b4c940e8d65e8462f1065}{element\+At} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{class_q_c_p_layout_a39d3e9ef5d9b82ab1885ba1cb9597e56}{Q\+C\+P\+Layout}.
+
+\hypertarget{class_q_c_p_layout_grid_ae9e24e01552f6667b6d05b12a54a4caa}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!elements@{elements}}
+\index{elements@{elements}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{elements}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ {\bf Q\+C\+P\+Layout\+Element} $\ast$ $>$ Q\+C\+P\+Layout\+Grid\+::elements (
+\begin{DoxyParamCaption}
+\item[{bool}]{recursive}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_layout_grid_ae9e24e01552f6667b6d05b12a54a4caa}
+Returns a list of all child elements in this layout element. If {\itshape recursive} is true, all sub-\/child elements are included in the list, too.
+
+\begin{DoxyWarning}{Warning}
+There may be entries with value 0 in the returned list. (For example, \hyperlink{class_q_c_p_layout_grid}{Q\+C\+P\+Layout\+Grid} may have empty cells which yield 0 at the respective index.) 
+\end{DoxyWarning}
+
+
+Reimplemented from \hyperlink{class_q_c_p_layout_a51fe2675b53e829130b229bc1f7b0f99}{Q\+C\+P\+Layout}.
+
+\hypertarget{class_q_c_p_layout_grid_a886c0dcbabd51a45da399e044552b685}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!expand\+To@{expand\+To}}
+\index{expand\+To@{expand\+To}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{expand\+To}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layout\+Grid\+::expand\+To (
+\begin{DoxyParamCaption}
+\item[{int}]{new\+Row\+Count, }
+\item[{int}]{new\+Column\+Count}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_layout_grid_a886c0dcbabd51a45da399e044552b685}
+Expands the layout to have {\itshape new\+Row\+Count} rows and {\itshape new\+Column\+Count} columns. So the last valid row index will be {\itshape new\+Row\+Count-\/1}, the last valid column index will be {\itshape new\+Column\+Count-\/1}.
+
+If the current column/row count is already larger or equal to {\itshape new\+Column\+Count/{\itshape new\+Row\+Count},} this function does nothing in that dimension.
+
+Newly created cells are empty, new rows and columns have the stretch factor 1.
+
+Note that upon a call to \hyperlink{class_q_c_p_layout_grid_adff1a2ca691ed83d2d24a4cd1fe17012}{add\+Element}, the layout is expanded automatically to contain the specified row and column, using this function.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_layout_grid_a08bba60e4acd20165526a8fd7f986b58}{simplify} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_layout_grid_af348d903e3b8bc416f1fe1b8125d1173}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!get\+Maximum\+Row\+Col\+Sizes@{get\+Maximum\+Row\+Col\+Sizes}}
+\index{get\+Maximum\+Row\+Col\+Sizes@{get\+Maximum\+Row\+Col\+Sizes}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{get\+Maximum\+Row\+Col\+Sizes}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layout\+Grid\+::get\+Maximum\+Row\+Col\+Sizes (
+\begin{DoxyParamCaption}
+\item[{Q\+Vector$<$ int $>$ $\ast$}]{max\+Col\+Widths, }
+\item[{Q\+Vector$<$ int $>$ $\ast$}]{max\+Row\+Heights}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_layout_grid_af348d903e3b8bc416f1fe1b8125d1173}
+\hypertarget{class_q_c_p_layout_grid_ac645fb9b1c4257b08a9f09dee10b9b3f}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!get\+Minimum\+Row\+Col\+Sizes@{get\+Minimum\+Row\+Col\+Sizes}}
+\index{get\+Minimum\+Row\+Col\+Sizes@{get\+Minimum\+Row\+Col\+Sizes}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{get\+Minimum\+Row\+Col\+Sizes}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layout\+Grid\+::get\+Minimum\+Row\+Col\+Sizes (
+\begin{DoxyParamCaption}
+\item[{Q\+Vector$<$ int $>$ $\ast$}]{min\+Col\+Widths, }
+\item[{Q\+Vector$<$ int $>$ $\ast$}]{min\+Row\+Heights}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_layout_grid_ac645fb9b1c4257b08a9f09dee10b9b3f}
+\hypertarget{class_q_c_p_layout_grid_ab0cf4f7edc9414a3bfaddac0f46dc0a0}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!has\+Element@{has\+Element}}
+\index{has\+Element@{has\+Element}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{has\+Element}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Layout\+Grid\+::has\+Element (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{int}]{column}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_layout_grid_ab0cf4f7edc9414a3bfaddac0f46dc0a0}
+Returns whether the cell at {\itshape row} and {\itshape column} exists and contains a valid element, i.\+e. isn\textquotesingle{}t empty.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_layout_grid_a525f25e6ba43ee228151d074251b4e6a}{element} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_layout_grid_a1e880a321dbe8b43b471ccd764433dc4}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!insert\+Column@{insert\+Column}}
+\index{insert\+Column@{insert\+Column}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{insert\+Column}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layout\+Grid\+::insert\+Column (
+\begin{DoxyParamCaption}
+\item[{int}]{new\+Index}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_layout_grid_a1e880a321dbe8b43b471ccd764433dc4}
+Inserts a new column with empty cells at the column index {\itshape new\+Index}. Valid values for {\itshape new\+Index} range from 0 (inserts a row at the left) to {\itshape row\+Count} (appends a row at the right).
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_layout_grid_a48af3dd7c3a653d9c3d7dd99bd02e838}{insert\+Row} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_layout_grid_a48af3dd7c3a653d9c3d7dd99bd02e838}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!insert\+Row@{insert\+Row}}
+\index{insert\+Row@{insert\+Row}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{insert\+Row}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layout\+Grid\+::insert\+Row (
+\begin{DoxyParamCaption}
+\item[{int}]{new\+Index}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_layout_grid_a48af3dd7c3a653d9c3d7dd99bd02e838}
+Inserts a new row with empty cells at the row index {\itshape new\+Index}. Valid values for {\itshape new\+Index} range from 0 (inserts a row at the top) to {\itshape row\+Count} (appends a row at the bottom).
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_layout_grid_a1e880a321dbe8b43b471ccd764433dc4}{insert\+Column} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_layout_grid_a1ec4bf5914900a51829a7919f74aa58c}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!maximum\+Size\+Hint@{maximum\+Size\+Hint}}
+\index{maximum\+Size\+Hint@{maximum\+Size\+Hint}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{maximum\+Size\+Hint}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Size Q\+C\+P\+Layout\+Grid\+::maximum\+Size\+Hint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_layout_grid_a1ec4bf5914900a51829a7919f74aa58c}
+Returns the maximum size this layout element (the inner \hyperlink{class_q_c_p_layout_element_affdfea003469aac3d0fac5f4e06171bc}{rect}) may be expanded to.
+
+if a maximum size (\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}) was not set manually, parent layouts consult this function to determine the maximum allowed size of this layout element. (A manual maximum size is considered set if it is smaller than Qt\textquotesingle{}s Q\+W\+I\+D\+G\+E\+T\+S\+I\+Z\+E\+\_\+\+M\+A\+X.) 
+
+Reimplemented from \hyperlink{class_q_c_p_layout_element_adbd3a00fec44c977150c6be7329eb801}{Q\+C\+P\+Layout\+Element}.
+
+\hypertarget{class_q_c_p_layout_grid_a67aae235fb4dd9a479aafe07462ef9ee}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!minimum\+Size\+Hint@{minimum\+Size\+Hint}}
+\index{minimum\+Size\+Hint@{minimum\+Size\+Hint}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{minimum\+Size\+Hint}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Size Q\+C\+P\+Layout\+Grid\+::minimum\+Size\+Hint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_layout_grid_a67aae235fb4dd9a479aafe07462ef9ee}
+Returns the minimum size this layout element (the inner \hyperlink{class_q_c_p_layout_element_affdfea003469aac3d0fac5f4e06171bc}{rect}) may be compressed to.
+
+if a minimum size (\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}) was not set manually, parent layouts consult this function to determine the minimum allowed size of this layout element. (A manual minimum size is considered set if it is non-\/zero.) 
+
+Reimplemented from \hyperlink{class_q_c_p_layout_element_aebe14fb71f858c0f98caf8d342a9864a}{Q\+C\+P\+Layout\+Element}.
+
+\hypertarget{class_q_c_p_layout_grid_af8e6c7a05864ebe610c87756c7b9079c}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!row\+Count@{row\+Count}}
+\index{row\+Count@{row\+Count}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{row\+Count}]{\setlength{\rightskip}{0pt plus 5cm}int Q\+C\+P\+Layout\+Grid\+::row\+Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_q_c_p_layout_grid_af8e6c7a05864ebe610c87756c7b9079c}
+Returns the number of rows in the layout.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_layout_grid_ac39074eafd148b82d0762090f258189e}{column\+Count} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_layout_grid_abccdd33c1b284feb6df90fa02f23d9a3}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!row\+Spacing@{row\+Spacing}}
+\index{row\+Spacing@{row\+Spacing}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{row\+Spacing}]{\setlength{\rightskip}{0pt plus 5cm}int Q\+C\+P\+Layout\+Grid\+::row\+Spacing (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_layout_grid_abccdd33c1b284feb6df90fa02f23d9a3}
+\hypertarget{class_q_c_p_layout_grid_a3744496abf73c8e3b464181d63bb20a7}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!row\+Stretch\+Factors@{row\+Stretch\+Factors}}
+\index{row\+Stretch\+Factors@{row\+Stretch\+Factors}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{row\+Stretch\+Factors}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$double$>$ Q\+C\+P\+Layout\+Grid\+::row\+Stretch\+Factors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_layout_grid_a3744496abf73c8e3b464181d63bb20a7}
+\hypertarget{class_q_c_p_layout_grid_a3a49272aba32bb0fddc3bb2a45a3dba0}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!set\+Column\+Spacing@{set\+Column\+Spacing}}
+\index{set\+Column\+Spacing@{set\+Column\+Spacing}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{set\+Column\+Spacing}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layout\+Grid\+::set\+Column\+Spacing (
+\begin{DoxyParamCaption}
+\item[{int}]{pixels}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_layout_grid_a3a49272aba32bb0fddc3bb2a45a3dba0}
+Sets the gap that is left blank between columns to {\itshape pixels}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_layout_grid_aaef2cd2d456197ee06a208793678e436}{set\+Row\+Spacing} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_layout_grid_ae38f31a71687b9d7ee3104852528fb50}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!set\+Column\+Stretch\+Factor@{set\+Column\+Stretch\+Factor}}
+\index{set\+Column\+Stretch\+Factor@{set\+Column\+Stretch\+Factor}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{set\+Column\+Stretch\+Factor}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layout\+Grid\+::set\+Column\+Stretch\+Factor (
+\begin{DoxyParamCaption}
+\item[{int}]{column, }
+\item[{double}]{factor}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_layout_grid_ae38f31a71687b9d7ee3104852528fb50}
+Sets the stretch {\itshape factor} of {\itshape column}.
+
+Stretch factors control the relative sizes of rows and columns. Cells will not be resized beyond their minimum and maximum widths/heights (\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{Q\+C\+P\+Layout\+Element\+::set\+Minimum\+Size}, \hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{Q\+C\+P\+Layout\+Element\+::set\+Maximum\+Size}), regardless of the stretch factor.
+
+The default stretch factor of newly created rows/columns is 1.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_layout_grid_a6c2591d1a7e2534ce036989543b49e57}{set\+Column\+Stretch\+Factors}, \hyperlink{class_q_c_p_layout_grid_a7b0273de5369bd93d942edbaf5b166ec}{set\+Row\+Stretch\+Factor} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_layout_grid_a6c2591d1a7e2534ce036989543b49e57}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!set\+Column\+Stretch\+Factors@{set\+Column\+Stretch\+Factors}}
+\index{set\+Column\+Stretch\+Factors@{set\+Column\+Stretch\+Factors}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{set\+Column\+Stretch\+Factors}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layout\+Grid\+::set\+Column\+Stretch\+Factors (
+\begin{DoxyParamCaption}
+\item[{const Q\+List$<$ double $>$ \&}]{factors}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_layout_grid_a6c2591d1a7e2534ce036989543b49e57}
+Sets the stretch {\itshape factors} of all columns. {\itshape factors} must have the size \hyperlink{class_q_c_p_layout_grid_ac39074eafd148b82d0762090f258189e}{column\+Count}.
+
+Stretch factors control the relative sizes of rows and columns. Cells will not be resized beyond their minimum and maximum widths/heights (\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{Q\+C\+P\+Layout\+Element\+::set\+Minimum\+Size}, \hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{Q\+C\+P\+Layout\+Element\+::set\+Maximum\+Size}), regardless of the stretch factor.
+
+The default stretch factor of newly created rows/columns is 1.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_layout_grid_ae38f31a71687b9d7ee3104852528fb50}{set\+Column\+Stretch\+Factor}, \hyperlink{class_q_c_p_layout_grid_a200b45f9c908f96ebadaa3c8d87a2782}{set\+Row\+Stretch\+Factors} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_layout_grid_aaef2cd2d456197ee06a208793678e436}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!set\+Row\+Spacing@{set\+Row\+Spacing}}
+\index{set\+Row\+Spacing@{set\+Row\+Spacing}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{set\+Row\+Spacing}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layout\+Grid\+::set\+Row\+Spacing (
+\begin{DoxyParamCaption}
+\item[{int}]{pixels}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_layout_grid_aaef2cd2d456197ee06a208793678e436}
+Sets the gap that is left blank between rows to {\itshape pixels}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_layout_grid_a3a49272aba32bb0fddc3bb2a45a3dba0}{set\+Column\+Spacing} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_layout_grid_a7b0273de5369bd93d942edbaf5b166ec}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!set\+Row\+Stretch\+Factor@{set\+Row\+Stretch\+Factor}}
+\index{set\+Row\+Stretch\+Factor@{set\+Row\+Stretch\+Factor}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{set\+Row\+Stretch\+Factor}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layout\+Grid\+::set\+Row\+Stretch\+Factor (
+\begin{DoxyParamCaption}
+\item[{int}]{row, }
+\item[{double}]{factor}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_layout_grid_a7b0273de5369bd93d942edbaf5b166ec}
+Sets the stretch {\itshape factor} of {\itshape row}.
+
+Stretch factors control the relative sizes of rows and columns. Cells will not be resized beyond their minimum and maximum widths/heights (\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{Q\+C\+P\+Layout\+Element\+::set\+Minimum\+Size}, \hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{Q\+C\+P\+Layout\+Element\+::set\+Maximum\+Size}), regardless of the stretch factor.
+
+The default stretch factor of newly created rows/columns is 1.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_layout_grid_a6c2591d1a7e2534ce036989543b49e57}{set\+Column\+Stretch\+Factors}, \hyperlink{class_q_c_p_layout_grid_a7b0273de5369bd93d942edbaf5b166ec}{set\+Row\+Stretch\+Factor} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_layout_grid_a200b45f9c908f96ebadaa3c8d87a2782}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!set\+Row\+Stretch\+Factors@{set\+Row\+Stretch\+Factors}}
+\index{set\+Row\+Stretch\+Factors@{set\+Row\+Stretch\+Factors}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{set\+Row\+Stretch\+Factors}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layout\+Grid\+::set\+Row\+Stretch\+Factors (
+\begin{DoxyParamCaption}
+\item[{const Q\+List$<$ double $>$ \&}]{factors}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_layout_grid_a200b45f9c908f96ebadaa3c8d87a2782}
+Sets the stretch {\itshape factors} of all rows. {\itshape factors} must have the size \hyperlink{class_q_c_p_layout_grid_af8e6c7a05864ebe610c87756c7b9079c}{row\+Count}.
+
+Stretch factors control the relative sizes of rows and columns. Cells will not be resized beyond their minimum and maximum widths/heights (\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{Q\+C\+P\+Layout\+Element\+::set\+Minimum\+Size}, \hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{Q\+C\+P\+Layout\+Element\+::set\+Maximum\+Size}), regardless of the stretch factor.
+
+The default stretch factor of newly created rows/columns is 1.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_layout_grid_a7b0273de5369bd93d942edbaf5b166ec}{set\+Row\+Stretch\+Factor}, \hyperlink{class_q_c_p_layout_grid_a6c2591d1a7e2534ce036989543b49e57}{set\+Column\+Stretch\+Factors} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_layout_grid_a08bba60e4acd20165526a8fd7f986b58}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!simplify@{simplify}}
+\index{simplify@{simplify}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{simplify}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layout\+Grid\+::simplify (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_layout_grid_a08bba60e4acd20165526a8fd7f986b58}
+Simplifies the layout by collapsing rows and columns which only contain empty cells. 
+
+Reimplemented from \hyperlink{class_q_c_p_layout_a41e6ac049143866e8f8b4964efab01b2}{Q\+C\+P\+Layout}.
+
+\hypertarget{class_q_c_p_layout_grid_a666a9fe9e92054436f9b66eba25cca0c}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!take@{take}}
+\index{take@{take}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{take}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Layout\+Grid\+::take (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Layout\+Element} $\ast$}]{element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_layout_grid_a666a9fe9e92054436f9b66eba25cca0c}
+Removes the specified {\itshape element} from the layout and returns true on success.
+
+If the {\itshape element} isn\textquotesingle{}t in this layout, returns false.
+
+Note that some layouts don\textquotesingle{}t remove the respective cell right away but leave an empty cell after successful removal of the layout element. To collapse empty cells, use \hyperlink{class_q_c_p_layout_grid_a08bba60e4acd20165526a8fd7f986b58}{simplify}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_layout_grid_acc1277394ff8a6432e111ff9463e6375}{take\+At} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{class_q_c_p_layout_ada26cd17e56472b0b4d7fbbc96873e4c}{Q\+C\+P\+Layout}.
+
+\hypertarget{class_q_c_p_layout_grid_acc1277394ff8a6432e111ff9463e6375}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!take\+At@{take\+At}}
+\index{take\+At@{take\+At}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{take\+At}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Layout\+Element} $\ast$ Q\+C\+P\+Layout\+Grid\+::take\+At (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_layout_grid_acc1277394ff8a6432e111ff9463e6375}
+Removes the element with the given {\itshape index} from the layout and returns it.
+
+If the {\itshape index} is invalid or the cell with that index is empty, returns 0.
+
+Note that some layouts don\textquotesingle{}t remove the respective cell right away but leave an empty cell after successful removal of the layout element. To collapse empty cells, use \hyperlink{class_q_c_p_layout_grid_a08bba60e4acd20165526a8fd7f986b58}{simplify}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_layout_grid_a26849ee5c47b4c940e8d65e8462f1065}{element\+At}, \hyperlink{class_q_c_p_layout_grid_a666a9fe9e92054436f9b66eba25cca0c}{take} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{class_q_c_p_layout_a5a79621fa0a6eabb8b520cfc04fb601a}{Q\+C\+P\+Layout}.
+
+\hypertarget{class_q_c_p_layout_grid_a07f8dd7d3d61d7345026621d446042a4}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!update\+Layout@{update\+Layout}}
+\index{update\+Layout@{update\+Layout}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{update\+Layout}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layout\+Grid\+::update\+Layout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_layout_grid_a07f8dd7d3d61d7345026621d446042a4}
+
+
+Reimplemented from \hyperlink{class_q_c_p_layout_a165c77f6287ac92e8d03017ad913378b}{Q\+C\+P\+Layout}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_q_c_p_layout_grid_ae9ac48f0791be07ead0a96dbd5622770}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!m\+Column\+Spacing@{m\+Column\+Spacing}}
+\index{m\+Column\+Spacing@{m\+Column\+Spacing}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{m\+Column\+Spacing}]{\setlength{\rightskip}{0pt plus 5cm}int Q\+C\+P\+Layout\+Grid\+::m\+Column\+Spacing\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_layout_grid_ae9ac48f0791be07ead0a96dbd5622770}
+\hypertarget{class_q_c_p_layout_grid_ac6aabe62339f94f18b9f8adab94b1840}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!m\+Column\+Stretch\+Factors@{m\+Column\+Stretch\+Factors}}
+\index{m\+Column\+Stretch\+Factors@{m\+Column\+Stretch\+Factors}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{m\+Column\+Stretch\+Factors}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$double$>$ Q\+C\+P\+Layout\+Grid\+::m\+Column\+Stretch\+Factors\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_layout_grid_ac6aabe62339f94f18b9f8adab94b1840}
+\hypertarget{class_q_c_p_layout_grid_a3577d3855bf8ad20ef9079291a49f397}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!m\+Elements@{m\+Elements}}
+\index{m\+Elements@{m\+Elements}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{m\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$Q\+List$<${\bf Q\+C\+P\+Layout\+Element}$\ast$$>$ $>$ Q\+C\+P\+Layout\+Grid\+::m\+Elements\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_layout_grid_a3577d3855bf8ad20ef9079291a49f397}
+\hypertarget{class_q_c_p_layout_grid_a8b67f183f4645739cc4c794d75843b40}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!m\+Row\+Spacing@{m\+Row\+Spacing}}
+\index{m\+Row\+Spacing@{m\+Row\+Spacing}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{m\+Row\+Spacing}]{\setlength{\rightskip}{0pt plus 5cm}int Q\+C\+P\+Layout\+Grid\+::m\+Row\+Spacing\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_layout_grid_a8b67f183f4645739cc4c794d75843b40}
+\hypertarget{class_q_c_p_layout_grid_a36c85a7eaf342680fb9b8a4977486f16}{}\index{Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}!m\+Row\+Stretch\+Factors@{m\+Row\+Stretch\+Factors}}
+\index{m\+Row\+Stretch\+Factors@{m\+Row\+Stretch\+Factors}!Q\+C\+P\+Layout\+Grid@{Q\+C\+P\+Layout\+Grid}}
+\subsubsection[{m\+Row\+Stretch\+Factors}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$double$>$ Q\+C\+P\+Layout\+Grid\+::m\+Row\+Stretch\+Factors\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_layout_grid_a36c85a7eaf342680fb9b8a4977486f16}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{qcustomplot_8h}{qcustomplot.\+h}\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}\end{DoxyCompactItemize}

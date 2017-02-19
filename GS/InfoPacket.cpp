@@ -13,7 +13,7 @@
 // ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 // OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-#include "InfoPacket.h"
+#include "infopacket.h"
 
 
 Protocol::InfoPacket::InfoPacket(uint8_t* buffer, size_t len) : InfoPacket()

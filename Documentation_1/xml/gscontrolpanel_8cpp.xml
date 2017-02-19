@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="gscontrolpanel_8cpp" kind="file" language="C++">
+    <compoundname>gscontrolpanel.cpp</compoundname>
+    <includes refid="gscontrolpanel_8h" local="yes">gscontrolpanel.h</includes>
+    <includes local="yes">ui_gscontrolpanel.h</includes>
+    <incdepgraph>
+      <node id="337">
+        <label>gscontrolpanel.h</label>
+        <link refid="gscontrolpanel_8h"/>
+        <childnode refid="338" relation="include">
+        </childnode>
+      </node>
+      <node id="336">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/gscontrolpanel.cpp</label>
+        <link refid="gscontrolpanel.cpp"/>
+        <childnode refid="337" relation="include">
+        </childnode>
+        <childnode refid="339" relation="include">
+        </childnode>
+      </node>
+      <node id="338">
+        <label>QDialog</label>
+      </node>
+      <node id="339">
+        <label>ui_gscontrolpanel.h</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="gscontrolpanel_8h" kindref="compound">gscontrolpanel.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ui_gscontrolpanel.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><ref refid="class_g_s_control_panel_1af4fcf695b7372dce0d53cb6aab6f614c" kindref="member">GSControlPanel::GSControlPanel</ref>(QWidget<sp/>*parent)<sp/>:</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>QDialog(parent),</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>ui(new<sp/><ref refid="namespace_ui" kindref="compound">Ui</ref>::<ref refid="class_g_s_control_panel" kindref="compound">GSControlPanel</ref>)</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>ui-&gt;setupUi(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><ref refid="class_g_s_control_panel_1a52c9acf2d18ced290a5128e5577d71c7" kindref="member">GSControlPanel::~GSControlPanel</ref>()</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>ui;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/gscontrolpanel.cpp"/>
+  </compounddef>
+</doxygen>

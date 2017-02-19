@@ -6,7 +6,7 @@
 #include <QComboBox>
 #include <QPushButton>
 #include <QButtonGroup>
-#include <QWebEnginePage>
+#include <QWebEngineView>
 #include <QPair>
 #include <QList>
 
@@ -19,6 +19,7 @@
 #include "options.h"
 #include "messagebox.h"
 #include "mission.h"
+#include "mapwidget.h"
 
 #include "ui_mapexecution.h"
 #include "messagebox.h"
@@ -45,7 +46,6 @@ public slots:
     void updateTable(double lat, double lng);
     void sendFlightPlan();
     void updateStatusIndicator();
-    void addClickListener();
 
 public:
     MapExecution(FlightPath* flightPath, QWidget *parent = 0);
@@ -56,7 +56,7 @@ public:
 
     messagebox MyMessageBox;
 
-    messagebox MessageBox;
+    //messagebox MessageBox;
 
     Mission getMyMission() const;
 
@@ -70,6 +70,7 @@ private slots:
     void on_cancelButton_clicked();
     void on_stopButton_clicked();
     void on_backButton_clicked();
+    void addClickListener();
 
 private:
     Ui::MapExecution *ui;
@@ -80,14 +81,13 @@ private:
 
     FlightPath myFlightPath;
     Mission myMission;
+    MapWidget* map;
 
     bool missionStarted;
     QTimer *conTime;
 
 signals:
-
     void timeToStartMapRecap();
-
 };
 
 #endif // MAPEXECUTION_H

@@ -1,0 +1,271 @@
+\hypertarget{class_q_c_p_item_line}{}\section{Q\+C\+P\+Item\+Line Class Reference}
+\label{class_q_c_p_item_line}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+
+
+A line from one point to another.  
+
+
+
+
+{\ttfamily \#include $<$qcustomplot.\+h$>$}
+
+Inheritance diagram for Q\+C\+P\+Item\+Line\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_q_c_p_item_line}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_c_p_item_line_a17804b7f64961c6accf25b61e85142e3}{Q\+C\+P\+Item\+Line} (\hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} $\ast$\hyperlink{class_q_c_p_layerable_ab7e0e94461566093d36ffc0f5312b109}{parent\+Plot})
+\item 
+virtual \hyperlink{class_q_c_p_item_line_a94b5aaae048171e5306dc4695b991283}{$\sim$\+Q\+C\+P\+Item\+Line} ()
+\item 
+Q\+Pen \hyperlink{class_q_c_p_item_line_a235779dd079a263bedb20b3daecc40eb}{pen} () const 
+\item 
+Q\+Pen \hyperlink{class_q_c_p_item_line_a9fde5e95a1a369008252e18f1925650c}{selected\+Pen} () const 
+\item 
+\hyperlink{class_q_c_p_line_ending}{Q\+C\+P\+Line\+Ending} \hyperlink{class_q_c_p_item_line_a5f6cbc5c763feae9dfbce71748fc43f1}{head} () const 
+\item 
+\hyperlink{class_q_c_p_line_ending}{Q\+C\+P\+Line\+Ending} \hyperlink{class_q_c_p_item_line_a5d2ca0f784933e80f3e6e1d15dceebb3}{tail} () const 
+\item 
+void \hyperlink{class_q_c_p_item_line_a572528dab61c1abe205822fbd5db4b27}{set\+Pen} (const Q\+Pen \&\hyperlink{class_q_c_p_item_line_a235779dd079a263bedb20b3daecc40eb}{pen})
+\item 
+void \hyperlink{class_q_c_p_item_line_a3e2fec44503277e77717e9c24f87f1ea}{set\+Selected\+Pen} (const Q\+Pen \&\hyperlink{class_q_c_p_item_line_a235779dd079a263bedb20b3daecc40eb}{pen})
+\item 
+void \hyperlink{class_q_c_p_item_line_aebf3d687114d584e0459db6759e2c3c3}{set\+Head} (const \hyperlink{class_q_c_p_line_ending}{Q\+C\+P\+Line\+Ending} \&\hyperlink{class_q_c_p_item_line_a5f6cbc5c763feae9dfbce71748fc43f1}{head})
+\item 
+void \hyperlink{class_q_c_p_item_line_ac264222c3297a7efe33df9345c811a5f}{set\+Tail} (const \hyperlink{class_q_c_p_line_ending}{Q\+C\+P\+Line\+Ending} \&\hyperlink{class_q_c_p_item_line_a5d2ca0f784933e80f3e6e1d15dceebb3}{tail})
+\item 
+virtual double \hyperlink{class_q_c_p_item_line_a7541e5d9378ca121d07b0df3b24f7178}{select\+Test} (const Q\+Point\+F \&pos, bool only\+Selectable, Q\+Variant $\ast$details=0) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_c_p_item_position}{Q\+C\+P\+Item\+Position} $\ast$const \hyperlink{class_q_c_p_item_line_a602da607a09498b0f152ada1d6851bc5}{start}
+\item 
+\hyperlink{class_q_c_p_item_position}{Q\+C\+P\+Item\+Position} $\ast$const \hyperlink{class_q_c_p_item_line_a15598864c1c22a2497a1979c4980c4e1}{end}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_q_c_p_item_line_a1fc045dd33919f8006df0692aeb0e84a}{draw} (\hyperlink{class_q_c_p_painter}{Q\+C\+P\+Painter} $\ast$painter)
+\item 
+Q\+Line\+F \hyperlink{class_q_c_p_item_line_a36e8620019a221ccea4357f0287b81c2}{get\+Rect\+Clipped\+Line} (const Q\+Vector2\+D \&\hyperlink{class_q_c_p_item_line_a602da607a09498b0f152ada1d6851bc5}{start}, const Q\+Vector2\+D \&\hyperlink{class_q_c_p_item_line_a15598864c1c22a2497a1979c4980c4e1}{end}, const Q\+Rect \&rect) const 
+\item 
+Q\+Pen \hyperlink{class_q_c_p_item_line_a7b5bc4ebacb55774b87c91b308ca7912}{main\+Pen} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Pen \hyperlink{class_q_c_p_item_line_abbb544d5bb927dfe4e81a7f3ca4c65ac}{m\+Pen}
+\item 
+Q\+Pen \hyperlink{class_q_c_p_item_line_aff858ad6dde3b90024814ca4b116f278}{m\+Selected\+Pen}
+\item 
+\hyperlink{class_q_c_p_line_ending}{Q\+C\+P\+Line\+Ending} \hyperlink{class_q_c_p_item_line_a51603f28ab7ddb1c1a95ea384791d3ed}{m\+Head}
+\item 
+\hyperlink{class_q_c_p_line_ending}{Q\+C\+P\+Line\+Ending} \hyperlink{class_q_c_p_item_line_ab8ed61dfe15bbb1cbf9b95eae95e242f}{m\+Tail}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A line from one point to another. 
+
+ It has two positions, {\itshape start} and {\itshape end}, which define the end points of the line.
+
+With \hyperlink{class_q_c_p_item_line_aebf3d687114d584e0459db6759e2c3c3}{set\+Head} and \hyperlink{class_q_c_p_item_line_ac264222c3297a7efe33df9345c811a5f}{set\+Tail} you may set different line ending styles, e.\+g. to create an arrow. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_q_c_p_item_line_a17804b7f64961c6accf25b61e85142e3}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{Q\+C\+P\+Item\+Line}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Item\+Line\+::\+Q\+C\+P\+Item\+Line (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+Custom\+Plot} $\ast$}]{parent\+Plot}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_line_a17804b7f64961c6accf25b61e85142e3}
+Creates a line item and sets default values.
+
+The constructed item can be added to the plot with \hyperlink{class_q_custom_plot_aa500620379262321685cb7a7674cbd2a}{Q\+Custom\+Plot\+::add\+Item}. \hypertarget{class_q_c_p_item_line_a94b5aaae048171e5306dc4695b991283}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!````~Q\+C\+P\+Item\+Line@{$\sim$\+Q\+C\+P\+Item\+Line}}
+\index{````~Q\+C\+P\+Item\+Line@{$\sim$\+Q\+C\+P\+Item\+Line}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{$\sim$\+Q\+C\+P\+Item\+Line}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Item\+Line\+::$\sim$\+Q\+C\+P\+Item\+Line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_item_line_a94b5aaae048171e5306dc4695b991283}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_q_c_p_item_line_a1fc045dd33919f8006df0692aeb0e84a}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!draw@{draw}}
+\index{draw@{draw}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Line\+::draw (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Painter} $\ast$}]{painter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_item_line_a1fc045dd33919f8006df0692aeb0e84a}
+
+
+Implements \hyperlink{class_q_c_p_abstract_item_ad0dc056f650c3ca73414e6b4f01674ef}{Q\+C\+P\+Abstract\+Item}.
+
+\hypertarget{class_q_c_p_item_line_a36e8620019a221ccea4357f0287b81c2}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!get\+Rect\+Clipped\+Line@{get\+Rect\+Clipped\+Line}}
+\index{get\+Rect\+Clipped\+Line@{get\+Rect\+Clipped\+Line}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{get\+Rect\+Clipped\+Line}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Line\+F Q\+C\+P\+Item\+Line\+::get\+Rect\+Clipped\+Line (
+\begin{DoxyParamCaption}
+\item[{const Q\+Vector2\+D \&}]{start, }
+\item[{const Q\+Vector2\+D \&}]{end, }
+\item[{const Q\+Rect \&}]{rect}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_item_line_a36e8620019a221ccea4357f0287b81c2}
+\hypertarget{class_q_c_p_item_line_a5f6cbc5c763feae9dfbce71748fc43f1}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!head@{head}}
+\index{head@{head}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{head}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Line\+Ending} Q\+C\+P\+Item\+Line\+::head (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_item_line_a5f6cbc5c763feae9dfbce71748fc43f1}
+\hypertarget{class_q_c_p_item_line_a7b5bc4ebacb55774b87c91b308ca7912}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!main\+Pen@{main\+Pen}}
+\index{main\+Pen@{main\+Pen}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{main\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pen Q\+C\+P\+Item\+Line\+::main\+Pen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_item_line_a7b5bc4ebacb55774b87c91b308ca7912}
+\hypertarget{class_q_c_p_item_line_a235779dd079a263bedb20b3daecc40eb}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!pen@{pen}}
+\index{pen@{pen}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{pen}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pen Q\+C\+P\+Item\+Line\+::pen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_item_line_a235779dd079a263bedb20b3daecc40eb}
+\hypertarget{class_q_c_p_item_line_a9fde5e95a1a369008252e18f1925650c}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!selected\+Pen@{selected\+Pen}}
+\index{selected\+Pen@{selected\+Pen}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{selected\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pen Q\+C\+P\+Item\+Line\+::selected\+Pen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_item_line_a9fde5e95a1a369008252e18f1925650c}
+\hypertarget{class_q_c_p_item_line_a7541e5d9378ca121d07b0df3b24f7178}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!select\+Test@{select\+Test}}
+\index{select\+Test@{select\+Test}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{select\+Test}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Item\+Line\+::select\+Test (
+\begin{DoxyParamCaption}
+\item[{const Q\+Point\+F \&}]{pos, }
+\item[{bool}]{only\+Selectable, }
+\item[{Q\+Variant $\ast$}]{details = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_item_line_a7541e5d9378ca121d07b0df3b24f7178}
+This function is used to decide whether a click hits a layerable object or not.
+
+{\itshape pos} is a point in pixel coordinates on the \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn\textquotesingle{}t be determined, -\/1.\+0 is returned. Further, if {\itshape only\+Selectable} is true and the object is not selectable, -\/1.\+0 is returned, too.
+
+If the item is represented not by single lines but by an area like \hyperlink{class_q_c_p_item_rect}{Q\+C\+P\+Item\+Rect} or \hyperlink{class_q_c_p_item_text}{Q\+C\+P\+Item\+Text}, a click inside the area returns a constant value greater zero (typically the selection\+Tolerance of the parent \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} multiplied by 0.\+99). If the click lies outside the area, this function returns -\/1.\+0.
+
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
+
+The actual setting of the selection state is not done by this function. This is handled by the parent \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/deselect\+Event methods.
+
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to \hyperlink{class_q_c_p_abstract_item_aaf92af7b9893712959a6c073d334d88d}{select\+Event} when the parent \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to \hyperlink{class_q_c_p_abstract_item_aaf92af7b9893712959a6c073d334d88d}{select\+Event} will carry the {\itshape details}. This is useful for multi-\/part objects (like \hyperlink{class_q_c_p_axis}{Q\+C\+P\+Axis}). This way, a possibly complex calculation to decide which part was clicked is only done once in \hyperlink{class_q_c_p_item_line_a7541e5d9378ca121d07b0df3b24f7178}{select\+Test}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent \hyperlink{class_q_c_p_abstract_item_aaf92af7b9893712959a6c073d334d88d}{select\+Event}, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+
+You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_abstract_item_aaf92af7b9893712959a6c073d334d88d}{select\+Event}, \hyperlink{class_q_c_p_abstract_item_a91f090d6763cfedb0749219c63788ae9}{deselect\+Event}, \hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{Q\+Custom\+Plot\+::set\+Interactions} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b}{Q\+C\+P\+Abstract\+Item}.
+
+\hypertarget{class_q_c_p_item_line_aebf3d687114d584e0459db6759e2c3c3}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!set\+Head@{set\+Head}}
+\index{set\+Head@{set\+Head}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{set\+Head}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Line\+::set\+Head (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Line\+Ending} \&}]{head}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_line_aebf3d687114d584e0459db6759e2c3c3}
+Sets the line ending style of the head. The head corresponds to the {\itshape end} position.
+
+Note that due to the overloaded \hyperlink{class_q_c_p_line_ending}{Q\+C\+P\+Line\+Ending} constructor, you may directly specify a \hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5}{Q\+C\+P\+Line\+Ending\+::\+Ending\+Style} here, e.\+g.
+\begin{DoxyCode}
+\hyperlink{class_q_c_p_item_line_aebf3d687114d584e0459db6759e2c3c3}{setHead}(\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5ab9964d0d03f812d1e79de15edbeb2cbf}{QCPLineEnding::esSpikeArrow}) 
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_item_line_ac264222c3297a7efe33df9345c811a5f}{set\+Tail} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_item_line_a572528dab61c1abe205822fbd5db4b27}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!set\+Pen@{set\+Pen}}
+\index{set\+Pen@{set\+Pen}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{set\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Line\+::set\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_line_a572528dab61c1abe205822fbd5db4b27}
+Sets the pen that will be used to draw the line
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_item_line_a3e2fec44503277e77717e9c24f87f1ea}{set\+Selected\+Pen} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_item_line_a3e2fec44503277e77717e9c24f87f1ea}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!set\+Selected\+Pen@{set\+Selected\+Pen}}
+\index{set\+Selected\+Pen@{set\+Selected\+Pen}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{set\+Selected\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Line\+::set\+Selected\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_line_a3e2fec44503277e77717e9c24f87f1ea}
+Sets the pen that will be used to draw the line when selected
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_item_line_a572528dab61c1abe205822fbd5db4b27}{set\+Pen}, \hyperlink{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}{set\+Selected} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_item_line_ac264222c3297a7efe33df9345c811a5f}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!set\+Tail@{set\+Tail}}
+\index{set\+Tail@{set\+Tail}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{set\+Tail}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Line\+::set\+Tail (
+\begin{DoxyParamCaption}
+\item[{const {\bf Q\+C\+P\+Line\+Ending} \&}]{tail}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_line_ac264222c3297a7efe33df9345c811a5f}
+Sets the line ending style of the tail. The tail corresponds to the {\itshape start} position.
+
+Note that due to the overloaded \hyperlink{class_q_c_p_line_ending}{Q\+C\+P\+Line\+Ending} constructor, you may directly specify a \hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5}{Q\+C\+P\+Line\+Ending\+::\+Ending\+Style} here, e.\+g.
+\begin{DoxyCode}
+\hyperlink{class_q_c_p_item_line_ac264222c3297a7efe33df9345c811a5f}{setTail}(\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5ab9964d0d03f812d1e79de15edbeb2cbf}{QCPLineEnding::esSpikeArrow}) 
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_item_line_aebf3d687114d584e0459db6759e2c3c3}{set\+Head} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_item_line_a5d2ca0f784933e80f3e6e1d15dceebb3}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!tail@{tail}}
+\index{tail@{tail}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{tail}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Line\+Ending} Q\+C\+P\+Item\+Line\+::tail (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_item_line_a5d2ca0f784933e80f3e6e1d15dceebb3}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_q_c_p_item_line_a15598864c1c22a2497a1979c4980c4e1}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!end@{end}}
+\index{end@{end}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Item\+Position}$\ast$ const Q\+C\+P\+Item\+Line\+::end}\label{class_q_c_p_item_line_a15598864c1c22a2497a1979c4980c4e1}
+\hypertarget{class_q_c_p_item_line_a51603f28ab7ddb1c1a95ea384791d3ed}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!m\+Head@{m\+Head}}
+\index{m\+Head@{m\+Head}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{m\+Head}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Line\+Ending} Q\+C\+P\+Item\+Line\+::m\+Head\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_item_line_a51603f28ab7ddb1c1a95ea384791d3ed}
+\hypertarget{class_q_c_p_item_line_abbb544d5bb927dfe4e81a7f3ca4c65ac}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!m\+Pen@{m\+Pen}}
+\index{m\+Pen@{m\+Pen}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{m\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pen Q\+C\+P\+Item\+Line\+::m\+Pen\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_item_line_abbb544d5bb927dfe4e81a7f3ca4c65ac}
+\hypertarget{class_q_c_p_item_line_aff858ad6dde3b90024814ca4b116f278}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!m\+Selected\+Pen@{m\+Selected\+Pen}}
+\index{m\+Selected\+Pen@{m\+Selected\+Pen}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{m\+Selected\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pen Q\+C\+P\+Item\+Line\+::m\+Selected\+Pen\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_item_line_aff858ad6dde3b90024814ca4b116f278}
+\hypertarget{class_q_c_p_item_line_ab8ed61dfe15bbb1cbf9b95eae95e242f}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!m\+Tail@{m\+Tail}}
+\index{m\+Tail@{m\+Tail}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{m\+Tail}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Line\+Ending} Q\+C\+P\+Item\+Line\+::m\+Tail\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_item_line_ab8ed61dfe15bbb1cbf9b95eae95e242f}
+\hypertarget{class_q_c_p_item_line_a602da607a09498b0f152ada1d6851bc5}{}\index{Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}!start@{start}}
+\index{start@{start}!Q\+C\+P\+Item\+Line@{Q\+C\+P\+Item\+Line}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Item\+Position}$\ast$ const Q\+C\+P\+Item\+Line\+::start}\label{class_q_c_p_item_line_a602da607a09498b0f152ada1d6851bc5}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{qcustomplot_8h}{qcustomplot.\+h}\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}\end{DoxyCompactItemize}

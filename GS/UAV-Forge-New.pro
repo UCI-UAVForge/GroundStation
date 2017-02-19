@@ -12,9 +12,12 @@ QT       += core \
 QT       += svg
 QT       += sql
 
+QT       += webengine
+QT       += webenginewidgets
+QT       += webchannel
+QT       += websockets
+QT       += widgets
 
-QT       += webkit webkitwidgets
-QT       += webengine webenginewidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
@@ -24,6 +27,9 @@ CONFIG += c++11
 #win32{
 #    LIBS += -lws2_32
 #}
+macx {
+    QMAKE_MAC_SDK = macosx10.12
+}
 TARGET = UAV-Forge-New
 TEMPLATE = app
 
@@ -40,6 +46,7 @@ SOURCES += main.cpp\
     videoplayer.cpp \
     gsserver.cpp \
     gsclient.cpp \
+    gscontrolpanel.cpp \
     qcustomplot.cpp\
     networklistener.cpp \
     connectiondialog.cpp \
@@ -58,6 +65,13 @@ SOURCES += main.cpp\
     mainmdidisplay.cpp \
     missionplanningwindow.cpp \
     dbmanager.cpp \
+    mapwidget.cpp \
+    websocketclientwrapper.cpp \
+    websockettransport.cpp \
+    tablewidget.cpp \
+    #statuswidget.cpp \
+    timerwidget.cpp \
+    missionstatuswindow.cpp \
     gscontrolpanel.cpp
 
 HEADERS  += mainwindow.h \
@@ -71,6 +85,7 @@ HEADERS  += mainwindow.h \
     qcomboboxdelegate.h \
     videoplayer.h \
     net.h \
+    gscontrolpanel.h \
     gsserver.h \
     gsclient.h \
     qcustomplot.h\
@@ -92,6 +107,14 @@ HEADERS  += mainwindow.h \
     mainmdidisplay.h \
     missionplanningwindow.h \
     dbmanager.h \
+    mapwidget.h \
+    websocketclientwrapper.h \
+    websockettransport.h \
+    dialog.h \
+    tablewidget.h \
+    #statuswidget.h \
+    timerwidget.h \
+    missionstatuswindow.h \
     gscontrolpanel.h
 
 FORMS    += mainwindow.ui \
@@ -101,10 +124,13 @@ FORMS    += mainwindow.ui \
     missionrecap.ui \
     tutorial.ui \
     popwindowmp.ui \
+    gscontrolpanel.ui \
     connectiondialog.ui \
     maprecap.ui \
     qttabtest.ui \
     mainmdidisplay.ui \
+    dialog.ui \
+    missionstatuswindow.ui \
     gscontrolpanel.ui
 
 OTHER_FILES +=
@@ -114,3 +140,6 @@ OTHER_FILES +=
 
 RESOURCES += \
     Resources.qrc
+
+#DISTFILES += \
+#    res/html/mapsPlanningGoogle.html

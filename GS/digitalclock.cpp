@@ -135,6 +135,8 @@ void DigitalClock::showStatus()
         clear();
         appendPlainText(text);
 
-        map_exec_ptr->plotPosition(lat, lon);
+
+        /// \todo fix this NullPointerException!
+        //map_exec_ptr->plotPosition(lat, lon);
     }
 }

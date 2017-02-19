@@ -1,0 +1,528 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_protocol_1_1_telemetry_packet" kind="class" language="C++" prot="public">
+    <compoundname>Protocol::TelemetryPacket</compoundname>
+    <basecompoundref refid="class_protocol_1_1_packet" prot="public" virt="non-virtual">Protocol::Packet</basecompoundref>
+    <includes refid="telemetrypacket_8h" local="no">telemetrypacket.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_protocol_1_1_telemetry_packet_1a49e58eb212e9023e0933e413a96eecec" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Protocol::TelemetryPacket::sequenceNumber</definition>
+        <argsstring></argsstring>
+        <name>sequenceNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="28" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_protocol_1_1_telemetry_packet_1a0e2c3ac96e89cfcff9ed7f433a5c6e9e" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Protocol::TelemetryPacket::vX</definition>
+        <argsstring></argsstring>
+        <name>vX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="29" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_protocol_1_1_telemetry_packet_1aa3949303827b4452a94b13292badb40c" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Protocol::TelemetryPacket::vY</definition>
+        <argsstring></argsstring>
+        <name>vY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="30" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_protocol_1_1_telemetry_packet_1a0c976c9f5dc159fb5e73c4fd438c7ae5" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Protocol::TelemetryPacket::vZ</definition>
+        <argsstring></argsstring>
+        <name>vZ</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="31" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_protocol_1_1_telemetry_packet_1a021825d02a051b33d31e3e63e1028949" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Protocol::TelemetryPacket::pitch</definition>
+        <argsstring></argsstring>
+        <name>pitch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="32" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_protocol_1_1_telemetry_packet_1a1801ec877f678883616755267b0d7072" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Protocol::TelemetryPacket::roll</definition>
+        <argsstring></argsstring>
+        <name>roll</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="33" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_protocol_1_1_telemetry_packet_1a18fd48cffa8dde7ef593ec92abc85902" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Protocol::TelemetryPacket::yaw</definition>
+        <argsstring></argsstring>
+        <name>yaw</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="34" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_protocol_1_1_telemetry_packet_1acbf5018c8bbc435f00780d2e64f87d05" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Protocol::TelemetryPacket::lat</definition>
+        <argsstring></argsstring>
+        <name>lat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="35" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_protocol_1_1_telemetry_packet_1ae60cdef7c00e933f01a712e06feb564d" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Protocol::TelemetryPacket::lon</definition>
+        <argsstring></argsstring>
+        <name>lon</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="36" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_protocol_1_1_telemetry_packet_1a0719f4fce3bf1e24d3e01ddcbfba62e9" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Protocol::TelemetryPacket::alt</definition>
+        <argsstring></argsstring>
+        <name>alt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="37" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_protocol_1_1_telemetry_packet_1a2266292d4e6e26a9c91b3242ec94c84c" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Protocol::TelemetryPacket::heading</definition>
+        <argsstring></argsstring>
+        <name>heading</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="38" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_protocol_1_1_telemetry_packet_1a71b0df1730ed60301fe1ff0b22a0dc09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Protocol::TelemetryPacket::TelemetryPacket</definition>
+        <argsstring>()</argsstring>
+        <name>TelemetryPacket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="41" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/TelemetryPacket.cpp" bodystart="20" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_telemetry_packet_1ad1ff3ae0a25afc4df6c5d7b3bff0efbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Protocol::TelemetryPacket::~TelemetryPacket</definition>
+        <argsstring>()</argsstring>
+        <name>~TelemetryPacket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="43" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/TelemetryPacket.cpp" bodystart="51" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_telemetry_packet_1a6f4b307892126a00e82278fd183d946c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Protocol::TelemetryPacket::TelemetryPacket</definition>
+        <argsstring>(uint8_t *buffer, size_t len)</argsstring>
+        <name>TelemetryPacket</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="45" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/TelemetryPacket.cpp" bodystart="32" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_telemetry_packet_1afdd8e67e4fa68af9ae21257f17946152" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Protocol::TelemetryPacket::TelemetryPacket</definition>
+        <argsstring>(uint32_t seqNo)</argsstring>
+        <name>TelemetryPacket</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>seqNo</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="47" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/TelemetryPacket.cpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_telemetry_packet_1a884b1f0fe09c50f4e1bb2034d3dc3b27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Protocol::TelemetryPacket::SetVelocity</definition>
+        <argsstring>(float x, float y, float z)</argsstring>
+        <name>SetVelocity</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="49" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/TelemetryPacket.cpp" bodystart="55" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_telemetry_packet_1a74ed46006349eba2a2dad08421d66f6e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Protocol::TelemetryPacket::SetOrientation</definition>
+        <argsstring>(float p, float r, float y)</argsstring>
+        <name>SetOrientation</name>
+        <param>
+          <type>float</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="51" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/TelemetryPacket.cpp" bodystart="62" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_telemetry_packet_1ab977283fdafb89bebca3a0886c2a3ee9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Protocol::TelemetryPacket::SetLocation</definition>
+        <argsstring>(double lat, double lon, float alt)</argsstring>
+        <name>SetLocation</name>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lon</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>alt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="53" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/TelemetryPacket.cpp" bodystart="69" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_telemetry_packet_1a33769f679172881acb1ee6004240fc79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Protocol::TelemetryPacket::SetLocation</definition>
+        <argsstring>(double lat, double lon)</argsstring>
+        <name>SetLocation</name>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lon</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="55" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/TelemetryPacket.cpp" bodystart="76" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_telemetry_packet_1a9ab33ab74a354c23787b62354fd2c365" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Protocol::TelemetryPacket::SetHeading</definition>
+        <argsstring>(float h)</argsstring>
+        <name>SetHeading</name>
+        <param>
+          <type>float</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="57" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/TelemetryPacket.cpp" bodystart="82" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_telemetry_packet_1a5e67607eff1a34ee2747e232c806b8c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Protocol::TelemetryPacket::GetVelocity</definition>
+        <argsstring>(float *x, float *y, float *z)</argsstring>
+        <name>GetVelocity</name>
+        <param>
+          <type>float *</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>z</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="59" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/TelemetryPacket.cpp" bodystart="87" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_telemetry_packet_1ac2cbd3c31a0d9b184a6d8fc79a77a80b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Protocol::TelemetryPacket::GetOrientation</definition>
+        <argsstring>(float *p, float *r, float *y)</argsstring>
+        <name>GetOrientation</name>
+        <param>
+          <type>float *</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="61" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/TelemetryPacket.cpp" bodystart="94" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_telemetry_packet_1a1b4a35e86bac0731ab8176cb9371c2a8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Protocol::TelemetryPacket::GetLocation</definition>
+        <argsstring>(double *lat, double *lon, float *alt)</argsstring>
+        <name>GetLocation</name>
+        <param>
+          <type>double *</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>lon</declname>
+        </param>
+        <param>
+          <type>float *</type>
+          <declname>alt</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="63" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/TelemetryPacket.cpp" bodystart="101" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_telemetry_packet_1a99157743e501e0ad781a7aa55ed9efad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Protocol::TelemetryPacket::GetHeading</definition>
+        <argsstring>(float *h)</argsstring>
+        <name>GetHeading</name>
+        <param>
+          <type>float *</type>
+          <declname>h</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="65" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/TelemetryPacket.cpp" bodystart="108" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_telemetry_packet_1a36d86bf7afc3dcdd820ffa0982c5177a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>size_t</type>
+        <definition>size_t Protocol::TelemetryPacket::GetBytes</definition>
+        <argsstring>(uint8_t *buffer, size_t len)</argsstring>
+        <name>GetBytes</name>
+        <reimplements refid="class_protocol_1_1_packet_1a9c89c3d05acc44a5050ebfc756a2cd41">GetBytes</reimplements>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores the byte representation of a packet in the given buffer.</para><para><simplesect kind="author"><para>Jason Watkins </para></simplesect>
+<simplesect kind="date"><para>2015-11-16</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buffer[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array to write the packet to. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of <computeroutput>buffer</computeroutput>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="68" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/TelemetryPacket.cpp" bodystart="113" bodyend="137"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1042">
+        <label>Protocol::Packet</label>
+        <link refid="class_protocol_1_1_packet"/>
+      </node>
+      <node id="1041">
+        <label>Protocol::TelemetryPacket</label>
+        <link refid="class_protocol_1_1_telemetry_packet"/>
+        <childnode refid="1042" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1044">
+        <label>Protocol::Packet</label>
+        <link refid="class_protocol_1_1_packet"/>
+      </node>
+      <node id="1043">
+        <label>Protocol::TelemetryPacket</label>
+        <link refid="class_protocol_1_1_telemetry_packet"/>
+        <childnode refid="1044" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" line="26" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/telemetrypacket.h" bodystart="25" bodyend="69"/>
+    <listofallmembers>
+      <member refid="class_protocol_1_1_telemetry_packet_1a0719f4fce3bf1e24d3e01ddcbfba62e9" prot="private" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>alt</name></member>
+      <member refid="class_protocol_1_1_packet_1acbe4f1b9f973d14097814d16fb0cd83a" prot="public" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>get_timestamp</name></member>
+      <member refid="class_protocol_1_1_packet_1a3c159ff945d95102ee2a2ba0b93d05d8" prot="public" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>get_type</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1a36d86bf7afc3dcdd820ffa0982c5177a" prot="public" virt="virtual"><scope>Protocol::TelemetryPacket</scope><name>GetBytes</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1a99157743e501e0ad781a7aa55ed9efad" prot="public" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>GetHeading</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1a1b4a35e86bac0731ab8176cb9371c2a8" prot="public" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>GetLocation</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1ac2cbd3c31a0d9b184a6d8fc79a77a80b" prot="public" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>GetOrientation</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1a5e67607eff1a34ee2747e232c806b8c1" prot="public" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>GetVelocity</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1a2266292d4e6e26a9c91b3242ec94c84c" prot="private" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>heading</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1acbf5018c8bbc435f00780d2e64f87d05" prot="private" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>lat</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1ae60cdef7c00e933f01a712e06feb564d" prot="private" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>lon</name></member>
+      <member refid="class_protocol_1_1_packet_1ae02347b6d2eee98511ec19343b82e0a7" prot="protected" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>Packet</name></member>
+      <member refid="class_protocol_1_1_packet_1ad327686418aa271121e6a6a8eadebbd4" prot="public" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>Parse</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1a021825d02a051b33d31e3e63e1028949" prot="private" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>pitch</name></member>
+      <member refid="class_protocol_1_1_packet_1aa5f54d3128f7914383f4d8e8f53fbce4" prot="protected" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>ReadHeader</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1a1801ec877f678883616755267b0d7072" prot="private" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>roll</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1a49e58eb212e9023e0933e413a96eecec" prot="private" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>sequenceNumber</name></member>
+      <member refid="class_protocol_1_1_packet_1aa3f97852d443bb9554178384afa24eec" prot="public" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>set_type</name></member>
+      <member refid="class_protocol_1_1_packet_1adc4ebdbdbcdbaa177ba243c5c654ba18" prot="protected" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>SetChecksum</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1a9ab33ab74a354c23787b62354fd2c365" prot="public" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>SetHeading</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1ab977283fdafb89bebca3a0886c2a3ee9" prot="public" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>SetLocation</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1a33769f679172881acb1ee6004240fc79" prot="public" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>SetLocation</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1a74ed46006349eba2a2dad08421d66f6e" prot="public" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>SetOrientation</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1a884b1f0fe09c50f4e1bb2034d3dc3b27" prot="public" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>SetVelocity</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1a71b0df1730ed60301fe1ff0b22a0dc09" prot="public" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>TelemetryPacket</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1a6f4b307892126a00e82278fd183d946c" prot="public" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>TelemetryPacket</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1afdd8e67e4fa68af9ae21257f17946152" prot="public" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>TelemetryPacket</name></member>
+      <member refid="class_protocol_1_1_packet_1a2f0a19f4bff82270290e53d31e67db33" prot="protected" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>timestamp</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1a0e2c3ac96e89cfcff9ed7f433a5c6e9e" prot="private" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>vX</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1aa3949303827b4452a94b13292badb40c" prot="private" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>vY</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1a0c976c9f5dc159fb5e73c4fd438c7ae5" prot="private" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>vZ</name></member>
+      <member refid="class_protocol_1_1_packet_1aa7498c8c70cb8a55617ce588508af81f" prot="protected" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>WriteHeader</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1a18fd48cffa8dde7ef593ec92abc85902" prot="private" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>yaw</name></member>
+      <member refid="class_protocol_1_1_telemetry_packet_1ad1ff3ae0a25afc4df6c5d7b3bff0efbd" prot="public" virt="non-virtual"><scope>Protocol::TelemetryPacket</scope><name>~TelemetryPacket</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

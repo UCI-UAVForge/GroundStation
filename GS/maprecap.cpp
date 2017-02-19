@@ -4,8 +4,8 @@ MapRecap::MapRecap(QWidget *parent):QDialog(parent), ui(new Ui::MapRecap) , back
     ui->setupUi(this);
     //buttonGroup = new QButtonGroup();
 
-    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    ui->webView->setUrl(QUrl("qrc:/res/html/mapsExecution.html"));
+    //connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
+    //ui->webView->setUrl(QUrl("qrc:/res/html/mapsPlanning.html"));
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
@@ -19,8 +19,8 @@ MapRecap::MapRecap(QWidget *parent):QDialog(parent), ui(new Ui::MapRecap) , back
 MapRecap::MapRecap(Mission *mission, QWidget *parent):QDialog(parent), ui(new Ui::MapRecap), myMission(*mission) {
     ui->setupUi(this);
 
-    connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
-    ui->webView->setUrl(QUrl("qrc:/res/html/mapsExecution.html"));
+    //connect(ui->webView->page()->mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),this,SLOT(addClickListener()), Qt::UniqueConnection);
+    //ui->webView->setUrl(QUrl("qrc:/res/html/mapsPlanning.html"));
     model = new TableModel();
     ui->tableView->setModel(model);
     ui->tableView->setItemDelegate(new QComboBoxDelegate());
@@ -41,7 +41,7 @@ MapRecap::~MapRecap(){
 void MapRecap::addClickListener() {
     std::cout << "listenerAdded!" << std::endl;
     //Creates the bridge called cbridge between the java script object and this class.
-    ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("cbridge",this);
+    //ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("cbridge",this);
 }
 
 
@@ -49,15 +49,15 @@ void MapRecap::on_backButton_clicked() {
     this->done(0);
 }
 
-
 /* Sends a request for the map to clear itself, causing the JavaScript page
 to reload itself. This function then cycles through each entry on the table
 and enters the coordinates on the map one by one in order. Function added by
 Jordan Dickson Feb 14th 2015. */
 //Sends clearMap request.
 void MapRecap::updateMap() {
-    ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
-    drawFlightPath(myMission.getFlightPath());
+//    ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("stopFlight()");
+//    drawFlightPath(myMission.getFlightPath());
 }
 
 
@@ -75,7 +75,7 @@ void MapRecap::addNewMap() {
 }
 
 void MapRecap::drawFlightPath(FlightPath *flightPath) {
-    ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
+//    ui->webView->page()->mainFrame()->evaluateJavaScript("clearMap()");
     QList<Protocol::Waypoint> *points = flightPath->getOrderedWaypoints();
     for (Protocol::Waypoint wp : *points){
         sendCoordToJSMap(wp.lat,wp.lon,0);
@@ -84,7 +84,7 @@ void MapRecap::drawFlightPath(FlightPath *flightPath) {
 }
 
 void MapRecap::sendCoordToJSMap(double lat, double lng, int mapID){
-    ui->webView->page()->mainFrame()->evaluateJavaScript("plotPointOnMap("+QString::number(lat)+","+QString::number(lng)+","+QString::number(mapID)+")");
+    //ui->webView->page()->mainFrame()->evaluateJavaScript("plotPointOnMap("+QString::number(lat)+","+QString::number(lng)+","+QString::number(mapID)+")");
 }
 
 /* Passer function for adding entries to the table with coordinates recived
@@ -109,7 +109,7 @@ QPushButton * MapRecap::getBackToPlanningButton() {
 
     if ( this->backToPlanningButton == NULL ) {
 
-        qDebug() << "BACK TO PLANNING BUTTON IS BEING CREATED!!!";
+        //qDebug << "BACK TO PLANNING BUTTON IS BEING CREATED!!!";
 
         this->backToPlanningButton = new QPushButton( QString( "Back to Planning" ) );
 
@@ -127,7 +127,8 @@ QPushButton * MapRecap::getBackToPlanningButton() {
         // Do nothing.
 
     }
-
+    //Reset map
+//    ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
     return this->backToPlanningButton ;
 
 }
@@ -135,15 +136,10 @@ QPushButton * MapRecap::getBackToPlanningButton() {
 void MapRecap::setBackToPlanningButton( QPushButton * backToPlanningButton ) {
 
     if ( backToPlanningButton != NULL ) {
-
         this->backToPlanningButton = backToPlanningButton ;
-
     }
 
     else {
-
         //Do nothing.
-
     }
-
 }

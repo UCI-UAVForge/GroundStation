@@ -1,0 +1,209 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_flight_path" kind="class" language="C++" prot="public">
+    <compoundname>FlightPath</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QList&lt; TimedAction * &gt;</basecompoundref>
+    <includes refid="flightpath_8h" local="no">flightpath.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_flight_path_1a2e628a23c9b4a92c238263cfa3d650d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FlightPath::FlightPath</definition>
+        <argsstring>()</argsstring>
+        <name>FlightPath</name>
+        <briefdescription>
+<para><ref refid="class_flight_path" kindref="compound">FlightPath</ref> - default constructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="17" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.cpp" bodystart="5" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_flight_path_1a9be65ab000a34bf60862b8b1af77d43d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FlightPath::FlightPath</definition>
+        <argsstring>(QString filename)</argsstring>
+        <name>FlightPath</name>
+        <param>
+          <type>QString</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_flight_path" kindref="compound">FlightPath</ref> - Creates a new <ref refid="class_flight_path" kindref="compound">FlightPath</ref> using the data stored in the target file. Serves as a load function. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the name of the target file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para><xrefsect id="todo_1_todo000002"><xreftitle>Todo</xreftitle><xrefdescription><para>any database initialization and error checking if necesary </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000003"><xreftitle>Todo</xreftitle><xrefdescription><para>get actual database length </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000004"><xreftitle>Todo</xreftitle><xrefdescription><para>update these two lines with values from the database </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000005"><xreftitle>Todo</xreftitle><xrefdescription><para>any remaining database functions for safe file handling if needed </para></xrefdescription></xrefsect></para>        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="24" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.cpp" bodystart="9" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_flight_path_1a6fecfbdebe93de7d2b62e3a2048111ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FlightPath::~FlightPath</definition>
+        <argsstring>()</argsstring>
+        <name>~FlightPath</name>
+        <briefdescription>
+<para><ref refid="class_flight_path" kindref="compound">FlightPath</ref> - Default destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="29" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.cpp" bodystart="35" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="class_flight_path_1ab625d5c73d69a5e616dade72ddcffd49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FlightPath::addCmdAction</definition>
+        <argsstring>(Protocol::ActionType type, double delay)</argsstring>
+        <name>addCmdAction</name>
+        <param>
+          <type><ref refid="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9" kindref="member">Protocol::ActionType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>delay</declname>
+        </param>
+        <briefdescription>
+<para>addCmdAction Adds a new Command-type Action to this <ref refid="class_flight_path" kindref="compound">FlightPath</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the type of Action this new packet contains </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the queue position of this Action - small numbers send first </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="36" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.cpp" bodystart="39" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_flight_path_1a101c5c8e050e215d70e3c6218b935aa9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void FlightPath::addNavAction</definition>
+        <argsstring>(Protocol::Waypoint wp, double delay)</argsstring>
+        <name>addNavAction</name>
+        <param>
+          <type><ref refid="struct_protocol_1_1_waypoint" kindref="compound">Protocol::Waypoint</ref></type>
+          <declname>wp</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>delay</declname>
+        </param>
+        <briefdescription>
+<para>addNavAction Adds a new Navigation-type Action to this <ref refid="class_flight_path" kindref="compound">FlightPath</ref> </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>wp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the destination Waypoint for this navigation action </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the queue position of this Action - small numbers send first </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="43" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.cpp" bodystart="43" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_flight_path_1a3a602f9b4b608f506354bf6c711a84eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool FlightPath::save</definition>
+        <argsstring>(QString filename)</argsstring>
+        <name>save</name>
+        <param>
+          <type>QString</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>save Writes this <ref refid="class_flight_path" kindref="compound">FlightPath</ref>&apos;s data out to a target file </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the name of the target file </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the write was successful, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para><xrefsect id="todo_1_todo000006"><xreftitle>Todo</xreftitle><xrefdescription><para>any database initialization and error checking. </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000007"><xreftitle>Todo</xreftitle><xrefdescription><para>write &quot;actionNum&quot;, &quot;delay&quot;, and &quot;data&quot; variables to the database </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000008"><xreftitle>Todo</xreftitle><xrefdescription><para>any remaining database functions for safe file handling if needed </para></xrefdescription></xrefsect></para>        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="50" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.cpp" bodystart="74" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="class_flight_path_1a3ffe0a2832e0e0e48e15b181ace42870" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="struct_protocol_1_1_waypoint" kindref="compound">Protocol::Waypoint</ref> &gt; *</type>
+        <definition>QList&lt; Protocol::Waypoint &gt; * FlightPath::getOrderedWaypoints</definition>
+        <argsstring>()</argsstring>
+        <name>getOrderedWaypoints</name>
+        <briefdescription>
+<para>getOrderedWaypoints Returns a list of all Waypoint objects in ascending order of delay (queue postion). </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A pointer to the sorted QList containing all the Waypoints </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="57" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.cpp" bodystart="47" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="31">
+        <label>FlightPath</label>
+        <link refid="class_flight_path"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>QList&lt; TimedAction * &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="33">
+        <label>FlightPath</label>
+        <link refid="class_flight_path"/>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>QList&lt; TimedAction * &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="11" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" bodystart="11" bodyend="60"/>
+    <listofallmembers>
+      <member refid="class_flight_path_1ab625d5c73d69a5e616dade72ddcffd49" prot="public" virt="non-virtual"><scope>FlightPath</scope><name>addCmdAction</name></member>
+      <member refid="class_flight_path_1a101c5c8e050e215d70e3c6218b935aa9" prot="public" virt="non-virtual"><scope>FlightPath</scope><name>addNavAction</name></member>
+      <member refid="class_flight_path_1a2e628a23c9b4a92c238263cfa3d650d4" prot="public" virt="non-virtual"><scope>FlightPath</scope><name>FlightPath</name></member>
+      <member refid="class_flight_path_1a9be65ab000a34bf60862b8b1af77d43d" prot="public" virt="non-virtual"><scope>FlightPath</scope><name>FlightPath</name></member>
+      <member refid="class_flight_path_1a3ffe0a2832e0e0e48e15b181ace42870" prot="public" virt="non-virtual"><scope>FlightPath</scope><name>getOrderedWaypoints</name></member>
+      <member refid="class_flight_path_1a3a602f9b4b608f506354bf6c711a84eb" prot="public" virt="non-virtual"><scope>FlightPath</scope><name>save</name></member>
+      <member refid="class_flight_path_1a6fecfbdebe93de7d2b62e3a2048111ca" prot="public" virt="non-virtual"><scope>FlightPath</scope><name>~FlightPath</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

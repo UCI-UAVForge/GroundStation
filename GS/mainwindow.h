@@ -2,13 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "options.h"
 #include <QPropertyAnimation>
 #include <QShortcut>
 #include <QPixmap>
 #include <QDebug>
 #include <iostream>
-#include <QtWebKitWidgets/QWebView>
 #include <QUrl>
 
 #include "options.h"

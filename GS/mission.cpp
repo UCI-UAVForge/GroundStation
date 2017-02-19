@@ -49,7 +49,6 @@ Mission::Mission(QString filename){
 }
 
 Mission::~Mission() {
-
 }
 
 FlightPath *Mission::getFlightPath(){

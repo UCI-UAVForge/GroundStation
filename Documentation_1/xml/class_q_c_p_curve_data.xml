@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_q_c_p_curve_data" kind="class" language="C++" prot="public">
+    <compoundname>QCPCurveData</compoundname>
+    <includes refid="qcustomplot_8h" local="no">qcustomplot.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_q_c_p_curve_data_1aecc395525be28e9178a088793beb3ff3" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPCurveData::t</definition>
+        <argsstring></argsstring>
+        <name>t</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2643" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2643" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_curve_data_1a8a4ec5f2b9a396149fd842e309701bd4" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPCurveData::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2643" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2643" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_curve_data_1a72b39b8e1dbf7b45382ebd48419b6828" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPCurveData::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2643" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2643" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_c_p_curve_data_1a48252779b5198a509d99c69ae223fbf8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPCurveData::QCPCurveData</definition>
+        <argsstring>()</argsstring>
+        <name>QCPCurveData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a curve data point with t, key and value set to zero. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2641" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="16742" bodyend="16747"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_curve_data_1a3586be0cc6f8db15bcdd0c0d03b0c173" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPCurveData::QCPCurveData</definition>
+        <argsstring>(double t, double key, double value)</argsstring>
+        <name>QCPCurveData</name>
+        <param>
+          <type>double</type>
+          <declname>t</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a curve data point with the specified <emphasis>t</emphasis>, <emphasis>key</emphasis> and <emphasis>value</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2642" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="16752" bodyend="16757"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Holds the data of one single data point for <ref refid="class_q_c_p_curve" kindref="compound">QCPCurve</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>The container for storing multiple data points is <ref refid="qcustomplot_8h_1a444d37ec9cb2951b3a7fe443c34d1658" kindref="member">QCPCurveDataMap</ref>.</para><para>The stored data is: <itemizedlist>
+<listitem><para><emphasis>t:</emphasis> the free parameter of the curve at this curve point (cp. the mathematical vector <emphasis>(x(t), y(t))</emphasis>) </para></listitem>
+<listitem><para><emphasis>key:</emphasis> coordinate on the key axis of this curve point </para></listitem>
+<listitem><para><emphasis>value:</emphasis> coordinate on the value axis of this curve point</para></listitem>
+</itemizedlist>
+<simplesect kind="see"><para><ref refid="qcustomplot_8h_1a444d37ec9cb2951b3a7fe443c34d1658" kindref="member">QCPCurveDataMap</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2639" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2638" bodyend="2644"/>
+    <listofallmembers>
+      <member refid="class_q_c_p_curve_data_1a8a4ec5f2b9a396149fd842e309701bd4" prot="public" virt="non-virtual"><scope>QCPCurveData</scope><name>key</name></member>
+      <member refid="class_q_c_p_curve_data_1a48252779b5198a509d99c69ae223fbf8" prot="public" virt="non-virtual"><scope>QCPCurveData</scope><name>QCPCurveData</name></member>
+      <member refid="class_q_c_p_curve_data_1a3586be0cc6f8db15bcdd0c0d03b0c173" prot="public" virt="non-virtual"><scope>QCPCurveData</scope><name>QCPCurveData</name></member>
+      <member refid="class_q_c_p_curve_data_1aecc395525be28e9178a088793beb3ff3" prot="public" virt="non-virtual"><scope>QCPCurveData</scope><name>t</name></member>
+      <member refid="class_q_c_p_curve_data_1a72b39b8e1dbf7b45382ebd48419b6828" prot="public" virt="non-virtual"><scope>QCPCurveData</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

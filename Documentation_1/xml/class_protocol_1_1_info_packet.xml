@@ -1,0 +1,266 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_protocol_1_1_info_packet" kind="class" language="C++" prot="public">
+    <compoundname>Protocol::InfoPacket</compoundname>
+    <basecompoundref refid="class_protocol_1_1_packet" prot="public" virt="non-virtual">Protocol::Packet</basecompoundref>
+    <includes refid="infopacket_8h" local="no">infopacket.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_protocol_1_1_info_packet_1a301a632c83b43837e3ba2a8f9d43209a" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t Protocol::InfoPacket::pointsStorable</definition>
+        <argsstring></argsstring>
+        <name>pointsStorable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/infopacket.h" line="29" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/infopacket.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_protocol_1_1_info_packet_1a006786f5c0775968079fe26e97e8b492" prot="private" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t Protocol::InfoPacket::batteryState</definition>
+        <argsstring></argsstring>
+        <name>batteryState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/infopacket.h" line="30" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/infopacket.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_protocol_1_1_info_packet_1a0daf2bfcbb0753b497b065b05bf317ae" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string Protocol::InfoPacket::other</definition>
+        <argsstring></argsstring>
+        <name>other</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/infopacket.h" line="31" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/infopacket.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_protocol_1_1_info_packet_1a11fa7cf70f73872adb44ba550bfe3bad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Protocol::InfoPacket::InfoPacket</definition>
+        <argsstring>()</argsstring>
+        <name>InfoPacket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/infopacket.h" line="34" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/infopacket.h" bodystart="34" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_info_packet_1a3492d10770f6fbbeda7b49be359fcf7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Protocol::InfoPacket::InfoPacket</definition>
+        <argsstring>(uint8_t *buffer, size_t len)</argsstring>
+        <name>InfoPacket</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/infopacket.h" line="36" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/InfoPacket.cpp" bodystart="19" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_info_packet_1aa41807efe3d80764352e2cabe0ce3dab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Protocol::InfoPacket::SetStorable</definition>
+        <argsstring>(uint16_t s)</argsstring>
+        <name>SetStorable</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/infopacket.h" line="38" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/InfoPacket.cpp" bodystart="31" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_info_packet_1a9d892385a9ec50b38411af3fb9f07d81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Protocol::InfoPacket::SetBattery</definition>
+        <argsstring>(uint16_t b)</argsstring>
+        <name>SetBattery</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/infopacket.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/InfoPacket.cpp" bodystart="36" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_info_packet_1a1751ad384a82367591e851bfa479fda2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Protocol::InfoPacket::SetOther</definition>
+        <argsstring>(std::string s)</argsstring>
+        <name>SetOther</name>
+        <param>
+          <type>std::string</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/infopacket.h" line="42" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/InfoPacket.cpp" bodystart="41" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_info_packet_1a83e236806b6ae78ae7486c6b12e9f94f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t Protocol::InfoPacket::GetStorable</definition>
+        <argsstring>()</argsstring>
+        <name>GetStorable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/infopacket.h" line="44" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/InfoPacket.cpp" bodystart="46" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_info_packet_1a2bb88fcedd69d0bb22db500de6ff11f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint16_t</type>
+        <definition>uint16_t Protocol::InfoPacket::GetBattery</definition>
+        <argsstring>()</argsstring>
+        <name>GetBattery</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/infopacket.h" line="46" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/InfoPacket.cpp" bodystart="51" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_info_packet_1a4cfc3b5c49b57016e7b4f72f74b62021" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string Protocol::InfoPacket::GetOther</definition>
+        <argsstring>()</argsstring>
+        <name>GetOther</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/infopacket.h" line="48" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/InfoPacket.cpp" bodystart="56" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_info_packet_1ad1f43721045348442cf224533bce7f1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>size_t</type>
+        <definition>size_t Protocol::InfoPacket::GetBytes</definition>
+        <argsstring>(uint8_t *buffer, size_t len)</argsstring>
+        <name>GetBytes</name>
+        <reimplements refid="class_protocol_1_1_packet_1a9c89c3d05acc44a5050ebfc756a2cd41">GetBytes</reimplements>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores the byte representation of a packet in the given buffer.</para><para><simplesect kind="author"><para>Jason Watkins </para></simplesect>
+<simplesect kind="date"><para>2015-11-16</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buffer[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array to write the packet to. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of <computeroutput>buffer</computeroutput>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/infopacket.h" line="50" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/InfoPacket.cpp" bodystart="61" bodyend="73"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="42">
+        <label>Protocol::Packet</label>
+        <link refid="class_protocol_1_1_packet"/>
+      </node>
+      <node id="41">
+        <label>Protocol::InfoPacket</label>
+        <link refid="class_protocol_1_1_info_packet"/>
+        <childnode refid="42" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="44">
+        <label>Protocol::Packet</label>
+        <link refid="class_protocol_1_1_packet"/>
+      </node>
+      <node id="43">
+        <label>Protocol::InfoPacket</label>
+        <link refid="class_protocol_1_1_info_packet"/>
+        <childnode refid="44" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/infopacket.h" line="27" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/infopacket.h" bodystart="26" bodyend="51"/>
+    <listofallmembers>
+      <member refid="class_protocol_1_1_info_packet_1a006786f5c0775968079fe26e97e8b492" prot="private" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>batteryState</name></member>
+      <member refid="class_protocol_1_1_packet_1acbe4f1b9f973d14097814d16fb0cd83a" prot="public" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>get_timestamp</name></member>
+      <member refid="class_protocol_1_1_packet_1a3c159ff945d95102ee2a2ba0b93d05d8" prot="public" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>get_type</name></member>
+      <member refid="class_protocol_1_1_info_packet_1a2bb88fcedd69d0bb22db500de6ff11f7" prot="public" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>GetBattery</name></member>
+      <member refid="class_protocol_1_1_info_packet_1ad1f43721045348442cf224533bce7f1a" prot="public" virt="virtual"><scope>Protocol::InfoPacket</scope><name>GetBytes</name></member>
+      <member refid="class_protocol_1_1_info_packet_1a4cfc3b5c49b57016e7b4f72f74b62021" prot="public" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>GetOther</name></member>
+      <member refid="class_protocol_1_1_info_packet_1a83e236806b6ae78ae7486c6b12e9f94f" prot="public" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>GetStorable</name></member>
+      <member refid="class_protocol_1_1_info_packet_1a11fa7cf70f73872adb44ba550bfe3bad" prot="public" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>InfoPacket</name></member>
+      <member refid="class_protocol_1_1_info_packet_1a3492d10770f6fbbeda7b49be359fcf7c" prot="public" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>InfoPacket</name></member>
+      <member refid="class_protocol_1_1_info_packet_1a0daf2bfcbb0753b497b065b05bf317ae" prot="private" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>other</name></member>
+      <member refid="class_protocol_1_1_packet_1ae02347b6d2eee98511ec19343b82e0a7" prot="protected" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>Packet</name></member>
+      <member refid="class_protocol_1_1_packet_1ad327686418aa271121e6a6a8eadebbd4" prot="public" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>Parse</name></member>
+      <member refid="class_protocol_1_1_info_packet_1a301a632c83b43837e3ba2a8f9d43209a" prot="private" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>pointsStorable</name></member>
+      <member refid="class_protocol_1_1_packet_1aa5f54d3128f7914383f4d8e8f53fbce4" prot="protected" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>ReadHeader</name></member>
+      <member refid="class_protocol_1_1_packet_1aa3f97852d443bb9554178384afa24eec" prot="public" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>set_type</name></member>
+      <member refid="class_protocol_1_1_info_packet_1a9d892385a9ec50b38411af3fb9f07d81" prot="public" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>SetBattery</name></member>
+      <member refid="class_protocol_1_1_packet_1adc4ebdbdbcdbaa177ba243c5c654ba18" prot="protected" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>SetChecksum</name></member>
+      <member refid="class_protocol_1_1_info_packet_1a1751ad384a82367591e851bfa479fda2" prot="public" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>SetOther</name></member>
+      <member refid="class_protocol_1_1_info_packet_1aa41807efe3d80764352e2cabe0ce3dab" prot="public" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>SetStorable</name></member>
+      <member refid="class_protocol_1_1_packet_1a2f0a19f4bff82270290e53d31e67db33" prot="protected" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>timestamp</name></member>
+      <member refid="class_protocol_1_1_packet_1aa7498c8c70cb8a55617ce588508af81f" prot="protected" virt="non-virtual"><scope>Protocol::InfoPacket</scope><name>WriteHeader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

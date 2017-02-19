@@ -1,0 +1,276 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="websocketclientwrapper_8h" kind="file" language="C++">
+    <compoundname>websocketclientwrapper.h</compoundname>
+    <includes local="no">QObject</includes>
+    <includedby refid="mapwidget_8h" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h</includedby>
+    <includedby refid="websocketclientwrapper_8cpp" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/websocketclientwrapper.cpp</includedby>
+    <incdepgraph>
+      <node id="3502">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/websocketclientwrapper.h</label>
+        <link refid="websocketclientwrapper.h"/>
+        <childnode refid="3503" relation="include">
+        </childnode>
+      </node>
+      <node id="3503">
+        <label>QObject</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3521">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.cpp</label>
+        <link refid="popwindowmp_8cpp"/>
+      </node>
+      <node id="3508">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h</label>
+        <link refid="mapexecution_8h"/>
+        <childnode refid="3509" relation="include">
+        </childnode>
+        <childnode refid="3506" relation="include">
+        </childnode>
+        <childnode refid="3510" relation="include">
+        </childnode>
+        <childnode refid="3511" relation="include">
+        </childnode>
+        <childnode refid="3516" relation="include">
+        </childnode>
+        <childnode refid="3520" relation="include">
+        </childnode>
+        <childnode refid="3521" relation="include">
+        </childnode>
+      </node>
+      <node id="3504">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/websocketclientwrapper.h</label>
+        <link refid="websocketclientwrapper.h"/>
+        <childnode refid="3505" relation="include">
+        </childnode>
+        <childnode refid="3526" relation="include">
+        </childnode>
+      </node>
+      <node id="3523">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp</label>
+        <link refid="mapplanning_8cpp"/>
+      </node>
+      <node id="3506">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h</label>
+        <link refid="mapplanning_8h"/>
+        <childnode refid="3507" relation="include">
+        </childnode>
+        <childnode refid="3510" relation="include">
+        </childnode>
+        <childnode refid="3511" relation="include">
+        </childnode>
+        <childnode refid="3512" relation="include">
+        </childnode>
+        <childnode refid="3516" relation="include">
+        </childnode>
+        <childnode refid="3523" relation="include">
+        </childnode>
+        <childnode refid="3524" relation="include">
+        </childnode>
+      </node>
+      <node id="3524">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapvalidator.cpp</label>
+        <link refid="mapvalidator_8cpp"/>
+      </node>
+      <node id="3522">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.cpp</label>
+        <link refid="missionrecap_8cpp"/>
+      </node>
+      <node id="3511">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h</label>
+        <link refid="qttabtest_8h"/>
+        <childnode refid="3512" relation="include">
+        </childnode>
+        <childnode refid="3515" relation="include">
+        </childnode>
+      </node>
+      <node id="3525">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp</label>
+        <link refid="mapwidget_8cpp"/>
+      </node>
+      <node id="3507">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h</label>
+        <link refid="missionrecap_8h"/>
+        <childnode refid="3508" relation="include">
+        </childnode>
+        <childnode refid="3510" relation="include">
+        </childnode>
+        <childnode refid="3511" relation="include">
+        </childnode>
+        <childnode refid="3516" relation="include">
+        </childnode>
+        <childnode refid="3522" relation="include">
+        </childnode>
+      </node>
+      <node id="3519">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.cpp</label>
+        <link refid="options_8cpp"/>
+      </node>
+      <node id="3509">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.cpp</label>
+        <link refid="digitalclock_8cpp"/>
+      </node>
+      <node id="3512">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainmdidisplay.h</label>
+        <link refid="mainmdidisplay_8h"/>
+        <childnode refid="3513" relation="include">
+        </childnode>
+        <childnode refid="3514" relation="include">
+        </childnode>
+      </node>
+      <node id="3517">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="3510">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.h</label>
+        <link refid="options_8h"/>
+        <childnode refid="3508" relation="include">
+        </childnode>
+        <childnode refid="3511" relation="include">
+        </childnode>
+        <childnode refid="3516" relation="include">
+        </childnode>
+        <childnode refid="3519" relation="include">
+        </childnode>
+      </node>
+      <node id="3514">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainmdidisplay.cpp</label>
+        <link refid="mainmdidisplay_8cpp"/>
+      </node>
+      <node id="3505">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h</label>
+        <link refid="mapwidget_8h"/>
+        <childnode refid="3506" relation="include">
+        </childnode>
+        <childnode refid="3508" relation="include">
+        </childnode>
+        <childnode refid="3512" relation="include">
+        </childnode>
+        <childnode refid="3514" relation="include">
+        </childnode>
+        <childnode refid="3523" relation="include">
+        </childnode>
+        <childnode refid="3525" relation="include">
+        </childnode>
+      </node>
+      <node id="3518">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/tutorial.cpp</label>
+        <link refid="tutorial_8cpp"/>
+      </node>
+      <node id="3515">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.cpp</label>
+        <link refid="qttabtest_8cpp"/>
+      </node>
+      <node id="3516">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="3517" relation="include">
+        </childnode>
+        <childnode refid="3518" relation="include">
+        </childnode>
+      </node>
+      <node id="3520">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp</label>
+        <link refid="mapexecution_8cpp"/>
+      </node>
+      <node id="3526">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/websocketclientwrapper.cpp</label>
+        <link refid="websocketclientwrapper_8cpp"/>
+      </node>
+      <node id="3513">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_web_socket_client_wrapper" prot="public">WebSocketClientWrapper</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/****************************************************************************</highlight></codeline>
+<codeline lineno="2"><highlight class="comment">**</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">**<sp/>Copyright<sp/>(C)<sp/>2016<sp/>Klarälvdalens<sp/>Datakonsult<sp/>AB,<sp/>a<sp/>KDAB<sp/>Group<sp/>company,<sp/>info@kdab.com,<sp/>author<sp/>Milian<sp/>Wolff<sp/>&lt;milian.wolff@kdab.com&gt;</highlight></codeline>
+<codeline lineno="4"><highlight class="comment">**<sp/>Contact:<sp/>https://www.qt.io/licensing/</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">**</highlight></codeline>
+<codeline lineno="6"><highlight class="comment">**<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>QtWebChannel<sp/>module<sp/>of<sp/>the<sp/>Qt<sp/>Toolkit.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment">**</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">**<sp/>$QT_BEGIN_LICENSE:BSD$</highlight></codeline>
+<codeline lineno="9"><highlight class="comment">**<sp/>Commercial<sp/>License<sp/>Usage</highlight></codeline>
+<codeline lineno="10"><highlight class="comment">**<sp/>Licensees<sp/>holding<sp/>valid<sp/>commercial<sp/>Qt<sp/>licenses<sp/>may<sp/>use<sp/>this<sp/>file<sp/>in</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">**<sp/>accordance<sp/>with<sp/>the<sp/>commercial<sp/>license<sp/>agreement<sp/>provided<sp/>with<sp/>the</highlight></codeline>
+<codeline lineno="12"><highlight class="comment">**<sp/>Software<sp/>or,<sp/>alternatively,<sp/>in<sp/>accordance<sp/>with<sp/>the<sp/>terms<sp/>contained<sp/>in</highlight></codeline>
+<codeline lineno="13"><highlight class="comment">**<sp/>a<sp/>written<sp/>agreement<sp/>between<sp/>you<sp/>and<sp/>The<sp/>Qt<sp/>Company.<sp/>For<sp/>licensing<sp/>terms</highlight></codeline>
+<codeline lineno="14"><highlight class="comment">**<sp/>and<sp/>conditions<sp/>see<sp/>https://www.qt.io/terms-conditions.<sp/>For<sp/>further</highlight></codeline>
+<codeline lineno="15"><highlight class="comment">**<sp/>information<sp/>use<sp/>the<sp/>contact<sp/>form<sp/>at<sp/>https://www.qt.io/contact-us.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment">**</highlight></codeline>
+<codeline lineno="17"><highlight class="comment">**<sp/>BSD<sp/>License<sp/>Usage</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">**<sp/>Alternatively,<sp/>you<sp/>may<sp/>use<sp/>this<sp/>file<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>BSD<sp/>license</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">**<sp/>as<sp/>follows:</highlight></codeline>
+<codeline lineno="20"><highlight class="comment">**</highlight></codeline>
+<codeline lineno="21"><highlight class="comment">**<sp/>&quot;Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="22"><highlight class="comment">**<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are</highlight></codeline>
+<codeline lineno="23"><highlight class="comment">**<sp/>met:</highlight></codeline>
+<codeline lineno="24"><highlight class="comment">**<sp/><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">**<sp/><sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment">**<sp/><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="27"><highlight class="comment">**<sp/><sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in</highlight></codeline>
+<codeline lineno="28"><highlight class="comment">**<sp/><sp/><sp/><sp/><sp/>the<sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the</highlight></codeline>
+<codeline lineno="29"><highlight class="comment">**<sp/><sp/><sp/><sp/><sp/>distribution.</highlight></codeline>
+<codeline lineno="30"><highlight class="comment">**<sp/><sp/><sp/>*<sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>The<sp/>Qt<sp/>Company<sp/>Ltd<sp/>nor<sp/>the<sp/>names<sp/>of<sp/>its</highlight></codeline>
+<codeline lineno="31"><highlight class="comment">**<sp/><sp/><sp/><sp/><sp/>contributors<sp/>may<sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived</highlight></codeline>
+<codeline lineno="32"><highlight class="comment">**<sp/><sp/><sp/><sp/><sp/>from<sp/>this<sp/>software<sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="33"><highlight class="comment">**</highlight></codeline>
+<codeline lineno="34"><highlight class="comment">**</highlight></codeline>
+<codeline lineno="35"><highlight class="comment">**<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>THE<sp/>COPYRIGHT<sp/>HOLDERS<sp/>AND<sp/>CONTRIBUTORS</highlight></codeline>
+<codeline lineno="36"><highlight class="comment">**<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>ANY<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="37"><highlight class="comment">**<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR</highlight></codeline>
+<codeline lineno="38"><highlight class="comment">**<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>COPYRIGHT</highlight></codeline>
+<codeline lineno="39"><highlight class="comment">**<sp/>OWNER<sp/>OR<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,</highlight></codeline>
+<codeline lineno="40"><highlight class="comment">**<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>(INCLUDING,<sp/>BUT<sp/>NOT</highlight></codeline>
+<codeline lineno="41"><highlight class="comment">**<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;<sp/>LOSS<sp/>OF<sp/>USE,</highlight></codeline>
+<codeline lineno="42"><highlight class="comment">**<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND<sp/>ON<sp/>ANY</highlight></codeline>
+<codeline lineno="43"><highlight class="comment">**<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT</highlight></codeline>
+<codeline lineno="44"><highlight class="comment">**<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE</highlight></codeline>
+<codeline lineno="45"><highlight class="comment">**<sp/>OF<sp/>THIS<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.&quot;</highlight></codeline>
+<codeline lineno="46"><highlight class="comment">**</highlight></codeline>
+<codeline lineno="47"><highlight class="comment">**<sp/>$QT_END_LICENSE$</highlight></codeline>
+<codeline lineno="48"><highlight class="comment">**</highlight></codeline>
+<codeline lineno="49"><highlight class="comment">****************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>WEBSOCKETTRANSPORTSERVER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>WEBSOCKETTRANSPORTSERVER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">QT_BEGIN_NAMESPACE</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QWebSocketServer;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_web_socket_transport" kindref="compound">WebSocketTransport</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="class_web_socket_client_wrapper" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_web_socket_client_wrapper" kindref="compound">WebSocketClientWrapper</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_web_socket_client_wrapper_1a5af93779273d4a8e7cfcaf547ae04a52" kindref="member">WebSocketClientWrapper</ref>(QWebSocketServer<sp/>*server,<sp/>QObject<sp/>*parent<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">Q_SIGNALS:</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_web_socket_client_wrapper_1a67624fd48603482dd0631f699d19e87e" kindref="member">clientConnected</ref>(<ref refid="class_web_socket_transport" kindref="compound">WebSocketTransport</ref>*<sp/>client);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleNewConnection();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>QWebSocketServer<sp/>*m_server;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">QT_END_NAMESPACE</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>WEBSOCKETTRANSPORTSERVER_H</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/websocketclientwrapper.h"/>
+  </compounddef>
+</doxygen>
