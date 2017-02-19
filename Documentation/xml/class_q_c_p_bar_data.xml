@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_q_c_p_bar_data" kind="class" language="C++" prot="public">
+    <compoundname>QCPBarData</compoundname>
+    <includes refid="qcustomplot_8h" local="no">qcustomplot.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_q_c_p_bar_data_1afe544b035ef19027ea3d65adeaf81b42" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPBarData::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2807" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2807" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_bar_data_1acab57005d8916d61b64e9ddef6113b60" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPBarData::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2807" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2807" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_c_p_bar_data_1a8d214eda9ef41bc6da2a908a09623836" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPBarData::QCPBarData</definition>
+        <argsstring>()</argsstring>
+        <name>QCPBarData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a bar data point with key and value set to zero. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2805" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18352" bodyend="18356"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_bar_data_1ac0bb7ede5373a7b18713418fa78f972d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPBarData::QCPBarData</definition>
+        <argsstring>(double key, double value)</argsstring>
+        <name>QCPBarData</name>
+        <param>
+          <type>double</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a bar data point with the specified <emphasis>key</emphasis> and <emphasis>value</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2806" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18361" bodyend="18365"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Holds the data of one single data point (one bar) for <ref refid="class_q_c_p_bars" kindref="compound">QCPBars</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>The container for storing multiple data points is <ref refid="qcustomplot_8h_1aa846c77472cae93def9f1609d0c57191" kindref="member">QCPBarDataMap</ref>.</para><para>The stored data is: <itemizedlist>
+<listitem><para><emphasis>key:</emphasis> coordinate on the key axis of this bar </para></listitem>
+<listitem><para><emphasis>value:</emphasis> height coordinate on the value axis of this bar</para></listitem>
+</itemizedlist>
+<simplesect kind="see"><para>QCPBarDataaMap </para></simplesect>
+</para>    </detaileddescription>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2803" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2802" bodyend="2808"/>
+    <listofallmembers>
+      <member refid="class_q_c_p_bar_data_1afe544b035ef19027ea3d65adeaf81b42" prot="public" virt="non-virtual"><scope>QCPBarData</scope><name>key</name></member>
+      <member refid="class_q_c_p_bar_data_1a8d214eda9ef41bc6da2a908a09623836" prot="public" virt="non-virtual"><scope>QCPBarData</scope><name>QCPBarData</name></member>
+      <member refid="class_q_c_p_bar_data_1ac0bb7ede5373a7b18713418fa78f972d" prot="public" virt="non-virtual"><scope>QCPBarData</scope><name>QCPBarData</name></member>
+      <member refid="class_q_c_p_bar_data_1acab57005d8916d61b64e9ddef6113b60" prot="public" virt="non-virtual"><scope>QCPBarData</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

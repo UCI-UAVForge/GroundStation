@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_video_player" kind="class" language="C++" prot="public">
+    <compoundname>VideoPlayer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QWidget</basecompoundref>
+    <includes refid="videoplayer_8h" local="no">videoplayer.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_video_player_1ac8db33eca4b05bbfed4ce5dd2a9cfab7" prot="private" static="no" mutable="no">
+        <type>QMediaPlayer</type>
+        <definition>QMediaPlayer VideoPlayer::mediaPlayer</definition>
+        <argsstring></argsstring>
+        <name>mediaPlayer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" line="26" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_video_player_1a453a5b692dd5415c20de08c51e955088" prot="private" static="no" mutable="no">
+        <type>QAbstractButton *</type>
+        <definition>QAbstractButton* VideoPlayer::playButton</definition>
+        <argsstring></argsstring>
+        <name>playButton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" line="27" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_video_player_1a04f7f93d7b602fe8f9f507956ba54852" prot="private" static="no" mutable="no">
+        <type>QSlider *</type>
+        <definition>QSlider* VideoPlayer::positionSlider</definition>
+        <argsstring></argsstring>
+        <name>positionSlider</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" line="28" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_video_player_1a97c127c74e38d0b4523fe66cb608e83c" prot="private" static="no" mutable="no">
+        <type>QLabel *</type>
+        <definition>QLabel* VideoPlayer::errorLabel</definition>
+        <argsstring></argsstring>
+        <name>errorLabel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" line="29" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_video_player_1a1d43337dac90ba3ec1ba178f4b1ddceb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>VideoPlayer::VideoPlayer</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>VideoPlayer</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" line="20" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.cpp" bodystart="3" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_video_player_1a84982600649b54d2fa2ddb4efee2349f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>VideoPlayer::~VideoPlayer</definition>
+        <argsstring>()</argsstring>
+        <name>~VideoPlayer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" line="21" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.cpp" bodystart="23" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_video_player_1a13ba0d270e849566f33ceffd7fb425c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void VideoPlayer::play</definition>
+        <argsstring>()</argsstring>
+        <name>play</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" line="24" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.cpp" bodystart="27" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1111">
+        <label>VideoPlayer</label>
+        <link refid="class_video_player"/>
+        <childnode refid="1112" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1112">
+        <label>QWidget</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1113">
+        <label>VideoPlayer</label>
+        <link refid="class_video_player"/>
+        <childnode refid="1114" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1114">
+        <label>QWidget</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" line="17" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" bodystart="16" bodyend="30"/>
+    <listofallmembers>
+      <member refid="class_video_player_1a97c127c74e38d0b4523fe66cb608e83c" prot="private" virt="non-virtual"><scope>VideoPlayer</scope><name>errorLabel</name></member>
+      <member refid="class_video_player_1ac8db33eca4b05bbfed4ce5dd2a9cfab7" prot="private" virt="non-virtual"><scope>VideoPlayer</scope><name>mediaPlayer</name></member>
+      <member refid="class_video_player_1a13ba0d270e849566f33ceffd7fb425c0" prot="public" virt="non-virtual"><scope>VideoPlayer</scope><name>play</name></member>
+      <member refid="class_video_player_1a453a5b692dd5415c20de08c51e955088" prot="private" virt="non-virtual"><scope>VideoPlayer</scope><name>playButton</name></member>
+      <member refid="class_video_player_1a04f7f93d7b602fe8f9f507956ba54852" prot="private" virt="non-virtual"><scope>VideoPlayer</scope><name>positionSlider</name></member>
+      <member refid="class_video_player_1a1d43337dac90ba3ec1ba178f4b1ddceb" prot="public" virt="non-virtual"><scope>VideoPlayer</scope><name>VideoPlayer</name></member>
+      <member refid="class_video_player_1a84982600649b54d2fa2ddb4efee2349f" prot="public" virt="non-virtual"><scope>VideoPlayer</scope><name>~VideoPlayer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

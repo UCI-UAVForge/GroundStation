@@ -11,7 +11,7 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new U
 
     MapExecutionStatusVBoxLayout(NULL) , mapExecutionStatusUIWidget(NULL) , tempMapPlanningUIWidget(NULL),
 
-    missionPlanningFlightPath( NULL ) , saveMissionButton( NULL ) , loadMissionButton( NULL ) , saveMissionByNameLabel( NULL ) {
+    missionPlanningFlightPath(NULL) , saveMissionButton(NULL) , loadMissionButton(NULL) , saveMissionByNameLabel(NULL) {
 
     ui->setupUi(this);
 

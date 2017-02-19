@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="todo" kind="page">
+    <compoundname>todo</compoundname>
+    <title>Todo List</title>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term><anchor id="todo_1_todo000001"/>Member <ref refid="class_flight_path_1a9be65ab000a34bf60862b8b1af77d43d" kindref="member">FlightPath::FlightPath</ref>  (QString filename)</term></varlistentry>
+<listitem><para>any database initialization and error checking if necesary </para><para>get actual database length </para><para>update these two lines with values from the database </para><para>any remaining database functions for safe file handling if needed  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000005"/>Member <ref refid="class_flight_path_1a3a602f9b4b608f506354bf6c711a84eb" kindref="member">FlightPath::save</ref>  (QString filename)</term></varlistentry>
+<listitem><para>any database initialization and error checking. </para><para>write &quot;actionNum&quot;, &quot;delay&quot;, and &quot;data&quot; variables to the database </para><para>any remaining database functions for safe file handling if needed  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000008"/>Member <ref refid="class_gs_server_1a9fbceada3decdaafff7c1d5dda8c8405" kindref="member">GsServer::sendNextPacket</ref>  ()</term></varlistentry>
+<listitem><para>implement actual ack packet transfer from message box to outPackets.recievAckPacket(AckPacket)  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000009"/>Member <ref refid="class_mission_1a3c1cb92197018f64854514616b43f06b" kindref="member">Mission::Mission</ref>  (QString filename)</term></varlistentry>
+<listitem><para>any database initialization and error checking if necesary </para><para>get the number of lines in the database </para><para>update these lines with values from the database </para><para>any remaining database functions for safe file handling if needed  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000013"/>Member <ref refid="class_mission_1a8e02183538b8e0095f7a6e609149f75d" kindref="member">Mission::save</ref>  (QString filename)</term></varlistentry>
+<listitem><para>any database initialization and error checking. </para><para>write each of the above variables to the database </para><para>any remaining database functions for safe file handling if needed  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000016"/>Member <ref refid="class_network_listener_1a831238cc68f68ecac14a9a5b3d330f1b" kindref="member">NetworkListener::processPendingDatagrams</ref>  ()</term></varlistentry>
+<listitem><para>remove this so that the red line is dependent on telem packets rather than action packets  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000017"/>Member <ref refid="class_server_queue_1aa8678274d8afa980b2995ed3f839a3f8" kindref="member">ServerQueue::dequeue</ref>  (<ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref> *packet)</term></varlistentry>
+<listitem><para>Implement and test this  </para></listitem>
+<varlistentry><term><anchor id="todo_1_todo000018"/>Member <ref refid="class_server_queue_1a8d0d64b34a8e2a342009b496bfe8b196" kindref="member">ServerQueue::forceDequeue</ref>  (<ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref> *packet)</term></varlistentry>
+<listitem><para>Implement and test this </para></listitem>
+</variablelist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

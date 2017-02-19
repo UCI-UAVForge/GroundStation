@@ -1,0 +1,445 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="maprecap_8cpp" kind="file" language="C++">
+    <compoundname>maprecap.cpp</compoundname>
+    <includes refid="maprecap_8h" local="yes">maprecap.h</includes>
+    <incdepgraph>
+      <node id="1463">
+        <label>QMap</label>
+      </node>
+      <node id="1421">
+        <label>maprecap.h</label>
+        <link refid="maprecap_8h"/>
+        <childnode refid="1422" relation="include">
+        </childnode>
+        <childnode refid="1423" relation="include">
+        </childnode>
+        <childnode refid="1424" relation="include">
+        </childnode>
+        <childnode refid="1425" relation="include">
+        </childnode>
+        <childnode refid="1426" relation="include">
+        </childnode>
+        <childnode refid="1427" relation="include">
+        </childnode>
+        <childnode refid="1428" relation="include">
+        </childnode>
+        <childnode refid="1429" relation="include">
+        </childnode>
+        <childnode refid="1430" relation="include">
+        </childnode>
+        <childnode refid="1434" relation="include">
+        </childnode>
+        <childnode refid="1436" relation="include">
+        </childnode>
+        <childnode refid="1444" relation="include">
+        </childnode>
+        <childnode refid="1451" relation="include">
+        </childnode>
+        <childnode refid="1459" relation="include">
+        </childnode>
+        <childnode refid="1460" relation="include">
+        </childnode>
+        <childnode refid="1461" relation="include">
+        </childnode>
+      </node>
+      <node id="1439">
+        <label>QObject</label>
+      </node>
+      <node id="1432">
+        <label>QList</label>
+      </node>
+      <node id="1450">
+        <label>stdint.h</label>
+      </node>
+      <node id="1445">
+        <label>actionpacket.h</label>
+        <link refid="actionpacket_8h"/>
+        <childnode refid="1446" relation="include">
+        </childnode>
+        <childnode refid="1447" relation="include">
+        </childnode>
+      </node>
+      <node id="1433">
+        <label>QPair</label>
+      </node>
+      <node id="1446">
+        <label>string</label>
+      </node>
+      <node id="1459">
+        <label>qwebframe.h</label>
+      </node>
+      <node id="1438">
+        <label>QModelIndex</label>
+      </node>
+      <node id="1455">
+        <label>ackpacket.h</label>
+        <link refid="ackpacket_8h"/>
+        <childnode refid="1449" relation="include">
+        </childnode>
+        <childnode refid="1447" relation="include">
+        </childnode>
+      </node>
+      <node id="1460">
+        <label>ui_maprecap.h</label>
+      </node>
+      <node id="1447">
+        <label>Packet.h</label>
+        <link refid="packet_8h"/>
+        <childnode refid="1448" relation="include">
+        </childnode>
+        <childnode refid="1449" relation="include">
+        </childnode>
+        <childnode refid="1450" relation="include">
+        </childnode>
+      </node>
+      <node id="1426">
+        <label>QWebFrame</label>
+      </node>
+      <node id="1425">
+        <label>QButtonGroup</label>
+      </node>
+      <node id="1461">
+        <label>mission.h</label>
+        <link refid="mission_8h"/>
+        <childnode refid="1427" relation="include">
+        </childnode>
+        <childnode refid="1462" relation="include">
+        </childnode>
+        <childnode refid="1433" relation="include">
+        </childnode>
+        <childnode refid="1463" relation="include">
+        </childnode>
+        <childnode refid="1445" relation="include">
+        </childnode>
+        <childnode refid="1458" relation="include">
+        </childnode>
+        <childnode refid="1444" relation="include">
+        </childnode>
+        <childnode refid="1451" relation="include">
+        </childnode>
+      </node>
+      <node id="1456">
+        <label>infopacket.h</label>
+        <link refid="infopacket_8h"/>
+        <childnode refid="1446" relation="include">
+        </childnode>
+        <childnode refid="1457" relation="include">
+        </childnode>
+        <childnode refid="1450" relation="include">
+        </childnode>
+        <childnode refid="1447" relation="include">
+        </childnode>
+      </node>
+      <node id="1457">
+        <label>string.h</label>
+      </node>
+      <node id="1454">
+        <label>QTime</label>
+      </node>
+      <node id="1428">
+        <label>QApplication</label>
+      </node>
+      <node id="1458">
+        <label>telemetrypacket.h</label>
+        <link refid="telemetrypacket_8h"/>
+        <childnode refid="1446" relation="include">
+        </childnode>
+        <childnode refid="1447" relation="include">
+        </childnode>
+      </node>
+      <node id="1443">
+        <label>QValidator</label>
+      </node>
+      <node id="1422">
+        <label>QDialog</label>
+      </node>
+      <node id="1453">
+        <label>vector</label>
+      </node>
+      <node id="1435">
+        <label>QWidget</label>
+      </node>
+      <node id="1441">
+        <label>QLineEdit</label>
+      </node>
+      <node id="1427">
+        <label>QString</label>
+      </node>
+      <node id="1440">
+        <label>QSize</label>
+      </node>
+      <node id="1442">
+        <label>mapvalidator.h</label>
+        <link refid="mapvalidator_8h"/>
+        <childnode refid="1429" relation="include">
+        </childnode>
+        <childnode refid="1443" relation="include">
+        </childnode>
+      </node>
+      <node id="1424">
+        <label>QPushButton</label>
+      </node>
+      <node id="1448">
+        <label>time.h</label>
+      </node>
+      <node id="1436">
+        <label>qcomboboxdelegate.h</label>
+        <link refid="qcomboboxdelegate_8h"/>
+        <childnode refid="1437" relation="include">
+        </childnode>
+        <childnode refid="1423" relation="include">
+        </childnode>
+        <childnode refid="1438" relation="include">
+        </childnode>
+        <childnode refid="1439" relation="include">
+        </childnode>
+        <childnode refid="1440" relation="include">
+        </childnode>
+        <childnode refid="1441" relation="include">
+        </childnode>
+        <childnode refid="1442" relation="include">
+        </childnode>
+      </node>
+      <node id="1423">
+        <label>QComboBox</label>
+      </node>
+      <node id="1452">
+        <label>iostream</label>
+      </node>
+      <node id="1437">
+        <label>QItemDelegate</label>
+      </node>
+      <node id="1420">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/maprecap.cpp</label>
+        <link refid="maprecap.cpp"/>
+        <childnode refid="1421" relation="include">
+        </childnode>
+      </node>
+      <node id="1434">
+        <label>popwindowmp.h</label>
+        <link refid="popwindowmp_8h"/>
+        <childnode refid="1435" relation="include">
+        </childnode>
+      </node>
+      <node id="1429">
+        <label>QDoubleValidator</label>
+      </node>
+      <node id="1430">
+        <label>tablemodel.h</label>
+        <link refid="tablemodel_8h"/>
+        <childnode refid="1431" relation="include">
+        </childnode>
+        <childnode refid="1432" relation="include">
+        </childnode>
+        <childnode refid="1433" relation="include">
+        </childnode>
+      </node>
+      <node id="1449">
+        <label>stdio.h</label>
+      </node>
+      <node id="1431">
+        <label>QAbstractTableModel</label>
+      </node>
+      <node id="1444">
+        <label>flightpath.h</label>
+        <link refid="flightpath_8h"/>
+        <childnode refid="1432" relation="include">
+        </childnode>
+        <childnode refid="1433" relation="include">
+        </childnode>
+        <childnode refid="1427" relation="include">
+        </childnode>
+        <childnode refid="1445" relation="include">
+        </childnode>
+      </node>
+      <node id="1462">
+        <label>QVector</label>
+      </node>
+      <node id="1451">
+        <label>messagebox.h</label>
+        <link refid="messagebox_8h"/>
+        <childnode refid="1452" relation="include">
+        </childnode>
+        <childnode refid="1453" relation="include">
+        </childnode>
+        <childnode refid="1428" relation="include">
+        </childnode>
+        <childnode refid="1433" relation="include">
+        </childnode>
+        <childnode refid="1432" relation="include">
+        </childnode>
+        <childnode refid="1454" relation="include">
+        </childnode>
+        <childnode refid="1450" relation="include">
+        </childnode>
+        <childnode refid="1436" relation="include">
+        </childnode>
+        <childnode refid="1455" relation="include">
+        </childnode>
+        <childnode refid="1445" relation="include">
+        </childnode>
+        <childnode refid="1456" relation="include">
+        </childnode>
+        <childnode refid="1458" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="maprecap_8h" kindref="compound">maprecap.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><ref refid="class_map_recap_1a739aa8a008d8daf8ed083edd2af1da56" kindref="member">MapRecap::MapRecap</ref>(QWidget<sp/>*parent):QDialog(parent),<sp/><ref refid="class_main_m_d_i_display_1a76297f463be48cd56af5cbbc59691056" kindref="member">ui</ref>(new<sp/><ref refid="namespace_ui" kindref="compound">Ui</ref>::<ref refid="class_map_recap" kindref="compound">MapRecap</ref>)<sp/>,<sp/><ref refid="class_main_m_d_i_display_1a76eac289ae5734e636b970277548f01c" kindref="member">backToPlanningButton</ref>(NULL)<sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kindref="member">ui</ref>-&gt;setupUi(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//buttonGroup<sp/>=<sp/>new<sp/>QButtonGroup();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(<ref refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kindref="member">ui</ref>-&gt;webView-&gt;page()-&gt;mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),</highlight><highlight class="keyword">this</highlight><highlight class="normal">,SLOT(<ref refid="class_map_planning_1a67bb2037f76155fdd04579c4d53f735b" kindref="member">addClickListener</ref>()),<sp/>Qt::UniqueConnection);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kindref="member">ui</ref>-&gt;webView-&gt;setUrl(QUrl(</highlight><highlight class="stringliteral">&quot;qrc:/res/html/mapsExecution.html&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_planning_1aab63d8ac819d33a75d30349052ed8ce5" kindref="member">model</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_table_model" kindref="compound">TableModel</ref>();</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kindref="member">ui</ref>-&gt;tableView-&gt;setModel(<ref refid="class_map_planning_1aab63d8ac819d33a75d30349052ed8ce5" kindref="member">model</ref>);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kindref="member">ui</ref>-&gt;tableView-&gt;setItemDelegate(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_q_combo_box_delegate" kindref="compound">QComboBoxDelegate</ref>());</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kindref="member">ui</ref>-&gt;tableView-&gt;setColumnHidden(0,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kindref="member">ui</ref>-&gt;tableView-&gt;setColumnHidden(5,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kindref="member">ui</ref>-&gt;tableView-&gt;setColumnWidth(2,<sp/>42);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kindref="member">ui</ref>-&gt;tableView-&gt;setColumnWidth(4,<sp/>42);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><ref refid="class_map_recap_1a739aa8a008d8daf8ed083edd2af1da56" kindref="member">MapRecap::MapRecap</ref>(<ref refid="class_mission" kindref="compound">Mission</ref><sp/>*mission,<sp/>QWidget<sp/>*parent):QDialog(parent),<sp/><ref refid="class_main_m_d_i_display_1a76297f463be48cd56af5cbbc59691056" kindref="member">ui</ref>(new<sp/><ref refid="namespace_ui" kindref="compound">Ui</ref>::<ref refid="class_map_recap" kindref="compound">MapRecap</ref>),<sp/>myMission(*mission)<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kindref="member">ui</ref>-&gt;setupUi(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(<ref refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kindref="member">ui</ref>-&gt;webView-&gt;page()-&gt;mainFrame(),SIGNAL(javaScriptWindowObjectCleared()),</highlight><highlight class="keyword">this</highlight><highlight class="normal">,SLOT(<ref refid="class_map_planning_1a67bb2037f76155fdd04579c4d53f735b" kindref="member">addClickListener</ref>()),<sp/>Qt::UniqueConnection);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kindref="member">ui</ref>-&gt;webView-&gt;setUrl(QUrl(</highlight><highlight class="stringliteral">&quot;qrc:/res/html/mapsExecution.html&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_planning_1aab63d8ac819d33a75d30349052ed8ce5" kindref="member">model</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_table_model" kindref="compound">TableModel</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kindref="member">ui</ref>-&gt;tableView-&gt;setModel(<ref refid="class_map_planning_1aab63d8ac819d33a75d30349052ed8ce5" kindref="member">model</ref>);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kindref="member">ui</ref>-&gt;tableView-&gt;setItemDelegate(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_q_combo_box_delegate" kindref="compound">QComboBoxDelegate</ref>());</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kindref="member">ui</ref>-&gt;tableView-&gt;setColumnHidden(0,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kindref="member">ui</ref>-&gt;tableView-&gt;setColumnHidden(5,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kindref="member">ui</ref>-&gt;tableView-&gt;setColumnWidth(2,<sp/>42);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kindref="member">ui</ref>-&gt;tableView-&gt;setColumnWidth(4,<sp/>42);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><ref refid="class_map_recap_1a70449a34a10a0770d0cbbe2f86040852" kindref="member">MapRecap::~MapRecap</ref>(){</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="class_map_recap_1aa04121192955caa5b209f5895f06567c" kindref="member">ui</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Since<sp/>c++/JS<sp/>bridges<sp/>are<sp/>broken<sp/>when<sp/>the<sp/>JS<sp/>page<sp/>refreshes<sp/>this<sp/>slot</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>is<sp/>used<sp/>to<sp/>rebruild<sp/>the<sp/>bridge<sp/>each<sp/>time<sp/>when<sp/>triggered<sp/>by<sp/>a</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>javaScriptWindowObjectCleared<sp/>signal<sp/>from<sp/>the<sp/>page<sp/>frame.<sp/>Function</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>added<sp/>by<sp/>Jordan<sp/>Dickson<sp/>Feb<sp/>21st<sp/>2015.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_recap_1a657156592368cb2c3707510f26142af1" kindref="member">MapRecap::addClickListener</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;listenerAdded!&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Creates<sp/>the<sp/>bridge<sp/>called<sp/>cbridge<sp/>between<sp/>the<sp/>java<sp/>script<sp/>object<sp/>and<sp/>this<sp/>class.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_recap_1aa04121192955caa5b209f5895f06567c" kindref="member">ui</ref>-&gt;webView-&gt;page()-&gt;mainFrame()-&gt;addToJavaScriptWindowObject(</highlight><highlight class="stringliteral">&quot;cbridge&quot;</highlight><highlight class="normal">,</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_recap_1a541fb1b8f7198776876a5c4382c8a24b" kindref="member">MapRecap::on_backButton_clicked</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;done(0);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Sends<sp/>a<sp/>request<sp/>for<sp/>the<sp/>map<sp/>to<sp/>clear<sp/>itself,<sp/>causing<sp/>the<sp/>JavaScript<sp/>page</highlight></codeline>
+<codeline lineno="54"><highlight class="comment">to<sp/>reload<sp/>itself.<sp/>This<sp/>function<sp/>then<sp/>cycles<sp/>through<sp/>each<sp/>entry<sp/>on<sp/>the<sp/>table</highlight></codeline>
+<codeline lineno="55"><highlight class="comment">and<sp/>enters<sp/>the<sp/>coordinates<sp/>on<sp/>the<sp/>map<sp/>one<sp/>by<sp/>one<sp/>in<sp/>order.<sp/>Function<sp/>added<sp/>by</highlight></codeline>
+<codeline lineno="56"><highlight class="comment">Jordan<sp/>Dickson<sp/>Feb<sp/>14th<sp/>2015.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">//Sends<sp/>clearMap<sp/>request.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_recap_1a6fbdfd9a06e6e08b961298197eca389e" kindref="member">MapRecap::updateMap</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_recap_1aa04121192955caa5b209f5895f06567c" kindref="member">ui</ref>-&gt;webView-&gt;page()-&gt;mainFrame()-&gt;evaluateJavaScript(</highlight><highlight class="stringliteral">&quot;clearMap()&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_recap_1a56a47357e83cd6a8d451cd561142259e" kindref="member">drawFlightPath</ref>(<ref refid="class_map_recap_1a3d44d0b8c9ac592b512b2b628c28ac0c" kindref="member">myMission</ref>.<ref refid="class_mission_1ae6034451524e6b87062fcb62c89ae458" kindref="member">getFlightPath</ref>());</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_recap_1ae345f351504eb2fefdefbc6858296679" kindref="member">MapRecap::closeWindow</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;close();</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>Function<sp/>called<sp/>by<sp/>the<sp/>JavaScript<sp/>to<sp/>add<sp/>the<sp/>map<sp/>data<sp/>from<sp/>mission<sp/>planning.</highlight></codeline>
+<codeline lineno="70"><highlight class="comment">This<sp/>is<sp/>necessary<sp/>because<sp/>data<sp/>cannot<sp/>be<sp/>added<sp/>until<sp/>the<sp/>html<sp/>file<sp/>is<sp/>completely</highlight></codeline>
+<codeline lineno="71"><highlight class="comment">loaded.<sp/>Jordan<sp/>2/21/2015<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_recap_1aeaf4d37a45ad4e4b7d9747473c900531" kindref="member">MapRecap::addNewMap</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;adding<sp/>new<sp/>map&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_recap_1a6fbdfd9a06e6e08b961298197eca389e" kindref="member">updateMap</ref>();</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_recap_1a56a47357e83cd6a8d451cd561142259e" kindref="member">MapRecap::drawFlightPath</ref>(<ref refid="class_flight_path" kindref="compound">FlightPath</ref><sp/>*flightPath)<sp/>{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_recap_1aa04121192955caa5b209f5895f06567c" kindref="member">ui</ref>-&gt;webView-&gt;page()-&gt;mainFrame()-&gt;evaluateJavaScript(</highlight><highlight class="stringliteral">&quot;clearMap()&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;Protocol::Waypoint&gt;<sp/>*points<sp/>=<sp/>flightPath-&gt;<ref refid="class_flight_path_1a3ffe0a2832e0e0e48e15b181ace42870" kindref="member">getOrderedWaypoints</ref>();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="struct_protocol_1_1_waypoint" kindref="compound">Protocol::Waypoint</ref><sp/>wp<sp/>:<sp/>*points){</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_recap_1aa63a3d553ae9b10f0eeddcf411474b5b" kindref="member">sendCoordToJSMap</ref>(wp.lat,wp.lon,0);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/>points;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_recap_1aa63a3d553ae9b10f0eeddcf411474b5b" kindref="member">MapRecap::sendCoordToJSMap</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lat,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lng,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mapID){</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_recap_1aa04121192955caa5b209f5895f06567c" kindref="member">ui</ref>-&gt;webView-&gt;page()-&gt;mainFrame()-&gt;evaluateJavaScript(</highlight><highlight class="stringliteral">&quot;plotPointOnMap(&quot;</highlight><highlight class="normal">+QString::number(lat)+</highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal">+QString::number(lng)+</highlight><highlight class="stringliteral">&quot;,&quot;</highlight><highlight class="normal">+QString::number(mapID)+</highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Passer<sp/>function<sp/>for<sp/>adding<sp/>entries<sp/>to<sp/>the<sp/>table<sp/>with<sp/>coordinates<sp/>recived</highlight></codeline>
+<codeline lineno="91"><highlight class="comment">from<sp/>the<sp/>JavaScript<sp/>file.<sp/>See<sp/>tablemodel.cpp<sp/>file<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline lineno="92"><highlight class="comment">Added<sp/>by<sp/>Jordan<sp/>Dickson<sp/>Feb<sp/>14th<sp/>2015.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_recap_1a1c98beb9687a394d68e41fd39580edfe" kindref="member">MapRecap::addPointToTable</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lat,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lng)<sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_recap_1a0b19d2f81bdec02ee0a34c68ca6d8c1b" kindref="member">model</ref>-&gt;<ref refid="class_table_model_1a3bc1eb333f87d13d9bb0fb2b4f7c744a" kindref="member">insertRow</ref>(lng,lat);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*<sp/>Return<sp/>a<sp/>pointer<sp/>to<sp/>the<sp/>QWidget<sp/>object<sp/>of<sp/>the<sp/>tab<sp/>at<sp/>the<sp/>index<sp/>given<sp/>by<sp/>the<sp/>tabIndex<sp/>parameter.</highlight></codeline>
+<codeline lineno="99"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal">QWidget<sp/>*<sp/><ref refid="class_map_recap_1a44427cdc30c5bbf4ceffd044052b626f" kindref="member">MapRecap::getTab</ref>(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tabIndex<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_map_recap_1aa04121192955caa5b209f5895f06567c" kindref="member">ui</ref>-&gt;tabWidget-&gt;widget(<sp/>tabIndex<sp/>);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">//TODO<sp/>For<sp/>some<sp/>reason,<sp/>this<sp/>function<sp/>doesn&apos;t<sp/>work<sp/>-<sp/>Roman<sp/>Parise</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal">QPushButton<sp/>*<sp/><ref refid="class_map_recap_1a78f083152cc33bd8d5750b6dfb213bff" kindref="member">MapRecap::getBackToPlanningButton</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>this-&gt;<ref refid="class_map_recap_1a6f7fd935b7041d9b358a6ecdd96906f2" kindref="member">backToPlanningButton</ref><sp/>==<sp/>NULL<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qDebug()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;BACK<sp/>TO<sp/>PLANNING<sp/>BUTTON<sp/>IS<sp/>BEING<sp/>CREATED!!!&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_map_recap_1a6f7fd935b7041d9b358a6ecdd96906f2" kindref="member">backToPlanningButton</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QPushButton(<sp/>QString(<sp/></highlight><highlight class="stringliteral">&quot;Back<sp/>to<sp/>Planning&quot;</highlight><highlight class="normal"><sp/>)<sp/>);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Have<sp/>the<sp/>backToPlanningButton<sp/>take<sp/>on<sp/>the<sp/>default<sp/>button<sp/>style<sp/>sheet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//TODO<sp/>Implement<sp/>a<sp/>default<sp/>QPushButton<sp/>stylesheet<sp/>in<sp/>this<sp/>class<sp/>and<sp/>force<sp/>all<sp/>buttons</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//in<sp/>this<sp/>UI<sp/>to<sp/>conform<sp/>to<sp/>it.<sp/>Embrace<sp/>conformity...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//this-&gt;backToPlanningButton-&gt;setStyleSheet(<sp/>this-&gt;ui-&gt;backButton-&gt;styleSheet()<sp/>);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Do<sp/>nothing.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="class_map_recap_1a6f7fd935b7041d9b358a6ecdd96906f2" kindref="member">backToPlanningButton</ref><sp/>;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_recap_1a7211ca6ea807c0bd769ea85c3b6ed10e" kindref="member">MapRecap::setBackToPlanningButton</ref>(<sp/>QPushButton<sp/>*<sp/><ref refid="class_main_m_d_i_display_1a76eac289ae5734e636b970277548f01c" kindref="member">backToPlanningButton</ref><sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<sp/>backToPlanningButton<sp/>!=<sp/>NULL<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;backToPlanningButton<sp/>=<sp/><ref refid="class_map_recap_1a6f7fd935b7041d9b358a6ecdd96906f2" kindref="member">backToPlanningButton</ref><sp/>;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Do<sp/>nothing.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/maprecap.cpp"/>
+  </compounddef>
+</doxygen>

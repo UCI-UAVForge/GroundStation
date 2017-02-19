@@ -1,0 +1,1127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_q_c_p_layout_element" kind="class" language="C++" prot="public">
+    <compoundname>QCPLayoutElement</compoundname>
+    <basecompoundref refid="class_q_c_p_layerable" prot="public" virt="non-virtual">QCPLayerable</basecompoundref>
+    <derivedcompoundref refid="class_q_c_p_abstract_legend_item" prot="public" virt="non-virtual">QCPAbstractLegendItem</derivedcompoundref>
+    <derivedcompoundref refid="class_q_c_p_axis_rect" prot="public" virt="non-virtual">QCPAxisRect</derivedcompoundref>
+    <derivedcompoundref refid="class_q_c_p_color_scale" prot="public" virt="non-virtual">QCPColorScale</derivedcompoundref>
+    <derivedcompoundref refid="class_q_c_p_layout" prot="public" virt="non-virtual">QCPLayout</derivedcompoundref>
+    <derivedcompoundref refid="class_q_c_p_plot_title" prot="public" virt="non-virtual">QCPPlotTitle</derivedcompoundref>
+    <includes refid="qcustomplot_8h" local="no">qcustomplot.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374d" prot="public" static="no">
+        <name>UpdatePhase</name>
+        <enumvalue id="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374dad6119882eba136357c2f627992e527d3" prot="public">
+          <name>upPreparation</name>
+          <briefdescription>
+<para>Phase used for any type of preparation that needs to be done before margin calculation and layout. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676" prot="public">
+          <name>upMargins</name>
+          <briefdescription>
+<para>Phase in which the margins are calculated and set. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045" prot="public">
+          <name>upLayout</name>
+          <briefdescription>
+<para>Final phase in which the layout system places the rects of the elements. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Defines the phases of the update process, that happens just before a replot. At each phase, <ref refid="class_q_c_p_layout_element_1a929c2ec62e0e0e1d8418eaa802e2af9b" kindref="member">update</ref> is called with the according UpdatePhase value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="646" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="646" bodyend="649"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_q_c_p_layout_element_1ae7c75c25549608bd688bdb65d4c38066" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_layout" kindref="compound">QCPLayout</ref> *</type>
+        <definition>QCPLayout* QCPLayoutElement::mParentLayout</definition>
+        <argsstring></argsstring>
+        <name>mParentLayout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="689" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="689" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_layout_element_1affef747c81632de33f08483b7fd10d01" prot="protected" static="no" mutable="no">
+        <type>QSize</type>
+        <definition>QSize QCPLayoutElement::mMinimumSize</definition>
+        <argsstring></argsstring>
+        <name>mMinimumSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="690" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="690" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_layout_element_1a64a387973fd4addac842028c89088998" prot="protected" static="no" mutable="no">
+        <type>QSize</type>
+        <definition>QSize QCPLayoutElement::mMaximumSize</definition>
+        <argsstring></argsstring>
+        <name>mMaximumSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="690" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="690" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_layout_element_1ad8896f05550389f7b9e92c9e6cdf6e01" prot="protected" static="no" mutable="no">
+        <type>QRect</type>
+        <definition>QRect QCPLayoutElement::mRect</definition>
+        <argsstring></argsstring>
+        <name>mRect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="691" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="691" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_layout_element_1a07bb4973379e75cb0fa5b032c1d24afd" prot="protected" static="no" mutable="no">
+        <type>QRect</type>
+        <definition>QRect QCPLayoutElement::mOuterRect</definition>
+        <argsstring></argsstring>
+        <name>mOuterRect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="691" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="691" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_layout_element_1ac2a32b99ee527ca5dfff9da03628fe94" prot="protected" static="no" mutable="no">
+        <type>QMargins</type>
+        <definition>QMargins QCPLayoutElement::mMargins</definition>
+        <argsstring></argsstring>
+        <name>mMargins</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="692" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="692" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_layout_element_1a5ba71f25d1af4bb092b28df618538e63" prot="protected" static="no" mutable="no">
+        <type>QMargins</type>
+        <definition>QMargins QCPLayoutElement::mMinimumMargins</definition>
+        <argsstring></argsstring>
+        <name>mMinimumMargins</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="692" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="692" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_layout_element_1af61c70354d1275778d68206b2a1b2d36" prot="protected" static="no" mutable="no">
+        <type>QCP::MarginSides</type>
+        <definition>QCP::MarginSides QCPLayoutElement::mAutoMargins</definition>
+        <argsstring></argsstring>
+        <name>mAutoMargins</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="693" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="693" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_layout_element_1aeafbbc1130e02eee663c5326761fc963" prot="protected" static="no" mutable="no">
+        <type>QHash&lt; <ref refid="namespace_q_c_p_1a7e487e3e2ccb62ab7771065bab7cae54" kindref="member">QCP::MarginSide</ref>, <ref refid="class_q_c_p_margin_group" kindref="compound">QCPMarginGroup</ref> * &gt;</type>
+        <definition>QHash&lt;QCP::MarginSide, QCPMarginGroup*&gt; QCPLayoutElement::mMarginGroups</definition>
+        <argsstring></argsstring>
+        <name>mMarginGroups</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="694" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="694" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_q_c_p_layout_element_1a1cdf9df76adcfae45261690aa0ca2198" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class QCustomPlot</definition>
+        <argsstring></argsstring>
+        <name>QCustomPlot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="713" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="713" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_q_c_p_layout_element_1a588aac0a0d721f6c5f10126d8596a20f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class QCPLayout</definition>
+        <argsstring></argsstring>
+        <name>QCPLayout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="714" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="714" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_q_c_p_layout_element_1ad077a686e85ab6fa03dcb2fd37fc499a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class QCPMarginGroup</definition>
+        <argsstring></argsstring>
+        <name>QCPMarginGroup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="715" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="715" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a8947f0ada17e672aaba3d424cbbb67e3" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPLayoutElement::QCPLayoutElement</definition>
+        <argsstring>(QCustomPlot *parentPlot=0)</argsstring>
+        <name>QCPLayoutElement</name>
+        <param>
+          <type><ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> *</type>
+          <declname>parentPlot</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an instance of <ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> and sets default values. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="652" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="1744" bodyend="1755"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a0dc52343920011b3e72d61fc94ed3400" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>QCPLayoutElement::~QCPLayoutElement</definition>
+        <argsstring>()</argsstring>
+        <name>~QCPLayoutElement</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="653" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="1757" bodyend="1763"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a6235f5384db871fc6e3387a1bc558b0d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_layout" kindref="compound">QCPLayout</ref> *</type>
+        <definition>QCPLayout * QCPLayoutElement::layout</definition>
+        <argsstring>() const </argsstring>
+        <name>layout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the parent layout of this layout element. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="656" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="656" bodyend="656"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QRect</type>
+        <definition>QRect QCPLayoutElement::rect</definition>
+        <argsstring>() const </argsstring>
+        <name>rect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the inner rect of this layout element. The inner rect is the outer rect (<ref refid="class_q_c_p_layout_element_1a38975ea13e36de8e53391ce41d94bc0f" kindref="member">setOuterRect</ref>) shrinked by the margins (<ref refid="class_q_c_p_layout_element_1a8f450b1f3f992ad576fce2c63d8b79cf" kindref="member">setMargins</ref>, <ref refid="class_q_c_p_layout_element_1accfda49994e3e6d51ed14504abf9d27d" kindref="member">setAutoMargins</ref>).</para><para>In some cases, the area between outer and inner rect is left blank. In other cases the margin area is used to display peripheral graphics while the main content is in the inner rect. This is where automatic margin calculation becomes interesting because it allows the layout element to adapt the margins to the peripheral graphics it wants to draw. For example, <ref refid="class_q_c_p_axis_rect" kindref="compound">QCPAxisRect</ref> draws the axis labels and tick labels in the margin area, thus needs to adjust the margins (if <ref refid="class_q_c_p_layout_element_1accfda49994e3e6d51ed14504abf9d27d" kindref="member">setAutoMargins</ref> is enabled) according to the space required by the labels of the axes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="657" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="657" bodyend="657"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a60bbddee2d1230c2414bd776f44d17b8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QRect</type>
+        <definition>QRect QCPLayoutElement::outerRect</definition>
+        <argsstring>() const </argsstring>
+        <name>outerRect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="658" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="658" bodyend="658"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a85ff977dfcced84eef32d9f819ec9543" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QMargins</type>
+        <definition>QMargins QCPLayoutElement::margins</definition>
+        <argsstring>() const </argsstring>
+        <name>margins</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="659" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="659" bodyend="659"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a60ec7f377c26726174d536bffb632002" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QMargins</type>
+        <definition>QMargins QCPLayoutElement::minimumMargins</definition>
+        <argsstring>() const </argsstring>
+        <name>minimumMargins</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="660" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="660" bodyend="660"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a2f499b1179b3126e22d0d7508124ccb3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QCP::MarginSides</type>
+        <definition>QCP::MarginSides QCPLayoutElement::autoMargins</definition>
+        <argsstring>() const </argsstring>
+        <name>autoMargins</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="661" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="661" bodyend="661"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1ae71f9230171d2d898e21dc461fc3df03" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QSize</type>
+        <definition>QSize QCPLayoutElement::minimumSize</definition>
+        <argsstring>() const </argsstring>
+        <name>minimumSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="662" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="662" bodyend="662"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a1fc85c79e15c2ab8051eccd455fccc4a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QSize</type>
+        <definition>QSize QCPLayoutElement::maximumSize</definition>
+        <argsstring>() const </argsstring>
+        <name>maximumSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="663" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="663" bodyend="663"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a22cb1bb62c452fd802e43ca2524660db" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_margin_group" kindref="compound">QCPMarginGroup</ref> *</type>
+        <definition>QCPMarginGroup* QCPLayoutElement::marginGroup</definition>
+        <argsstring>(QCP::MarginSide side) const </argsstring>
+        <name>marginGroup</name>
+        <param>
+          <type><ref refid="namespace_q_c_p_1a7e487e3e2ccb62ab7771065bab7cae54" kindref="member">QCP::MarginSide</ref></type>
+          <declname>side</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="664" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="664" bodyend="664"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1ac43921c997570389c14a1671bc3ea499" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QHash&lt; <ref refid="namespace_q_c_p_1a7e487e3e2ccb62ab7771065bab7cae54" kindref="member">QCP::MarginSide</ref>, <ref refid="class_q_c_p_margin_group" kindref="compound">QCPMarginGroup</ref> * &gt;</type>
+        <definition>QHash&lt;QCP::MarginSide, QCPMarginGroup*&gt; QCPLayoutElement::marginGroups</definition>
+        <argsstring>() const </argsstring>
+        <name>marginGroups</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="665" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="665" bodyend="665"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a38975ea13e36de8e53391ce41d94bc0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutElement::setOuterRect</definition>
+        <argsstring>(const QRect &amp;rect)</argsstring>
+        <name>setOuterRect</name>
+        <param>
+          <type>const QRect &amp;</type>
+          <declname>rect</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the outer rect of this layout element. If the layout element is inside a layout, the layout sets the position and size of this layout element using this function.</para><para>Calling this function externally has no effect, since the layout will overwrite any changes to the outer rect upon the next replot.</para><para>The layout element will adapt its inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref> by applying the margins inward to the outer rect.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="668" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="1776" bodyend="1783"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a8f450b1f3f992ad576fce2c63d8b79cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutElement::setMargins</definition>
+        <argsstring>(const QMargins &amp;margins)</argsstring>
+        <name>setMargins</name>
+        <param>
+          <type>const QMargins &amp;</type>
+          <declname>margins</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the margins of this layout element. If <ref refid="class_q_c_p_layout_element_1accfda49994e3e6d51ed14504abf9d27d" kindref="member">setAutoMargins</ref> is disabled for some or all sides, this function is used to manually set the margin on those sides. Sides that are still set to be handled automatically are ignored and may have any value in <emphasis>margins</emphasis>.</para><para>The margin is the distance between the outer rect (controlled by the parent layout via <ref refid="class_q_c_p_layout_element_1a38975ea13e36de8e53391ce41d94bc0f" kindref="member">setOuterRect</ref>) and the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref> (which usually contains the main content of this layout element).</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_element_1accfda49994e3e6d51ed14504abf9d27d" kindref="member">setAutoMargins</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="669" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="1796" bodyend="1803"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a0a8a17abc16b7923159fcc7608f94673" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutElement::setMinimumMargins</definition>
+        <argsstring>(const QMargins &amp;margins)</argsstring>
+        <name>setMinimumMargins</name>
+        <param>
+          <type>const QMargins &amp;</type>
+          <declname>margins</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>If <ref refid="class_q_c_p_layout_element_1accfda49994e3e6d51ed14504abf9d27d" kindref="member">setAutoMargins</ref> is enabled on some or all margins, this function is used to provide minimum values for those margins.</para><para>The minimum values are not enforced on margin sides that were set to be under manual control via <ref refid="class_q_c_p_layout_element_1accfda49994e3e6d51ed14504abf9d27d" kindref="member">setAutoMargins</ref>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_element_1accfda49994e3e6d51ed14504abf9d27d" kindref="member">setAutoMargins</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="670" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="1814" bodyend="1820"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1accfda49994e3e6d51ed14504abf9d27d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutElement::setAutoMargins</definition>
+        <argsstring>(QCP::MarginSides sides)</argsstring>
+        <name>setAutoMargins</name>
+        <param>
+          <type>QCP::MarginSides</type>
+          <declname>sides</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets on which sides the margin shall be calculated automatically. If a side is calculated automatically, a minimum margin value may be provided with <ref refid="class_q_c_p_layout_element_1a0a8a17abc16b7923159fcc7608f94673" kindref="member">setMinimumMargins</ref>. If a side is set to be controlled manually, the value may be specified with <ref refid="class_q_c_p_layout_element_1a8f450b1f3f992ad576fce2c63d8b79cf" kindref="member">setMargins</ref>.</para><para>Margin sides that are under automatic control may participate in a <ref refid="class_q_c_p_margin_group" kindref="compound">QCPMarginGroup</ref> (see <ref refid="class_q_c_p_layout_element_1a516e56f76b6bc100e8e71d329866847d" kindref="member">setMarginGroup</ref>), to synchronize (align) it with other layout elements in the plot.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_element_1a0a8a17abc16b7923159fcc7608f94673" kindref="member">setMinimumMargins</ref>, <ref refid="class_q_c_p_layout_element_1a8f450b1f3f992ad576fce2c63d8b79cf" kindref="member">setMargins</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="671" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="1832" bodyend="1835"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a5dd29a3c8bc88440c97c06b67be7886b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutElement::setMinimumSize</definition>
+        <argsstring>(const QSize &amp;size)</argsstring>
+        <name>setMinimumSize</name>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the minimum size for the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref> of this layout element. A parent layout tries to respect the <emphasis>size</emphasis> here by changing row/column sizes in the layout accordingly.</para><para>If the parent layout size is not sufficient to satisfy all minimum size constraints of its child layout elements, the layout may set a size that is actually smaller than <emphasis>size</emphasis>. <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> propagates the layout&apos;s size constraints to the outside by setting its own minimum QWidget size accordingly, so violations of <emphasis>size</emphasis> should be exceptions. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="672" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="1846" bodyend="1854"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a8e0447614a0bf92de9a7304588c6b96e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutElement::setMinimumSize</definition>
+        <argsstring>(int width, int height)</argsstring>
+        <name>setMinimumSize</name>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>Sets the minimum size for the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref> of this layout element. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="673" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="1860" bodyend="1863"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a74eb5280a737ab44833d506db65efd95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutElement::setMaximumSize</definition>
+        <argsstring>(const QSize &amp;size)</argsstring>
+        <name>setMaximumSize</name>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the maximum size for the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref> of this layout element. A parent layout tries to respect the <emphasis>size</emphasis> here by changing row/column sizes in the layout accordingly. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="674" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="1869" bodyend="1877"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a03e0e9c48f230217c529b0819f832d84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutElement::setMaximumSize</definition>
+        <argsstring>(int width, int height)</argsstring>
+        <name>setMaximumSize</name>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>Sets the maximum size for the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref> of this layout element. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="675" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="1883" bodyend="1886"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a516e56f76b6bc100e8e71d329866847d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutElement::setMarginGroup</definition>
+        <argsstring>(QCP::MarginSides sides, QCPMarginGroup *group)</argsstring>
+        <name>setMarginGroup</name>
+        <param>
+          <type>QCP::MarginSides</type>
+          <declname>sides</declname>
+        </param>
+        <param>
+          <type><ref refid="class_q_c_p_margin_group" kindref="compound">QCPMarginGroup</ref> *</type>
+          <declname>group</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the margin <emphasis>group</emphasis> of the specified margin <emphasis>sides</emphasis>.</para><para>Margin groups allow synchronizing specified margins across layout elements, see the documentation of <ref refid="class_q_c_p_margin_group" kindref="compound">QCPMarginGroup</ref>.</para><para>To unset the margin group of <emphasis>sides</emphasis>, set <emphasis>group</emphasis> to 0.</para><para>Note that margin groups only work for margin sides that are set to automatic (<ref refid="class_q_c_p_layout_element_1accfda49994e3e6d51ed14504abf9d27d" kindref="member">setAutoMargins</ref>). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="676" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="1899" bodyend="1926"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a929c2ec62e0e0e1d8418eaa802e2af9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QCPLayoutElement::update</definition>
+        <argsstring>(UpdatePhase phase)</argsstring>
+        <name>update</name>
+        <reimplementedby refid="class_q_c_p_layout_1a34ab477e820537ded7bade4399c482fd">update</reimplementedby>
+        <reimplementedby refid="class_q_c_p_axis_rect_1a255080a017df9083a60a321ef2ba9ed8">update</reimplementedby>
+        <reimplementedby refid="class_q_c_p_color_scale_1ab8f6991ac88243fc582b44b183670334">update</reimplementedby>
+        <param>
+          <type><ref refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374d" kindref="member">UpdatePhase</ref></type>
+          <declname>phase</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Updates the layout element and sub-elements. This function is automatically called before every replot by the parent layout element. It is called multiple times, once for every <ref refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374d" kindref="member">UpdatePhase</ref>. The phases are run through in the order of the enum values. For details about what happens at the different phases, see the documentation of <ref refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374d" kindref="member">UpdatePhase</ref>.</para><para>Layout elements that have child elements should call the <ref refid="class_q_c_p_layout_element_1a929c2ec62e0e0e1d8418eaa802e2af9b" kindref="member">update</ref> method of their child elements, and pass the current <emphasis>phase</emphasis> unchanged.</para><para>The default implementation executes the automatic margin mechanism in the <ref refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676" kindref="member">upMargins</ref> phase. Subclasses should make sure to call the base class implementation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="679" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="1940" bodyend="1964"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1aebe14fb71f858c0f98caf8d342a9864a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QSize</type>
+        <definition>QSize QCPLayoutElement::minimumSizeHint</definition>
+        <argsstring>() const </argsstring>
+        <name>minimumSizeHint</name>
+        <reimplementedby refid="class_q_c_p_layout_grid_1a67aae235fb4dd9a479aafe07462ef9ee">minimumSizeHint</reimplementedby>
+        <reimplementedby refid="class_q_c_p_plottable_legend_item_1a76bad654ebc8e870392f488419a6a483">minimumSizeHint</reimplementedby>
+        <reimplementedby refid="class_q_c_p_plot_title_1a695e6037e72a1e129387e7e4a980faea">minimumSizeHint</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the minimum size this layout element (the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref>) may be compressed to.</para><para>if a minimum size (<ref refid="class_q_c_p_layout_element_1a5dd29a3c8bc88440c97c06b67be7886b" kindref="member">setMinimumSize</ref>) was not set manually, parent layouts consult this function to determine the minimum allowed size of this layout element. (A manual minimum size is considered set if it is non-zero.) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="680" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="1973" bodyend="1976"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1adbd3a00fec44c977150c6be7329eb801" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QSize</type>
+        <definition>QSize QCPLayoutElement::maximumSizeHint</definition>
+        <argsstring>() const </argsstring>
+        <name>maximumSizeHint</name>
+        <reimplementedby refid="class_q_c_p_layout_grid_1a1ec4bf5914900a51829a7919f74aa58c">maximumSizeHint</reimplementedby>
+        <reimplementedby refid="class_q_c_p_plot_title_1a2afaf11a379038e5ca58040a0eb0ae4c">maximumSizeHint</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the maximum size this layout element (the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref>) may be expanded to.</para><para>if a maximum size (<ref refid="class_q_c_p_layout_element_1a74eb5280a737ab44833d506db65efd95" kindref="member">setMaximumSize</ref>) was not set manually, parent layouts consult this function to determine the maximum allowed size of this layout element. (A manual maximum size is considered set if it is smaller than Qt&apos;s QWIDGETSIZE_MAX.) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="681" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="1985" bodyend="1988"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a311d60d78e62ef8eaaedb1b6ceb9e788" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QList&lt; <ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> * &gt;</type>
+        <definition>QList&lt; QCPLayoutElement * &gt; QCPLayoutElement::elements</definition>
+        <argsstring>(bool recursive) const </argsstring>
+        <name>elements</name>
+        <reimplementedby refid="class_q_c_p_layout_1a51fe2675b53e829130b229bc1f7b0f99">elements</reimplementedby>
+        <reimplementedby refid="class_q_c_p_layout_grid_1ae9e24e01552f6667b6d05b12a54a4caa">elements</reimplementedby>
+        <reimplementedby refid="class_q_c_p_axis_rect_1a2bda6bf2b5b5797f92583cecd01c8949">elements</reimplementedby>
+        <param>
+          <type>bool</type>
+          <declname>recursive</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a list of all child elements in this layout element. If <emphasis>recursive</emphasis> is true, all sub-child elements are included in the list, too.</para><para><simplesect kind="warning"><para>There may be entries with value 0 in the returned list. (For example, <ref refid="class_q_c_p_layout_grid" kindref="compound">QCPLayoutGrid</ref> may have empty cells which yield 0 at the respective index.) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="682" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="1997" bodyend="2001"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a9fcf5d0ea19f2c23b2b528bce2c6f095" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double QCPLayoutElement::selectTest</definition>
+        <argsstring>(const QPointF &amp;pos, bool onlySelectable, QVariant *details=0) const </argsstring>
+        <name>selectTest</name>
+        <reimplements refid="class_q_c_p_layerable_1a4001c4d0dfec55598efa4d531f2179a9">selectTest</reimplements>
+        <reimplementedby refid="class_q_c_p_layout_inset_1ab5a2f2b88c05e369fd7da9583d17aa3a">selectTest</reimplementedby>
+        <reimplementedby refid="class_q_c_p_abstract_legend_item_1ad0480d5cad34627a294a2921caa4a62f">selectTest</reimplementedby>
+        <reimplementedby refid="class_q_c_p_legend_1aa3892801051bc7b985e003576df844db">selectTest</reimplementedby>
+        <reimplementedby refid="class_q_c_p_plot_title_1a5b7ae716be9134a48f4e378feb0e6699">selectTest</reimplementedby>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>onlySelectable</declname>
+        </param>
+        <param>
+          <type>QVariant *</type>
+          <declname>details</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Layout elements are sensitive to events inside their outer rect. If <emphasis>pos</emphasis> is within the outer rect, this method returns a value corresponding to 0.99 times the parent plot&apos;s selection tolerance. However, layout elements are not selectable by default. So if <emphasis>onlySelectable</emphasis> is true, -1.0 is returned.</para><para>See <ref refid="class_q_c_p_layerable_1a4001c4d0dfec55598efa4d531f2179a9" kindref="member">QCPLayerable::selectTest</ref> for a general explanation of this virtual method.</para><para><ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> subclasses may reimplement this method to provide more specific selection test behaviour. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="685" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="2014" bodyend="2032"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a005c9f0fe84bc1591a2cf2c46fd477b4" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int QCPLayoutElement::calculateAutoMargin</definition>
+        <argsstring>(QCP::MarginSide side)</argsstring>
+        <name>calculateAutoMargin</name>
+        <reimplementedby refid="class_q_c_p_axis_rect_1ae79f18302e6507586aa8c032a5f9ed1c">calculateAutoMargin</reimplementedby>
+        <param>
+          <type><ref refid="namespace_q_c_p_1a7e487e3e2ccb62ab7771065bab7cae54" kindref="member">QCP::MarginSide</ref></type>
+          <declname>side</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="697" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="2057" bodyend="2060"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a2d82ea21fe0ee628f177bd824bc51a71" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void QCPLayoutElement::mousePressEvent</definition>
+        <argsstring>(QMouseEvent *event)</argsstring>
+        <name>mousePressEvent</name>
+        <reimplementedby refid="class_q_c_p_axis_rect_1a77501dbeccdac7256f7979b05077c04e">mousePressEvent</reimplementedby>
+        <reimplementedby refid="class_q_c_p_color_scale_1a5df6ad81b2ad045878d276c2d5be7120">mousePressEvent</reimplementedby>
+        <param>
+          <type>QMouseEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This event is called, if the mouse was pressed while being inside the outer rect of this layout element. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="699" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="699" bodyend="699"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a14f4acf58cdb8dd2c6c571479c4c4a40" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void QCPLayoutElement::mouseMoveEvent</definition>
+        <argsstring>(QMouseEvent *event)</argsstring>
+        <name>mouseMoveEvent</name>
+        <reimplementedby refid="class_q_c_p_axis_rect_1a4baf3d5dd69166788f6ceda0ea182c6e">mouseMoveEvent</reimplementedby>
+        <reimplementedby refid="class_q_c_p_color_scale_1a3aca469d531ce7b5882de73590aa0de6">mouseMoveEvent</reimplementedby>
+        <param>
+          <type>QMouseEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This event is called, if the mouse is moved inside the outer rect of this layout element. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="700" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="700" bodyend="700"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1ae526ac828cce1e5bb94eaa85776d7404" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void QCPLayoutElement::mouseReleaseEvent</definition>
+        <argsstring>(QMouseEvent *event)</argsstring>
+        <name>mouseReleaseEvent</name>
+        <reimplementedby refid="class_q_c_p_axis_rect_1adf6c99780cea55ab39459a6eaad3a94a">mouseReleaseEvent</reimplementedby>
+        <reimplementedby refid="class_q_c_p_color_scale_1a0916613d20901950fc6d00c6f99fe0a1">mouseReleaseEvent</reimplementedby>
+        <param>
+          <type>QMouseEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This event is called, if the mouse was previously pressed inside the outer rect of this layout element and is now released. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="701" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="701" bodyend="701"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1aa8fef6486cb6ceb7c82cbdd50bc32ee9" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void QCPLayoutElement::mouseDoubleClickEvent</definition>
+        <argsstring>(QMouseEvent *event)</argsstring>
+        <name>mouseDoubleClickEvent</name>
+        <param>
+          <type>QMouseEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This event is called, if the mouse is double-clicked inside the outer rect of this layout element. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="702" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="702" bodyend="702"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a300521d2fd18a893c1b85f6be11ce2bf" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void QCPLayoutElement::wheelEvent</definition>
+        <argsstring>(QWheelEvent *event)</argsstring>
+        <name>wheelEvent</name>
+        <reimplementedby refid="class_q_c_p_axis_rect_1a5acf41fc30aa68ea263246ecfad85c31">wheelEvent</reimplementedby>
+        <reimplementedby refid="class_q_c_p_color_scale_1ab398e14c01240f3dc855884fe9e1ee8c">wheelEvent</reimplementedby>
+        <param>
+          <type>QWheelEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This event is called, if the mouse wheel is scrolled while the cursor is inside the rect of this layout element. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="703" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="703" bodyend="703"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1ad6d2b4bb0291c2441b2e1ca3d5296df5" prot="protected" static="no" const="yes" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void QCPLayoutElement::applyDefaultAntialiasingHint</definition>
+        <argsstring>(QCPPainter *painter) const </argsstring>
+        <name>applyDefaultAntialiasingHint</name>
+        <reimplements refid="class_q_c_p_layerable_1afdf83ddc6a265cbf4c89fe99d3d93473">applyDefaultAntialiasingHint</reimplements>
+        <reimplementedby refid="class_q_c_p_axis_rect_1a9a6dd0763701cbc7d01f899bcbb3f9ca">applyDefaultAntialiasingHint</reimplementedby>
+        <reimplementedby refid="class_q_c_p_abstract_legend_item_1a71c3baeda42ba78d2cccd97e74110a5e">applyDefaultAntialiasingHint</reimplementedby>
+        <reimplementedby refid="class_q_c_p_legend_1a26307f532c3458b379663b7d517a5f47">applyDefaultAntialiasingHint</reimplementedby>
+        <reimplementedby refid="class_q_c_p_plot_title_1a0e2a491864bf8d8e8b159ef38e9d85bd">applyDefaultAntialiasingHint</reimplementedby>
+        <reimplementedby refid="class_q_c_p_color_scale_1a23d530c340c15d2fce6583e7120ee8bd">applyDefaultAntialiasingHint</reimplementedby>
+        <param>
+          <type><ref refid="class_q_c_p_painter" kindref="compound">QCPPainter</ref> *</type>
+          <declname>painter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="706" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="706" bodyend="706"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a547bcc1e6e2be5645ca781efe0834653" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void QCPLayoutElement::draw</definition>
+        <argsstring>(QCPPainter *painter)</argsstring>
+        <name>draw</name>
+        <reimplements refid="class_q_c_p_layerable_1aecf2f7087482d4b6a78cb2770e5ed12d">draw</reimplements>
+        <reimplementedby refid="class_q_c_p_axis_rect_1afb1bbbbda8345cd2710d92ee48440b53">draw</reimplementedby>
+        <reimplementedby refid="class_q_c_p_abstract_legend_item_1a97dedc084c672359710f16b31d046d1d">draw</reimplementedby>
+        <reimplementedby refid="class_q_c_p_plottable_legend_item_1a68a781c3de4f9959fdf82075052d43aa">draw</reimplementedby>
+        <reimplementedby refid="class_q_c_p_legend_1a4462151bf875ca85fa3815457c683fdc">draw</reimplementedby>
+        <reimplementedby refid="class_q_c_p_plot_title_1ae4f1f8d24489628dabb7256363b097d2">draw</reimplementedby>
+        <reimplementedby refid="class_q_c_p_color_scale_axis_rect_private_1adb67bfe9057a9dd9a85f548c274e6d98">draw</reimplementedby>
+        <param>
+          <type><ref refid="class_q_c_p_painter" kindref="compound">QCPPainter</ref> *</type>
+          <declname>painter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="707" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="707" bodyend="707"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_element_1a1478899e80e8244b411e96ec3b2e5ce2" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QCPLayoutElement::parentPlotInitialized</definition>
+        <argsstring>(QCustomPlot *parentPlot)</argsstring>
+        <name>parentPlotInitialized</name>
+        <reimplements refid="class_q_c_p_layerable_1ab20b7dbd8e0249ed61adb9622c427382">parentPlotInitialized</reimplements>
+        <reimplementedby refid="class_q_c_p_legend_1a4d552c63d82742d77fb7f177bae7b1ba">parentPlotInitialized</reimplementedby>
+        <param>
+          <type><ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> *</type>
+          <declname>parentPlot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="708" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="2039" bodyend="2046"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The abstract base class for all objects that form the layout system. </para>    </briefdescription>
+    <detaileddescription>
+<para>This is an abstract base class. As such, it can&apos;t be instantiated directly, rather use one of its subclasses.</para><para>A Layout element is a rectangular object which can be placed in layouts. It has an outer rect (<ref refid="class_q_c_p_layout_element_1a60bbddee2d1230c2414bd776f44d17b8" kindref="member">QCPLayoutElement::outerRect</ref>) and an inner rect (<ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">QCPLayoutElement::rect</ref>). The difference between outer and inner rect is called its margin. The margin can either be set to automatic or manual (<ref refid="class_q_c_p_layout_element_1accfda49994e3e6d51ed14504abf9d27d" kindref="member">setAutoMargins</ref>) on a per-side basis. If a side is set to manual, that margin can be set explicitly with <ref refid="class_q_c_p_layout_element_1a8f450b1f3f992ad576fce2c63d8b79cf" kindref="member">setMargins</ref> and will stay fixed at that value. If it&apos;s set to automatic, the layout element subclass will control the value itself (via <ref refid="class_q_c_p_layout_element_1a005c9f0fe84bc1591a2cf2c46fd477b4" kindref="member">calculateAutoMargin</ref>).</para><para>Layout elements can be placed in layouts (base class <ref refid="class_q_c_p_layout" kindref="compound">QCPLayout</ref>) like <ref refid="class_q_c_p_layout_grid" kindref="compound">QCPLayoutGrid</ref>. The top level layout is reachable via <ref refid="class_q_custom_plot_1afd280d4d621ae64a106543a545c508d7" kindref="member">QCustomPlot::plotLayout</ref>, and is a <ref refid="class_q_c_p_layout_grid" kindref="compound">QCPLayoutGrid</ref>. Since <ref refid="class_q_c_p_layout" kindref="compound">QCPLayout</ref> itself derives from <ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref>, layouts can be nested.</para><para>Thus in <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> one can divide layout elements into two categories: The ones that are invisible by themselves, because they don&apos;t draw anything. Their only purpose is to manage the position and size of other layout elements. This category of layout elements usually use <ref refid="class_q_c_p_layout" kindref="compound">QCPLayout</ref> as base class. Then there is the category of layout elements which actually draw something. For example, <ref refid="class_q_c_p_axis_rect" kindref="compound">QCPAxisRect</ref>, <ref refid="class_q_c_p_legend" kindref="compound">QCPLegend</ref> and <ref refid="class_q_c_p_plot_title" kindref="compound">QCPPlotTitle</ref> are of this category. This does not necessarily mean that the latter category can&apos;t have child layout elements. <ref refid="class_q_c_p_legend" kindref="compound">QCPLegend</ref> for instance, actually derives from <ref refid="class_q_c_p_layout_grid" kindref="compound">QCPLayoutGrid</ref> and the individual legend items are child layout elements in the grid layout. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="864">
+        <label>QCPColorScaleAxisRectPrivate</label>
+        <link refid="class_q_c_p_color_scale_axis_rect_private"/>
+        <childnode refid="863" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="869">
+        <label>QCPLayoutInset</label>
+        <link refid="class_q_c_p_layout_inset"/>
+        <childnode refid="866" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="858">
+        <label>QCPLayoutElement</label>
+        <link refid="class_q_c_p_layout_element"/>
+        <childnode refid="859" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="870">
+        <label>QCPPlotTitle</label>
+        <link refid="class_q_c_p_plot_title"/>
+        <childnode refid="858" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="860">
+        <label>QObject</label>
+      </node>
+      <node id="868">
+        <label>QCPLegend</label>
+        <link refid="class_q_c_p_legend"/>
+        <childnode refid="867" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="865">
+        <label>QCPColorScale</label>
+        <link refid="class_q_c_p_color_scale"/>
+        <childnode refid="858" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="861">
+        <label>QCPAbstractLegendItem</label>
+        <link refid="class_q_c_p_abstract_legend_item"/>
+        <childnode refid="858" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="862">
+        <label>QCPPlottableLegendItem</label>
+        <link refid="class_q_c_p_plottable_legend_item"/>
+        <childnode refid="861" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="866">
+        <label>QCPLayout</label>
+        <link refid="class_q_c_p_layout"/>
+        <childnode refid="858" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="867">
+        <label>QCPLayoutGrid</label>
+        <link refid="class_q_c_p_layout_grid"/>
+        <childnode refid="866" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="859">
+        <label>QCPLayerable</label>
+        <link refid="class_q_c_p_layerable"/>
+        <childnode refid="860" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="863">
+        <label>QCPAxisRect</label>
+        <link refid="class_q_c_p_axis_rect"/>
+        <childnode refid="858" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="885">
+        <label>QCPLayoutInset</label>
+        <link refid="class_q_c_p_layout_inset"/>
+        <childnode refid="878" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="871">
+        <label>QCPLayoutElement</label>
+        <link refid="class_q_c_p_layout_element"/>
+        <childnode refid="872" relation="public-inheritance">
+        </childnode>
+        <childnode refid="878" relation="usage">
+          <edgelabel>mParentLayout</edgelabel>
+        </childnode>
+      </node>
+      <node id="873">
+        <label>QObject</label>
+      </node>
+      <node id="880">
+        <label>QCPRange</label>
+        <link refid="class_q_c_p_range"/>
+      </node>
+      <node id="886">
+        <label>QCPLegend</label>
+        <link refid="class_q_c_p_legend"/>
+        <childnode refid="877" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="882">
+        <label>QCPLineEnding</label>
+        <link refid="class_q_c_p_line_ending"/>
+      </node>
+      <node id="878">
+        <label>QCPLayout</label>
+        <link refid="class_q_c_p_layout"/>
+        <childnode refid="871" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="883">
+        <label>QCPGrid</label>
+        <link refid="class_q_c_p_grid"/>
+        <childnode refid="872" relation="public-inheritance">
+        </childnode>
+        <childnode refid="879" relation="usage">
+          <edgelabel>mParentAxis</edgelabel>
+        </childnode>
+      </node>
+      <node id="881">
+        <label>QCPAxisPainterPrivate</label>
+        <link refid="class_q_c_p_axis_painter_private"/>
+        <childnode refid="882" relation="usage">
+          <edgelabel>lowerEnding</edgelabel>
+          <edgelabel>upperEnding</edgelabel>
+        </childnode>
+        <childnode refid="875" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="876">
+        <label>QWidget</label>
+      </node>
+      <node id="874">
+        <label>QCPLayer</label>
+        <link refid="class_q_c_p_layer"/>
+        <childnode refid="873" relation="public-inheritance">
+        </childnode>
+        <childnode refid="875" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="877">
+        <label>QCPLayoutGrid</label>
+        <link refid="class_q_c_p_layout_grid"/>
+        <childnode refid="878" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="872">
+        <label>QCPLayerable</label>
+        <link refid="class_q_c_p_layerable"/>
+        <childnode refid="873" relation="public-inheritance">
+        </childnode>
+        <childnode refid="874" relation="usage">
+          <edgelabel>mLayer</edgelabel>
+        </childnode>
+        <childnode refid="875" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="879">
+        <label>QCPAxis</label>
+        <link refid="class_q_c_p_axis"/>
+        <childnode refid="872" relation="public-inheritance">
+        </childnode>
+        <childnode refid="880" relation="usage">
+          <edgelabel>mRange</edgelabel>
+        </childnode>
+        <childnode refid="881" relation="usage">
+          <edgelabel>mAxisPainter</edgelabel>
+        </childnode>
+        <childnode refid="883" relation="usage">
+          <edgelabel>mGrid</edgelabel>
+        </childnode>
+        <childnode refid="884" relation="usage">
+          <edgelabel>mAxisRect</edgelabel>
+        </childnode>
+      </node>
+      <node id="884">
+        <label>QCPAxisRect</label>
+        <link refid="class_q_c_p_axis_rect"/>
+        <childnode refid="871" relation="public-inheritance">
+        </childnode>
+        <childnode refid="885" relation="usage">
+          <edgelabel>mInsetLayout</edgelabel>
+        </childnode>
+        <childnode refid="880" relation="usage">
+          <edgelabel>mDragStartVertRange</edgelabel>
+          <edgelabel>mDragStartHorzRange</edgelabel>
+        </childnode>
+      </node>
+      <node id="875">
+        <label>QCustomPlot</label>
+        <link refid="class_q_custom_plot"/>
+        <childnode refid="876" relation="public-inheritance">
+        </childnode>
+        <childnode refid="874" relation="usage">
+          <edgelabel>mCurrentLayer</edgelabel>
+        </childnode>
+        <childnode refid="877" relation="usage">
+          <edgelabel>mPlotLayout</edgelabel>
+        </childnode>
+        <childnode refid="879" relation="usage">
+          <edgelabel>yAxis2</edgelabel>
+          <edgelabel>xAxis2</edgelabel>
+          <edgelabel>xAxis</edgelabel>
+          <edgelabel>yAxis</edgelabel>
+        </childnode>
+        <childnode refid="886" relation="usage">
+          <edgelabel>legend</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="630" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="629" bodyend="716"/>
+    <listofallmembers>
+      <member refid="class_q_c_p_layerable_1aef5cb4aa899ed9dc9384fd614560291e" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>antialiased</name></member>
+      <member refid="class_q_c_p_layerable_1a62bd552d1a45aa9accb24b310542279e" prot="protected" virt="non-virtual"><scope>QCPLayoutElement</scope><name>applyAntialiasingHint</name></member>
+      <member refid="class_q_c_p_layout_element_1ad6d2b4bb0291c2441b2e1ca3d5296df5" prot="protected" virt="virtual"><scope>QCPLayoutElement</scope><name>applyDefaultAntialiasingHint</name></member>
+      <member refid="class_q_c_p_layout_element_1a2f499b1179b3126e22d0d7508124ccb3" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>autoMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a005c9f0fe84bc1591a2cf2c46fd477b4" prot="protected" virt="virtual"><scope>QCPLayoutElement</scope><name>calculateAutoMargin</name></member>
+      <member refid="class_q_c_p_layerable_1a07a8f746640c3704b09910df297afcba" prot="protected" virt="virtual"><scope>QCPLayoutElement</scope><name>clipRect</name></member>
+      <member refid="class_q_c_p_layerable_1ae546370644a5551c76af739afc008bee" prot="protected" virt="virtual"><scope>QCPLayoutElement</scope><name>deselectEvent</name></member>
+      <member refid="class_q_c_p_layout_element_1a547bcc1e6e2be5645ca781efe0834653" prot="protected" virt="virtual"><scope>QCPLayoutElement</scope><name>draw</name></member>
+      <member refid="class_q_c_p_layout_element_1a311d60d78e62ef8eaaedb1b6ceb9e788" prot="public" virt="virtual"><scope>QCPLayoutElement</scope><name>elements</name></member>
+      <member refid="class_q_c_p_layerable_1a8cbe5a0c9a5674249982f5ca5f8e02bc" prot="protected" virt="non-virtual"><scope>QCPLayoutElement</scope><name>initializeParentPlot</name></member>
+      <member refid="class_q_c_p_layerable_1aea67e8c19145e70d68c286a36f6b8300" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>layer</name></member>
+      <member refid="class_q_c_p_layerable_1abbf8657cedea73ac1c3499b521c90eba" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>layerChanged</name></member>
+      <member refid="class_q_c_p_layout_element_1a6235f5384db871fc6e3387a1bc558b0d" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>layout</name></member>
+      <member refid="class_q_c_p_layerable_1a3ab45a4c76a3333ce42eb217a81733ec" prot="protected" virt="non-virtual"><scope>QCPLayoutElement</scope><name>mAntialiased</name></member>
+      <member refid="class_q_c_p_layout_element_1a22cb1bb62c452fd802e43ca2524660db" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>marginGroup</name></member>
+      <member refid="class_q_c_p_layout_element_1ac43921c997570389c14a1671bc3ea499" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>marginGroups</name></member>
+      <member refid="class_q_c_p_layout_element_1a85ff977dfcced84eef32d9f819ec9543" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>margins</name></member>
+      <member refid="class_q_c_p_layout_element_1af61c70354d1275778d68206b2a1b2d36" prot="protected" virt="non-virtual"><scope>QCPLayoutElement</scope><name>mAutoMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a1fc85c79e15c2ab8051eccd455fccc4a" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>maximumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1adbd3a00fec44c977150c6be7329eb801" prot="public" virt="virtual"><scope>QCPLayoutElement</scope><name>maximumSizeHint</name></member>
+      <member refid="class_q_c_p_layout_element_1a60ec7f377c26726174d536bffb632002" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>minimumMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1ae71f9230171d2d898e21dc461fc3df03" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>minimumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1aebe14fb71f858c0f98caf8d342a9864a" prot="public" virt="virtual"><scope>QCPLayoutElement</scope><name>minimumSizeHint</name></member>
+      <member refid="class_q_c_p_layerable_1aa38ec5891aff0f50b36fd63e9372a0cd" prot="protected" virt="non-virtual"><scope>QCPLayoutElement</scope><name>mLayer</name></member>
+      <member refid="class_q_c_p_layout_element_1aeafbbc1130e02eee663c5326761fc963" prot="protected" virt="non-virtual"><scope>QCPLayoutElement</scope><name>mMarginGroups</name></member>
+      <member refid="class_q_c_p_layout_element_1ac2a32b99ee527ca5dfff9da03628fe94" prot="protected" virt="non-virtual"><scope>QCPLayoutElement</scope><name>mMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a64a387973fd4addac842028c89088998" prot="protected" virt="non-virtual"><scope>QCPLayoutElement</scope><name>mMaximumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a5ba71f25d1af4bb092b28df618538e63" prot="protected" virt="non-virtual"><scope>QCPLayoutElement</scope><name>mMinimumMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1affef747c81632de33f08483b7fd10d01" prot="protected" virt="non-virtual"><scope>QCPLayoutElement</scope><name>mMinimumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1aa8fef6486cb6ceb7c82cbdd50bc32ee9" prot="protected" virt="virtual"><scope>QCPLayoutElement</scope><name>mouseDoubleClickEvent</name></member>
+      <member refid="class_q_c_p_layout_element_1a14f4acf58cdb8dd2c6c571479c4c4a40" prot="protected" virt="virtual"><scope>QCPLayoutElement</scope><name>mouseMoveEvent</name></member>
+      <member refid="class_q_c_p_layout_element_1a2d82ea21fe0ee628f177bd824bc51a71" prot="protected" virt="virtual"><scope>QCPLayoutElement</scope><name>mousePressEvent</name></member>
+      <member refid="class_q_c_p_layout_element_1ae526ac828cce1e5bb94eaa85776d7404" prot="protected" virt="virtual"><scope>QCPLayoutElement</scope><name>mouseReleaseEvent</name></member>
+      <member refid="class_q_c_p_layout_element_1a07bb4973379e75cb0fa5b032c1d24afd" prot="protected" virt="non-virtual"><scope>QCPLayoutElement</scope><name>mOuterRect</name></member>
+      <member refid="class_q_c_p_layerable_1af94484cfb7cbbddb7de522e9be71d9a4" prot="protected" virt="non-virtual"><scope>QCPLayoutElement</scope><name>moveToLayer</name></member>
+      <member refid="class_q_c_p_layerable_1a3291445a980053e2d17a21d15957624e" prot="protected" virt="non-virtual"><scope>QCPLayoutElement</scope><name>mParentLayerable</name></member>
+      <member refid="class_q_c_p_layout_element_1ae7c75c25549608bd688bdb65d4c38066" prot="protected" virt="non-virtual"><scope>QCPLayoutElement</scope><name>mParentLayout</name></member>
+      <member refid="class_q_c_p_layerable_1aa2a528433e44db02b8aef23c1f9f90ed" prot="protected" virt="non-virtual"><scope>QCPLayoutElement</scope><name>mParentPlot</name></member>
+      <member refid="class_q_c_p_layout_element_1ad8896f05550389f7b9e92c9e6cdf6e01" prot="protected" virt="non-virtual"><scope>QCPLayoutElement</scope><name>mRect</name></member>
+      <member refid="class_q_c_p_layerable_1a62e3aed8427d6ce3ccf716f285106cb3" prot="protected" virt="non-virtual"><scope>QCPLayoutElement</scope><name>mVisible</name></member>
+      <member refid="class_q_c_p_layout_element_1a60bbddee2d1230c2414bd776f44d17b8" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>outerRect</name></member>
+      <member refid="class_q_c_p_layerable_1a98d79f5b716d45eac4347befe546d0ec" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>parentLayerable</name></member>
+      <member refid="class_q_c_p_layerable_1ab7e0e94461566093d36ffc0f5312b109" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>parentPlot</name></member>
+      <member refid="class_q_c_p_layout_element_1a1478899e80e8244b411e96ec3b2e5ce2" prot="protected" virt="virtual"><scope>QCPLayoutElement</scope><name>parentPlotInitialized</name></member>
+      <member refid="class_q_c_p_layerable_1a74c0fa237f29bf0e49565013fc5d1ec0" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>QCPLayerable</name></member>
+      <member refid="class_q_c_p_layout_element_1a588aac0a0d721f6c5f10126d8596a20f" prot="private" virt="non-virtual"><scope>QCPLayoutElement</scope><name>QCPLayout</name></member>
+      <member refid="class_q_c_p_layout_element_1a8947f0ada17e672aaba3d424cbbb67e3" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>QCPLayoutElement</name></member>
+      <member refid="class_q_c_p_layout_element_1ad077a686e85ab6fa03dcb2fd37fc499a" prot="private" virt="non-virtual"><scope>QCPLayoutElement</scope><name>QCPMarginGroup</name></member>
+      <member refid="class_q_c_p_layout_element_1a1cdf9df76adcfae45261690aa0ca2198" prot="private" virt="non-virtual"><scope>QCPLayoutElement</scope><name>QCustomPlot</name></member>
+      <member refid="class_q_c_p_layerable_1a30809f7455e9794bca7b6c737622fa63" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>realVisibility</name></member>
+      <member refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>rect</name></member>
+      <member refid="class_q_c_p_layerable_1a7498c2d0d081cf7cad0fb3bb93aa0e91" prot="protected" virt="virtual"><scope>QCPLayoutElement</scope><name>selectEvent</name></member>
+      <member refid="class_q_c_p_layerable_1aa4035e586b7f317a06ba7e74e242a5ea" prot="protected" virt="virtual"><scope>QCPLayoutElement</scope><name>selectionCategory</name></member>
+      <member refid="class_q_c_p_layout_element_1a9fcf5d0ea19f2c23b2b528bce2c6f095" prot="public" virt="virtual"><scope>QCPLayoutElement</scope><name>selectTest</name></member>
+      <member refid="class_q_c_p_layerable_1a4fd43e89be4a553ead41652565ff0581" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>setAntialiased</name></member>
+      <member refid="class_q_c_p_layout_element_1accfda49994e3e6d51ed14504abf9d27d" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>setAutoMargins</name></member>
+      <member refid="class_q_c_p_layerable_1ab0d0da6d2de45a118886d2c8e16d5a54" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>setLayer</name></member>
+      <member refid="class_q_c_p_layerable_1ab25a0e7b897993b44447caee0f142083" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>setLayer</name></member>
+      <member refid="class_q_c_p_layout_element_1a516e56f76b6bc100e8e71d329866847d" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>setMarginGroup</name></member>
+      <member refid="class_q_c_p_layout_element_1a8f450b1f3f992ad576fce2c63d8b79cf" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>setMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a74eb5280a737ab44833d506db65efd95" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>setMaximumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a03e0e9c48f230217c529b0819f832d84" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>setMaximumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a0a8a17abc16b7923159fcc7608f94673" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>setMinimumMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a5dd29a3c8bc88440c97c06b67be7886b" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>setMinimumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a8e0447614a0bf92de9a7304588c6b96e" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>setMinimumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a38975ea13e36de8e53391ce41d94bc0f" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>setOuterRect</name></member>
+      <member refid="class_q_c_p_layerable_1aa23c893671f1f6744ac235cf2204cf3a" prot="protected" virt="non-virtual"><scope>QCPLayoutElement</scope><name>setParentLayerable</name></member>
+      <member refid="class_q_c_p_layerable_1a3bed99ddc396b48ce3ebfdc0418744f8" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>setVisible</name></member>
+      <member refid="class_q_c_p_layout_element_1a929c2ec62e0e0e1d8418eaa802e2af9b" prot="public" virt="virtual"><scope>QCPLayoutElement</scope><name>update</name></member>
+      <member refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374d" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>UpdatePhase</name></member>
+      <member refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>upLayout</name></member>
+      <member refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>upMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374dad6119882eba136357c2f627992e527d3" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>upPreparation</name></member>
+      <member refid="class_q_c_p_layerable_1a10a3cc92e0fa63e4a929e61d34e275a7" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>visible</name></member>
+      <member refid="class_q_c_p_layout_element_1a300521d2fd18a893c1b85f6be11ce2bf" prot="protected" virt="virtual"><scope>QCPLayoutElement</scope><name>wheelEvent</name></member>
+      <member refid="class_q_c_p_layerable_1a4231cf5b3601d6d3a5781283e7a9735b" prot="public" virt="non-virtual"><scope>QCPLayoutElement</scope><name>~QCPLayerable</name></member>
+      <member refid="class_q_c_p_layout_element_1a0dc52343920011b3e72d61fc94ed3400" prot="public" virt="virtual"><scope>QCPLayoutElement</scope><name>~QCPLayoutElement</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

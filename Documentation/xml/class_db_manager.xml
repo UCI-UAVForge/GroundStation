@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_db_manager" kind="class" language="C++" prot="public">
+    <compoundname>DbManager</compoundname>
+    <includes refid="dbmanager_8h" local="no">dbmanager.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_db_manager_1a289f7f1c539781db95292c79fb13a632" prot="private" static="no" mutable="no">
+        <type>QSqlDatabase</type>
+        <definition>QSqlDatabase DbManager::m_db</definition>
+        <argsstring></argsstring>
+        <name>m_db</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/dbmanager.h" line="39" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/dbmanager.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_db_manager_1a4e4a497a29fc6586d49c84aac94dbdf9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DbManager::DbManager</definition>
+        <argsstring>(const QString &amp;path=&quot;./UAVFDatabase.db&quot;)</argsstring>
+        <name>DbManager</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>path</declname>
+          <defval>&quot;./UAVFDatabase.db&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/dbmanager.h" line="25" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/dbmanager.cpp" bodystart="11" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="class_db_manager_1ac5cdf8e5e932d1681ab807d8f256374c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DbManager::~DbManager</definition>
+        <argsstring>()</argsstring>
+        <name>~DbManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/dbmanager.h" line="26" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/dbmanager.cpp" bodystart="47" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_db_manager_1af26e2cb3fc39656e05f2c9b0cda89d59" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DbManager::isOpen</definition>
+        <argsstring>() const </argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/dbmanager.h" line="29" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_db_manager_1abc1f8de9119b6ddbfa9145a2cba4615f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DbManager::clearMission</definition>
+        <argsstring>(const QString &amp;name)</argsstring>
+        <name>clearMission</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/dbmanager.h" line="35" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/dbmanager.cpp" bodystart="115" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_db_manager_1a6903e6088e28dc2b531db5c19c672c49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DbManager::clearAllMissions</definition>
+        <argsstring>()</argsstring>
+        <name>clearAllMissions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/dbmanager.h" line="36" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/dbmanager.cpp" bodystart="120" bodyend="123"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_db_manager_1ab7249071e7d4077b88eace7b56d7321d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DbManager::createTablesIfDoesntExist</definition>
+        <argsstring>()</argsstring>
+        <name>createTablesIfDoesntExist</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/dbmanager.h" line="43" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/dbmanager.cpp" bodystart="28" bodyend="45"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/dbmanager.h" line="21" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/dbmanager.h" bodystart="20" bodyend="44"/>
+    <listofallmembers>
+      <member refid="class_db_manager_1a6903e6088e28dc2b531db5c19c672c49" prot="public" virt="non-virtual"><scope>DbManager</scope><name>clearAllMissions</name></member>
+      <member refid="class_db_manager_1abc1f8de9119b6ddbfa9145a2cba4615f" prot="public" virt="non-virtual"><scope>DbManager</scope><name>clearMission</name></member>
+      <member refid="class_db_manager_1ab7249071e7d4077b88eace7b56d7321d" prot="private" virt="non-virtual"><scope>DbManager</scope><name>createTablesIfDoesntExist</name></member>
+      <member refid="class_db_manager_1a4e4a497a29fc6586d49c84aac94dbdf9" prot="public" virt="non-virtual"><scope>DbManager</scope><name>DbManager</name></member>
+      <member refid="class_db_manager_1af26e2cb3fc39656e05f2c9b0cda89d59" prot="public" virt="non-virtual"><scope>DbManager</scope><name>isOpen</name></member>
+      <member refid="class_db_manager_1a289f7f1c539781db95292c79fb13a632" prot="private" virt="non-virtual"><scope>DbManager</scope><name>m_db</name></member>
+      <member refid="class_db_manager_1ac5cdf8e5e932d1681ab807d8f256374c" prot="public" virt="non-virtual"><scope>DbManager</scope><name>~DbManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

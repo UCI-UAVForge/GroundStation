@@ -1,0 +1,627 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_q_c_p_item_curve" kind="class" language="C++" prot="public">
+    <compoundname>QCPItemCurve</compoundname>
+    <basecompoundref refid="class_q_c_p_abstract_item" prot="public" virt="non-virtual">QCPAbstractItem</basecompoundref>
+    <includes refid="qcustomplot_8h" local="no">qcustomplot.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_q_c_p_item_curve_1a20c3b5ea31c33764f4f30c2ec7ae518b" prot="public" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> *const</type>
+        <definition>QCPItemPosition* const QCPItemCurve::start</definition>
+        <argsstring></argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3349" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3349" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_curve_1aa124bf66c09cc51c627fb49db8bf8a7b" prot="public" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> *const</type>
+        <definition>QCPItemPosition* const QCPItemCurve::startDir</definition>
+        <argsstring></argsstring>
+        <name>startDir</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3350" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3350" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_curve_1a28181a9dee9cc3c3da83a883221bd2d0" prot="public" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> *const</type>
+        <definition>QCPItemPosition* const QCPItemCurve::endDir</definition>
+        <argsstring></argsstring>
+        <name>endDir</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3351" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3351" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_curve_1a24ecbb195b32a08b42b61c2cf08a1b4d" prot="public" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> *const</type>
+        <definition>QCPItemPosition* const QCPItemCurve::end</definition>
+        <argsstring></argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3352" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3352" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_q_c_p_item_curve_1a7ef92988d1db2e4d0311e34c0a57fe42" prot="protected" static="no" mutable="no">
+        <type>QPen</type>
+        <definition>QPen QCPItemCurve::mPen</definition>
+        <argsstring></argsstring>
+        <name>mPen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3356" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3356" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_curve_1ab22cbab261b20be5aa8e4ca252149246" prot="protected" static="no" mutable="no">
+        <type>QPen</type>
+        <definition>QPen QCPItemCurve::mSelectedPen</definition>
+        <argsstring></argsstring>
+        <name>mSelectedPen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3356" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3356" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_curve_1af2cc26ff199570940dc96f5ec19a13f8" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_line_ending" kindref="compound">QCPLineEnding</ref></type>
+        <definition>QCPLineEnding QCPItemCurve::mHead</definition>
+        <argsstring></argsstring>
+        <name>mHead</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3357" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3357" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_curve_1af1dca285b97e3f5b892dab827a79f327" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_line_ending" kindref="compound">QCPLineEnding</ref></type>
+        <definition>QCPLineEnding QCPItemCurve::mTail</definition>
+        <argsstring></argsstring>
+        <name>mTail</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3357" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3357" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_c_p_item_curve_1ac9b7508bb5c8827e1a7a6199f8c82bec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPItemCurve::QCPItemCurve</definition>
+        <argsstring>(QCustomPlot *parentPlot)</argsstring>
+        <name>QCPItemCurve</name>
+        <param>
+          <type><ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> *</type>
+          <declname>parentPlot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a curve item and sets default values.</para><para>The constructed item can be added to the plot with <ref refid="class_q_custom_plot_1aa500620379262321685cb7a7674cbd2a" kindref="member">QCustomPlot::addItem</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3331" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="21824" bodyend="21838"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_curve_1ae36f20fd5deff2f1443a7c53eaa95c81" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>QCPItemCurve::~QCPItemCurve</definition>
+        <argsstring>()</argsstring>
+        <name>~QCPItemCurve</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3332" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="21840" bodyend="21842"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_curve_1abc6321e55a9ba1a0c7df407843dfa252" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QPen</type>
+        <definition>QPen QCPItemCurve::pen</definition>
+        <argsstring>() const </argsstring>
+        <name>pen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3335" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3335" bodyend="3335"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_curve_1abd8b8be5b13bc4dafec4c1758c281336" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QPen</type>
+        <definition>QPen QCPItemCurve::selectedPen</definition>
+        <argsstring>() const </argsstring>
+        <name>selectedPen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3336" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3336" bodyend="3336"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_curve_1afc067f0d1e60cd04812f2c2c7fdf36c3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_line_ending" kindref="compound">QCPLineEnding</ref></type>
+        <definition>QCPLineEnding QCPItemCurve::head</definition>
+        <argsstring>() const </argsstring>
+        <name>head</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3337" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3337" bodyend="3337"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_curve_1a9adddfcc5275be0cf27e3c0c31c37c1a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_line_ending" kindref="compound">QCPLineEnding</ref></type>
+        <definition>QCPLineEnding QCPItemCurve::tail</definition>
+        <argsstring>() const </argsstring>
+        <name>tail</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3338" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3338" bodyend="3338"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_curve_1a034be908440aec785c34b92843461221" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemCurve::setPen</definition>
+        <argsstring>(const QPen &amp;pen)</argsstring>
+        <name>setPen</name>
+        <param>
+          <type>const QPen &amp;</type>
+          <declname>pen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the pen that will be used to draw the line</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_curve_1a375b917669f868c5a106bf2f1ab7c26d" kindref="member">setSelectedPen</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3341" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="21849" bodyend="21852"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_curve_1a375b917669f868c5a106bf2f1ab7c26d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemCurve::setSelectedPen</definition>
+        <argsstring>(const QPen &amp;pen)</argsstring>
+        <name>setSelectedPen</name>
+        <param>
+          <type>const QPen &amp;</type>
+          <declname>pen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the pen that will be used to draw the line when selected</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_curve_1a034be908440aec785c34b92843461221" kindref="member">setPen</ref>, <ref refid="class_q_c_p_abstract_item_1a203de94ad586cc44d16c9565f49d3378" kindref="member">setSelected</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3342" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="21859" bodyend="21862"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_curve_1a08a30d9cdd63995deea3d9e20430676f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemCurve::setHead</definition>
+        <argsstring>(const QCPLineEnding &amp;head)</argsstring>
+        <name>setHead</name>
+        <param>
+          <type>const <ref refid="class_q_c_p_line_ending" kindref="compound">QCPLineEnding</ref> &amp;</type>
+          <declname>head</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the line ending style of the head. The head corresponds to the <emphasis>end</emphasis> position.</para><para>Note that due to the overloaded <ref refid="class_q_c_p_line_ending" kindref="compound">QCPLineEnding</ref> constructor, you may directly specify a <ref refid="class_q_c_p_line_ending_1a5ef16e6876b4b74959c7261d8d4c2cd5" kindref="member">QCPLineEnding::EndingStyle</ref> here, e.g.<programlisting><codeline><highlight class="normal">setHead(QCPLineEnding::esSpikeArrow)<sp/></highlight></codeline>
+</programlisting></para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_curve_1ac3488d8b1a6489c845dc5bff3ef71124" kindref="member">setTail</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3343" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="21872" bodyend="21875"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_curve_1ac3488d8b1a6489c845dc5bff3ef71124" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemCurve::setTail</definition>
+        <argsstring>(const QCPLineEnding &amp;tail)</argsstring>
+        <name>setTail</name>
+        <param>
+          <type>const <ref refid="class_q_c_p_line_ending" kindref="compound">QCPLineEnding</ref> &amp;</type>
+          <declname>tail</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the line ending style of the tail. The tail corresponds to the <emphasis>start</emphasis> position.</para><para>Note that due to the overloaded <ref refid="class_q_c_p_line_ending" kindref="compound">QCPLineEnding</ref> constructor, you may directly specify a <ref refid="class_q_c_p_line_ending_1a5ef16e6876b4b74959c7261d8d4c2cd5" kindref="member">QCPLineEnding::EndingStyle</ref> here, e.g.<programlisting><codeline><highlight class="normal">setTail(QCPLineEnding::esSpikeArrow)<sp/></highlight></codeline>
+</programlisting></para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_curve_1a08a30d9cdd63995deea3d9e20430676f" kindref="member">setHead</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3344" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="21885" bodyend="21888"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_curve_1a741375c11667b5f9c95b2683f93ee514" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double QCPItemCurve::selectTest</definition>
+        <argsstring>(const QPointF &amp;pos, bool onlySelectable, QVariant *details=0) const </argsstring>
+        <name>selectTest</name>
+        <reimplements refid="class_q_c_p_abstract_item_1a96d522d10ffc0413b9a366c6f7f0476b">selectTest</reimplements>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>onlySelectable</declname>
+        </param>
+        <param>
+          <type>QVariant *</type>
+          <declname>details</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is used to decide whether a click hits a layerable object or not.</para><para><emphasis>pos</emphasis> is a point in pixel coordinates on the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn&apos;t be determined, -1.0 is returned. Further, if <emphasis>onlySelectable</emphasis> is true and the object is not selectable, -1.0 is returned, too.</para><para>If the item is represented not by single lines but by an area like <ref refid="class_q_c_p_item_rect" kindref="compound">QCPItemRect</ref> or <ref refid="class_q_c_p_item_text" kindref="compound">QCPItemText</ref>, a click inside the area returns a constant value greater zero (typically the selectionTolerance of the parent <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> multiplied by 0.99). If the click lies outside the area, this function returns -1.0.</para><para>Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.e. closer than 0.99*selectionTolerance).</para><para>The actual setting of the selection state is not done by this function. This is handled by the parent <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> when the mouseReleaseEvent occurs, and the finally selected object is notified via the selectEvent/deselectEvent methods.</para><para><emphasis>details</emphasis> is an optional output parameter. Every layerable subclass may place any information in <emphasis>details</emphasis>. This information will be passed to <ref refid="class_q_c_p_abstract_item_1aaf92af7b9893712959a6c073d334d88d" kindref="member">selectEvent</ref> when the parent <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> decides on the basis of this selectTest call, that the object was successfully selected. The subsequent call to <ref refid="class_q_c_p_abstract_item_1aaf92af7b9893712959a6c073d334d88d" kindref="member">selectEvent</ref> will carry the <emphasis>details</emphasis>. This is useful for multi-part objects (like <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref>). This way, a possibly complex calculation to decide which part was clicked is only done once in <ref refid="class_q_c_p_item_curve_1a741375c11667b5f9c95b2683f93ee514" kindref="member">selectTest</ref>. The result (i.e. the actually clicked part) can then be placed in <emphasis>details</emphasis>. So in the subsequent <ref refid="class_q_c_p_abstract_item_1aaf92af7b9893712959a6c073d334d88d" kindref="member">selectEvent</ref>, the decision which part was selected doesn&apos;t have to be done a second time for a single selection operation.</para><para>You may pass 0 as <emphasis>details</emphasis> to indicate that you are not interested in those selection details.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_abstract_item_1aaf92af7b9893712959a6c073d334d88d" kindref="member">selectEvent</ref>, <ref refid="class_q_c_p_abstract_item_1a91f090d6763cfedb0749219c63788ae9" kindref="member">deselectEvent</ref>, <ref refid="class_q_custom_plot_1a5ee1e2f6ae27419deca53e75907c27e5" kindref="member">QCustomPlot::setInteractions</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3347" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="21891" bodyend="21914"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_q_c_p_item_curve_1a56cb5b72cd02db2eda598274a39839a9" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QCPItemCurve::draw</definition>
+        <argsstring>(QCPPainter *painter)</argsstring>
+        <name>draw</name>
+        <reimplements refid="class_q_c_p_abstract_item_1ad0dc056f650c3ca73414e6b4f01674ef">draw</reimplements>
+        <param>
+          <type><ref refid="class_q_c_p_painter" kindref="compound">QCPPainter</ref> *</type>
+          <declname>painter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3360" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="21917" bodyend="21944"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_curve_1a8089126f5645b6edfbaddea49d1e8390" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QPen</type>
+        <definition>QPen QCPItemCurve::mainPen</definition>
+        <argsstring>() const </argsstring>
+        <name>mainPen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3363" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="21951" bodyend="21954"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A curved line from one point to another. </para>    </briefdescription>
+    <detaileddescription>
+<para><image type="html" name="QCPItemCurve.png">Curve example. Blue dotted circles are anchors, solid blue discs are positions.</image>
+ It has four positions, <emphasis>start</emphasis> and <emphasis>end</emphasis>, which define the end points of the line, and two control points which define the direction the line exits from the start and the direction from which it approaches the end: <emphasis>startDir</emphasis> and <emphasis>endDir</emphasis>.</para><para>With <ref refid="class_q_c_p_item_curve_1a08a30d9cdd63995deea3d9e20430676f" kindref="member">setHead</ref> and <ref refid="class_q_c_p_item_curve_1ac3488d8b1a6489c845dc5bff3ef71124" kindref="member">setTail</ref> you may set different line ending styles, e.g. to create an arrow.</para><para>Often it is desirable for the control points to stay at fixed relative positions to the start/end point. This can be achieved by setting the parent anchor e.g. of <emphasis>startDir</emphasis> simply to <emphasis>start</emphasis>, and then specify the desired pixel offset with <ref refid="class_q_c_p_item_position_1aa988ba4e87ab684c9021017dcaba945f" kindref="member">QCPItemPosition::setCoords</ref> on <emphasis>startDir</emphasis>. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="556">
+        <label>QObject</label>
+      </node>
+      <node id="553">
+        <label>QCPItemCurve</label>
+        <link refid="class_q_c_p_item_curve"/>
+        <childnode refid="554" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="554">
+        <label>QCPAbstractItem</label>
+        <link refid="class_q_c_p_abstract_item"/>
+        <childnode refid="555" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="555">
+        <label>QCPLayerable</label>
+        <link refid="class_q_c_p_layerable"/>
+        <childnode refid="556" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="573">
+        <label>QCPLayoutInset</label>
+        <link refid="class_q_c_p_layout_inset"/>
+        <childnode refid="565" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="566">
+        <label>QCPLayoutElement</label>
+        <link refid="class_q_c_p_layout_element"/>
+        <childnode refid="559" relation="public-inheritance">
+        </childnode>
+        <childnode refid="565" relation="usage">
+          <edgelabel>mParentLayout</edgelabel>
+        </childnode>
+      </node>
+      <node id="560">
+        <label>QObject</label>
+      </node>
+      <node id="568">
+        <label>QCPRange</label>
+        <link refid="class_q_c_p_range"/>
+      </node>
+      <node id="575">
+        <label>QCPItemPosition</label>
+        <link refid="class_q_c_p_item_position"/>
+        <childnode refid="576" relation="public-inheritance">
+        </childnode>
+        <childnode refid="576" relation="usage">
+          <edgelabel>mParentAnchorX</edgelabel>
+          <edgelabel>mParentAnchorY</edgelabel>
+        </childnode>
+      </node>
+      <node id="574">
+        <label>QCPLegend</label>
+        <link refid="class_q_c_p_legend"/>
+        <childnode refid="564" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="557">
+        <label>QCPItemCurve</label>
+        <link refid="class_q_c_p_item_curve"/>
+        <childnode refid="558" relation="public-inheritance">
+        </childnode>
+        <childnode refid="570" relation="usage">
+          <edgelabel>mHead</edgelabel>
+          <edgelabel>mTail</edgelabel>
+        </childnode>
+        <childnode refid="575" relation="usage">
+          <edgelabel>endDir</edgelabel>
+          <edgelabel>end</edgelabel>
+          <edgelabel>startDir</edgelabel>
+          <edgelabel>start</edgelabel>
+        </childnode>
+      </node>
+      <node id="570">
+        <label>QCPLineEnding</label>
+        <link refid="class_q_c_p_line_ending"/>
+      </node>
+      <node id="565">
+        <label>QCPLayout</label>
+        <link refid="class_q_c_p_layout"/>
+        <childnode refid="566" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="571">
+        <label>QCPGrid</label>
+        <link refid="class_q_c_p_grid"/>
+        <childnode refid="559" relation="public-inheritance">
+        </childnode>
+        <childnode refid="567" relation="usage">
+          <edgelabel>mParentAxis</edgelabel>
+        </childnode>
+      </node>
+      <node id="569">
+        <label>QCPAxisPainterPrivate</label>
+        <link refid="class_q_c_p_axis_painter_private"/>
+        <childnode refid="570" relation="usage">
+          <edgelabel>lowerEnding</edgelabel>
+          <edgelabel>upperEnding</edgelabel>
+        </childnode>
+        <childnode refid="562" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="558">
+        <label>QCPAbstractItem</label>
+        <link refid="class_q_c_p_abstract_item"/>
+        <childnode refid="559" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="563">
+        <label>QWidget</label>
+      </node>
+      <node id="561">
+        <label>QCPLayer</label>
+        <link refid="class_q_c_p_layer"/>
+        <childnode refid="560" relation="public-inheritance">
+        </childnode>
+        <childnode refid="562" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="576">
+        <label>QCPItemAnchor</label>
+        <link refid="class_q_c_p_item_anchor"/>
+        <childnode refid="558" relation="usage">
+          <edgelabel>mParentItem</edgelabel>
+        </childnode>
+        <childnode refid="562" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="564">
+        <label>QCPLayoutGrid</label>
+        <link refid="class_q_c_p_layout_grid"/>
+        <childnode refid="565" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="559">
+        <label>QCPLayerable</label>
+        <link refid="class_q_c_p_layerable"/>
+        <childnode refid="560" relation="public-inheritance">
+        </childnode>
+        <childnode refid="561" relation="usage">
+          <edgelabel>mLayer</edgelabel>
+        </childnode>
+        <childnode refid="562" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="567">
+        <label>QCPAxis</label>
+        <link refid="class_q_c_p_axis"/>
+        <childnode refid="559" relation="public-inheritance">
+        </childnode>
+        <childnode refid="568" relation="usage">
+          <edgelabel>mRange</edgelabel>
+        </childnode>
+        <childnode refid="569" relation="usage">
+          <edgelabel>mAxisPainter</edgelabel>
+        </childnode>
+        <childnode refid="571" relation="usage">
+          <edgelabel>mGrid</edgelabel>
+        </childnode>
+        <childnode refid="572" relation="usage">
+          <edgelabel>mAxisRect</edgelabel>
+        </childnode>
+      </node>
+      <node id="572">
+        <label>QCPAxisRect</label>
+        <link refid="class_q_c_p_axis_rect"/>
+        <childnode refid="566" relation="public-inheritance">
+        </childnode>
+        <childnode refid="573" relation="usage">
+          <edgelabel>mInsetLayout</edgelabel>
+        </childnode>
+        <childnode refid="568" relation="usage">
+          <edgelabel>mDragStartVertRange</edgelabel>
+          <edgelabel>mDragStartHorzRange</edgelabel>
+        </childnode>
+      </node>
+      <node id="562">
+        <label>QCustomPlot</label>
+        <link refid="class_q_custom_plot"/>
+        <childnode refid="563" relation="public-inheritance">
+        </childnode>
+        <childnode refid="561" relation="usage">
+          <edgelabel>mCurrentLayer</edgelabel>
+        </childnode>
+        <childnode refid="564" relation="usage">
+          <edgelabel>mPlotLayout</edgelabel>
+        </childnode>
+        <childnode refid="567" relation="usage">
+          <edgelabel>yAxis2</edgelabel>
+          <edgelabel>xAxis2</edgelabel>
+          <edgelabel>xAxis</edgelabel>
+          <edgelabel>yAxis</edgelabel>
+        </childnode>
+        <childnode refid="574" relation="usage">
+          <edgelabel>legend</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3322" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3321" bodyend="3364"/>
+    <listofallmembers>
+      <member refid="class_q_c_p_abstract_item_1abed974cba7cc02608c71dad4638e008d" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>anchor</name></member>
+      <member refid="class_q_c_p_abstract_item_1a94bde62b8a2fc133666dcbb8035deeed" prot="protected" virt="virtual"><scope>QCPItemCurve</scope><name>anchorPixelPoint</name></member>
+      <member refid="class_q_c_p_abstract_item_1a8454b9941960b840608a5a1e00b1977d" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>anchors</name></member>
+      <member refid="class_q_c_p_layerable_1aef5cb4aa899ed9dc9384fd614560291e" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>antialiased</name></member>
+      <member refid="class_q_c_p_layerable_1a62bd552d1a45aa9accb24b310542279e" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>applyAntialiasingHint</name></member>
+      <member refid="class_q_c_p_abstract_item_1a0839031abdd71067e2256a4d53c7a011" prot="protected" virt="virtual"><scope>QCPItemCurve</scope><name>applyDefaultAntialiasingHint</name></member>
+      <member refid="class_q_c_p_abstract_item_1a37f86618740b5047eae23eedb2de061a" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>clipAxisRect</name></member>
+      <member refid="class_q_c_p_abstract_item_1a538e25ff8856534582f5b2b400a46405" prot="protected" virt="virtual"><scope>QCPItemCurve</scope><name>clipRect</name></member>
+      <member refid="class_q_c_p_abstract_item_1a5b0ea171823033bcb8aee81f4a034871" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>clipToAxisRect</name></member>
+      <member refid="class_q_c_p_abstract_item_1af3fc92527802078ca395138748b629a7" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>createAnchor</name></member>
+      <member refid="class_q_c_p_abstract_item_1a75036d39c4d4e2e1a7dd145fff915d32" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>createPosition</name></member>
+      <member refid="class_q_c_p_abstract_item_1a91f090d6763cfedb0749219c63788ae9" prot="protected" virt="virtual"><scope>QCPItemCurve</scope><name>deselectEvent</name></member>
+      <member refid="class_q_c_p_abstract_item_1acdca343717d625b8abb3c3e38c0ed39d" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>distSqrToLine</name></member>
+      <member refid="class_q_c_p_item_curve_1a56cb5b72cd02db2eda598274a39839a9" prot="protected" virt="virtual"><scope>QCPItemCurve</scope><name>draw</name></member>
+      <member refid="class_q_c_p_item_curve_1a24ecbb195b32a08b42b61c2cf08a1b4d" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>end</name></member>
+      <member refid="class_q_c_p_item_curve_1a28181a9dee9cc3c3da83a883221bd2d0" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>endDir</name></member>
+      <member refid="class_q_c_p_abstract_item_1acbce9e5ba5252541d19db0c40303357a" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>hasAnchor</name></member>
+      <member refid="class_q_c_p_item_curve_1afc067f0d1e60cd04812f2c2c7fdf36c3" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>head</name></member>
+      <member refid="class_q_c_p_layerable_1a8cbe5a0c9a5674249982f5ca5f8e02bc" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>initializeParentPlot</name></member>
+      <member refid="class_q_c_p_layerable_1aea67e8c19145e70d68c286a36f6b8300" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>layer</name></member>
+      <member refid="class_q_c_p_layerable_1abbf8657cedea73ac1c3499b521c90eba" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>layerChanged</name></member>
+      <member refid="class_q_c_p_item_curve_1a8089126f5645b6edfbaddea49d1e8390" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>mainPen</name></member>
+      <member refid="class_q_c_p_abstract_item_1a909a3abab783de302ebf0a0e6f2bbc15" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>mAnchors</name></member>
+      <member refid="class_q_c_p_layerable_1a3ab45a4c76a3333ce42eb217a81733ec" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>mAntialiased</name></member>
+      <member refid="class_q_c_p_abstract_item_1a3e57cfe7da4b1ac3d6fa7281ea437361" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>mClipAxisRect</name></member>
+      <member refid="class_q_c_p_abstract_item_1ad2a70ff6b658fcb84a9427f69d3f587d" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>mClipToAxisRect</name></member>
+      <member refid="class_q_c_p_item_curve_1af2cc26ff199570940dc96f5ec19a13f8" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>mHead</name></member>
+      <member refid="class_q_c_p_layerable_1aa38ec5891aff0f50b36fd63e9372a0cd" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>mLayer</name></member>
+      <member refid="class_q_c_p_layerable_1af94484cfb7cbbddb7de522e9be71d9a4" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>moveToLayer</name></member>
+      <member refid="class_q_c_p_layerable_1a3291445a980053e2d17a21d15957624e" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>mParentLayerable</name></member>
+      <member refid="class_q_c_p_layerable_1aa2a528433e44db02b8aef23c1f9f90ed" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>mParentPlot</name></member>
+      <member refid="class_q_c_p_item_curve_1a7ef92988d1db2e4d0311e34c0a57fe42" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>mPen</name></member>
+      <member refid="class_q_c_p_abstract_item_1af94ff71b6a15ea6d028ab8bd8eccd012" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>mPositions</name></member>
+      <member refid="class_q_c_p_abstract_item_1ad81eb35c8726a0f458db9df9732e0e41" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>mSelectable</name></member>
+      <member refid="class_q_c_p_abstract_item_1a4bdb3457dad1d268c0f78a44152b9645" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>mSelected</name></member>
+      <member refid="class_q_c_p_item_curve_1ab22cbab261b20be5aa8e4ca252149246" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>mSelectedPen</name></member>
+      <member refid="class_q_c_p_item_curve_1af1dca285b97e3f5b892dab827a79f327" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>mTail</name></member>
+      <member refid="class_q_c_p_layerable_1a62e3aed8427d6ce3ccf716f285106cb3" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>mVisible</name></member>
+      <member refid="class_q_c_p_layerable_1a98d79f5b716d45eac4347befe546d0ec" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>parentLayerable</name></member>
+      <member refid="class_q_c_p_layerable_1ab7e0e94461566093d36ffc0f5312b109" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>parentPlot</name></member>
+      <member refid="class_q_c_p_layerable_1ab20b7dbd8e0249ed61adb9622c427382" prot="protected" virt="virtual"><scope>QCPItemCurve</scope><name>parentPlotInitialized</name></member>
+      <member refid="class_q_c_p_item_curve_1abc6321e55a9ba1a0c7df407843dfa252" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>pen</name></member>
+      <member refid="class_q_c_p_abstract_item_1af71345bd150f87fa1d2442837b87bb59" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>position</name></member>
+      <member refid="class_q_c_p_abstract_item_1adf6a680cc29a6bce8345c3b6af3a91a1" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>positions</name></member>
+      <member refid="class_q_c_p_abstract_item_1a9922507d8b4503a1fe1ed0b1030e23b6" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>QCPAbstractItem</name></member>
+      <member refid="class_q_c_p_item_curve_1ac9b7508bb5c8827e1a7a6199f8c82bec" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>QCPItemCurve</name></member>
+      <member refid="class_q_c_p_layerable_1a74c0fa237f29bf0e49565013fc5d1ec0" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>QCPLayerable</name></member>
+      <member refid="class_q_c_p_layerable_1a30809f7455e9794bca7b6c737622fa63" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>realVisibility</name></member>
+      <member refid="class_q_c_p_abstract_item_1a4c0e14c4e92df91174cb7183fb363069" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>rectSelectTest</name></member>
+      <member refid="class_q_c_p_abstract_item_1a9189e752025533e1595eaade0009a3bc" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>selectable</name></member>
+      <member refid="class_q_c_p_abstract_item_1a5b266c11aac61cb511901f3911dac2a3" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>selectableChanged</name></member>
+      <member refid="class_q_c_p_abstract_item_1a225865808640d8d9a7dd19f09a2e93f2" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>selected</name></member>
+      <member refid="class_q_c_p_item_curve_1abd8b8be5b13bc4dafec4c1758c281336" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>selectedPen</name></member>
+      <member refid="class_q_c_p_abstract_item_1aaf92af7b9893712959a6c073d334d88d" prot="protected" virt="virtual"><scope>QCPItemCurve</scope><name>selectEvent</name></member>
+      <member refid="class_q_c_p_abstract_item_1a777b5d384936396ad9c3ceb3d3453f1c" prot="protected" virt="virtual"><scope>QCPItemCurve</scope><name>selectionCategory</name></member>
+      <member refid="class_q_c_p_abstract_item_1aa5cffb034fc65dbb91c77e02c1c14251" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>selectionChanged</name></member>
+      <member refid="class_q_c_p_item_curve_1a741375c11667b5f9c95b2683f93ee514" prot="public" virt="virtual"><scope>QCPItemCurve</scope><name>selectTest</name></member>
+      <member refid="class_q_c_p_layerable_1a4fd43e89be4a553ead41652565ff0581" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>setAntialiased</name></member>
+      <member refid="class_q_c_p_abstract_item_1a7dc75fcbcd10206fe0b75d757ea7a347" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>setClipAxisRect</name></member>
+      <member refid="class_q_c_p_abstract_item_1a39e05b9d4176b9accafc746d16ca6a06" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>setClipToAxisRect</name></member>
+      <member refid="class_q_c_p_item_curve_1a08a30d9cdd63995deea3d9e20430676f" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>setHead</name></member>
+      <member refid="class_q_c_p_layerable_1ab0d0da6d2de45a118886d2c8e16d5a54" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>setLayer</name></member>
+      <member refid="class_q_c_p_layerable_1ab25a0e7b897993b44447caee0f142083" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>setLayer</name></member>
+      <member refid="class_q_c_p_layerable_1aa23c893671f1f6744ac235cf2204cf3a" prot="protected" virt="non-virtual"><scope>QCPItemCurve</scope><name>setParentLayerable</name></member>
+      <member refid="class_q_c_p_item_curve_1a034be908440aec785c34b92843461221" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>setPen</name></member>
+      <member refid="class_q_c_p_abstract_item_1a8a8e32a55bc478b849756a78c2d87fd2" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>setSelectable</name></member>
+      <member refid="class_q_c_p_abstract_item_1a203de94ad586cc44d16c9565f49d3378" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>setSelected</name></member>
+      <member refid="class_q_c_p_item_curve_1a375b917669f868c5a106bf2f1ab7c26d" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>setSelectedPen</name></member>
+      <member refid="class_q_c_p_item_curve_1ac3488d8b1a6489c845dc5bff3ef71124" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>setTail</name></member>
+      <member refid="class_q_c_p_layerable_1a3bed99ddc396b48ce3ebfdc0418744f8" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>setVisible</name></member>
+      <member refid="class_q_c_p_item_curve_1a20c3b5ea31c33764f4f30c2ec7ae518b" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>start</name></member>
+      <member refid="class_q_c_p_item_curve_1aa124bf66c09cc51c627fb49db8bf8a7b" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>startDir</name></member>
+      <member refid="class_q_c_p_item_curve_1a9adddfcc5275be0cf27e3c0c31c37c1a" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>tail</name></member>
+      <member refid="class_q_c_p_layerable_1a10a3cc92e0fa63e4a929e61d34e275a7" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>visible</name></member>
+      <member refid="class_q_c_p_abstract_item_1a375bd1b7d3218b04a6ff7ff06fff917c" prot="public" virt="virtual"><scope>QCPItemCurve</scope><name>~QCPAbstractItem</name></member>
+      <member refid="class_q_c_p_item_curve_1ae36f20fd5deff2f1443a7c53eaa95c81" prot="public" virt="virtual"><scope>QCPItemCurve</scope><name>~QCPItemCurve</name></member>
+      <member refid="class_q_c_p_layerable_1a4231cf5b3601d6d3a5781283e7a9735b" prot="public" virt="non-virtual"><scope>QCPItemCurve</scope><name>~QCPLayerable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

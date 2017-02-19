@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_q_c_p_data" kind="class" language="C++" prot="public">
+    <compoundname>QCPData</compoundname>
+    <includes refid="qcustomplot_8h" local="no">qcustomplot.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_q_c_p_data_1a2f5ba9aca61bb74f88516e148a4cf71b" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPData::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2472" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2472" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_data_1aefe1ecf8fa2e34ed875b67523e542373" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPData::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2472" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2472" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_data_1ae468c3808107c2fd23052481156ab5b5" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPData::keyErrorPlus</definition>
+        <argsstring></argsstring>
+        <name>keyErrorPlus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2473" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2473" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_data_1af107d650b8ee5c3b2961ecddcfb1bccb" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPData::keyErrorMinus</definition>
+        <argsstring></argsstring>
+        <name>keyErrorMinus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2473" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2473" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_data_1ad26912552d03485ea20d91dcad16aa8f" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPData::valueErrorPlus</definition>
+        <argsstring></argsstring>
+        <name>valueErrorPlus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2474" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2474" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_data_1a51d8f42bf4d49a1f263531e70cadd6a3" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPData::valueErrorMinus</definition>
+        <argsstring></argsstring>
+        <name>valueErrorMinus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2474" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2474" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_c_p_data_1a1f06d624e36ba0ed72ac36d42aa5c7ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPData::QCPData</definition>
+        <argsstring>()</argsstring>
+        <name>QCPData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a data point with key, value and all errors set to zero. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2470" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="14417" bodyend="14425"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_data_1aa274181ae8de2a0907ba5464d3c2c103" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPData::QCPData</definition>
+        <argsstring>(double key, double value)</argsstring>
+        <name>QCPData</name>
+        <param>
+          <type>double</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a data point with the specified <emphasis>key</emphasis> and <emphasis>value</emphasis>. All errors are set to zero. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2471" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="14430" bodyend="14438"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Holds the data of one single data point for <ref refid="class_q_c_p_graph" kindref="compound">QCPGraph</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>The container for storing multiple data points is <ref refid="qcustomplot_8h_1a84a9c4a4c2216ccfdcb5f3067cda76e3" kindref="member">QCPDataMap</ref>.</para><para>The stored data is: <itemizedlist>
+<listitem><para><emphasis>key:</emphasis> coordinate on the key axis of this data point </para></listitem>
+<listitem><para><emphasis>value:</emphasis> coordinate on the value axis of this data point </para></listitem>
+<listitem><para><emphasis>keyErrorMinus:</emphasis> negative error in the key dimension (for error bars) </para></listitem>
+<listitem><para><emphasis>keyErrorPlus:</emphasis> positive error in the key dimension (for error bars) </para></listitem>
+<listitem><para><emphasis>valueErrorMinus:</emphasis> negative error in the value dimension (for error bars) </para></listitem>
+<listitem><para><emphasis>valueErrorPlus:</emphasis> positive error in the value dimension (for error bars)</para></listitem>
+</itemizedlist>
+<simplesect kind="see"><para><ref refid="qcustomplot_8h_1a84a9c4a4c2216ccfdcb5f3067cda76e3" kindref="member">QCPDataMap</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2468" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2467" bodyend="2475"/>
+    <listofallmembers>
+      <member refid="class_q_c_p_data_1a2f5ba9aca61bb74f88516e148a4cf71b" prot="public" virt="non-virtual"><scope>QCPData</scope><name>key</name></member>
+      <member refid="class_q_c_p_data_1af107d650b8ee5c3b2961ecddcfb1bccb" prot="public" virt="non-virtual"><scope>QCPData</scope><name>keyErrorMinus</name></member>
+      <member refid="class_q_c_p_data_1ae468c3808107c2fd23052481156ab5b5" prot="public" virt="non-virtual"><scope>QCPData</scope><name>keyErrorPlus</name></member>
+      <member refid="class_q_c_p_data_1a1f06d624e36ba0ed72ac36d42aa5c7ee" prot="public" virt="non-virtual"><scope>QCPData</scope><name>QCPData</name></member>
+      <member refid="class_q_c_p_data_1aa274181ae8de2a0907ba5464d3c2c103" prot="public" virt="non-virtual"><scope>QCPData</scope><name>QCPData</name></member>
+      <member refid="class_q_c_p_data_1aefe1ecf8fa2e34ed875b67523e542373" prot="public" virt="non-virtual"><scope>QCPData</scope><name>value</name></member>
+      <member refid="class_q_c_p_data_1a51d8f42bf4d49a1f263531e70cadd6a3" prot="public" virt="non-virtual"><scope>QCPData</scope><name>valueErrorMinus</name></member>
+      <member refid="class_q_c_p_data_1ad26912552d03485ea20d91dcad16aa8f" prot="public" virt="non-virtual"><scope>QCPData</scope><name>valueErrorPlus</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

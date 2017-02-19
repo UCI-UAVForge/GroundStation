@@ -1,0 +1,483 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="packet_8h" kind="file" language="C++">
+    <compoundname>packet.h</compoundname>
+    <includes local="yes">time.h</includes>
+    <includes local="yes">stdio.h</includes>
+    <includes local="yes">stdint.h</includes>
+    <includedby refid="ackpacket_8h" local="yes">C:/Users/Roman/Documents/GroundStation/GS/ackpacket.h</includedby>
+    <includedby refid="actionpacket_8h" local="yes">C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h</includedby>
+    <includedby refid="infopacket_8h" local="yes">C:/Users/Roman/Documents/GroundStation/GS/infopacket.h</includedby>
+    <includedby refid="telemetrypacket_8h" local="yes">C:/Users/Roman/Documents/GroundStation/GS/telemetrypacket.h</includedby>
+    <includedby refid="serverqueue_8h" local="yes">C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h</includedby>
+    <includedby refid="networklistener_8h" local="yes">C:/Users/Roman/Documents/GroundStation/GS/networklistener.h</includedby>
+    <includedby refid="networklistener_8cpp" local="yes">C:/Users/Roman/Documents/GroundStation/GS/networklistener.cpp</includedby>
+    <includedby refid="_packet_8cpp" local="yes">C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp</includedby>
+    <includedby refid="_packet_handler_8h" local="yes">C:/Users/Roman/Documents/GroundStation/GS/PacketHandler.h</includedby>
+    <incdepgraph>
+      <node id="2394">
+        <label>stdint.h</label>
+      </node>
+      <node id="2391">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/packet.h</label>
+        <link refid="packet.h"/>
+        <childnode refid="2392" relation="include">
+        </childnode>
+        <childnode refid="2393" relation="include">
+        </childnode>
+        <childnode refid="2394" relation="include">
+        </childnode>
+      </node>
+      <node id="2392">
+        <label>time.h</label>
+      </node>
+      <node id="2393">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2423">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/maprecap.h</label>
+        <link refid="maprecap_8h"/>
+        <childnode refid="2400" relation="include">
+        </childnode>
+        <childnode refid="2404" relation="include">
+        </childnode>
+        <childnode refid="2405" relation="include">
+        </childnode>
+        <childnode refid="2409" relation="include">
+        </childnode>
+        <childnode refid="2424" relation="include">
+        </childnode>
+      </node>
+      <node id="2412">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/options.cpp</label>
+        <link refid="options_8cpp"/>
+      </node>
+      <node id="2399">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/digitalclock.cpp</label>
+        <link refid="digitalclock_8cpp"/>
+      </node>
+      <node id="2416">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapexecution.cpp</label>
+        <link refid="mapexecution_8cpp"/>
+      </node>
+      <node id="2439">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/PacketHandler.h</label>
+        <link refid="_packet_handler_8h"/>
+        <childnode refid="2440" relation="include">
+        </childnode>
+      </node>
+      <node id="2405">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h</label>
+        <link refid="mainmdidisplay_8h"/>
+        <childnode refid="2406" relation="include">
+        </childnode>
+        <childnode refid="2407" relation="include">
+        </childnode>
+      </node>
+      <node id="2438">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/TelemetryPacket.cpp</label>
+        <link refid="_telemetry_packet_8cpp"/>
+      </node>
+      <node id="2418">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/networklistener.h</label>
+        <link refid="networklistener_8h"/>
+        <childnode refid="2419" relation="include">
+        </childnode>
+        <childnode refid="2421" relation="include">
+        </childnode>
+      </node>
+      <node id="2430">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h</label>
+        <link refid="actionpacket_8h"/>
+        <childnode refid="2431" relation="include">
+        </childnode>
+        <childnode refid="2432" relation="include">
+        </childnode>
+        <childnode refid="2397" relation="include">
+        </childnode>
+        <childnode refid="2428" relation="include">
+        </childnode>
+        <childnode refid="2422" relation="include">
+        </childnode>
+        <childnode refid="2433" relation="include">
+        </childnode>
+        <childnode refid="2421" relation="include">
+        </childnode>
+        <childnode refid="2427" relation="include">
+        </childnode>
+      </node>
+      <node id="2429">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/serverqueue.cpp</label>
+        <link refid="serverqueue_8cpp"/>
+      </node>
+      <node id="2415">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapvalidator.cpp</label>
+        <link refid="mapvalidator_8cpp"/>
+      </node>
+      <node id="2407">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp</label>
+        <link refid="mainmdidisplay_8cpp"/>
+      </node>
+      <node id="2401">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h</label>
+        <link refid="mapplanning_8h"/>
+        <childnode refid="2402" relation="include">
+        </childnode>
+        <childnode refid="2403" relation="include">
+        </childnode>
+        <childnode refid="2404" relation="include">
+        </childnode>
+        <childnode refid="2405" relation="include">
+        </childnode>
+        <childnode refid="2409" relation="include">
+        </childnode>
+        <childnode refid="2414" relation="include">
+        </childnode>
+        <childnode refid="2415" relation="include">
+        </childnode>
+      </node>
+      <node id="2406">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="2436">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/InfoPacket.cpp</label>
+        <link refid="_info_packet_8cpp"/>
+      </node>
+      <node id="2396">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/ackpacket.h</label>
+        <link refid="ackpacket_8h"/>
+        <childnode refid="2397" relation="include">
+        </childnode>
+        <childnode refid="2428" relation="include">
+        </childnode>
+        <childnode refid="2421" relation="include">
+        </childnode>
+        <childnode refid="2427" relation="include">
+        </childnode>
+      </node>
+      <node id="2403">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/options.h</label>
+        <link refid="options_8h"/>
+        <childnode refid="2400" relation="include">
+        </childnode>
+        <childnode refid="2404" relation="include">
+        </childnode>
+        <childnode refid="2409" relation="include">
+        </childnode>
+        <childnode refid="2412" relation="include">
+        </childnode>
+      </node>
+      <node id="2404">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h</label>
+        <link refid="qttabtest_8h"/>
+        <childnode refid="2405" relation="include">
+        </childnode>
+        <childnode refid="2408" relation="include">
+        </childnode>
+      </node>
+      <node id="2395">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/packet.h</label>
+        <link refid="packet.h"/>
+        <childnode refid="2396" relation="include">
+        </childnode>
+        <childnode refid="2430" relation="include">
+        </childnode>
+        <childnode refid="2435" relation="include">
+        </childnode>
+        <childnode refid="2437" relation="include">
+        </childnode>
+        <childnode refid="2428" relation="include">
+        </childnode>
+        <childnode refid="2418" relation="include">
+        </childnode>
+        <childnode refid="2421" relation="include">
+        </childnode>
+        <childnode refid="2427" relation="include">
+        </childnode>
+        <childnode refid="2439" relation="include">
+        </childnode>
+      </node>
+      <node id="2434">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/flightpath.cpp</label>
+        <link refid="flightpath_8cpp"/>
+      </node>
+      <node id="2425">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mission.cpp</label>
+        <link refid="mission_8cpp"/>
+      </node>
+      <node id="2422">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mission.h</label>
+        <link refid="mission_8h"/>
+        <childnode refid="2419" relation="include">
+        </childnode>
+        <childnode refid="2423" relation="include">
+        </childnode>
+        <childnode refid="2400" relation="include">
+        </childnode>
+        <childnode refid="2425" relation="include">
+        </childnode>
+      </node>
+      <node id="2409">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="2410" relation="include">
+        </childnode>
+        <childnode refid="2411" relation="include">
+        </childnode>
+      </node>
+      <node id="2435">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/infopacket.h</label>
+        <link refid="infopacket_8h"/>
+        <childnode refid="2397" relation="include">
+        </childnode>
+        <childnode refid="2428" relation="include">
+        </childnode>
+        <childnode refid="2436" relation="include">
+        </childnode>
+        <childnode refid="2421" relation="include">
+        </childnode>
+        <childnode refid="2427" relation="include">
+        </childnode>
+      </node>
+      <node id="2437">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/telemetrypacket.h</label>
+        <link refid="telemetrypacket_8h"/>
+        <childnode refid="2397" relation="include">
+        </childnode>
+        <childnode refid="2428" relation="include">
+        </childnode>
+        <childnode refid="2422" relation="include">
+        </childnode>
+        <childnode refid="2421" relation="include">
+        </childnode>
+        <childnode refid="2427" relation="include">
+        </childnode>
+        <childnode refid="2438" relation="include">
+        </childnode>
+      </node>
+      <node id="2426">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp</label>
+        <link refid="messagebox_8cpp"/>
+      </node>
+      <node id="2421">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/networklistener.cpp</label>
+        <link refid="networklistener_8cpp"/>
+      </node>
+      <node id="2414">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp</label>
+        <link refid="mapplanning_8cpp"/>
+      </node>
+      <node id="2419">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/gsserver.h</label>
+        <link refid="gsserver_8h"/>
+        <childnode refid="2400" relation="include">
+        </childnode>
+        <childnode refid="2420" relation="include">
+        </childnode>
+        <childnode refid="2421" relation="include">
+        </childnode>
+      </node>
+      <node id="2402">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h</label>
+        <link refid="missionrecap_8h"/>
+        <childnode refid="2400" relation="include">
+        </childnode>
+        <childnode refid="2403" relation="include">
+        </childnode>
+        <childnode refid="2404" relation="include">
+        </childnode>
+        <childnode refid="2409" relation="include">
+        </childnode>
+        <childnode refid="2413" relation="include">
+        </childnode>
+      </node>
+      <node id="2400">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapexecution.h</label>
+        <link refid="mapexecution_8h"/>
+        <childnode refid="2399" relation="include">
+        </childnode>
+        <childnode refid="2401" relation="include">
+        </childnode>
+        <childnode refid="2403" relation="include">
+        </childnode>
+        <childnode refid="2404" relation="include">
+        </childnode>
+        <childnode refid="2409" relation="include">
+        </childnode>
+        <childnode refid="2416" relation="include">
+        </childnode>
+        <childnode refid="2417" relation="include">
+        </childnode>
+      </node>
+      <node id="2440">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/PacketHandler.cpp</label>
+        <link refid="_packet_handler_8cpp"/>
+      </node>
+      <node id="2428">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h</label>
+        <link refid="serverqueue_8h"/>
+        <childnode refid="2419" relation="include">
+        </childnode>
+        <childnode refid="2429" relation="include">
+        </childnode>
+      </node>
+      <node id="2413">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp</label>
+        <link refid="missionrecap_8cpp"/>
+      </node>
+      <node id="2417">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.cpp</label>
+        <link refid="popwindowmp_8cpp"/>
+      </node>
+      <node id="2398">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/digitalclock.h</label>
+        <link refid="digitalclock_8h"/>
+        <childnode refid="2399" relation="include">
+        </childnode>
+        <childnode refid="2400" relation="include">
+        </childnode>
+      </node>
+      <node id="2411">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/tutorial.cpp</label>
+        <link refid="tutorial_8cpp"/>
+      </node>
+      <node id="2427">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp</label>
+        <link refid="_packet_8cpp"/>
+      </node>
+      <node id="2424">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/maprecap.cpp</label>
+        <link refid="maprecap_8cpp"/>
+      </node>
+      <node id="2420">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/gsserver.cpp</label>
+        <link refid="gsserver_8cpp"/>
+      </node>
+      <node id="2410">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="2408">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp</label>
+        <link refid="qttabtest_8cpp"/>
+      </node>
+      <node id="2432">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/dbmanager.cpp</label>
+        <link refid="dbmanager_8cpp"/>
+      </node>
+      <node id="2431">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/ActionPacket.cpp</label>
+        <link refid="_action_packet_8cpp"/>
+      </node>
+      <node id="2433">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/flightpath.h</label>
+        <link refid="flightpath_8h"/>
+        <childnode refid="2422" relation="include">
+        </childnode>
+        <childnode refid="2423" relation="include">
+        </childnode>
+        <childnode refid="2401" relation="include">
+        </childnode>
+        <childnode refid="2400" relation="include">
+        </childnode>
+        <childnode refid="2434" relation="include">
+        </childnode>
+      </node>
+      <node id="2397">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/messagebox.h</label>
+        <link refid="messagebox_8h"/>
+        <childnode refid="2398" relation="include">
+        </childnode>
+        <childnode refid="2418" relation="include">
+        </childnode>
+        <childnode refid="2419" relation="include">
+        </childnode>
+        <childnode refid="2422" relation="include">
+        </childnode>
+        <childnode refid="2423" relation="include">
+        </childnode>
+        <childnode refid="2401" relation="include">
+        </childnode>
+        <childnode refid="2400" relation="include">
+        </childnode>
+        <childnode refid="2426" relation="include">
+        </childnode>
+        <childnode refid="2427" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_protocol_1_1_packet" prot="public">Protocol::Packet</innerclass>
+    <innernamespace refid="namespace_protocol">Protocol</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2015:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Jason<sp/>Watkins<sp/>&lt;watkins1@uci.edu&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Permission<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>and/or<sp/>distribute<sp/>this<sp/>software<sp/>for<sp/>any</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>purpose<sp/>with<sp/>or<sp/>without<sp/>fee<sp/>is<sp/>hereby<sp/>granted,<sp/>provided<sp/>that<sp/>the<sp/>above</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>appear<sp/>in<sp/>all<sp/>copies.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>THE<sp/>AUTHOR<sp/>DISCLAIMS<sp/>ALL<sp/>WARRANTIES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>WITH<sp/>REGARD<sp/>TO<sp/>THIS<sp/>SOFTWARE<sp/>INCLUDING<sp/>ALL<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>AUTHOR<sp/>BE<sp/>LIABLE<sp/>FOR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ANY<sp/>SPECIAL,<sp/>DIRECT,<sp/>INDIRECT,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>OR<sp/>ANY<sp/>DAMAGES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>WHATSOEVER<sp/>RESULTING<sp/>FROM<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA<sp/>OR<sp/>PROFITS,<sp/>WHETHER<sp/>IN<sp/>AN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>NEGLIGENCE<sp/>OR<sp/>OTHER<sp/>TORTIOUS<sp/>ACTION,<sp/>ARISING<sp/>OUT<sp/>OF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>USE<sp/>OR<sp/>PERFORMANCE<sp/>OF<sp/>THIS<sp/>SOFTWARE.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>COORDINATOR_PACKET_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>COORDINATOR_PACKET_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;time.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;stdio.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;stdint.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespace_protocol" kindref="compound">Protocol</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25" refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75" kindref="member">PacketType</ref><sp/>:<sp/>uint8_t</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75ab25d8b2099e52bb9300aca6661601b8b" kindref="member">Ack</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75a5f221e9a2771c63ef7f696975f16cea4" kindref="member">Telem</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75a004bf6c9a40003140292e97330236c53" kindref="member">Action</ref><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75a4059b0251f66a18cb56f544728796875" kindref="member">Info</ref><sp/>=<sp/>3</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="class_protocol_1_1_packet" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_protocol_1_1_packet" kindref="compound">Packet</ref></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="class_protocol_1_1_packet_1acbe4f1b9f973d14097814d16fb0cd83a" kindref="member">get_timestamp</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_protocol_1_1_packet_1aa3f97852d443bb9554178384afa24eec" kindref="member">set_type</ref>(<ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75" kindref="member">PacketType</ref><sp/>a);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75" kindref="member">PacketType</ref><sp/><ref refid="class_protocol_1_1_packet_1a3c159ff945d95102ee2a2ba0b93d05d8" kindref="member">get_type</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40" refid="class_protocol_1_1_packet_1a007e952050b7cd153f79516a517f8e7c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75" kindref="member">PacketType</ref><sp/><ref refid="class_protocol_1_1_packet_1a007e952050b7cd153f79516a517f8e7c" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="44" refid="class_protocol_1_1_packet_1a2f0a19f4bff82270290e53d31e67db33" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="class_protocol_1_1_packet_1a2f0a19f4bff82270290e53d31e67db33" kindref="member">timestamp</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_protocol_1_1_packet_1ae02347b6d2eee98511ec19343b82e0a7" kindref="member">Packet</ref>(<ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75" kindref="member">PacketType</ref><sp/>t);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="class_protocol_1_1_packet_1aa7498c8c70cb8a55617ce588508af81f" kindref="member">WriteHeader</ref>(uint8_t*<sp/><ref refid="_packet_handler_8cpp_1aae7966d231efc476384b8aa9c25980f9" kindref="member">buffer</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="class_protocol_1_1_packet_1aa5f54d3128f7914383f4d8e8f53fbce4" kindref="member">ReadHeader</ref>(uint8_t*<sp/><ref refid="_packet_handler_8cpp_1aae7966d231efc476384b8aa9c25980f9" kindref="member">buffer</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="class_protocol_1_1_packet_1adc4ebdbdbcdbaa177ba243c5c654ba18" kindref="member">SetChecksum</ref>(uint8_t*<sp/><ref refid="_packet_handler_8cpp_1aae7966d231efc476384b8aa9c25980f9" kindref="member">buffer</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>offset);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="class_protocol_1_1_packet_1a9c89c3d05acc44a5050ebfc756a2cd41" kindref="member">GetBytes</ref>(uint8_t*<sp/><ref refid="_packet_handler_8cpp_1aae7966d231efc476384b8aa9c25980f9" kindref="member">buffer</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="class_protocol_1_1_packet" kindref="compound">Packet</ref>*<sp/><ref refid="class_protocol_1_1_packet_1ad327686418aa271121e6a6a8eadebbd4" kindref="member">Parse</ref>(uint8_t*<sp/><ref refid="_packet_handler_8cpp_1aae7966d231efc476384b8aa9c25980f9" kindref="member">buffer</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h"/>
+  </compounddef>
+</doxygen>

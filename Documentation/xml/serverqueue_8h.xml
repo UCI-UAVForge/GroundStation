@@ -1,0 +1,343 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="serverqueue_8h" kind="file" language="C++">
+    <compoundname>serverqueue.h</compoundname>
+    <includes local="no">QList</includes>
+    <includes local="no">QLinkedList</includes>
+    <includes refid="packet_8h" local="yes">packet.h</includes>
+    <includes refid="ackpacket_8h" local="yes">ackpacket.h</includes>
+    <includes refid="actionpacket_8h" local="yes">actionpacket.h</includes>
+    <includes refid="infopacket_8h" local="yes">infopacket.h</includes>
+    <includes refid="telemetrypacket_8h" local="yes">telemetrypacket.h</includes>
+    <includedby refid="gsserver_8h" local="yes">C:/Users/Roman/Documents/GroundStation/GS/gsserver.h</includedby>
+    <includedby refid="serverqueue_8cpp" local="yes">C:/Users/Roman/Documents/GroundStation/GS/serverqueue.cpp</includedby>
+    <incdepgraph>
+      <node id="2912">
+        <label>QList</label>
+      </node>
+      <node id="2917">
+        <label>stdint.h</label>
+      </node>
+      <node id="2919">
+        <label>actionpacket.h</label>
+        <link refid="actionpacket_8h"/>
+        <childnode refid="2920" relation="include">
+        </childnode>
+        <childnode refid="2914" relation="include">
+        </childnode>
+      </node>
+      <node id="2920">
+        <label>string</label>
+      </node>
+      <node id="2913">
+        <label>QLinkedList</label>
+      </node>
+      <node id="2918">
+        <label>ackpacket.h</label>
+        <link refid="ackpacket_8h"/>
+        <childnode refid="2916" relation="include">
+        </childnode>
+        <childnode refid="2914" relation="include">
+        </childnode>
+      </node>
+      <node id="2914">
+        <label>packet.h</label>
+        <link refid="packet_8h"/>
+        <childnode refid="2915" relation="include">
+        </childnode>
+        <childnode refid="2916" relation="include">
+        </childnode>
+        <childnode refid="2917" relation="include">
+        </childnode>
+      </node>
+      <node id="2921">
+        <label>infopacket.h</label>
+        <link refid="infopacket_8h"/>
+        <childnode refid="2920" relation="include">
+        </childnode>
+        <childnode refid="2922" relation="include">
+        </childnode>
+        <childnode refid="2917" relation="include">
+        </childnode>
+        <childnode refid="2914" relation="include">
+        </childnode>
+      </node>
+      <node id="2922">
+        <label>string.h</label>
+      </node>
+      <node id="2923">
+        <label>telemetrypacket.h</label>
+        <link refid="telemetrypacket_8h"/>
+        <childnode refid="2920" relation="include">
+        </childnode>
+        <childnode refid="2914" relation="include">
+        </childnode>
+      </node>
+      <node id="2915">
+        <label>time.h</label>
+      </node>
+      <node id="2911">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h</label>
+        <link refid="serverqueue.h"/>
+        <childnode refid="2912" relation="include">
+        </childnode>
+        <childnode refid="2913" relation="include">
+        </childnode>
+        <childnode refid="2914" relation="include">
+        </childnode>
+        <childnode refid="2918" relation="include">
+        </childnode>
+        <childnode refid="2919" relation="include">
+        </childnode>
+        <childnode refid="2921" relation="include">
+        </childnode>
+        <childnode refid="2923" relation="include">
+        </childnode>
+      </node>
+      <node id="2916">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2939">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/options.cpp</label>
+        <link refid="options_8cpp"/>
+      </node>
+      <node id="2927">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/digitalclock.cpp</label>
+        <link refid="digitalclock_8cpp"/>
+      </node>
+      <node id="2943">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapexecution.cpp</label>
+        <link refid="mapexecution_8cpp"/>
+      </node>
+      <node id="2932">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h</label>
+        <link refid="mainmdidisplay_8h"/>
+        <childnode refid="2933" relation="include">
+        </childnode>
+        <childnode refid="2934" relation="include">
+        </childnode>
+      </node>
+      <node id="2947">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/serverqueue.cpp</label>
+        <link refid="serverqueue_8cpp"/>
+      </node>
+      <node id="2942">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapvalidator.cpp</label>
+        <link refid="mapvalidator_8cpp"/>
+      </node>
+      <node id="2934">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp</label>
+        <link refid="mainmdidisplay_8cpp"/>
+      </node>
+      <node id="2928">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h</label>
+        <link refid="mapplanning_8h"/>
+        <childnode refid="2929" relation="include">
+        </childnode>
+        <childnode refid="2930" relation="include">
+        </childnode>
+        <childnode refid="2931" relation="include">
+        </childnode>
+        <childnode refid="2932" relation="include">
+        </childnode>
+        <childnode refid="2936" relation="include">
+        </childnode>
+        <childnode refid="2941" relation="include">
+        </childnode>
+        <childnode refid="2942" relation="include">
+        </childnode>
+      </node>
+      <node id="2933">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="2930">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/options.h</label>
+        <link refid="options_8h"/>
+        <childnode refid="2926" relation="include">
+        </childnode>
+        <childnode refid="2931" relation="include">
+        </childnode>
+        <childnode refid="2936" relation="include">
+        </childnode>
+        <childnode refid="2939" relation="include">
+        </childnode>
+      </node>
+      <node id="2931">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h</label>
+        <link refid="qttabtest_8h"/>
+        <childnode refid="2932" relation="include">
+        </childnode>
+        <childnode refid="2935" relation="include">
+        </childnode>
+      </node>
+      <node id="2936">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="2937" relation="include">
+        </childnode>
+        <childnode refid="2938" relation="include">
+        </childnode>
+      </node>
+      <node id="2946">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/networklistener.cpp</label>
+        <link refid="networklistener_8cpp"/>
+      </node>
+      <node id="2941">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp</label>
+        <link refid="mapplanning_8cpp"/>
+      </node>
+      <node id="2925">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/gsserver.h</label>
+        <link refid="gsserver_8h"/>
+        <childnode refid="2926" relation="include">
+        </childnode>
+        <childnode refid="2945" relation="include">
+        </childnode>
+        <childnode refid="2946" relation="include">
+        </childnode>
+      </node>
+      <node id="2929">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h</label>
+        <link refid="missionrecap_8h"/>
+        <childnode refid="2926" relation="include">
+        </childnode>
+        <childnode refid="2930" relation="include">
+        </childnode>
+        <childnode refid="2931" relation="include">
+        </childnode>
+        <childnode refid="2936" relation="include">
+        </childnode>
+        <childnode refid="2940" relation="include">
+        </childnode>
+      </node>
+      <node id="2926">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mapexecution.h</label>
+        <link refid="mapexecution_8h"/>
+        <childnode refid="2927" relation="include">
+        </childnode>
+        <childnode refid="2928" relation="include">
+        </childnode>
+        <childnode refid="2930" relation="include">
+        </childnode>
+        <childnode refid="2931" relation="include">
+        </childnode>
+        <childnode refid="2936" relation="include">
+        </childnode>
+        <childnode refid="2943" relation="include">
+        </childnode>
+        <childnode refid="2944" relation="include">
+        </childnode>
+      </node>
+      <node id="2924">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h</label>
+        <link refid="serverqueue.h"/>
+        <childnode refid="2925" relation="include">
+        </childnode>
+        <childnode refid="2947" relation="include">
+        </childnode>
+      </node>
+      <node id="2940">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp</label>
+        <link refid="missionrecap_8cpp"/>
+      </node>
+      <node id="2944">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.cpp</label>
+        <link refid="popwindowmp_8cpp"/>
+      </node>
+      <node id="2938">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/tutorial.cpp</label>
+        <link refid="tutorial_8cpp"/>
+      </node>
+      <node id="2945">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/gsserver.cpp</label>
+        <link refid="gsserver_8cpp"/>
+      </node>
+      <node id="2937">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="2935">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp</label>
+        <link refid="qttabtest_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_q_u_e_u_e___e_n_t_r_y" prot="public">QUEUE_ENTRY</innerclass>
+    <innerclass refid="class_server_queue" prot="public">ServerQueue</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="serverqueue_8h_1a326cffc052cd053ca9cdd401fdd996ad" prot="public" static="no">
+        <type>struct <ref refid="struct_q_u_e_u_e___e_n_t_r_y" kindref="compound">QUEUE_ENTRY</ref></type>
+        <definition>typedef struct QUEUE_ENTRY QueueEntry</definition>
+        <argsstring></argsstring>
+        <name>QueueEntry</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" line="17" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>SERVERQUEUE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SERVERQUEUE_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QLinkedList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="packet_8h" kindref="compound">packet.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ackpacket_8h" kindref="compound">ackpacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="actionpacket_8h" kindref="compound">actionpacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="infopacket_8h" kindref="compound">infopacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="telemetrypacket_8h" kindref="compound">telemetrypacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="struct_q_u_e_u_e___e_n_t_r_y" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_q_u_e_u_e___e_n_t_r_y" kindref="compound">QUEUE_ENTRY</ref>{</highlight></codeline>
+<codeline lineno="14" refid="struct_q_u_e_u_e___e_n_t_r_y_1a9ce6547656475c3c62836a758bf07383" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref><sp/>*<ref refid="struct_q_u_e_u_e___e_n_t_r_y_1a9ce6547656475c3c62836a758bf07383" kindref="member">packet</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="15" refid="struct_q_u_e_u_e___e_n_t_r_y_1aceb97e348a3a8237b3af362b56615b01" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="struct_q_u_e_u_e___e_n_t_r_y_1aceb97e348a3a8237b3af362b56615b01" kindref="member">priority</ref><sp/>=<sp/>10000;</highlight></codeline>
+<codeline lineno="16" refid="struct_q_u_e_u_e___e_n_t_r_y_1a881ee0110089a84a651334a82c556795" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_q_u_e_u_e___e_n_t_r_y_1a881ee0110089a84a651334a82c556795" kindref="member">waitingForAck</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}<ref refid="serverqueue_8h_1a326cffc052cd053ca9cdd401fdd996ad" kindref="member">QueueEntry</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="class_server_queue" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_server_queue" kindref="compound">ServerQueue</ref><sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="40" refid="class_server_queue_1ae44a5def3d3c052a1a92584777d8a951" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QLinkedList&lt;QueueEntry*&gt;<sp/><ref refid="class_server_queue_1ae44a5def3d3c052a1a92584777d8a951" kindref="member">pendingPackets</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="class_server_queue_1a0fd870115c26c00c8a09e05ac502ea60" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;QueueEntry*&gt;<sp/><ref refid="class_server_queue_1a0fd870115c26c00c8a09e05ac502ea60" kindref="member">window</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="class_server_queue_1afb24e3092a45555723b0e184d90280fb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_server_queue_1afb24e3092a45555723b0e184d90280fb" kindref="member">windowLen</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_server_queue_1adb7adca838737f11995fe4bb20f18c8d" kindref="member">updateWindow</ref>();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_server_queue_1a5a03695a07bd1fe30cf6c2e58f6f8b1e" kindref="member">ServerQueue</ref>();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_server_queue_1a5a03695a07bd1fe30cf6c2e58f6f8b1e" kindref="member">ServerQueue</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>windowLen);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_server_queue_1a59cd46b536b9e86f7c7d93519d5bd983" kindref="member">~ServerQueue</ref>();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_server_queue_1aa8335eeeaf56fbe703cb49988b63fb87" kindref="member">isEmpty</ref>();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_server_queue_1a715921b0a0067b3d3a1485a824fbbb3d" kindref="member">enqueue</ref>(<ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref><sp/>*packet);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_server_queue_1a715921b0a0067b3d3a1485a824fbbb3d" kindref="member">enqueue</ref>(<ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref><sp/>*packet,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>priority);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_server_queue_1aa8678274d8afa980b2995ed3f839a3f8" kindref="member">dequeue</ref>(<ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref><sp/>*packet);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_server_queue_1a8d0d64b34a8e2a342009b496bfe8b196" kindref="member">forceDequeue</ref>(<ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref><sp/>*packet);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_server_queue_1a4815b1a73a46c6b581bd70a82b04d1b0" kindref="member">recieveAckPacket</ref>(<ref refid="class_protocol_1_1_ack_packet" kindref="compound">Protocol::AckPacket</ref><sp/>*ack_pack);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref><sp/>*<ref refid="class_server_queue_1a89278291c92e8ec01d730407d3f2f806" kindref="member">getNextPacket</ref>();</highlight></codeline>
+<codeline lineno="140"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>SERVERQUEUE_H</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h"/>
+  </compounddef>
+</doxygen>
