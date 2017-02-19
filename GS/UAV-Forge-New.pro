@@ -71,7 +71,8 @@ SOURCES += main.cpp\
     tablewidget.cpp \
     #statuswidget.cpp \
     timerwidget.cpp \
-    missionstatuswindow.cpp
+    missionstatuswindow.cpp \
+    gscontrolpanel.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
@@ -113,7 +114,8 @@ HEADERS  += mainwindow.h \
     tablewidget.h \
     #statuswidget.h \
     timerwidget.h \
-    missionstatuswindow.h
+    missionstatuswindow.h \
+    gscontrolpanel.h
 
 FORMS    += mainwindow.ui \
     options.ui \
@@ -128,7 +130,8 @@ FORMS    += mainwindow.ui \
     qttabtest.ui \
     mainmdidisplay.ui \
     dialog.ui \
-    missionstatuswindow.ui
+    missionstatuswindow.ui \
+    gscontrolpanel.ui
 
 OTHER_FILES +=
 

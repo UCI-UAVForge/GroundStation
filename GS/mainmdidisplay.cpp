@@ -5,7 +5,6 @@
 
 MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
     ui(new Ui::MainMDIDisplay) {
-
     qttWidget = NULL ;
 
     ui->setupUi(this);

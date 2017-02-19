@@ -42,7 +42,7 @@ private slots:
 private:
 
     Ui::GSControlPanel *ui;
-  
+
 };
 
 #endif // GSCONTROLPANEL_H
