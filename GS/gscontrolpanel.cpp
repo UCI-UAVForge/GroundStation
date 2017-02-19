@@ -122,7 +122,7 @@ QString GSControlPanel::getMissionNameToSave() {
  */
 QString GSControlPanel::getMissionNameToLoad() {
 
-    return this->ui->LoadMissionDropdown->itemData( this->ui->LoadMissionDropdown->currentIndex() ) ;
+    return this->ui->LoadMissionDropdown->itemData( this->ui->LoadMissionDropdown->currentIndex() ).toString() ;
 
 }
 

@@ -7,9 +7,9 @@
 #include "ui_mainmdidisplay.h"
 #include "mapwidget.h"
 #include "missionstatuswindow.h"
-#include "messagebox.h"
-
 #include <assert.h>
+
+#include "gscontrolpanel.h"
 
 //FOR NOW...
 #include "mapplanning.h"
@@ -90,6 +90,18 @@ private:
 
     QVBoxLayout * MapExecutionStatusVBoxLayout;
 
+    /**
+     * @brief MissionStatusWindow holds StatusWidget and TimerWidget.
+     */
+    MissionStatusWindow msw ;
+
+    /**
+     * @brief Network log
+     */
+    messagebox mb ;
+
+    GSControlPanel gscp ;
+
     /* Buttons */
 
     //TODO Put all the buttons/other UI elements for the GUI here to organize everything in one spot
@@ -99,10 +111,6 @@ private:
     /* Tabs */
 
     QWidget * MapRecapUI_TableTab , * MapRecapUI_GraphTab ;
-
-    MissionStatusWindow * msw ;
-
-    messagebox mb ;
 
 };
 

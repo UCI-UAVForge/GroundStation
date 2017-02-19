@@ -7,31 +7,21 @@
 
 MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlanning) {
     ui->setupUi(this);
-    this->connect(ui->mapView, &MapWidget::pointAddedToMap, ui->tableView, &TableWidget::appendRow);
+    this->connect(ui->mapView, &MapWidget::pointAdded, ui->tableView, &TableWidget::appendRow);
+    this->connect(ui->mapView, &MapWidget::JSInitialized, this, &MapPlanning::setupMapPaths);
     this->connect(ui->clearTableButton, &QPushButton::clicked, ui->tableView, &TableWidget::clearTable);
-    this->connect(ui->clearTableButton, &QPushButton::clicked, ui->mapView, &MapWidget::clearMap);
+    this->connect(ui->clearTableButton, &QPushButton::clicked, ui->mapView, &MapWidget::clearFlightPath);
 }
 
 MapPlanning::~MapPlanning() {
     delete ui;
 }
 
-/*
- * Since C++/JS bridges are broken when the JS page refreshes this slot
- * is used to rebruild the bridge each time when triggered by a
- * javaScriptWindowObjectCleared signal from the page frame. Function
- * added by Jordan Dickson Feb 14th 2015.
- * Unused after 5.7 update -Jordan Dickson Feb 3 2017
- */
-void MapPlanning::addClickListener() {
-    //Creates the bridge called cbridge between the java script object and this class.
-    //ui->webView->page()->mainFrame()->addToJavaScriptWindowObject("cbridge",this);
-}
-
 // execution button
 // redirect to mission execution window
 void MapPlanning::on_executeButton_clicked() {
     ui->mapView->disconnectWebSocket();
+    //this->done(2);
     MapExecution* mapExecution = new MapExecution(getTableAsFlightPath());
     this->close();
     mapExecution->showFullScreen();
@@ -55,6 +45,7 @@ void MapPlanning::on_updateTableButton_clicked() {
 // back button
 // redirect to main window
 void MapPlanning::on_backButton_clicked() {
+    ui->mapView->disconnectWebSocket();
     this->done(0);
 }
 
@@ -73,6 +64,7 @@ FlightPath *MapPlanning::getTableAsFlightPath(){
 }
 
 void MapPlanning::closeWindow() {
+    ui->mapView->disconnectWebSocket();
     this->close();
 }
 
@@ -83,7 +75,13 @@ void MapPlanning::addPointToTable(double lat, double lng) {
     ui->tableView->appendRow(lat,lng);
 }
 
+void MapPlanning::setupMapPaths(){
+    ui->mapView->sendCreateNewPath(0);
+    ui->mapView->sendSetActivePath(0);
+}
+
 void MapPlanning::clearTable() {
     ui->tableView->clearTable();
-    ui->mapView->clearMap();
+    /// \todo make the argument mean something (tie it to a variable)
+    ui->mapView->clearFlightPath(0);
 }

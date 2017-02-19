@@ -46,6 +46,7 @@ SOURCES += main.cpp\
     videoplayer.cpp \
     gsserver.cpp \
     gsclient.cpp \
+    gscontrolpanel.cpp \
     qcustomplot.cpp\
     networklistener.cpp \
     connectiondialog.cpp \
@@ -83,6 +84,7 @@ HEADERS  += mainwindow.h \
     qcomboboxdelegate.h \
     videoplayer.h \
     net.h \
+    gscontrolpanel.h \
     gsserver.h \
     gsclient.h \
     qcustomplot.h\
@@ -120,6 +122,7 @@ FORMS    += mainwindow.ui \
     missionrecap.ui \
     tutorial.ui \
     popwindowmp.ui \
+    gscontrolpanel.ui \
     connectiondialog.ui \
     maprecap.ui \
     qttabtest.ui \
