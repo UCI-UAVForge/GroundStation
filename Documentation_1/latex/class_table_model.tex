@@ -1,0 +1,165 @@
+\hypertarget{class_table_model}{}\section{Table\+Model Class Reference}
+\label{class_table_model}\index{Table\+Model@{Table\+Model}}
+
+
+{\ttfamily \#include $<$tablemodel.\+h$>$}
+
+Inheritance diagram for Table\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_table_model}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_table_model_ad7d9723995888a77fa2242069fe3e67d}{Table\+Model} (Q\+Object $\ast$parent=0)
+\item 
+\hyperlink{class_table_model_ad91b1c11aa366dc3472fb393c68d0dc8}{Table\+Model} (Q\+List$<$ Q\+List$<$ Q\+String $>$ $>$ listof\+Pairs, Q\+Object $\ast$parent=0)
+\item 
+int \hyperlink{class_table_model_ac2815f7ad9ece5ffb1abd08a3a567483}{row\+Count} (const Q\+Model\+Index \&parent) const 
+\item 
+int \hyperlink{class_table_model_a0f07a494fac556e1520b0306c3a50cc0}{column\+Count} (const Q\+Model\+Index \&parent) const 
+\item 
+Q\+Variant \hyperlink{class_table_model_ab22a19802ca81ba42e1cec670e864183}{data} (const Q\+Model\+Index \&index, int role) const 
+\item 
+Q\+Variant \hyperlink{class_table_model_a4677a49af807c3b72ca4c1e82971d9ec}{header\+Data} (int section, Qt\+::\+Orientation orientation, int role) const 
+\item 
+Qt\+::\+Item\+Flags \hyperlink{class_table_model_ac758b15767be92f2ac9e0c4d958d5662}{flags} (const Q\+Model\+Index \&index) const 
+\item 
+bool \hyperlink{class_table_model_aa5ebe742e8bb1570c2ed8577c41f7c8d}{set\+Data} (const Q\+Model\+Index \&index, const Q\+Variant \&value, int role=Qt\+::\+Edit\+Role)
+\item 
+bool \hyperlink{class_table_model_a7fcf06eebf32f5295fec05cadcdf5320}{insert\+Rows} (int position, int rows, const Q\+Model\+Index \&index=Q\+Model\+Index())
+\item 
+bool \hyperlink{class_table_model_a3bc1eb333f87d13d9bb0fb2b4f7c744a}{insert\+Row} (const Q\+Model\+Index \&index=Q\+Model\+Index())
+\item 
+bool \hyperlink{class_table_model_abd1d9fd2aebf4ab22a5bc1f1bc4c446d}{remove\+Rows} (int position, int rows, const Q\+Model\+Index \&index=Q\+Model\+Index())
+\item 
+bool \hyperlink{class_table_model_a319fa96b8856ee379b09ddb793611f44}{remove\+Rows} (Q\+Model\+Index\+List indexes)
+\item 
+Q\+List$<$ Q\+List$<$ Q\+String $>$ $>$ \hyperlink{class_table_model_ac5d306166ddda71a3b2deff4245ff1cf}{get\+List} ()
+\item 
+bool \hyperlink{class_table_model_a99c2ce0fac13ea5a673f862ea7fe0d6c}{insert\+Row} (double longitude, double latitude, const Q\+Model\+Index \&index=Q\+Model\+Index())
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_table_model_ad7d9723995888a77fa2242069fe3e67d}{}\index{Table\+Model@{Table\+Model}!Table\+Model@{Table\+Model}}
+\index{Table\+Model@{Table\+Model}!Table\+Model@{Table\+Model}}
+\subsubsection[{Table\+Model}]{\setlength{\rightskip}{0pt plus 5cm}Table\+Model\+::\+Table\+Model (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{class_table_model_ad7d9723995888a77fa2242069fe3e67d}
+\hypertarget{class_table_model_ad91b1c11aa366dc3472fb393c68d0dc8}{}\index{Table\+Model@{Table\+Model}!Table\+Model@{Table\+Model}}
+\index{Table\+Model@{Table\+Model}!Table\+Model@{Table\+Model}}
+\subsubsection[{Table\+Model}]{\setlength{\rightskip}{0pt plus 5cm}Table\+Model\+::\+Table\+Model (
+\begin{DoxyParamCaption}
+\item[{Q\+List$<$ Q\+List$<$ Q\+String $>$ $>$}]{listof\+Pairs, }
+\item[{Q\+Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{class_table_model_ad91b1c11aa366dc3472fb393c68d0dc8}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_table_model_a0f07a494fac556e1520b0306c3a50cc0}{}\index{Table\+Model@{Table\+Model}!column\+Count@{column\+Count}}
+\index{column\+Count@{column\+Count}!Table\+Model@{Table\+Model}}
+\subsubsection[{column\+Count}]{\setlength{\rightskip}{0pt plus 5cm}int Table\+Model\+::column\+Count (
+\begin{DoxyParamCaption}
+\item[{const Q\+Model\+Index \&}]{parent}
+\end{DoxyParamCaption}
+) const}\label{class_table_model_a0f07a494fac556e1520b0306c3a50cc0}
+\hypertarget{class_table_model_ab22a19802ca81ba42e1cec670e864183}{}\index{Table\+Model@{Table\+Model}!data@{data}}
+\index{data@{data}!Table\+Model@{Table\+Model}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Variant Table\+Model\+::data (
+\begin{DoxyParamCaption}
+\item[{const Q\+Model\+Index \&}]{index, }
+\item[{int}]{role}
+\end{DoxyParamCaption}
+) const}\label{class_table_model_ab22a19802ca81ba42e1cec670e864183}
+\hypertarget{class_table_model_ac758b15767be92f2ac9e0c4d958d5662}{}\index{Table\+Model@{Table\+Model}!flags@{flags}}
+\index{flags@{flags}!Table\+Model@{Table\+Model}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}Qt\+::\+Item\+Flags Table\+Model\+::flags (
+\begin{DoxyParamCaption}
+\item[{const Q\+Model\+Index \&}]{index}
+\end{DoxyParamCaption}
+) const}\label{class_table_model_ac758b15767be92f2ac9e0c4d958d5662}
+\hypertarget{class_table_model_ac5d306166ddda71a3b2deff4245ff1cf}{}\index{Table\+Model@{Table\+Model}!get\+List@{get\+List}}
+\index{get\+List@{get\+List}!Table\+Model@{Table\+Model}}
+\subsubsection[{get\+List}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ Q\+List$<$ Q\+String $>$ $>$ Table\+Model\+::get\+List (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_table_model_ac5d306166ddda71a3b2deff4245ff1cf}
+\hypertarget{class_table_model_a4677a49af807c3b72ca4c1e82971d9ec}{}\index{Table\+Model@{Table\+Model}!header\+Data@{header\+Data}}
+\index{header\+Data@{header\+Data}!Table\+Model@{Table\+Model}}
+\subsubsection[{header\+Data}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Variant Table\+Model\+::header\+Data (
+\begin{DoxyParamCaption}
+\item[{int}]{section, }
+\item[{Qt\+::\+Orientation}]{orientation, }
+\item[{int}]{role}
+\end{DoxyParamCaption}
+) const}\label{class_table_model_a4677a49af807c3b72ca4c1e82971d9ec}
+\hypertarget{class_table_model_a3bc1eb333f87d13d9bb0fb2b4f7c744a}{}\index{Table\+Model@{Table\+Model}!insert\+Row@{insert\+Row}}
+\index{insert\+Row@{insert\+Row}!Table\+Model@{Table\+Model}}
+\subsubsection[{insert\+Row}]{\setlength{\rightskip}{0pt plus 5cm}bool Table\+Model\+::insert\+Row (
+\begin{DoxyParamCaption}
+\item[{const Q\+Model\+Index \&}]{index = {\ttfamily QModelIndex()}}
+\end{DoxyParamCaption}
+)}\label{class_table_model_a3bc1eb333f87d13d9bb0fb2b4f7c744a}
+\hypertarget{class_table_model_a99c2ce0fac13ea5a673f862ea7fe0d6c}{}\index{Table\+Model@{Table\+Model}!insert\+Row@{insert\+Row}}
+\index{insert\+Row@{insert\+Row}!Table\+Model@{Table\+Model}}
+\subsubsection[{insert\+Row}]{\setlength{\rightskip}{0pt plus 5cm}bool Table\+Model\+::insert\+Row (
+\begin{DoxyParamCaption}
+\item[{double}]{longitude, }
+\item[{double}]{latitude, }
+\item[{const Q\+Model\+Index \&}]{index = {\ttfamily QModelIndex()}}
+\end{DoxyParamCaption}
+)}\label{class_table_model_a99c2ce0fac13ea5a673f862ea7fe0d6c}
+\hypertarget{class_table_model_a7fcf06eebf32f5295fec05cadcdf5320}{}\index{Table\+Model@{Table\+Model}!insert\+Rows@{insert\+Rows}}
+\index{insert\+Rows@{insert\+Rows}!Table\+Model@{Table\+Model}}
+\subsubsection[{insert\+Rows}]{\setlength{\rightskip}{0pt plus 5cm}bool Table\+Model\+::insert\+Rows (
+\begin{DoxyParamCaption}
+\item[{int}]{position, }
+\item[{int}]{rows, }
+\item[{const Q\+Model\+Index \&}]{index = {\ttfamily QModelIndex()}}
+\end{DoxyParamCaption}
+)}\label{class_table_model_a7fcf06eebf32f5295fec05cadcdf5320}
+\hypertarget{class_table_model_abd1d9fd2aebf4ab22a5bc1f1bc4c446d}{}\index{Table\+Model@{Table\+Model}!remove\+Rows@{remove\+Rows}}
+\index{remove\+Rows@{remove\+Rows}!Table\+Model@{Table\+Model}}
+\subsubsection[{remove\+Rows}]{\setlength{\rightskip}{0pt plus 5cm}bool Table\+Model\+::remove\+Rows (
+\begin{DoxyParamCaption}
+\item[{int}]{position, }
+\item[{int}]{rows, }
+\item[{const Q\+Model\+Index \&}]{index = {\ttfamily QModelIndex()}}
+\end{DoxyParamCaption}
+)}\label{class_table_model_abd1d9fd2aebf4ab22a5bc1f1bc4c446d}
+\hypertarget{class_table_model_a319fa96b8856ee379b09ddb793611f44}{}\index{Table\+Model@{Table\+Model}!remove\+Rows@{remove\+Rows}}
+\index{remove\+Rows@{remove\+Rows}!Table\+Model@{Table\+Model}}
+\subsubsection[{remove\+Rows}]{\setlength{\rightskip}{0pt plus 5cm}bool Table\+Model\+::remove\+Rows (
+\begin{DoxyParamCaption}
+\item[{Q\+Model\+Index\+List}]{indexes}
+\end{DoxyParamCaption}
+)}\label{class_table_model_a319fa96b8856ee379b09ddb793611f44}
+\hypertarget{class_table_model_ac2815f7ad9ece5ffb1abd08a3a567483}{}\index{Table\+Model@{Table\+Model}!row\+Count@{row\+Count}}
+\index{row\+Count@{row\+Count}!Table\+Model@{Table\+Model}}
+\subsubsection[{row\+Count}]{\setlength{\rightskip}{0pt plus 5cm}int Table\+Model\+::row\+Count (
+\begin{DoxyParamCaption}
+\item[{const Q\+Model\+Index \&}]{parent}
+\end{DoxyParamCaption}
+) const}\label{class_table_model_ac2815f7ad9ece5ffb1abd08a3a567483}
+\hypertarget{class_table_model_aa5ebe742e8bb1570c2ed8577c41f7c8d}{}\index{Table\+Model@{Table\+Model}!set\+Data@{set\+Data}}
+\index{set\+Data@{set\+Data}!Table\+Model@{Table\+Model}}
+\subsubsection[{set\+Data}]{\setlength{\rightskip}{0pt plus 5cm}bool Table\+Model\+::set\+Data (
+\begin{DoxyParamCaption}
+\item[{const Q\+Model\+Index \&}]{index, }
+\item[{const Q\+Variant \&}]{value, }
+\item[{int}]{role = {\ttfamily Qt\+:\+:EditRole}}
+\end{DoxyParamCaption}
+)}\label{class_table_model_aa5ebe742e8bb1570c2ed8577c41f7c8d}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{tablemodel_8h}{tablemodel.\+h}\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{tablemodel_8cpp}{tablemodel.\+cpp}\end{DoxyCompactItemize}

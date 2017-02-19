@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_tutorial" kind="class" language="C++" prot="public">
+    <compoundname>Tutorial</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QWidget</basecompoundref>
+    <includes refid="tutorial_8h" local="no">tutorial.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_tutorial_1a36963da2753d1554374a0e4c028208fd" prot="private" static="no" mutable="no">
+        <type>Ui::Tutorial *</type>
+        <definition>Ui::Tutorial* Tutorial::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tutorial.h" line="22" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tutorial.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_tutorial_1a27845ca3a1d3987bd505d36659e3bf7c" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tutorial::Tutorial</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>Tutorial</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tutorial.h" line="15" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tutorial.cpp" bodystart="5" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tutorial_1a6a7f12f75952c7d801c12aed8179f510" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Tutorial::~Tutorial</definition>
+        <argsstring>()</argsstring>
+        <name>~Tutorial</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tutorial.h" line="16" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tutorial.cpp" bodystart="16" bodyend="19"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_tutorial_1a580cce489f3e8c90b8186fec6a6e2801" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Tutorial::on_backButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_backButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tutorial.h" line="19" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tutorial.cpp" bodystart="21" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1055">
+        <label>Tutorial</label>
+        <link refid="class_tutorial"/>
+        <childnode refid="1056" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1056">
+        <label>QWidget</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1057">
+        <label>Tutorial</label>
+        <link refid="class_tutorial"/>
+        <childnode refid="1058" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1058">
+        <label>QWidget</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tutorial.h" line="11" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tutorial.h" bodystart="10" bodyend="23"/>
+    <listofallmembers>
+      <member refid="class_tutorial_1a580cce489f3e8c90b8186fec6a6e2801" prot="private" virt="non-virtual"><scope>Tutorial</scope><name>on_backButton_clicked</name></member>
+      <member refid="class_tutorial_1a27845ca3a1d3987bd505d36659e3bf7c" prot="public" virt="non-virtual"><scope>Tutorial</scope><name>Tutorial</name></member>
+      <member refid="class_tutorial_1a36963da2753d1554374a0e4c028208fd" prot="private" virt="non-virtual"><scope>Tutorial</scope><name>ui</name></member>
+      <member refid="class_tutorial_1a6a7f12f75952c7d801c12aed8179f510" prot="public" virt="non-virtual"><scope>Tutorial</scope><name>~Tutorial</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

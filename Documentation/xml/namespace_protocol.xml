@@ -1,0 +1,252 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="namespace_protocol" kind="namespace" language="C++">
+    <compoundname>Protocol</compoundname>
+    <innerclass refid="class_protocol_1_1_ack_packet" prot="public">Protocol::AckPacket</innerclass>
+    <innerclass refid="class_protocol_1_1_action_packet" prot="public">Protocol::ActionPacket</innerclass>
+    <innerclass refid="class_protocol_1_1_info_packet" prot="public">Protocol::InfoPacket</innerclass>
+    <innerclass refid="class_protocol_1_1_packet" prot="public">Protocol::Packet</innerclass>
+    <innerclass refid="class_protocol_1_1_telemetry_packet" prot="public">Protocol::TelemetryPacket</innerclass>
+    <innerclass refid="struct_protocol_1_1_waypoint" prot="public">Protocol::Waypoint</innerclass>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9" prot="public" static="no">
+        <name>ActionType</name>
+        <enumvalue id="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9aa6122a65eaa676f700ae68d393054a37" prot="public">
+          <name>Start</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9ad688f865d336b65f4de574e314ebcf3f" prot="public">
+          <name>RequestInfo</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9ae68373c55e2e3d2b783403fba58c7327" prot="public">
+          <name>AddWaypoint</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9ad127d07d13bd85cec9997691b4eec0d4" prot="public">
+          <name>SetHome</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9a6a758440fe37f8e3c863f340eb267c5b" prot="public">
+          <name>RemoveWaypoint</name>
+          <initializer>= 4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9a11a755d598c0c417f9a36758c3da7481" prot="public">
+          <name>Stop</name>
+          <initializer>= 14</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9a1a4ebb180ba59b067782515ffee6e975" prot="public">
+          <name>Shutdown</name>
+          <initializer>= 15</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h" line="25" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h" bodystart="24" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75" prot="public" static="no">
+        <name>PacketType</name>
+        <enumvalue id="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75ab25d8b2099e52bb9300aca6661601b8b" prot="public">
+          <name>Ack</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75a5f221e9a2771c63ef7f696975f16cea4" prot="public">
+          <name>Telem</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75a004bf6c9a40003140292e97330236c53" prot="public">
+          <name>Action</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75a4059b0251f66a18cb56f544728796875" prot="public">
+          <name>Info</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="26" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/packet.h" bodystart="25" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespace_protocol_1a5a64ef0b3c8cee827111b106b3aaf25a" prot="public" static="no">
+        <type>struct <ref refid="struct_protocol_1_1_waypoint" kindref="compound">Waypoint</ref></type>
+        <definition>typedef struct Waypoint Protocol::Waypoint</definition>
+        <argsstring></argsstring>
+        <name>Waypoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h" line="50" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespace_protocol_1a1bc281284688ad6b57162dbefd3b7b84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_protocol_1_1_packet" kindref="compound">Packet</ref> *</type>
+        <definition>Protocol::Packet * Protocol::ReadPacket</definition>
+        <argsstring>()</argsstring>
+        <name>ReadPacket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Trys to read a packet from the network link.</para><para>Reads a UDP packet and parses it into a meaningful <ref refid="class_protocol_1_1_packet" kindref="compound">Packet</ref> understood by the rest of the Coordinator subsystems.</para><para><simplesect kind="author"><para>Jason Watkins </para></simplesect>
+<simplesect kind="date"><para>2015-11-21</para></simplesect>
+<simplesect kind="return"><para>A pointer to the parsed packet. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/PacketHandler.h" line="34" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/PacketHandler.cpp" bodystart="24" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_protocol_1a9fbc73a47067bdd531b5435b4865da47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Protocol::SendPacket</definition>
+        <argsstring>(Packet *p)</argsstring>
+        <name>SendPacket</name>
+        <param>
+          <type><ref refid="class_protocol_1_1_packet" kindref="compound">Packet</ref> *</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sends a packet over the network link.</para><para><simplesect kind="author"><para>Jason Watkins </para></simplesect>
+<simplesect kind="date"><para>2015-11-21</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the packet to send. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/PacketHandler.h" line="42" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/PacketHandler.cpp" bodystart="45" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_protocol_1ae4715844a15b4cef94c06d21a9bce30a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Protocol::HandlePacket</definition>
+        <argsstring>(Packet *packet)</argsstring>
+        <name>HandlePacket</name>
+        <param>
+          <type><ref refid="class_protocol_1_1_packet" kindref="compound">Packet</ref> *</type>
+          <declname>packet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Dispatches an incomming packet to an appropriate handler.</para><para><simplesect kind="author"><para>Jason Watkins </para></simplesect>
+<simplesect kind="date"><para>2015-11-21</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the packet to handle. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/PacketHandler.h" line="50" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/PacketHandler.cpp" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="namespace_protocol_1a15ee711eaba2f00333d798eaa3e6e55b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Protocol::Setup</definition>
+        <argsstring>(IPAddress &amp;addr, uint16_t port)</argsstring>
+        <name>Setup</name>
+        <param>
+          <type>IPAddress &amp;</type>
+          <declname>addr</declname>
+        </param>
+        <param>
+          <type>uint16_t</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Performs initial actions required to initialize packet handler.</para><para><simplesect kind="author"><para>Jason Watkins </para></simplesect>
+<simplesect kind="date"><para>2015-11-21</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addr[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The remote IP address of the ground station. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>port[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The local port of the ground station. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/PacketHandler.h" line="59" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/PacketHandler.cpp" bodystart="62" bodyend="66"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/ackpacket.h" line="23" column="1"/>
+  </compounddef>
+</doxygen>

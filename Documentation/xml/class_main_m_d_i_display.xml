@@ -1,0 +1,821 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_main_m_d_i_display" kind="class" language="C++" prot="public">
+    <compoundname>MainMDIDisplay</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QMainWindow</basecompoundref>
+    <includes refid="mainmdidisplay_8h" local="no">mainmdidisplay.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_main_m_d_i_display_1a76297f463be48cd56af5cbbc59691056" prot="private" static="no" mutable="no">
+        <type>Ui::MainMDIDisplay *</type>
+        <definition>Ui::MainMDIDisplay* MainMDIDisplay::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="63" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_m_d_i_display_1af0d1e6a509d1d992b865e5d9a53dcff4" prot="private" static="no" mutable="no">
+        <type><ref refid="mainmdidisplay_8h_1af3d52afbb0d088f62e02208b24a9cbd2" kindref="member">Menu</ref></type>
+        <definition>Menu MainMDIDisplay::currentMenu</definition>
+        <argsstring></argsstring>
+        <name>currentMenu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="65" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_m_d_i_display_1a6ed57e546474a6959b41cee7be5b6a3f" prot="private" static="no" mutable="no">
+        <type><ref refid="class_qt_tab_test" kindref="compound">QtTabTest</ref> *</type>
+        <definition>QtTabTest* MainMDIDisplay::qttWidget</definition>
+        <argsstring></argsstring>
+        <name>qttWidget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="67" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_m_d_i_display_1a4730b2efbbaa52b9a94485767c620ca2" prot="private" static="no" mutable="no">
+        <type><ref refid="class_map_planning" kindref="compound">MapPlanning</ref> *</type>
+        <definition>MapPlanning* MainMDIDisplay::tempMapPlanningUIWidget</definition>
+        <argsstring></argsstring>
+        <name>tempMapPlanningUIWidget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="72" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_m_d_i_display_1a0ae2987fa8543ea056b0fa85ea39f3ba" prot="private" static="no" mutable="no">
+        <type><ref refid="class_mission_planning_window" kindref="compound">MissionPlanningWindow</ref> *</type>
+        <definition>MissionPlanningWindow* MainMDIDisplay::missionPlanningWindowUIWidget</definition>
+        <argsstring></argsstring>
+        <name>missionPlanningWindowUIWidget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="76" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_m_d_i_display_1afc2def182ae5634fc8c6512d3e00b89e" prot="private" static="no" mutable="no">
+        <type><ref refid="class_map_execution" kindref="compound">MapExecution</ref> *</type>
+        <definition>MapExecution* MainMDIDisplay::tempMapExecutionUIWidget</definition>
+        <argsstring></argsstring>
+        <name>tempMapExecutionUIWidget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="78" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_m_d_i_display_1a9fa94cc123432a94262b8c81808bd2b7" prot="private" static="no" mutable="no">
+        <type><ref refid="class_map_recap" kindref="compound">MapRecap</ref> *</type>
+        <definition>MapRecap* MainMDIDisplay::tempMapRecapUIWidget</definition>
+        <argsstring></argsstring>
+        <name>tempMapRecapUIWidget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="80" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_m_d_i_display_1aa82b1d4c7c0d05797986d56fef8d22d8" prot="private" static="no" mutable="no">
+        <type>QWidget *</type>
+        <definition>QWidget* MainMDIDisplay::mapExecutionStatusUIWidget</definition>
+        <argsstring></argsstring>
+        <name>mapExecutionStatusUIWidget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="82" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_m_d_i_display_1a7023176e24026e1b3bfd5c774ccf7081" prot="private" static="no" mutable="no">
+        <type>QVBoxLayout *</type>
+        <definition>QVBoxLayout* MainMDIDisplay::MapExecutionStatusVBoxLayout</definition>
+        <argsstring></argsstring>
+        <name>MapExecutionStatusVBoxLayout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="84" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_m_d_i_display_1a76eac289ae5734e636b970277548f01c" prot="private" static="no" mutable="no">
+        <type>QPushButton *</type>
+        <definition>QPushButton* MainMDIDisplay::backToPlanningButton</definition>
+        <argsstring></argsstring>
+        <name>backToPlanningButton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="90" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_m_d_i_display_1a81d81e17f91f5626979f5f913a45aad3" prot="private" static="no" mutable="no">
+        <type>QPushButton *</type>
+        <definition>QPushButton * MainMDIDisplay::saveMissionButton</definition>
+        <argsstring></argsstring>
+        <name>saveMissionButton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="90" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_m_d_i_display_1aac1cc3f9a189ea7e197953105a2a89e3" prot="private" static="no" mutable="no">
+        <type>QPushButton *</type>
+        <definition>QPushButton * MainMDIDisplay::loadMissionButton</definition>
+        <argsstring></argsstring>
+        <name>loadMissionButton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="90" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_m_d_i_display_1aeb045c80bf1b3cdec40ddeff3b9f98ab" prot="private" static="no" mutable="no">
+        <type>QLineEdit *</type>
+        <definition>QLineEdit* MainMDIDisplay::saveMissionByNameLineEdit</definition>
+        <argsstring></argsstring>
+        <name>saveMissionByNameLineEdit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="92" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_m_d_i_display_1a209e6020a9b839e7b0594ed7d221f916" prot="private" static="no" mutable="no">
+        <type>QLabel *</type>
+        <definition>QLabel* MainMDIDisplay::saveMissionByNameLabel</definition>
+        <argsstring></argsstring>
+        <name>saveMissionByNameLabel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="94" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_m_d_i_display_1a9c19329cbea82f9fda6b9c9c6a750773" prot="private" static="no" mutable="no">
+        <type>QWidget *</type>
+        <definition>QWidget* MainMDIDisplay::MapRecapUI_TableTab</definition>
+        <argsstring></argsstring>
+        <name>MapRecapUI_TableTab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="98" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_m_d_i_display_1ac52d5c5eb8e95f9d113b40cc53475457" prot="private" static="no" mutable="no">
+        <type>QWidget *</type>
+        <definition>QWidget * MainMDIDisplay::MapRecapUI_GraphTab</definition>
+        <argsstring></argsstring>
+        <name>MapRecapUI_GraphTab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="98" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_m_d_i_display_1a040d70efb507fac6ca48856e61a56f39" prot="private" static="no" mutable="no">
+        <type>QMdiSubWindow *</type>
+        <definition>QMdiSubWindow* MainMDIDisplay::MapSubWindow</definition>
+        <argsstring></argsstring>
+        <name>MapSubWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="100" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_m_d_i_display_1acbe461a3845086f8e39ee560895a433a" prot="private" static="no" mutable="no">
+        <type>QMdiSubWindow *</type>
+        <definition>QMdiSubWindow * MainMDIDisplay::MissionControlSubWindow</definition>
+        <argsstring></argsstring>
+        <name>MissionControlSubWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="100" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_m_d_i_display_1ad2d0f11daf8bd36a7a0c5ef572c21546" prot="private" static="no" mutable="no">
+        <type><ref refid="class_flight_path" kindref="compound">FlightPath</ref> *</type>
+        <definition>FlightPath* MainMDIDisplay::missionPlanningFlightPath</definition>
+        <argsstring></argsstring>
+        <name>missionPlanningFlightPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="102" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_main_m_d_i_display_1a782ef2721fdd8b24924ce87dc66bb55c" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainMDIDisplay::MainMDIDisplay</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>MainMDIDisplay</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="38" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="4" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_m_d_i_display_1ab057ec6cb6ad3f4acf190ed522e0e004" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QMdiSubWindow *</type>
+        <definition>QMdiSubWindow * MainMDIDisplay::addWindow</definition>
+        <argsstring>(QWidget *)</argsstring>
+        <name>addWindow</name>
+        <param>
+          <type>QWidget *</type>
+          <defname>myNewWindowWidget</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="173" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_m_d_i_display_1a0ca1499c42b7428014519897ed528c32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::addWindow</definition>
+        <argsstring>(QWidget *, QString)</argsstring>
+        <name>addWindow</name>
+        <param>
+          <type>QWidget *</type>
+          <defname>myNewWindowWidget</defname>
+        </param>
+        <param>
+          <type>QString</type>
+          <defname>windowTitle</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="42" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="189" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_m_d_i_display_1abeda7bf528423b91f8bc9c3b6873795e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainMDIDisplay::~MainMDIDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>~MainMDIDisplay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="44" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="42" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_m_d_i_display_1a25d070683b2dbc80d15629af962dd504" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_qt_tab_test" kindref="compound">QtTabTest</ref> *</type>
+        <definition>QtTabTest * MainMDIDisplay::getQttWidget</definition>
+        <argsstring>() const </argsstring>
+        <name>getQttWidget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="46" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="161" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_m_d_i_display_1a0bd367883842e6f0069181b566690490" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::setQttWidget</definition>
+        <argsstring>(QtTabTest *)</argsstring>
+        <name>setQttWidget</name>
+        <param>
+          <type><ref refid="class_qt_tab_test" kindref="compound">QtTabTest</ref> *</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="48" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="167" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_m_d_i_display_1ae5a5bb272b564517870daf9703e83fca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::clearMapExecution</definition>
+        <argsstring>()</argsstring>
+        <name>clearMapExecution</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="50" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="509" bodyend="657"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_m_d_i_display_1a2499cb8a6c4c56d49b7785546a044d35" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::clearMapRecap</definition>
+        <argsstring>()</argsstring>
+        <name>clearMapRecap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="52" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="468" bodyend="506"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_m_d_i_display_1a0a08ba2f51e573f0161784e3d9c03b41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::changePlanningToExecutionWindow</definition>
+        <argsstring>()</argsstring>
+        <name>changePlanningToExecutionWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="55" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="311" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_m_d_i_display_1a437506b2ebd8b9789381a0b48a1b81a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::switchToPlanningWindow</definition>
+        <argsstring>()</argsstring>
+        <name>switchToPlanningWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="57" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="54" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_m_d_i_display_1ad46e5bb590735c32ec79d192ffbd5244" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::switchToRecapWindow</definition>
+        <argsstring>()</argsstring>
+        <name>switchToRecapWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="59" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="371" bodyend="439"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_main_m_d_i_display_1a0fcb2ead58dc4d4424c90299e6999b7e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::destroy</definition>
+        <argsstring>()</argsstring>
+        <name>destroy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="106" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="363" bodyend="369"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_m_d_i_display_1a9479e57c6dc0732ce314b490e312e1b5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::beginMapExecution</definition>
+        <argsstring>()</argsstring>
+        <name>beginMapExecution</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="108" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="203" bodyend="308"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_m_d_i_display_1a806849d419a43545ca048d6961ee0f8f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::clickedFinishButton_MainDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>clickedFinishButton_MainDisplay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="110" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="451" bodyend="465"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_m_d_i_display_1a7e73497327aff470b2d29e4a88910ab0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::clickedCancelButton_MainDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>clickedCancelButton_MainDisplay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="112" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="659" bodyend="667"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_m_d_i_display_1af0083f9e84168b238a7fb82c1a71b6ba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::clickedBackButton_MainDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>clickedBackButton_MainDisplay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="114" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="669" bodyend="673"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_m_d_i_display_1a4c5ea49b575e5648243b63bf54c2667d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::clickedBackToPlanningButton_MainDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>clickedBackToPlanningButton_MainDisplay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="116" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="441" bodyend="449"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_m_d_i_display_1ad435455cad574ed917da86b29c0cebda" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::clickedLoadMissionButton_MainDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>clickedLoadMissionButton_MainDisplay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="118" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="722" bodyend="756"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_m_d_i_display_1a5493f1a0e616ad504eb32c087c820d42" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::clickedSaveMissionButton_MainDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>clickedSaveMissionButton_MainDisplay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="120" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="684" bodyend="720"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_m_d_i_display_1a122050b11de7d6dbaf2ea8cac8df3696" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::onMapUpdated</definition>
+        <argsstring>()</argsstring>
+        <name>onMapUpdated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="122" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp" bodystart="676" bodyend="682"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_main_m_d_i_display_1a29cbd207dda41f3b1297600310e69ad6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::switchedToPlanning</definition>
+        <argsstring>()</argsstring>
+        <name>switchedToPlanning</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="126" column="1"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_main_m_d_i_display_1a911790c434763c88fee143c8bf72b862" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::switchedToRecap</definition>
+        <argsstring>()</argsstring>
+        <name>switchedToRecap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="128" column="1"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_main_m_d_i_display_1ac35b2ebe3f5d7a6672a3a927c3018c14" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainMDIDisplay::switchedToExecution</definition>
+        <argsstring>()</argsstring>
+        <name>switchedToExecution</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="130" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="58">
+        <label>QMainWindow</label>
+      </node>
+      <node id="57">
+        <label>MainMDIDisplay</label>
+        <link refid="class_main_m_d_i_display"/>
+        <childnode refid="58" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="76">
+        <label>ServerQueue</label>
+        <link refid="class_server_queue"/>
+      </node>
+      <node id="74">
+        <label>NetworkListener</label>
+        <link refid="class_network_listener"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+        <childnode refid="71" relation="usage">
+          <edgelabel>myMessageBox</edgelabel>
+        </childnode>
+        <childnode refid="72" relation="usage">
+          <edgelabel>server</edgelabel>
+        </childnode>
+      </node>
+      <node id="71">
+        <label>messagebox</label>
+        <link refid="classmessagebox"/>
+      </node>
+      <node id="64">
+        <label>MapRecap</label>
+        <link refid="class_map_recap"/>
+        <childnode refid="62" relation="public-inheritance">
+        </childnode>
+        <childnode refid="65" relation="usage">
+          <edgelabel>myMission</edgelabel>
+        </childnode>
+        <childnode refid="68" relation="usage">
+          <edgelabel>model</edgelabel>
+        </childnode>
+      </node>
+      <node id="73">
+        <label>QThread</label>
+      </node>
+      <node id="68">
+        <label>TableModel</label>
+        <link refid="class_table_model"/>
+        <childnode refid="69" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>QMainWindow</label>
+      </node>
+      <node id="66">
+        <label>FlightPath</label>
+        <link refid="class_flight_path"/>
+        <childnode refid="67" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>Mission</label>
+        <link refid="class_mission"/>
+        <childnode refid="66" relation="usage">
+          <edgelabel>myFlightPath</edgelabel>
+        </childnode>
+      </node>
+      <node id="78">
+        <label>PopWindowMP</label>
+        <link refid="class_pop_window_m_p"/>
+        <childnode refid="79" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="72">
+        <label>GsServer</label>
+        <link refid="class_gs_server"/>
+        <childnode refid="73" relation="public-inheritance">
+        </childnode>
+        <childnode refid="65" relation="usage">
+          <edgelabel>myMission</edgelabel>
+        </childnode>
+        <childnode refid="74" relation="usage">
+          <edgelabel>networkListener</edgelabel>
+        </childnode>
+        <childnode refid="71" relation="usage">
+          <edgelabel>myMessageBox</edgelabel>
+        </childnode>
+        <childnode refid="76" relation="usage">
+          <edgelabel>outPackets</edgelabel>
+        </childnode>
+      </node>
+      <node id="61">
+        <label>MissionPlanningWindow</label>
+        <link refid="class_mission_planning_window"/>
+        <childnode refid="62" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="62">
+        <label>QDialog</label>
+      </node>
+      <node id="79">
+        <label>QWidget</label>
+      </node>
+      <node id="67">
+        <label>QList&lt; TimedAction * &gt;</label>
+      </node>
+      <node id="59">
+        <label>MainMDIDisplay</label>
+        <link refid="class_main_m_d_i_display"/>
+        <childnode refid="60" relation="public-inheritance">
+        </childnode>
+        <childnode refid="61" relation="usage">
+          <edgelabel>missionPlanningWindowUIWidget</edgelabel>
+        </childnode>
+        <childnode refid="63" relation="usage">
+          <edgelabel>qttWidget</edgelabel>
+        </childnode>
+        <childnode refid="64" relation="usage">
+          <edgelabel>tempMapRecapUIWidget</edgelabel>
+        </childnode>
+        <childnode refid="70" relation="usage">
+          <edgelabel>tempMapExecutionUIWidget</edgelabel>
+        </childnode>
+        <childnode refid="77" relation="usage">
+          <edgelabel>tempMapPlanningUIWidget</edgelabel>
+        </childnode>
+        <childnode refid="66" relation="usage">
+          <edgelabel>missionPlanningFlightPath</edgelabel>
+        </childnode>
+      </node>
+      <node id="75">
+        <label>QUdpSocket</label>
+      </node>
+      <node id="70">
+        <label>MapExecution</label>
+        <link refid="class_map_execution"/>
+        <childnode refid="62" relation="public-inheritance">
+        </childnode>
+        <childnode refid="65" relation="usage">
+          <edgelabel>myMission</edgelabel>
+        </childnode>
+        <childnode refid="71" relation="usage">
+          <edgelabel>MessageBox</edgelabel>
+          <edgelabel>MyMessageBox</edgelabel>
+        </childnode>
+        <childnode refid="68" relation="usage">
+          <edgelabel>model</edgelabel>
+        </childnode>
+        <childnode refid="72" relation="usage">
+          <edgelabel>myServer</edgelabel>
+        </childnode>
+        <childnode refid="66" relation="usage">
+          <edgelabel>myFlightPath</edgelabel>
+        </childnode>
+      </node>
+      <node id="63">
+        <label>QtTabTest</label>
+        <link refid="class_qt_tab_test"/>
+        <childnode refid="60" relation="public-inheritance">
+        </childnode>
+        <childnode refid="64" relation="usage">
+          <edgelabel>MapRecapUIWidget</edgelabel>
+        </childnode>
+        <childnode refid="70" relation="usage">
+          <edgelabel>MapExecutionUIWidget</edgelabel>
+        </childnode>
+        <childnode refid="77" relation="usage">
+          <edgelabel>MapPlanningUIWidget</edgelabel>
+          <edgelabel>testMAP</edgelabel>
+        </childnode>
+      </node>
+      <node id="69">
+        <label>QAbstractTableModel</label>
+      </node>
+      <node id="77">
+        <label>MapPlanning</label>
+        <link refid="class_map_planning"/>
+        <childnode refid="62" relation="public-inheritance">
+        </childnode>
+        <childnode refid="68" relation="usage">
+          <edgelabel>model</edgelabel>
+        </childnode>
+        <childnode refid="78" relation="usage">
+          <edgelabel>popup</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" line="32" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h" bodystart="32" bodyend="132"/>
+    <listofallmembers>
+      <member refid="class_main_m_d_i_display_1ab057ec6cb6ad3f4acf190ed522e0e004" prot="public" virt="non-virtual"><scope>MainMDIDisplay</scope><name>addWindow</name></member>
+      <member refid="class_main_m_d_i_display_1a0ca1499c42b7428014519897ed528c32" prot="public" virt="non-virtual"><scope>MainMDIDisplay</scope><name>addWindow</name></member>
+      <member refid="class_main_m_d_i_display_1a76eac289ae5734e636b970277548f01c" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>backToPlanningButton</name></member>
+      <member refid="class_main_m_d_i_display_1a9479e57c6dc0732ce314b490e312e1b5" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>beginMapExecution</name></member>
+      <member refid="class_main_m_d_i_display_1a0a08ba2f51e573f0161784e3d9c03b41" prot="public" virt="non-virtual"><scope>MainMDIDisplay</scope><name>changePlanningToExecutionWindow</name></member>
+      <member refid="class_main_m_d_i_display_1ae5a5bb272b564517870daf9703e83fca" prot="public" virt="non-virtual"><scope>MainMDIDisplay</scope><name>clearMapExecution</name></member>
+      <member refid="class_main_m_d_i_display_1a2499cb8a6c4c56d49b7785546a044d35" prot="public" virt="non-virtual"><scope>MainMDIDisplay</scope><name>clearMapRecap</name></member>
+      <member refid="class_main_m_d_i_display_1af0083f9e84168b238a7fb82c1a71b6ba" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>clickedBackButton_MainDisplay</name></member>
+      <member refid="class_main_m_d_i_display_1a4c5ea49b575e5648243b63bf54c2667d" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>clickedBackToPlanningButton_MainDisplay</name></member>
+      <member refid="class_main_m_d_i_display_1a7e73497327aff470b2d29e4a88910ab0" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>clickedCancelButton_MainDisplay</name></member>
+      <member refid="class_main_m_d_i_display_1a806849d419a43545ca048d6961ee0f8f" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>clickedFinishButton_MainDisplay</name></member>
+      <member refid="class_main_m_d_i_display_1ad435455cad574ed917da86b29c0cebda" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>clickedLoadMissionButton_MainDisplay</name></member>
+      <member refid="class_main_m_d_i_display_1a5493f1a0e616ad504eb32c087c820d42" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>clickedSaveMissionButton_MainDisplay</name></member>
+      <member refid="class_main_m_d_i_display_1af0d1e6a509d1d992b865e5d9a53dcff4" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>currentMenu</name></member>
+      <member refid="class_main_m_d_i_display_1a0fcb2ead58dc4d4424c90299e6999b7e" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>destroy</name></member>
+      <member refid="class_main_m_d_i_display_1a25d070683b2dbc80d15629af962dd504" prot="public" virt="non-virtual"><scope>MainMDIDisplay</scope><name>getQttWidget</name></member>
+      <member refid="class_main_m_d_i_display_1aac1cc3f9a189ea7e197953105a2a89e3" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>loadMissionButton</name></member>
+      <member refid="class_main_m_d_i_display_1a782ef2721fdd8b24924ce87dc66bb55c" prot="public" virt="non-virtual"><scope>MainMDIDisplay</scope><name>MainMDIDisplay</name></member>
+      <member refid="class_main_m_d_i_display_1aa82b1d4c7c0d05797986d56fef8d22d8" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>mapExecutionStatusUIWidget</name></member>
+      <member refid="class_main_m_d_i_display_1a7023176e24026e1b3bfd5c774ccf7081" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>MapExecutionStatusVBoxLayout</name></member>
+      <member refid="class_main_m_d_i_display_1ac52d5c5eb8e95f9d113b40cc53475457" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>MapRecapUI_GraphTab</name></member>
+      <member refid="class_main_m_d_i_display_1a9c19329cbea82f9fda6b9c9c6a750773" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>MapRecapUI_TableTab</name></member>
+      <member refid="class_main_m_d_i_display_1a040d70efb507fac6ca48856e61a56f39" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>MapSubWindow</name></member>
+      <member refid="class_main_m_d_i_display_1acbe461a3845086f8e39ee560895a433a" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>MissionControlSubWindow</name></member>
+      <member refid="class_main_m_d_i_display_1ad2d0f11daf8bd36a7a0c5ef572c21546" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>missionPlanningFlightPath</name></member>
+      <member refid="class_main_m_d_i_display_1a0ae2987fa8543ea056b0fa85ea39f3ba" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>missionPlanningWindowUIWidget</name></member>
+      <member refid="class_main_m_d_i_display_1a122050b11de7d6dbaf2ea8cac8df3696" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>onMapUpdated</name></member>
+      <member refid="class_main_m_d_i_display_1a6ed57e546474a6959b41cee7be5b6a3f" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>qttWidget</name></member>
+      <member refid="class_main_m_d_i_display_1a81d81e17f91f5626979f5f913a45aad3" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>saveMissionButton</name></member>
+      <member refid="class_main_m_d_i_display_1a209e6020a9b839e7b0594ed7d221f916" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>saveMissionByNameLabel</name></member>
+      <member refid="class_main_m_d_i_display_1aeb045c80bf1b3cdec40ddeff3b9f98ab" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>saveMissionByNameLineEdit</name></member>
+      <member refid="class_main_m_d_i_display_1a0bd367883842e6f0069181b566690490" prot="public" virt="non-virtual"><scope>MainMDIDisplay</scope><name>setQttWidget</name></member>
+      <member refid="class_main_m_d_i_display_1ac35b2ebe3f5d7a6672a3a927c3018c14" prot="public" virt="non-virtual"><scope>MainMDIDisplay</scope><name>switchedToExecution</name></member>
+      <member refid="class_main_m_d_i_display_1a29cbd207dda41f3b1297600310e69ad6" prot="public" virt="non-virtual"><scope>MainMDIDisplay</scope><name>switchedToPlanning</name></member>
+      <member refid="class_main_m_d_i_display_1a911790c434763c88fee143c8bf72b862" prot="public" virt="non-virtual"><scope>MainMDIDisplay</scope><name>switchedToRecap</name></member>
+      <member refid="class_main_m_d_i_display_1a437506b2ebd8b9789381a0b48a1b81a3" prot="public" virt="non-virtual"><scope>MainMDIDisplay</scope><name>switchToPlanningWindow</name></member>
+      <member refid="class_main_m_d_i_display_1ad46e5bb590735c32ec79d192ffbd5244" prot="public" virt="non-virtual"><scope>MainMDIDisplay</scope><name>switchToRecapWindow</name></member>
+      <member refid="class_main_m_d_i_display_1afc2def182ae5634fc8c6512d3e00b89e" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>tempMapExecutionUIWidget</name></member>
+      <member refid="class_main_m_d_i_display_1a4730b2efbbaa52b9a94485767c620ca2" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>tempMapPlanningUIWidget</name></member>
+      <member refid="class_main_m_d_i_display_1a9fa94cc123432a94262b8c81808bd2b7" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>tempMapRecapUIWidget</name></member>
+      <member refid="class_main_m_d_i_display_1a76297f463be48cd56af5cbbc59691056" prot="private" virt="non-virtual"><scope>MainMDIDisplay</scope><name>ui</name></member>
+      <member refid="class_main_m_d_i_display_1abeda7bf528423b91f8bc9c3b6873795e" prot="public" virt="non-virtual"><scope>MainMDIDisplay</scope><name>~MainMDIDisplay</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

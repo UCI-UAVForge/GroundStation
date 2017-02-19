@@ -1,0 +1,918 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_q_c_p_layout_grid" kind="class" language="C++" prot="public">
+    <compoundname>QCPLayoutGrid</compoundname>
+    <basecompoundref refid="class_q_c_p_layout" prot="public" virt="non-virtual">QCPLayout</basecompoundref>
+    <derivedcompoundref refid="class_q_c_p_legend" prot="public" virt="non-virtual">QCPLegend</derivedcompoundref>
+    <includes refid="qcustomplot_8h" local="no">qcustomplot.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_q_c_p_layout_grid_1a3577d3855bf8ad20ef9079291a49f397" prot="protected" static="no" mutable="no">
+        <type>QList&lt; QList&lt; <ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> * &gt; &gt;</type>
+        <definition>QList&lt;QList&lt;QCPLayoutElement*&gt; &gt; QCPLayoutGrid::mElements</definition>
+        <argsstring></argsstring>
+        <name>mElements</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="809" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="809" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_layout_grid_1ac6aabe62339f94f18b9f8adab94b1840" prot="protected" static="no" mutable="no">
+        <type>QList&lt; double &gt;</type>
+        <definition>QList&lt;double&gt; QCPLayoutGrid::mColumnStretchFactors</definition>
+        <argsstring></argsstring>
+        <name>mColumnStretchFactors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="810" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="810" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_layout_grid_1a36c85a7eaf342680fb9b8a4977486f16" prot="protected" static="no" mutable="no">
+        <type>QList&lt; double &gt;</type>
+        <definition>QList&lt;double&gt; QCPLayoutGrid::mRowStretchFactors</definition>
+        <argsstring></argsstring>
+        <name>mRowStretchFactors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="811" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="811" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_layout_grid_1ae9ac48f0791be07ead0a96dbd5622770" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int QCPLayoutGrid::mColumnSpacing</definition>
+        <argsstring></argsstring>
+        <name>mColumnSpacing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="812" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="812" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_layout_grid_1a8b67f183f4645739cc4c794d75843b40" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int QCPLayoutGrid::mRowSpacing</definition>
+        <argsstring></argsstring>
+        <name>mRowSpacing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="812" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="812" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1ab2a4c1587dc8aed4c41c509c8d8d2a64" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPLayoutGrid::QCPLayoutGrid</definition>
+        <argsstring>()</argsstring>
+        <name>QCPLayoutGrid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an instance of <ref refid="class_q_c_p_layout_grid" kindref="compound">QCPLayoutGrid</ref> and sets default values. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="769" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2499" bodyend="2503"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1af859f4a4db693a21056a9e615f6c4a90" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>QCPLayoutGrid::~QCPLayoutGrid</definition>
+        <argsstring>()</argsstring>
+        <name>~QCPLayoutGrid</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="770" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2505" bodyend="2510"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1af8e6c7a05864ebe610c87756c7b9079c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int QCPLayoutGrid::rowCount</definition>
+        <argsstring>() const </argsstring>
+        <name>rowCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the number of rows in the layout.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_grid_1ac39074eafd148b82d0762090f258189e" kindref="member">columnCount</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="773" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2542" bodyend="2545"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1ac39074eafd148b82d0762090f258189e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int QCPLayoutGrid::columnCount</definition>
+        <argsstring>() const </argsstring>
+        <name>columnCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the number of columns in the layout.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_grid_1af8e6c7a05864ebe610c87756c7b9079c" kindref="member">rowCount</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="774" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2552" bodyend="2558"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1a39bd7994d00687d1b9defef6f1bda835" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QList&lt; double &gt;</type>
+        <definition>QList&lt;double&gt; QCPLayoutGrid::columnStretchFactors</definition>
+        <argsstring>() const </argsstring>
+        <name>columnStretchFactors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="775" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="775" bodyend="775"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1a3744496abf73c8e3b464181d63bb20a7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QList&lt; double &gt;</type>
+        <definition>QList&lt;double&gt; QCPLayoutGrid::rowStretchFactors</definition>
+        <argsstring>() const </argsstring>
+        <name>rowStretchFactors</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="776" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="776" bodyend="776"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1a3de19753fdca81194458cb15156f7315" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int QCPLayoutGrid::columnSpacing</definition>
+        <argsstring>() const </argsstring>
+        <name>columnSpacing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="777" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="777" bodyend="777"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1abccdd33c1b284feb6df90fa02f23d9a3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int QCPLayoutGrid::rowSpacing</definition>
+        <argsstring>() const </argsstring>
+        <name>rowSpacing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="778" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="778" bodyend="778"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1ae38f31a71687b9d7ee3104852528fb50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutGrid::setColumnStretchFactor</definition>
+        <argsstring>(int column, double factor)</argsstring>
+        <name>setColumnStretchFactor</name>
+        <param>
+          <type>int</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the stretch <emphasis>factor</emphasis> of <emphasis>column</emphasis>.</para><para>Stretch factors control the relative sizes of rows and columns. Cells will not be resized beyond their minimum and maximum widths/heights (<ref refid="class_q_c_p_layout_element_1a5dd29a3c8bc88440c97c06b67be7886b" kindref="member">QCPLayoutElement::setMinimumSize</ref>, <ref refid="class_q_c_p_layout_element_1a74eb5280a737ab44833d506db65efd95" kindref="member">QCPLayoutElement::setMaximumSize</ref>), regardless of the stretch factor.</para><para>The default stretch factor of newly created rows/columns is 1.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_grid_1a6c2591d1a7e2534ce036989543b49e57" kindref="member">setColumnStretchFactors</ref>, <ref refid="class_q_c_p_layout_grid_1a7b0273de5369bd93d942edbaf5b166ec" kindref="member">setRowStretchFactor</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="781" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2614" bodyend="2624"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1a6c2591d1a7e2534ce036989543b49e57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutGrid::setColumnStretchFactors</definition>
+        <argsstring>(const QList&lt; double &gt; &amp;factors)</argsstring>
+        <name>setColumnStretchFactors</name>
+        <param>
+          <type>const QList&lt; double &gt; &amp;</type>
+          <declname>factors</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the stretch <emphasis>factors</emphasis> of all columns. <emphasis>factors</emphasis> must have the size <ref refid="class_q_c_p_layout_grid_1ac39074eafd148b82d0762090f258189e" kindref="member">columnCount</ref>.</para><para>Stretch factors control the relative sizes of rows and columns. Cells will not be resized beyond their minimum and maximum widths/heights (<ref refid="class_q_c_p_layout_element_1a5dd29a3c8bc88440c97c06b67be7886b" kindref="member">QCPLayoutElement::setMinimumSize</ref>, <ref refid="class_q_c_p_layout_element_1a74eb5280a737ab44833d506db65efd95" kindref="member">QCPLayoutElement::setMaximumSize</ref>), regardless of the stretch factor.</para><para>The default stretch factor of newly created rows/columns is 1.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_grid_1ae38f31a71687b9d7ee3104852528fb50" kindref="member">setColumnStretchFactor</ref>, <ref refid="class_q_c_p_layout_grid_1a200b45f9c908f96ebadaa3c8d87a2782" kindref="member">setRowStretchFactors</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="782" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2637" bodyend="2652"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1a7b0273de5369bd93d942edbaf5b166ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutGrid::setRowStretchFactor</definition>
+        <argsstring>(int row, double factor)</argsstring>
+        <name>setRowStretchFactor</name>
+        <param>
+          <type>int</type>
+          <declname>row</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the stretch <emphasis>factor</emphasis> of <emphasis>row</emphasis>.</para><para>Stretch factors control the relative sizes of rows and columns. Cells will not be resized beyond their minimum and maximum widths/heights (<ref refid="class_q_c_p_layout_element_1a5dd29a3c8bc88440c97c06b67be7886b" kindref="member">QCPLayoutElement::setMinimumSize</ref>, <ref refid="class_q_c_p_layout_element_1a74eb5280a737ab44833d506db65efd95" kindref="member">QCPLayoutElement::setMaximumSize</ref>), regardless of the stretch factor.</para><para>The default stretch factor of newly created rows/columns is 1.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_grid_1a6c2591d1a7e2534ce036989543b49e57" kindref="member">setColumnStretchFactors</ref>, <ref refid="class_q_c_p_layout_grid_1a7b0273de5369bd93d942edbaf5b166ec" kindref="member">setRowStretchFactor</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="783" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2665" bodyend="2675"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1a200b45f9c908f96ebadaa3c8d87a2782" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutGrid::setRowStretchFactors</definition>
+        <argsstring>(const QList&lt; double &gt; &amp;factors)</argsstring>
+        <name>setRowStretchFactors</name>
+        <param>
+          <type>const QList&lt; double &gt; &amp;</type>
+          <declname>factors</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the stretch <emphasis>factors</emphasis> of all rows. <emphasis>factors</emphasis> must have the size <ref refid="class_q_c_p_layout_grid_1af8e6c7a05864ebe610c87756c7b9079c" kindref="member">rowCount</ref>.</para><para>Stretch factors control the relative sizes of rows and columns. Cells will not be resized beyond their minimum and maximum widths/heights (<ref refid="class_q_c_p_layout_element_1a5dd29a3c8bc88440c97c06b67be7886b" kindref="member">QCPLayoutElement::setMinimumSize</ref>, <ref refid="class_q_c_p_layout_element_1a74eb5280a737ab44833d506db65efd95" kindref="member">QCPLayoutElement::setMaximumSize</ref>), regardless of the stretch factor.</para><para>The default stretch factor of newly created rows/columns is 1.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_grid_1a7b0273de5369bd93d942edbaf5b166ec" kindref="member">setRowStretchFactor</ref>, <ref refid="class_q_c_p_layout_grid_1a6c2591d1a7e2534ce036989543b49e57" kindref="member">setColumnStretchFactors</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="784" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2688" bodyend="2703"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1a3a49272aba32bb0fddc3bb2a45a3dba0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutGrid::setColumnSpacing</definition>
+        <argsstring>(int pixels)</argsstring>
+        <name>setColumnSpacing</name>
+        <param>
+          <type>int</type>
+          <declname>pixels</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the gap that is left blank between columns to <emphasis>pixels</emphasis>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_grid_1aaef2cd2d456197ee06a208793678e436" kindref="member">setRowSpacing</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="785" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2710" bodyend="2713"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1aaef2cd2d456197ee06a208793678e436" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutGrid::setRowSpacing</definition>
+        <argsstring>(int pixels)</argsstring>
+        <name>setRowSpacing</name>
+        <param>
+          <type>int</type>
+          <declname>pixels</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the gap that is left blank between rows to <emphasis>pixels</emphasis>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_grid_1a3a49272aba32bb0fddc3bb2a45a3dba0" kindref="member">setColumnSpacing</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="786" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2720" bodyend="2723"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1a07f8dd7d3d61d7345026621d446042a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QCPLayoutGrid::updateLayout</definition>
+        <argsstring>()</argsstring>
+        <name>updateLayout</name>
+        <reimplements refid="class_q_c_p_layout_1a165c77f6287ac92e8d03017ad913378b">updateLayout</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="789" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2809" bodyend="2835"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1aa682b1d36660478f665bab3c64e956a9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int QCPLayoutGrid::elementCount</definition>
+        <argsstring>() const </argsstring>
+        <name>elementCount</name>
+        <reimplements refid="class_q_c_p_layout_1a39d3e9ef5d9b82ab1885ba1cb9597e56">elementCount</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the number of elements/cells in the layout.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_grid_1ae9e24e01552f6667b6d05b12a54a4caa" kindref="member">elements</ref>, <ref refid="class_q_c_p_layout_grid_1a26849ee5c47b4c940e8d65e8462f1065" kindref="member">elementAt</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="790" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2838" bodyend="2841"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1a26849ee5c47b4c940e8d65e8462f1065" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> *</type>
+        <definition>QCPLayoutElement * QCPLayoutGrid::elementAt</definition>
+        <argsstring>(int index) const </argsstring>
+        <name>elementAt</name>
+        <reimplements refid="class_q_c_p_layout_1afa73ca7d859f8a3ee5c73c9b353d2a56">elementAt</reimplements>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the element in the cell with the given <emphasis>index</emphasis>. If <emphasis>index</emphasis> is invalid, returns 0.</para><para>Note that even if <emphasis>index</emphasis> is valid, the respective cell may be empty in some layouts (e.g. <ref refid="class_q_c_p_layout_grid" kindref="compound">QCPLayoutGrid</ref>), so this function may return 0 in those cases. You may use this function to check whether a cell is empty or not.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_grid_1ae9e24e01552f6667b6d05b12a54a4caa" kindref="member">elements</ref>, <ref refid="class_q_c_p_layout_grid_1aa682b1d36660478f665bab3c64e956a9" kindref="member">elementCount</ref>, <ref refid="class_q_c_p_layout_grid_1acc1277394ff8a6432e111ff9463e6375" kindref="member">takeAt</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="791" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2844" bodyend="2850"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1acc1277394ff8a6432e111ff9463e6375" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> *</type>
+        <definition>QCPLayoutElement * QCPLayoutGrid::takeAt</definition>
+        <argsstring>(int index)</argsstring>
+        <name>takeAt</name>
+        <reimplements refid="class_q_c_p_layout_1a5a79621fa0a6eabb8b520cfc04fb601a">takeAt</reimplements>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes the element with the given <emphasis>index</emphasis> from the layout and returns it.</para><para>If the <emphasis>index</emphasis> is invalid or the cell with that index is empty, returns 0.</para><para>Note that some layouts don&apos;t remove the respective cell right away but leave an empty cell after successful removal of the layout element. To collapse empty cells, use <ref refid="class_q_c_p_layout_grid_1a08bba60e4acd20165526a8fd7f986b58" kindref="member">simplify</ref>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_grid_1a26849ee5c47b4c940e8d65e8462f1065" kindref="member">elementAt</ref>, <ref refid="class_q_c_p_layout_grid_1a666a9fe9e92054436f9b66eba25cca0c" kindref="member">take</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="792" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2853" bodyend="2865"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1a666a9fe9e92054436f9b66eba25cca0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool QCPLayoutGrid::take</definition>
+        <argsstring>(QCPLayoutElement *element)</argsstring>
+        <name>take</name>
+        <reimplements refid="class_q_c_p_layout_1ada26cd17e56472b0b4d7fbbc96873e4c">take</reimplements>
+        <param>
+          <type><ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> *</type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes the specified <emphasis>element</emphasis> from the layout and returns true on success.</para><para>If the <emphasis>element</emphasis> isn&apos;t in this layout, returns false.</para><para>Note that some layouts don&apos;t remove the respective cell right away but leave an empty cell after successful removal of the layout element. To collapse empty cells, use <ref refid="class_q_c_p_layout_grid_1a08bba60e4acd20165526a8fd7f986b58" kindref="member">simplify</ref>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_grid_1acc1277394ff8a6432e111ff9463e6375" kindref="member">takeAt</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="793" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2868" bodyend="2884"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1ae9e24e01552f6667b6d05b12a54a4caa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QList&lt; <ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> * &gt;</type>
+        <definition>QList&lt; QCPLayoutElement * &gt; QCPLayoutGrid::elements</definition>
+        <argsstring>(bool recursive) const </argsstring>
+        <name>elements</name>
+        <reimplements refid="class_q_c_p_layout_1a51fe2675b53e829130b229bc1f7b0f99">elements</reimplements>
+        <param>
+          <type>bool</type>
+          <declname>recursive</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a list of all child elements in this layout element. If <emphasis>recursive</emphasis> is true, all sub-child elements are included in the list, too.</para><para><simplesect kind="warning"><para>There may be entries with value 0 in the returned list. (For example, <ref refid="class_q_c_p_layout_grid" kindref="compound">QCPLayoutGrid</ref> may have empty cells which yield 0 at the respective index.) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="794" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2887" bodyend="2912"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1a08bba60e4acd20165526a8fd7f986b58" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QCPLayoutGrid::simplify</definition>
+        <argsstring>()</argsstring>
+        <name>simplify</name>
+        <reimplements refid="class_q_c_p_layout_1a41e6ac049143866e8f8b4964efab01b2">simplify</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Simplifies the layout by collapsing rows and columns which only contain empty cells. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="795" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2917" bodyend="2959"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1a67aae235fb4dd9a479aafe07462ef9ee" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QSize</type>
+        <definition>QSize QCPLayoutGrid::minimumSizeHint</definition>
+        <argsstring>() const </argsstring>
+        <name>minimumSizeHint</name>
+        <reimplements refid="class_q_c_p_layout_element_1aebe14fb71f858c0f98caf8d342a9864a">minimumSizeHint</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the minimum size this layout element (the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref>) may be compressed to.</para><para>if a minimum size (<ref refid="class_q_c_p_layout_element_1a5dd29a3c8bc88440c97c06b67be7886b" kindref="member">setMinimumSize</ref>) was not set manually, parent layouts consult this function to determine the minimum allowed size of this layout element. (A manual minimum size is considered set if it is non-zero.) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="796" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2962" bodyend="2974"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1a1ec4bf5914900a51829a7919f74aa58c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QSize</type>
+        <definition>QSize QCPLayoutGrid::maximumSizeHint</definition>
+        <argsstring>() const </argsstring>
+        <name>maximumSizeHint</name>
+        <reimplements refid="class_q_c_p_layout_element_1adbd3a00fec44c977150c6be7329eb801">maximumSizeHint</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the maximum size this layout element (the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref>) may be expanded to.</para><para>if a maximum size (<ref refid="class_q_c_p_layout_element_1a74eb5280a737ab44833d506db65efd95" kindref="member">setMaximumSize</ref>) was not set manually, parent layouts consult this function to determine the maximum allowed size of this layout element. (A manual maximum size is considered set if it is smaller than Qt&apos;s QWIDGETSIZE_MAX.) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="797" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2977" bodyend="2990"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1a525f25e6ba43ee228151d074251b4e6a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> *</type>
+        <definition>QCPLayoutElement * QCPLayoutGrid::element</definition>
+        <argsstring>(int row, int column) const </argsstring>
+        <name>element</name>
+        <param>
+          <type>int</type>
+          <declname>row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>column</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the element in the cell in <emphasis>row</emphasis> and <emphasis>column</emphasis>.</para><para>Returns 0 if either the row/column is invalid or if the cell is empty. In those cases, a qDebug message is printed. To check whether a cell exists and isn&apos;t empty, use <ref refid="class_q_c_p_layout_grid_1ab0cf4f7edc9414a3bfaddac0f46dc0a0" kindref="member">hasElement</ref>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_grid_1adff1a2ca691ed83d2d24a4cd1fe17012" kindref="member">addElement</ref>, <ref refid="class_q_c_p_layout_grid_1ab0cf4f7edc9414a3bfaddac0f46dc0a0" kindref="member">hasElement</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="800" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2520" bodyend="2535"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1adff1a2ca691ed83d2d24a4cd1fe17012" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPLayoutGrid::addElement</definition>
+        <argsstring>(int row, int column, QCPLayoutElement *element)</argsstring>
+        <name>addElement</name>
+        <param>
+          <type>int</type>
+          <declname>row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type><ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> *</type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds the <emphasis>element</emphasis> to cell with <emphasis>row</emphasis> and <emphasis>column</emphasis>. If <emphasis>element</emphasis> is already in a layout, it is first removed from there. If <emphasis>row</emphasis> or <emphasis>column</emphasis> don&apos;t exist yet, the layout is expanded accordingly.</para><para>Returns true if the element was added successfully, i.e. if the cell at <emphasis>row</emphasis> and <emphasis>column</emphasis> didn&apos;t already have an element.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_grid_1a525f25e6ba43ee228151d074251b4e6a" kindref="member">element</ref>, <ref refid="class_q_c_p_layout_grid_1ab0cf4f7edc9414a3bfaddac0f46dc0a0" kindref="member">hasElement</ref>, <ref refid="class_q_c_p_layout_grid_1a666a9fe9e92054436f9b66eba25cca0c" kindref="member">take</ref>, <ref refid="class_q_c_p_layout_1a6c58f537d8086f352576ab7c5b15d0bc" kindref="member">remove</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="801" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2570" bodyend="2587"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1ab0cf4f7edc9414a3bfaddac0f46dc0a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPLayoutGrid::hasElement</definition>
+        <argsstring>(int row, int column)</argsstring>
+        <name>hasElement</name>
+        <param>
+          <type>int</type>
+          <declname>row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>column</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns whether the cell at <emphasis>row</emphasis> and <emphasis>column</emphasis> exists and contains a valid element, i.e. isn&apos;t empty.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_grid_1a525f25e6ba43ee228151d074251b4e6a" kindref="member">element</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="802" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2595" bodyend="2601"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1a886c0dcbabd51a45da399e044552b685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutGrid::expandTo</definition>
+        <argsstring>(int newRowCount, int newColumnCount)</argsstring>
+        <name>expandTo</name>
+        <param>
+          <type>int</type>
+          <declname>newRowCount</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>newColumnCount</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Expands the layout to have <emphasis>newRowCount</emphasis> rows and <emphasis>newColumnCount</emphasis> columns. So the last valid row index will be <emphasis>newRowCount-1</emphasis>, the last valid column index will be <emphasis>newColumnCount-1</emphasis>.</para><para>If the current column/row count is already larger or equal to <emphasis>newColumnCount/<emphasis>newRowCount</emphasis>,</emphasis> this function does nothing in that dimension.</para><para>Newly created cells are empty, new rows and columns have the stretch factor 1.</para><para>Note that upon a call to <ref refid="class_q_c_p_layout_grid_1adff1a2ca691ed83d2d24a4cd1fe17012" kindref="member">addElement</ref>, the layout is expanded automatically to contain the specified row and column, using this function.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_grid_1a08bba60e4acd20165526a8fd7f986b58" kindref="member">simplify</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="803" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2739" bodyend="2756"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1a48af3dd7c3a653d9c3d7dd99bd02e838" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutGrid::insertRow</definition>
+        <argsstring>(int newIndex)</argsstring>
+        <name>insertRow</name>
+        <param>
+          <type>int</type>
+          <declname>newIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Inserts a new row with empty cells at the row index <emphasis>newIndex</emphasis>. Valid values for <emphasis>newIndex</emphasis> range from 0 (inserts a row at the top) to <emphasis>rowCount</emphasis> (appends a row at the bottom).</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_grid_1a1e880a321dbe8b43b471ccd764433dc4" kindref="member">insertColumn</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="804" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2764" bodyend="2782"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1a1e880a321dbe8b43b471ccd764433dc4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutGrid::insertColumn</definition>
+        <argsstring>(int newIndex)</argsstring>
+        <name>insertColumn</name>
+        <param>
+          <type>int</type>
+          <declname>newIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Inserts a new column with empty cells at the column index <emphasis>newIndex</emphasis>. Valid values for <emphasis>newIndex</emphasis> range from 0 (inserts a row at the left) to <emphasis>rowCount</emphasis> (appends a row at the right).</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_grid_1a48af3dd7c3a653d9c3d7dd99bd02e838" kindref="member">insertRow</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="805" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2790" bodyend="2806"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1ac645fb9b1c4257b08a9f09dee10b9b3f" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutGrid::getMinimumRowColSizes</definition>
+        <argsstring>(QVector&lt; int &gt; *minColWidths, QVector&lt; int &gt; *minRowHeights) const </argsstring>
+        <name>getMinimumRowColSizes</name>
+        <param>
+          <type>QVector&lt; int &gt; *</type>
+          <declname>minColWidths</declname>
+        </param>
+        <param>
+          <type>QVector&lt; int &gt; *</type>
+          <declname>minRowHeights</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="815" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="3004" bodyend="3024"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_grid_1af348d903e3b8bc416f1fe1b8125d1173" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayoutGrid::getMaximumRowColSizes</definition>
+        <argsstring>(QVector&lt; int &gt; *maxColWidths, QVector&lt; int &gt; *maxRowHeights) const </argsstring>
+        <name>getMaximumRowColSizes</name>
+        <param>
+          <type>QVector&lt; int &gt; *</type>
+          <declname>maxColWidths</declname>
+        </param>
+        <param>
+          <type>QVector&lt; int &gt; *</type>
+          <declname>maxRowHeights</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="816" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="3038" bodyend="3058"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A layout that arranges child elements in a grid. </para>    </briefdescription>
+    <detaileddescription>
+<para>Elements are laid out in a grid with configurable stretch factors (<ref refid="class_q_c_p_layout_grid_1ae38f31a71687b9d7ee3104852528fb50" kindref="member">setColumnStretchFactor</ref>, <ref refid="class_q_c_p_layout_grid_1a7b0273de5369bd93d942edbaf5b166ec" kindref="member">setRowStretchFactor</ref>) and spacing (<ref refid="class_q_c_p_layout_grid_1a3a49272aba32bb0fddc3bb2a45a3dba0" kindref="member">setColumnSpacing</ref>, <ref refid="class_q_c_p_layout_grid_1aaef2cd2d456197ee06a208793678e436" kindref="member">setRowSpacing</ref>).</para><para>Elements can be added to cells via <ref refid="class_q_c_p_layout_grid_1adff1a2ca691ed83d2d24a4cd1fe17012" kindref="member">addElement</ref>. The grid is expanded if the specified row or column doesn&apos;t exist yet. Whether a cell contains a valid layout element can be checked with <ref refid="class_q_c_p_layout_grid_1ab0cf4f7edc9414a3bfaddac0f46dc0a0" kindref="member">hasElement</ref>, that element can be retrieved with <ref refid="class_q_c_p_layout_grid_1a525f25e6ba43ee228151d074251b4e6a" kindref="member">element</ref>. If rows and columns that only have empty cells shall be removed, call <ref refid="class_q_c_p_layout_grid_1a08bba60e4acd20165526a8fd7f986b58" kindref="member">simplify</ref>. Removal of elements is either done by just adding the element to a different layout or by using the <ref refid="class_q_c_p_layout" kindref="compound">QCPLayout</ref> interface <ref refid="class_q_c_p_layout_grid_1a666a9fe9e92054436f9b66eba25cca0c" kindref="member">take</ref> or <ref refid="class_q_c_p_layout_1a6c58f537d8086f352576ab7c5b15d0bc" kindref="member">remove</ref>.</para><para>Row and column insertion can be performed with <ref refid="class_q_c_p_layout_grid_1a48af3dd7c3a653d9c3d7dd99bd02e838" kindref="member">insertRow</ref> and <ref refid="class_q_c_p_layout_grid_1a1e880a321dbe8b43b471ccd764433dc4" kindref="member">insertColumn</ref>. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="842">
+        <label>QCPLayoutElement</label>
+        <link refid="class_q_c_p_layout_element"/>
+        <childnode refid="843" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="844">
+        <label>QObject</label>
+      </node>
+      <node id="845">
+        <label>QCPLegend</label>
+        <link refid="class_q_c_p_legend"/>
+        <childnode refid="840" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="841">
+        <label>QCPLayout</label>
+        <link refid="class_q_c_p_layout"/>
+        <childnode refid="842" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="840">
+        <label>QCPLayoutGrid</label>
+        <link refid="class_q_c_p_layout_grid"/>
+        <childnode refid="841" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="843">
+        <label>QCPLayerable</label>
+        <link refid="class_q_c_p_layerable"/>
+        <childnode refid="844" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="860">
+        <label>QCPLayoutInset</label>
+        <link refid="class_q_c_p_layout_inset"/>
+        <childnode refid="847" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="848">
+        <label>QCPLayoutElement</label>
+        <link refid="class_q_c_p_layout_element"/>
+        <childnode refid="849" relation="public-inheritance">
+        </childnode>
+        <childnode refid="847" relation="usage">
+          <edgelabel>mParentLayout</edgelabel>
+        </childnode>
+      </node>
+      <node id="850">
+        <label>QObject</label>
+      </node>
+      <node id="855">
+        <label>QCPRange</label>
+        <link refid="class_q_c_p_range"/>
+      </node>
+      <node id="861">
+        <label>QCPLegend</label>
+        <link refid="class_q_c_p_legend"/>
+        <childnode refid="846" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="857">
+        <label>QCPLineEnding</label>
+        <link refid="class_q_c_p_line_ending"/>
+      </node>
+      <node id="847">
+        <label>QCPLayout</label>
+        <link refid="class_q_c_p_layout"/>
+        <childnode refid="848" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="858">
+        <label>QCPGrid</label>
+        <link refid="class_q_c_p_grid"/>
+        <childnode refid="849" relation="public-inheritance">
+        </childnode>
+        <childnode refid="854" relation="usage">
+          <edgelabel>mParentAxis</edgelabel>
+        </childnode>
+      </node>
+      <node id="856">
+        <label>QCPAxisPainterPrivate</label>
+        <link refid="class_q_c_p_axis_painter_private"/>
+        <childnode refid="857" relation="usage">
+          <edgelabel>lowerEnding</edgelabel>
+          <edgelabel>upperEnding</edgelabel>
+        </childnode>
+        <childnode refid="852" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="853">
+        <label>QWidget</label>
+      </node>
+      <node id="851">
+        <label>QCPLayer</label>
+        <link refid="class_q_c_p_layer"/>
+        <childnode refid="850" relation="public-inheritance">
+        </childnode>
+        <childnode refid="852" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="846">
+        <label>QCPLayoutGrid</label>
+        <link refid="class_q_c_p_layout_grid"/>
+        <childnode refid="847" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="849">
+        <label>QCPLayerable</label>
+        <link refid="class_q_c_p_layerable"/>
+        <childnode refid="850" relation="public-inheritance">
+        </childnode>
+        <childnode refid="851" relation="usage">
+          <edgelabel>mLayer</edgelabel>
+        </childnode>
+        <childnode refid="852" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="854">
+        <label>QCPAxis</label>
+        <link refid="class_q_c_p_axis"/>
+        <childnode refid="849" relation="public-inheritance">
+        </childnode>
+        <childnode refid="855" relation="usage">
+          <edgelabel>mRange</edgelabel>
+        </childnode>
+        <childnode refid="856" relation="usage">
+          <edgelabel>mAxisPainter</edgelabel>
+        </childnode>
+        <childnode refid="858" relation="usage">
+          <edgelabel>mGrid</edgelabel>
+        </childnode>
+        <childnode refid="859" relation="usage">
+          <edgelabel>mAxisRect</edgelabel>
+        </childnode>
+      </node>
+      <node id="859">
+        <label>QCPAxisRect</label>
+        <link refid="class_q_c_p_axis_rect"/>
+        <childnode refid="848" relation="public-inheritance">
+        </childnode>
+        <childnode refid="860" relation="usage">
+          <edgelabel>mInsetLayout</edgelabel>
+        </childnode>
+        <childnode refid="855" relation="usage">
+          <edgelabel>mDragStartVertRange</edgelabel>
+          <edgelabel>mDragStartHorzRange</edgelabel>
+        </childnode>
+      </node>
+      <node id="852">
+        <label>QCustomPlot</label>
+        <link refid="class_q_custom_plot"/>
+        <childnode refid="853" relation="public-inheritance">
+        </childnode>
+        <childnode refid="851" relation="usage">
+          <edgelabel>mCurrentLayer</edgelabel>
+        </childnode>
+        <childnode refid="846" relation="usage">
+          <edgelabel>mPlotLayout</edgelabel>
+        </childnode>
+        <childnode refid="854" relation="usage">
+          <edgelabel>yAxis2</edgelabel>
+          <edgelabel>xAxis2</edgelabel>
+          <edgelabel>xAxis</edgelabel>
+          <edgelabel>yAxis</edgelabel>
+        </childnode>
+        <childnode refid="861" relation="usage">
+          <edgelabel>legend</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="758" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="757" bodyend="820"/>
+    <listofallmembers>
+      <member refid="class_q_c_p_layout_grid_1adff1a2ca691ed83d2d24a4cd1fe17012" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>addElement</name></member>
+      <member refid="class_q_c_p_layout_1af6dbbc24156a808da29cd1ec031729a3" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>adoptElement</name></member>
+      <member refid="class_q_c_p_layerable_1aef5cb4aa899ed9dc9384fd614560291e" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>antialiased</name></member>
+      <member refid="class_q_c_p_layerable_1a62bd552d1a45aa9accb24b310542279e" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>applyAntialiasingHint</name></member>
+      <member refid="class_q_c_p_layout_element_1ad6d2b4bb0291c2441b2e1ca3d5296df5" prot="protected" virt="virtual"><scope>QCPLayoutGrid</scope><name>applyDefaultAntialiasingHint</name></member>
+      <member refid="class_q_c_p_layout_element_1a2f499b1179b3126e22d0d7508124ccb3" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>autoMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a005c9f0fe84bc1591a2cf2c46fd477b4" prot="protected" virt="virtual"><scope>QCPLayoutGrid</scope><name>calculateAutoMargin</name></member>
+      <member refid="class_q_c_p_layout_1a02883bdf2769b5b227f0232dba1ac4ee" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>clear</name></member>
+      <member refid="class_q_c_p_layerable_1a07a8f746640c3704b09910df297afcba" prot="protected" virt="virtual"><scope>QCPLayoutGrid</scope><name>clipRect</name></member>
+      <member refid="class_q_c_p_layout_grid_1ac39074eafd148b82d0762090f258189e" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>columnCount</name></member>
+      <member refid="class_q_c_p_layout_grid_1a3de19753fdca81194458cb15156f7315" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>columnSpacing</name></member>
+      <member refid="class_q_c_p_layout_grid_1a39bd7994d00687d1b9defef6f1bda835" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>columnStretchFactors</name></member>
+      <member refid="class_q_c_p_layerable_1ae546370644a5551c76af739afc008bee" prot="protected" virt="virtual"><scope>QCPLayoutGrid</scope><name>deselectEvent</name></member>
+      <member refid="class_q_c_p_layout_element_1a547bcc1e6e2be5645ca781efe0834653" prot="protected" virt="virtual"><scope>QCPLayoutGrid</scope><name>draw</name></member>
+      <member refid="class_q_c_p_layout_grid_1a525f25e6ba43ee228151d074251b4e6a" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>element</name></member>
+      <member refid="class_q_c_p_layout_grid_1a26849ee5c47b4c940e8d65e8462f1065" prot="public" virt="virtual"><scope>QCPLayoutGrid</scope><name>elementAt</name></member>
+      <member refid="class_q_c_p_layout_grid_1aa682b1d36660478f665bab3c64e956a9" prot="public" virt="virtual"><scope>QCPLayoutGrid</scope><name>elementCount</name></member>
+      <member refid="class_q_c_p_layout_grid_1ae9e24e01552f6667b6d05b12a54a4caa" prot="public" virt="virtual"><scope>QCPLayoutGrid</scope><name>elements</name></member>
+      <member refid="class_q_c_p_layout_grid_1a886c0dcbabd51a45da399e044552b685" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>expandTo</name></member>
+      <member refid="class_q_c_p_layout_grid_1af348d903e3b8bc416f1fe1b8125d1173" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>getMaximumRowColSizes</name></member>
+      <member refid="class_q_c_p_layout_grid_1ac645fb9b1c4257b08a9f09dee10b9b3f" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>getMinimumRowColSizes</name></member>
+      <member refid="class_q_c_p_layout_1a92d9dcd95e9510b323706ef7fc4ff62e" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>getSectionSizes</name></member>
+      <member refid="class_q_c_p_layout_grid_1ab0cf4f7edc9414a3bfaddac0f46dc0a0" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>hasElement</name></member>
+      <member refid="class_q_c_p_layerable_1a8cbe5a0c9a5674249982f5ca5f8e02bc" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>initializeParentPlot</name></member>
+      <member refid="class_q_c_p_layout_grid_1a1e880a321dbe8b43b471ccd764433dc4" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>insertColumn</name></member>
+      <member refid="class_q_c_p_layout_grid_1a48af3dd7c3a653d9c3d7dd99bd02e838" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>insertRow</name></member>
+      <member refid="class_q_c_p_layerable_1aea67e8c19145e70d68c286a36f6b8300" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>layer</name></member>
+      <member refid="class_q_c_p_layerable_1abbf8657cedea73ac1c3499b521c90eba" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>layerChanged</name></member>
+      <member refid="class_q_c_p_layout_element_1a6235f5384db871fc6e3387a1bc558b0d" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>layout</name></member>
+      <member refid="class_q_c_p_layerable_1a3ab45a4c76a3333ce42eb217a81733ec" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mAntialiased</name></member>
+      <member refid="class_q_c_p_layout_element_1a22cb1bb62c452fd802e43ca2524660db" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>marginGroup</name></member>
+      <member refid="class_q_c_p_layout_element_1ac43921c997570389c14a1671bc3ea499" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>marginGroups</name></member>
+      <member refid="class_q_c_p_layout_element_1a85ff977dfcced84eef32d9f819ec9543" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>margins</name></member>
+      <member refid="class_q_c_p_layout_element_1af61c70354d1275778d68206b2a1b2d36" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mAutoMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a1fc85c79e15c2ab8051eccd455fccc4a" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>maximumSize</name></member>
+      <member refid="class_q_c_p_layout_grid_1a1ec4bf5914900a51829a7919f74aa58c" prot="public" virt="virtual"><scope>QCPLayoutGrid</scope><name>maximumSizeHint</name></member>
+      <member refid="class_q_c_p_layout_grid_1ae9ac48f0791be07ead0a96dbd5622770" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mColumnSpacing</name></member>
+      <member refid="class_q_c_p_layout_grid_1ac6aabe62339f94f18b9f8adab94b1840" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mColumnStretchFactors</name></member>
+      <member refid="class_q_c_p_layout_grid_1a3577d3855bf8ad20ef9079291a49f397" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mElements</name></member>
+      <member refid="class_q_c_p_layout_element_1a60ec7f377c26726174d536bffb632002" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>minimumMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1ae71f9230171d2d898e21dc461fc3df03" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>minimumSize</name></member>
+      <member refid="class_q_c_p_layout_grid_1a67aae235fb4dd9a479aafe07462ef9ee" prot="public" virt="virtual"><scope>QCPLayoutGrid</scope><name>minimumSizeHint</name></member>
+      <member refid="class_q_c_p_layerable_1aa38ec5891aff0f50b36fd63e9372a0cd" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mLayer</name></member>
+      <member refid="class_q_c_p_layout_element_1aeafbbc1130e02eee663c5326761fc963" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mMarginGroups</name></member>
+      <member refid="class_q_c_p_layout_element_1ac2a32b99ee527ca5dfff9da03628fe94" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a64a387973fd4addac842028c89088998" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mMaximumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a5ba71f25d1af4bb092b28df618538e63" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mMinimumMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1affef747c81632de33f08483b7fd10d01" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mMinimumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1aa8fef6486cb6ceb7c82cbdd50bc32ee9" prot="protected" virt="virtual"><scope>QCPLayoutGrid</scope><name>mouseDoubleClickEvent</name></member>
+      <member refid="class_q_c_p_layout_element_1a14f4acf58cdb8dd2c6c571479c4c4a40" prot="protected" virt="virtual"><scope>QCPLayoutGrid</scope><name>mouseMoveEvent</name></member>
+      <member refid="class_q_c_p_layout_element_1a2d82ea21fe0ee628f177bd824bc51a71" prot="protected" virt="virtual"><scope>QCPLayoutGrid</scope><name>mousePressEvent</name></member>
+      <member refid="class_q_c_p_layout_element_1ae526ac828cce1e5bb94eaa85776d7404" prot="protected" virt="virtual"><scope>QCPLayoutGrid</scope><name>mouseReleaseEvent</name></member>
+      <member refid="class_q_c_p_layout_element_1a07bb4973379e75cb0fa5b032c1d24afd" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mOuterRect</name></member>
+      <member refid="class_q_c_p_layerable_1af94484cfb7cbbddb7de522e9be71d9a4" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>moveToLayer</name></member>
+      <member refid="class_q_c_p_layerable_1a3291445a980053e2d17a21d15957624e" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mParentLayerable</name></member>
+      <member refid="class_q_c_p_layout_element_1ae7c75c25549608bd688bdb65d4c38066" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mParentLayout</name></member>
+      <member refid="class_q_c_p_layerable_1aa2a528433e44db02b8aef23c1f9f90ed" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mParentPlot</name></member>
+      <member refid="class_q_c_p_layout_element_1ad8896f05550389f7b9e92c9e6cdf6e01" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mRect</name></member>
+      <member refid="class_q_c_p_layout_grid_1a8b67f183f4645739cc4c794d75843b40" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mRowSpacing</name></member>
+      <member refid="class_q_c_p_layout_grid_1a36c85a7eaf342680fb9b8a4977486f16" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mRowStretchFactors</name></member>
+      <member refid="class_q_c_p_layerable_1a62e3aed8427d6ce3ccf716f285106cb3" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>mVisible</name></member>
+      <member refid="class_q_c_p_layout_element_1a60bbddee2d1230c2414bd776f44d17b8" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>outerRect</name></member>
+      <member refid="class_q_c_p_layerable_1a98d79f5b716d45eac4347befe546d0ec" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>parentLayerable</name></member>
+      <member refid="class_q_c_p_layerable_1ab7e0e94461566093d36ffc0f5312b109" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>parentPlot</name></member>
+      <member refid="class_q_c_p_layout_element_1a1478899e80e8244b411e96ec3b2e5ce2" prot="protected" virt="virtual"><scope>QCPLayoutGrid</scope><name>parentPlotInitialized</name></member>
+      <member refid="class_q_c_p_layerable_1a74c0fa237f29bf0e49565013fc5d1ec0" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>QCPLayerable</name></member>
+      <member refid="class_q_c_p_layout_1a04222e6e1361fd802d48f1a25b7020d4" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>QCPLayout</name></member>
+      <member refid="class_q_c_p_layout_element_1a8947f0ada17e672aaba3d424cbbb67e3" prot="public" virt="non-virtual" ambiguityscope="QCPLayoutElement::"><scope>QCPLayoutGrid</scope><name>QCPLayoutElement</name></member>
+      <member refid="class_q_c_p_layout_grid_1ab2a4c1587dc8aed4c41c509c8d8d2a64" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>QCPLayoutGrid</name></member>
+      <member refid="class_q_c_p_layerable_1a30809f7455e9794bca7b6c737622fa63" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>realVisibility</name></member>
+      <member refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>rect</name></member>
+      <member refid="class_q_c_p_layout_1a4afbb4bef0071f72f91afdac4433a18e" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>releaseElement</name></member>
+      <member refid="class_q_c_p_layout_1a6c58f537d8086f352576ab7c5b15d0bc" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>remove</name></member>
+      <member refid="class_q_c_p_layout_1a2403f684fee3ce47132faaeed00bb066" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>removeAt</name></member>
+      <member refid="class_q_c_p_layout_grid_1af8e6c7a05864ebe610c87756c7b9079c" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>rowCount</name></member>
+      <member refid="class_q_c_p_layout_grid_1abccdd33c1b284feb6df90fa02f23d9a3" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>rowSpacing</name></member>
+      <member refid="class_q_c_p_layout_grid_1a3744496abf73c8e3b464181d63bb20a7" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>rowStretchFactors</name></member>
+      <member refid="class_q_c_p_layerable_1a7498c2d0d081cf7cad0fb3bb93aa0e91" prot="protected" virt="virtual"><scope>QCPLayoutGrid</scope><name>selectEvent</name></member>
+      <member refid="class_q_c_p_layerable_1aa4035e586b7f317a06ba7e74e242a5ea" prot="protected" virt="virtual"><scope>QCPLayoutGrid</scope><name>selectionCategory</name></member>
+      <member refid="class_q_c_p_layout_element_1a9fcf5d0ea19f2c23b2b528bce2c6f095" prot="public" virt="virtual"><scope>QCPLayoutGrid</scope><name>selectTest</name></member>
+      <member refid="class_q_c_p_layerable_1a4fd43e89be4a553ead41652565ff0581" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setAntialiased</name></member>
+      <member refid="class_q_c_p_layout_element_1accfda49994e3e6d51ed14504abf9d27d" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setAutoMargins</name></member>
+      <member refid="class_q_c_p_layout_grid_1a3a49272aba32bb0fddc3bb2a45a3dba0" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setColumnSpacing</name></member>
+      <member refid="class_q_c_p_layout_grid_1ae38f31a71687b9d7ee3104852528fb50" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setColumnStretchFactor</name></member>
+      <member refid="class_q_c_p_layout_grid_1a6c2591d1a7e2534ce036989543b49e57" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setColumnStretchFactors</name></member>
+      <member refid="class_q_c_p_layerable_1ab0d0da6d2de45a118886d2c8e16d5a54" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setLayer</name></member>
+      <member refid="class_q_c_p_layerable_1ab25a0e7b897993b44447caee0f142083" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setLayer</name></member>
+      <member refid="class_q_c_p_layout_element_1a516e56f76b6bc100e8e71d329866847d" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setMarginGroup</name></member>
+      <member refid="class_q_c_p_layout_element_1a8f450b1f3f992ad576fce2c63d8b79cf" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a74eb5280a737ab44833d506db65efd95" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setMaximumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a03e0e9c48f230217c529b0819f832d84" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setMaximumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a0a8a17abc16b7923159fcc7608f94673" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setMinimumMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a5dd29a3c8bc88440c97c06b67be7886b" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setMinimumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a8e0447614a0bf92de9a7304588c6b96e" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setMinimumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a38975ea13e36de8e53391ce41d94bc0f" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setOuterRect</name></member>
+      <member refid="class_q_c_p_layerable_1aa23c893671f1f6744ac235cf2204cf3a" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setParentLayerable</name></member>
+      <member refid="class_q_c_p_layout_grid_1aaef2cd2d456197ee06a208793678e436" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setRowSpacing</name></member>
+      <member refid="class_q_c_p_layout_grid_1a7b0273de5369bd93d942edbaf5b166ec" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setRowStretchFactor</name></member>
+      <member refid="class_q_c_p_layout_grid_1a200b45f9c908f96ebadaa3c8d87a2782" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setRowStretchFactors</name></member>
+      <member refid="class_q_c_p_layerable_1a3bed99ddc396b48ce3ebfdc0418744f8" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>setVisible</name></member>
+      <member refid="class_q_c_p_layout_grid_1a08bba60e4acd20165526a8fd7f986b58" prot="public" virt="virtual"><scope>QCPLayoutGrid</scope><name>simplify</name></member>
+      <member refid="class_q_c_p_layout_1a6218cd7e5c0e30077c1aeaffe55b6145" prot="protected" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>sizeConstraintsChanged</name></member>
+      <member refid="class_q_c_p_layout_grid_1a666a9fe9e92054436f9b66eba25cca0c" prot="public" virt="virtual"><scope>QCPLayoutGrid</scope><name>take</name></member>
+      <member refid="class_q_c_p_layout_grid_1acc1277394ff8a6432e111ff9463e6375" prot="public" virt="virtual"><scope>QCPLayoutGrid</scope><name>takeAt</name></member>
+      <member refid="class_q_c_p_layout_1a34ab477e820537ded7bade4399c482fd" prot="public" virt="virtual"><scope>QCPLayoutGrid</scope><name>update</name></member>
+      <member refid="class_q_c_p_layout_grid_1a07f8dd7d3d61d7345026621d446042a4" prot="public" virt="virtual"><scope>QCPLayoutGrid</scope><name>updateLayout</name></member>
+      <member refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374d" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>UpdatePhase</name></member>
+      <member refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>upLayout</name></member>
+      <member refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>upMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374dad6119882eba136357c2f627992e527d3" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>upPreparation</name></member>
+      <member refid="class_q_c_p_layerable_1a10a3cc92e0fa63e4a929e61d34e275a7" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>visible</name></member>
+      <member refid="class_q_c_p_layout_element_1a300521d2fd18a893c1b85f6be11ce2bf" prot="protected" virt="virtual"><scope>QCPLayoutGrid</scope><name>wheelEvent</name></member>
+      <member refid="class_q_c_p_layerable_1a4231cf5b3601d6d3a5781283e7a9735b" prot="public" virt="non-virtual"><scope>QCPLayoutGrid</scope><name>~QCPLayerable</name></member>
+      <member refid="class_q_c_p_layout_element_1a0dc52343920011b3e72d61fc94ed3400" prot="public" virt="virtual"><scope>QCPLayoutGrid</scope><name>~QCPLayoutElement</name></member>
+      <member refid="class_q_c_p_layout_grid_1af859f4a4db693a21056a9e615f6c4a90" prot="public" virt="virtual"><scope>QCPLayoutGrid</scope><name>~QCPLayoutGrid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

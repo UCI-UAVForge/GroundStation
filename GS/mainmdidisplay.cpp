@@ -41,6 +41,9 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new U
     TableWidget *tw = new TableWidget();
     addWindow(tw);
 
+    msw = new MissionStatusWindow() ;
+    addWindow(msw);
+
     connect(map, &MapWidget::pointAddedToMap, tw, &TableWidget::appendRow);
 
     this->addWindow( this->missionPlanningWindowUIWidget );

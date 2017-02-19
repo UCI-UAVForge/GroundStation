@@ -1,0 +1,206 @@
+\hypertarget{class_protocol_1_1_packet}{}\section{Protocol\+:\+:Packet Class Reference}
+\label{class_protocol_1_1_packet}\index{Protocol\+::\+Packet@{Protocol\+::\+Packet}}
+
+
+{\ttfamily \#include $<$packet.\+h$>$}
+
+Inheritance diagram for Protocol\+:\+:Packet\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.686747cm]{class_protocol_1_1_packet}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{class_protocol_1_1_packet_acbe4f1b9f973d14097814d16fb0cd83a}{get\+\_\+timestamp} ()
+\item 
+void \hyperlink{class_protocol_1_1_packet_aa3f97852d443bb9554178384afa24eec}{set\+\_\+type} (\hyperlink{namespace_protocol_a0704fe3e36f425dc9805a6dcc1ea1b75}{Packet\+Type} a)
+\item 
+\hyperlink{namespace_protocol_a0704fe3e36f425dc9805a6dcc1ea1b75}{Packet\+Type} \hyperlink{class_protocol_1_1_packet_a3c159ff945d95102ee2a2ba0b93d05d8}{get\+\_\+type} ()
+\item 
+virtual size\+\_\+t \hyperlink{class_protocol_1_1_packet_a9c89c3d05acc44a5050ebfc756a2cd41}{Get\+Bytes} (uint8\+\_\+t $\ast$buffer, size\+\_\+t len)=0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_protocol_1_1_packet}{Packet} $\ast$ \hyperlink{class_protocol_1_1_packet_ad327686418aa271121e6a6a8eadebbd4}{Parse} (uint8\+\_\+t $\ast$buffer, size\+\_\+t len)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_protocol_1_1_packet_ae02347b6d2eee98511ec19343b82e0a7}{Packet} (\hyperlink{namespace_protocol_a0704fe3e36f425dc9805a6dcc1ea1b75}{Packet\+Type} t)
+\item 
+size\+\_\+t \hyperlink{class_protocol_1_1_packet_aa7498c8c70cb8a55617ce588508af81f}{Write\+Header} (uint8\+\_\+t $\ast$buffer, size\+\_\+t len)
+\item 
+size\+\_\+t \hyperlink{class_protocol_1_1_packet_aa5f54d3128f7914383f4d8e8f53fbce4}{Read\+Header} (uint8\+\_\+t $\ast$buffer, size\+\_\+t len)
+\item 
+size\+\_\+t \hyperlink{class_protocol_1_1_packet_adc4ebdbdbcdbaa177ba243c5c654ba18}{Set\+Checksum} (uint8\+\_\+t $\ast$buffer, size\+\_\+t len, size\+\_\+t offset)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \hyperlink{class_protocol_1_1_packet_a2f0a19f4bff82270290e53d31e67db33}{timestamp}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_protocol_1_1_packet_ae02347b6d2eee98511ec19343b82e0a7}{}\index{Protocol\+::\+Packet@{Protocol\+::\+Packet}!Packet@{Packet}}
+\index{Packet@{Packet}!Protocol\+::\+Packet@{Protocol\+::\+Packet}}
+\subsubsection[{Packet}]{\setlength{\rightskip}{0pt plus 5cm}Protocol\+::\+Packet\+::\+Packet (
+\begin{DoxyParamCaption}
+\item[{{\bf Protocol\+::\+Packet\+Type}}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_protocol_1_1_packet_ae02347b6d2eee98511ec19343b82e0a7}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_protocol_1_1_packet_acbe4f1b9f973d14097814d16fb0cd83a}{}\index{Protocol\+::\+Packet@{Protocol\+::\+Packet}!get\+\_\+timestamp@{get\+\_\+timestamp}}
+\index{get\+\_\+timestamp@{get\+\_\+timestamp}!Protocol\+::\+Packet@{Protocol\+::\+Packet}}
+\subsubsection[{get\+\_\+timestamp}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Protocol\+::\+Packet\+::get\+\_\+timestamp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_protocol_1_1_packet_acbe4f1b9f973d14097814d16fb0cd83a}
+\hypertarget{class_protocol_1_1_packet_a3c159ff945d95102ee2a2ba0b93d05d8}{}\index{Protocol\+::\+Packet@{Protocol\+::\+Packet}!get\+\_\+type@{get\+\_\+type}}
+\index{get\+\_\+type@{get\+\_\+type}!Protocol\+::\+Packet@{Protocol\+::\+Packet}}
+\subsubsection[{get\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Protocol\+::\+Packet\+Type} Protocol\+::\+Packet\+::get\+\_\+type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_protocol_1_1_packet_a3c159ff945d95102ee2a2ba0b93d05d8}
+\hypertarget{class_protocol_1_1_packet_a9c89c3d05acc44a5050ebfc756a2cd41}{}\index{Protocol\+::\+Packet@{Protocol\+::\+Packet}!Get\+Bytes@{Get\+Bytes}}
+\index{Get\+Bytes@{Get\+Bytes}!Protocol\+::\+Packet@{Protocol\+::\+Packet}}
+\subsubsection[{Get\+Bytes}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\+\_\+t Protocol\+::\+Packet\+::\+Get\+Bytes (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_protocol_1_1_packet_a9c89c3d05acc44a5050ebfc756a2cd41}
+Stores the byte representation of a packet in the given buffer.
+
+\begin{DoxyAuthor}{Author}
+Jason Watkins 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2015-\/11-\/16
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\mbox{[}in\mbox{]}} & An array to write the packet to. \\
+\hline
+{\em len\mbox{[}in\mbox{]}} & The length of {\ttfamily buffer}. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{class_protocol_1_1_action_packet_af5963f7c15af8292152df260b188f626}{Protocol\+::\+Action\+Packet}, \hyperlink{class_protocol_1_1_telemetry_packet_a36d86bf7afc3dcdd820ffa0982c5177a}{Protocol\+::\+Telemetry\+Packet}, \hyperlink{class_protocol_1_1_info_packet_ad1f43721045348442cf224533bce7f1a}{Protocol\+::\+Info\+Packet}, and \hyperlink{class_protocol_1_1_ack_packet_a588f9608c58a913c5dd3c4acd28f92af}{Protocol\+::\+Ack\+Packet}.
+
+\hypertarget{class_protocol_1_1_packet_ad327686418aa271121e6a6a8eadebbd4}{}\index{Protocol\+::\+Packet@{Protocol\+::\+Packet}!Parse@{Parse}}
+\index{Parse@{Parse}!Protocol\+::\+Packet@{Protocol\+::\+Packet}}
+\subsubsection[{Parse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Protocol\+::\+Packet} $\ast$ Protocol\+::\+Packet\+::\+Parse (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_protocol_1_1_packet_ad327686418aa271121e6a6a8eadebbd4}
+\hypertarget{class_protocol_1_1_packet_aa5f54d3128f7914383f4d8e8f53fbce4}{}\index{Protocol\+::\+Packet@{Protocol\+::\+Packet}!Read\+Header@{Read\+Header}}
+\index{Read\+Header@{Read\+Header}!Protocol\+::\+Packet@{Protocol\+::\+Packet}}
+\subsubsection[{Read\+Header}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t Protocol\+::\+Packet\+::\+Read\+Header (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_protocol_1_1_packet_aa5f54d3128f7914383f4d8e8f53fbce4}
+Reads information shared by all packets from the given buffer.
+
+\begin{DoxyAuthor}{Author}
+Jason Watkins 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2015-\/11-\/16
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\mbox{[}in\mbox{]}} & An array containing a valid packet \\
+\hline
+{\em len\mbox{[}in\mbox{]}} & The length of {\ttfamily buffer}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes contained in the header. 
+\end{DoxyReturn}
+\hypertarget{class_protocol_1_1_packet_aa3f97852d443bb9554178384afa24eec}{}\index{Protocol\+::\+Packet@{Protocol\+::\+Packet}!set\+\_\+type@{set\+\_\+type}}
+\index{set\+\_\+type@{set\+\_\+type}!Protocol\+::\+Packet@{Protocol\+::\+Packet}}
+\subsubsection[{set\+\_\+type}]{\setlength{\rightskip}{0pt plus 5cm}void Protocol\+::\+Packet\+::set\+\_\+type (
+\begin{DoxyParamCaption}
+\item[{{\bf Protocol\+::\+Packet\+Type}}]{a}
+\end{DoxyParamCaption}
+)}\label{class_protocol_1_1_packet_aa3f97852d443bb9554178384afa24eec}
+\hypertarget{class_protocol_1_1_packet_adc4ebdbdbcdbaa177ba243c5c654ba18}{}\index{Protocol\+::\+Packet@{Protocol\+::\+Packet}!Set\+Checksum@{Set\+Checksum}}
+\index{Set\+Checksum@{Set\+Checksum}!Protocol\+::\+Packet@{Protocol\+::\+Packet}}
+\subsubsection[{Set\+Checksum}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t Protocol\+::\+Packet\+::\+Set\+Checksum (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{len, }
+\item[{size\+\_\+t}]{offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_protocol_1_1_packet_adc4ebdbdbcdbaa177ba243c5c654ba18}
+Sets the checksum bytes at the end of a packet.
+
+\begin{DoxyAuthor}{Author}
+Jason Watkins 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2015-\/11-\/16
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\mbox{[}in\mbox{]}} & An array to write the header to. \\
+\hline
+{\em len\mbox{[}in\mbox{]}} & The length of {\ttfamily buffer}. \\
+\hline
+{\em offset\mbox{[}in\mbox{]}} & The index of the last byte that should be part of the calculated checksum. {\ttfamily offset} should be at least two less than {\ttfamily len} to leave room for the checksum bytes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The end of the packet with the checksum appended. 
+\end{DoxyReturn}
+\hypertarget{class_protocol_1_1_packet_aa7498c8c70cb8a55617ce588508af81f}{}\index{Protocol\+::\+Packet@{Protocol\+::\+Packet}!Write\+Header@{Write\+Header}}
+\index{Write\+Header@{Write\+Header}!Protocol\+::\+Packet@{Protocol\+::\+Packet}}
+\subsubsection[{Write\+Header}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t Protocol\+::\+Packet\+::\+Write\+Header (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_protocol_1_1_packet_aa7498c8c70cb8a55617ce588508af81f}
+Writes information shared by all packets to the given buffer.
+
+\begin{DoxyAuthor}{Author}
+Jason Watkins 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2015-\/11-\/16
+\end{DoxyDate}
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\mbox{[}in\mbox{]}} & An array to write the header to. \\
+\hline
+{\em len\mbox{[}in\mbox{]}} & The length of {\ttfamily buffer}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written to buffer. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_protocol_1_1_packet_a2f0a19f4bff82270290e53d31e67db33}{}\index{Protocol\+::\+Packet@{Protocol\+::\+Packet}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!Protocol\+::\+Packet@{Protocol\+::\+Packet}}
+\subsubsection[{timestamp}]{\setlength{\rightskip}{0pt plus 5cm}uint32\+\_\+t Protocol\+::\+Packet\+::timestamp\hspace{0.3cm}{\ttfamily [protected]}}\label{class_protocol_1_1_packet_a2f0a19f4bff82270290e53d31e67db33}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{packet_8h}{packet.\+h}\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{_packet_8cpp}{Packet.\+cpp}\end{DoxyCompactItemize}

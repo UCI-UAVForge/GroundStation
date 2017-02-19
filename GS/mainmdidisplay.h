@@ -6,6 +6,8 @@
 #include "missionplanningwindow.h"
 #include "ui_mainmdidisplay.h"
 #include "mapwidget.h"
+#include "missionstatuswindow.h"
+#include "messagebox.h"
 
 #include <assert.h>
 
@@ -97,6 +99,10 @@ private:
     /* Tabs */
 
     QWidget * MapRecapUI_TableTab , * MapRecapUI_GraphTab ;
+
+    MissionStatusWindow * msw ;
+
+    messagebox mb ;
 
 };
 

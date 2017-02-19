@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_q_c_p_financial_data" kind="class" language="C++" prot="public">
+    <compoundname>QCPFinancialData</compoundname>
+    <includes refid="qcustomplot_8h" local="no">qcustomplot.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_q_c_p_financial_data_1a18bc92126f28c214b05b0161e5f5958b" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPFinancialData::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3129" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_financial_data_1a3059e1e1fbcb9fd243fde0450f238032" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPFinancialData::open</definition>
+        <argsstring></argsstring>
+        <name>open</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3129" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_financial_data_1a299a4b241296fb6cd1baf5ab03f7126a" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPFinancialData::high</definition>
+        <argsstring></argsstring>
+        <name>high</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3129" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_financial_data_1aecce0fb45a115e3f3a25eea78491ac16" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPFinancialData::low</definition>
+        <argsstring></argsstring>
+        <name>low</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3129" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_financial_data_1a45e9b96944c4a08ea6c82a72d3d22df2" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPFinancialData::close</definition>
+        <argsstring></argsstring>
+        <name>close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3129" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3129" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_c_p_financial_data_1a1ca53b3a9ae4e9658a4fd1ca57d76ba4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPFinancialData::QCPFinancialData</definition>
+        <argsstring>()</argsstring>
+        <name>QCPFinancialData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a data point with key and all values set to zero. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3127" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="20487" bodyend="20494"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_financial_data_1a069b72c514dfd4fc8e1d5df811e54ca4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPFinancialData::QCPFinancialData</definition>
+        <argsstring>(double key, double open, double high, double low, double close)</argsstring>
+        <name>QCPFinancialData</name>
+        <param>
+          <type>double</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>open</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>high</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>low</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>close</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a data point with the specified <emphasis>key</emphasis> and OHLC values. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3128" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="20499" bodyend="20506"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Holds the data of one single data point for <ref refid="class_q_c_p_financial" kindref="compound">QCPFinancial</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>The container for storing multiple data points is <ref refid="qcustomplot_8h_1a745c09823fae0974b50beca9bc3b3d7d" kindref="member">QCPFinancialDataMap</ref>.</para><para>The stored data is: <itemizedlist>
+<listitem><para><emphasis>key:</emphasis> coordinate on the key axis of this data point </para></listitem>
+<listitem><para><emphasis>open:</emphasis> The opening value at the data point </para></listitem>
+<listitem><para><emphasis>high:</emphasis> The high/maximum value at the data point </para></listitem>
+<listitem><para><emphasis>low:</emphasis> The low/minimum value at the data point </para></listitem>
+<listitem><para><emphasis>close:</emphasis> The closing value at the data point</para></listitem>
+</itemizedlist>
+<simplesect kind="see"><para><ref refid="qcustomplot_8h_1a745c09823fae0974b50beca9bc3b3d7d" kindref="member">QCPFinancialDataMap</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3125" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3124" bodyend="3130"/>
+    <listofallmembers>
+      <member refid="class_q_c_p_financial_data_1a45e9b96944c4a08ea6c82a72d3d22df2" prot="public" virt="non-virtual"><scope>QCPFinancialData</scope><name>close</name></member>
+      <member refid="class_q_c_p_financial_data_1a299a4b241296fb6cd1baf5ab03f7126a" prot="public" virt="non-virtual"><scope>QCPFinancialData</scope><name>high</name></member>
+      <member refid="class_q_c_p_financial_data_1a18bc92126f28c214b05b0161e5f5958b" prot="public" virt="non-virtual"><scope>QCPFinancialData</scope><name>key</name></member>
+      <member refid="class_q_c_p_financial_data_1aecce0fb45a115e3f3a25eea78491ac16" prot="public" virt="non-virtual"><scope>QCPFinancialData</scope><name>low</name></member>
+      <member refid="class_q_c_p_financial_data_1a3059e1e1fbcb9fd243fde0450f238032" prot="public" virt="non-virtual"><scope>QCPFinancialData</scope><name>open</name></member>
+      <member refid="class_q_c_p_financial_data_1a1ca53b3a9ae4e9658a4fd1ca57d76ba4" prot="public" virt="non-virtual"><scope>QCPFinancialData</scope><name>QCPFinancialData</name></member>
+      <member refid="class_q_c_p_financial_data_1a069b72c514dfd4fc8e1d5df811e54ca4" prot="public" virt="non-virtual"><scope>QCPFinancialData</scope><name>QCPFinancialData</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

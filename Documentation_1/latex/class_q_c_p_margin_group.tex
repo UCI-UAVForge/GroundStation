@@ -1,0 +1,157 @@
+\hypertarget{class_q_c_p_margin_group}{}\section{Q\+C\+P\+Margin\+Group Class Reference}
+\label{class_q_c_p_margin_group}\index{Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}}
+
+
+A margin group allows synchronization of margin sides if working with multiple layout elements.  
+
+
+
+
+{\ttfamily \#include $<$qcustomplot.\+h$>$}
+
+Inheritance diagram for Q\+C\+P\+Margin\+Group\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_q_c_p_margin_group}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_c_p_margin_group_ac481c20678ec5b305d6df330715f4b7b}{Q\+C\+P\+Margin\+Group} (\hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} $\ast$parent\+Plot)
+\item 
+\hyperlink{class_q_c_p_margin_group_a42c62becdaac41406ca90f1c2a755e1c}{$\sim$\+Q\+C\+P\+Margin\+Group} ()
+\item 
+Q\+List$<$ \hyperlink{class_q_c_p_layout_element}{Q\+C\+P\+Layout\+Element} $\ast$ $>$ \hyperlink{class_q_c_p_margin_group_a2f39e319c9ece34e0392c2ca350f1069}{elements} (\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{Q\+C\+P\+::\+Margin\+Side} side) const 
+\item 
+bool \hyperlink{class_q_c_p_margin_group_a28c8e87a0b87c01bd28c693faabddd7b}{is\+Empty} () const 
+\item 
+void \hyperlink{class_q_c_p_margin_group_a144b67f216e4e86c3a3a309e850285fe}{clear} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_q_c_p_margin_group_aeaeba9068dba2ef8be41449f0f2582f7}{common\+Margin} (\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{Q\+C\+P\+::\+Margin\+Side} side) const 
+\item 
+void \hyperlink{class_q_c_p_margin_group_acb9c3a35acec655c2895b7eb95ee0524}{add\+Child} (\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{Q\+C\+P\+::\+Margin\+Side} side, \hyperlink{class_q_c_p_layout_element}{Q\+C\+P\+Layout\+Element} $\ast$element)
+\item 
+void \hyperlink{class_q_c_p_margin_group_a20ab3286062957d99b58db683fe725b0}{remove\+Child} (\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{Q\+C\+P\+::\+Margin\+Side} side, \hyperlink{class_q_c_p_layout_element}{Q\+C\+P\+Layout\+Element} $\ast$element)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} $\ast$ \hyperlink{class_q_c_p_margin_group_a23cfa29e3cc0f33a59141b77d8c04edf}{m\+Parent\+Plot}
+\item 
+Q\+Hash$<$ \hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54}{Q\+C\+P\+::\+Margin\+Side}, Q\+List$<$ \hyperlink{class_q_c_p_layout_element}{Q\+C\+P\+Layout\+Element} $\ast$ $>$ $>$ \hyperlink{class_q_c_p_margin_group_a954bc89ff8958b9bb6a4a0d08ed5fc0f}{m\+Children}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_q_c_p_margin_group_a0790750c7e7f14fdbd960d172655b42b}{Q\+C\+P\+Layout\+Element}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A margin group allows synchronization of margin sides if working with multiple layout elements. 
+
+\hyperlink{class_q_c_p_margin_group}{Q\+C\+P\+Margin\+Group} allows you to tie a margin side of two or more layout elements together, such that they will all have the same size, based on the largest required margin in the group.
+
+~\newline
+~\newline
+ In certain situations it is desirable that margins at specific sides are synchronized across layout elements. For example, if one \hyperlink{class_q_c_p_axis_rect}{Q\+C\+P\+Axis\+Rect} is below another one in a grid layout, it will provide a cleaner look to the user if the left and right margins of the two axis rects are of the same size. The left axis of the top axis rect will then be at the same horizontal position as the left axis of the lower axis rect, making them appear aligned. The same applies for the right axes. This is what \hyperlink{class_q_c_p_margin_group}{Q\+C\+P\+Margin\+Group} makes possible.
+
+To add/remove a specific side of a layout element to/from a margin group, use the \hyperlink{class_q_c_p_layout_element_a516e56f76b6bc100e8e71d329866847d}{Q\+C\+P\+Layout\+Element\+::set\+Margin\+Group} method. To completely break apart the margin group, either call \hyperlink{class_q_c_p_margin_group_a144b67f216e4e86c3a3a309e850285fe}{clear}, or just delete the margin group.\hypertarget{class_q_c_p_margin_group_QCPMarginGroup-example}{}\subsection{Example}\label{class_q_c_p_margin_group_QCPMarginGroup-example}
+First create a margin group\+: 
+\begin{DoxyCode}
+\hyperlink{class_q_c_p_margin_group}{QCPMarginGroup} *group = \textcolor{keyword}{new} \hyperlink{class_q_c_p_margin_group_ac481c20678ec5b305d6df330715f4b7b}{QCPMarginGroup}(customPlot);
+\end{DoxyCode}
+ Then set this group on the layout element sides\+: 
+\begin{DoxyCode}
+customPlot->axisRect(0)->setMarginGroup(\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54a9500c8bfcc9e80b9dff0a8e00e867f07}{QCP::msLeft}|\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54a93c719593bb2b94ed244d52c86d83b65}{QCP::msRight}, group);
+customPlot->axisRect(1)->setMarginGroup(\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54a9500c8bfcc9e80b9dff0a8e00e867f07}{QCP::msLeft}|\hyperlink{namespace_q_c_p_a7e487e3e2ccb62ab7771065bab7cae54a93c719593bb2b94ed244d52c86d83b65}{QCP::msRight}, group);
+\end{DoxyCode}
+ Here, we\textquotesingle{}ve used the first two axis rects of the plot and synchronized their left margins with each other and their right margins with each other. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_q_c_p_margin_group_ac481c20678ec5b305d6df330715f4b7b}{}\index{Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}!Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}}
+\index{Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}!Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}}
+\subsubsection[{Q\+C\+P\+Margin\+Group}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Margin\+Group\+::\+Q\+C\+P\+Margin\+Group (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+Custom\+Plot} $\ast$}]{parent\+Plot}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_margin_group_ac481c20678ec5b305d6df330715f4b7b}
+Creates a new \hyperlink{class_q_c_p_margin_group}{Q\+C\+P\+Margin\+Group} instance in {\itshape parent\+Plot}. \hypertarget{class_q_c_p_margin_group_a42c62becdaac41406ca90f1c2a755e1c}{}\index{Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}!````~Q\+C\+P\+Margin\+Group@{$\sim$\+Q\+C\+P\+Margin\+Group}}
+\index{````~Q\+C\+P\+Margin\+Group@{$\sim$\+Q\+C\+P\+Margin\+Group}!Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}}
+\subsubsection[{$\sim$\+Q\+C\+P\+Margin\+Group}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Margin\+Group\+::$\sim$\+Q\+C\+P\+Margin\+Group (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_margin_group_a42c62becdaac41406ca90f1c2a755e1c}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_q_c_p_margin_group_acb9c3a35acec655c2895b7eb95ee0524}{}\index{Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}}
+\subsubsection[{add\+Child}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Margin\+Group\+::add\+Child (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+::\+Margin\+Side}}]{side, }
+\item[{{\bf Q\+C\+P\+Layout\+Element} $\ast$}]{element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_margin_group_acb9c3a35acec655c2895b7eb95ee0524}
+\hypertarget{class_q_c_p_margin_group_a144b67f216e4e86c3a3a309e850285fe}{}\index{Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}!clear@{clear}}
+\index{clear@{clear}!Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Margin\+Group\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_margin_group_a144b67f216e4e86c3a3a309e850285fe}
+Clears this margin group. The synchronization of the margin sides that use this margin group is lifted and they will use their individual margin sizes again. \hypertarget{class_q_c_p_margin_group_aeaeba9068dba2ef8be41449f0f2582f7}{}\index{Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}!common\+Margin@{common\+Margin}}
+\index{common\+Margin@{common\+Margin}!Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}}
+\subsubsection[{common\+Margin}]{\setlength{\rightskip}{0pt plus 5cm}int Q\+C\+P\+Margin\+Group\+::common\+Margin (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+::\+Margin\+Side}}]{side}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_margin_group_aeaeba9068dba2ef8be41449f0f2582f7}
+\hypertarget{class_q_c_p_margin_group_a2f39e319c9ece34e0392c2ca350f1069}{}\index{Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}!elements@{elements}}
+\index{elements@{elements}!Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}}
+\subsubsection[{elements}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ {\bf Q\+C\+P\+Layout\+Element} $\ast$ $>$ Q\+C\+P\+Margin\+Group\+::elements (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+::\+Margin\+Side}}]{side}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_margin_group_a2f39e319c9ece34e0392c2ca350f1069}
+Returns a list of all layout elements that have their margin {\itshape side} associated with this margin group. \hypertarget{class_q_c_p_margin_group_a28c8e87a0b87c01bd28c693faabddd7b}{}\index{Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}}
+\subsubsection[{is\+Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Margin\+Group\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_q_c_p_margin_group_a28c8e87a0b87c01bd28c693faabddd7b}
+Returns whether this margin group is empty. If this function returns true, no layout elements use this margin group to synchronize margin sides. \hypertarget{class_q_c_p_margin_group_a20ab3286062957d99b58db683fe725b0}{}\index{Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}!remove\+Child@{remove\+Child}}
+\index{remove\+Child@{remove\+Child}!Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}}
+\subsubsection[{remove\+Child}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Margin\+Group\+::remove\+Child (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+::\+Margin\+Side}}]{side, }
+\item[{{\bf Q\+C\+P\+Layout\+Element} $\ast$}]{element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_margin_group_a20ab3286062957d99b58db683fe725b0}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_q_c_p_margin_group_a0790750c7e7f14fdbd960d172655b42b}{}\index{Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}!Q\+C\+P\+Layout\+Element@{Q\+C\+P\+Layout\+Element}}
+\index{Q\+C\+P\+Layout\+Element@{Q\+C\+P\+Layout\+Element}!Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}}
+\subsubsection[{Q\+C\+P\+Layout\+Element}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Q\+C\+P\+Layout\+Element}\hspace{0.3cm}{\ttfamily [friend]}}\label{class_q_c_p_margin_group_a0790750c7e7f14fdbd960d172655b42b}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_q_c_p_margin_group_a954bc89ff8958b9bb6a4a0d08ed5fc0f}{}\index{Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}!m\+Children@{m\+Children}}
+\index{m\+Children@{m\+Children}!Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}}
+\subsubsection[{m\+Children}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Hash$<${\bf Q\+C\+P\+::\+Margin\+Side}, Q\+List$<${\bf Q\+C\+P\+Layout\+Element}$\ast$$>$ $>$ Q\+C\+P\+Margin\+Group\+::m\+Children\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_margin_group_a954bc89ff8958b9bb6a4a0d08ed5fc0f}
+\hypertarget{class_q_c_p_margin_group_a23cfa29e3cc0f33a59141b77d8c04edf}{}\index{Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}!m\+Parent\+Plot@{m\+Parent\+Plot}}
+\index{m\+Parent\+Plot@{m\+Parent\+Plot}!Q\+C\+P\+Margin\+Group@{Q\+C\+P\+Margin\+Group}}
+\subsubsection[{m\+Parent\+Plot}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+Custom\+Plot}$\ast$ Q\+C\+P\+Margin\+Group\+::m\+Parent\+Plot\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_margin_group_a23cfa29e3cc0f33a59141b77d8c04edf}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{qcustomplot_8h}{qcustomplot.\+h}\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}\end{DoxyCompactItemize}

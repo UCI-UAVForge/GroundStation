@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_connection_dialog" kind="class" language="C++" prot="public">
+    <compoundname>ConnectionDialog</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QDialog</basecompoundref>
+    <includes refid="connectiondialog_8h" local="no">connectiondialog.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_connection_dialog_1af57ae0f64512933c043c1cf136b5a621" prot="private" static="no" mutable="no">
+        <type>Ui::ConnectionDialog *</type>
+        <definition>Ui::ConnectionDialog* ConnectionDialog::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/connectiondialog.h" line="32" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/connectiondialog.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_connection_dialog_1a3a32f24f981932f85d14670b747f45d6" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ConnectionDialog::ConnectionDialog</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>ConnectionDialog</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/connectiondialog.h" line="21" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/connectiondialog.cpp" bodystart="4" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_connection_dialog_1a43281efe3677803bce4e84c46b1f43b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ConnectionDialog::~ConnectionDialog</definition>
+        <argsstring>()</argsstring>
+        <name>~ConnectionDialog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/connectiondialog.h" line="22" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/connectiondialog.cpp" bodystart="23" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_connection_dialog_1a347fa3cbeb71b24813bad9c4181a68b0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConnectionDialog::closeConnectionDialog</definition>
+        <argsstring>()</argsstring>
+        <name>closeConnectionDialog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/connectiondialog.h" line="28" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/connectiondialog.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_connection_dialog_1a47aa49fc57ff2d2db7175dbd72b4ba85" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConnectionDialog::on_OK_button_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_OK_button_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/connectiondialog.h" line="29" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/connectiondialog.cpp" bodystart="18" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="10">
+        <label>ConnectionDialog</label>
+        <link refid="class_connection_dialog"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>QDialog</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="12">
+        <label>ConnectionDialog</label>
+        <link refid="class_connection_dialog"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>QDialog</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/connectiondialog.h" line="17" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/connectiondialog.h" bodystart="16" bodyend="33"/>
+    <listofallmembers>
+      <member refid="class_connection_dialog_1a347fa3cbeb71b24813bad9c4181a68b0" prot="private" virt="non-virtual"><scope>ConnectionDialog</scope><name>closeConnectionDialog</name></member>
+      <member refid="class_connection_dialog_1a3a32f24f981932f85d14670b747f45d6" prot="public" virt="non-virtual"><scope>ConnectionDialog</scope><name>ConnectionDialog</name></member>
+      <member refid="class_connection_dialog_1a47aa49fc57ff2d2db7175dbd72b4ba85" prot="private" virt="non-virtual"><scope>ConnectionDialog</scope><name>on_OK_button_clicked</name></member>
+      <member refid="class_connection_dialog_1af57ae0f64512933c043c1cf136b5a621" prot="private" virt="non-virtual"><scope>ConnectionDialog</scope><name>ui</name></member>
+      <member refid="class_connection_dialog_1a43281efe3677803bce4e84c46b1f43b8" prot="public" virt="non-virtual"><scope>ConnectionDialog</scope><name>~ConnectionDialog</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

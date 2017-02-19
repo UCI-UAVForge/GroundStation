@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="struct_q_c_p_axis_painter_private_1_1_cached_label" kind="struct" language="C++" prot="protected">
+    <compoundname>QCPAxisPainterPrivate::CachedLabel</compoundname>
+    <includes refid="qcustomplot_8h" local="no">qcustomplot.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_q_c_p_axis_painter_private_1_1_cached_label_1a5f502db71c92e572f1e6f44f62c59d8e" prot="public" static="no" mutable="no">
+        <type>QPointF</type>
+        <definition>QPointF QCPAxisPainterPrivate::CachedLabel::offset</definition>
+        <argsstring></argsstring>
+        <name>offset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1364" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1364" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_q_c_p_axis_painter_private_1_1_cached_label_1a461597cbd470914a9d24b64d16037a88" prot="public" static="no" mutable="no">
+        <type>QPixmap</type>
+        <definition>QPixmap QCPAxisPainterPrivate::CachedLabel::pixmap</definition>
+        <argsstring></argsstring>
+        <name>pixmap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1365" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1365" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1363" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1362" bodyend="1366"/>
+    <listofallmembers>
+      <member refid="struct_q_c_p_axis_painter_private_1_1_cached_label_1a5f502db71c92e572f1e6f44f62c59d8e" prot="public" virt="non-virtual"><scope>QCPAxisPainterPrivate::CachedLabel</scope><name>offset</name></member>
+      <member refid="struct_q_c_p_axis_painter_private_1_1_cached_label_1a461597cbd470914a9d24b64d16037a88" prot="public" virt="non-virtual"><scope>QCPAxisPainterPrivate::CachedLabel</scope><name>pixmap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

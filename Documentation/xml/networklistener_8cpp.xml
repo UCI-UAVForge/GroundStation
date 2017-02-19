@@ -1,0 +1,445 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="networklistener_8cpp" kind="file" language="C++">
+    <compoundname>networklistener.cpp</compoundname>
+    <includes refid="networklistener_8h" local="yes">networklistener.h</includes>
+    <includes refid="net_8h" local="yes">net.h</includes>
+    <includes local="no">QtCore</includes>
+    <includes local="no">QDebug</includes>
+    <includes local="no">iostream</includes>
+    <includes local="no">QString</includes>
+    <includes refid="gsserver_8h" local="yes">gsserver.h</includes>
+    <includes refid="ackpacket_8h" local="yes">ackpacket.h</includes>
+    <includes refid="actionpacket_8h" local="yes">actionpacket.h</includes>
+    <includes refid="telemetrypacket_8h" local="yes">telemetrypacket.h</includes>
+    <includes refid="infopacket_8h" local="yes">infopacket.h</includes>
+    <includes refid="packet_8h" local="yes">packet.h</includes>
+    <incdepgraph>
+      <node id="2096">
+        <label>net.h</label>
+        <link refid="net_8h"/>
+        <childnode refid="2097" relation="include">
+        </childnode>
+      </node>
+      <node id="2106">
+        <label>QMap</label>
+      </node>
+      <node id="2066">
+        <label>QObject</label>
+      </node>
+      <node id="2065">
+        <label>networklistener.h</label>
+        <link refid="networklistener_8h"/>
+        <childnode refid="2066" relation="include">
+        </childnode>
+        <childnode refid="2067" relation="include">
+        </childnode>
+        <childnode refid="2068" relation="include">
+        </childnode>
+        <childnode refid="2069" relation="include">
+        </childnode>
+        <childnode refid="2070" relation="include">
+        </childnode>
+        <childnode refid="2089" relation="include">
+        </childnode>
+      </node>
+      <node id="2075">
+        <label>QList</label>
+      </node>
+      <node id="2077">
+        <label>stdint.h</label>
+      </node>
+      <node id="2091">
+        <label>actionpacket.h</label>
+        <link refid="actionpacket_8h"/>
+        <childnode refid="2092" relation="include">
+        </childnode>
+        <childnode refid="2089" relation="include">
+        </childnode>
+      </node>
+      <node id="2067">
+        <label>QThread</label>
+      </node>
+      <node id="2074">
+        <label>QPair</label>
+      </node>
+      <node id="2092">
+        <label>string</label>
+      </node>
+      <node id="2103">
+        <label>QLinkedList</label>
+      </node>
+      <node id="2081">
+        <label>QModelIndex</label>
+      </node>
+      <node id="2087">
+        <label>ackpacket.h</label>
+        <link refid="ackpacket_8h"/>
+        <childnode refid="2088" relation="include">
+        </childnode>
+        <childnode refid="2089" relation="include">
+        </childnode>
+      </node>
+      <node id="2089">
+        <label>Packet.h</label>
+        <link refid="packet_8h"/>
+        <childnode refid="2090" relation="include">
+        </childnode>
+        <childnode refid="2088" relation="include">
+        </childnode>
+        <childnode refid="2077" relation="include">
+        </childnode>
+      </node>
+      <node id="2098">
+        <label>QtCore</label>
+      </node>
+      <node id="2104">
+        <label>mission.h</label>
+        <link refid="mission_8h"/>
+        <childnode refid="2068" relation="include">
+        </childnode>
+        <childnode refid="2105" relation="include">
+        </childnode>
+        <childnode refid="2074" relation="include">
+        </childnode>
+        <childnode refid="2106" relation="include">
+        </childnode>
+        <childnode refid="2091" relation="include">
+        </childnode>
+        <childnode refid="2095" relation="include">
+        </childnode>
+        <childnode refid="2107" relation="include">
+        </childnode>
+        <childnode refid="2070" relation="include">
+        </childnode>
+      </node>
+      <node id="2093">
+        <label>infopacket.h</label>
+        <link refid="infopacket_8h"/>
+        <childnode refid="2092" relation="include">
+        </childnode>
+        <childnode refid="2094" relation="include">
+        </childnode>
+        <childnode refid="2077" relation="include">
+        </childnode>
+        <childnode refid="2089" relation="include">
+        </childnode>
+      </node>
+      <node id="2094">
+        <label>string.h</label>
+      </node>
+      <node id="2076">
+        <label>QTime</label>
+      </node>
+      <node id="2073">
+        <label>QApplication</label>
+      </node>
+      <node id="2095">
+        <label>telemetrypacket.h</label>
+        <link refid="telemetrypacket_8h"/>
+        <childnode refid="2092" relation="include">
+        </childnode>
+        <childnode refid="2089" relation="include">
+        </childnode>
+      </node>
+      <node id="2086">
+        <label>QValidator</label>
+      </node>
+      <node id="2099">
+        <label>QDebug</label>
+      </node>
+      <node id="2072">
+        <label>vector</label>
+      </node>
+      <node id="2083">
+        <label>QLineEdit</label>
+      </node>
+      <node id="2064">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/networklistener.cpp</label>
+        <link refid="networklistener.cpp"/>
+        <childnode refid="2065" relation="include">
+        </childnode>
+        <childnode refid="2096" relation="include">
+        </childnode>
+        <childnode refid="2098" relation="include">
+        </childnode>
+        <childnode refid="2099" relation="include">
+        </childnode>
+        <childnode refid="2071" relation="include">
+        </childnode>
+        <childnode refid="2068" relation="include">
+        </childnode>
+        <childnode refid="2100" relation="include">
+        </childnode>
+        <childnode refid="2087" relation="include">
+        </childnode>
+        <childnode refid="2091" relation="include">
+        </childnode>
+        <childnode refid="2095" relation="include">
+        </childnode>
+        <childnode refid="2093" relation="include">
+        </childnode>
+        <childnode refid="2089" relation="include">
+        </childnode>
+      </node>
+      <node id="2068">
+        <label>QString</label>
+      </node>
+      <node id="2101">
+        <label>QQueue</label>
+      </node>
+      <node id="2069">
+        <label>QUdpSocket</label>
+      </node>
+      <node id="2097">
+        <label>QHostAddress</label>
+      </node>
+      <node id="2082">
+        <label>QSize</label>
+      </node>
+      <node id="2084">
+        <label>mapvalidator.h</label>
+        <link refid="mapvalidator_8h"/>
+        <childnode refid="2085" relation="include">
+        </childnode>
+        <childnode refid="2086" relation="include">
+        </childnode>
+      </node>
+      <node id="2100">
+        <label>gsserver.h</label>
+        <link refid="gsserver_8h"/>
+        <childnode refid="2101" relation="include">
+        </childnode>
+        <childnode refid="2074" relation="include">
+        </childnode>
+        <childnode refid="2067" relation="include">
+        </childnode>
+        <childnode refid="2069" relation="include">
+        </childnode>
+        <childnode refid="2102" relation="include">
+        </childnode>
+        <childnode refid="2066" relation="include">
+        </childnode>
+        <childnode refid="2065" relation="include">
+        </childnode>
+        <childnode refid="2070" relation="include">
+        </childnode>
+        <childnode refid="2104" relation="include">
+        </childnode>
+      </node>
+      <node id="2090">
+        <label>time.h</label>
+      </node>
+      <node id="2102">
+        <label>serverqueue.h</label>
+        <link refid="serverqueue_8h"/>
+        <childnode refid="2075" relation="include">
+        </childnode>
+        <childnode refid="2103" relation="include">
+        </childnode>
+        <childnode refid="2089" relation="include">
+        </childnode>
+        <childnode refid="2087" relation="include">
+        </childnode>
+        <childnode refid="2091" relation="include">
+        </childnode>
+        <childnode refid="2093" relation="include">
+        </childnode>
+        <childnode refid="2095" relation="include">
+        </childnode>
+      </node>
+      <node id="2078">
+        <label>qcomboboxdelegate.h</label>
+        <link refid="qcomboboxdelegate_8h"/>
+        <childnode refid="2079" relation="include">
+        </childnode>
+        <childnode refid="2080" relation="include">
+        </childnode>
+        <childnode refid="2081" relation="include">
+        </childnode>
+        <childnode refid="2066" relation="include">
+        </childnode>
+        <childnode refid="2082" relation="include">
+        </childnode>
+        <childnode refid="2083" relation="include">
+        </childnode>
+        <childnode refid="2084" relation="include">
+        </childnode>
+      </node>
+      <node id="2080">
+        <label>QComboBox</label>
+      </node>
+      <node id="2071">
+        <label>iostream</label>
+      </node>
+      <node id="2079">
+        <label>QItemDelegate</label>
+      </node>
+      <node id="2085">
+        <label>QDoubleValidator</label>
+      </node>
+      <node id="2088">
+        <label>stdio.h</label>
+      </node>
+      <node id="2107">
+        <label>flightpath.h</label>
+        <link refid="flightpath_8h"/>
+        <childnode refid="2075" relation="include">
+        </childnode>
+        <childnode refid="2074" relation="include">
+        </childnode>
+        <childnode refid="2068" relation="include">
+        </childnode>
+        <childnode refid="2091" relation="include">
+        </childnode>
+      </node>
+      <node id="2105">
+        <label>QVector</label>
+      </node>
+      <node id="2070">
+        <label>messagebox.h</label>
+        <link refid="messagebox_8h"/>
+        <childnode refid="2071" relation="include">
+        </childnode>
+        <childnode refid="2072" relation="include">
+        </childnode>
+        <childnode refid="2073" relation="include">
+        </childnode>
+        <childnode refid="2074" relation="include">
+        </childnode>
+        <childnode refid="2075" relation="include">
+        </childnode>
+        <childnode refid="2076" relation="include">
+        </childnode>
+        <childnode refid="2077" relation="include">
+        </childnode>
+        <childnode refid="2078" relation="include">
+        </childnode>
+        <childnode refid="2087" relation="include">
+        </childnode>
+        <childnode refid="2091" relation="include">
+        </childnode>
+        <childnode refid="2093" relation="include">
+        </childnode>
+        <childnode refid="2095" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacestd">std</innernamespace>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="networklistener_8cpp_1aeca034f67218340ecb2261a22c2f3dcd" prot="public" static="no">
+        <name>BUFSIZE</name>
+        <initializer>4096</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/networklistener.cpp" line="15" column="9" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/networklistener.cpp" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="networklistener_8h" kindref="compound">networklistener.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="net_8h" kindref="compound">net.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QtCore&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDebug&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QString&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="gsserver_8h" kindref="compound">gsserver.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ackpacket_8h" kindref="compound">ackpacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="actionpacket_8h" kindref="compound">actionpacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="telemetrypacket_8h" kindref="compound">telemetrypacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="infopacket_8h" kindref="compound">infopacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="packet_8h" kindref="compound">packet.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BUFSIZE<sp/>4096</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal"><ref refid="namespacestd" kindref="compound">std</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><ref refid="class_network_listener_1a47d3f9cbc646f4accac24d9e9e7669cc" kindref="member">NetworkListener::NetworkListener</ref>(<ref refid="classmessagebox" kindref="compound">messagebox</ref><sp/>*myMessagebox,<sp/><ref refid="class_gs_server" kindref="compound">GsServer</ref>*<sp/>server){</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;myMessageBox<sp/>=<sp/>myMessagebox;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;server<sp/>=<sp/>server;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;New<sp/>NetworkListener<sp/>created.&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>bind(<ref refid="namespace_n_e_t_1a06f4ca39727c72129964425f6758e9f5" kindref="member">NET::LISTEN_PORT</ref>);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>listening<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><ref refid="class_network_listener_1a47d3f9cbc646f4accac24d9e9e7669cc" kindref="member">NetworkListener::NetworkListener</ref>(<ref refid="classmessagebox" kindref="compound">messagebox</ref><sp/>*myMessagebox,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>UAVid,<sp/><ref refid="class_gs_server" kindref="compound">GsServer</ref>*<sp/>server):<ref refid="class_network_listener" kindref="compound">NetworkListener</ref>(myMessagebox,<sp/>server)<sp/>{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;UAVid<sp/>=<sp/>UAVid;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>listening<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><ref refid="class_network_listener_1a18ad1d8973011f8bdceb5fc6d5cd81c1" kindref="member">NetworkListener::~NetworkListener</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_network_listener_1a258e0ef8e6e4de827e652a43186c6a07" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1a831238cc68f68ecac14a9a5b3d330f1b" kindref="member">NetworkListener::processPendingDatagrams</ref>(){</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>pack_number<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>QByteArray<sp/>datagram;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>datagram.resize(pendingDatagramSize());</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>readDatagram(datagram.data(),<sp/>datagram.size());</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref>*<sp/>incPack<sp/>=<sp/><ref refid="class_protocol_1_1_packet_1ad327686418aa271121e6a6a8eadebbd4" kindref="member">Protocol::Packet::Parse</ref>((uint8_t*)datagram.data(),<sp/>datagram.size());</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75" kindref="member">Protocol::PacketType</ref><sp/>type<sp/>=<sp/>incPack-&gt;<ref refid="class_protocol_1_1_packet_1a3c159ff945d95102ee2a2ba0b93d05d8" kindref="member">get_type</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75ab25d8b2099e52bb9300aca6661601b8b" kindref="member">Protocol::PacketType::Ack</ref>){</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;AckPacket<sp/>Recieved&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_protocol_1_1_ack_packet" kindref="compound">Protocol::AckPacket</ref><sp/>*ackPacket<sp/>=<sp/>(<ref refid="class_protocol_1_1_ack_packet" kindref="compound">Protocol::AckPacket</ref>*)incPack;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_network_listener_1abd438db9a3d37b505f711993c1db7239" kindref="member">myMessageBox</ref>-&gt;<ref refid="classmessagebox_1a356a1119d888a5aea5a70b67bce0132b" kindref="member">addAckPacket</ref>(*ackPacket);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_network_listener_1a18b48fbd5b2df44baa73e4b332981a56" kindref="member">server</ref>-&gt;<ref refid="class_gs_server_1abfbbae94e647cc6415b3a460fbabec88" kindref="member">recieveAckPacket</ref>(ackPacket);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75a004bf6c9a40003140292e97330236c53" kindref="member">Protocol::PacketType::Action</ref>){</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ActionPacket<sp/>Recieved&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_protocol_1_1_action_packet" kindref="compound">Protocol::ActionPacket</ref><sp/>*actionPacket<sp/>=<sp/>(<ref refid="class_protocol_1_1_action_packet" kindref="compound">Protocol::ActionPacket</ref>*)incPack;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_protocol_1_1_waypoint" kindref="compound">Protocol::Waypoint</ref><sp/>test_wp;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>test_wp<sp/>=<sp/>actionPacket-&gt;<ref refid="class_protocol_1_1_action_packet_1a4897181b5915534b25c94f1e4c9d40ba" kindref="member">GetWaypoint</ref>();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>pack_number<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>Latitude:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>test_wp.<ref refid="struct_protocol_1_1_waypoint_1a29b254ffa54a87da980aa2d0a6dd8e1e" kindref="member">lat</ref><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;<sp/>Longitude:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>test_wp.<ref refid="struct_protocol_1_1_waypoint_1ac5f0dd73ea290deb60ea7464b114faa7" kindref="member">lon</ref><sp/>&lt;&lt;<sp/><sp/></highlight><highlight class="stringliteral">&quot;<sp/>Alt:<sp/>&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/><sp/>test_wp.<ref refid="struct_protocol_1_1_waypoint_1a69b7b1c0eeb8629e07fc929a902a91aa" kindref="member">alt</ref><sp/><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++pack_number;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*if<sp/>(actionPacket-&gt;GetAction()<sp/>==<sp/>Protocol::ActionType::AddWaypoint){</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Protocol::TelemetryPacket<sp/>telem;</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>telem.SetLocation(test_wp.lat,test_wp.lon,test_wp.alt);</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>telem.SetHeading(0.45);</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>telem.SetOrientation(1,2,3);</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>telem.SetVelocity(-10.0,10.0,0);</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//myMessageBox-&gt;addTelemetryPacket(telem);</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>server-&gt;sendPacket(&amp;telem,8);</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_network_listener_1abd438db9a3d37b505f711993c1db7239" kindref="member">myMessageBox</ref>-&gt;<ref refid="classmessagebox_1a75d62bfa9db5b55a60b9e2e0fa164c81" kindref="member">addActionPacket</ref>(*actionPacket);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75a5f221e9a2771c63ef7f696975f16cea4" kindref="member">Protocol::PacketType::Telem</ref>){</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;TelemPacket<sp/>Recieved&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_protocol_1_1_telemetry_packet" kindref="compound">Protocol::TelemetryPacket</ref><sp/>*telemPacket<sp/>=<sp/>(<ref refid="class_protocol_1_1_telemetry_packet" kindref="compound">Protocol::TelemetryPacket</ref>*)incPack;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>pack_number<sp/>&lt;&lt;<sp/>&quot;<sp/>Latitude:<sp/>&quot;<sp/>&lt;&lt;<sp/>telemPacket<sp/>&lt;&lt;<sp/>&quot;<sp/>Longitude:<sp/>&quot;<sp/>&lt;&lt;<sp/>telemPacket-&gt;lon<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++pack_number;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_network_listener_1abd438db9a3d37b505f711993c1db7239" kindref="member">myMessageBox</ref>-&gt;<ref refid="classmessagebox_1a27ac98af342131cd148fb4ed2261631f" kindref="member">addTelemetryPacket</ref>(*telemPacket);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_network_listener_1a18b48fbd5b2df44baa73e4b332981a56" kindref="member">server</ref>-&gt;<ref refid="class_gs_server_1a450eb8f60b68bf82216d058cc9738e28" kindref="member">packetRecieved</ref>(*telemPacket);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75a4059b0251f66a18cb56f544728796875" kindref="member">Protocol::PacketType::Info</ref>){</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;InfoPacket<sp/>Recieved&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref><sp/>*infoPacket<sp/>=<sp/>(<ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref>*)incPack;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_network_listener_1abd438db9a3d37b505f711993c1db7239" kindref="member">myMessageBox</ref>-&gt;<ref refid="classmessagebox_1aa7a826742dd2a22376eaf787d510f064" kindref="member">addInfoPacket</ref>(*infoPacket);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;UNKNOWN<sp/>PACKET<sp/>TYPE<sp/>RECIEVED!&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1aae655a7afbd74bbe193612f2b7638958" kindref="member">NetworkListener::start</ref>(){</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,SIGNAL(readyRead()),</highlight><highlight class="keyword">this</highlight><highlight class="normal">,SLOT(<ref refid="class_network_listener_1a831238cc68f68ecac14a9a5b3d330f1b" kindref="member">processPendingDatagrams</ref>()));</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1a258e0ef8e6e4de827e652a43186c6a07" kindref="member">NetworkListener::stop</ref>(){</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if(isOpen()){</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>abort();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>disconnect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,SIGNAL(readyRead()),</highlight><highlight class="keyword">this</highlight><highlight class="normal">,SLOT(<ref refid="class_network_listener_1a831238cc68f68ecac14a9a5b3d330f1b" kindref="member">processPendingDatagrams</ref>()));</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_network_listener_1a3192d69724315464c95ae1f63db0b127" kindref="member">listening</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Stopping<sp/>NetworkListener...&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/networklistener.cpp"/>
+  </compounddef>
+</doxygen>

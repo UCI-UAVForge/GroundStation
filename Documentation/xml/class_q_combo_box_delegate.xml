@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_q_combo_box_delegate" kind="class" language="C++" prot="public">
+    <compoundname>QComboBoxDelegate</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QItemDelegate</basecompoundref>
+    <includes refid="qcomboboxdelegate_8h" local="no">qcomboboxdelegate.h</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_combo_box_delegate_1a5894396d9b9694ad60516be6457b9e97" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QComboBoxDelegate::QComboBoxDelegate</definition>
+        <argsstring>(QObject *parent=0)</argsstring>
+        <name>QComboBoxDelegate</name>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcomboboxdelegate.h" line="15" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcomboboxdelegate.cpp" bodystart="3" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_combo_box_delegate_1a2cae1e908e3b9864e7ab174cfa39a9a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QWidget *</type>
+        <definition>QWidget * QComboBoxDelegate::createEditor</definition>
+        <argsstring>(QWidget *parent, const QStyleOptionViewItem &amp;option, const QModelIndex &amp;index) const </argsstring>
+        <name>createEditor</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+        </param>
+        <param>
+          <type>const QStyleOptionViewItem &amp;</type>
+          <declname>option</declname>
+        </param>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcomboboxdelegate.h" line="16" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcomboboxdelegate.cpp" bodystart="8" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_combo_box_delegate_1abf09d46bd215e169c921a282a1052cf2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QComboBoxDelegate::setEditorData</definition>
+        <argsstring>(QWidget *editor, const QModelIndex &amp;index) const </argsstring>
+        <name>setEditorData</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>editor</declname>
+        </param>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcomboboxdelegate.h" line="17" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcomboboxdelegate.cpp" bodystart="75" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_combo_box_delegate_1a17c8842bbf2a85035143fd3d104f802a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QComboBoxDelegate::setModelData</definition>
+        <argsstring>(QWidget *editor, QAbstractItemModel *model, const QModelIndex &amp;index) const </argsstring>
+        <name>setModelData</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>editor</declname>
+        </param>
+        <param>
+          <type>QAbstractItemModel *</type>
+          <declname>model</declname>
+        </param>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcomboboxdelegate.h" line="18" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcomboboxdelegate.cpp" bodystart="90" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_combo_box_delegate_1a606e97162b64134d8d3189bea7cdd11a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QComboBoxDelegate::updateEditorGeometry</definition>
+        <argsstring>(QWidget *editor, const QStyleOptionViewItem &amp;option, const QModelIndex &amp;index) const </argsstring>
+        <name>updateEditorGeometry</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>editor</declname>
+        </param>
+        <param>
+          <type>const QStyleOptionViewItem &amp;</type>
+          <declname>option</declname>
+        </param>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcomboboxdelegate.h" line="19" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcomboboxdelegate.cpp" bodystart="101" bodyend="103"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="160">
+        <label>QItemDelegate</label>
+      </node>
+      <node id="159">
+        <label>QComboBoxDelegate</label>
+        <link refid="class_q_combo_box_delegate"/>
+        <childnode refid="160" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="162">
+        <label>QItemDelegate</label>
+      </node>
+      <node id="161">
+        <label>QComboBoxDelegate</label>
+        <link refid="class_q_combo_box_delegate"/>
+        <childnode refid="162" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/qcomboboxdelegate.h" line="12" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcomboboxdelegate.h" bodystart="11" bodyend="27"/>
+    <listofallmembers>
+      <member refid="class_q_combo_box_delegate_1a2cae1e908e3b9864e7ab174cfa39a9a8" prot="public" virt="non-virtual"><scope>QComboBoxDelegate</scope><name>createEditor</name></member>
+      <member refid="class_q_combo_box_delegate_1a5894396d9b9694ad60516be6457b9e97" prot="public" virt="non-virtual"><scope>QComboBoxDelegate</scope><name>QComboBoxDelegate</name></member>
+      <member refid="class_q_combo_box_delegate_1abf09d46bd215e169c921a282a1052cf2" prot="public" virt="non-virtual"><scope>QComboBoxDelegate</scope><name>setEditorData</name></member>
+      <member refid="class_q_combo_box_delegate_1a17c8842bbf2a85035143fd3d104f802a" prot="public" virt="non-virtual"><scope>QComboBoxDelegate</scope><name>setModelData</name></member>
+      <member refid="class_q_combo_box_delegate_1a606e97162b64134d8d3189bea7cdd11a" prot="public" virt="non-virtual"><scope>QComboBoxDelegate</scope><name>updateEditorGeometry</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

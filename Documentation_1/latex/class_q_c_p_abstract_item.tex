@@ -1,0 +1,566 @@
+\hypertarget{class_q_c_p_abstract_item}{}\section{Q\+C\+P\+Abstract\+Item Class Reference}
+\label{class_q_c_p_abstract_item}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+
+
+The abstract base class for all items in a plot.  
+
+
+
+
+{\ttfamily \#include $<$qcustomplot.\+h$>$}
+
+Inheritance diagram for Q\+C\+P\+Abstract\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_q_c_p_abstract_item}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_q_c_p_abstract_item_aa5cffb034fc65dbb91c77e02c1c14251}{selection\+Changed} (bool \hyperlink{class_q_c_p_abstract_item_a225865808640d8d9a7dd19f09a2e93f2}{selected})
+\item 
+void \hyperlink{class_q_c_p_abstract_item_a5b266c11aac61cb511901f3911dac2a3}{selectable\+Changed} (bool \hyperlink{class_q_c_p_abstract_item_a9189e752025533e1595eaade0009a3bc}{selectable})
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_c_p_abstract_item_a9922507d8b4503a1fe1ed0b1030e23b6}{Q\+C\+P\+Abstract\+Item} (\hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} $\ast$\hyperlink{class_q_c_p_layerable_ab7e0e94461566093d36ffc0f5312b109}{parent\+Plot})
+\item 
+virtual \hyperlink{class_q_c_p_abstract_item_a375bd1b7d3218b04a6ff7ff06fff917c}{$\sim$\+Q\+C\+P\+Abstract\+Item} ()
+\item 
+bool \hyperlink{class_q_c_p_abstract_item_a5b0ea171823033bcb8aee81f4a034871}{clip\+To\+Axis\+Rect} () const 
+\item 
+\hyperlink{class_q_c_p_axis_rect}{Q\+C\+P\+Axis\+Rect} $\ast$ \hyperlink{class_q_c_p_abstract_item_a37f86618740b5047eae23eedb2de061a}{clip\+Axis\+Rect} () const 
+\item 
+bool \hyperlink{class_q_c_p_abstract_item_a9189e752025533e1595eaade0009a3bc}{selectable} () const 
+\item 
+bool \hyperlink{class_q_c_p_abstract_item_a225865808640d8d9a7dd19f09a2e93f2}{selected} () const 
+\item 
+void \hyperlink{class_q_c_p_abstract_item_a39e05b9d4176b9accafc746d16ca6a06}{set\+Clip\+To\+Axis\+Rect} (bool clip)
+\item 
+void \hyperlink{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347}{set\+Clip\+Axis\+Rect} (\hyperlink{class_q_c_p_axis_rect}{Q\+C\+P\+Axis\+Rect} $\ast$rect)
+\item 
+Q\+\_\+\+S\+L\+O\+T void \hyperlink{class_q_c_p_abstract_item_a8a8e32a55bc478b849756a78c2d87fd2}{set\+Selectable} (bool \hyperlink{class_q_c_p_abstract_item_a9189e752025533e1595eaade0009a3bc}{selectable})
+\item 
+Q\+\_\+\+S\+L\+O\+T void \hyperlink{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}{set\+Selected} (bool \hyperlink{class_q_c_p_abstract_item_a225865808640d8d9a7dd19f09a2e93f2}{selected})
+\item 
+virtual double \hyperlink{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b}{select\+Test} (const Q\+Point\+F \&pos, bool only\+Selectable, Q\+Variant $\ast$details=0) const =0
+\item 
+Q\+List$<$ \hyperlink{class_q_c_p_item_position}{Q\+C\+P\+Item\+Position} $\ast$ $>$ \hyperlink{class_q_c_p_abstract_item_adf6a680cc29a6bce8345c3b6af3a91a1}{positions} () const 
+\item 
+Q\+List$<$ \hyperlink{class_q_c_p_item_anchor}{Q\+C\+P\+Item\+Anchor} $\ast$ $>$ \hyperlink{class_q_c_p_abstract_item_a8454b9941960b840608a5a1e00b1977d}{anchors} () const 
+\item 
+\hyperlink{class_q_c_p_item_position}{Q\+C\+P\+Item\+Position} $\ast$ \hyperlink{class_q_c_p_abstract_item_af71345bd150f87fa1d2442837b87bb59}{position} (const Q\+String \&name) const 
+\item 
+\hyperlink{class_q_c_p_item_anchor}{Q\+C\+P\+Item\+Anchor} $\ast$ \hyperlink{class_q_c_p_abstract_item_abed974cba7cc02608c71dad4638e008d}{anchor} (const Q\+String \&name) const 
+\item 
+bool \hyperlink{class_q_c_p_abstract_item_acbce9e5ba5252541d19db0c40303357a}{has\+Anchor} (const Q\+String \&name) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{Q\+C\+P\+::\+Interaction} \hyperlink{class_q_c_p_abstract_item_a777b5d384936396ad9c3ceb3d3453f1c}{selection\+Category} () const 
+\item 
+virtual Q\+Rect \hyperlink{class_q_c_p_abstract_item_a538e25ff8856534582f5b2b400a46405}{clip\+Rect} () const 
+\item 
+virtual void \hyperlink{class_q_c_p_abstract_item_a0839031abdd71067e2256a4d53c7a011}{apply\+Default\+Antialiasing\+Hint} (\hyperlink{class_q_c_p_painter}{Q\+C\+P\+Painter} $\ast$painter) const 
+\item 
+virtual void \hyperlink{class_q_c_p_abstract_item_ad0dc056f650c3ca73414e6b4f01674ef}{draw} (\hyperlink{class_q_c_p_painter}{Q\+C\+P\+Painter} $\ast$painter)=0
+\item 
+virtual void \hyperlink{class_q_c_p_abstract_item_aaf92af7b9893712959a6c073d334d88d}{select\+Event} (Q\+Mouse\+Event $\ast$event, bool additive, const Q\+Variant \&details, bool $\ast$selection\+State\+Changed)
+\item 
+virtual void \hyperlink{class_q_c_p_abstract_item_a91f090d6763cfedb0749219c63788ae9}{deselect\+Event} (bool $\ast$selection\+State\+Changed)
+\item 
+virtual Q\+Point\+F \hyperlink{class_q_c_p_abstract_item_a94bde62b8a2fc133666dcbb8035deeed}{anchor\+Pixel\+Point} (int anchor\+Id) const 
+\item 
+double \hyperlink{class_q_c_p_abstract_item_acdca343717d625b8abb3c3e38c0ed39d}{dist\+Sqr\+To\+Line} (const Q\+Point\+F \&start, const Q\+Point\+F \&end, const Q\+Point\+F \&point) const 
+\item 
+double \hyperlink{class_q_c_p_abstract_item_a4c0e14c4e92df91174cb7183fb363069}{rect\+Select\+Test} (const Q\+Rect\+F \&rect, const Q\+Point\+F \&pos, bool filled\+Rect) const 
+\item 
+\hyperlink{class_q_c_p_item_position}{Q\+C\+P\+Item\+Position} $\ast$ \hyperlink{class_q_c_p_abstract_item_a75036d39c4d4e2e1a7dd145fff915d32}{create\+Position} (const Q\+String \&name)
+\item 
+\hyperlink{class_q_c_p_item_anchor}{Q\+C\+P\+Item\+Anchor} $\ast$ \hyperlink{class_q_c_p_abstract_item_af3fc92527802078ca395138748b629a7}{create\+Anchor} (const Q\+String \&name, int anchor\+Id)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_q_c_p_abstract_item_ad2a70ff6b658fcb84a9427f69d3f587d}{m\+Clip\+To\+Axis\+Rect}
+\item 
+Q\+Pointer$<$ \hyperlink{class_q_c_p_axis_rect}{Q\+C\+P\+Axis\+Rect} $>$ \hyperlink{class_q_c_p_abstract_item_a3e57cfe7da4b1ac3d6fa7281ea437361}{m\+Clip\+Axis\+Rect}
+\item 
+Q\+List$<$ \hyperlink{class_q_c_p_item_position}{Q\+C\+P\+Item\+Position} $\ast$ $>$ \hyperlink{class_q_c_p_abstract_item_af94ff71b6a15ea6d028ab8bd8eccd012}{m\+Positions}
+\item 
+Q\+List$<$ \hyperlink{class_q_c_p_item_anchor}{Q\+C\+P\+Item\+Anchor} $\ast$ $>$ \hyperlink{class_q_c_p_abstract_item_a909a3abab783de302ebf0a0e6f2bbc15}{m\+Anchors}
+\item 
+bool \hyperlink{class_q_c_p_abstract_item_ad81eb35c8726a0f458db9df9732e0e41}{m\+Selectable}
+\item 
+bool \hyperlink{class_q_c_p_abstract_item_a4bdb3457dad1d268c0f78a44152b9645}{m\+Selected}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_q_c_p_abstract_item_a1cdf9df76adcfae45261690aa0ca2198}{Q\+Custom\+Plot}
+\item 
+class \hyperlink{class_q_c_p_abstract_item_a61767d414fd57af9eb1741b34268c7fc}{Q\+C\+P\+Item\+Anchor}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The abstract base class for all items in a plot. 
+
+In \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot}, items are supplemental graphical elements that are neither plottables (\hyperlink{class_q_c_p_abstract_plottable}{Q\+C\+P\+Abstract\+Plottable}) nor axes (\hyperlink{class_q_c_p_axis}{Q\+C\+P\+Axis}). While plottables are always tied to two axes and thus plot coordinates, items can also be placed in absolute coordinates independent of any axes. Each specific item has at least one \hyperlink{class_q_c_p_item_position}{Q\+C\+P\+Item\+Position} member which controls the positioning. Some items are defined by more than one coordinate and thus have two or more \hyperlink{class_q_c_p_item_position}{Q\+C\+P\+Item\+Position} members (For example, \hyperlink{class_q_c_p_item_rect}{Q\+C\+P\+Item\+Rect} has {\itshape top\+Left} and {\itshape bottom\+Right}).
+
+This abstract base class defines a very basic interface like visibility and clipping. Since this class is abstract, it can\textquotesingle{}t be instantiated. Use one of the subclasses or create a subclass yourself to create new items.
+
+The built-\/in items are\+: \begin{TabularC}{2}
+\hline
+\hyperlink{class_q_c_p_item_line}{Q\+C\+P\+Item\+Line}&A line defined by a start and an end point. May have different ending styles on each side (e.\+g. arrows). \\\cline{1-2}
+\hyperlink{class_q_c_p_item_straight_line}{Q\+C\+P\+Item\+Straight\+Line}&A straight line defined by a start and a direction point. Unlike \hyperlink{class_q_c_p_item_line}{Q\+C\+P\+Item\+Line}, the straight line is infinitely long and has no endings. \\\cline{1-2}
+\hyperlink{class_q_c_p_item_curve}{Q\+C\+P\+Item\+Curve}&A curve defined by start, end and two intermediate control points. May have different ending styles on each side (e.\+g. arrows). \\\cline{1-2}
+\hyperlink{class_q_c_p_item_rect}{Q\+C\+P\+Item\+Rect}&A rectangle \\\cline{1-2}
+\hyperlink{class_q_c_p_item_ellipse}{Q\+C\+P\+Item\+Ellipse}&An ellipse \\\cline{1-2}
+\hyperlink{class_q_c_p_item_pixmap}{Q\+C\+P\+Item\+Pixmap}&An arbitrary pixmap \\\cline{1-2}
+\hyperlink{class_q_c_p_item_text}{Q\+C\+P\+Item\+Text}&A text label \\\cline{1-2}
+\hyperlink{class_q_c_p_item_bracket}{Q\+C\+P\+Item\+Bracket}&A bracket which may be used to reference/highlight certain parts in the plot. \\\cline{1-2}
+\hyperlink{class_q_c_p_item_tracer}{Q\+C\+P\+Item\+Tracer}&An item that can be attached to a \hyperlink{class_q_c_p_graph}{Q\+C\+P\+Graph} and sticks to its data points, given a key coordinate. \\\cline{1-2}
+\end{TabularC}
+\hypertarget{class_q_c_p_abstract_item_items-clipping}{}\subsection{Clipping}\label{class_q_c_p_abstract_item_items-clipping}
+Items are by default clipped to the main axis rect (they are only visible inside the axis rect). To make an item visible outside that axis rect, disable clipping via \hyperlink{class_q_c_p_abstract_item_a39e05b9d4176b9accafc746d16ca6a06}{set\+Clip\+To\+Axis\+Rect(false)}.
+
+On the other hand if you want the item to be clipped to a different axis rect, specify it via \hyperlink{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347}{set\+Clip\+Axis\+Rect}. This clip\+Axis\+Rect property of an item is only used for clipping behaviour, and in principle is independent of the coordinate axes the item might be tied to via its position members (\hyperlink{class_q_c_p_item_position_a2185f45c75ac8cb9be89daeaaad50e37}{Q\+C\+P\+Item\+Position\+::set\+Axes}). However, it is common that the axis rect for clipping also contains the axes used for the item positions.\hypertarget{class_q_c_p_abstract_item_items-using}{}\subsection{Using items}\label{class_q_c_p_abstract_item_items-using}
+First you instantiate the item you want to use and add it to the plot\+: 
+\begin{DoxyCode}
+\hyperlink{class_q_c_p_item_line}{QCPItemLine} *line = \textcolor{keyword}{new} \hyperlink{class_q_c_p_item_line}{QCPItemLine}(customPlot);
+customPlot->addItem(line);
+\end{DoxyCode}
+ by default, the positions of the item are bound to the x-\/ and y-\/\+Axis of the plot. So we can just set the plot coordinates where the line should start/end\+: 
+\begin{DoxyCode}
+line->\hyperlink{class_q_c_p_item_line_a602da607a09498b0f152ada1d6851bc5}{start}->\hyperlink{class_q_c_p_item_position_aa988ba4e87ab684c9021017dcaba945f}{setCoords}(-0.1, 0.8);
+line->\hyperlink{class_q_c_p_item_line_a15598864c1c22a2497a1979c4980c4e1}{end}->\hyperlink{class_q_c_p_item_position_aa988ba4e87ab684c9021017dcaba945f}{setCoords}(1.1, 0.2);
+\end{DoxyCode}
+ If we don\textquotesingle{}t want the line to be positioned in plot coordinates but a different coordinate system, e.\+g. absolute pixel positions on the \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} surface, we need to change the position type like this\+: 
+\begin{DoxyCode}
+line->\hyperlink{class_q_c_p_item_line_a602da607a09498b0f152ada1d6851bc5}{start}->\hyperlink{class_q_c_p_item_position_aa476abf71ed8fa4c537457ebb1a754ad}{setType}(\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8a564f5e53e550ead1ec5fc7fc7d0b73e0}{QCPItemPosition::ptAbsolute});
+line->\hyperlink{class_q_c_p_item_line_a15598864c1c22a2497a1979c4980c4e1}{end}->\hyperlink{class_q_c_p_item_position_aa476abf71ed8fa4c537457ebb1a754ad}{setType}(\hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8a564f5e53e550ead1ec5fc7fc7d0b73e0}{QCPItemPosition::ptAbsolute});
+\end{DoxyCode}
+ Then we can set the coordinates, this time in pixels\+: 
+\begin{DoxyCode}
+line->\hyperlink{class_q_c_p_item_line_a602da607a09498b0f152ada1d6851bc5}{start}->\hyperlink{class_q_c_p_item_position_aa988ba4e87ab684c9021017dcaba945f}{setCoords}(100, 200);
+line->\hyperlink{class_q_c_p_item_line_a15598864c1c22a2497a1979c4980c4e1}{end}->\hyperlink{class_q_c_p_item_position_aa988ba4e87ab684c9021017dcaba945f}{setCoords}(450, 320);
+\end{DoxyCode}
+ and make the line visible on the entire \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot}, by disabling clipping to the axis rect\+: 
+\begin{DoxyCode}
+line->\hyperlink{class_q_c_p_abstract_item_a39e05b9d4176b9accafc746d16ca6a06}{setClipToAxisRect}(\textcolor{keyword}{false});
+\end{DoxyCode}
+
+
+For more advanced plots, it is even possible to set different types and parent anchors per X/\+Y coordinate of an item position, using for example \hyperlink{class_q_c_p_item_position_a2113b2351d6d00457fb3559a4e20c3ea}{Q\+C\+P\+Item\+Position\+::set\+Type\+X} or \hyperlink{class_q_c_p_item_position_add71461a973927c74e42179480916d9c}{Q\+C\+P\+Item\+Position\+::set\+Parent\+Anchor\+X}. For details, see the documentation of \hyperlink{class_q_c_p_item_position}{Q\+C\+P\+Item\+Position}.\hypertarget{class_q_c_p_abstract_item_items-subclassing}{}\subsection{Creating own items}\label{class_q_c_p_abstract_item_items-subclassing}
+To create an own item, you implement a subclass of \hyperlink{class_q_c_p_abstract_item}{Q\+C\+P\+Abstract\+Item}. These are the pure virtual functions, you must implement\+: \begin{DoxyItemize}
+\item \hyperlink{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b}{select\+Test} \item \hyperlink{class_q_c_p_abstract_item_ad0dc056f650c3ca73414e6b4f01674ef}{draw}\end{DoxyItemize}
+See the documentation of those functions for what they need to do.\hypertarget{class_q_c_p_abstract_item_items-positioning}{}\subsubsection{Allowing the item to be positioned}\label{class_q_c_p_abstract_item_items-positioning}
+As mentioned, item positions are represented by \hyperlink{class_q_c_p_item_position}{Q\+C\+P\+Item\+Position} members. Let\textquotesingle{}s assume the new item shall have only one point as its position (as opposed to two like a rect or multiple like a polygon). You then add a public member of type \hyperlink{class_q_c_p_item_position}{Q\+C\+P\+Item\+Position} like so\+:
+
+
+\begin{DoxyCode}
+\hyperlink{class_q_c_p_item_position}{QCPItemPosition} * \textcolor{keyword}{const} myPosition;
+\end{DoxyCode}
+
+
+the const makes sure the pointer itself can\textquotesingle{}t be modified from the user of your new item (the \hyperlink{class_q_c_p_item_position}{Q\+C\+P\+Item\+Position} instance it points to, can be modified, of course). The initialization of this pointer is made easy with the \hyperlink{class_q_c_p_abstract_item_a75036d39c4d4e2e1a7dd145fff915d32}{create\+Position} function. Just assign the return value of this function to each \hyperlink{class_q_c_p_item_position}{Q\+C\+P\+Item\+Position} in the constructor of your item. \hyperlink{class_q_c_p_abstract_item_a75036d39c4d4e2e1a7dd145fff915d32}{create\+Position} takes a string which is the name of the position, typically this is identical to the variable name. For example, the constructor of Q\+C\+P\+Item\+Example could look like this\+:
+
+
+\begin{DoxyCode}
+QCPItemExample::QCPItemExample(\hyperlink{class_q_custom_plot}{QCustomPlot} *\hyperlink{class_q_c_p_layerable_ab7e0e94461566093d36ffc0f5312b109}{parentPlot}) :
+  \hyperlink{class_q_c_p_abstract_item}{QCPAbstractItem}(parentPlot),
+  myPosition(\hyperlink{class_q_c_p_abstract_item_a75036d39c4d4e2e1a7dd145fff915d32}{createPosition}(\textcolor{stringliteral}{"myPosition"}))
+\{
+  \textcolor{comment}{// other constructor code}
+\}
+\end{DoxyCode}
+\hypertarget{class_q_c_p_abstract_item_items-drawing}{}\subsubsection{The draw function}\label{class_q_c_p_abstract_item_items-drawing}
+To give your item a visual representation, reimplement the \hyperlink{class_q_c_p_abstract_item_ad0dc056f650c3ca73414e6b4f01674ef}{draw} function and use the passed \hyperlink{class_q_c_p_painter}{Q\+C\+P\+Painter} to draw the item. You can retrieve the item position in pixel coordinates from the position member(s) via \hyperlink{class_q_c_p_item_position_ae490f9c76ee2ba33752c495d3b6e8fb5}{Q\+C\+P\+Item\+Position\+::pixel\+Point}.
+
+To optimize performance you should calculate a bounding rect first (don\textquotesingle{}t forget to take the pen width into account), check whether it intersects the \hyperlink{class_q_c_p_abstract_item_a538e25ff8856534582f5b2b400a46405}{clip\+Rect}, and only draw the item at all if this is the case.\hypertarget{class_q_c_p_abstract_item_items-selection}{}\subsubsection{The select\+Test function}\label{class_q_c_p_abstract_item_items-selection}
+Your implementation of the \hyperlink{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b}{select\+Test} function may use the helpers \hyperlink{class_q_c_p_abstract_item_acdca343717d625b8abb3c3e38c0ed39d}{dist\+Sqr\+To\+Line} and \hyperlink{class_q_c_p_abstract_item_a4c0e14c4e92df91174cb7183fb363069}{rect\+Select\+Test}. With these, the implementation of the selection test becomes significantly simpler for most items. See the documentation of \hyperlink{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b}{select\+Test} for what the function parameters mean and what the function should return.\hypertarget{class_q_c_p_abstract_item_anchors}{}\subsubsection{Providing anchors}\label{class_q_c_p_abstract_item_anchors}
+Providing anchors (\hyperlink{class_q_c_p_item_anchor}{Q\+C\+P\+Item\+Anchor}) starts off like adding a position. First you create a public member, e.\+g.
+
+
+\begin{DoxyCode}
+\hyperlink{class_q_c_p_item_anchor}{QCPItemAnchor} * \textcolor{keyword}{const} bottom;
+\end{DoxyCode}
+
+
+and create it in the constructor with the \hyperlink{class_q_c_p_abstract_item_af3fc92527802078ca395138748b629a7}{create\+Anchor} function, assigning it a name and an anchor id (an integer enumerating all anchors on the item, you may create an own enum for this). Since anchors can be placed anywhere, relative to the item\textquotesingle{}s position(s), your item needs to provide the position of every anchor with the reimplementation of the \hyperlink{class_q_c_p_abstract_item_a94bde62b8a2fc133666dcbb8035deeed}{anchor\+Pixel\+Point}(int anchor\+Id) function.
+
+In essence the \hyperlink{class_q_c_p_item_anchor}{Q\+C\+P\+Item\+Anchor} is merely an intermediary that itself asks your item for the pixel position when anything attached to the anchor needs to know the coordinates. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_q_c_p_abstract_item_a9922507d8b4503a1fe1ed0b1030e23b6}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{Q\+C\+P\+Abstract\+Item}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Abstract\+Item\+::\+Q\+C\+P\+Abstract\+Item (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+Custom\+Plot} $\ast$}]{parent\+Plot}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_abstract_item_a9922507d8b4503a1fe1ed0b1030e23b6}
+Base class constructor which initializes base class members. \hypertarget{class_q_c_p_abstract_item_a375bd1b7d3218b04a6ff7ff06fff917c}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!````~Q\+C\+P\+Abstract\+Item@{$\sim$\+Q\+C\+P\+Abstract\+Item}}
+\index{````~Q\+C\+P\+Abstract\+Item@{$\sim$\+Q\+C\+P\+Abstract\+Item}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{$\sim$\+Q\+C\+P\+Abstract\+Item}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Abstract\+Item\+::$\sim$\+Q\+C\+P\+Abstract\+Item (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_abstract_item_a375bd1b7d3218b04a6ff7ff06fff917c}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_q_c_p_abstract_item_abed974cba7cc02608c71dad4638e008d}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!anchor@{anchor}}
+\index{anchor@{anchor}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{anchor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Item\+Anchor} $\ast$ Q\+C\+P\+Abstract\+Item\+::anchor (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+) const}\label{class_q_c_p_abstract_item_abed974cba7cc02608c71dad4638e008d}
+Returns the \hyperlink{class_q_c_p_item_anchor}{Q\+C\+P\+Item\+Anchor} with the specified {\itshape name}. If this item doesn\textquotesingle{}t have an anchor by that name, returns 0.
+
+This function provides an alternative way to access item anchors. Normally, you access anchors direcly by their member pointers (which typically have the same variable name as {\itshape name}).
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_abstract_item_a8454b9941960b840608a5a1e00b1977d}{anchors}, \hyperlink{class_q_c_p_abstract_item_af71345bd150f87fa1d2442837b87bb59}{position} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_abstract_item_a94bde62b8a2fc133666dcbb8035deeed}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!anchor\+Pixel\+Point@{anchor\+Pixel\+Point}}
+\index{anchor\+Pixel\+Point@{anchor\+Pixel\+Point}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{anchor\+Pixel\+Point}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Point\+F Q\+C\+P\+Abstract\+Item\+::anchor\+Pixel\+Point (
+\begin{DoxyParamCaption}
+\item[{int}]{anchor\+Id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_abstract_item_a94bde62b8a2fc133666dcbb8035deeed}
+
+
+Reimplemented in \hyperlink{class_q_c_p_item_bracket_ac76827e3acba5faee81f149af4047a39}{Q\+C\+P\+Item\+Bracket}, \hyperlink{class_q_c_p_item_pixmap_a88abce3c1027f371cddcf6dad35ffbb1}{Q\+C\+P\+Item\+Pixmap}, \hyperlink{class_q_c_p_item_ellipse_ad3c607304dba081e2f778b6a81b903bb}{Q\+C\+P\+Item\+Ellipse}, \hyperlink{class_q_c_p_item_text_ad248f988534a9d07bc7c220a2457142a}{Q\+C\+P\+Item\+Text}, and \hyperlink{class_q_c_p_item_rect_ae0973f8281fb52361b0c99ee899be07e}{Q\+C\+P\+Item\+Rect}.
+
+\hypertarget{class_q_c_p_abstract_item_a8454b9941960b840608a5a1e00b1977d}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!anchors@{anchors}}
+\index{anchors@{anchors}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{anchors}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ {\bf Q\+C\+P\+Item\+Anchor} $\ast$ $>$ Q\+C\+P\+Abstract\+Item\+::anchors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_abstract_item_a8454b9941960b840608a5a1e00b1977d}
+Returns all anchors of the item in a list. Note that since a position (\hyperlink{class_q_c_p_item_position}{Q\+C\+P\+Item\+Position}) is always also an anchor, the list will also contain the positions of this item.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_abstract_item_adf6a680cc29a6bce8345c3b6af3a91a1}{positions}, \hyperlink{class_q_c_p_abstract_item_abed974cba7cc02608c71dad4638e008d}{anchor} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_abstract_item_a0839031abdd71067e2256a4d53c7a011}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!apply\+Default\+Antialiasing\+Hint@{apply\+Default\+Antialiasing\+Hint}}
+\index{apply\+Default\+Antialiasing\+Hint@{apply\+Default\+Antialiasing\+Hint}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{apply\+Default\+Antialiasing\+Hint}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Abstract\+Item\+::apply\+Default\+Antialiasing\+Hint (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Painter} $\ast$}]{painter}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_abstract_item_a0839031abdd71067e2256a4d53c7a011}
+
+
+Implements \hyperlink{class_q_c_p_layerable_afdf83ddc6a265cbf4c89fe99d3d93473}{Q\+C\+P\+Layerable}.
+
+\hypertarget{class_q_c_p_abstract_item_a37f86618740b5047eae23eedb2de061a}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!clip\+Axis\+Rect@{clip\+Axis\+Rect}}
+\index{clip\+Axis\+Rect@{clip\+Axis\+Rect}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{clip\+Axis\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Axis\+Rect} $\ast$ Q\+C\+P\+Abstract\+Item\+::clip\+Axis\+Rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_q_c_p_abstract_item_a37f86618740b5047eae23eedb2de061a}
+\hypertarget{class_q_c_p_abstract_item_a538e25ff8856534582f5b2b400a46405}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!clip\+Rect@{clip\+Rect}}
+\index{clip\+Rect@{clip\+Rect}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{clip\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Rect Q\+C\+P\+Abstract\+Item\+::clip\+Rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_abstract_item_a538e25ff8856534582f5b2b400a46405}
+
+
+Reimplemented from \hyperlink{class_q_c_p_layerable_a07a8f746640c3704b09910df297afcba}{Q\+C\+P\+Layerable}.
+
+\hypertarget{class_q_c_p_abstract_item_a5b0ea171823033bcb8aee81f4a034871}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!clip\+To\+Axis\+Rect@{clip\+To\+Axis\+Rect}}
+\index{clip\+To\+Axis\+Rect@{clip\+To\+Axis\+Rect}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{clip\+To\+Axis\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Abstract\+Item\+::clip\+To\+Axis\+Rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_abstract_item_a5b0ea171823033bcb8aee81f4a034871}
+\hypertarget{class_q_c_p_abstract_item_af3fc92527802078ca395138748b629a7}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!create\+Anchor@{create\+Anchor}}
+\index{create\+Anchor@{create\+Anchor}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{create\+Anchor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Item\+Anchor} $\ast$ Q\+C\+P\+Abstract\+Item\+::create\+Anchor (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name, }
+\item[{int}]{anchor\+Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_abstract_item_af3fc92527802078ca395138748b629a7}
+\hypertarget{class_q_c_p_abstract_item_a75036d39c4d4e2e1a7dd145fff915d32}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!create\+Position@{create\+Position}}
+\index{create\+Position@{create\+Position}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{create\+Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Item\+Position} $\ast$ Q\+C\+P\+Abstract\+Item\+::create\+Position (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_abstract_item_a75036d39c4d4e2e1a7dd145fff915d32}
+\hypertarget{class_q_c_p_abstract_item_a91f090d6763cfedb0749219c63788ae9}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!deselect\+Event@{deselect\+Event}}
+\index{deselect\+Event@{deselect\+Event}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{deselect\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Abstract\+Item\+::deselect\+Event (
+\begin{DoxyParamCaption}
+\item[{bool $\ast$}]{selection\+State\+Changed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_abstract_item_a91f090d6763cfedb0749219c63788ae9}
+
+
+Reimplemented from \hyperlink{class_q_c_p_layerable_ae546370644a5551c76af739afc008bee}{Q\+C\+P\+Layerable}.
+
+\hypertarget{class_q_c_p_abstract_item_acdca343717d625b8abb3c3e38c0ed39d}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!dist\+Sqr\+To\+Line@{dist\+Sqr\+To\+Line}}
+\index{dist\+Sqr\+To\+Line@{dist\+Sqr\+To\+Line}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{dist\+Sqr\+To\+Line}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Abstract\+Item\+::dist\+Sqr\+To\+Line (
+\begin{DoxyParamCaption}
+\item[{const Q\+Point\+F \&}]{start, }
+\item[{const Q\+Point\+F \&}]{end, }
+\item[{const Q\+Point\+F \&}]{point}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_abstract_item_acdca343717d625b8abb3c3e38c0ed39d}
+\hypertarget{class_q_c_p_abstract_item_ad0dc056f650c3ca73414e6b4f01674ef}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!draw@{draw}}
+\index{draw@{draw}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Abstract\+Item\+::draw (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Painter} $\ast$}]{painter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\label{class_q_c_p_abstract_item_ad0dc056f650c3ca73414e6b4f01674ef}
+
+
+Implements \hyperlink{class_q_c_p_layerable_aecf2f7087482d4b6a78cb2770e5ed12d}{Q\+C\+P\+Layerable}.
+
+
+
+Implemented in \hyperlink{class_q_c_p_item_bracket_a8343cf0559c64886add7aa7f4b22f1a6}{Q\+C\+P\+Item\+Bracket}, \hyperlink{class_q_c_p_item_tracer_aaaf49b48382c730ec9be0e74c2538315}{Q\+C\+P\+Item\+Tracer}, \hyperlink{class_q_c_p_item_pixmap_a879e8076c2db01a38b34cfa73ec95d2f}{Q\+C\+P\+Item\+Pixmap}, \hyperlink{class_q_c_p_item_ellipse_afe97ec827adb05f000fe007783faae3c}{Q\+C\+P\+Item\+Ellipse}, \hyperlink{class_q_c_p_item_text_a8793adb271ab79b4cf391dc55e9987f1}{Q\+C\+P\+Item\+Text}, \hyperlink{class_q_c_p_item_rect_a18cd583638b876cdd50f1a155ec182aa}{Q\+C\+P\+Item\+Rect}, \hyperlink{class_q_c_p_item_curve_a56cb5b72cd02db2eda598274a39839a9}{Q\+C\+P\+Item\+Curve}, \hyperlink{class_q_c_p_item_line_a1fc045dd33919f8006df0692aeb0e84a}{Q\+C\+P\+Item\+Line}, and \hyperlink{class_q_c_p_item_straight_line_a2daa1e1253216c26565d56a2d5530170}{Q\+C\+P\+Item\+Straight\+Line}.
+
+\hypertarget{class_q_c_p_abstract_item_acbce9e5ba5252541d19db0c40303357a}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!has\+Anchor@{has\+Anchor}}
+\index{has\+Anchor@{has\+Anchor}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{has\+Anchor}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Abstract\+Item\+::has\+Anchor (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+) const}\label{class_q_c_p_abstract_item_acbce9e5ba5252541d19db0c40303357a}
+Returns whether this item has an anchor with the specified {\itshape name}.
+
+Note that you can check for positions with this function, too. This is because every position is also an anchor (\hyperlink{class_q_c_p_item_position}{Q\+C\+P\+Item\+Position} inherits from \hyperlink{class_q_c_p_item_anchor}{Q\+C\+P\+Item\+Anchor}).
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_abstract_item_abed974cba7cc02608c71dad4638e008d}{anchor}, \hyperlink{class_q_c_p_abstract_item_af71345bd150f87fa1d2442837b87bb59}{position} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_abstract_item_af71345bd150f87fa1d2442837b87bb59}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!position@{position}}
+\index{position@{position}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Item\+Position} $\ast$ Q\+C\+P\+Abstract\+Item\+::position (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{name}
+\end{DoxyParamCaption}
+) const}\label{class_q_c_p_abstract_item_af71345bd150f87fa1d2442837b87bb59}
+Returns the \hyperlink{class_q_c_p_item_position}{Q\+C\+P\+Item\+Position} with the specified {\itshape name}. If this item doesn\textquotesingle{}t have a position by that name, returns 0.
+
+This function provides an alternative way to access item positions. Normally, you access positions direcly by their member pointers (which typically have the same variable name as {\itshape name}).
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_abstract_item_adf6a680cc29a6bce8345c3b6af3a91a1}{positions}, \hyperlink{class_q_c_p_abstract_item_abed974cba7cc02608c71dad4638e008d}{anchor} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_abstract_item_adf6a680cc29a6bce8345c3b6af3a91a1}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!positions@{positions}}
+\index{positions@{positions}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{positions}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ {\bf Q\+C\+P\+Item\+Position} $\ast$ $>$ Q\+C\+P\+Abstract\+Item\+::positions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_abstract_item_adf6a680cc29a6bce8345c3b6af3a91a1}
+Returns all positions of the item in a list.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_abstract_item_a8454b9941960b840608a5a1e00b1977d}{anchors}, \hyperlink{class_q_c_p_abstract_item_af71345bd150f87fa1d2442837b87bb59}{position} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_abstract_item_a4c0e14c4e92df91174cb7183fb363069}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!rect\+Select\+Test@{rect\+Select\+Test}}
+\index{rect\+Select\+Test@{rect\+Select\+Test}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{rect\+Select\+Test}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Abstract\+Item\+::rect\+Select\+Test (
+\begin{DoxyParamCaption}
+\item[{const Q\+Rect\+F \&}]{rect, }
+\item[{const Q\+Point\+F \&}]{pos, }
+\item[{bool}]{filled\+Rect}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_abstract_item_a4c0e14c4e92df91174cb7183fb363069}
+\hypertarget{class_q_c_p_abstract_item_a9189e752025533e1595eaade0009a3bc}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!selectable@{selectable}}
+\index{selectable@{selectable}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{selectable}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Abstract\+Item\+::selectable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_abstract_item_a9189e752025533e1595eaade0009a3bc}
+\hypertarget{class_q_c_p_abstract_item_a5b266c11aac61cb511901f3911dac2a3}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!selectable\+Changed@{selectable\+Changed}}
+\index{selectable\+Changed@{selectable\+Changed}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{selectable\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Abstract\+Item\+::selectable\+Changed (
+\begin{DoxyParamCaption}
+\item[{bool}]{selectable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_q_c_p_abstract_item_a5b266c11aac61cb511901f3911dac2a3}
+\hypertarget{class_q_c_p_abstract_item_a225865808640d8d9a7dd19f09a2e93f2}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!selected@{selected}}
+\index{selected@{selected}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{selected}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Abstract\+Item\+::selected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_abstract_item_a225865808640d8d9a7dd19f09a2e93f2}
+\hypertarget{class_q_c_p_abstract_item_aaf92af7b9893712959a6c073d334d88d}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!select\+Event@{select\+Event}}
+\index{select\+Event@{select\+Event}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{select\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Abstract\+Item\+::select\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{event, }
+\item[{bool}]{additive, }
+\item[{const Q\+Variant \&}]{details, }
+\item[{bool $\ast$}]{selection\+State\+Changed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_abstract_item_aaf92af7b9893712959a6c073d334d88d}
+
+
+Reimplemented from \hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{Q\+C\+P\+Layerable}.
+
+\hypertarget{class_q_c_p_abstract_item_a777b5d384936396ad9c3ceb3d3453f1c}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!selection\+Category@{selection\+Category}}
+\index{selection\+Category@{selection\+Category}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{selection\+Category}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+::\+Interaction} Q\+C\+P\+Abstract\+Item\+::selection\+Category (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_abstract_item_a777b5d384936396ad9c3ceb3d3453f1c}
+
+
+Reimplemented from \hyperlink{class_q_c_p_layerable_aa4035e586b7f317a06ba7e74e242a5ea}{Q\+C\+P\+Layerable}.
+
+\hypertarget{class_q_c_p_abstract_item_aa5cffb034fc65dbb91c77e02c1c14251}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!selection\+Changed@{selection\+Changed}}
+\index{selection\+Changed@{selection\+Changed}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{selection\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Abstract\+Item\+::selection\+Changed (
+\begin{DoxyParamCaption}
+\item[{bool}]{selected}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_q_c_p_abstract_item_aa5cffb034fc65dbb91c77e02c1c14251}
+This signal is emitted when the selection state of this item has changed, either by user interaction or by a direct call to \hyperlink{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}{set\+Selected}. \hypertarget{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!select\+Test@{select\+Test}}
+\index{select\+Test@{select\+Test}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{select\+Test}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Q\+C\+P\+Abstract\+Item\+::select\+Test (
+\begin{DoxyParamCaption}
+\item[{const Q\+Point\+F \&}]{pos, }
+\item[{bool}]{only\+Selectable, }
+\item[{Q\+Variant $\ast$}]{details = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b}
+This function is used to decide whether a click hits a layerable object or not.
+
+{\itshape pos} is a point in pixel coordinates on the \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn\textquotesingle{}t be determined, -\/1.\+0 is returned. Further, if {\itshape only\+Selectable} is true and the object is not selectable, -\/1.\+0 is returned, too.
+
+If the item is represented not by single lines but by an area like \hyperlink{class_q_c_p_item_rect}{Q\+C\+P\+Item\+Rect} or \hyperlink{class_q_c_p_item_text}{Q\+C\+P\+Item\+Text}, a click inside the area returns a constant value greater zero (typically the selection\+Tolerance of the parent \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} multiplied by 0.\+99). If the click lies outside the area, this function returns -\/1.\+0.
+
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
+
+The actual setting of the selection state is not done by this function. This is handled by the parent \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/deselect\+Event methods.
+
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to \hyperlink{class_q_c_p_abstract_item_aaf92af7b9893712959a6c073d334d88d}{select\+Event} when the parent \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to \hyperlink{class_q_c_p_abstract_item_aaf92af7b9893712959a6c073d334d88d}{select\+Event} will carry the {\itshape details}. This is useful for multi-\/part objects (like \hyperlink{class_q_c_p_axis}{Q\+C\+P\+Axis}). This way, a possibly complex calculation to decide which part was clicked is only done once in \hyperlink{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b}{select\+Test}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent \hyperlink{class_q_c_p_abstract_item_aaf92af7b9893712959a6c073d334d88d}{select\+Event}, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+
+You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_abstract_item_aaf92af7b9893712959a6c073d334d88d}{select\+Event}, \hyperlink{class_q_c_p_abstract_item_a91f090d6763cfedb0749219c63788ae9}{deselect\+Event}, \hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{Q\+Custom\+Plot\+::set\+Interactions} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \hyperlink{class_q_c_p_layerable_a4001c4d0dfec55598efa4d531f2179a9}{Q\+C\+P\+Layerable}.
+
+
+
+Implemented in \hyperlink{class_q_c_p_item_bracket_aa6933caff1d42c54bcebc769ef88c798}{Q\+C\+P\+Item\+Bracket}, \hyperlink{class_q_c_p_item_tracer_ae71f3728421c83c188c117279ca050fd}{Q\+C\+P\+Item\+Tracer}, \hyperlink{class_q_c_p_item_pixmap_a9f8436aa141fa0fb504191c882c2f4d9}{Q\+C\+P\+Item\+Pixmap}, \hyperlink{class_q_c_p_item_ellipse_acd7e5f9528630b2ab5987e2a5782eb7c}{Q\+C\+P\+Item\+Ellipse}, \hyperlink{class_q_c_p_item_text_a285b95bb6634c2e4f7768abb7a8bc69c}{Q\+C\+P\+Item\+Text}, \hyperlink{class_q_c_p_item_rect_af13b0797079b40b73d1c7286b76f18ac}{Q\+C\+P\+Item\+Rect}, \hyperlink{class_q_c_p_item_curve_a741375c11667b5f9c95b2683f93ee514}{Q\+C\+P\+Item\+Curve}, \hyperlink{class_q_c_p_item_line_a7541e5d9378ca121d07b0df3b24f7178}{Q\+C\+P\+Item\+Line}, and \hyperlink{class_q_c_p_item_straight_line_a64cc3796f58ce856012732603edb2f1c}{Q\+C\+P\+Item\+Straight\+Line}.
+
+\hypertarget{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!set\+Clip\+Axis\+Rect@{set\+Clip\+Axis\+Rect}}
+\index{set\+Clip\+Axis\+Rect@{set\+Clip\+Axis\+Rect}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{set\+Clip\+Axis\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Abstract\+Item\+::set\+Clip\+Axis\+Rect (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Axis\+Rect} $\ast$}]{rect}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347}
+Sets the clip axis rect. It defines the rect that will be used to clip the item when \hyperlink{class_q_c_p_abstract_item_a39e05b9d4176b9accafc746d16ca6a06}{set\+Clip\+To\+Axis\+Rect} is set to true.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_abstract_item_a39e05b9d4176b9accafc746d16ca6a06}{set\+Clip\+To\+Axis\+Rect} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_abstract_item_a39e05b9d4176b9accafc746d16ca6a06}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!set\+Clip\+To\+Axis\+Rect@{set\+Clip\+To\+Axis\+Rect}}
+\index{set\+Clip\+To\+Axis\+Rect@{set\+Clip\+To\+Axis\+Rect}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{set\+Clip\+To\+Axis\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Abstract\+Item\+::set\+Clip\+To\+Axis\+Rect (
+\begin{DoxyParamCaption}
+\item[{bool}]{clip}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_abstract_item_a39e05b9d4176b9accafc746d16ca6a06}
+Sets whether the item shall be clipped to an axis rect or whether it shall be visible on the entire \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot}. The axis rect can be set with \hyperlink{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347}{set\+Clip\+Axis\+Rect}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347}{set\+Clip\+Axis\+Rect} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_abstract_item_a8a8e32a55bc478b849756a78c2d87fd2}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!set\+Selectable@{set\+Selectable}}
+\index{set\+Selectable@{set\+Selectable}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{set\+Selectable}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Abstract\+Item\+::set\+Selectable (
+\begin{DoxyParamCaption}
+\item[{bool}]{selectable}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_abstract_item_a8a8e32a55bc478b849756a78c2d87fd2}
+Sets whether the user can (de-\/)select this item by clicking on the \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} surface. (When \hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{Q\+Custom\+Plot\+::set\+Interactions} contains Q\+Custom\+Plot\+::i\+Select\+Items.)
+
+However, even when {\itshape selectable} was set to false, it is possible to set the selection manually, by calling \hyperlink{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}{set\+Selected}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{Q\+Custom\+Plot\+::set\+Interactions}, \hyperlink{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}{set\+Selected} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!set\+Selected@{set\+Selected}}
+\index{set\+Selected@{set\+Selected}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{set\+Selected}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Abstract\+Item\+::set\+Selected (
+\begin{DoxyParamCaption}
+\item[{bool}]{selected}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}
+Sets whether this item is selected or not. When selected, it might use a different visual appearance (e.\+g. pen and brush), this depends on the specific item though.
+
+The entire selection mechanism for items is handled automatically when \hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{Q\+Custom\+Plot\+::set\+Interactions} contains Q\+Custom\+Plot\+::i\+Select\+Items. You only need to call this function when you wish to change the selection state manually.
+
+This function can change the selection state even when \hyperlink{class_q_c_p_abstract_item_a8a8e32a55bc478b849756a78c2d87fd2}{set\+Selectable} was set to false.
+
+emits the \hyperlink{class_q_c_p_abstract_item_aa5cffb034fc65dbb91c77e02c1c14251}{selection\+Changed} signal when {\itshape selected} is different from the previous selection state.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_abstract_item_a8a8e32a55bc478b849756a78c2d87fd2}{set\+Selectable}, \hyperlink{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b}{select\+Test} 
+\end{DoxySeeAlso}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_q_c_p_abstract_item_a61767d414fd57af9eb1741b34268c7fc}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!Q\+C\+P\+Item\+Anchor@{Q\+C\+P\+Item\+Anchor}}
+\index{Q\+C\+P\+Item\+Anchor@{Q\+C\+P\+Item\+Anchor}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{Q\+C\+P\+Item\+Anchor}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Q\+C\+P\+Item\+Anchor}\hspace{0.3cm}{\ttfamily [friend]}}\label{class_q_c_p_abstract_item_a61767d414fd57af9eb1741b34268c7fc}
+\hypertarget{class_q_c_p_abstract_item_a1cdf9df76adcfae45261690aa0ca2198}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!Q\+Custom\+Plot@{Q\+Custom\+Plot}}
+\index{Q\+Custom\+Plot@{Q\+Custom\+Plot}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{Q\+Custom\+Plot}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Q\+Custom\+Plot}\hspace{0.3cm}{\ttfamily [friend]}}\label{class_q_c_p_abstract_item_a1cdf9df76adcfae45261690aa0ca2198}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_q_c_p_abstract_item_a909a3abab783de302ebf0a0e6f2bbc15}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!m\+Anchors@{m\+Anchors}}
+\index{m\+Anchors@{m\+Anchors}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{m\+Anchors}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<${\bf Q\+C\+P\+Item\+Anchor}$\ast$$>$ Q\+C\+P\+Abstract\+Item\+::m\+Anchors\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_abstract_item_a909a3abab783de302ebf0a0e6f2bbc15}
+\hypertarget{class_q_c_p_abstract_item_a3e57cfe7da4b1ac3d6fa7281ea437361}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!m\+Clip\+Axis\+Rect@{m\+Clip\+Axis\+Rect}}
+\index{m\+Clip\+Axis\+Rect@{m\+Clip\+Axis\+Rect}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{m\+Clip\+Axis\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pointer$<${\bf Q\+C\+P\+Axis\+Rect}$>$ Q\+C\+P\+Abstract\+Item\+::m\+Clip\+Axis\+Rect\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_abstract_item_a3e57cfe7da4b1ac3d6fa7281ea437361}
+\hypertarget{class_q_c_p_abstract_item_ad2a70ff6b658fcb84a9427f69d3f587d}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!m\+Clip\+To\+Axis\+Rect@{m\+Clip\+To\+Axis\+Rect}}
+\index{m\+Clip\+To\+Axis\+Rect@{m\+Clip\+To\+Axis\+Rect}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{m\+Clip\+To\+Axis\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Abstract\+Item\+::m\+Clip\+To\+Axis\+Rect\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_abstract_item_ad2a70ff6b658fcb84a9427f69d3f587d}
+\hypertarget{class_q_c_p_abstract_item_af94ff71b6a15ea6d028ab8bd8eccd012}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!m\+Positions@{m\+Positions}}
+\index{m\+Positions@{m\+Positions}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{m\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<${\bf Q\+C\+P\+Item\+Position}$\ast$$>$ Q\+C\+P\+Abstract\+Item\+::m\+Positions\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_abstract_item_af94ff71b6a15ea6d028ab8bd8eccd012}
+\hypertarget{class_q_c_p_abstract_item_ad81eb35c8726a0f458db9df9732e0e41}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!m\+Selectable@{m\+Selectable}}
+\index{m\+Selectable@{m\+Selectable}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{m\+Selectable}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Abstract\+Item\+::m\+Selectable\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_abstract_item_ad81eb35c8726a0f458db9df9732e0e41}
+\hypertarget{class_q_c_p_abstract_item_a4bdb3457dad1d268c0f78a44152b9645}{}\index{Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}!m\+Selected@{m\+Selected}}
+\index{m\+Selected@{m\+Selected}!Q\+C\+P\+Abstract\+Item@{Q\+C\+P\+Abstract\+Item}}
+\subsubsection[{m\+Selected}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Abstract\+Item\+::m\+Selected\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_abstract_item_a4bdb3457dad1d268c0f78a44152b9645}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{qcustomplot_8h}{qcustomplot.\+h}\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}\end{DoxyCompactItemize}

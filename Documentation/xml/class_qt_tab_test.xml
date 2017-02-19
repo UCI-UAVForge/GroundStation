@@ -1,0 +1,488 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_qt_tab_test" kind="class" language="C++" prot="public">
+    <compoundname>QtTabTest</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QMainWindow</basecompoundref>
+    <includes refid="qttabtest_8h" local="no">qttabtest.h</includes>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_qt_tab_test_1a337398c114f638b5a3e2fdc4529936c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class MainMDIDisplay</definition>
+        <argsstring></argsstring>
+        <name>MainMDIDisplay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="34" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_qt_tab_test_1a1e913a265d8dd7b990bcadd75a9a739a" prot="private" static="no" mutable="no">
+        <type>Ui::QtTabTest *</type>
+        <definition>Ui::QtTabTest* QtTabTest::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="103" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_qt_tab_test_1a4f8deadb031f32110bcfc057a296cb59" prot="private" static="no" mutable="no">
+        <type><ref refid="class_map_planning" kindref="compound">MapPlanning</ref> *</type>
+        <definition>MapPlanning* QtTabTest::testMAP</definition>
+        <argsstring></argsstring>
+        <name>testMAP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="105" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_qt_tab_test_1a60353412d75587e1529192426a375f3f" prot="private" static="no" mutable="no">
+        <type><ref refid="class_map_planning" kindref="compound">MapPlanning</ref> *</type>
+        <definition>MapPlanning* QtTabTest::MapPlanningUIWidget</definition>
+        <argsstring></argsstring>
+        <name>MapPlanningUIWidget</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="107" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_qt_tab_test_1a9cf53933abe6db1f38812f494ed26a69" prot="private" static="no" mutable="no">
+        <type><ref refid="class_map_execution" kindref="compound">MapExecution</ref> *</type>
+        <definition>MapExecution* QtTabTest::MapExecutionUIWidget</definition>
+        <argsstring></argsstring>
+        <name>MapExecutionUIWidget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="109" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_qt_tab_test_1af9d35a03f59449bf74cde5a0a428489a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_map_recap" kindref="compound">MapRecap</ref> *</type>
+        <definition>MapRecap* QtTabTest::MapRecapUIWidget</definition>
+        <argsstring></argsstring>
+        <name>MapRecapUIWidget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="111" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_qt_tab_test_1af15dbd5ab17e8d8e72667cefe470aeb2" prot="private" static="no" mutable="no">
+        <type>QWidget *</type>
+        <definition>QWidget* QtTabTest::MapRecapUI_MapTab</definition>
+        <argsstring></argsstring>
+        <name>MapRecapUI_MapTab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="113" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_qt_tab_test_1ac2a75b757aee9d0f88e0238da6b9385f" prot="private" static="no" mutable="no">
+        <type>QWidget *</type>
+        <definition>QWidget* QtTabTest::MapRecapUI_TableTab</definition>
+        <argsstring></argsstring>
+        <name>MapRecapUI_TableTab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="115" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_qt_tab_test_1ad3ce666ddedb1a602953f70c57fa16b2" prot="private" static="no" mutable="no">
+        <type>QWidget *</type>
+        <definition>QWidget* QtTabTest::MapRecapUI_GraphTab</definition>
+        <argsstring></argsstring>
+        <name>MapRecapUI_GraphTab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="117" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_qt_tab_test_1abea56f8bf2015b60b8e72092752bc1dc" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool QtTabTest::isFirstTabEmpty</definition>
+        <argsstring></argsstring>
+        <name>isFirstTabEmpty</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="119" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_qt_tab_test_1af938cba3872db479e49de0c2f4a2d353" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QtTabTest::QtTabTest</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>QtTabTest</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructor for the main window </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="38" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="9" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_tab_test_1ab3c73076dfe26ba129dbc9421154b572" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QtTabTest::~QtTabTest</definition>
+        <argsstring>()</argsstring>
+        <name>~QtTabTest</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructor for the main window </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="24" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_tab_test_1a71445077b93df68b1fef88ed8133d4c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtTabTest::addNewTab</definition>
+        <argsstring>(QWidget *, QString)</argsstring>
+        <name>addNewTab</name>
+        <param>
+          <type>QWidget *</type>
+          <defname>myNewTabWidget</defname>
+        </param>
+        <param>
+          <type>QString</type>
+          <defname>label</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="42" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="113" bodyend="145"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_tab_test_1a1218449139a279a20325ee6ff790573c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtTabTest::deleteTabIndex</definition>
+        <argsstring>(int)</argsstring>
+        <name>deleteTabIndex</name>
+        <param>
+          <type>int</type>
+          <defname>index</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="44" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="147" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_tab_test_1ad7f602d0285a16d25da6cf0b4b04a9e2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_map_planning" kindref="compound">MapPlanning</ref> *</type>
+        <definition>MapPlanning * QtTabTest::getMapPlanningUIWidget</definition>
+        <argsstring>() const </argsstring>
+        <name>getMapPlanningUIWidget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="46" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="81" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_tab_test_1ac1c2917b9b1db269974664ba64868c83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtTabTest::setMapPlanningUIWidget</definition>
+        <argsstring>(MapPlanning *)</argsstring>
+        <name>setMapPlanningUIWidget</name>
+        <param>
+          <type><ref refid="class_map_planning" kindref="compound">MapPlanning</ref> *</type>
+          <defname>MapPlanningUIWidget</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="48" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="87" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_tab_test_1a288a55c8ffe6dc4d049954d7b07bd662" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_map_execution" kindref="compound">MapExecution</ref> *</type>
+        <definition>MapExecution * QtTabTest::getMapExecutionUIWidget</definition>
+        <argsstring>() const </argsstring>
+        <name>getMapExecutionUIWidget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="50" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="67" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_tab_test_1abf3b471245a1b63675f2c94668456eb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtTabTest::setMapExecutionUIWidget</definition>
+        <argsstring>(MapExecution *)</argsstring>
+        <name>setMapExecutionUIWidget</name>
+        <param>
+          <type><ref refid="class_map_execution" kindref="compound">MapExecution</ref> *</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="52" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="74" bodyend="78"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_qt_tab_test_1a6e4a7828ec11ac0f84f8706cb6a730f4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtTabTest::startMapExecution</definition>
+        <argsstring>()</argsstring>
+        <name>startMapExecution</name>
+        <briefdescription>
+<para>Ready to begin map execution. Replace the <ref refid="class_map_planning" kindref="compound">MapPlanning</ref> widget with a new <ref refid="class_map_execution" kindref="compound">MapExecution</ref> widget. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="56" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="34" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_qt_tab_test_1a3afcc9c822edb16ed7ff5cb911a23a68" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtTabTest::startMapRecap</definition>
+        <argsstring>()</argsstring>
+        <name>startMapRecap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="58" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="47" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1068">
+        <label>QMainWindow</label>
+      </node>
+      <node id="1067">
+        <label>QtTabTest</label>
+        <link refid="class_qt_tab_test"/>
+        <childnode refid="1068" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1084">
+        <label>ServerQueue</label>
+        <link refid="class_server_queue"/>
+      </node>
+      <node id="1082">
+        <label>NetworkListener</label>
+        <link refid="class_network_listener"/>
+        <childnode refid="1083" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1079" relation="usage">
+          <edgelabel>myMessageBox</edgelabel>
+        </childnode>
+        <childnode refid="1080" relation="usage">
+          <edgelabel>server</edgelabel>
+        </childnode>
+      </node>
+      <node id="1079">
+        <label>messagebox</label>
+        <link refid="classmessagebox"/>
+      </node>
+      <node id="1071">
+        <label>MapRecap</label>
+        <link refid="class_map_recap"/>
+        <childnode refid="1072" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1073" relation="usage">
+          <edgelabel>myMission</edgelabel>
+        </childnode>
+        <childnode refid="1076" relation="usage">
+          <edgelabel>model</edgelabel>
+        </childnode>
+      </node>
+      <node id="1081">
+        <label>QThread</label>
+      </node>
+      <node id="1076">
+        <label>TableModel</label>
+        <link refid="class_table_model"/>
+        <childnode refid="1077" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1070">
+        <label>QMainWindow</label>
+      </node>
+      <node id="1074">
+        <label>FlightPath</label>
+        <link refid="class_flight_path"/>
+        <childnode refid="1075" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1073">
+        <label>Mission</label>
+        <link refid="class_mission"/>
+        <childnode refid="1074" relation="usage">
+          <edgelabel>myFlightPath</edgelabel>
+        </childnode>
+      </node>
+      <node id="1086">
+        <label>PopWindowMP</label>
+        <link refid="class_pop_window_m_p"/>
+        <childnode refid="1087" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1080">
+        <label>GsServer</label>
+        <link refid="class_gs_server"/>
+        <childnode refid="1081" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1073" relation="usage">
+          <edgelabel>myMission</edgelabel>
+        </childnode>
+        <childnode refid="1082" relation="usage">
+          <edgelabel>networkListener</edgelabel>
+        </childnode>
+        <childnode refid="1079" relation="usage">
+          <edgelabel>myMessageBox</edgelabel>
+        </childnode>
+        <childnode refid="1084" relation="usage">
+          <edgelabel>outPackets</edgelabel>
+        </childnode>
+      </node>
+      <node id="1072">
+        <label>QDialog</label>
+      </node>
+      <node id="1087">
+        <label>QWidget</label>
+      </node>
+      <node id="1075">
+        <label>QList&lt; TimedAction * &gt;</label>
+      </node>
+      <node id="1083">
+        <label>QUdpSocket</label>
+      </node>
+      <node id="1078">
+        <label>MapExecution</label>
+        <link refid="class_map_execution"/>
+        <childnode refid="1072" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1073" relation="usage">
+          <edgelabel>myMission</edgelabel>
+        </childnode>
+        <childnode refid="1079" relation="usage">
+          <edgelabel>MessageBox</edgelabel>
+          <edgelabel>MyMessageBox</edgelabel>
+        </childnode>
+        <childnode refid="1076" relation="usage">
+          <edgelabel>model</edgelabel>
+        </childnode>
+        <childnode refid="1080" relation="usage">
+          <edgelabel>myServer</edgelabel>
+        </childnode>
+        <childnode refid="1074" relation="usage">
+          <edgelabel>myFlightPath</edgelabel>
+        </childnode>
+      </node>
+      <node id="1069">
+        <label>QtTabTest</label>
+        <link refid="class_qt_tab_test"/>
+        <childnode refid="1070" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1071" relation="usage">
+          <edgelabel>MapRecapUIWidget</edgelabel>
+        </childnode>
+        <childnode refid="1078" relation="usage">
+          <edgelabel>MapExecutionUIWidget</edgelabel>
+        </childnode>
+        <childnode refid="1085" relation="usage">
+          <edgelabel>MapPlanningUIWidget</edgelabel>
+          <edgelabel>testMAP</edgelabel>
+        </childnode>
+      </node>
+      <node id="1077">
+        <label>QAbstractTableModel</label>
+      </node>
+      <node id="1085">
+        <label>MapPlanning</label>
+        <link refid="class_map_planning"/>
+        <childnode refid="1072" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1076" relation="usage">
+          <edgelabel>model</edgelabel>
+        </childnode>
+        <childnode refid="1086" relation="usage">
+          <edgelabel>popup</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="30" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="30" bodyend="123"/>
+    <listofallmembers>
+      <member refid="class_qt_tab_test_1a71445077b93df68b1fef88ed8133d4c9" prot="public" virt="non-virtual"><scope>QtTabTest</scope><name>addNewTab</name></member>
+      <member refid="class_qt_tab_test_1a1218449139a279a20325ee6ff790573c" prot="public" virt="non-virtual"><scope>QtTabTest</scope><name>deleteTabIndex</name></member>
+      <member refid="class_qt_tab_test_1a288a55c8ffe6dc4d049954d7b07bd662" prot="public" virt="non-virtual"><scope>QtTabTest</scope><name>getMapExecutionUIWidget</name></member>
+      <member refid="class_qt_tab_test_1ad7f602d0285a16d25da6cf0b4b04a9e2" prot="public" virt="non-virtual"><scope>QtTabTest</scope><name>getMapPlanningUIWidget</name></member>
+      <member refid="class_qt_tab_test_1abea56f8bf2015b60b8e72092752bc1dc" prot="private" virt="non-virtual"><scope>QtTabTest</scope><name>isFirstTabEmpty</name></member>
+      <member refid="class_qt_tab_test_1a337398c114f638b5a3e2fdc4529936c5" prot="private" virt="non-virtual"><scope>QtTabTest</scope><name>MainMDIDisplay</name></member>
+      <member refid="class_qt_tab_test_1a9cf53933abe6db1f38812f494ed26a69" prot="private" virt="non-virtual"><scope>QtTabTest</scope><name>MapExecutionUIWidget</name></member>
+      <member refid="class_qt_tab_test_1a60353412d75587e1529192426a375f3f" prot="private" virt="non-virtual"><scope>QtTabTest</scope><name>MapPlanningUIWidget</name></member>
+      <member refid="class_qt_tab_test_1ad3ce666ddedb1a602953f70c57fa16b2" prot="private" virt="non-virtual"><scope>QtTabTest</scope><name>MapRecapUI_GraphTab</name></member>
+      <member refid="class_qt_tab_test_1af15dbd5ab17e8d8e72667cefe470aeb2" prot="private" virt="non-virtual"><scope>QtTabTest</scope><name>MapRecapUI_MapTab</name></member>
+      <member refid="class_qt_tab_test_1ac2a75b757aee9d0f88e0238da6b9385f" prot="private" virt="non-virtual"><scope>QtTabTest</scope><name>MapRecapUI_TableTab</name></member>
+      <member refid="class_qt_tab_test_1af9d35a03f59449bf74cde5a0a428489a" prot="private" virt="non-virtual"><scope>QtTabTest</scope><name>MapRecapUIWidget</name></member>
+      <member refid="class_qt_tab_test_1af938cba3872db479e49de0c2f4a2d353" prot="public" virt="non-virtual"><scope>QtTabTest</scope><name>QtTabTest</name></member>
+      <member refid="class_qt_tab_test_1abf3b471245a1b63675f2c94668456eb4" prot="public" virt="non-virtual"><scope>QtTabTest</scope><name>setMapExecutionUIWidget</name></member>
+      <member refid="class_qt_tab_test_1ac1c2917b9b1db269974664ba64868c83" prot="public" virt="non-virtual"><scope>QtTabTest</scope><name>setMapPlanningUIWidget</name></member>
+      <member refid="class_qt_tab_test_1a6e4a7828ec11ac0f84f8706cb6a730f4" prot="private" virt="non-virtual"><scope>QtTabTest</scope><name>startMapExecution</name></member>
+      <member refid="class_qt_tab_test_1a3afcc9c822edb16ed7ff5cb911a23a68" prot="private" virt="non-virtual"><scope>QtTabTest</scope><name>startMapRecap</name></member>
+      <member refid="class_qt_tab_test_1a4f8deadb031f32110bcfc057a296cb59" prot="private" virt="non-virtual"><scope>QtTabTest</scope><name>testMAP</name></member>
+      <member refid="class_qt_tab_test_1a1e913a265d8dd7b990bcadd75a9a739a" prot="private" virt="non-virtual"><scope>QtTabTest</scope><name>ui</name></member>
+      <member refid="class_qt_tab_test_1ab3c73076dfe26ba129dbc9421154b572" prot="public" virt="non-virtual"><scope>QtTabTest</scope><name>~QtTabTest</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

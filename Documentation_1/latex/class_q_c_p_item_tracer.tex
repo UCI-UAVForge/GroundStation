@@ -1,0 +1,450 @@
+\hypertarget{class_q_c_p_item_tracer}{}\section{Q\+C\+P\+Item\+Tracer Class Reference}
+\label{class_q_c_p_item_tracer}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+
+
+Item that sticks to \hyperlink{class_q_c_p_graph}{Q\+C\+P\+Graph} data points.  
+
+
+
+
+{\ttfamily \#include $<$qcustomplot.\+h$>$}
+
+Inheritance diagram for Q\+C\+P\+Item\+Tracer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_q_c_p_item_tracer}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500}{Tracer\+Style} \{ \\*
+\hyperlink{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500aac27462c79146225bfa8fba24d2ee8a4}{ts\+None}, 
+\hyperlink{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500a3323fb04017146e4885e080a459472fa}{ts\+Plus}, 
+\hyperlink{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500af562ec81ac3ba99e26ef8540cf1ec16f}{ts\+Crosshair}, 
+\hyperlink{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500ae2252c28f4842880d71e9f94e69de94e}{ts\+Circle}, 
+\\*
+\hyperlink{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500a4ed5f01f2c5fd86d980366d79f481b9b}{ts\+Square}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_c_p_item_tracer_adc5ca846eeac323db4aa1fc4081e36be}{Q\+C\+P\+Item\+Tracer} (\hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} $\ast$\hyperlink{class_q_c_p_layerable_ab7e0e94461566093d36ffc0f5312b109}{parent\+Plot})
+\item 
+virtual \hyperlink{class_q_c_p_item_tracer_a43686565a9b70815915618636b9bdf0f}{$\sim$\+Q\+C\+P\+Item\+Tracer} ()
+\item 
+Q\+Pen \hyperlink{class_q_c_p_item_tracer_a1f51b61e98c276298a0874d5e89707f0}{pen} () const 
+\item 
+Q\+Pen \hyperlink{class_q_c_p_item_tracer_ad75e5d2d868dbedc176f7911091f379b}{selected\+Pen} () const 
+\item 
+Q\+Brush \hyperlink{class_q_c_p_item_tracer_af07527750cfb6afc3c0ba4bec012011f}{brush} () const 
+\item 
+Q\+Brush \hyperlink{class_q_c_p_item_tracer_afed284222253083375bfd21d3d4dbc30}{selected\+Brush} () const 
+\item 
+double \hyperlink{class_q_c_p_item_tracer_a2607fcb3d01e90773ea1532fd6803760}{size} () const 
+\item 
+\hyperlink{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500}{Tracer\+Style} \hyperlink{class_q_c_p_item_tracer_a871832dace1709f877c3136fac7ae1ec}{style} () const 
+\item 
+\hyperlink{class_q_c_p_graph}{Q\+C\+P\+Graph} $\ast$ \hyperlink{class_q_c_p_item_tracer_a74c90da0e6730839b8d7cf6445a4ec1f}{graph} () const 
+\item 
+double \hyperlink{class_q_c_p_item_tracer_a361c5c9b93bdf4588fc49bc3097529ad}{graph\+Key} () const 
+\item 
+bool \hyperlink{class_q_c_p_item_tracer_ab318c233fa35c17a317af38ce7b3c312}{interpolating} () const 
+\item 
+void \hyperlink{class_q_c_p_item_tracer_af8048636fc1ef0152e51809b008df2ca}{set\+Pen} (const Q\+Pen \&\hyperlink{class_q_c_p_item_tracer_a1f51b61e98c276298a0874d5e89707f0}{pen})
+\item 
+void \hyperlink{class_q_c_p_item_tracer_ae1bf70db7f13f928660168cd3e5069f3}{set\+Selected\+Pen} (const Q\+Pen \&\hyperlink{class_q_c_p_item_tracer_a1f51b61e98c276298a0874d5e89707f0}{pen})
+\item 
+void \hyperlink{class_q_c_p_item_tracer_a2c303f7470a30084daa201ed556b3c36}{set\+Brush} (const Q\+Brush \&\hyperlink{class_q_c_p_item_tracer_af07527750cfb6afc3c0ba4bec012011f}{brush})
+\item 
+void \hyperlink{class_q_c_p_item_tracer_a0f55c084980a7a312af859d3e7b558ef}{set\+Selected\+Brush} (const Q\+Brush \&\hyperlink{class_q_c_p_item_tracer_af07527750cfb6afc3c0ba4bec012011f}{brush})
+\item 
+void \hyperlink{class_q_c_p_item_tracer_ae47fe0617f5fef5fdb766999569be10a}{set\+Size} (double \hyperlink{class_q_c_p_item_tracer_a2607fcb3d01e90773ea1532fd6803760}{size})
+\item 
+void \hyperlink{class_q_c_p_item_tracer_a41a2ac4f1acd7897b4e2a2579c03204e}{set\+Style} (\hyperlink{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500}{Tracer\+Style} \hyperlink{class_q_c_p_item_tracer_a871832dace1709f877c3136fac7ae1ec}{style})
+\item 
+void \hyperlink{class_q_c_p_item_tracer_af5886f4ded8dd68cb4f3388f390790c0}{set\+Graph} (\hyperlink{class_q_c_p_graph}{Q\+C\+P\+Graph} $\ast$\hyperlink{class_q_c_p_item_tracer_a74c90da0e6730839b8d7cf6445a4ec1f}{graph})
+\item 
+void \hyperlink{class_q_c_p_item_tracer_a6840143b42f3b685cedf7c6d83a704c8}{set\+Graph\+Key} (double key)
+\item 
+void \hyperlink{class_q_c_p_item_tracer_a6c244a9d1175bef12b50afafd4f5fcd2}{set\+Interpolating} (bool enabled)
+\item 
+virtual double \hyperlink{class_q_c_p_item_tracer_ae71f3728421c83c188c117279ca050fd}{select\+Test} (const Q\+Point\+F \&pos, bool only\+Selectable, Q\+Variant $\ast$details=0) const 
+\item 
+void \hyperlink{class_q_c_p_item_tracer_a5b90296109e36384aedbc8908a670413}{update\+Position} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_c_p_item_position}{Q\+C\+P\+Item\+Position} $\ast$const \hyperlink{class_q_c_p_item_tracer_a69917e2fdb2b3a929c196958feee7cbe}{position}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_q_c_p_item_tracer_aaaf49b48382c730ec9be0e74c2538315}{draw} (\hyperlink{class_q_c_p_painter}{Q\+C\+P\+Painter} $\ast$painter)
+\item 
+Q\+Pen \hyperlink{class_q_c_p_item_tracer_af87132b7698d5bb35c96a8a0b9e7180e}{main\+Pen} () const 
+\item 
+Q\+Brush \hyperlink{class_q_c_p_item_tracer_aaf4e72e2d87f53279b9f9ba624961bf5}{main\+Brush} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Pen \hyperlink{class_q_c_p_item_tracer_a579e3bd6bd16d6aaff03638dc8a99a69}{m\+Pen}
+\item 
+Q\+Pen \hyperlink{class_q_c_p_item_tracer_a3f61829784200819661d1e2a5354d866}{m\+Selected\+Pen}
+\item 
+Q\+Brush \hyperlink{class_q_c_p_item_tracer_a6597be63a17a266233941354200b2340}{m\+Brush}
+\item 
+Q\+Brush \hyperlink{class_q_c_p_item_tracer_a1c15d2adde40efdcc0ef1ff78fd256a6}{m\+Selected\+Brush}
+\item 
+double \hyperlink{class_q_c_p_item_tracer_a575153a24bb357d1e006f6bc3bd099b9}{m\+Size}
+\item 
+\hyperlink{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500}{Tracer\+Style} \hyperlink{class_q_c_p_item_tracer_afb1f236bebf417544e0138fef22a292e}{m\+Style}
+\item 
+\hyperlink{class_q_c_p_graph}{Q\+C\+P\+Graph} $\ast$ \hyperlink{class_q_c_p_item_tracer_a2d70cf616b579563aa15f796dfc143ac}{m\+Graph}
+\item 
+double \hyperlink{class_q_c_p_item_tracer_a8fa20f2e9ee07d21fd7c8d30ba4702ca}{m\+Graph\+Key}
+\item 
+bool \hyperlink{class_q_c_p_item_tracer_afab37c22ad39f235921e86f93cd84595}{m\+Interpolating}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Item that sticks to \hyperlink{class_q_c_p_graph}{Q\+C\+P\+Graph} data points. 
+
+ The tracer can be connected with a \hyperlink{class_q_c_p_graph}{Q\+C\+P\+Graph} via \hyperlink{class_q_c_p_item_tracer_af5886f4ded8dd68cb4f3388f390790c0}{set\+Graph}. Then it will automatically adopt the coordinate axes of the graph and update its {\itshape position} to be on the graph\textquotesingle{}s data. This means the key stays controllable via \hyperlink{class_q_c_p_item_tracer_a6840143b42f3b685cedf7c6d83a704c8}{set\+Graph\+Key}, but the value will follow the graph data. If a \hyperlink{class_q_c_p_graph}{Q\+C\+P\+Graph} is connected, note that setting the coordinates of the tracer item directly via {\itshape position} will have no effect because they will be overriden in the next redraw (this is when the coordinate update happens).
+
+If the specified key in \hyperlink{class_q_c_p_item_tracer_a6840143b42f3b685cedf7c6d83a704c8}{set\+Graph\+Key} is outside the key bounds of the graph, the tracer will stay at the corresponding end of the graph.
+
+With \hyperlink{class_q_c_p_item_tracer_a6c244a9d1175bef12b50afafd4f5fcd2}{set\+Interpolating} you may specify whether the tracer may only stay exactly on data points or whether it interpolates data points linearly, if given a key that lies between two data points of the graph.
+
+The tracer has different visual styles, see \hyperlink{class_q_c_p_item_tracer_a41a2ac4f1acd7897b4e2a2579c03204e}{set\+Style}. It is also possible to make the tracer have no own visual appearance (set the style to \hyperlink{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500aac27462c79146225bfa8fba24d2ee8a4}{ts\+None}), and just connect other item positions to the tracer {\itshape position} (used as an anchor) via \hyperlink{class_q_c_p_item_position_ac094d67a95d2dceafa0d50b9db3a7e51}{Q\+C\+P\+Item\+Position\+::set\+Parent\+Anchor}.
+
+\begin{DoxyNote}{Note}
+The tracer position is only automatically updated upon redraws. So when the data of the graph changes and immediately afterwards (without a redraw) the a position coordinates of the tracer are retrieved, they will not reflect the updated data of the graph. In this case \hyperlink{class_q_c_p_item_tracer_a5b90296109e36384aedbc8908a670413}{update\+Position} must be called manually, prior to reading the tracer coordinates. 
+\end{DoxyNote}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!Tracer\+Style@{Tracer\+Style}}
+\index{Tracer\+Style@{Tracer\+Style}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{Tracer\+Style}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Q\+C\+P\+Item\+Tracer\+::\+Tracer\+Style}}\label{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500}
+The different visual appearances a tracer item can have. Some styles size may be controlled with \hyperlink{class_q_c_p_item_tracer_ae47fe0617f5fef5fdb766999569be10a}{set\+Size}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_item_tracer_a41a2ac4f1acd7897b4e2a2579c03204e}{set\+Style} 
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{ts\+None@{ts\+None}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!ts\+None@{ts\+None}}\item[{\em 
+\hypertarget{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500aac27462c79146225bfa8fba24d2ee8a4}{}ts\+None\label{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500aac27462c79146225bfa8fba24d2ee8a4}
+}]The tracer is not visible. \index{ts\+Plus@{ts\+Plus}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!ts\+Plus@{ts\+Plus}}\item[{\em 
+\hypertarget{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500a3323fb04017146e4885e080a459472fa}{}ts\+Plus\label{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500a3323fb04017146e4885e080a459472fa}
+}]A plus shaped crosshair with limited size. \index{ts\+Crosshair@{ts\+Crosshair}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!ts\+Crosshair@{ts\+Crosshair}}\item[{\em 
+\hypertarget{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500af562ec81ac3ba99e26ef8540cf1ec16f}{}ts\+Crosshair\label{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500af562ec81ac3ba99e26ef8540cf1ec16f}
+}]A plus shaped crosshair which spans the complete axis rect. \index{ts\+Circle@{ts\+Circle}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!ts\+Circle@{ts\+Circle}}\item[{\em 
+\hypertarget{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500ae2252c28f4842880d71e9f94e69de94e}{}ts\+Circle\label{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500ae2252c28f4842880d71e9f94e69de94e}
+}]A circle. \index{ts\+Square@{ts\+Square}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!ts\+Square@{ts\+Square}}\item[{\em 
+\hypertarget{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500a4ed5f01f2c5fd86d980366d79f481b9b}{}ts\+Square\label{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500a4ed5f01f2c5fd86d980366d79f481b9b}
+}]A square. \end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_q_c_p_item_tracer_adc5ca846eeac323db4aa1fc4081e36be}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{Q\+C\+P\+Item\+Tracer}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Item\+Tracer\+::\+Q\+C\+P\+Item\+Tracer (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+Custom\+Plot} $\ast$}]{parent\+Plot}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_tracer_adc5ca846eeac323db4aa1fc4081e36be}
+Creates a tracer item and sets default values.
+
+The constructed item can be added to the plot with \hyperlink{class_q_custom_plot_aa500620379262321685cb7a7674cbd2a}{Q\+Custom\+Plot\+::add\+Item}. \hypertarget{class_q_c_p_item_tracer_a43686565a9b70815915618636b9bdf0f}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!````~Q\+C\+P\+Item\+Tracer@{$\sim$\+Q\+C\+P\+Item\+Tracer}}
+\index{````~Q\+C\+P\+Item\+Tracer@{$\sim$\+Q\+C\+P\+Item\+Tracer}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{$\sim$\+Q\+C\+P\+Item\+Tracer}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Item\+Tracer\+::$\sim$\+Q\+C\+P\+Item\+Tracer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_item_tracer_a43686565a9b70815915618636b9bdf0f}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_q_c_p_item_tracer_af07527750cfb6afc3c0ba4bec012011f}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!brush@{brush}}
+\index{brush@{brush}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{brush}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Brush Q\+C\+P\+Item\+Tracer\+::brush (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_item_tracer_af07527750cfb6afc3c0ba4bec012011f}
+\hypertarget{class_q_c_p_item_tracer_aaaf49b48382c730ec9be0e74c2538315}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!draw@{draw}}
+\index{draw@{draw}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Tracer\+::draw (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Painter} $\ast$}]{painter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_item_tracer_aaaf49b48382c730ec9be0e74c2538315}
+
+
+Implements \hyperlink{class_q_c_p_abstract_item_ad0dc056f650c3ca73414e6b4f01674ef}{Q\+C\+P\+Abstract\+Item}.
+
+\hypertarget{class_q_c_p_item_tracer_a74c90da0e6730839b8d7cf6445a4ec1f}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!graph@{graph}}
+\index{graph@{graph}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{graph}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Graph}$\ast$ Q\+C\+P\+Item\+Tracer\+::graph (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_item_tracer_a74c90da0e6730839b8d7cf6445a4ec1f}
+\hypertarget{class_q_c_p_item_tracer_a361c5c9b93bdf4588fc49bc3097529ad}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!graph\+Key@{graph\+Key}}
+\index{graph\+Key@{graph\+Key}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{graph\+Key}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Item\+Tracer\+::graph\+Key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_item_tracer_a361c5c9b93bdf4588fc49bc3097529ad}
+\hypertarget{class_q_c_p_item_tracer_ab318c233fa35c17a317af38ce7b3c312}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!interpolating@{interpolating}}
+\index{interpolating@{interpolating}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{interpolating}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Item\+Tracer\+::interpolating (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_item_tracer_ab318c233fa35c17a317af38ce7b3c312}
+\hypertarget{class_q_c_p_item_tracer_aaf4e72e2d87f53279b9f9ba624961bf5}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!main\+Brush@{main\+Brush}}
+\index{main\+Brush@{main\+Brush}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{main\+Brush}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Brush Q\+C\+P\+Item\+Tracer\+::main\+Brush (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_item_tracer_aaf4e72e2d87f53279b9f9ba624961bf5}
+\hypertarget{class_q_c_p_item_tracer_af87132b7698d5bb35c96a8a0b9e7180e}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!main\+Pen@{main\+Pen}}
+\index{main\+Pen@{main\+Pen}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{main\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pen Q\+C\+P\+Item\+Tracer\+::main\+Pen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_item_tracer_af87132b7698d5bb35c96a8a0b9e7180e}
+\hypertarget{class_q_c_p_item_tracer_a1f51b61e98c276298a0874d5e89707f0}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!pen@{pen}}
+\index{pen@{pen}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{pen}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pen Q\+C\+P\+Item\+Tracer\+::pen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_item_tracer_a1f51b61e98c276298a0874d5e89707f0}
+\hypertarget{class_q_c_p_item_tracer_afed284222253083375bfd21d3d4dbc30}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!selected\+Brush@{selected\+Brush}}
+\index{selected\+Brush@{selected\+Brush}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{selected\+Brush}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Brush Q\+C\+P\+Item\+Tracer\+::selected\+Brush (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_item_tracer_afed284222253083375bfd21d3d4dbc30}
+\hypertarget{class_q_c_p_item_tracer_ad75e5d2d868dbedc176f7911091f379b}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!selected\+Pen@{selected\+Pen}}
+\index{selected\+Pen@{selected\+Pen}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{selected\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pen Q\+C\+P\+Item\+Tracer\+::selected\+Pen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_item_tracer_ad75e5d2d868dbedc176f7911091f379b}
+\hypertarget{class_q_c_p_item_tracer_ae71f3728421c83c188c117279ca050fd}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!select\+Test@{select\+Test}}
+\index{select\+Test@{select\+Test}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{select\+Test}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Item\+Tracer\+::select\+Test (
+\begin{DoxyParamCaption}
+\item[{const Q\+Point\+F \&}]{pos, }
+\item[{bool}]{only\+Selectable, }
+\item[{Q\+Variant $\ast$}]{details = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_item_tracer_ae71f3728421c83c188c117279ca050fd}
+This function is used to decide whether a click hits a layerable object or not.
+
+{\itshape pos} is a point in pixel coordinates on the \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn\textquotesingle{}t be determined, -\/1.\+0 is returned. Further, if {\itshape only\+Selectable} is true and the object is not selectable, -\/1.\+0 is returned, too.
+
+If the item is represented not by single lines but by an area like \hyperlink{class_q_c_p_item_rect}{Q\+C\+P\+Item\+Rect} or \hyperlink{class_q_c_p_item_text}{Q\+C\+P\+Item\+Text}, a click inside the area returns a constant value greater zero (typically the selection\+Tolerance of the parent \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} multiplied by 0.\+99). If the click lies outside the area, this function returns -\/1.\+0.
+
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99$\ast$selection\+Tolerance).
+
+The actual setting of the selection state is not done by this function. This is handled by the parent \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/deselect\+Event methods.
+
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to \hyperlink{class_q_c_p_abstract_item_aaf92af7b9893712959a6c073d334d88d}{select\+Event} when the parent \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to \hyperlink{class_q_c_p_abstract_item_aaf92af7b9893712959a6c073d334d88d}{select\+Event} will carry the {\itshape details}. This is useful for multi-\/part objects (like \hyperlink{class_q_c_p_axis}{Q\+C\+P\+Axis}). This way, a possibly complex calculation to decide which part was clicked is only done once in \hyperlink{class_q_c_p_item_tracer_ae71f3728421c83c188c117279ca050fd}{select\+Test}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent \hyperlink{class_q_c_p_abstract_item_aaf92af7b9893712959a6c073d334d88d}{select\+Event}, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+
+You may pass 0 as {\itshape details} to indicate that you are not interested in those selection details.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_abstract_item_aaf92af7b9893712959a6c073d334d88d}{select\+Event}, \hyperlink{class_q_c_p_abstract_item_a91f090d6763cfedb0749219c63788ae9}{deselect\+Event}, \hyperlink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{Q\+Custom\+Plot\+::set\+Interactions} 
+\end{DoxySeeAlso}
+
+
+Implements \hyperlink{class_q_c_p_abstract_item_a96d522d10ffc0413b9a366c6f7f0476b}{Q\+C\+P\+Abstract\+Item}.
+
+\hypertarget{class_q_c_p_item_tracer_a2c303f7470a30084daa201ed556b3c36}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!set\+Brush@{set\+Brush}}
+\index{set\+Brush@{set\+Brush}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{set\+Brush}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Tracer\+::set\+Brush (
+\begin{DoxyParamCaption}
+\item[{const Q\+Brush \&}]{brush}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_tracer_a2c303f7470a30084daa201ed556b3c36}
+Sets the brush that will be used to draw any fills of the tracer
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_item_tracer_a0f55c084980a7a312af859d3e7b558ef}{set\+Selected\+Brush}, \hyperlink{class_q_c_p_item_tracer_af8048636fc1ef0152e51809b008df2ca}{set\+Pen} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_item_tracer_af5886f4ded8dd68cb4f3388f390790c0}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!set\+Graph@{set\+Graph}}
+\index{set\+Graph@{set\+Graph}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{set\+Graph}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Tracer\+::set\+Graph (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Graph} $\ast$}]{graph}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_tracer_af5886f4ded8dd68cb4f3388f390790c0}
+Sets the \hyperlink{class_q_c_p_graph}{Q\+C\+P\+Graph} this tracer sticks to. The tracer {\itshape position} will be set to type \hyperlink{class_q_c_p_item_position_aad9936c22bf43e3d358552f6e86dbdc8ad5ffb8dc99ad73263f7010c77342294c}{Q\+C\+P\+Item\+Position\+::pt\+Plot\+Coords} and the axes will be set to the axes of {\itshape graph}.
+
+To free the tracer from any graph, set {\itshape graph} to 0. The tracer {\itshape position} can then be placed freely like any other item position. This is the state the tracer will assume when its graph gets deleted while still attached to it.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_item_tracer_a6840143b42f3b685cedf7c6d83a704c8}{set\+Graph\+Key} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_item_tracer_a6840143b42f3b685cedf7c6d83a704c8}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!set\+Graph\+Key@{set\+Graph\+Key}}
+\index{set\+Graph\+Key@{set\+Graph\+Key}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{set\+Graph\+Key}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Tracer\+::set\+Graph\+Key (
+\begin{DoxyParamCaption}
+\item[{double}]{key}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_tracer_a6840143b42f3b685cedf7c6d83a704c8}
+Sets the key of the graph\textquotesingle{}s data point the tracer will be positioned at. This is the only free coordinate of a tracer when attached to a graph.
+
+Depending on \hyperlink{class_q_c_p_item_tracer_a6c244a9d1175bef12b50afafd4f5fcd2}{set\+Interpolating}, the tracer will be either positioned on the data point closest to {\itshape key}, or will stay exactly at {\itshape key} and interpolate the value linearly.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_item_tracer_af5886f4ded8dd68cb4f3388f390790c0}{set\+Graph}, \hyperlink{class_q_c_p_item_tracer_a6c244a9d1175bef12b50afafd4f5fcd2}{set\+Interpolating} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_item_tracer_a6c244a9d1175bef12b50afafd4f5fcd2}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!set\+Interpolating@{set\+Interpolating}}
+\index{set\+Interpolating@{set\+Interpolating}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{set\+Interpolating}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Tracer\+::set\+Interpolating (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_tracer_a6c244a9d1175bef12b50afafd4f5fcd2}
+Sets whether the value of the graph\textquotesingle{}s data points shall be interpolated, when positioning the tracer.
+
+If {\itshape enabled} is set to false and a key is given with \hyperlink{class_q_c_p_item_tracer_a6840143b42f3b685cedf7c6d83a704c8}{set\+Graph\+Key}, the tracer is placed on the data point of the graph which is closest to the key, but which is not necessarily exactly there. If {\itshape enabled} is true, the tracer will be positioned exactly at the specified key, and the appropriate value will be interpolated from the graph\textquotesingle{}s data points linearly.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_item_tracer_af5886f4ded8dd68cb4f3388f390790c0}{set\+Graph}, \hyperlink{class_q_c_p_item_tracer_a6840143b42f3b685cedf7c6d83a704c8}{set\+Graph\+Key} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_item_tracer_af8048636fc1ef0152e51809b008df2ca}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!set\+Pen@{set\+Pen}}
+\index{set\+Pen@{set\+Pen}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{set\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Tracer\+::set\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_tracer_af8048636fc1ef0152e51809b008df2ca}
+Sets the pen that will be used to draw the line of the tracer
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_item_tracer_ae1bf70db7f13f928660168cd3e5069f3}{set\+Selected\+Pen}, \hyperlink{class_q_c_p_item_tracer_a2c303f7470a30084daa201ed556b3c36}{set\+Brush} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_item_tracer_a0f55c084980a7a312af859d3e7b558ef}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!set\+Selected\+Brush@{set\+Selected\+Brush}}
+\index{set\+Selected\+Brush@{set\+Selected\+Brush}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{set\+Selected\+Brush}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Tracer\+::set\+Selected\+Brush (
+\begin{DoxyParamCaption}
+\item[{const Q\+Brush \&}]{brush}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_tracer_a0f55c084980a7a312af859d3e7b558ef}
+Sets the brush that will be used to draw any fills of the tracer, when selected.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_item_tracer_a2c303f7470a30084daa201ed556b3c36}{set\+Brush}, \hyperlink{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}{set\+Selected} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_item_tracer_ae1bf70db7f13f928660168cd3e5069f3}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!set\+Selected\+Pen@{set\+Selected\+Pen}}
+\index{set\+Selected\+Pen@{set\+Selected\+Pen}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{set\+Selected\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Tracer\+::set\+Selected\+Pen (
+\begin{DoxyParamCaption}
+\item[{const Q\+Pen \&}]{pen}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_tracer_ae1bf70db7f13f928660168cd3e5069f3}
+Sets the pen that will be used to draw the line of the tracer when selected
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_item_tracer_af8048636fc1ef0152e51809b008df2ca}{set\+Pen}, \hyperlink{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}{set\+Selected} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_item_tracer_ae47fe0617f5fef5fdb766999569be10a}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!set\+Size@{set\+Size}}
+\index{set\+Size@{set\+Size}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{set\+Size}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Tracer\+::set\+Size (
+\begin{DoxyParamCaption}
+\item[{double}]{size}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_tracer_ae47fe0617f5fef5fdb766999569be10a}
+Sets the size of the tracer in pixels, if the style supports setting a size (e.\+g. \hyperlink{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500a4ed5f01f2c5fd86d980366d79f481b9b}{ts\+Square} does, \hyperlink{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500af562ec81ac3ba99e26ef8540cf1ec16f}{ts\+Crosshair} does not). \hypertarget{class_q_c_p_item_tracer_a41a2ac4f1acd7897b4e2a2579c03204e}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!set\+Style@{set\+Style}}
+\index{set\+Style@{set\+Style}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{set\+Style}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Tracer\+::set\+Style (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Item\+Tracer\+::\+Tracer\+Style}}]{style}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_tracer_a41a2ac4f1acd7897b4e2a2579c03204e}
+Sets the style/visual appearance of the tracer.
+
+If you only want to use the tracer {\itshape position} as an anchor for other items, set {\itshape style} to \hyperlink{class_q_c_p_item_tracer_a2f05ddb13978036f902ca3ab47076500aac27462c79146225bfa8fba24d2ee8a4}{ts\+None}. \hypertarget{class_q_c_p_item_tracer_a2607fcb3d01e90773ea1532fd6803760}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!size@{size}}
+\index{size@{size}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Item\+Tracer\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_item_tracer_a2607fcb3d01e90773ea1532fd6803760}
+\hypertarget{class_q_c_p_item_tracer_a871832dace1709f877c3136fac7ae1ec}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!style@{style}}
+\index{style@{style}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{style}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tracer\+Style} Q\+C\+P\+Item\+Tracer\+::style (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_item_tracer_a871832dace1709f877c3136fac7ae1ec}
+\hypertarget{class_q_c_p_item_tracer_a5b90296109e36384aedbc8908a670413}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!update\+Position@{update\+Position}}
+\index{update\+Position@{update\+Position}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{update\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Item\+Tracer\+::update\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_item_tracer_a5b90296109e36384aedbc8908a670413}
+If the tracer is connected with a graph (\hyperlink{class_q_c_p_item_tracer_af5886f4ded8dd68cb4f3388f390790c0}{set\+Graph}), this function updates the tracer\textquotesingle{}s {\itshape position} to reside on the graph data, depending on the configured key (\hyperlink{class_q_c_p_item_tracer_a6840143b42f3b685cedf7c6d83a704c8}{set\+Graph\+Key}).
+
+It is called automatically on every redraw and normally doesn\textquotesingle{}t need to be called manually. One exception is when you want to read the tracer coordinates via {\itshape position} and are not sure that the graph\textquotesingle{}s data (or the tracer key with \hyperlink{class_q_c_p_item_tracer_a6840143b42f3b685cedf7c6d83a704c8}{set\+Graph\+Key}) hasn\textquotesingle{}t changed since the last redraw. In that situation, call this function before accessing {\itshape position}, to make sure you don\textquotesingle{}t get out-\/of-\/date coordinates.
+
+If there is no graph set on this tracer, this function does nothing. 
+
+\subsection{Member Data Documentation}
+\hypertarget{class_q_c_p_item_tracer_a6597be63a17a266233941354200b2340}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!m\+Brush@{m\+Brush}}
+\index{m\+Brush@{m\+Brush}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{m\+Brush}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Brush Q\+C\+P\+Item\+Tracer\+::m\+Brush\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_item_tracer_a6597be63a17a266233941354200b2340}
+\hypertarget{class_q_c_p_item_tracer_a2d70cf616b579563aa15f796dfc143ac}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!m\+Graph@{m\+Graph}}
+\index{m\+Graph@{m\+Graph}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{m\+Graph}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Graph}$\ast$ Q\+C\+P\+Item\+Tracer\+::m\+Graph\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_item_tracer_a2d70cf616b579563aa15f796dfc143ac}
+\hypertarget{class_q_c_p_item_tracer_a8fa20f2e9ee07d21fd7c8d30ba4702ca}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!m\+Graph\+Key@{m\+Graph\+Key}}
+\index{m\+Graph\+Key@{m\+Graph\+Key}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{m\+Graph\+Key}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Item\+Tracer\+::m\+Graph\+Key\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_item_tracer_a8fa20f2e9ee07d21fd7c8d30ba4702ca}
+\hypertarget{class_q_c_p_item_tracer_afab37c22ad39f235921e86f93cd84595}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!m\+Interpolating@{m\+Interpolating}}
+\index{m\+Interpolating@{m\+Interpolating}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{m\+Interpolating}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Item\+Tracer\+::m\+Interpolating\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_item_tracer_afab37c22ad39f235921e86f93cd84595}
+\hypertarget{class_q_c_p_item_tracer_a579e3bd6bd16d6aaff03638dc8a99a69}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!m\+Pen@{m\+Pen}}
+\index{m\+Pen@{m\+Pen}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{m\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pen Q\+C\+P\+Item\+Tracer\+::m\+Pen\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_item_tracer_a579e3bd6bd16d6aaff03638dc8a99a69}
+\hypertarget{class_q_c_p_item_tracer_a1c15d2adde40efdcc0ef1ff78fd256a6}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!m\+Selected\+Brush@{m\+Selected\+Brush}}
+\index{m\+Selected\+Brush@{m\+Selected\+Brush}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{m\+Selected\+Brush}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Brush Q\+C\+P\+Item\+Tracer\+::m\+Selected\+Brush\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_item_tracer_a1c15d2adde40efdcc0ef1ff78fd256a6}
+\hypertarget{class_q_c_p_item_tracer_a3f61829784200819661d1e2a5354d866}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!m\+Selected\+Pen@{m\+Selected\+Pen}}
+\index{m\+Selected\+Pen@{m\+Selected\+Pen}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{m\+Selected\+Pen}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Pen Q\+C\+P\+Item\+Tracer\+::m\+Selected\+Pen\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_item_tracer_a3f61829784200819661d1e2a5354d866}
+\hypertarget{class_q_c_p_item_tracer_a575153a24bb357d1e006f6bc3bd099b9}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!m\+Size@{m\+Size}}
+\index{m\+Size@{m\+Size}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{m\+Size}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Item\+Tracer\+::m\+Size\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_item_tracer_a575153a24bb357d1e006f6bc3bd099b9}
+\hypertarget{class_q_c_p_item_tracer_afb1f236bebf417544e0138fef22a292e}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!m\+Style@{m\+Style}}
+\index{m\+Style@{m\+Style}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{m\+Style}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tracer\+Style} Q\+C\+P\+Item\+Tracer\+::m\+Style\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_item_tracer_afb1f236bebf417544e0138fef22a292e}
+\hypertarget{class_q_c_p_item_tracer_a69917e2fdb2b3a929c196958feee7cbe}{}\index{Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}!position@{position}}
+\index{position@{position}!Q\+C\+P\+Item\+Tracer@{Q\+C\+P\+Item\+Tracer}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+C\+P\+Item\+Position}$\ast$ const Q\+C\+P\+Item\+Tracer\+::position}\label{class_q_c_p_item_tracer_a69917e2fdb2b3a929c196958feee7cbe}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{qcustomplot_8h}{qcustomplot.\+h}\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}\end{DoxyCompactItemize}

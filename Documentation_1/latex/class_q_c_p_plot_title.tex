@@ -1,0 +1,422 @@
+\hypertarget{class_q_c_p_plot_title}{}\section{Q\+C\+P\+Plot\+Title Class Reference}
+\label{class_q_c_p_plot_title}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+
+
+A layout element displaying a plot title text.  
+
+
+
+
+{\ttfamily \#include $<$qcustomplot.\+h$>$}
+
+Inheritance diagram for Q\+C\+P\+Plot\+Title\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_q_c_p_plot_title}
+\end{center}
+\end{figure}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_q_c_p_plot_title_a3a01ede2da3b0b5eda33aa5274cc3523}{selection\+Changed} (bool \hyperlink{class_q_c_p_plot_title_a9771f3a4bca026484d7c8b5d953b5e82}{selected})
+\item 
+void \hyperlink{class_q_c_p_plot_title_a5eac3c17a4dbabb75250bc1210a83cfc}{selectable\+Changed} (bool \hyperlink{class_q_c_p_plot_title_a8d75c7cbcf2049c9512a3335d6f11416}{selectable})
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_c_p_plot_title_aaae17bee2de6d6a1e695f76fb1abed03}{Q\+C\+P\+Plot\+Title} (\hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} $\ast$\hyperlink{class_q_c_p_layerable_ab7e0e94461566093d36ffc0f5312b109}{parent\+Plot})
+\item 
+\hyperlink{class_q_c_p_plot_title_a90b9f46ceccbeee41f71c895a8c7ee1f}{Q\+C\+P\+Plot\+Title} (\hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} $\ast$\hyperlink{class_q_c_p_layerable_ab7e0e94461566093d36ffc0f5312b109}{parent\+Plot}, const Q\+String \&\hyperlink{class_q_c_p_plot_title_aeaa6f2384a611e8a610262b976b3cee5}{text})
+\item 
+Q\+String \hyperlink{class_q_c_p_plot_title_aeaa6f2384a611e8a610262b976b3cee5}{text} () const 
+\item 
+Q\+Font \hyperlink{class_q_c_p_plot_title_aa5f4cf007db51ccdd1c137191f564119}{font} () const 
+\item 
+Q\+Color \hyperlink{class_q_c_p_plot_title_a69f2cae768ff84dbf9f8a387ad617781}{text\+Color} () const 
+\item 
+Q\+Font \hyperlink{class_q_c_p_plot_title_aa865a3656e01ee8db41837afa892f2a3}{selected\+Font} () const 
+\item 
+Q\+Color \hyperlink{class_q_c_p_plot_title_ab2262e40edfc41540c1dbc1c4234f9d2}{selected\+Text\+Color} () const 
+\item 
+bool \hyperlink{class_q_c_p_plot_title_a8d75c7cbcf2049c9512a3335d6f11416}{selectable} () const 
+\item 
+bool \hyperlink{class_q_c_p_plot_title_a9771f3a4bca026484d7c8b5d953b5e82}{selected} () const 
+\item 
+void \hyperlink{class_q_c_p_plot_title_aae5a93e88050dfb2cbf6adc087516821}{set\+Text} (const Q\+String \&\hyperlink{class_q_c_p_plot_title_aeaa6f2384a611e8a610262b976b3cee5}{text})
+\item 
+void \hyperlink{class_q_c_p_plot_title_a199fc7170802ea65006c371875349e37}{set\+Font} (const Q\+Font \&\hyperlink{class_q_c_p_plot_title_aa5f4cf007db51ccdd1c137191f564119}{font})
+\item 
+void \hyperlink{class_q_c_p_plot_title_a71273e3a0ca6b4c151591b37b9e5ce33}{set\+Text\+Color} (const Q\+Color \&color)
+\item 
+void \hyperlink{class_q_c_p_plot_title_a5245980ead999ceed51dbe702d0e3131}{set\+Selected\+Font} (const Q\+Font \&\hyperlink{class_q_c_p_plot_title_aa5f4cf007db51ccdd1c137191f564119}{font})
+\item 
+void \hyperlink{class_q_c_p_plot_title_a09ffd8c52ac8824d00382f84be391b66}{set\+Selected\+Text\+Color} (const Q\+Color \&color)
+\item 
+Q\+\_\+\+S\+L\+O\+T void \hyperlink{class_q_c_p_plot_title_a8866b07b9fa14877d4cefbf38406c5dd}{set\+Selectable} (bool \hyperlink{class_q_c_p_plot_title_a8d75c7cbcf2049c9512a3335d6f11416}{selectable})
+\item 
+Q\+\_\+\+S\+L\+O\+T void \hyperlink{class_q_c_p_plot_title_a8d441a889d371307df86f1ab7687a333}{set\+Selected} (bool \hyperlink{class_q_c_p_plot_title_a9771f3a4bca026484d7c8b5d953b5e82}{selected})
+\item 
+virtual double \hyperlink{class_q_c_p_plot_title_a5b7ae716be9134a48f4e378feb0e6699}{select\+Test} (const Q\+Point\+F \&pos, bool only\+Selectable, Q\+Variant $\ast$details=0) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_q_c_p_plot_title_a0e2a491864bf8d8e8b159ef38e9d85bd}{apply\+Default\+Antialiasing\+Hint} (\hyperlink{class_q_c_p_painter}{Q\+C\+P\+Painter} $\ast$painter) const 
+\item 
+virtual void \hyperlink{class_q_c_p_plot_title_ae4f1f8d24489628dabb7256363b097d2}{draw} (\hyperlink{class_q_c_p_painter}{Q\+C\+P\+Painter} $\ast$painter)
+\item 
+virtual Q\+Size \hyperlink{class_q_c_p_plot_title_a695e6037e72a1e129387e7e4a980faea}{minimum\+Size\+Hint} () const 
+\item 
+virtual Q\+Size \hyperlink{class_q_c_p_plot_title_a2afaf11a379038e5ca58040a0eb0ae4c}{maximum\+Size\+Hint} () const 
+\item 
+virtual void \hyperlink{class_q_c_p_plot_title_a22672ef2abe442b1e73b7ee04cff9bdd}{select\+Event} (Q\+Mouse\+Event $\ast$event, bool additive, const Q\+Variant \&details, bool $\ast$selection\+State\+Changed)
+\item 
+virtual void \hyperlink{class_q_c_p_plot_title_ac6dfce05bebdb9bd0bfacd5ff02f3325}{deselect\+Event} (bool $\ast$selection\+State\+Changed)
+\item 
+Q\+Font \hyperlink{class_q_c_p_plot_title_a7e74004e3a68118b16491848708a8b3a}{main\+Font} () const 
+\item 
+Q\+Color \hyperlink{class_q_c_p_plot_title_ac1b02546563a2e76f97d78a576f82f5a}{main\+Text\+Color} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+String \hyperlink{class_q_c_p_plot_title_a0d961bfac1211d59d3b0bc30d35f6379}{m\+Text}
+\item 
+Q\+Font \hyperlink{class_q_c_p_plot_title_ad9e2c2a2e941f3444cb692a51df0df62}{m\+Font}
+\item 
+Q\+Color \hyperlink{class_q_c_p_plot_title_a5d7f834d6522c1a72fb0682c0b7ebe13}{m\+Text\+Color}
+\item 
+Q\+Font \hyperlink{class_q_c_p_plot_title_a95003186c39bbab902873a8ef4cbb547}{m\+Selected\+Font}
+\item 
+Q\+Color \hyperlink{class_q_c_p_plot_title_a8b9760e62af92814c4effdd7ad69c5f9}{m\+Selected\+Text\+Color}
+\item 
+Q\+Rect \hyperlink{class_q_c_p_plot_title_a7178a0f6c1e633c144c17b4de4e0b840}{m\+Text\+Bounding\+Rect}
+\item 
+bool \hyperlink{class_q_c_p_plot_title_aadefb5e2b19b1cc7deda0a55ec747884}{m\+Selectable}
+\item 
+bool \hyperlink{class_q_c_p_plot_title_afef1342a20f5ca985a20b9cfdc03d815}{m\+Selected}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+A layout element displaying a plot title text. 
+
+The text may be specified with \hyperlink{class_q_c_p_plot_title_aae5a93e88050dfb2cbf6adc087516821}{set\+Text}, theformatting can be controlled with \hyperlink{class_q_c_p_plot_title_a199fc7170802ea65006c371875349e37}{set\+Font} and \hyperlink{class_q_c_p_plot_title_a71273e3a0ca6b4c151591b37b9e5ce33}{set\+Text\+Color}.
+
+A plot title can be added as follows\+: 
+\begin{DoxyCode}
+customPlot->plotLayout()->insertRow(0); \textcolor{comment}{// inserts an empty row above the default axis rect}
+customPlot->plotLayout()->addElement(0, 0, \textcolor{keyword}{new} \hyperlink{class_q_c_p_plot_title_aaae17bee2de6d6a1e695f76fb1abed03}{QCPPlotTitle}(customPlot, \textcolor{stringliteral}{"Your Plot Title"}));
+\end{DoxyCode}
+
+
+Since a plot title is a common requirement, \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} offers specialized selection signals for easy interaction with \hyperlink{class_q_c_p_plot_title}{Q\+C\+P\+Plot\+Title}. If a layout element of type \hyperlink{class_q_c_p_plot_title}{Q\+C\+P\+Plot\+Title} is clicked, the signal \hyperlink{class_q_custom_plot_a2137a819e518fee7edd1c0bf5984d8d6}{Q\+Custom\+Plot\+::title\+Click} is emitted. A double click emits the \hyperlink{class_q_custom_plot_ad51d65f6abf5edfaeef6e0519a4c1a2f}{Q\+Custom\+Plot\+::title\+Double\+Click} signal. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_q_c_p_plot_title_aaae17bee2de6d6a1e695f76fb1abed03}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{Q\+C\+P\+Plot\+Title}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Plot\+Title\+::\+Q\+C\+P\+Plot\+Title (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+Custom\+Plot} $\ast$}]{parent\+Plot}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_q_c_p_plot_title_aaae17bee2de6d6a1e695f76fb1abed03}
+Creates a new \hyperlink{class_q_c_p_plot_title}{Q\+C\+P\+Plot\+Title} instance and sets default values. The initial text is empty (\hyperlink{class_q_c_p_plot_title_aae5a93e88050dfb2cbf6adc087516821}{set\+Text}).
+
+To set the title text in the constructor, rather use \hyperlink{class_q_c_p_plot_title_a90b9f46ceccbeee41f71c895a8c7ee1f}{Q\+C\+P\+Plot\+Title(\+Q\+Custom\+Plot $\ast$parent\+Plot, const Q\+String \&text)}. \hypertarget{class_q_c_p_plot_title_a90b9f46ceccbeee41f71c895a8c7ee1f}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{Q\+C\+P\+Plot\+Title}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Plot\+Title\+::\+Q\+C\+P\+Plot\+Title (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+Custom\+Plot} $\ast$}]{parent\+Plot, }
+\item[{const Q\+String \&}]{text}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_q_c_p_plot_title_a90b9f46ceccbeee41f71c895a8c7ee1f}
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Creates a new \hyperlink{class_q_c_p_plot_title}{Q\+C\+P\+Plot\+Title} instance and sets default values. The initial text is set to {\itshape text}. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_q_c_p_plot_title_a0e2a491864bf8d8e8b159ef38e9d85bd}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!apply\+Default\+Antialiasing\+Hint@{apply\+Default\+Antialiasing\+Hint}}
+\index{apply\+Default\+Antialiasing\+Hint@{apply\+Default\+Antialiasing\+Hint}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{apply\+Default\+Antialiasing\+Hint}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::apply\+Default\+Antialiasing\+Hint (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Painter} $\ast$}]{painter}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_plot_title_a0e2a491864bf8d8e8b159ef38e9d85bd}
+
+
+Reimplemented from \hyperlink{class_q_c_p_layout_element_ad6d2b4bb0291c2441b2e1ca3d5296df5}{Q\+C\+P\+Layout\+Element}.
+
+\hypertarget{class_q_c_p_plot_title_ac6dfce05bebdb9bd0bfacd5ff02f3325}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!deselect\+Event@{deselect\+Event}}
+\index{deselect\+Event@{deselect\+Event}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{deselect\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::deselect\+Event (
+\begin{DoxyParamCaption}
+\item[{bool $\ast$}]{selection\+State\+Changed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_plot_title_ac6dfce05bebdb9bd0bfacd5ff02f3325}
+
+
+Reimplemented from \hyperlink{class_q_c_p_layerable_ae546370644a5551c76af739afc008bee}{Q\+C\+P\+Layerable}.
+
+\hypertarget{class_q_c_p_plot_title_ae4f1f8d24489628dabb7256363b097d2}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!draw@{draw}}
+\index{draw@{draw}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::draw (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Painter} $\ast$}]{painter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_plot_title_ae4f1f8d24489628dabb7256363b097d2}
+
+
+Reimplemented from \hyperlink{class_q_c_p_layout_element_a547bcc1e6e2be5645ca781efe0834653}{Q\+C\+P\+Layout\+Element}.
+
+\hypertarget{class_q_c_p_plot_title_aa5f4cf007db51ccdd1c137191f564119}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!font@{font}}
+\index{font@{font}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{font}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Font Q\+C\+P\+Plot\+Title\+::font (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_plot_title_aa5f4cf007db51ccdd1c137191f564119}
+\hypertarget{class_q_c_p_plot_title_a7e74004e3a68118b16491848708a8b3a}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!main\+Font@{main\+Font}}
+\index{main\+Font@{main\+Font}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{main\+Font}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Font Q\+C\+P\+Plot\+Title\+::main\+Font (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_plot_title_a7e74004e3a68118b16491848708a8b3a}
+\hypertarget{class_q_c_p_plot_title_ac1b02546563a2e76f97d78a576f82f5a}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!main\+Text\+Color@{main\+Text\+Color}}
+\index{main\+Text\+Color@{main\+Text\+Color}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{main\+Text\+Color}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color Q\+C\+P\+Plot\+Title\+::main\+Text\+Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_plot_title_ac1b02546563a2e76f97d78a576f82f5a}
+\hypertarget{class_q_c_p_plot_title_a2afaf11a379038e5ca58040a0eb0ae4c}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!maximum\+Size\+Hint@{maximum\+Size\+Hint}}
+\index{maximum\+Size\+Hint@{maximum\+Size\+Hint}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{maximum\+Size\+Hint}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Size Q\+C\+P\+Plot\+Title\+::maximum\+Size\+Hint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_plot_title_a2afaf11a379038e5ca58040a0eb0ae4c}
+Returns the maximum size this layout element (the inner \hyperlink{class_q_c_p_layout_element_affdfea003469aac3d0fac5f4e06171bc}{rect}) may be expanded to.
+
+if a maximum size (\hyperlink{class_q_c_p_layout_element_a74eb5280a737ab44833d506db65efd95}{set\+Maximum\+Size}) was not set manually, parent layouts consult this function to determine the maximum allowed size of this layout element. (A manual maximum size is considered set if it is smaller than Qt\textquotesingle{}s Q\+W\+I\+D\+G\+E\+T\+S\+I\+Z\+E\+\_\+\+M\+A\+X.) 
+
+Reimplemented from \hyperlink{class_q_c_p_layout_element_adbd3a00fec44c977150c6be7329eb801}{Q\+C\+P\+Layout\+Element}.
+
+\hypertarget{class_q_c_p_plot_title_a695e6037e72a1e129387e7e4a980faea}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!minimum\+Size\+Hint@{minimum\+Size\+Hint}}
+\index{minimum\+Size\+Hint@{minimum\+Size\+Hint}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{minimum\+Size\+Hint}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Size Q\+C\+P\+Plot\+Title\+::minimum\+Size\+Hint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_plot_title_a695e6037e72a1e129387e7e4a980faea}
+Returns the minimum size this layout element (the inner \hyperlink{class_q_c_p_layout_element_affdfea003469aac3d0fac5f4e06171bc}{rect}) may be compressed to.
+
+if a minimum size (\hyperlink{class_q_c_p_layout_element_a5dd29a3c8bc88440c97c06b67be7886b}{set\+Minimum\+Size}) was not set manually, parent layouts consult this function to determine the minimum allowed size of this layout element. (A manual minimum size is considered set if it is non-\/zero.) 
+
+Reimplemented from \hyperlink{class_q_c_p_layout_element_aebe14fb71f858c0f98caf8d342a9864a}{Q\+C\+P\+Layout\+Element}.
+
+\hypertarget{class_q_c_p_plot_title_a8d75c7cbcf2049c9512a3335d6f11416}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!selectable@{selectable}}
+\index{selectable@{selectable}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{selectable}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Plot\+Title\+::selectable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_plot_title_a8d75c7cbcf2049c9512a3335d6f11416}
+\hypertarget{class_q_c_p_plot_title_a5eac3c17a4dbabb75250bc1210a83cfc}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!selectable\+Changed@{selectable\+Changed}}
+\index{selectable\+Changed@{selectable\+Changed}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{selectable\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::selectable\+Changed (
+\begin{DoxyParamCaption}
+\item[{bool}]{selectable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_q_c_p_plot_title_a5eac3c17a4dbabb75250bc1210a83cfc}
+\hypertarget{class_q_c_p_plot_title_a9771f3a4bca026484d7c8b5d953b5e82}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!selected@{selected}}
+\index{selected@{selected}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{selected}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Plot\+Title\+::selected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_plot_title_a9771f3a4bca026484d7c8b5d953b5e82}
+\hypertarget{class_q_c_p_plot_title_aa865a3656e01ee8db41837afa892f2a3}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!selected\+Font@{selected\+Font}}
+\index{selected\+Font@{selected\+Font}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{selected\+Font}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Font Q\+C\+P\+Plot\+Title\+::selected\+Font (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_plot_title_aa865a3656e01ee8db41837afa892f2a3}
+\hypertarget{class_q_c_p_plot_title_ab2262e40edfc41540c1dbc1c4234f9d2}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!selected\+Text\+Color@{selected\+Text\+Color}}
+\index{selected\+Text\+Color@{selected\+Text\+Color}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{selected\+Text\+Color}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color Q\+C\+P\+Plot\+Title\+::selected\+Text\+Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_plot_title_ab2262e40edfc41540c1dbc1c4234f9d2}
+\hypertarget{class_q_c_p_plot_title_a22672ef2abe442b1e73b7ee04cff9bdd}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!select\+Event@{select\+Event}}
+\index{select\+Event@{select\+Event}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{select\+Event}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::select\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Mouse\+Event $\ast$}]{event, }
+\item[{bool}]{additive, }
+\item[{const Q\+Variant \&}]{details, }
+\item[{bool $\ast$}]{selection\+State\+Changed}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_q_c_p_plot_title_a22672ef2abe442b1e73b7ee04cff9bdd}
+
+
+Reimplemented from \hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{Q\+C\+P\+Layerable}.
+
+\hypertarget{class_q_c_p_plot_title_a3a01ede2da3b0b5eda33aa5274cc3523}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!selection\+Changed@{selection\+Changed}}
+\index{selection\+Changed@{selection\+Changed}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{selection\+Changed}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::selection\+Changed (
+\begin{DoxyParamCaption}
+\item[{bool}]{selected}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}\label{class_q_c_p_plot_title_a3a01ede2da3b0b5eda33aa5274cc3523}
+This signal is emitted when the selection state has changed to {\itshape selected}, either by user interaction or by a direct call to \hyperlink{class_q_c_p_plot_title_a8d441a889d371307df86f1ab7687a333}{set\+Selected}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_plot_title_a8d441a889d371307df86f1ab7687a333}{set\+Selected}, \hyperlink{class_q_c_p_plot_title_a8866b07b9fa14877d4cefbf38406c5dd}{set\+Selectable} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_plot_title_a5b7ae716be9134a48f4e378feb0e6699}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!select\+Test@{select\+Test}}
+\index{select\+Test@{select\+Test}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{select\+Test}]{\setlength{\rightskip}{0pt plus 5cm}double Q\+C\+P\+Plot\+Title\+::select\+Test (
+\begin{DoxyParamCaption}
+\item[{const Q\+Point\+F \&}]{pos, }
+\item[{bool}]{only\+Selectable, }
+\item[{Q\+Variant $\ast$}]{details = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_q_c_p_plot_title_a5b7ae716be9134a48f4e378feb0e6699}
+Layout elements are sensitive to events inside their outer rect. If {\itshape pos} is within the outer rect, this method returns a value corresponding to 0.\+99 times the parent plot\textquotesingle{}s selection tolerance. However, layout elements are not selectable by default. So if {\itshape only\+Selectable} is true, -\/1.\+0 is returned.
+
+See \hyperlink{class_q_c_p_layerable_a4001c4d0dfec55598efa4d531f2179a9}{Q\+C\+P\+Layerable\+::select\+Test} for a general explanation of this virtual method.
+
+\hyperlink{class_q_c_p_layout_element}{Q\+C\+P\+Layout\+Element} subclasses may reimplement this method to provide more specific selection test behaviour. 
+
+Reimplemented from \hyperlink{class_q_c_p_layout_element_a9fcf5d0ea19f2c23b2b528bce2c6f095}{Q\+C\+P\+Layout\+Element}.
+
+\hypertarget{class_q_c_p_plot_title_a199fc7170802ea65006c371875349e37}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!set\+Font@{set\+Font}}
+\index{set\+Font@{set\+Font}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{set\+Font}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::set\+Font (
+\begin{DoxyParamCaption}
+\item[{const Q\+Font \&}]{font}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_plot_title_a199fc7170802ea65006c371875349e37}
+Sets the {\itshape font} of the title text.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_plot_title_a71273e3a0ca6b4c151591b37b9e5ce33}{set\+Text\+Color}, \hyperlink{class_q_c_p_plot_title_a5245980ead999ceed51dbe702d0e3131}{set\+Selected\+Font} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_plot_title_a8866b07b9fa14877d4cefbf38406c5dd}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!set\+Selectable@{set\+Selectable}}
+\index{set\+Selectable@{set\+Selectable}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{set\+Selectable}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::set\+Selectable (
+\begin{DoxyParamCaption}
+\item[{bool}]{selectable}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_plot_title_a8866b07b9fa14877d4cefbf38406c5dd}
+Sets whether the user may select this plot title to {\itshape selectable}.
+
+Note that even when {\itshape selectable} is set to {\ttfamily false}, the selection state may be changed programmatically via \hyperlink{class_q_c_p_plot_title_a8d441a889d371307df86f1ab7687a333}{set\+Selected}. \hypertarget{class_q_c_p_plot_title_a8d441a889d371307df86f1ab7687a333}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!set\+Selected@{set\+Selected}}
+\index{set\+Selected@{set\+Selected}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{set\+Selected}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::set\+Selected (
+\begin{DoxyParamCaption}
+\item[{bool}]{selected}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_plot_title_a8d441a889d371307df86f1ab7687a333}
+Sets the selection state of this plot title to {\itshape selected}. If the selection has changed, \hyperlink{class_q_c_p_plot_title_a3a01ede2da3b0b5eda33aa5274cc3523}{selection\+Changed} is emitted.
+
+Note that this function can change the selection state independently of the current \hyperlink{class_q_c_p_plot_title_a8866b07b9fa14877d4cefbf38406c5dd}{set\+Selectable} state. \hypertarget{class_q_c_p_plot_title_a5245980ead999ceed51dbe702d0e3131}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!set\+Selected\+Font@{set\+Selected\+Font}}
+\index{set\+Selected\+Font@{set\+Selected\+Font}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{set\+Selected\+Font}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::set\+Selected\+Font (
+\begin{DoxyParamCaption}
+\item[{const Q\+Font \&}]{font}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_plot_title_a5245980ead999ceed51dbe702d0e3131}
+Sets the {\itshape font} of the title text that will be used if the plot title is selected (\hyperlink{class_q_c_p_plot_title_a8d441a889d371307df86f1ab7687a333}{set\+Selected}).
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_plot_title_a199fc7170802ea65006c371875349e37}{set\+Font} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_plot_title_a09ffd8c52ac8824d00382f84be391b66}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!set\+Selected\+Text\+Color@{set\+Selected\+Text\+Color}}
+\index{set\+Selected\+Text\+Color@{set\+Selected\+Text\+Color}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{set\+Selected\+Text\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::set\+Selected\+Text\+Color (
+\begin{DoxyParamCaption}
+\item[{const Q\+Color \&}]{color}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_plot_title_a09ffd8c52ac8824d00382f84be391b66}
+Sets the {\itshape color} of the title text that will be used if the plot title is selected (\hyperlink{class_q_c_p_plot_title_a8d441a889d371307df86f1ab7687a333}{set\+Selected}).
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_plot_title_a71273e3a0ca6b4c151591b37b9e5ce33}{set\+Text\+Color} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_plot_title_aae5a93e88050dfb2cbf6adc087516821}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!set\+Text@{set\+Text}}
+\index{set\+Text@{set\+Text}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{set\+Text}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::set\+Text (
+\begin{DoxyParamCaption}
+\item[{const Q\+String \&}]{text}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_plot_title_aae5a93e88050dfb2cbf6adc087516821}
+Sets the text that will be displayed to {\itshape text}. Multiple lines can be created by insertion of \char`\"{}\textbackslash{}n\char`\"{}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_plot_title_a199fc7170802ea65006c371875349e37}{set\+Font}, \hyperlink{class_q_c_p_plot_title_a71273e3a0ca6b4c151591b37b9e5ce33}{set\+Text\+Color} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_plot_title_a71273e3a0ca6b4c151591b37b9e5ce33}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!set\+Text\+Color@{set\+Text\+Color}}
+\index{set\+Text\+Color@{set\+Text\+Color}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{set\+Text\+Color}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Plot\+Title\+::set\+Text\+Color (
+\begin{DoxyParamCaption}
+\item[{const Q\+Color \&}]{color}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_plot_title_a71273e3a0ca6b4c151591b37b9e5ce33}
+Sets the {\itshape color} of the title text.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_q_c_p_plot_title_a199fc7170802ea65006c371875349e37}{set\+Font}, \hyperlink{class_q_c_p_plot_title_a09ffd8c52ac8824d00382f84be391b66}{set\+Selected\+Text\+Color} 
+\end{DoxySeeAlso}
+\hypertarget{class_q_c_p_plot_title_aeaa6f2384a611e8a610262b976b3cee5}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!text@{text}}
+\index{text@{text}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{text}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Q\+C\+P\+Plot\+Title\+::text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_plot_title_aeaa6f2384a611e8a610262b976b3cee5}
+\hypertarget{class_q_c_p_plot_title_a69f2cae768ff84dbf9f8a387ad617781}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!text\+Color@{text\+Color}}
+\index{text\+Color@{text\+Color}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{text\+Color}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color Q\+C\+P\+Plot\+Title\+::text\+Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_plot_title_a69f2cae768ff84dbf9f8a387ad617781}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_q_c_p_plot_title_ad9e2c2a2e941f3444cb692a51df0df62}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!m\+Font@{m\+Font}}
+\index{m\+Font@{m\+Font}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{m\+Font}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Font Q\+C\+P\+Plot\+Title\+::m\+Font\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_plot_title_ad9e2c2a2e941f3444cb692a51df0df62}
+\hypertarget{class_q_c_p_plot_title_aadefb5e2b19b1cc7deda0a55ec747884}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!m\+Selectable@{m\+Selectable}}
+\index{m\+Selectable@{m\+Selectable}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{m\+Selectable}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Plot\+Title\+::m\+Selectable\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_plot_title_aadefb5e2b19b1cc7deda0a55ec747884}
+\hypertarget{class_q_c_p_plot_title_afef1342a20f5ca985a20b9cfdc03d815}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!m\+Selected@{m\+Selected}}
+\index{m\+Selected@{m\+Selected}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{m\+Selected}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Plot\+Title\+::m\+Selected\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_plot_title_afef1342a20f5ca985a20b9cfdc03d815}
+\hypertarget{class_q_c_p_plot_title_a95003186c39bbab902873a8ef4cbb547}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!m\+Selected\+Font@{m\+Selected\+Font}}
+\index{m\+Selected\+Font@{m\+Selected\+Font}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{m\+Selected\+Font}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Font Q\+C\+P\+Plot\+Title\+::m\+Selected\+Font\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_plot_title_a95003186c39bbab902873a8ef4cbb547}
+\hypertarget{class_q_c_p_plot_title_a8b9760e62af92814c4effdd7ad69c5f9}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!m\+Selected\+Text\+Color@{m\+Selected\+Text\+Color}}
+\index{m\+Selected\+Text\+Color@{m\+Selected\+Text\+Color}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{m\+Selected\+Text\+Color}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color Q\+C\+P\+Plot\+Title\+::m\+Selected\+Text\+Color\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_plot_title_a8b9760e62af92814c4effdd7ad69c5f9}
+\hypertarget{class_q_c_p_plot_title_a0d961bfac1211d59d3b0bc30d35f6379}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!m\+Text@{m\+Text}}
+\index{m\+Text@{m\+Text}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{m\+Text}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Q\+C\+P\+Plot\+Title\+::m\+Text\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_plot_title_a0d961bfac1211d59d3b0bc30d35f6379}
+\hypertarget{class_q_c_p_plot_title_a7178a0f6c1e633c144c17b4de4e0b840}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!m\+Text\+Bounding\+Rect@{m\+Text\+Bounding\+Rect}}
+\index{m\+Text\+Bounding\+Rect@{m\+Text\+Bounding\+Rect}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{m\+Text\+Bounding\+Rect}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Rect Q\+C\+P\+Plot\+Title\+::m\+Text\+Bounding\+Rect\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_plot_title_a7178a0f6c1e633c144c17b4de4e0b840}
+\hypertarget{class_q_c_p_plot_title_a5d7f834d6522c1a72fb0682c0b7ebe13}{}\index{Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}!m\+Text\+Color@{m\+Text\+Color}}
+\index{m\+Text\+Color@{m\+Text\+Color}!Q\+C\+P\+Plot\+Title@{Q\+C\+P\+Plot\+Title}}
+\subsubsection[{m\+Text\+Color}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Color Q\+C\+P\+Plot\+Title\+::m\+Text\+Color\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_plot_title_a5d7f834d6522c1a72fb0682c0b7ebe13}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{qcustomplot_8h}{qcustomplot.\+h}\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}\end{DoxyCompactItemize}
