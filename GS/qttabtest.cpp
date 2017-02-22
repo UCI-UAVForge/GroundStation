@@ -35,7 +35,7 @@ void QtTabTest::startMapExecution() {
 
     /* PRIVATE SLOT */
 
-    this->MapExecutionUIWidget = new MapExecution( this->MapPlanningUIWidget->getTableAsFlightPath() );
+    //this->MapExecutionUIWidget = new MapExecution( this->MapPlanningUIWidget->getTableAsFlightPath(), new QWebView);
 
     this->addNewTab( this->MapExecutionUIWidget , QString( "Mission Execution" ) );
 

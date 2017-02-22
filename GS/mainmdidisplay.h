@@ -1,14 +1,15 @@
 #ifndef MAINMDIDISPLAY_H
 #define MAINMDIDISPLAY_H
 
-#define MINIMUM_NUMBER_OF_POINTS 1
-
 #include <QMainWindow>
 #include "qttabtest.h"
 #include "missionplanningwindow.h"
 #include "ui_mainmdidisplay.h"
-
+#include "mapwidget.h"
+#include "missionstatuswindow.h"
 #include <assert.h>
+
+#include "gscontrolpanel.h"
 
 //FOR NOW...
 #include "mapplanning.h"
@@ -16,12 +17,6 @@
 #include "maprecap.h"
 
 //TODO Getters and setters. C'mon...
-
-#define BLANK_QSTRING QString( "" )
-
-#define SAVE_SUCCESSFUL true
-
-enum Menu { Startup , Planning , Execution , Recap } ;
 
 namespace Ui {
 
@@ -37,7 +32,7 @@ public:
 
     explicit MainMDIDisplay(QWidget *parent = 0);
 
-    QMdiSubWindow * addWindow( QWidget * );
+    void addWindow( QWidget * );
 
     void addWindow( QWidget * , QString );
 
@@ -72,17 +67,9 @@ private slots:
 
     void clickedBackButton_MainDisplay();
 
-    void clickedLoadMissionButton_MainDisplay() ;
-
-    void clickedSaveMissionButton_MainDisplay() ;
-
-    void onMapUpdated() ;
-
 private:
 
     Ui::MainMDIDisplay *ui;
-
-    Menu currentMenu ;
 
     QtTabTest * qttWidget;
 
@@ -91,7 +78,7 @@ private:
 
     MapPlanning * tempMapPlanningUIWidget;
 
-    //QWebView * MapPlanningMapUIWidget;
+    MapWidget *map;
 
     MissionPlanningWindow * missionPlanningWindowUIWidget;
 
@@ -103,31 +90,27 @@ private:
 
     QVBoxLayout * MapExecutionStatusVBoxLayout;
 
+    /**
+     * @brief MissionStatusWindow holds StatusWidget and TimerWidget.
+     */
+    MissionStatusWindow msw ;
+
+    /**
+     * @brief Network log
+     */
+    messagebox mb ;
+
+    GSControlPanel gscp ;
+
     /* Buttons */
 
     //TODO Put all the buttons/other UI elements for the GUI here to organize everything in one spot
 
-    QPushButton * backToPlanningButton , * saveMissionButton , * loadMissionButton ;
-
-    QLineEdit * saveMissionByNameLineEdit ;
-
-    QLabel * saveMissionByNameLabel ;
+    QPushButton * backToPlanningButton ;
 
     /* Tabs */
 
     QWidget * MapRecapUI_TableTab , * MapRecapUI_GraphTab ;
-
-    QMdiSubWindow * MapSubWindow , * MissionControlSubWindow ;
-
-    FlightPath * missionPlanningFlightPath ;
-
-signals:
-
-    void switchedToPlanning() ;
-
-    void switchedToRecap() ;
-
-    void switchedToExecution() ;
 
 };
 

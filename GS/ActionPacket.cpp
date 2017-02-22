@@ -13,7 +13,7 @@
 // ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 // OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-#include "ActionPacket.h"
+#include "actionpacket.h"
 
 Protocol::ActionPacket::ActionPacket(uint8_t* buffer, size_t len) : ActionPacket()
 {

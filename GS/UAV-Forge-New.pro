@@ -12,9 +12,12 @@ QT       += core \
 QT       += svg
 QT       += sql
 
+QT       += webengine
+QT       += webenginewidgets
+QT       += webchannel
+QT       += websockets
+QT       += widgets
 
-QT       += webkit webkitwidgets
-QT       += webengine webenginewidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
@@ -24,6 +27,9 @@ CONFIG += c++11
 #win32{
 #    LIBS += -lws2_32
 #}
+macx {
+    QMAKE_MAC_SDK = macosx10.12
+}
 TARGET = UAV-Forge-New
 TEMPLATE = app
 
@@ -39,7 +45,6 @@ SOURCES += main.cpp\
     qcomboboxdelegate.cpp \
     videoplayer.cpp \
     gsserver.cpp \
-    gsclient.cpp \
     qcustomplot.cpp\
     networklistener.cpp \
     connectiondialog.cpp \
@@ -57,7 +62,11 @@ SOURCES += main.cpp\
     qttabtest.cpp \
     mainmdidisplay.cpp \
     missionplanningwindow.cpp \
-    dbmanager.cpp
+    dbmanager.cpp \
+    mapwidget.cpp \
+    websocketclientwrapper.cpp \
+    websockettransport.cpp \
+    tablewidget.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
@@ -71,7 +80,6 @@ HEADERS  += mainwindow.h \
     videoplayer.h \
     net.h \
     gsserver.h \
-    gsclient.h \
     qcustomplot.h\
     networklistener.h \
     connectiondialog.h \
@@ -90,7 +98,12 @@ HEADERS  += mainwindow.h \
     qttabtest.h \
     mainmdidisplay.h \
     missionplanningwindow.h \
-    dbmanager.h
+    dbmanager.h \
+    mapwidget.h \
+    websocketclientwrapper.h \
+    websockettransport.h \
+    dialog.h \
+    tablewidget.h
 
 FORMS    += mainwindow.ui \
     options.ui \
@@ -102,12 +115,17 @@ FORMS    += mainwindow.ui \
     connectiondialog.ui \
     maprecap.ui \
     qttabtest.ui \
-    mainmdidisplay.ui
+    mainmdidisplay.ui \
+    dialog.ui
 
 OTHER_FILES +=
 
 #Uncomment this line, clean the build, run qmake, and then rebuild to use the old GUI.
-#DEFINES += OLD_GUI
+DEFINES += OLD_GUI
 
 RESOURCES += \
     Resources.qrc
+
+#DISTFILES += \
+#    res/html/mapsPlanningGoogle.html
+

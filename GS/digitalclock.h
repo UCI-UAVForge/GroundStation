@@ -28,6 +28,7 @@ public:
     MapExecution* map_exec_ptr;
     QTimer* StatusTimer;
     QTimer* TimeTimer;
+    QTimer* myTimer;
 
     void initiate(QTime timein);
     // Added mapexection pointer so that mapexecution can be updated

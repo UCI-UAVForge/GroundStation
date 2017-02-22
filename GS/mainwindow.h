@@ -2,13 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "options.h"
 #include <QPropertyAnimation>
 #include <QShortcut>
 #include <QPixmap>
 #include <QDebug>
 #include <iostream>
-#include <QtWebKitWidgets/QWebView>
 #include <QUrl>
 
 #include "options.h"
@@ -56,7 +54,7 @@ private slots:
     void checkFinishStatus(int status);
 
     void showMissionPlanning();
-    void showMissionExecution();
+    void showMissionExecution(FlightPath *path = 0);
     void showMissionRecap();
     void showTutorial();
 
