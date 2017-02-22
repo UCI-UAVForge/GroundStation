@@ -1,0 +1,861 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_q_c_p_item_position" kind="class" language="C++" prot="public">
+    <compoundname>QCPItemPosition</compoundname>
+    <basecompoundref refid="class_q_c_p_item_anchor" prot="public" virt="non-virtual">QCPItemAnchor</basecompoundref>
+    <includes refid="qcustomplot_8h" local="no">qcustomplot.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8" prot="public" static="no">
+        <name>PositionType</name>
+        <enumvalue id="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8a564f5e53e550ead1ec5fc7fc7d0b73e0" prot="public">
+          <name>ptAbsolute</name>
+          <briefdescription>
+<para>Static positioning in pixels, starting from the top left corner of the viewport/widget. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8ac7d6aa89ceacb39658b0d6da061c789a" prot="public">
+          <name>ptViewportRatio</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Static positioning given by a fraction of the viewport size. For example, if you call setCoords(0, 0), the position will be at the top left corner of the viewport/widget. setCoords(1, 1) will be at the bottom right corner, setCoords(0.5, 0) will be horizontally centered and vertically at the top of the viewport/widget, etc. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8a01080fd00eaf09fa238ef6b73bbfef75" prot="public">
+          <name>ptAxisRectRatio</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Static positioning given by a fraction of the axis rect size (see <ref refid="class_q_c_p_item_position_1a0cd9b326fb324710169e92e8ca0041c2" kindref="member">setAxisRect</ref>). For example, if you call setCoords(0, 0), the position will be at the top left corner of the axis rect. setCoords(1, 1) will be at the bottom right corner, setCoords(0.5, 0) will be horizontally centered and vertically at the top of the axis rect, etc. You can also go beyond the axis rect by providing negative coordinates or coordinates larger than 1. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8ad5ffb8dc99ad73263f7010c77342294c" prot="public">
+          <name>ptPlotCoords</name>
+          <briefdescription>
+<para>Dynamic positioning at a plot coordinate defined by two axes (see <ref refid="class_q_c_p_item_position_1a2185f45c75ac8cb9be89daeaaad50e37" kindref="member">setAxes</ref>). </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Defines the ways an item position can be specified. Thus it defines what the numbers passed to <ref refid="class_q_c_p_item_position_1aa988ba4e87ab684c9021017dcaba945f" kindref="member">setCoords</ref> actually mean.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_position_1aa476abf71ed8fa4c537457ebb1a754ad" kindref="member">setType</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1549" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1549" bodyend="1557"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_q_c_p_item_position_1ae2a617dce057c5f3ec6878c1823aa291" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8" kindref="member">PositionType</ref></type>
+        <definition>PositionType QCPItemPosition::mPositionTypeX</definition>
+        <argsstring></argsstring>
+        <name>mPositionTypeX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1592" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1592" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_position_1a47c96c0ef4380e1af4aaa7c2265c260b" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8" kindref="member">PositionType</ref></type>
+        <definition>PositionType QCPItemPosition::mPositionTypeY</definition>
+        <argsstring></argsstring>
+        <name>mPositionTypeY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1592" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1592" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_position_1a63967a33933231e92f68c8ce06bfc37e" prot="protected" static="no" mutable="no">
+        <type>QPointer&lt; <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> &gt;</type>
+        <definition>QPointer&lt;QCPAxis&gt; QCPItemPosition::mKeyAxis</definition>
+        <argsstring></argsstring>
+        <name>mKeyAxis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1593" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1593" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_position_1a505dc2da24ba274452c1c817fcaba011" prot="protected" static="no" mutable="no">
+        <type>QPointer&lt; <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> &gt;</type>
+        <definition>QPointer&lt;QCPAxis&gt; QCPItemPosition::mValueAxis</definition>
+        <argsstring></argsstring>
+        <name>mValueAxis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1593" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1593" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_position_1add40fcb8994c247d85f42a126286b740" prot="protected" static="no" mutable="no">
+        <type>QPointer&lt; <ref refid="class_q_c_p_axis_rect" kindref="compound">QCPAxisRect</ref> &gt;</type>
+        <definition>QPointer&lt;QCPAxisRect&gt; QCPItemPosition::mAxisRect</definition>
+        <argsstring></argsstring>
+        <name>mAxisRect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1594" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1594" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_position_1a4ff3931ad115603dfb4c7000b24bb415" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPItemPosition::mKey</definition>
+        <argsstring></argsstring>
+        <name>mKey</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1595" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1595" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_position_1a67bf5df69f587d53731724a7d61c6c3f" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPItemPosition::mValue</definition>
+        <argsstring></argsstring>
+        <name>mValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1595" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1595" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_position_1a41b4641d18c90997b9c01bf304181bf0" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref> *</type>
+        <definition>QCPItemAnchor* QCPItemPosition::mParentAnchorX</definition>
+        <argsstring></argsstring>
+        <name>mParentAnchorX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1596" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1596" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_position_1afc6142a6a09c8fa41c44d3d54fadd737" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref> *</type>
+        <definition>QCPItemAnchor * QCPItemPosition::mParentAnchorY</definition>
+        <argsstring></argsstring>
+        <name>mParentAnchorY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1596" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1596" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_c_p_item_position_1a3efc524f37fdcd22907545eb77555ce4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPItemPosition::QCPItemPosition</definition>
+        <argsstring>(QCustomPlot *parentPlot, QCPAbstractItem *parentItem, const QString name)</argsstring>
+        <name>QCPItemPosition</name>
+        <param>
+          <type><ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> *</type>
+          <declname>parentPlot</declname>
+        </param>
+        <param>
+          <type><ref refid="class_q_c_p_abstract_item" kindref="compound">QCPAbstractItem</ref> *</type>
+          <declname>parentItem</declname>
+        </param>
+        <param>
+          <type>const QString</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new <ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref>. You shouldn&apos;t create <ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> instances directly, even if you want to make a new item subclass. Use <ref refid="class_q_c_p_abstract_item_1a75036d39c4d4e2e1a7dd145fff915d32" kindref="member">QCPAbstractItem::createPosition</ref> instead, as explained in the subclassing section of the <ref refid="class_q_c_p_abstract_item" kindref="compound">QCPAbstractItem</ref> documentation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1559" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="7626" bodyend="7635"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1ad8a289016f7a62332f9c865c39ab2047" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>QCPItemPosition::~QCPItemPosition</definition>
+        <argsstring>()</argsstring>
+        <name>~QCPItemPosition</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1560" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="7637" bodyend="7657"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1aecb709d72c9aa334a7f62e2c9e0b5d60" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8" kindref="member">PositionType</ref></type>
+        <definition>QCPItemPosition::PositionType * QCPItemPosition::type</definition>
+        <argsstring>() const </argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the current position type.</para><para>If different types were set for X and Y (<ref refid="class_q_c_p_item_position_1a2113b2351d6d00457fb3559a4e20c3ea" kindref="member">setTypeX</ref>, <ref refid="class_q_c_p_item_position_1ac2a454aa5a54c1615c50686601ec4510" kindref="member">setTypeY</ref>), this method returns the type of the X coordinate. In that case rather use <emphasis><ref refid="class_q_c_p_item_position_1a3cb68cf9c95be05c66a0f47448e328e5" kindref="member">typeX()</ref></emphasis> and <emphasis><ref refid="class_q_c_p_item_position_1a8a2fec9dec1ce006a598b32685fd7ab3" kindref="member">typeY()</ref></emphasis>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_position_1aa476abf71ed8fa4c537457ebb1a754ad" kindref="member">setType</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1563" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1563" bodyend="1563"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1a3cb68cf9c95be05c66a0f47448e328e5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8" kindref="member">PositionType</ref></type>
+        <definition>PositionType QCPItemPosition::typeX</definition>
+        <argsstring>() const </argsstring>
+        <name>typeX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1564" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1564" bodyend="1564"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1a8a2fec9dec1ce006a598b32685fd7ab3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8" kindref="member">PositionType</ref></type>
+        <definition>PositionType QCPItemPosition::typeY</definition>
+        <argsstring>() const </argsstring>
+        <name>typeY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1565" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1565" bodyend="1565"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1a7b4ffab9946945c0e11cd2352dc2e042" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref> *</type>
+        <definition>QCPItemAnchor * QCPItemPosition::parentAnchor</definition>
+        <argsstring>() const </argsstring>
+        <name>parentAnchor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the current parent anchor.</para><para>If different parent anchors were set for X and Y (<ref refid="class_q_c_p_item_position_1add71461a973927c74e42179480916d9c" kindref="member">setParentAnchorX</ref>, <ref refid="class_q_c_p_item_position_1add5ec1db9d19cec58a3b5c9e0a0c3f9d" kindref="member">setParentAnchorY</ref>), this method returns the parent anchor of the Y coordinate. In that case rather use <emphasis><ref refid="class_q_c_p_item_position_1a485abba71c8552086c5f68e95dca7f9a" kindref="member">parentAnchorX()</ref></emphasis> and <emphasis><ref refid="class_q_c_p_item_position_1a1502dba801cb20424b7e097399e372de" kindref="member">parentAnchorY()</ref></emphasis>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_position_1ac094d67a95d2dceafa0d50b9db3a7e51" kindref="member">setParentAnchor</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1566" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1566" bodyend="1566"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1a485abba71c8552086c5f68e95dca7f9a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref> *</type>
+        <definition>QCPItemAnchor* QCPItemPosition::parentAnchorX</definition>
+        <argsstring>() const </argsstring>
+        <name>parentAnchorX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1567" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1567" bodyend="1567"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1a1502dba801cb20424b7e097399e372de" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref> *</type>
+        <definition>QCPItemAnchor* QCPItemPosition::parentAnchorY</definition>
+        <argsstring>() const </argsstring>
+        <name>parentAnchorY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1568" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1568" bodyend="1568"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1ac3cb2bddf5f89e5181830be30b93d090" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double QCPItemPosition::key</definition>
+        <argsstring>() const </argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1569" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1569" bodyend="1569"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1a6817f7356d3a2b63e8446c6b6106dae1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double QCPItemPosition::value</definition>
+        <argsstring>() const </argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1570" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1570" bodyend="1570"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1a253d7adbb6d46299bd6cbc31aa8819f1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QPointF</type>
+        <definition>QPointF QCPItemPosition::coords</definition>
+        <argsstring>() const </argsstring>
+        <name>coords</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1571" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1571" bodyend="1571"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1ab99de7ae5766d246defb2de9f47eaf51" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> *</type>
+        <definition>QCPAxis* QCPItemPosition::keyAxis</definition>
+        <argsstring>() const </argsstring>
+        <name>keyAxis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1572" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1572" bodyend="1572"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1a8d3a039fb2e69df86b4015daa30dfd2d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> *</type>
+        <definition>QCPAxis* QCPItemPosition::valueAxis</definition>
+        <argsstring>() const </argsstring>
+        <name>valueAxis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1573" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1573" bodyend="1573"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1a7f10fa702a324880cc4de958f434cec7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_q_c_p_axis_rect" kindref="compound">QCPAxisRect</ref> *</type>
+        <definition>QCPAxisRect * QCPItemPosition::axisRect</definition>
+        <argsstring>() const </argsstring>
+        <name>axisRect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1574" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="7660" bodyend="7663"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1ae490f9c76ee2ba33752c495d3b6e8fb5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QPointF</type>
+        <definition>QPointF QCPItemPosition::pixelPoint</definition>
+        <argsstring>() const </argsstring>
+        <name>pixelPoint</name>
+        <reimplements refid="class_q_c_p_item_anchor_1ae92def8f9297c5d73f5806c586517bb3">pixelPoint</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the final absolute pixel position of the <ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> on the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> surface. It includes all effects of type (<ref refid="class_q_c_p_item_position_1aa476abf71ed8fa4c537457ebb1a754ad" kindref="member">setType</ref>) and possible parent anchors (<ref refid="class_q_c_p_item_position_1ac094d67a95d2dceafa0d50b9db3a7e51" kindref="member">setParentAnchor</ref>).</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_position_1ab404e56d9ac2ac2df0382c57933a71ef" kindref="member">setPixelPoint</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1575" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="7950" bodyend="8043"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1aa476abf71ed8fa4c537457ebb1a754ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemPosition::setType</definition>
+        <argsstring>(PositionType type)</argsstring>
+        <name>setType</name>
+        <param>
+          <type><ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8" kindref="member">PositionType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the type of the position. The type defines how the coordinates passed to <ref refid="class_q_c_p_item_position_1aa988ba4e87ab684c9021017dcaba945f" kindref="member">setCoords</ref> should be handled and how the <ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> should behave in the plot.</para><para>The possible values for <emphasis>type</emphasis> can be separated in two main categories:</para><para><itemizedlist>
+<listitem><para>The position is regarded as a point in plot coordinates. This corresponds to <ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8ad5ffb8dc99ad73263f7010c77342294c" kindref="member">ptPlotCoords</ref> and requires two axes that define the plot coordinate system. They can be specified with <ref refid="class_q_c_p_item_position_1a2185f45c75ac8cb9be89daeaaad50e37" kindref="member">setAxes</ref>. By default, the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref>&apos;s x- and yAxis are used.</para></listitem>
+</itemizedlist>
+<itemizedlist>
+<listitem><para>The position is fixed on the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> surface, i.e. independent of axis ranges. This corresponds to all other types, i.e. <ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8a564f5e53e550ead1ec5fc7fc7d0b73e0" kindref="member">ptAbsolute</ref>, <ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8ac7d6aa89ceacb39658b0d6da061c789a" kindref="member">ptViewportRatio</ref> and <ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8a01080fd00eaf09fa238ef6b73bbfef75" kindref="member">ptAxisRectRatio</ref>. They differ only in the way the absolute position is described, see the documentation of <ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8" kindref="member">PositionType</ref> for details. For <ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8a01080fd00eaf09fa238ef6b73bbfef75" kindref="member">ptAxisRectRatio</ref>, note that you can specify the axis rect with <ref refid="class_q_c_p_item_position_1a0cd9b326fb324710169e92e8ca0041c2" kindref="member">setAxisRect</ref>. By default this is set to the main axis rect.</para></listitem>
+</itemizedlist>
+Note that the position type <ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8ad5ffb8dc99ad73263f7010c77342294c" kindref="member">ptPlotCoords</ref> is only available (and sensible) when the position has no parent anchor (<ref refid="class_q_c_p_item_position_1ac094d67a95d2dceafa0d50b9db3a7e51" kindref="member">setParentAnchor</ref>).</para><para>If the type is changed, the apparent pixel position on the plot is preserved. This means the coordinates as retrieved with <ref refid="class_q_c_p_item_position_1a253d7adbb6d46299bd6cbc31aa8819f1" kindref="member">coords()</ref> and set with <ref refid="class_q_c_p_item_position_1aa988ba4e87ab684c9021017dcaba945f" kindref="member">setCoords</ref> may change in the process.</para><para>This method sets the type for both X and Y directions. It is also possible to set different types for X and Y, see <ref refid="class_q_c_p_item_position_1a2113b2351d6d00457fb3559a4e20c3ea" kindref="member">setTypeX</ref>, <ref refid="class_q_c_p_item_position_1ac2a454aa5a54c1615c50686601ec4510" kindref="member">setTypeY</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1578" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="7690" bodyend="7694"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1a2113b2351d6d00457fb3559a4e20c3ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemPosition::setTypeX</definition>
+        <argsstring>(PositionType type)</argsstring>
+        <name>setTypeX</name>
+        <param>
+          <type><ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8" kindref="member">PositionType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method sets the position type of the X coordinate to <emphasis>type</emphasis>.</para><para>For a detailed description of what a position type is, see the documentation of <ref refid="class_q_c_p_item_position_1aa476abf71ed8fa4c537457ebb1a754ad" kindref="member">setType</ref>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_position_1aa476abf71ed8fa4c537457ebb1a754ad" kindref="member">setType</ref>, <ref refid="class_q_c_p_item_position_1ac2a454aa5a54c1615c50686601ec4510" kindref="member">setTypeY</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1579" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="7703" bodyend="7724"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1ac2a454aa5a54c1615c50686601ec4510" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemPosition::setTypeY</definition>
+        <argsstring>(PositionType type)</argsstring>
+        <name>setTypeY</name>
+        <param>
+          <type><ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8" kindref="member">PositionType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method sets the position type of the Y coordinate to <emphasis>type</emphasis>.</para><para>For a detailed description of what a position type is, see the documentation of <ref refid="class_q_c_p_item_position_1aa476abf71ed8fa4c537457ebb1a754ad" kindref="member">setType</ref>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_position_1aa476abf71ed8fa4c537457ebb1a754ad" kindref="member">setType</ref>, <ref refid="class_q_c_p_item_position_1a2113b2351d6d00457fb3559a4e20c3ea" kindref="member">setTypeX</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1580" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="7733" bodyend="7754"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1ac094d67a95d2dceafa0d50b9db3a7e51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPItemPosition::setParentAnchor</definition>
+        <argsstring>(QCPItemAnchor *parentAnchor, bool keepPixelPosition=false)</argsstring>
+        <name>setParentAnchor</name>
+        <param>
+          <type><ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref> *</type>
+          <declname>parentAnchor</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>keepPixelPosition</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the parent of this <ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> to <emphasis>parentAnchor</emphasis>. This means the position will now follow any position changes of the anchor. The local coordinate system of positions with a parent anchor always is absolute pixels, with (0, 0) being exactly on top of the parent anchor. (Hence the type shouldn&apos;t be set to <ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8ad5ffb8dc99ad73263f7010c77342294c" kindref="member">ptPlotCoords</ref> for positions with parent anchors.)</para><para>if <emphasis>keepPixelPosition</emphasis> is true, the current pixel position of the <ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> is preserved during reparenting. If it&apos;s set to false, the coordinates are set to (0, 0), i.e. the position will be exactly on top of the parent anchor.</para><para>To remove this <ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> from any parent anchor, set <emphasis>parentAnchor</emphasis> to 0.</para><para>If the <ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> previously had no parent and the type is <ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8ad5ffb8dc99ad73263f7010c77342294c" kindref="member">ptPlotCoords</ref>, the type is set to <ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8a564f5e53e550ead1ec5fc7fc7d0b73e0" kindref="member">ptAbsolute</ref>, to keep the position in a valid state.</para><para>This method sets the parent anchor for both X and Y directions. It is also possible to set different parents for X and Y, see <ref refid="class_q_c_p_item_position_1add71461a973927c74e42179480916d9c" kindref="member">setParentAnchorX</ref>, <ref refid="class_q_c_p_item_position_1add5ec1db9d19cec58a3b5c9e0a0c3f9d" kindref="member">setParentAnchorY</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1581" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="7774" bodyend="7779"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1add71461a973927c74e42179480916d9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPItemPosition::setParentAnchorX</definition>
+        <argsstring>(QCPItemAnchor *parentAnchor, bool keepPixelPosition=false)</argsstring>
+        <name>setParentAnchorX</name>
+        <param>
+          <type><ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref> *</type>
+          <declname>parentAnchor</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>keepPixelPosition</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method sets the parent anchor of the X coordinate to <emphasis>parentAnchor</emphasis>.</para><para>For a detailed description of what a parent anchor is, see the documentation of <ref refid="class_q_c_p_item_position_1ac094d67a95d2dceafa0d50b9db3a7e51" kindref="member">setParentAnchor</ref>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_position_1ac094d67a95d2dceafa0d50b9db3a7e51" kindref="member">setParentAnchor</ref>, <ref refid="class_q_c_p_item_position_1add5ec1db9d19cec58a3b5c9e0a0c3f9d" kindref="member">setParentAnchorY</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1582" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="7788" bodyend="7844"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1add5ec1db9d19cec58a3b5c9e0a0c3f9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPItemPosition::setParentAnchorY</definition>
+        <argsstring>(QCPItemAnchor *parentAnchor, bool keepPixelPosition=false)</argsstring>
+        <name>setParentAnchorY</name>
+        <param>
+          <type><ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref> *</type>
+          <declname>parentAnchor</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>keepPixelPosition</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method sets the parent anchor of the Y coordinate to <emphasis>parentAnchor</emphasis>.</para><para>For a detailed description of what a parent anchor is, see the documentation of <ref refid="class_q_c_p_item_position_1ac094d67a95d2dceafa0d50b9db3a7e51" kindref="member">setParentAnchor</ref>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_position_1ac094d67a95d2dceafa0d50b9db3a7e51" kindref="member">setParentAnchor</ref>, <ref refid="class_q_c_p_item_position_1add71461a973927c74e42179480916d9c" kindref="member">setParentAnchorX</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1583" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="7853" bodyend="7909"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1aa988ba4e87ab684c9021017dcaba945f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemPosition::setCoords</definition>
+        <argsstring>(double key, double value)</argsstring>
+        <name>setCoords</name>
+        <param>
+          <type>double</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the coordinates of this <ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref>. What the coordinates mean, is defined by the type (<ref refid="class_q_c_p_item_position_1aa476abf71ed8fa4c537457ebb1a754ad" kindref="member">setType</ref>, <ref refid="class_q_c_p_item_position_1a2113b2351d6d00457fb3559a4e20c3ea" kindref="member">setTypeX</ref>, <ref refid="class_q_c_p_item_position_1ac2a454aa5a54c1615c50686601ec4510" kindref="member">setTypeY</ref>).</para><para>For example, if the type is <ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8a564f5e53e550ead1ec5fc7fc7d0b73e0" kindref="member">ptAbsolute</ref>, <emphasis>key</emphasis> and <emphasis>value</emphasis> mean the x and y pixel position on the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> surface. In that case the origin (0, 0) is in the top left corner of the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> viewport. If the type is <ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8ad5ffb8dc99ad73263f7010c77342294c" kindref="member">ptPlotCoords</ref>, <emphasis>key</emphasis> and <emphasis>value</emphasis> mean a point in the plot coordinate system defined by the axes set by <ref refid="class_q_c_p_item_position_1a2185f45c75ac8cb9be89daeaaad50e37" kindref="member">setAxes</ref>. By default those are the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref>&apos;s xAxis and yAxis. See the documentation of <ref refid="class_q_c_p_item_position_1aa476abf71ed8fa4c537457ebb1a754ad" kindref="member">setType</ref> for other available coordinate types and their meaning.</para><para>If different types were configured for X and Y (<ref refid="class_q_c_p_item_position_1a2113b2351d6d00457fb3559a4e20c3ea" kindref="member">setTypeX</ref>, <ref refid="class_q_c_p_item_position_1ac2a454aa5a54c1615c50686601ec4510" kindref="member">setTypeY</ref>), <emphasis>key</emphasis> and <emphasis>value</emphasis> must also be provided in the different coordinate systems. Here, the X type refers to <emphasis>key</emphasis>, and the Y type refers to <emphasis>value</emphasis>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_position_1ab404e56d9ac2ac2df0382c57933a71ef" kindref="member">setPixelPoint</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1584" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="7928" bodyend="7932"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1acc70b3abc143287f806e5f154e5e07b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemPosition::setCoords</definition>
+        <argsstring>(const QPointF &amp;coords)</argsstring>
+        <name>setCoords</name>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>coords</declname>
+          <defname>pos</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>Sets the coordinates as a QPointF <emphasis>pos</emphasis> where pos.x has the meaning of <emphasis>key</emphasis> and pos.y the meaning of <emphasis>value</emphasis> of the <ref refid="class_q_c_p_item_position_1aa988ba4e87ab684c9021017dcaba945f" kindref="member">setCoords(double key, double value)</ref> method. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1585" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="7939" bodyend="7942"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1a2185f45c75ac8cb9be89daeaaad50e37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemPosition::setAxes</definition>
+        <argsstring>(QCPAxis *keyAxis, QCPAxis *valueAxis)</argsstring>
+        <name>setAxes</name>
+        <param>
+          <type><ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> *</type>
+          <declname>keyAxis</declname>
+        </param>
+        <param>
+          <type><ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> *</type>
+          <declname>valueAxis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>When <ref refid="class_q_c_p_item_position_1aa476abf71ed8fa4c537457ebb1a754ad" kindref="member">setType</ref> is <ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8ad5ffb8dc99ad73263f7010c77342294c" kindref="member">ptPlotCoords</ref>, this function may be used to specify the axes the coordinates set with <ref refid="class_q_c_p_item_position_1aa988ba4e87ab684c9021017dcaba945f" kindref="member">setCoords</ref> relate to. By default they are set to the initial xAxis and yAxis of the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1586" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="8050" bodyend="8054"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1a0cd9b326fb324710169e92e8ca0041c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemPosition::setAxisRect</definition>
+        <argsstring>(QCPAxisRect *axisRect)</argsstring>
+        <name>setAxisRect</name>
+        <param>
+          <type><ref refid="class_q_c_p_axis_rect" kindref="compound">QCPAxisRect</ref> *</type>
+          <declname>axisRect</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>When <ref refid="class_q_c_p_item_position_1aa476abf71ed8fa4c537457ebb1a754ad" kindref="member">setType</ref> is <ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8a01080fd00eaf09fa238ef6b73bbfef75" kindref="member">ptAxisRectRatio</ref>, this function may be used to specify the axis rect the coordinates set with <ref refid="class_q_c_p_item_position_1aa988ba4e87ab684c9021017dcaba945f" kindref="member">setCoords</ref> relate to. By default this is set to the main axis rect of the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1587" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="8061" bodyend="8064"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_position_1ab404e56d9ac2ac2df0382c57933a71ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemPosition::setPixelPoint</definition>
+        <argsstring>(const QPointF &amp;pixelPoint)</argsstring>
+        <name>setPixelPoint</name>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>pixelPoint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the apparent pixel position. This works no matter what type (<ref refid="class_q_c_p_item_position_1aa476abf71ed8fa4c537457ebb1a754ad" kindref="member">setType</ref>) this <ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> is or what parent-child situation it is in, as coordinates are transformed appropriately, to make the position finally appear at the specified pixel values.</para><para>Only if the type is <ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8a564f5e53e550ead1ec5fc7fc7d0b73e0" kindref="member">ptAbsolute</ref> and no parent anchor is set, this function&apos;s effect is identical to that of <ref refid="class_q_c_p_item_position_1aa988ba4e87ab684c9021017dcaba945f" kindref="member">setCoords</ref>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_position_1ae490f9c76ee2ba33752c495d3b6e8fb5" kindref="member">pixelPoint</ref>, <ref refid="class_q_c_p_item_position_1aa988ba4e87ab684c9021017dcaba945f" kindref="member">setCoords</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1588" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="8076" bodyend="8166"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_q_c_p_item_position_1a577a7efc601df85a20b3e709d1ac320e" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type><ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> *</type>
+        <definition>virtual QCPItemPosition* QCPItemPosition::toQCPItemPosition</definition>
+        <argsstring>()</argsstring>
+        <name>toQCPItemPosition</name>
+        <reimplements refid="class_q_c_p_item_anchor_1ac54b20120669950255a63587193dbb86">toQCPItemPosition</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns 0 if this instance is merely a <ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref>, and a valid pointer of type QCPItemPosition* if it actually is a <ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> (which is a subclass of <ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref>).</para><para>This safe downcast functionality could also be achieved with a dynamic_cast. However, <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> avoids dynamic_cast to work with projects that don&apos;t have RTTI support enabled (e.g. -fno-rtti flag with gcc compiler). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1599" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1599" bodyend="1599"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Manages the position of an item. </para>    </briefdescription>
+    <detaileddescription>
+<para>Every item has at least one public <ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> member pointer which provides ways to position the item on the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> surface. Some items have multiple positions, for example <ref refid="class_q_c_p_item_rect" kindref="compound">QCPItemRect</ref> has two: <emphasis>topLeft</emphasis> and <emphasis>bottomRight</emphasis>.</para><para><ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> has a type (<ref refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8" kindref="member">PositionType</ref>) that can be set with <ref refid="class_q_c_p_item_position_1aa476abf71ed8fa4c537457ebb1a754ad" kindref="member">setType</ref>. This type defines how coordinates passed to <ref refid="class_q_c_p_item_position_1aa988ba4e87ab684c9021017dcaba945f" kindref="member">setCoords</ref> are to be interpreted, e.g. as absolute pixel coordinates, as plot coordinates of certain axes, etc. For more advanced plots it is also possible to assign different types per X/Y coordinate of the position (see <ref refid="class_q_c_p_item_position_1a2113b2351d6d00457fb3559a4e20c3ea" kindref="member">setTypeX</ref>, <ref refid="class_q_c_p_item_position_1ac2a454aa5a54c1615c50686601ec4510" kindref="member">setTypeY</ref>). This way an item could be positioned at a fixed pixel distance from the top in the Y direction, while following a plot coordinate in the X direction.</para><para>A <ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> may have a parent <ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref>, see <ref refid="class_q_c_p_item_position_1ac094d67a95d2dceafa0d50b9db3a7e51" kindref="member">setParentAnchor</ref>. This way you can tie multiple items together. If the <ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> has a parent, its coordinates (<ref refid="class_q_c_p_item_position_1aa988ba4e87ab684c9021017dcaba945f" kindref="member">setCoords</ref>) are considered to be absolute pixels in the reference frame of the parent anchor, where (0, 0) means directly ontop of the parent anchor. For example, You could attach the <emphasis>start</emphasis> position of a <ref refid="class_q_c_p_item_line" kindref="compound">QCPItemLine</ref> to the <emphasis>bottom</emphasis> anchor of a <ref refid="class_q_c_p_item_text" kindref="compound">QCPItemText</ref> to make the starting point of the line always be centered under the text label, no matter where the text is moved to. For more advanced plots, it is possible to assign different parent anchors per X/Y coordinate of the position, see <ref refid="class_q_c_p_item_position_1add71461a973927c74e42179480916d9c" kindref="member">setParentAnchorX</ref>, <ref refid="class_q_c_p_item_position_1add5ec1db9d19cec58a3b5c9e0a0c3f9d" kindref="member">setParentAnchorY</ref>. This way an item could follow another item in the X direction but stay at a fixed position in the Y direction. Or even follow item A in X, and item B in Y.</para><para>Note that every <ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> inherits from <ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref> and thus can itself be used as parent anchor for other positions.</para><para>To set the apparent pixel position on the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> surface directly, use <ref refid="class_q_c_p_item_position_1ab404e56d9ac2ac2df0382c57933a71ef" kindref="member">setPixelPoint</ref>. This works no matter what type this <ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> is or what parent-child situation it is in, as <ref refid="class_q_c_p_item_position_1ab404e56d9ac2ac2df0382c57933a71ef" kindref="member">setPixelPoint</ref> transforms the coordinates appropriately, to make the position appear at the specified pixel values. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="602">
+        <label>QCPItemPosition</label>
+        <link refid="class_q_c_p_item_position"/>
+        <childnode refid="603" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="603">
+        <label>QCPItemAnchor</label>
+        <link refid="class_q_c_p_item_anchor"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="621">
+        <label>QCPLayoutInset</label>
+        <link refid="class_q_c_p_layout_inset"/>
+        <childnode refid="613" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="614">
+        <label>QCPLayoutElement</label>
+        <link refid="class_q_c_p_layout_element"/>
+        <childnode refid="607" relation="public-inheritance">
+        </childnode>
+        <childnode refid="613" relation="usage">
+          <edgelabel>mParentLayout</edgelabel>
+        </childnode>
+      </node>
+      <node id="608">
+        <label>QObject</label>
+      </node>
+      <node id="616">
+        <label>QCPRange</label>
+        <link refid="class_q_c_p_range"/>
+      </node>
+      <node id="604">
+        <label>QCPItemPosition</label>
+        <link refid="class_q_c_p_item_position"/>
+        <childnode refid="605" relation="public-inheritance">
+        </childnode>
+        <childnode refid="605" relation="usage">
+          <edgelabel>mParentAnchorX</edgelabel>
+          <edgelabel>mParentAnchorY</edgelabel>
+        </childnode>
+      </node>
+      <node id="622">
+        <label>QCPLegend</label>
+        <link refid="class_q_c_p_legend"/>
+        <childnode refid="612" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="618">
+        <label>QCPLineEnding</label>
+        <link refid="class_q_c_p_line_ending"/>
+      </node>
+      <node id="613">
+        <label>QCPLayout</label>
+        <link refid="class_q_c_p_layout"/>
+        <childnode refid="614" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="619">
+        <label>QCPGrid</label>
+        <link refid="class_q_c_p_grid"/>
+        <childnode refid="607" relation="public-inheritance">
+        </childnode>
+        <childnode refid="615" relation="usage">
+          <edgelabel>mParentAxis</edgelabel>
+        </childnode>
+      </node>
+      <node id="617">
+        <label>QCPAxisPainterPrivate</label>
+        <link refid="class_q_c_p_axis_painter_private"/>
+        <childnode refid="618" relation="usage">
+          <edgelabel>lowerEnding</edgelabel>
+          <edgelabel>upperEnding</edgelabel>
+        </childnode>
+        <childnode refid="610" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="606">
+        <label>QCPAbstractItem</label>
+        <link refid="class_q_c_p_abstract_item"/>
+        <childnode refid="607" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="611">
+        <label>QWidget</label>
+      </node>
+      <node id="609">
+        <label>QCPLayer</label>
+        <link refid="class_q_c_p_layer"/>
+        <childnode refid="608" relation="public-inheritance">
+        </childnode>
+        <childnode refid="610" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="605">
+        <label>QCPItemAnchor</label>
+        <link refid="class_q_c_p_item_anchor"/>
+        <childnode refid="606" relation="usage">
+          <edgelabel>mParentItem</edgelabel>
+        </childnode>
+        <childnode refid="610" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="612">
+        <label>QCPLayoutGrid</label>
+        <link refid="class_q_c_p_layout_grid"/>
+        <childnode refid="613" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="607">
+        <label>QCPLayerable</label>
+        <link refid="class_q_c_p_layerable"/>
+        <childnode refid="608" relation="public-inheritance">
+        </childnode>
+        <childnode refid="609" relation="usage">
+          <edgelabel>mLayer</edgelabel>
+        </childnode>
+        <childnode refid="610" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="615">
+        <label>QCPAxis</label>
+        <link refid="class_q_c_p_axis"/>
+        <childnode refid="607" relation="public-inheritance">
+        </childnode>
+        <childnode refid="616" relation="usage">
+          <edgelabel>mRange</edgelabel>
+        </childnode>
+        <childnode refid="617" relation="usage">
+          <edgelabel>mAxisPainter</edgelabel>
+        </childnode>
+        <childnode refid="619" relation="usage">
+          <edgelabel>mGrid</edgelabel>
+        </childnode>
+        <childnode refid="620" relation="usage">
+          <edgelabel>mAxisRect</edgelabel>
+        </childnode>
+      </node>
+      <node id="620">
+        <label>QCPAxisRect</label>
+        <link refid="class_q_c_p_axis_rect"/>
+        <childnode refid="614" relation="public-inheritance">
+        </childnode>
+        <childnode refid="621" relation="usage">
+          <edgelabel>mInsetLayout</edgelabel>
+        </childnode>
+        <childnode refid="616" relation="usage">
+          <edgelabel>mDragStartVertRange</edgelabel>
+          <edgelabel>mDragStartHorzRange</edgelabel>
+        </childnode>
+      </node>
+      <node id="610">
+        <label>QCustomPlot</label>
+        <link refid="class_q_custom_plot"/>
+        <childnode refid="611" relation="public-inheritance">
+        </childnode>
+        <childnode refid="609" relation="usage">
+          <edgelabel>mCurrentLayer</edgelabel>
+        </childnode>
+        <childnode refid="612" relation="usage">
+          <edgelabel>mPlotLayout</edgelabel>
+        </childnode>
+        <childnode refid="615" relation="usage">
+          <edgelabel>yAxis2</edgelabel>
+          <edgelabel>xAxis2</edgelabel>
+          <edgelabel>xAxis</edgelabel>
+          <edgelabel>yAxis</edgelabel>
+        </childnode>
+        <childnode refid="622" relation="usage">
+          <edgelabel>legend</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1541" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1540" bodyend="1604"/>
+    <listofallmembers>
+      <member refid="class_q_c_p_item_anchor_1aef15daa640debfb11b0aeaa2116c6fbc" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>addChildX</name></member>
+      <member refid="class_q_c_p_item_anchor_1af05dc56f24536f0c7a9a0f57b58cea67" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>addChildY</name></member>
+      <member refid="class_q_c_p_item_position_1a7f10fa702a324880cc4de958f434cec7" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>axisRect</name></member>
+      <member refid="class_q_c_p_item_position_1a253d7adbb6d46299bd6cbc31aa8819f1" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>coords</name></member>
+      <member refid="class_q_c_p_item_position_1ac3cb2bddf5f89e5181830be30b93d090" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>key</name></member>
+      <member refid="class_q_c_p_item_position_1ab99de7ae5766d246defb2de9f47eaf51" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>keyAxis</name></member>
+      <member refid="class_q_c_p_item_anchor_1a00c62070333e8345976b579676ad3997" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>mAnchorId</name></member>
+      <member refid="class_q_c_p_item_position_1add40fcb8994c247d85f42a126286b740" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>mAxisRect</name></member>
+      <member refid="class_q_c_p_item_anchor_1a3c0bfd6e50f3b48e2a9b3824695b20f7" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>mChildrenX</name></member>
+      <member refid="class_q_c_p_item_anchor_1a3abe4eebd0683454d81c8341df6f7115" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>mChildrenY</name></member>
+      <member refid="class_q_c_p_item_position_1a4ff3931ad115603dfb4c7000b24bb415" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>mKey</name></member>
+      <member refid="class_q_c_p_item_position_1a63967a33933231e92f68c8ce06bfc37e" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>mKeyAxis</name></member>
+      <member refid="class_q_c_p_item_anchor_1a23ad4d0ab0d2cbb41a7baf05bcf996ec" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>mName</name></member>
+      <member refid="class_q_c_p_item_position_1a41b4641d18c90997b9c01bf304181bf0" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>mParentAnchorX</name></member>
+      <member refid="class_q_c_p_item_position_1afc6142a6a09c8fa41c44d3d54fadd737" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>mParentAnchorY</name></member>
+      <member refid="class_q_c_p_item_anchor_1a80fad480ad3bb980446ed6ebc00818ae" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>mParentItem</name></member>
+      <member refid="class_q_c_p_item_anchor_1a59b968410831ba91a25cc75a77dde6f5" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>mParentPlot</name></member>
+      <member refid="class_q_c_p_item_position_1ae2a617dce057c5f3ec6878c1823aa291" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>mPositionTypeX</name></member>
+      <member refid="class_q_c_p_item_position_1a47c96c0ef4380e1af4aaa7c2265c260b" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>mPositionTypeY</name></member>
+      <member refid="class_q_c_p_item_position_1a67bf5df69f587d53731724a7d61c6c3f" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>mValue</name></member>
+      <member refid="class_q_c_p_item_position_1a505dc2da24ba274452c1c817fcaba011" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>mValueAxis</name></member>
+      <member refid="class_q_c_p_item_anchor_1ac93984042a58c875e76847dc3e5f75fe" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>name</name></member>
+      <member refid="class_q_c_p_item_position_1a7b4ffab9946945c0e11cd2352dc2e042" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>parentAnchor</name></member>
+      <member refid="class_q_c_p_item_position_1a485abba71c8552086c5f68e95dca7f9a" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>parentAnchorX</name></member>
+      <member refid="class_q_c_p_item_position_1a1502dba801cb20424b7e097399e372de" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>parentAnchorY</name></member>
+      <member refid="class_q_c_p_item_position_1ae490f9c76ee2ba33752c495d3b6e8fb5" prot="public" virt="virtual"><scope>QCPItemPosition</scope><name>pixelPoint</name></member>
+      <member refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>PositionType</name></member>
+      <member refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8a564f5e53e550ead1ec5fc7fc7d0b73e0" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>ptAbsolute</name></member>
+      <member refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8a01080fd00eaf09fa238ef6b73bbfef75" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>ptAxisRectRatio</name></member>
+      <member refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8ad5ffb8dc99ad73263f7010c77342294c" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>ptPlotCoords</name></member>
+      <member refid="class_q_c_p_item_position_1aad9936c22bf43e3d358552f6e86dbdc8ac7d6aa89ceacb39658b0d6da061c789a" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>ptViewportRatio</name></member>
+      <member refid="class_q_c_p_item_anchor_1aeb6b681d2bf324db40a915d32ec5624f" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>QCPItemAnchor</name></member>
+      <member refid="class_q_c_p_item_position_1a3efc524f37fdcd22907545eb77555ce4" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>QCPItemPosition</name></member>
+      <member refid="class_q_c_p_item_anchor_1a230b1d494cda63458e289bbe1b642599" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>removeChildX</name></member>
+      <member refid="class_q_c_p_item_anchor_1aa2394911d8fff3bd958b9f4f1994b64d" prot="protected" virt="non-virtual"><scope>QCPItemPosition</scope><name>removeChildY</name></member>
+      <member refid="class_q_c_p_item_position_1a2185f45c75ac8cb9be89daeaaad50e37" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>setAxes</name></member>
+      <member refid="class_q_c_p_item_position_1a0cd9b326fb324710169e92e8ca0041c2" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>setAxisRect</name></member>
+      <member refid="class_q_c_p_item_position_1aa988ba4e87ab684c9021017dcaba945f" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>setCoords</name></member>
+      <member refid="class_q_c_p_item_position_1acc70b3abc143287f806e5f154e5e07b0" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>setCoords</name></member>
+      <member refid="class_q_c_p_item_position_1ac094d67a95d2dceafa0d50b9db3a7e51" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>setParentAnchor</name></member>
+      <member refid="class_q_c_p_item_position_1add71461a973927c74e42179480916d9c" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>setParentAnchorX</name></member>
+      <member refid="class_q_c_p_item_position_1add5ec1db9d19cec58a3b5c9e0a0c3f9d" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>setParentAnchorY</name></member>
+      <member refid="class_q_c_p_item_position_1ab404e56d9ac2ac2df0382c57933a71ef" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>setPixelPoint</name></member>
+      <member refid="class_q_c_p_item_position_1aa476abf71ed8fa4c537457ebb1a754ad" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>setType</name></member>
+      <member refid="class_q_c_p_item_position_1a2113b2351d6d00457fb3559a4e20c3ea" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>setTypeX</name></member>
+      <member refid="class_q_c_p_item_position_1ac2a454aa5a54c1615c50686601ec4510" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>setTypeY</name></member>
+      <member refid="class_q_c_p_item_position_1a577a7efc601df85a20b3e709d1ac320e" prot="protected" virt="virtual"><scope>QCPItemPosition</scope><name>toQCPItemPosition</name></member>
+      <member refid="class_q_c_p_item_position_1aecb709d72c9aa334a7f62e2c9e0b5d60" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>type</name></member>
+      <member refid="class_q_c_p_item_position_1a3cb68cf9c95be05c66a0f47448e328e5" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>typeX</name></member>
+      <member refid="class_q_c_p_item_position_1a8a2fec9dec1ce006a598b32685fd7ab3" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>typeY</name></member>
+      <member refid="class_q_c_p_item_position_1a6817f7356d3a2b63e8446c6b6106dae1" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>value</name></member>
+      <member refid="class_q_c_p_item_position_1a8d3a039fb2e69df86b4015daa30dfd2d" prot="public" virt="non-virtual"><scope>QCPItemPosition</scope><name>valueAxis</name></member>
+      <member refid="class_q_c_p_item_anchor_1a1868559407600688ee4d1a4621e81ceb" prot="public" virt="virtual"><scope>QCPItemPosition</scope><name>~QCPItemAnchor</name></member>
+      <member refid="class_q_c_p_item_position_1ad8a289016f7a62332f9c865c39ab2047" prot="public" virt="virtual"><scope>QCPItemPosition</scope><name>~QCPItemPosition</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

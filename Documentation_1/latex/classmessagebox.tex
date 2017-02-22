@@ -1,0 +1,341 @@
+\hypertarget{classmessagebox}{}\section{messagebox Class Reference}
+\label{classmessagebox}\index{messagebox@{messagebox}}
+
+
+{\ttfamily \#include $<$messagebox.\+h$>$}
+
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classmessagebox_a7e27018e68e04cfe417386d743a58695}{recieve\+\_\+packet} (\hyperlink{class_protocol_1_1_packet}{Protocol\+::\+Packet} $\ast$packet)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmessagebox_aa1982e07048de340df52d2a5f37dd8ac}{messagebox} ()
+\item 
+void \hyperlink{classmessagebox_ad5e6c9a2d407ebc95415e6ddeb91aba3}{load\+\_\+ack\+\_\+packet} (uint8\+\_\+t $\ast$buffer, size\+\_\+t len)
+\item 
+void \hyperlink{classmessagebox_afa0a64c35c27e21fab6cbee8055341b1}{load\+\_\+action\+\_\+packet} (\hyperlink{namespace_protocol_a95f2e35dc2d8d920f0d7ddaaf122c3b9}{Protocol\+::\+Action\+Type} atype, double lat, double lon, float alt, float spd)
+\item 
+void \hyperlink{classmessagebox_af79061031d97b9e3e0e677fe365b2b15}{load\+\_\+action\+\_\+packet} (double lat, double lon, float alt, float spd)
+\item 
+void \hyperlink{classmessagebox_a6128a1a53fbba888dccfcab5a5fafa1f}{load\+\_\+info\+\_\+packet} (std\+::string other)
+\item 
+void \hyperlink{classmessagebox_a0e3beabe499e7aade0e769ff17ced30d}{load\+\_\+telem\+\_\+packet} (double lat, double lon)
+\item 
+void \hyperlink{classmessagebox_acfa11fc9bcf7c96ddf2478b981be826d}{load\+\_\+telem\+\_\+packet} (float x, float y, float z, float p, float r, float yaw, double lat, double lon, float alt, float heading)
+\item 
+void \hyperlink{classmessagebox_a545d9441dccf14adbea8e859628d6425}{load\+\_\+out\+Action\+\_\+packets} (double lat, double lon, float alt, float spd)
+\begin{DoxyCompactList}\small\item\em Fetches the packets from table and stores them into the outbox where they will sent back. \end{DoxyCompactList}\item 
+void \hyperlink{classmessagebox_ad8dd259b5b34d30b241f27172a255575}{add\+Out\+Action\+Packet} (const \hyperlink{class_protocol_1_1_action_packet}{Protocol\+::\+Action\+Packet} \&action\+Packet)
+\item 
+void \hyperlink{classmessagebox_ac2463eee5d4c1e5d693f8a96cca0e00f}{recieve\+\_\+initial\+\_\+info} (\hyperlink{class_protocol_1_1_info_packet}{Protocol\+::\+Info\+Packet} intip)
+\begin{DoxyCompactList}\small\item\em Takes initial info packet and sets timestamp based on it. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_protocol_1_1_ack_packet}{Protocol\+::\+Ack\+Packet} $>$ \hyperlink{classmessagebox_abe5152230ef5e89e0839d9dd866590e5}{get\+\_\+ack\+\_\+packets} ()
+\item 
+std\+::vector$<$ \hyperlink{class_protocol_1_1_action_packet}{Protocol\+::\+Action\+Packet} $>$ \hyperlink{classmessagebox_afd08c7f717357ee71a666720ff6bb9bc}{get\+\_\+action\+\_\+packets} ()
+\item 
+std\+::vector$<$ \hyperlink{class_protocol_1_1_info_packet}{Protocol\+::\+Info\+Packet} $>$ \hyperlink{classmessagebox_a15a6793bc31aa9bb080c9fbcea14e1af}{get\+\_\+info\+\_\+packets} ()
+\item 
+std\+::vector$<$ \hyperlink{class_protocol_1_1_telemetry_packet}{Protocol\+::\+Telemetry\+Packet} $>$ \hyperlink{classmessagebox_a58df2b6675cad37e6f31b2bc25bcfb0e}{get\+\_\+telem\+\_\+packets} ()
+\item 
+std\+::vector$<$ \hyperlink{class_protocol_1_1_ack_packet}{Protocol\+::\+Ack\+Packet} $>$ \hyperlink{classmessagebox_aa19eb7d103c82c6edabe95052d71e957}{get\+\_\+out\+\_\+ack\+\_\+packets} ()
+\begin{DoxyCompactList}\small\item\em returns the packets from the sending side of messagebox \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{class_protocol_1_1_action_packet}{Protocol\+::\+Action\+Packet} $>$ \hyperlink{classmessagebox_a49302f9e97d15853ab0bd4293cda3603}{get\+\_\+out\+\_\+action\+\_\+packets} ()
+\item 
+std\+::vector$<$ \hyperlink{class_protocol_1_1_info_packet}{Protocol\+::\+Info\+Packet} $>$ \hyperlink{classmessagebox_a8630b30babf0555dc17d150ccfe08d8f}{get\+\_\+out\+\_\+info\+\_\+packets} ()
+\item 
+std\+::vector$<$ \hyperlink{class_protocol_1_1_telemetry_packet}{Protocol\+::\+Telemetry\+Packet} $>$ \hyperlink{classmessagebox_a5ab4ee4ec8c63b6e4936fed1884fbd87}{get\+\_\+out\+\_\+telem\+\_\+packets} ()
+\item 
+void \hyperlink{classmessagebox_a356a1119d888a5aea5a70b67bce0132b}{add\+Ack\+Packet} (const \hyperlink{class_protocol_1_1_ack_packet}{Protocol\+::\+Ack\+Packet} \&ack\+Packet)
+\begin{DoxyCompactList}\small\item\em Adds fully formed or empty packet into the proper packet container in messagebox. \end{DoxyCompactList}\item 
+void \hyperlink{classmessagebox_a75d62bfa9db5b55a60b9e2e0fa164c81}{add\+Action\+Packet} (const \hyperlink{class_protocol_1_1_action_packet}{Protocol\+::\+Action\+Packet} \&action\+Packet)
+\item 
+void \hyperlink{classmessagebox_a27ac98af342131cd148fb4ed2261631f}{add\+Telemetry\+Packet} (const \hyperlink{class_protocol_1_1_telemetry_packet}{Protocol\+::\+Telemetry\+Packet} \&telem\+Packet)
+\item 
+void \hyperlink{classmessagebox_aa7a826742dd2a22376eaf787d510f064}{add\+Info\+Packet} (const \hyperlink{class_protocol_1_1_info_packet}{Protocol\+::\+Info\+Packet} \&info\+Packet)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Time \hyperlink{classmessagebox_ac738a854bbbcdc5be4fd4df476db724b}{timer}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classmessagebox_a9923a7ec95448c63c3c51fcf094a7cb7}{Digital\+Clock}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmessagebox_aa1982e07048de340df52d2a5f37dd8ac}{}\index{messagebox@{messagebox}!messagebox@{messagebox}}
+\index{messagebox@{messagebox}!messagebox@{messagebox}}
+\subsubsection[{messagebox}]{\setlength{\rightskip}{0pt plus 5cm}messagebox\+::messagebox (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_aa1982e07048de340df52d2a5f37dd8ac}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classmessagebox_a356a1119d888a5aea5a70b67bce0132b}{}\index{messagebox@{messagebox}!add\+Ack\+Packet@{add\+Ack\+Packet}}
+\index{add\+Ack\+Packet@{add\+Ack\+Packet}!messagebox@{messagebox}}
+\subsubsection[{add\+Ack\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}void messagebox\+::add\+Ack\+Packet (
+\begin{DoxyParamCaption}
+\item[{const {\bf Protocol\+::\+Ack\+Packet} \&}]{ack\+Packet}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_a356a1119d888a5aea5a70b67bce0132b}
+
+
+Adds fully formed or empty packet into the proper packet container in messagebox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$type$>$\+Packet} & -\/$>$ A formed or empty Packets\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Alvin Truong 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2016-\/1-\/20
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{messagebox_8h}{messagebox.\+h} for more info 
+\end{DoxySeeAlso}
+\hypertarget{classmessagebox_a75d62bfa9db5b55a60b9e2e0fa164c81}{}\index{messagebox@{messagebox}!add\+Action\+Packet@{add\+Action\+Packet}}
+\index{add\+Action\+Packet@{add\+Action\+Packet}!messagebox@{messagebox}}
+\subsubsection[{add\+Action\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}void messagebox\+::add\+Action\+Packet (
+\begin{DoxyParamCaption}
+\item[{const {\bf Protocol\+::\+Action\+Packet} \&}]{action\+Packet}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_a75d62bfa9db5b55a60b9e2e0fa164c81}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{messagebox_8h}{messagebox.\+h} for more info 
+\end{DoxySeeAlso}
+\hypertarget{classmessagebox_aa7a826742dd2a22376eaf787d510f064}{}\index{messagebox@{messagebox}!add\+Info\+Packet@{add\+Info\+Packet}}
+\index{add\+Info\+Packet@{add\+Info\+Packet}!messagebox@{messagebox}}
+\subsubsection[{add\+Info\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}void messagebox\+::add\+Info\+Packet (
+\begin{DoxyParamCaption}
+\item[{const {\bf Protocol\+::\+Info\+Packet} \&}]{info\+Packet}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_aa7a826742dd2a22376eaf787d510f064}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{messagebox_8h}{messagebox.\+h} for more info 
+\end{DoxySeeAlso}
+\hypertarget{classmessagebox_ad8dd259b5b34d30b241f27172a255575}{}\index{messagebox@{messagebox}!add\+Out\+Action\+Packet@{add\+Out\+Action\+Packet}}
+\index{add\+Out\+Action\+Packet@{add\+Out\+Action\+Packet}!messagebox@{messagebox}}
+\subsubsection[{add\+Out\+Action\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}void messagebox\+::add\+Out\+Action\+Packet (
+\begin{DoxyParamCaption}
+\item[{const {\bf Protocol\+::\+Action\+Packet} \&}]{action\+Packet}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_ad8dd259b5b34d30b241f27172a255575}
+\hypertarget{classmessagebox_a27ac98af342131cd148fb4ed2261631f}{}\index{messagebox@{messagebox}!add\+Telemetry\+Packet@{add\+Telemetry\+Packet}}
+\index{add\+Telemetry\+Packet@{add\+Telemetry\+Packet}!messagebox@{messagebox}}
+\subsubsection[{add\+Telemetry\+Packet}]{\setlength{\rightskip}{0pt plus 5cm}void messagebox\+::add\+Telemetry\+Packet (
+\begin{DoxyParamCaption}
+\item[{const {\bf Protocol\+::\+Telemetry\+Packet} \&}]{telem\+Packet}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_a27ac98af342131cd148fb4ed2261631f}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{messagebox_8h}{messagebox.\+h} for more info 
+\end{DoxySeeAlso}
+\hypertarget{classmessagebox_abe5152230ef5e89e0839d9dd866590e5}{}\index{messagebox@{messagebox}!get\+\_\+ack\+\_\+packets@{get\+\_\+ack\+\_\+packets}}
+\index{get\+\_\+ack\+\_\+packets@{get\+\_\+ack\+\_\+packets}!messagebox@{messagebox}}
+\subsubsection[{get\+\_\+ack\+\_\+packets}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Protocol\+::\+Ack\+Packet} $>$ messagebox\+::get\+\_\+ack\+\_\+packets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_abe5152230ef5e89e0839d9dd866590e5}
+\hypertarget{classmessagebox_afd08c7f717357ee71a666720ff6bb9bc}{}\index{messagebox@{messagebox}!get\+\_\+action\+\_\+packets@{get\+\_\+action\+\_\+packets}}
+\index{get\+\_\+action\+\_\+packets@{get\+\_\+action\+\_\+packets}!messagebox@{messagebox}}
+\subsubsection[{get\+\_\+action\+\_\+packets}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Protocol\+::\+Action\+Packet} $>$ messagebox\+::get\+\_\+action\+\_\+packets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_afd08c7f717357ee71a666720ff6bb9bc}
+\hypertarget{classmessagebox_a15a6793bc31aa9bb080c9fbcea14e1af}{}\index{messagebox@{messagebox}!get\+\_\+info\+\_\+packets@{get\+\_\+info\+\_\+packets}}
+\index{get\+\_\+info\+\_\+packets@{get\+\_\+info\+\_\+packets}!messagebox@{messagebox}}
+\subsubsection[{get\+\_\+info\+\_\+packets}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Protocol\+::\+Info\+Packet} $>$ messagebox\+::get\+\_\+info\+\_\+packets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_a15a6793bc31aa9bb080c9fbcea14e1af}
+\hypertarget{classmessagebox_aa19eb7d103c82c6edabe95052d71e957}{}\index{messagebox@{messagebox}!get\+\_\+out\+\_\+ack\+\_\+packets@{get\+\_\+out\+\_\+ack\+\_\+packets}}
+\index{get\+\_\+out\+\_\+ack\+\_\+packets@{get\+\_\+out\+\_\+ack\+\_\+packets}!messagebox@{messagebox}}
+\subsubsection[{get\+\_\+out\+\_\+ack\+\_\+packets}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Protocol\+::\+Ack\+Packet} $>$ messagebox\+::get\+\_\+out\+\_\+ack\+\_\+packets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_aa19eb7d103c82c6edabe95052d71e957}
+
+
+returns the packets from the sending side of messagebox 
+
+\begin{DoxyAuthor}{Author}
+Kevin Phan 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2016/1/29 
+\end{DoxyDate}
+\hypertarget{classmessagebox_a49302f9e97d15853ab0bd4293cda3603}{}\index{messagebox@{messagebox}!get\+\_\+out\+\_\+action\+\_\+packets@{get\+\_\+out\+\_\+action\+\_\+packets}}
+\index{get\+\_\+out\+\_\+action\+\_\+packets@{get\+\_\+out\+\_\+action\+\_\+packets}!messagebox@{messagebox}}
+\subsubsection[{get\+\_\+out\+\_\+action\+\_\+packets}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Protocol\+::\+Action\+Packet} $>$ messagebox\+::get\+\_\+out\+\_\+action\+\_\+packets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_a49302f9e97d15853ab0bd4293cda3603}
+\hypertarget{classmessagebox_a8630b30babf0555dc17d150ccfe08d8f}{}\index{messagebox@{messagebox}!get\+\_\+out\+\_\+info\+\_\+packets@{get\+\_\+out\+\_\+info\+\_\+packets}}
+\index{get\+\_\+out\+\_\+info\+\_\+packets@{get\+\_\+out\+\_\+info\+\_\+packets}!messagebox@{messagebox}}
+\subsubsection[{get\+\_\+out\+\_\+info\+\_\+packets}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Protocol\+::\+Info\+Packet} $>$ messagebox\+::get\+\_\+out\+\_\+info\+\_\+packets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_a8630b30babf0555dc17d150ccfe08d8f}
+\hypertarget{classmessagebox_a5ab4ee4ec8c63b6e4936fed1884fbd87}{}\index{messagebox@{messagebox}!get\+\_\+out\+\_\+telem\+\_\+packets@{get\+\_\+out\+\_\+telem\+\_\+packets}}
+\index{get\+\_\+out\+\_\+telem\+\_\+packets@{get\+\_\+out\+\_\+telem\+\_\+packets}!messagebox@{messagebox}}
+\subsubsection[{get\+\_\+out\+\_\+telem\+\_\+packets}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Protocol\+::\+Telemetry\+Packet} $>$ messagebox\+::get\+\_\+out\+\_\+telem\+\_\+packets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_a5ab4ee4ec8c63b6e4936fed1884fbd87}
+\hypertarget{classmessagebox_a58df2b6675cad37e6f31b2bc25bcfb0e}{}\index{messagebox@{messagebox}!get\+\_\+telem\+\_\+packets@{get\+\_\+telem\+\_\+packets}}
+\index{get\+\_\+telem\+\_\+packets@{get\+\_\+telem\+\_\+packets}!messagebox@{messagebox}}
+\subsubsection[{get\+\_\+telem\+\_\+packets}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ {\bf Protocol\+::\+Telemetry\+Packet} $>$ messagebox\+::get\+\_\+telem\+\_\+packets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_a58df2b6675cad37e6f31b2bc25bcfb0e}
+\hypertarget{classmessagebox_ad5e6c9a2d407ebc95415e6ddeb91aba3}{}\index{messagebox@{messagebox}!load\+\_\+ack\+\_\+packet@{load\+\_\+ack\+\_\+packet}}
+\index{load\+\_\+ack\+\_\+packet@{load\+\_\+ack\+\_\+packet}!messagebox@{messagebox}}
+\subsubsection[{load\+\_\+ack\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}void messagebox\+::load\+\_\+ack\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{buffer, }
+\item[{size\+\_\+t}]{len}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_ad5e6c9a2d407ebc95415e6ddeb91aba3}
+\hypertarget{classmessagebox_afa0a64c35c27e21fab6cbee8055341b1}{}\index{messagebox@{messagebox}!load\+\_\+action\+\_\+packet@{load\+\_\+action\+\_\+packet}}
+\index{load\+\_\+action\+\_\+packet@{load\+\_\+action\+\_\+packet}!messagebox@{messagebox}}
+\subsubsection[{load\+\_\+action\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}void messagebox\+::load\+\_\+action\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{{\bf Protocol\+::\+Action\+Type}}]{atype, }
+\item[{double}]{lat, }
+\item[{double}]{lon, }
+\item[{float}]{alt, }
+\item[{float}]{spd}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_afa0a64c35c27e21fab6cbee8055341b1}
+\hypertarget{classmessagebox_af79061031d97b9e3e0e677fe365b2b15}{}\index{messagebox@{messagebox}!load\+\_\+action\+\_\+packet@{load\+\_\+action\+\_\+packet}}
+\index{load\+\_\+action\+\_\+packet@{load\+\_\+action\+\_\+packet}!messagebox@{messagebox}}
+\subsubsection[{load\+\_\+action\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}void messagebox\+::load\+\_\+action\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{double}]{lat, }
+\item[{double}]{lon, }
+\item[{float}]{alt, }
+\item[{float}]{spd}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_af79061031d97b9e3e0e677fe365b2b15}
+\hypertarget{classmessagebox_a6128a1a53fbba888dccfcab5a5fafa1f}{}\index{messagebox@{messagebox}!load\+\_\+info\+\_\+packet@{load\+\_\+info\+\_\+packet}}
+\index{load\+\_\+info\+\_\+packet@{load\+\_\+info\+\_\+packet}!messagebox@{messagebox}}
+\subsubsection[{load\+\_\+info\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}void messagebox\+::load\+\_\+info\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{other}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_a6128a1a53fbba888dccfcab5a5fafa1f}
+\hypertarget{classmessagebox_a545d9441dccf14adbea8e859628d6425}{}\index{messagebox@{messagebox}!load\+\_\+out\+Action\+\_\+packets@{load\+\_\+out\+Action\+\_\+packets}}
+\index{load\+\_\+out\+Action\+\_\+packets@{load\+\_\+out\+Action\+\_\+packets}!messagebox@{messagebox}}
+\subsubsection[{load\+\_\+out\+Action\+\_\+packets}]{\setlength{\rightskip}{0pt plus 5cm}void messagebox\+::load\+\_\+out\+Action\+\_\+packets (
+\begin{DoxyParamCaption}
+\item[{double}]{lat, }
+\item[{double}]{lon, }
+\item[{float}]{alt, }
+\item[{float}]{spd}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_a545d9441dccf14adbea8e859628d6425}
+
+
+Fetches the packets from table and stores them into the outbox where they will sent back. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$type$>$} & double,double,float,float -\/$>$ sets the waypoint\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Kevin Phan 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2016-\/2-\/05 
+\end{DoxyDate}
+\hypertarget{classmessagebox_a0e3beabe499e7aade0e769ff17ced30d}{}\index{messagebox@{messagebox}!load\+\_\+telem\+\_\+packet@{load\+\_\+telem\+\_\+packet}}
+\index{load\+\_\+telem\+\_\+packet@{load\+\_\+telem\+\_\+packet}!messagebox@{messagebox}}
+\subsubsection[{load\+\_\+telem\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}void messagebox\+::load\+\_\+telem\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{double}]{lat, }
+\item[{double}]{lon}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_a0e3beabe499e7aade0e769ff17ced30d}
+\hypertarget{classmessagebox_acfa11fc9bcf7c96ddf2478b981be826d}{}\index{messagebox@{messagebox}!load\+\_\+telem\+\_\+packet@{load\+\_\+telem\+\_\+packet}}
+\index{load\+\_\+telem\+\_\+packet@{load\+\_\+telem\+\_\+packet}!messagebox@{messagebox}}
+\subsubsection[{load\+\_\+telem\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}void messagebox\+::load\+\_\+telem\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{z, }
+\item[{float}]{p, }
+\item[{float}]{r, }
+\item[{float}]{yaw, }
+\item[{double}]{lat, }
+\item[{double}]{lon, }
+\item[{float}]{alt, }
+\item[{float}]{heading}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_acfa11fc9bcf7c96ddf2478b981be826d}
+\hypertarget{classmessagebox_ac2463eee5d4c1e5d693f8a96cca0e00f}{}\index{messagebox@{messagebox}!recieve\+\_\+initial\+\_\+info@{recieve\+\_\+initial\+\_\+info}}
+\index{recieve\+\_\+initial\+\_\+info@{recieve\+\_\+initial\+\_\+info}!messagebox@{messagebox}}
+\subsubsection[{recieve\+\_\+initial\+\_\+info}]{\setlength{\rightskip}{0pt plus 5cm}void messagebox\+::recieve\+\_\+initial\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{{\bf Protocol\+::\+Info\+Packet}}]{intip}
+\end{DoxyParamCaption}
+)}\label{classmessagebox_ac2463eee5d4c1e5d693f8a96cca0e00f}
+
+
+Takes initial info packet and sets timestamp based on it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$type$>$\+Info\+Packet} & -\/$>$ The inital infopacket sent from U\+A\+V\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Nathan Brannon 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2016-\/1-\/22 
+\end{DoxyDate}
+\hypertarget{classmessagebox_a7e27018e68e04cfe417386d743a58695}{}\index{messagebox@{messagebox}!recieve\+\_\+packet@{recieve\+\_\+packet}}
+\index{recieve\+\_\+packet@{recieve\+\_\+packet}!messagebox@{messagebox}}
+\subsubsection[{recieve\+\_\+packet}]{\setlength{\rightskip}{0pt plus 5cm}void messagebox\+::recieve\+\_\+packet (
+\begin{DoxyParamCaption}
+\item[{{\bf Protocol\+::\+Packet} $\ast$}]{packet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{classmessagebox_a7e27018e68e04cfe417386d743a58695}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classmessagebox_a9923a7ec95448c63c3c51fcf094a7cb7}{}\index{messagebox@{messagebox}!Digital\+Clock@{Digital\+Clock}}
+\index{Digital\+Clock@{Digital\+Clock}!messagebox@{messagebox}}
+\subsubsection[{Digital\+Clock}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Digital\+Clock}\hspace{0.3cm}{\ttfamily [friend]}}\label{classmessagebox_a9923a7ec95448c63c3c51fcf094a7cb7}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmessagebox_ac738a854bbbcdc5be4fd4df476db724b}{}\index{messagebox@{messagebox}!timer@{timer}}
+\index{timer@{timer}!messagebox@{messagebox}}
+\subsubsection[{timer}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Time messagebox\+::timer}\label{classmessagebox_ac738a854bbbcdc5be4fd4df476db724b}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{messagebox_8h}{messagebox.\+h}\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{messagebox_8cpp}{messagebox.\+cpp}\end{DoxyCompactItemize}

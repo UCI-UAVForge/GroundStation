@@ -1,0 +1,15 @@
+- Error: dependent (filename) does not exist
+Solution: Your Makefile is not updated. You probably deleted something and your Makefile
+still has it listed as a dependency for debug/release builds. Run qmake to update your Makefile,
+and you should be good.
+
+- Error: QApplication. No such file or directory.
+Go to your .pro file. Make sure QT += widgets is there
+
+- Error: Project not configured
+Go to projects and click "configure project"
+
+-------------------------------------------------------------------------------
+
+- Asynchronous behavior problems signals, slots, Qt
+- Network protocol data structures in straight C++

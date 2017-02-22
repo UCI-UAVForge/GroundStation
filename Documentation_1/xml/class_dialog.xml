@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_dialog" kind="class" language="C++" prot="public">
+    <compoundname>Dialog</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="dialog_8h" local="no">dialog.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_dialog_1ab5618ff14ed69aab6b525304c80fbb75" prot="private" static="no" mutable="no">
+        <type>QDialog</type>
+        <definition>QDialog Dialog::dialog</definition>
+        <argsstring></argsstring>
+        <name>dialog</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dialog.h" line="70" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dialog.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_dialog_1a62c4186c0cf571547612cf1ad40dfada" prot="public" static="no" mutable="no">
+        <type>Ui::Dialog</type>
+        <definition>Ui::Dialog Dialog::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dialog.h" line="73" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dialog.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_dialog_1a13476d9809dc62da93e9f36958d8ce69" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Dialog::Dialog</definition>
+        <argsstring>(QObject *parent=0)</argsstring>
+        <name>Dialog</name>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dialog.h" line="12" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dialog.h" bodystart="12" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="class_dialog_1ace9ced9197b21b73477e1dfe08ce0452" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dialog::displayMessage</definition>
+        <argsstring>(const QString &amp;message)</argsstring>
+        <name>displayMessage</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dialog.h" line="21" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dialog.h" bodystart="21" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_dialog_1a2c541f80e65d942ff6d471607a81fbbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dialog::sendText</definition>
+        <argsstring>(const QString &amp;text)</argsstring>
+        <name>sendText</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This signal is emitted from the C++ side and the text displayed on the HTML client side. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dialog.h" line="30" column="1"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_dialog_1ada82bdcc218632134d3907af12f0d567" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dialog::sendPoint</definition>
+        <argsstring>(double lat, double lng)</argsstring>
+        <name>sendPoint</name>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lng</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dialog.h" line="31" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_dialog_1a937038eaea8c49ecbe7fb38fee63fd29" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dialog::receiveText</definition>
+        <argsstring>(const QString &amp;text)</argsstring>
+        <name>receiveText</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This slot is invoked from the HTML client side and the text displayed on the server side. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dialog.h" line="37" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dialog.h" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_dialog_1a4649de72d982f73ecaa9bef08a6282b4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dialog::addPointToTable</definition>
+        <argsstring>(double lat, double lng)</argsstring>
+        <name>addPointToTable</name>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lng</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dialog.h" line="41" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dialog.h" bodystart="41" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_dialog_1ada84e6c9a986477a5127407d84ac4de1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void Dialog::clicked</definition>
+        <argsstring>()</argsstring>
+        <name>clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Note that this slot is private and thus not accessible to HTML clients. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dialog.h" line="49" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dialog.h" bodystart="49" bodyend="67"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="16">
+        <label>Dialog</label>
+        <link refid="class_dialog"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="18">
+        <label>Dialog</label>
+        <link refid="class_dialog"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dialog.h" line="8" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dialog.h" bodystart="7" bodyend="74"/>
+    <listofallmembers>
+      <member refid="class_dialog_1a4649de72d982f73ecaa9bef08a6282b4" prot="public" virt="non-virtual"><scope>Dialog</scope><name>addPointToTable</name></member>
+      <member refid="class_dialog_1ada84e6c9a986477a5127407d84ac4de1" prot="private" virt="non-virtual"><scope>Dialog</scope><name>clicked</name></member>
+      <member refid="class_dialog_1ab5618ff14ed69aab6b525304c80fbb75" prot="private" virt="non-virtual"><scope>Dialog</scope><name>dialog</name></member>
+      <member refid="class_dialog_1a13476d9809dc62da93e9f36958d8ce69" prot="public" virt="non-virtual"><scope>Dialog</scope><name>Dialog</name></member>
+      <member refid="class_dialog_1ace9ced9197b21b73477e1dfe08ce0452" prot="public" virt="non-virtual"><scope>Dialog</scope><name>displayMessage</name></member>
+      <member refid="class_dialog_1a937038eaea8c49ecbe7fb38fee63fd29" prot="public" virt="non-virtual"><scope>Dialog</scope><name>receiveText</name></member>
+      <member refid="class_dialog_1ada82bdcc218632134d3907af12f0d567" prot="public" virt="non-virtual"><scope>Dialog</scope><name>sendPoint</name></member>
+      <member refid="class_dialog_1a2c541f80e65d942ff6d471607a81fbbc" prot="public" virt="non-virtual"><scope>Dialog</scope><name>sendText</name></member>
+      <member refid="class_dialog_1a62c4186c0cf571547612cf1ad40dfada" prot="public" virt="non-virtual"><scope>Dialog</scope><name>ui</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,300 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_mission_recap" kind="class" language="C++" prot="public">
+    <compoundname>MissionRecap</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QDialog</basecompoundref>
+    <includes refid="missionrecap_8h" local="no">missionrecap.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_mission_recap_1af3d0841a36bc3d04ff0630ba9e1a40af" prot="private" static="no" mutable="no">
+        <type>Ui::MissionRecap *</type>
+        <definition>Ui::MissionRecap* MissionRecap::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="57" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mission_recap_1a3aa1dbd113e8493f74087c000a1401c8" prot="private" static="no" mutable="no">
+        <type>QMediaPlayer</type>
+        <definition>QMediaPlayer MissionRecap::mediaPlayer</definition>
+        <argsstring></argsstring>
+        <name>mediaPlayer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="58" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mission_recap_1a6f9c6e56d1a5454b67f1bc4b6bf7595e" prot="private" static="no" mutable="no">
+        <type>QVideoFrame</type>
+        <definition>QVideoFrame MissionRecap::currentFrame</definition>
+        <argsstring></argsstring>
+        <name>currentFrame</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="59" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mission_recap_1ab5e4e89e18b06016d0fcf2a9b834f5a4" prot="private" static="no" mutable="no">
+        <type>QTimer</type>
+        <definition>QTimer MissionRecap::dataTimer</definition>
+        <argsstring></argsstring>
+        <name>dataTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="60" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_mission_recap_1a7b516bd2925e4e0e2bc9f70072786b32" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MissionRecap::MissionRecap</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>MissionRecap</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates video widget, requests a video to be played back Creates a map to play back UAV path Also creates custom plot for UAV statistics </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="35" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="9" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_recap_1a7ebaee9824446e52e77083c65d41535b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MissionRecap::~MissionRecap</definition>
+        <argsstring>()</argsstring>
+        <name>~MissionRecap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="36" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="33" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_mission_recap_1a47eb36c2cc172358a0367dee72b1740f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionRecap::updateSlider</definition>
+        <argsstring>(qint64 position)</argsstring>
+        <name>updateSlider</name>
+        <param>
+          <type>qint64</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="39" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="117" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_mission_recap_1a15ecf642246edadd1c09d81b93a6a4c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionRecap::updateMediaPlayer</definition>
+        <argsstring>(int position)</argsstring>
+        <name>updateMediaPlayer</name>
+        <param>
+          <type>int</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="121" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_mission_recap_1ae719be21194bde9a725c20bd3ed8048f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionRecap::replayMissionClicked</definition>
+        <argsstring>()</argsstring>
+        <name>replayMissionClicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="41" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="127" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_mission_recap_1a4d45a9fbe0fc9bdfd7e6033cfaa533f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionRecap::setupRealtimeDataDemo</definition>
+        <argsstring>(QCustomPlot *customPlot)</argsstring>
+        <name>setupRealtimeDataDemo</name>
+        <param>
+          <type><ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> *</type>
+          <declname>customPlot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks if QT under QT4.7 This is the code for the custom plot chart to play back real time data of the UAV Currently auto plays lines (10/23/15) </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="42" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="42" bodyend="77"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_mission_recap_1a5021bd075cfc09c0513c1af391ca1232" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionRecap::realtimeDataSlot</definition>
+        <argsstring>()</argsstring>
+        <name>realtimeDataSlot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="46" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="79" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_mission_recap_1a8282cbca3fa24dde997fe7761801fe75" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionRecap::on_backButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_backButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="47" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="133" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_mission_recap_1acd2ecc7d704a92e28e1eb379e9c4cbba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionRecap::on_playButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_playButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="48" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="140" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_mission_recap_1ad41a52b1c487f8b5e3603fa7895c6336" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionRecap::on_stopButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_stopButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="49" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="150" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_mission_recap_1adb9bc8dfd542ba5f184184ac0f56cfa5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionRecap::on_openFileButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_openFileButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="50" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="155" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_mission_recap_1a49d2c78db48989261a6d02ca9cad0179" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionRecap::on_newMission_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_newMission_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="52" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="164" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_mission_recap_1a3523c087e1a9b94c5a6d409afd6c0f30" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MissionRecap::addClickListener</definition>
+        <argsstring>()</argsstring>
+        <name>addClickListener</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="54" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="171" bodyend="173"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="131">
+        <label>QDialog</label>
+      </node>
+      <node id="130">
+        <label>MissionRecap</label>
+        <link refid="class_mission_recap"/>
+        <childnode refid="131" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="133">
+        <label>QDialog</label>
+      </node>
+      <node id="132">
+        <label>MissionRecap</label>
+        <link refid="class_mission_recap"/>
+        <childnode refid="133" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="31" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" bodystart="30" bodyend="61"/>
+    <listofallmembers>
+      <member refid="class_mission_recap_1a3523c087e1a9b94c5a6d409afd6c0f30" prot="private" virt="non-virtual"><scope>MissionRecap</scope><name>addClickListener</name></member>
+      <member refid="class_mission_recap_1a6f9c6e56d1a5454b67f1bc4b6bf7595e" prot="private" virt="non-virtual"><scope>MissionRecap</scope><name>currentFrame</name></member>
+      <member refid="class_mission_recap_1ab5e4e89e18b06016d0fcf2a9b834f5a4" prot="private" virt="non-virtual"><scope>MissionRecap</scope><name>dataTimer</name></member>
+      <member refid="class_mission_recap_1a3aa1dbd113e8493f74087c000a1401c8" prot="private" virt="non-virtual"><scope>MissionRecap</scope><name>mediaPlayer</name></member>
+      <member refid="class_mission_recap_1a7b516bd2925e4e0e2bc9f70072786b32" prot="public" virt="non-virtual"><scope>MissionRecap</scope><name>MissionRecap</name></member>
+      <member refid="class_mission_recap_1a8282cbca3fa24dde997fe7761801fe75" prot="private" virt="non-virtual"><scope>MissionRecap</scope><name>on_backButton_clicked</name></member>
+      <member refid="class_mission_recap_1a49d2c78db48989261a6d02ca9cad0179" prot="private" virt="non-virtual"><scope>MissionRecap</scope><name>on_newMission_clicked</name></member>
+      <member refid="class_mission_recap_1adb9bc8dfd542ba5f184184ac0f56cfa5" prot="private" virt="non-virtual"><scope>MissionRecap</scope><name>on_openFileButton_clicked</name></member>
+      <member refid="class_mission_recap_1acd2ecc7d704a92e28e1eb379e9c4cbba" prot="private" virt="non-virtual"><scope>MissionRecap</scope><name>on_playButton_clicked</name></member>
+      <member refid="class_mission_recap_1ad41a52b1c487f8b5e3603fa7895c6336" prot="private" virt="non-virtual"><scope>MissionRecap</scope><name>on_stopButton_clicked</name></member>
+      <member refid="class_mission_recap_1a5021bd075cfc09c0513c1af391ca1232" prot="private" virt="non-virtual"><scope>MissionRecap</scope><name>realtimeDataSlot</name></member>
+      <member refid="class_mission_recap_1ae719be21194bde9a725c20bd3ed8048f" prot="public" virt="non-virtual"><scope>MissionRecap</scope><name>replayMissionClicked</name></member>
+      <member refid="class_mission_recap_1a4d45a9fbe0fc9bdfd7e6033cfaa533f9" prot="public" virt="non-virtual"><scope>MissionRecap</scope><name>setupRealtimeDataDemo</name></member>
+      <member refid="class_mission_recap_1af3d0841a36bc3d04ff0630ba9e1a40af" prot="private" virt="non-virtual"><scope>MissionRecap</scope><name>ui</name></member>
+      <member refid="class_mission_recap_1a15ecf642246edadd1c09d81b93a6a4c5" prot="public" virt="non-virtual"><scope>MissionRecap</scope><name>updateMediaPlayer</name></member>
+      <member refid="class_mission_recap_1a47eb36c2cc172358a0367dee72b1740f" prot="public" virt="non-virtual"><scope>MissionRecap</scope><name>updateSlider</name></member>
+      <member refid="class_mission_recap_1a7ebaee9824446e52e77083c65d41535b" prot="public" virt="non-virtual"><scope>MissionRecap</scope><name>~MissionRecap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

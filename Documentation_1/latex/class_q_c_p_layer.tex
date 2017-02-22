@@ -1,0 +1,204 @@
+\hypertarget{class_q_c_p_layer}{}\section{Q\+C\+P\+Layer Class Reference}
+\label{class_q_c_p_layer}\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+
+
+A layer that may contain objects, to control the rendering order.  
+
+
+
+
+{\ttfamily \#include $<$qcustomplot.\+h$>$}
+
+Inheritance diagram for Q\+C\+P\+Layer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_q_c_p_layer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_c_p_layer_a5d0657fc86d624e5efbe930ef21af718}{Q\+C\+P\+Layer} (\hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} $\ast$\hyperlink{class_q_c_p_layer_a3958c9a938c2d05a7378c41484acee08}{parent\+Plot}, const Q\+String \&layer\+Name)
+\item 
+\hyperlink{class_q_c_p_layer_afc1a8940f8e34c9f25ead9dfd4828cae}{$\sim$\+Q\+C\+P\+Layer} ()
+\item 
+\hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} $\ast$ \hyperlink{class_q_c_p_layer_a3958c9a938c2d05a7378c41484acee08}{parent\+Plot} () const 
+\item 
+Q\+String \hyperlink{class_q_c_p_layer_a96ebd1e436f3813938cb9cd4a59a60be}{name} () const 
+\item 
+int \hyperlink{class_q_c_p_layer_ad5d7010829a6b99f326b07d7e37c8c99}{index} () const 
+\item 
+Q\+List$<$ \hyperlink{class_q_c_p_layerable}{Q\+C\+P\+Layerable} $\ast$ $>$ \hyperlink{class_q_c_p_layer_a94c2f0100e48cefad2de8fe0fbb03c27}{children} () const 
+\item 
+bool \hyperlink{class_q_c_p_layer_a9efca636e4dcad721999a6282f296016}{visible} () const 
+\item 
+void \hyperlink{class_q_c_p_layer_ac07671f74edf6884b51a82afb2c19516}{set\+Visible} (bool \hyperlink{class_q_c_p_layer_a9efca636e4dcad721999a6282f296016}{visible})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_q_c_p_layer_a57ce5e49364aa9122276d5df3b4a0ddc}{add\+Child} (\hyperlink{class_q_c_p_layerable}{Q\+C\+P\+Layerable} $\ast$layerable, bool prepend)
+\item 
+void \hyperlink{class_q_c_p_layer_ac2f64ac7761650582d968d86670ef362}{remove\+Child} (\hyperlink{class_q_c_p_layerable}{Q\+C\+P\+Layerable} $\ast$layerable)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} $\ast$ \hyperlink{class_q_c_p_layer_a2f3374a7884bf403720cd1cf6f7ad1bb}{m\+Parent\+Plot}
+\item 
+Q\+String \hyperlink{class_q_c_p_layer_a91e6298183cb4b9dfd4efdfaf1ecc220}{m\+Name}
+\item 
+int \hyperlink{class_q_c_p_layer_a122088bcab6cec76a52b75ce8606605b}{m\+Index}
+\item 
+Q\+List$<$ \hyperlink{class_q_c_p_layerable}{Q\+C\+P\+Layerable} $\ast$ $>$ \hyperlink{class_q_c_p_layer_a704aa71bba469383c3a3c598c1ec0d28}{m\+Children}
+\item 
+bool \hyperlink{class_q_c_p_layer_a264950deb08e589460c126c895a1e2b5}{m\+Visible}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_q_c_p_layer_a1cdf9df76adcfae45261690aa0ca2198}{Q\+Custom\+Plot}
+\item 
+class \hyperlink{class_q_c_p_layer_ad655f55cccf49ba14d5172ec517e07ae}{Q\+C\+P\+Layerable}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A layer that may contain objects, to control the rendering order. 
+
+The Layering system of \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} is the mechanism to control the rendering order of the elements inside the plot.
+
+It is based on the two classes \hyperlink{class_q_c_p_layer}{Q\+C\+P\+Layer} and \hyperlink{class_q_c_p_layerable}{Q\+C\+P\+Layerable}. \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} holds an ordered list of one or more instances of \hyperlink{class_q_c_p_layer}{Q\+C\+P\+Layer} (see \hyperlink{class_q_custom_plot_ad5255393df078448bb6ac83fa5db5f52}{Q\+Custom\+Plot\+::add\+Layer}, \hyperlink{class_q_custom_plot_aac492da01782820454e9136a8db28182}{Q\+Custom\+Plot\+::layer}, \hyperlink{class_q_custom_plot_ae896140beff19424e9e9e02d6e331104}{Q\+Custom\+Plot\+::move\+Layer}, etc.). When replotting, \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} goes through the list of layers bottom to top and successively draws the layerables of the layers.
+
+A \hyperlink{class_q_c_p_layer}{Q\+C\+P\+Layer} contains an ordered list of \hyperlink{class_q_c_p_layerable}{Q\+C\+P\+Layerable} instances. \hyperlink{class_q_c_p_layerable}{Q\+C\+P\+Layerable} is an abstract base class from which almost all visible objects derive, like axes, grids, graphs, items, etc.
+
+Initially, \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot} has five layers\+: \char`\"{}background\char`\"{}, \char`\"{}grid\char`\"{}, \char`\"{}main\char`\"{}, \char`\"{}axes\char`\"{} and \char`\"{}legend\char`\"{} (in that order). The top two layers \char`\"{}axes\char`\"{} and \char`\"{}legend\char`\"{} contain the default axes and legend, so they will be drawn on top. In the middle, there is the \char`\"{}main\char`\"{} layer. It is initially empty and set as the current layer (see \hyperlink{class_q_custom_plot_a73a6dc47c653bb6f8f030abca5a11852}{Q\+Custom\+Plot\+::set\+Current\+Layer}). This means, all new plottables, items etc. are created on this layer by default. Then comes the \char`\"{}grid\char`\"{} layer which contains the \hyperlink{class_q_c_p_grid}{Q\+C\+P\+Grid} instances (which belong tightly to \hyperlink{class_q_c_p_axis}{Q\+C\+P\+Axis}, see \hyperlink{class_q_c_p_axis_ac4fb913cce3072b5e75a4635e0f6cd04}{Q\+C\+P\+Axis\+::grid}). The Axis rect background shall be drawn behind everything else, thus the default \hyperlink{class_q_c_p_axis_rect}{Q\+C\+P\+Axis\+Rect} instance is placed on the \char`\"{}background\char`\"{} layer. Of course, the layer affiliation of the individual objects can be changed as required (\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{Q\+C\+P\+Layerable\+::set\+Layer}).
+
+Controlling the ordering of objects is easy\+: Create a new layer in the position you want it to be, e.\+g. above \char`\"{}main\char`\"{}, with \hyperlink{class_q_custom_plot_ad5255393df078448bb6ac83fa5db5f52}{Q\+Custom\+Plot\+::add\+Layer}. Then set the current layer with \hyperlink{class_q_custom_plot_a73a6dc47c653bb6f8f030abca5a11852}{Q\+Custom\+Plot\+::set\+Current\+Layer} to that new layer and finally create the objects normally. They will be placed on the new layer automatically, due to the current layer setting. Alternatively you could have also ignored the current layer setting and just moved the objects with \hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{Q\+C\+P\+Layerable\+::set\+Layer} to the desired layer after creating them.
+
+It is also possible to move whole layers. For example, If you want the grid to be shown in front of all plottables/items on the \char`\"{}main\char`\"{} layer, just move it above \char`\"{}main\char`\"{} with \hyperlink{class_q_custom_plot_ae896140beff19424e9e9e02d6e331104}{Q\+Custom\+Plot\+::move\+Layer}.
+
+The rendering order within one layer is simply by order of creation or insertion. The item created last (or added last to the layer), is drawn on top of all other objects on that layer.
+
+When a layer is deleted, the objects on it are not deleted with it, but fall on the layer below the deleted layer, see \hyperlink{class_q_custom_plot_a40f75e342c5eaab6a86066a42a0e2a94}{Q\+Custom\+Plot\+::remove\+Layer}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_q_c_p_layer_a5d0657fc86d624e5efbe930ef21af718}{}\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}!Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}!Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+\subsubsection[{Q\+C\+P\+Layer}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Layer\+::\+Q\+C\+P\+Layer (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+Custom\+Plot} $\ast$}]{parent\+Plot, }
+\item[{const Q\+String \&}]{layer\+Name}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_layer_a5d0657fc86d624e5efbe930ef21af718}
+Creates a new \hyperlink{class_q_c_p_layer}{Q\+C\+P\+Layer} instance.
+
+Normally you shouldn\textquotesingle{}t directly instantiate layers, use \hyperlink{class_q_custom_plot_ad5255393df078448bb6ac83fa5db5f52}{Q\+Custom\+Plot\+::add\+Layer} instead.
+
+\begin{DoxyWarning}{Warning}
+It is not checked that {\itshape layer\+Name} is actually a unique layer name in {\itshape parent\+Plot}. This check is only performed by \hyperlink{class_q_custom_plot_ad5255393df078448bb6ac83fa5db5f52}{Q\+Custom\+Plot\+::add\+Layer}. 
+\end{DoxyWarning}
+\hypertarget{class_q_c_p_layer_afc1a8940f8e34c9f25ead9dfd4828cae}{}\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}!````~Q\+C\+P\+Layer@{$\sim$\+Q\+C\+P\+Layer}}
+\index{````~Q\+C\+P\+Layer@{$\sim$\+Q\+C\+P\+Layer}!Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+\subsubsection[{$\sim$\+Q\+C\+P\+Layer}]{\setlength{\rightskip}{0pt plus 5cm}Q\+C\+P\+Layer\+::$\sim$\+Q\+C\+P\+Layer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_layer_afc1a8940f8e34c9f25ead9dfd4828cae}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_q_c_p_layer_a57ce5e49364aa9122276d5df3b4a0ddc}{}\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+\subsubsection[{add\+Child}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layer\+::add\+Child (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Layerable} $\ast$}]{layerable, }
+\item[{bool}]{prepend}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_layer_a57ce5e49364aa9122276d5df3b4a0ddc}
+\hypertarget{class_q_c_p_layer_a94c2f0100e48cefad2de8fe0fbb03c27}{}\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}!children@{children}}
+\index{children@{children}!Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+\subsubsection[{children}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<$ {\bf Q\+C\+P\+Layerable} $\ast$ $>$ Q\+C\+P\+Layer\+::children (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_layer_a94c2f0100e48cefad2de8fe0fbb03c27}
+Returns a list of all layerables on this layer. The order corresponds to the rendering order\+: layerables with higher indices are drawn above layerables with lower indices. \hypertarget{class_q_c_p_layer_ad5d7010829a6b99f326b07d7e37c8c99}{}\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}!index@{index}}
+\index{index@{index}!Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+\subsubsection[{index}]{\setlength{\rightskip}{0pt plus 5cm}int Q\+C\+P\+Layer\+::index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_layer_ad5d7010829a6b99f326b07d7e37c8c99}
+Returns the index this layer has in the \hyperlink{class_q_custom_plot}{Q\+Custom\+Plot}. The index is the integer number by which this layer can be accessed via \hyperlink{class_q_custom_plot_aac492da01782820454e9136a8db28182}{Q\+Custom\+Plot\+::layer}.
+
+Layers with higher indices will be drawn above layers with lower indices. \hypertarget{class_q_c_p_layer_a96ebd1e436f3813938cb9cd4a59a60be}{}\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}!name@{name}}
+\index{name@{name}!Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Q\+C\+P\+Layer\+::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_layer_a96ebd1e436f3813938cb9cd4a59a60be}
+\hypertarget{class_q_c_p_layer_a3958c9a938c2d05a7378c41484acee08}{}\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}!parent\+Plot@{parent\+Plot}}
+\index{parent\+Plot@{parent\+Plot}!Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+\subsubsection[{parent\+Plot}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+Custom\+Plot}$\ast$ Q\+C\+P\+Layer\+::parent\+Plot (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_layer_a3958c9a938c2d05a7378c41484acee08}
+\hypertarget{class_q_c_p_layer_ac2f64ac7761650582d968d86670ef362}{}\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}!remove\+Child@{remove\+Child}}
+\index{remove\+Child@{remove\+Child}!Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+\subsubsection[{remove\+Child}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layer\+::remove\+Child (
+\begin{DoxyParamCaption}
+\item[{{\bf Q\+C\+P\+Layerable} $\ast$}]{layerable}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_layer_ac2f64ac7761650582d968d86670ef362}
+\hypertarget{class_q_c_p_layer_ac07671f74edf6884b51a82afb2c19516}{}\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}!set\+Visible@{set\+Visible}}
+\index{set\+Visible@{set\+Visible}!Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+\subsubsection[{set\+Visible}]{\setlength{\rightskip}{0pt plus 5cm}void Q\+C\+P\+Layer\+::set\+Visible (
+\begin{DoxyParamCaption}
+\item[{bool}]{visible}
+\end{DoxyParamCaption}
+)}\label{class_q_c_p_layer_ac07671f74edf6884b51a82afb2c19516}
+Sets whether this layer is visible or not. If {\itshape visible} is set to false, all layerables on this layer will be invisible.
+
+This function doesn\textquotesingle{}t change the visibility property of the layerables (\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{Q\+C\+P\+Layerable\+::set\+Visible}), but the \hyperlink{class_q_c_p_layerable_a30809f7455e9794bca7b6c737622fa63}{Q\+C\+P\+Layerable\+::real\+Visibility} of each layerable takes the visibility of the parent layer into account. \hypertarget{class_q_c_p_layer_a9efca636e4dcad721999a6282f296016}{}\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}!visible@{visible}}
+\index{visible@{visible}!Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+\subsubsection[{visible}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Layer\+::visible (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_q_c_p_layer_a9efca636e4dcad721999a6282f296016}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_q_c_p_layer_ad655f55cccf49ba14d5172ec517e07ae}{}\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}!Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}}
+\index{Q\+C\+P\+Layerable@{Q\+C\+P\+Layerable}!Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+\subsubsection[{Q\+C\+P\+Layerable}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Q\+C\+P\+Layerable}\hspace{0.3cm}{\ttfamily [friend]}}\label{class_q_c_p_layer_ad655f55cccf49ba14d5172ec517e07ae}
+\hypertarget{class_q_c_p_layer_a1cdf9df76adcfae45261690aa0ca2198}{}\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}!Q\+Custom\+Plot@{Q\+Custom\+Plot}}
+\index{Q\+Custom\+Plot@{Q\+Custom\+Plot}!Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+\subsubsection[{Q\+Custom\+Plot}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Q\+Custom\+Plot}\hspace{0.3cm}{\ttfamily [friend]}}\label{class_q_c_p_layer_a1cdf9df76adcfae45261690aa0ca2198}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_q_c_p_layer_a704aa71bba469383c3a3c598c1ec0d28}{}\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}!m\+Children@{m\+Children}}
+\index{m\+Children@{m\+Children}!Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+\subsubsection[{m\+Children}]{\setlength{\rightskip}{0pt plus 5cm}Q\+List$<${\bf Q\+C\+P\+Layerable}$\ast$$>$ Q\+C\+P\+Layer\+::m\+Children\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_layer_a704aa71bba469383c3a3c598c1ec0d28}
+\hypertarget{class_q_c_p_layer_a122088bcab6cec76a52b75ce8606605b}{}\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}!m\+Index@{m\+Index}}
+\index{m\+Index@{m\+Index}!Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+\subsubsection[{m\+Index}]{\setlength{\rightskip}{0pt plus 5cm}int Q\+C\+P\+Layer\+::m\+Index\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_layer_a122088bcab6cec76a52b75ce8606605b}
+\hypertarget{class_q_c_p_layer_a91e6298183cb4b9dfd4efdfaf1ecc220}{}\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}!m\+Name@{m\+Name}}
+\index{m\+Name@{m\+Name}!Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+\subsubsection[{m\+Name}]{\setlength{\rightskip}{0pt plus 5cm}Q\+String Q\+C\+P\+Layer\+::m\+Name\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_layer_a91e6298183cb4b9dfd4efdfaf1ecc220}
+\hypertarget{class_q_c_p_layer_a2f3374a7884bf403720cd1cf6f7ad1bb}{}\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}!m\+Parent\+Plot@{m\+Parent\+Plot}}
+\index{m\+Parent\+Plot@{m\+Parent\+Plot}!Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+\subsubsection[{m\+Parent\+Plot}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Q\+Custom\+Plot}$\ast$ Q\+C\+P\+Layer\+::m\+Parent\+Plot\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_layer_a2f3374a7884bf403720cd1cf6f7ad1bb}
+\hypertarget{class_q_c_p_layer_a264950deb08e589460c126c895a1e2b5}{}\index{Q\+C\+P\+Layer@{Q\+C\+P\+Layer}!m\+Visible@{m\+Visible}}
+\index{m\+Visible@{m\+Visible}!Q\+C\+P\+Layer@{Q\+C\+P\+Layer}}
+\subsubsection[{m\+Visible}]{\setlength{\rightskip}{0pt plus 5cm}bool Q\+C\+P\+Layer\+::m\+Visible\hspace{0.3cm}{\ttfamily [protected]}}\label{class_q_c_p_layer_a264950deb08e589460c126c895a1e2b5}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{qcustomplot_8h}{qcustomplot.\+h}\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{qcustomplot_8cpp}{qcustomplot.\+cpp}\end{DoxyCompactItemize}

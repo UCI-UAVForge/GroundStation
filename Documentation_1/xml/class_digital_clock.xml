@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_digital_clock" kind="class" language="C++" prot="public">
+    <compoundname>DigitalClock</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QPlainTextEdit</basecompoundref>
+    <includes refid="digitalclock_8h" local="no">digitalclock.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_digital_clock_1aa5f7b6ed6828178d12e4e5cd66f5008c" prot="public" static="no" mutable="no">
+        <type>QTime</type>
+        <definition>QTime DigitalClock::time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" line="25" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_digital_clock_1acefe5da3fee2eba06d65402484dbe8f8" prot="public" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString DigitalClock::start</definition>
+        <argsstring></argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" line="26" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_digital_clock_1a0538ee6d4983204422a10beef92158ac" prot="public" static="no" mutable="no">
+        <type><ref refid="classmessagebox" kindref="compound">messagebox</ref> *</type>
+        <definition>messagebox* DigitalClock::mb</definition>
+        <argsstring></argsstring>
+        <name>mb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" line="27" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_digital_clock_1a280a7e0206e2d9e192a19b89cf9c2327" prot="public" static="no" mutable="no">
+        <type><ref refid="class_map_execution" kindref="compound">MapExecution</ref> *</type>
+        <definition>MapExecution* DigitalClock::map_exec_ptr</definition>
+        <argsstring></argsstring>
+        <name>map_exec_ptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" line="28" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_digital_clock_1ad2d7eceb84025180dc2b7862668b87e7" prot="public" static="no" mutable="no">
+        <type>QTimer *</type>
+        <definition>QTimer* DigitalClock::StatusTimer</definition>
+        <argsstring></argsstring>
+        <name>StatusTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" line="29" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_digital_clock_1aa49ae733b7fb0c8b1f353e9811372d5b" prot="public" static="no" mutable="no">
+        <type>QTimer *</type>
+        <definition>QTimer* DigitalClock::TimeTimer</definition>
+        <argsstring></argsstring>
+        <name>TimeTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" line="30" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_digital_clock_1ab87ec7559579311929e8542dbcf5e294" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DigitalClock::~DigitalClock</definition>
+        <argsstring>()</argsstring>
+        <name>~DigitalClock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" line="22" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.cpp" bodystart="19" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="class_digital_clock_1a1df69f177d5defdd5029ff2e6b7cb564" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DigitalClock::DigitalClock</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>DigitalClock</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" line="23" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.cpp" bodystart="8" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_digital_clock_1a070278bd43a6162c7a666f354c3d1087" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DigitalClock::initiate</definition>
+        <argsstring>(QTime timein)</argsstring>
+        <name>initiate</name>
+        <param>
+          <type>QTime</type>
+          <declname>timein</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_digital_clock_1a070278bd43a6162c7a666f354c3d1087" kindref="member">DigitalClock::initiate</ref> saves start time (need to fix to get from message box) connects 1 second timer to showtime function. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" line="32" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.cpp" bodystart="39" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="class_digital_clock_1afdcf81f100c3a2ef9bd5961c8f82562f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DigitalClock::initiate</definition>
+        <argsstring>(messagebox *mbin, MapExecution *mapexec_ptr)</argsstring>
+        <name>initiate</name>
+        <param>
+          <type><ref refid="classmessagebox" kindref="compound">messagebox</ref> *</type>
+          <declname>mbin</declname>
+        </param>
+        <param>
+          <type><ref refid="class_map_execution" kindref="compound">MapExecution</ref> *</type>
+          <declname>mapexec_ptr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" line="34" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.cpp" bodystart="50" bodyend="59"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_digital_clock_1a87cd1f935265a947f2ece712bffc4aaa" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DigitalClock::showTime</definition>
+        <argsstring>()</argsstring>
+        <name>showTime</name>
+        <briefdescription>
+<para>DigitalClock::showTime creates string from elapsed time and starting time clears the PlainText and updates it. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" line="37" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.cpp" bodystart="66" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_digital_clock_1a2b0778dec030cfa1a48dc8668bff18ed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DigitalClock::showStatus</definition>
+        <argsstring>()</argsstring>
+        <name>showStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para><xrefsect id="todo_1_todo000001"><xreftitle>Todo</xreftitle><xrefdescription><para>fix this NullPointerException! </para></xrefdescription></xrefsect></para>        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" line="38" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.cpp" bodystart="80" bodyend="118"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_digital_clock" kindref="compound">DigitalClock</ref> class inherits from QPlainTextEdit -Aaron Ko. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="20">
+        <label>DigitalClock</label>
+        <link refid="class_digital_clock"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>QPlainTextEdit</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="29">
+        <label>NetworkListener</label>
+        <link refid="class_network_listener"/>
+        <childnode refid="30" relation="public-inheritance">
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>server</edgelabel>
+        </childnode>
+      </node>
+      <node id="26">
+        <label>messagebox</label>
+        <link refid="classmessagebox"/>
+      </node>
+      <node id="28">
+        <label>QThread</label>
+      </node>
+      <node id="22">
+        <label>DigitalClock</label>
+        <link refid="class_digital_clock"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>map_exec_ptr</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>mb</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>QPlainTextEdit</label>
+      </node>
+      <node id="27">
+        <label>GsServer</label>
+        <link refid="class_gs_server"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>networkListener</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>QDialog</label>
+      </node>
+      <node id="30">
+        <label>QUdpSocket</label>
+      </node>
+      <node id="24">
+        <label>MapExecution</label>
+        <link refid="class_map_execution"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>MyMessageBox</edgelabel>
+        </childnode>
+        <childnode refid="27" relation="usage">
+          <edgelabel>myServer</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" line="18" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h" bodystart="17" bodyend="39"/>
+    <listofallmembers>
+      <member refid="class_digital_clock_1a1df69f177d5defdd5029ff2e6b7cb564" prot="public" virt="non-virtual"><scope>DigitalClock</scope><name>DigitalClock</name></member>
+      <member refid="class_digital_clock_1a070278bd43a6162c7a666f354c3d1087" prot="public" virt="non-virtual"><scope>DigitalClock</scope><name>initiate</name></member>
+      <member refid="class_digital_clock_1afdcf81f100c3a2ef9bd5961c8f82562f" prot="public" virt="non-virtual"><scope>DigitalClock</scope><name>initiate</name></member>
+      <member refid="class_digital_clock_1a280a7e0206e2d9e192a19b89cf9c2327" prot="public" virt="non-virtual"><scope>DigitalClock</scope><name>map_exec_ptr</name></member>
+      <member refid="class_digital_clock_1a0538ee6d4983204422a10beef92158ac" prot="public" virt="non-virtual"><scope>DigitalClock</scope><name>mb</name></member>
+      <member refid="class_digital_clock_1a2b0778dec030cfa1a48dc8668bff18ed" prot="private" virt="non-virtual"><scope>DigitalClock</scope><name>showStatus</name></member>
+      <member refid="class_digital_clock_1a87cd1f935265a947f2ece712bffc4aaa" prot="private" virt="non-virtual"><scope>DigitalClock</scope><name>showTime</name></member>
+      <member refid="class_digital_clock_1acefe5da3fee2eba06d65402484dbe8f8" prot="public" virt="non-virtual"><scope>DigitalClock</scope><name>start</name></member>
+      <member refid="class_digital_clock_1ad2d7eceb84025180dc2b7862668b87e7" prot="public" virt="non-virtual"><scope>DigitalClock</scope><name>StatusTimer</name></member>
+      <member refid="class_digital_clock_1aa5f7b6ed6828178d12e4e5cd66f5008c" prot="public" virt="non-virtual"><scope>DigitalClock</scope><name>time</name></member>
+      <member refid="class_digital_clock_1aa49ae733b7fb0c8b1f353e9811372d5b" prot="public" virt="non-virtual"><scope>DigitalClock</scope><name>TimeTimer</name></member>
+      <member refid="class_digital_clock_1ab87ec7559579311929e8542dbcf5e294" prot="public" virt="non-virtual"><scope>DigitalClock</scope><name>~DigitalClock</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

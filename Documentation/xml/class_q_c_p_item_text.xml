@@ -1,0 +1,1283 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_q_c_p_item_text" kind="class" language="C++" prot="public">
+    <compoundname>QCPItemText</compoundname>
+    <basecompoundref refid="class_q_c_p_abstract_item" prot="public" virt="non-virtual">QCPAbstractItem</basecompoundref>
+    <includes refid="qcustomplot_8h" local="no">qcustomplot.h</includes>
+      <sectiondef kind="protected-type">
+      <memberdef kind="enum" id="class_q_c_p_item_text_1a14a84e58f72519c8ae1d7a4a1dd23f21" prot="protected" static="no">
+        <name>AnchorIndex</name>
+        <enumvalue id="class_q_c_p_item_text_1a14a84e58f72519c8ae1d7a4a1dd23f21a30342ee15065715f045cb52eb77b904c" prot="protected">
+          <name>aiTopLeft</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_item_text_1a14a84e58f72519c8ae1d7a4a1dd23f21a55ce9699c71db6d264eb669bb0eb9aff" prot="protected">
+          <name>aiTop</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_item_text_1a14a84e58f72519c8ae1d7a4a1dd23f21a7b6ff56fcad4c78db0b793a96fce9580" prot="protected">
+          <name>aiTopRight</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_item_text_1a14a84e58f72519c8ae1d7a4a1dd23f21ad4faa7def46db6df2fedd1926237b48f" prot="protected">
+          <name>aiRight</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_item_text_1a14a84e58f72519c8ae1d7a4a1dd23f21af2072f259730ef47aa7ad7519f3a0255" prot="protected">
+          <name>aiBottomRight</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_item_text_1a14a84e58f72519c8ae1d7a4a1dd23f21a5773ad69b7f4cd2724ba46d8f31b0688" prot="protected">
+          <name>aiBottom</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_item_text_1a14a84e58f72519c8ae1d7a4a1dd23f21a489ec73da5a18c15e98a4f9b17ed301f" prot="protected">
+          <name>aiBottomLeft</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_item_text_1a14a84e58f72519c8ae1d7a4a1dd23f21a7f1c1b8c574c753e300a4759915a9170" prot="protected">
+          <name>aiLeft</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3487" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3487" bodyend="3487"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_q_c_p_item_text_1a0d228a00e819022b5690c65762721129" prot="public" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> *const</type>
+        <definition>QCPItemPosition* const QCPItemText::position</definition>
+        <argsstring></argsstring>
+        <name>position</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3476" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3476" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1a6354d8762182a3502103fabe5fbb8512" prot="public" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref> *const</type>
+        <definition>QCPItemAnchor* const QCPItemText::topLeft</definition>
+        <argsstring></argsstring>
+        <name>topLeft</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3477" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3477" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1a5c87ee162cbbe3d166b97826c8849304" prot="public" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref> *const</type>
+        <definition>QCPItemAnchor* const QCPItemText::top</definition>
+        <argsstring></argsstring>
+        <name>top</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3478" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3478" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1ad18ac45cb4cc135de1eb78f2e86b6504" prot="public" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref> *const</type>
+        <definition>QCPItemAnchor* const QCPItemText::topRight</definition>
+        <argsstring></argsstring>
+        <name>topRight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3479" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3479" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1aef159622ce6502412e782a21ba6d84f2" prot="public" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref> *const</type>
+        <definition>QCPItemAnchor* const QCPItemText::right</definition>
+        <argsstring></argsstring>
+        <name>right</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3480" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3480" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1a8ad47045c29af43b0312f7d93bb74374" prot="public" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref> *const</type>
+        <definition>QCPItemAnchor* const QCPItemText::bottomRight</definition>
+        <argsstring></argsstring>
+        <name>bottomRight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3481" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3481" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1a94aeec080f877d3d1d0c3d8ffc10e9e6" prot="public" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref> *const</type>
+        <definition>QCPItemAnchor* const QCPItemText::bottom</definition>
+        <argsstring></argsstring>
+        <name>bottom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3482" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3482" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1a6a1c872ad3789ecafcaeac2066e218a0" prot="public" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref> *const</type>
+        <definition>QCPItemAnchor* const QCPItemText::bottomLeft</definition>
+        <argsstring></argsstring>
+        <name>bottomLeft</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3483" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3483" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1ab8c6c6e1df36256986fab1463c0a1d38" prot="public" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref> *const</type>
+        <definition>QCPItemAnchor* const QCPItemText::left</definition>
+        <argsstring></argsstring>
+        <name>left</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3484" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3484" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_q_c_p_item_text_1a8407f284ad867f627878cc26ef433d08" prot="protected" static="no" mutable="no">
+        <type>QColor</type>
+        <definition>QColor QCPItemText::mColor</definition>
+        <argsstring></argsstring>
+        <name>mColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3490" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3490" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1a7eb64e42f5f7998a97d8907ad25933c1" prot="protected" static="no" mutable="no">
+        <type>QColor</type>
+        <definition>QColor QCPItemText::mSelectedColor</definition>
+        <argsstring></argsstring>
+        <name>mSelectedColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3490" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3490" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1aa02388705dbbff1bf7b8aa872b5f579c" prot="protected" static="no" mutable="no">
+        <type>QPen</type>
+        <definition>QPen QCPItemText::mPen</definition>
+        <argsstring></argsstring>
+        <name>mPen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3491" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3491" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1a8eaec649606d6ead2d8d4dcb5691777c" prot="protected" static="no" mutable="no">
+        <type>QPen</type>
+        <definition>QPen QCPItemText::mSelectedPen</definition>
+        <argsstring></argsstring>
+        <name>mSelectedPen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3491" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3491" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1a2535911875faa459b8337f2efccb5cb8" prot="protected" static="no" mutable="no">
+        <type>QBrush</type>
+        <definition>QBrush QCPItemText::mBrush</definition>
+        <argsstring></argsstring>
+        <name>mBrush</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3492" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3492" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1a28ccd097b42a216d81db9c6869f54a59" prot="protected" static="no" mutable="no">
+        <type>QBrush</type>
+        <definition>QBrush QCPItemText::mSelectedBrush</definition>
+        <argsstring></argsstring>
+        <name>mSelectedBrush</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3492" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3492" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1a1dc87fe2a824820d549ffd7e644eef8d" prot="protected" static="no" mutable="no">
+        <type>QFont</type>
+        <definition>QFont QCPItemText::mFont</definition>
+        <argsstring></argsstring>
+        <name>mFont</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3493" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3493" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1a6702f141fae590b2f4f1ec02fe9f8bd5" prot="protected" static="no" mutable="no">
+        <type>QFont</type>
+        <definition>QFont QCPItemText::mSelectedFont</definition>
+        <argsstring></argsstring>
+        <name>mSelectedFont</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3493" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3493" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1a2dec3e08c11f51639629374ecec3bd62" prot="protected" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString QCPItemText::mText</definition>
+        <argsstring></argsstring>
+        <name>mText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3494" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3494" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1a6c27f7dc1a962a04b32430cf99f04654" prot="protected" static="no" mutable="no">
+        <type>Qt::Alignment</type>
+        <definition>Qt::Alignment QCPItemText::mPositionAlignment</definition>
+        <argsstring></argsstring>
+        <name>mPositionAlignment</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3495" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3495" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1acdb2e50c38e83da00f083771efbd213f" prot="protected" static="no" mutable="no">
+        <type>Qt::Alignment</type>
+        <definition>Qt::Alignment QCPItemText::mTextAlignment</definition>
+        <argsstring></argsstring>
+        <name>mTextAlignment</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3496" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3496" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1ac37df0061552225d2277e1ee3b48f2cb" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPItemText::mRotation</definition>
+        <argsstring></argsstring>
+        <name>mRotation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3497" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3497" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_text_1ae7b3ef0ce6046efd4b346d28f2e1fb67" prot="protected" static="no" mutable="no">
+        <type>QMargins</type>
+        <definition>QMargins QCPItemText::mPadding</definition>
+        <argsstring></argsstring>
+        <name>mPadding</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3498" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3498" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_c_p_item_text_1a77ff96a2972a00872ff8f8c67143abbe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPItemText::QCPItemText</definition>
+        <argsstring>(QCustomPlot *parentPlot)</argsstring>
+        <name>QCPItemText</name>
+        <param>
+          <type><ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> *</type>
+          <declname>parentPlot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a text item and sets default values.</para><para>The constructed item can be added to the plot with <ref refid="class_q_custom_plot_1aa500620379262321685cb7a7674cbd2a" kindref="member">QCustomPlot::addItem</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3440" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22132" bodyend="22157"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a1efd41ca53d49042d4f4b63cf9615cb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>QCPItemText::~QCPItemText</definition>
+        <argsstring>()</argsstring>
+        <name>~QCPItemText</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3441" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22159" bodyend="22161"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1ac9cb0a8a27f64d1b40855910ea9ebd03" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QColor</type>
+        <definition>QColor QCPItemText::color</definition>
+        <argsstring>() const </argsstring>
+        <name>color</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3444" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3444" bodyend="3444"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a44f690ec0ba6a32e518f2e923c002e39" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QColor</type>
+        <definition>QColor QCPItemText::selectedColor</definition>
+        <argsstring>() const </argsstring>
+        <name>selectedColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3445" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3445" bodyend="3445"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a552bd02f46dbcb4b4812559036893352" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QPen</type>
+        <definition>QPen QCPItemText::pen</definition>
+        <argsstring>() const </argsstring>
+        <name>pen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3446" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3446" bodyend="3446"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a70c86ec95133d3e904d1718023fe3c4e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QPen</type>
+        <definition>QPen QCPItemText::selectedPen</definition>
+        <argsstring>() const </argsstring>
+        <name>selectedPen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3447" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3447" bodyend="3447"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a38b981dfacb703efa8e27346eebcb5a2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QBrush</type>
+        <definition>QBrush QCPItemText::brush</definition>
+        <argsstring>() const </argsstring>
+        <name>brush</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3448" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3448" bodyend="3448"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1ac6802bbceff1ade0053166c64a5a6966" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QBrush</type>
+        <definition>QBrush QCPItemText::selectedBrush</definition>
+        <argsstring>() const </argsstring>
+        <name>selectedBrush</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3449" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3449" bodyend="3449"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1ad34943fd68a9b1451d3e3234d072e418" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QFont</type>
+        <definition>QFont QCPItemText::font</definition>
+        <argsstring>() const </argsstring>
+        <name>font</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3450" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3450" bodyend="3450"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1af2e7cacb1975132508714a51c5f48c3b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QFont</type>
+        <definition>QFont QCPItemText::selectedFont</definition>
+        <argsstring>() const </argsstring>
+        <name>selectedFont</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3451" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3451" bodyend="3451"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a9547f7832010486abed0837e75db5330" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString QCPItemText::text</definition>
+        <argsstring>() const </argsstring>
+        <name>text</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3452" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3452" bodyend="3452"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1af13c6adc480f268116ae72196eb44b06" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Qt::Alignment</type>
+        <definition>Qt::Alignment QCPItemText::positionAlignment</definition>
+        <argsstring>() const </argsstring>
+        <name>positionAlignment</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3453" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3453" bodyend="3453"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1aaa1d84b3f61f9f2a0cce230e66ef7194" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Qt::Alignment</type>
+        <definition>Qt::Alignment QCPItemText::textAlignment</definition>
+        <argsstring>() const </argsstring>
+        <name>textAlignment</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3454" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3454" bodyend="3454"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1ae8991207fa1697511c1c8af9f3ca0e0a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double QCPItemText::rotation</definition>
+        <argsstring>() const </argsstring>
+        <name>rotation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3455" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3455" bodyend="3455"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a00e0fa03822ff384bf4921c1c90322ff" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QMargins</type>
+        <definition>QMargins QCPItemText::padding</definition>
+        <argsstring>() const </argsstring>
+        <name>padding</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3456" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3456" bodyend="3456"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1aa51efc0841fe52da9eaf8aff6fc8a8b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemText::setColor</definition>
+        <argsstring>(const QColor &amp;color)</argsstring>
+        <name>setColor</name>
+        <param>
+          <type>const QColor &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the color of the text. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3459" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22166" bodyend="22169"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1ae7ba0bdb75c897b028388e45bfd435fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemText::setSelectedColor</definition>
+        <argsstring>(const QColor &amp;color)</argsstring>
+        <name>setSelectedColor</name>
+        <param>
+          <type>const QColor &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the color of the text that will be used when the item is selected. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3460" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22174" bodyend="22177"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a9b9ec6eea0eb0603977ff84d4c78d0a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemText::setPen</definition>
+        <argsstring>(const QPen &amp;pen)</argsstring>
+        <name>setPen</name>
+        <param>
+          <type>const QPen &amp;</type>
+          <declname>pen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the pen that will be used do draw a rectangular border around the text. To disable the border, set <emphasis>pen</emphasis> to Qt::NoPen.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_text_1a291febe586f0da3f1c392e77bef4aa20" kindref="member">setSelectedPen</ref>, <ref refid="class_q_c_p_item_text_1a1c7e131516df2ed8d941ef31240ded8e" kindref="member">setBrush</ref>, <ref refid="class_q_c_p_item_text_1aeea8a3e01f135f9dd0bb08f51db66310" kindref="member">setPadding</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3461" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22185" bodyend="22188"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a291febe586f0da3f1c392e77bef4aa20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemText::setSelectedPen</definition>
+        <argsstring>(const QPen &amp;pen)</argsstring>
+        <name>setSelectedPen</name>
+        <param>
+          <type>const QPen &amp;</type>
+          <declname>pen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the pen that will be used do draw a rectangular border around the text, when the item is selected. To disable the border, set <emphasis>pen</emphasis> to Qt::NoPen.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_text_1a9b9ec6eea0eb0603977ff84d4c78d0a3" kindref="member">setPen</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3462" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22196" bodyend="22199"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a1c7e131516df2ed8d941ef31240ded8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemText::setBrush</definition>
+        <argsstring>(const QBrush &amp;brush)</argsstring>
+        <name>setBrush</name>
+        <param>
+          <type>const QBrush &amp;</type>
+          <declname>brush</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the brush that will be used do fill the background of the text. To disable the background, set <emphasis>brush</emphasis> to Qt::NoBrush.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_text_1a6b8377eeb2af75eb9528422671ac16cb" kindref="member">setSelectedBrush</ref>, <ref refid="class_q_c_p_item_text_1a9b9ec6eea0eb0603977ff84d4c78d0a3" kindref="member">setPen</ref>, <ref refid="class_q_c_p_item_text_1aeea8a3e01f135f9dd0bb08f51db66310" kindref="member">setPadding</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3463" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22207" bodyend="22210"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a6b8377eeb2af75eb9528422671ac16cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemText::setSelectedBrush</definition>
+        <argsstring>(const QBrush &amp;brush)</argsstring>
+        <name>setSelectedBrush</name>
+        <param>
+          <type>const QBrush &amp;</type>
+          <declname>brush</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the brush that will be used do fill the background of the text, when the item is selected. To disable the background, set <emphasis>brush</emphasis> to Qt::NoBrush.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_text_1a1c7e131516df2ed8d941ef31240ded8e" kindref="member">setBrush</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3464" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22218" bodyend="22221"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a94ad60ebe04f5c07c35e7c2029e96b1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemText::setFont</definition>
+        <argsstring>(const QFont &amp;font)</argsstring>
+        <name>setFont</name>
+        <param>
+          <type>const QFont &amp;</type>
+          <declname>font</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the font of the text.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_text_1a0be2841772f83663c4db307928b82816" kindref="member">setSelectedFont</ref>, <ref refid="class_q_c_p_item_text_1aa51efc0841fe52da9eaf8aff6fc8a8b2" kindref="member">setColor</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3465" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22228" bodyend="22231"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a0be2841772f83663c4db307928b82816" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemText::setSelectedFont</definition>
+        <argsstring>(const QFont &amp;font)</argsstring>
+        <name>setSelectedFont</name>
+        <param>
+          <type>const QFont &amp;</type>
+          <declname>font</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the font of the text that will be used when the item is selected.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_text_1a94ad60ebe04f5c07c35e7c2029e96b1f" kindref="member">setFont</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3466" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22238" bodyend="22241"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a3dacdda0ac88f99a05b333b977c48747" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemText::setText</definition>
+        <argsstring>(const QString &amp;text)</argsstring>
+        <name>setText</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the text that will be displayed. Multi-line texts are supported by inserting a line break character, e.g. &apos;<linebreak/>
+&apos;.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_text_1a94ad60ebe04f5c07c35e7c2029e96b1f" kindref="member">setFont</ref>, <ref refid="class_q_c_p_item_text_1aa51efc0841fe52da9eaf8aff6fc8a8b2" kindref="member">setColor</ref>, <ref refid="class_q_c_p_item_text_1ab5bc0684c4d1bed81949a11b34dba478" kindref="member">setTextAlignment</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3467" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22249" bodyend="22252"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a781cdf8c640fc6a055dcff1e675c8c7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemText::setPositionAlignment</definition>
+        <argsstring>(Qt::Alignment alignment)</argsstring>
+        <name>setPositionAlignment</name>
+        <param>
+          <type>Qt::Alignment</type>
+          <declname>alignment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets which point of the text rect shall be aligned with <emphasis>position</emphasis>.</para><para>Examples: <itemizedlist>
+<listitem><para>If <emphasis>alignment</emphasis> is <computeroutput>Qt::AlignHCenter | Qt::AlignTop</computeroutput>, the text will be positioned such that the top of the text rect will be horizontally centered on <emphasis>position</emphasis>. </para></listitem>
+<listitem><para>If <emphasis>alignment</emphasis> is <computeroutput>Qt::AlignLeft | Qt::AlignBottom</computeroutput>, <emphasis>position</emphasis> will indicate the bottom left corner of the text rect.</para></listitem>
+</itemizedlist>
+If you want to control the alignment of (multi-lined) text within the text rect, use <ref refid="class_q_c_p_item_text_1ab5bc0684c4d1bed81949a11b34dba478" kindref="member">setTextAlignment</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3468" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22266" bodyend="22269"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1ab5bc0684c4d1bed81949a11b34dba478" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemText::setTextAlignment</definition>
+        <argsstring>(Qt::Alignment alignment)</argsstring>
+        <name>setTextAlignment</name>
+        <param>
+          <type>Qt::Alignment</type>
+          <declname>alignment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Controls how (multi-lined) text is aligned inside the text rect (typically Qt::AlignLeft, Qt::AlignCenter or Qt::AlignRight). </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3469" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22274" bodyend="22277"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a4bcc10cd97952c3f749d75824b5077f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemText::setRotation</definition>
+        <argsstring>(double degrees)</argsstring>
+        <name>setRotation</name>
+        <param>
+          <type>double</type>
+          <declname>degrees</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the angle in degrees by which the text (and the text rectangle, if visible) will be rotated around <emphasis>position</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3470" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22283" bodyend="22286"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1aeea8a3e01f135f9dd0bb08f51db66310" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemText::setPadding</definition>
+        <argsstring>(const QMargins &amp;padding)</argsstring>
+        <name>setPadding</name>
+        <param>
+          <type>const QMargins &amp;</type>
+          <declname>padding</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the distance between the border of the text rectangle and the text. The appearance (and visibility) of the text rectangle can be controlled with <ref refid="class_q_c_p_item_text_1a9b9ec6eea0eb0603977ff84d4c78d0a3" kindref="member">setPen</ref> and <ref refid="class_q_c_p_item_text_1a1c7e131516df2ed8d941ef31240ded8e" kindref="member">setBrush</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3471" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22292" bodyend="22295"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a285b95bb6634c2e4f7768abb7a8bc69c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double QCPItemText::selectTest</definition>
+        <argsstring>(const QPointF &amp;pos, bool onlySelectable, QVariant *details=0) const </argsstring>
+        <name>selectTest</name>
+        <reimplements refid="class_q_c_p_abstract_item_1a96d522d10ffc0413b9a366c6f7f0476b">selectTest</reimplements>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>onlySelectable</declname>
+        </param>
+        <param>
+          <type>QVariant *</type>
+          <declname>details</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is used to decide whether a click hits a layerable object or not.</para><para><emphasis>pos</emphasis> is a point in pixel coordinates on the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn&apos;t be determined, -1.0 is returned. Further, if <emphasis>onlySelectable</emphasis> is true and the object is not selectable, -1.0 is returned, too.</para><para>If the item is represented not by single lines but by an area like <ref refid="class_q_c_p_item_rect" kindref="compound">QCPItemRect</ref> or <ref refid="class_q_c_p_item_text" kindref="compound">QCPItemText</ref>, a click inside the area returns a constant value greater zero (typically the selectionTolerance of the parent <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> multiplied by 0.99). If the click lies outside the area, this function returns -1.0.</para><para>Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.e. closer than 0.99*selectionTolerance).</para><para>The actual setting of the selection state is not done by this function. This is handled by the parent <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> when the mouseReleaseEvent occurs, and the finally selected object is notified via the selectEvent/deselectEvent methods.</para><para><emphasis>details</emphasis> is an optional output parameter. Every layerable subclass may place any information in <emphasis>details</emphasis>. This information will be passed to <ref refid="class_q_c_p_abstract_item_1aaf92af7b9893712959a6c073d334d88d" kindref="member">selectEvent</ref> when the parent <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> decides on the basis of this selectTest call, that the object was successfully selected. The subsequent call to <ref refid="class_q_c_p_abstract_item_1aaf92af7b9893712959a6c073d334d88d" kindref="member">selectEvent</ref> will carry the <emphasis>details</emphasis>. This is useful for multi-part objects (like <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref>). This way, a possibly complex calculation to decide which part was clicked is only done once in <ref refid="class_q_c_p_item_text_1a285b95bb6634c2e4f7768abb7a8bc69c" kindref="member">selectTest</ref>. The result (i.e. the actually clicked part) can then be placed in <emphasis>details</emphasis>. So in the subsequent <ref refid="class_q_c_p_abstract_item_1aaf92af7b9893712959a6c073d334d88d" kindref="member">selectEvent</ref>, the decision which part was selected doesn&apos;t have to be done a second time for a single selection operation.</para><para>You may pass 0 as <emphasis>details</emphasis> to indicate that you are not interested in those selection details.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_abstract_item_1aaf92af7b9893712959a6c073d334d88d" kindref="member">selectEvent</ref>, <ref refid="class_q_c_p_abstract_item_1a91f090d6763cfedb0749219c63788ae9" kindref="member">deselectEvent</ref>, <ref refid="class_q_custom_plot_1a5ee1e2f6ae27419deca53e75907c27e5" kindref="member">QCustomPlot::setInteractions</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3474" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22298" bodyend="22319"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_q_c_p_item_text_1a8793adb271ab79b4cf391dc55e9987f1" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QCPItemText::draw</definition>
+        <argsstring>(QCPPainter *painter)</argsstring>
+        <name>draw</name>
+        <reimplements refid="class_q_c_p_abstract_item_1ad0dc056f650c3ca73414e6b4f01674ef">draw</reimplements>
+        <param>
+          <type><ref refid="class_q_c_p_painter" kindref="compound">QCPPainter</ref> *</type>
+          <declname>painter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3501" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22322" bodyend="22351"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1ad248f988534a9d07bc7c220a2457142a" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QPointF</type>
+        <definition>QPointF QCPItemText::anchorPixelPoint</definition>
+        <argsstring>(int anchorId) const </argsstring>
+        <name>anchorPixelPoint</name>
+        <reimplements refid="class_q_c_p_abstract_item_1a94bde62b8a2fc133666dcbb8035deeed">anchorPixelPoint</reimplements>
+        <param>
+          <type>int</type>
+          <declname>anchorId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3502" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22354" bodyend="22383"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1aa6e478b1ce198eace89157c4cacc3ddc" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QPointF</type>
+        <definition>QPointF QCPItemText::getTextDrawPoint</definition>
+        <argsstring>(const QPointF &amp;pos, const QRectF &amp;rect, Qt::Alignment positionAlignment) const </argsstring>
+        <name>getTextDrawPoint</name>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>const QRectF &amp;</type>
+          <declname>rect</declname>
+        </param>
+        <param>
+          <type>Qt::Alignment</type>
+          <declname>positionAlignment</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3505" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22395" bodyend="22410"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a23d391bd6471c45e73f45add67ede902" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QFont</type>
+        <definition>QFont QCPItemText::mainFont</definition>
+        <argsstring>() const </argsstring>
+        <name>mainFont</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3506" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22417" bodyend="22420"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1ad7bf17e4945cc86bbf9a36331da059a0" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QColor</type>
+        <definition>QColor QCPItemText::mainColor</definition>
+        <argsstring>() const </argsstring>
+        <name>mainColor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3507" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22427" bodyend="22430"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a9ade32d362b22853659201c738269e2a" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QPen</type>
+        <definition>QPen QCPItemText::mainPen</definition>
+        <argsstring>() const </argsstring>
+        <name>mainPen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3508" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22437" bodyend="22440"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_text_1a10d6585a030633aa79d5ebc5a437f183" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QBrush</type>
+        <definition>QBrush QCPItemText::mainBrush</definition>
+        <argsstring>() const </argsstring>
+        <name>mainBrush</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3509" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="22447" bodyend="22450"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A text label. </para>    </briefdescription>
+    <detaileddescription>
+<para><image type="html" name="QCPItemText.png">Text example. Blue dotted circles are anchors, solid blue discs are positions.</image>
+ Its position is defined by the member <emphasis>position</emphasis> and the setting of <ref refid="class_q_c_p_item_text_1a781cdf8c640fc6a055dcff1e675c8c7a" kindref="member">setPositionAlignment</ref>. The latter controls which part of the text rect shall be aligned with <emphasis>position</emphasis>.</para><para>The text alignment itself (i.e. left, center, right) can be controlled with <ref refid="class_q_c_p_item_text_1ab5bc0684c4d1bed81949a11b34dba478" kindref="member">setTextAlignment</ref>.</para><para>The text may be rotated around the <emphasis>position</emphasis> point with <ref refid="class_q_c_p_item_text_1a4bcc10cd97952c3f749d75824b5077f0" kindref="member">setRotation</ref>. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="721">
+        <label>QObject</label>
+      </node>
+      <node id="718">
+        <label>QCPItemText</label>
+        <link refid="class_q_c_p_item_text"/>
+        <childnode refid="719" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="719">
+        <label>QCPAbstractItem</label>
+        <link refid="class_q_c_p_abstract_item"/>
+        <childnode refid="720" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="720">
+        <label>QCPLayerable</label>
+        <link refid="class_q_c_p_layerable"/>
+        <childnode refid="721" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="738">
+        <label>QCPLayoutInset</label>
+        <link refid="class_q_c_p_layout_inset"/>
+        <childnode refid="730" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="731">
+        <label>QCPLayoutElement</label>
+        <link refid="class_q_c_p_layout_element"/>
+        <childnode refid="724" relation="public-inheritance">
+        </childnode>
+        <childnode refid="730" relation="usage">
+          <edgelabel>mParentLayout</edgelabel>
+        </childnode>
+      </node>
+      <node id="725">
+        <label>QObject</label>
+      </node>
+      <node id="733">
+        <label>QCPRange</label>
+        <link refid="class_q_c_p_range"/>
+      </node>
+      <node id="740">
+        <label>QCPItemPosition</label>
+        <link refid="class_q_c_p_item_position"/>
+        <childnode refid="741" relation="public-inheritance">
+        </childnode>
+        <childnode refid="741" relation="usage">
+          <edgelabel>mParentAnchorX</edgelabel>
+          <edgelabel>mParentAnchorY</edgelabel>
+        </childnode>
+      </node>
+      <node id="739">
+        <label>QCPLegend</label>
+        <link refid="class_q_c_p_legend"/>
+        <childnode refid="729" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="722">
+        <label>QCPItemText</label>
+        <link refid="class_q_c_p_item_text"/>
+        <childnode refid="723" relation="public-inheritance">
+        </childnode>
+        <childnode refid="740" relation="usage">
+          <edgelabel>position</edgelabel>
+        </childnode>
+        <childnode refid="741" relation="usage">
+          <edgelabel>bottomRight</edgelabel>
+          <edgelabel>topRight</edgelabel>
+          <edgelabel>right</edgelabel>
+          <edgelabel>left</edgelabel>
+          <edgelabel>bottom</edgelabel>
+          <edgelabel>bottomLeft</edgelabel>
+          <edgelabel>topLeft</edgelabel>
+          <edgelabel>top</edgelabel>
+        </childnode>
+      </node>
+      <node id="735">
+        <label>QCPLineEnding</label>
+        <link refid="class_q_c_p_line_ending"/>
+      </node>
+      <node id="730">
+        <label>QCPLayout</label>
+        <link refid="class_q_c_p_layout"/>
+        <childnode refid="731" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="736">
+        <label>QCPGrid</label>
+        <link refid="class_q_c_p_grid"/>
+        <childnode refid="724" relation="public-inheritance">
+        </childnode>
+        <childnode refid="732" relation="usage">
+          <edgelabel>mParentAxis</edgelabel>
+        </childnode>
+      </node>
+      <node id="734">
+        <label>QCPAxisPainterPrivate</label>
+        <link refid="class_q_c_p_axis_painter_private"/>
+        <childnode refid="735" relation="usage">
+          <edgelabel>lowerEnding</edgelabel>
+          <edgelabel>upperEnding</edgelabel>
+        </childnode>
+        <childnode refid="727" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="723">
+        <label>QCPAbstractItem</label>
+        <link refid="class_q_c_p_abstract_item"/>
+        <childnode refid="724" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="728">
+        <label>QWidget</label>
+      </node>
+      <node id="726">
+        <label>QCPLayer</label>
+        <link refid="class_q_c_p_layer"/>
+        <childnode refid="725" relation="public-inheritance">
+        </childnode>
+        <childnode refid="727" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="741">
+        <label>QCPItemAnchor</label>
+        <link refid="class_q_c_p_item_anchor"/>
+        <childnode refid="723" relation="usage">
+          <edgelabel>mParentItem</edgelabel>
+        </childnode>
+        <childnode refid="727" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="729">
+        <label>QCPLayoutGrid</label>
+        <link refid="class_q_c_p_layout_grid"/>
+        <childnode refid="730" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="724">
+        <label>QCPLayerable</label>
+        <link refid="class_q_c_p_layerable"/>
+        <childnode refid="725" relation="public-inheritance">
+        </childnode>
+        <childnode refid="726" relation="usage">
+          <edgelabel>mLayer</edgelabel>
+        </childnode>
+        <childnode refid="727" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="732">
+        <label>QCPAxis</label>
+        <link refid="class_q_c_p_axis"/>
+        <childnode refid="724" relation="public-inheritance">
+        </childnode>
+        <childnode refid="733" relation="usage">
+          <edgelabel>mRange</edgelabel>
+        </childnode>
+        <childnode refid="734" relation="usage">
+          <edgelabel>mAxisPainter</edgelabel>
+        </childnode>
+        <childnode refid="736" relation="usage">
+          <edgelabel>mGrid</edgelabel>
+        </childnode>
+        <childnode refid="737" relation="usage">
+          <edgelabel>mAxisRect</edgelabel>
+        </childnode>
+      </node>
+      <node id="737">
+        <label>QCPAxisRect</label>
+        <link refid="class_q_c_p_axis_rect"/>
+        <childnode refid="731" relation="public-inheritance">
+        </childnode>
+        <childnode refid="738" relation="usage">
+          <edgelabel>mInsetLayout</edgelabel>
+        </childnode>
+        <childnode refid="733" relation="usage">
+          <edgelabel>mDragStartVertRange</edgelabel>
+          <edgelabel>mDragStartHorzRange</edgelabel>
+        </childnode>
+      </node>
+      <node id="727">
+        <label>QCustomPlot</label>
+        <link refid="class_q_custom_plot"/>
+        <childnode refid="728" relation="public-inheritance">
+        </childnode>
+        <childnode refid="726" relation="usage">
+          <edgelabel>mCurrentLayer</edgelabel>
+        </childnode>
+        <childnode refid="729" relation="usage">
+          <edgelabel>mPlotLayout</edgelabel>
+        </childnode>
+        <childnode refid="732" relation="usage">
+          <edgelabel>yAxis2</edgelabel>
+          <edgelabel>xAxis2</edgelabel>
+          <edgelabel>xAxis</edgelabel>
+          <edgelabel>yAxis</edgelabel>
+        </childnode>
+        <childnode refid="739" relation="usage">
+          <edgelabel>legend</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="3422" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="3421" bodyend="3510"/>
+    <listofallmembers>
+      <member refid="class_q_c_p_item_text_1a14a84e58f72519c8ae1d7a4a1dd23f21a5773ad69b7f4cd2724ba46d8f31b0688" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>aiBottom</name></member>
+      <member refid="class_q_c_p_item_text_1a14a84e58f72519c8ae1d7a4a1dd23f21a489ec73da5a18c15e98a4f9b17ed301f" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>aiBottomLeft</name></member>
+      <member refid="class_q_c_p_item_text_1a14a84e58f72519c8ae1d7a4a1dd23f21af2072f259730ef47aa7ad7519f3a0255" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>aiBottomRight</name></member>
+      <member refid="class_q_c_p_item_text_1a14a84e58f72519c8ae1d7a4a1dd23f21a7f1c1b8c574c753e300a4759915a9170" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>aiLeft</name></member>
+      <member refid="class_q_c_p_item_text_1a14a84e58f72519c8ae1d7a4a1dd23f21ad4faa7def46db6df2fedd1926237b48f" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>aiRight</name></member>
+      <member refid="class_q_c_p_item_text_1a14a84e58f72519c8ae1d7a4a1dd23f21a55ce9699c71db6d264eb669bb0eb9aff" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>aiTop</name></member>
+      <member refid="class_q_c_p_item_text_1a14a84e58f72519c8ae1d7a4a1dd23f21a30342ee15065715f045cb52eb77b904c" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>aiTopLeft</name></member>
+      <member refid="class_q_c_p_item_text_1a14a84e58f72519c8ae1d7a4a1dd23f21a7b6ff56fcad4c78db0b793a96fce9580" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>aiTopRight</name></member>
+      <member refid="class_q_c_p_abstract_item_1abed974cba7cc02608c71dad4638e008d" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>anchor</name></member>
+      <member refid="class_q_c_p_item_text_1a14a84e58f72519c8ae1d7a4a1dd23f21" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>AnchorIndex</name></member>
+      <member refid="class_q_c_p_item_text_1ad248f988534a9d07bc7c220a2457142a" prot="protected" virt="virtual"><scope>QCPItemText</scope><name>anchorPixelPoint</name></member>
+      <member refid="class_q_c_p_abstract_item_1a8454b9941960b840608a5a1e00b1977d" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>anchors</name></member>
+      <member refid="class_q_c_p_layerable_1aef5cb4aa899ed9dc9384fd614560291e" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>antialiased</name></member>
+      <member refid="class_q_c_p_layerable_1a62bd552d1a45aa9accb24b310542279e" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>applyAntialiasingHint</name></member>
+      <member refid="class_q_c_p_abstract_item_1a0839031abdd71067e2256a4d53c7a011" prot="protected" virt="virtual"><scope>QCPItemText</scope><name>applyDefaultAntialiasingHint</name></member>
+      <member refid="class_q_c_p_item_text_1a94aeec080f877d3d1d0c3d8ffc10e9e6" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>bottom</name></member>
+      <member refid="class_q_c_p_item_text_1a6a1c872ad3789ecafcaeac2066e218a0" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>bottomLeft</name></member>
+      <member refid="class_q_c_p_item_text_1a8ad47045c29af43b0312f7d93bb74374" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>bottomRight</name></member>
+      <member refid="class_q_c_p_item_text_1a38b981dfacb703efa8e27346eebcb5a2" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>brush</name></member>
+      <member refid="class_q_c_p_abstract_item_1a37f86618740b5047eae23eedb2de061a" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>clipAxisRect</name></member>
+      <member refid="class_q_c_p_abstract_item_1a538e25ff8856534582f5b2b400a46405" prot="protected" virt="virtual"><scope>QCPItemText</scope><name>clipRect</name></member>
+      <member refid="class_q_c_p_abstract_item_1a5b0ea171823033bcb8aee81f4a034871" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>clipToAxisRect</name></member>
+      <member refid="class_q_c_p_item_text_1ac9cb0a8a27f64d1b40855910ea9ebd03" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>color</name></member>
+      <member refid="class_q_c_p_abstract_item_1af3fc92527802078ca395138748b629a7" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>createAnchor</name></member>
+      <member refid="class_q_c_p_abstract_item_1a75036d39c4d4e2e1a7dd145fff915d32" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>createPosition</name></member>
+      <member refid="class_q_c_p_abstract_item_1a91f090d6763cfedb0749219c63788ae9" prot="protected" virt="virtual"><scope>QCPItemText</scope><name>deselectEvent</name></member>
+      <member refid="class_q_c_p_abstract_item_1acdca343717d625b8abb3c3e38c0ed39d" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>distSqrToLine</name></member>
+      <member refid="class_q_c_p_item_text_1a8793adb271ab79b4cf391dc55e9987f1" prot="protected" virt="virtual"><scope>QCPItemText</scope><name>draw</name></member>
+      <member refid="class_q_c_p_item_text_1ad34943fd68a9b1451d3e3234d072e418" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>font</name></member>
+      <member refid="class_q_c_p_item_text_1aa6e478b1ce198eace89157c4cacc3ddc" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>getTextDrawPoint</name></member>
+      <member refid="class_q_c_p_abstract_item_1acbce9e5ba5252541d19db0c40303357a" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>hasAnchor</name></member>
+      <member refid="class_q_c_p_layerable_1a8cbe5a0c9a5674249982f5ca5f8e02bc" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>initializeParentPlot</name></member>
+      <member refid="class_q_c_p_layerable_1aea67e8c19145e70d68c286a36f6b8300" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>layer</name></member>
+      <member refid="class_q_c_p_layerable_1abbf8657cedea73ac1c3499b521c90eba" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>layerChanged</name></member>
+      <member refid="class_q_c_p_item_text_1ab8c6c6e1df36256986fab1463c0a1d38" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>left</name></member>
+      <member refid="class_q_c_p_item_text_1a10d6585a030633aa79d5ebc5a437f183" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mainBrush</name></member>
+      <member refid="class_q_c_p_item_text_1ad7bf17e4945cc86bbf9a36331da059a0" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mainColor</name></member>
+      <member refid="class_q_c_p_item_text_1a23d391bd6471c45e73f45add67ede902" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mainFont</name></member>
+      <member refid="class_q_c_p_item_text_1a9ade32d362b22853659201c738269e2a" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mainPen</name></member>
+      <member refid="class_q_c_p_abstract_item_1a909a3abab783de302ebf0a0e6f2bbc15" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mAnchors</name></member>
+      <member refid="class_q_c_p_layerable_1a3ab45a4c76a3333ce42eb217a81733ec" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mAntialiased</name></member>
+      <member refid="class_q_c_p_item_text_1a2535911875faa459b8337f2efccb5cb8" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mBrush</name></member>
+      <member refid="class_q_c_p_abstract_item_1a3e57cfe7da4b1ac3d6fa7281ea437361" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mClipAxisRect</name></member>
+      <member refid="class_q_c_p_abstract_item_1ad2a70ff6b658fcb84a9427f69d3f587d" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mClipToAxisRect</name></member>
+      <member refid="class_q_c_p_item_text_1a8407f284ad867f627878cc26ef433d08" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mColor</name></member>
+      <member refid="class_q_c_p_item_text_1a1dc87fe2a824820d549ffd7e644eef8d" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mFont</name></member>
+      <member refid="class_q_c_p_layerable_1aa38ec5891aff0f50b36fd63e9372a0cd" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mLayer</name></member>
+      <member refid="class_q_c_p_layerable_1af94484cfb7cbbddb7de522e9be71d9a4" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>moveToLayer</name></member>
+      <member refid="class_q_c_p_item_text_1ae7b3ef0ce6046efd4b346d28f2e1fb67" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mPadding</name></member>
+      <member refid="class_q_c_p_layerable_1a3291445a980053e2d17a21d15957624e" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mParentLayerable</name></member>
+      <member refid="class_q_c_p_layerable_1aa2a528433e44db02b8aef23c1f9f90ed" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mParentPlot</name></member>
+      <member refid="class_q_c_p_item_text_1aa02388705dbbff1bf7b8aa872b5f579c" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mPen</name></member>
+      <member refid="class_q_c_p_item_text_1a6c27f7dc1a962a04b32430cf99f04654" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mPositionAlignment</name></member>
+      <member refid="class_q_c_p_abstract_item_1af94ff71b6a15ea6d028ab8bd8eccd012" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mPositions</name></member>
+      <member refid="class_q_c_p_item_text_1ac37df0061552225d2277e1ee3b48f2cb" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mRotation</name></member>
+      <member refid="class_q_c_p_abstract_item_1ad81eb35c8726a0f458db9df9732e0e41" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mSelectable</name></member>
+      <member refid="class_q_c_p_abstract_item_1a4bdb3457dad1d268c0f78a44152b9645" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mSelected</name></member>
+      <member refid="class_q_c_p_item_text_1a28ccd097b42a216d81db9c6869f54a59" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mSelectedBrush</name></member>
+      <member refid="class_q_c_p_item_text_1a7eb64e42f5f7998a97d8907ad25933c1" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mSelectedColor</name></member>
+      <member refid="class_q_c_p_item_text_1a6702f141fae590b2f4f1ec02fe9f8bd5" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mSelectedFont</name></member>
+      <member refid="class_q_c_p_item_text_1a8eaec649606d6ead2d8d4dcb5691777c" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mSelectedPen</name></member>
+      <member refid="class_q_c_p_item_text_1a2dec3e08c11f51639629374ecec3bd62" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mText</name></member>
+      <member refid="class_q_c_p_item_text_1acdb2e50c38e83da00f083771efbd213f" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mTextAlignment</name></member>
+      <member refid="class_q_c_p_layerable_1a62e3aed8427d6ce3ccf716f285106cb3" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>mVisible</name></member>
+      <member refid="class_q_c_p_item_text_1a00e0fa03822ff384bf4921c1c90322ff" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>padding</name></member>
+      <member refid="class_q_c_p_layerable_1a98d79f5b716d45eac4347befe546d0ec" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>parentLayerable</name></member>
+      <member refid="class_q_c_p_layerable_1ab7e0e94461566093d36ffc0f5312b109" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>parentPlot</name></member>
+      <member refid="class_q_c_p_layerable_1ab20b7dbd8e0249ed61adb9622c427382" prot="protected" virt="virtual"><scope>QCPItemText</scope><name>parentPlotInitialized</name></member>
+      <member refid="class_q_c_p_item_text_1a552bd02f46dbcb4b4812559036893352" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>pen</name></member>
+      <member refid="class_q_c_p_item_text_1a0d228a00e819022b5690c65762721129" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>position</name></member>
+      <member refid="class_q_c_p_abstract_item_1af71345bd150f87fa1d2442837b87bb59" prot="public" virt="non-virtual" ambiguityscope="QCPAbstractItem::"><scope>QCPItemText</scope><name>position</name></member>
+      <member refid="class_q_c_p_item_text_1af13c6adc480f268116ae72196eb44b06" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>positionAlignment</name></member>
+      <member refid="class_q_c_p_abstract_item_1adf6a680cc29a6bce8345c3b6af3a91a1" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>positions</name></member>
+      <member refid="class_q_c_p_abstract_item_1a9922507d8b4503a1fe1ed0b1030e23b6" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>QCPAbstractItem</name></member>
+      <member refid="class_q_c_p_item_text_1a77ff96a2972a00872ff8f8c67143abbe" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>QCPItemText</name></member>
+      <member refid="class_q_c_p_layerable_1a74c0fa237f29bf0e49565013fc5d1ec0" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>QCPLayerable</name></member>
+      <member refid="class_q_c_p_layerable_1a30809f7455e9794bca7b6c737622fa63" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>realVisibility</name></member>
+      <member refid="class_q_c_p_abstract_item_1a4c0e14c4e92df91174cb7183fb363069" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>rectSelectTest</name></member>
+      <member refid="class_q_c_p_item_text_1aef159622ce6502412e782a21ba6d84f2" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>right</name></member>
+      <member refid="class_q_c_p_item_text_1ae8991207fa1697511c1c8af9f3ca0e0a" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>rotation</name></member>
+      <member refid="class_q_c_p_abstract_item_1a9189e752025533e1595eaade0009a3bc" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>selectable</name></member>
+      <member refid="class_q_c_p_abstract_item_1a5b266c11aac61cb511901f3911dac2a3" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>selectableChanged</name></member>
+      <member refid="class_q_c_p_abstract_item_1a225865808640d8d9a7dd19f09a2e93f2" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>selected</name></member>
+      <member refid="class_q_c_p_item_text_1ac6802bbceff1ade0053166c64a5a6966" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>selectedBrush</name></member>
+      <member refid="class_q_c_p_item_text_1a44f690ec0ba6a32e518f2e923c002e39" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>selectedColor</name></member>
+      <member refid="class_q_c_p_item_text_1af2e7cacb1975132508714a51c5f48c3b" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>selectedFont</name></member>
+      <member refid="class_q_c_p_item_text_1a70c86ec95133d3e904d1718023fe3c4e" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>selectedPen</name></member>
+      <member refid="class_q_c_p_abstract_item_1aaf92af7b9893712959a6c073d334d88d" prot="protected" virt="virtual"><scope>QCPItemText</scope><name>selectEvent</name></member>
+      <member refid="class_q_c_p_abstract_item_1a777b5d384936396ad9c3ceb3d3453f1c" prot="protected" virt="virtual"><scope>QCPItemText</scope><name>selectionCategory</name></member>
+      <member refid="class_q_c_p_abstract_item_1aa5cffb034fc65dbb91c77e02c1c14251" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>selectionChanged</name></member>
+      <member refid="class_q_c_p_item_text_1a285b95bb6634c2e4f7768abb7a8bc69c" prot="public" virt="virtual"><scope>QCPItemText</scope><name>selectTest</name></member>
+      <member refid="class_q_c_p_layerable_1a4fd43e89be4a553ead41652565ff0581" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setAntialiased</name></member>
+      <member refid="class_q_c_p_item_text_1a1c7e131516df2ed8d941ef31240ded8e" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setBrush</name></member>
+      <member refid="class_q_c_p_abstract_item_1a7dc75fcbcd10206fe0b75d757ea7a347" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setClipAxisRect</name></member>
+      <member refid="class_q_c_p_abstract_item_1a39e05b9d4176b9accafc746d16ca6a06" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setClipToAxisRect</name></member>
+      <member refid="class_q_c_p_item_text_1aa51efc0841fe52da9eaf8aff6fc8a8b2" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setColor</name></member>
+      <member refid="class_q_c_p_item_text_1a94ad60ebe04f5c07c35e7c2029e96b1f" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setFont</name></member>
+      <member refid="class_q_c_p_layerable_1ab0d0da6d2de45a118886d2c8e16d5a54" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setLayer</name></member>
+      <member refid="class_q_c_p_layerable_1ab25a0e7b897993b44447caee0f142083" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setLayer</name></member>
+      <member refid="class_q_c_p_item_text_1aeea8a3e01f135f9dd0bb08f51db66310" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setPadding</name></member>
+      <member refid="class_q_c_p_layerable_1aa23c893671f1f6744ac235cf2204cf3a" prot="protected" virt="non-virtual"><scope>QCPItemText</scope><name>setParentLayerable</name></member>
+      <member refid="class_q_c_p_item_text_1a9b9ec6eea0eb0603977ff84d4c78d0a3" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setPen</name></member>
+      <member refid="class_q_c_p_item_text_1a781cdf8c640fc6a055dcff1e675c8c7a" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setPositionAlignment</name></member>
+      <member refid="class_q_c_p_item_text_1a4bcc10cd97952c3f749d75824b5077f0" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setRotation</name></member>
+      <member refid="class_q_c_p_abstract_item_1a8a8e32a55bc478b849756a78c2d87fd2" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setSelectable</name></member>
+      <member refid="class_q_c_p_abstract_item_1a203de94ad586cc44d16c9565f49d3378" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setSelected</name></member>
+      <member refid="class_q_c_p_item_text_1a6b8377eeb2af75eb9528422671ac16cb" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setSelectedBrush</name></member>
+      <member refid="class_q_c_p_item_text_1ae7ba0bdb75c897b028388e45bfd435fa" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setSelectedColor</name></member>
+      <member refid="class_q_c_p_item_text_1a0be2841772f83663c4db307928b82816" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setSelectedFont</name></member>
+      <member refid="class_q_c_p_item_text_1a291febe586f0da3f1c392e77bef4aa20" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setSelectedPen</name></member>
+      <member refid="class_q_c_p_item_text_1a3dacdda0ac88f99a05b333b977c48747" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setText</name></member>
+      <member refid="class_q_c_p_item_text_1ab5bc0684c4d1bed81949a11b34dba478" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setTextAlignment</name></member>
+      <member refid="class_q_c_p_layerable_1a3bed99ddc396b48ce3ebfdc0418744f8" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>setVisible</name></member>
+      <member refid="class_q_c_p_item_text_1a9547f7832010486abed0837e75db5330" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>text</name></member>
+      <member refid="class_q_c_p_item_text_1aaa1d84b3f61f9f2a0cce230e66ef7194" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>textAlignment</name></member>
+      <member refid="class_q_c_p_item_text_1a5c87ee162cbbe3d166b97826c8849304" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>top</name></member>
+      <member refid="class_q_c_p_item_text_1a6354d8762182a3502103fabe5fbb8512" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>topLeft</name></member>
+      <member refid="class_q_c_p_item_text_1ad18ac45cb4cc135de1eb78f2e86b6504" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>topRight</name></member>
+      <member refid="class_q_c_p_layerable_1a10a3cc92e0fa63e4a929e61d34e275a7" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>visible</name></member>
+      <member refid="class_q_c_p_abstract_item_1a375bd1b7d3218b04a6ff7ff06fff917c" prot="public" virt="virtual"><scope>QCPItemText</scope><name>~QCPAbstractItem</name></member>
+      <member refid="class_q_c_p_item_text_1a1efd41ca53d49042d4f4b63cf9615cb6" prot="public" virt="virtual"><scope>QCPItemText</scope><name>~QCPItemText</name></member>
+      <member refid="class_q_c_p_layerable_1a4231cf5b3601d6d3a5781283e7a9735b" prot="public" virt="non-virtual"><scope>QCPItemText</scope><name>~QCPLayerable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,346 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_protocol_1_1_packet" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Protocol::Packet</compoundname>
+    <derivedcompoundref refid="class_protocol_1_1_ack_packet" prot="public" virt="non-virtual">Protocol::AckPacket</derivedcompoundref>
+    <derivedcompoundref refid="class_protocol_1_1_action_packet" prot="public" virt="non-virtual">Protocol::ActionPacket</derivedcompoundref>
+    <derivedcompoundref refid="class_protocol_1_1_info_packet" prot="public" virt="non-virtual">Protocol::InfoPacket</derivedcompoundref>
+    <derivedcompoundref refid="class_protocol_1_1_telemetry_packet" prot="public" virt="non-virtual">Protocol::TelemetryPacket</derivedcompoundref>
+    <includes refid="packet_8h" local="no">packet.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_protocol_1_1_packet_1a007e952050b7cd153f79516a517f8e7c" prot="private" static="no" mutable="no">
+        <type><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75" kindref="member">PacketType</ref></type>
+        <definition>PacketType Protocol::Packet::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/packet.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_protocol_1_1_packet_1a2f0a19f4bff82270290e53d31e67db33" prot="protected" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t Protocol::Packet::timestamp</definition>
+        <argsstring></argsstring>
+        <name>timestamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="44" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/packet.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_protocol_1_1_packet_1acbe4f1b9f973d14097814d16fb0cd83a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t Protocol::Packet::get_timestamp</definition>
+        <argsstring>()</argsstring>
+        <name>get_timestamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="36" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="57" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_packet_1aa3f97852d443bb9554178384afa24eec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Protocol::Packet::set_type</definition>
+        <argsstring>(PacketType a)</argsstring>
+        <name>set_type</name>
+        <param>
+          <type><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75" kindref="member">PacketType</ref></type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="37" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="60" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_packet_1a3c159ff945d95102ee2a2ba0b93d05d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75" kindref="member">PacketType</ref></type>
+        <definition>Protocol::PacketType Protocol::Packet::get_type</definition>
+        <argsstring>()</argsstring>
+        <name>get_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="38" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="64" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_packet_1a9c89c3d05acc44a5050ebfc756a2cd41" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>size_t</type>
+        <definition>virtual size_t Protocol::Packet::GetBytes</definition>
+        <argsstring>(uint8_t *buffer, size_t len)=0</argsstring>
+        <name>GetBytes</name>
+        <reimplementedby refid="class_protocol_1_1_ack_packet_1a588f9608c58a913c5dd3c4acd28f92af">GetBytes</reimplementedby>
+        <reimplementedby refid="class_protocol_1_1_info_packet_1ad1f43721045348442cf224533bce7f1a">GetBytes</reimplementedby>
+        <reimplementedby refid="class_protocol_1_1_telemetry_packet_1a36d86bf7afc3dcdd820ffa0982c5177a">GetBytes</reimplementedby>
+        <reimplementedby refid="class_protocol_1_1_action_packet_1af5963f7c15af8292152df260b188f626">GetBytes</reimplementedby>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores the byte representation of a packet in the given buffer.</para><para><simplesect kind="author"><para>Jason Watkins </para></simplesect>
+<simplesect kind="date"><para>2015-11-16</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buffer[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array to write the packet to. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of <computeroutput>buffer</computeroutput>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="89" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_protocol_1_1_packet_1ae02347b6d2eee98511ec19343b82e0a7" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Protocol::Packet::Packet</definition>
+        <argsstring>(PacketType t)</argsstring>
+        <name>Packet</name>
+        <param>
+          <type><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75" kindref="member">PacketType</ref></type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="46" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="33" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_packet_1aa7498c8c70cb8a55617ce588508af81f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t Protocol::Packet::WriteHeader</definition>
+        <argsstring>(uint8_t *buffer, size_t len)</argsstring>
+        <name>WriteHeader</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Writes information shared by all packets to the given buffer.</para><para><simplesect kind="author"><para>Jason Watkins </para></simplesect>
+<simplesect kind="date"><para>2015-11-16</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buffer[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array to write the header to. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of <computeroutput>buffer</computeroutput>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of bytes written to buffer. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="56" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="40" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_packet_1aa5f54d3128f7914383f4d8e8f53fbce4" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t Protocol::Packet::ReadHeader</definition>
+        <argsstring>(uint8_t *buffer, size_t len)</argsstring>
+        <name>ReadHeader</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads information shared by all packets from the given buffer.</para><para><simplesect kind="author"><para>Jason Watkins </para></simplesect>
+<simplesect kind="date"><para>2015-11-16</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buffer[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array containing a valid packet </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of <computeroutput>buffer</computeroutput>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The number of bytes contained in the header. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="66" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="49" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_packet_1adc4ebdbdbcdbaa177ba243c5c654ba18" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t Protocol::Packet::SetChecksum</definition>
+        <argsstring>(uint8_t *buffer, size_t len, size_t offset)</argsstring>
+        <name>SetChecksum</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the checksum bytes at the end of a packet.</para><para><simplesect kind="author"><para>Jason Watkins </para></simplesect>
+<simplesect kind="date"><para>2015-11-16</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buffer[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array to write the header to. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of <computeroutput>buffer</computeroutput>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>offset[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The index of the last byte that should be part of the calculated checksum. <computeroutput>offset</computeroutput> should be at least two less than <computeroutput>len</computeroutput> to leave room for the checksum bytes. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The end of the packet with the checksum appended. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="80" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="68" bodyend="92"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_protocol_1_1_packet_1ad327686418aa271121e6a6a8eadebbd4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_protocol_1_1_packet" kindref="compound">Packet</ref> *</type>
+        <definition>Protocol::Packet * Protocol::Packet::Parse</definition>
+        <argsstring>(uint8_t *buffer, size_t len)</argsstring>
+        <name>Parse</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="91" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="107" bodyend="139"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="149">
+        <label>Protocol::Packet</label>
+        <link refid="class_protocol_1_1_packet"/>
+      </node>
+      <node id="152">
+        <label>Protocol::InfoPacket</label>
+        <link refid="class_protocol_1_1_info_packet"/>
+        <childnode refid="149" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="150">
+        <label>Protocol::AckPacket</label>
+        <link refid="class_protocol_1_1_ack_packet"/>
+        <childnode refid="149" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="151">
+        <label>Protocol::ActionPacket</label>
+        <link refid="class_protocol_1_1_action_packet"/>
+        <childnode refid="149" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="153">
+        <label>Protocol::TelemetryPacket</label>
+        <link refid="class_protocol_1_1_telemetry_packet"/>
+        <childnode refid="149" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="34" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/packet.h" bodystart="33" bodyend="92"/>
+    <listofallmembers>
+      <member refid="class_protocol_1_1_packet_1acbe4f1b9f973d14097814d16fb0cd83a" prot="public" virt="non-virtual"><scope>Protocol::Packet</scope><name>get_timestamp</name></member>
+      <member refid="class_protocol_1_1_packet_1a3c159ff945d95102ee2a2ba0b93d05d8" prot="public" virt="non-virtual"><scope>Protocol::Packet</scope><name>get_type</name></member>
+      <member refid="class_protocol_1_1_packet_1a9c89c3d05acc44a5050ebfc756a2cd41" prot="public" virt="pure-virtual"><scope>Protocol::Packet</scope><name>GetBytes</name></member>
+      <member refid="class_protocol_1_1_packet_1ae02347b6d2eee98511ec19343b82e0a7" prot="protected" virt="non-virtual"><scope>Protocol::Packet</scope><name>Packet</name></member>
+      <member refid="class_protocol_1_1_packet_1ad327686418aa271121e6a6a8eadebbd4" prot="public" virt="non-virtual"><scope>Protocol::Packet</scope><name>Parse</name></member>
+      <member refid="class_protocol_1_1_packet_1aa5f54d3128f7914383f4d8e8f53fbce4" prot="protected" virt="non-virtual"><scope>Protocol::Packet</scope><name>ReadHeader</name></member>
+      <member refid="class_protocol_1_1_packet_1aa3f97852d443bb9554178384afa24eec" prot="public" virt="non-virtual"><scope>Protocol::Packet</scope><name>set_type</name></member>
+      <member refid="class_protocol_1_1_packet_1adc4ebdbdbcdbaa177ba243c5c654ba18" prot="protected" virt="non-virtual"><scope>Protocol::Packet</scope><name>SetChecksum</name></member>
+      <member refid="class_protocol_1_1_packet_1a2f0a19f4bff82270290e53d31e67db33" prot="protected" virt="non-virtual"><scope>Protocol::Packet</scope><name>timestamp</name></member>
+      <member refid="class_protocol_1_1_packet_1a007e952050b7cd153f79516a517f8e7c" prot="private" virt="non-virtual"><scope>Protocol::Packet</scope><name>type</name></member>
+      <member refid="class_protocol_1_1_packet_1aa7498c8c70cb8a55617ce588508af81f" prot="protected" virt="non-virtual"><scope>Protocol::Packet</scope><name>WriteHeader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

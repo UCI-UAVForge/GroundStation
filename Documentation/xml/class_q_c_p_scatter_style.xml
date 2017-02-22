@@ -1,0 +1,764 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_q_c_p_scatter_style" kind="class" language="C++" prot="public">
+    <compoundname>QCPScatterStyle</compoundname>
+    <includes refid="qcustomplot_8h" local="no">qcustomplot.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349" prot="public" static="no">
+        <name>ScatterShape</name>
+        <enumvalue id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349abd144c291ca274f77053ec68cab6c022" prot="public">
+          <name>ssNone</name>
+          <briefdescription>
+<para>no scatter symbols are drawn (e.g. in <ref refid="class_q_c_p_graph" kindref="compound">QCPGraph</ref>, data only represented with lines) </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a06e15a735b79093a1d999c0374fa3aa1" prot="public">
+          <name>ssDot</name>
+          <briefdescription>
+<para>{ssDot.png} a single pixel (use <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a281fe1434696dcbab3aa6b9ccfbb09e9" kindref="member">ssDisc</ref> or <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a7c92a110880d0ef2170dff3a5b4f7779" kindref="member">ssCircle</ref> if you want a round shape with a certain radius) </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a9eacd60f059dc3ef71bf249f515a6fe4" prot="public">
+          <name>ssCross</name>
+          <briefdescription>
+<para>{ssCross.png} a cross </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a2d7f1d3c1a148b9d9d17f2fd9cae5eb7" prot="public">
+          <name>ssPlus</name>
+          <briefdescription>
+<para>{ssPlus.png} a plus </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a7c92a110880d0ef2170dff3a5b4f7779" prot="public">
+          <name>ssCircle</name>
+          <briefdescription>
+<para>{ssCircle.png} a circle </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a281fe1434696dcbab3aa6b9ccfbb09e9" prot="public">
+          <name>ssDisc</name>
+          <briefdescription>
+<para>{ssDisc.png} a circle which is filled with the pen&apos;s color (not the brush as with ssCircle) </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a279e48703ddc9f1cf4a61d3e2817ab3c" prot="public">
+          <name>ssSquare</name>
+          <briefdescription>
+<para>{ssSquare.png} a square </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a4fc5929df1b2dad0a3cb2ef2c8b6e633" prot="public">
+          <name>ssDiamond</name>
+          <briefdescription>
+<para>{ssDiamond.png} a diamond </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a6047a2d64e41f1d6ce54445d595d442f" prot="public">
+          <name>ssStar</name>
+          <briefdescription>
+<para>{ssStar.png} a star with eight arms, i.e. a combination of cross and plus </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a74a8d4eff1d97b57c53a60d0003453c3" prot="public">
+          <name>ssTriangle</name>
+          <briefdescription>
+<para>{ssTriangle.png} an equilateral triangle, standing on baseline </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a6156274d21d8b4115197567d3ea2d9a8" prot="public">
+          <name>ssTriangleInverted</name>
+          <briefdescription>
+<para>{ssTriangleInverted.png} an equilateral triangle, standing on corner </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a7081310936c200c6c78e34c172f72d07" prot="public">
+          <name>ssCrossSquare</name>
+          <briefdescription>
+<para>{ssCrossSquare.png} a square with a cross inside </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a5aa8e9db545e5404482fec774768ee25" prot="public">
+          <name>ssPlusSquare</name>
+          <briefdescription>
+<para>{ssPlusSquare.png} a square with a plus inside </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a524613ba5d1c4eaa1541d74cf339d283" prot="public">
+          <name>ssCrossCircle</name>
+          <briefdescription>
+<para>{ssCrossCircle.png} a circle with a cross inside </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a6fa151d01f1694c9ff9922da686dc535" prot="public">
+          <name>ssPlusCircle</name>
+          <briefdescription>
+<para>{ssPlusCircle.png} a circle with a plus inside </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349ada3b2988ece38c121922a4b5007eb08d" prot="public">
+          <name>ssPeace</name>
+          <briefdescription>
+<para>{ssPeace.png} a circle, with one vertical and two downward diagonal lines </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e" prot="public">
+          <name>ssPixmap</name>
+          <briefdescription>
+<para>a custom pixmap specified by <ref refid="class_q_c_p_scatter_style_1a5fb611d46acfac520d7b89a1c71d9246" kindref="member">setPixmap</ref>, centered on the data point coordinates </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d" prot="public">
+          <name>ssCustom</name>
+          <briefdescription>
+<para>custom painter operations are performed per scatter (As QPainterPath, see <ref refid="class_q_c_p_scatter_style_1a96a3e949f90b2afe5677ca9412a12a1e" kindref="member">setCustomPath</ref>) </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Defines the shape used for scatter points.</para><para>On plottables/items that draw scatters, the sizes of these visualizations (with exception of <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a06e15a735b79093a1d999c0374fa3aa1" kindref="member">ssDot</ref> and <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e" kindref="member">ssPixmap</ref>) can be controlled with the <ref refid="class_q_c_p_scatter_style_1aaefdd031052892c4136129db68596e0f" kindref="member">setSize</ref> function. Scatters are drawn with the pen and brush specified with <ref refid="class_q_c_p_scatter_style_1a761f1f229cc0ca4703e1e2b89f6dd1ba" kindref="member">setPen</ref> and <ref refid="class_q_c_p_scatter_style_1a74d692aaeb8d4b36d6f7d510e44264b1" kindref="member">setBrush</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="246" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="246" bodyend="264"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_q_c_p_scatter_style_1a757da98671eb06b221979373ac2cec91" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPScatterStyle::mSize</definition>
+        <argsstring></argsstring>
+        <name>mSize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="299" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="299" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_scatter_style_1af1b327f35f107ed108290187bbc8c7c6" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349" kindref="member">ScatterShape</ref></type>
+        <definition>ScatterShape QCPScatterStyle::mShape</definition>
+        <argsstring></argsstring>
+        <name>mShape</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="300" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="300" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_scatter_style_1a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17" prot="protected" static="no" mutable="no">
+        <type>QPen</type>
+        <definition>QPen QCPScatterStyle::mPen</definition>
+        <argsstring></argsstring>
+        <name>mPen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="301" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="301" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_scatter_style_1a1b9c6ab10aebcaf236f1f45d1d6d64d1" prot="protected" static="no" mutable="no">
+        <type>QBrush</type>
+        <definition>QBrush QCPScatterStyle::mBrush</definition>
+        <argsstring></argsstring>
+        <name>mBrush</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="302" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_scatter_style_1a7697346c89b19d4cd1d8dd33319ec9e3" prot="protected" static="no" mutable="no">
+        <type>QPixmap</type>
+        <definition>QPixmap QCPScatterStyle::mPixmap</definition>
+        <argsstring></argsstring>
+        <name>mPixmap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="303" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="303" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_scatter_style_1a813cb074744dc5a2f59cc99d6a10c6f0" prot="protected" static="no" mutable="no">
+        <type>QPainterPath</type>
+        <definition>QPainterPath QCPScatterStyle::mCustomPath</definition>
+        <argsstring></argsstring>
+        <name>mCustomPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="304" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="304" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_scatter_style_1a84ef5aa591ddba07b440f597e1669e78" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool QCPScatterStyle::mPenDefined</definition>
+        <argsstring></argsstring>
+        <name>mPenDefined</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="307" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a8836018d9ad83ccd8870de8315c1be73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPScatterStyle::QCPScatterStyle</definition>
+        <argsstring>()</argsstring>
+        <name>QCPScatterStyle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new <ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> instance with size set to 6. No shape, pen or brush is defined.</para><para>Since the pen is undefined (<ref refid="class_q_c_p_scatter_style_1a7f1385a8d5e4f349a6b8030723fbd0f7" kindref="member">isPenDefined</ref> returns false), the scatter color will be inherited from the plottable that uses this scatter style. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="266" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="342" bodyend="349"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a003d92f74f4561eda111862eadd62f28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPScatterStyle::QCPScatterStyle</definition>
+        <argsstring>(ScatterShape shape, double size=6)</argsstring>
+        <name>QCPScatterStyle</name>
+        <param>
+          <type><ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349" kindref="member">ScatterShape</ref></type>
+          <declname>shape</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>size</declname>
+          <defval>6</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new <ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> instance with shape set to <emphasis>shape</emphasis> and size to <emphasis>size</emphasis>. No pen or brush is defined.</para><para>Since the pen is undefined (<ref refid="class_q_c_p_scatter_style_1a7f1385a8d5e4f349a6b8030723fbd0f7" kindref="member">isPenDefined</ref> returns false), the scatter color will be inherited from the plottable that uses this scatter style. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="267" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="358" bodyend="365"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1afa059da858c864c7e05871dc602d7eab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPScatterStyle::QCPScatterStyle</definition>
+        <argsstring>(ScatterShape shape, const QColor &amp;color, double size)</argsstring>
+        <name>QCPScatterStyle</name>
+        <param>
+          <type><ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349" kindref="member">ScatterShape</ref></type>
+          <declname>shape</declname>
+        </param>
+        <param>
+          <type>const QColor &amp;</type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new <ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> instance with shape set to <emphasis>shape</emphasis>, the pen color set to <emphasis>color</emphasis>, and size to <emphasis>size</emphasis>. No brush is defined, i.e. the scatter point will not be filled. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="268" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="371" bodyend="378"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a6e1b64f12cac7f07af180ae4316fd38d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPScatterStyle::QCPScatterStyle</definition>
+        <argsstring>(ScatterShape shape, const QColor &amp;color, const QColor &amp;fill, double size)</argsstring>
+        <name>QCPScatterStyle</name>
+        <param>
+          <type><ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349" kindref="member">ScatterShape</ref></type>
+          <declname>shape</declname>
+        </param>
+        <param>
+          <type>const QColor &amp;</type>
+          <declname>color</declname>
+        </param>
+        <param>
+          <type>const QColor &amp;</type>
+          <declname>fill</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new <ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> instance with shape set to <emphasis>shape</emphasis>, the pen color set to <emphasis>color</emphasis>, the brush color to <emphasis>fill</emphasis> (with a solid pattern), and size to <emphasis>size</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="269" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="384" bodyend="391"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a85acc4941d7e5c9bca5fa51377a77f49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPScatterStyle::QCPScatterStyle</definition>
+        <argsstring>(ScatterShape shape, const QPen &amp;pen, const QBrush &amp;brush, double size)</argsstring>
+        <name>QCPScatterStyle</name>
+        <param>
+          <type><ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349" kindref="member">ScatterShape</ref></type>
+          <declname>shape</declname>
+        </param>
+        <param>
+          <type>const QPen &amp;</type>
+          <declname>pen</declname>
+        </param>
+        <param>
+          <type>const QBrush &amp;</type>
+          <declname>brush</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new <ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> instance with shape set to <emphasis>shape</emphasis>, the pen set to <emphasis>pen</emphasis>, the brush to <emphasis>brush</emphasis>, and size to <emphasis>size</emphasis>.</para><para><simplesect kind="warning"><para>In some cases it might be tempting to directly use a pen style like <computeroutput>Qt::NoPen</computeroutput> as <emphasis>pen</emphasis> and a color like <computeroutput>Qt::blue</computeroutput> as <emphasis>brush</emphasis>. Notice however, that the corresponding call<linebreak/>
+<computeroutput><ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle(QCPScatterShape::ssCircle, Qt::NoPen, Qt::blue, 5)</ref></computeroutput><linebreak/>
+doesn&apos;t necessarily lead C++ to use this constructor in some cases, but might mistake <computeroutput>Qt::NoPen</computeroutput> for a QColor and use the <ref refid="class_q_c_p_scatter_style_1a6e1b64f12cac7f07af180ae4316fd38d" kindref="member">QCPScatterStyle(ScatterShape shape, const QColor &amp;color, const QColor &amp;fill, double size)</ref> constructor instead (which will lead to an unexpected look of the scatter points). To prevent this, be more explicit with the parameter types. For example, use <computeroutput>QBrush(Qt::blue)</computeroutput> instead of just <computeroutput>Qt::blue</computeroutput>, to clearly point out to the compiler that this constructor is wanted. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="270" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="408" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a63962094587a4c2258435aa7933996cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPScatterStyle::QCPScatterStyle</definition>
+        <argsstring>(const QPixmap &amp;pixmap)</argsstring>
+        <name>QCPScatterStyle</name>
+        <param>
+          <type>const QPixmap &amp;</type>
+          <declname>pixmap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new <ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> instance which will show the specified <emphasis>pixmap</emphasis>. The scatter shape is set to <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e" kindref="member">ssPixmap</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="271" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="421" bodyend="429"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a879c30647683b3cfbde2afecea815e6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPScatterStyle::QCPScatterStyle</definition>
+        <argsstring>(const QPainterPath &amp;customPath, const QPen &amp;pen, const QBrush &amp;brush=Qt::NoBrush, double size=6)</argsstring>
+        <name>QCPScatterStyle</name>
+        <param>
+          <type>const QPainterPath &amp;</type>
+          <declname>customPath</declname>
+        </param>
+        <param>
+          <type>const QPen &amp;</type>
+          <declname>pen</declname>
+        </param>
+        <param>
+          <type>const QBrush &amp;</type>
+          <declname>brush</declname>
+          <defval>Qt::NoBrush</defval>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>size</declname>
+          <defval>6</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new <ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> instance with a custom shape that is defined via <emphasis>customPath</emphasis>. The scatter shape is set to <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d" kindref="member">ssCustom</ref>.</para><para>The custom shape line will be drawn with <emphasis>pen</emphasis> and filled with <emphasis>brush</emphasis>. The size has a slightly different meaning than for built-in scatter points: The custom path will be drawn scaled by a factor of <emphasis>size/6.0</emphasis>. Since the default <emphasis>size</emphasis> is 6, the custom path will appear at a its natural size by default. To double the size of the path for example, set <emphasis>size</emphasis> to 12. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="272" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="440" bodyend="448"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a1973ee650368f1c5f55507b78473f634" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double QCPScatterStyle::size</definition>
+        <argsstring>() const </argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="275" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="275" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a4462a25ef17769631f4e0aa81dadca4b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349" kindref="member">ScatterShape</ref></type>
+        <definition>ScatterShape QCPScatterStyle::shape</definition>
+        <argsstring>() const </argsstring>
+        <name>shape</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="276" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="276" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a3c24c3bf37b561b4807aed9f1418ab58" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QPen</type>
+        <definition>QPen QCPScatterStyle::pen</definition>
+        <argsstring>() const </argsstring>
+        <name>pen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="277" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="277" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a46bf481d84bfa31b287dd43a3bf86d37" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QBrush</type>
+        <definition>QBrush QCPScatterStyle::brush</definition>
+        <argsstring>() const </argsstring>
+        <name>brush</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="278" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="278" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a9bab44cc41fcd585621a4b3e0e48231b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QPixmap</type>
+        <definition>QPixmap QCPScatterStyle::pixmap</definition>
+        <argsstring>() const </argsstring>
+        <name>pixmap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="279" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="279" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a4dd4998dfb0d6889205668a06c790328" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QPainterPath</type>
+        <definition>QPainterPath QCPScatterStyle::customPath</definition>
+        <argsstring>() const </argsstring>
+        <name>customPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="280" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="280" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1aaefdd031052892c4136129db68596e0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPScatterStyle::setSize</definition>
+        <argsstring>(double size)</argsstring>
+        <name>setSize</name>
+        <param>
+          <type>double</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the size (pixel diameter) of the drawn scatter points to <emphasis>size</emphasis>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_scatter_style_1a7c641c4d4c6d29cb705d3887cfce91c1" kindref="member">setShape</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="283" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="455" bodyend="458"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a7c641c4d4c6d29cb705d3887cfce91c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPScatterStyle::setShape</definition>
+        <argsstring>(ScatterShape shape)</argsstring>
+        <name>setShape</name>
+        <param>
+          <type><ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349" kindref="member">ScatterShape</ref></type>
+          <declname>shape</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the shape to <emphasis>shape</emphasis>.</para><para>Note that the calls <ref refid="class_q_c_p_scatter_style_1a5fb611d46acfac520d7b89a1c71d9246" kindref="member">setPixmap</ref> and <ref refid="class_q_c_p_scatter_style_1a96a3e949f90b2afe5677ca9412a12a1e" kindref="member">setCustomPath</ref> automatically set the shape to <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e" kindref="member">ssPixmap</ref> and <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d" kindref="member">ssCustom</ref>, respectively.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_scatter_style_1aaefdd031052892c4136129db68596e0f" kindref="member">setSize</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="284" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="468" bodyend="471"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a761f1f229cc0ca4703e1e2b89f6dd1ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPScatterStyle::setPen</definition>
+        <argsstring>(const QPen &amp;pen)</argsstring>
+        <name>setPen</name>
+        <param>
+          <type>const QPen &amp;</type>
+          <declname>pen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the pen that will be used to draw scatter points to <emphasis>pen</emphasis>.</para><para>If the pen was previously undefined (see <ref refid="class_q_c_p_scatter_style_1a7f1385a8d5e4f349a6b8030723fbd0f7" kindref="member">isPenDefined</ref>), the pen is considered defined after a call to this function, even if <emphasis>pen</emphasis> is <computeroutput>Qt::NoPen</computeroutput>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_scatter_style_1a74d692aaeb8d4b36d6f7d510e44264b1" kindref="member">setBrush</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="285" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="481" bodyend="485"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a74d692aaeb8d4b36d6f7d510e44264b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPScatterStyle::setBrush</definition>
+        <argsstring>(const QBrush &amp;brush)</argsstring>
+        <name>setBrush</name>
+        <param>
+          <type>const QBrush &amp;</type>
+          <declname>brush</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the brush that will be used to fill scatter points to <emphasis>brush</emphasis>. Note that not all scatter shapes have fillable areas. For example, <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a2d7f1d3c1a148b9d9d17f2fd9cae5eb7" kindref="member">ssPlus</ref> does not while <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a7c92a110880d0ef2170dff3a5b4f7779" kindref="member">ssCircle</ref> does.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_scatter_style_1a761f1f229cc0ca4703e1e2b89f6dd1ba" kindref="member">setPen</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="286" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="493" bodyend="496"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a5fb611d46acfac520d7b89a1c71d9246" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPScatterStyle::setPixmap</definition>
+        <argsstring>(const QPixmap &amp;pixmap)</argsstring>
+        <name>setPixmap</name>
+        <param>
+          <type>const QPixmap &amp;</type>
+          <declname>pixmap</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the pixmap that will be drawn as scatter point to <emphasis>pixmap</emphasis>.</para><para>Note that <ref refid="class_q_c_p_scatter_style_1aaefdd031052892c4136129db68596e0f" kindref="member">setSize</ref> does not influence the appearance of the pixmap.</para><para>The scatter shape is automatically set to <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e" kindref="member">ssPixmap</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="287" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="505" bodyend="509"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a96a3e949f90b2afe5677ca9412a12a1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPScatterStyle::setCustomPath</definition>
+        <argsstring>(const QPainterPath &amp;customPath)</argsstring>
+        <name>setCustomPath</name>
+        <param>
+          <type>const QPainterPath &amp;</type>
+          <declname>customPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the custom shape that will be drawn as scatter point to <emphasis>customPath</emphasis>.</para><para>The scatter shape is automatically set to <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d" kindref="member">ssCustom</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="288" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="516" bodyend="520"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1aa3861281108d0adbeb291c820ea3925c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPScatterStyle::isNone</definition>
+        <argsstring>() const </argsstring>
+        <name>isNone</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns whether the scatter shape is <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349abd144c291ca274f77053ec68cab6c022" kindref="member">ssNone</ref>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_scatter_style_1a7c641c4d4c6d29cb705d3887cfce91c1" kindref="member">setShape</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="291" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="291" bodyend="291"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a7f1385a8d5e4f349a6b8030723fbd0f7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPScatterStyle::isPenDefined</definition>
+        <argsstring>() const </argsstring>
+        <name>isPenDefined</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns whether a pen has been defined for this scatter style.</para><para>The pen is undefined if a constructor is called that does not carry <emphasis>pen</emphasis> as parameter. Those are <ref refid="class_q_c_p_scatter_style_1a8836018d9ad83ccd8870de8315c1be73" kindref="member">QCPScatterStyle()</ref> and <ref refid="class_q_c_p_scatter_style_1a003d92f74f4561eda111862eadd62f28" kindref="member">QCPScatterStyle(ScatterShape shape, double size)</ref>. If the pen is left undefined, the scatter color will be inherited from the plottable that uses this scatter style.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_scatter_style_1a761f1f229cc0ca4703e1e2b89f6dd1ba" kindref="member">setPen</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="292" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="292" bodyend="292"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a81817dfd404635f211e6ff2a04657d36" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPScatterStyle::applyTo</definition>
+        <argsstring>(QCPPainter *painter, const QPen &amp;defaultPen) const </argsstring>
+        <name>applyTo</name>
+        <param>
+          <type><ref refid="class_q_c_p_painter" kindref="compound">QCPPainter</ref> *</type>
+          <declname>painter</declname>
+        </param>
+        <param>
+          <type>const QPen &amp;</type>
+          <declname>defaultPen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Applies the pen and the brush of this scatter style to <emphasis>painter</emphasis>. If this scatter style has an undefined pen (<ref refid="class_q_c_p_scatter_style_1a7f1385a8d5e4f349a6b8030723fbd0f7" kindref="member">isPenDefined</ref>), sets the pen of <emphasis>painter</emphasis> to <emphasis>defaultPen</emphasis> instead.</para><para>This function is used by plottables (or any class that wants to draw scatters) just before a number of scatters with this style shall be drawn with the <emphasis>painter</emphasis>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_scatter_style_1a992d531ac471ec2b29bdec6aeb400a06" kindref="member">drawShape</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="293" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="531" bodyend="535"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1a992d531ac471ec2b29bdec6aeb400a06" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPScatterStyle::drawShape</definition>
+        <argsstring>(QCPPainter *painter, QPointF pos) const </argsstring>
+        <name>drawShape</name>
+        <param>
+          <type><ref refid="class_q_c_p_painter" kindref="compound">QCPPainter</ref> *</type>
+          <declname>painter</declname>
+        </param>
+        <param>
+          <type>QPointF</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Draws the scatter shape with <emphasis>painter</emphasis> at position <emphasis>pos</emphasis>.</para><para>This function does not modify the pen or the brush on the painter, as <ref refid="class_q_c_p_scatter_style_1a81817dfd404635f211e6ff2a04657d36" kindref="member">applyTo</ref> is meant to be called before scatter points are drawn with <ref refid="class_q_c_p_scatter_style_1a992d531ac471ec2b29bdec6aeb400a06" kindref="member">drawShape</ref>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_scatter_style_1a81817dfd404635f211e6ff2a04657d36" kindref="member">applyTo</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="294" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="545" bodyend="548"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_scatter_style_1ae76811ac9f70ebf7a2b4c759853e6ed8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPScatterStyle::drawShape</definition>
+        <argsstring>(QCPPainter *painter, double x, double y) const </argsstring>
+        <name>drawShape</name>
+        <param>
+          <type><ref refid="class_q_c_p_painter" kindref="compound">QCPPainter</ref> *</type>
+          <declname>painter</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Draws the scatter shape with <emphasis>painter</emphasis> at position <emphasis>x</emphasis> and <emphasis>y</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="295" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="553" bodyend="675"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents the visual appearance of scatter points. </para>    </briefdescription>
+    <detaileddescription>
+<para>This class holds information about shape, color and size of scatter points. In plottables like <ref refid="class_q_c_p_graph" kindref="compound">QCPGraph</ref> it is used to store how scatter points shall be drawn. For example, <ref refid="class_q_c_p_graph_1a12bd17a8ba21983163ec5d8f42a9fea5" kindref="member">QCPGraph::setScatterStyle</ref> takes a <ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> instance.</para><para>A scatter style consists of a shape (<ref refid="class_q_c_p_scatter_style_1a7c641c4d4c6d29cb705d3887cfce91c1" kindref="member">setShape</ref>), a line color (<ref refid="class_q_c_p_scatter_style_1a761f1f229cc0ca4703e1e2b89f6dd1ba" kindref="member">setPen</ref>) and possibly a fill (<ref refid="class_q_c_p_scatter_style_1a74d692aaeb8d4b36d6f7d510e44264b1" kindref="member">setBrush</ref>), if the shape provides a fillable area. Further, the size of the shape can be controlled with <ref refid="class_q_c_p_scatter_style_1aaefdd031052892c4136129db68596e0f" kindref="member">setSize</ref>.</para><sect1 id="class_q_c_p_scatter_style_1QCPScatterStyle-defining">
+<title>Specifying a scatter style</title>
+<para>You can set all these configurations either by calling the respective functions on an instance: <programlisting><codeline><highlight class="normal">QCPScatterStyle<sp/>myScatter;</highlight></codeline>
+<codeline><highlight class="normal">myScatter.setShape(QCPScatterStyle::ssCircle);</highlight></codeline>
+<codeline><highlight class="normal">myScatter.setPen(Qt::blue);</highlight></codeline>
+<codeline><highlight class="normal">myScatter.setBrush(Qt::white);</highlight></codeline>
+<codeline><highlight class="normal">myScatter.setSize(5);</highlight></codeline>
+<codeline><highlight class="normal">customPlot-&gt;graph(0)-&gt;setScatterStyle(myScatter);</highlight></codeline>
+</programlisting></para><para>Or you can use one of the various constructors that take different parameter combinations, making it easy to specify a scatter style in a single call, like so: <programlisting><codeline><highlight class="normal">customPlot-&gt;graph(0)-&gt;setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle,<sp/>Qt::blue,<sp/>Qt::white,<sp/>5));</highlight></codeline>
+</programlisting></para></sect1>
+<sect1 id="class_q_c_p_scatter_style_1QCPScatterStyle-undefinedpen">
+<title>Leaving the color/pen up to the plottable</title>
+<para>There are two constructors which leave the pen undefined: <ref refid="class_q_c_p_scatter_style_1a8836018d9ad83ccd8870de8315c1be73" kindref="member">QCPScatterStyle()</ref> and <ref refid="class_q_c_p_scatter_style_1a003d92f74f4561eda111862eadd62f28" kindref="member">QCPScatterStyle(ScatterShape shape, double size)</ref>. If those constructors are used, a call to <ref refid="class_q_c_p_scatter_style_1a7f1385a8d5e4f349a6b8030723fbd0f7" kindref="member">isPenDefined</ref> will return false. It leads to scatter points that inherit the pen from the plottable that uses the scatter style. Thus, if such a scatter style is passed to <ref refid="class_q_c_p_graph" kindref="compound">QCPGraph</ref>, the line color of the graph (<ref refid="class_q_c_p_abstract_plottable_1ab74b09ae4c0e7e13142fe4b5bf46cac7" kindref="member">QCPGraph::setPen</ref>) will be used by the scatter points. This makes it very convenient to set up typical scatter settings:</para><para><programlisting><codeline><highlight class="normal">customPlot-&gt;graph(0)-&gt;setScatterStyle(QCPScatterStyle::ssPlus);</highlight></codeline>
+</programlisting></para><para>Notice that it wasn&apos;t even necessary to explicitly call a <ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> constructor. This works because <ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> provides a constructor that can transform a <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349" kindref="member">ScatterShape</ref> directly into a <ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> instance (that&apos;s the <ref refid="class_q_c_p_scatter_style_1a003d92f74f4561eda111862eadd62f28" kindref="member">QCPScatterStyle(ScatterShape shape, double size)</ref> constructor with a default for <emphasis>size</emphasis>). In those cases, C++ allows directly supplying a <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349" kindref="member">ScatterShape</ref>, where actually a <ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> is expected.</para></sect1>
+<sect1 id="class_q_c_p_scatter_style_1QCPScatterStyle-custompath-and-pixmap">
+<title>Custom shapes and pixmaps</title>
+<para><ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> supports drawing custom shapes and arbitrary pixmaps as scatter points.</para><para>For custom shapes, you can provide a QPainterPath with the desired shape to the <ref refid="class_q_c_p_scatter_style_1a96a3e949f90b2afe5677ca9412a12a1e" kindref="member">setCustomPath</ref> function or call the constructor that takes a painter path. The scatter shape will automatically be set to <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d" kindref="member">ssCustom</ref>.</para><para>For pixmaps, you call <ref refid="class_q_c_p_scatter_style_1a5fb611d46acfac520d7b89a1c71d9246" kindref="member">setPixmap</ref> with the desired QPixmap. Alternatively you can use the constructor that takes a QPixmap. The scatter shape will automatically be set to <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e" kindref="member">ssPixmap</ref>. Note that <ref refid="class_q_c_p_scatter_style_1aaefdd031052892c4136129db68596e0f" kindref="member">setSize</ref> does not influence the appearance of the pixmap. </para></sect1>
+    </detaileddescription>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="235" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="234" bodyend="308"/>
+    <listofallmembers>
+      <member refid="class_q_c_p_scatter_style_1a81817dfd404635f211e6ff2a04657d36" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>applyTo</name></member>
+      <member refid="class_q_c_p_scatter_style_1a46bf481d84bfa31b287dd43a3bf86d37" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>brush</name></member>
+      <member refid="class_q_c_p_scatter_style_1a4dd4998dfb0d6889205668a06c790328" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>customPath</name></member>
+      <member refid="class_q_c_p_scatter_style_1a992d531ac471ec2b29bdec6aeb400a06" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>drawShape</name></member>
+      <member refid="class_q_c_p_scatter_style_1ae76811ac9f70ebf7a2b4c759853e6ed8" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>drawShape</name></member>
+      <member refid="class_q_c_p_scatter_style_1aa3861281108d0adbeb291c820ea3925c" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>isNone</name></member>
+      <member refid="class_q_c_p_scatter_style_1a7f1385a8d5e4f349a6b8030723fbd0f7" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>isPenDefined</name></member>
+      <member refid="class_q_c_p_scatter_style_1a1b9c6ab10aebcaf236f1f45d1d6d64d1" prot="protected" virt="non-virtual"><scope>QCPScatterStyle</scope><name>mBrush</name></member>
+      <member refid="class_q_c_p_scatter_style_1a813cb074744dc5a2f59cc99d6a10c6f0" prot="protected" virt="non-virtual"><scope>QCPScatterStyle</scope><name>mCustomPath</name></member>
+      <member refid="class_q_c_p_scatter_style_1a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17" prot="protected" virt="non-virtual"><scope>QCPScatterStyle</scope><name>mPen</name></member>
+      <member refid="class_q_c_p_scatter_style_1a84ef5aa591ddba07b440f597e1669e78" prot="protected" virt="non-virtual"><scope>QCPScatterStyle</scope><name>mPenDefined</name></member>
+      <member refid="class_q_c_p_scatter_style_1a7697346c89b19d4cd1d8dd33319ec9e3" prot="protected" virt="non-virtual"><scope>QCPScatterStyle</scope><name>mPixmap</name></member>
+      <member refid="class_q_c_p_scatter_style_1af1b327f35f107ed108290187bbc8c7c6" prot="protected" virt="non-virtual"><scope>QCPScatterStyle</scope><name>mShape</name></member>
+      <member refid="class_q_c_p_scatter_style_1a757da98671eb06b221979373ac2cec91" prot="protected" virt="non-virtual"><scope>QCPScatterStyle</scope><name>mSize</name></member>
+      <member refid="class_q_c_p_scatter_style_1a3c24c3bf37b561b4807aed9f1418ab58" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>pen</name></member>
+      <member refid="class_q_c_p_scatter_style_1a9bab44cc41fcd585621a4b3e0e48231b" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>pixmap</name></member>
+      <member refid="class_q_c_p_scatter_style_1a8836018d9ad83ccd8870de8315c1be73" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>QCPScatterStyle</name></member>
+      <member refid="class_q_c_p_scatter_style_1a003d92f74f4561eda111862eadd62f28" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>QCPScatterStyle</name></member>
+      <member refid="class_q_c_p_scatter_style_1afa059da858c864c7e05871dc602d7eab" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>QCPScatterStyle</name></member>
+      <member refid="class_q_c_p_scatter_style_1a6e1b64f12cac7f07af180ae4316fd38d" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>QCPScatterStyle</name></member>
+      <member refid="class_q_c_p_scatter_style_1a85acc4941d7e5c9bca5fa51377a77f49" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>QCPScatterStyle</name></member>
+      <member refid="class_q_c_p_scatter_style_1a63962094587a4c2258435aa7933996cc" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>QCPScatterStyle</name></member>
+      <member refid="class_q_c_p_scatter_style_1a879c30647683b3cfbde2afecea815e6f" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>QCPScatterStyle</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ScatterShape</name></member>
+      <member refid="class_q_c_p_scatter_style_1a74d692aaeb8d4b36d6f7d510e44264b1" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>setBrush</name></member>
+      <member refid="class_q_c_p_scatter_style_1a96a3e949f90b2afe5677ca9412a12a1e" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>setCustomPath</name></member>
+      <member refid="class_q_c_p_scatter_style_1a761f1f229cc0ca4703e1e2b89f6dd1ba" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>setPen</name></member>
+      <member refid="class_q_c_p_scatter_style_1a5fb611d46acfac520d7b89a1c71d9246" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>setPixmap</name></member>
+      <member refid="class_q_c_p_scatter_style_1a7c641c4d4c6d29cb705d3887cfce91c1" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>setShape</name></member>
+      <member refid="class_q_c_p_scatter_style_1aaefdd031052892c4136129db68596e0f" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>setSize</name></member>
+      <member refid="class_q_c_p_scatter_style_1a4462a25ef17769631f4e0aa81dadca4b" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>shape</name></member>
+      <member refid="class_q_c_p_scatter_style_1a1973ee650368f1c5f55507b78473f634" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>size</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a7c92a110880d0ef2170dff3a5b4f7779" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ssCircle</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a9eacd60f059dc3ef71bf249f515a6fe4" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ssCross</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a524613ba5d1c4eaa1541d74cf339d283" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ssCrossCircle</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a7081310936c200c6c78e34c172f72d07" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ssCrossSquare</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ssCustom</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a4fc5929df1b2dad0a3cb2ef2c8b6e633" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ssDiamond</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a281fe1434696dcbab3aa6b9ccfbb09e9" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ssDisc</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a06e15a735b79093a1d999c0374fa3aa1" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ssDot</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349abd144c291ca274f77053ec68cab6c022" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ssNone</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349ada3b2988ece38c121922a4b5007eb08d" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ssPeace</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ssPixmap</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a2d7f1d3c1a148b9d9d17f2fd9cae5eb7" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ssPlus</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a6fa151d01f1694c9ff9922da686dc535" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ssPlusCircle</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a5aa8e9db545e5404482fec774768ee25" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ssPlusSquare</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a279e48703ddc9f1cf4a61d3e2817ab3c" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ssSquare</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a6047a2d64e41f1d6ce54445d595d442f" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ssStar</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a74a8d4eff1d97b57c53a60d0003453c3" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ssTriangle</name></member>
+      <member refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a6156274d21d8b4115197567d3ea2d9a8" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>ssTriangleInverted</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

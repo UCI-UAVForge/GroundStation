@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="missionplanningwindow_8h" kind="file" language="C++">
+    <compoundname>missionplanningwindow.h</compoundname>
+    <includes local="no">QDialog</includes>
+    <includes local="yes">qpushbutton.h</includes>
+    <includes local="yes">QHBoxLayout</includes>
+    <includes local="yes">QVBoxLayout</includes>
+    <includes local="yes">QGridLayout</includes>
+    <includes local="yes">qcombobox.h</includes>
+    <includes local="no">QDebug</includes>
+    <includes local="no">QLineEdit</includes>
+    <includes local="no">QLabel</includes>
+    <includedby refid="mainmdidisplay_8h" local="yes">C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h</includedby>
+    <includedby refid="missionplanningwindow_8cpp" local="yes">C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.cpp</includedby>
+    <incdepgraph>
+      <node id="1849">
+        <label>qpushbutton.h</label>
+      </node>
+      <node id="1847">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h</label>
+        <link refid="missionplanningwindow.h"/>
+        <childnode refid="1848" relation="include">
+        </childnode>
+        <childnode refid="1849" relation="include">
+        </childnode>
+        <childnode refid="1850" relation="include">
+        </childnode>
+        <childnode refid="1851" relation="include">
+        </childnode>
+        <childnode refid="1852" relation="include">
+        </childnode>
+        <childnode refid="1853" relation="include">
+        </childnode>
+        <childnode refid="1854" relation="include">
+        </childnode>
+        <childnode refid="1855" relation="include">
+        </childnode>
+        <childnode refid="1856" relation="include">
+        </childnode>
+      </node>
+      <node id="1850">
+        <label>QHBoxLayout</label>
+      </node>
+      <node id="1848">
+        <label>QDialog</label>
+      </node>
+      <node id="1854">
+        <label>QDebug</label>
+      </node>
+      <node id="1851">
+        <label>QVBoxLayout</label>
+      </node>
+      <node id="1855">
+        <label>QLineEdit</label>
+      </node>
+      <node id="1856">
+        <label>QLabel</label>
+      </node>
+      <node id="1852">
+        <label>QGridLayout</label>
+      </node>
+      <node id="1853">
+        <label>qcombobox.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1858">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h</label>
+        <link refid="mainmdidisplay_8h"/>
+        <childnode refid="1859" relation="include">
+        </childnode>
+        <childnode refid="1860" relation="include">
+        </childnode>
+      </node>
+      <node id="1860">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp</label>
+        <link refid="mainmdidisplay_8cpp"/>
+      </node>
+      <node id="1859">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="1857">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h</label>
+        <link refid="missionplanningwindow.h"/>
+        <childnode refid="1858" relation="include">
+        </childnode>
+        <childnode refid="1861" relation="include">
+        </childnode>
+      </node>
+      <node id="1861">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.cpp</label>
+        <link refid="missionplanningwindow_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_mission_planning_window" prot="public">MissionPlanningWindow</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>MISSIONPLANNINGWINDOW_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MISSIONPLANNINGWINDOW_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDialog&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;qpushbutton.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;QHBoxLayout&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;QVBoxLayout&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;QGridLayout&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;qcombobox.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDebug&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QLineEdit&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QLabel&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//Code<sp/>by<sp/>David<sp/>Moe</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="class_mission_planning_window" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_mission_planning_window" kindref="compound">MissionPlanningWindow</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QDialog</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="class_mission_planning_window_1a337398c114f638b5a3e2fdc4529936c5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_main_m_d_i_display" kindref="compound">MainMDIDisplay</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mission_planning_window_1a4ce75f53873c10f1053e7aff288f42ce" kindref="member">MissionPlanningWindow</ref>(QWidget<sp/>*parent<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mission_planning_window_1a2dd1e975fa9ab1f843dc4440436d066b" kindref="member">~MissionPlanningWindow</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>TODO<sp/>Roman<sp/>Parise<sp/>-<sp/>temporary<sp/>function.<sp/>Please<sp/>replace<sp/>later<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_mission_planning_window_1a995569fb123c9df67ba52db675543ab0" kindref="member">deleteExecuteButton</ref>();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_mission_planning_window_1af3cb4549864921d72a3919412c1a9565" kindref="member">addButton</ref>(<sp/>QPushButton<sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_mission_planning_window_1a69829c310643543db1a5c5b3c6c72359" kindref="member">addComboBox</ref>(<sp/>QComboBox<sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_mission_planning_window_1a8e9b70111f19163564d843ff8e793fed" kindref="member">addTextBox</ref>(<sp/>QLineEdit<sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_mission_planning_window_1a8e9b70111f19163564d843ff8e793fed" kindref="member">addTextBox</ref>(<sp/>QLineEdit<sp/>*<sp/>,<sp/>QLabel<sp/>*<sp/>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_mission_planning_window_1a015cb8e3949a82535ec53a30520622e9" kindref="member">dumpButtons</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_mission_planning_window_1a87d851bd04f183dabdd8b95d0bcd5e52" kindref="member">dumpComboBoxes</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_mission_planning_window_1a685f4ba0b024f1eff55329bd21b9b397" kindref="member">changeTitle</ref>(<sp/>QString<sp/>)<sp/>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Return<sp/>value<sp/>of<sp/>uavComboBox</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_mission_planning_window_1a8ee76a6437678b6a37b34c05a3e829b9" kindref="member">getUAV</ref>()<sp/>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Return<sp/>value<sp/>of<sp/>missionPlanComboBox</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_mission_planning_window_1abc58ee19268e6038dae8e9c8cf103d6e" kindref="member">getMission</ref>()<sp/>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="50" refid="class_mission_planning_window_1ae75ab3c897bd85ddffd68e4b2ab2c722" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QPushButton<sp/>*<ref refid="class_mission_planning_window_1ae75ab3c897bd85ddffd68e4b2ab2c722" kindref="member">executeButton</ref>;</highlight></codeline>
+<codeline lineno="51" refid="class_mission_planning_window_1a956e20879bcb91222b053aec6ec5ecab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QComboBox<sp/>*<ref refid="class_mission_planning_window_1a956e20879bcb91222b053aec6ec5ecab" kindref="member">uavComboBox</ref>;</highlight></codeline>
+<codeline lineno="52" refid="class_mission_planning_window_1a6b52e7d7e81c92d652d1acbbb1a381da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QComboBox<sp/>*<ref refid="class_mission_planning_window_1a6b52e7d7e81c92d652d1acbbb1a381da" kindref="member">missionPlanComboBox</ref>;</highlight></codeline>
+<codeline lineno="53" refid="class_mission_planning_window_1a32befd8dba0065fd33f12900e8ca59d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QGridLayout<sp/>*<ref refid="class_mission_planning_window_1a32befd8dba0065fd33f12900e8ca59d1" kindref="member">layout</ref>;</highlight></codeline>
+<codeline lineno="54" refid="class_mission_planning_window_1a0045be95220d1939ea5f0206265f9e52" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QHBoxLayout<sp/>*<sp/><ref refid="class_mission_planning_window_1a0045be95220d1939ea5f0206265f9e52" kindref="member">buttonLayout</ref>;</highlight></codeline>
+<codeline lineno="55" refid="class_mission_planning_window_1af52013df0814d527015b042b7e4cbff6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QHBoxLayout<sp/>*<sp/><ref refid="class_mission_planning_window_1af52013df0814d527015b042b7e4cbff6" kindref="member">textBoxLayout</ref>;</highlight></codeline>
+<codeline lineno="56" refid="class_mission_planning_window_1af3a070e0315b9741a7e578001ca308f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QVBoxLayout<sp/>*<sp/><ref refid="class_mission_planning_window_1af3a070e0315b9741a7e578001ca308f1" kindref="member">superLayout</ref>;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="class_mission_planning_window_1aa1eb6565feff4115e69b4fe927fa24db" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;QPushButton<sp/>*&gt;<sp/><ref refid="class_mission_planning_window_1aa1eb6565feff4115e69b4fe927fa24db" kindref="member">buttonList</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="class_mission_planning_window_1ab1dff11dc51d5919c79bdfe94e333119" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;QComboBox<sp/>*&gt;<sp/><ref refid="class_mission_planning_window_1ab1dff11dc51d5919c79bdfe94e333119" kindref="member">comboBoxList</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="class_mission_planning_window_1a05b7d3b96dae27deccf067bb47c66a06" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;QLineEdit<sp/>*&gt;<sp/><ref refid="class_mission_planning_window_1a05b7d3b96dae27deccf067bb47c66a06" kindref="member">textBoxList</ref>;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="class_mission_planning_window_1a4706b5c1aee414b3b1377943b2ac692a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;QLabel<sp/>*&gt;<sp/><ref refid="class_mission_planning_window_1a4706b5c1aee414b3b1377943b2ac692a" kindref="member">textBoxLabelList</ref>;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>slots:</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//void<sp/>setExecutionButtonEnabled();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>MISSIONPLANNINGWINDOW_H</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,625 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_map_execution" kind="class" language="C++" prot="public">
+    <compoundname>MapExecution</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QDialog</basecompoundref>
+    <includes refid="mapexecution_8h" local="no">mapexecution.h</includes>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_map_execution_1a337398c114f638b5a3e2fdc4529936c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class MainMDIDisplay</definition>
+        <argsstring></argsstring>
+        <name>MainMDIDisplay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="39" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_map_execution_1a9cbfe92cbfe0fe7ee433a04a121be766" prot="public" static="no" mutable="no">
+        <type><ref refid="class_gs_server" kindref="compound">GsServer</ref></type>
+        <definition>GsServer MapExecution::myServer</definition>
+        <argsstring></argsstring>
+        <name>myServer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="55" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_execution_1ade1432547d600a40172f5f00e4db3a1e" prot="public" static="no" mutable="no">
+        <type><ref refid="classmessagebox" kindref="compound">messagebox</ref></type>
+        <definition>messagebox MapExecution::MyMessageBox</definition>
+        <argsstring></argsstring>
+        <name>MyMessageBox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="57" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" prot="private" static="no" mutable="no">
+        <type>Ui::MapExecution *</type>
+        <definition>Ui::MapExecution* MapExecution::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="76" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_execution_1a6d3fb3f2c2600e218674b1e2fbc1e9ec" prot="private" static="no" mutable="no">
+        <type><ref refid="class_table_model" kindref="compound">TableModel</ref> *</type>
+        <definition>TableModel* MapExecution::model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="77" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_execution_1a0462acd7e519c3bd1fac5c5409257306" prot="private" static="no" mutable="no">
+        <type>QButtonGroup *</type>
+        <definition>QButtonGroup* MapExecution::buttonGroup</definition>
+        <argsstring></argsstring>
+        <name>buttonGroup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="78" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_execution_1a85cc21bfaa1d7424a66022763a123947" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double MapExecution::prevLat</definition>
+        <argsstring></argsstring>
+        <name>prevLat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="79" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_execution_1af25773acd59e042f35a75c9fd4c8eb68" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double MapExecution::prevLng</definition>
+        <argsstring></argsstring>
+        <name>prevLng</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="79" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_execution_1ac080a5dec716b48a42186541de6a3fa5" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double MapExecution::prevAlt</definition>
+        <argsstring></argsstring>
+        <name>prevAlt</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="79" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_execution_1aa2c95fb3a72997297c899812fba11269" prot="private" static="no" mutable="no">
+        <type>QTime</type>
+        <definition>QTime MapExecution::prevTime</definition>
+        <argsstring></argsstring>
+        <name>prevTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="80" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_execution_1a4f701b952bbceb15e60ad5eb7d57c87e" prot="private" static="no" mutable="no">
+        <type><ref refid="class_flight_path" kindref="compound">FlightPath</ref></type>
+        <definition>FlightPath MapExecution::myFlightPath</definition>
+        <argsstring></argsstring>
+        <name>myFlightPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="82" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_execution_1a186288c3bd575e199102d52f6357b16f" prot="private" static="no" mutable="no">
+        <type><ref refid="class_mission" kindref="compound">Mission</ref></type>
+        <definition>Mission MapExecution::myMission</definition>
+        <argsstring></argsstring>
+        <name>myMission</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="83" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_execution_1a18ed5a89baeb474d551cb68bd600772a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_map_widget" kindref="compound">MapWidget</ref> *</type>
+        <definition>MapWidget* MapExecution::map</definition>
+        <argsstring></argsstring>
+        <name>map</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="84" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_execution_1a7c1440123040a6a9844273e1e1821569" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MapExecution::missionStarted</definition>
+        <argsstring></argsstring>
+        <name>missionStarted</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="86" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_execution_1af8f73763242302e0dfe9c6485528bfdb" prot="private" static="no" mutable="no">
+        <type>QTimer *</type>
+        <definition>QTimer* MapExecution::conTime</definition>
+        <argsstring></argsstring>
+        <name>conTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="87" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_map_execution_1a0fc2a824601c5f09fb8d448f025d4da3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapExecution::addNewMap</definition>
+        <argsstring>()</argsstring>
+        <name>addNewMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="42" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="178" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_execution_1a993abccda8744bb5ad9110b97027d650" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapExecution::plotPosition</definition>
+        <argsstring>(double lat, double lng)</argsstring>
+        <name>plotPosition</name>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lng</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="43" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="185" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_execution_1abf980f0adb250cd2ef5a99668a793f46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapExecution::sendCoordToJSMap</definition>
+        <argsstring>(double lat, double lng, int mapID)</argsstring>
+        <name>sendCoordToJSMap</name>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lng</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>mapID</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="44" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="190" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_execution_1aae070b94d4318c09aaa4a95b244050c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapExecution::drawFlightPath</definition>
+        <argsstring>(FlightPath *flightPath)</argsstring>
+        <name>drawFlightPath</name>
+        <param>
+          <type><ref refid="class_flight_path" kindref="compound">FlightPath</ref> *</type>
+          <declname>flightPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="45" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="146" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_execution_1a3bb03858cf15e2f9543a0e169383e13b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapExecution::updateTable</definition>
+        <argsstring>(double lat, double lng)</argsstring>
+        <name>updateTable</name>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lng</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="46" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="195" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_execution_1a5f0c7ab18a5fcc4c474eeb5b9707dc61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapExecution::sendFlightPlan</definition>
+        <argsstring>()</argsstring>
+        <name>sendFlightPlan</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="47" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="137" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_execution_1af846e29b7a32021359fcf66bca46e20b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapExecution::updateStatusIndicator</definition>
+        <argsstring>()</argsstring>
+        <name>updateStatusIndicator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="48" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="201" bodyend="225"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_map_execution_1afcf6d9187674478b9b24cdb59b832198" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MapExecution::MapExecution</definition>
+        <argsstring>(FlightPath *flightPath, QWidget *parent=0)</argsstring>
+        <name>MapExecution</name>
+        <param>
+          <type><ref refid="class_flight_path" kindref="compound">FlightPath</ref> *</type>
+          <declname>flightPath</declname>
+        </param>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="51" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="6" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="class_map_execution_1a8cd67a89386d7880f2f741598f78115c" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MapExecution::MapExecution</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>MapExecution</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="52" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="4" bodyend="4"/>
+      </memberdef>
+      <memberdef kind="function" id="class_map_execution_1aeaebbbd5ed4a669c28b9b2372a135e9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MapExecution::~MapExecution</definition>
+        <argsstring>()</argsstring>
+        <name>~MapExecution</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="53" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="68" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="class_map_execution_1ab96a28f3c2d98931c94e25cd4d059262" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_mission" kindref="compound">Mission</ref></type>
+        <definition>Mission MapExecution::getMyMission</definition>
+        <argsstring>() const </argsstring>
+        <name>getMyMission</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="61" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="165" bodyend="168"/>
+      </memberdef>
+      <memberdef kind="function" id="class_map_execution_1a44b75a52f37d3a0487651e75c79aea2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_map_recap" kindref="compound">MapRecap</ref> *</type>
+        <definition>MapRecap * MapExecution::getMapRecap</definition>
+        <argsstring>()</argsstring>
+        <name>getMapRecap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="63" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="229" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="class_map_execution_1a41eefdc4c0f8c8bec18b11f3eb55f91b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapExecution::setMyMission</definition>
+        <argsstring>(const Mission &amp;value)</argsstring>
+        <name>setMyMission</name>
+        <param>
+          <type>const <ref refid="class_mission" kindref="compound">Mission</ref> &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="65" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="170" bodyend="173"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_map_execution_1a915725914a13468b3ff5c50a291c4250" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapExecution::on_finishButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_finishButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="68" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="78" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_execution_1a8e3f80d073442f9d27c517b1fdb6379c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapExecution::on_returnHomeButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_returnHomeButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="69" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="106" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_execution_1a8b065231e835882c21868a2dea5febd2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapExecution::on_cancelButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_cancelButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="70" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="114" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_execution_1a8cbf92235cbe6dc0d767010258ab5efc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapExecution::on_stopButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_stopButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="71" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="98" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_execution_1aba29038fe5edd8ac2fd73d9f3669fe4e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapExecution::on_backButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_backButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="72" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="123" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_execution_1a628fc094b942dbaa21887c58b1f76319" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapExecution::addClickListener</definition>
+        <argsstring>()</argsstring>
+        <name>addClickListener</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="73" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp" bodystart="161" bodyend="164"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_map_execution_1a658805b61b3331c43c48211e543cafe0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapExecution::timeToStartMapRecap</definition>
+        <argsstring>()</argsstring>
+        <name>timeToStartMapRecap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="90" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="54">
+        <label>QDialog</label>
+      </node>
+      <node id="53">
+        <label>MapExecution</label>
+        <link refid="class_map_execution"/>
+        <childnode refid="54" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="60">
+        <label>NetworkListener</label>
+        <link refid="class_network_listener"/>
+        <childnode refid="61" relation="public-inheritance">
+        </childnode>
+        <childnode refid="58" relation="usage">
+          <edgelabel>server</edgelabel>
+        </childnode>
+      </node>
+      <node id="57">
+        <label>messagebox</label>
+        <link refid="classmessagebox"/>
+      </node>
+      <node id="59">
+        <label>QThread</label>
+      </node>
+      <node id="58">
+        <label>GsServer</label>
+        <link refid="class_gs_server"/>
+        <childnode refid="59" relation="public-inheritance">
+        </childnode>
+        <childnode refid="60" relation="usage">
+          <edgelabel>networkListener</edgelabel>
+        </childnode>
+      </node>
+      <node id="56">
+        <label>QDialog</label>
+      </node>
+      <node id="61">
+        <label>QUdpSocket</label>
+      </node>
+      <node id="55">
+        <label>MapExecution</label>
+        <link refid="class_map_execution"/>
+        <childnode refid="56" relation="public-inheritance">
+        </childnode>
+        <childnode refid="57" relation="usage">
+          <edgelabel>MyMessageBox</edgelabel>
+        </childnode>
+        <childnode refid="58" relation="usage">
+          <edgelabel>myServer</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" line="35" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h" bodystart="35" bodyend="91"/>
+    <listofallmembers>
+      <member refid="class_map_execution_1a628fc094b942dbaa21887c58b1f76319" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>addClickListener</name></member>
+      <member refid="class_map_execution_1a0fc2a824601c5f09fb8d448f025d4da3" prot="public" virt="non-virtual"><scope>MapExecution</scope><name>addNewMap</name></member>
+      <member refid="class_map_execution_1a0462acd7e519c3bd1fac5c5409257306" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>buttonGroup</name></member>
+      <member refid="class_map_execution_1af8f73763242302e0dfe9c6485528bfdb" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>conTime</name></member>
+      <member refid="class_map_execution_1aae070b94d4318c09aaa4a95b244050c4" prot="public" virt="non-virtual"><scope>MapExecution</scope><name>drawFlightPath</name></member>
+      <member refid="class_map_execution_1a44b75a52f37d3a0487651e75c79aea2a" prot="public" virt="non-virtual"><scope>MapExecution</scope><name>getMapRecap</name></member>
+      <member refid="class_map_execution_1ab96a28f3c2d98931c94e25cd4d059262" prot="public" virt="non-virtual"><scope>MapExecution</scope><name>getMyMission</name></member>
+      <member refid="class_map_execution_1a337398c114f638b5a3e2fdc4529936c5" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>MainMDIDisplay</name></member>
+      <member refid="class_map_execution_1a18ed5a89baeb474d551cb68bd600772a" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>map</name></member>
+      <member refid="class_map_execution_1afcf6d9187674478b9b24cdb59b832198" prot="public" virt="non-virtual"><scope>MapExecution</scope><name>MapExecution</name></member>
+      <member refid="class_map_execution_1a8cd67a89386d7880f2f741598f78115c" prot="public" virt="non-virtual"><scope>MapExecution</scope><name>MapExecution</name></member>
+      <member refid="class_map_execution_1a7c1440123040a6a9844273e1e1821569" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>missionStarted</name></member>
+      <member refid="class_map_execution_1a6d3fb3f2c2600e218674b1e2fbc1e9ec" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>model</name></member>
+      <member refid="class_map_execution_1a4f701b952bbceb15e60ad5eb7d57c87e" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>myFlightPath</name></member>
+      <member refid="class_map_execution_1ade1432547d600a40172f5f00e4db3a1e" prot="public" virt="non-virtual"><scope>MapExecution</scope><name>MyMessageBox</name></member>
+      <member refid="class_map_execution_1a186288c3bd575e199102d52f6357b16f" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>myMission</name></member>
+      <member refid="class_map_execution_1a9cbfe92cbfe0fe7ee433a04a121be766" prot="public" virt="non-virtual"><scope>MapExecution</scope><name>myServer</name></member>
+      <member refid="class_map_execution_1aba29038fe5edd8ac2fd73d9f3669fe4e" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>on_backButton_clicked</name></member>
+      <member refid="class_map_execution_1a8b065231e835882c21868a2dea5febd2" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>on_cancelButton_clicked</name></member>
+      <member refid="class_map_execution_1a915725914a13468b3ff5c50a291c4250" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>on_finishButton_clicked</name></member>
+      <member refid="class_map_execution_1a8e3f80d073442f9d27c517b1fdb6379c" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>on_returnHomeButton_clicked</name></member>
+      <member refid="class_map_execution_1a8cbf92235cbe6dc0d767010258ab5efc" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>on_stopButton_clicked</name></member>
+      <member refid="class_map_execution_1a993abccda8744bb5ad9110b97027d650" prot="public" virt="non-virtual"><scope>MapExecution</scope><name>plotPosition</name></member>
+      <member refid="class_map_execution_1ac080a5dec716b48a42186541de6a3fa5" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>prevAlt</name></member>
+      <member refid="class_map_execution_1a85cc21bfaa1d7424a66022763a123947" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>prevLat</name></member>
+      <member refid="class_map_execution_1af25773acd59e042f35a75c9fd4c8eb68" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>prevLng</name></member>
+      <member refid="class_map_execution_1aa2c95fb3a72997297c899812fba11269" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>prevTime</name></member>
+      <member refid="class_map_execution_1abf980f0adb250cd2ef5a99668a793f46" prot="public" virt="non-virtual"><scope>MapExecution</scope><name>sendCoordToJSMap</name></member>
+      <member refid="class_map_execution_1a5f0c7ab18a5fcc4c474eeb5b9707dc61" prot="public" virt="non-virtual"><scope>MapExecution</scope><name>sendFlightPlan</name></member>
+      <member refid="class_map_execution_1a41eefdc4c0f8c8bec18b11f3eb55f91b" prot="public" virt="non-virtual"><scope>MapExecution</scope><name>setMyMission</name></member>
+      <member refid="class_map_execution_1a658805b61b3331c43c48211e543cafe0" prot="public" virt="non-virtual"><scope>MapExecution</scope><name>timeToStartMapRecap</name></member>
+      <member refid="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" prot="private" virt="non-virtual"><scope>MapExecution</scope><name>ui</name></member>
+      <member refid="class_map_execution_1af846e29b7a32021359fcf66bca46e20b" prot="public" virt="non-virtual"><scope>MapExecution</scope><name>updateStatusIndicator</name></member>
+      <member refid="class_map_execution_1a3bb03858cf15e2f9543a0e169383e13b" prot="public" virt="non-virtual"><scope>MapExecution</scope><name>updateTable</name></member>
+      <member refid="class_map_execution_1aeaebbbd5ed4a669c28b9b2372a135e9c" prot="public" virt="non-virtual"><scope>MapExecution</scope><name>~MapExecution</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

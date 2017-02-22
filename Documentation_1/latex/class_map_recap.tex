@@ -1,0 +1,163 @@
+\hypertarget{class_map_recap}{}\section{Map\+Recap Class Reference}
+\label{class_map_recap}\index{Map\+Recap@{Map\+Recap}}
+
+
+{\ttfamily \#include $<$maprecap.\+h$>$}
+
+Inheritance diagram for Map\+Recap\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_map_recap}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_map_recap_aeaf4d37a45ad4e4b7d9747473c900531}{add\+New\+Map} ()
+\item 
+void \hyperlink{class_map_recap_a1c98beb9687a394d68e41fd39580edfe}{add\+Point\+To\+Table} (double lat, double lng)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_map_recap_a739aa8a008d8daf8ed083edd2af1da56}{Map\+Recap} (\hyperlink{class_mission}{Mission} $\ast$mission, Q\+Widget $\ast$parent=0)
+\item 
+\hyperlink{class_map_recap_a68734cfee38270d6b61ead2eec0f64a2}{Map\+Recap} (Q\+Widget $\ast$parent=0)
+\item 
+\hyperlink{class_map_recap_a70449a34a10a0770d0cbbe2f86040852}{$\sim$\+Map\+Recap} ()
+\item 
+void \hyperlink{class_map_recap_a6fbdfd9a06e6e08b961298197eca389e}{update\+Map} ()
+\item 
+void \hyperlink{class_map_recap_a669c0d109577996829b6c089b6d7262f}{plot\+Position} (double lat, double lng)
+\item 
+void \hyperlink{class_map_recap_a52a26d6de1e8003cc1b59e297df96b12}{add\+Point} (Q\+String string)
+\item 
+void \hyperlink{class_map_recap_a56a47357e83cd6a8d451cd561142259e}{draw\+Flight\+Path} (\hyperlink{class_flight_path}{Flight\+Path} $\ast$flight\+Path)
+\item 
+void \hyperlink{class_map_recap_aa63a3d553ae9b10f0eeddcf411474b5b}{send\+Coord\+To\+J\+S\+Map} (double lat, double lng, int map\+I\+D)
+\item 
+Q\+Widget $\ast$ \hyperlink{class_map_recap_a44427cdc30c5bbf4ceffd044052b626f}{get\+Tab} (int)
+\item 
+Q\+Push\+Button $\ast$ \hyperlink{class_map_recap_a78f083152cc33bd8d5750b6dfb213bff}{get\+Back\+To\+Planning\+Button} ()
+\item 
+void \hyperlink{class_map_recap_a7211ca6ea807c0bd769ea85c3b6ed10e}{set\+Back\+To\+Planning\+Button} (Q\+Push\+Button $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_map_recap_a337398c114f638b5a3e2fdc4529936c5}{Main\+M\+D\+I\+Display}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_map_recap_a739aa8a008d8daf8ed083edd2af1da56}{}\index{Map\+Recap@{Map\+Recap}!Map\+Recap@{Map\+Recap}}
+\index{Map\+Recap@{Map\+Recap}!Map\+Recap@{Map\+Recap}}
+\subsubsection[{Map\+Recap}]{\setlength{\rightskip}{0pt plus 5cm}Map\+Recap\+::\+Map\+Recap (
+\begin{DoxyParamCaption}
+\item[{{\bf Mission} $\ast$}]{mission, }
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_map_recap_a739aa8a008d8daf8ed083edd2af1da56}
+\hypertarget{class_map_recap_a68734cfee38270d6b61ead2eec0f64a2}{}\index{Map\+Recap@{Map\+Recap}!Map\+Recap@{Map\+Recap}}
+\index{Map\+Recap@{Map\+Recap}!Map\+Recap@{Map\+Recap}}
+\subsubsection[{Map\+Recap}]{\setlength{\rightskip}{0pt plus 5cm}Map\+Recap\+::\+Map\+Recap (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{class_map_recap_a68734cfee38270d6b61ead2eec0f64a2}
+\hypertarget{class_map_recap_a70449a34a10a0770d0cbbe2f86040852}{}\index{Map\+Recap@{Map\+Recap}!````~Map\+Recap@{$\sim$\+Map\+Recap}}
+\index{````~Map\+Recap@{$\sim$\+Map\+Recap}!Map\+Recap@{Map\+Recap}}
+\subsubsection[{$\sim$\+Map\+Recap}]{\setlength{\rightskip}{0pt plus 5cm}Map\+Recap\+::$\sim$\+Map\+Recap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_map_recap_a70449a34a10a0770d0cbbe2f86040852}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_map_recap_aeaf4d37a45ad4e4b7d9747473c900531}{}\index{Map\+Recap@{Map\+Recap}!add\+New\+Map@{add\+New\+Map}}
+\index{add\+New\+Map@{add\+New\+Map}!Map\+Recap@{Map\+Recap}}
+\subsubsection[{add\+New\+Map}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Recap\+::add\+New\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_map_recap_aeaf4d37a45ad4e4b7d9747473c900531}
+\hypertarget{class_map_recap_a52a26d6de1e8003cc1b59e297df96b12}{}\index{Map\+Recap@{Map\+Recap}!add\+Point@{add\+Point}}
+\index{add\+Point@{add\+Point}!Map\+Recap@{Map\+Recap}}
+\subsubsection[{add\+Point}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Recap\+::add\+Point (
+\begin{DoxyParamCaption}
+\item[{Q\+String}]{string}
+\end{DoxyParamCaption}
+)}\label{class_map_recap_a52a26d6de1e8003cc1b59e297df96b12}
+\hypertarget{class_map_recap_a1c98beb9687a394d68e41fd39580edfe}{}\index{Map\+Recap@{Map\+Recap}!add\+Point\+To\+Table@{add\+Point\+To\+Table}}
+\index{add\+Point\+To\+Table@{add\+Point\+To\+Table}!Map\+Recap@{Map\+Recap}}
+\subsubsection[{add\+Point\+To\+Table}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Recap\+::add\+Point\+To\+Table (
+\begin{DoxyParamCaption}
+\item[{double}]{lat, }
+\item[{double}]{lng}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}\label{class_map_recap_a1c98beb9687a394d68e41fd39580edfe}
+\hypertarget{class_map_recap_a56a47357e83cd6a8d451cd561142259e}{}\index{Map\+Recap@{Map\+Recap}!draw\+Flight\+Path@{draw\+Flight\+Path}}
+\index{draw\+Flight\+Path@{draw\+Flight\+Path}!Map\+Recap@{Map\+Recap}}
+\subsubsection[{draw\+Flight\+Path}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Recap\+::draw\+Flight\+Path (
+\begin{DoxyParamCaption}
+\item[{{\bf Flight\+Path} $\ast$}]{flight\+Path}
+\end{DoxyParamCaption}
+)}\label{class_map_recap_a56a47357e83cd6a8d451cd561142259e}
+\hypertarget{class_map_recap_a78f083152cc33bd8d5750b6dfb213bff}{}\index{Map\+Recap@{Map\+Recap}!get\+Back\+To\+Planning\+Button@{get\+Back\+To\+Planning\+Button}}
+\index{get\+Back\+To\+Planning\+Button@{get\+Back\+To\+Planning\+Button}!Map\+Recap@{Map\+Recap}}
+\subsubsection[{get\+Back\+To\+Planning\+Button}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Push\+Button $\ast$ Map\+Recap\+::get\+Back\+To\+Planning\+Button (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_map_recap_a78f083152cc33bd8d5750b6dfb213bff}
+\hypertarget{class_map_recap_a44427cdc30c5bbf4ceffd044052b626f}{}\index{Map\+Recap@{Map\+Recap}!get\+Tab@{get\+Tab}}
+\index{get\+Tab@{get\+Tab}!Map\+Recap@{Map\+Recap}}
+\subsubsection[{get\+Tab}]{\setlength{\rightskip}{0pt plus 5cm}Q\+Widget $\ast$ Map\+Recap\+::get\+Tab (
+\begin{DoxyParamCaption}
+\item[{int}]{tab\+Index}
+\end{DoxyParamCaption}
+)}\label{class_map_recap_a44427cdc30c5bbf4ceffd044052b626f}
+\hypertarget{class_map_recap_a669c0d109577996829b6c089b6d7262f}{}\index{Map\+Recap@{Map\+Recap}!plot\+Position@{plot\+Position}}
+\index{plot\+Position@{plot\+Position}!Map\+Recap@{Map\+Recap}}
+\subsubsection[{plot\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Recap\+::plot\+Position (
+\begin{DoxyParamCaption}
+\item[{double}]{lat, }
+\item[{double}]{lng}
+\end{DoxyParamCaption}
+)}\label{class_map_recap_a669c0d109577996829b6c089b6d7262f}
+\hypertarget{class_map_recap_aa63a3d553ae9b10f0eeddcf411474b5b}{}\index{Map\+Recap@{Map\+Recap}!send\+Coord\+To\+J\+S\+Map@{send\+Coord\+To\+J\+S\+Map}}
+\index{send\+Coord\+To\+J\+S\+Map@{send\+Coord\+To\+J\+S\+Map}!Map\+Recap@{Map\+Recap}}
+\subsubsection[{send\+Coord\+To\+J\+S\+Map}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Recap\+::send\+Coord\+To\+J\+S\+Map (
+\begin{DoxyParamCaption}
+\item[{double}]{lat, }
+\item[{double}]{lng, }
+\item[{int}]{map\+I\+D}
+\end{DoxyParamCaption}
+)}\label{class_map_recap_aa63a3d553ae9b10f0eeddcf411474b5b}
+\hypertarget{class_map_recap_a7211ca6ea807c0bd769ea85c3b6ed10e}{}\index{Map\+Recap@{Map\+Recap}!set\+Back\+To\+Planning\+Button@{set\+Back\+To\+Planning\+Button}}
+\index{set\+Back\+To\+Planning\+Button@{set\+Back\+To\+Planning\+Button}!Map\+Recap@{Map\+Recap}}
+\subsubsection[{set\+Back\+To\+Planning\+Button}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Recap\+::set\+Back\+To\+Planning\+Button (
+\begin{DoxyParamCaption}
+\item[{Q\+Push\+Button $\ast$}]{back\+To\+Planning\+Button}
+\end{DoxyParamCaption}
+)}\label{class_map_recap_a7211ca6ea807c0bd769ea85c3b6ed10e}
+\hypertarget{class_map_recap_a6fbdfd9a06e6e08b961298197eca389e}{}\index{Map\+Recap@{Map\+Recap}!update\+Map@{update\+Map}}
+\index{update\+Map@{update\+Map}!Map\+Recap@{Map\+Recap}}
+\subsubsection[{update\+Map}]{\setlength{\rightskip}{0pt plus 5cm}void Map\+Recap\+::update\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_map_recap_a6fbdfd9a06e6e08b961298197eca389e}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_map_recap_a337398c114f638b5a3e2fdc4529936c5}{}\index{Map\+Recap@{Map\+Recap}!Main\+M\+D\+I\+Display@{Main\+M\+D\+I\+Display}}
+\index{Main\+M\+D\+I\+Display@{Main\+M\+D\+I\+Display}!Map\+Recap@{Map\+Recap}}
+\subsubsection[{Main\+M\+D\+I\+Display}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Main\+M\+D\+I\+Display}\hspace{0.3cm}{\ttfamily [friend]}}\label{class_map_recap_a337398c114f638b5a3e2fdc4529936c5}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{maprecap_8h}{maprecap.\+h}\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{maprecap_8cpp}{maprecap.\+cpp}\end{DoxyCompactItemize}

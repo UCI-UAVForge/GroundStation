@@ -1,0 +1,372 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_table_model" kind="class" language="C++" prot="public">
+    <compoundname>TableModel</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QAbstractTableModel</basecompoundref>
+    <includes refid="tablemodel_8h" local="no">tablemodel.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_table_model_1a236a000a21493bb71dbb6cbeb7a1cde8" prot="private" static="no" mutable="no">
+        <type>QList&lt; QList&lt; QString &gt; &gt;</type>
+        <definition>QList&lt;QList&lt;QString&gt; &gt; TableModel::listOfPairs</definition>
+        <argsstring></argsstring>
+        <name>listOfPairs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" line="35" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_table_model_1a2ff2b13db2fd19c2602c63260bb597be" prot="private" static="no" mutable="no">
+        <type>QList&lt; QString &gt;</type>
+        <definition>QList&lt;QString&gt; TableModel::columns</definition>
+        <argsstring></argsstring>
+        <name>columns</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" line="36" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_table_model_1ad7d9723995888a77fa2242069fe3e67d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TableModel::TableModel</definition>
+        <argsstring>(QObject *parent=0)</argsstring>
+        <name>TableModel</name>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" line="13" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.cpp" bodystart="3" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_table_model_1ad91b1c11aa366dc3472fb393c68d0dc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TableModel::TableModel</definition>
+        <argsstring>(QList&lt; QList&lt; QString &gt; &gt; listofPairs, QObject *parent=0)</argsstring>
+        <name>TableModel</name>
+        <param>
+          <type>QList&lt; QList&lt; QString &gt; &gt;</type>
+          <declname>listofPairs</declname>
+        </param>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" line="15" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.cpp" bodystart="17" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="class_table_model_1ac2815f7ad9ece5ffb1abd08a3a567483" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int TableModel::rowCount</definition>
+        <argsstring>(const QModelIndex &amp;parent) const </argsstring>
+        <name>rowCount</name>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" line="17" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.cpp" bodystart="23" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="class_table_model_1a0f07a494fac556e1520b0306c3a50cc0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int TableModel::columnCount</definition>
+        <argsstring>(const QModelIndex &amp;parent) const </argsstring>
+        <name>columnCount</name>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" line="18" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.cpp" bodystart="29" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_table_model_1ab22a19802ca81ba42e1cec670e864183" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QVariant</type>
+        <definition>QVariant TableModel::data</definition>
+        <argsstring>(const QModelIndex &amp;index, int role) const </argsstring>
+        <name>data</name>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>role</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" line="19" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.cpp" bodystart="35" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_table_model_1a4677a49af807c3b72ca4c1e82971d9ec" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QVariant</type>
+        <definition>QVariant TableModel::headerData</definition>
+        <argsstring>(int section, Qt::Orientation orientation, int role) const </argsstring>
+        <name>headerData</name>
+        <param>
+          <type>int</type>
+          <declname>section</declname>
+        </param>
+        <param>
+          <type>Qt::Orientation</type>
+          <declname>orientation</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>role</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" line="20" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.cpp" bodystart="51" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_table_model_1ac758b15767be92f2ac9e0c4d958d5662" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Qt::ItemFlags</type>
+        <definition>Qt::ItemFlags TableModel::flags</definition>
+        <argsstring>(const QModelIndex &amp;index) const </argsstring>
+        <name>flags</name>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" line="21" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.cpp" bodystart="182" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="class_table_model_1aa5ebe742e8bb1570c2ed8577c41f7c8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TableModel::setData</definition>
+        <argsstring>(const QModelIndex &amp;index, const QVariant &amp;value, int role=Qt::EditRole)</argsstring>
+        <name>setData</name>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>const QVariant &amp;</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>role</declname>
+          <defval>Qt::EditRole</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" line="22" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.cpp" bodystart="166" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="class_table_model_1a7fcf06eebf32f5295fec05cadcdf5320" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TableModel::insertRows</definition>
+        <argsstring>(int position, int rows, const QModelIndex &amp;index=QModelIndex())</argsstring>
+        <name>insertRows</name>
+        <param>
+          <type>int</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>rows</declname>
+        </param>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>index</declname>
+          <defval>QModelIndex()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" line="23" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.cpp" bodystart="63" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="class_table_model_1a3bc1eb333f87d13d9bb0fb2b4f7c744a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TableModel::insertRow</definition>
+        <argsstring>(const QModelIndex &amp;index=QModelIndex())</argsstring>
+        <name>insertRow</name>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>index</declname>
+          <defval>QModelIndex()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" line="24" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.cpp" bodystart="138" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="class_table_model_1abd1d9fd2aebf4ab22a5bc1f1bc4c446d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TableModel::removeRows</definition>
+        <argsstring>(int position, int rows, const QModelIndex &amp;index=QModelIndex())</argsstring>
+        <name>removeRows</name>
+        <param>
+          <type>int</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>rows</declname>
+        </param>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>index</declname>
+          <defval>QModelIndex()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" line="25" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.cpp" bodystart="153" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="class_table_model_1a319fa96b8856ee379b09ddb793611f44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TableModel::removeRows</definition>
+        <argsstring>(QModelIndexList indexes)</argsstring>
+        <name>removeRows</name>
+        <param>
+          <type>QModelIndexList</type>
+          <declname>indexes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" line="26" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.cpp" bodystart="195" bodyend="203"/>
+      </memberdef>
+      <memberdef kind="function" id="class_table_model_1ac5d306166ddda71a3b2deff4245ff1cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; QList&lt; QString &gt; &gt;</type>
+        <definition>QList&lt; QList&lt; QString &gt; &gt; TableModel::getList</definition>
+        <argsstring>()</argsstring>
+        <name>getList</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" line="27" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.cpp" bodystart="190" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="class_table_model_1a99c2ce0fac13ea5a673f862ea7fe0d6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TableModel::insertRow</definition>
+        <argsstring>(double longitude, double latitude, const QModelIndex &amp;index=QModelIndex())</argsstring>
+        <name>insertRow</name>
+        <param>
+          <type>double</type>
+          <declname>longitude</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>latitude</declname>
+        </param>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>index</declname>
+          <defval>QModelIndex()</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" line="29" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.cpp" bodystart="76" bodyend="135"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1093">
+        <label>TableModel</label>
+        <link refid="class_table_model"/>
+        <childnode refid="1094" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1094">
+        <label>QAbstractTableModel</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1095">
+        <label>TableModel</label>
+        <link refid="class_table_model"/>
+        <childnode refid="1096" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1096">
+        <label>QAbstractTableModel</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" line="9" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.h" bodystart="8" bodyend="37"/>
+    <listofallmembers>
+      <member refid="class_table_model_1a0f07a494fac556e1520b0306c3a50cc0" prot="public" virt="non-virtual"><scope>TableModel</scope><name>columnCount</name></member>
+      <member refid="class_table_model_1a2ff2b13db2fd19c2602c63260bb597be" prot="private" virt="non-virtual"><scope>TableModel</scope><name>columns</name></member>
+      <member refid="class_table_model_1ab22a19802ca81ba42e1cec670e864183" prot="public" virt="non-virtual"><scope>TableModel</scope><name>data</name></member>
+      <member refid="class_table_model_1ac758b15767be92f2ac9e0c4d958d5662" prot="public" virt="non-virtual"><scope>TableModel</scope><name>flags</name></member>
+      <member refid="class_table_model_1ac5d306166ddda71a3b2deff4245ff1cf" prot="public" virt="non-virtual"><scope>TableModel</scope><name>getList</name></member>
+      <member refid="class_table_model_1a4677a49af807c3b72ca4c1e82971d9ec" prot="public" virt="non-virtual"><scope>TableModel</scope><name>headerData</name></member>
+      <member refid="class_table_model_1a3bc1eb333f87d13d9bb0fb2b4f7c744a" prot="public" virt="non-virtual"><scope>TableModel</scope><name>insertRow</name></member>
+      <member refid="class_table_model_1a99c2ce0fac13ea5a673f862ea7fe0d6c" prot="public" virt="non-virtual"><scope>TableModel</scope><name>insertRow</name></member>
+      <member refid="class_table_model_1a7fcf06eebf32f5295fec05cadcdf5320" prot="public" virt="non-virtual"><scope>TableModel</scope><name>insertRows</name></member>
+      <member refid="class_table_model_1a236a000a21493bb71dbb6cbeb7a1cde8" prot="private" virt="non-virtual"><scope>TableModel</scope><name>listOfPairs</name></member>
+      <member refid="class_table_model_1abd1d9fd2aebf4ab22a5bc1f1bc4c446d" prot="public" virt="non-virtual"><scope>TableModel</scope><name>removeRows</name></member>
+      <member refid="class_table_model_1a319fa96b8856ee379b09ddb793611f44" prot="public" virt="non-virtual"><scope>TableModel</scope><name>removeRows</name></member>
+      <member refid="class_table_model_1ac2815f7ad9ece5ffb1abd08a3a567483" prot="public" virt="non-virtual"><scope>TableModel</scope><name>rowCount</name></member>
+      <member refid="class_table_model_1aa5ebe742e8bb1570c2ed8577c41f7c8d" prot="public" virt="non-virtual"><scope>TableModel</scope><name>setData</name></member>
+      <member refid="class_table_model_1ad7d9723995888a77fa2242069fe3e67d" prot="public" virt="non-virtual"><scope>TableModel</scope><name>TableModel</name></member>
+      <member refid="class_table_model_1ad91b1c11aa366dc3472fb393c68d0dc8" prot="public" virt="non-virtual"><scope>TableModel</scope><name>TableModel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

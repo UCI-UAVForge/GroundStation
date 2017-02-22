@@ -1,0 +1,76 @@
+\hypertarget{struct_mission_data}{}\section{Mission\+Data Struct Reference}
+\label{struct_mission_data}\index{Mission\+Data@{Mission\+Data}}
+
+
+{\ttfamily \#include $<$dbmanager.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{struct_mission_data_aca98e398b94037e80749d0a9e73dcefe}{heading}
+\item 
+double \hyperlink{struct_mission_data_a36cf42a5d8fd328293d296c67239af9b}{lat}
+\item 
+double \hyperlink{struct_mission_data_a7fcee2655bd219b949d4a697ecc70a67}{lan}
+\item 
+float \hyperlink{struct_mission_data_ad4f9f598f5960f26fc8290180a7cfd18}{alt}
+\item 
+float \hyperlink{struct_mission_data_a43974cedf16a4aa6645145224a4c3e77}{pitch}
+\item 
+float \hyperlink{struct_mission_data_a9fca0a04ef126efa755e91c2a96a536e}{roll}
+\item 
+float \hyperlink{struct_mission_data_a186d118b99361b39a581ae01cf20e2c3}{yaw}
+\item 
+float \hyperlink{struct_mission_data_a6a86665d3ace692fec591d90ef69d7b3}{xvel}
+\item 
+float \hyperlink{struct_mission_data_a0551fec33eeabd071cebf089603ed122}{yvel}
+\item 
+float \hyperlink{struct_mission_data_abe305df8910d25abeb1638dd6693081b}{zvel}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class\+: D\+B\+Manager Date\+: Fall 2016 Author\+: Aung(\+David) Moe, Rayan Ahmed Description\+: Database system for logging system information to/from the drones for the U\+A\+V\+F project.
+
+!!!!!! I\+M\+P\+O\+R\+T\+A\+N\+T\+: Add \textquotesingle{}Q\+T += sql\textquotesingle{} to the .pro file. !!!!!!
+
+Example for \hyperlink{class_mission}{Mission}\+: \hyperlink{class_db_manager}{Db\+Manager} db(\char`\"{}\+Test1\char`\"{},\char`\"{}\+Database\char`\"{}); // Creates a file Database/\+Test1.\+db. The folder must exist if (db.\+is\+Open()) \{ db.\+add\+Mission\+Data(\{\}); db.\+add\+Mission\+Data(\{2.\+1,1.\+1,1.\+1,1.\+1,1.\+1,1.\+1,1.\+1,1.\+1,1.\+1,1.\+1\}); db.\+add\+Mission\+Data(\{3.\+2,1.\+2,1.\+2,1.\+2,1.\+2,1.\+2,1.\+2,1.\+2,1.\+2,1.\+2\}); db.\+add\+Mission\+Data(\{4,1,1,1,1,1,1,1,1,1\}); db.\+save\+Mission\+To\+File();
+
+foreach (\hyperlink{struct_mission_data}{Mission\+Data} data, db.\+get\+Mission()) \{ do something \} 
+
+\subsection{Member Data Documentation}
+\hypertarget{struct_mission_data_ad4f9f598f5960f26fc8290180a7cfd18}{}\index{Mission\+Data@{Mission\+Data}!alt@{alt}}
+\index{alt@{alt}!Mission\+Data@{Mission\+Data}}
+\subsubsection[{alt}]{\setlength{\rightskip}{0pt plus 5cm}float Mission\+Data\+::alt}\label{struct_mission_data_ad4f9f598f5960f26fc8290180a7cfd18}
+\hypertarget{struct_mission_data_aca98e398b94037e80749d0a9e73dcefe}{}\index{Mission\+Data@{Mission\+Data}!heading@{heading}}
+\index{heading@{heading}!Mission\+Data@{Mission\+Data}}
+\subsubsection[{heading}]{\setlength{\rightskip}{0pt plus 5cm}float Mission\+Data\+::heading}\label{struct_mission_data_aca98e398b94037e80749d0a9e73dcefe}
+\hypertarget{struct_mission_data_a7fcee2655bd219b949d4a697ecc70a67}{}\index{Mission\+Data@{Mission\+Data}!lan@{lan}}
+\index{lan@{lan}!Mission\+Data@{Mission\+Data}}
+\subsubsection[{lan}]{\setlength{\rightskip}{0pt plus 5cm}double Mission\+Data\+::lan}\label{struct_mission_data_a7fcee2655bd219b949d4a697ecc70a67}
+\hypertarget{struct_mission_data_a36cf42a5d8fd328293d296c67239af9b}{}\index{Mission\+Data@{Mission\+Data}!lat@{lat}}
+\index{lat@{lat}!Mission\+Data@{Mission\+Data}}
+\subsubsection[{lat}]{\setlength{\rightskip}{0pt plus 5cm}double Mission\+Data\+::lat}\label{struct_mission_data_a36cf42a5d8fd328293d296c67239af9b}
+\hypertarget{struct_mission_data_a43974cedf16a4aa6645145224a4c3e77}{}\index{Mission\+Data@{Mission\+Data}!pitch@{pitch}}
+\index{pitch@{pitch}!Mission\+Data@{Mission\+Data}}
+\subsubsection[{pitch}]{\setlength{\rightskip}{0pt plus 5cm}float Mission\+Data\+::pitch}\label{struct_mission_data_a43974cedf16a4aa6645145224a4c3e77}
+\hypertarget{struct_mission_data_a9fca0a04ef126efa755e91c2a96a536e}{}\index{Mission\+Data@{Mission\+Data}!roll@{roll}}
+\index{roll@{roll}!Mission\+Data@{Mission\+Data}}
+\subsubsection[{roll}]{\setlength{\rightskip}{0pt plus 5cm}float Mission\+Data\+::roll}\label{struct_mission_data_a9fca0a04ef126efa755e91c2a96a536e}
+\hypertarget{struct_mission_data_a6a86665d3ace692fec591d90ef69d7b3}{}\index{Mission\+Data@{Mission\+Data}!xvel@{xvel}}
+\index{xvel@{xvel}!Mission\+Data@{Mission\+Data}}
+\subsubsection[{xvel}]{\setlength{\rightskip}{0pt plus 5cm}float Mission\+Data\+::xvel}\label{struct_mission_data_a6a86665d3ace692fec591d90ef69d7b3}
+\hypertarget{struct_mission_data_a186d118b99361b39a581ae01cf20e2c3}{}\index{Mission\+Data@{Mission\+Data}!yaw@{yaw}}
+\index{yaw@{yaw}!Mission\+Data@{Mission\+Data}}
+\subsubsection[{yaw}]{\setlength{\rightskip}{0pt plus 5cm}float Mission\+Data\+::yaw}\label{struct_mission_data_a186d118b99361b39a581ae01cf20e2c3}
+\hypertarget{struct_mission_data_a0551fec33eeabd071cebf089603ed122}{}\index{Mission\+Data@{Mission\+Data}!yvel@{yvel}}
+\index{yvel@{yvel}!Mission\+Data@{Mission\+Data}}
+\subsubsection[{yvel}]{\setlength{\rightskip}{0pt plus 5cm}float Mission\+Data\+::yvel}\label{struct_mission_data_a0551fec33eeabd071cebf089603ed122}
+\hypertarget{struct_mission_data_abe305df8910d25abeb1638dd6693081b}{}\index{Mission\+Data@{Mission\+Data}!zvel@{zvel}}
+\index{zvel@{zvel}!Mission\+Data@{Mission\+Data}}
+\subsubsection[{zvel}]{\setlength{\rightskip}{0pt plus 5cm}float Mission\+Data\+::zvel}\label{struct_mission_data_abe305df8910d25abeb1638dd6693081b}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Roman/\+Documents/\+Mygs/\+Ground\+Station/\+G\+S/\hyperlink{dbmanager_8h}{dbmanager.\+h}\end{DoxyCompactItemize}

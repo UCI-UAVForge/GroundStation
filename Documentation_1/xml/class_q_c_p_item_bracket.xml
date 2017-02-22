@@ -1,0 +1,693 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_q_c_p_item_bracket" kind="class" language="C++" prot="public">
+    <compoundname>QCPItemBracket</compoundname>
+    <basecompoundref refid="class_q_c_p_abstract_item" prot="public" virt="non-virtual">QCPAbstractItem</basecompoundref>
+    <includes refid="qcustomplot_8h" local="no">qcustomplot.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_q_c_p_item_bracket_1a7ac3afd0b24a607054e7212047d59dbd" prot="public" static="no">
+        <name>BracketStyle</name>
+        <enumvalue id="class_q_c_p_item_bracket_1a7ac3afd0b24a607054e7212047d59dbda7f9df4a7359bfe3dac1dbe4ccf5d220c" prot="public">
+          <name>bsSquare</name>
+          <briefdescription>
+<para>A brace with angled edges. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_item_bracket_1a7ac3afd0b24a607054e7212047d59dbda394627b0830a26ee3e0a02ca67a9f918" prot="public">
+          <name>bsRound</name>
+          <briefdescription>
+<para>A brace with round edges. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_item_bracket_1a7ac3afd0b24a607054e7212047d59dbda5024ce4023c2d8de4221f1cd4816acd8" prot="public">
+          <name>bsCurly</name>
+          <briefdescription>
+<para>A curly brace. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_item_bracket_1a7ac3afd0b24a607054e7212047d59dbda8f29f5ef754e2dc9a9efdedb2face0f3" prot="public">
+          <name>bsCalligraphic</name>
+          <briefdescription>
+<para>A curly brace with varying stroke width giving a calligraphic impression. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3723" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="3723" bodyend="3727"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-type">
+      <memberdef kind="enum" id="class_q_c_p_item_bracket_1a7f3a6a56d67f71219ed220553f3dd861" prot="protected" static="no">
+        <name>AnchorIndex</name>
+        <enumvalue id="class_q_c_p_item_bracket_1a7f3a6a56d67f71219ed220553f3dd861a17b57ef34cc05eadfe9becd1ad5b5242" prot="protected">
+          <name>aiCenter</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3753" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="3753" bodyend="3753"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_q_c_p_item_bracket_1af6cc6d27d96171778c6927d6edce48b0" prot="public" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> *const</type>
+        <definition>QCPItemPosition* const QCPItemBracket::left</definition>
+        <argsstring></argsstring>
+        <name>left</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3747" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="3747" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_bracket_1afa6c1360b05a50c4e0df37b3cebab6be" prot="public" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_position" kindref="compound">QCPItemPosition</ref> *const</type>
+        <definition>QCPItemPosition* const QCPItemBracket::right</definition>
+        <argsstring></argsstring>
+        <name>right</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3748" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="3748" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_bracket_1a2dbcabdf5f467f28be12a7b25962ffca" prot="public" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_anchor" kindref="compound">QCPItemAnchor</ref> *const</type>
+        <definition>QCPItemAnchor* const QCPItemBracket::center</definition>
+        <argsstring></argsstring>
+        <name>center</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3749" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="3749" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_q_c_p_item_bracket_1a350c864a5853b04343719f5a8be6b675" prot="protected" static="no" mutable="no">
+        <type>QPen</type>
+        <definition>QPen QCPItemBracket::mPen</definition>
+        <argsstring></argsstring>
+        <name>mPen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3754" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="3754" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_bracket_1adcfb53602d1802d00e2de4fd6df6b291" prot="protected" static="no" mutable="no">
+        <type>QPen</type>
+        <definition>QPen QCPItemBracket::mSelectedPen</definition>
+        <argsstring></argsstring>
+        <name>mSelectedPen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3754" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="3754" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_bracket_1ab3d99bba8da18eb4d0e0cb23dded33b2" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPItemBracket::mLength</definition>
+        <argsstring></argsstring>
+        <name>mLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3755" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="3755" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_item_bracket_1ac911907184c824d621f274f8e0990080" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_item_bracket_1a7ac3afd0b24a607054e7212047d59dbd" kindref="member">BracketStyle</ref></type>
+        <definition>BracketStyle QCPItemBracket::mStyle</definition>
+        <argsstring></argsstring>
+        <name>mStyle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3756" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="3756" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_c_p_item_bracket_1a44ecfa37a76de5e3549e2d61f9d8ee56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPItemBracket::QCPItemBracket</definition>
+        <argsstring>(QCustomPlot *parentPlot)</argsstring>
+        <name>QCPItemBracket</name>
+        <param>
+          <type><ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> *</type>
+          <declname>parentPlot</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a bracket item and sets default values.</para><para>The constructed item can be added to the plot with <ref refid="class_q_custom_plot_1aa500620379262321685cb7a7674cbd2a" kindref="member">QCustomPlot::addItem</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3729" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="23272" bodyend="23285"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_bracket_1ad773c3e8e09868d6f8caeb92c54919f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>QCPItemBracket::~QCPItemBracket</definition>
+        <argsstring>()</argsstring>
+        <name>~QCPItemBracket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3730" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="23287" bodyend="23289"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_bracket_1a8963ff4a232b649c83d2461fd3c30d39" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QPen</type>
+        <definition>QPen QCPItemBracket::pen</definition>
+        <argsstring>() const </argsstring>
+        <name>pen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3733" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="3733" bodyend="3733"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_bracket_1a9f6ea5ea9559ef36dfacdadd6e9bdcf0" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QPen</type>
+        <definition>QPen QCPItemBracket::selectedPen</definition>
+        <argsstring>() const </argsstring>
+        <name>selectedPen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3734" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="3734" bodyend="3734"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_bracket_1aed5126eafcb1381ee5718499c20ba023" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>double</type>
+        <definition>double QCPItemBracket::length</definition>
+        <argsstring>() const </argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3735" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="3735" bodyend="3735"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_bracket_1afad726f453f70fe77c0e9c2f260fff97" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_item_bracket_1a7ac3afd0b24a607054e7212047d59dbd" kindref="member">BracketStyle</ref></type>
+        <definition>BracketStyle QCPItemBracket::style</definition>
+        <argsstring>() const </argsstring>
+        <name>style</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3736" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="3736" bodyend="3736"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_bracket_1ab13001d9cc5d8f9e56ea15bdda682acb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemBracket::setPen</definition>
+        <argsstring>(const QPen &amp;pen)</argsstring>
+        <name>setPen</name>
+        <param>
+          <type>const QPen &amp;</type>
+          <declname>pen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the pen that will be used to draw the bracket.</para><para>Note that when the style is <ref refid="class_q_c_p_item_bracket_1a7ac3afd0b24a607054e7212047d59dbda8f29f5ef754e2dc9a9efdedb2face0f3" kindref="member">bsCalligraphic</ref>, only the color will be taken from the pen, the stroke and width are ignored. To change the apparent stroke width of a calligraphic bracket, use <ref refid="class_q_c_p_item_bracket_1ac7cfc3da7da9b5c5ac5dfbe4f0351b2a" kindref="member">setLength</ref>, which has a similar effect.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_bracket_1a349785c31122778a520c64891fa204c5" kindref="member">setSelectedPen</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3739" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="23300" bodyend="23303"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_bracket_1a349785c31122778a520c64891fa204c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemBracket::setSelectedPen</definition>
+        <argsstring>(const QPen &amp;pen)</argsstring>
+        <name>setSelectedPen</name>
+        <param>
+          <type>const QPen &amp;</type>
+          <declname>pen</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the pen that will be used to draw the bracket when selected</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_bracket_1ab13001d9cc5d8f9e56ea15bdda682acb" kindref="member">setPen</ref>, <ref refid="class_q_c_p_abstract_item_1a203de94ad586cc44d16c9565f49d3378" kindref="member">setSelected</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3740" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="23310" bodyend="23313"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_bracket_1ac7cfc3da7da9b5c5ac5dfbe4f0351b2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemBracket::setLength</definition>
+        <argsstring>(double length)</argsstring>
+        <name>setLength</name>
+        <param>
+          <type>double</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the <emphasis>length</emphasis> in pixels how far the bracket extends in the direction towards the embraced span of the bracket (i.e. perpendicular to the <emphasis>left</emphasis>-<emphasis>right</emphasis>-direction)</para><para><image type="html" name="QCPItemBracket-length.png"></image>
+ <center>Demonstrating the effect of different values for <ref refid="class_q_c_p_item_bracket_1ac7cfc3da7da9b5c5ac5dfbe4f0351b2a" kindref="member">setLength</ref>, for styles <ref refid="class_q_c_p_item_bracket_1a7ac3afd0b24a607054e7212047d59dbda8f29f5ef754e2dc9a9efdedb2face0f3" kindref="member">bsCalligraphic</ref> and <ref refid="class_q_c_p_item_bracket_1a7ac3afd0b24a607054e7212047d59dbda7f9df4a7359bfe3dac1dbe4ccf5d220c" kindref="member">bsSquare</ref>. Anchors and positions are displayed for reference.</center> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3741" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="23323" bodyend="23326"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_bracket_1a612dffa2373422eef8754d690add3703" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPItemBracket::setStyle</definition>
+        <argsstring>(BracketStyle style)</argsstring>
+        <name>setStyle</name>
+        <param>
+          <type><ref refid="class_q_c_p_item_bracket_1a7ac3afd0b24a607054e7212047d59dbd" kindref="member">BracketStyle</ref></type>
+          <declname>style</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the style of the bracket, i.e. the shape/visual appearance.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_item_bracket_1ab13001d9cc5d8f9e56ea15bdda682acb" kindref="member">setPen</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3742" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="23333" bodyend="23336"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_bracket_1aa6933caff1d42c54bcebc769ef88c798" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double QCPItemBracket::selectTest</definition>
+        <argsstring>(const QPointF &amp;pos, bool onlySelectable, QVariant *details=0) const </argsstring>
+        <name>selectTest</name>
+        <reimplements refid="class_q_c_p_abstract_item_1a96d522d10ffc0413b9a366c6f7f0476b">selectTest</reimplements>
+        <param>
+          <type>const QPointF &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>onlySelectable</declname>
+        </param>
+        <param>
+          <type>QVariant *</type>
+          <declname>details</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is used to decide whether a click hits a layerable object or not.</para><para><emphasis>pos</emphasis> is a point in pixel coordinates on the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn&apos;t be determined, -1.0 is returned. Further, if <emphasis>onlySelectable</emphasis> is true and the object is not selectable, -1.0 is returned, too.</para><para>If the item is represented not by single lines but by an area like <ref refid="class_q_c_p_item_rect" kindref="compound">QCPItemRect</ref> or <ref refid="class_q_c_p_item_text" kindref="compound">QCPItemText</ref>, a click inside the area returns a constant value greater zero (typically the selectionTolerance of the parent <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> multiplied by 0.99). If the click lies outside the area, this function returns -1.0.</para><para>Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.e. closer than 0.99*selectionTolerance).</para><para>The actual setting of the selection state is not done by this function. This is handled by the parent <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> when the mouseReleaseEvent occurs, and the finally selected object is notified via the selectEvent/deselectEvent methods.</para><para><emphasis>details</emphasis> is an optional output parameter. Every layerable subclass may place any information in <emphasis>details</emphasis>. This information will be passed to <ref refid="class_q_c_p_abstract_item_1aaf92af7b9893712959a6c073d334d88d" kindref="member">selectEvent</ref> when the parent <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> decides on the basis of this selectTest call, that the object was successfully selected. The subsequent call to <ref refid="class_q_c_p_abstract_item_1aaf92af7b9893712959a6c073d334d88d" kindref="member">selectEvent</ref> will carry the <emphasis>details</emphasis>. This is useful for multi-part objects (like <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref>). This way, a possibly complex calculation to decide which part was clicked is only done once in <ref refid="class_q_c_p_item_bracket_1aa6933caff1d42c54bcebc769ef88c798" kindref="member">selectTest</ref>. The result (i.e. the actually clicked part) can then be placed in <emphasis>details</emphasis>. So in the subsequent <ref refid="class_q_c_p_abstract_item_1aaf92af7b9893712959a6c073d334d88d" kindref="member">selectEvent</ref>, the decision which part was selected doesn&apos;t have to be done a second time for a single selection operation.</para><para>You may pass 0 as <emphasis>details</emphasis> to indicate that you are not interested in those selection details.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_abstract_item_1aaf92af7b9893712959a6c073d334d88d" kindref="member">selectEvent</ref>, <ref refid="class_q_c_p_abstract_item_1a91f090d6763cfedb0749219c63788ae9" kindref="member">deselectEvent</ref>, <ref refid="class_q_custom_plot_1a5ee1e2f6ae27419deca53e75907c27e5" kindref="member">QCustomPlot::setInteractions</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3745" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="23339" bodyend="23356"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_q_c_p_item_bracket_1a8343cf0559c64886add7aa7f4b22f1a6" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QCPItemBracket::draw</definition>
+        <argsstring>(QCPPainter *painter)</argsstring>
+        <name>draw</name>
+        <reimplements refid="class_q_c_p_abstract_item_1ad0dc056f650c3ca73414e6b4f01674ef">draw</reimplements>
+        <param>
+          <type><ref refid="class_q_c_p_painter" kindref="compound">QCPPainter</ref> *</type>
+          <declname>painter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3759" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="23359" bodyend="23425"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_bracket_1ac76827e3acba5faee81f149af4047a39" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QPointF</type>
+        <definition>QPointF QCPItemBracket::anchorPixelPoint</definition>
+        <argsstring>(int anchorId) const </argsstring>
+        <name>anchorPixelPoint</name>
+        <reimplements refid="class_q_c_p_abstract_item_1a94bde62b8a2fc133666dcbb8035deeed">anchorPixelPoint</reimplements>
+        <param>
+          <type>int</type>
+          <declname>anchorId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3760" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="23428" bodyend="23447"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_item_bracket_1a8df4ad873bf88a4a7bfb9bbbd490e495" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QPen</type>
+        <definition>QPen QCPItemBracket::mainPen</definition>
+        <argsstring>() const </argsstring>
+        <name>mainPen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3763" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="23454" bodyend="23457"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A bracket for referencing/highlighting certain parts in the plot. </para>    </briefdescription>
+    <detaileddescription>
+<para><image type="html" name="QCPItemBracket.png">Bracket example. Blue dotted circles are anchors, solid blue discs are positions.</image>
+ It has two positions, <emphasis>left</emphasis> and <emphasis>right</emphasis>, which define the span of the bracket. If <emphasis>left</emphasis> is actually farther to the left than <emphasis>right</emphasis>, the bracket is opened to the bottom, as shown in the example image.</para><para>The bracket supports multiple styles via <ref refid="class_q_c_p_item_bracket_1a612dffa2373422eef8754d690add3703" kindref="member">setStyle</ref>. The length, i.e. how far the bracket stretches away from the embraced span, can be controlled with <ref refid="class_q_c_p_item_bracket_1ac7cfc3da7da9b5c5ac5dfbe4f0351b2a" kindref="member">setLength</ref>.</para><para><image type="html" name="QCPItemBracket-length.png"></image>
+ <center>Demonstrating the effect of different values for <ref refid="class_q_c_p_item_bracket_1ac7cfc3da7da9b5c5ac5dfbe4f0351b2a" kindref="member">setLength</ref>, for styles <ref refid="class_q_c_p_item_bracket_1a7ac3afd0b24a607054e7212047d59dbda8f29f5ef754e2dc9a9efdedb2face0f3" kindref="member">bsCalligraphic</ref> and <ref refid="class_q_c_p_item_bracket_1a7ac3afd0b24a607054e7212047d59dbda7f9df4a7359bfe3dac1dbe4ccf5d220c" kindref="member">bsSquare</ref>. Anchors and positions are displayed for reference.</center></para><para>It provides an anchor <emphasis>center</emphasis>, to allow connection of other items, e.g. an arrow (<ref refid="class_q_c_p_item_line" kindref="compound">QCPItemLine</ref> or <ref refid="class_q_c_p_item_curve" kindref="compound">QCPItemCurve</ref>) or a text label (<ref refid="class_q_c_p_item_text" kindref="compound">QCPItemText</ref>), to the bracket. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="482">
+        <label>QCPItemBracket</label>
+        <link refid="class_q_c_p_item_bracket"/>
+        <childnode refid="483" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="485">
+        <label>QObject</label>
+      </node>
+      <node id="483">
+        <label>QCPAbstractItem</label>
+        <link refid="class_q_c_p_abstract_item"/>
+        <childnode refid="484" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="484">
+        <label>QCPLayerable</label>
+        <link refid="class_q_c_p_layerable"/>
+        <childnode refid="485" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="502">
+        <label>QCPLayoutInset</label>
+        <link refid="class_q_c_p_layout_inset"/>
+        <childnode refid="494" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="486">
+        <label>QCPItemBracket</label>
+        <link refid="class_q_c_p_item_bracket"/>
+        <childnode refid="487" relation="public-inheritance">
+        </childnode>
+        <childnode refid="504" relation="usage">
+          <edgelabel>right</edgelabel>
+          <edgelabel>left</edgelabel>
+        </childnode>
+        <childnode refid="505" relation="usage">
+          <edgelabel>center</edgelabel>
+        </childnode>
+      </node>
+      <node id="495">
+        <label>QCPLayoutElement</label>
+        <link refid="class_q_c_p_layout_element"/>
+        <childnode refid="488" relation="public-inheritance">
+        </childnode>
+        <childnode refid="494" relation="usage">
+          <edgelabel>mParentLayout</edgelabel>
+        </childnode>
+      </node>
+      <node id="489">
+        <label>QObject</label>
+      </node>
+      <node id="497">
+        <label>QCPRange</label>
+        <link refid="class_q_c_p_range"/>
+      </node>
+      <node id="504">
+        <label>QCPItemPosition</label>
+        <link refid="class_q_c_p_item_position"/>
+        <childnode refid="505" relation="public-inheritance">
+        </childnode>
+        <childnode refid="505" relation="usage">
+          <edgelabel>mParentAnchorX</edgelabel>
+          <edgelabel>mParentAnchorY</edgelabel>
+        </childnode>
+      </node>
+      <node id="503">
+        <label>QCPLegend</label>
+        <link refid="class_q_c_p_legend"/>
+        <childnode refid="493" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="499">
+        <label>QCPLineEnding</label>
+        <link refid="class_q_c_p_line_ending"/>
+      </node>
+      <node id="494">
+        <label>QCPLayout</label>
+        <link refid="class_q_c_p_layout"/>
+        <childnode refid="495" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="500">
+        <label>QCPGrid</label>
+        <link refid="class_q_c_p_grid"/>
+        <childnode refid="488" relation="public-inheritance">
+        </childnode>
+        <childnode refid="496" relation="usage">
+          <edgelabel>mParentAxis</edgelabel>
+        </childnode>
+      </node>
+      <node id="498">
+        <label>QCPAxisPainterPrivate</label>
+        <link refid="class_q_c_p_axis_painter_private"/>
+        <childnode refid="499" relation="usage">
+          <edgelabel>lowerEnding</edgelabel>
+          <edgelabel>upperEnding</edgelabel>
+        </childnode>
+        <childnode refid="491" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="487">
+        <label>QCPAbstractItem</label>
+        <link refid="class_q_c_p_abstract_item"/>
+        <childnode refid="488" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="492">
+        <label>QWidget</label>
+      </node>
+      <node id="490">
+        <label>QCPLayer</label>
+        <link refid="class_q_c_p_layer"/>
+        <childnode refid="489" relation="public-inheritance">
+        </childnode>
+        <childnode refid="491" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="505">
+        <label>QCPItemAnchor</label>
+        <link refid="class_q_c_p_item_anchor"/>
+        <childnode refid="487" relation="usage">
+          <edgelabel>mParentItem</edgelabel>
+        </childnode>
+        <childnode refid="491" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="493">
+        <label>QCPLayoutGrid</label>
+        <link refid="class_q_c_p_layout_grid"/>
+        <childnode refid="494" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="488">
+        <label>QCPLayerable</label>
+        <link refid="class_q_c_p_layerable"/>
+        <childnode refid="489" relation="public-inheritance">
+        </childnode>
+        <childnode refid="490" relation="usage">
+          <edgelabel>mLayer</edgelabel>
+        </childnode>
+        <childnode refid="491" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="496">
+        <label>QCPAxis</label>
+        <link refid="class_q_c_p_axis"/>
+        <childnode refid="488" relation="public-inheritance">
+        </childnode>
+        <childnode refid="497" relation="usage">
+          <edgelabel>mRange</edgelabel>
+        </childnode>
+        <childnode refid="498" relation="usage">
+          <edgelabel>mAxisPainter</edgelabel>
+        </childnode>
+        <childnode refid="500" relation="usage">
+          <edgelabel>mGrid</edgelabel>
+        </childnode>
+        <childnode refid="501" relation="usage">
+          <edgelabel>mAxisRect</edgelabel>
+        </childnode>
+      </node>
+      <node id="501">
+        <label>QCPAxisRect</label>
+        <link refid="class_q_c_p_axis_rect"/>
+        <childnode refid="495" relation="public-inheritance">
+        </childnode>
+        <childnode refid="502" relation="usage">
+          <edgelabel>mInsetLayout</edgelabel>
+        </childnode>
+        <childnode refid="497" relation="usage">
+          <edgelabel>mDragStartVertRange</edgelabel>
+          <edgelabel>mDragStartHorzRange</edgelabel>
+        </childnode>
+      </node>
+      <node id="491">
+        <label>QCustomPlot</label>
+        <link refid="class_q_custom_plot"/>
+        <childnode refid="492" relation="public-inheritance">
+        </childnode>
+        <childnode refid="490" relation="usage">
+          <edgelabel>mCurrentLayer</edgelabel>
+        </childnode>
+        <childnode refid="493" relation="usage">
+          <edgelabel>mPlotLayout</edgelabel>
+        </childnode>
+        <childnode refid="496" relation="usage">
+          <edgelabel>yAxis2</edgelabel>
+          <edgelabel>xAxis2</edgelabel>
+          <edgelabel>xAxis</edgelabel>
+          <edgelabel>yAxis</edgelabel>
+        </childnode>
+        <childnode refid="503" relation="usage">
+          <edgelabel>legend</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="3714" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="3713" bodyend="3764"/>
+    <listofallmembers>
+      <member refid="class_q_c_p_item_bracket_1a7f3a6a56d67f71219ed220553f3dd861a17b57ef34cc05eadfe9becd1ad5b5242" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>aiCenter</name></member>
+      <member refid="class_q_c_p_abstract_item_1abed974cba7cc02608c71dad4638e008d" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>anchor</name></member>
+      <member refid="class_q_c_p_item_bracket_1a7f3a6a56d67f71219ed220553f3dd861" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>AnchorIndex</name></member>
+      <member refid="class_q_c_p_item_bracket_1ac76827e3acba5faee81f149af4047a39" prot="protected" virt="virtual"><scope>QCPItemBracket</scope><name>anchorPixelPoint</name></member>
+      <member refid="class_q_c_p_abstract_item_1a8454b9941960b840608a5a1e00b1977d" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>anchors</name></member>
+      <member refid="class_q_c_p_layerable_1aef5cb4aa899ed9dc9384fd614560291e" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>antialiased</name></member>
+      <member refid="class_q_c_p_layerable_1a62bd552d1a45aa9accb24b310542279e" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>applyAntialiasingHint</name></member>
+      <member refid="class_q_c_p_abstract_item_1a0839031abdd71067e2256a4d53c7a011" prot="protected" virt="virtual"><scope>QCPItemBracket</scope><name>applyDefaultAntialiasingHint</name></member>
+      <member refid="class_q_c_p_item_bracket_1a7ac3afd0b24a607054e7212047d59dbd" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>BracketStyle</name></member>
+      <member refid="class_q_c_p_item_bracket_1a7ac3afd0b24a607054e7212047d59dbda8f29f5ef754e2dc9a9efdedb2face0f3" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>bsCalligraphic</name></member>
+      <member refid="class_q_c_p_item_bracket_1a7ac3afd0b24a607054e7212047d59dbda5024ce4023c2d8de4221f1cd4816acd8" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>bsCurly</name></member>
+      <member refid="class_q_c_p_item_bracket_1a7ac3afd0b24a607054e7212047d59dbda394627b0830a26ee3e0a02ca67a9f918" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>bsRound</name></member>
+      <member refid="class_q_c_p_item_bracket_1a7ac3afd0b24a607054e7212047d59dbda7f9df4a7359bfe3dac1dbe4ccf5d220c" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>bsSquare</name></member>
+      <member refid="class_q_c_p_item_bracket_1a2dbcabdf5f467f28be12a7b25962ffca" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>center</name></member>
+      <member refid="class_q_c_p_abstract_item_1a37f86618740b5047eae23eedb2de061a" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>clipAxisRect</name></member>
+      <member refid="class_q_c_p_abstract_item_1a538e25ff8856534582f5b2b400a46405" prot="protected" virt="virtual"><scope>QCPItemBracket</scope><name>clipRect</name></member>
+      <member refid="class_q_c_p_abstract_item_1a5b0ea171823033bcb8aee81f4a034871" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>clipToAxisRect</name></member>
+      <member refid="class_q_c_p_abstract_item_1af3fc92527802078ca395138748b629a7" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>createAnchor</name></member>
+      <member refid="class_q_c_p_abstract_item_1a75036d39c4d4e2e1a7dd145fff915d32" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>createPosition</name></member>
+      <member refid="class_q_c_p_abstract_item_1a91f090d6763cfedb0749219c63788ae9" prot="protected" virt="virtual"><scope>QCPItemBracket</scope><name>deselectEvent</name></member>
+      <member refid="class_q_c_p_abstract_item_1acdca343717d625b8abb3c3e38c0ed39d" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>distSqrToLine</name></member>
+      <member refid="class_q_c_p_item_bracket_1a8343cf0559c64886add7aa7f4b22f1a6" prot="protected" virt="virtual"><scope>QCPItemBracket</scope><name>draw</name></member>
+      <member refid="class_q_c_p_abstract_item_1acbce9e5ba5252541d19db0c40303357a" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>hasAnchor</name></member>
+      <member refid="class_q_c_p_layerable_1a8cbe5a0c9a5674249982f5ca5f8e02bc" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>initializeParentPlot</name></member>
+      <member refid="class_q_c_p_layerable_1aea67e8c19145e70d68c286a36f6b8300" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>layer</name></member>
+      <member refid="class_q_c_p_layerable_1abbf8657cedea73ac1c3499b521c90eba" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>layerChanged</name></member>
+      <member refid="class_q_c_p_item_bracket_1af6cc6d27d96171778c6927d6edce48b0" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>left</name></member>
+      <member refid="class_q_c_p_item_bracket_1aed5126eafcb1381ee5718499c20ba023" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>length</name></member>
+      <member refid="class_q_c_p_item_bracket_1a8df4ad873bf88a4a7bfb9bbbd490e495" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>mainPen</name></member>
+      <member refid="class_q_c_p_abstract_item_1a909a3abab783de302ebf0a0e6f2bbc15" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>mAnchors</name></member>
+      <member refid="class_q_c_p_layerable_1a3ab45a4c76a3333ce42eb217a81733ec" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>mAntialiased</name></member>
+      <member refid="class_q_c_p_abstract_item_1a3e57cfe7da4b1ac3d6fa7281ea437361" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>mClipAxisRect</name></member>
+      <member refid="class_q_c_p_abstract_item_1ad2a70ff6b658fcb84a9427f69d3f587d" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>mClipToAxisRect</name></member>
+      <member refid="class_q_c_p_layerable_1aa38ec5891aff0f50b36fd63e9372a0cd" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>mLayer</name></member>
+      <member refid="class_q_c_p_item_bracket_1ab3d99bba8da18eb4d0e0cb23dded33b2" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>mLength</name></member>
+      <member refid="class_q_c_p_layerable_1af94484cfb7cbbddb7de522e9be71d9a4" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>moveToLayer</name></member>
+      <member refid="class_q_c_p_layerable_1a3291445a980053e2d17a21d15957624e" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>mParentLayerable</name></member>
+      <member refid="class_q_c_p_layerable_1aa2a528433e44db02b8aef23c1f9f90ed" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>mParentPlot</name></member>
+      <member refid="class_q_c_p_item_bracket_1a350c864a5853b04343719f5a8be6b675" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>mPen</name></member>
+      <member refid="class_q_c_p_abstract_item_1af94ff71b6a15ea6d028ab8bd8eccd012" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>mPositions</name></member>
+      <member refid="class_q_c_p_abstract_item_1ad81eb35c8726a0f458db9df9732e0e41" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>mSelectable</name></member>
+      <member refid="class_q_c_p_abstract_item_1a4bdb3457dad1d268c0f78a44152b9645" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>mSelected</name></member>
+      <member refid="class_q_c_p_item_bracket_1adcfb53602d1802d00e2de4fd6df6b291" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>mSelectedPen</name></member>
+      <member refid="class_q_c_p_item_bracket_1ac911907184c824d621f274f8e0990080" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>mStyle</name></member>
+      <member refid="class_q_c_p_layerable_1a62e3aed8427d6ce3ccf716f285106cb3" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>mVisible</name></member>
+      <member refid="class_q_c_p_layerable_1a98d79f5b716d45eac4347befe546d0ec" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>parentLayerable</name></member>
+      <member refid="class_q_c_p_layerable_1ab7e0e94461566093d36ffc0f5312b109" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>parentPlot</name></member>
+      <member refid="class_q_c_p_layerable_1ab20b7dbd8e0249ed61adb9622c427382" prot="protected" virt="virtual"><scope>QCPItemBracket</scope><name>parentPlotInitialized</name></member>
+      <member refid="class_q_c_p_item_bracket_1a8963ff4a232b649c83d2461fd3c30d39" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>pen</name></member>
+      <member refid="class_q_c_p_abstract_item_1af71345bd150f87fa1d2442837b87bb59" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>position</name></member>
+      <member refid="class_q_c_p_abstract_item_1adf6a680cc29a6bce8345c3b6af3a91a1" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>positions</name></member>
+      <member refid="class_q_c_p_abstract_item_1a9922507d8b4503a1fe1ed0b1030e23b6" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>QCPAbstractItem</name></member>
+      <member refid="class_q_c_p_item_bracket_1a44ecfa37a76de5e3549e2d61f9d8ee56" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>QCPItemBracket</name></member>
+      <member refid="class_q_c_p_layerable_1a74c0fa237f29bf0e49565013fc5d1ec0" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>QCPLayerable</name></member>
+      <member refid="class_q_c_p_layerable_1a30809f7455e9794bca7b6c737622fa63" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>realVisibility</name></member>
+      <member refid="class_q_c_p_abstract_item_1a4c0e14c4e92df91174cb7183fb363069" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>rectSelectTest</name></member>
+      <member refid="class_q_c_p_item_bracket_1afa6c1360b05a50c4e0df37b3cebab6be" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>right</name></member>
+      <member refid="class_q_c_p_abstract_item_1a9189e752025533e1595eaade0009a3bc" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>selectable</name></member>
+      <member refid="class_q_c_p_abstract_item_1a5b266c11aac61cb511901f3911dac2a3" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>selectableChanged</name></member>
+      <member refid="class_q_c_p_abstract_item_1a225865808640d8d9a7dd19f09a2e93f2" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>selected</name></member>
+      <member refid="class_q_c_p_item_bracket_1a9f6ea5ea9559ef36dfacdadd6e9bdcf0" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>selectedPen</name></member>
+      <member refid="class_q_c_p_abstract_item_1aaf92af7b9893712959a6c073d334d88d" prot="protected" virt="virtual"><scope>QCPItemBracket</scope><name>selectEvent</name></member>
+      <member refid="class_q_c_p_abstract_item_1a777b5d384936396ad9c3ceb3d3453f1c" prot="protected" virt="virtual"><scope>QCPItemBracket</scope><name>selectionCategory</name></member>
+      <member refid="class_q_c_p_abstract_item_1aa5cffb034fc65dbb91c77e02c1c14251" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>selectionChanged</name></member>
+      <member refid="class_q_c_p_item_bracket_1aa6933caff1d42c54bcebc769ef88c798" prot="public" virt="virtual"><scope>QCPItemBracket</scope><name>selectTest</name></member>
+      <member refid="class_q_c_p_layerable_1a4fd43e89be4a553ead41652565ff0581" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>setAntialiased</name></member>
+      <member refid="class_q_c_p_abstract_item_1a7dc75fcbcd10206fe0b75d757ea7a347" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>setClipAxisRect</name></member>
+      <member refid="class_q_c_p_abstract_item_1a39e05b9d4176b9accafc746d16ca6a06" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>setClipToAxisRect</name></member>
+      <member refid="class_q_c_p_layerable_1ab0d0da6d2de45a118886d2c8e16d5a54" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>setLayer</name></member>
+      <member refid="class_q_c_p_layerable_1ab25a0e7b897993b44447caee0f142083" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>setLayer</name></member>
+      <member refid="class_q_c_p_item_bracket_1ac7cfc3da7da9b5c5ac5dfbe4f0351b2a" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>setLength</name></member>
+      <member refid="class_q_c_p_layerable_1aa23c893671f1f6744ac235cf2204cf3a" prot="protected" virt="non-virtual"><scope>QCPItemBracket</scope><name>setParentLayerable</name></member>
+      <member refid="class_q_c_p_item_bracket_1ab13001d9cc5d8f9e56ea15bdda682acb" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>setPen</name></member>
+      <member refid="class_q_c_p_abstract_item_1a8a8e32a55bc478b849756a78c2d87fd2" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>setSelectable</name></member>
+      <member refid="class_q_c_p_abstract_item_1a203de94ad586cc44d16c9565f49d3378" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>setSelected</name></member>
+      <member refid="class_q_c_p_item_bracket_1a349785c31122778a520c64891fa204c5" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>setSelectedPen</name></member>
+      <member refid="class_q_c_p_item_bracket_1a612dffa2373422eef8754d690add3703" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>setStyle</name></member>
+      <member refid="class_q_c_p_layerable_1a3bed99ddc396b48ce3ebfdc0418744f8" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>setVisible</name></member>
+      <member refid="class_q_c_p_item_bracket_1afad726f453f70fe77c0e9c2f260fff97" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>style</name></member>
+      <member refid="class_q_c_p_layerable_1a10a3cc92e0fa63e4a929e61d34e275a7" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>visible</name></member>
+      <member refid="class_q_c_p_abstract_item_1a375bd1b7d3218b04a6ff7ff06fff917c" prot="public" virt="virtual"><scope>QCPItemBracket</scope><name>~QCPAbstractItem</name></member>
+      <member refid="class_q_c_p_item_bracket_1ad773c3e8e09868d6f8caeb92c54919f4" prot="public" virt="virtual"><scope>QCPItemBracket</scope><name>~QCPItemBracket</name></member>
+      <member refid="class_q_c_p_layerable_1a4231cf5b3601d6d3a5781283e7a9735b" prot="public" virt="non-virtual"><scope>QCPItemBracket</scope><name>~QCPLayerable</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

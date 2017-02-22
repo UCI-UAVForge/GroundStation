@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="dbmanager_8h" kind="file" language="C++">
+    <compoundname>dbmanager.h</compoundname>
+    <includes local="no">QSqlDatabase</includes>
+    <includedby refid="dbmanager_8cpp" local="no">C:/Users/Roman/Documents/GroundStation/GS/dbmanager.cpp</includedby>
+    <incdepgraph>
+      <node id="135">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/dbmanager.h</label>
+        <link refid="dbmanager.h"/>
+        <childnode refid="136" relation="include">
+        </childnode>
+      </node>
+      <node id="136">
+        <label>QSqlDatabase</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="137">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/dbmanager.h</label>
+        <link refid="dbmanager.h"/>
+        <childnode refid="138" relation="include">
+        </childnode>
+      </node>
+      <node id="138">
+        <label>C:/Users/Roman/Documents/GroundStation/GS/dbmanager.cpp</label>
+        <link refid="dbmanager_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_db_manager" prot="public">DbManager</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DBMANAGER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBMANAGER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QSqlDatabase&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="keyword">class<sp/></highlight><highlight class="normal">QString;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="class_db_manager" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_db_manager" kindref="compound">DbManager</ref></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Sets<sp/>up<sp/>a<sp/>connection<sp/>with<sp/>db<sp/>from<sp/>&apos;file&apos;<sp/>and<sp/>opens<sp/>it.<sp/>Creates<sp/>db<sp/>if<sp/>it<sp/>doesn&apos;t<sp/>already<sp/>exist.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_db_manager_1a4e4a497a29fc6586d49c84aac94dbdf9" kindref="member">DbManager</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>path<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;./UAVFDatabase.db&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_db_manager_1ac5cdf8e5e932d1681ab807d8f256374c" kindref="member">~DbManager</ref>();<sp/></highlight><highlight class="comment">//<sp/>Closes<sp/>the<sp/>db<sp/>connection</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_db_manager_1af26e2cb3fc39656e05f2c9b0cda89d59" kindref="member">isOpen</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>QVector&lt;std::string&gt;<sp/>getAllMissions()<sp/>const;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>bool<sp/>addMission(const<sp/>QString&amp;<sp/>name);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>bool<sp/>addWaypointsToMission(const<sp/>QString&amp;<sp/>missionName,<sp/>QList&lt;Waypoint&gt;*<sp/>wp);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_db_manager_1abc1f8de9119b6ddbfa9145a2cba4615f" kindref="member">clearMission</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/>name);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_db_manager_1a6903e6088e28dc2b531db5c19c672c49" kindref="member">clearAllMissions</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="39" refid="class_db_manager_1a289f7f1c539781db95292c79fb13a632" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QSqlDatabase<sp/><ref refid="class_db_manager_1a289f7f1c539781db95292c79fb13a632" kindref="member">m_db</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Create<sp/>required<sp/>tables<sp/>for<sp/>UAVF<sp/>if<sp/>it<sp/>doesn&apos;t<sp/>already<sp/>exist</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Caller:<sp/>constructor.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_db_manager_1ab7249071e7d4077b88eace7b56d7321d" kindref="member">createTablesIfDoesntExist</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>DBMANAGER_H</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/GroundStation/GS/dbmanager.h"/>
+  </compounddef>
+</doxygen>

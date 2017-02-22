@@ -52,7 +52,7 @@ public:
     void switchToPlanningWindow();
 
     void switchToRecapWindow();
-
+  
 private slots:
 
     void destroy();
