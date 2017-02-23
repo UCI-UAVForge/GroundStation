@@ -188,6 +188,8 @@ void MapExecution::receivePacket(Protocol::Packet *packet){
         float alt;
         telemPacket->GetLocation(&lat,&lng,&alt);
         plotPosition(lat,lng);
+        //send to graph here
+        // ui->graphWidget->plotData(telemPacket);
     } else if (type == Protocol::PacketType::Info){
         std::cout<< "InfoPacket Recieved" << std::endl;
         Protocol::InfoPacket *infoPacket = (Protocol::InfoPacket*)incPack;
