@@ -89,6 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_func_g.html#index_g"><span>g</span></a></li>
       <li><a href="functions_func_h.html#index_h"><span>h</span></a></li>
       <li><a href="functions_func_i.html#index_i"><span>i</span></a></li>
+      <li><a href="functions_func_j.html#index_j"><span>j</span></a></li>
       <li><a href="functions_func_k.html#index_k"><span>k</span></a></li>
       <li><a href="functions_func_l.html#index_l"><span>l</span></a></li>
       <li><a href="functions_func_m.html#index_m"><span>m</span></a></li>
@@ -141,6 +142,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>saveJpg()
 : <a class="el" href="class_q_custom_plot.html#a490c722092d1771e8ce4a7a73dfd84ab">QCustomPlot</a>
+</li>
+<li>saveMissionToFile()
+: <a class="el" href="class_db_manager.html#afac9da99cb97c29cae46e7488d681d36">DbManager</a>
 </li>
 <li>savePdf()
 : <a class="el" href="class_q_custom_plot.html#a632da44c6d94ea8b271eb483b08b5114">QCustomPlot</a>
@@ -332,6 +336,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 , <a class="el" href="class_q_c_p_plot_title.html#a5b7ae716be9134a48f4e378feb0e6699">QCPPlotTitle</a>
 , <a class="el" href="class_q_c_p_statistical_box.html#a7d3ac843dc48a085740fdfc4319a89cc">QCPStatisticalBox</a>
 </li>
+<li>sendClearFlightPath()
+: <a class="el" href="class_map_widget.html#ad5a6b1734e52d7f47d64809620e6a0e7">MapWidget</a>
+</li>
 <li>sendCoordinates()
 : <a class="el" href="class_network_listener.html#ac280873f9f90c046460b908fdb4a7883">NetworkListener</a>
 </li>
@@ -339,8 +346,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_map_execution.html#abf980f0adb250cd2ef5a99668a793f46">MapExecution</a>
 , <a class="el" href="class_map_recap.html#aa63a3d553ae9b10f0eeddcf411474b5b">MapRecap</a>
 </li>
+<li>sendCreateNewPath()
+: <a class="el" href="class_map_widget.html#ae989a74840130045badfc960c9ab7d07">MapWidget</a>
+</li>
 <li>sendFlightPlan()
 : <a class="el" href="class_map_execution.html#a5f0c7ab18a5fcc4c474eeb5b9707dc61">MapExecution</a>
+</li>
+<li>sendMessage()
+: <a class="el" href="class_web_socket_transport.html#a1d6e79bb542a76d3c8fabeb8791ad3e8">WebSocketTransport</a>
 </li>
 <li>sendNextPacket()
 : <a class="el" href="class_gs_server.html#a9fbceada3decdaafff7c1d5dda8c8405">GsServer</a>
@@ -348,8 +361,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>sendPacket()
 : <a class="el" href="class_gs_server.html#ae8e04868caa920485facfc4cfda6291e">GsServer</a>
 </li>
+<li>sendPoint()
+: <a class="el" href="class_dialog.html#ada82bdcc218632134d3907af12f0d567">Dialog</a>
+</li>
+<li>sendSetActivePath()
+: <a class="el" href="class_map_widget.html#a229b88166cf83db76b97192d2b34963d">MapWidget</a>
+</li>
+<li>sendText()
+: <a class="el" href="class_dialog.html#a2c541f80e65d942ff6d471607a81fbbc">Dialog</a>
+</li>
 <li>ServerQueue()
-: <a class="el" href="class_server_queue.html#a05f53c129a6c445e869904eab8504888">ServerQueue</a>
+: <a class="el" href="class_server_queue.html#a5a03695a07bd1fe30cf6c2e58f6f8b1e">ServerQueue</a>
 </li>
 <li>set_timestamp()
 : <a class="el" href="class_protocol_1_1_ack_packet.html#a425bc52cf7a0d1b6c8092f339ff6fe16">Protocol::AckPacket</a>
@@ -359,6 +381,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>SetAction()
 : <a class="el" href="class_protocol_1_1_action_packet.html#ac59aeacf4f0566ce327bdbacd8594687">Protocol::ActionPacket</a>
+</li>
+<li>setActivePath()
+: <a class="el" href="class_map_widget.html#adb6c583449a96841d12765d9d2dd545c">MapWidget</a>
 </li>
 <li>setAdaptiveSampling()
 : <a class="el" href="class_q_c_p_graph.html#ab468cd600160f327836aa0644291e64c">QCPGraph</a>
@@ -649,7 +674,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_q_c_p_axis.html#a4391192a766e5d20cfe5cbc17607a7a2">QCPAxis</a>
 </li>
 <li>setLayer()
-: <a class="el" href="class_q_c_p_layerable.html#ab0d0da6d2de45a118886d2c8e16d5a54">QCPLayerable</a>
+: <a class="el" href="class_q_c_p_layerable.html#ab25a0e7b897993b44447caee0f142083">QCPLayerable</a>
 </li>
 <li>setLength()
 : <a class="el" href="class_q_c_p_item_bracket.html#ac7cfc3da7da9b5c5ac5dfbe4f0351b2a">QCPItemBracket</a>
@@ -662,11 +687,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_q_c_p_curve.html#a4a377ec863ff81a1875c3094a6177c19">QCPCurve</a>
 , <a class="el" href="class_q_c_p_graph.html#a513fecccff5b2a50ce53f665338c60ff">QCPGraph</a>
 </li>
-<li>setLoadMissionButton()
-: <a class="el" href="class_map_planning.html#a678f06ef673840b378b551ddff50312e">MapPlanning</a>
-</li>
 <li>SetLocation()
-: <a class="el" href="class_protocol_1_1_telemetry_packet.html#a33769f679172881acb1ee6004240fc79">Protocol::TelemetryPacket</a>
+: <a class="el" href="class_protocol_1_1_telemetry_packet.html#ab977283fdafb89bebca3a0886c2a3ee9">Protocol::TelemetryPacket</a>
 </li>
 <li>setLowerEnding()
 : <a class="el" href="class_q_c_p_axis.html#a08af1c72db9ae4dc8cb8a973d44405ab">QCPAxis</a>
@@ -690,7 +712,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_q_c_p_statistical_box.html#acec5ad1901f00f2c5387cfb4d9787eb3">QCPStatisticalBox</a>
 </li>
 <li>setMaximumSize()
-: <a class="el" href="class_q_c_p_layout_element.html#a74eb5280a737ab44833d506db65efd95">QCPLayoutElement</a>
+: <a class="el" href="class_q_c_p_layout_element.html#a03e0e9c48f230217c529b0819f832d84">QCPLayoutElement</a>
 </li>
 <li>setMedian()
 : <a class="el" href="class_q_c_p_statistical_box.html#a65970e77a897da4ecb4b15300868aad3">QCPStatisticalBox</a>
@@ -859,15 +881,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>setRowStretchFactors()
 : <a class="el" href="class_q_c_p_layout_grid.html#a200b45f9c908f96ebadaa3c8d87a2782">QCPLayoutGrid</a>
 </li>
-<li>setSaveMissionButton()
-: <a class="el" href="class_map_planning.html#a58463dc589c032a3b6aa92e8164b0795">MapPlanning</a>
-</li>
-<li>setSaveMissionByNameLabel()
-: <a class="el" href="class_map_planning.html#a5b2d49b6608a2dbdcc560e98d88051b6">MapPlanning</a>
-</li>
-<li>setSaveMissionByNameLineEdit()
-: <a class="el" href="class_map_planning.html#a0d1b34de2d24bad30ed01ef82510da85">MapPlanning</a>
-</li>
 <li>setScaled()
 : <a class="el" href="class_q_c_p_item_pixmap.html#ab4d44529a1c6c8d37d0ea7560e042777">QCPItemPixmap</a>
 </li>
@@ -982,6 +995,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>setSpacingType()
 : <a class="el" href="class_q_c_p_bars_group.html#a2c7e2d61b10594a4555b615e1fcaf49e">QCPBarsGroup</a>
 </li>
+<li>setStatusTimer()
+: <a class="el" href="class_status_widget.html#a172ab7eb7040df2efa0eef942f90e5b0">StatusWidget</a>
+</li>
 <li>SetStorable()
 : <a class="el" href="class_protocol_1_1_info_packet.html#aa41807efe3d80764352e2cabe0ce3dab">Protocol::InfoPacket</a>
 </li>
@@ -1075,6 +1091,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>setTightBoundary()
 : <a class="el" href="class_q_c_p_color_map.html#ad03221cc285e5f562a0b13d684b5576d">QCPColorMap</a>
 </li>
+<li>setTime()
+: <a class="el" href="class_timer_widget.html#af5fc0b2df4d189a02966806749f8768b">TimerWidget</a>
+</li>
 <li>setTwoColored()
 : <a class="el" href="class_q_c_p_financial.html#a138e44aac160a17a9676652e240c5f08">QCPFinancial</a>
 </li>
@@ -1090,6 +1109,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>setupFullAxesBox()
 : <a class="el" href="class_q_c_p_axis_rect.html#a5fa906175447b14206954f77fc7f1ef4">QCPAxisRect</a>
+</li>
+<li>setupMapPaths()
+: <a class="el" href="class_map_execution.html#aebf5591cd50f0949e87dc47a43349eeb">MapExecution</a>
+, <a class="el" href="class_map_planning.html#ac9e2730ca705585be868af75701d673f">MapPlanning</a>
 </li>
 <li>setUpperEnding()
 : <a class="el" href="class_q_c_p_axis.html#a69119b892fc306f651763596685aa377">QCPAxis</a>
@@ -1150,7 +1173,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_q_c_p_scatter_style.html#a4462a25ef17769631f4e0aa81dadca4b">QCPScatterStyle</a>
 </li>
 <li>showMissionExecution()
-: <a class="el" href="class_main_window.html#af85588a658c667f541d926824018baee">MainWindow</a>
+: <a class="el" href="class_main_window.html#acb033393f94473976658455949facf87">MainWindow</a>
 </li>
 <li>showMissionPlanning()
 : <a class="el" href="class_main_window.html#a35549602e191dbbbfd6101baa3aa56d4">MainWindow</a>
@@ -1160,9 +1183,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>showStatus()
 : <a class="el" href="class_digital_clock.html#a2b0778dec030cfa1a48dc8668bff18ed">DigitalClock</a>
+, <a class="el" href="class_status_widget.html#a31b621d52573cd10e0a5208d8d46858a">StatusWidget</a>
 </li>
 <li>showTime()
 : <a class="el" href="class_digital_clock.html#a87cd1f935265a947f2ece712bffc4aaa">DigitalClock</a>
+, <a class="el" href="class_timer_widget.html#ae60da213b39810256792230c34524503">TimerWidget</a>
 </li>
 <li>showTutorial()
 : <a class="el" href="class_main_window.html#a256333bcbb01a576d5cdd77815409d8d">MainWindow</a>
@@ -1204,6 +1229,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>startServer()
 : <a class="el" href="class_gs_server.html#a394e75ea0a17eb9a6ac2814ea84b250c">GsServer</a>
 </li>
+<li>StatusWidget()
+: <a class="el" href="class_status_widget.html#a64fbad1ba9c9e7584afc4eae42521878">StatusWidget</a>
+</li>
 <li>stop()
 : <a class="el" href="class_network_listener.html#a258e0ef8e6e4de827e652a43186c6a07">NetworkListener</a>
 </li>
@@ -1230,15 +1258,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>subTickPen()
 : <a class="el" href="class_q_c_p_axis.html#a2e8bce6dd03e393dbdf6bb427461a726">QCPAxis</a>
 </li>
-<li>switchedToExecution()
-: <a class="el" href="class_main_m_d_i_display.html#ac35b2ebe3f5d7a6672a3a927c3018c14">MainMDIDisplay</a>
-</li>
-<li>switchedToPlanning()
-: <a class="el" href="class_main_m_d_i_display.html#a29cbd207dda41f3b1297600310e69ad6">MainMDIDisplay</a>
-</li>
-<li>switchedToRecap()
-: <a class="el" href="class_main_m_d_i_display.html#a911790c434763c88fee143c8bf72b862">MainMDIDisplay</a>
-</li>
 <li>switchToPlanningWindow()
 : <a class="el" href="class_main_m_d_i_display.html#a437506b2ebd8b9789381a0b48a1b81a3">MainMDIDisplay</a>
 </li>
@@ -1249,7 +1268,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 2 2017 12:41:13 for UAVForgeGS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 22 2017 23:20:43 for UAVForgeGS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

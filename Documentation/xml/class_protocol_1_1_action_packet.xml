@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h" line="54" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h" bodystart="54" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="54" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_protocol_1_1_action_packet_1a4fad543a5728c983ca5abb375b9e8350" prot="private" static="no" mutable="no">
         <type><ref refid="struct_protocol_1_1_waypoint" kindref="compound">Waypoint</ref></type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h" line="55" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h" bodystart="55" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="55" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" bodystart="55" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h" line="58" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h" bodystart="58" bodyend="58"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="58" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" bodystart="58" bodyend="58"/>
       </memberdef>
       <memberdef kind="function" id="class_protocol_1_1_action_packet_1ae37774554c838433daa49f2fcd8439a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -65,7 +65,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h" line="60" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/ActionPacket.cpp" bodystart="18" bodyend="28"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="60" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ActionPacket.cpp" bodystart="18" bodyend="28"/>
       </memberdef>
       <memberdef kind="function" id="class_protocol_1_1_action_packet_1ac59aeacf4f0566ce327bdbacd8594687" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -82,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h" line="62" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/ActionPacket.cpp" bodystart="30" bodyend="33"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="62" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ActionPacket.cpp" bodystart="30" bodyend="33"/>
       </memberdef>
       <memberdef kind="function" id="class_protocol_1_1_action_packet_1a2f6167c9e92ea9914bf9a39de3fcd3e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h" line="64" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/ActionPacket.cpp" bodystart="35" bodyend="38"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="64" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ActionPacket.cpp" bodystart="35" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="class_protocol_1_1_action_packet_1ae90be2ee603b6968cc1515e32e0e1057" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9" kindref="member">ActionType</ref></type>
@@ -112,7 +112,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h" line="66" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/ActionPacket.cpp" bodystart="40" bodyend="43"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="66" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ActionPacket.cpp" bodystart="40" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="class_protocol_1_1_action_packet_1a4897181b5915534b25c94f1e4c9d40ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="struct_protocol_1_1_waypoint" kindref="compound">Waypoint</ref></type>
@@ -125,7 +125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h" line="68" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/ActionPacket.cpp" bodystart="45" bodyend="48"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="68" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ActionPacket.cpp" bodystart="45" bodyend="48"/>
       </memberdef>
       <memberdef kind="function" id="class_protocol_1_1_action_packet_1af5963f7c15af8292152df260b188f626" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>size_t</type>
@@ -164,7 +164,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h" line="70" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/ActionPacket.cpp" bodystart="50" bodyend="62"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="70" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ActionPacket.cpp" bodystart="50" bodyend="62"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -202,7 +202,7 @@
         <link refid="struct_protocol_1_1_waypoint"/>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h" line="52" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/actionpacket.h" bodystart="51" bodyend="71"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="52" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" bodystart="51" bodyend="71"/>
     <listofallmembers>
       <member refid="class_protocol_1_1_action_packet_1a2789fc0ac609d39d98ad8e0c1c1d63a6" prot="private" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>action</name></member>
       <member refid="class_protocol_1_1_action_packet_1a9057809acd70d7445a3c79667d6a746c" prot="public" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>ActionPacket</name></member>

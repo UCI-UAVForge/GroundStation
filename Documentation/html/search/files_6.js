@@ -13,6 +13,8 @@ var searchData=
   ['maprecap_2eh',['maprecap.h',['../maprecap_8h.html',1,'']]],
   ['mapvalidator_2ecpp',['mapvalidator.cpp',['../mapvalidator_8cpp.html',1,'']]],
   ['mapvalidator_2eh',['mapvalidator.h',['../mapvalidator_8h.html',1,'']]],
+  ['mapwidget_2ecpp',['mapwidget.cpp',['../mapwidget_8cpp.html',1,'']]],
+  ['mapwidget_2eh',['mapwidget.h',['../mapwidget_8h.html',1,'']]],
   ['messagebox_2ecpp',['messagebox.cpp',['../messagebox_8cpp.html',1,'']]],
   ['messagebox_2eh',['messagebox.h',['../messagebox_8h.html',1,'']]],
   ['mission_2ecpp',['mission.cpp',['../mission_8cpp.html',1,'']]],
@@ -20,5 +22,7 @@ var searchData=
   ['missionplanningwindow_2ecpp',['missionplanningwindow.cpp',['../missionplanningwindow_8cpp.html',1,'']]],
   ['missionplanningwindow_2eh',['missionplanningwindow.h',['../missionplanningwindow_8h.html',1,'']]],
   ['missionrecap_2ecpp',['missionrecap.cpp',['../missionrecap_8cpp.html',1,'']]],
-  ['missionrecap_2eh',['missionrecap.h',['../missionrecap_8h.html',1,'']]]
+  ['missionrecap_2eh',['missionrecap.h',['../missionrecap_8h.html',1,'']]],
+  ['missionstatuswindow_2ecpp',['missionstatuswindow.cpp',['../missionstatuswindow_8cpp.html',1,'']]],
+  ['missionstatuswindow_2eh',['missionstatuswindow.h',['../missionstatuswindow_8h.html',1,'']]]
 ];

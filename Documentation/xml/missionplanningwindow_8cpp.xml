@@ -4,59 +4,59 @@
     <compoundname>missionplanningwindow.cpp</compoundname>
     <includes refid="missionplanningwindow_8h" local="yes">missionplanningwindow.h</includes>
     <incdepgraph>
-      <node id="1838">
+      <node id="1988">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionplanningwindow.cpp</label>
+        <link refid="missionplanningwindow.cpp"/>
+        <childnode refid="1989" relation="include">
+        </childnode>
+      </node>
+      <node id="1991">
         <label>qpushbutton.h</label>
       </node>
-      <node id="1836">
-        <label>missionplanningwindow.h</label>
-        <link refid="missionplanningwindow_8h"/>
-        <childnode refid="1837" relation="include">
-        </childnode>
-        <childnode refid="1838" relation="include">
-        </childnode>
-        <childnode refid="1839" relation="include">
-        </childnode>
-        <childnode refid="1840" relation="include">
-        </childnode>
-        <childnode refid="1841" relation="include">
-        </childnode>
-        <childnode refid="1842" relation="include">
-        </childnode>
-        <childnode refid="1843" relation="include">
-        </childnode>
-        <childnode refid="1844" relation="include">
-        </childnode>
-        <childnode refid="1845" relation="include">
-        </childnode>
-      </node>
-      <node id="1839">
+      <node id="1992">
         <label>QHBoxLayout</label>
       </node>
-      <node id="1837">
+      <node id="1990">
         <label>QDialog</label>
       </node>
-      <node id="1843">
+      <node id="1996">
         <label>QDebug</label>
       </node>
-      <node id="1840">
+      <node id="1993">
         <label>QVBoxLayout</label>
       </node>
-      <node id="1844">
+      <node id="1997">
         <label>QLineEdit</label>
       </node>
-      <node id="1845">
+      <node id="1998">
         <label>QLabel</label>
       </node>
-      <node id="1835">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.cpp</label>
-        <link refid="missionplanningwindow.cpp"/>
-        <childnode refid="1836" relation="include">
+      <node id="1989">
+        <label>missionplanningwindow.h</label>
+        <link refid="missionplanningwindow_8h"/>
+        <childnode refid="1990" relation="include">
+        </childnode>
+        <childnode refid="1991" relation="include">
+        </childnode>
+        <childnode refid="1992" relation="include">
+        </childnode>
+        <childnode refid="1993" relation="include">
+        </childnode>
+        <childnode refid="1994" relation="include">
+        </childnode>
+        <childnode refid="1995" relation="include">
+        </childnode>
+        <childnode refid="1996" relation="include">
+        </childnode>
+        <childnode refid="1997" relation="include">
+        </childnode>
+        <childnode refid="1998" relation="include">
         </childnode>
       </node>
-      <node id="1841">
+      <node id="1994">
         <label>QGridLayout</label>
       </node>
-      <node id="1842">
+      <node id="1995">
         <label>qcombobox.h</label>
       </node>
     </incdepgraph>
@@ -288,6 +288,6 @@
 <codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="class_mission_planning_window_1a32befd8dba0065fd33f12900e8ca59d1" kindref="member">layout</ref>;</highlight></codeline>
 <codeline lineno="222"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>~MissionPlanningWindow()</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/missionplanningwindow.cpp"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionplanningwindow.cpp"/>
   </compounddef>
 </doxygen>

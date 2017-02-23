@@ -4,7 +4,6 @@ var searchData=
   ['phfastpolylines',['phFastPolylines',['../namespace_q_c_p.html#a5400e5fcb9528d92002ddb938c1f4ef4aa5fd227bc878c56ad2a87ea32c74ee4d',1,'QCP']]],
   ['phforcerepaint',['phForceRepaint',['../namespace_q_c_p.html#a5400e5fcb9528d92002ddb938c1f4ef4aa3090dafa0e0f9a28c579c79d6c2d283',1,'QCP']]],
   ['phnone',['phNone',['../namespace_q_c_p.html#a5400e5fcb9528d92002ddb938c1f4ef4ab7283c5bfc1ba9e597015389880bda42',1,'QCP']]],
-  ['planning',['Planning',['../mainmdidisplay_8h.html#af3d52afbb0d088f62e02208b24a9cbd2ab6e962263a189ccf06bea19765e98f2b',1,'mainmdidisplay.h']]],
   ['pmdefault',['pmDefault',['../class_q_c_p_painter.html#a156cf16444ff5e0d81a73c615fdb156da3bac5e87e3d58553b297befb4eee2a45',1,'QCPPainter']]],
   ['pmnocaching',['pmNoCaching',['../class_q_c_p_painter.html#a156cf16444ff5e0d81a73c615fdb156dae78f9a4eb277a5f9207f50850a51a0b0',1,'QCPPainter']]],
   ['pmnoncosmetic',['pmNonCosmetic',['../class_q_c_p_painter.html#a156cf16444ff5e0d81a73c615fdb156dac1e481bfaf408f2bd2eaad3ec341f36b',1,'QCPPainter']]],

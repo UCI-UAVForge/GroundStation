@@ -4,167 +4,167 @@
     <compoundname>messagebox.cpp</compoundname>
     <includes refid="messagebox_8h" local="yes">messagebox.h</includes>
     <incdepgraph>
-      <node id="1669">
+      <node id="1820">
         <label>QObject</label>
       </node>
-      <node id="1662">
-        <label>QList</label>
-      </node>
-      <node id="1664">
-        <label>stdint.h</label>
-      </node>
-      <node id="1679">
-        <label>actionpacket.h</label>
-        <link refid="actionpacket_8h"/>
-        <childnode refid="1680" relation="include">
-        </childnode>
-        <childnode refid="1677" relation="include">
-        </childnode>
-      </node>
-      <node id="1661">
-        <label>QPair</label>
-      </node>
-      <node id="1680">
-        <label>string</label>
-      </node>
-      <node id="1668">
-        <label>QModelIndex</label>
-      </node>
-      <node id="1675">
+      <node id="1826">
         <label>ackpacket.h</label>
         <link refid="ackpacket_8h"/>
-        <childnode refid="1676" relation="include">
+        <childnode refid="1827" relation="include">
         </childnode>
-        <childnode refid="1677" relation="include">
-        </childnode>
-      </node>
-      <node id="1677">
-        <label>Packet.h</label>
-        <link refid="packet_8h"/>
-        <childnode refid="1678" relation="include">
-        </childnode>
-        <childnode refid="1676" relation="include">
-        </childnode>
-        <childnode refid="1664" relation="include">
+        <childnode refid="1828" relation="include">
         </childnode>
       </node>
-      <node id="1681">
-        <label>infopacket.h</label>
-        <link refid="infopacket_8h"/>
-        <childnode refid="1680" relation="include">
-        </childnode>
-        <childnode refid="1682" relation="include">
-        </childnode>
-        <childnode refid="1664" relation="include">
-        </childnode>
-        <childnode refid="1677" relation="include">
-        </childnode>
+      <node id="1813">
+        <label>QList</label>
       </node>
-      <node id="1682">
-        <label>string.h</label>
+      <node id="1815">
+        <label>stdint.h</label>
       </node>
-      <node id="1663">
-        <label>QTime</label>
-      </node>
-      <node id="1660">
-        <label>QApplication</label>
-      </node>
-      <node id="1683">
+      <node id="1834">
         <label>telemetrypacket.h</label>
         <link refid="telemetrypacket_8h"/>
-        <childnode refid="1680" relation="include">
+        <childnode refid="1831" relation="include">
         </childnode>
-        <childnode refid="1677" relation="include">
-        </childnode>
-      </node>
-      <node id="1656">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp</label>
-        <link refid="messagebox.cpp"/>
-        <childnode refid="1657" relation="include">
+        <childnode refid="1828" relation="include">
         </childnode>
       </node>
-      <node id="1674">
-        <label>QValidator</label>
+      <node id="1812">
+        <label>QPair</label>
       </node>
-      <node id="1659">
-        <label>vector</label>
+      <node id="1831">
+        <label>string</label>
       </node>
-      <node id="1671">
-        <label>QLineEdit</label>
-      </node>
-      <node id="1670">
-        <label>QSize</label>
-      </node>
-      <node id="1672">
-        <label>mapvalidator.h</label>
-        <link refid="mapvalidator_8h"/>
-        <childnode refid="1673" relation="include">
-        </childnode>
-        <childnode refid="1674" relation="include">
-        </childnode>
-      </node>
-      <node id="1678">
-        <label>time.h</label>
-      </node>
-      <node id="1665">
+      <node id="1816">
         <label>qcomboboxdelegate.h</label>
         <link refid="qcomboboxdelegate_8h"/>
-        <childnode refid="1666" relation="include">
+        <childnode refid="1817" relation="include">
         </childnode>
-        <childnode refid="1667" relation="include">
+        <childnode refid="1818" relation="include">
         </childnode>
-        <childnode refid="1668" relation="include">
+        <childnode refid="1819" relation="include">
         </childnode>
-        <childnode refid="1669" relation="include">
+        <childnode refid="1820" relation="include">
         </childnode>
-        <childnode refid="1670" relation="include">
+        <childnode refid="1821" relation="include">
         </childnode>
-        <childnode refid="1671" relation="include">
+        <childnode refid="1822" relation="include">
         </childnode>
-        <childnode refid="1672" relation="include">
+        <childnode refid="1823" relation="include">
         </childnode>
       </node>
-      <node id="1667">
+      <node id="1819">
+        <label>QModelIndex</label>
+      </node>
+      <node id="1833">
+        <label>string.h</label>
+      </node>
+      <node id="1814">
+        <label>QTime</label>
+      </node>
+      <node id="1811">
+        <label>QApplication</label>
+      </node>
+      <node id="1825">
+        <label>QValidator</label>
+      </node>
+      <node id="1810">
+        <label>vector</label>
+      </node>
+      <node id="1822">
+        <label>QLineEdit</label>
+      </node>
+      <node id="1828">
+        <label>packet.h</label>
+        <link refid="packet_8h"/>
+        <childnode refid="1829" relation="include">
+        </childnode>
+        <childnode refid="1827" relation="include">
+        </childnode>
+        <childnode refid="1815" relation="include">
+        </childnode>
+      </node>
+      <node id="1821">
+        <label>QSize</label>
+      </node>
+      <node id="1829">
+        <label>time.h</label>
+      </node>
+      <node id="1818">
         <label>QComboBox</label>
       </node>
-      <node id="1658">
+      <node id="1809">
         <label>iostream</label>
       </node>
-      <node id="1666">
+      <node id="1807">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp</label>
+        <link refid="messagebox.cpp"/>
+        <childnode refid="1808" relation="include">
+        </childnode>
+      </node>
+      <node id="1817">
         <label>QItemDelegate</label>
       </node>
-      <node id="1673">
+      <node id="1824">
         <label>QDoubleValidator</label>
       </node>
-      <node id="1676">
-        <label>stdio.h</label>
-      </node>
-      <node id="1657">
+      <node id="1808">
         <label>messagebox.h</label>
         <link refid="messagebox_8h"/>
-        <childnode refid="1658" relation="include">
+        <childnode refid="1809" relation="include">
         </childnode>
-        <childnode refid="1659" relation="include">
+        <childnode refid="1810" relation="include">
         </childnode>
-        <childnode refid="1660" relation="include">
+        <childnode refid="1811" relation="include">
         </childnode>
-        <childnode refid="1661" relation="include">
+        <childnode refid="1812" relation="include">
         </childnode>
-        <childnode refid="1662" relation="include">
+        <childnode refid="1813" relation="include">
         </childnode>
-        <childnode refid="1663" relation="include">
+        <childnode refid="1814" relation="include">
         </childnode>
-        <childnode refid="1664" relation="include">
+        <childnode refid="1815" relation="include">
         </childnode>
-        <childnode refid="1665" relation="include">
+        <childnode refid="1816" relation="include">
         </childnode>
-        <childnode refid="1675" relation="include">
+        <childnode refid="1826" relation="include">
         </childnode>
-        <childnode refid="1679" relation="include">
+        <childnode refid="1830" relation="include">
         </childnode>
-        <childnode refid="1681" relation="include">
+        <childnode refid="1832" relation="include">
         </childnode>
-        <childnode refid="1683" relation="include">
+        <childnode refid="1834" relation="include">
+        </childnode>
+      </node>
+      <node id="1823">
+        <label>mapvalidator.h</label>
+        <link refid="mapvalidator_8h"/>
+        <childnode refid="1824" relation="include">
+        </childnode>
+        <childnode refid="1825" relation="include">
+        </childnode>
+      </node>
+      <node id="1832">
+        <label>infopacket.h</label>
+        <link refid="infopacket_8h"/>
+        <childnode refid="1831" relation="include">
+        </childnode>
+        <childnode refid="1833" relation="include">
+        </childnode>
+        <childnode refid="1815" relation="include">
+        </childnode>
+        <childnode refid="1828" relation="include">
+        </childnode>
+      </node>
+      <node id="1827">
+        <label>stdio.h</label>
+      </node>
+      <node id="1830">
+        <label>actionpacket.h</label>
+        <link refid="actionpacket_8h"/>
+        <childnode refid="1831" relation="include">
+        </childnode>
+        <childnode refid="1828" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -177,7 +177,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" line="2" column="9" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="2" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" line="2" column="9" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="2" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -196,7 +196,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" line="142" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="142" bodyend="144"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" line="142" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="142" bodyend="144"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -347,6 +347,6 @@
 <codeline lineno="145"><highlight class="normal"></highlight></codeline>
 <codeline lineno="146"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>UAV_MESSAGEBOX_CPP</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp"/>
   </compounddef>
 </doxygen>

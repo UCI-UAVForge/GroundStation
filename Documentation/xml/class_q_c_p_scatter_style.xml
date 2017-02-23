@@ -138,7 +138,7 @@
 <para>Defines the shape used for scatter points.</para><para>On plottables/items that draw scatters, the sizes of these visualizations (with exception of <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a06e15a735b79093a1d999c0374fa3aa1" kindref="member">ssDot</ref> and <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e" kindref="member">ssPixmap</ref>) can be controlled with the <ref refid="class_q_c_p_scatter_style_1aaefdd031052892c4136129db68596e0f" kindref="member">setSize</ref> function. Scatters are drawn with the pen and brush specified with <ref refid="class_q_c_p_scatter_style_1a761f1f229cc0ca4703e1e2b89f6dd1ba" kindref="member">setPen</ref> and <ref refid="class_q_c_p_scatter_style_1a74d692aaeb8d4b36d6f7d510e44264b1" kindref="member">setBrush</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="246" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="246" bodyend="264"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="246" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="246" bodyend="264"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -153,7 +153,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="299" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="299" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="299" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="299" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_scatter_style_1af1b327f35f107ed108290187bbc8c7c6" prot="protected" static="no" mutable="no">
         <type><ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349" kindref="member">ScatterShape</ref></type>
@@ -166,7 +166,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="300" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="300" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="300" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="300" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_scatter_style_1a0f6a85e6d1e3ae1ca1b6efb4d4cdfe17" prot="protected" static="no" mutable="no">
         <type>QPen</type>
@@ -179,7 +179,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="301" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="301" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="301" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="301" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_scatter_style_1a1b9c6ab10aebcaf236f1f45d1d6d64d1" prot="protected" static="no" mutable="no">
         <type>QBrush</type>
@@ -192,7 +192,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="302" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="302" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="302" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="302" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_scatter_style_1a7697346c89b19d4cd1d8dd33319ec9e3" prot="protected" static="no" mutable="no">
         <type>QPixmap</type>
@@ -205,7 +205,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="303" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="303" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="303" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="303" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_scatter_style_1a813cb074744dc5a2f59cc99d6a10c6f0" prot="protected" static="no" mutable="no">
         <type>QPainterPath</type>
@@ -218,7 +218,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="304" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="304" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="304" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="304" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_scatter_style_1a84ef5aa591ddba07b440f597e1669e78" prot="protected" static="no" mutable="no">
         <type>bool</type>
@@ -231,7 +231,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="307" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="307" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="307" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="307" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -246,7 +246,7 @@
 <para>Creates a new <ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> instance with size set to 6. No shape, pen or brush is defined.</para><para>Since the pen is undefined (<ref refid="class_q_c_p_scatter_style_1a7f1385a8d5e4f349a6b8030723fbd0f7" kindref="member">isPenDefined</ref> returns false), the scatter color will be inherited from the plottable that uses this scatter style. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="266" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="342" bodyend="349"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="266" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="342" bodyend="349"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a003d92f74f4561eda111862eadd62f28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -268,7 +268,7 @@
 <para>Creates a new <ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> instance with shape set to <emphasis>shape</emphasis> and size to <emphasis>size</emphasis>. No pen or brush is defined.</para><para>Since the pen is undefined (<ref refid="class_q_c_p_scatter_style_1a7f1385a8d5e4f349a6b8030723fbd0f7" kindref="member">isPenDefined</ref> returns false), the scatter color will be inherited from the plottable that uses this scatter style. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="267" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="358" bodyend="365"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="267" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="358" bodyend="365"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1afa059da858c864c7e05871dc602d7eab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -293,7 +293,7 @@
 <para>Creates a new <ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> instance with shape set to <emphasis>shape</emphasis>, the pen color set to <emphasis>color</emphasis>, and size to <emphasis>size</emphasis>. No brush is defined, i.e. the scatter point will not be filled. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="268" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="371" bodyend="378"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="268" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="371" bodyend="378"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a6e1b64f12cac7f07af180ae4316fd38d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -322,7 +322,7 @@
 <para>Creates a new <ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> instance with shape set to <emphasis>shape</emphasis>, the pen color set to <emphasis>color</emphasis>, the brush color to <emphasis>fill</emphasis> (with a solid pattern), and size to <emphasis>size</emphasis>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="269" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="384" bodyend="391"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="269" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="384" bodyend="391"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a85acc4941d7e5c9bca5fa51377a77f49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -354,7 +354,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="270" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="408" bodyend="415"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="270" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="408" bodyend="415"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a63962094587a4c2258435aa7933996cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -371,7 +371,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
 <para>Creates a new <ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> instance which will show the specified <emphasis>pixmap</emphasis>. The scatter shape is set to <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e" kindref="member">ssPixmap</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="271" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="421" bodyend="429"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="271" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="421" bodyend="429"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a879c30647683b3cfbde2afecea815e6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -402,7 +402,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
 <para>Creates a new <ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> instance with a custom shape that is defined via <emphasis>customPath</emphasis>. The scatter shape is set to <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d" kindref="member">ssCustom</ref>.</para><para>The custom shape line will be drawn with <emphasis>pen</emphasis> and filled with <emphasis>brush</emphasis>. The size has a slightly different meaning than for built-in scatter points: The custom path will be drawn scaled by a factor of <emphasis>size/6.0</emphasis>. Since the default <emphasis>size</emphasis> is 6, the custom path will appear at a its natural size by default. To double the size of the path for example, set <emphasis>size</emphasis> to 12. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="272" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="440" bodyend="448"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="272" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="440" bodyend="448"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a1973ee650368f1c5f55507b78473f634" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
@@ -415,7 +415,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="275" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="275" bodyend="275"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="275" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="275" bodyend="275"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a4462a25ef17769631f4e0aa81dadca4b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349" kindref="member">ScatterShape</ref></type>
@@ -428,7 +428,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="276" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="276" bodyend="276"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="276" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="276" bodyend="276"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a3c24c3bf37b561b4807aed9f1418ab58" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>QPen</type>
@@ -441,7 +441,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="277" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="277" bodyend="277"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="277" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="277" bodyend="277"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a46bf481d84bfa31b287dd43a3bf86d37" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>QBrush</type>
@@ -454,7 +454,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="278" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="278" bodyend="278"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="278" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="278" bodyend="278"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a9bab44cc41fcd585621a4b3e0e48231b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>QPixmap</type>
@@ -467,7 +467,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="279" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="279" bodyend="279"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="279" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="279" bodyend="279"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a4dd4998dfb0d6889205668a06c790328" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>QPainterPath</type>
@@ -480,7 +480,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="280" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="280" bodyend="280"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="280" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="280" bodyend="280"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1aaefdd031052892c4136129db68596e0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -498,7 +498,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="283" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="455" bodyend="458"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="283" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="455" bodyend="458"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a7c641c4d4c6d29cb705d3887cfce91c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -516,7 +516,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="284" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="468" bodyend="471"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="284" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="468" bodyend="471"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a761f1f229cc0ca4703e1e2b89f6dd1ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -534,7 +534,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="285" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="481" bodyend="485"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="285" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="481" bodyend="485"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a74d692aaeb8d4b36d6f7d510e44264b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -552,7 +552,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="286" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="493" bodyend="496"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="286" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="493" bodyend="496"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a5fb611d46acfac520d7b89a1c71d9246" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -569,7 +569,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
 <para>Sets the pixmap that will be drawn as scatter point to <emphasis>pixmap</emphasis>.</para><para>Note that <ref refid="class_q_c_p_scatter_style_1aaefdd031052892c4136129db68596e0f" kindref="member">setSize</ref> does not influence the appearance of the pixmap.</para><para>The scatter shape is automatically set to <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e" kindref="member">ssPixmap</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="287" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="505" bodyend="509"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="287" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="505" bodyend="509"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a96a3e949f90b2afe5677ca9412a12a1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -586,7 +586,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
 <para>Sets the custom shape that will be drawn as scatter point to <emphasis>customPath</emphasis>.</para><para>The scatter shape is automatically set to <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d" kindref="member">ssCustom</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="288" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="516" bodyend="520"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="288" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="516" bodyend="520"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1aa3861281108d0adbeb291c820ea3925c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -600,7 +600,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="291" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="291" bodyend="291"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="291" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="291" bodyend="291"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a7f1385a8d5e4f349a6b8030723fbd0f7" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -614,7 +614,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="292" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="292" bodyend="292"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="292" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="292" bodyend="292"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a81817dfd404635f211e6ff2a04657d36" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -636,7 +636,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="293" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="531" bodyend="535"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="293" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="531" bodyend="535"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1a992d531ac471ec2b29bdec6aeb400a06" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -658,7 +658,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="294" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="545" bodyend="548"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="294" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="545" bodyend="548"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_scatter_style_1ae76811ac9f70ebf7a2b4c759853e6ed8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -683,7 +683,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
 <para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Draws the scatter shape with <emphasis>painter</emphasis> at position <emphasis>x</emphasis> and <emphasis>y</emphasis>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="295" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="553" bodyend="675"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="295" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="553" bodyend="675"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -707,7 +707,7 @@ doesn&apos;t necessarily lead C++ to use this constructor in some cases, but mig
 <title>Custom shapes and pixmaps</title>
 <para><ref refid="class_q_c_p_scatter_style" kindref="compound">QCPScatterStyle</ref> supports drawing custom shapes and arbitrary pixmaps as scatter points.</para><para>For custom shapes, you can provide a QPainterPath with the desired shape to the <ref refid="class_q_c_p_scatter_style_1a96a3e949f90b2afe5677ca9412a12a1e" kindref="member">setCustomPath</ref> function or call the constructor that takes a painter path. The scatter shape will automatically be set to <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a15d9bcfd9de94edda949006529f9219d" kindref="member">ssCustom</ref>.</para><para>For pixmaps, you call <ref refid="class_q_c_p_scatter_style_1a5fb611d46acfac520d7b89a1c71d9246" kindref="member">setPixmap</ref> with the desired QPixmap. Alternatively you can use the constructor that takes a QPixmap. The scatter shape will automatically be set to <ref refid="class_q_c_p_scatter_style_1adb31525af6b680e6f1b7472e43859349a8718b849ca7c307b07b8e091efb0c31e" kindref="member">ssPixmap</ref>. Note that <ref refid="class_q_c_p_scatter_style_1aaefdd031052892c4136129db68596e0f" kindref="member">setSize</ref> does not influence the appearance of the pixmap. </para></sect1>
     </detaileddescription>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="235" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="234" bodyend="308"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="235" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="234" bodyend="308"/>
     <listofallmembers>
       <member refid="class_q_c_p_scatter_style_1a81817dfd404635f211e6ff2a04657d36" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>applyTo</name></member>
       <member refid="class_q_c_p_scatter_style_1a46bf481d84bfa31b287dd43a3bf86d37" prot="public" virt="non-virtual"><scope>QCPScatterStyle</scope><name>brush</name></member>

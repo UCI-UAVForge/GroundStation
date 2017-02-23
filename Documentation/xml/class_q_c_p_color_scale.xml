@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2438" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2438" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2438" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2438" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_color_scale_1a5d4853feb32cd0077bb2b871687c844b" prot="protected" static="no" mutable="no">
         <type><ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref></type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2439" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2439" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2439" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2439" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_color_scale_1a2754d6a78736f64a241e333fbd955372" prot="protected" static="no" mutable="no">
         <type><ref refid="class_q_c_p_axis_1a36d8e8658dbaa179bf2aeb973db2d6f0" kindref="member">QCPAxis::ScaleType</ref></type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2440" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2440" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2440" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2440" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_color_scale_1ae195a385032066b5c46cc3301af58922" prot="protected" static="no" mutable="no">
         <type><ref refid="class_q_c_p_color_gradient" kindref="compound">QCPColorGradient</ref></type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2441" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2441" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2441" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2441" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_color_scale_1a409d2ab78dff1f92da5e6acfb062e811" prot="protected" static="no" mutable="no">
         <type>int</type>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2442" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2442" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2442" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2442" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_color_scale_1a6e37f7d49cd614dc50ef1caae60461b9" prot="protected" static="no" mutable="no">
         <type>QPointer&lt; <ref refid="class_q_c_p_color_scale_axis_rect_private" kindref="compound">QCPColorScaleAxisRectPrivate</ref> &gt;</type>
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2445" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2445" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2445" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2445" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_color_scale_1a2efbc90fd31898fe05d2b74a8422b1d5" prot="protected" static="no" mutable="no">
         <type>QPointer&lt; <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> &gt;</type>
@@ -94,7 +94,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2446" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2446" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2446" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2446" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -109,7 +109,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2459" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2459" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2459" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2459" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -128,7 +128,7 @@
 <para>Constructs a new <ref refid="class_q_c_p_color_scale" kindref="compound">QCPColorScale</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2400" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="13836" bodyend="13846"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2400" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="13836" bodyend="13846"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1a49d8d2d155c15fa315fdc0427194c9ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -141,7 +141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2401" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="13848" bodyend="13851"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2401" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="13848" bodyend="13851"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1a1205bd67c8a33d5818aac1f6eea016a4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> *</type>
@@ -154,7 +154,7 @@
 <para>Returns the internal <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> instance of this color scale. You can access it to alter the appearance and behaviour of the axis. <ref refid="class_q_c_p_color_scale" kindref="compound">QCPColorScale</ref> duplicates some properties in its interface for convenience. Those are <ref refid="class_q_c_p_color_scale_1abe88633003a26d1e756aa74984587fef" kindref="member">setDataRange</ref> (<ref refid="class_q_c_p_axis_1aebdfea5d44c3a0ad2b4700cd4d25b641" kindref="member">QCPAxis::setRange</ref>), <ref refid="class_q_c_p_color_scale_1aeb6107d67dd7325145b2498abae67fc3" kindref="member">setDataScaleType</ref> (<ref refid="class_q_c_p_axis_1adef29cae617af4f519f6c40d1a866ca6" kindref="member">QCPAxis::setScaleType</ref>), and the method <ref refid="class_q_c_p_color_scale_1aee124ae8396320cacf8276e9a0fbb8ce" kindref="member">setLabel</ref> (<ref refid="class_q_c_p_axis_1a33bcc382c111c9f31bb0687352a2dea4" kindref="member">QCPAxis::setLabel</ref>). As they each are connected, it does not matter whether you use the method on the <ref refid="class_q_c_p_color_scale" kindref="compound">QCPColorScale</ref> or on its <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref>.</para><para>If the type of the color scale is changed with <ref refid="class_q_c_p_color_scale_1a1bf9bdb291927c422dd66b404b206f1f" kindref="member">setType</ref>, the axis returned by this method will change, too, to either the left, right, bottom or top axis, depending on which type was set. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2404" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2404" bodyend="2404"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2404" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2404" bodyend="2404"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1a9a5236328c97fbfde01e3d91c4fcce6a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_q_c_p_axis_1ae2bcc1728b382f10f064612b368bc18a" kindref="member">QCPAxis::AxisType</ref></type>
@@ -167,7 +167,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2405" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2405" bodyend="2405"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2405" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2405" bodyend="2405"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1a52134696d5e04074fff4227d92d96f7b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref></type>
@@ -180,7 +180,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2406" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2406" bodyend="2406"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2406" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2406" bodyend="2406"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1a9718c004421811be97e683d7f7d7ee61" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_q_c_p_axis_1a36d8e8658dbaa179bf2aeb973db2d6f0" kindref="member">QCPAxis::ScaleType</ref></type>
@@ -193,7 +193,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2407" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2407" bodyend="2407"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2407" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2407" bodyend="2407"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1ac71a6cd853c97a2dbfd32f67afd399df" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_q_c_p_color_gradient" kindref="compound">QCPColorGradient</ref></type>
@@ -206,7 +206,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2408" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2408" bodyend="2408"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2408" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2408" bodyend="2408"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1af92a62a6e4401f4c5b5e36cc94351ec9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>QString</type>
@@ -219,7 +219,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2409" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="13854" bodyend="13863"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2409" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="13854" bodyend="13863"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1a0de546f12105cf8bcb00ce60366d3a3d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -232,7 +232,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2410" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2410" bodyend="2410"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2410" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2410" bodyend="2410"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1a0d45597064cc40bc8a84d11e870c6b05" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -245,7 +245,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2411" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="13866" bodyend="13877"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2411" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="13866" bodyend="13877"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1a1123986a10acda3cdc371e4d97b3326c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -258,7 +258,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2412" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="13880" bodyend="13891"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2412" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="13880" bodyend="13891"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1a1bf9bdb291927c422dd66b404b206f1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -275,7 +275,7 @@
 <para>Sets at which side of the color scale the axis is placed, and thus also its orientation.</para><para>Note that after setting <emphasis>type</emphasis> to a different value, the axis returned by <ref refid="class_q_c_p_color_scale_1a1205bd67c8a33d5818aac1f6eea016a4" kindref="member">axis()</ref> will be a different one. The new axis will adopt the following properties from the previous axis: The range, scale type, log base and label. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2415" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="13900" bodyend="13939"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2415" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="13900" bodyend="13939"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1abe88633003a26d1e756aa74984587fef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Q_SLOT void</type>
@@ -293,7 +293,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2416" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="13950" bodyend="13959"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2416" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="13950" bodyend="13959"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1aeb6107d67dd7325145b2498abae67fc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Q_SLOT void</type>
@@ -311,7 +311,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2417" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="13971" bodyend="13982"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2417" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="13971" bodyend="13982"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1a1f29583bb6f1e7f473b62fb712be3940" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>Q_SLOT void</type>
@@ -329,7 +329,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2418" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="13991" bodyend="14000"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2418" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="13991" bodyend="14000"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1aee124ae8396320cacf8276e9a0fbb8ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -346,7 +346,7 @@
 <para>Sets the axis label of the color scale. This is equivalent to calling <ref refid="class_q_c_p_axis_1a33bcc382c111c9f31bb0687352a2dea4" kindref="member">QCPAxis::setLabel</ref> on the internal <ref refid="class_q_c_p_color_scale_1a1205bd67c8a33d5818aac1f6eea016a4" kindref="member">axis</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2419" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="14006" bodyend="14015"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2419" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="14006" bodyend="14015"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1ab9dcc0c1cd583477496209b1413bcb99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -363,7 +363,7 @@
 <para>Sets the width (or height, for horizontal color scales) the bar where the gradient is displayed will have. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2420" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="14021" bodyend="14024"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2420" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="14021" bodyend="14024"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1a21c51a55e4fd581b6feadca9ee5b38d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -380,7 +380,7 @@
 <para>Sets whether the user can drag the data range (<ref refid="class_q_c_p_color_scale_1abe88633003a26d1e756aa74984587fef" kindref="member">setDataRange</ref>).</para><para>Note that <ref refid="namespace_q_c_p_1a2ad6bb6281c7c2d593d4277b44c2b037a2c4432b9aceafb94000be8d1b589ef18" kindref="member">QCP::iRangeDrag</ref> must be in the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref>&apos;s interactions (<ref refid="class_q_custom_plot_1a5ee1e2f6ae27419deca53e75907c27e5" kindref="member">QCustomPlot::setInteractions</ref>) to allow range dragging. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2421" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="14032" bodyend="14044"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2421" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="14032" bodyend="14044"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1a96bd60fb6317ad6821841b539c93eeeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -397,7 +397,7 @@
 <para>Sets whether the user can zoom the data range (<ref refid="class_q_c_p_color_scale_1abe88633003a26d1e756aa74984587fef" kindref="member">setDataRange</ref>) by scrolling the mouse wheel.</para><para>Note that <ref refid="namespace_q_c_p_1a2ad6bb6281c7c2d593d4277b44c2b037abee1e94353525a636aeaf0ba32b72e14" kindref="member">QCP::iRangeZoom</ref> must be in the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref>&apos;s interactions (<ref refid="class_q_custom_plot_1a5ee1e2f6ae27419deca53e75907c27e5" kindref="member">QCustomPlot::setInteractions</ref>) to allow range dragging. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2422" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="14052" bodyend="14064"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2422" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="14052" bodyend="14064"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1a01bb96981614f2556ef7da04531a7a05" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>QList&lt; <ref refid="class_q_c_p_color_map" kindref="compound">QCPColorMap</ref> * &gt;</type>
@@ -410,7 +410,7 @@
 <para>Returns a list of all the color maps associated with this color scale. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2425" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="14069" bodyend="14079"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2425" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="14069" bodyend="14079"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1a425983db4478543924ddbd04ea20a356" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -428,7 +428,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2426" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="14087" bodyend="14144"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2426" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="14087" bodyend="14144"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1ab8f6991ac88243fc582b44b183670334" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -446,7 +446,7 @@
 <para>Updates the layout element and sub-elements. This function is automatically called before every replot by the parent layout element. It is called multiple times, once for every <ref refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374d" kindref="member">UpdatePhase</ref>. The phases are run through in the order of the enum values. For details about what happens at the different phases, see the documentation of <ref refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374d" kindref="member">UpdatePhase</ref>.</para><para>Layout elements that have child elements should call the <ref refid="class_q_c_p_color_scale_1ab8f6991ac88243fc582b44b183670334" kindref="member">update</ref> method of their child elements, and pass the current <emphasis>phase</emphasis> unchanged.</para><para>The default implementation executes the automatic margin mechanism in the <ref refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676" kindref="member">upMargins</ref> phase. Subclasses should make sure to call the base class implementation. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2429" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="14147" bodyend="14180"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2429" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="14147" bodyend="14180"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="signal">
@@ -466,7 +466,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2432" column="1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2432" column="1"/>
       </memberdef>
       <memberdef kind="signal" id="class_q_c_p_color_scale_1a61558b962f7791ff2f15a565dcf60181" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -484,7 +484,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2433" column="1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2433" column="1"/>
       </memberdef>
       <memberdef kind="signal" id="class_q_c_p_color_scale_1a67a5eb06cf551d322885e8635a46378c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -502,7 +502,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2434" column="1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2434" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -522,7 +522,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2449" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="14183" bodyend="14186"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2449" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="14183" bodyend="14186"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1a5df6ad81b2ad045878d276c2d5be7120" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -540,7 +540,7 @@
 <para>This event is called, if the mouse was pressed while being inside the outer rect of this layout element. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2451" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="14189" bodyend="14197"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2451" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="14189" bodyend="14197"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1a3aca469d531ce7b5882de73590aa0de6" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -558,7 +558,7 @@
 <para>This event is called, if the mouse is moved inside the outer rect of this layout element. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2452" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="14200" bodyend="14208"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2452" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="14200" bodyend="14208"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1a0916613d20901950fc6d00c6f99fe0a1" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -576,7 +576,7 @@
 <para>This event is called, if the mouse was previously pressed inside the outer rect of this layout element and is now released. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2453" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="14211" bodyend="14219"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2453" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="14211" bodyend="14219"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_scale_1ab398e14c01240f3dc855884fe9e1ee8c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -594,7 +594,7 @@
 <para>This event is called, if the mouse wheel is scrolled while the cursor is inside the rect of this layout element. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2454" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="14222" bodyend="14230"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2454" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="14222" bodyend="14230"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -610,187 +610,187 @@
 <codeline><highlight class="normal">customPlot-&gt;axisRect()-&gt;setMarginGroup(QCP::msTop|QCP::msBottom,<sp/>group);</highlight></codeline>
 </programlisting></para><para>Color scales are initialized with a non-zero minimum top and bottom margin (<ref refid="class_q_c_p_layout_element_1a0a8a17abc16b7923159fcc7608f94673" kindref="member">setMinimumMargins</ref>), because vertical color scales are most common and the minimum top/bottom margin makes sure it keeps some distance to the top/bottom widget border. So if you change to a horizontal color scale by setting <ref refid="class_q_c_p_color_scale_1a1bf9bdb291927c422dd66b404b206f1f" kindref="member">setType</ref> to <ref refid="class_q_c_p_axis_1ae2bcc1728b382f10f064612b368bc18aa220d68888516b6c3b493d144f1ba438f" kindref="member">QCPAxis::atBottom</ref> or <ref refid="class_q_c_p_axis_1ae2bcc1728b382f10f064612b368bc18aac0ece2b680d3f545e701f75af1655977" kindref="member">QCPAxis::atTop</ref>, you might want to also change the minimum margins accordingly, e.g. <computeroutput>setMinimumMargins(QMargins(6, 0, 6, 0))</computeroutput>. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="371">
+      <node id="395">
         <label>QCPLayoutElement</label>
         <link refid="class_q_c_p_layout_element"/>
-        <childnode refid="372" relation="public-inheritance">
+        <childnode refid="396" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="373">
+      <node id="397">
         <label>QObject</label>
       </node>
-      <node id="370">
+      <node id="394">
         <label>QCPColorScale</label>
         <link refid="class_q_c_p_color_scale"/>
-        <childnode refid="371" relation="public-inheritance">
+        <childnode refid="395" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="372">
+      <node id="396">
         <label>QCPLayerable</label>
         <link refid="class_q_c_p_layerable"/>
-        <childnode refid="373" relation="public-inheritance">
+        <childnode refid="397" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="389">
+      <node id="413">
         <label>QCPLayoutInset</label>
         <link refid="class_q_c_p_layout_inset"/>
-        <childnode refid="382" relation="public-inheritance">
+        <childnode refid="406" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="375">
+      <node id="399">
         <label>QCPLayoutElement</label>
         <link refid="class_q_c_p_layout_element"/>
-        <childnode refid="376" relation="public-inheritance">
+        <childnode refid="400" relation="public-inheritance">
         </childnode>
-        <childnode refid="382" relation="usage">
+        <childnode refid="406" relation="usage">
           <edgelabel>mParentLayout</edgelabel>
         </childnode>
       </node>
-      <node id="377">
+      <node id="401">
         <label>QObject</label>
       </node>
-      <node id="384">
+      <node id="408">
         <label>QCPRange</label>
         <link refid="class_q_c_p_range"/>
       </node>
-      <node id="390">
+      <node id="414">
         <label>QCPLegend</label>
         <link refid="class_q_c_p_legend"/>
-        <childnode refid="381" relation="public-inheritance">
+        <childnode refid="405" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="374">
+      <node id="398">
         <label>QCPColorScale</label>
         <link refid="class_q_c_p_color_scale"/>
-        <childnode refid="375" relation="public-inheritance">
+        <childnode refid="399" relation="public-inheritance">
         </childnode>
-        <childnode refid="384" relation="usage">
+        <childnode refid="408" relation="usage">
           <edgelabel>mDataRange</edgelabel>
         </childnode>
-        <childnode refid="391" relation="usage">
+        <childnode refid="415" relation="usage">
           <edgelabel>mGradient</edgelabel>
         </childnode>
       </node>
-      <node id="386">
+      <node id="410">
         <label>QCPLineEnding</label>
         <link refid="class_q_c_p_line_ending"/>
       </node>
-      <node id="382">
+      <node id="406">
         <label>QCPLayout</label>
         <link refid="class_q_c_p_layout"/>
-        <childnode refid="375" relation="public-inheritance">
+        <childnode refid="399" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="387">
+      <node id="411">
         <label>QCPGrid</label>
         <link refid="class_q_c_p_grid"/>
-        <childnode refid="376" relation="public-inheritance">
+        <childnode refid="400" relation="public-inheritance">
         </childnode>
-        <childnode refid="383" relation="usage">
+        <childnode refid="407" relation="usage">
           <edgelabel>mParentAxis</edgelabel>
         </childnode>
       </node>
-      <node id="385">
+      <node id="409">
         <label>QCPAxisPainterPrivate</label>
         <link refid="class_q_c_p_axis_painter_private"/>
-        <childnode refid="386" relation="usage">
+        <childnode refid="410" relation="usage">
           <edgelabel>lowerEnding</edgelabel>
           <edgelabel>upperEnding</edgelabel>
         </childnode>
-        <childnode refid="379" relation="usage">
+        <childnode refid="403" relation="usage">
           <edgelabel>mParentPlot</edgelabel>
         </childnode>
       </node>
-      <node id="380">
+      <node id="404">
         <label>QWidget</label>
       </node>
-      <node id="378">
+      <node id="402">
         <label>QCPLayer</label>
         <link refid="class_q_c_p_layer"/>
-        <childnode refid="377" relation="public-inheritance">
+        <childnode refid="401" relation="public-inheritance">
         </childnode>
-        <childnode refid="379" relation="usage">
+        <childnode refid="403" relation="usage">
           <edgelabel>mParentPlot</edgelabel>
         </childnode>
       </node>
-      <node id="391">
+      <node id="415">
         <label>QCPColorGradient</label>
         <link refid="class_q_c_p_color_gradient"/>
       </node>
-      <node id="381">
+      <node id="405">
         <label>QCPLayoutGrid</label>
         <link refid="class_q_c_p_layout_grid"/>
-        <childnode refid="382" relation="public-inheritance">
+        <childnode refid="406" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="376">
+      <node id="400">
         <label>QCPLayerable</label>
         <link refid="class_q_c_p_layerable"/>
-        <childnode refid="377" relation="public-inheritance">
+        <childnode refid="401" relation="public-inheritance">
         </childnode>
-        <childnode refid="378" relation="usage">
+        <childnode refid="402" relation="usage">
           <edgelabel>mLayer</edgelabel>
         </childnode>
-        <childnode refid="379" relation="usage">
+        <childnode refid="403" relation="usage">
           <edgelabel>mParentPlot</edgelabel>
         </childnode>
       </node>
-      <node id="383">
+      <node id="407">
         <label>QCPAxis</label>
         <link refid="class_q_c_p_axis"/>
-        <childnode refid="376" relation="public-inheritance">
+        <childnode refid="400" relation="public-inheritance">
         </childnode>
-        <childnode refid="384" relation="usage">
+        <childnode refid="408" relation="usage">
           <edgelabel>mRange</edgelabel>
         </childnode>
-        <childnode refid="385" relation="usage">
+        <childnode refid="409" relation="usage">
           <edgelabel>mAxisPainter</edgelabel>
         </childnode>
-        <childnode refid="387" relation="usage">
+        <childnode refid="411" relation="usage">
           <edgelabel>mGrid</edgelabel>
         </childnode>
-        <childnode refid="388" relation="usage">
+        <childnode refid="412" relation="usage">
           <edgelabel>mAxisRect</edgelabel>
         </childnode>
       </node>
-      <node id="388">
+      <node id="412">
         <label>QCPAxisRect</label>
         <link refid="class_q_c_p_axis_rect"/>
-        <childnode refid="375" relation="public-inheritance">
+        <childnode refid="399" relation="public-inheritance">
         </childnode>
-        <childnode refid="389" relation="usage">
+        <childnode refid="413" relation="usage">
           <edgelabel>mInsetLayout</edgelabel>
         </childnode>
-        <childnode refid="384" relation="usage">
+        <childnode refid="408" relation="usage">
           <edgelabel>mDragStartVertRange</edgelabel>
           <edgelabel>mDragStartHorzRange</edgelabel>
         </childnode>
       </node>
-      <node id="379">
+      <node id="403">
         <label>QCustomPlot</label>
         <link refid="class_q_custom_plot"/>
-        <childnode refid="380" relation="public-inheritance">
+        <childnode refid="404" relation="public-inheritance">
         </childnode>
-        <childnode refid="378" relation="usage">
+        <childnode refid="402" relation="usage">
           <edgelabel>mCurrentLayer</edgelabel>
         </childnode>
-        <childnode refid="381" relation="usage">
+        <childnode refid="405" relation="usage">
           <edgelabel>mPlotLayout</edgelabel>
         </childnode>
-        <childnode refid="383" relation="usage">
+        <childnode refid="407" relation="usage">
           <edgelabel>yAxis2</edgelabel>
           <edgelabel>xAxis2</edgelabel>
           <edgelabel>xAxis</edgelabel>
           <edgelabel>yAxis</edgelabel>
         </childnode>
-        <childnode refid="390" relation="usage">
+        <childnode refid="414" relation="usage">
           <edgelabel>legend</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2387" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2386" bodyend="2460"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2387" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2386" bodyend="2460"/>
     <listofallmembers>
       <member refid="class_q_c_p_layerable_1aef5cb4aa899ed9dc9384fd614560291e" prot="public" virt="non-virtual"><scope>QCPColorScale</scope><name>antialiased</name></member>
       <member refid="class_q_c_p_layerable_1a62bd552d1a45aa9accb24b310542279e" prot="protected" virt="non-virtual"><scope>QCPColorScale</scope><name>applyAntialiasingHint</name></member>

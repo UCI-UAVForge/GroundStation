@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/packet.h" bodystart="40" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/packet.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/packet.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -34,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="44" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/packet.h" bodystart="44" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/packet.h" line="44" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/packet.h" bodystart="44" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -49,7 +49,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="36" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="57" bodyend="59"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/packet.h" line="36" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp" bodystart="57" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="class_protocol_1_1_packet_1aa3f97852d443bb9554178384afa24eec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -66,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="37" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="60" bodyend="62"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/packet.h" line="37" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp" bodystart="60" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="class_protocol_1_1_packet_1a3c159ff945d95102ee2a2ba0b93d05d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75" kindref="member">PacketType</ref></type>
@@ -79,7 +79,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="38" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="64" bodyend="66"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/packet.h" line="38" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp" bodystart="64" bodyend="66"/>
       </memberdef>
       <memberdef kind="function" id="class_protocol_1_1_packet_1a9c89c3d05acc44a5050ebfc756a2cd41" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>size_t</type>
@@ -121,7 +121,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="89" column="1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/packet.h" line="89" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -140,7 +140,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="46" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="33" bodyend="38"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/packet.h" line="46" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp" bodystart="33" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="class_protocol_1_1_packet_1aa7498c8c70cb8a55617ce588508af81f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>size_t</type>
@@ -179,7 +179,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="56" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="40" bodyend="47"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/packet.h" line="56" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp" bodystart="40" bodyend="47"/>
       </memberdef>
       <memberdef kind="function" id="class_protocol_1_1_packet_1aa5f54d3128f7914383f4d8e8f53fbce4" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>size_t</type>
@@ -218,7 +218,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="66" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="49" bodyend="55"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/packet.h" line="66" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp" bodystart="49" bodyend="55"/>
       </memberdef>
       <memberdef kind="function" id="class_protocol_1_1_packet_1adc4ebdbdbcdbaa177ba243c5c654ba18" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>size_t</type>
@@ -268,7 +268,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="80" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="68" bodyend="92"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/packet.h" line="80" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp" bodystart="68" bodyend="92"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -291,7 +291,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="91" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="107" bodyend="139"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/packet.h" line="91" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp" bodystart="107" bodyend="139"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -299,36 +299,36 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="149">
+      <node id="173">
         <label>Protocol::Packet</label>
         <link refid="class_protocol_1_1_packet"/>
       </node>
-      <node id="152">
+      <node id="176">
         <label>Protocol::InfoPacket</label>
         <link refid="class_protocol_1_1_info_packet"/>
-        <childnode refid="149" relation="public-inheritance">
+        <childnode refid="173" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="150">
+      <node id="174">
         <label>Protocol::AckPacket</label>
         <link refid="class_protocol_1_1_ack_packet"/>
-        <childnode refid="149" relation="public-inheritance">
+        <childnode refid="173" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="151">
+      <node id="175">
         <label>Protocol::ActionPacket</label>
         <link refid="class_protocol_1_1_action_packet"/>
-        <childnode refid="149" relation="public-inheritance">
+        <childnode refid="173" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="153">
+      <node id="177">
         <label>Protocol::TelemetryPacket</label>
         <link refid="class_protocol_1_1_telemetry_packet"/>
-        <childnode refid="149" relation="public-inheritance">
+        <childnode refid="173" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/packet.h" line="34" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/packet.h" bodystart="33" bodyend="92"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/packet.h" line="34" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/packet.h" bodystart="33" bodyend="92"/>
     <listofallmembers>
       <member refid="class_protocol_1_1_packet_1acbe4f1b9f973d14097814d16fb0cd83a" prot="public" virt="non-virtual"><scope>Protocol::Packet</scope><name>get_timestamp</name></member>
       <member refid="class_protocol_1_1_packet_1a3c159ff945d95102ee2a2ba0b93d05d8" prot="public" virt="non-virtual"><scope>Protocol::Packet</scope><name>get_type</name></member>

@@ -94,33 +94,60 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>The <a class="el" href="class_db_manager.html" title="The DbManager class - Interaction to save/load UAVF information will be handled in this class...">DbManager</a> class - Interaction to save/load UAVF information will be handled in this class.  
+ <a href="class_db_manager.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="dbmanager_8h_source.html">dbmanager.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4e4a497a29fc6586d49c84aac94dbdf9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#a4e4a497a29fc6586d49c84aac94dbdf9">DbManager</a> (const QString &amp;path=&quot;./UAVFDatabase.db&quot;)</td></tr>
-<tr class="separator:a4e4a497a29fc6586d49c84aac94dbdf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f5d145bb4b33b7d08f78a2ceee17a47"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#a7f5d145bb4b33b7d08f78a2ceee17a47">DbManager</a> (const QString &amp;<a class="el" href="class_db_manager.html#aaae92f26899ce6563a070d00caa83340">fileName</a>=&quot;aDatabase&quot;, const QString &amp;<a class="el" href="class_db_manager.html#a2a20d1a953156c2103bfc216de062cf7">directory</a>=&quot;&quot;)</td></tr>
+<tr class="memdesc:a7f5d145bb4b33b7d08f78a2ceee17a47"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_db_manager.html" title="The DbManager class - Interaction to save/load UAVF information will be handled in this class...">DbManager</a> - Opens a connection with the database from 'directory/fileName'. Creates a new database with 'fileName' in 'directory' if the file doesn't exist.  <a href="#a7f5d145bb4b33b7d08f78a2ceee17a47">More...</a><br /></td></tr>
+<tr class="separator:a7f5d145bb4b33b7d08f78a2ceee17a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5cdf8e5e932d1681ab807d8f256374c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#ac5cdf8e5e932d1681ab807d8f256374c">~DbManager</a> ()</td></tr>
 <tr class="separator:ac5cdf8e5e932d1681ab807d8f256374c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af26e2cb3fc39656e05f2c9b0cda89d59"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#af26e2cb3fc39656e05f2c9b0cda89d59">isOpen</a> () const </td></tr>
 <tr class="separator:af26e2cb3fc39656e05f2c9b0cda89d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc1f8de9119b6ddbfa9145a2cba4615f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#abc1f8de9119b6ddbfa9145a2cba4615f">clearMission</a> (const QString &amp;name)</td></tr>
-<tr class="separator:abc1f8de9119b6ddbfa9145a2cba4615f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6903e6088e28dc2b531db5c19c672c49"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#a6903e6088e28dc2b531db5c19c672c49">clearAllMissions</a> ()</td></tr>
-<tr class="separator:a6903e6088e28dc2b531db5c19c672c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab89634eca6b13b420dda1d56484ae427"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#ab89634eca6b13b420dda1d56484ae427">open</a> (const QString &amp;<a class="el" href="class_db_manager.html#aaae92f26899ce6563a070d00caa83340">fileName</a>, const QString &amp;<a class="el" href="class_db_manager.html#a2a20d1a953156c2103bfc216de062cf7">directory</a>)</td></tr>
+<tr class="separator:ab89634eca6b13b420dda1d56484ae427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e118f2a45390cde3a118f8841e0875f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#a0e118f2a45390cde3a118f8841e0875f">close</a> ()</td></tr>
+<tr class="separator:a0e118f2a45390cde3a118f8841e0875f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a962e5ea4e83bb6f65f9d19f82a470687"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#a962e5ea4e83bb6f65f9d19f82a470687">addMissionData</a> (<a class="el" href="struct_mission_data.html">MissionData</a> data)</td></tr>
+<tr class="separator:a962e5ea4e83bb6f65f9d19f82a470687"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfe91eed71e54ff7d7b2f28d10800efe"><td class="memItemLeft" align="right" valign="top">const QVector&lt; <a class="el" href="struct_mission_data.html">MissionData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#adfe91eed71e54ff7d7b2f28d10800efe">getMission</a> () const </td></tr>
+<tr class="separator:adfe91eed71e54ff7d7b2f28d10800efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afac9da99cb97c29cae46e7488d681d36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#afac9da99cb97c29cae46e7488d681d36">saveMissionToFile</a> ()</td></tr>
+<tr class="separator:afac9da99cb97c29cae46e7488d681d36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:ab7249071e7d4077b88eace7b56d7321d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#ab7249071e7d4077b88eace7b56d7321d">createTablesIfDoesntExist</a> ()</td></tr>
-<tr class="separator:ab7249071e7d4077b88eace7b56d7321d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69ab0277d6dd71c29838cb16dd2d752f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#a69ab0277d6dd71c29838cb16dd2d752f">createOrLoadMissionTable</a> ()</td></tr>
+<tr class="separator:a69ab0277d6dd71c29838cb16dd2d752f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca0348a606923c9786212f3af81e43d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#aca0348a606923c9786212f3af81e43d0">clearMissionTable</a> ()</td></tr>
+<tr class="separator:aca0348a606923c9786212f3af81e43d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a289f7f1c539781db95292c79fb13a632"><td class="memItemLeft" align="right" valign="top">QSqlDatabase&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#a289f7f1c539781db95292c79fb13a632">m_db</a></td></tr>
+<tr class="memdesc:a289f7f1c539781db95292c79fb13a632"><td class="mdescLeft">&#160;</td><td class="mdescRight">getAllWaypoints - Gets all the waypoints for the current mission.  <a href="#a289f7f1c539781db95292c79fb13a632">More...</a><br /></td></tr>
 <tr class="separator:a289f7f1c539781db95292c79fb13a632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a870328e413d2709bce968898660056c0"><td class="memItemLeft" align="right" valign="top">QVector&lt; <a class="el" href="struct_mission_data.html">MissionData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#a870328e413d2709bce968898660056c0">mission</a></td></tr>
+<tr class="separator:a870328e413d2709bce968898660056c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaae92f26899ce6563a070d00caa83340"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#aaae92f26899ce6563a070d00caa83340">fileName</a></td></tr>
+<tr class="separator:aaae92f26899ce6563a070d00caa83340"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a20d1a953156c2103bfc216de062cf7"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#a2a20d1a953156c2103bfc216de062cf7">directory</a></td></tr>
+<tr class="separator:a2a20d1a953156c2103bfc216de062cf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bbf3b6992f5b54dfbc7998e506a5fa3"><td class="memItemLeft" align="right" valign="top">const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#a3bbf3b6992f5b54dfbc7998e506a5fa3">kDatabaseType</a> = &quot;QSQLITE&quot;</td></tr>
+<tr class="separator:a3bbf3b6992f5b54dfbc7998e506a5fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bfbb8102812b262c484fcfa9a864ac9"><td class="memItemLeft" align="right" valign="top">const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#a8bfbb8102812b262c484fcfa9a864ac9">kFileExtension</a> = &quot;.db&quot;</td></tr>
+<tr class="separator:a8bfbb8102812b262c484fcfa9a864ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a7271f31d10f555b411dc1c6926e05d"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_db_manager.html#a7a7271f31d10f555b411dc1c6926e05d">kPathSeparator</a></td></tr>
+<tr class="separator:a7a7271f31d10f555b411dc1c6926e05d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a4e4a497a29fc6586d49c84aac94dbdf9"></a>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The <a class="el" href="class_db_manager.html" title="The DbManager class - Interaction to save/load UAVF information will be handled in this class...">DbManager</a> class - Interaction to save/load UAVF information will be handled in this class. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a7f5d145bb4b33b7d08f78a2ceee17a47"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -128,11 +155,31 @@ Private Attributes</h2></td></tr>
           <td class="memname">DbManager::DbManager </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>path</em> = <code>&quot;./UAVFDatabase.db&quot;</code></td><td>)</td>
+          <td class="paramname"><em>fileName</em> = <code>&quot;aDatabase&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>directory</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="class_db_manager.html" title="The DbManager class - Interaction to save/load UAVF information will be handled in this class...">DbManager</a> - Opens a connection with the database from 'directory/fileName'. Creates a new database with 'fileName' in 'directory' if the file doesn't exist. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileName</td><td>- The name of the mission file without the extension. </td></tr>
+    <tr><td class="paramname">directory</td><td>- The folder where the database file is located. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>- Do not include the fileName's extension (e.g. mission1.db -&gt; just mission1) </dd></dl>
 
 </div>
 </div>
@@ -152,14 +199,15 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a6903e6088e28dc2b531db5c19c672c49"></a>
+<a class="anchor" id="a962e5ea4e83bb6f65f9d19f82a470687"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool DbManager::clearAllMissions </td>
+          <td class="memname">void DbManager::addMissionData </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="struct_mission_data.html">MissionData</a>&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -167,23 +215,7 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="abc1f8de9119b6ddbfa9145a2cba4615f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool DbManager::clearMission </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ab7249071e7d4077b88eace7b56d7321d"></a>
+<a class="anchor" id="aca0348a606923c9786212f3af81e43d0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -191,7 +223,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void DbManager::createTablesIfDoesntExist </td>
+          <td class="memname">void DbManager::clearMissionTable </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -202,6 +234,59 @@ Private Attributes</h2></td></tr>
 <span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a0e118f2a45390cde3a118f8841e0875f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DbManager::close </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a69ab0277d6dd71c29838cb16dd2d752f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DbManager::createOrLoadMissionTable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="adfe91eed71e54ff7d7b2f28d10800efe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QVector&lt; <a class="el" href="struct_mission_data.html">MissionData</a> &gt; DbManager::getMission </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>
@@ -221,7 +306,153 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ab89634eca6b13b420dda1d56484ae427"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DbManager::open </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>directory</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="afac9da99cb97c29cae46e7488d681d36"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DbManager::saveMissionToFile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a2a20d1a953156c2103bfc216de062cf7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString DbManager::directory</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaae92f26899ce6563a070d00caa83340"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString DbManager::fileName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a3bbf3b6992f5b54dfbc7998e506a5fa3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString DbManager::kDatabaseType = &quot;QSQLITE&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a8bfbb8102812b262c484fcfa9a864ac9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString DbManager::kFileExtension = &quot;.db&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7a7271f31d10f555b411dc1c6926e05d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char DbManager::kPathSeparator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line"></div>
+<div class="line">                                <span class="charliteral">&#39;/&#39;</span></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a class="anchor" id="a289f7f1c539781db95292c79fb13a632"></a>
 <div class="memitem">
 <div class="memproto">
@@ -240,16 +471,39 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>getAllWaypoints - Gets all the waypoints for the current mission. </p>
+<dl class="section return"><dt>Returns</dt><dd>- All the waypoints in the database. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a870328e413d2709bce968898660056c0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QVector&lt;<a class="el" href="struct_mission_data.html">MissionData</a>&gt; DbManager::mission</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/Roman/Documents/GroundStation/GS/<a class="el" href="dbmanager_8h_source.html">dbmanager.h</a></li>
-<li>C:/Users/Roman/Documents/GroundStation/GS/<a class="el" href="dbmanager_8cpp.html">dbmanager.cpp</a></li>
+<li>C:/Users/Roman/Documents/Mygs/GroundStation/GS/<a class="el" href="dbmanager_8h_source.html">dbmanager.h</a></li>
+<li>C:/Users/Roman/Documents/Mygs/GroundStation/GS/<a class="el" href="dbmanager_8cpp.html">dbmanager.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 2 2017 12:41:02 for UAVForgeGS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 22 2017 23:20:34 for UAVForgeGS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -30,12 +30,33 @@
   </compound>
   <compound refid="class_db_manager" kind="class"><name>DbManager</name>
     <member refid="class_db_manager_1a289f7f1c539781db95292c79fb13a632" kind="variable"><name>m_db</name></member>
-    <member refid="class_db_manager_1a4e4a497a29fc6586d49c84aac94dbdf9" kind="function"><name>DbManager</name></member>
+    <member refid="class_db_manager_1a870328e413d2709bce968898660056c0" kind="variable"><name>mission</name></member>
+    <member refid="class_db_manager_1aaae92f26899ce6563a070d00caa83340" kind="variable"><name>fileName</name></member>
+    <member refid="class_db_manager_1a2a20d1a953156c2103bfc216de062cf7" kind="variable"><name>directory</name></member>
+    <member refid="class_db_manager_1a3bbf3b6992f5b54dfbc7998e506a5fa3" kind="variable"><name>kDatabaseType</name></member>
+    <member refid="class_db_manager_1a8bfbb8102812b262c484fcfa9a864ac9" kind="variable"><name>kFileExtension</name></member>
+    <member refid="class_db_manager_1a7a7271f31d10f555b411dc1c6926e05d" kind="variable"><name>kPathSeparator</name></member>
+    <member refid="class_db_manager_1a7f5d145bb4b33b7d08f78a2ceee17a47" kind="function"><name>DbManager</name></member>
     <member refid="class_db_manager_1ac5cdf8e5e932d1681ab807d8f256374c" kind="function"><name>~DbManager</name></member>
     <member refid="class_db_manager_1af26e2cb3fc39656e05f2c9b0cda89d59" kind="function"><name>isOpen</name></member>
-    <member refid="class_db_manager_1abc1f8de9119b6ddbfa9145a2cba4615f" kind="function"><name>clearMission</name></member>
-    <member refid="class_db_manager_1a6903e6088e28dc2b531db5c19c672c49" kind="function"><name>clearAllMissions</name></member>
-    <member refid="class_db_manager_1ab7249071e7d4077b88eace7b56d7321d" kind="function"><name>createTablesIfDoesntExist</name></member>
+    <member refid="class_db_manager_1ab89634eca6b13b420dda1d56484ae427" kind="function"><name>open</name></member>
+    <member refid="class_db_manager_1a0e118f2a45390cde3a118f8841e0875f" kind="function"><name>close</name></member>
+    <member refid="class_db_manager_1a962e5ea4e83bb6f65f9d19f82a470687" kind="function"><name>addMissionData</name></member>
+    <member refid="class_db_manager_1adfe91eed71e54ff7d7b2f28d10800efe" kind="function"><name>getMission</name></member>
+    <member refid="class_db_manager_1afac9da99cb97c29cae46e7488d681d36" kind="function"><name>saveMissionToFile</name></member>
+    <member refid="class_db_manager_1a69ab0277d6dd71c29838cb16dd2d752f" kind="function"><name>createOrLoadMissionTable</name></member>
+    <member refid="class_db_manager_1aca0348a606923c9786212f3af81e43d0" kind="function"><name>clearMissionTable</name></member>
+  </compound>
+  <compound refid="class_dialog" kind="class"><name>Dialog</name>
+    <member refid="class_dialog_1ab5618ff14ed69aab6b525304c80fbb75" kind="variable"><name>dialog</name></member>
+    <member refid="class_dialog_1a62c4186c0cf571547612cf1ad40dfada" kind="variable"><name>ui</name></member>
+    <member refid="class_dialog_1a13476d9809dc62da93e9f36958d8ce69" kind="function"><name>Dialog</name></member>
+    <member refid="class_dialog_1ace9ced9197b21b73477e1dfe08ce0452" kind="function"><name>displayMessage</name></member>
+    <member refid="class_dialog_1a2c541f80e65d942ff6d471607a81fbbc" kind="signal"><name>sendText</name></member>
+    <member refid="class_dialog_1ada82bdcc218632134d3907af12f0d567" kind="signal"><name>sendPoint</name></member>
+    <member refid="class_dialog_1a937038eaea8c49ecbe7fb38fee63fd29" kind="slot"><name>receiveText</name></member>
+    <member refid="class_dialog_1a4649de72d982f73ecaa9bef08a6282b4" kind="slot"><name>addPointToTable</name></member>
+    <member refid="class_dialog_1ada84e6c9a986477a5127407d84ac4de1" kind="slot"><name>clicked</name></member>
   </compound>
   <compound refid="class_digital_clock" kind="class"><name>DigitalClock</name>
     <member refid="class_digital_clock_1aa5f7b6ed6828178d12e4e5cd66f5008c" kind="variable"><name>time</name></member>
@@ -44,6 +65,7 @@
     <member refid="class_digital_clock_1a280a7e0206e2d9e192a19b89cf9c2327" kind="variable"><name>map_exec_ptr</name></member>
     <member refid="class_digital_clock_1ad2d7eceb84025180dc2b7862668b87e7" kind="variable"><name>StatusTimer</name></member>
     <member refid="class_digital_clock_1aa49ae733b7fb0c8b1f353e9811372d5b" kind="variable"><name>TimeTimer</name></member>
+    <member refid="class_digital_clock_1aba1e4d8bc0f0fadd9e9ab82ecdeb1772" kind="variable"><name>myTimer</name></member>
     <member refid="class_digital_clock_1ab87ec7559579311929e8542dbcf5e294" kind="function"><name>~DigitalClock</name></member>
     <member refid="class_digital_clock_1a1df69f177d5defdd5029ff2e6b7cb564" kind="function"><name>DigitalClock</name></member>
     <member refid="class_digital_clock_1a070278bd43a6162c7a666f354c3d1087" kind="function"><name>initiate</name></member>
@@ -64,6 +86,15 @@
     <member refid="class_g_s_control_panel_1ab016ceef3792e4accd6f9cb1f071d1af" kind="variable"><name>ui</name></member>
     <member refid="class_g_s_control_panel_1af4fcf695b7372dce0d53cb6aab6f614c" kind="function"><name>GSControlPanel</name></member>
     <member refid="class_g_s_control_panel_1a52c9acf2d18ced290a5128e5577d71c7" kind="function"><name>~GSControlPanel</name></member>
+    <member refid="class_g_s_control_panel_1a1dd77e962e4061a8cb446c5b0167f6e1" kind="function"><name>getMissionNameToSave</name></member>
+    <member refid="class_g_s_control_panel_1acf3f260046c6f63e67b6e81cd5f0525b" kind="function"><name>getMissionNameToLoad</name></member>
+    <member refid="class_g_s_control_panel_1a428750d1676f9e521be891d62a6fa08b" kind="function"><name>addMissionToLoad</name></member>
+    <member refid="class_g_s_control_panel_1a7854dd3010bf8b133b44e9ff72a935a2" kind="slot"><name>on_StartMissionButton_clicked</name></member>
+    <member refid="class_g_s_control_panel_1a1b8bbf086e86c6b4c15d1cebc9b3a18d" kind="slot"><name>on_FinishMissionButton_clicked</name></member>
+    <member refid="class_g_s_control_panel_1a4988ca05aaa99d3de1e9f699d14ce630" kind="slot"><name>on_LoadMissionButton_clicked</name></member>
+    <member refid="class_g_s_control_panel_1aa4b0abb2206717db2cd45a88bb39fa85" kind="slot"><name>on_SaveMissionButton_clicked</name></member>
+    <member refid="class_g_s_control_panel_1a2ee4fe9187b1bfcc13b868b76feea3c6" kind="slot"><name>on_ClearPointsButton_clicked</name></member>
+    <member refid="class_g_s_control_panel_1a30dfb8691dce9927d4a5ac3215ee1652" kind="slot"><name>on_ExitButton_clicked</name></member>
   </compound>
   <compound refid="class_gs_server" kind="class"><name>GsServer</name>
     <member refid="class_gs_server_1aee6ff9911df099594d4483cb116ed808" kind="variable"><name>uav_fd</name></member>
@@ -87,8 +118,10 @@
     <member refid="class_gs_server_1a5be5b957f9207e66550fc33fbf2b4df2" kind="function"><name>waitNet</name></member>
     <member refid="class_gs_server_1ae8e04868caa920485facfc4cfda6291e" kind="function"><name>sendPacket</name></member>
     <member refid="class_gs_server_1a3a07e46c4042ff43336ffcafa36f2a3a" kind="function"><name>sendPacket</name></member>
-    <member refid="class_gs_server_1a450eb8f60b68bf82216d058cc9738e28" kind="function"><name>packetRecieved</name></member>
+    <member refid="class_gs_server_1aaa42f9bb1c822408a6c030ca880f5a91" kind="function"><name>addPacketToMission</name></member>
     <member refid="class_gs_server_1a9fbceada3decdaafff7c1d5dda8c8405" kind="function"><name>sendNextPacket</name></member>
+    <member refid="class_gs_server_1a5affc1d47f645639011c2dbf59e6bbb0" kind="slot"><name>recivePacket</name></member>
+    <member refid="class_gs_server_1aaf16a132e06135f8d992a5e7a29bef27" kind="signal"><name>packetRecieved</name></member>
   </compound>
   <compound refid="class_protocol_1_1_info_packet" kind="class"><name>Protocol::InfoPacket</name>
     <member refid="class_protocol_1_1_info_packet_1a301a632c83b43837e3ba2a8f9d43209a" kind="variable"><name>pointsStorable</name></member>
@@ -106,26 +139,22 @@
   </compound>
   <compound refid="class_main_m_d_i_display" kind="class"><name>MainMDIDisplay</name>
     <member refid="class_main_m_d_i_display_1a76297f463be48cd56af5cbbc59691056" kind="variable"><name>ui</name></member>
-    <member refid="class_main_m_d_i_display_1af0d1e6a509d1d992b865e5d9a53dcff4" kind="variable"><name>currentMenu</name></member>
     <member refid="class_main_m_d_i_display_1a6ed57e546474a6959b41cee7be5b6a3f" kind="variable"><name>qttWidget</name></member>
     <member refid="class_main_m_d_i_display_1a4730b2efbbaa52b9a94485767c620ca2" kind="variable"><name>tempMapPlanningUIWidget</name></member>
+    <member refid="class_main_m_d_i_display_1a898ca8971408917beea9ba90ce6379b7" kind="variable"><name>map</name></member>
     <member refid="class_main_m_d_i_display_1a0ae2987fa8543ea056b0fa85ea39f3ba" kind="variable"><name>missionPlanningWindowUIWidget</name></member>
     <member refid="class_main_m_d_i_display_1afc2def182ae5634fc8c6512d3e00b89e" kind="variable"><name>tempMapExecutionUIWidget</name></member>
     <member refid="class_main_m_d_i_display_1a9fa94cc123432a94262b8c81808bd2b7" kind="variable"><name>tempMapRecapUIWidget</name></member>
     <member refid="class_main_m_d_i_display_1aa82b1d4c7c0d05797986d56fef8d22d8" kind="variable"><name>mapExecutionStatusUIWidget</name></member>
     <member refid="class_main_m_d_i_display_1a7023176e24026e1b3bfd5c774ccf7081" kind="variable"><name>MapExecutionStatusVBoxLayout</name></member>
+    <member refid="class_main_m_d_i_display_1a38a3a0314e38e0c40388179c07ae26d2" kind="variable"><name>msw</name></member>
+    <member refid="class_main_m_d_i_display_1a1271d105e3495498c6862361be8cd157" kind="variable"><name>mb</name></member>
+    <member refid="class_main_m_d_i_display_1afcd5ae9e0d6f068e40deeecf6988255c" kind="variable"><name>gscp</name></member>
     <member refid="class_main_m_d_i_display_1a76eac289ae5734e636b970277548f01c" kind="variable"><name>backToPlanningButton</name></member>
-    <member refid="class_main_m_d_i_display_1a81d81e17f91f5626979f5f913a45aad3" kind="variable"><name>saveMissionButton</name></member>
-    <member refid="class_main_m_d_i_display_1aac1cc3f9a189ea7e197953105a2a89e3" kind="variable"><name>loadMissionButton</name></member>
-    <member refid="class_main_m_d_i_display_1aeb045c80bf1b3cdec40ddeff3b9f98ab" kind="variable"><name>saveMissionByNameLineEdit</name></member>
-    <member refid="class_main_m_d_i_display_1a209e6020a9b839e7b0594ed7d221f916" kind="variable"><name>saveMissionByNameLabel</name></member>
     <member refid="class_main_m_d_i_display_1a9c19329cbea82f9fda6b9c9c6a750773" kind="variable"><name>MapRecapUI_TableTab</name></member>
     <member refid="class_main_m_d_i_display_1ac52d5c5eb8e95f9d113b40cc53475457" kind="variable"><name>MapRecapUI_GraphTab</name></member>
-    <member refid="class_main_m_d_i_display_1a040d70efb507fac6ca48856e61a56f39" kind="variable"><name>MapSubWindow</name></member>
-    <member refid="class_main_m_d_i_display_1acbe461a3845086f8e39ee560895a433a" kind="variable"><name>MissionControlSubWindow</name></member>
-    <member refid="class_main_m_d_i_display_1ad2d0f11daf8bd36a7a0c5ef572c21546" kind="variable"><name>missionPlanningFlightPath</name></member>
     <member refid="class_main_m_d_i_display_1a782ef2721fdd8b24924ce87dc66bb55c" kind="function"><name>MainMDIDisplay</name></member>
-    <member refid="class_main_m_d_i_display_1ab057ec6cb6ad3f4acf190ed522e0e004" kind="function"><name>addWindow</name></member>
+    <member refid="class_main_m_d_i_display_1a527f8ff5bc9f78afb09376ac862a1f34" kind="function"><name>addWindow</name></member>
     <member refid="class_main_m_d_i_display_1a0ca1499c42b7428014519897ed528c32" kind="function"><name>addWindow</name></member>
     <member refid="class_main_m_d_i_display_1abeda7bf528423b91f8bc9c3b6873795e" kind="function"><name>~MainMDIDisplay</name></member>
     <member refid="class_main_m_d_i_display_1a25d070683b2dbc80d15629af962dd504" kind="function"><name>getQttWidget</name></member>
@@ -139,14 +168,8 @@
     <member refid="class_main_m_d_i_display_1a9479e57c6dc0732ce314b490e312e1b5" kind="slot"><name>beginMapExecution</name></member>
     <member refid="class_main_m_d_i_display_1a806849d419a43545ca048d6961ee0f8f" kind="slot"><name>clickedFinishButton_MainDisplay</name></member>
     <member refid="class_main_m_d_i_display_1a7e73497327aff470b2d29e4a88910ab0" kind="slot"><name>clickedCancelButton_MainDisplay</name></member>
-    <member refid="class_main_m_d_i_display_1af0083f9e84168b238a7fb82c1a71b6ba" kind="slot"><name>clickedBackButton_MainDisplay</name></member>
     <member refid="class_main_m_d_i_display_1a4c5ea49b575e5648243b63bf54c2667d" kind="slot"><name>clickedBackToPlanningButton_MainDisplay</name></member>
-    <member refid="class_main_m_d_i_display_1ad435455cad574ed917da86b29c0cebda" kind="slot"><name>clickedLoadMissionButton_MainDisplay</name></member>
-    <member refid="class_main_m_d_i_display_1a5493f1a0e616ad504eb32c087c820d42" kind="slot"><name>clickedSaveMissionButton_MainDisplay</name></member>
-    <member refid="class_main_m_d_i_display_1a122050b11de7d6dbaf2ea8cac8df3696" kind="slot"><name>onMapUpdated</name></member>
-    <member refid="class_main_m_d_i_display_1a29cbd207dda41f3b1297600310e69ad6" kind="signal"><name>switchedToPlanning</name></member>
-    <member refid="class_main_m_d_i_display_1a911790c434763c88fee143c8bf72b862" kind="signal"><name>switchedToRecap</name></member>
-    <member refid="class_main_m_d_i_display_1ac35b2ebe3f5d7a6672a3a927c3018c14" kind="signal"><name>switchedToExecution</name></member>
+    <member refid="class_main_m_d_i_display_1af0083f9e84168b238a7fb82c1a71b6ba" kind="slot"><name>clickedBackButton_MainDisplay</name></member>
   </compound>
   <compound refid="class_main_window" kind="class"><name>MainWindow</name>
     <member refid="class_main_window_1a35466a70ed47252a0191168126a352a5" kind="variable"><name>ui</name></member>
@@ -164,7 +187,7 @@
     <member refid="class_main_window_1ac8733b579b312836c458dc4ad856e66f" kind="slot"><name>on_actionMission_Recap_triggered</name></member>
     <member refid="class_main_window_1a6bc9a1eb5bdf2e6784a1954ecdc8965a" kind="slot"><name>checkFinishStatus</name></member>
     <member refid="class_main_window_1a35549602e191dbbbfd6101baa3aa56d4" kind="slot"><name>showMissionPlanning</name></member>
-    <member refid="class_main_window_1af85588a658c667f541d926824018baee" kind="slot"><name>showMissionExecution</name></member>
+    <member refid="class_main_window_1acb033393f94473976658455949facf87" kind="slot"><name>showMissionExecution</name></member>
     <member refid="class_main_window_1a2b0c8c1d55340184fa4a0799957c8ba4" kind="slot"><name>showMissionRecap</name></member>
     <member refid="class_main_window_1a256333bcbb01a576d5cdd77815409d8d" kind="slot"><name>showTutorial</name></member>
   </compound>
@@ -172,7 +195,6 @@
     <member refid="class_map_execution_1a337398c114f638b5a3e2fdc4529936c5" kind="friend"><name>MainMDIDisplay</name></member>
     <member refid="class_map_execution_1a9cbfe92cbfe0fe7ee433a04a121be766" kind="variable"><name>myServer</name></member>
     <member refid="class_map_execution_1ade1432547d600a40172f5f00e4db3a1e" kind="variable"><name>MyMessageBox</name></member>
-    <member refid="class_map_execution_1ad29bc8e9455863499f67c8fe9fdba843" kind="variable"><name>MessageBox</name></member>
     <member refid="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" kind="variable"><name>ui</name></member>
     <member refid="class_map_execution_1a6d3fb3f2c2600e218674b1e2fbc1e9ec" kind="variable"><name>model</name></member>
     <member refid="class_map_execution_1a0462acd7e519c3bd1fac5c5409257306" kind="variable"><name>buttonGroup</name></member>
@@ -182,6 +204,7 @@
     <member refid="class_map_execution_1aa2c95fb3a72997297c899812fba11269" kind="variable"><name>prevTime</name></member>
     <member refid="class_map_execution_1a4f701b952bbceb15e60ad5eb7d57c87e" kind="variable"><name>myFlightPath</name></member>
     <member refid="class_map_execution_1a186288c3bd575e199102d52f6357b16f" kind="variable"><name>myMission</name></member>
+    <member refid="class_map_execution_1a18ed5a89baeb474d551cb68bd600772a" kind="variable"><name>map</name></member>
     <member refid="class_map_execution_1a7c1440123040a6a9844273e1e1821569" kind="variable"><name>missionStarted</name></member>
     <member refid="class_map_execution_1af8f73763242302e0dfe9c6485528bfdb" kind="variable"><name>conTime</name></member>
     <member refid="class_map_execution_1a0fc2a824601c5f09fb8d448f025d4da3" kind="slot"><name>addNewMap</name></member>
@@ -191,55 +214,37 @@
     <member refid="class_map_execution_1a3bb03858cf15e2f9543a0e169383e13b" kind="slot"><name>updateTable</name></member>
     <member refid="class_map_execution_1a5f0c7ab18a5fcc4c474eeb5b9707dc61" kind="slot"><name>sendFlightPlan</name></member>
     <member refid="class_map_execution_1af846e29b7a32021359fcf66bca46e20b" kind="slot"><name>updateStatusIndicator</name></member>
-    <member refid="class_map_execution_1a628fc094b942dbaa21887c58b1f76319" kind="slot"><name>addClickListener</name></member>
+    <member refid="class_map_execution_1aebf5591cd50f0949e87dc47a43349eeb" kind="slot"><name>setupMapPaths</name></member>
+    <member refid="class_map_execution_1a6cc2c0744ca18582fffa402c1d34fa35" kind="slot"><name>receivePacket</name></member>
     <member refid="class_map_execution_1afcf6d9187674478b9b24cdb59b832198" kind="function"><name>MapExecution</name></member>
     <member refid="class_map_execution_1a8cd67a89386d7880f2f741598f78115c" kind="function"><name>MapExecution</name></member>
     <member refid="class_map_execution_1aeaebbbd5ed4a669c28b9b2372a135e9c" kind="function"><name>~MapExecution</name></member>
     <member refid="class_map_execution_1ab96a28f3c2d98931c94e25cd4d059262" kind="function"><name>getMyMission</name></member>
     <member refid="class_map_execution_1a44b75a52f37d3a0487651e75c79aea2a" kind="function"><name>getMapRecap</name></member>
     <member refid="class_map_execution_1a41eefdc4c0f8c8bec18b11f3eb55f91b" kind="function"><name>setMyMission</name></member>
-    <member refid="class_map_execution_1a915725914a13468b3ff5c50a291c4250" kind="slot"><name>on_finishButton_clicked</name></member>
+    <member refid="class_map_execution_1a412f115f78b732b0dd50d3064071fd7c" kind="slot"><name>onFinishButtonClicked</name></member>
     <member refid="class_map_execution_1a8e3f80d073442f9d27c517b1fdb6379c" kind="slot"><name>on_returnHomeButton_clicked</name></member>
-    <member refid="class_map_execution_1a8b065231e835882c21868a2dea5febd2" kind="slot"><name>on_cancelButton_clicked</name></member>
+    <member refid="class_map_execution_1a8ffb26c93c53d54c2ae9c17f27663def" kind="slot"><name>onCancelButtonClicked</name></member>
     <member refid="class_map_execution_1a8cbf92235cbe6dc0d767010258ab5efc" kind="slot"><name>on_stopButton_clicked</name></member>
-    <member refid="class_map_execution_1aba29038fe5edd8ac2fd73d9f3669fe4e" kind="slot"><name>on_backButton_clicked</name></member>
+    <member refid="class_map_execution_1ae8b8194207477071903852da2d3ac15f" kind="slot"><name>onStartButtonClicked</name></member>
+    <member refid="class_map_execution_1a628fc094b942dbaa21887c58b1f76319" kind="slot"><name>addClickListener</name></member>
     <member refid="class_map_execution_1a658805b61b3331c43c48211e543cafe0" kind="signal"><name>timeToStartMapRecap</name></member>
   </compound>
   <compound refid="class_map_planning" kind="class"><name>MapPlanning</name>
-    <member refid="class_map_planning_1a337398c114f638b5a3e2fdc4529936c5" kind="friend"><name>MainMDIDisplay</name></member>
-    <member refid="class_map_planning_1a552fbbc0827db07c9eca5df3d3492588" kind="variable"><name>buttonGroup</name></member>
-    <member refid="class_map_planning_1a659d16f315de31e54a57159e59e96f5c" kind="variable"><name>del</name></member>
-    <member refid="class_map_planning_1aab63d8ac819d33a75d30349052ed8ce5" kind="variable"><name>model</name></member>
-    <member refid="class_map_planning_1a3604a9cf676dff7967f12cc622057529" kind="variable"><name>popup</name></member>
-    <member refid="class_map_planning_1ac9084206ce3ab842028bdf9632961966" kind="variable"><name>loadMissionButton</name></member>
-    <member refid="class_map_planning_1a20a0b06f6e53d04fbbc1740f5afd5121" kind="variable"><name>saveMissionButton</name></member>
-    <member refid="class_map_planning_1aee0f605c3b054170a94d9d39616222e1" kind="variable"><name>saveMissionByNameLineEdit</name></member>
-    <member refid="class_map_planning_1adf0d5fa9dca6a4dbd81864d9be30f900" kind="variable"><name>saveMissionByNameLabel</name></member>
     <member refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" kind="variable"><name>ui</name></member>
-    <member refid="class_map_planning_1adbd3f2c13fafaaa335058f7517ee4601" kind="function"><name>updateMap</name></member>
-    <member refid="class_map_planning_1a38f72780859a68815d818b28767c6dfd" kind="function"><name>getTableAsFlightPath</name></member>
     <member refid="class_map_planning_1a02df54932a2eeeb02ca68ee9de8f4e83" kind="function"><name>MapPlanning</name></member>
     <member refid="class_map_planning_1a676c43e0b605ee019f8cbfe1cb4e38be" kind="function"><name>~MapPlanning</name></member>
-    <member refid="class_map_planning_1adc6e9ef8ab566618504241b9ed523195" kind="function"><name>getLoadMissionButton</name></member>
-    <member refid="class_map_planning_1a25239a16d8fd9a09c7d69a519a5f6cd2" kind="function"><name>getSaveMissionButton</name></member>
-    <member refid="class_map_planning_1a38e8042804f19570676a145663edd9f0" kind="function"><name>getSaveMissionByNameLineEdit</name></member>
-    <member refid="class_map_planning_1a33d3d95615a985fa86b70ade73bf56fe" kind="function"><name>getSaveMissionByNameLabel</name></member>
-    <member refid="class_map_planning_1a678f06ef673840b378b551ddff50312e" kind="function"><name>setLoadMissionButton</name></member>
-    <member refid="class_map_planning_1a58463dc589c032a3b6aa92e8164b0795" kind="function"><name>setSaveMissionButton</name></member>
-    <member refid="class_map_planning_1a0d1b34de2d24bad30ed01ef82510da85" kind="function"><name>setSaveMissionByNameLineEdit</name></member>
-    <member refid="class_map_planning_1a5b2d49b6608a2dbdcc560e98d88051b6" kind="function"><name>setSaveMissionByNameLabel</name></member>
+    <member refid="class_map_planning_1adbd3f2c13fafaaa335058f7517ee4601" kind="function"><name>updateMap</name></member>
+    <member refid="class_map_planning_1a38f72780859a68815d818b28767c6dfd" kind="function"><name>getTableAsFlightPath</name></member>
     <member refid="class_map_planning_1af2068f7c19c1f495debe4c4e745c99d4" kind="slot"><name>addPointToTable</name></member>
+    <member refid="class_map_planning_1a320e452b516fbad57bb4a2a6138832c8" kind="slot"><name>clearTable</name></member>
+    <member refid="class_map_planning_1ac9e2730ca705585be868af75701d673f" kind="slot"><name>setupMapPaths</name></member>
     <member refid="class_map_planning_1aadaff61da568b1b57d3d9fad5c63ecec" kind="slot"><name>on_executeButton_clicked</name></member>
     <member refid="class_map_planning_1a916faaa809c387c1a4dfaf02367fa11b" kind="slot"><name>on_addButton_clicked</name></member>
     <member refid="class_map_planning_1a2f715a04a1b4becbdcd6471d5998ae69" kind="slot"><name>on_backButton_clicked</name></member>
-    <member refid="class_map_planning_1aed8a871a4ad421d38b6994c3b4e02f97" kind="slot"><name>on_clearTableButton_clicked</name></member>
-    <member refid="class_map_planning_1a48a4d0dcd991d1805bb7bba8d0632d25" kind="slot"><name>on_clearMapButton_clicked</name></member>
     <member refid="class_map_planning_1a6a250a62f619b29f4f0f2eceb921b461" kind="slot"><name>on_deleteButton_clicked</name></member>
     <member refid="class_map_planning_1a9f1419c0edb6cec3ba6755a2c109851b" kind="slot"><name>on_updateTableButton_clicked</name></member>
-    <member refid="class_map_planning_1a67bb2037f76155fdd04579c4d53f735b" kind="slot"><name>addClickListener</name></member>
     <member refid="class_map_planning_1aef1fc52bee516b93cd153d95f799df40" kind="slot"><name>closeWindow</name></member>
-    <member refid="class_map_planning_1a700eb0065441bec199a2a3fc343d0571" kind="signal"><name>timeToStartMapExecution</name></member>
-    <member refid="class_map_planning_1af983ce7e5456e915347af984a98d63e9" kind="signal"><name>tableUpdated</name></member>
   </compound>
   <compound refid="class_map_recap" kind="class"><name>MapRecap</name>
     <member refid="class_map_recap_1a337398c114f638b5a3e2fdc4529936c5" kind="friend"><name>MainMDIDisplay</name></member>
@@ -267,6 +272,41 @@
   <compound refid="class_map_validator" kind="class"><name>MapValidator</name>
     <member refid="class_map_validator_1adc4f53b1f99cbe2c1c832c1c713405b2" kind="function"><name>MapValidator</name></member>
     <member refid="class_map_validator_1a7314e2243ed254fdff4aab33ded97a8b" kind="function"><name>validate</name></member>
+  </compound>
+  <compound refid="class_map_widget" kind="class"><name>MapWidget</name>
+    <member refid="class_map_widget_1a32057f4287339e79f94298297508dc45" kind="variable"><name>loading</name></member>
+    <member refid="class_map_widget_1a2bfa4de7a6e0c7fa52713d567cfb9769" kind="variable"><name>lists</name></member>
+    <member refid="class_map_widget_1a913e8bdc3f2faeafcc2071934c6d4556" kind="variable"><name>channel</name></member>
+    <member refid="class_map_widget_1a0cc82b046bc7a740145ab7beb57ee8ad" kind="variable"><name>server</name></member>
+    <member refid="class_map_widget_1afb627af3b709a370c1d59fefe73431ba" kind="variable"><name>clientWrapper</name></member>
+    <member refid="class_map_widget_1abdc3f5706335a8e8b9dd7528ad509bf9" kind="variable"><name>MapURL</name></member>
+    <member refid="class_map_widget_1a713e505662adb701530212e7a2d78362" kind="function"><name>MapWidget</name></member>
+    <member refid="class_map_widget_1a2be5ffdc125d85aa0ccdb4f552e393cc" kind="function"><name>~MapWidget</name></member>
+    <member refid="class_map_widget_1ab74d0f96d17ac84330c1ad9128fa3043" kind="function"><name>ready</name></member>
+    <member refid="class_map_widget_1a74413ad372d073726adaafa0e4b23a88" kind="function"><name>createNewPath</name></member>
+    <member refid="class_map_widget_1a4ce8b29f199770cbbfb619409d03b64a" kind="function"><name>appendGPSCoordToPath</name></member>
+    <member refid="class_map_widget_1ade38deed1067391a63e190a129de6503" kind="function"><name>getPath</name></member>
+    <member refid="class_map_widget_1a4c48f353c9eb673747a810d341b237d6" kind="slot"><name>loadStartedSlot</name></member>
+    <member refid="class_map_widget_1a176dacdfedf2b68f5e9deebe5a3625ce" kind="slot"><name>loadFinishedSlot</name></member>
+    <member refid="class_map_widget_1ae989a74840130045badfc960c9ab7d07" kind="slot"><name>sendCreateNewPath</name></member>
+    <member refid="class_map_widget_1a229b88166cf83db76b97192d2b34963d" kind="slot"><name>sendSetActivePath</name></member>
+    <member refid="class_map_widget_1aaa77cb93c813bdc96ead3036bc0ad8ad" kind="slot"><name>addPointToMap</name></member>
+    <member refid="class_map_widget_1ad5a6b1734e52d7f47d64809620e6a0e7" kind="slot"><name>sendClearFlightPath</name></member>
+    <member refid="class_map_widget_1a1334377e2cdd9b97c499880a3327c25d" kind="slot"><name>disconnectWebSocket</name></member>
+    <member refid="class_map_widget_1a4a749a2cea2cdf36a2efee6b3fb26c42" kind="slot"><name>addFlightPath</name></member>
+    <member refid="class_map_widget_1af1fbcb7ac92d7278d680b0bebeb5b4d1" kind="slot"><name>pointAddedToMap</name></member>
+    <member refid="class_map_widget_1ac6ec69c739962378b091619edad4b7f6" kind="slot"><name>pathCleared</name></member>
+    <member refid="class_map_widget_1ab49ed2cf6439e36bedfe4141b814cbe7" kind="slot"><name>pointRemovedFromMap</name></member>
+    <member refid="class_map_widget_1a3dc3db3a5ac82ee0381a385d724f8ad4" kind="slot"><name>finishedLoading</name></member>
+    <member refid="class_map_widget_1ad3cf277e8192badc50d24830a338e129" kind="signal"><name>pointAdded</name></member>
+    <member refid="class_map_widget_1a16912518f2b2969faa60c2f7b502600d" kind="signal"><name>JSInitialized</name></member>
+    <member refid="class_map_widget_1a29e796fa736490afd29d511e2e5b2b60" kind="signal"><name>createNewPath</name></member>
+    <member refid="class_map_widget_1adb6c583449a96841d12765d9d2dd545c" kind="signal"><name>setActivePath</name></member>
+    <member refid="class_map_widget_1a3199a1cb4eb467318b2c9edf13ff2aca" kind="signal"><name>disableEditing</name></member>
+    <member refid="class_map_widget_1ab02ed9fe412bd7462c9a09d23262e7d0" kind="signal"><name>appendPointToPath</name></member>
+    <member refid="class_map_widget_1ac1eb6a5b04b9fd353c2179bdfa1f7269" kind="signal"><name>insertPointToMap</name></member>
+    <member refid="class_map_widget_1a509428dfb3c4cc33c9c58ccf23f5d3ca" kind="signal"><name>removePointFromMap</name></member>
+    <member refid="class_map_widget_1a9ad5615b0a835998172b61de2e61a12c" kind="signal"><name>clearFlightPath</name></member>
   </compound>
   <compound refid="classmessagebox" kind="class"><name>messagebox</name>
     <member refid="classmessagebox_1a9923a7ec95448c63c3c51fcf094a7cb7" kind="friend"><name>DigitalClock</name></member>
@@ -321,6 +361,18 @@
     <member refid="class_mission_1a8e02183538b8e0095f7a6e609149f75d" kind="function"><name>save</name></member>
     <member refid="class_mission_1af76ffa1e6c93db10274dfd9b457b373f" kind="function"><name>initValues</name></member>
   </compound>
+  <compound refid="struct_mission_data" kind="struct"><name>MissionData</name>
+    <member refid="struct_mission_data_1aca98e398b94037e80749d0a9e73dcefe" kind="variable"><name>heading</name></member>
+    <member refid="struct_mission_data_1a36cf42a5d8fd328293d296c67239af9b" kind="variable"><name>lat</name></member>
+    <member refid="struct_mission_data_1a7fcee2655bd219b949d4a697ecc70a67" kind="variable"><name>lan</name></member>
+    <member refid="struct_mission_data_1ad4f9f598f5960f26fc8290180a7cfd18" kind="variable"><name>alt</name></member>
+    <member refid="struct_mission_data_1a43974cedf16a4aa6645145224a4c3e77" kind="variable"><name>pitch</name></member>
+    <member refid="struct_mission_data_1a9fca0a04ef126efa755e91c2a96a536e" kind="variable"><name>roll</name></member>
+    <member refid="struct_mission_data_1a186d118b99361b39a581ae01cf20e2c3" kind="variable"><name>yaw</name></member>
+    <member refid="struct_mission_data_1a6a86665d3ace692fec591d90ef69d7b3" kind="variable"><name>xvel</name></member>
+    <member refid="struct_mission_data_1a0551fec33eeabd071cebf089603ed122" kind="variable"><name>yvel</name></member>
+    <member refid="struct_mission_data_1abe305df8910d25abeb1638dd6693081b" kind="variable"><name>zvel</name></member>
+  </compound>
   <compound refid="class_mission_planning_window" kind="class"><name>MissionPlanningWindow</name>
     <member refid="class_mission_planning_window_1a337398c114f638b5a3e2fdc4529936c5" kind="friend"><name>MainMDIDisplay</name></member>
     <member refid="class_mission_planning_window_1ae75ab3c897bd85ddffd68e4b2ab2c722" kind="variable"><name>executeButton</name></member>
@@ -365,6 +417,11 @@
     <member refid="class_mission_recap_1adb9bc8dfd542ba5f184184ac0f56cfa5" kind="slot"><name>on_openFileButton_clicked</name></member>
     <member refid="class_mission_recap_1a49d2c78db48989261a6d02ca9cad0179" kind="slot"><name>on_newMission_clicked</name></member>
     <member refid="class_mission_recap_1a3523c087e1a9b94c5a6d409afd6c0f30" kind="slot"><name>addClickListener</name></member>
+  </compound>
+  <compound refid="class_mission_status_window" kind="class"><name>MissionStatusWindow</name>
+    <member refid="class_mission_status_window_1a0aaf2adaf879db758a4f4bed80b13ec0" kind="variable"><name>ui</name></member>
+    <member refid="class_mission_status_window_1a7cb42c39b9050b6ab3c5f1dac25cc45d" kind="function"><name>MissionStatusWindow</name></member>
+    <member refid="class_mission_status_window_1ae777603fed5cedc813c7f3e21d10179f" kind="function"><name>~MissionStatusWindow</name></member>
   </compound>
   <compound refid="class_network_listener" kind="class"><name>NetworkListener</name>
     <member refid="class_network_listener_1a3192d69724315464c95ae1f63db0b127" kind="variable"><name>listening</name></member>
@@ -2535,6 +2592,18 @@
     <member refid="class_server_queue_1a4815b1a73a46c6b581bd70a82b04d1b0" kind="function"><name>recieveAckPacket</name></member>
     <member refid="class_server_queue_1a89278291c92e8ec01d730407d3f2f806" kind="function"><name>getNextPacket</name></member>
   </compound>
+  <compound refid="class_status_widget" kind="class"><name>StatusWidget</name>
+    <member refid="class_status_widget_1a2b2e34b29945d2ea12a8c05df7577073" kind="variable"><name>StatusTimer</name></member>
+    <member refid="class_status_widget_1aa44ee56a7a1bfc07fea862479f9f243d" kind="variable"><name>start</name></member>
+    <member refid="class_status_widget_1ad2a00a82ccb53786324a2d2638112783" kind="variable"><name>mb</name></member>
+    <member refid="class_status_widget_1a64fbad1ba9c9e7584afc4eae42521878" kind="function"><name>StatusWidget</name></member>
+    <member refid="class_status_widget_1a0991157916d0e53285dd00ff27f4a1c5" kind="function"><name>~StatusWidget</name></member>
+    <member refid="class_status_widget_1ab4adf6771aca52d05c164e97fa8d06f5" kind="function"><name>initiate</name></member>
+    <member refid="class_status_widget_1a43ed1589a2b314c7f6fcef0b71116244" kind="function"><name>getStatusTimer</name></member>
+    <member refid="class_status_widget_1a172ab7eb7040df2efa0eef942f90e5b0" kind="function"><name>setStatusTimer</name></member>
+    <member refid="class_status_widget_1a31b621d52573cd10e0a5208d8d46858a" kind="slot"><name>showStatus</name></member>
+    <member refid="class_status_widget_1aee594f77c101d1601cab25c39df61aa9" kind="signal"><name>updateMe</name></member>
+  </compound>
   <compound refid="class_table_model" kind="class"><name>TableModel</name>
     <member refid="class_table_model_1a236a000a21493bb71dbb6cbeb7a1cde8" kind="variable"><name>listOfPairs</name></member>
     <member refid="class_table_model_1a2ff2b13db2fd19c2602c63260bb597be" kind="variable"><name>columns</name></member>
@@ -2552,6 +2621,17 @@
     <member refid="class_table_model_1a319fa96b8856ee379b09ddb793611f44" kind="function"><name>removeRows</name></member>
     <member refid="class_table_model_1ac5d306166ddda71a3b2deff4245ff1cf" kind="function"><name>getList</name></member>
     <member refid="class_table_model_1a99c2ce0fac13ea5a673f862ea7fe0d6c" kind="function"><name>insertRow</name></member>
+  </compound>
+  <compound refid="class_table_widget" kind="class"><name>TableWidget</name>
+    <member refid="class_table_widget_1ad14823dda2528e9edde49452561c7fe7" kind="variable"><name>model</name></member>
+    <member refid="class_table_widget_1a9e169fb9a5b62629c67cc0576e065f6a" kind="variable"><name>delegate</name></member>
+    <member refid="class_table_widget_1a53a444c14c52aebcd2b2cc2bde659d73" kind="function"><name>TableWidget</name></member>
+    <member refid="class_table_widget_1a5fb6edc429e21280d8f47faf6fe012fa" kind="function"><name>~TableWidget</name></member>
+    <member refid="class_table_widget_1acf7df57ad87a0241daba9f96509ef4df" kind="function"><name>getTableAsFlightPath</name></member>
+    <member refid="class_table_widget_1aa53e286c6cea8cb627543b6db289b8cf" kind="signal"><name>tableUpdated</name></member>
+    <member refid="class_table_widget_1afa9b2a89c72a5895134c8f45f39ff514" kind="slot"><name>appendRow</name></member>
+    <member refid="class_table_widget_1aa1751d4d1f9d82e4a959260e24a650d3" kind="slot"><name>removeSelectedRows</name></member>
+    <member refid="class_table_widget_1a159b1f8816eaa41ff2a4844a8a9f0f55" kind="slot"><name>clearTable</name></member>
   </compound>
   <compound refid="class_protocol_1_1_telemetry_packet" kind="class"><name>Protocol::TelemetryPacket</name>
     <member refid="class_protocol_1_1_telemetry_packet_1a49e58eb212e9023e0933e413a96eecec" kind="variable"><name>sequenceNumber</name></member>
@@ -2598,6 +2678,17 @@
     <member refid="class_timed_action_1adc140fabcb0074cb26b2ec45329aba22" kind="function"><name>hasWaypoint</name></member>
     <member refid="class_timed_action_1a8fc6b608826b02309ea063b4222bc149" kind="function"><name>hasAction</name></member>
   </compound>
+  <compound refid="class_timer_widget" kind="class"><name>TimerWidget</name>
+    <member refid="class_timer_widget_1a9bd0efab037342ab106882018469ccd3" kind="variable"><name>time</name></member>
+    <member refid="class_timer_widget_1a1c46e2555ede70519a5765392f3f8142" kind="variable"><name>TimeTimer</name></member>
+    <member refid="class_timer_widget_1a808776d552c6855f23460f68fe428326" kind="variable"><name>start</name></member>
+    <member refid="class_timer_widget_1a459f4729f0522983a9b01c88ac3e8e37" kind="function"><name>TimerWidget</name></member>
+    <member refid="class_timer_widget_1a3989d66aa8710930b1205e6201ad23e3" kind="function"><name>~TimerWidget</name></member>
+    <member refid="class_timer_widget_1ae60da213b39810256792230c34524503" kind="function"><name>showTime</name></member>
+    <member refid="class_timer_widget_1a037ac6faafa61e321fdd13960aaef405" kind="function"><name>initiate</name></member>
+    <member refid="class_timer_widget_1a5c606c2b1ebf5976594583f2d1c2a9f1" kind="function"><name>getTime</name></member>
+    <member refid="class_timer_widget_1af5fc0b2df4d189a02966806749f8768b" kind="function"><name>setTime</name></member>
+  </compound>
   <compound refid="class_tutorial" kind="class"><name>Tutorial</name>
     <member refid="class_tutorial_1a36963da2753d1554374a0e4c028208fd" kind="variable"><name>ui</name></member>
     <member refid="class_tutorial_1a27845ca3a1d3987bd505d36659e3bf7c" kind="function"><name>Tutorial</name></member>
@@ -2618,6 +2709,19 @@
     <member refid="struct_protocol_1_1_waypoint_1ac5f0dd73ea290deb60ea7464b114faa7" kind="variable"><name>lon</name></member>
     <member refid="struct_protocol_1_1_waypoint_1a69b7b1c0eeb8629e07fc929a902a91aa" kind="variable"><name>alt</name></member>
     <member refid="struct_protocol_1_1_waypoint_1aa92f0aab1641e5bdb5ea7a9b9d6994ad" kind="variable"><name>speed</name></member>
+  </compound>
+  <compound refid="class_web_socket_client_wrapper" kind="class"><name>WebSocketClientWrapper</name>
+    <member refid="class_web_socket_client_wrapper_1afc3491efe29dfa62f23230a96f631f15" kind="variable"><name>m_server</name></member>
+    <member refid="class_web_socket_client_wrapper_1a5af93779273d4a8e7cfcaf547ae04a52" kind="function"><name>WebSocketClientWrapper</name></member>
+    <member refid="class_web_socket_client_wrapper_1a67624fd48603482dd0631f699d19e87e" kind="signal"><name>clientConnected</name></member>
+    <member refid="class_web_socket_client_wrapper_1a2a139f16c65a5443c1578a51028cae9a" kind="slot"><name>handleNewConnection</name></member>
+  </compound>
+  <compound refid="class_web_socket_transport" kind="class"><name>WebSocketTransport</name>
+    <member refid="class_web_socket_transport_1aeaa3bb047d435aba08b9bbea5c510bc0" kind="variable"><name>m_socket</name></member>
+    <member refid="class_web_socket_transport_1adc3cc5ba10f10618a2a5514914fd7ff0" kind="function"><name>WebSocketTransport</name></member>
+    <member refid="class_web_socket_transport_1a5448ab45c8f5366763c1b82693b3da4e" kind="function"><name>~WebSocketTransport</name></member>
+    <member refid="class_web_socket_transport_1a1d6e79bb542a76d3c8fabeb8791ad3e8" kind="function"><name>sendMessage</name></member>
+    <member refid="class_web_socket_transport_1ac353962d0b80101029216a6bcbe3a660" kind="slot"><name>textMessageReceived</name></member>
   </compound>
   <compound refid="namespace_n_e_t" kind="namespace"><name>NET</name>
     <member refid="namespace_n_e_t_1a06f4ca39727c72129964425f6758e9f5" kind="variable"><name>LISTEN_PORT</name></member>
@@ -2705,6 +2809,8 @@
   </compound>
   <compound refid="dbmanager_8h" kind="file"><name>dbmanager.h</name>
   </compound>
+  <compound refid="dialog_8h" kind="file"><name>dialog.h</name>
+  </compound>
   <compound refid="digitalclock_8cpp" kind="file"><name>digitalclock.cpp</name>
   </compound>
   <compound refid="digitalclock_8h" kind="file"><name>digitalclock.h</name>
@@ -2736,14 +2842,6 @@
   <compound refid="mainmdidisplay_8cpp" kind="file"><name>mainmdidisplay.cpp</name>
   </compound>
   <compound refid="mainmdidisplay_8h" kind="file"><name>mainmdidisplay.h</name>
-    <member refid="mainmdidisplay_8h_1af22161c364d81ea6febed3c4ad0e09a1" kind="define"><name>MINIMUM_NUMBER_OF_POINTS</name></member>
-    <member refid="mainmdidisplay_8h_1ae1bbabd6292b4598398ae907d5d18e88" kind="define"><name>BLANK_QSTRING</name></member>
-    <member refid="mainmdidisplay_8h_1a9dc5189022b98999de582f96b98d5d90" kind="define"><name>SAVE_SUCCESSFUL</name></member>
-    <member refid="mainmdidisplay_8h_1af3d52afbb0d088f62e02208b24a9cbd2" kind="enum"><name>Menu</name></member>
-    <member refid="mainmdidisplay_8h_1af3d52afbb0d088f62e02208b24a9cbd2a81b6a630ce374e3388c5d5509e889b59" kind="enumvalue"><name>Startup</name></member>
-    <member refid="mainmdidisplay_8h_1af3d52afbb0d088f62e02208b24a9cbd2ab6e962263a189ccf06bea19765e98f2b" kind="enumvalue"><name>Planning</name></member>
-    <member refid="mainmdidisplay_8h_1af3d52afbb0d088f62e02208b24a9cbd2a8feb235a279b61bc82803ada6e4d7002" kind="enumvalue"><name>Execution</name></member>
-    <member refid="mainmdidisplay_8h_1af3d52afbb0d088f62e02208b24a9cbd2ab4f4437145212b7723e01794a65fa0fd" kind="enumvalue"><name>Recap</name></member>
   </compound>
   <compound refid="mainwindow_8cpp" kind="file"><name>mainwindow.cpp</name>
   </compound>
@@ -2756,8 +2854,6 @@
   <compound refid="mapplanning_8cpp" kind="file"><name>mapplanning.cpp</name>
   </compound>
   <compound refid="mapplanning_8h" kind="file"><name>mapplanning.h</name>
-    <member refid="mapplanning_8h_1ae8f128f2cf66bd68f674d2681a624fa2" kind="define"><name>DEFAULT_MISSION_NAME_PLACEHOLDER</name></member>
-    <member refid="mapplanning_8h_1a5a4a63654639668e95cac917f2173aa9" kind="define"><name>DEFAULT_MISSION_NAME_LINEEDIT_CAPTION</name></member>
   </compound>
   <compound refid="maprecap_8cpp" kind="file"><name>maprecap.cpp</name>
   </compound>
@@ -2766,6 +2862,10 @@
   <compound refid="mapvalidator_8cpp" kind="file"><name>mapvalidator.cpp</name>
   </compound>
   <compound refid="mapvalidator_8h" kind="file"><name>mapvalidator.h</name>
+  </compound>
+  <compound refid="mapwidget_8cpp" kind="file"><name>mapwidget.cpp</name>
+  </compound>
+  <compound refid="mapwidget_8h" kind="file"><name>mapwidget.h</name>
   </compound>
   <compound refid="messagebox_8cpp" kind="file"><name>messagebox.cpp</name>
     <member refid="messagebox_8cpp_1a9408123ee7d78084c7c8a4ee65e6266f" kind="define"><name>UAV_MESSAGEBOX_CPP</name></member>
@@ -2785,6 +2885,10 @@
   </compound>
   <compound refid="missionrecap_8h" kind="file"><name>missionrecap.h</name>
     <member refid="missionrecap_8h_1af4cfe29414a81e0f98129289d6c2f3a0" kind="define"><name>QCUSTOMPLOT_COMPILE_LIBRARY</name></member>
+  </compound>
+  <compound refid="missionstatuswindow_8cpp" kind="file"><name>missionstatuswindow.cpp</name>
+  </compound>
+  <compound refid="missionstatuswindow_8h" kind="file"><name>missionstatuswindow.h</name>
   </compound>
   <compound refid="net_8h" kind="file"><name>net.h</name>
   </compound>
@@ -2864,13 +2968,25 @@
   <compound refid="serverqueue_8h" kind="file"><name>serverqueue.h</name>
     <member refid="serverqueue_8h_1a326cffc052cd053ca9cdd401fdd996ad" kind="typedef"><name>QueueEntry</name></member>
   </compound>
+  <compound refid="statuswidget_8cpp" kind="file"><name>statuswidget.cpp</name>
+  </compound>
+  <compound refid="statuswidget_8h" kind="file"><name>statuswidget.h</name>
+  </compound>
   <compound refid="tablemodel_8cpp" kind="file"><name>tablemodel.cpp</name>
   </compound>
   <compound refid="tablemodel_8h" kind="file"><name>tablemodel.h</name>
   </compound>
+  <compound refid="tablewidget_8cpp" kind="file"><name>tablewidget.cpp</name>
+  </compound>
+  <compound refid="tablewidget_8h" kind="file"><name>tablewidget.h</name>
+  </compound>
   <compound refid="_telemetry_packet_8cpp" kind="file"><name>TelemetryPacket.cpp</name>
   </compound>
   <compound refid="telemetrypacket_8h" kind="file"><name>telemetrypacket.h</name>
+  </compound>
+  <compound refid="timerwidget_8cpp" kind="file"><name>timerwidget.cpp</name>
+  </compound>
+  <compound refid="timerwidget_8h" kind="file"><name>timerwidget.h</name>
   </compound>
   <compound refid="tutorial_8cpp" kind="file"><name>tutorial.cpp</name>
   </compound>
@@ -2880,8 +2996,16 @@
   </compound>
   <compound refid="videoplayer_8h" kind="file"><name>videoplayer.h</name>
   </compound>
+  <compound refid="websocketclientwrapper_8cpp" kind="file"><name>websocketclientwrapper.cpp</name>
+  </compound>
+  <compound refid="websocketclientwrapper_8h" kind="file"><name>websocketclientwrapper.h</name>
+  </compound>
+  <compound refid="websockettransport_8cpp" kind="file"><name>websockettransport.cpp</name>
+  </compound>
+  <compound refid="websockettransport_8h" kind="file"><name>websockettransport.h</name>
+  </compound>
   <compound refid="todo" kind="page"><name>todo</name>
   </compound>
-  <compound refid="dir_220bdabaa0245b8ac52ced9dcf680619" kind="dir"><name>C:/Users/Roman/Documents/GroundStation/GS</name>
+  <compound refid="dir_220bdabaa0245b8ac52ced9dcf680619" kind="dir"><name>C:/Users/Roman/Documents/Mygs/GroundStation/GS</name>
   </compound>
 </doxygenindex>

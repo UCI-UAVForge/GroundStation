@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.9.1"/>
-<title>UAVForgeGS: C:/Users/Roman/Documents/GroundStation/GS/digitalclock.h Source File</title>
+<title>UAVForgeGS: C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -115,24 +115,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_digital_clock.html#a280a7e0206e2d9e192a19b89cf9c2327">   28</a></span>&#160;    <a class="code" href="class_map_execution.html">MapExecution</a>* <a class="code" href="class_digital_clock.html#a280a7e0206e2d9e192a19b89cf9c2327">map_exec_ptr</a>;</div>
 <div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_digital_clock.html#ad2d7eceb84025180dc2b7862668b87e7">   29</a></span>&#160;    QTimer* <a class="code" href="class_digital_clock.html#ad2d7eceb84025180dc2b7862668b87e7">StatusTimer</a>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_digital_clock.html#aa49ae733b7fb0c8b1f353e9811372d5b">   30</a></span>&#160;    QTimer* <a class="code" href="class_digital_clock.html#aa49ae733b7fb0c8b1f353e9811372d5b">TimeTimer</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_digital_clock.html#a070278bd43a6162c7a666f354c3d1087">initiate</a>(QTime timein);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// Added mapexection pointer so that mapexecution can be updated</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_digital_clock.html#a070278bd43a6162c7a666f354c3d1087">initiate</a>(<a class="code" href="classmessagebox.html">messagebox</a>* mbin, <a class="code" href="class_map_execution.html">MapExecution</a>* mapexec_ptr);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_digital_clock.html#a87cd1f935265a947f2ece712bffc4aaa">showTime</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_digital_clock.html#a2b0778dec030cfa1a48dc8668bff18ed">showStatus</a>();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif // DIGITALCLOCK_H</span></div>
-<div class="ttc" id="class_map_execution_html"><div class="ttname"><a href="class_map_execution.html">MapExecution</a></div><div class="ttdef"><b>Definition:</b> mapexecution.h:34</div></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_digital_clock.html#aba1e4d8bc0f0fadd9e9ab82ecdeb1772">   31</a></span>&#160;    QTimer* <a class="code" href="class_digital_clock.html#aba1e4d8bc0f0fadd9e9ab82ecdeb1772">myTimer</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_digital_clock.html#a070278bd43a6162c7a666f354c3d1087">initiate</a>(QTime timein);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// Added mapexection pointer so that mapexecution can be updated</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_digital_clock.html#a070278bd43a6162c7a666f354c3d1087">initiate</a>(<a class="code" href="classmessagebox.html">messagebox</a>* mbin, <a class="code" href="class_map_execution.html">MapExecution</a>* mapexec_ptr);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_digital_clock.html#a87cd1f935265a947f2ece712bffc4aaa">showTime</a>();</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_digital_clock.html#a2b0778dec030cfa1a48dc8668bff18ed">showStatus</a>();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif // DIGITALCLOCK_H</span></div>
+<div class="ttc" id="class_map_execution_html"><div class="ttname"><a href="class_map_execution.html">MapExecution</a></div><div class="ttdef"><b>Definition:</b> mapexecution.h:35</div></div>
 <div class="ttc" id="class_digital_clock_html_a2b0778dec030cfa1a48dc8668bff18ed"><div class="ttname"><a href="class_digital_clock.html#a2b0778dec030cfa1a48dc8668bff18ed">DigitalClock::showStatus</a></div><div class="ttdeci">void showStatus()</div><div class="ttdef"><b>Definition:</b> digitalclock.cpp:104</div></div>
 <div class="ttc" id="class_digital_clock_html_ab87ec7559579311929e8542dbcf5e294"><div class="ttname"><a href="class_digital_clock.html#ab87ec7559579311929e8542dbcf5e294">DigitalClock::~DigitalClock</a></div><div class="ttdeci">~DigitalClock()</div><div class="ttdef"><b>Definition:</b> digitalclock.cpp:19</div></div>
 <div class="ttc" id="class_digital_clock_html"><div class="ttname"><a href="class_digital_clock.html">DigitalClock</a></div><div class="ttdoc">The DigitalClock class inherits from QPlainTextEdit -Aaron Ko. </div><div class="ttdef"><b>Definition:</b> digitalclock.h:17</div></div>
 <div class="ttc" id="class_digital_clock_html_ad2d7eceb84025180dc2b7862668b87e7"><div class="ttname"><a href="class_digital_clock.html#ad2d7eceb84025180dc2b7862668b87e7">DigitalClock::StatusTimer</a></div><div class="ttdeci">QTimer * StatusTimer</div><div class="ttdef"><b>Definition:</b> digitalclock.h:29</div></div>
 <div class="ttc" id="class_digital_clock_html_a1df69f177d5defdd5029ff2e6b7cb564"><div class="ttname"><a href="class_digital_clock.html#a1df69f177d5defdd5029ff2e6b7cb564">DigitalClock::DigitalClock</a></div><div class="ttdeci">DigitalClock(QWidget *parent=0)</div><div class="ttdef"><b>Definition:</b> digitalclock.cpp:8</div></div>
 <div class="ttc" id="class_digital_clock_html_acefe5da3fee2eba06d65402484dbe8f8"><div class="ttname"><a href="class_digital_clock.html#acefe5da3fee2eba06d65402484dbe8f8">DigitalClock::start</a></div><div class="ttdeci">QString start</div><div class="ttdef"><b>Definition:</b> digitalclock.h:26</div></div>
+<div class="ttc" id="class_digital_clock_html_aba1e4d8bc0f0fadd9e9ab82ecdeb1772"><div class="ttname"><a href="class_digital_clock.html#aba1e4d8bc0f0fadd9e9ab82ecdeb1772">DigitalClock::myTimer</a></div><div class="ttdeci">QTimer * myTimer</div><div class="ttdef"><b>Definition:</b> digitalclock.h:31</div></div>
 <div class="ttc" id="messagebox_8h_html"><div class="ttname"><a href="messagebox_8h.html">messagebox.h</a></div></div>
 <div class="ttc" id="class_digital_clock_html_a87cd1f935265a947f2ece712bffc4aaa"><div class="ttname"><a href="class_digital_clock.html#a87cd1f935265a947f2ece712bffc4aaa">DigitalClock::showTime</a></div><div class="ttdeci">void showTime()</div><div class="ttdoc">DigitalClock::showTime creates string from elapsed time and starting time clears the PlainText and up...</div><div class="ttdef"><b>Definition:</b> digitalclock.cpp:90</div></div>
 <div class="ttc" id="class_digital_clock_html_aa49ae733b7fb0c8b1f353e9811372d5b"><div class="ttname"><a href="class_digital_clock.html#aa49ae733b7fb0c8b1f353e9811372d5b">DigitalClock::TimeTimer</a></div><div class="ttdeci">QTimer * TimeTimer</div><div class="ttdef"><b>Definition:</b> digitalclock.h:30</div></div>
@@ -144,7 +146,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 2 2017 12:40:56 for UAVForgeGS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 22 2017 23:20:30 for UAVForgeGS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -27,7 +27,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1909" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="1909" bodyend="1911"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1909" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1909" bodyend="1911"/>
       </memberdef>
       <memberdef kind="enum" id="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072" prot="public" static="no">
         <name>GradientPreset</name>
@@ -121,7 +121,7 @@
 <para>Defines the available presets that can be loaded with <ref refid="class_q_c_p_color_gradient_1aa0aeec1528241728b9671bf8e60b1622" kindref="member">loadPreset</ref>. See the documentation there for an image of the presets. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1918" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="1918" bodyend="1930"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1918" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1918" bodyend="1930"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -136,7 +136,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1961" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="1961" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1961" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1961" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_color_gradient_1a9e11a2b0974ef289d12c324822bc3a3e" prot="protected" static="no" mutable="no">
         <type>QMap&lt; double, QColor &gt;</type>
@@ -149,7 +149,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1962" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="1962" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1962" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1962" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_color_gradient_1a028cef73d863800a9ee93ffd641cce01" prot="protected" static="no" mutable="no">
         <type><ref refid="class_q_c_p_color_gradient_1ac5dca17cc24336e6ca176610e7f77fc1" kindref="member">ColorInterpolation</ref></type>
@@ -162,7 +162,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1963" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="1963" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1963" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1963" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_color_gradient_1a4b07deeb20ca1ee2d5ea7e01bf0420af" prot="protected" static="no" mutable="no">
         <type>bool</type>
@@ -175,7 +175,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1964" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="1964" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1964" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1964" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_color_gradient_1af8b5f0739faa5f8295154d47ce38ecff" prot="protected" static="no" mutable="no">
         <type>QVector&lt; QRgb &gt;</type>
@@ -188,7 +188,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1967" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="1967" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1967" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1967" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_color_gradient_1abacf55e11f67d6722a687af1bb2687bd" prot="protected" static="no" mutable="no">
         <type>bool</type>
@@ -201,7 +201,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1968" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="1968" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1968" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1968" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -221,7 +221,7 @@
 <para>Constructs a new <ref refid="class_q_c_p_color_gradient" kindref="compound">QCPColorGradient</ref> initialized with the colors and color interpolation according to <emphasis>preset</emphasis>.</para><para>The color level count is initialized to 350. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1933" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="11191" bodyend="11199"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1933" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11191" bodyend="11199"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_gradient_1aada47d8206bf2cec77462653bf471c13" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -238,7 +238,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1934" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="11202" bodyend="11208"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1934" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11202" bodyend="11208"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_gradient_1ac641f5d2dc1686201d3cb602c871791d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -255,7 +255,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1935" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="1935" bodyend="1935"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1935" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1935" bodyend="1935"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_gradient_1ae7537a8e6d0fed3f1928328062bb0f4e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -268,7 +268,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1938" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="1938" bodyend="1938"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1938" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1938" bodyend="1938"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_gradient_1a64f8aba7826f9c6363aacff8376cef37" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>QMap&lt; double, QColor &gt;</type>
@@ -281,7 +281,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1939" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="1939" bodyend="1939"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1939" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1939" bodyend="1939"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_gradient_1a731616fabe6f2e33f71f58dd382359d8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_q_c_p_color_gradient_1ac5dca17cc24336e6ca176610e7f77fc1" kindref="member">ColorInterpolation</ref></type>
@@ -294,7 +294,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1940" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="1940" bodyend="1940"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1940" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1940" bodyend="1940"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_gradient_1a860b7048f877195d2a0fb8d5a7cf5d73" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -307,7 +307,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1941" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="1941" bodyend="1941"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1941" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1941" bodyend="1941"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_gradient_1a18da587eb4f7fc788ea28ba15b6a12de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -325,7 +325,7 @@
  </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1944" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="11216" bodyend="11228"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1944" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11216" bodyend="11228"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_gradient_1a724e828aa6f0ba5011a9392477c35d3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -343,7 +343,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1945" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="11240" bodyend="11244"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1945" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11240" bodyend="11244"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_gradient_1a3b48be5e78079db1bb2a1188a4c3390e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -365,7 +365,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1946" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="11252" bodyend="11256"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1946" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11252" bodyend="11256"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_gradient_1aa13fda86406e1d896a465a409ae63b38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -382,7 +382,7 @@
 <para>Sets whether the colors in between the configured color stops (see <ref refid="class_q_c_p_color_gradient_1a3b48be5e78079db1bb2a1188a4c3390e" kindref="member">setColorStopAt</ref>) shall be interpolated linearly in RGB or in HSV color space.</para><para>For example, a sweep in RGB space from red to green will have a muddy brown intermediate color, whereas in HSV space the intermediate color is yellow. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1947" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="11265" bodyend="11272"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1947" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11265" bodyend="11272"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_gradient_1a39d6448155fc00a219f239220d14bb39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -400,7 +400,7 @@
 </para><para>As shown in the image above, gradients that have the same start and end color are especially suitable for a periodic gradient mapping, since they produce smooth color transitions throughout the color map. A preset that has this property is <ref refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130" kindref="member">gpHues</ref>.</para><para>In practice, using periodic color gradients makes sense when the data corresponds to a periodic dimension, such as an angle or a phase. If this is not the case, the color encoding might become ambiguous, because multiple different data values are shown as the same color. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1948" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="11289" bodyend="11292"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1948" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11289" bodyend="11292"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_gradient_1aaf423ceb943e177b0ed2c48c811d83dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -439,7 +439,7 @@
 <para>This method is used to quickly convert a <emphasis>data</emphasis> array to colors. The colors will be output in the array <emphasis>scanLine</emphasis>. Both <emphasis>data</emphasis> and <emphasis>scanLine</emphasis> must have the length <emphasis>n</emphasis> when passed to this function. The data range that shall be used for mapping the data value to the gradient is passed in <emphasis>range</emphasis>. <emphasis>logarithmic</emphasis> indicates whether the data values shall be mapped to colors logarithmically.</para><para>if <emphasis>data</emphasis> actually contains 2D-data linearized via <computeroutput>[row*columnCount + column]</computeroutput>, you can set <emphasis>dataIndexFactor</emphasis> to <computeroutput>columnCount</computeroutput> to convert a column instead of a row of the data array, in <emphasis>scanLine</emphasis>. <emphasis>scanLine</emphasis> will remain a regular (1D) array. This works because <emphasis>data</emphasis> is addressed <computeroutput>data[i*dataIndexFactor]</computeroutput>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1951" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="11306" bodyend="11370"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1951" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11306" bodyend="11370"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_gradient_1a0599545c859268b025d2060dea741cea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>QRgb</type>
@@ -465,7 +465,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1952" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="11381" bodyend="11404"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1952" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11381" bodyend="11404"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_gradient_1aa0aeec1528241728b9671bf8e60b1622" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -483,7 +483,7 @@
  </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1953" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="11413" bodyend="11515"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1953" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11413" bodyend="11515"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_gradient_1a939213e85f0d1279519d555c5fcfb6ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -497,7 +497,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1954" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="11522" bodyend="11526"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1954" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11522" bodyend="11526"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_color_gradient_1abe04e1d1ccab3d7aa78f2924faed4916" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_q_c_p_color_gradient" kindref="compound">QCPColorGradient</ref></type>
@@ -511,7 +511,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1955" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="11534" bodyend="11541"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1955" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11534" bodyend="11541"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -526,7 +526,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1958" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="11548" bodyend="11607"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1958" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11548" bodyend="11607"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -535,7 +535,7 @@
 <para>This class describes a color gradient which can be used to encode data with color. For example, <ref refid="class_q_c_p_color_map" kindref="compound">QCPColorMap</ref> and <ref refid="class_q_c_p_color_scale" kindref="compound">QCPColorScale</ref> have <ref refid="class_q_c_p_color_map_1a7313c78360471cead3576341a2c50377" kindref="member">setGradient</ref> methods which take an instance of this class. Colors are set with <ref refid="class_q_c_p_color_gradient_1a3b48be5e78079db1bb2a1188a4c3390e" kindref="member">setColorStopAt(double position, const QColor &amp;color)</ref> with a <emphasis>position</emphasis> from 0 to 1. In between these defined color positions, the color will be interpolated linearly either in RGB or HSV space, see <ref refid="class_q_c_p_color_gradient_1aa13fda86406e1d896a465a409ae63b38" kindref="member">setColorInterpolation</ref>.</para><para>Alternatively, load one of the preset color gradients shown in the image below, with <ref refid="class_q_c_p_color_gradient_1aa0aeec1528241728b9671bf8e60b1622" kindref="member">loadPreset</ref>, or by directly specifying the preset in the constructor.</para><para><image type="html" name="QCPColorGradient.png"></image>
 </para><para>The fact that the <ref refid="class_q_c_p_color_gradient" kindref="compound">ructor</ref> allows directly converting a <ref refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072" kindref="member">GradientPreset</ref> to a <ref refid="class_q_c_p_color_gradient" kindref="compound">QCPColorGradient</ref>, you can also directly pass <ref refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072" kindref="member">GradientPreset</ref> to all the <emphasis>setGradient</emphasis> methods, e.g.: <programlisting><codeline><highlight class="normal">colorMap-&gt;setGradient(QCPColorGradient::gpHot);</highlight></codeline>
 </programlisting></para><para>The total number of levels used in the gradient can be set with <ref refid="class_q_c_p_color_gradient_1a18da587eb4f7fc788ea28ba15b6a12de" kindref="member">setLevelCount</ref>. Whether the color gradient shall be applied periodically (wrapping around) to data values that lie outside the data range specified on the plottable instance can be controlled with <ref refid="class_q_c_p_color_gradient_1a39d6448155fc00a219f239220d14bb39" kindref="member">setPeriodic</ref>. </para>    </detaileddescription>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1901" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="1900" bodyend="1969"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1901" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1900" bodyend="1969"/>
     <listofallmembers>
       <member refid="class_q_c_p_color_gradient_1ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>ciHSV</name></member>
       <member refid="class_q_c_p_color_gradient_1ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>ciRGB</name></member>

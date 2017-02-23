@@ -1,0 +1,936 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_map_widget" kind="class" language="C++" prot="public">
+    <compoundname>MapWidget</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QWebEngineView</basecompoundref>
+    <includes refid="mapwidget_8h" local="no">mapwidget.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_map_widget_1a32057f4287339e79f94298297508dc45" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MapWidget::loading</definition>
+        <argsstring></argsstring>
+        <name>loading</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="22" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_widget_1a2bfa4de7a6e0c7fa52713d567cfb9769" prot="private" static="no" mutable="no">
+        <type>QList&lt; QList&lt; <ref refid="struct_protocol_1_1_waypoint" kindref="compound">Protocol::Waypoint</ref> &gt; &gt; *</type>
+        <definition>QList&lt;QList&lt;Protocol::Waypoint&gt; &gt;* MapWidget::lists</definition>
+        <argsstring></argsstring>
+        <name>lists</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="23" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_widget_1a913e8bdc3f2faeafcc2071934c6d4556" prot="private" static="no" mutable="no">
+        <type>QWebChannel</type>
+        <definition>QWebChannel MapWidget::channel</definition>
+        <argsstring></argsstring>
+        <name>channel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="24" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_widget_1a0cc82b046bc7a740145ab7beb57ee8ad" prot="private" static="no" mutable="no">
+        <type>QWebSocketServer</type>
+        <definition>QWebSocketServer MapWidget::server</definition>
+        <argsstring></argsstring>
+        <name>server</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="25" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_widget_1afb627af3b709a370c1d59fefe73431ba" prot="private" static="no" mutable="no">
+        <type><ref refid="class_web_socket_client_wrapper" kindref="compound">WebSocketClientWrapper</ref></type>
+        <definition>WebSocketClientWrapper MapWidget::clientWrapper</definition>
+        <argsstring></argsstring>
+        <name>clientWrapper</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="26" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_map_widget_1abdc3f5706335a8e8b9dd7528ad509bf9" prot="private" static="no" mutable="no">
+        <type>const QUrl</type>
+        <definition>const QUrl MapWidget::MapURL</definition>
+        <argsstring></argsstring>
+        <name>MapURL</name>
+        <initializer>= QUrl(&quot;qrc:/res/html/mapsPlanningGoogle.html&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="28" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_map_widget_1a713e505662adb701530212e7a2d78362" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MapWidget::MapWidget</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>MapWidget</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Jordan Dickson </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="32" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp" bodystart="14" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="class_map_widget_1a2be5ffdc125d85aa0ccdb4f552e393cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MapWidget::~MapWidget</definition>
+        <argsstring>()</argsstring>
+        <name>~MapWidget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="33" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp" bodystart="41" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_map_widget_1ab74d0f96d17ac84330c1ad9128fa3043" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MapWidget::ready</definition>
+        <argsstring>()</argsstring>
+        <name>ready</name>
+        <briefdescription>
+<para>ready </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the <ref refid="class_map_widget" kindref="compound">MapWidget</ref> input or output Waypoints </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="39" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_map_widget_1a74413ad372d073726adaafa0e4b23a88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int MapWidget::createNewPath</definition>
+        <argsstring>()</argsstring>
+        <name>createNewPath</name>
+        <briefdescription>
+<para>createNewPath </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A new path ID for adding waypoints to and retrieving the path. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="45" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_map_widget_1a4ce8b29f199770cbbfb619409d03b64a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::appendGPSCoordToPath</definition>
+        <argsstring>(double lat, double lng, int pathID)</argsstring>
+        <name>appendGPSCoordToPath</name>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lng</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pathID</declname>
+        </param>
+        <briefdescription>
+<para>appendGPSCoordToPath </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lng</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pathID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The ID of the path the point is to be added to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="53" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp" bodystart="51" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_map_widget_1ade38deed1067391a63e190a129de6503" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="struct_protocol_1_1_waypoint" kindref="compound">Protocol::Waypoint</ref> &gt; *</type>
+        <definition>QList&lt; Protocol::Waypoint &gt; * MapWidget::getPath</definition>
+        <argsstring>(int pathID)</argsstring>
+        <name>getPath</name>
+        <param>
+          <type>int</type>
+          <declname>pathID</declname>
+        </param>
+        <briefdescription>
+<para>getPath </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pathID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The ID of the path to be returned </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>An ordered list of all the waypoints in a certain path </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="60" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp" bodystart="55" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_map_widget_1a4c48f353c9eb673747a810d341b237d6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::loadStartedSlot</definition>
+        <argsstring>()</argsstring>
+        <name>loadStartedSlot</name>
+        <briefdescription>
+<para>loadStartedSlot tied to the loadStarted signal </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="66" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp" bodystart="63" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_widget_1a176dacdfedf2b68f5e9deebe5a3625ce" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::loadFinishedSlot</definition>
+        <argsstring>()</argsstring>
+        <name>loadFinishedSlot</name>
+        <briefdescription>
+<para>loadFinishedSlot tied to the loadFinished signal </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="71" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp" bodystart="59" bodyend="61"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_map_widget_1ae989a74840130045badfc960c9ab7d07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::sendCreateNewPath</definition>
+        <argsstring>(int id)</argsstring>
+        <name>sendCreateNewPath</name>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>sendCreateNewPath </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="81" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp" bodystart="71" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_widget_1a229b88166cf83db76b97192d2b34963d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::sendSetActivePath</definition>
+        <argsstring>(int id)</argsstring>
+        <name>sendSetActivePath</name>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+<para>sendSetActivePath </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="87" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp" bodystart="75" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_widget_1aaa77cb93c813bdc96ead3036bc0ad8ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::addPointToMap</definition>
+        <argsstring>(double lat, double lng, int index, int pathID)</argsstring>
+        <name>addPointToMap</name>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lng</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pathID</declname>
+        </param>
+        <briefdescription>
+<para>addPointToMap </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lng</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pathID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="96" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_widget_1ad5a6b1734e52d7f47d64809620e6a0e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::sendClearFlightPath</definition>
+        <argsstring>(int pathID)</argsstring>
+        <name>sendClearFlightPath</name>
+        <param>
+          <type>int</type>
+          <declname>pathID</declname>
+        </param>
+        <briefdescription>
+<para>clearMap </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pathID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="102" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp" bodystart="79" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_widget_1a1334377e2cdd9b97c499880a3327c25d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::disconnectWebSocket</definition>
+        <argsstring>()</argsstring>
+        <name>disconnectWebSocket</name>
+        <briefdescription>
+<para>disconnectWebSocket must be called before opening another <ref refid="class_map_widget" kindref="compound">MapWidget</ref> Later we&apos;ll work a solution that allows for multiple MapWidgets to be &quot;open&quot; at the same time. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="109" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp" bodystart="83" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_widget_1a4a749a2cea2cdf36a2efee6b3fb26c42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::addFlightPath</definition>
+        <argsstring>(FlightPath *fp, int id=0)</argsstring>
+        <name>addFlightPath</name>
+        <param>
+          <type><ref refid="class_flight_path" kindref="compound">FlightPath</ref> *</type>
+          <declname>fp</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>addFlightpath </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="116" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp" bodystart="87" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_widget_1af1fbcb7ac92d7278d680b0bebeb5b4d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::pointAddedToMap</definition>
+        <argsstring>(double lat, double lng, int index, int pathID)</argsstring>
+        <name>pointAddedToMap</name>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lng</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pathID</declname>
+        </param>
+        <briefdescription>
+<para>pointAddedToMap Tells <ref refid="class_map_widget" kindref="compound">MapWidget</ref> that the user has added a new waypoint with (lat, lng) at the specified index to the path with identifier ID. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the latitude of the point that was added </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lng</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the longitude of the point that was added </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the index the point was added at </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pathID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the ID for the path the point was added to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para><xrefsect id="todo_1_todo000011"><xreftitle>Todo</xreftitle><xrefdescription><para>include index in this signal </para></xrefdescription></xrefsect></para>        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="128" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp" bodystart="101" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_widget_1ac6ec69c739962378b091619edad4b7f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::pathCleared</definition>
+        <argsstring>(int pathID)</argsstring>
+        <name>pathCleared</name>
+        <param>
+          <type>int</type>
+          <declname>pathID</declname>
+        </param>
+        <briefdescription>
+<para>pathCleared Tells <ref refid="class_map_widget" kindref="compound">MapWidget</ref> that the user has cleared a path from the map. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pathID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the ID for the path that was cleared </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="135" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp" bodystart="106" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_widget_1ab49ed2cf6439e36bedfe4141b814cbe7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::pointRemovedFromMap</definition>
+        <argsstring>(int index, int pathID)</argsstring>
+        <name>pointRemovedFromMap</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pathID</declname>
+        </param>
+        <briefdescription>
+<para>pointRemovedFromMap Tells <ref refid="class_map_widget" kindref="compound">MapWidget</ref> that a point with a certain index has been removed from the path with identifier ID. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the index of the point that was removed </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pathID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the ID for the path the point was removed from </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="143" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp" bodystart="110" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_widget_1a3dc3db3a5ac82ee0381a385d724f8ad4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::finishedLoading</definition>
+        <argsstring>()</argsstring>
+        <name>finishedLoading</name>
+        <briefdescription>
+<para>finishedLoading </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="148" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.cpp" bodystart="114" bodyend="117"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_map_widget_1ad3cf277e8192badc50d24830a338e129" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::pointAdded</definition>
+        <argsstring>(double lat, double lng, int pathID)</argsstring>
+        <name>pointAdded</name>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lng</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pathID</declname>
+        </param>
+        <briefdescription>
+<para>pointAdded is emitted each time a new point is added to the map. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the latitude of the new point </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lng</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the longitude of the new point </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pathID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the ID of the path the point is a member of </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="159" column="1"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_map_widget_1a16912518f2b2969faa60c2f7b502600d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::JSInitialized</definition>
+        <argsstring>()</argsstring>
+        <name>JSInitialized</name>
+        <briefdescription>
+<para>JSInitialized. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="164" column="1"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_map_widget_1a29e796fa736490afd29d511e2e5b2b60" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::createNewPath</definition>
+        <argsstring>(int pathID)</argsstring>
+        <name>createNewPath</name>
+        <param>
+          <type>int</type>
+          <declname>pathID</declname>
+        </param>
+        <briefdescription>
+<para>createNewPath Tells the mapping script to create a new path with identifier ID. It is the responsibility of the C++ side (<ref refid="class_map_widget" kindref="compound">MapWidget</ref>) to ensure IDs are kept unique. JavaScript should do nothing (except possibly display an error message) if the ID is already in use. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pathID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the ID that will be used to identify the new path. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="174" column="1"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_map_widget_1adb6c583449a96841d12765d9d2dd545c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::setActivePath</definition>
+        <argsstring>(int pathID)</argsstring>
+        <name>setActivePath</name>
+        <param>
+          <type>int</type>
+          <declname>pathID</declname>
+        </param>
+        <briefdescription>
+<para>setActivePath Tells the mapping script to allow editing to be made to the path with identifier ID. Only one path can be &quot;Active&quot; at a time. By default no paths should be editable. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pathID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- some identifier for which path will be made editable. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="182" column="1"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_map_widget_1a3199a1cb4eb467318b2c9edf13ff2aca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::disableEditing</definition>
+        <argsstring>()</argsstring>
+        <name>disableEditing</name>
+        <briefdescription>
+<para>disableEditing Tells the mapping script to disable editing for all graphs. This only affects edits made through whatever GUI tools the mapping script allows for. By default not paths should be editable. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="190" column="1"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_map_widget_1ab02ed9fe412bd7462c9a09d23262e7d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::appendPointToPath</definition>
+        <argsstring>(double lat, double lng, int pathID)</argsstring>
+        <name>appendPointToPath</name>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lng</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pathID</declname>
+        </param>
+        <briefdescription>
+<para>appendPointToPath Tells the mapping script to append a new waypoint with (lat, lng) to the path with identifier ID. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the latitude of the new waypoint </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lng</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the longitude of the new waypoint </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pathID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the ID of the path to be appended to </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="199" column="1"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_map_widget_1ac1eb6a5b04b9fd353c2179bdfa1f7269" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::insertPointToMap</definition>
+        <argsstring>(double lat, double lng, int index, int pathID)</argsstring>
+        <name>insertPointToMap</name>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lng</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pathID</declname>
+        </param>
+        <briefdescription>
+<para>insertPointToMap Tells the mapping script to add a new waypoint with (lat, lng) at the specified index to the path with identifier ID. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the latitude of the new waypoint </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lng</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the longitude of the new waypoint </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the index the new point is to be inserted </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pathID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the ID of the path this point will be inserted into </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="209" column="1"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_map_widget_1a509428dfb3c4cc33c9c58ccf23f5d3ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::removePointFromMap</definition>
+        <argsstring>(int index, int pathID)</argsstring>
+        <name>removePointFromMap</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pathID</declname>
+        </param>
+        <briefdescription>
+<para>removePointFromPath Tells the mapping script to remove a waypoint with the specified index from the list with identifier ID. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the index of the point to be removed. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pathID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- the ID of the path that will have a point removed. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="217" column="1"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_map_widget_1a9ad5615b0a835998172b61de2e61a12c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapWidget::clearFlightPath</definition>
+        <argsstring>(int pathID)</argsstring>
+        <name>clearFlightPath</name>
+        <param>
+          <type>int</type>
+          <declname>pathID</declname>
+        </param>
+        <briefdescription>
+<para>clearFlightpath Tells the mapping script to delete all of the points in the path with ID equal to pathID. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pathID</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The ID of the flight path to be cleared. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="224" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_map_widget" kindref="compound">MapWidget</ref> class. </para>    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Jordan Dickson </para></simplesect>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="133">
+        <label>QWebEngineView</label>
+      </node>
+      <node id="132">
+        <label>MapWidget</label>
+        <link refid="class_map_widget"/>
+        <childnode refid="133" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="137">
+        <label>QObject</label>
+      </node>
+      <node id="135">
+        <label>QWebEngineView</label>
+      </node>
+      <node id="134">
+        <label>MapWidget</label>
+        <link refid="class_map_widget"/>
+        <childnode refid="135" relation="public-inheritance">
+        </childnode>
+        <childnode refid="136" relation="usage">
+          <edgelabel>clientWrapper</edgelabel>
+        </childnode>
+      </node>
+      <node id="136">
+        <label>WebSocketClientWrapper</label>
+        <link refid="class_web_socket_client_wrapper"/>
+        <childnode refid="137" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" line="19" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapwidget.h" bodystart="19" bodyend="225"/>
+    <listofallmembers>
+      <member refid="class_map_widget_1a4a749a2cea2cdf36a2efee6b3fb26c42" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>addFlightPath</name></member>
+      <member refid="class_map_widget_1aaa77cb93c813bdc96ead3036bc0ad8ad" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>addPointToMap</name></member>
+      <member refid="class_map_widget_1a4ce8b29f199770cbbfb619409d03b64a" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>appendGPSCoordToPath</name></member>
+      <member refid="class_map_widget_1ab02ed9fe412bd7462c9a09d23262e7d0" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>appendPointToPath</name></member>
+      <member refid="class_map_widget_1a913e8bdc3f2faeafcc2071934c6d4556" prot="private" virt="non-virtual"><scope>MapWidget</scope><name>channel</name></member>
+      <member refid="class_map_widget_1a9ad5615b0a835998172b61de2e61a12c" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>clearFlightPath</name></member>
+      <member refid="class_map_widget_1afb627af3b709a370c1d59fefe73431ba" prot="private" virt="non-virtual"><scope>MapWidget</scope><name>clientWrapper</name></member>
+      <member refid="class_map_widget_1a74413ad372d073726adaafa0e4b23a88" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>createNewPath</name></member>
+      <member refid="class_map_widget_1a29e796fa736490afd29d511e2e5b2b60" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>createNewPath</name></member>
+      <member refid="class_map_widget_1a3199a1cb4eb467318b2c9edf13ff2aca" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>disableEditing</name></member>
+      <member refid="class_map_widget_1a1334377e2cdd9b97c499880a3327c25d" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>disconnectWebSocket</name></member>
+      <member refid="class_map_widget_1a3dc3db3a5ac82ee0381a385d724f8ad4" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>finishedLoading</name></member>
+      <member refid="class_map_widget_1ade38deed1067391a63e190a129de6503" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>getPath</name></member>
+      <member refid="class_map_widget_1ac1eb6a5b04b9fd353c2179bdfa1f7269" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>insertPointToMap</name></member>
+      <member refid="class_map_widget_1a16912518f2b2969faa60c2f7b502600d" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>JSInitialized</name></member>
+      <member refid="class_map_widget_1a2bfa4de7a6e0c7fa52713d567cfb9769" prot="private" virt="non-virtual"><scope>MapWidget</scope><name>lists</name></member>
+      <member refid="class_map_widget_1a176dacdfedf2b68f5e9deebe5a3625ce" prot="private" virt="non-virtual"><scope>MapWidget</scope><name>loadFinishedSlot</name></member>
+      <member refid="class_map_widget_1a32057f4287339e79f94298297508dc45" prot="private" virt="non-virtual"><scope>MapWidget</scope><name>loading</name></member>
+      <member refid="class_map_widget_1a4c48f353c9eb673747a810d341b237d6" prot="private" virt="non-virtual"><scope>MapWidget</scope><name>loadStartedSlot</name></member>
+      <member refid="class_map_widget_1abdc3f5706335a8e8b9dd7528ad509bf9" prot="private" virt="non-virtual"><scope>MapWidget</scope><name>MapURL</name></member>
+      <member refid="class_map_widget_1a713e505662adb701530212e7a2d78362" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>MapWidget</name></member>
+      <member refid="class_map_widget_1ac6ec69c739962378b091619edad4b7f6" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>pathCleared</name></member>
+      <member refid="class_map_widget_1ad3cf277e8192badc50d24830a338e129" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>pointAdded</name></member>
+      <member refid="class_map_widget_1af1fbcb7ac92d7278d680b0bebeb5b4d1" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>pointAddedToMap</name></member>
+      <member refid="class_map_widget_1ab49ed2cf6439e36bedfe4141b814cbe7" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>pointRemovedFromMap</name></member>
+      <member refid="class_map_widget_1ab74d0f96d17ac84330c1ad9128fa3043" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>ready</name></member>
+      <member refid="class_map_widget_1a509428dfb3c4cc33c9c58ccf23f5d3ca" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>removePointFromMap</name></member>
+      <member refid="class_map_widget_1ad5a6b1734e52d7f47d64809620e6a0e7" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>sendClearFlightPath</name></member>
+      <member refid="class_map_widget_1ae989a74840130045badfc960c9ab7d07" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>sendCreateNewPath</name></member>
+      <member refid="class_map_widget_1a229b88166cf83db76b97192d2b34963d" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>sendSetActivePath</name></member>
+      <member refid="class_map_widget_1a0cc82b046bc7a740145ab7beb57ee8ad" prot="private" virt="non-virtual"><scope>MapWidget</scope><name>server</name></member>
+      <member refid="class_map_widget_1adb6c583449a96841d12765d9d2dd545c" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>setActivePath</name></member>
+      <member refid="class_map_widget_1a2be5ffdc125d85aa0ccdb4f552e393cc" prot="public" virt="non-virtual"><scope>MapWidget</scope><name>~MapWidget</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

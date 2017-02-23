@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="57" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" bodystart="57" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" line="57" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" bodystart="57" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_mission_recap_1a3aa1dbd113e8493f74087c000a1401c8" prot="private" static="no" mutable="no">
         <type>QMediaPlayer</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="58" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" bodystart="58" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" line="58" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" bodystart="58" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_mission_recap_1a6f9c6e56d1a5454b67f1bc4b6bf7595e" prot="private" static="no" mutable="no">
         <type>QVideoFrame</type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="59" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" bodystart="59" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" line="59" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" bodystart="59" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_mission_recap_1ab5e4e89e18b06016d0fcf2a9b834f5a4" prot="private" static="no" mutable="no">
         <type>QTimer</type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="60" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" bodystart="60" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" line="60" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" bodystart="60" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -75,7 +75,7 @@
 <para>Creates video widget, requests a video to be played back Creates a map to play back UAV path Also creates custom plot for UAV statistics </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="35" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="9" bodyend="31"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" line="35" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.cpp" bodystart="9" bodyend="31"/>
       </memberdef>
       <memberdef kind="function" id="class_mission_recap_1a7ebaee9824446e52e77083c65d41535b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -88,7 +88,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="36" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="33" bodyend="35"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" line="36" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.cpp" bodystart="33" bodyend="35"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-slot">
@@ -107,7 +107,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="39" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="117" bodyend="119"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" line="39" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.cpp" bodystart="117" bodyend="119"/>
       </memberdef>
       <memberdef kind="slot" id="class_mission_recap_1a15ecf642246edadd1c09d81b93a6a4c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -124,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="121" bodyend="123"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.cpp" bodystart="121" bodyend="123"/>
       </memberdef>
       <memberdef kind="slot" id="class_mission_recap_1ae719be21194bde9a725c20bd3ed8048f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -137,7 +137,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="41" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="127" bodyend="129"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" line="41" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.cpp" bodystart="127" bodyend="129"/>
       </memberdef>
       <memberdef kind="slot" id="class_mission_recap_1a4d45a9fbe0fc9bdfd7e6033cfaa533f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -154,7 +154,7 @@
 <para>Checks if QT under QT4.7 This is the code for the custom plot chart to play back real time data of the UAV Currently auto plays lines (10/23/15) </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="42" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="42" bodyend="77"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" line="42" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.cpp" bodystart="42" bodyend="77"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-slot">
@@ -169,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="46" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="79" bodyend="115"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" line="46" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.cpp" bodystart="79" bodyend="115"/>
       </memberdef>
       <memberdef kind="slot" id="class_mission_recap_1a8282cbca3fa24dde997fe7761801fe75" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -182,7 +182,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="47" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="133" bodyend="137"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" line="47" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.cpp" bodystart="133" bodyend="137"/>
       </memberdef>
       <memberdef kind="slot" id="class_mission_recap_1acd2ecc7d704a92e28e1eb379e9c4cbba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -195,7 +195,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="48" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="140" bodyend="147"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" line="48" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.cpp" bodystart="140" bodyend="147"/>
       </memberdef>
       <memberdef kind="slot" id="class_mission_recap_1ad41a52b1c487f8b5e3603fa7895c6336" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -208,7 +208,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="49" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="150" bodyend="153"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" line="49" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.cpp" bodystart="150" bodyend="153"/>
       </memberdef>
       <memberdef kind="slot" id="class_mission_recap_1adb9bc8dfd542ba5f184184ac0f56cfa5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -221,7 +221,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="50" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="155" bodyend="158"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" line="50" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.cpp" bodystart="155" bodyend="158"/>
       </memberdef>
       <memberdef kind="slot" id="class_mission_recap_1a49d2c78db48989261a6d02ca9cad0179" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -234,7 +234,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="52" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="164" bodyend="168"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" line="52" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.cpp" bodystart="164" bodyend="168"/>
       </memberdef>
       <memberdef kind="slot" id="class_mission_recap_1a3523c087e1a9b94c5a6d409afd6c0f30" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -247,7 +247,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="54" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp" bodystart="171" bodyend="173"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" line="54" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.cpp" bodystart="171" bodyend="173"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -255,28 +255,28 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="131">
+      <node id="151">
         <label>QDialog</label>
       </node>
-      <node id="130">
+      <node id="150">
         <label>MissionRecap</label>
         <link refid="class_mission_recap"/>
-        <childnode refid="131" relation="public-inheritance">
+        <childnode refid="151" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="133">
+      <node id="153">
         <label>QDialog</label>
       </node>
-      <node id="132">
+      <node id="152">
         <label>MissionRecap</label>
         <link refid="class_mission_recap"/>
-        <childnode refid="133" relation="public-inheritance">
+        <childnode refid="153" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" line="31" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h" bodystart="30" bodyend="61"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" line="31" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h" bodystart="30" bodyend="61"/>
     <listofallmembers>
       <member refid="class_mission_recap_1a3523c087e1a9b94c5a6d409afd6c0f30" prot="private" virt="non-virtual"><scope>MissionRecap</scope><name>addClickListener</name></member>
       <member refid="class_mission_recap_1a6f9c6e56d1a5454b67f1bc4b6bf7595e" prot="private" virt="non-virtual"><scope>MissionRecap</scope><name>currentFrame</name></member>

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['handlenewconnection',['handleNewConnection',['../class_web_socket_client_wrapper.html#a2a139f16c65a5443c1578a51028cae9a',1,'WebSocketClientWrapper']]],
   ['handlepacket',['HandlePacket',['../namespace_protocol.html#ae4715844a15b4cef94c06d21a9bce30a',1,'Protocol']]],
   ['hasaction',['hasAction',['../class_timed_action.html#a8fc6b608826b02309ea063b4222bc149',1,'TimedAction']]],
   ['hasanchor',['hasAnchor',['../class_q_c_p_abstract_item.html#acbce9e5ba5252541d19db0c40303357a',1,'QCPAbstractItem']]],
@@ -10,7 +11,7 @@ var searchData=
   ['haswaypoint',['hasWaypoint',['../class_timed_action.html#adc140fabcb0074cb26b2ec45329aba22',1,'TimedAction']]],
   ['head',['head',['../class_q_c_p_item_line.html#a5f6cbc5c763feae9dfbce71748fc43f1',1,'QCPItemLine::head()'],['../class_q_c_p_item_curve.html#afc067f0d1e60cd04812f2c2c7fdf36c3',1,'QCPItemCurve::head()']]],
   ['headerdata',['headerData',['../class_table_model.html#a4677a49af807c3b72ca4c1e82971d9ec',1,'TableModel']]],
-  ['heading',['heading',['../class_protocol_1_1_telemetry_packet.html#a2266292d4e6e26a9c91b3242ec94c84c',1,'Protocol::TelemetryPacket']]],
+  ['heading',['heading',['../struct_mission_data.html#aca98e398b94037e80749d0a9e73dcefe',1,'MissionData::heading()'],['../class_protocol_1_1_telemetry_packet.html#a2266292d4e6e26a9c91b3242ec94c84c',1,'Protocol::TelemetryPacket::heading()']]],
   ['height',['height',['../class_q_c_p_axis_rect.html#a1c55c4f3bef40cf01b21820316c8469e',1,'QCPAxisRect']]],
   ['high',['high',['../class_q_c_p_financial_data.html#a299a4b241296fb6cd1baf5ab03f7126a',1,'QCPFinancialData']]],
   ['holdsaction',['holdsAction',['../class_timed_action.html#a6667b4cc9f2bb66a7869f2a4417f225d',1,'TimedAction']]],

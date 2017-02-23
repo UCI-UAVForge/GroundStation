@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/options.h" line="27" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/options.h" bodystart="27" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.h" line="27" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.h" bodystart="27" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -36,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/options.h" line="19" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/options.cpp" bodystart="5" bodyend="7"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.h" line="19" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.cpp" bodystart="5" bodyend="7"/>
       </memberdef>
       <memberdef kind="function" id="class_options_1a86ddb85b183f8b58af5481f30a42fa92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -49,7 +49,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/options.h" line="20" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/options.cpp" bodystart="9" bodyend="11"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.h" line="20" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.cpp" bodystart="9" bodyend="11"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-slot">
@@ -64,7 +64,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/options.h" line="23" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/options.cpp" bodystart="13" bodyend="17"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.h" line="23" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.cpp" bodystart="13" bodyend="17"/>
       </memberdef>
       <memberdef kind="slot" id="class_options_1ab001c7990aeae298da133bbe1b7873ed" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -77,7 +77,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/options.h" line="24" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/options.cpp" bodystart="19" bodyend="23"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.h" line="24" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.cpp" bodystart="19" bodyend="23"/>
       </memberdef>
       <memberdef kind="slot" id="class_options_1a1557421fdf0647a34163c0ef3428e14a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -90,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/options.h" line="25" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/options.cpp" bodystart="25" bodyend="29"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.h" line="25" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.cpp" bodystart="25" bodyend="29"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -98,28 +98,28 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="146">
+      <node id="170">
         <label>QWidget</label>
       </node>
-      <node id="145">
+      <node id="169">
         <label>Options</label>
         <link refid="class_options"/>
-        <childnode refid="146" relation="public-inheritance">
+        <childnode refid="170" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="148">
+      <node id="172">
         <label>QWidget</label>
       </node>
-      <node id="147">
+      <node id="171">
         <label>Options</label>
         <link refid="class_options"/>
-        <childnode refid="148" relation="public-inheritance">
+        <childnode refid="172" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/options.h" line="15" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/options.h" bodystart="14" bodyend="29"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.h" line="15" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.h" bodystart="14" bodyend="29"/>
     <listofallmembers>
       <member refid="class_options_1ab001c7990aeae298da133bbe1b7873ed" prot="private" virt="non-virtual"><scope>Options</scope><name>on_missionExecutionButton_clicked</name></member>
       <member refid="class_options_1aa706ad78e5ee99a4e1e3266c7a62e5a6" prot="private" virt="non-virtual"><scope>Options</scope><name>on_missionPlanningButton_clicked</name></member>

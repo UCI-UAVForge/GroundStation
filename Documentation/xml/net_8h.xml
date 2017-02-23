@@ -3,34 +3,34 @@
   <compounddef id="net_8h" kind="file" language="C++">
     <compoundname>net.h</compoundname>
     <includes local="no">QHostAddress</includes>
-    <includedby refid="gsserver_8cpp" local="yes">C:/Users/Roman/Documents/GroundStation/GS/gsserver.cpp</includedby>
-    <includedby refid="networklistener_8cpp" local="yes">C:/Users/Roman/Documents/GroundStation/GS/networklistener.cpp</includedby>
+    <includedby refid="gsserver_8cpp" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.cpp</includedby>
+    <includedby refid="networklistener_8cpp" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/networklistener.cpp</includedby>
     <incdepgraph>
-      <node id="2059">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/net.h</label>
-        <link refid="net.h"/>
-        <childnode refid="2060" relation="include">
-        </childnode>
-      </node>
-      <node id="2060">
+      <node id="2237">
         <label>QHostAddress</label>
+      </node>
+      <node id="2236">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/net.h</label>
+        <link refid="net.h"/>
+        <childnode refid="2237" relation="include">
+        </childnode>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="2061">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/net.h</label>
-        <link refid="net.h"/>
-        <childnode refid="2062" relation="include">
-        </childnode>
-        <childnode refid="2063" relation="include">
-        </childnode>
-      </node>
-      <node id="2063">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/networklistener.cpp</label>
+      <node id="2240">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/networklistener.cpp</label>
         <link refid="networklistener_8cpp"/>
       </node>
-      <node id="2062">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/gsserver.cpp</label>
+      <node id="2238">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/net.h</label>
+        <link refid="net.h"/>
+        <childnode refid="2239" relation="include">
+        </childnode>
+        <childnode refid="2240" relation="include">
+        </childnode>
+      </node>
+      <node id="2239">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.cpp</label>
         <link refid="gsserver_8cpp"/>
       </node>
     </invincdepgraph>
@@ -61,6 +61,6 @@
 <codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>NET_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/net.h"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/net.h"/>
   </compounddef>
 </doxygen>

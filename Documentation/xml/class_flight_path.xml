@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/flightpath.h" line="17" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/flightpath.cpp" bodystart="5" bodyend="7"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="17" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.cpp" bodystart="5" bodyend="7"/>
       </memberdef>
       <memberdef kind="function" id="class_flight_path_1a9be65ab000a34bf60862b8b1af77d43d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -40,8 +40,8 @@
 </parameterlist>
 </para>        </detaileddescription>
         <inbodydescription>
-<para><xrefsect id="todo_1_todo000001"><xreftitle>Todo</xreftitle><xrefdescription><para>any database initialization and error checking if necesary </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000002"><xreftitle>Todo</xreftitle><xrefdescription><para>get actual database length </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000003"><xreftitle>Todo</xreftitle><xrefdescription><para>update these two lines with values from the database </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000004"><xreftitle>Todo</xreftitle><xrefdescription><para>any remaining database functions for safe file handling if needed </para></xrefdescription></xrefsect></para>        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/flightpath.h" line="24" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/flightpath.cpp" bodystart="9" bodyend="32"/>
+<para><xrefsect id="todo_1_todo000002"><xreftitle>Todo</xreftitle><xrefdescription><para>any database initialization and error checking if necesary </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000003"><xreftitle>Todo</xreftitle><xrefdescription><para>get actual database length </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000004"><xreftitle>Todo</xreftitle><xrefdescription><para>update these two lines with values from the database </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000005"><xreftitle>Todo</xreftitle><xrefdescription><para>any remaining database functions for safe file handling if needed </para></xrefdescription></xrefsect></para>        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="24" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.cpp" bodystart="9" bodyend="33"/>
       </memberdef>
       <memberdef kind="function" id="class_flight_path_1a6fecfbdebe93de7d2b62e3a2048111ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/flightpath.h" line="29" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/flightpath.cpp" bodystart="34" bodyend="36"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="29" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.cpp" bodystart="35" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="class_flight_path_1ab625d5c73d69a5e616dade72ddcffd49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -90,7 +90,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/flightpath.h" line="36" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/flightpath.cpp" bodystart="38" bodyend="40"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="36" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.cpp" bodystart="39" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="class_flight_path_1a101c5c8e050e215d70e3c6218b935aa9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -126,7 +126,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/flightpath.h" line="43" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/flightpath.cpp" bodystart="42" bodyend="44"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="43" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.cpp" bodystart="43" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="class_flight_path_1a3a602f9b4b608f506354bf6c711a84eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -151,8 +151,8 @@
 <simplesect kind="return"><para>true if the write was successful, false otherwise </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
-<para><xrefsect id="todo_1_todo000005"><xreftitle>Todo</xreftitle><xrefdescription><para>any database initialization and error checking. </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000006"><xreftitle>Todo</xreftitle><xrefdescription><para>write &quot;actionNum&quot;, &quot;delay&quot;, and &quot;data&quot; variables to the database </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000007"><xreftitle>Todo</xreftitle><xrefdescription><para>any remaining database functions for safe file handling if needed </para></xrefdescription></xrefsect></para>        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/flightpath.h" line="50" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/flightpath.cpp" bodystart="73" bodyend="90"/>
+<para><xrefsect id="todo_1_todo000006"><xreftitle>Todo</xreftitle><xrefdescription><para>any database initialization and error checking. </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000007"><xreftitle>Todo</xreftitle><xrefdescription><para>write &quot;actionNum&quot;, &quot;delay&quot;, and &quot;data&quot; variables to the database </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000008"><xreftitle>Todo</xreftitle><xrefdescription><para>any remaining database functions for safe file handling if needed </para></xrefdescription></xrefsect></para>        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="50" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.cpp" bodystart="74" bodyend="92"/>
       </memberdef>
       <memberdef kind="function" id="class_flight_path_1a3ffe0a2832e0e0e48e15b181ace42870" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>QList&lt; <ref refid="struct_protocol_1_1_waypoint" kindref="compound">Protocol::Waypoint</ref> &gt; *</type>
@@ -166,7 +166,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/flightpath.h" line="57" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/flightpath.cpp" bodystart="46" bodyend="71"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="57" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.cpp" bodystart="47" bodyend="72"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -174,28 +174,28 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="34">
+      <node id="42">
         <label>FlightPath</label>
         <link refid="class_flight_path"/>
-        <childnode refid="35" relation="public-inheritance">
+        <childnode refid="43" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="35">
+      <node id="43">
         <label>QList&lt; TimedAction * &gt;</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="36">
+      <node id="44">
         <label>FlightPath</label>
         <link refid="class_flight_path"/>
-        <childnode refid="37" relation="public-inheritance">
+        <childnode refid="45" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="37">
+      <node id="45">
         <label>QList&lt; TimedAction * &gt;</label>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/flightpath.h" line="11" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/flightpath.h" bodystart="11" bodyend="60"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="11" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" bodystart="11" bodyend="60"/>
     <listofallmembers>
       <member refid="class_flight_path_1ab625d5c73d69a5e616dade72ddcffd49" prot="public" virt="non-virtual"><scope>FlightPath</scope><name>addCmdAction</name></member>
       <member refid="class_flight_path_1a101c5c8e050e215d70e3c6218b935aa9" prot="public" virt="non-virtual"><scope>FlightPath</scope><name>addNavAction</name></member>

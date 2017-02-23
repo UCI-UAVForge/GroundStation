@@ -4,119 +4,119 @@
     <compoundname>qcustomplot.cpp</compoundname>
     <includes refid="qcustomplot_8h" local="yes">qcustomplot.h</includes>
     <incdepgraph>
-      <node id="2650">
+      <node id="2854">
         <label>QtNumeric</label>
       </node>
-      <node id="2644">
+      <node id="2848">
         <label>QVector2D</label>
       </node>
-      <node id="2649">
+      <node id="2853">
         <label>limits</label>
       </node>
-      <node id="2640">
+      <node id="2833">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp</label>
+        <link refid="qcustomplot.cpp"/>
+        <childnode refid="2834" relation="include">
+        </childnode>
+      </node>
+      <node id="2844">
         <label>QDateTime</label>
       </node>
-      <node id="2631">
+      <node id="2835">
         <label>QObject</label>
       </node>
-      <node id="2629">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp</label>
-        <link refid="qcustomplot.cpp"/>
-        <childnode refid="2630" relation="include">
-        </childnode>
-      </node>
-      <node id="2630">
-        <label>qcustomplot.h</label>
-        <link refid="qcustomplot_8h"/>
-        <childnode refid="2631" relation="include">
-        </childnode>
-        <childnode refid="2632" relation="include">
-        </childnode>
-        <childnode refid="2633" relation="include">
-        </childnode>
-        <childnode refid="2634" relation="include">
-        </childnode>
-        <childnode refid="2635" relation="include">
-        </childnode>
-        <childnode refid="2636" relation="include">
-        </childnode>
-        <childnode refid="2637" relation="include">
-        </childnode>
-        <childnode refid="2638" relation="include">
-        </childnode>
-        <childnode refid="2639" relation="include">
-        </childnode>
-        <childnode refid="2640" relation="include">
-        </childnode>
-        <childnode refid="2641" relation="include">
-        </childnode>
-        <childnode refid="2642" relation="include">
-        </childnode>
-        <childnode refid="2643" relation="include">
-        </childnode>
-        <childnode refid="2644" relation="include">
-        </childnode>
-        <childnode refid="2645" relation="include">
-        </childnode>
-        <childnode refid="2646" relation="include">
-        </childnode>
-        <childnode refid="2647" relation="include">
-        </childnode>
-        <childnode refid="2648" relation="include">
-        </childnode>
-        <childnode refid="2649" relation="include">
-        </childnode>
-        <childnode refid="2650" relation="include">
-        </childnode>
-        <childnode refid="2651" relation="include">
-        </childnode>
-      </node>
-      <node id="2645">
+      <node id="2849">
         <label>QStack</label>
       </node>
-      <node id="2648">
+      <node id="2852">
         <label>qmath.h</label>
       </node>
-      <node id="2642">
+      <node id="2846">
         <label>QFlags</label>
       </node>
-      <node id="2646">
+      <node id="2834">
+        <label>qcustomplot.h</label>
+        <link refid="qcustomplot_8h"/>
+        <childnode refid="2835" relation="include">
+        </childnode>
+        <childnode refid="2836" relation="include">
+        </childnode>
+        <childnode refid="2837" relation="include">
+        </childnode>
+        <childnode refid="2838" relation="include">
+        </childnode>
+        <childnode refid="2839" relation="include">
+        </childnode>
+        <childnode refid="2840" relation="include">
+        </childnode>
+        <childnode refid="2841" relation="include">
+        </childnode>
+        <childnode refid="2842" relation="include">
+        </childnode>
+        <childnode refid="2843" relation="include">
+        </childnode>
+        <childnode refid="2844" relation="include">
+        </childnode>
+        <childnode refid="2845" relation="include">
+        </childnode>
+        <childnode refid="2846" relation="include">
+        </childnode>
+        <childnode refid="2847" relation="include">
+        </childnode>
+        <childnode refid="2848" relation="include">
+        </childnode>
+        <childnode refid="2849" relation="include">
+        </childnode>
+        <childnode refid="2850" relation="include">
+        </childnode>
+        <childnode refid="2851" relation="include">
+        </childnode>
+        <childnode refid="2852" relation="include">
+        </childnode>
+        <childnode refid="2853" relation="include">
+        </childnode>
+        <childnode refid="2854" relation="include">
+        </childnode>
+        <childnode refid="2855" relation="include">
+        </childnode>
+      </node>
+      <node id="2850">
         <label>QCache</label>
       </node>
-      <node id="2634">
+      <node id="2838">
         <label>QPainter</label>
       </node>
-      <node id="2636">
+      <node id="2840">
         <label>QMouseEvent</label>
       </node>
-      <node id="2651">
+      <node id="2855">
         <label>QtPrintSupport</label>
       </node>
-      <node id="2632">
+      <node id="2836">
         <label>QPointer</label>
       </node>
-      <node id="2643">
+      <node id="2847">
         <label>QDebug</label>
       </node>
-      <node id="2633">
+      <node id="2837">
         <label>QWidget</label>
       </node>
-      <node id="2639">
+      <node id="2843">
         <label>QString</label>
       </node>
-      <node id="2647">
+      <node id="2851">
         <label>QMargins</label>
       </node>
-      <node id="2637">
+      <node id="2841">
         <label>QPixmap</label>
       </node>
-      <node id="2635">
+      <node id="2839">
         <label>QPaintEvent</label>
       </node>
-      <node id="2638">
+      <node id="2842">
         <label>QVector</label>
       </node>
-      <node id="2641">
+      <node id="2845">
         <label>QMultiMap</label>
       </node>
     </incdepgraph>
@@ -15096,6 +15096,6 @@
 <codeline lineno="23457"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="23458"><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp"/>
   </compounddef>
 </doxygen>

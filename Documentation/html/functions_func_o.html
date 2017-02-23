@@ -89,6 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_func_g.html#index_g"><span>g</span></a></li>
       <li><a href="functions_func_h.html#index_h"><span>h</span></a></li>
       <li><a href="functions_func_i.html#index_i"><span>i</span></a></li>
+      <li><a href="functions_func_j.html#index_j"><span>j</span></a></li>
       <li><a href="functions_func_k.html#index_k"><span>k</span></a></li>
       <li><a href="functions_func_l.html#index_l"><span>l</span></a></li>
       <li><a href="functions_func_m.html#index_m"><span>m</span></a></li>
@@ -150,20 +151,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_map_planning.html#a916faaa809c387c1a4dfaf02367fa11b">MapPlanning</a>
 </li>
 <li>on_backButton_clicked()
-: <a class="el" href="class_map_execution.html#aba29038fe5edd8ac2fd73d9f3669fe4e">MapExecution</a>
-, <a class="el" href="class_map_planning.html#a2f715a04a1b4becbdcd6471d5998ae69">MapPlanning</a>
+: <a class="el" href="class_map_planning.html#a2f715a04a1b4becbdcd6471d5998ae69">MapPlanning</a>
 , <a class="el" href="class_map_recap.html#a541fb1b8f7198776876a5c4382c8a24b">MapRecap</a>
 , <a class="el" href="class_mission_recap.html#a8282cbca3fa24dde997fe7761801fe75">MissionRecap</a>
 , <a class="el" href="class_tutorial.html#a580cce489f3e8c90b8186fec6a6e2801">Tutorial</a>
 </li>
-<li>on_cancelButton_clicked()
-: <a class="el" href="class_map_execution.html#a8b065231e835882c21868a2dea5febd2">MapExecution</a>
-</li>
-<li>on_clearMapButton_clicked()
-: <a class="el" href="class_map_planning.html#a48a4d0dcd991d1805bb7bba8d0632d25">MapPlanning</a>
-</li>
-<li>on_clearTableButton_clicked()
-: <a class="el" href="class_map_planning.html#aed8a871a4ad421d38b6994c3b4e02f97">MapPlanning</a>
+<li>on_ClearPointsButton_clicked()
+: <a class="el" href="class_g_s_control_panel.html#a2ee4fe9187b1bfcc13b868b76feea3c6">GSControlPanel</a>
 </li>
 <li>on_deleteButton_clicked()
 : <a class="el" href="class_map_planning.html#a6a250a62f619b29f4f0f2eceb921b461">MapPlanning</a>
@@ -171,8 +165,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>on_executeButton_clicked()
 : <a class="el" href="class_map_planning.html#aadaff61da568b1b57d3d9fad5c63ecec">MapPlanning</a>
 </li>
-<li>on_finishButton_clicked()
-: <a class="el" href="class_map_execution.html#a915725914a13468b3ff5c50a291c4250">MapExecution</a>
+<li>on_ExitButton_clicked()
+: <a class="el" href="class_g_s_control_panel.html#a30dfb8691dce9927d4a5ac3215ee1652">GSControlPanel</a>
+</li>
+<li>on_FinishMissionButton_clicked()
+: <a class="el" href="class_g_s_control_panel.html#a1b8bbf086e86c6b4c15d1cebc9b3a18d">GSControlPanel</a>
+</li>
+<li>on_LoadMissionButton_clicked()
+: <a class="el" href="class_g_s_control_panel.html#a4988ca05aaa99d3de1e9f699d14ce630">GSControlPanel</a>
 </li>
 <li>on_missionExecutionButton_clicked()
 : <a class="el" href="class_options.html#ab001c7990aeae298da133bbe1b7873ed">Options</a>
@@ -201,6 +201,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>on_returnHomeButton_clicked()
 : <a class="el" href="class_map_execution.html#a8e3f80d073442f9d27c517b1fdb6379c">MapExecution</a>
 </li>
+<li>on_SaveMissionButton_clicked()
+: <a class="el" href="class_g_s_control_panel.html#aa4b0abb2206717db2cd45a88bb39fa85">GSControlPanel</a>
+</li>
+<li>on_StartMissionButton_clicked()
+: <a class="el" href="class_g_s_control_panel.html#a7854dd3010bf8b133b44e9ff72a935a2">GSControlPanel</a>
+</li>
 <li>on_stopButton_clicked()
 : <a class="el" href="class_map_execution.html#a8cbf92235cbe6dc0d767010258ab5efc">MapExecution</a>
 , <a class="el" href="class_mission_recap.html#ad41a52b1c487f8b5e3603fa7895c6336">MissionRecap</a>
@@ -211,8 +217,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>on_yesButton_clicked()
 : <a class="el" href="class_pop_window_m_p.html#aebbe674886f81dc8113ced549e07b570">PopWindowMP</a>
 </li>
-<li>onMapUpdated()
-: <a class="el" href="class_main_m_d_i_display.html#a122050b11de7d6dbaf2ea8cac8df3696">MainMDIDisplay</a>
+<li>onCancelButtonClicked()
+: <a class="el" href="class_map_execution.html#a8ffb26c93c53d54c2ae9c17f27663def">MapExecution</a>
+</li>
+<li>onFinishButtonClicked()
+: <a class="el" href="class_map_execution.html#a412f115f78b732b0dd50d3064071fd7c">MapExecution</a>
+</li>
+<li>onStartButtonClicked()
+: <a class="el" href="class_map_execution.html#ae8b8194207477071903852da2d3ac15f">MapExecution</a>
+</li>
+<li>open()
+: <a class="el" href="class_db_manager.html#ab89634eca6b13b420dda1d56484ae427">DbManager</a>
 </li>
 <li>openServer()
 : <a class="el" href="class_gs_server.html#a6f73b66c39e5080eb58c80ab355d3c8c">GsServer</a>
@@ -250,7 +265,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_options.html#a87403ad1d6bd9ae2b54af860bb0f0952">Options</a>
 </li>
 <li>orientation()
-: <a class="el" href="class_q_c_p_axis.html#a9a68b3e45f1b1e33d4d807822342516c">QCPAxis</a>
+: <a class="el" href="class_q_c_p_axis.html#a57483f2f60145ddc9e63f3af53959265">QCPAxis</a>
 </li>
 <li>outerRect()
 : <a class="el" href="class_q_c_p_layout_element.html#a60bbddee2d1230c2414bd776f44d17b8">QCPLayoutElement</a>
@@ -265,7 +280,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 2 2017 12:41:13 for UAVForgeGS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 22 2017 23:20:43 for UAVForgeGS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

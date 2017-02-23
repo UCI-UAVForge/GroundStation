@@ -1,12 +1,14 @@
 var searchData=
 [
-  ['waitnet',['waitNet',['../class_gs_server.html#a5be5b957f9207e66550fc33fbf2b4df2',1,'GsServer']]],
-  ['wheelevent',['wheelEvent',['../class_q_c_p_layout_element.html#a300521d2fd18a893c1b85f6be11ce2bf',1,'QCPLayoutElement::wheelEvent()'],['../class_q_custom_plot.html#a7b8bd7e8d3a1d23a8595e9c6a6b76ef1',1,'QCustomPlot::wheelEvent()'],['../class_q_c_p_axis_rect.html#a5acf41fc30aa68ea263246ecfad85c31',1,'QCPAxisRect::wheelEvent()'],['../class_q_c_p_color_scale.html#ab398e14c01240f3dc855884fe9e1ee8c',1,'QCPColorScale::wheelEvent()']]],
-  ['whiskerbarpen',['whiskerBarPen',['../class_q_c_p_statistical_box.html#ab151a727fb0b6396acb3b6c72505a4fe',1,'QCPStatisticalBox']]],
-  ['whiskerpen',['whiskerPen',['../class_q_c_p_statistical_box.html#a26d2b34cbaeac2dd639bb21590f317c4',1,'QCPStatisticalBox']]],
-  ['whiskerwidth',['whiskerWidth',['../class_q_c_p_statistical_box.html#ab02392dd54ebd6dd7c8d6fb5c3f0421c',1,'QCPStatisticalBox']]],
-  ['width',['width',['../class_q_c_p_line_ending.html#a028328ee3fb139a40acaf65fb56edf67',1,'QCPLineEnding::width()'],['../class_q_c_p_axis_rect.html#a45bf5c17f4ca29131b7eb0db06efc259',1,'QCPAxisRect::width()'],['../class_q_c_p_bars.html#a42798c38abd5f5db22bd45d77f429625',1,'QCPBars::width()'],['../class_q_c_p_statistical_box.html#a0733a7bd575fc5929ce6d507bcc2a04c',1,'QCPStatisticalBox::width()'],['../class_q_c_p_financial.html#a71ccaa04cdade0ec08a2117db6e4a4ce',1,'QCPFinancial::width()']]],
-  ['widthtype',['widthType',['../class_q_c_p_bars.html#a8606651ada5804075f6affd04c88dd05',1,'QCPBars']]],
-  ['windowclosed',['windowClosed',['../class_pop_window_m_p.html#aea9a78b6f0f6bb6536c7481ed67ad66d',1,'PopWindowMP']]],
-  ['writeheader',['WriteHeader',['../class_protocol_1_1_packet.html#aa7498c8c70cb8a55617ce588508af81f',1,'Protocol::Packet']]]
+  ['validate',['validate',['../class_map_validator.html#a7314e2243ed254fdff4aab33ded97a8b',1,'MapValidator']]],
+  ['validatechecksum',['ValidateChecksum',['../_packet_8cpp.html#afdaaafce354cb5ffed467daccab058f2',1,'Packet.cpp']]],
+  ['validrange',['validRange',['../class_q_c_p_range.html#ab38bd4841c77c7bb86c9eea0f142dcc0',1,'QCPRange::validRange(double lower, double upper)'],['../class_q_c_p_range.html#a801b964752eaad6219be9d8a651ec2b3',1,'QCPRange::validRange(const QCPRange &amp;range)']]],
+  ['value',['value',['../class_q_c_p_item_position.html#a6817f7356d3a2b63e8446c6b6106dae1',1,'QCPItemPosition']]],
+  ['valueaxis',['valueAxis',['../class_q_c_p_abstract_plottable.html#a3106f9d34d330a6097a8ec5905e5b519',1,'QCPAbstractPlottable::valueAxis()'],['../class_q_c_p_item_position.html#a8d3a039fb2e69df86b4015daa30dfd2d',1,'QCPItemPosition::valueAxis()']]],
+  ['valuerange',['valueRange',['../class_q_c_p_color_map_data.html#a025be4d7ba0494fd7b38a5a56c737f2a',1,'QCPColorMapData']]],
+  ['valuesize',['valueSize',['../class_q_c_p_color_map_data.html#ab880be6bc587f34e8d22fe77ef6b57e9',1,'QCPColorMapData']]],
+  ['videoplayer',['VideoPlayer',['../class_video_player.html#a1d43337dac90ba3ec1ba178f4b1ddceb',1,'VideoPlayer']]],
+  ['viewport',['viewport',['../class_q_custom_plot.html#a953ecdbc28018e7e84cb6213ad3d88c2',1,'QCustomPlot']]],
+  ['visible',['visible',['../class_q_c_p_layer.html#a9efca636e4dcad721999a6282f296016',1,'QCPLayer::visible()'],['../class_q_c_p_layerable.html#a10a3cc92e0fa63e4a929e61d34e275a7',1,'QCPLayerable::visible()']]],
+  ['visibletickbounds',['visibleTickBounds',['../class_q_c_p_axis.html#a06320a944d1120732cc0d72fe1306d8b',1,'QCPAxis']]]
 ];

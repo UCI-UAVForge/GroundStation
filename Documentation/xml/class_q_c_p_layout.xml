@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="753" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="753" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="753" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="753" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -33,7 +33,7 @@
 <para>Creates an instance of <ref refid="class_q_c_p_layout" kindref="compound">QCPLayout</ref> and sets default values. Note that since <ref refid="class_q_c_p_layout" kindref="compound">QCPLayout</ref> is an abstract base class, it can&apos;t be instantiated directly. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="723" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="2139" bodyend="2141"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="723" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2139" bodyend="2141"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_layout_1a34ab477e820537ded7bade4399c482fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -51,7 +51,7 @@
 <para>First calls the <ref refid="class_q_c_p_layout_element_1a929c2ec62e0e0e1d8418eaa802e2af9b" kindref="member">QCPLayoutElement::update</ref> base class implementation to update the margins on this layout.</para><para>Then calls <ref refid="class_q_c_p_layout_1a165c77f6287ac92e8d03017ad913378b" kindref="member">updateLayout</ref> which subclasses reimplement to reposition and resize their cells.</para><para>Finally, <ref refid="class_q_c_p_layout_1a34ab477e820537ded7bade4399c482fd" kindref="member">update</ref> is called on all child elements. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="726" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="2151" bodyend="2166"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="726" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2151" bodyend="2166"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_layout_1a51fe2675b53e829130b229bc1f7b0f99" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>QList&lt; <ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> * &gt;</type>
@@ -71,7 +71,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="727" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="2169" bodyend="2187"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="727" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2169" bodyend="2187"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_layout_1a39d3e9ef5d9b82ab1885ba1cb9597e56" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type>int</type>
@@ -87,7 +87,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="730" column="1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="730" column="1"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_layout_1afa73ca7d859f8a3ee5c73c9b353d2a56" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> *</type>
@@ -107,7 +107,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="731" column="1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="731" column="1"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_layout_1a5a79621fa0a6eabb8b520cfc04fb601a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type><ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> *</type>
@@ -127,7 +127,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="732" column="1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="732" column="1"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_layout_1ada26cd17e56472b0b4d7fbbc96873e4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
         <type>bool</type>
@@ -147,7 +147,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="733" column="1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="733" column="1"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_layout_1a41e6ac049143866e8f8b4964efab01b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -162,7 +162,7 @@
 <para>Simplifies the layout by collapsing empty cells. The exact behavior depends on subclasses, the default implementation does nothing.</para><para>Not all layouts need simplification. For example, <ref refid="class_q_c_p_layout_inset" kindref="compound">QCPLayoutInset</ref> doesn&apos;t use explicit simplification while <ref refid="class_q_c_p_layout_grid" kindref="compound">QCPLayoutGrid</ref> does. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="734" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="2196" bodyend="2198"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="734" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2196" bodyend="2198"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_layout_1a2403f684fee3ce47132faaeed00bb066" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -180,7 +180,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="737" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="2209" bodyend="2217"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="737" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2209" bodyend="2217"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_layout_1a6c58f537d8086f352576ab7c5b15d0bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -198,7 +198,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="738" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="2228" bodyend="2236"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="738" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2228" bodyend="2236"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_layout_1a02883bdf2769b5b227f0232dba1ac4ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -212,7 +212,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="739" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="2243" bodyend="2251"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="739" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2243" bodyend="2251"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -229,7 +229,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="743" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="2281" bodyend="2283"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="743" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2281" bodyend="2283"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_layout_1a6218cd7e5c0e30077c1aeaffe55b6145" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -242,7 +242,7 @@
 <para>Subclasses call this method to report changed (minimum/maximum) size constraints.</para><para>If the parent of this layout is again a <ref refid="class_q_c_p_layout" kindref="compound">QCPLayout</ref>, forwards the call to the parent&apos;s <ref refid="class_q_c_p_layout_1a6218cd7e5c0e30077c1aeaffe55b6145" kindref="member">sizeConstraintsChanged</ref>. If the parent is a QWidget (i.e. is the <ref refid="class_q_custom_plot_1afd280d4d621ae64a106543a545c508d7" kindref="member">QCustomPlot::plotLayout</ref> of <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref>), calls QWidget::updateGeometry, so if the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> widget is inside a Qt QLayout, it may update itself and resize cells accordingly. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="746" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="2261" bodyend="2267"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="746" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2261" bodyend="2267"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_layout_1af6dbbc24156a808da29cd1ec031729a3" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -259,7 +259,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="747" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="2298" bodyend="2309"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="747" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2298" bodyend="2309"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_layout_1a4afbb4bef0071f72f91afdac4433a18e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -276,7 +276,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="748" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="2321" bodyend="2331"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="748" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2321" bodyend="2331"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_layout_1a92d9dcd95e9510b323706ef7fc4ff62e" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>QVector&lt; int &gt;</type>
@@ -305,7 +305,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="749" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="2362" bodyend="2473"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="749" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2362" bodyend="2473"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -313,189 +313,189 @@
     <detaileddescription>
 <para>This is an abstract base class for layout elements whose main purpose is to define the position and size of other child layout elements. In most cases, layouts don&apos;t draw anything themselves (but there are exceptions to this, e.g. <ref refid="class_q_c_p_legend" kindref="compound">QCPLegend</ref>).</para><para><ref refid="class_q_c_p_layout" kindref="compound">QCPLayout</ref> derives from <ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref>, and thus can itself be nested in other layouts.</para><para><ref refid="class_q_c_p_layout" kindref="compound">QCPLayout</ref> introduces a common interface for accessing and manipulating the child elements. Those functions are most notably <ref refid="class_q_c_p_layout_1a39d3e9ef5d9b82ab1885ba1cb9597e56" kindref="member">elementCount</ref>, <ref refid="class_q_c_p_layout_1afa73ca7d859f8a3ee5c73c9b353d2a56" kindref="member">elementAt</ref>, <ref refid="class_q_c_p_layout_1a5a79621fa0a6eabb8b520cfc04fb601a" kindref="member">takeAt</ref>, <ref refid="class_q_c_p_layout_1ada26cd17e56472b0b4d7fbbc96873e4c" kindref="member">take</ref>, <ref refid="class_q_c_p_layout_1a41e6ac049143866e8f8b4964efab01b2" kindref="member">simplify</ref>, <ref refid="class_q_c_p_layout_1a2403f684fee3ce47132faaeed00bb066" kindref="member">removeAt</ref>, <ref refid="class_q_c_p_layout_1a6c58f537d8086f352576ab7c5b15d0bc" kindref="member">remove</ref> and <ref refid="class_q_c_p_layout_1a02883bdf2769b5b227f0232dba1ac4ee" kindref="member">clear</ref>. Individual subclasses may add more functions to this interface which are more specialized to the form of the layout. For example, <ref refid="class_q_c_p_layout_grid" kindref="compound">QCPLayoutGrid</ref> adds functions that take row and column indices to access cells of the layout grid more conveniently.</para><para>Since this is an abstract base class, you can&apos;t instantiate it directly. Rather use one of its subclasses like <ref refid="class_q_c_p_layout_grid" kindref="compound">QCPLayoutGrid</ref> or <ref refid="class_q_c_p_layout_inset" kindref="compound">QCPLayoutInset</ref>.</para><para>For a general introduction to the layout system, see the dedicated documentation page The Layout System. </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="841">
+      <node id="865">
         <label>QCPLayoutInset</label>
         <link refid="class_q_c_p_layout_inset"/>
-        <childnode refid="835" relation="public-inheritance">
+        <childnode refid="859" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="836">
+      <node id="860">
         <label>QCPLayoutElement</label>
         <link refid="class_q_c_p_layout_element"/>
-        <childnode refid="837" relation="public-inheritance">
+        <childnode refid="861" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="838">
+      <node id="862">
         <label>QObject</label>
       </node>
-      <node id="840">
+      <node id="864">
         <label>QCPLegend</label>
         <link refid="class_q_c_p_legend"/>
-        <childnode refid="839" relation="public-inheritance">
+        <childnode refid="863" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="835">
+      <node id="859">
         <label>QCPLayout</label>
         <link refid="class_q_c_p_layout"/>
-        <childnode refid="836" relation="public-inheritance">
+        <childnode refid="860" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="839">
+      <node id="863">
         <label>QCPLayoutGrid</label>
         <link refid="class_q_c_p_layout_grid"/>
-        <childnode refid="835" relation="public-inheritance">
+        <childnode refid="859" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="837">
+      <node id="861">
         <label>QCPLayerable</label>
         <link refid="class_q_c_p_layerable"/>
-        <childnode refid="838" relation="public-inheritance">
+        <childnode refid="862" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="856">
+      <node id="880">
         <label>QCPLayoutInset</label>
         <link refid="class_q_c_p_layout_inset"/>
-        <childnode refid="842" relation="public-inheritance">
+        <childnode refid="866" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="843">
+      <node id="867">
         <label>QCPLayoutElement</label>
         <link refid="class_q_c_p_layout_element"/>
-        <childnode refid="844" relation="public-inheritance">
+        <childnode refid="868" relation="public-inheritance">
         </childnode>
-        <childnode refid="842" relation="usage">
+        <childnode refid="866" relation="usage">
           <edgelabel>mParentLayout</edgelabel>
         </childnode>
       </node>
-      <node id="845">
+      <node id="869">
         <label>QObject</label>
       </node>
-      <node id="851">
+      <node id="875">
         <label>QCPRange</label>
         <link refid="class_q_c_p_range"/>
       </node>
-      <node id="857">
+      <node id="881">
         <label>QCPLegend</label>
         <link refid="class_q_c_p_legend"/>
-        <childnode refid="849" relation="public-inheritance">
+        <childnode refid="873" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="853">
+      <node id="877">
         <label>QCPLineEnding</label>
         <link refid="class_q_c_p_line_ending"/>
       </node>
-      <node id="842">
+      <node id="866">
         <label>QCPLayout</label>
         <link refid="class_q_c_p_layout"/>
-        <childnode refid="843" relation="public-inheritance">
+        <childnode refid="867" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="854">
+      <node id="878">
         <label>QCPGrid</label>
         <link refid="class_q_c_p_grid"/>
-        <childnode refid="844" relation="public-inheritance">
+        <childnode refid="868" relation="public-inheritance">
         </childnode>
-        <childnode refid="850" relation="usage">
+        <childnode refid="874" relation="usage">
           <edgelabel>mParentAxis</edgelabel>
         </childnode>
       </node>
-      <node id="852">
+      <node id="876">
         <label>QCPAxisPainterPrivate</label>
         <link refid="class_q_c_p_axis_painter_private"/>
-        <childnode refid="853" relation="usage">
+        <childnode refid="877" relation="usage">
           <edgelabel>lowerEnding</edgelabel>
           <edgelabel>upperEnding</edgelabel>
         </childnode>
-        <childnode refid="847" relation="usage">
+        <childnode refid="871" relation="usage">
           <edgelabel>mParentPlot</edgelabel>
         </childnode>
       </node>
-      <node id="848">
+      <node id="872">
         <label>QWidget</label>
       </node>
-      <node id="846">
+      <node id="870">
         <label>QCPLayer</label>
         <link refid="class_q_c_p_layer"/>
-        <childnode refid="845" relation="public-inheritance">
+        <childnode refid="869" relation="public-inheritance">
         </childnode>
-        <childnode refid="847" relation="usage">
+        <childnode refid="871" relation="usage">
           <edgelabel>mParentPlot</edgelabel>
         </childnode>
       </node>
-      <node id="849">
+      <node id="873">
         <label>QCPLayoutGrid</label>
         <link refid="class_q_c_p_layout_grid"/>
-        <childnode refid="842" relation="public-inheritance">
+        <childnode refid="866" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="844">
+      <node id="868">
         <label>QCPLayerable</label>
         <link refid="class_q_c_p_layerable"/>
-        <childnode refid="845" relation="public-inheritance">
+        <childnode refid="869" relation="public-inheritance">
         </childnode>
-        <childnode refid="846" relation="usage">
+        <childnode refid="870" relation="usage">
           <edgelabel>mLayer</edgelabel>
         </childnode>
-        <childnode refid="847" relation="usage">
+        <childnode refid="871" relation="usage">
           <edgelabel>mParentPlot</edgelabel>
         </childnode>
       </node>
-      <node id="850">
+      <node id="874">
         <label>QCPAxis</label>
         <link refid="class_q_c_p_axis"/>
-        <childnode refid="844" relation="public-inheritance">
+        <childnode refid="868" relation="public-inheritance">
         </childnode>
-        <childnode refid="851" relation="usage">
+        <childnode refid="875" relation="usage">
           <edgelabel>mRange</edgelabel>
         </childnode>
-        <childnode refid="852" relation="usage">
+        <childnode refid="876" relation="usage">
           <edgelabel>mAxisPainter</edgelabel>
         </childnode>
-        <childnode refid="854" relation="usage">
+        <childnode refid="878" relation="usage">
           <edgelabel>mGrid</edgelabel>
         </childnode>
-        <childnode refid="855" relation="usage">
+        <childnode refid="879" relation="usage">
           <edgelabel>mAxisRect</edgelabel>
         </childnode>
       </node>
-      <node id="855">
+      <node id="879">
         <label>QCPAxisRect</label>
         <link refid="class_q_c_p_axis_rect"/>
-        <childnode refid="843" relation="public-inheritance">
+        <childnode refid="867" relation="public-inheritance">
         </childnode>
-        <childnode refid="856" relation="usage">
+        <childnode refid="880" relation="usage">
           <edgelabel>mInsetLayout</edgelabel>
         </childnode>
-        <childnode refid="851" relation="usage">
+        <childnode refid="875" relation="usage">
           <edgelabel>mDragStartVertRange</edgelabel>
           <edgelabel>mDragStartHorzRange</edgelabel>
         </childnode>
       </node>
-      <node id="847">
+      <node id="871">
         <label>QCustomPlot</label>
         <link refid="class_q_custom_plot"/>
-        <childnode refid="848" relation="public-inheritance">
+        <childnode refid="872" relation="public-inheritance">
         </childnode>
-        <childnode refid="846" relation="usage">
+        <childnode refid="870" relation="usage">
           <edgelabel>mCurrentLayer</edgelabel>
         </childnode>
-        <childnode refid="849" relation="usage">
+        <childnode refid="873" relation="usage">
           <edgelabel>mPlotLayout</edgelabel>
         </childnode>
-        <childnode refid="850" relation="usage">
+        <childnode refid="874" relation="usage">
           <edgelabel>yAxis2</edgelabel>
           <edgelabel>xAxis2</edgelabel>
           <edgelabel>xAxis</edgelabel>
           <edgelabel>yAxis</edgelabel>
         </childnode>
-        <childnode refid="857" relation="usage">
+        <childnode refid="881" relation="usage">
           <edgelabel>legend</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="720" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="719" bodyend="754"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="720" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="719" bodyend="754"/>
     <listofallmembers>
       <member refid="class_q_c_p_layout_1af6dbbc24156a808da29cd1ec031729a3" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>adoptElement</name></member>
       <member refid="class_q_c_p_layerable_1aef5cb4aa899ed9dc9384fd614560291e" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>antialiased</name></member>

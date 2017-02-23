@@ -20,7 +20,6 @@ var searchData=
   ['beforereplot',['beforeReplot',['../class_q_custom_plot.html#a0cd30e29b73efd6afe096e44bc5956f5',1,'QCustomPlot']]],
   ['begin',['begin',['../class_q_c_p_painter.html#a0a41146ccd619dceab6e25ec7b46b044',1,'QCPPainter']]],
   ['beginmapexecution',['beginMapExecution',['../class_main_m_d_i_display.html#a9479e57c6dc0732ce314b490e312e1b5',1,'MainMDIDisplay']]],
-  ['blank_5fqstring',['BLANK_QSTRING',['../mainmdidisplay_8h.html#ae1bbabd6292b4598398ae907d5d18e88',1,'mainmdidisplay.h']]],
   ['borderpen',['borderPen',['../class_q_c_p_legend.html#a8ffd92df86ddf43696d95f04a20e3226',1,'QCPLegend']]],
   ['bottom',['bottom',['../class_q_c_p_item_rect.html#a99313bf2b338d9f81e19bd38082038aa',1,'QCPItemRect::bottom()'],['../class_q_c_p_item_text.html#a94aeec080f877d3d1d0c3d8ffc10e9e6',1,'QCPItemText::bottom()'],['../class_q_c_p_item_ellipse.html#a2dc80ff9f5db600eae0133bdde65066f',1,'QCPItemEllipse::bottom()'],['../class_q_c_p_item_pixmap.html#ad7da77f530868e846151eff8a28fb948',1,'QCPItemPixmap::bottom()'],['../class_q_c_p_axis_rect.html#af2b5982ebe7e6f781b9bf1cc371a60d8',1,'QCPAxisRect::bottom()']]],
   ['bottomleft',['bottomLeft',['../class_q_c_p_item_rect.html#abd8ee63fdf81f0c74bf7ccadee8603da',1,'QCPItemRect::bottomLeft()'],['../class_q_c_p_item_text.html#a6a1c872ad3789ecafcaeac2066e218a0',1,'QCPItemText::bottomLeft()'],['../class_q_c_p_item_pixmap.html#a01943e569233382b3627e24636b0fff2',1,'QCPItemPixmap::bottomLeft()'],['../class_q_c_p_axis_rect.html#a724b0333971ea6a338f0dbd814dc97ae',1,'QCPAxisRect::bottomLeft()']]],
@@ -39,7 +38,7 @@ var searchData=
   ['buf_5fsize',['BUF_SIZE',['../_packet_handler_8cpp.html#a193efbe5ebe68b5b7e79b5986f70a821',1,'PacketHandler.cpp']]],
   ['buffer',['buffer',['../_packet_handler_8cpp.html#aae7966d231efc476384b8aa9c25980f9',1,'PacketHandler.cpp']]],
   ['bufsize',['BUFSIZE',['../networklistener_8cpp.html#aeca034f67218340ecb2261a22c2f3dcd',1,'networklistener.cpp']]],
-  ['buttongroup',['buttonGroup',['../class_map_execution.html#a0462acd7e519c3bd1fac5c5409257306',1,'MapExecution::buttonGroup()'],['../class_map_planning.html#a552fbbc0827db07c9eca5df3d3492588',1,'MapPlanning::buttonGroup()']]],
+  ['buttongroup',['buttonGroup',['../class_map_execution.html#a0462acd7e519c3bd1fac5c5409257306',1,'MapExecution']]],
   ['buttonlayout',['buttonLayout',['../class_mission_planning_window.html#a0045be95220d1939ea5f0206265f9e52',1,'MissionPlanningWindow']]],
   ['buttonlist',['buttonList',['../class_mission_planning_window.html#aa1eb6565feff4115e69b4fe927fa24db',1,'MissionPlanningWindow']]]
 ];

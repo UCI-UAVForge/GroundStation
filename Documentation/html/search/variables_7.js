@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['key',['key',['../class_q_c_p_data.html#a2f5ba9aca61bb74f88516e148a4cf71b',1,'QCPData::key()'],['../class_q_c_p_curve_data.html#a8a4ec5f2b9a396149fd842e309701bd4',1,'QCPCurveData::key()'],['../class_q_c_p_bar_data.html#afe544b035ef19027ea3d65adeaf81b42',1,'QCPBarData::key()'],['../class_q_c_p_financial_data.html#a18bc92126f28c214b05b0161e5f5958b',1,'QCPFinancialData::key()']]],
-  ['keyerrorminus',['keyErrorMinus',['../class_q_c_p_data.html#af107d650b8ee5c3b2961ecddcfb1bccb',1,'QCPData']]],
-  ['keyerrorplus',['keyErrorPlus',['../class_q_c_p_data.html#ae468c3808107c2fd23052481156ab5b5',1,'QCPData']]]
+  ['heading',['heading',['../struct_mission_data.html#aca98e398b94037e80749d0a9e73dcefe',1,'MissionData::heading()'],['../class_protocol_1_1_telemetry_packet.html#a2266292d4e6e26a9c91b3242ec94c84c',1,'Protocol::TelemetryPacket::heading()']]],
+  ['high',['high',['../class_q_c_p_financial_data.html#a299a4b241296fb6cd1baf5ab03f7126a',1,'QCPFinancialData']]],
+  ['holdsaction',['holdsAction',['../class_timed_action.html#a6667b4cc9f2bb66a7869f2a4417f225d',1,'TimedAction']]],
+  ['holdswaypoint',['holdsWaypoint',['../class_timed_action.html#a8cbfc9905cb844411a871369e9f91509',1,'TimedAction']]]
 ];

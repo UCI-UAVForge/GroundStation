@@ -6,327 +6,327 @@
     <includes local="no">QTime</includes>
     <includes local="no">QTimer</includes>
     <includes refid="messagebox_8h" local="yes">messagebox.h</includes>
-    <includedby refid="digitalclock_8cpp" local="yes">C:/Users/Roman/Documents/GroundStation/GS/digitalclock.cpp</includedby>
-    <includedby refid="mapexecution_8h" local="yes">C:/Users/Roman/Documents/GroundStation/GS/mapexecution.h</includedby>
+    <includedby refid="digitalclock_8cpp" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.cpp</includedby>
+    <includedby refid="mapexecution_8h" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h</includedby>
     <incdepgraph>
-      <node id="245">
+      <node id="260">
         <label>QObject</label>
       </node>
-      <node id="239">
-        <label>QList</label>
-      </node>
-      <node id="240">
-        <label>stdint.h</label>
-      </node>
-      <node id="255">
-        <label>actionpacket.h</label>
-        <link refid="actionpacket_8h"/>
-        <childnode refid="256" relation="include">
-        </childnode>
-        <childnode refid="253" relation="include">
-        </childnode>
-      </node>
-      <node id="238">
-        <label>QPair</label>
-      </node>
-      <node id="256">
-        <label>string</label>
-      </node>
-      <node id="231">
-        <label>QPlainTextEdit</label>
-      </node>
-      <node id="244">
-        <label>QModelIndex</label>
-      </node>
-      <node id="251">
+      <node id="266">
         <label>ackpacket.h</label>
         <link refid="ackpacket_8h"/>
-        <childnode refid="252" relation="include">
+        <childnode refid="267" relation="include">
         </childnode>
-        <childnode refid="253" relation="include">
-        </childnode>
-      </node>
-      <node id="253">
-        <label>Packet.h</label>
-        <link refid="packet_8h"/>
-        <childnode refid="254" relation="include">
-        </childnode>
-        <childnode refid="252" relation="include">
-        </childnode>
-        <childnode refid="240" relation="include">
-        </childnode>
-      </node>
-      <node id="257">
-        <label>infopacket.h</label>
-        <link refid="infopacket_8h"/>
-        <childnode refid="256" relation="include">
-        </childnode>
-        <childnode refid="258" relation="include">
-        </childnode>
-        <childnode refid="240" relation="include">
-        </childnode>
-        <childnode refid="253" relation="include">
-        </childnode>
-      </node>
-      <node id="258">
-        <label>string.h</label>
-      </node>
-      <node id="232">
-        <label>QTime</label>
-      </node>
-      <node id="237">
-        <label>QApplication</label>
-      </node>
-      <node id="259">
-        <label>telemetrypacket.h</label>
-        <link refid="telemetrypacket_8h"/>
-        <childnode refid="256" relation="include">
-        </childnode>
-        <childnode refid="253" relation="include">
-        </childnode>
-      </node>
-      <node id="250">
-        <label>QValidator</label>
-      </node>
-      <node id="233">
-        <label>QTimer</label>
-      </node>
-      <node id="236">
-        <label>vector</label>
-      </node>
-      <node id="247">
-        <label>QLineEdit</label>
-      </node>
-      <node id="246">
-        <label>QSize</label>
-      </node>
-      <node id="248">
-        <label>mapvalidator.h</label>
-        <link refid="mapvalidator_8h"/>
-        <childnode refid="249" relation="include">
-        </childnode>
-        <childnode refid="250" relation="include">
+        <childnode refid="268" relation="include">
         </childnode>
       </node>
       <node id="254">
-        <label>time.h</label>
+        <label>QList</label>
       </node>
-      <node id="241">
-        <label>qcomboboxdelegate.h</label>
-        <link refid="qcomboboxdelegate_8h"/>
-        <childnode refid="242" relation="include">
+      <node id="255">
+        <label>stdint.h</label>
+      </node>
+      <node id="274">
+        <label>telemetrypacket.h</label>
+        <link refid="telemetrypacket_8h"/>
+        <childnode refid="271" relation="include">
         </childnode>
-        <childnode refid="243" relation="include">
+        <childnode refid="268" relation="include">
         </childnode>
-        <childnode refid="244" relation="include">
-        </childnode>
-        <childnode refid="245" relation="include">
-        </childnode>
+      </node>
+      <node id="253">
+        <label>QPair</label>
+      </node>
+      <node id="271">
+        <label>string</label>
+      </node>
+      <node id="246">
+        <label>QPlainTextEdit</label>
+      </node>
+      <node id="245">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h</label>
+        <link refid="digitalclock.h"/>
         <childnode refid="246" relation="include">
         </childnode>
         <childnode refid="247" relation="include">
         </childnode>
         <childnode refid="248" relation="include">
         </childnode>
-      </node>
-      <node id="243">
-        <label>QComboBox</label>
-      </node>
-      <node id="235">
-        <label>iostream</label>
-      </node>
-      <node id="230">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/digitalclock.h</label>
-        <link refid="digitalclock.h"/>
-        <childnode refid="231" relation="include">
-        </childnode>
-        <childnode refid="232" relation="include">
-        </childnode>
-        <childnode refid="233" relation="include">
-        </childnode>
-        <childnode refid="234" relation="include">
+        <childnode refid="249" relation="include">
         </childnode>
       </node>
-      <node id="242">
-        <label>QItemDelegate</label>
-      </node>
-      <node id="249">
-        <label>QDoubleValidator</label>
-      </node>
-      <node id="252">
-        <label>stdio.h</label>
-      </node>
-      <node id="234">
-        <label>messagebox.h</label>
-        <link refid="messagebox_8h"/>
-        <childnode refid="235" relation="include">
-        </childnode>
-        <childnode refid="236" relation="include">
-        </childnode>
-        <childnode refid="237" relation="include">
-        </childnode>
-        <childnode refid="238" relation="include">
-        </childnode>
-        <childnode refid="239" relation="include">
-        </childnode>
-        <childnode refid="232" relation="include">
-        </childnode>
-        <childnode refid="240" relation="include">
-        </childnode>
-        <childnode refid="241" relation="include">
-        </childnode>
-        <childnode refid="251" relation="include">
-        </childnode>
-        <childnode refid="255" relation="include">
-        </childnode>
+      <node id="256">
+        <label>qcomboboxdelegate.h</label>
+        <link refid="qcomboboxdelegate_8h"/>
         <childnode refid="257" relation="include">
+        </childnode>
+        <childnode refid="258" relation="include">
         </childnode>
         <childnode refid="259" relation="include">
         </childnode>
-      </node>
-    </incdepgraph>
-    <invincdepgraph>
-      <node id="274">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/options.cpp</label>
-        <link refid="options_8cpp"/>
-      </node>
-      <node id="261">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/digitalclock.cpp</label>
-        <link refid="digitalclock_8cpp"/>
-      </node>
-      <node id="278">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mapexecution.cpp</label>
-        <link refid="mapexecution_8cpp"/>
-      </node>
-      <node id="267">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h</label>
-        <link refid="mainmdidisplay_8h"/>
-        <childnode refid="268" relation="include">
+        <childnode refid="260" relation="include">
         </childnode>
+        <childnode refid="261" relation="include">
+        </childnode>
+        <childnode refid="262" relation="include">
+        </childnode>
+        <childnode refid="263" relation="include">
+        </childnode>
+      </node>
+      <node id="259">
+        <label>QModelIndex</label>
+      </node>
+      <node id="273">
+        <label>string.h</label>
+      </node>
+      <node id="247">
+        <label>QTime</label>
+      </node>
+      <node id="252">
+        <label>QApplication</label>
+      </node>
+      <node id="265">
+        <label>QValidator</label>
+      </node>
+      <node id="248">
+        <label>QTimer</label>
+      </node>
+      <node id="251">
+        <label>vector</label>
+      </node>
+      <node id="262">
+        <label>QLineEdit</label>
+      </node>
+      <node id="268">
+        <label>packet.h</label>
+        <link refid="packet_8h"/>
         <childnode refid="269" relation="include">
         </childnode>
+        <childnode refid="267" relation="include">
+        </childnode>
+        <childnode refid="255" relation="include">
+        </childnode>
       </node>
-      <node id="277">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mapvalidator.cpp</label>
-        <link refid="mapvalidator_8cpp"/>
+      <node id="261">
+        <label>QSize</label>
       </node>
       <node id="269">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp</label>
-        <link refid="mainmdidisplay_8cpp"/>
+        <label>time.h</label>
+      </node>
+      <node id="258">
+        <label>QComboBox</label>
+      </node>
+      <node id="250">
+        <label>iostream</label>
+      </node>
+      <node id="257">
+        <label>QItemDelegate</label>
+      </node>
+      <node id="264">
+        <label>QDoubleValidator</label>
+      </node>
+      <node id="249">
+        <label>messagebox.h</label>
+        <link refid="messagebox_8h"/>
+        <childnode refid="250" relation="include">
+        </childnode>
+        <childnode refid="251" relation="include">
+        </childnode>
+        <childnode refid="252" relation="include">
+        </childnode>
+        <childnode refid="253" relation="include">
+        </childnode>
+        <childnode refid="254" relation="include">
+        </childnode>
+        <childnode refid="247" relation="include">
+        </childnode>
+        <childnode refid="255" relation="include">
+        </childnode>
+        <childnode refid="256" relation="include">
+        </childnode>
+        <childnode refid="266" relation="include">
+        </childnode>
+        <childnode refid="270" relation="include">
+        </childnode>
+        <childnode refid="272" relation="include">
+        </childnode>
+        <childnode refid="274" relation="include">
+        </childnode>
       </node>
       <node id="263">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h</label>
-        <link refid="mapplanning_8h"/>
+        <label>mapvalidator.h</label>
+        <link refid="mapvalidator_8h"/>
         <childnode refid="264" relation="include">
         </childnode>
         <childnode refid="265" relation="include">
         </childnode>
-        <childnode refid="266" relation="include">
-        </childnode>
-        <childnode refid="267" relation="include">
-        </childnode>
+      </node>
+      <node id="272">
+        <label>infopacket.h</label>
+        <link refid="infopacket_8h"/>
         <childnode refid="271" relation="include">
         </childnode>
+        <childnode refid="273" relation="include">
+        </childnode>
+        <childnode refid="255" relation="include">
+        </childnode>
+        <childnode refid="268" relation="include">
+        </childnode>
+      </node>
+      <node id="267">
+        <label>stdio.h</label>
+      </node>
+      <node id="270">
+        <label>actionpacket.h</label>
+        <link refid="actionpacket_8h"/>
+        <childnode refid="271" relation="include">
+        </childnode>
+        <childnode refid="268" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="294">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.cpp</label>
+        <link refid="popwindowmp_8cpp"/>
+      </node>
+      <node id="277">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h</label>
+        <link refid="mapexecution_8h"/>
+        <childnode refid="276" relation="include">
+        </childnode>
+        <childnode refid="278" relation="include">
+        </childnode>
+        <childnode refid="280" relation="include">
+        </childnode>
+        <childnode refid="281" relation="include">
+        </childnode>
+        <childnode refid="286" relation="include">
+        </childnode>
+        <childnode refid="293" relation="include">
+        </childnode>
+        <childnode refid="294" relation="include">
+        </childnode>
+      </node>
+      <node id="291">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp</label>
+        <link refid="mapplanning_8cpp"/>
+      </node>
+      <node id="278">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h</label>
+        <link refid="mapplanning_8h"/>
+        <childnode refid="279" relation="include">
+        </childnode>
+        <childnode refid="280" relation="include">
+        </childnode>
+        <childnode refid="281" relation="include">
+        </childnode>
+        <childnode refid="282" relation="include">
+        </childnode>
+        <childnode refid="286" relation="include">
+        </childnode>
+        <childnode refid="291" relation="include">
+        </childnode>
+        <childnode refid="292" relation="include">
+        </childnode>
+      </node>
+      <node id="292">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapvalidator.cpp</label>
+        <link refid="mapvalidator_8cpp"/>
+      </node>
+      <node id="290">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.cpp</label>
+        <link refid="missionrecap_8cpp"/>
+      </node>
+      <node id="275">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h</label>
+        <link refid="digitalclock.h"/>
         <childnode refid="276" relation="include">
         </childnode>
         <childnode refid="277" relation="include">
         </childnode>
       </node>
-      <node id="268">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/main.cpp</label>
-        <link refid="main_8cpp"/>
-      </node>
-      <node id="265">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/options.h</label>
-        <link refid="options_8h"/>
-        <childnode refid="262" relation="include">
-        </childnode>
-        <childnode refid="266" relation="include">
-        </childnode>
-        <childnode refid="271" relation="include">
-        </childnode>
-        <childnode refid="274" relation="include">
-        </childnode>
-      </node>
-      <node id="266">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h</label>
+      <node id="281">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h</label>
         <link refid="qttabtest_8h"/>
-        <childnode refid="267" relation="include">
+        <childnode refid="282" relation="include">
         </childnode>
-        <childnode refid="270" relation="include">
+        <childnode refid="285" relation="include">
         </childnode>
-      </node>
-      <node id="271">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mainwindow.h</label>
-        <link refid="mainwindow_8h"/>
-        <childnode refid="272" relation="include">
-        </childnode>
-        <childnode refid="273" relation="include">
-        </childnode>
-      </node>
-      <node id="276">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp</label>
-        <link refid="mapplanning_8cpp"/>
-      </node>
-      <node id="264">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h</label>
-        <link refid="missionrecap_8h"/>
-        <childnode refid="262" relation="include">
-        </childnode>
-        <childnode refid="265" relation="include">
-        </childnode>
-        <childnode refid="266" relation="include">
-        </childnode>
-        <childnode refid="271" relation="include">
-        </childnode>
-        <childnode refid="275" relation="include">
-        </childnode>
-      </node>
-      <node id="262">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mapexecution.h</label>
-        <link refid="mapexecution_8h"/>
-        <childnode refid="261" relation="include">
-        </childnode>
-        <childnode refid="263" relation="include">
-        </childnode>
-        <childnode refid="265" relation="include">
-        </childnode>
-        <childnode refid="266" relation="include">
-        </childnode>
-        <childnode refid="271" relation="include">
-        </childnode>
-        <childnode refid="278" relation="include">
-        </childnode>
-        <childnode refid="279" relation="include">
-        </childnode>
-      </node>
-      <node id="275">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp</label>
-        <link refid="missionrecap_8cpp"/>
       </node>
       <node id="279">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.cpp</label>
-        <link refid="popwindowmp_8cpp"/>
-      </node>
-      <node id="260">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/digitalclock.h</label>
-        <link refid="digitalclock.h"/>
-        <childnode refid="261" relation="include">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h</label>
+        <link refid="missionrecap_8h"/>
+        <childnode refid="277" relation="include">
         </childnode>
-        <childnode refid="262" relation="include">
+        <childnode refid="280" relation="include">
+        </childnode>
+        <childnode refid="281" relation="include">
+        </childnode>
+        <childnode refid="286" relation="include">
+        </childnode>
+        <childnode refid="290" relation="include">
         </childnode>
       </node>
-      <node id="273">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/tutorial.cpp</label>
-        <link refid="tutorial_8cpp"/>
+      <node id="289">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.cpp</label>
+        <link refid="options_8cpp"/>
       </node>
-      <node id="272">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mainwindow.cpp</label>
+      <node id="276">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.cpp</label>
+        <link refid="digitalclock_8cpp"/>
+      </node>
+      <node id="282">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainmdidisplay.h</label>
+        <link refid="mainmdidisplay_8h"/>
+        <childnode refid="283" relation="include">
+        </childnode>
+        <childnode refid="284" relation="include">
+        </childnode>
+      </node>
+      <node id="287">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainwindow.cpp</label>
         <link refid="mainwindow_8cpp"/>
       </node>
-      <node id="270">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp</label>
+      <node id="280">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.h</label>
+        <link refid="options_8h"/>
+        <childnode refid="277" relation="include">
+        </childnode>
+        <childnode refid="281" relation="include">
+        </childnode>
+        <childnode refid="286" relation="include">
+        </childnode>
+        <childnode refid="289" relation="include">
+        </childnode>
+      </node>
+      <node id="284">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainmdidisplay.cpp</label>
+        <link refid="mainmdidisplay_8cpp"/>
+      </node>
+      <node id="288">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/tutorial.cpp</label>
+        <link refid="tutorial_8cpp"/>
+      </node>
+      <node id="285">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.cpp</label>
         <link refid="qttabtest_8cpp"/>
+      </node>
+      <node id="286">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="287" relation="include">
+        </childnode>
+        <childnode refid="288" relation="include">
+        </childnode>
+      </node>
+      <node id="293">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp</label>
+        <link refid="mapexecution_8cpp"/>
+      </node>
+      <node id="283">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/main.cpp</label>
+        <link refid="main_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="class_digital_clock" prot="public">DigitalClock</innerclass>
@@ -360,18 +360,19 @@
 <codeline lineno="28" refid="class_digital_clock_1a280a7e0206e2d9e192a19b89cf9c2327" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_execution" kindref="compound">MapExecution</ref>*<sp/><ref refid="class_digital_clock_1a280a7e0206e2d9e192a19b89cf9c2327" kindref="member">map_exec_ptr</ref>;</highlight></codeline>
 <codeline lineno="29" refid="class_digital_clock_1ad2d7eceb84025180dc2b7862668b87e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QTimer*<sp/><ref refid="class_digital_clock_1ad2d7eceb84025180dc2b7862668b87e7" kindref="member">StatusTimer</ref>;</highlight></codeline>
 <codeline lineno="30" refid="class_digital_clock_1aa49ae733b7fb0c8b1f353e9811372d5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QTimer*<sp/><ref refid="class_digital_clock_1aa49ae733b7fb0c8b1f353e9811372d5b" kindref="member">TimeTimer</ref>;</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_digital_clock_1a070278bd43a6162c7a666f354c3d1087" kindref="member">initiate</ref>(QTime<sp/>timein);</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Added<sp/>mapexection<sp/>pointer<sp/>so<sp/>that<sp/>mapexecution<sp/>can<sp/>be<sp/>updated</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_digital_clock_1a070278bd43a6162c7a666f354c3d1087" kindref="member">initiate</ref>(<ref refid="classmessagebox" kindref="compound">messagebox</ref>*<sp/>mbin,<sp/><ref refid="class_map_execution" kindref="compound">MapExecution</ref>*<sp/>mapexec_ptr);</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>slots:</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_digital_clock_1a87cd1f935265a947f2ece712bffc4aaa" kindref="member">showTime</ref>();</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_digital_clock_1a2b0778dec030cfa1a48dc8668bff18ed" kindref="member">showStatus</ref>();</highlight></codeline>
-<codeline lineno="39"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>DIGITALCLOCK_H</highlight></codeline>
+<codeline lineno="31" refid="class_digital_clock_1aba1e4d8bc0f0fadd9e9ab82ecdeb1772" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QTimer*<sp/><ref refid="class_digital_clock_1aba1e4d8bc0f0fadd9e9ab82ecdeb1772" kindref="member">myTimer</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_digital_clock_1a070278bd43a6162c7a666f354c3d1087" kindref="member">initiate</ref>(QTime<sp/>timein);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Added<sp/>mapexection<sp/>pointer<sp/>so<sp/>that<sp/>mapexecution<sp/>can<sp/>be<sp/>updated</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_digital_clock_1a070278bd43a6162c7a666f354c3d1087" kindref="member">initiate</ref>(<ref refid="classmessagebox" kindref="compound">messagebox</ref>*<sp/>mbin,<sp/><ref refid="class_map_execution" kindref="compound">MapExecution</ref>*<sp/>mapexec_ptr);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>slots:</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_digital_clock_1a87cd1f935265a947f2ece712bffc4aaa" kindref="member">showTime</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_digital_clock_1a2b0778dec030cfa1a48dc8668bff18ed" kindref="member">showStatus</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>DIGITALCLOCK_H</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/digitalclock.h"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.h"/>
   </compounddef>
 </doxygen>

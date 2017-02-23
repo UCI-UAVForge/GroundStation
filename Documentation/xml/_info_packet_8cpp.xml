@@ -2,50 +2,50 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
   <compounddef id="_info_packet_8cpp" kind="file" language="C++">
     <compoundname>InfoPacket.cpp</compoundname>
-    <includes refid="infopacket_8h" local="yes">InfoPacket.h</includes>
+    <includes refid="infopacket_8h" local="yes">infopacket.h</includes>
     <incdepgraph>
-      <node id="455">
+      <node id="477">
         <label>stdint.h</label>
       </node>
-      <node id="453">
+      <node id="475">
         <label>string</label>
       </node>
-      <node id="451">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/InfoPacket.cpp</label>
-        <link refid="InfoPacket.cpp"/>
-        <childnode refid="452" relation="include">
-        </childnode>
-      </node>
-      <node id="456">
-        <label>Packet.h</label>
-        <link refid="packet_8h"/>
-        <childnode refid="457" relation="include">
-        </childnode>
-        <childnode refid="458" relation="include">
-        </childnode>
-        <childnode refid="455" relation="include">
-        </childnode>
-      </node>
-      <node id="452">
-        <label>InfoPacket.h</label>
-        <link refid="infopacket_8h"/>
-        <childnode refid="453" relation="include">
-        </childnode>
-        <childnode refid="454" relation="include">
-        </childnode>
-        <childnode refid="455" relation="include">
-        </childnode>
-        <childnode refid="456" relation="include">
-        </childnode>
-      </node>
-      <node id="454">
+      <node id="476">
         <label>string.h</label>
       </node>
-      <node id="457">
+      <node id="478">
+        <label>packet.h</label>
+        <link refid="packet_8h"/>
+        <childnode refid="479" relation="include">
+        </childnode>
+        <childnode refid="480" relation="include">
+        </childnode>
+        <childnode refid="477" relation="include">
+        </childnode>
+      </node>
+      <node id="479">
         <label>time.h</label>
       </node>
-      <node id="458">
+      <node id="474">
+        <label>infopacket.h</label>
+        <link refid="infopacket_8h"/>
+        <childnode refid="475" relation="include">
+        </childnode>
+        <childnode refid="476" relation="include">
+        </childnode>
+        <childnode refid="477" relation="include">
+        </childnode>
+        <childnode refid="478" relation="include">
+        </childnode>
+      </node>
+      <node id="480">
         <label>stdio.h</label>
+      </node>
+      <node id="473">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/InfoPacket.cpp</label>
+        <link refid="InfoPacket.cpp"/>
+        <childnode refid="474" relation="include">
+        </childnode>
       </node>
     </incdepgraph>
     <briefdescription>
@@ -68,7 +68,7 @@
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>NEGLIGENCE<sp/>OR<sp/>OTHER<sp/>TORTIOUS<sp/>ACTION,<sp/>ARISING<sp/>OUT<sp/>OF</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>USE<sp/>OR<sp/>PERFORMANCE<sp/>OF<sp/>THIS<sp/>SOFTWARE.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="infopacket_8h" kindref="compound">InfoPacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="infopacket_8h" kindref="compound">infopacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><ref refid="class_protocol_1_1_info_packet_1a11fa7cf70f73872adb44ba550bfe3bad" kindref="member">Protocol::InfoPacket::InfoPacket</ref>(uint8_t*<sp/><ref refid="_packet_handler_8cpp_1aae7966d231efc476384b8aa9c25980f9" kindref="member">buffer</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len)<sp/>:<sp/>InfoPacket()</highlight></codeline>
@@ -127,6 +127,6 @@
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;SetChecksum(buffer,<sp/>len,<sp/>offset);</highlight></codeline>
 <codeline lineno="73"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/InfoPacket.cpp"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/InfoPacket.cpp"/>
   </compounddef>
 </doxygen>

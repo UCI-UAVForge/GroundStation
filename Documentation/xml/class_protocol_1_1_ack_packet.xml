@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/ackpacket.h" line="27" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/ackpacket.h" bodystart="27" bodyend="27"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ackpacket.h" line="27" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ackpacket.h" bodystart="27" bodyend="27"/>
       </memberdef>
       <memberdef kind="function" id="class_protocol_1_1_ack_packet_1af80fa8655d726cded381d20915464ca3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -37,7 +37,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/ackpacket.h" line="29" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/ackpacket.h" bodystart="29" bodyend="33"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ackpacket.h" line="29" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ackpacket.h" bodystart="29" bodyend="33"/>
       </memberdef>
       <memberdef kind="function" id="class_protocol_1_1_ack_packet_1a425bc52cf7a0d1b6c8092f339ff6fe16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/ackpacket.h" line="35" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/ackpacket.h" bodystart="35" bodyend="37"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ackpacket.h" line="35" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ackpacket.h" bodystart="35" bodyend="37"/>
       </memberdef>
       <memberdef kind="function" id="class_protocol_1_1_ack_packet_1a588f9608c58a913c5dd3c4acd28f92af" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
         <type>size_t</type>
@@ -93,7 +93,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/ackpacket.h" line="39" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/ackpacket.h" bodystart="39" bodyend="43"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ackpacket.h" line="39" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ackpacket.h" bodystart="39" bodyend="43"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -124,7 +124,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/ackpacket.h" line="25" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/ackpacket.h" bodystart="24" bodyend="44"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ackpacket.h" line="25" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ackpacket.h" bodystart="24" bodyend="44"/>
     <listofallmembers>
       <member refid="class_protocol_1_1_ack_packet_1a2d2a891317ae95d2e73fbb07521efc47" prot="public" virt="non-virtual"><scope>Protocol::AckPacket</scope><name>AckPacket</name></member>
       <member refid="class_protocol_1_1_ack_packet_1af80fa8655d726cded381d20915464ca3" prot="public" virt="non-virtual"><scope>Protocol::AckPacket</scope><name>AckPacket</name></member>

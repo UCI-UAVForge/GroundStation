@@ -4,29 +4,29 @@
     <compoundname>tablemodel.cpp</compoundname>
     <includes refid="tablemodel_8h" local="yes">tablemodel.h</includes>
     <incdepgraph>
-      <node id="2951">
+      <node id="3233">
         <label>QList</label>
       </node>
-      <node id="2952">
+      <node id="3234">
         <label>QPair</label>
       </node>
-      <node id="2948">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/tablemodel.cpp</label>
+      <node id="3230">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablemodel.cpp</label>
         <link refid="tablemodel.cpp"/>
-        <childnode refid="2949" relation="include">
+        <childnode refid="3231" relation="include">
         </childnode>
       </node>
-      <node id="2949">
+      <node id="3231">
         <label>tablemodel.h</label>
         <link refid="tablemodel_8h"/>
-        <childnode refid="2950" relation="include">
+        <childnode refid="3232" relation="include">
         </childnode>
-        <childnode refid="2951" relation="include">
+        <childnode refid="3233" relation="include">
         </childnode>
-        <childnode refid="2952" relation="include">
+        <childnode refid="3234" relation="include">
         </childnode>
       </node>
-      <node id="2950">
+      <node id="3232">
         <label>QAbstractTableModel</label>
       </node>
     </incdepgraph>
@@ -239,6 +239,6 @@
 <codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="203"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/tablemodel.cpp"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablemodel.cpp"/>
   </compounddef>
 </doxygen>

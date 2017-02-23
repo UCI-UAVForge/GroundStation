@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1364" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="1364" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1364" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1364" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="struct_q_c_p_axis_painter_private_1_1_cached_label_1a461597cbd470914a9d24b64d16037a88" prot="public" static="no" mutable="no">
         <type>QPixmap</type>
@@ -28,14 +28,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1365" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="1365" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1365" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1365" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="1363" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="1362" bodyend="1366"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1363" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1362" bodyend="1366"/>
     <listofallmembers>
       <member refid="struct_q_c_p_axis_painter_private_1_1_cached_label_1a5f502db71c92e572f1e6f44f62c59d8e" prot="public" virt="non-virtual"><scope>QCPAxisPainterPrivate::CachedLabel</scope><name>offset</name></member>
       <member refid="struct_q_c_p_axis_painter_private_1_1_cached_label_1a461597cbd470914a9d24b64d16037a88" prot="public" virt="non-virtual"><scope>QCPAxisPainterPrivate::CachedLabel</scope><name>pixmap</name></member>

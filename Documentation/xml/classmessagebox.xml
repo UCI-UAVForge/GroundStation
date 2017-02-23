@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="33" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" bodystart="33" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="33" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="89" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" bodystart="89" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="89" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="89" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="102" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" bodystart="102" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="102" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="102" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classmessagebox_1ad0e2aac1d4346b025a5e668b33632976" prot="private" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="class_protocol_1_1_action_packet" kindref="compound">Protocol::ActionPacket</ref> &gt;</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="103" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" bodystart="103" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="103" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classmessagebox_1aa06ba794e434f5714a622ca94c121d7a" prot="private" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref> &gt;</type>
@@ -71,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="104" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" bodystart="104" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="104" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="104" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classmessagebox_1a0b04ce0c8a621b70c6dc3ce302f0e753" prot="private" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="class_protocol_1_1_telemetry_packet" kindref="compound">Protocol::TelemetryPacket</ref> &gt;</type>
@@ -84,7 +84,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="105" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" bodystart="105" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="105" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="105" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classmessagebox_1a1a34f6f62dc6f0f2dff2dc2d7a42fc9a" prot="private" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref> * &gt;</type>
@@ -97,7 +97,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="107" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" bodystart="107" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="107" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="107" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classmessagebox_1a06c992c37c73627ebbd5120c68e32657" prot="private" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="class_protocol_1_1_ack_packet" kindref="compound">Protocol::AckPacket</ref> &gt;</type>
@@ -112,7 +112,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="115" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" bodystart="115" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="115" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="115" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classmessagebox_1a78e755e984640f5d46e76a5274e3039e" prot="private" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="class_protocol_1_1_action_packet" kindref="compound">Protocol::ActionPacket</ref> &gt;</type>
@@ -125,7 +125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="116" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" bodystart="116" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="116" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="116" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classmessagebox_1a6d8a49db801fc38ed89c3438c1451f8b" prot="private" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref> &gt;</type>
@@ -138,7 +138,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="117" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" bodystart="117" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="117" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="117" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classmessagebox_1a6ab4d9acb5406325a0ae0b6e5de170db" prot="private" static="no" mutable="no">
         <type>std::vector&lt; <ref refid="class_protocol_1_1_telemetry_packet" kindref="compound">Protocol::TelemetryPacket</ref> &gt;</type>
@@ -151,7 +151,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="118" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" bodystart="118" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="118" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="118" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classmessagebox_1aea3ed46bcf2e14a03a19bd5fb639d9a5" prot="private" static="no" mutable="no">
         <type>uint32_t</type>
@@ -164,7 +164,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="120" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" bodystart="120" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="120" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="120" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -179,7 +179,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="34" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="6" bodyend="12"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="34" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="6" bodyend="12"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1ad5e6c9a2d407ebc95415e6ddeb91aba3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -200,7 +200,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="35" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="14" bodyend="16"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="35" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="14" bodyend="16"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1afa0a64c35c27e21fab6cbee8055341b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -233,7 +233,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="36" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="29" bodyend="39"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="36" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="29" bodyend="39"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1af79061031d97b9e3e0e677fe365b2b15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -262,7 +262,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="37" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="18" bodyend="27"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="37" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="18" bodyend="27"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1a6128a1a53fbba888dccfcab5a5fafa1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -279,7 +279,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="38" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="51" bodyend="54"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="38" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="51" bodyend="54"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1a0e3beabe499e7aade0e769ff17ced30d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -300,7 +300,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="39" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="56" bodyend="60"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="39" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="56" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1acfa11fc9bcf7c96ddf2478b981be826d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -353,7 +353,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="62" bodyend="68"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="62" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1a545d9441dccf14adbea8e859628d6425" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -392,7 +392,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="49" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="41" bodyend="49"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="49" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="41" bodyend="49"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1ad8dd259b5b34d30b241f27172a255575" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -409,7 +409,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="50" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="125" bodyend="127"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="50" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="125" bodyend="127"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1ac2463eee5d4c1e5d693f8a96cca0e00f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -436,7 +436,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="59" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="70" bodyend="73"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="59" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="70" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1abe5152230ef5e89e0839d9dd866590e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; <ref refid="class_protocol_1_1_ack_packet" kindref="compound">Protocol::AckPacket</ref> &gt;</type>
@@ -449,7 +449,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="61" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="75" bodyend="77"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="61" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="75" bodyend="77"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1afd08c7f717357ee71a666720ff6bb9bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; <ref refid="class_protocol_1_1_action_packet" kindref="compound">Protocol::ActionPacket</ref> &gt;</type>
@@ -462,7 +462,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="62" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="79" bodyend="81"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="62" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="79" bodyend="81"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1a15a6793bc31aa9bb080c9fbcea14e1af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; <ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref> &gt;</type>
@@ -475,7 +475,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="63" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="83" bodyend="85"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="63" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="83" bodyend="85"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1a58df2b6675cad37e6f31b2bc25bcfb0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; <ref refid="class_protocol_1_1_telemetry_packet" kindref="compound">Protocol::TelemetryPacket</ref> &gt;</type>
@@ -488,7 +488,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="64" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="87" bodyend="89"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="64" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="87" bodyend="89"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1aa19eb7d103c82c6edabe95052d71e957" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; <ref refid="class_protocol_1_1_ack_packet" kindref="compound">Protocol::AckPacket</ref> &gt;</type>
@@ -503,7 +503,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="73" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="91" bodyend="93"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="73" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="91" bodyend="93"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1a49302f9e97d15853ab0bd4293cda3603" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; <ref refid="class_protocol_1_1_action_packet" kindref="compound">Protocol::ActionPacket</ref> &gt;</type>
@@ -516,7 +516,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="74" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="95" bodyend="97"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="74" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="95" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1a8630b30babf0555dc17d150ccfe08d8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; <ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref> &gt;</type>
@@ -529,7 +529,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="75" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="99" bodyend="101"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="75" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="99" bodyend="101"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1a5ab4ee4ec8c63b6e4936fed1884fbd87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::vector&lt; <ref refid="class_protocol_1_1_telemetry_packet" kindref="compound">Protocol::TelemetryPacket</ref> &gt;</type>
@@ -542,7 +542,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="76" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="103" bodyend="105"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="76" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="103" bodyend="105"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1a356a1119d888a5aea5a70b67bce0132b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -570,7 +570,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="85" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="113" bodyend="116"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="85" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="113" bodyend="116"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1a75d62bfa9db5b55a60b9e2e0fa164c81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -588,7 +588,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="86" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="120" bodyend="123"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="86" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="120" bodyend="123"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1a27ac98af342131cd148fb4ed2261631f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -606,7 +606,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="87" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="130" bodyend="133"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="87" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="130" bodyend="133"/>
       </memberdef>
       <memberdef kind="function" id="classmessagebox_1aa7a826742dd2a22376eaf787d510f064" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -624,7 +624,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="88" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="137" bodyend="140"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="88" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="137" bodyend="140"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -641,7 +641,7 @@ Nathan Brannon <simplesect kind="date"><para>2016-1-22 </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="101" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.cpp" bodystart="107" bodyend="109"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="101" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="107" bodyend="109"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-slot">
@@ -660,14 +660,14 @@ Nathan Brannon <simplesect kind="date"><para>2016-1-22 </para></simplesect>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="125" column="1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="125" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" line="31" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/messagebox.h" bodystart="31" bodyend="126"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="31" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="31" bodyend="126"/>
     <listofallmembers>
       <member refid="classmessagebox_1a7adbd15e5b2a9dbf6dad7c16ac18d305" prot="private" virt="non-virtual"><scope>messagebox</scope><name>ackPackets_incoming</name></member>
       <member refid="classmessagebox_1ad0e2aac1d4346b025a5e668b33632976" prot="private" virt="non-virtual"><scope>messagebox</scope><name>actionPackets_incoming</name></member>

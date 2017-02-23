@@ -3,182 +3,182 @@
   <compounddef id="popwindowmp_8h" kind="file" language="C++">
     <compoundname>popwindowmp.h</compoundname>
     <includes local="no">QWidget</includes>
-    <includedby refid="maprecap_8h" local="yes">C:/Users/Roman/Documents/GroundStation/GS/maprecap.h</includedby>
-    <includedby refid="mapplanning_8h" local="yes">C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h</includedby>
-    <includedby refid="popwindowmp_8cpp" local="yes">C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.cpp</includedby>
+    <includedby refid="maprecap_8h" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/maprecap.h</includedby>
+    <includedby refid="mapplanning_8h" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h</includedby>
+    <includedby refid="popwindowmp_8cpp" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.cpp</includedby>
     <incdepgraph>
-      <node id="2551">
-        <label>QWidget</label>
-      </node>
-      <node id="2550">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h</label>
+      <node id="2750">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.h</label>
         <link refid="popwindowmp.h"/>
-        <childnode refid="2551" relation="include">
+        <childnode refid="2751" relation="include">
         </childnode>
+      </node>
+      <node id="2751">
+        <label>QWidget</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="2553">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/maprecap.h</label>
-        <link refid="maprecap_8h"/>
-        <childnode refid="2554" relation="include">
-        </childnode>
-        <childnode refid="2559" relation="include">
-        </childnode>
-        <childnode refid="2560" relation="include">
-        </childnode>
-        <childnode refid="2564" relation="include">
-        </childnode>
-        <childnode refid="2573" relation="include">
-        </childnode>
-      </node>
-      <node id="2567">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/options.cpp</label>
-        <link refid="options_8cpp"/>
-      </node>
-      <node id="2555">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/digitalclock.cpp</label>
-        <link refid="digitalclock_8cpp"/>
-      </node>
-      <node id="2571">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mapexecution.cpp</label>
-        <link refid="mapexecution_8cpp"/>
-      </node>
-      <node id="2560">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.h</label>
-        <link refid="mainmdidisplay_8h"/>
-        <childnode refid="2561" relation="include">
-        </childnode>
-        <childnode refid="2562" relation="include">
-        </childnode>
-      </node>
-      <node id="2570">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mapvalidator.cpp</label>
-        <link refid="mapvalidator_8cpp"/>
-      </node>
-      <node id="2562">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mainmdidisplay.cpp</label>
-        <link refid="mainmdidisplay_8cpp"/>
-      </node>
-      <node id="2556">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h</label>
-        <link refid="mapplanning_8h"/>
-        <childnode refid="2557" relation="include">
-        </childnode>
-        <childnode refid="2558" relation="include">
-        </childnode>
-        <childnode refid="2559" relation="include">
-        </childnode>
-        <childnode refid="2560" relation="include">
-        </childnode>
-        <childnode refid="2564" relation="include">
-        </childnode>
-        <childnode refid="2569" relation="include">
-        </childnode>
-        <childnode refid="2570" relation="include">
-        </childnode>
-      </node>
-      <node id="2561">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/main.cpp</label>
-        <link refid="main_8cpp"/>
-      </node>
-      <node id="2558">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/options.h</label>
-        <link refid="options_8h"/>
-        <childnode refid="2554" relation="include">
-        </childnode>
-        <childnode refid="2559" relation="include">
-        </childnode>
-        <childnode refid="2564" relation="include">
-        </childnode>
-        <childnode refid="2567" relation="include">
-        </childnode>
-      </node>
-      <node id="2559">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h</label>
-        <link refid="qttabtest_8h"/>
-        <childnode refid="2560" relation="include">
-        </childnode>
-        <childnode refid="2563" relation="include">
-        </childnode>
-      </node>
-      <node id="2564">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mainwindow.h</label>
-        <link refid="mainwindow_8h"/>
-        <childnode refid="2565" relation="include">
-        </childnode>
-        <childnode refid="2566" relation="include">
-        </childnode>
-      </node>
-      <node id="2569">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp</label>
-        <link refid="mapplanning_8cpp"/>
-      </node>
-      <node id="2557">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/missionrecap.h</label>
-        <link refid="missionrecap_8h"/>
-        <childnode refid="2554" relation="include">
-        </childnode>
-        <childnode refid="2558" relation="include">
-        </childnode>
-        <childnode refid="2559" relation="include">
-        </childnode>
-        <childnode refid="2564" relation="include">
-        </childnode>
-        <childnode refid="2568" relation="include">
-        </childnode>
-      </node>
-      <node id="2554">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mapexecution.h</label>
-        <link refid="mapexecution_8h"/>
-        <childnode refid="2555" relation="include">
-        </childnode>
-        <childnode refid="2556" relation="include">
-        </childnode>
-        <childnode refid="2558" relation="include">
-        </childnode>
-        <childnode refid="2559" relation="include">
-        </childnode>
-        <childnode refid="2564" relation="include">
-        </childnode>
-        <childnode refid="2571" relation="include">
-        </childnode>
-        <childnode refid="2572" relation="include">
-        </childnode>
-      </node>
-      <node id="2568">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/missionrecap.cpp</label>
-        <link refid="missionrecap_8cpp"/>
-      </node>
-      <node id="2572">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.cpp</label>
+      <node id="2772">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.cpp</label>
         <link refid="popwindowmp_8cpp"/>
       </node>
-      <node id="2566">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/tutorial.cpp</label>
-        <link refid="tutorial_8cpp"/>
+      <node id="2754">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h</label>
+        <link refid="mapexecution_8h"/>
+        <childnode refid="2755" relation="include">
+        </childnode>
+        <childnode refid="2756" relation="include">
+        </childnode>
+        <childnode refid="2758" relation="include">
+        </childnode>
+        <childnode refid="2759" relation="include">
+        </childnode>
+        <childnode refid="2764" relation="include">
+        </childnode>
+        <childnode refid="2771" relation="include">
+        </childnode>
+        <childnode refid="2772" relation="include">
+        </childnode>
       </node>
-      <node id="2573">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/maprecap.cpp</label>
-        <link refid="maprecap_8cpp"/>
+      <node id="2769">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp</label>
+        <link refid="mapplanning_8cpp"/>
       </node>
-      <node id="2552">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h</label>
+      <node id="2756">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h</label>
+        <link refid="mapplanning_8h"/>
+        <childnode refid="2757" relation="include">
+        </childnode>
+        <childnode refid="2758" relation="include">
+        </childnode>
+        <childnode refid="2759" relation="include">
+        </childnode>
+        <childnode refid="2760" relation="include">
+        </childnode>
+        <childnode refid="2764" relation="include">
+        </childnode>
+        <childnode refid="2769" relation="include">
+        </childnode>
+        <childnode refid="2770" relation="include">
+        </childnode>
+      </node>
+      <node id="2770">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapvalidator.cpp</label>
+        <link refid="mapvalidator_8cpp"/>
+      </node>
+      <node id="2768">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.cpp</label>
+        <link refid="missionrecap_8cpp"/>
+      </node>
+      <node id="2753">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/maprecap.h</label>
+        <link refid="maprecap_8h"/>
+        <childnode refid="2754" relation="include">
+        </childnode>
+        <childnode refid="2759" relation="include">
+        </childnode>
+        <childnode refid="2760" relation="include">
+        </childnode>
+        <childnode refid="2764" relation="include">
+        </childnode>
+        <childnode refid="2773" relation="include">
+        </childnode>
+      </node>
+      <node id="2759">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h</label>
+        <link refid="qttabtest_8h"/>
+        <childnode refid="2760" relation="include">
+        </childnode>
+        <childnode refid="2763" relation="include">
+        </childnode>
+      </node>
+      <node id="2752">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.h</label>
         <link refid="popwindowmp.h"/>
-        <childnode refid="2553" relation="include">
+        <childnode refid="2753" relation="include">
         </childnode>
-        <childnode refid="2556" relation="include">
+        <childnode refid="2756" relation="include">
         </childnode>
-        <childnode refid="2572" relation="include">
+        <childnode refid="2772" relation="include">
         </childnode>
       </node>
-      <node id="2565">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mainwindow.cpp</label>
+      <node id="2757">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h</label>
+        <link refid="missionrecap_8h"/>
+        <childnode refid="2754" relation="include">
+        </childnode>
+        <childnode refid="2758" relation="include">
+        </childnode>
+        <childnode refid="2759" relation="include">
+        </childnode>
+        <childnode refid="2764" relation="include">
+        </childnode>
+        <childnode refid="2768" relation="include">
+        </childnode>
+      </node>
+      <node id="2767">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.cpp</label>
+        <link refid="options_8cpp"/>
+      </node>
+      <node id="2755">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.cpp</label>
+        <link refid="digitalclock_8cpp"/>
+      </node>
+      <node id="2760">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainmdidisplay.h</label>
+        <link refid="mainmdidisplay_8h"/>
+        <childnode refid="2761" relation="include">
+        </childnode>
+        <childnode refid="2762" relation="include">
+        </childnode>
+      </node>
+      <node id="2765">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainwindow.cpp</label>
         <link refid="mainwindow_8cpp"/>
       </node>
-      <node id="2563">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp</label>
+      <node id="2758">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.h</label>
+        <link refid="options_8h"/>
+        <childnode refid="2754" relation="include">
+        </childnode>
+        <childnode refid="2759" relation="include">
+        </childnode>
+        <childnode refid="2764" relation="include">
+        </childnode>
+        <childnode refid="2767" relation="include">
+        </childnode>
+      </node>
+      <node id="2762">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainmdidisplay.cpp</label>
+        <link refid="mainmdidisplay_8cpp"/>
+      </node>
+      <node id="2766">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/tutorial.cpp</label>
+        <link refid="tutorial_8cpp"/>
+      </node>
+      <node id="2763">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.cpp</label>
         <link refid="qttabtest_8cpp"/>
+      </node>
+      <node id="2764">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="2765" relation="include">
+        </childnode>
+        <childnode refid="2766" relation="include">
+        </childnode>
+      </node>
+      <node id="2771">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp</label>
+        <link refid="mapexecution_8cpp"/>
+      </node>
+      <node id="2761">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="2773">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/maprecap.cpp</label>
+        <link refid="maprecap_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="class_pop_window_m_p" prot="public">PopWindowMP</innerclass>
@@ -218,6 +218,6 @@
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>POPWINDOWMP_H</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.h"/>
   </compounddef>
 </doxygen>

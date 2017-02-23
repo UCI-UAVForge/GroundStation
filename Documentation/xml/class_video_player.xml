@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" line="26" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" bodystart="26" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/videoplayer.h" line="26" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/videoplayer.h" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_video_player_1a453a5b692dd5415c20de08c51e955088" prot="private" static="no" mutable="no">
         <type>QAbstractButton *</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" line="27" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" bodystart="27" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/videoplayer.h" line="27" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/videoplayer.h" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_video_player_1a04f7f93d7b602fe8f9f507956ba54852" prot="private" static="no" mutable="no">
         <type>QSlider *</type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" line="28" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" bodystart="28" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/videoplayer.h" line="28" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/videoplayer.h" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_video_player_1a97c127c74e38d0b4523fe66cb608e83c" prot="private" static="no" mutable="no">
         <type>QLabel *</type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" line="29" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" bodystart="29" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/videoplayer.h" line="29" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/videoplayer.h" bodystart="29" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" line="20" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.cpp" bodystart="3" bodyend="21"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/videoplayer.h" line="20" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/videoplayer.cpp" bodystart="3" bodyend="21"/>
       </memberdef>
       <memberdef kind="function" id="class_video_player_1a84982600649b54d2fa2ddb4efee2349f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -88,7 +88,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" line="21" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.cpp" bodystart="23" bodyend="25"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/videoplayer.h" line="21" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/videoplayer.cpp" bodystart="23" bodyend="25"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-slot">
@@ -103,7 +103,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" line="24" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.cpp" bodystart="27" bodyend="37"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/videoplayer.h" line="24" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/videoplayer.cpp" bodystart="27" bodyend="37"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -111,28 +111,28 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1111">
+      <node id="1154">
         <label>VideoPlayer</label>
         <link refid="class_video_player"/>
-        <childnode refid="1112" relation="public-inheritance">
+        <childnode refid="1155" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1112">
+      <node id="1155">
         <label>QWidget</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1113">
+      <node id="1156">
         <label>VideoPlayer</label>
         <link refid="class_video_player"/>
-        <childnode refid="1114" relation="public-inheritance">
+        <childnode refid="1157" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1114">
+      <node id="1157">
         <label>QWidget</label>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" line="17" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/videoplayer.h" bodystart="16" bodyend="30"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/videoplayer.h" line="17" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/videoplayer.h" bodystart="16" bodyend="30"/>
     <listofallmembers>
       <member refid="class_video_player_1a97c127c74e38d0b4523fe66cb608e83c" prot="private" virt="non-virtual"><scope>VideoPlayer</scope><name>errorLabel</name></member>
       <member refid="class_video_player_1ac8db33eca4b05bbfed4ce5dd2a9cfab7" prot="private" virt="non-virtual"><scope>VideoPlayer</scope><name>mediaPlayer</name></member>

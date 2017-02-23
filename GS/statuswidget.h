@@ -31,5 +31,9 @@ private slots:
 
     void showStatus();
 
+signals:
+
+    void updateMe() ;
+
 };
 #endif

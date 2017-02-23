@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" line="15" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" bodystart="15" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.h" line="15" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.h" bodystart="15" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" line="23" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" bodystart="23" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.h" line="23" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.h" bodystart="23" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" line="14" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.cpp" bodystart="7" bodyend="11"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.h" line="14" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.cpp" bodystart="7" bodyend="11"/>
       </memberdef>
       <memberdef kind="function" id="class_pop_window_m_p_1aa58c893a6ddb936e79d4ee329dab11c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" line="16" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.cpp" bodystart="13" bodyend="15"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.h" line="16" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.cpp" bodystart="13" bodyend="15"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-slot">
@@ -83,7 +83,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" line="19" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.cpp" bodystart="17" bodyend="22"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.h" line="19" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.cpp" bodystart="17" bodyend="22"/>
       </memberdef>
       <memberdef kind="slot" id="class_pop_window_m_p_1ac2daaca87599a4b34188ced95fe27f95" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -96,7 +96,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" line="20" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.cpp" bodystart="24" bodyend="26"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.h" line="20" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.cpp" bodystart="24" bodyend="26"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="signal">
@@ -111,7 +111,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" line="26" column="1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.h" line="26" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -119,28 +119,28 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="155">
+      <node id="179">
         <label>PopWindowMP</label>
         <link refid="class_pop_window_m_p"/>
-        <childnode refid="156" relation="public-inheritance">
+        <childnode refid="180" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="156">
+      <node id="180">
         <label>QWidget</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="157">
+      <node id="181">
         <label>PopWindowMP</label>
         <link refid="class_pop_window_m_p"/>
-        <childnode refid="158" relation="public-inheritance">
+        <childnode refid="182" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="158">
+      <node id="182">
         <label>QWidget</label>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" line="11" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/popwindowmp.h" bodystart="10" bodyend="27"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.h" line="11" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.h" bodystart="10" bodyend="27"/>
     <listofallmembers>
       <member refid="class_pop_window_m_p_1a95b9fb0c455dce6924a1a7282fd13b00" prot="public" virt="non-virtual"><scope>PopWindowMP</scope><name>mapStrings</name></member>
       <member refid="class_pop_window_m_p_1ac2daaca87599a4b34188ced95fe27f95" prot="private" virt="non-virtual"><scope>PopWindowMP</scope><name>on_noButton_clicked</name></member>

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['minimum_5fnumber_5fof_5fpoints',['MINIMUM_NUMBER_OF_POINTS',['../mainmdidisplay_8h.html#af22161c364d81ea6febed3c4ad0e09a1',1,'mainmdidisplay.h']]]
+  ['qcp_5flib_5fdecl',['QCP_LIB_DECL',['../qcustomplot_8h.html#a5eaab02224a642ded7fb8951e973a02c',1,'qcustomplot.h']]],
+  ['qcustomplot_5fcompile_5flibrary',['QCUSTOMPLOT_COMPILE_LIBRARY',['../missionrecap_8h.html#af4cfe29414a81e0f98129289d6c2f3a0',1,'missionrecap.h']]]
 ];

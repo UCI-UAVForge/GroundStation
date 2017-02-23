@@ -15,314 +15,314 @@
     <includes refid="infopacket_8h" local="yes">infopacket.h</includes>
     <includes refid="packet_8h" local="yes">packet.h</includes>
     <incdepgraph>
-      <node id="2096">
-        <label>net.h</label>
-        <link refid="net_8h"/>
-        <childnode refid="2097" relation="include">
-        </childnode>
-      </node>
-      <node id="2106">
+      <node id="2283">
         <label>QMap</label>
       </node>
-      <node id="2066">
+      <node id="2243">
         <label>QObject</label>
       </node>
-      <node id="2065">
-        <label>networklistener.h</label>
-        <link refid="networklistener_8h"/>
-        <childnode refid="2066" relation="include">
-        </childnode>
-        <childnode refid="2067" relation="include">
-        </childnode>
-        <childnode refid="2068" relation="include">
-        </childnode>
-        <childnode refid="2069" relation="include">
-        </childnode>
-        <childnode refid="2070" relation="include">
-        </childnode>
-        <childnode refid="2089" relation="include">
-        </childnode>
-      </node>
-      <node id="2075">
-        <label>QList</label>
-      </node>
-      <node id="2077">
-        <label>stdint.h</label>
-      </node>
-      <node id="2091">
-        <label>actionpacket.h</label>
-        <link refid="actionpacket_8h"/>
-        <childnode refid="2092" relation="include">
-        </childnode>
-        <childnode refid="2089" relation="include">
-        </childnode>
-      </node>
-      <node id="2067">
-        <label>QThread</label>
-      </node>
-      <node id="2074">
-        <label>QPair</label>
-      </node>
-      <node id="2092">
-        <label>string</label>
-      </node>
-      <node id="2103">
-        <label>QLinkedList</label>
-      </node>
-      <node id="2081">
-        <label>QModelIndex</label>
-      </node>
-      <node id="2087">
+      <node id="2264">
         <label>ackpacket.h</label>
         <link refid="ackpacket_8h"/>
-        <childnode refid="2088" relation="include">
+        <childnode refid="2265" relation="include">
         </childnode>
-        <childnode refid="2089" relation="include">
-        </childnode>
-      </node>
-      <node id="2089">
-        <label>Packet.h</label>
-        <link refid="packet_8h"/>
-        <childnode refid="2090" relation="include">
-        </childnode>
-        <childnode refid="2088" relation="include">
-        </childnode>
-        <childnode refid="2077" relation="include">
+        <childnode refid="2266" relation="include">
         </childnode>
       </node>
-      <node id="2098">
-        <label>QtCore</label>
+      <node id="2252">
+        <label>QList</label>
       </node>
-      <node id="2104">
-        <label>mission.h</label>
-        <link refid="mission_8h"/>
-        <childnode refid="2068" relation="include">
-        </childnode>
-        <childnode refid="2105" relation="include">
-        </childnode>
-        <childnode refid="2074" relation="include">
-        </childnode>
-        <childnode refid="2106" relation="include">
-        </childnode>
-        <childnode refid="2091" relation="include">
-        </childnode>
-        <childnode refid="2095" relation="include">
-        </childnode>
-        <childnode refid="2107" relation="include">
-        </childnode>
-        <childnode refid="2070" relation="include">
-        </childnode>
+      <node id="2254">
+        <label>stdint.h</label>
       </node>
-      <node id="2093">
-        <label>infopacket.h</label>
-        <link refid="infopacket_8h"/>
-        <childnode refid="2092" relation="include">
-        </childnode>
-        <childnode refid="2094" relation="include">
-        </childnode>
-        <childnode refid="2077" relation="include">
-        </childnode>
-        <childnode refid="2089" relation="include">
-        </childnode>
-      </node>
-      <node id="2094">
-        <label>string.h</label>
-      </node>
-      <node id="2076">
-        <label>QTime</label>
-      </node>
-      <node id="2073">
-        <label>QApplication</label>
-      </node>
-      <node id="2095">
+      <node id="2272">
         <label>telemetrypacket.h</label>
         <link refid="telemetrypacket_8h"/>
-        <childnode refid="2092" relation="include">
+        <childnode refid="2269" relation="include">
         </childnode>
-        <childnode refid="2089" relation="include">
-        </childnode>
-      </node>
-      <node id="2086">
-        <label>QValidator</label>
-      </node>
-      <node id="2099">
-        <label>QDebug</label>
-      </node>
-      <node id="2072">
-        <label>vector</label>
-      </node>
-      <node id="2083">
-        <label>QLineEdit</label>
-      </node>
-      <node id="2064">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/networklistener.cpp</label>
-        <link refid="networklistener.cpp"/>
-        <childnode refid="2065" relation="include">
-        </childnode>
-        <childnode refid="2096" relation="include">
-        </childnode>
-        <childnode refid="2098" relation="include">
-        </childnode>
-        <childnode refid="2099" relation="include">
-        </childnode>
-        <childnode refid="2071" relation="include">
-        </childnode>
-        <childnode refid="2068" relation="include">
-        </childnode>
-        <childnode refid="2100" relation="include">
-        </childnode>
-        <childnode refid="2087" relation="include">
-        </childnode>
-        <childnode refid="2091" relation="include">
-        </childnode>
-        <childnode refid="2095" relation="include">
-        </childnode>
-        <childnode refid="2093" relation="include">
-        </childnode>
-        <childnode refid="2089" relation="include">
+        <childnode refid="2266" relation="include">
         </childnode>
       </node>
-      <node id="2068">
-        <label>QString</label>
+      <node id="2244">
+        <label>QThread</label>
       </node>
-      <node id="2101">
-        <label>QQueue</label>
+      <node id="2251">
+        <label>QPair</label>
       </node>
-      <node id="2069">
-        <label>QUdpSocket</label>
+      <node id="2269">
+        <label>string</label>
       </node>
-      <node id="2097">
-        <label>QHostAddress</label>
+      <node id="2280">
+        <label>QLinkedList</label>
       </node>
-      <node id="2082">
-        <label>QSize</label>
-      </node>
-      <node id="2084">
-        <label>mapvalidator.h</label>
-        <link refid="mapvalidator_8h"/>
-        <childnode refid="2085" relation="include">
-        </childnode>
-        <childnode refid="2086" relation="include">
-        </childnode>
-      </node>
-      <node id="2100">
-        <label>gsserver.h</label>
-        <link refid="gsserver_8h"/>
-        <childnode refid="2101" relation="include">
-        </childnode>
-        <childnode refid="2074" relation="include">
-        </childnode>
-        <childnode refid="2067" relation="include">
-        </childnode>
-        <childnode refid="2069" relation="include">
-        </childnode>
-        <childnode refid="2102" relation="include">
-        </childnode>
-        <childnode refid="2066" relation="include">
-        </childnode>
-        <childnode refid="2065" relation="include">
-        </childnode>
-        <childnode refid="2070" relation="include">
-        </childnode>
-        <childnode refid="2104" relation="include">
-        </childnode>
-      </node>
-      <node id="2090">
-        <label>time.h</label>
-      </node>
-      <node id="2102">
-        <label>serverqueue.h</label>
-        <link refid="serverqueue_8h"/>
-        <childnode refid="2075" relation="include">
-        </childnode>
-        <childnode refid="2103" relation="include">
-        </childnode>
-        <childnode refid="2089" relation="include">
-        </childnode>
-        <childnode refid="2087" relation="include">
-        </childnode>
-        <childnode refid="2091" relation="include">
-        </childnode>
-        <childnode refid="2093" relation="include">
-        </childnode>
-        <childnode refid="2095" relation="include">
-        </childnode>
-      </node>
-      <node id="2078">
+      <node id="2255">
         <label>qcomboboxdelegate.h</label>
         <link refid="qcomboboxdelegate_8h"/>
-        <childnode refid="2079" relation="include">
+        <childnode refid="2256" relation="include">
         </childnode>
-        <childnode refid="2080" relation="include">
+        <childnode refid="2257" relation="include">
         </childnode>
-        <childnode refid="2081" relation="include">
+        <childnode refid="2258" relation="include">
         </childnode>
-        <childnode refid="2066" relation="include">
+        <childnode refid="2243" relation="include">
         </childnode>
-        <childnode refid="2082" relation="include">
+        <childnode refid="2259" relation="include">
         </childnode>
-        <childnode refid="2083" relation="include">
+        <childnode refid="2260" relation="include">
         </childnode>
-        <childnode refid="2084" relation="include">
+        <childnode refid="2261" relation="include">
         </childnode>
       </node>
-      <node id="2080">
+      <node id="2279">
+        <label>serverqueue.h</label>
+        <link refid="serverqueue_8h"/>
+        <childnode refid="2252" relation="include">
+        </childnode>
+        <childnode refid="2280" relation="include">
+        </childnode>
+        <childnode refid="2266" relation="include">
+        </childnode>
+        <childnode refid="2264" relation="include">
+        </childnode>
+        <childnode refid="2268" relation="include">
+        </childnode>
+        <childnode refid="2270" relation="include">
+        </childnode>
+        <childnode refid="2272" relation="include">
+        </childnode>
+      </node>
+      <node id="2258">
+        <label>QModelIndex</label>
+      </node>
+      <node id="2242">
+        <label>networklistener.h</label>
+        <link refid="networklistener_8h"/>
+        <childnode refid="2243" relation="include">
+        </childnode>
+        <childnode refid="2244" relation="include">
+        </childnode>
+        <childnode refid="2245" relation="include">
+        </childnode>
+        <childnode refid="2246" relation="include">
+        </childnode>
+        <childnode refid="2247" relation="include">
+        </childnode>
+        <childnode refid="2266" relation="include">
+        </childnode>
+      </node>
+      <node id="2281">
+        <label>mission.h</label>
+        <link refid="mission_8h"/>
+        <childnode refid="2245" relation="include">
+        </childnode>
+        <childnode refid="2282" relation="include">
+        </childnode>
+        <childnode refid="2251" relation="include">
+        </childnode>
+        <childnode refid="2283" relation="include">
+        </childnode>
+        <childnode refid="2268" relation="include">
+        </childnode>
+        <childnode refid="2272" relation="include">
+        </childnode>
+        <childnode refid="2284" relation="include">
+        </childnode>
+        <childnode refid="2247" relation="include">
+        </childnode>
+      </node>
+      <node id="2275">
+        <label>QtCore</label>
+      </node>
+      <node id="2271">
+        <label>string.h</label>
+      </node>
+      <node id="2253">
+        <label>QTime</label>
+      </node>
+      <node id="2250">
+        <label>QApplication</label>
+      </node>
+      <node id="2263">
+        <label>QValidator</label>
+      </node>
+      <node id="2277">
+        <label>gsserver.h</label>
+        <link refid="gsserver_8h"/>
+        <childnode refid="2278" relation="include">
+        </childnode>
+        <childnode refid="2251" relation="include">
+        </childnode>
+        <childnode refid="2244" relation="include">
+        </childnode>
+        <childnode refid="2246" relation="include">
+        </childnode>
+        <childnode refid="2279" relation="include">
+        </childnode>
+        <childnode refid="2243" relation="include">
+        </childnode>
+        <childnode refid="2242" relation="include">
+        </childnode>
+        <childnode refid="2247" relation="include">
+        </childnode>
+        <childnode refid="2281" relation="include">
+        </childnode>
+      </node>
+      <node id="2276">
+        <label>QDebug</label>
+      </node>
+      <node id="2249">
+        <label>vector</label>
+      </node>
+      <node id="2260">
+        <label>QLineEdit</label>
+      </node>
+      <node id="2241">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/networklistener.cpp</label>
+        <link refid="networklistener.cpp"/>
+        <childnode refid="2242" relation="include">
+        </childnode>
+        <childnode refid="2273" relation="include">
+        </childnode>
+        <childnode refid="2275" relation="include">
+        </childnode>
+        <childnode refid="2276" relation="include">
+        </childnode>
+        <childnode refid="2248" relation="include">
+        </childnode>
+        <childnode refid="2245" relation="include">
+        </childnode>
+        <childnode refid="2277" relation="include">
+        </childnode>
+        <childnode refid="2264" relation="include">
+        </childnode>
+        <childnode refid="2268" relation="include">
+        </childnode>
+        <childnode refid="2272" relation="include">
+        </childnode>
+        <childnode refid="2270" relation="include">
+        </childnode>
+        <childnode refid="2266" relation="include">
+        </childnode>
+      </node>
+      <node id="2266">
+        <label>packet.h</label>
+        <link refid="packet_8h"/>
+        <childnode refid="2267" relation="include">
+        </childnode>
+        <childnode refid="2265" relation="include">
+        </childnode>
+        <childnode refid="2254" relation="include">
+        </childnode>
+      </node>
+      <node id="2245">
+        <label>QString</label>
+      </node>
+      <node id="2278">
+        <label>QQueue</label>
+      </node>
+      <node id="2246">
+        <label>QUdpSocket</label>
+      </node>
+      <node id="2274">
+        <label>QHostAddress</label>
+      </node>
+      <node id="2259">
+        <label>QSize</label>
+      </node>
+      <node id="2267">
+        <label>time.h</label>
+      </node>
+      <node id="2257">
         <label>QComboBox</label>
       </node>
-      <node id="2071">
+      <node id="2248">
         <label>iostream</label>
       </node>
-      <node id="2079">
-        <label>QItemDelegate</label>
-      </node>
-      <node id="2085">
-        <label>QDoubleValidator</label>
-      </node>
-      <node id="2088">
-        <label>stdio.h</label>
-      </node>
-      <node id="2107">
+      <node id="2284">
         <label>flightpath.h</label>
         <link refid="flightpath_8h"/>
-        <childnode refid="2075" relation="include">
+        <childnode refid="2252" relation="include">
         </childnode>
-        <childnode refid="2074" relation="include">
+        <childnode refid="2251" relation="include">
         </childnode>
-        <childnode refid="2068" relation="include">
+        <childnode refid="2245" relation="include">
         </childnode>
-        <childnode refid="2091" relation="include">
+        <childnode refid="2268" relation="include">
         </childnode>
       </node>
-      <node id="2105">
-        <label>QVector</label>
+      <node id="2256">
+        <label>QItemDelegate</label>
       </node>
-      <node id="2070">
+      <node id="2273">
+        <label>net.h</label>
+        <link refid="net_8h"/>
+        <childnode refid="2274" relation="include">
+        </childnode>
+      </node>
+      <node id="2262">
+        <label>QDoubleValidator</label>
+      </node>
+      <node id="2247">
         <label>messagebox.h</label>
         <link refid="messagebox_8h"/>
-        <childnode refid="2071" relation="include">
+        <childnode refid="2248" relation="include">
         </childnode>
-        <childnode refid="2072" relation="include">
+        <childnode refid="2249" relation="include">
         </childnode>
-        <childnode refid="2073" relation="include">
+        <childnode refid="2250" relation="include">
         </childnode>
-        <childnode refid="2074" relation="include">
+        <childnode refid="2251" relation="include">
         </childnode>
-        <childnode refid="2075" relation="include">
+        <childnode refid="2252" relation="include">
         </childnode>
-        <childnode refid="2076" relation="include">
+        <childnode refid="2253" relation="include">
         </childnode>
-        <childnode refid="2077" relation="include">
+        <childnode refid="2254" relation="include">
         </childnode>
-        <childnode refid="2078" relation="include">
+        <childnode refid="2255" relation="include">
         </childnode>
-        <childnode refid="2087" relation="include">
+        <childnode refid="2264" relation="include">
         </childnode>
-        <childnode refid="2091" relation="include">
+        <childnode refid="2268" relation="include">
         </childnode>
-        <childnode refid="2093" relation="include">
+        <childnode refid="2270" relation="include">
         </childnode>
-        <childnode refid="2095" relation="include">
+        <childnode refid="2272" relation="include">
         </childnode>
+      </node>
+      <node id="2261">
+        <label>mapvalidator.h</label>
+        <link refid="mapvalidator_8h"/>
+        <childnode refid="2262" relation="include">
+        </childnode>
+        <childnode refid="2263" relation="include">
+        </childnode>
+      </node>
+      <node id="2270">
+        <label>infopacket.h</label>
+        <link refid="infopacket_8h"/>
+        <childnode refid="2269" relation="include">
+        </childnode>
+        <childnode refid="2271" relation="include">
+        </childnode>
+        <childnode refid="2254" relation="include">
+        </childnode>
+        <childnode refid="2266" relation="include">
+        </childnode>
+      </node>
+      <node id="2265">
+        <label>stdio.h</label>
+      </node>
+      <node id="2268">
+        <label>actionpacket.h</label>
+        <link refid="actionpacket_8h"/>
+        <childnode refid="2269" relation="include">
+        </childnode>
+        <childnode refid="2266" relation="include">
+        </childnode>
+      </node>
+      <node id="2282">
+        <label>QVector</label>
       </node>
     </incdepgraph>
     <innernamespace refid="namespacestd">std</innernamespace>
@@ -336,7 +336,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/networklistener.cpp" line="15" column="9" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/networklistener.cpp" bodystart="15" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/networklistener.cpp" line="15" column="9" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/networklistener.cpp" bodystart="15" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -417,29 +417,30 @@
 <codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>pack_number<sp/>&lt;&lt;<sp/>&quot;<sp/>Latitude:<sp/>&quot;<sp/>&lt;&lt;<sp/>telemPacket<sp/>&lt;&lt;<sp/>&quot;<sp/>Longitude:<sp/>&quot;<sp/>&lt;&lt;<sp/>telemPacket-&gt;lon<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++pack_number;</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_network_listener_1abd438db9a3d37b505f711993c1db7239" kindref="member">myMessageBox</ref>-&gt;<ref refid="classmessagebox_1a27ac98af342131cd148fb4ed2261631f" kindref="member">addTelemetryPacket</ref>(*telemPacket);</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_network_listener_1a18b48fbd5b2df44baa73e4b332981a56" kindref="member">server</ref>-&gt;<ref refid="class_gs_server_1a450eb8f60b68bf82216d058cc9738e28" kindref="member">packetRecieved</ref>(*telemPacket);</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75a4059b0251f66a18cb56f544728796875" kindref="member">Protocol::PacketType::Info</ref>){</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;InfoPacket<sp/>Recieved&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref><sp/>*infoPacket<sp/>=<sp/>(<ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref>*)incPack;</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_network_listener_1abd438db9a3d37b505f711993c1db7239" kindref="member">myMessageBox</ref>-&gt;<ref refid="classmessagebox_1aa7a826742dd2a22376eaf787d510f064" kindref="member">addInfoPacket</ref>(*infoPacket);</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;UNKNOWN<sp/>PACKET<sp/>TYPE<sp/>RECIEVED!&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1aae655a7afbd74bbe193612f2b7638958" kindref="member">NetworkListener::start</ref>(){</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,SIGNAL(readyRead()),</highlight><highlight class="keyword">this</highlight><highlight class="normal">,SLOT(<ref refid="class_network_listener_1a831238cc68f68ecac14a9a5b3d330f1b" kindref="member">processPendingDatagrams</ref>()));</highlight></codeline>
-<codeline lineno="87"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1a258e0ef8e6e4de827e652a43186c6a07" kindref="member">NetworkListener::stop</ref>(){</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if(isOpen()){</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>abort();</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//}</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>disconnect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,SIGNAL(readyRead()),</highlight><highlight class="keyword">this</highlight><highlight class="normal">,SLOT(<ref refid="class_network_listener_1a831238cc68f68ecac14a9a5b3d330f1b" kindref="member">processPendingDatagrams</ref>()));</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_network_listener_1a3192d69724315464c95ae1f63db0b127" kindref="member">listening</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Stopping<sp/>NetworkListener...&quot;</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="96"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_network_listener_1a18b48fbd5b2df44baa73e4b332981a56" kindref="member">server</ref>-&gt;<ref refid="class_gs_server_1aaa42f9bb1c822408a6c030ca880f5a91" kindref="member">addPacketToMission</ref>(*telemPacket);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>emit<sp/>this-&gt;<ref refid="class_network_listener_1aa695d0b565bb61dea1d03715b9f22e4b" kindref="member">packetRecieved</ref>(telemPacket);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75a4059b0251f66a18cb56f544728796875" kindref="member">Protocol::PacketType::Info</ref>){</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;InfoPacket<sp/>Recieved&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref><sp/>*infoPacket<sp/>=<sp/>(<ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref>*)incPack;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_network_listener_1abd438db9a3d37b505f711993c1db7239" kindref="member">myMessageBox</ref>-&gt;<ref refid="classmessagebox_1aa7a826742dd2a22376eaf787d510f064" kindref="member">addInfoPacket</ref>(*infoPacket);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;UNKNOWN<sp/>PACKET<sp/>TYPE<sp/>RECIEVED!&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1aae655a7afbd74bbe193612f2b7638958" kindref="member">NetworkListener::start</ref>(){</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,SIGNAL(readyRead()),</highlight><highlight class="keyword">this</highlight><highlight class="normal">,SLOT(<ref refid="class_network_listener_1a831238cc68f68ecac14a9a5b3d330f1b" kindref="member">processPendingDatagrams</ref>()));</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_network_listener_1a258e0ef8e6e4de827e652a43186c6a07" kindref="member">NetworkListener::stop</ref>(){</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if(isOpen()){</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>abort();</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>disconnect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,SIGNAL(readyRead()),</highlight><highlight class="keyword">this</highlight><highlight class="normal">,SLOT(<ref refid="class_network_listener_1a831238cc68f68ecac14a9a5b3d330f1b" kindref="member">processPendingDatagrams</ref>()));</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_network_listener_1a3192d69724315464c95ae1f63db0b127" kindref="member">listening</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Stopping<sp/>NetworkListener...&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/networklistener.cpp"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/networklistener.cpp"/>
   </compounddef>
 </doxygen>

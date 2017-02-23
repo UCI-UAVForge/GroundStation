@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['handlenewconnection',['handleNewConnection',['../class_web_socket_client_wrapper.html#a2a139f16c65a5443c1578a51028cae9a',1,'WebSocketClientWrapper']]],
   ['handlepacket',['HandlePacket',['../namespace_protocol.html#ae4715844a15b4cef94c06d21a9bce30a',1,'Protocol']]],
   ['hasaction',['hasAction',['../class_timed_action.html#a8fc6b608826b02309ea063b4222bc149',1,'TimedAction']]],
   ['hasanchor',['hasAnchor',['../class_q_c_p_abstract_item.html#acbce9e5ba5252541d19db0c40303357a',1,'QCPAbstractItem']]],

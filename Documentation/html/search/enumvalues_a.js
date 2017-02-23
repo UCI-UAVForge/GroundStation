@@ -31,7 +31,6 @@ var searchData=
   ['sstriangleinverted',['ssTriangleInverted',['../class_q_c_p_scatter_style.html#adb31525af6b680e6f1b7472e43859349a6156274d21d8b4115197567d3ea2d9a8',1,'QCPScatterStyle']]],
   ['stabsolute',['stAbsolute',['../class_q_c_p_bars_group.html#a4c0521120a97e60bbca37677a37075b6ab53fa3efaf14867dd0f14d41d64e42ac',1,'QCPBarsGroup']]],
   ['start',['Start',['../namespace_protocol.html#a95f2e35dc2d8d920f0d7ddaaf122c3b9aa6122a65eaa676f700ae68d393054a37',1,'Protocol']]],
-  ['startup',['Startup',['../mainmdidisplay_8h.html#af3d52afbb0d088f62e02208b24a9cbd2a81b6a630ce374e3388c5d5509e889b59',1,'mainmdidisplay.h']]],
   ['staxisrectratio',['stAxisRectRatio',['../class_q_c_p_bars_group.html#a4c0521120a97e60bbca37677a37075b6ae94b05c27bc985dcdd8b1e1b7f163d26',1,'QCPBarsGroup']]],
   ['stlinear',['stLinear',['../class_q_c_p_axis.html#a36d8e8658dbaa179bf2aeb973db2d6f0aff6e30a11a828bc850caffab0ff994f6',1,'QCPAxis']]],
   ['stlogarithmic',['stLogarithmic',['../class_q_c_p_axis.html#a36d8e8658dbaa179bf2aeb973db2d6f0abf5b785ad976618816dc6f79b73216d4',1,'QCPAxis']]],

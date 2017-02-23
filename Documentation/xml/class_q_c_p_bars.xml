@@ -35,7 +35,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2841" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2841" bodyend="2844"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2841" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2841" bodyend="2844"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -50,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2885" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2885" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2885" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2885" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_bars_1a7c4e0f2246f8133f48a9c3f24cf5b920" prot="protected" static="no" mutable="no">
         <type>double</type>
@@ -63,7 +63,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2886" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2886" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2886" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2886" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_bars_1a94dba1309496c7601d01e2c59715cbb3" prot="protected" static="no" mutable="no">
         <type><ref refid="class_q_c_p_bars_1a65dbbf1ab41cbe993d71521096ed4649" kindref="member">WidthType</ref></type>
@@ -76,7 +76,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2887" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2887" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2887" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2887" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_bars_1a9f59c255f3739182ca9744dff75beaa9" prot="protected" static="no" mutable="no">
         <type><ref refid="class_q_c_p_bars_group" kindref="compound">QCPBarsGroup</ref> *</type>
@@ -89,7 +89,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2888" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2888" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2888" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2888" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_bars_1aa0515cf47fa6044cc28e59b1ae5ec759" prot="protected" static="no" mutable="no">
         <type>double</type>
@@ -102,7 +102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2889" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2889" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2889" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2889" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_bars_1ad51db970eed7e286f2753b0216fc56de" prot="protected" static="no" mutable="no">
         <type>QPointer&lt; <ref refid="class_q_c_p_bars" kindref="compound">QCPBars</ref> &gt;</type>
@@ -115,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2890" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2890" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2890" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2890" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_q_c_p_bars_1a0c1c46076c41a478dbb373cfd35929aa" prot="protected" static="no" mutable="no">
         <type>QPointer&lt; <ref refid="class_q_c_p_bars" kindref="compound">QCPBars</ref> &gt;</type>
@@ -128,7 +128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2890" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2890" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2890" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2890" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -143,7 +143,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2905" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2905" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2905" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2905" bodyend="-1"/>
       </memberdef>
       <memberdef kind="friend" id="class_q_c_p_bars_1a8429035e7adfbd7f05805a6530ad5e3b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend class</type>
@@ -156,7 +156,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2906" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2906" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2906" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2906" bodyend="-1"/>
       </memberdef>
       <memberdef kind="friend" id="class_q_c_p_bars_1ae1051b4d58a2786cb420367a586e2fee" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>friend class</type>
@@ -169,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2907" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2907" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2907" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2907" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -192,7 +192,7 @@
 <para>Constructs a bar chart which uses <emphasis>keyAxis</emphasis> as its key axis (&quot;x&quot;) and <emphasis>valueAxis</emphasis> as its value axis (&quot;y&quot;). <emphasis>keyAxis</emphasis> and <emphasis>valueAxis</emphasis> must reside in the same <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> instance and not have the same orientation. If either of these restrictions is violated, a corresponding message is printed to the debug output (qDebug), the construction is not aborted, though.</para><para>The constructed <ref refid="class_q_c_p_bars" kindref="compound">QCPBars</ref> can be added to the plot with <ref refid="class_q_custom_plot_1ab7ad9174f701f9c6f64e378df77927a6" kindref="member">QCustomPlot::addPlottable</ref>, <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> then takes ownership of the bar chart. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2847" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18438" bodyend="18455"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2847" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18438" bodyend="18455"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a4d880e28031ef120603f543379be2f22" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -205,7 +205,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2848" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18457" bodyend="18463"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2848" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18457" bodyend="18463"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a42798c38abd5f5db22bd45d77f429625" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
@@ -218,7 +218,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2851" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2851" bodyend="2851"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2851" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2851" bodyend="2851"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a8606651ada5804075f6affd04c88dd05" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_q_c_p_bars_1a65dbbf1ab41cbe993d71521096ed4649" kindref="member">WidthType</ref></type>
@@ -231,7 +231,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2852" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2852" bodyend="2852"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2852" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2852" bodyend="2852"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a6d6b2b17619a0ba9c7a88bb2b90fc178" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_q_c_p_bars_group" kindref="compound">QCPBarsGroup</ref> *</type>
@@ -244,7 +244,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2853" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2853" bodyend="2853"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2853" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2853" bodyend="2853"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a3c8686a74396883fd1da87b2e325b043" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
@@ -257,7 +257,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2854" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2854" bodyend="2854"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2854" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2854" bodyend="2854"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a2c46a686cbad95f180ca3c2e88263961" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_q_c_p_bars" kindref="compound">QCPBars</ref> *</type>
@@ -271,7 +271,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2855" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2855" bodyend="2855"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2855" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2855" bodyend="2855"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a9ca48a6577586825d85bdc1fbf410803" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="class_q_c_p_bars" kindref="compound">QCPBars</ref> *</type>
@@ -285,7 +285,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2856" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2856" bodyend="2856"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2856" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2856" bodyend="2856"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1ac05c21de37f677545d06fd852ef8a743" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="qcustomplot_8h_1aa846c77472cae93def9f1609d0c57191" kindref="member">QCPBarDataMap</ref> *</type>
@@ -298,7 +298,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2857" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2857" bodyend="2857"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2857" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2857" bodyend="2857"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1afec6116579d44d5b706e0fa5e5332507" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -315,7 +315,7 @@
 <para>Sets the width of the bars.</para><para>How the number passed as <emphasis>width</emphasis> is interpreted (e.g. screen pixels, plot coordinates,...), depends on the currently set width type, see <ref refid="class_q_c_p_bars_1adcaa3b41281bb2c0f7949b341592fcc0" kindref="member">setWidthType</ref> and <ref refid="class_q_c_p_bars_1a65dbbf1ab41cbe993d71521096ed4649" kindref="member">WidthType</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2860" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18471" bodyend="18474"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2860" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18471" bodyend="18474"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1adcaa3b41281bb2c0f7949b341592fcc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -333,7 +333,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2861" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18484" bodyend="18487"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2861" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18484" bodyend="18487"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1aedd1709061f0b307c47ddb45e172ef9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -350,7 +350,7 @@
 <para>Sets to which <ref refid="class_q_c_p_bars_group" kindref="compound">QCPBarsGroup</ref> this <ref refid="class_q_c_p_bars" kindref="compound">QCPBars</ref> instance belongs to. Alternatively, you can also use <ref refid="class_q_c_p_bars_group_1a809ed63cc4ff7cd5b0b8c96b470163d3" kindref="member">QCPBarsGroup::append</ref>.</para><para>To remove this <ref refid="class_q_c_p_bars" kindref="compound">QCPBars</ref> from any group, set <emphasis>barsGroup</emphasis> to 0. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2862" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18495" bodyend="18504"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2862" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18495" bodyend="18504"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a574ec7eb7537566df1a28ff085d75623" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -367,7 +367,7 @@
 <para>Sets the base value of this bars plottable.</para><para>The base value defines where on the value coordinate the bars start. How far the bars extend from the base value is given by their individual value data. For example, if the base value is set to 1, a bar with data value 2 will have its lowest point at value coordinate 1 and highest point at 3.</para><para>For stacked bars, only the base value of the bottom-most <ref refid="class_q_c_p_bars" kindref="compound">QCPBars</ref> has meaning.</para><para>The default base value is 0. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2863" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18518" bodyend="18521"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2863" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18518" bodyend="18521"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1aa3435aab19e0a49e4e7b41bd36a8d96b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -389,7 +389,7 @@
 <para>Replaces the current data with the provided <emphasis>data</emphasis>.</para><para>If <emphasis>copy</emphasis> is set to true, data points in <emphasis>data</emphasis> will only be copied. if false, the plottable takes ownership of the passed data and replaces the internal data pointer with it. This is significantly faster than copying for large datasets. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2864" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18530" bodyend="18545"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2864" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18530" bodyend="18545"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a3efded5df4a82ecb201f7c28099fa2e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -410,7 +410,7 @@
 <para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>Replaces the current data with the provided points in <emphasis>key</emphasis> and <emphasis>value</emphasis> tuples. The provided vectors should have equal length. Else, the number of added points will be the size of the smallest vector. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2865" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18553" bodyend="18565"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2865" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18553" bodyend="18565"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a69fc371346980f19177c3d1ecdad78ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -428,7 +428,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2868" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18581" bodyend="18598"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2868" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18581" bodyend="18598"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1ac22e00a6a41509538c21b04f0a57318c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -446,7 +446,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2869" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18614" bodyend="18631"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2869" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18614" bodyend="18631"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a1f29cf08615040993209147fa68de3f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -464,7 +464,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2870" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18637" bodyend="18640"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2870" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18637" bodyend="18640"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a142158b1addefd53259002dd3ab22c3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -482,7 +482,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2871" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18646" bodyend="18649"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2871" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18646" bodyend="18649"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a684dd105403a5497fda42f2094fecbb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -504,7 +504,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2872" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18655" bodyend="18661"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2872" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18655" bodyend="18661"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a3679a0a9decab0fa03f8f4c6e3344d52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -526,7 +526,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2873" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18667" bodyend="18678"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2873" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18667" bodyend="18678"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a9d12779a3fad4820aad2c428f368298d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -544,7 +544,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2874" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18684" bodyend="18689"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2874" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18684" bodyend="18689"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a99de6e7abbbf03fb41fa604c7f08aa8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -562,7 +562,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2875" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18695" bodyend="18701"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2875" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18695" bodyend="18701"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a1fe9bcb57d670defea1bb65cadf43765" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -584,7 +584,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2876" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18710" bodyend="18717"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2876" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18710" bodyend="18717"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a837cc9848ad3edd40a6130b508493f93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -602,7 +602,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2877" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18727" bodyend="18730"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2877" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18727" bodyend="18730"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a11dbbd707132f07f862dff13c5789c2b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -617,7 +617,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2880" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18736" bodyend="18739"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2880" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18736" bodyend="18739"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a0d37a9feb1d0baf73ce6e809db214445" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>double</type>
@@ -645,7 +645,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2881" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18742" bodyend="18759"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2881" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18742" bodyend="18759"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -665,7 +665,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2893" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18762" bodyend="18794"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2893" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18762" bodyend="18794"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1ad4fb35d2ab7d2aa460a6612aff3e7a15" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -687,7 +687,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2894" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18797" bodyend="18806"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2894" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18797" bodyend="18806"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a93cfdc8a535f36aeb087acca49c00662" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref></type>
@@ -710,7 +710,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2895" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="19030" bodyend="19077"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2895" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="19030" bodyend="19077"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1ada96e20309570d1488c165596cb2647f" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type><ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref></type>
@@ -733,7 +733,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2896" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="19080" bodyend="19111"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2896" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="19080" bodyend="19111"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1af73d2032be0a64d2692bb76b08c79ec2" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -754,7 +754,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2899" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18822" bodyend="18868"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2899" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18822" bodyend="18868"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a1d118a76662cfd691a78c6f573e3f78c" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>QPolygonF</type>
@@ -775,7 +775,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2900" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18876" bodyend="18905"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2900" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18876" bodyend="18905"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1a794eefe4fb29b9b40583654ccbf460dc" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -800,7 +800,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2901" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18916" bodyend="18957"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2901" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18916" bodyend="18957"/>
       </memberdef>
       <memberdef kind="function" id="class_q_c_p_bars_1ae9b0c2fad9f29030c84bb6e62a4b605f" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -821,7 +821,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2902" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="18968" bodyend="18990"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2902" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="18968" bodyend="18990"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-static-func">
@@ -844,7 +844,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2903" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.cpp" bodystart="19000" bodyend="19027"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2903" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="19000" bodyend="19027"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -864,195 +864,195 @@
 </programlisting> </para></sect1>
     </detaileddescription>
     <inheritancegraph>
-      <node id="302">
+      <node id="326">
         <label>QObject</label>
       </node>
-      <node id="299">
+      <node id="323">
         <label>QCPBars</label>
         <link refid="class_q_c_p_bars"/>
-        <childnode refid="300" relation="public-inheritance">
+        <childnode refid="324" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="300">
+      <node id="324">
         <label>QCPAbstractPlottable</label>
         <link refid="class_q_c_p_abstract_plottable"/>
-        <childnode refid="301" relation="public-inheritance">
+        <childnode refid="325" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="301">
+      <node id="325">
         <label>QCPLayerable</label>
         <link refid="class_q_c_p_layerable"/>
-        <childnode refid="302" relation="public-inheritance">
+        <childnode refid="326" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="319">
+      <node id="343">
         <label>QCPLayoutInset</label>
         <link refid="class_q_c_p_layout_inset"/>
-        <childnode refid="311" relation="public-inheritance">
+        <childnode refid="335" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="312">
+      <node id="336">
         <label>QCPLayoutElement</label>
         <link refid="class_q_c_p_layout_element"/>
-        <childnode refid="305" relation="public-inheritance">
+        <childnode refid="329" relation="public-inheritance">
         </childnode>
-        <childnode refid="311" relation="usage">
+        <childnode refid="335" relation="usage">
           <edgelabel>mParentLayout</edgelabel>
         </childnode>
       </node>
-      <node id="306">
+      <node id="330">
         <label>QObject</label>
       </node>
-      <node id="303">
+      <node id="327">
         <label>QCPBars</label>
         <link refid="class_q_c_p_bars"/>
-        <childnode refid="304" relation="public-inheritance">
+        <childnode refid="328" relation="public-inheritance">
         </childnode>
-        <childnode refid="321" relation="usage">
+        <childnode refid="345" relation="usage">
           <edgelabel>mBarsGroup</edgelabel>
         </childnode>
       </node>
-      <node id="314">
+      <node id="338">
         <label>QCPRange</label>
         <link refid="class_q_c_p_range"/>
       </node>
-      <node id="320">
+      <node id="344">
         <label>QCPLegend</label>
         <link refid="class_q_c_p_legend"/>
-        <childnode refid="310" relation="public-inheritance">
+        <childnode refid="334" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="304">
+      <node id="328">
         <label>QCPAbstractPlottable</label>
         <link refid="class_q_c_p_abstract_plottable"/>
-        <childnode refid="305" relation="public-inheritance">
+        <childnode refid="329" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="316">
+      <node id="340">
         <label>QCPLineEnding</label>
         <link refid="class_q_c_p_line_ending"/>
       </node>
-      <node id="321">
+      <node id="345">
         <label>QCPBarsGroup</label>
         <link refid="class_q_c_p_bars_group"/>
-        <childnode refid="306" relation="public-inheritance">
+        <childnode refid="330" relation="public-inheritance">
         </childnode>
-        <childnode refid="308" relation="usage">
+        <childnode refid="332" relation="usage">
           <edgelabel>mParentPlot</edgelabel>
         </childnode>
       </node>
-      <node id="311">
+      <node id="335">
         <label>QCPLayout</label>
         <link refid="class_q_c_p_layout"/>
-        <childnode refid="312" relation="public-inheritance">
+        <childnode refid="336" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="317">
+      <node id="341">
         <label>QCPGrid</label>
         <link refid="class_q_c_p_grid"/>
-        <childnode refid="305" relation="public-inheritance">
+        <childnode refid="329" relation="public-inheritance">
         </childnode>
-        <childnode refid="313" relation="usage">
+        <childnode refid="337" relation="usage">
           <edgelabel>mParentAxis</edgelabel>
         </childnode>
       </node>
-      <node id="315">
+      <node id="339">
         <label>QCPAxisPainterPrivate</label>
         <link refid="class_q_c_p_axis_painter_private"/>
-        <childnode refid="316" relation="usage">
+        <childnode refid="340" relation="usage">
           <edgelabel>lowerEnding</edgelabel>
           <edgelabel>upperEnding</edgelabel>
         </childnode>
-        <childnode refid="308" relation="usage">
+        <childnode refid="332" relation="usage">
           <edgelabel>mParentPlot</edgelabel>
         </childnode>
       </node>
-      <node id="309">
+      <node id="333">
         <label>QWidget</label>
       </node>
-      <node id="307">
+      <node id="331">
         <label>QCPLayer</label>
         <link refid="class_q_c_p_layer"/>
-        <childnode refid="306" relation="public-inheritance">
+        <childnode refid="330" relation="public-inheritance">
         </childnode>
-        <childnode refid="308" relation="usage">
+        <childnode refid="332" relation="usage">
           <edgelabel>mParentPlot</edgelabel>
         </childnode>
       </node>
-      <node id="310">
+      <node id="334">
         <label>QCPLayoutGrid</label>
         <link refid="class_q_c_p_layout_grid"/>
-        <childnode refid="311" relation="public-inheritance">
+        <childnode refid="335" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="305">
+      <node id="329">
         <label>QCPLayerable</label>
         <link refid="class_q_c_p_layerable"/>
-        <childnode refid="306" relation="public-inheritance">
+        <childnode refid="330" relation="public-inheritance">
         </childnode>
-        <childnode refid="307" relation="usage">
+        <childnode refid="331" relation="usage">
           <edgelabel>mLayer</edgelabel>
         </childnode>
-        <childnode refid="308" relation="usage">
+        <childnode refid="332" relation="usage">
           <edgelabel>mParentPlot</edgelabel>
         </childnode>
       </node>
-      <node id="313">
+      <node id="337">
         <label>QCPAxis</label>
         <link refid="class_q_c_p_axis"/>
-        <childnode refid="305" relation="public-inheritance">
+        <childnode refid="329" relation="public-inheritance">
         </childnode>
-        <childnode refid="314" relation="usage">
+        <childnode refid="338" relation="usage">
           <edgelabel>mRange</edgelabel>
         </childnode>
-        <childnode refid="315" relation="usage">
+        <childnode refid="339" relation="usage">
           <edgelabel>mAxisPainter</edgelabel>
         </childnode>
-        <childnode refid="317" relation="usage">
+        <childnode refid="341" relation="usage">
           <edgelabel>mGrid</edgelabel>
         </childnode>
-        <childnode refid="318" relation="usage">
+        <childnode refid="342" relation="usage">
           <edgelabel>mAxisRect</edgelabel>
         </childnode>
       </node>
-      <node id="318">
+      <node id="342">
         <label>QCPAxisRect</label>
         <link refid="class_q_c_p_axis_rect"/>
-        <childnode refid="312" relation="public-inheritance">
+        <childnode refid="336" relation="public-inheritance">
         </childnode>
-        <childnode refid="319" relation="usage">
+        <childnode refid="343" relation="usage">
           <edgelabel>mInsetLayout</edgelabel>
         </childnode>
-        <childnode refid="314" relation="usage">
+        <childnode refid="338" relation="usage">
           <edgelabel>mDragStartVertRange</edgelabel>
           <edgelabel>mDragStartHorzRange</edgelabel>
         </childnode>
       </node>
-      <node id="308">
+      <node id="332">
         <label>QCustomPlot</label>
         <link refid="class_q_custom_plot"/>
-        <childnode refid="309" relation="public-inheritance">
+        <childnode refid="333" relation="public-inheritance">
         </childnode>
-        <childnode refid="307" relation="usage">
+        <childnode refid="331" relation="usage">
           <edgelabel>mCurrentLayer</edgelabel>
         </childnode>
-        <childnode refid="310" relation="usage">
+        <childnode refid="334" relation="usage">
           <edgelabel>mPlotLayout</edgelabel>
         </childnode>
-        <childnode refid="313" relation="usage">
+        <childnode refid="337" relation="usage">
           <edgelabel>yAxis2</edgelabel>
           <edgelabel>xAxis2</edgelabel>
           <edgelabel>xAxis</edgelabel>
           <edgelabel>yAxis</edgelabel>
         </childnode>
-        <childnode refid="320" relation="usage">
+        <childnode refid="344" relation="usage">
           <edgelabel>legend</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" line="2824" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qcustomplot.h" bodystart="2823" bodyend="2908"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2824" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2823" bodyend="2908"/>
     <listofallmembers>
       <member refid="class_q_c_p_bars_1a1f29cf08615040993209147fa68de3f2" prot="public" virt="non-virtual"><scope>QCPBars</scope><name>addData</name></member>
       <member refid="class_q_c_p_bars_1a142158b1addefd53259002dd3ab22c3a" prot="public" virt="non-virtual"><scope>QCPBars</scope><name>addData</name></member>

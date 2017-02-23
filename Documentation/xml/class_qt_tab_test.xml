@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="34" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="34" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="33" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" bodystart="33" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -26,12 +26,14 @@
         <argsstring></argsstring>
         <name>ui</name>
         <briefdescription>
-        </briefdescription>
+<para>implemented the four menubar options: (Save,Map Planning,<ref refid="class_mission" kindref="compound">Mission</ref> Execution, <ref refid="class_mission" kindref="compound">Mission</ref> Recap) </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="author"><para>Kevin Phan </para></simplesect>
+<simplesect kind="date"><para>2016-2-26 </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="103" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="103" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="102" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" bodystart="102" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_qt_tab_test_1a4f8deadb031f32110bcfc057a296cb59" prot="private" static="no" mutable="no">
         <type><ref refid="class_map_planning" kindref="compound">MapPlanning</ref> *</type>
@@ -44,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="105" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="105" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="104" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" bodystart="104" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_qt_tab_test_1a60353412d75587e1529192426a375f3f" prot="private" static="no" mutable="no">
         <type><ref refid="class_map_planning" kindref="compound">MapPlanning</ref> *</type>
@@ -58,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="107" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="107" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="106" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" bodystart="106" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_qt_tab_test_1a9cf53933abe6db1f38812f494ed26a69" prot="private" static="no" mutable="no">
         <type><ref refid="class_map_execution" kindref="compound">MapExecution</ref> *</type>
@@ -71,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="109" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="109" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="108" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" bodystart="108" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_qt_tab_test_1af9d35a03f59449bf74cde5a0a428489a" prot="private" static="no" mutable="no">
         <type><ref refid="class_map_recap" kindref="compound">MapRecap</ref> *</type>
@@ -84,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="111" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="111" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="110" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" bodystart="110" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_qt_tab_test_1af15dbd5ab17e8d8e72667cefe470aeb2" prot="private" static="no" mutable="no">
         <type>QWidget *</type>
@@ -97,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="113" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="113" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="112" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" bodystart="112" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_qt_tab_test_1ac2a75b757aee9d0f88e0238da6b9385f" prot="private" static="no" mutable="no">
         <type>QWidget *</type>
@@ -110,7 +112,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="115" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="115" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="114" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" bodystart="114" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_qt_tab_test_1ad3ce666ddedb1a602953f70c57fa16b2" prot="private" static="no" mutable="no">
         <type>QWidget *</type>
@@ -123,7 +125,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="117" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="117" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="116" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" bodystart="116" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_qt_tab_test_1abea56f8bf2015b60b8e72092752bc1dc" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -136,7 +138,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="119" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="119" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="118" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" bodystart="118" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -156,7 +158,7 @@
 <para>Constructor for the main window </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="38" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="9" bodyend="19"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="37" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.cpp" bodystart="9" bodyend="19"/>
       </memberdef>
       <memberdef kind="function" id="class_qt_tab_test_1ab3c73076dfe26ba129dbc9421154b572" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -169,7 +171,7 @@
 <para>Destructor for the main window </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="24" bodyend="28"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="39" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.cpp" bodystart="24" bodyend="28"/>
       </memberdef>
       <memberdef kind="function" id="class_qt_tab_test_1a71445077b93df68b1fef88ed8133d4c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -190,7 +192,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="42" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="113" bodyend="145"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="41" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.cpp" bodystart="113" bodyend="145"/>
       </memberdef>
       <memberdef kind="function" id="class_qt_tab_test_1a1218449139a279a20325ee6ff790573c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -207,7 +209,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="44" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="147" bodyend="151"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="43" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.cpp" bodystart="147" bodyend="151"/>
       </memberdef>
       <memberdef kind="function" id="class_qt_tab_test_1ad7f602d0285a16d25da6cf0b4b04a9e2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_map_planning" kindref="compound">MapPlanning</ref> *</type>
@@ -220,7 +222,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="46" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="81" bodyend="85"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="45" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.cpp" bodystart="81" bodyend="85"/>
       </memberdef>
       <memberdef kind="function" id="class_qt_tab_test_1ac1c2917b9b1db269974664ba64868c83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -237,7 +239,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="48" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="87" bodyend="107"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="47" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.cpp" bodystart="87" bodyend="107"/>
       </memberdef>
       <memberdef kind="function" id="class_qt_tab_test_1a288a55c8ffe6dc4d049954d7b07bd662" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_map_execution" kindref="compound">MapExecution</ref> *</type>
@@ -250,7 +252,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="50" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="67" bodyend="71"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="49" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.cpp" bodystart="67" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="class_qt_tab_test_1abf3b471245a1b63675f2c94668456eb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -267,7 +269,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="52" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="74" bodyend="78"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="51" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.cpp" bodystart="74" bodyend="78"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-slot">
@@ -282,7 +284,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="56" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="34" bodyend="44"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="55" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.cpp" bodystart="34" bodyend="44"/>
       </memberdef>
       <memberdef kind="slot" id="class_qt_tab_test_1a3afcc9c822edb16ed7ff5cb911a23a68" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -295,7 +297,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="58" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.cpp" bodystart="47" bodyend="65"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="57" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.cpp" bodystart="47" bodyend="65"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -303,165 +305,173 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="1068">
+      <node id="1092">
         <label>QMainWindow</label>
       </node>
-      <node id="1067">
+      <node id="1091">
         <label>QtTabTest</label>
         <link refid="class_qt_tab_test"/>
-        <childnode refid="1068" relation="public-inheritance">
+        <childnode refid="1092" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="1084">
+      <node id="1112">
         <label>ServerQueue</label>
         <link refid="class_server_queue"/>
       </node>
-      <node id="1082">
+      <node id="1110">
         <label>NetworkListener</label>
         <link refid="class_network_listener"/>
-        <childnode refid="1083" relation="public-inheritance">
+        <childnode refid="1111" relation="public-inheritance">
         </childnode>
-        <childnode refid="1079" relation="usage">
+        <childnode refid="1103" relation="usage">
           <edgelabel>myMessageBox</edgelabel>
         </childnode>
-        <childnode refid="1080" relation="usage">
+        <childnode refid="1108" relation="usage">
           <edgelabel>server</edgelabel>
         </childnode>
       </node>
-      <node id="1079">
+      <node id="1107">
+        <label>QObject</label>
+      </node>
+      <node id="1103">
         <label>messagebox</label>
         <link refid="classmessagebox"/>
       </node>
-      <node id="1071">
+      <node id="1105">
+        <label>QWebEngineView</label>
+      </node>
+      <node id="1095">
         <label>MapRecap</label>
         <link refid="class_map_recap"/>
-        <childnode refid="1072" relation="public-inheritance">
+        <childnode refid="1096" relation="public-inheritance">
         </childnode>
-        <childnode refid="1073" relation="usage">
+        <childnode refid="1097" relation="usage">
           <edgelabel>myMission</edgelabel>
         </childnode>
-        <childnode refid="1076" relation="usage">
+        <childnode refid="1100" relation="usage">
           <edgelabel>model</edgelabel>
         </childnode>
       </node>
-      <node id="1081">
+      <node id="1109">
         <label>QThread</label>
       </node>
-      <node id="1076">
+      <node id="1100">
         <label>TableModel</label>
         <link refid="class_table_model"/>
-        <childnode refid="1077" relation="public-inheritance">
+        <childnode refid="1101" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1070">
+      <node id="1094">
         <label>QMainWindow</label>
       </node>
-      <node id="1074">
+      <node id="1098">
         <label>FlightPath</label>
         <link refid="class_flight_path"/>
-        <childnode refid="1075" relation="public-inheritance">
+        <childnode refid="1099" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="1073">
+      <node id="1097">
         <label>Mission</label>
         <link refid="class_mission"/>
-        <childnode refid="1074" relation="usage">
+        <childnode refid="1098" relation="usage">
           <edgelabel>myFlightPath</edgelabel>
         </childnode>
       </node>
-      <node id="1086">
-        <label>PopWindowMP</label>
-        <link refid="class_pop_window_m_p"/>
-        <childnode refid="1087" relation="public-inheritance">
+      <node id="1104">
+        <label>MapWidget</label>
+        <link refid="class_map_widget"/>
+        <childnode refid="1105" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1106" relation="usage">
+          <edgelabel>clientWrapper</edgelabel>
         </childnode>
       </node>
-      <node id="1080">
+      <node id="1108">
         <label>GsServer</label>
         <link refid="class_gs_server"/>
-        <childnode refid="1081" relation="public-inheritance">
+        <childnode refid="1109" relation="public-inheritance">
         </childnode>
-        <childnode refid="1073" relation="usage">
+        <childnode refid="1097" relation="usage">
           <edgelabel>myMission</edgelabel>
         </childnode>
-        <childnode refid="1082" relation="usage">
+        <childnode refid="1110" relation="usage">
           <edgelabel>networkListener</edgelabel>
         </childnode>
-        <childnode refid="1079" relation="usage">
+        <childnode refid="1103" relation="usage">
           <edgelabel>myMessageBox</edgelabel>
         </childnode>
-        <childnode refid="1084" relation="usage">
+        <childnode refid="1112" relation="usage">
           <edgelabel>outPackets</edgelabel>
         </childnode>
       </node>
-      <node id="1072">
+      <node id="1096">
         <label>QDialog</label>
       </node>
-      <node id="1087">
-        <label>QWidget</label>
+      <node id="1106">
+        <label>WebSocketClientWrapper</label>
+        <link refid="class_web_socket_client_wrapper"/>
+        <childnode refid="1107" relation="public-inheritance">
+        </childnode>
       </node>
-      <node id="1075">
+      <node id="1099">
         <label>QList&lt; TimedAction * &gt;</label>
       </node>
-      <node id="1083">
+      <node id="1111">
         <label>QUdpSocket</label>
       </node>
-      <node id="1078">
+      <node id="1102">
         <label>MapExecution</label>
         <link refid="class_map_execution"/>
-        <childnode refid="1072" relation="public-inheritance">
+        <childnode refid="1096" relation="public-inheritance">
         </childnode>
-        <childnode refid="1073" relation="usage">
+        <childnode refid="1097" relation="usage">
           <edgelabel>myMission</edgelabel>
         </childnode>
-        <childnode refid="1079" relation="usage">
-          <edgelabel>MessageBox</edgelabel>
+        <childnode refid="1103" relation="usage">
           <edgelabel>MyMessageBox</edgelabel>
         </childnode>
-        <childnode refid="1076" relation="usage">
+        <childnode refid="1104" relation="usage">
+          <edgelabel>map</edgelabel>
+        </childnode>
+        <childnode refid="1100" relation="usage">
           <edgelabel>model</edgelabel>
         </childnode>
-        <childnode refid="1080" relation="usage">
+        <childnode refid="1108" relation="usage">
           <edgelabel>myServer</edgelabel>
         </childnode>
-        <childnode refid="1074" relation="usage">
+        <childnode refid="1098" relation="usage">
           <edgelabel>myFlightPath</edgelabel>
         </childnode>
       </node>
-      <node id="1069">
+      <node id="1093">
         <label>QtTabTest</label>
         <link refid="class_qt_tab_test"/>
-        <childnode refid="1070" relation="public-inheritance">
+        <childnode refid="1094" relation="public-inheritance">
         </childnode>
-        <childnode refid="1071" relation="usage">
+        <childnode refid="1095" relation="usage">
           <edgelabel>MapRecapUIWidget</edgelabel>
         </childnode>
-        <childnode refid="1078" relation="usage">
+        <childnode refid="1102" relation="usage">
           <edgelabel>MapExecutionUIWidget</edgelabel>
         </childnode>
-        <childnode refid="1085" relation="usage">
+        <childnode refid="1113" relation="usage">
           <edgelabel>MapPlanningUIWidget</edgelabel>
           <edgelabel>testMAP</edgelabel>
         </childnode>
       </node>
-      <node id="1077">
+      <node id="1101">
         <label>QAbstractTableModel</label>
       </node>
-      <node id="1085">
+      <node id="1113">
         <label>MapPlanning</label>
         <link refid="class_map_planning"/>
-        <childnode refid="1072" relation="public-inheritance">
-        </childnode>
-        <childnode refid="1076" relation="usage">
-          <edgelabel>model</edgelabel>
-        </childnode>
-        <childnode refid="1086" relation="usage">
-          <edgelabel>popup</edgelabel>
+        <childnode refid="1096" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" line="30" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/qttabtest.h" bodystart="30" bodyend="123"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" line="29" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h" bodystart="29" bodyend="122"/>
     <listofallmembers>
       <member refid="class_qt_tab_test_1a71445077b93df68b1fef88ed8133d4c9" prot="public" virt="non-virtual"><scope>QtTabTest</scope><name>addNewTab</name></member>
       <member refid="class_qt_tab_test_1a1218449139a279a20325ee6ff790573c" prot="public" virt="non-virtual"><scope>QtTabTest</scope><name>deleteTabIndex</name></member>

@@ -4,126 +4,7 @@
     <compoundname>MapPlanning</compoundname>
     <basecompoundref prot="public" virt="non-virtual">QDialog</basecompoundref>
     <includes refid="mapplanning_8h" local="no">mapplanning.h</includes>
-      <sectiondef kind="friend">
-      <memberdef kind="friend" id="class_map_planning_1a337398c114f638b5a3e2fdc4529936c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>friend class</type>
-        <definition>friend class MainMDIDisplay</definition>
-        <argsstring></argsstring>
-        <name>MainMDIDisplay</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" bodystart="40" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="class_map_planning_1a552fbbc0827db07c9eca5df3d3492588" prot="private" static="no" mutable="no">
-        <type>QButtonGroup *</type>
-        <definition>QButtonGroup* MapPlanning::buttonGroup</definition>
-        <argsstring></argsstring>
-        <name>buttonGroup</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="85" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" bodystart="85" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_map_planning_1a659d16f315de31e54a57159e59e96f5c" prot="private" static="no" mutable="no">
-        <type>QPushButton *</type>
-        <definition>QPushButton* MapPlanning::del</definition>
-        <argsstring></argsstring>
-        <name>del</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="86" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" bodystart="86" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_map_planning_1aab63d8ac819d33a75d30349052ed8ce5" prot="private" static="no" mutable="no">
-        <type><ref refid="class_table_model" kindref="compound">TableModel</ref> *</type>
-        <definition>TableModel* MapPlanning::model</definition>
-        <argsstring></argsstring>
-        <name>model</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="87" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" bodystart="87" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_map_planning_1a3604a9cf676dff7967f12cc622057529" prot="private" static="no" mutable="no">
-        <type><ref refid="class_pop_window_m_p" kindref="compound">PopWindowMP</ref> *</type>
-        <definition>PopWindowMP* MapPlanning::popup</definition>
-        <argsstring></argsstring>
-        <name>popup</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="88" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" bodystart="88" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_map_planning_1ac9084206ce3ab842028bdf9632961966" prot="private" static="no" mutable="no">
-        <type>QPushButton *</type>
-        <definition>QPushButton* MapPlanning::loadMissionButton</definition>
-        <argsstring></argsstring>
-        <name>loadMissionButton</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="91" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" bodystart="91" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_map_planning_1a20a0b06f6e53d04fbbc1740f5afd5121" prot="private" static="no" mutable="no">
-        <type>QPushButton *</type>
-        <definition>QPushButton * MapPlanning::saveMissionButton</definition>
-        <argsstring></argsstring>
-        <name>saveMissionButton</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="91" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" bodystart="91" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_map_planning_1aee0f605c3b054170a94d9d39616222e1" prot="private" static="no" mutable="no">
-        <type>QLineEdit *</type>
-        <definition>QLineEdit* MapPlanning::saveMissionByNameLineEdit</definition>
-        <argsstring></argsstring>
-        <name>saveMissionByNameLineEdit</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="93" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" bodystart="93" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="class_map_planning_1adf0d5fa9dca6a4dbd81864d9be30f900" prot="private" static="no" mutable="no">
-        <type>QLabel *</type>
-        <definition>QLabel* MapPlanning::saveMissionByNameLabel</definition>
-        <argsstring></argsstring>
-        <name>saveMissionByNameLabel</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="95" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" bodystart="95" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="variable" id="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" prot="private" static="no" mutable="no">
         <type>Ui::MapPlanning *</type>
         <definition>Ui::MapPlanning* MapPlanning::ui</definition>
@@ -135,36 +16,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="97" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" bodystart="97" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h" line="57" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h" bodystart="57" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="class_map_planning_1adbd3f2c13fafaaa335058f7517ee4601" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void MapPlanning::updateMap</definition>
-        <argsstring>()</argsstring>
-        <name>updateMap</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="43" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="114" bodyend="132"/>
-      </memberdef>
-      <memberdef kind="function" id="class_map_planning_1a38f72780859a68815d818b28767c6dfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="class_flight_path" kindref="compound">FlightPath</ref> *</type>
-        <definition>FlightPath * MapPlanning::getTableAsFlightPath</definition>
-        <argsstring>()</argsstring>
-        <name>getTableAsFlightPath</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="44" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="134" bodyend="155"/>
-      </memberdef>
       <memberdef kind="function" id="class_map_planning_1a02df54932a2eeeb02ca68ee9de8f4e83" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type></type>
         <definition>MapPlanning::MapPlanning</definition>
@@ -181,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="45" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="3" bodyend="27"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h" line="31" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp" bodystart="8" bodyend="14"/>
       </memberdef>
       <memberdef kind="function" id="class_map_planning_1a676c43e0b605ee019f8cbfe1cb4e38be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -194,127 +49,33 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="46" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="29" bodyend="31"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h" line="32" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp" bodystart="16" bodyend="18"/>
       </memberdef>
-      <memberdef kind="function" id="class_map_planning_1adc6e9ef8ab566618504241b9ed523195" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>QPushButton *</type>
-        <definition>QPushButton * MapPlanning::getLoadMissionButton</definition>
-        <argsstring>()</argsstring>
-        <name>getLoadMissionButton</name>
-        <briefdescription>
-<para>Get a pointer to the QPushButton object, loadMissionButton. If it doesn&apos;t exist (i.e. NULL pointer), then make it. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="48" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="183" bodyend="206"/>
-      </memberdef>
-      <memberdef kind="function" id="class_map_planning_1a25239a16d8fd9a09c7d69a519a5f6cd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>QPushButton *</type>
-        <definition>QPushButton * MapPlanning::getSaveMissionButton</definition>
-        <argsstring>()</argsstring>
-        <name>getSaveMissionButton</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="50" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="208" bodyend="226"/>
-      </memberdef>
-      <memberdef kind="function" id="class_map_planning_1a38e8042804f19570676a145663edd9f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>QLineEdit *</type>
-        <definition>QLineEdit * MapPlanning::getSaveMissionByNameLineEdit</definition>
-        <argsstring>()</argsstring>
-        <name>getSaveMissionByNameLineEdit</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="52" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="260" bodyend="278"/>
-      </memberdef>
-      <memberdef kind="function" id="class_map_planning_1a33d3d95615a985fa86b70ade73bf56fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>QLabel *</type>
-        <definition>QLabel * MapPlanning::getSaveMissionByNameLabel</definition>
-        <argsstring>()</argsstring>
-        <name>getSaveMissionByNameLabel</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="54" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="296" bodyend="312"/>
-      </memberdef>
-      <memberdef kind="function" id="class_map_planning_1a678f06ef673840b378b551ddff50312e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="class_map_planning_1adbd3f2c13fafaaa335058f7517ee4601" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void MapPlanning::setLoadMissionButton</definition>
-        <argsstring>(QPushButton *)</argsstring>
-        <name>setLoadMissionButton</name>
-        <param>
-          <type>QPushButton *</type>
-          <defname>loadMissionButton</defname>
-        </param>
+        <definition>void MapPlanning::updateMap</definition>
+        <argsstring>()</argsstring>
+        <name>updateMap</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="56" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="228" bodyend="242"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h" line="34" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp" bodystart="56" bodyend="60"/>
       </memberdef>
-      <memberdef kind="function" id="class_map_planning_1a58463dc589c032a3b6aa92e8164b0795" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void MapPlanning::setSaveMissionButton</definition>
-        <argsstring>(QPushButton *)</argsstring>
-        <name>setSaveMissionButton</name>
-        <param>
-          <type>QPushButton *</type>
-          <defname>saveMissionButton</defname>
-        </param>
+      <memberdef kind="function" id="class_map_planning_1a38f72780859a68815d818b28767c6dfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_flight_path" kindref="compound">FlightPath</ref> *</type>
+        <definition>FlightPath * MapPlanning::getTableAsFlightPath</definition>
+        <argsstring>()</argsstring>
+        <name>getTableAsFlightPath</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="58" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="244" bodyend="258"/>
-      </memberdef>
-      <memberdef kind="function" id="class_map_planning_1a0d1b34de2d24bad30ed01ef82510da85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void MapPlanning::setSaveMissionByNameLineEdit</definition>
-        <argsstring>(QLineEdit *)</argsstring>
-        <name>setSaveMissionByNameLineEdit</name>
-        <param>
-          <type>QLineEdit *</type>
-          <defname>saveMissionByNameLineEdit</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="60" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="280" bodyend="294"/>
-      </memberdef>
-      <memberdef kind="function" id="class_map_planning_1a5b2d49b6608a2dbdcc560e98d88051b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void MapPlanning::setSaveMissionByNameLabel</definition>
-        <argsstring>(QLabel *)</argsstring>
-        <name>setSaveMissionByNameLabel</name>
-        <param>
-          <type>QLabel *</type>
-          <defname>saveMissionByNameLabel</defname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="62" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="314" bodyend="328"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h" line="36" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp" bodystart="62" bodyend="64"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-slot">
@@ -337,7 +98,33 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="65" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="164" bodyend="172"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h" line="39" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp" bodystart="74" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_planning_1a320e452b516fbad57bb4a2a6138832c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapPlanning::clearTable</definition>
+        <argsstring>()</argsstring>
+        <name>clearTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para><xrefsect id="todo_1_todo000010"><xreftitle>Todo</xreftitle><xrefdescription><para>make the argument mean something (tie it to a variable) </para></xrefdescription></xrefsect></para>        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h" line="43" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp" bodystart="83" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_map_planning_1ac9e2730ca705585be868af75701d673f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MapPlanning::setupMapPaths</definition>
+        <argsstring>()</argsstring>
+        <name>setupMapPaths</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h" line="45" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp" bodystart="78" bodyend="81"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-slot">
@@ -352,7 +139,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="71" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="46" bodyend="64"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h" line="48" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp" bodystart="22" bodyend="28"/>
       </memberdef>
       <memberdef kind="slot" id="class_map_planning_1a916faaa809c387c1a4dfaf02367fa11b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -365,7 +152,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="72" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="67" bodyend="69"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h" line="49" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp" bodystart="31" bodyend="33"/>
       </memberdef>
       <memberdef kind="slot" id="class_map_planning_1a2f715a04a1b4becbdcd6471d5998ae69" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -378,33 +165,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="73" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="85" bodyend="87"/>
-      </memberdef>
-      <memberdef kind="slot" id="class_map_planning_1aed8a871a4ad421d38b6994c3b4e02f97" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void MapPlanning::on_clearTableButton_clicked</definition>
-        <argsstring>()</argsstring>
-        <name>on_clearTableButton_clicked</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="74" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="93" bodyend="98"/>
-      </memberdef>
-      <memberdef kind="slot" id="class_map_planning_1a48a4d0dcd991d1805bb7bba8d0632d25" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void MapPlanning::on_clearMapButton_clicked</definition>
-        <argsstring>()</argsstring>
-        <name>on_clearMapButton_clicked</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="75" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="104" bodyend="107"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h" line="50" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp" bodystart="47" bodyend="50"/>
       </memberdef>
       <memberdef kind="slot" id="class_map_planning_1a6a250a62f619b29f4f0f2eceb921b461" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -417,7 +178,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="76" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="72" bodyend="76"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h" line="51" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp" bodystart="36" bodyend="38"/>
       </memberdef>
       <memberdef kind="slot" id="class_map_planning_1a9f1419c0edb6cec3ba6755a2c109851b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -430,20 +191,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="77" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="79" bodyend="81"/>
-      </memberdef>
-      <memberdef kind="slot" id="class_map_planning_1a67bb2037f76155fdd04579c4d53f735b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void MapPlanning::addClickListener</definition>
-        <argsstring>()</argsstring>
-        <name>addClickListener</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="79" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="39" bodyend="42"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h" line="52" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp" bodystart="41" bodyend="43"/>
       </memberdef>
       <memberdef kind="slot" id="class_map_planning_1aef1fc52bee516b93cd153d95f799df40" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -456,35 +204,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="81" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.cpp" bodystart="157" bodyend="159"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="signal">
-      <memberdef kind="signal" id="class_map_planning_1a700eb0065441bec199a2a3fc343d0571" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void MapPlanning::timeToStartMapExecution</definition>
-        <argsstring>()</argsstring>
-        <name>timeToStartMapExecution</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="102" column="1"/>
-      </memberdef>
-      <memberdef kind="signal" id="class_map_planning_1af983ce7e5456e915347af984a98d63e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void MapPlanning::tableUpdated</definition>
-        <argsstring>()</argsstring>
-        <name>tableUpdated</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="104" column="1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h" line="54" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp" bodystart="66" bodyend="69"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -492,84 +212,40 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="100">
+      <node id="116">
         <label>QDialog</label>
       </node>
-      <node id="99">
+      <node id="115">
         <label>MapPlanning</label>
         <link refid="class_map_planning"/>
-        <childnode refid="100" relation="public-inheritance">
+        <childnode refid="116" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="103">
-        <label>TableModel</label>
-        <link refid="class_table_model"/>
-        <childnode refid="104" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="105">
-        <label>PopWindowMP</label>
-        <link refid="class_pop_window_m_p"/>
-        <childnode refid="106" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="102">
+      <node id="118">
         <label>QDialog</label>
       </node>
-      <node id="106">
-        <label>QWidget</label>
-      </node>
-      <node id="104">
-        <label>QAbstractTableModel</label>
-      </node>
-      <node id="101">
+      <node id="117">
         <label>MapPlanning</label>
         <link refid="class_map_planning"/>
-        <childnode refid="102" relation="public-inheritance">
-        </childnode>
-        <childnode refid="103" relation="usage">
-          <edgelabel>model</edgelabel>
-        </childnode>
-        <childnode refid="105" relation="usage">
-          <edgelabel>popup</edgelabel>
+        <childnode refid="118" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" line="34" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/mapplanning.h" bodystart="34" bodyend="106"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h" line="28" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h" bodystart="28" bodyend="59"/>
     <listofallmembers>
-      <member refid="class_map_planning_1a67bb2037f76155fdd04579c4d53f735b" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>addClickListener</name></member>
       <member refid="class_map_planning_1af2068f7c19c1f495debe4c4e745c99d4" prot="public" virt="non-virtual"><scope>MapPlanning</scope><name>addPointToTable</name></member>
-      <member refid="class_map_planning_1a552fbbc0827db07c9eca5df3d3492588" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>buttonGroup</name></member>
+      <member refid="class_map_planning_1a320e452b516fbad57bb4a2a6138832c8" prot="public" virt="non-virtual"><scope>MapPlanning</scope><name>clearTable</name></member>
       <member refid="class_map_planning_1aef1fc52bee516b93cd153d95f799df40" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>closeWindow</name></member>
-      <member refid="class_map_planning_1a659d16f315de31e54a57159e59e96f5c" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>del</name></member>
-      <member refid="class_map_planning_1adc6e9ef8ab566618504241b9ed523195" prot="public" virt="non-virtual"><scope>MapPlanning</scope><name>getLoadMissionButton</name></member>
-      <member refid="class_map_planning_1a25239a16d8fd9a09c7d69a519a5f6cd2" prot="public" virt="non-virtual"><scope>MapPlanning</scope><name>getSaveMissionButton</name></member>
-      <member refid="class_map_planning_1a33d3d95615a985fa86b70ade73bf56fe" prot="public" virt="non-virtual"><scope>MapPlanning</scope><name>getSaveMissionByNameLabel</name></member>
-      <member refid="class_map_planning_1a38e8042804f19570676a145663edd9f0" prot="public" virt="non-virtual"><scope>MapPlanning</scope><name>getSaveMissionByNameLineEdit</name></member>
       <member refid="class_map_planning_1a38f72780859a68815d818b28767c6dfd" prot="public" virt="non-virtual"><scope>MapPlanning</scope><name>getTableAsFlightPath</name></member>
-      <member refid="class_map_planning_1ac9084206ce3ab842028bdf9632961966" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>loadMissionButton</name></member>
-      <member refid="class_map_planning_1a337398c114f638b5a3e2fdc4529936c5" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>MainMDIDisplay</name></member>
       <member refid="class_map_planning_1a02df54932a2eeeb02ca68ee9de8f4e83" prot="public" virt="non-virtual"><scope>MapPlanning</scope><name>MapPlanning</name></member>
-      <member refid="class_map_planning_1aab63d8ac819d33a75d30349052ed8ce5" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>model</name></member>
       <member refid="class_map_planning_1a916faaa809c387c1a4dfaf02367fa11b" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>on_addButton_clicked</name></member>
       <member refid="class_map_planning_1a2f715a04a1b4becbdcd6471d5998ae69" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>on_backButton_clicked</name></member>
-      <member refid="class_map_planning_1a48a4d0dcd991d1805bb7bba8d0632d25" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>on_clearMapButton_clicked</name></member>
-      <member refid="class_map_planning_1aed8a871a4ad421d38b6994c3b4e02f97" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>on_clearTableButton_clicked</name></member>
       <member refid="class_map_planning_1a6a250a62f619b29f4f0f2eceb921b461" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>on_deleteButton_clicked</name></member>
       <member refid="class_map_planning_1aadaff61da568b1b57d3d9fad5c63ecec" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>on_executeButton_clicked</name></member>
       <member refid="class_map_planning_1a9f1419c0edb6cec3ba6755a2c109851b" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>on_updateTableButton_clicked</name></member>
-      <member refid="class_map_planning_1a3604a9cf676dff7967f12cc622057529" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>popup</name></member>
-      <member refid="class_map_planning_1a20a0b06f6e53d04fbbc1740f5afd5121" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>saveMissionButton</name></member>
-      <member refid="class_map_planning_1adf0d5fa9dca6a4dbd81864d9be30f900" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>saveMissionByNameLabel</name></member>
-      <member refid="class_map_planning_1aee0f605c3b054170a94d9d39616222e1" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>saveMissionByNameLineEdit</name></member>
-      <member refid="class_map_planning_1a678f06ef673840b378b551ddff50312e" prot="public" virt="non-virtual"><scope>MapPlanning</scope><name>setLoadMissionButton</name></member>
-      <member refid="class_map_planning_1a58463dc589c032a3b6aa92e8164b0795" prot="public" virt="non-virtual"><scope>MapPlanning</scope><name>setSaveMissionButton</name></member>
-      <member refid="class_map_planning_1a5b2d49b6608a2dbdcc560e98d88051b6" prot="public" virt="non-virtual"><scope>MapPlanning</scope><name>setSaveMissionByNameLabel</name></member>
-      <member refid="class_map_planning_1a0d1b34de2d24bad30ed01ef82510da85" prot="public" virt="non-virtual"><scope>MapPlanning</scope><name>setSaveMissionByNameLineEdit</name></member>
-      <member refid="class_map_planning_1af983ce7e5456e915347af984a98d63e9" prot="public" virt="non-virtual"><scope>MapPlanning</scope><name>tableUpdated</name></member>
-      <member refid="class_map_planning_1a700eb0065441bec199a2a3fc343d0571" prot="public" virt="non-virtual"><scope>MapPlanning</scope><name>timeToStartMapExecution</name></member>
+      <member refid="class_map_planning_1ac9e2730ca705585be868af75701d673f" prot="public" virt="non-virtual"><scope>MapPlanning</scope><name>setupMapPaths</name></member>
       <member refid="class_map_planning_1a8737c0becd5875fcc1617e65931360fc" prot="private" virt="non-virtual"><scope>MapPlanning</scope><name>ui</name></member>
       <member refid="class_map_planning_1adbd3f2c13fafaaa335058f7517ee4601" prot="public" virt="non-virtual"><scope>MapPlanning</scope><name>updateMap</name></member>
       <member refid="class_map_planning_1a676c43e0b605ee019f8cbfe1cb4e38be" prot="public" virt="non-virtual"><scope>MapPlanning</scope><name>~MapPlanning</name></member>

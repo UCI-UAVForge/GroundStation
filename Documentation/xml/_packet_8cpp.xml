@@ -3,192 +3,192 @@
   <compounddef id="_packet_8cpp" kind="file" language="C++">
     <compoundname>Packet.cpp</compoundname>
     <includes local="no">QDateTime</includes>
-    <includes refid="packet_8h" local="yes">Packet.h</includes>
-    <includes refid="ackpacket_8h" local="yes">AckPacket.h</includes>
-    <includes refid="actionpacket_8h" local="yes">ActionPacket.h</includes>
-    <includes refid="infopacket_8h" local="yes">InfoPacket.h</includes>
-    <includes refid="telemetrypacket_8h" local="yes">TelemetryPacket.h</includes>
+    <includes refid="packet_8h" local="yes">packet.h</includes>
+    <includes refid="ackpacket_8h" local="yes">ackpacket.h</includes>
+    <includes refid="actionpacket_8h" local="yes">actionpacket.h</includes>
+    <includes refid="infopacket_8h" local="yes">infopacket.h</includes>
+    <includes refid="telemetrypacket_8h" local="yes">telemetrypacket.h</includes>
     <includes local="yes">stdint.h</includes>
     <includes refid="messagebox_8h" local="yes">messagebox.h</includes>
     <incdepgraph>
-      <node id="2384">
+      <node id="2573">
         <label>QObject</label>
       </node>
-      <node id="2362">
+      <node id="2551">
         <label>QDateTime</label>
       </node>
-      <node id="2378">
+      <node id="2556">
+        <label>ackpacket.h</label>
+        <link refid="ackpacket_8h"/>
+        <childnode refid="2554" relation="include">
+        </childnode>
+        <childnode refid="2552" relation="include">
+        </childnode>
+      </node>
+      <node id="2567">
         <label>QList</label>
       </node>
-      <node id="2366">
+      <node id="2555">
         <label>stdint.h</label>
       </node>
-      <node id="2368">
-        <label>ActionPacket.h</label>
-        <link refid="actionpacket_8h"/>
-        <childnode refid="2369" relation="include">
+      <node id="2561">
+        <label>telemetrypacket.h</label>
+        <link refid="telemetrypacket_8h"/>
+        <childnode refid="2558" relation="include">
         </childnode>
-        <childnode refid="2363" relation="include">
+        <childnode refid="2552" relation="include">
         </childnode>
       </node>
-      <node id="2377">
+      <node id="2566">
         <label>QPair</label>
       </node>
-      <node id="2369">
+      <node id="2550">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp</label>
+        <link refid="Packet.cpp"/>
+        <childnode refid="2551" relation="include">
+        </childnode>
+        <childnode refid="2552" relation="include">
+        </childnode>
+        <childnode refid="2556" relation="include">
+        </childnode>
+        <childnode refid="2557" relation="include">
+        </childnode>
+        <childnode refid="2559" relation="include">
+        </childnode>
+        <childnode refid="2561" relation="include">
+        </childnode>
+        <childnode refid="2555" relation="include">
+        </childnode>
+        <childnode refid="2562" relation="include">
+        </childnode>
+      </node>
+      <node id="2558">
         <label>string</label>
       </node>
-      <node id="2383">
-        <label>QModelIndex</label>
-      </node>
-      <node id="2367">
-        <label>AckPacket.h</label>
-        <link refid="ackpacket_8h"/>
-        <childnode refid="2365" relation="include">
-        </childnode>
-        <childnode refid="2363" relation="include">
-        </childnode>
-      </node>
-      <node id="2363">
-        <label>Packet.h</label>
-        <link refid="packet_8h"/>
-        <childnode refid="2364" relation="include">
-        </childnode>
-        <childnode refid="2365" relation="include">
-        </childnode>
-        <childnode refid="2366" relation="include">
-        </childnode>
-      </node>
-      <node id="2370">
-        <label>InfoPacket.h</label>
-        <link refid="infopacket_8h"/>
-        <childnode refid="2369" relation="include">
-        </childnode>
-        <childnode refid="2371" relation="include">
-        </childnode>
-        <childnode refid="2366" relation="include">
-        </childnode>
-        <childnode refid="2363" relation="include">
-        </childnode>
-      </node>
-      <node id="2371">
-        <label>string.h</label>
-      </node>
-      <node id="2379">
-        <label>QTime</label>
-      </node>
-      <node id="2376">
-        <label>QApplication</label>
-      </node>
-      <node id="2372">
-        <label>TelemetryPacket.h</label>
-        <link refid="telemetrypacket_8h"/>
-        <childnode refid="2369" relation="include">
-        </childnode>
-        <childnode refid="2363" relation="include">
-        </childnode>
-      </node>
-      <node id="2389">
-        <label>QValidator</label>
-      </node>
-      <node id="2375">
-        <label>vector</label>
-      </node>
-      <node id="2386">
-        <label>QLineEdit</label>
-      </node>
-      <node id="2385">
-        <label>QSize</label>
-      </node>
-      <node id="2387">
-        <label>mapvalidator.h</label>
-        <link refid="mapvalidator_8h"/>
-        <childnode refid="2388" relation="include">
-        </childnode>
-        <childnode refid="2389" relation="include">
-        </childnode>
-      </node>
-      <node id="2364">
-        <label>time.h</label>
-      </node>
-      <node id="2380">
+      <node id="2569">
         <label>qcomboboxdelegate.h</label>
         <link refid="qcomboboxdelegate_8h"/>
-        <childnode refid="2381" relation="include">
+        <childnode refid="2570" relation="include">
         </childnode>
-        <childnode refid="2382" relation="include">
+        <childnode refid="2571" relation="include">
         </childnode>
-        <childnode refid="2383" relation="include">
+        <childnode refid="2572" relation="include">
         </childnode>
-        <childnode refid="2384" relation="include">
+        <childnode refid="2573" relation="include">
         </childnode>
-        <childnode refid="2385" relation="include">
+        <childnode refid="2574" relation="include">
         </childnode>
-        <childnode refid="2386" relation="include">
+        <childnode refid="2575" relation="include">
         </childnode>
-        <childnode refid="2387" relation="include">
+        <childnode refid="2576" relation="include">
         </childnode>
       </node>
-      <node id="2382">
+      <node id="2572">
+        <label>QModelIndex</label>
+      </node>
+      <node id="2560">
+        <label>string.h</label>
+      </node>
+      <node id="2568">
+        <label>QTime</label>
+      </node>
+      <node id="2565">
+        <label>QApplication</label>
+      </node>
+      <node id="2578">
+        <label>QValidator</label>
+      </node>
+      <node id="2564">
+        <label>vector</label>
+      </node>
+      <node id="2575">
+        <label>QLineEdit</label>
+      </node>
+      <node id="2552">
+        <label>packet.h</label>
+        <link refid="packet_8h"/>
+        <childnode refid="2553" relation="include">
+        </childnode>
+        <childnode refid="2554" relation="include">
+        </childnode>
+        <childnode refid="2555" relation="include">
+        </childnode>
+      </node>
+      <node id="2574">
+        <label>QSize</label>
+      </node>
+      <node id="2553">
+        <label>time.h</label>
+      </node>
+      <node id="2571">
         <label>QComboBox</label>
       </node>
-      <node id="2374">
+      <node id="2563">
         <label>iostream</label>
       </node>
-      <node id="2381">
+      <node id="2570">
         <label>QItemDelegate</label>
       </node>
-      <node id="2361">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp</label>
-        <link refid="Packet.cpp"/>
-        <childnode refid="2362" relation="include">
-        </childnode>
-        <childnode refid="2363" relation="include">
-        </childnode>
-        <childnode refid="2367" relation="include">
-        </childnode>
-        <childnode refid="2368" relation="include">
-        </childnode>
-        <childnode refid="2370" relation="include">
-        </childnode>
-        <childnode refid="2372" relation="include">
-        </childnode>
-        <childnode refid="2366" relation="include">
-        </childnode>
-        <childnode refid="2373" relation="include">
-        </childnode>
-      </node>
-      <node id="2388">
+      <node id="2577">
         <label>QDoubleValidator</label>
       </node>
-      <node id="2365">
-        <label>stdio.h</label>
-      </node>
-      <node id="2373">
+      <node id="2562">
         <label>messagebox.h</label>
         <link refid="messagebox_8h"/>
-        <childnode refid="2374" relation="include">
+        <childnode refid="2563" relation="include">
         </childnode>
-        <childnode refid="2375" relation="include">
+        <childnode refid="2564" relation="include">
         </childnode>
-        <childnode refid="2376" relation="include">
+        <childnode refid="2565" relation="include">
         </childnode>
-        <childnode refid="2377" relation="include">
+        <childnode refid="2566" relation="include">
         </childnode>
-        <childnode refid="2378" relation="include">
+        <childnode refid="2567" relation="include">
         </childnode>
-        <childnode refid="2379" relation="include">
+        <childnode refid="2568" relation="include">
         </childnode>
-        <childnode refid="2366" relation="include">
+        <childnode refid="2555" relation="include">
         </childnode>
-        <childnode refid="2380" relation="include">
+        <childnode refid="2569" relation="include">
         </childnode>
-        <childnode refid="2367" relation="include">
+        <childnode refid="2556" relation="include">
         </childnode>
-        <childnode refid="2368" relation="include">
+        <childnode refid="2557" relation="include">
         </childnode>
-        <childnode refid="2370" relation="include">
+        <childnode refid="2559" relation="include">
         </childnode>
-        <childnode refid="2372" relation="include">
+        <childnode refid="2561" relation="include">
+        </childnode>
+      </node>
+      <node id="2576">
+        <label>mapvalidator.h</label>
+        <link refid="mapvalidator_8h"/>
+        <childnode refid="2577" relation="include">
+        </childnode>
+        <childnode refid="2578" relation="include">
+        </childnode>
+      </node>
+      <node id="2559">
+        <label>infopacket.h</label>
+        <link refid="infopacket_8h"/>
+        <childnode refid="2558" relation="include">
+        </childnode>
+        <childnode refid="2560" relation="include">
+        </childnode>
+        <childnode refid="2555" relation="include">
+        </childnode>
+        <childnode refid="2552" relation="include">
+        </childnode>
+      </node>
+      <node id="2554">
+        <label>stdio.h</label>
+      </node>
+      <node id="2557">
+        <label>actionpacket.h</label>
+        <link refid="actionpacket_8h"/>
+        <childnode refid="2558" relation="include">
+        </childnode>
+        <childnode refid="2552" relation="include">
         </childnode>
       </node>
     </incdepgraph>
@@ -204,7 +204,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" line="28" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="28" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp" line="28" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_packet_8cpp_1a5eb35fde07fd79e65bc809fe20571c15" prot="public" static="yes" mutable="no">
         <type><ref refid="class_protocol_1_1_action_packet" kindref="compound">Protocol::ActionPacket</ref></type>
@@ -217,7 +217,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" line="29" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="29" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp" line="29" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_packet_8cpp_1a6c186652ef80185c56ec149bde0bb363" prot="public" static="yes" mutable="no">
         <type><ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref></type>
@@ -230,7 +230,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" line="30" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="30" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp" line="30" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="_packet_8cpp_1a1f004aa65c8ac9de29c00666b10d45ac" prot="public" static="yes" mutable="no">
         <type><ref refid="class_protocol_1_1_telemetry_packet" kindref="compound">Protocol::TelemetryPacket</ref></type>
@@ -243,7 +243,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" line="31" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="31" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp" line="31" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp" bodystart="31" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -266,7 +266,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" line="95" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp" bodystart="95" bodyend="105"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp" line="95" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp" bodystart="95" bodyend="105"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -291,11 +291,11 @@
 <codeline lineno="15"><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDateTime&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="packet_8h" kindref="compound">Packet.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ackpacket_8h" kindref="compound">AckPacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="actionpacket_8h" kindref="compound">ActionPacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="infopacket_8h" kindref="compound">InfoPacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="telemetrypacket_8h" kindref="compound">TelemetryPacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="packet_8h" kindref="compound">packet.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="ackpacket_8h" kindref="compound">ackpacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="actionpacket_8h" kindref="compound">actionpacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="infopacket_8h" kindref="compound">infopacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="telemetrypacket_8h" kindref="compound">telemetrypacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;stdint.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="messagebox_8h" kindref="compound">messagebox.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
@@ -414,6 +414,6 @@
 <codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="139"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/Packet.cpp"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/Packet.cpp"/>
   </compounddef>
 </doxygen>

@@ -4,61 +4,61 @@
     <compoundname>qcomboboxdelegate.cpp</compoundname>
     <includes refid="qcomboboxdelegate_8h" local="yes">qcomboboxdelegate.h</includes>
     <incdepgraph>
-      <node id="2579">
+      <node id="2774">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcomboboxdelegate.cpp</label>
+        <link refid="qcomboboxdelegate.cpp"/>
+        <childnode refid="2775" relation="include">
+        </childnode>
+      </node>
+      <node id="2779">
         <label>QObject</label>
       </node>
-      <node id="2578">
-        <label>QModelIndex</label>
-      </node>
-      <node id="2584">
-        <label>QValidator</label>
-      </node>
-      <node id="2581">
-        <label>QLineEdit</label>
-      </node>
-      <node id="2580">
-        <label>QSize</label>
-      </node>
-      <node id="2582">
-        <label>mapvalidator.h</label>
-        <link refid="mapvalidator_8h"/>
-        <childnode refid="2583" relation="include">
-        </childnode>
-        <childnode refid="2584" relation="include">
-        </childnode>
-      </node>
-      <node id="2575">
+      <node id="2775">
         <label>qcomboboxdelegate.h</label>
         <link refid="qcomboboxdelegate_8h"/>
-        <childnode refid="2576" relation="include">
+        <childnode refid="2776" relation="include">
         </childnode>
-        <childnode refid="2577" relation="include">
+        <childnode refid="2777" relation="include">
         </childnode>
-        <childnode refid="2578" relation="include">
+        <childnode refid="2778" relation="include">
         </childnode>
-        <childnode refid="2579" relation="include">
+        <childnode refid="2779" relation="include">
         </childnode>
-        <childnode refid="2580" relation="include">
+        <childnode refid="2780" relation="include">
         </childnode>
-        <childnode refid="2581" relation="include">
+        <childnode refid="2781" relation="include">
         </childnode>
-        <childnode refid="2582" relation="include">
+        <childnode refid="2782" relation="include">
         </childnode>
       </node>
-      <node id="2577">
+      <node id="2778">
+        <label>QModelIndex</label>
+      </node>
+      <node id="2784">
+        <label>QValidator</label>
+      </node>
+      <node id="2781">
+        <label>QLineEdit</label>
+      </node>
+      <node id="2780">
+        <label>QSize</label>
+      </node>
+      <node id="2777">
         <label>QComboBox</label>
       </node>
-      <node id="2576">
+      <node id="2776">
         <label>QItemDelegate</label>
       </node>
-      <node id="2574">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/qcomboboxdelegate.cpp</label>
-        <link refid="qcomboboxdelegate.cpp"/>
-        <childnode refid="2575" relation="include">
-        </childnode>
-      </node>
-      <node id="2583">
+      <node id="2783">
         <label>QDoubleValidator</label>
+      </node>
+      <node id="2782">
+        <label>mapvalidator.h</label>
+        <link refid="mapvalidator_8h"/>
+        <childnode refid="2783" relation="include">
+        </childnode>
+        <childnode refid="2784" relation="include">
+        </childnode>
       </node>
     </incdepgraph>
     <briefdescription>
@@ -76,10 +76,10 @@
 <codeline lineno="8"><highlight class="normal">QWidget*<sp/><ref refid="class_q_combo_box_delegate_1a2cae1e908e3b9864e7ab174cfa39a9a8" kindref="member">QComboBoxDelegate::createEditor</ref>(QWidget<sp/>*parent,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStyleOptionViewItem<sp/>&amp;option,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Create<sp/>the<sp/>combobox<sp/>and<sp/>populate<sp/>it</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>QComboBox<sp/>*comboBox<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QComboBox(parent);</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>currentText<sp/>=<sp/>index.data(Qt::DisplayRole).toString();</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index.column()<sp/>==<sp/>0)</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>currentText<sp/>=<sp/>index.data(Qt::DisplayRole).toString();</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index.column()<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QComboBox<sp/>*comboBox<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QComboBox(parent);</highlight></codeline>
 <codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comboBox-&gt;addItem(QString(</highlight><highlight class="stringliteral">&quot;Action<sp/>1&quot;</highlight><highlight class="normal">));</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comboBox-&gt;addItem(QString(</highlight><highlight class="stringliteral">&quot;Action<sp/>2&quot;</highlight><highlight class="normal">));</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comboBox-&gt;addItem(QString(</highlight><highlight class="stringliteral">&quot;Action<sp/>3&quot;</highlight><highlight class="normal">));</highlight></codeline>
@@ -88,50 +88,50 @@
 <codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//This<sp/>checks<sp/>the<sp/>validation<sp/>for<sp/>the<sp/>Longitude<sp/>input</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(index.column()<sp/>==<sp/>1)</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QLineEdit<sp/>*longValEdit<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QLineEdit(parent);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_validator" kindref="compound">MapValidator</ref><sp/>*longVal<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_map_validator" kindref="compound">MapValidator</ref>(<sp/>-180.0,<sp/>180.0,<sp/>8,<sp/>longValEdit);</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>longValEdit-&gt;setValidator(<sp/>longVal<sp/>);</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>longValEdit;</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index.column()<sp/>==<sp/>2)</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comboBox-&gt;addItem(QString(</highlight><highlight class="stringliteral">&quot;E&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comboBox-&gt;addItem(QString(</highlight><highlight class="stringliteral">&quot;W&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>comboBox;</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//this<sp/>checks<sp/>the<sp/>validation<sp/>for<sp/>the<sp/>Latitude<sp/>input</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(index.column()<sp/>==<sp/>3)</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QLineEdit<sp/>*latValEdit<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QLineEdit(parent);</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_validator" kindref="compound">MapValidator</ref><sp/>*latVal<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_map_validator" kindref="compound">MapValidator</ref>(<sp/>-90.0,<sp/>90.0,<sp/>8,<sp/>latValEdit);</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>latValEdit-&gt;setValidator(<sp/>latVal<sp/>);</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>latValEdit;</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index.column()<sp/>==<sp/>4){</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comboBox-&gt;addItem(QString(</highlight><highlight class="stringliteral">&quot;N&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comboBox-&gt;addItem(QString(</highlight><highlight class="stringliteral">&quot;S&quot;</highlight><highlight class="normal">));</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>comboBox;</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index.column()<sp/>==<sp/>5){</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QLineEdit<sp/>*altValEdit<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QLineEdit(parent);</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_validator" kindref="compound">MapValidator</ref><sp/>*altVal<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_map_validator" kindref="compound">MapValidator</ref>(<sp/>0.0,<sp/>30000.0,<sp/>8,<sp/>altValEdit);</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>altValEdit-&gt;setValidator(<sp/>altVal<sp/>);</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>altValEdit;</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index.column()<sp/>==<sp/>6){</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QLineEdit<sp/>*velValEdit<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QLineEdit(parent);</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_validator" kindref="compound">MapValidator</ref><sp/>*velVal<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_map_validator" kindref="compound">MapValidator</ref>(<sp/>0.0,<sp/>30000000.0,<sp/>8,<sp/>velValEdit);</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>velValEdit-&gt;setValidator(<sp/>velVal<sp/>);</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>velValEdit;</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index.column()<sp/>==<sp/>7)<sp/>{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QLineEdit<sp/>*longValEdit<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QLineEdit(parent);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_validator" kindref="compound">MapValidator</ref><sp/>*longVal<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_map_validator" kindref="compound">MapValidator</ref>(<sp/>-180.0,<sp/>180.0,<sp/>8,<sp/>longValEdit);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>longValEdit-&gt;setValidator(<sp/>longVal<sp/>);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>longValEdit;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index.column()<sp/>==<sp/>2)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QComboBox<sp/>*comboBox<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QComboBox(parent);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comboBox-&gt;addItem(QString(</highlight><highlight class="stringliteral">&quot;E&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comboBox-&gt;addItem(QString(</highlight><highlight class="stringliteral">&quot;W&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>comboBox;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//this<sp/>checks<sp/>the<sp/>validation<sp/>for<sp/>the<sp/>Latitude<sp/>input</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(index.column()<sp/>==<sp/>3)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QLineEdit<sp/>*latValEdit<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QLineEdit(parent);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_validator" kindref="compound">MapValidator</ref><sp/>*latVal<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_map_validator" kindref="compound">MapValidator</ref>(<sp/>-90.0,<sp/>90.0,<sp/>8,<sp/>latValEdit);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>latValEdit-&gt;setValidator(<sp/>latVal<sp/>);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>latValEdit;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index.column()<sp/>==<sp/>4){</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QComboBox<sp/>*comboBox<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QComboBox(parent);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comboBox-&gt;addItem(QString(</highlight><highlight class="stringliteral">&quot;N&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comboBox-&gt;addItem(QString(</highlight><highlight class="stringliteral">&quot;S&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>comboBox;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index.column()<sp/>==<sp/>5){</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QLineEdit<sp/>*altValEdit<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QLineEdit(parent);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_validator" kindref="compound">MapValidator</ref><sp/>*altVal<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_map_validator" kindref="compound">MapValidator</ref>(<sp/>0.0,<sp/>30000.0,<sp/>8,<sp/>altValEdit);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>altValEdit-&gt;setValidator(<sp/>altVal<sp/>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>altValEdit;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index.column()<sp/>==<sp/>6){</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QLineEdit<sp/>*velValEdit<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QLineEdit(parent);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_validator" kindref="compound">MapValidator</ref><sp/>*velVal<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_map_validator" kindref="compound">MapValidator</ref>(<sp/>0.0,<sp/>30000000.0,<sp/>8,<sp/>velValEdit);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>velValEdit-&gt;setValidator(<sp/>velVal<sp/>);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>velValEdit;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index.column()<sp/>==<sp/>7)<sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QComboBox<sp/>*comboBox<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QComboBox(parent);</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comboBox-&gt;addItem(QString(</highlight><highlight class="stringliteral">&quot;Behavior<sp/>1&quot;</highlight><highlight class="normal">));</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comboBox-&gt;addItem(QString(</highlight><highlight class="stringliteral">&quot;Behavior<sp/>2&quot;</highlight><highlight class="normal">));</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comboBox-&gt;addItem(QString(</highlight><highlight class="stringliteral">&quot;Behavior<sp/>3&quot;</highlight><highlight class="normal">));</highlight></codeline>
@@ -170,6 +170,6 @@
 <codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>editor-&gt;setGeometry(option.rect);</highlight></codeline>
 <codeline lineno="103"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/qcomboboxdelegate.cpp"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcomboboxdelegate.cpp"/>
   </compounddef>
 </doxygen>

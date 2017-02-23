@@ -85,8 +85,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_gs_server-members.html">List of all members</a>  </div>
@@ -99,6 +101,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>Inherits QThread.</p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:aaf16a132e06135f8d992a5e7a29bef27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gs_server.html#aaf16a132e06135f8d992a5e7a29bef27">packetRecieved</a> (<a class="el" href="class_protocol_1_1_packet.html">Protocol::Packet</a> *packet)</td></tr>
+<tr class="separator:aaf16a132e06135f8d992a5e7a29bef27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0931c5e470fcb46548c14996d2d9c853"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gs_server.html#a0931c5e470fcb46548c14996d2d9c853">GsServer</a> (<a class="el" href="classmessagebox.html">messagebox</a> *<a class="el" href="class_gs_server.html#a928408a8304c97c11d1655e5e44e0562">myMessageBox</a>, <a class="el" href="class_mission.html">Mission</a> *<a class="el" href="class_gs_server.html#a3ac60e8ec661841743faae8c0c9e8102">myMission</a>)</td></tr>
@@ -126,9 +133,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3a07e46c4042ff43336ffcafa36f2a3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gs_server.html#a3a07e46c4042ff43336ffcafa36f2a3a">sendPacket</a> (<a class="el" href="class_protocol_1_1_packet.html">Protocol::Packet</a> *packet, unsigned int priority)</td></tr>
 <tr class="memdesc:a3a07e46c4042ff43336ffcafa36f2a3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">sendPacket adds a packet to the send queue for this server. The packet will be sent as soon as the socket is free for sending. Lowest priority is sent first.  <a href="#a3a07e46c4042ff43336ffcafa36f2a3a">More...</a><br /></td></tr>
 <tr class="separator:a3a07e46c4042ff43336ffcafa36f2a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a450eb8f60b68bf82216d058cc9738e28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gs_server.html#a450eb8f60b68bf82216d058cc9738e28">packetRecieved</a> (<a class="el" href="class_protocol_1_1_telemetry_packet.html">Protocol::TelemetryPacket</a> packet)</td></tr>
-<tr class="memdesc:a450eb8f60b68bf82216d058cc9738e28"><td class="mdescLeft">&#160;</td><td class="mdescRight">packetRecieved adds a TelemetryPacket to this server's <a class="el" href="class_mission.html">Mission</a> object.  <a href="#a450eb8f60b68bf82216d058cc9738e28">More...</a><br /></td></tr>
-<tr class="separator:a450eb8f60b68bf82216d058cc9738e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa42f9bb1c822408a6c030ca880f5a91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gs_server.html#aaa42f9bb1c822408a6c030ca880f5a91">addPacketToMission</a> (<a class="el" href="class_protocol_1_1_telemetry_packet.html">Protocol::TelemetryPacket</a> packet)</td></tr>
+<tr class="memdesc:aaa42f9bb1c822408a6c030ca880f5a91"><td class="mdescLeft">&#160;</td><td class="mdescRight">packetRecieved adds a TelemetryPacket to this server's <a class="el" href="class_mission.html">Mission</a> object.  <a href="#aaa42f9bb1c822408a6c030ca880f5a91">More...</a><br /></td></tr>
+<tr class="separator:aaa42f9bb1c822408a6c030ca880f5a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -140,6 +147,11 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aa115a3c8f593c29bc6d68f102dbf1941"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a720185d9a2050ae2d5ebda4e7262ba6e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gs_server.html#a720185d9a2050ae2d5ebda4e7262ba6e">running</a></td></tr>
 <tr class="separator:a720185d9a2050ae2d5ebda4e7262ba6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a5affc1d47f645639011c2dbf59e6bbb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_gs_server.html#a5affc1d47f645639011c2dbf59e6bbb0">recivePacket</a> (<a class="el" href="class_protocol_1_1_packet.html">Protocol::Packet</a> *packet)</td></tr>
+<tr class="separator:a5affc1d47f645639011c2dbf59e6bbb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -219,6 +231,30 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aaa42f9bb1c822408a6c030ca880f5a91"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GsServer::addPacketToMission </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_protocol_1_1_telemetry_packet.html">Protocol::TelemetryPacket</a>&#160;</td>
+          <td class="paramname"><em>packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>packetRecieved adds a TelemetryPacket to this server's <a class="el" href="class_mission.html">Mission</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">packet</td><td>The telemetryPacket being added. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a7ca468b85231e88da9b5cafb1320bbb4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -278,27 +314,27 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a450eb8f60b68bf82216d058cc9738e28"></a>
+<a class="anchor" id="aaf16a132e06135f8d992a5e7a29bef27"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void GsServer::packetRecieved </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_protocol_1_1_telemetry_packet.html">Protocol::TelemetryPacket</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="class_protocol_1_1_packet.html">Protocol::Packet</a> *&#160;</td>
           <td class="paramname"><em>packet</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>packetRecieved adds a TelemetryPacket to this server's <a class="el" href="class_mission.html">Mission</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">packet</td><td>The telemetryPacket being added. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -323,6 +359,30 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a5affc1d47f645639011c2dbf59e6bbb0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GsServer::recivePacket </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_protocol_1_1_packet.html">Protocol::Packet</a> *&#160;</td>
+          <td class="paramname"><em>packet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -363,7 +423,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Sends the most significant datagram. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000008">Todo:</a></b></dt><dd>implement actual ack packet transfer from message box to outPackets.recievAckPacket(AckPacket) </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000009">Todo:</a></b></dt><dd>implement actual ack packet transfer from message box to outPackets.recievAckPacket(AckPacket) </dd></dl>
 
 </div>
 </div>
@@ -643,13 +703,13 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/Roman/Documents/GroundStation/GS/<a class="el" href="gsserver_8h_source.html">gsserver.h</a></li>
-<li>C:/Users/Roman/Documents/GroundStation/GS/<a class="el" href="gsserver_8cpp.html">gsserver.cpp</a></li>
+<li>C:/Users/Roman/Documents/Mygs/GroundStation/GS/<a class="el" href="gsserver_8h_source.html">gsserver.h</a></li>
+<li>C:/Users/Roman/Documents/Mygs/GroundStation/GS/<a class="el" href="gsserver_8cpp.html">gsserver.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 2 2017 12:41:02 for UAVForgeGS by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Feb 22 2017 23:20:35 for UAVForgeGS by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -4,69 +4,132 @@
     <compoundname>mainwindow.cpp</compoundname>
     <includes refid="mainwindow_8h" local="yes">mainwindow.h</includes>
     <incdepgraph>
-      <node id="890">
+      <node id="937">
         <label>QtWidgets/QWidget</label>
       </node>
-      <node id="885">
+      <node id="933">
         <label>QMap</label>
       </node>
-      <node id="913">
+      <node id="958">
         <label>QtNumeric</label>
       </node>
-      <node id="886">
-        <label>maprecap.h</label>
-        <link refid="maprecap_8h"/>
-        <childnode refid="835" relation="include">
+      <node id="913">
+        <label>mapexecution.h</label>
+        <link refid="mapexecution_8h"/>
+        <childnode refid="883" relation="include">
         </childnode>
-        <childnode refid="836" relation="include">
+        <childnode refid="885" relation="include">
         </childnode>
-        <childnode refid="837" relation="include">
-        </childnode>
-        <childnode refid="838" relation="include">
-        </childnode>
-        <childnode refid="840" relation="include">
-        </childnode>
-        <childnode refid="841" relation="include">
-        </childnode>
-        <childnode refid="842" relation="include">
-        </childnode>
-        <childnode refid="843" relation="include">
-        </childnode>
-        <childnode refid="844" relation="include">
-        </childnode>
-        <childnode refid="848" relation="include">
-        </childnode>
-        <childnode refid="849" relation="include">
-        </childnode>
-        <childnode refid="857" relation="include">
-        </childnode>
-        <childnode refid="869" relation="include">
+        <childnode refid="886" relation="include">
         </childnode>
         <childnode refid="887" relation="include">
         </childnode>
         <childnode refid="888" relation="include">
         </childnode>
-        <childnode refid="883" relation="include">
+        <childnode refid="889" relation="include">
+        </childnode>
+        <childnode refid="896" relation="include">
+        </childnode>
+        <childnode refid="895" relation="include">
+        </childnode>
+        <childnode refid="914" relation="include">
+        </childnode>
+        <childnode refid="924" relation="include">
+        </childnode>
+        <childnode refid="893" relation="include">
+        </childnode>
+        <childnode refid="898" relation="include">
+        </childnode>
+        <childnode refid="934" relation="include">
+        </childnode>
+        <childnode refid="936" relation="include">
+        </childnode>
+        <childnode refid="882" relation="include">
+        </childnode>
+        <childnode refid="918" relation="include">
+        </childnode>
+        <childnode refid="931" relation="include">
+        </childnode>
+        <childnode refid="962" relation="include">
+        </childnode>
+        <childnode refid="969" relation="include">
+        </childnode>
+        <childnode refid="970" relation="include">
+        </childnode>
+        <childnode refid="906" relation="include">
         </childnode>
       </node>
-      <node id="907">
+      <node id="970">
+        <label>connectiondialog.h</label>
+        <link refid="connectiondialog_8h"/>
+        <childnode refid="885" relation="include">
+        </childnode>
+      </node>
+      <node id="952">
         <label>QVector2D</label>
       </node>
-      <node id="912">
+      <node id="957">
         <label>limits</label>
       </node>
-      <node id="903">
+      <node id="967">
+        <label>websockettransport.h</label>
+        <link refid="websockettransport_8h"/>
+        <childnode refid="968" relation="include">
+        </childnode>
+      </node>
+      <node id="963">
+        <label>QWebChannel</label>
+      </node>
+      <node id="966">
+        <label>websocketclientwrapper.h</label>
+        <link refid="websocketclientwrapper_8h"/>
+        <childnode refid="901" relation="include">
+        </childnode>
+      </node>
+      <node id="949">
         <label>QDateTime</label>
       </node>
-      <node id="852">
+      <node id="901">
         <label>QObject</label>
       </node>
-      <node id="922">
-        <label>QtWebKitWidgets/QWebView</label>
+      <node id="889">
+        <label>QWebEngineView</label>
       </node>
-      <node id="915">
-        <label>videoplayer.h</label>
-        <link refid="videoplayer_8h"/>
+      <node id="920">
+        <label>ackpacket.h</label>
+        <link refid="ackpacket_8h"/>
+        <childnode refid="911" relation="include">
+        </childnode>
+        <childnode refid="909" relation="include">
+        </childnode>
+      </node>
+      <node id="895">
+        <label>QList</label>
+      </node>
+      <node id="912">
+        <label>stdint.h</label>
+      </node>
+      <node id="923">
+        <label>telemetrypacket.h</label>
+        <link refid="telemetrypacket_8h"/>
+        <childnode refid="908" relation="include">
+        </childnode>
+        <childnode refid="909" relation="include">
+        </childnode>
+      </node>
+      <node id="884">
+        <label>mapplanning.h</label>
+        <link refid="mapplanning_8h"/>
+        <childnode refid="885" relation="include">
+        </childnode>
+        <childnode refid="886" relation="include">
+        </childnode>
+        <childnode refid="887" relation="include">
+        </childnode>
+        <childnode refid="888" relation="include">
+        </childnode>
+        <childnode refid="889" relation="include">
+        </childnode>
         <childnode refid="890" relation="include">
         </childnode>
         <childnode refid="891" relation="include">
@@ -75,41 +138,107 @@
         </childnode>
         <childnode refid="893" relation="include">
         </childnode>
-        <childnode refid="894" relation="include">
-        </childnode>
-      </node>
-      <node id="882">
-        <label>networklistener.h</label>
-        <link refid="networklistener_8h"/>
-        <childnode refid="852" relation="include">
-        </childnode>
-        <childnode refid="878" relation="include">
-        </childnode>
-        <childnode refid="841" relation="include">
-        </childnode>
-        <childnode refid="879" relation="include">
-        </childnode>
-        <childnode refid="869" relation="include">
-        </childnode>
-        <childnode refid="860" relation="include">
-        </childnode>
-      </node>
-      <node id="846">
-        <label>QList</label>
-      </node>
-      <node id="863">
-        <label>stdint.h</label>
-      </node>
-      <node id="897">
-        <label>qcustomplot.h</label>
-        <link refid="qcustomplot_8h"/>
-        <childnode refid="852" relation="include">
+        <childnode refid="897" relation="include">
         </childnode>
         <childnode refid="898" relation="include">
         </childnode>
-        <childnode refid="833" relation="include">
+        <childnode refid="906" relation="include">
         </childnode>
+        <childnode refid="913" relation="include">
+        </childnode>
+        <childnode refid="918" relation="include">
+        </childnode>
+        <childnode refid="962" relation="include">
+        </childnode>
+        <childnode refid="971" relation="include">
+        </childnode>
+      </node>
+      <node id="926">
+        <label>QThread</label>
+      </node>
+      <node id="896">
+        <label>QPair</label>
+      </node>
+      <node id="953">
+        <label>QStack</label>
+      </node>
+      <node id="934">
+        <label>maprecap.h</label>
+        <link refid="maprecap_8h"/>
+        <childnode refid="885" relation="include">
+        </childnode>
+        <childnode refid="886" relation="include">
+        </childnode>
+        <childnode refid="887" relation="include">
+        </childnode>
+        <childnode refid="888" relation="include">
+        </childnode>
+        <childnode refid="890" relation="include">
+        </childnode>
+        <childnode refid="891" relation="include">
+        </childnode>
+        <childnode refid="892" relation="include">
+        </childnode>
+        <childnode refid="893" relation="include">
+        </childnode>
+        <childnode refid="897" relation="include">
+        </childnode>
+        <childnode refid="898" relation="include">
+        </childnode>
+        <childnode refid="906" relation="include">
+        </childnode>
+        <childnode refid="918" relation="include">
+        </childnode>
+        <childnode refid="935" relation="include">
+        </childnode>
+        <childnode refid="931" relation="include">
+        </childnode>
+      </node>
+      <node id="956">
+        <label>qmath.h</label>
+      </node>
+      <node id="908">
+        <label>string</label>
+      </node>
+      <node id="875">
+        <label>QMainWindow</label>
+      </node>
+      <node id="968">
+        <label>QtWebChannel/QWebChannelAbstractTransport</label>
+      </node>
+      <node id="915">
+        <label>QPlainTextEdit</label>
+      </node>
+      <node id="881">
+        <label>QUrl</label>
+      </node>
+      <node id="914">
+        <label>digitalclock.h</label>
+        <link refid="digitalclock_8h"/>
+        <childnode refid="915" relation="include">
+        </childnode>
+        <childnode refid="916" relation="include">
+        </childnode>
+        <childnode refid="917" relation="include">
+        </childnode>
+        <childnode refid="918" relation="include">
+        </childnode>
+      </node>
+      <node id="972">
+        <label>tutorial.h</label>
+        <link refid="tutorial_8h"/>
+        <childnode refid="883" relation="include">
+        </childnode>
+      </node>
+      <node id="929">
+        <label>QLinkedList</label>
+      </node>
+      <node id="898">
+        <label>qcomboboxdelegate.h</label>
+        <link refid="qcomboboxdelegate_8h"/>
         <childnode refid="899" relation="include">
+        </childnode>
+        <childnode refid="886" relation="include">
         </childnode>
         <childnode refid="900" relation="include">
         </childnode>
@@ -117,340 +246,396 @@
         </childnode>
         <childnode refid="902" relation="include">
         </childnode>
-        <childnode refid="884" relation="include">
-        </childnode>
-        <childnode refid="841" relation="include">
-        </childnode>
         <childnode refid="903" relation="include">
         </childnode>
         <childnode refid="904" relation="include">
         </childnode>
-        <childnode refid="905" relation="include">
+      </node>
+      <node id="928">
+        <label>serverqueue.h</label>
+        <link refid="serverqueue_8h"/>
+        <childnode refid="895" relation="include">
         </childnode>
-        <childnode refid="906" relation="include">
-        </childnode>
-        <childnode refid="907" relation="include">
-        </childnode>
-        <childnode refid="908" relation="include">
+        <childnode refid="929" relation="include">
         </childnode>
         <childnode refid="909" relation="include">
         </childnode>
+        <childnode refid="920" relation="include">
+        </childnode>
+        <childnode refid="907" relation="include">
+        </childnode>
+        <childnode refid="921" relation="include">
+        </childnode>
+        <childnode refid="923" relation="include">
+        </childnode>
+      </node>
+      <node id="969">
+        <label>ui_mapexecution.h</label>
+      </node>
+      <node id="900">
+        <label>QModelIndex</label>
+      </node>
+      <node id="897">
+        <label>popwindowmp.h</label>
+        <link refid="popwindowmp_8h"/>
+        <childnode refid="883" relation="include">
+        </childnode>
+      </node>
+      <node id="935">
+        <label>ui_maprecap.h</label>
+      </node>
+      <node id="936">
+        <label>missionrecap.h</label>
+        <link refid="missionrecap_8h"/>
+        <childnode refid="901" relation="include">
+        </childnode>
+        <childnode refid="937" relation="include">
+        </childnode>
+        <childnode refid="938" relation="include">
+        </childnode>
+        <childnode refid="939" relation="include">
+        </childnode>
+        <childnode refid="940" relation="include">
+        </childnode>
+        <childnode refid="941" relation="include">
+        </childnode>
+        <childnode refid="942" relation="include">
+        </childnode>
+        <childnode refid="943" relation="include">
+        </childnode>
+        <childnode refid="880" relation="include">
+        </childnode>
+        <childnode refid="917" relation="include">
+        </childnode>
+        <childnode refid="944" relation="include">
+        </childnode>
+        <childnode refid="884" relation="include">
+        </childnode>
+        <childnode refid="960" relation="include">
+        </childnode>
+        <childnode refid="961" relation="include">
+        </childnode>
+      </node>
+      <node id="941">
+        <label>qmediaplayer.h</label>
+      </node>
+      <node id="938">
+        <label>QtMultimediaWidgets</label>
+      </node>
+      <node id="971">
+        <label>ui_mapplanning.h</label>
+      </node>
+      <node id="939">
+        <label>QtGui/QMovie</label>
+      </node>
+      <node id="877">
+        <label>QShortcut</label>
+      </node>
+      <node id="873">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainwindow.cpp</label>
+        <link refid="mainwindow.cpp"/>
+        <childnode refid="874" relation="include">
+        </childnode>
+      </node>
+      <node id="951">
+        <label>QFlags</label>
+      </node>
+      <node id="944">
+        <label>qcustomplot.h</label>
+        <link refid="qcustomplot_8h"/>
+        <childnode refid="901" relation="include">
+        </childnode>
+        <childnode refid="945" relation="include">
+        </childnode>
+        <childnode refid="883" relation="include">
+        </childnode>
+        <childnode refid="946" relation="include">
+        </childnode>
+        <childnode refid="947" relation="include">
+        </childnode>
+        <childnode refid="948" relation="include">
+        </childnode>
+        <childnode refid="878" relation="include">
+        </childnode>
+        <childnode refid="932" relation="include">
+        </childnode>
+        <childnode refid="890" relation="include">
+        </childnode>
+        <childnode refid="949" relation="include">
+        </childnode>
+        <childnode refid="950" relation="include">
+        </childnode>
+        <childnode refid="951" relation="include">
+        </childnode>
+        <childnode refid="879" relation="include">
+        </childnode>
+        <childnode refid="952" relation="include">
+        </childnode>
+        <childnode refid="953" relation="include">
+        </childnode>
+        <childnode refid="954" relation="include">
+        </childnode>
+        <childnode refid="955" relation="include">
+        </childnode>
+        <childnode refid="956" relation="include">
+        </childnode>
+        <childnode refid="957" relation="include">
+        </childnode>
+        <childnode refid="958" relation="include">
+        </childnode>
+        <childnode refid="959" relation="include">
+        </childnode>
+      </node>
+      <node id="954">
+        <label>QCache</label>
+      </node>
+      <node id="930">
+        <label>networklistener.h</label>
+        <link refid="networklistener_8h"/>
+        <childnode refid="901" relation="include">
+        </childnode>
+        <childnode refid="926" relation="include">
+        </childnode>
+        <childnode refid="890" relation="include">
+        </childnode>
+        <childnode refid="927" relation="include">
+        </childnode>
+        <childnode refid="918" relation="include">
+        </childnode>
+        <childnode refid="909" relation="include">
+        </childnode>
+      </node>
+      <node id="946">
+        <label>QPainter</label>
+      </node>
+      <node id="931">
+        <label>mission.h</label>
+        <link refid="mission_8h"/>
+        <childnode refid="890" relation="include">
+        </childnode>
+        <childnode refid="932" relation="include">
+        </childnode>
+        <childnode refid="896" relation="include">
+        </childnode>
+        <childnode refid="933" relation="include">
+        </childnode>
+        <childnode refid="907" relation="include">
+        </childnode>
+        <childnode refid="923" relation="include">
+        </childnode>
+        <childnode refid="906" relation="include">
+        </childnode>
+        <childnode refid="918" relation="include">
+        </childnode>
+      </node>
+      <node id="948">
+        <label>QMouseEvent</label>
+      </node>
+      <node id="882">
+        <label>options.h</label>
+        <link refid="options_8h"/>
+        <childnode refid="883" relation="include">
+        </childnode>
+        <childnode refid="884" relation="include">
+        </childnode>
+        <childnode refid="913" relation="include">
+        </childnode>
+        <childnode refid="936" relation="include">
+        </childnode>
+      </node>
+      <node id="888">
+        <label>QButtonGroup</label>
+      </node>
+      <node id="922">
+        <label>string.h</label>
+      </node>
+      <node id="916">
+        <label>QTime</label>
+      </node>
+      <node id="942">
+        <label>qvideowidget.h</label>
+      </node>
+      <node id="891">
+        <label>QApplication</label>
+      </node>
+      <node id="959">
+        <label>QtPrintSupport</label>
+      </node>
+      <node id="945">
+        <label>QPointer</label>
+      </node>
+      <node id="973">
+        <label>ui_mainwindow.h</label>
+      </node>
+      <node id="905">
+        <label>QValidator</label>
+      </node>
+      <node id="885">
+        <label>QDialog</label>
+      </node>
+      <node id="924">
+        <label>gsserver.h</label>
+        <link refid="gsserver_8h"/>
+        <childnode refid="925" relation="include">
+        </childnode>
+        <childnode refid="896" relation="include">
+        </childnode>
+        <childnode refid="926" relation="include">
+        </childnode>
+        <childnode refid="927" relation="include">
+        </childnode>
+        <childnode refid="928" relation="include">
+        </childnode>
+        <childnode refid="901" relation="include">
+        </childnode>
+        <childnode refid="930" relation="include">
+        </childnode>
+        <childnode refid="918" relation="include">
+        </childnode>
+        <childnode refid="931" relation="include">
+        </childnode>
+      </node>
+      <node id="879">
+        <label>QDebug</label>
+      </node>
+      <node id="917">
+        <label>QTimer</label>
+      </node>
+      <node id="919">
+        <label>vector</label>
+      </node>
+      <node id="883">
+        <label>QWidget</label>
+      </node>
+      <node id="903">
+        <label>QLineEdit</label>
+      </node>
+      <node id="909">
+        <label>packet.h</label>
+        <link refid="packet_8h"/>
         <childnode refid="910" relation="include">
         </childnode>
         <childnode refid="911" relation="include">
         </childnode>
         <childnode refid="912" relation="include">
         </childnode>
-        <childnode refid="913" relation="include">
-        </childnode>
-        <childnode refid="914" relation="include">
-        </childnode>
       </node>
-      <node id="858">
-        <label>actionpacket.h</label>
-        <link refid="actionpacket_8h"/>
-        <childnode refid="859" relation="include">
-        </childnode>
-        <childnode refid="860" relation="include">
-        </childnode>
+      <node id="890">
+        <label>QString</label>
       </node>
-      <node id="878">
-        <label>QThread</label>
+      <node id="925">
+        <label>QQueue</label>
       </node>
-      <node id="847">
-        <label>QPair</label>
+      <node id="927">
+        <label>QUdpSocket</label>
       </node>
-      <node id="908">
-        <label>QStack</label>
-      </node>
-      <node id="918">
-        <label>connectiondialog.h</label>
-        <link refid="connectiondialog_8h"/>
-        <childnode refid="835" relation="include">
-        </childnode>
-      </node>
-      <node id="911">
-        <label>qmath.h</label>
-      </node>
-      <node id="859">
-        <label>string</label>
-      </node>
-      <node id="887">
-        <label>qwebframe.h</label>
-      </node>
-      <node id="831">
-        <label>QMainWindow</label>
-      </node>
-      <node id="834">
-        <label>mapplanning.h</label>
-        <link refid="mapplanning_8h"/>
-        <childnode refid="835" relation="include">
-        </childnode>
-        <childnode refid="836" relation="include">
-        </childnode>
-        <childnode refid="837" relation="include">
-        </childnode>
-        <childnode refid="838" relation="include">
-        </childnode>
-        <childnode refid="839" relation="include">
-        </childnode>
-        <childnode refid="840" relation="include">
-        </childnode>
-        <childnode refid="841" relation="include">
-        </childnode>
-        <childnode refid="842" relation="include">
-        </childnode>
-        <childnode refid="843" relation="include">
-        </childnode>
-        <childnode refid="844" relation="include">
-        </childnode>
-        <childnode refid="848" relation="include">
-        </childnode>
-        <childnode refid="849" relation="include">
-        </childnode>
-        <childnode refid="857" relation="include">
-        </childnode>
-        <childnode refid="864" relation="include">
-        </childnode>
-        <childnode refid="869" relation="include">
-        </childnode>
-        <childnode refid="919" relation="include">
-        </childnode>
-      </node>
-      <node id="866">
-        <label>QPlainTextEdit</label>
-      </node>
-      <node id="923">
-        <label>QUrl</label>
-      </node>
-      <node id="881">
-        <label>QLinkedList</label>
-      </node>
-      <node id="917">
-        <label>ui_mapexecution.h</label>
-      </node>
-      <node id="851">
-        <label>QModelIndex</label>
-      </node>
-      <node id="872">
-        <label>ackpacket.h</label>
-        <link refid="ackpacket_8h"/>
-        <childnode refid="862" relation="include">
-        </childnode>
-        <childnode refid="860" relation="include">
-        </childnode>
-      </node>
-      <node id="832">
-        <label>options.h</label>
-        <link refid="options_8h"/>
-        <childnode refid="833" relation="include">
-        </childnode>
-        <childnode refid="834" relation="include">
-        </childnode>
-        <childnode refid="864" relation="include">
+      <node id="962">
+        <label>mapwidget.h</label>
+        <link refid="mapwidget_8h"/>
+        <childnode refid="895" relation="include">
         </childnode>
         <childnode refid="889" relation="include">
         </childnode>
-      </node>
-      <node id="888">
-        <label>ui_maprecap.h</label>
-      </node>
-      <node id="894">
-        <label>qmediaplayer.h</label>
-      </node>
-      <node id="891">
-        <label>QtMultimediaWidgets</label>
-      </node>
-      <node id="919">
-        <label>ui_mapplanning.h</label>
-      </node>
-      <node id="892">
-        <label>QtGui/QMovie</label>
-      </node>
-      <node id="921">
-        <label>QShortcut</label>
-      </node>
-      <node id="860">
-        <label>Packet.h</label>
-        <link refid="packet_8h"/>
-        <childnode refid="861" relation="include">
+        <childnode refid="881" relation="include">
         </childnode>
-        <childnode refid="862" relation="include">
+        <childnode refid="963" relation="include">
         </childnode>
-        <childnode refid="863" relation="include">
+        <childnode refid="964" relation="include">
         </childnode>
-      </node>
-      <node id="905">
-        <label>QFlags</label>
-      </node>
-      <node id="909">
-        <label>QCache</label>
-      </node>
-      <node id="899">
-        <label>QPainter</label>
-      </node>
-      <node id="840">
-        <label>QWebFrame</label>
-      </node>
-      <node id="901">
-        <label>QMouseEvent</label>
-      </node>
-      <node id="924">
-        <label>tutorial.h</label>
-        <link refid="tutorial_8h"/>
-        <childnode refid="833" relation="include">
+        <childnode refid="965" relation="include">
         </childnode>
-      </node>
-      <node id="838">
-        <label>QButtonGroup</label>
-      </node>
-      <node id="883">
-        <label>mission.h</label>
-        <link refid="mission_8h"/>
-        <childnode refid="841" relation="include">
+        <childnode refid="907" relation="include">
         </childnode>
-        <childnode refid="884" relation="include">
+        <childnode refid="966" relation="include">
         </childnode>
-        <childnode refid="847" relation="include">
-        </childnode>
-        <childnode refid="885" relation="include">
-        </childnode>
-        <childnode refid="858" relation="include">
-        </childnode>
-        <childnode refid="875" relation="include">
-        </childnode>
-        <childnode refid="857" relation="include">
-        </childnode>
-        <childnode refid="869" relation="include">
-        </childnode>
-      </node>
-      <node id="830">
-        <label>mainwindow.h</label>
-        <link refid="mainwindow_8h"/>
-        <childnode refid="831" relation="include">
-        </childnode>
-        <childnode refid="832" relation="include">
-        </childnode>
-        <childnode refid="920" relation="include">
-        </childnode>
-        <childnode refid="921" relation="include">
-        </childnode>
-        <childnode refid="902" relation="include">
+        <childnode refid="967" relation="include">
         </childnode>
         <childnode refid="906" relation="include">
         </childnode>
-        <childnode refid="870" relation="include">
+      </node>
+      <node id="902">
+        <label>QSize</label>
+      </node>
+      <node id="965">
+        <label>QWebChannelAbstractTransport</label>
+      </node>
+      <node id="887">
+        <label>QPushButton</label>
+      </node>
+      <node id="964">
+        <label>QWebSocketServer</label>
+      </node>
+      <node id="910">
+        <label>time.h</label>
+      </node>
+      <node id="955">
+        <label>QMargins</label>
+      </node>
+      <node id="893">
+        <label>tablemodel.h</label>
+        <link refid="tablemodel_8h"/>
+        <childnode refid="894" relation="include">
         </childnode>
-        <childnode refid="922" relation="include">
+        <childnode refid="895" relation="include">
         </childnode>
-        <childnode refid="923" relation="include">
-        </childnode>
-        <childnode refid="924" relation="include">
-        </childnode>
-        <childnode refid="834" relation="include">
-        </childnode>
-        <childnode refid="864" relation="include">
-        </childnode>
-        <childnode refid="889" relation="include">
-        </childnode>
-        <childnode refid="886" relation="include">
-        </childnode>
-        <childnode refid="918" relation="include">
-        </childnode>
-        <childnode refid="925" relation="include">
+        <childnode refid="896" relation="include">
         </childnode>
       </node>
-      <node id="873">
-        <label>infopacket.h</label>
-        <link refid="infopacket_8h"/>
-        <childnode refid="859" relation="include">
+      <node id="943">
+        <label>qvideosurfaceformat.h</label>
+      </node>
+      <node id="961">
+        <label>ui_missionrecap.h</label>
+      </node>
+      <node id="886">
+        <label>QComboBox</label>
+      </node>
+      <node id="880">
+        <label>iostream</label>
+      </node>
+      <node id="906">
+        <label>flightpath.h</label>
+        <link refid="flightpath_8h"/>
+        <childnode refid="895" relation="include">
         </childnode>
-        <childnode refid="874" relation="include">
+        <childnode refid="896" relation="include">
         </childnode>
-        <childnode refid="863" relation="include">
+        <childnode refid="890" relation="include">
         </childnode>
-        <childnode refid="860" relation="include">
+        <childnode refid="907" relation="include">
+        </childnode>
+      </node>
+      <node id="899">
+        <label>QItemDelegate</label>
+      </node>
+      <node id="878">
+        <label>QPixmap</label>
+      </node>
+      <node id="892">
+        <label>QDoubleValidator</label>
+      </node>
+      <node id="960">
+        <label>videoplayer.h</label>
+        <link refid="videoplayer_8h"/>
+        <childnode refid="937" relation="include">
+        </childnode>
+        <childnode refid="938" relation="include">
+        </childnode>
+        <childnode refid="939" relation="include">
+        </childnode>
+        <childnode refid="940" relation="include">
+        </childnode>
+        <childnode refid="941" relation="include">
         </childnode>
       </node>
       <node id="874">
-        <label>string.h</label>
-      </node>
-      <node id="867">
-        <label>QTime</label>
-      </node>
-      <node id="895">
-        <label>qvideowidget.h</label>
-      </node>
-      <node id="842">
-        <label>QApplication</label>
-      </node>
-      <node id="875">
-        <label>telemetrypacket.h</label>
-        <link refid="telemetrypacket_8h"/>
-        <childnode refid="859" relation="include">
+        <label>mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="875" relation="include">
         </childnode>
-        <childnode refid="860" relation="include">
+        <childnode refid="876" relation="include">
         </childnode>
-      </node>
-      <node id="914">
-        <label>QtPrintSupport</label>
-      </node>
-      <node id="898">
-        <label>QPointer</label>
-      </node>
-      <node id="925">
-        <label>ui_mainwindow.h</label>
-      </node>
-      <node id="856">
-        <label>QValidator</label>
-      </node>
-      <node id="835">
-        <label>QDialog</label>
-      </node>
-      <node id="906">
-        <label>QDebug</label>
-      </node>
-      <node id="868">
-        <label>QTimer</label>
-      </node>
-      <node id="871">
-        <label>vector</label>
-      </node>
-      <node id="833">
-        <label>QWidget</label>
-      </node>
-      <node id="854">
-        <label>QLineEdit</label>
-      </node>
-      <node id="841">
-        <label>QString</label>
-      </node>
-      <node id="877">
-        <label>QQueue</label>
-      </node>
-      <node id="879">
-        <label>QUdpSocket</label>
-      </node>
-      <node id="853">
-        <label>QSize</label>
-      </node>
-      <node id="839">
-        <label>QWebEnginePage</label>
-      </node>
-      <node id="855">
-        <label>mapvalidator.h</label>
-        <link refid="mapvalidator_8h"/>
-        <childnode refid="843" relation="include">
-        </childnode>
-        <childnode refid="856" relation="include">
-        </childnode>
-      </node>
-      <node id="876">
-        <label>gsserver.h</label>
-        <link refid="gsserver_8h"/>
         <childnode refid="877" relation="include">
-        </childnode>
-        <childnode refid="847" relation="include">
         </childnode>
         <childnode refid="878" relation="include">
         </childnode>
@@ -458,251 +643,101 @@
         </childnode>
         <childnode refid="880" relation="include">
         </childnode>
-        <childnode refid="852" relation="include">
+        <childnode refid="881" relation="include">
         </childnode>
         <childnode refid="882" relation="include">
         </childnode>
-        <childnode refid="869" relation="include">
+        <childnode refid="972" relation="include">
         </childnode>
-        <childnode refid="883" relation="include">
+        <childnode refid="884" relation="include">
+        </childnode>
+        <childnode refid="913" relation="include">
+        </childnode>
+        <childnode refid="936" relation="include">
+        </childnode>
+        <childnode refid="934" relation="include">
+        </childnode>
+        <childnode refid="970" relation="include">
+        </childnode>
+        <childnode refid="973" relation="include">
         </childnode>
       </node>
-      <node id="837">
-        <label>QPushButton</label>
-      </node>
-      <node id="889">
-        <label>missionrecap.h</label>
-        <link refid="missionrecap_8h"/>
-        <childnode refid="852" relation="include">
+      <node id="918">
+        <label>messagebox.h</label>
+        <link refid="messagebox_8h"/>
+        <childnode refid="880" relation="include">
         </childnode>
-        <childnode refid="890" relation="include">
+        <childnode refid="919" relation="include">
         </childnode>
         <childnode refid="891" relation="include">
         </childnode>
-        <childnode refid="892" relation="include">
-        </childnode>
-        <childnode refid="893" relation="include">
-        </childnode>
-        <childnode refid="894" relation="include">
+        <childnode refid="896" relation="include">
         </childnode>
         <childnode refid="895" relation="include">
         </childnode>
-        <childnode refid="896" relation="include">
-        </childnode>
-        <childnode refid="870" relation="include">
-        </childnode>
-        <childnode refid="868" relation="include">
-        </childnode>
-        <childnode refid="897" relation="include">
-        </childnode>
-        <childnode refid="834" relation="include">
-        </childnode>
-        <childnode refid="915" relation="include">
-        </childnode>
         <childnode refid="916" relation="include">
         </childnode>
-      </node>
-      <node id="861">
-        <label>time.h</label>
-      </node>
-      <node id="910">
-        <label>QMargins</label>
-      </node>
-      <node id="864">
-        <label>mapexecution.h</label>
-        <link refid="mapexecution_8h"/>
-        <childnode refid="833" relation="include">
+        <childnode refid="912" relation="include">
         </childnode>
-        <childnode refid="835" relation="include">
+        <childnode refid="898" relation="include">
         </childnode>
-        <childnode refid="836" relation="include">
+        <childnode refid="920" relation="include">
         </childnode>
-        <childnode refid="837" relation="include">
+        <childnode refid="907" relation="include">
         </childnode>
-        <childnode refid="838" relation="include">
+        <childnode refid="921" relation="include">
         </childnode>
-        <childnode refid="839" relation="include">
+        <childnode refid="923" relation="include">
         </childnode>
-        <childnode refid="847" relation="include">
-        </childnode>
-        <childnode refid="846" relation="include">
-        </childnode>
-        <childnode refid="865" relation="include">
-        </childnode>
-        <childnode refid="876" relation="include">
-        </childnode>
-        <childnode refid="844" relation="include">
-        </childnode>
-        <childnode refid="849" relation="include">
-        </childnode>
-        <childnode refid="886" relation="include">
-        </childnode>
-        <childnode refid="889" relation="include">
-        </childnode>
-        <childnode refid="832" relation="include">
-        </childnode>
-        <childnode refid="869" relation="include">
-        </childnode>
-        <childnode refid="883" relation="include">
-        </childnode>
-        <childnode refid="917" relation="include">
-        </childnode>
-        <childnode refid="918" relation="include">
-        </childnode>
-        <childnode refid="857" relation="include">
-        </childnode>
-      </node>
-      <node id="880">
-        <label>serverqueue.h</label>
-        <link refid="serverqueue_8h"/>
-        <childnode refid="846" relation="include">
-        </childnode>
-        <childnode refid="881" relation="include">
-        </childnode>
-        <childnode refid="860" relation="include">
-        </childnode>
-        <childnode refid="872" relation="include">
-        </childnode>
-        <childnode refid="858" relation="include">
-        </childnode>
-        <childnode refid="873" relation="include">
-        </childnode>
-        <childnode refid="875" relation="include">
-        </childnode>
-      </node>
-      <node id="849">
-        <label>qcomboboxdelegate.h</label>
-        <link refid="qcomboboxdelegate_8h"/>
-        <childnode refid="850" relation="include">
-        </childnode>
-        <childnode refid="836" relation="include">
-        </childnode>
-        <childnode refid="851" relation="include">
-        </childnode>
-        <childnode refid="852" relation="include">
-        </childnode>
-        <childnode refid="853" relation="include">
-        </childnode>
-        <childnode refid="854" relation="include">
-        </childnode>
-        <childnode refid="855" relation="include">
-        </childnode>
-      </node>
-      <node id="896">
-        <label>qvideosurfaceformat.h</label>
-      </node>
-      <node id="916">
-        <label>ui_missionrecap.h</label>
-      </node>
-      <node id="836">
-        <label>QComboBox</label>
-      </node>
-      <node id="870">
-        <label>iostream</label>
-      </node>
-      <node id="865">
-        <label>digitalclock.h</label>
-        <link refid="digitalclock_8h"/>
-        <childnode refid="866" relation="include">
-        </childnode>
-        <childnode refid="867" relation="include">
-        </childnode>
-        <childnode refid="868" relation="include">
-        </childnode>
-        <childnode refid="869" relation="include">
-        </childnode>
-      </node>
-      <node id="850">
-        <label>QItemDelegate</label>
-      </node>
-      <node id="848">
-        <label>popwindowmp.h</label>
-        <link refid="popwindowmp_8h"/>
-        <childnode refid="833" relation="include">
-        </childnode>
-      </node>
-      <node id="902">
-        <label>QPixmap</label>
-      </node>
-      <node id="843">
-        <label>QDoubleValidator</label>
-      </node>
-      <node id="829">
-        <label>C:/Users/Roman/Documents/GroundStation/GS/mainwindow.cpp</label>
-        <link refid="mainwindow.cpp"/>
-        <childnode refid="830" relation="include">
-        </childnode>
-      </node>
-      <node id="844">
-        <label>tablemodel.h</label>
-        <link refid="tablemodel_8h"/>
-        <childnode refid="845" relation="include">
-        </childnode>
-        <childnode refid="846" relation="include">
-        </childnode>
-        <childnode refid="847" relation="include">
-        </childnode>
-      </node>
-      <node id="862">
-        <label>stdio.h</label>
-      </node>
-      <node id="900">
-        <label>QPaintEvent</label>
-      </node>
-      <node id="893">
-        <label>QVideoWidget</label>
-      </node>
-      <node id="845">
-        <label>QAbstractTableModel</label>
-      </node>
-      <node id="920">
-        <label>QPropertyAnimation</label>
-      </node>
-      <node id="857">
-        <label>flightpath.h</label>
-        <link refid="flightpath_8h"/>
-        <childnode refid="846" relation="include">
-        </childnode>
-        <childnode refid="847" relation="include">
-        </childnode>
-        <childnode refid="841" relation="include">
-        </childnode>
-        <childnode refid="858" relation="include">
-        </childnode>
-      </node>
-      <node id="884">
-        <label>QVector</label>
       </node>
       <node id="904">
-        <label>QMultiMap</label>
+        <label>mapvalidator.h</label>
+        <link refid="mapvalidator_8h"/>
+        <childnode refid="892" relation="include">
+        </childnode>
+        <childnode refid="905" relation="include">
+        </childnode>
       </node>
-      <node id="869">
-        <label>messagebox.h</label>
-        <link refid="messagebox_8h"/>
-        <childnode refid="870" relation="include">
+      <node id="921">
+        <label>infopacket.h</label>
+        <link refid="infopacket_8h"/>
+        <childnode refid="908" relation="include">
         </childnode>
-        <childnode refid="871" relation="include">
+        <childnode refid="922" relation="include">
         </childnode>
-        <childnode refid="842" relation="include">
+        <childnode refid="912" relation="include">
         </childnode>
-        <childnode refid="847" relation="include">
+        <childnode refid="909" relation="include">
         </childnode>
-        <childnode refid="846" relation="include">
+      </node>
+      <node id="911">
+        <label>stdio.h</label>
+      </node>
+      <node id="947">
+        <label>QPaintEvent</label>
+      </node>
+      <node id="940">
+        <label>QVideoWidget</label>
+      </node>
+      <node id="894">
+        <label>QAbstractTableModel</label>
+      </node>
+      <node id="907">
+        <label>actionpacket.h</label>
+        <link refid="actionpacket_8h"/>
+        <childnode refid="908" relation="include">
         </childnode>
-        <childnode refid="867" relation="include">
+        <childnode refid="909" relation="include">
         </childnode>
-        <childnode refid="863" relation="include">
-        </childnode>
-        <childnode refid="849" relation="include">
-        </childnode>
-        <childnode refid="872" relation="include">
-        </childnode>
-        <childnode refid="858" relation="include">
-        </childnode>
-        <childnode refid="873" relation="include">
-        </childnode>
-        <childnode refid="875" relation="include">
-        </childnode>
+      </node>
+      <node id="876">
+        <label>QPropertyAnimation</label>
+      </node>
+      <node id="932">
+        <label>QVector</label>
+      </node>
+      <node id="950">
+        <label>QMultiMap</label>
       </node>
     </incdepgraph>
     <briefdescription>
@@ -753,7 +788,7 @@
 <codeline lineno="54"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight></codeline>
 <codeline lineno="59"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_main_window_1a353d3eeb054f5158b86fe07e4ee23aad" kindref="member">MainWindow::missionExecutionClicked</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_main_window_1af85588a658c667f541d926824018baee" kindref="member">showMissionExecution</ref>();</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_main_window_1acb033393f94473976658455949facf87" kindref="member">showMissionExecution</ref>();</highlight></codeline>
 <codeline lineno="61"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"></highlight></codeline>
 <codeline lineno="66"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_main_window_1a559124f7e67176fb618f9aef4924e650" kindref="member">MainWindow::missionRecapClicked</ref>()<sp/>{</highlight></codeline>
@@ -770,7 +805,7 @@
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_main_window_1a35549602e191dbbbfd6101baa3aa56d4" kindref="member">showMissionPlanning</ref>();</highlight></codeline>
 <codeline lineno="81"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_main_window_1ae7ad48b7eb3055a2b02042ec57395516" kindref="member">MainWindow::on_actionMission_Execution_triggered</ref>(){</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_main_window_1af85588a658c667f541d926824018baee" kindref="member">showMissionExecution</ref>();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_main_window_1acb033393f94473976658455949facf87" kindref="member">showMissionExecution</ref>();</highlight></codeline>
 <codeline lineno="84"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_main_window_1ac8733b579b312836c458dc4ad856e66f" kindref="member">MainWindow::on_actionMission_Recap_triggered</ref>(){</highlight></codeline>
 <codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_main_window_1a2b0c8c1d55340184fa4a0799957c8ba4" kindref="member">showMissionRecap</ref>();</highlight></codeline>
@@ -779,7 +814,7 @@
 <codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(status<sp/>==<sp/>1)<sp/>{</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_main_window_1a35549602e191dbbbfd6101baa3aa56d4" kindref="member">showMissionPlanning</ref>();</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(status<sp/>==<sp/>2)<sp/>{</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_main_window_1af85588a658c667f541d926824018baee" kindref="member">showMissionExecution</ref>();</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_main_window_1acb033393f94473976658455949facf87" kindref="member">showMissionExecution</ref>();</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(status<sp/>==<sp/>3)<sp/>{</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_main_window_1a2b0c8c1d55340184fa4a0799957c8ba4" kindref="member">showMissionRecap</ref>();</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(status<sp/>==<sp/>4)<sp/>{</highlight></codeline>
@@ -795,66 +830,27 @@
 <codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>mapPlanning-&gt;showFullScreen();</highlight></codeline>
 <codeline lineno="115"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"></highlight></codeline>
-<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_main_window_1af85588a658c667f541d926824018baee" kindref="member">MainWindow::showMissionExecution</ref>(){</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Temporary<sp/>FlightPath<sp/>code<sp/>-<sp/>Remove<sp/>Later</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="119"><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Attempting<sp/>to<sp/>create<sp/>FlightPath&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_flight_path" kindref="compound">FlightPath</ref><sp/>*myFlightPath<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_flight_path" kindref="compound">FlightPath</ref>();</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_main_window_1acb033393f94473976658455949facf87" kindref="member">MainWindow::showMissionExecution</ref>(<ref refid="class_flight_path" kindref="compound">FlightPath</ref><sp/>*path){</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!path)<sp/>path<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_flight_path" kindref="compound">FlightPath</ref>();</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_execution" kindref="compound">MapExecution</ref><sp/>*mapExecution<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_map_execution" kindref="compound">MapExecution</ref>(path);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>QObject::connect(mapExecution,<sp/>SIGNAL(finished(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SLOT(<ref refid="class_main_window_1a6bc9a1eb5bdf2e6784a1954ecdc8965a" kindref="member">checkFinishStatus</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)),<sp/>Qt::UniqueConnection);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>mapExecution-&gt;showFullScreen();</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="123"><highlight class="normal"></highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Filling<sp/>point<sp/>1&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_protocol_1_1_waypoint" kindref="compound">Protocol::Waypoint</ref><sp/>wp;</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>wp.<ref refid="struct_protocol_1_1_waypoint_1a69b7b1c0eeb8629e07fc929a902a91aa" kindref="member">alt</ref><sp/>=<sp/>10;</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>wp.<ref refid="struct_protocol_1_1_waypoint_1a29b254ffa54a87da980aa2d0a6dd8e1e" kindref="member">lat</ref><sp/>=<sp/>33;</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>wp.<ref refid="struct_protocol_1_1_waypoint_1ac5f0dd73ea290deb60ea7464b114faa7" kindref="member">lon</ref><sp/>=<sp/>-111;</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>wp.<ref refid="struct_protocol_1_1_waypoint_1aa92f0aab1641e5bdb5ea7a9b9d6994ad" kindref="member">speed</ref><sp/>=<sp/>10;</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>myFlightPath-&gt;<ref refid="class_flight_path_1a101c5c8e050e215d70e3c6218b935aa9" kindref="member">addNavAction</ref>(wp,10);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_main_window_1a2b0c8c1d55340184fa4a0799957c8ba4" kindref="member">MainWindow::showMissionRecap</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//MissionRecap<sp/>*missionRecap<sp/>=<sp/>new<sp/>MissionRecap();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_recap" kindref="compound">MapRecap</ref><sp/>*missionRecap<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_map_recap" kindref="compound">MapRecap</ref>();</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>QObject::connect(missionRecap,<sp/>SIGNAL(finished(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SLOT(<ref refid="class_main_window_1a6bc9a1eb5bdf2e6784a1954ecdc8965a" kindref="member">checkFinishStatus</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)),<sp/>Qt::UniqueConnection);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>missionRecap-&gt;showFullScreen();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="131"><highlight class="normal"></highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Filling<sp/>point<sp/>2&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>wp.<ref refid="struct_protocol_1_1_waypoint_1a69b7b1c0eeb8629e07fc929a902a91aa" kindref="member">alt</ref><sp/>=<sp/>10;</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>wp.<ref refid="struct_protocol_1_1_waypoint_1a29b254ffa54a87da980aa2d0a6dd8e1e" kindref="member">lat</ref><sp/>=<sp/>34;</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>wp.<ref refid="struct_protocol_1_1_waypoint_1ac5f0dd73ea290deb60ea7464b114faa7" kindref="member">lon</ref><sp/>=<sp/>-111;</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>wp.<ref refid="struct_protocol_1_1_waypoint_1aa92f0aab1641e5bdb5ea7a9b9d6994ad" kindref="member">speed</ref><sp/>=<sp/>10;</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>myFlightPath-&gt;<ref refid="class_flight_path_1a101c5c8e050e215d70e3c6218b935aa9" kindref="member">addNavAction</ref>(wp,20);</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Filling<sp/>point<sp/>3&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>wp.<ref refid="struct_protocol_1_1_waypoint_1a69b7b1c0eeb8629e07fc929a902a91aa" kindref="member">alt</ref><sp/>=<sp/>10;</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>wp.<ref refid="struct_protocol_1_1_waypoint_1a29b254ffa54a87da980aa2d0a6dd8e1e" kindref="member">lat</ref><sp/>=<sp/>34;</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>wp.<ref refid="struct_protocol_1_1_waypoint_1ac5f0dd73ea290deb60ea7464b114faa7" kindref="member">lon</ref><sp/>=<sp/>-110;</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>wp.<ref refid="struct_protocol_1_1_waypoint_1aa92f0aab1641e5bdb5ea7a9b9d6994ad" kindref="member">speed</ref><sp/>=<sp/>10;</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>myFlightPath-&gt;<ref refid="class_flight_path_1a101c5c8e050e215d70e3c6218b935aa9" kindref="member">addNavAction</ref>(wp,30);</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"></highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Done<sp/>creating<sp/>FlightPath&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"></highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//End<sp/>temporary<sp/>FlightPath<sp/>code</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="149"><highlight class="normal"></highlight></codeline>
-<codeline lineno="150"><highlight class="normal"></highlight></codeline>
-<codeline lineno="151"><highlight class="normal"></highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_execution" kindref="compound">MapExecution</ref><sp/>*mapExecution<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_map_execution" kindref="compound">MapExecution</ref>(myFlightPath);</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>QObject::connect(mapExecution,<sp/>SIGNAL(finished(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SLOT(<ref refid="class_main_window_1a6bc9a1eb5bdf2e6784a1954ecdc8965a" kindref="member">checkFinishStatus</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)),<sp/>Qt::UniqueConnection);</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>mapExecution-&gt;showFullScreen();</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"></highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Open<sp/>ConnectionDialog<sp/>when<sp/>MissionExecution<sp/>is<sp/>opened</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="157"><highlight class="normal"></highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ConnectionDialog<sp/>*<sp/>connectionDialog<sp/>=<sp/>new<sp/>ConnectionDialog();</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//connectionDialog<sp/>-&gt;<sp/>show();</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="161"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"></highlight></codeline>
-<codeline lineno="163"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_main_window_1a2b0c8c1d55340184fa4a0799957c8ba4" kindref="member">MainWindow::showMissionRecap</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//MissionRecap<sp/>*missionRecap<sp/>=<sp/>new<sp/>MissionRecap();</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_recap" kindref="compound">MapRecap</ref><sp/>*missionRecap<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_map_recap" kindref="compound">MapRecap</ref>();</highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>QObject::connect(missionRecap,<sp/>SIGNAL(finished(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SLOT(<ref refid="class_main_window_1a6bc9a1eb5bdf2e6784a1954ecdc8965a" kindref="member">checkFinishStatus</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)),<sp/>Qt::UniqueConnection);</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>missionRecap-&gt;showFullScreen();</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"></highlight></codeline>
-<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"></highlight></codeline>
-<codeline lineno="171"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_main_window_1a256333bcbb01a576d5cdd77815409d8d" kindref="member">MainWindow::showTutorial</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_tutorial" kindref="compound">Tutorial</ref><sp/>*tutorial<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_tutorial" kindref="compound">Tutorial</ref>();</highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>QObject::connect(tutorial,<sp/>SIGNAL(finished(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SLOT(<ref refid="class_main_window_1a6bc9a1eb5bdf2e6784a1954ecdc8965a" kindref="member">checkFinishStatus</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)),<sp/>Qt::UniqueConnection);</highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>tutorial-&gt;showFullScreen();</highlight></codeline>
-<codeline lineno="175"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_main_window_1a256333bcbb01a576d5cdd77815409d8d" kindref="member">MainWindow::showTutorial</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_tutorial" kindref="compound">Tutorial</ref><sp/>*tutorial<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_tutorial" kindref="compound">Tutorial</ref>();</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>QObject::connect(tutorial,<sp/>SIGNAL(finished(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SLOT(<ref refid="class_main_window_1a6bc9a1eb5bdf2e6784a1954ecdc8965a" kindref="member">checkFinishStatus</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)),<sp/>Qt::UniqueConnection);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>tutorial-&gt;showFullScreen();</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/mainwindow.cpp"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainwindow.cpp"/>
   </compounddef>
 </doxygen>

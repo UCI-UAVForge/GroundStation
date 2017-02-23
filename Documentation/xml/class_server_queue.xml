@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" bodystart="40" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" bodystart="40" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_server_queue_1a0fd870115c26c00c8a09e05ac502ea60" prot="private" static="no" mutable="no">
         <type>QList&lt; <ref refid="serverqueue_8h_1a326cffc052cd053ca9cdd401fdd996ad" kindref="member">QueueEntry</ref> * &gt;</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" line="48" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" bodystart="48" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="48" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" bodystart="48" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="class_server_queue_1afb24e3092a45555723b0e184d90280fb" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" line="54" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" bodystart="54" bodyend="-1"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="54" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" bodystart="54" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -56,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" line="61" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.cpp" bodystart="25" bodyend="37"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="61" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="25" bodyend="37"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -71,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" line="68" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.cpp" bodystart="14" bodyend="16"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="68" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="14" bodyend="16"/>
       </memberdef>
       <memberdef kind="function" id="class_server_queue_1a05f53c129a6c445e869904eab8504888" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -96,7 +96,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" line="76" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.cpp" bodystart="10" bodyend="12"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="76" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="10" bodyend="12"/>
       </memberdef>
       <memberdef kind="function" id="class_server_queue_1a59cd46b536b9e86f7c7d93519d5bd983" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -109,7 +109,7 @@
 <para><ref refid="class_server_queue" kindref="compound">ServerQueue</ref> destructor </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" line="81" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.cpp" bodystart="18" bodyend="23"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="81" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="18" bodyend="23"/>
       </memberdef>
       <memberdef kind="function" id="class_server_queue_1aa8335eeeaf56fbe703cb49988b63fb87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -123,7 +123,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" line="87" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.cpp" bodystart="39" bodyend="41"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="87" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="39" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="class_server_queue_1a715921b0a0067b3d3a1485a824fbbb3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -148,7 +148,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" line="94" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.cpp" bodystart="82" bodyend="84"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="94" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="82" bodyend="84"/>
       </memberdef>
       <memberdef kind="function" id="class_server_queue_1a9438c6df4c203a32533d3388ae313195" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -184,7 +184,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" line="105" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.cpp" bodystart="43" bodyend="80"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="105" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="43" bodyend="80"/>
       </memberdef>
       <memberdef kind="function" id="class_server_queue_1aa8678274d8afa980b2995ed3f839a3f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -198,7 +198,7 @@
         <briefdescription>
 <para>dequeue Removes a packet from the <ref refid="class_server_queue" kindref="compound">ServerQueue</ref> if it has already been acknoledged. </para>        </briefdescription>
         <detaileddescription>
-<para><xrefsect id="todo_1_todo000017"><xreftitle>Todo</xreftitle><xrefdescription><para>Implement and test this </para></xrefdescription></xrefsect><parameterlist kind="param"><parameteritem>
+<para><xrefsect id="todo_1_todo000020"><xreftitle>Todo</xreftitle><xrefdescription><para>Implement and test this </para></xrefdescription></xrefsect><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>packet</parametername>
 </parameternamelist>
@@ -209,7 +209,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" line="113" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.cpp" bodystart="86" bodyend="95"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="113" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="86" bodyend="95"/>
       </memberdef>
       <memberdef kind="function" id="class_server_queue_1a8d0d64b34a8e2a342009b496bfe8b196" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -223,7 +223,7 @@
         <briefdescription>
 <para>forceDequeue Removes a packet from the <ref refid="class_server_queue" kindref="compound">ServerQueue</ref> regardless of if it has been acknolodged. </para>        </briefdescription>
         <detaileddescription>
-<para><xrefsect id="todo_1_todo000018"><xreftitle>Todo</xreftitle><xrefdescription><para>Implement and test this </para></xrefdescription></xrefsect><parameterlist kind="param"><parameteritem>
+<para><xrefsect id="todo_1_todo000021"><xreftitle>Todo</xreftitle><xrefdescription><para>Implement and test this </para></xrefdescription></xrefsect><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>packet</parametername>
 </parameternamelist>
@@ -234,7 +234,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" line="121" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.cpp" bodystart="97" bodyend="104"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="121" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="97" bodyend="104"/>
       </memberdef>
       <memberdef kind="function" id="class_server_queue_1a4815b1a73a46c6b581bd70a82b04d1b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -260,7 +260,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" line="132" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.cpp" bodystart="106" bodyend="120"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="132" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="106" bodyend="120"/>
       </memberdef>
       <memberdef kind="function" id="class_server_queue_1a89278291c92e8ec01d730407d3f2f806" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref> *</type>
@@ -274,14 +274,14 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" line="139" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.cpp" bodystart="122" bodyend="136"/>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="139" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="122" bodyend="136"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>The <ref refid="class_server_queue" kindref="compound">ServerQueue</ref> class is a specialized priority queue-like data structure for holding Packets before they are sent over the network. </para>    </briefdescription>
     <detaileddescription>
 <para>The enqueue(Packet, int) and <ref refid="class_server_queue_1a89278291c92e8ec01d730407d3f2f806" kindref="member">getNextPacket()</ref> methods are the main way to interact with this class. enqueue-ing packets will insert them into the list at a location corresponding with their priority. getNextPacket will grab the next Packet to send - determined internally by this class.</para><para>Packets come out of the queue lowest priority value first. A priority of 5 will be sent before a priority of 10. If two packets have the same priority, they will be sent in the order that they were added. </para>    </detaileddescription>
-    <location file="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" line="32" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/GS/serverqueue.h" bodystart="32" bodyend="140"/>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="32" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" bodystart="32" bodyend="140"/>
     <listofallmembers>
       <member refid="class_server_queue_1aa8678274d8afa980b2995ed3f839a3f8" prot="public" virt="non-virtual"><scope>ServerQueue</scope><name>dequeue</name></member>
       <member refid="class_server_queue_1a715921b0a0067b3d3a1485a824fbbb3d" prot="public" virt="non-virtual"><scope>ServerQueue</scope><name>enqueue</name></member>
