@@ -20,9 +20,7 @@ public:
     TimerWidget(QWidget * parent = 0) ;
     //explicit TimerWidget(QWidget* parent = 0);
 
-	~TimerWidget();
-
-    void showTime();
+    ~TimerWidget();
 
     void initiate(QTime timein);
 
@@ -33,6 +31,9 @@ public:
     //QTimer getTimeTimer() const;
 
     //void setTimeTimer(QTimer newTimeTimer);
+
+private slots:
+    void showTime();
 
 };
 #endif

@@ -45,7 +45,6 @@ SOURCES += main.cpp\
     qcomboboxdelegate.cpp \
     videoplayer.cpp \
     gsserver.cpp \
-    gsclient.cpp \
     gscontrolpanel.cpp \
     qcustomplot.cpp\
     networklistener.cpp \
@@ -71,8 +70,7 @@ SOURCES += main.cpp\
     tablewidget.cpp \
     #statuswidget.cpp \
     timerwidget.cpp \
-    missionstatuswindow.cpp \
-    gscontrolpanel.cpp
+    missionstatuswindow.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
@@ -113,8 +111,7 @@ HEADERS  += mainwindow.h \
     tablewidget.h \
     #statuswidget.h \
     timerwidget.h \
-    missionstatuswindow.h \
-    gscontrolpanel.h
+    missionstatuswindow.h
 
 FORMS    += mainwindow.ui \
     options.ui \
@@ -129,8 +126,7 @@ FORMS    += mainwindow.ui \
     qttabtest.ui \
     mainmdidisplay.ui \
     dialog.ui \
-    missionstatuswindow.ui \
-    gscontrolpanel.ui
+    missionstatuswindow.ui
 
 OTHER_FILES +=
 

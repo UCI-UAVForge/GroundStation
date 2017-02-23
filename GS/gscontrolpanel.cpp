@@ -100,8 +100,9 @@ void GSControlPanel::on_ClearPointsButton_clicked()
 void GSControlPanel::on_ExitButton_clicked()
 {
 
-    //TODO Change so that it can report errors via error codes
-    //TODO Transfer exiting over to MainMDIDisplay?
+    /// \todo Change so that it can report errors via error codes
+    /// \todo Transfer exiting over to MainMDIDisplay?
+    ///         YES plz! - Jordan
     QApplication::quit() ;
 
 }
