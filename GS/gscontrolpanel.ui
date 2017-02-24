@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>456</width>
-    <height>190</height>
+    <width>618</width>
+    <height>191</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,6 +20,13 @@
       <layout class="QHBoxLayout" name="ButtonLayout">
        <item>
         <layout class="QVBoxLayout" name="StartFinishMissionButtonLayout">
+         <item>
+          <widget class="QPushButton" name="CreateMissionButton">
+           <property name="text">
+            <string>Create Mission</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QPushButton" name="StartMissionButton">
            <property name="text">

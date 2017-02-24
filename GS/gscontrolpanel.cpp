@@ -5,31 +5,35 @@
  * @brief Default constructor for GSControlPanel
  * @param parent
  */
-GSControlPanel::GSControlPanel(QWidget *parent) : QDialog(parent),ui(new Ui::GSControlPanel)
-{
+GSControlPanel::GSControlPanel(QWidget *parent)
+    :QDialog(parent), ui(new Ui::GSControlPanel) {
 
     // Set up the GUI
     this->ui->setupUi(this);
-
     //Hide any GUI elements not used at start
-    this->ui->FinishMissionButton->hide() ;
-
+    this->ui->FinishMissionButton->hide();
+    this->ui->StartMissionButton->hide();
 }
 
 /**
  * @brief Default destructor for GSControlPanel
  */
-GSControlPanel::~GSControlPanel()
-{
+GSControlPanel::~GSControlPanel() {
     delete this->ui;
+}
+
+void GSControlPanel::on_CreateMissionButton_clicked() {
+    this->ui->CreateMissionButton->hide();
+    this->ui->StartMissionButton->show();
+
+    emit createMissionButton_clicked();
 }
 
 /**
  * @brief What happens when StartMissionButton is clicked. Hides GUI elements related to mission planning
  * and shows GUI elements related to mission execution.
  */
-void GSControlPanel::on_StartMissionButton_clicked()
-{
+void GSControlPanel::on_StartMissionButton_clicked() {
 
     //TODO Have StartMissionButton be disabled until you have at least one point in your flightpath
 
@@ -46,6 +50,7 @@ void GSControlPanel::on_StartMissionButton_clicked()
     //Show hidden GUI elements related to mission execution
     this->ui->FinishMissionButton->show() ;
 
+    emit startMissionButton_clicked();
 }
 
 /**
@@ -68,6 +73,7 @@ void GSControlPanel::on_FinishMissionButton_clicked()
     //Hide GUI elements related to mission execution
     this->ui->FinishMissionButton->hide() ;
 
+    emit finishMissionButton_clicked();
 }
 
 /**
@@ -75,7 +81,7 @@ void GSControlPanel::on_FinishMissionButton_clicked()
  */
 void GSControlPanel::on_LoadMissionButton_clicked()
 {
-
+    emit loadMissionButton_clicked();
 }
 
 /**
@@ -83,7 +89,7 @@ void GSControlPanel::on_LoadMissionButton_clicked()
  */
 void GSControlPanel::on_SaveMissionButton_clicked()
 {
-
+    emit saveMissionButton_clicked();
 }
 
 /**
@@ -91,7 +97,7 @@ void GSControlPanel::on_SaveMissionButton_clicked()
  */
 void GSControlPanel::on_ClearPointsButton_clicked()
 {
-
+    emit clearPointsButton_clicked();
 }
 
 /**
@@ -103,8 +109,7 @@ void GSControlPanel::on_ExitButton_clicked()
     /// \todo Change so that it can report errors via error codes
     /// \todo Transfer exiting over to MainMDIDisplay?
     ///         YES plz! - Jordan
-    QApplication::quit() ;
-
+    emit exitButton_clicked();
 }
 
 /**

@@ -10,18 +10,13 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
 
     ui->mdiArea->setBackground(QBrush( QPixmap( ":/res/images/UAVLogo.png" ) ) );
 
-    map = new MapWidget();
-    addWindow(map);
-
-    TableWidget *tw = new TableWidget();
-    addWindow(tw);
+    startMissionPlanning();
 
     addWindow(&msw);
-
     addWindow(&gscp);
 
-    this->connect(map, &MapWidget::pointAdded, tw, &TableWidget::appendRow);
-    this->connect(map, &MapWidget::JSInitialized, this, &MainMDIDisplay::setupMapPaths);
+    connect(&gscp, &GSControlPanel::createMissionButton_clicked, this, &MainMDIDisplay::startMissionPlanning);
+
 }
 
 MainMDIDisplay::~MainMDIDisplay() {
@@ -30,8 +25,26 @@ MainMDIDisplay::~MainMDIDisplay() {
 }
 
 void MainMDIDisplay::setupMapPaths(){
-    map->sendCreateNewPath(0);
-    map->sendSetActivePath(0);
+    switch (myState) {
+        case PLANNING:
+            map->sendCreateNewPath(0);
+            map->sendSetActivePath(0);
+            break;
+        case EXECUTION:
+            if(!map){
+                map->sendCreateNewPath(0);
+                map->addFlightPath(myLoadedFlightPath,0);
+            } else {
+                map->sendDisableEditing();
+            }
+            map->sendCreateNewPath(1);
+            break;
+        case RECAP:
+            /// \todo fill out MapRecap map requirements
+            break;
+        default:
+            break;
+    }
 }
 
 void MainMDIDisplay::addWindow(QWidget* myNewWindowWidget) {
@@ -49,3 +62,67 @@ void MainMDIDisplay::addWindow(QWidget* myNewWindowWidget, QString windowTitle) 
     tempSubWindow.setWindowTitle(windowTitle);
     this->addWindow(&tempSubWindow);
 }
+
+void MainMDIDisplay::changeState(MDIState newState){
+    switch(myState){
+        case NONE:
+            break;
+        case PLANNING:
+            myLoadedFlightPath = table->getTableAsFlightPath();
+            endMissionPlanning();
+            break;
+        case EXECUTION:
+            /// \todo get mission output in a Mission object from the messagebox
+            // myLoadedMission = myMessagebox.toMission();
+            endMissionExecution();
+            break;
+        case RECAP:
+            endMissionRecap();
+            break;
+        default: break;
+    }
+    myState = newState;
+
+    switch(newState){
+        case NONE: break;
+        case PLANNING:
+            startMissionPlanning();
+            break;
+        case EXECUTION:
+            startMissionExecution();
+            break;
+        case RECAP: startMissionRecap(); break;
+        default: break;
+    }
+}
+
+void MainMDIDisplay::startMissionPlanning(){
+    map = new MapWidget();
+    table = new TableWidget();
+    this->connect(map, &MapWidget::pointAdded, table, &TableWidget::appendRow);
+    this->connect(map, &MapWidget::JSInitialized, this, &MainMDIDisplay::setupMapPaths);
+    this->addWindow(map);
+    this->addWindow(table);
+}
+
+void MainMDIDisplay::endMissionPlanning(){
+
+}
+
+void MainMDIDisplay::startMissionExecution(){
+
+}
+
+void MainMDIDisplay::endMissionExecution(){
+
+}
+
+void MainMDIDisplay::startMissionRecap(){
+
+}
+
+void MainMDIDisplay::endMissionRecap(){
+
+}
+
+
