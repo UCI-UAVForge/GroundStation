@@ -1,0 +1,1572 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_q_c_p_axis_rect" kind="class" language="C++" prot="public">
+    <compoundname>QCPAxisRect</compoundname>
+    <basecompoundref refid="class_q_c_p_layout_element" prot="public" virt="non-virtual">QCPLayoutElement</basecompoundref>
+    <derivedcompoundref refid="class_q_c_p_color_scale_axis_rect_private" prot="public" virt="non-virtual">QCPColorScaleAxisRectPrivate</derivedcompoundref>
+    <includes refid="qcustomplot_8h" local="no">qcustomplot.h</includes>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1a5748e1a37f63c428e38b0a7724b46259" prot="protected" static="no" mutable="no">
+        <type>QBrush</type>
+        <definition>QBrush QCPAxisRect::mBackgroundBrush</definition>
+        <argsstring></argsstring>
+        <name>mBackgroundBrush</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2044" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2044" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1a38fb1a15f43228a0c124553649303722" prot="protected" static="no" mutable="no">
+        <type>QPixmap</type>
+        <definition>QPixmap QCPAxisRect::mBackgroundPixmap</definition>
+        <argsstring></argsstring>
+        <name>mBackgroundPixmap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2045" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2045" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1aa74b9415598d59b49290e41e42d7ee27" prot="protected" static="no" mutable="no">
+        <type>QPixmap</type>
+        <definition>QPixmap QCPAxisRect::mScaledBackgroundPixmap</definition>
+        <argsstring></argsstring>
+        <name>mScaledBackgroundPixmap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2046" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2046" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1a5ad835f0fae5d7cc5ada9e063641dbf1" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool QCPAxisRect::mBackgroundScaled</definition>
+        <argsstring></argsstring>
+        <name>mBackgroundScaled</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2047" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2047" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1a859fd368e794663e346b4f53f35078e9" prot="protected" static="no" mutable="no">
+        <type>Qt::AspectRatioMode</type>
+        <definition>Qt::AspectRatioMode QCPAxisRect::mBackgroundScaledMode</definition>
+        <argsstring></argsstring>
+        <name>mBackgroundScaledMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2048" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2048" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1a255240399e0fd24baad80cbbe46f698a" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_layout_inset" kindref="compound">QCPLayoutInset</ref> *</type>
+        <definition>QCPLayoutInset* QCPAxisRect::mInsetLayout</definition>
+        <argsstring></argsstring>
+        <name>mInsetLayout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2049" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2049" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1aa9f107f66ca3469ad50ee6cea7c9e237" prot="protected" static="no" mutable="no">
+        <type>Qt::Orientations</type>
+        <definition>Qt::Orientations QCPAxisRect::mRangeDrag</definition>
+        <argsstring></argsstring>
+        <name>mRangeDrag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2050" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2050" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1a215eff671d48df2edccc36e7f976f28c" prot="protected" static="no" mutable="no">
+        <type>Qt::Orientations</type>
+        <definition>Qt::Orientations QCPAxisRect::mRangeZoom</definition>
+        <argsstring></argsstring>
+        <name>mRangeZoom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2050" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2050" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1aeaaa38c6d2030dd5f84461e2596e41e3" prot="protected" static="no" mutable="no">
+        <type>QPointer&lt; <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> &gt;</type>
+        <definition>QPointer&lt;QCPAxis&gt; QCPAxisRect::mRangeDragHorzAxis</definition>
+        <argsstring></argsstring>
+        <name>mRangeDragHorzAxis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2051" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2051" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1a3e41dffec18987366f2a8ffd80689c12" prot="protected" static="no" mutable="no">
+        <type>QPointer&lt; <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> &gt;</type>
+        <definition>QPointer&lt;QCPAxis&gt; QCPAxisRect::mRangeDragVertAxis</definition>
+        <argsstring></argsstring>
+        <name>mRangeDragVertAxis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2051" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2051" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1ae22f882bab20518559f3fbb84243d0ab" prot="protected" static="no" mutable="no">
+        <type>QPointer&lt; <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> &gt;</type>
+        <definition>QPointer&lt;QCPAxis&gt; QCPAxisRect::mRangeZoomHorzAxis</definition>
+        <argsstring></argsstring>
+        <name>mRangeZoomHorzAxis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2051" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2051" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1a8b9acd16a203a9692bd35a9465f54bc1" prot="protected" static="no" mutable="no">
+        <type>QPointer&lt; <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> &gt;</type>
+        <definition>QPointer&lt;QCPAxis&gt; QCPAxisRect::mRangeZoomVertAxis</definition>
+        <argsstring></argsstring>
+        <name>mRangeZoomVertAxis</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2051" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2051" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1ad08d0250ed7b99de387d0ea6c7fd4dc1" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPAxisRect::mRangeZoomFactorHorz</definition>
+        <argsstring></argsstring>
+        <name>mRangeZoomFactorHorz</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2052" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2052" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1a32f063629581d5bf82b12769940b34ad" prot="protected" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPAxisRect::mRangeZoomFactorVert</definition>
+        <argsstring></argsstring>
+        <name>mRangeZoomFactorVert</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2052" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2052" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1a41936cf473ec638bec382f5a40cdb1f3" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref></type>
+        <definition>QCPRange QCPAxisRect::mDragStartHorzRange</definition>
+        <argsstring></argsstring>
+        <name>mDragStartHorzRange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2054" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2054" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1a1a5ae4c74b8bd46baf91bf4e4f4165f0" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref></type>
+        <definition>QCPRange QCPAxisRect::mDragStartVertRange</definition>
+        <argsstring></argsstring>
+        <name>mDragStartVertRange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2054" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2054" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1aa4a24f76360cfebe1bcf17a77fa7521b" prot="protected" static="no" mutable="no">
+        <type>QCP::AntialiasedElements</type>
+        <definition>QCP::AntialiasedElements QCPAxisRect::mAADragBackup</definition>
+        <argsstring></argsstring>
+        <name>mAADragBackup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2055" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2055" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1a6fcb12e052e276d57efbb128be31d6f5" prot="protected" static="no" mutable="no">
+        <type>QCP::AntialiasedElements</type>
+        <definition>QCP::AntialiasedElements QCPAxisRect::mNotAADragBackup</definition>
+        <argsstring></argsstring>
+        <name>mNotAADragBackup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2055" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2055" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1a032896b28f83a58010d8d533b78c49df" prot="protected" static="no" mutable="no">
+        <type>QPoint</type>
+        <definition>QPoint QCPAxisRect::mDragStart</definition>
+        <argsstring></argsstring>
+        <name>mDragStart</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2056" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2056" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1ab49a6698194cf0e9e38a1d734c0888a8" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool QCPAxisRect::mDragging</definition>
+        <argsstring></argsstring>
+        <name>mDragging</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2057" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2057" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_axis_rect_1afe7a24d2a2bea98fc552fa826350ba81" prot="protected" static="no" mutable="no">
+        <type>QHash&lt; <ref refid="class_q_c_p_axis_1ae2bcc1728b382f10f064612b368bc18a" kindref="member">QCPAxis::AxisType</ref>, QList&lt; <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> * &gt; &gt;</type>
+        <definition>QHash&lt;QCPAxis::AxisType, QList&lt;QCPAxis*&gt; &gt; QCPAxisRect::mAxes</definition>
+        <argsstring></argsstring>
+        <name>mAxes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2058" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2058" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_q_c_p_axis_rect_1a1cdf9df76adcfae45261690aa0ca2198" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class QCustomPlot</definition>
+        <argsstring></argsstring>
+        <name>QCustomPlot</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2077" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2077" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a60b31dece805462c1b82eea2e69ba042" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPAxisRect::QCPAxisRect</definition>
+        <argsstring>(QCustomPlot *parentPlot, bool setupDefaultAxes=true)</argsstring>
+        <name>QCPAxisRect</name>
+        <param>
+          <type><ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> *</type>
+          <declname>parentPlot</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>setupDefaultAxes</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a <ref refid="class_q_c_p_axis_rect" kindref="compound">QCPAxisRect</ref> instance and sets default values. An axis is added for each of the four sides, the top and right axes are set invisible initially. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1983" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11739" bodyend="11781"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a463c44b1856ddbf82eb3f7b582839cd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>QCPAxisRect::~QCPAxisRect</definition>
+        <argsstring>()</argsstring>
+        <name>~QCPAxisRect</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1984" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11783" bodyend="11791"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a0daa1dadd2a62dbfa37b7f742edd0059" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QPixmap</type>
+        <definition>QPixmap QCPAxisRect::background</definition>
+        <argsstring>() const </argsstring>
+        <name>background</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1987" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1987" bodyend="1987"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a67c18777b88fe9c81dee3dd2b5f50e5c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPAxisRect::backgroundScaled</definition>
+        <argsstring>() const </argsstring>
+        <name>backgroundScaled</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1988" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1988" bodyend="1988"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a3d0f42d6be11a0b3d4576402a2b0032d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Qt::AspectRatioMode</type>
+        <definition>Qt::AspectRatioMode QCPAxisRect::backgroundScaledMode</definition>
+        <argsstring>() const </argsstring>
+        <name>backgroundScaledMode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1989" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1989" bodyend="1989"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1af24b46954ce27a26b23770cdb8319080" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Qt::Orientations</type>
+        <definition>Qt::Orientations QCPAxisRect::rangeDrag</definition>
+        <argsstring>() const </argsstring>
+        <name>rangeDrag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1990" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1990" bodyend="1990"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a3397fc60e5df29089090bc236e9f05f6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>Qt::Orientations</type>
+        <definition>Qt::Orientations QCPAxisRect::rangeZoom</definition>
+        <argsstring>() const </argsstring>
+        <name>rangeZoom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1991" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1991" bodyend="1991"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a6d7c22cfc54fac7a3d6ef80b133a8574" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> *</type>
+        <definition>QCPAxis * QCPAxisRect::rangeDragAxis</definition>
+        <argsstring>(Qt::Orientation orientation)</argsstring>
+        <name>rangeDragAxis</name>
+        <param>
+          <type>Qt::Orientation</type>
+          <declname>orientation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the range drag axis of the <emphasis>orientation</emphasis> provided.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1a648cce336bd99daac4a5ca3e5743775d" kindref="member">setRangeDragAxes</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1992" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12275" bodyend="12278"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a679c63f2b8daccfe6ec5110dce3dd3b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> *</type>
+        <definition>QCPAxis * QCPAxisRect::rangeZoomAxis</definition>
+        <argsstring>(Qt::Orientation orientation)</argsstring>
+        <name>rangeZoomAxis</name>
+        <param>
+          <type>Qt::Orientation</type>
+          <declname>orientation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the range zoom axis of the <emphasis>orientation</emphasis> provided.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1a9442cca2aa358405f39a64d51eca13d2" kindref="member">setRangeZoomAxes</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1993" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12285" bodyend="12288"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1ae4e6c4d143aacc88d2d3c56f117c2fe1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double QCPAxisRect::rangeZoomFactor</definition>
+        <argsstring>(Qt::Orientation orientation)</argsstring>
+        <name>rangeZoomFactor</name>
+        <param>
+          <type>Qt::Orientation</type>
+          <declname>orientation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the range zoom factor of the <emphasis>orientation</emphasis> provided.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1a895d7ac745ea614e04056244b3c138ac" kindref="member">setRangeZoomFactor</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1994" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12295" bodyend="12298"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1af615ab5e52b8e0a9a0eff415b6559db5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::setBackground</definition>
+        <argsstring>(const QPixmap &amp;pm)</argsstring>
+        <name>setBackground</name>
+        <param>
+          <type>const QPixmap &amp;</type>
+          <declname>pm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets <emphasis>pm</emphasis> as the axis background pixmap. The axis background pixmap will be drawn inside the axis rect. Since axis rects place themselves on the &quot;background&quot; layer by default, the axis rect backgrounds are usually drawn below everything else.</para><para>For cases where the provided pixmap doesn&apos;t have the same size as the axis rect, scaling can be enabled with <ref refid="class_q_c_p_axis_rect_1ae6d36c3e0e968ffb991170a018e7b503" kindref="member">setBackgroundScaled</ref> and the scaling mode (i.e. whether and how the aspect ratio is preserved) can be set with <ref refid="class_q_c_p_axis_rect_1a5ef77ea829c9de7ba248e473f48f7305" kindref="member">setBackgroundScaledMode</ref>. To set all these options in one call, consider using the overloaded version of this function.</para><para>Below the pixmap, the axis rect may be optionally filled with a brush, if specified with <ref refid="class_q_c_p_axis_rect_1a22a22b8668735438dc06f9a55fe46b33" kindref="member">setBackground(const QBrush &amp;brush)</ref>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1ae6d36c3e0e968ffb991170a018e7b503" kindref="member">setBackgroundScaled</ref>, <ref refid="class_q_c_p_axis_rect_1a5ef77ea829c9de7ba248e473f48f7305" kindref="member">setBackgroundScaledMode</ref>, <ref refid="class_q_c_p_axis_rect_1a22a22b8668735438dc06f9a55fe46b33" kindref="member">setBackground(const QBrush &amp;brush)</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1997" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12206" bodyend="12210"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1ac48a2d5d9b7732e73b86605c69c5e4c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::setBackground</definition>
+        <argsstring>(const QPixmap &amp;pm, bool scaled, Qt::AspectRatioMode mode=Qt::KeepAspectRatioByExpanding)</argsstring>
+        <name>setBackground</name>
+        <param>
+          <type>const QPixmap &amp;</type>
+          <declname>pm</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>scaled</declname>
+        </param>
+        <param>
+          <type>Qt::AspectRatioMode</type>
+          <declname>mode</declname>
+          <defval>Qt::KeepAspectRatioByExpanding</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>Allows setting the background pixmap of the axis rect, whether it shall be scaled and how it shall be scaled in one call.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1af615ab5e52b8e0a9a0eff415b6559db5" kindref="member">setBackground(const QPixmap &amp;pm)</ref>, <ref refid="class_q_c_p_axis_rect_1ae6d36c3e0e968ffb991170a018e7b503" kindref="member">setBackgroundScaled</ref>, <ref refid="class_q_c_p_axis_rect_1a5ef77ea829c9de7ba248e473f48f7305" kindref="member">setBackgroundScaledMode</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1998" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12237" bodyend="12243"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a22a22b8668735438dc06f9a55fe46b33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::setBackground</definition>
+        <argsstring>(const QBrush &amp;brush)</argsstring>
+        <name>setBackground</name>
+        <param>
+          <type>const QBrush &amp;</type>
+          <declname>brush</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>Sets <emphasis>brush</emphasis> as the background brush. The axis rect background will be filled with this brush. Since axis rects place themselves on the &quot;background&quot; layer by default, the axis rect backgrounds are usually drawn below everything else.</para><para>The brush will be drawn before (under) any background pixmap, which may be specified with <ref refid="class_q_c_p_axis_rect_1af615ab5e52b8e0a9a0eff415b6559db5" kindref="member">setBackground(const QPixmap &amp;pm)</ref>.</para><para>To disable drawing of a background brush, set <emphasis>brush</emphasis> to Qt::NoBrush.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1af615ab5e52b8e0a9a0eff415b6559db5" kindref="member">setBackground(const QPixmap &amp;pm)</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1999" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12225" bodyend="12228"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1ae6d36c3e0e968ffb991170a018e7b503" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::setBackgroundScaled</definition>
+        <argsstring>(bool scaled)</argsstring>
+        <name>setBackgroundScaled</name>
+        <param>
+          <type>bool</type>
+          <declname>scaled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets whether the axis background pixmap shall be scaled to fit the axis rect or not. If <emphasis>scaled</emphasis> is set to true, you may control whether and how the aspect ratio of the original pixmap is preserved with <ref refid="class_q_c_p_axis_rect_1a5ef77ea829c9de7ba248e473f48f7305" kindref="member">setBackgroundScaledMode</ref>.</para><para>Note that the scaled version of the original pixmap is buffered, so there is no performance penalty on replots. (Except when the axis rect dimensions are changed continuously.)</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1af615ab5e52b8e0a9a0eff415b6559db5" kindref="member">setBackground</ref>, <ref refid="class_q_c_p_axis_rect_1a5ef77ea829c9de7ba248e473f48f7305" kindref="member">setBackgroundScaledMode</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2000" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12255" bodyend="12258"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a5ef77ea829c9de7ba248e473f48f7305" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::setBackgroundScaledMode</definition>
+        <argsstring>(Qt::AspectRatioMode mode)</argsstring>
+        <name>setBackgroundScaledMode</name>
+        <param>
+          <type>Qt::AspectRatioMode</type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>If scaling of the axis background pixmap is enabled (<ref refid="class_q_c_p_axis_rect_1ae6d36c3e0e968ffb991170a018e7b503" kindref="member">setBackgroundScaled</ref>), use this function to define whether and how the aspect ratio of the original pixmap passed to <ref refid="class_q_c_p_axis_rect_1af615ab5e52b8e0a9a0eff415b6559db5" kindref="member">setBackground</ref> is preserved. <simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1af615ab5e52b8e0a9a0eff415b6559db5" kindref="member">setBackground</ref>, <ref refid="class_q_c_p_axis_rect_1ae6d36c3e0e968ffb991170a018e7b503" kindref="member">setBackgroundScaled</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2001" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12265" bodyend="12268"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1ae6aef2f7211ba6097c925dcd26008418" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::setRangeDrag</definition>
+        <argsstring>(Qt::Orientations orientations)</argsstring>
+        <name>setRangeDrag</name>
+        <param>
+          <type>Qt::Orientations</type>
+          <declname>orientations</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets which axis orientation may be range dragged by the user with mouse interaction. What orientation corresponds to which specific axis can be set with <ref refid="class_q_c_p_axis_rect_1a648cce336bd99daac4a5ca3e5743775d" kindref="member">setRangeDragAxes(QCPAxis *horizontal, QCPAxis *vertical)</ref>. By default, the horizontal axis is the bottom axis (xAxis) and the vertical axis is the left axis (yAxis).</para><para>To disable range dragging entirely, pass 0 as <emphasis>orientations</emphasis> or remove <ref refid="namespace_q_c_p_1a2ad6bb6281c7c2d593d4277b44c2b037a2c4432b9aceafb94000be8d1b589ef18" kindref="member">QCP::iRangeDrag</ref> from <ref refid="class_q_custom_plot_1a5ee1e2f6ae27419deca53e75907c27e5" kindref="member">QCustomPlot::setInteractions</ref>. To enable range dragging for both directions, pass <computeroutput>Qt::Horizontal | Qt::Vertical</computeroutput> as <emphasis>orientations</emphasis>.</para><para>In addition to setting <emphasis>orientations</emphasis> to a non-zero value, make sure <ref refid="class_q_custom_plot_1a5ee1e2f6ae27419deca53e75907c27e5" kindref="member">QCustomPlot::setInteractions</ref> contains <ref refid="namespace_q_c_p_1a2ad6bb6281c7c2d593d4277b44c2b037a2c4432b9aceafb94000be8d1b589ef18" kindref="member">QCP::iRangeDrag</ref> to enable the range dragging interaction.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1a7960a9d222f1c31d558b064b60f86a31" kindref="member">setRangeZoom</ref>, <ref refid="class_q_c_p_axis_rect_1a648cce336bd99daac4a5ca3e5743775d" kindref="member">setRangeDragAxes</ref>, setNoAntialiasingOnDrag </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2002" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12316" bodyend="12319"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a7960a9d222f1c31d558b064b60f86a31" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::setRangeZoom</definition>
+        <argsstring>(Qt::Orientations orientations)</argsstring>
+        <name>setRangeZoom</name>
+        <param>
+          <type>Qt::Orientations</type>
+          <declname>orientations</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets which axis orientation may be zoomed by the user with the mouse wheel. What orientation corresponds to which specific axis can be set with <ref refid="class_q_c_p_axis_rect_1a9442cca2aa358405f39a64d51eca13d2" kindref="member">setRangeZoomAxes</ref>(<ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> *horizontal, <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> *vertical). By default, the horizontal axis is the bottom axis (xAxis) and the vertical axis is the left axis (yAxis).</para><para>To disable range zooming entirely, pass 0 as <emphasis>orientations</emphasis> or remove <ref refid="namespace_q_c_p_1a2ad6bb6281c7c2d593d4277b44c2b037abee1e94353525a636aeaf0ba32b72e14" kindref="member">QCP::iRangeZoom</ref> from <ref refid="class_q_custom_plot_1a5ee1e2f6ae27419deca53e75907c27e5" kindref="member">QCustomPlot::setInteractions</ref>. To enable range zooming for both directions, pass <computeroutput>Qt::Horizontal | Qt::Vertical</computeroutput> as <emphasis>orientations</emphasis>.</para><para>In addition to setting <emphasis>orientations</emphasis> to a non-zero value, make sure <ref refid="class_q_custom_plot_1a5ee1e2f6ae27419deca53e75907c27e5" kindref="member">QCustomPlot::setInteractions</ref> contains <ref refid="namespace_q_c_p_1a2ad6bb6281c7c2d593d4277b44c2b037abee1e94353525a636aeaf0ba32b72e14" kindref="member">QCP::iRangeZoom</ref> to enable the range zooming interaction.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1a895d7ac745ea614e04056244b3c138ac" kindref="member">setRangeZoomFactor</ref>, <ref refid="class_q_c_p_axis_rect_1a9442cca2aa358405f39a64d51eca13d2" kindref="member">setRangeZoomAxes</ref>, <ref refid="class_q_c_p_axis_rect_1ae6aef2f7211ba6097c925dcd26008418" kindref="member">setRangeDrag</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2003" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12336" bodyend="12339"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a648cce336bd99daac4a5ca3e5743775d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::setRangeDragAxes</definition>
+        <argsstring>(QCPAxis *horizontal, QCPAxis *vertical)</argsstring>
+        <name>setRangeDragAxes</name>
+        <param>
+          <type><ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> *</type>
+          <declname>horizontal</declname>
+        </param>
+        <param>
+          <type><ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> *</type>
+          <declname>vertical</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the axes whose range will be dragged when <ref refid="class_q_c_p_axis_rect_1ae6aef2f7211ba6097c925dcd26008418" kindref="member">setRangeDrag</ref> enables mouse range dragging on the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> widget.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1a9442cca2aa358405f39a64d51eca13d2" kindref="member">setRangeZoomAxes</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2004" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12347" bodyend="12351"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a9442cca2aa358405f39a64d51eca13d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::setRangeZoomAxes</definition>
+        <argsstring>(QCPAxis *horizontal, QCPAxis *vertical)</argsstring>
+        <name>setRangeZoomAxes</name>
+        <param>
+          <type><ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> *</type>
+          <declname>horizontal</declname>
+        </param>
+        <param>
+          <type><ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> *</type>
+          <declname>vertical</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the axes whose range will be zoomed when <ref refid="class_q_c_p_axis_rect_1a7960a9d222f1c31d558b064b60f86a31" kindref="member">setRangeZoom</ref> enables mouse wheel zooming on the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> widget. The two axes can be zoomed with different strengths, when different factors are passed to <ref refid="class_q_c_p_axis_rect_1a895d7ac745ea614e04056244b3c138ac" kindref="member">setRangeZoomFactor(double horizontalFactor, double verticalFactor)</ref>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1a648cce336bd99daac4a5ca3e5743775d" kindref="member">setRangeDragAxes</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2005" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12360" bodyend="12364"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a895d7ac745ea614e04056244b3c138ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::setRangeZoomFactor</definition>
+        <argsstring>(double horizontalFactor, double verticalFactor)</argsstring>
+        <name>setRangeZoomFactor</name>
+        <param>
+          <type>double</type>
+          <declname>horizontalFactor</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>verticalFactor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets how strong one rotation step of the mouse wheel zooms, when range zoom was activated with <ref refid="class_q_c_p_axis_rect_1a7960a9d222f1c31d558b064b60f86a31" kindref="member">setRangeZoom</ref>. The two parameters <emphasis>horizontalFactor</emphasis> and <emphasis>verticalFactor</emphasis> provide a way to let the horizontal axis zoom at different rates than the vertical axis. Which axis is horizontal and which is vertical, can be set with <ref refid="class_q_c_p_axis_rect_1a9442cca2aa358405f39a64d51eca13d2" kindref="member">setRangeZoomAxes</ref>.</para><para>When the zoom factor is greater than one, scrolling the mouse wheel backwards (towards the user) will zoom in (make the currently visible range smaller). For zoom factors smaller than one, the same scrolling direction will zoom out. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2006" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12376" bodyend="12380"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1ae83d187b03fc6fa4f00765ad50cd3fc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::setRangeZoomFactor</definition>
+        <argsstring>(double factor)</argsstring>
+        <name>setRangeZoomFactor</name>
+        <param>
+          <type>double</type>
+          <declname>factor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>Sets both the horizontal and vertical zoom <emphasis>factor</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2007" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12386" bodyend="12390"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a16e3e4646e52e4b5d5b865076c29ae58" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int QCPAxisRect::axisCount</definition>
+        <argsstring>(QCPAxis::AxisType type) const </argsstring>
+        <name>axisCount</name>
+        <param>
+          <type><ref refid="class_q_c_p_axis_1ae2bcc1728b382f10f064612b368bc18a" kindref="member">QCPAxis::AxisType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the number of axes on the axis rect side specified with <emphasis>type</emphasis>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1a560de44e47a4af0f86c59102a094b1e4" kindref="member">axis</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2010" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11798" bodyend="11801"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a560de44e47a4af0f86c59102a094b1e4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> *</type>
+        <definition>QCPAxis * QCPAxisRect::axis</definition>
+        <argsstring>(QCPAxis::AxisType type, int index=0) const </argsstring>
+        <name>axis</name>
+        <param>
+          <type><ref refid="class_q_c_p_axis_1ae2bcc1728b382f10f064612b368bc18a" kindref="member">QCPAxis::AxisType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the axis with the given <emphasis>index</emphasis> on the axis rect side specified with <emphasis>type</emphasis>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1a16e3e4646e52e4b5d5b865076c29ae58" kindref="member">axisCount</ref>, <ref refid="class_q_c_p_axis_rect_1a66654d51ca611ef036ded36250cd2518" kindref="member">axes</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2011" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11808" bodyend="11819"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a66654d51ca611ef036ded36250cd2518" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> * &gt;</type>
+        <definition>QList&lt; QCPAxis * &gt; QCPAxisRect::axes</definition>
+        <argsstring>(QCPAxis::AxisTypes types) const </argsstring>
+        <name>axes</name>
+        <param>
+          <type>QCPAxis::AxisTypes</type>
+          <declname>types</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns all axes on the axis rect sides specified with <emphasis>types</emphasis>.</para><para><emphasis>types</emphasis> may be a single <ref refid="class_q_c_p_axis_1ae2bcc1728b382f10f064612b368bc18a" kindref="member">QCPAxis::AxisType</ref> or an <computeroutput>or</computeroutput>-combination, to get the axes of multiple sides.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1a560de44e47a4af0f86c59102a094b1e4" kindref="member">axis</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2012" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11829" bodyend="11841"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a18dcdc0dd6c7520bc9f3d15a7a3feec2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> * &gt;</type>
+        <definition>QList&lt; QCPAxis * &gt; QCPAxisRect::axes</definition>
+        <argsstring>() const </argsstring>
+        <name>axes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.</para><para>Returns all axes of this axis rect. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2013" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11847" bodyend="11857"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a2dc336092ccc57d44a46194c8a23e4f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> *</type>
+        <definition>QCPAxis * QCPAxisRect::addAxis</definition>
+        <argsstring>(QCPAxis::AxisType type, QCPAxis *axis=0)</argsstring>
+        <name>addAxis</name>
+        <param>
+          <type><ref refid="class_q_c_p_axis_1ae2bcc1728b382f10f064612b368bc18a" kindref="member">QCPAxis::AxisType</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> *</type>
+          <declname>axis</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a new axis to the axis rect side specified with <emphasis>type</emphasis>, and returns it. If <emphasis>axis</emphasis> is 0, a new <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> instance is created internally.</para><para>You may inject <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> instances (or sublasses of <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref>) by setting <emphasis>axis</emphasis> to an axis that was previously created outside <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref>. It is important to note that <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> takes ownership of the axis, so you may not delete it afterwards. Further, the <emphasis>axis</emphasis> must have been created with this axis rect as parent and with the same axis type as specified in <emphasis>type</emphasis>. If this is not the case, a debug output is generated, the axis is not added, and the method returns 0.</para><para>This method can not be used to move <emphasis>axis</emphasis> between axis rects. The same <emphasis>axis</emphasis> instance must not be added multiple times to the same or different axis rects.</para><para>If an axis rect side already contains one or more axes, the lower and upper endings of the new axis (<ref refid="class_q_c_p_axis_1a08af1c72db9ae4dc8cb8a973d44405ab" kindref="member">QCPAxis::setLowerEnding</ref>, <ref refid="class_q_c_p_axis_1a69119b892fc306f651763596685aa377" kindref="member">QCPAxis::setUpperEnding</ref>) are set to <ref refid="class_q_c_p_line_ending_1a5ef16e6876b4b74959c7261d8d4c2cd5a126c390f0c359fcd8df1fc5e38d26d5b" kindref="member">QCPLineEnding::esHalfBar</ref>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1a792e1f3d9cb1591fca135bb0de9b81fc" kindref="member">addAxes</ref>, <ref refid="class_q_c_p_axis_rect_1a5fa906175447b14206954f77fc7f1ef4" kindref="member">setupFullAxesBox</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2014" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11878" bodyend="11910"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a792e1f3d9cb1591fca135bb0de9b81fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> * &gt;</type>
+        <definition>QList&lt; QCPAxis * &gt; QCPAxisRect::addAxes</definition>
+        <argsstring>(QCPAxis::AxisTypes types)</argsstring>
+        <name>addAxes</name>
+        <param>
+          <type>QCPAxis::AxisTypes</type>
+          <declname>types</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a new axis with <ref refid="class_q_c_p_axis_rect_1a2dc336092ccc57d44a46194c8a23e4f4" kindref="member">addAxis</ref> to each axis rect side specified in <emphasis>types</emphasis>. This may be an <computeroutput>or</computeroutput>-combination of <ref refid="class_q_c_p_axis_1ae2bcc1728b382f10f064612b368bc18a" kindref="member">QCPAxis::AxisType</ref>, so axes can be added to multiple sides at once.</para><para>Returns a list of the added axes.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1a2dc336092ccc57d44a46194c8a23e4f4" kindref="member">addAxis</ref>, <ref refid="class_q_c_p_axis_rect_1a5fa906175447b14206954f77fc7f1ef4" kindref="member">setupFullAxesBox</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2015" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11920" bodyend="11932"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a03c39cd9704f0d36fb6cf980cdddcbaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPAxisRect::removeAxis</definition>
+        <argsstring>(QCPAxis *axis)</argsstring>
+        <name>removeAxis</name>
+        <param>
+          <type><ref refid="class_q_c_p_axis" kindref="compound">QCPAxis</ref> *</type>
+          <declname>axis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes the specified <emphasis>axis</emphasis> from the axis rect and deletes it.</para><para>Returns true on success, i.e. if <emphasis>axis</emphasis> was a valid axis in this axis rect.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1a2dc336092ccc57d44a46194c8a23e4f4" kindref="member">addAxis</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2016" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11941" bodyend="11959"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a4114887c7141b59650b7488f930993e5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_layout_inset" kindref="compound">QCPLayoutInset</ref> *</type>
+        <definition>QCPLayoutInset * QCPAxisRect::insetLayout</definition>
+        <argsstring>() const </argsstring>
+        <name>insetLayout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the inset layout of this axis rect. It can be used to place other layout elements (or even layouts with multiple other elements) inside/on top of an axis rect.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_inset" kindref="compound">QCPLayoutInset</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2017" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2017" bodyend="2017"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a5fa906175447b14206954f77fc7f1ef4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::setupFullAxesBox</definition>
+        <argsstring>(bool connectRanges=false)</argsstring>
+        <name>setupFullAxesBox</name>
+        <param>
+          <type>bool</type>
+          <declname>connectRanges</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Convenience function to create an axis on each side that doesn&apos;t have any axes yet and set their visibility to true. Further, the top/right axes are assigned the following properties of the bottom/left axes:</para><para><itemizedlist>
+<listitem><para>range (<ref refid="class_q_c_p_axis_1aebdfea5d44c3a0ad2b4700cd4d25b641" kindref="member">QCPAxis::setRange</ref>) </para></listitem>
+<listitem><para>range reversed (<ref refid="class_q_c_p_axis_1a2172fdb196b1a0dc3f40992fcad8e9e1" kindref="member">QCPAxis::setRangeReversed</ref>) </para></listitem>
+<listitem><para>scale type (<ref refid="class_q_c_p_axis_1adef29cae617af4f519f6c40d1a866ca6" kindref="member">QCPAxis::setScaleType</ref>) </para></listitem>
+<listitem><para>scale log base (<ref refid="class_q_c_p_axis_1a726186054be90487885a748aa1b42188" kindref="member">QCPAxis::setScaleLogBase</ref>) </para></listitem>
+<listitem><para>ticks (<ref refid="class_q_c_p_axis_1ac891409315bc379e3b1abdb162c1a011" kindref="member">QCPAxis::setTicks</ref>) </para></listitem>
+<listitem><para>auto (major) tick count (<ref refid="class_q_c_p_axis_1a7c7111cbeac9ec5fcb40f93a1ef51a0b" kindref="member">QCPAxis::setAutoTickCount</ref>) </para></listitem>
+<listitem><para>sub tick count (<ref refid="class_q_c_p_axis_1a4b1554ead9d7f9799650d51383e326dd" kindref="member">QCPAxis::setSubTickCount</ref>) </para></listitem>
+<listitem><para>auto sub ticks (<ref refid="class_q_c_p_axis_1adcbdec7a60054b88571e89599f4a45bf" kindref="member">QCPAxis::setAutoSubTicks</ref>) </para></listitem>
+<listitem><para>tick step (<ref refid="class_q_c_p_axis_1af727db0acc6492c4c774c0700e738205" kindref="member">QCPAxis::setTickStep</ref>) </para></listitem>
+<listitem><para>auto tick step (<ref refid="class_q_c_p_axis_1a99fe77b034e06f5b723995beab96e741" kindref="member">QCPAxis::setAutoTickStep</ref>) </para></listitem>
+<listitem><para>number format (<ref refid="class_q_c_p_axis_1ae585a54dc2aac662e90a2ca82f002590" kindref="member">QCPAxis::setNumberFormat</ref>) </para></listitem>
+<listitem><para>number precision (<ref refid="class_q_c_p_axis_1a21dc8023ad7500382ad9574b48137e63" kindref="member">QCPAxis::setNumberPrecision</ref>) </para></listitem>
+<listitem><para>tick label type (<ref refid="class_q_c_p_axis_1a54f24f5ce8feea25209388a863d7e448" kindref="member">QCPAxis::setTickLabelType</ref>) </para></listitem>
+<listitem><para>date time format (<ref refid="class_q_c_p_axis_1a2ee0191daa03524a682113e63e05f7a7" kindref="member">QCPAxis::setDateTimeFormat</ref>) </para></listitem>
+<listitem><para>date time spec (<ref refid="class_q_c_p_axis_1a262e06731debed7eee11fa6a81d67eaf" kindref="member">QCPAxis::setDateTimeSpec</ref>)</para></listitem>
+</itemizedlist>
+Tick labels (<ref refid="class_q_c_p_axis_1a04ba16e1f6f78d70f938519576ed32c8" kindref="member">QCPAxis::setTickLabels</ref>) of the right and top axes are set to false.</para><para>If <emphasis>connectRanges</emphasis> is true, the <ref refid="class_q_c_p_axis_1a0894084e4c16a1736534c4095746f910" kindref="member">rangeChanged</ref> signals of the bottom and left axes are connected to the <ref refid="class_q_c_p_axis_1aebdfea5d44c3a0ad2b4700cd4d25b641" kindref="member">QCPAxis::setRange</ref> slots of the top and right axes. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2019" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11987" bodyend="12054"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a5b0d629c8de5572945eeae79a142296e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="class_q_c_p_abstract_plottable" kindref="compound">QCPAbstractPlottable</ref> * &gt;</type>
+        <definition>QList&lt; QCPAbstractPlottable * &gt; QCPAxisRect::plottables</definition>
+        <argsstring>() const </argsstring>
+        <name>plottables</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a list of all the plottables that are associated with this axis rect.</para><para>A plottable is considered associated with an axis rect if its key or value axis (or both) is in this axis rect.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1afa4ff90901d9275f670e24b40e3c1b25" kindref="member">graphs</ref>, <ref refid="class_q_c_p_axis_rect_1a0f17ed539962cfcbaca8ce0b1776c840" kindref="member">items</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2020" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12064" bodyend="12074"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1afa4ff90901d9275f670e24b40e3c1b25" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="class_q_c_p_graph" kindref="compound">QCPGraph</ref> * &gt;</type>
+        <definition>QList&lt; QCPGraph * &gt; QCPAxisRect::graphs</definition>
+        <argsstring>() const </argsstring>
+        <name>graphs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a list of all the graphs that are associated with this axis rect.</para><para>A graph is considered associated with an axis rect if its key or value axis (or both) is in this axis rect.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1a5b0d629c8de5572945eeae79a142296e" kindref="member">plottables</ref>, <ref refid="class_q_c_p_axis_rect_1a0f17ed539962cfcbaca8ce0b1776c840" kindref="member">items</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2021" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12084" bodyend="12094"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a0f17ed539962cfcbaca8ce0b1776c840" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="class_q_c_p_abstract_item" kindref="compound">QCPAbstractItem</ref> * &gt;</type>
+        <definition>QList&lt; QCPAbstractItem * &gt; QCPAxisRect::items</definition>
+        <argsstring>() const </argsstring>
+        <name>items</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a list of all the items that are associated with this axis rect.</para><para>An item is considered associated with an axis rect if any of its positions has key or value axis set to an axis that is in this axis rect, or if any of its positions has <ref refid="class_q_c_p_item_position_1a0cd9b326fb324710169e92e8ca0041c2" kindref="member">QCPItemPosition::setAxisRect</ref> set to the axis rect, or if the clip axis rect (<ref refid="class_q_c_p_abstract_item_1a7dc75fcbcd10206fe0b75d757ea7a347" kindref="member">QCPAbstractItem::setClipAxisRect</ref>) is set to this axis rect.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_rect_1a5b0d629c8de5572945eeae79a142296e" kindref="member">plottables</ref>, <ref refid="class_q_c_p_axis_rect_1afa4ff90901d9275f670e24b40e3c1b25" kindref="member">graphs</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2022" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12106" bodyend="12131"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a55b3ecf72a3a65b053f7651b88db458d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int QCPAxisRect::left</definition>
+        <argsstring>() const </argsstring>
+        <name>left</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the pixel position of the left border of this axis rect. Margins are not taken into account here, so the returned value is with respect to the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2025" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2025" bodyend="2025"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a6d0f989fc552aa2b563cf82f8fc81e61" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int QCPAxisRect::right</definition>
+        <argsstring>() const </argsstring>
+        <name>right</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the pixel position of the right border of this axis rect. Margins are not taken into account here, so the returned value is with respect to the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2026" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2026" bodyend="2026"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1ac45aef1eb75cea46b241b6303028a607" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int QCPAxisRect::top</definition>
+        <argsstring>() const </argsstring>
+        <name>top</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the pixel position of the top border of this axis rect. Margins are not taken into account here, so the returned value is with respect to the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2027" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2027" bodyend="2027"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1af2b5982ebe7e6f781b9bf1cc371a60d8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int QCPAxisRect::bottom</definition>
+        <argsstring>() const </argsstring>
+        <name>bottom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the pixel position of the bottom border of this axis rect. Margins are not taken into account here, so the returned value is with respect to the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2028" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2028" bodyend="2028"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a45bf5c17f4ca29131b7eb0db06efc259" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int QCPAxisRect::width</definition>
+        <argsstring>() const </argsstring>
+        <name>width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the pixel width of this axis rect. Margins are not taken into account here, so the returned value is with respect to the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2029" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2029" bodyend="2029"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a1c55c4f3bef40cf01b21820316c8469e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int QCPAxisRect::height</definition>
+        <argsstring>() const </argsstring>
+        <name>height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the pixel height of this axis rect. Margins are not taken into account here, so the returned value is with respect to the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2030" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2030" bodyend="2030"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a871b9fe49e92b39a3cbe29a59e458536" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QSize</type>
+        <definition>QSize QCPAxisRect::size</definition>
+        <argsstring>() const </argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the pixel size of this axis rect. Margins are not taken into account here, so the returned value is with respect to the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2031" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2031" bodyend="2031"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a88acbe716bcf5072790a6f95637c40d8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QPoint</type>
+        <definition>QPoint QCPAxisRect::topLeft</definition>
+        <argsstring>() const </argsstring>
+        <name>topLeft</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the top left corner of this axis rect in pixels. Margins are not taken into account here, so the returned value is with respect to the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2032" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2032" bodyend="2032"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a232409546394c23b59407bc62fa460a8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QPoint</type>
+        <definition>QPoint QCPAxisRect::topRight</definition>
+        <argsstring>() const </argsstring>
+        <name>topRight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the top right corner of this axis rect in pixels. Margins are not taken into account here, so the returned value is with respect to the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2033" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2033" bodyend="2033"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a724b0333971ea6a338f0dbd814dc97ae" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QPoint</type>
+        <definition>QPoint QCPAxisRect::bottomLeft</definition>
+        <argsstring>() const </argsstring>
+        <name>bottomLeft</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the bottom left corner of this axis rect in pixels. Margins are not taken into account here, so the returned value is with respect to the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2034" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2034" bodyend="2034"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a49ea3c7dff834b47e266cbf3d79f78b9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QPoint</type>
+        <definition>QPoint QCPAxisRect::bottomRight</definition>
+        <argsstring>() const </argsstring>
+        <name>bottomRight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the bottom right corner of this axis rect in pixels. Margins are not taken into account here, so the returned value is with respect to the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2035" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2035" bodyend="2035"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1aea5e6042bca198424fa1bc02fc282e59" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QPoint</type>
+        <definition>QPoint QCPAxisRect::center</definition>
+        <argsstring>() const </argsstring>
+        <name>center</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the center of this axis rect in pixels. Margins are not taken into account here, so the returned value is with respect to the inner <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2036" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="2036" bodyend="2036"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a255080a017df9083a60a321ef2ba9ed8" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::update</definition>
+        <argsstring>(UpdatePhase phase)</argsstring>
+        <name>update</name>
+        <reimplements refid="class_q_c_p_layout_element_1a929c2ec62e0e0e1d8418eaa802e2af9b">update</reimplements>
+        <param>
+          <type><ref refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374d" kindref="member">UpdatePhase</ref></type>
+          <declname>phase</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is called automatically upon replot and doesn&apos;t need to be called by users of <ref refid="class_q_c_p_axis_rect" kindref="compound">QCPAxisRect</ref>.</para><para>Calls the base class implementation to update the margins (see <ref refid="class_q_c_p_layout_element_1a929c2ec62e0e0e1d8418eaa802e2af9b" kindref="member">QCPLayoutElement::update</ref>), and finally passes the <ref refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" kindref="member">rect</ref> to the inset layout (<ref refid="class_q_c_p_axis_rect_1a4114887c7141b59650b7488f930993e5" kindref="member">insetLayout</ref>) and calls its QCPInsetLayout::update function. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2039" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12141" bodyend="12164"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a2bda6bf2b5b5797f92583cecd01c8949" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QList&lt; <ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> * &gt;</type>
+        <definition>QList&lt; QCPLayoutElement * &gt; QCPAxisRect::elements</definition>
+        <argsstring>(bool recursive) const </argsstring>
+        <name>elements</name>
+        <reimplements refid="class_q_c_p_layout_element_1a311d60d78e62ef8eaaedb1b6ceb9e788">elements</reimplements>
+        <param>
+          <type>bool</type>
+          <declname>recursive</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a list of all child elements in this layout element. If <emphasis>recursive</emphasis> is true, all sub-child elements are included in the list, too.</para><para><simplesect kind="warning"><para>There may be entries with value 0 in the returned list. (For example, <ref refid="class_q_c_p_layout_grid" kindref="compound">QCPLayoutGrid</ref> may have empty cells which yield 0 at the respective index.) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2040" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12167" bodyend="12177"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a9a6dd0763701cbc7d01f899bcbb3f9ca" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::applyDefaultAntialiasingHint</definition>
+        <argsstring>(QCPPainter *painter) const </argsstring>
+        <name>applyDefaultAntialiasingHint</name>
+        <reimplements refid="class_q_c_p_layout_element_1ad6d2b4bb0291c2441b2e1ca3d5296df5">applyDefaultAntialiasingHint</reimplements>
+        <param>
+          <type><ref refid="class_q_c_p_painter" kindref="compound">QCPPainter</ref> *</type>
+          <declname>painter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2061" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12180" bodyend="12183"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1afb1bbbbda8345cd2710d92ee48440b53" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::draw</definition>
+        <argsstring>(QCPPainter *painter)</argsstring>
+        <name>draw</name>
+        <reimplements refid="class_q_c_p_layout_element_1a547bcc1e6e2be5645ca781efe0834653">draw</reimplements>
+        <reimplementedby refid="class_q_c_p_color_scale_axis_rect_private_1adb67bfe9057a9dd9a85f548c274e6d98">draw</reimplementedby>
+        <param>
+          <type><ref refid="class_q_c_p_painter" kindref="compound">QCPPainter</ref> *</type>
+          <declname>painter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2062" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12186" bodyend="12189"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1ae79f18302e6507586aa8c032a5f9ed1c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>int</type>
+        <definition>int QCPAxisRect::calculateAutoMargin</definition>
+        <argsstring>(QCP::MarginSide side)</argsstring>
+        <name>calculateAutoMargin</name>
+        <reimplements refid="class_q_c_p_layout_element_1a005c9f0fe84bc1591a2cf2c46fd477b4">calculateAutoMargin</reimplements>
+        <param>
+          <type><ref refid="namespace_q_c_p_1a7e487e3e2ccb62ab7771065bab7cae54" kindref="member">QCP::MarginSide</ref></type>
+          <declname>side</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2063" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12465" bodyend="12478"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a77501dbeccdac7256f7979b05077c04e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::mousePressEvent</definition>
+        <argsstring>(QMouseEvent *event)</argsstring>
+        <name>mousePressEvent</name>
+        <reimplements refid="class_q_c_p_layout_element_1a2d82ea21fe0ee628f177bd824bc51a71">mousePressEvent</reimplements>
+        <param>
+          <type>QMouseEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This event is called, if the mouse was pressed while being inside the outer rect of this layout element. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2065" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12491" bodyend="12512"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a4baf3d5dd69166788f6ceda0ea182c6e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::mouseMoveEvent</definition>
+        <argsstring>(QMouseEvent *event)</argsstring>
+        <name>mouseMoveEvent</name>
+        <reimplements refid="class_q_c_p_layout_element_1a14f4acf58cdb8dd2c6c571479c4c4a40">mouseMoveEvent</reimplements>
+        <param>
+          <type>QMouseEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This event is called, if the mouse is moved inside the outer rect of this layout element. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2066" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12521" bodyend="12563"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1adf6c99780cea55ab39459a6eaad3a94a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::mouseReleaseEvent</definition>
+        <argsstring>(QMouseEvent *event)</argsstring>
+        <name>mouseReleaseEvent</name>
+        <reimplements refid="class_q_c_p_layout_element_1ae526ac828cce1e5bb94eaa85776d7404">mouseReleaseEvent</reimplements>
+        <param>
+          <type>QMouseEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This event is called, if the mouse was previously pressed inside the outer rect of this layout element and is now released. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2067" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12566" bodyend="12575"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a5acf41fc30aa68ea263246ecfad85c31" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::wheelEvent</definition>
+        <argsstring>(QWheelEvent *event)</argsstring>
+        <name>wheelEvent</name>
+        <reimplements refid="class_q_c_p_layout_element_1a300521d2fd18a893c1b85f6be11ce2bf">wheelEvent</reimplements>
+        <param>
+          <type>QWheelEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This event is called, if the mouse wheel is scrolled while the cursor is inside the rect of this layout element. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2068" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12591" bodyend="12615"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1ab49d338d1ce74b476fcead5b32cf06dc" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::drawBackground</definition>
+        <argsstring>(QCPPainter *painter)</argsstring>
+        <name>drawBackground</name>
+        <param>
+          <type><ref refid="class_q_c_p_painter" kindref="compound">QCPPainter</ref> *</type>
+          <declname>painter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2071" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12410" bodyend="12432"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_axis_rect_1a6024ccdc74f5dc0e8a0fe482e5b28a20" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPAxisRect::updateAxesOffset</definition>
+        <argsstring>(QCPAxis::AxisType type)</argsstring>
+        <name>updateAxesOffset</name>
+        <param>
+          <type><ref refid="class_q_c_p_axis_1ae2bcc1728b382f10f064612b368bc18a" kindref="member">QCPAxis::AxisType</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="2072" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="12444" bodyend="12462"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Holds multiple axes and arranges them in a rectangular shape. </para>    </briefdescription>
+    <detaileddescription>
+<para>This class represents an axis rect, a rectangular area that is bounded on all sides with an arbitrary number of axes.</para><para>Initially <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> has one axis rect, accessible via <ref refid="class_q_custom_plot_1a4a37a1add5fe63060ac518cf0a4c4050" kindref="member">QCustomPlot::axisRect()</ref>. However, the layout system allows to have multiple axis rects, e.g. arranged in a grid layout (<ref refid="class_q_custom_plot_1afd280d4d621ae64a106543a545c508d7" kindref="member">QCustomPlot::plotLayout</ref>).</para><para>By default, <ref refid="class_q_c_p_axis_rect" kindref="compound">QCPAxisRect</ref> comes with four axes, at bottom, top, left and right. They can be accessed via <ref refid="class_q_c_p_axis_rect_1a560de44e47a4af0f86c59102a094b1e4" kindref="member">axis</ref> by providing the respective axis type (<ref refid="class_q_c_p_axis_1ae2bcc1728b382f10f064612b368bc18a" kindref="member">QCPAxis::AxisType</ref>) and index. If you need all axes in the axis rect, use <ref refid="class_q_c_p_axis_rect_1a66654d51ca611ef036ded36250cd2518" kindref="member">axes</ref>. The top and right axes are set to be invisible initially (<ref refid="class_q_c_p_layerable_1a3bed99ddc396b48ce3ebfdc0418744f8" kindref="member">QCPAxis::setVisible</ref>). To add more axes to a side, use <ref refid="class_q_c_p_axis_rect_1a2dc336092ccc57d44a46194c8a23e4f4" kindref="member">addAxis</ref> or <ref refid="class_q_c_p_axis_rect_1a792e1f3d9cb1591fca135bb0de9b81fc" kindref="member">addAxes</ref>. To remove an axis, use <ref refid="class_q_c_p_axis_rect_1a03c39cd9704f0d36fb6cf980cdddcbaa" kindref="member">removeAxis</ref>.</para><para>The axis rect layerable itself only draws a background pixmap or color, if specified (<ref refid="class_q_c_p_axis_rect_1af615ab5e52b8e0a9a0eff415b6559db5" kindref="member">setBackground</ref>). It is placed on the &quot;background&quot; layer initially (see <ref refid="class_q_c_p_layer" kindref="compound">QCPLayer</ref> for an explanation of the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> layer system). The axes that are held by the axis rect can be placed on other layers, independently of the axis rect.</para><para>Every axis rect has a child layout of type <ref refid="class_q_c_p_layout_inset" kindref="compound">QCPLayoutInset</ref>. It is accessible via <ref refid="class_q_c_p_axis_rect_1a4114887c7141b59650b7488f930993e5" kindref="member">insetLayout</ref> and can be used to have other layout elements (or even other layouts with multiple elements) hovering inside the axis rect.</para><para>If an axis rect is clicked and dragged, it processes this by moving certain axis ranges. The behaviour can be controlled with <ref refid="class_q_c_p_axis_rect_1ae6aef2f7211ba6097c925dcd26008418" kindref="member">setRangeDrag</ref> and <ref refid="class_q_c_p_axis_rect_1a648cce336bd99daac4a5ca3e5743775d" kindref="member">setRangeDragAxes</ref>. If the mouse wheel is scrolled while the cursor is on the axis rect, certain axes are scaled. This is controllable via <ref refid="class_q_c_p_axis_rect_1a7960a9d222f1c31d558b064b60f86a31" kindref="member">setRangeZoom</ref>, <ref refid="class_q_c_p_axis_rect_1a9442cca2aa358405f39a64d51eca13d2" kindref="member">setRangeZoomAxes</ref> and <ref refid="class_q_c_p_axis_rect_1a895d7ac745ea614e04056244b3c138ac" kindref="member">setRangeZoomFactor</ref>. These interactions are only enabled if <ref refid="class_q_custom_plot_1a5ee1e2f6ae27419deca53e75907c27e5" kindref="member">QCustomPlot::setInteractions</ref> contains <ref refid="namespace_q_c_p_1a2ad6bb6281c7c2d593d4277b44c2b037a2c4432b9aceafb94000be8d1b589ef18" kindref="member">QCP::iRangeDrag</ref> and <ref refid="namespace_q_c_p_1a2ad6bb6281c7c2d593d4277b44c2b037abee1e94353525a636aeaf0ba32b72e14" kindref="member">QCP::iRangeZoom</ref>.</para><para><image type="html" name="AxisRectSpacingOverview.png"></image>
+ <center>Overview of the spacings and paddings that define the geometry of an axis. The dashed line on the far left indicates the viewport/widget border.</center> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="304">
+        <label>QCPColorScaleAxisRectPrivate</label>
+        <link refid="class_q_c_p_color_scale_axis_rect_private"/>
+        <childnode refid="300" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="301">
+        <label>QCPLayoutElement</label>
+        <link refid="class_q_c_p_layout_element"/>
+        <childnode refid="302" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="303">
+        <label>QObject</label>
+      </node>
+      <node id="302">
+        <label>QCPLayerable</label>
+        <link refid="class_q_c_p_layerable"/>
+        <childnode refid="303" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="300">
+        <label>QCPAxisRect</label>
+        <link refid="class_q_c_p_axis_rect"/>
+        <childnode refid="301" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="320">
+        <label>QCPLayoutInset</label>
+        <link refid="class_q_c_p_layout_inset"/>
+        <childnode refid="313" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="306">
+        <label>QCPLayoutElement</label>
+        <link refid="class_q_c_p_layout_element"/>
+        <childnode refid="307" relation="public-inheritance">
+        </childnode>
+        <childnode refid="313" relation="usage">
+          <edgelabel>mParentLayout</edgelabel>
+        </childnode>
+      </node>
+      <node id="308">
+        <label>QObject</label>
+      </node>
+      <node id="315">
+        <label>QCPRange</label>
+        <link refid="class_q_c_p_range"/>
+      </node>
+      <node id="319">
+        <label>QCPLegend</label>
+        <link refid="class_q_c_p_legend"/>
+        <childnode refid="312" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="317">
+        <label>QCPLineEnding</label>
+        <link refid="class_q_c_p_line_ending"/>
+      </node>
+      <node id="313">
+        <label>QCPLayout</label>
+        <link refid="class_q_c_p_layout"/>
+        <childnode refid="306" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="318">
+        <label>QCPGrid</label>
+        <link refid="class_q_c_p_grid"/>
+        <childnode refid="307" relation="public-inheritance">
+        </childnode>
+        <childnode refid="314" relation="usage">
+          <edgelabel>mParentAxis</edgelabel>
+        </childnode>
+      </node>
+      <node id="316">
+        <label>QCPAxisPainterPrivate</label>
+        <link refid="class_q_c_p_axis_painter_private"/>
+        <childnode refid="317" relation="usage">
+          <edgelabel>lowerEnding</edgelabel>
+          <edgelabel>upperEnding</edgelabel>
+        </childnode>
+        <childnode refid="310" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="311">
+        <label>QWidget</label>
+      </node>
+      <node id="309">
+        <label>QCPLayer</label>
+        <link refid="class_q_c_p_layer"/>
+        <childnode refid="308" relation="public-inheritance">
+        </childnode>
+        <childnode refid="310" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="312">
+        <label>QCPLayoutGrid</label>
+        <link refid="class_q_c_p_layout_grid"/>
+        <childnode refid="313" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="307">
+        <label>QCPLayerable</label>
+        <link refid="class_q_c_p_layerable"/>
+        <childnode refid="308" relation="public-inheritance">
+        </childnode>
+        <childnode refid="309" relation="usage">
+          <edgelabel>mLayer</edgelabel>
+        </childnode>
+        <childnode refid="310" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="314">
+        <label>QCPAxis</label>
+        <link refid="class_q_c_p_axis"/>
+        <childnode refid="307" relation="public-inheritance">
+        </childnode>
+        <childnode refid="315" relation="usage">
+          <edgelabel>mRange</edgelabel>
+        </childnode>
+        <childnode refid="316" relation="usage">
+          <edgelabel>mAxisPainter</edgelabel>
+        </childnode>
+        <childnode refid="318" relation="usage">
+          <edgelabel>mGrid</edgelabel>
+        </childnode>
+        <childnode refid="305" relation="usage">
+          <edgelabel>mAxisRect</edgelabel>
+        </childnode>
+      </node>
+      <node id="305">
+        <label>QCPAxisRect</label>
+        <link refid="class_q_c_p_axis_rect"/>
+        <childnode refid="306" relation="public-inheritance">
+        </childnode>
+        <childnode refid="320" relation="usage">
+          <edgelabel>mInsetLayout</edgelabel>
+        </childnode>
+        <childnode refid="315" relation="usage">
+          <edgelabel>mDragStartVertRange</edgelabel>
+          <edgelabel>mDragStartHorzRange</edgelabel>
+        </childnode>
+      </node>
+      <node id="310">
+        <label>QCustomPlot</label>
+        <link refid="class_q_custom_plot"/>
+        <childnode refid="311" relation="public-inheritance">
+        </childnode>
+        <childnode refid="309" relation="usage">
+          <edgelabel>mCurrentLayer</edgelabel>
+        </childnode>
+        <childnode refid="312" relation="usage">
+          <edgelabel>mPlotLayout</edgelabel>
+        </childnode>
+        <childnode refid="314" relation="usage">
+          <edgelabel>yAxis2</edgelabel>
+          <edgelabel>xAxis2</edgelabel>
+          <edgelabel>xAxis</edgelabel>
+          <edgelabel>yAxis</edgelabel>
+        </childnode>
+        <childnode refid="319" relation="usage">
+          <edgelabel>legend</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1973" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1972" bodyend="2078"/>
+    <listofallmembers>
+      <member refid="class_q_c_p_axis_rect_1a792e1f3d9cb1591fca135bb0de9b81fc" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>addAxes</name></member>
+      <member refid="class_q_c_p_axis_rect_1a2dc336092ccc57d44a46194c8a23e4f4" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>addAxis</name></member>
+      <member refid="class_q_c_p_layerable_1aef5cb4aa899ed9dc9384fd614560291e" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>antialiased</name></member>
+      <member refid="class_q_c_p_layerable_1a62bd552d1a45aa9accb24b310542279e" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>applyAntialiasingHint</name></member>
+      <member refid="class_q_c_p_axis_rect_1a9a6dd0763701cbc7d01f899bcbb3f9ca" prot="protected" virt="virtual"><scope>QCPAxisRect</scope><name>applyDefaultAntialiasingHint</name></member>
+      <member refid="class_q_c_p_layout_element_1a2f499b1179b3126e22d0d7508124ccb3" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>autoMargins</name></member>
+      <member refid="class_q_c_p_axis_rect_1a66654d51ca611ef036ded36250cd2518" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>axes</name></member>
+      <member refid="class_q_c_p_axis_rect_1a18dcdc0dd6c7520bc9f3d15a7a3feec2" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>axes</name></member>
+      <member refid="class_q_c_p_axis_rect_1a560de44e47a4af0f86c59102a094b1e4" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>axis</name></member>
+      <member refid="class_q_c_p_axis_rect_1a16e3e4646e52e4b5d5b865076c29ae58" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>axisCount</name></member>
+      <member refid="class_q_c_p_axis_rect_1a0daa1dadd2a62dbfa37b7f742edd0059" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>background</name></member>
+      <member refid="class_q_c_p_axis_rect_1a67c18777b88fe9c81dee3dd2b5f50e5c" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>backgroundScaled</name></member>
+      <member refid="class_q_c_p_axis_rect_1a3d0f42d6be11a0b3d4576402a2b0032d" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>backgroundScaledMode</name></member>
+      <member refid="class_q_c_p_axis_rect_1af2b5982ebe7e6f781b9bf1cc371a60d8" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>bottom</name></member>
+      <member refid="class_q_c_p_axis_rect_1a724b0333971ea6a338f0dbd814dc97ae" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>bottomLeft</name></member>
+      <member refid="class_q_c_p_axis_rect_1a49ea3c7dff834b47e266cbf3d79f78b9" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>bottomRight</name></member>
+      <member refid="class_q_c_p_axis_rect_1ae79f18302e6507586aa8c032a5f9ed1c" prot="protected" virt="virtual"><scope>QCPAxisRect</scope><name>calculateAutoMargin</name></member>
+      <member refid="class_q_c_p_axis_rect_1aea5e6042bca198424fa1bc02fc282e59" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>center</name></member>
+      <member refid="class_q_c_p_layerable_1a07a8f746640c3704b09910df297afcba" prot="protected" virt="virtual"><scope>QCPAxisRect</scope><name>clipRect</name></member>
+      <member refid="class_q_c_p_layerable_1ae546370644a5551c76af739afc008bee" prot="protected" virt="virtual"><scope>QCPAxisRect</scope><name>deselectEvent</name></member>
+      <member refid="class_q_c_p_axis_rect_1afb1bbbbda8345cd2710d92ee48440b53" prot="protected" virt="virtual"><scope>QCPAxisRect</scope><name>draw</name></member>
+      <member refid="class_q_c_p_axis_rect_1ab49d338d1ce74b476fcead5b32cf06dc" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>drawBackground</name></member>
+      <member refid="class_q_c_p_axis_rect_1a2bda6bf2b5b5797f92583cecd01c8949" prot="public" virt="virtual"><scope>QCPAxisRect</scope><name>elements</name></member>
+      <member refid="class_q_c_p_axis_rect_1afa4ff90901d9275f670e24b40e3c1b25" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>graphs</name></member>
+      <member refid="class_q_c_p_axis_rect_1a1c55c4f3bef40cf01b21820316c8469e" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>height</name></member>
+      <member refid="class_q_c_p_layerable_1a8cbe5a0c9a5674249982f5ca5f8e02bc" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>initializeParentPlot</name></member>
+      <member refid="class_q_c_p_axis_rect_1a4114887c7141b59650b7488f930993e5" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>insetLayout</name></member>
+      <member refid="class_q_c_p_axis_rect_1a0f17ed539962cfcbaca8ce0b1776c840" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>items</name></member>
+      <member refid="class_q_c_p_layerable_1aea67e8c19145e70d68c286a36f6b8300" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>layer</name></member>
+      <member refid="class_q_c_p_layerable_1abbf8657cedea73ac1c3499b521c90eba" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>layerChanged</name></member>
+      <member refid="class_q_c_p_layout_element_1a6235f5384db871fc6e3387a1bc558b0d" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>layout</name></member>
+      <member refid="class_q_c_p_axis_rect_1a55b3ecf72a3a65b053f7651b88db458d" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>left</name></member>
+      <member refid="class_q_c_p_axis_rect_1aa4a24f76360cfebe1bcf17a77fa7521b" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mAADragBackup</name></member>
+      <member refid="class_q_c_p_layerable_1a3ab45a4c76a3333ce42eb217a81733ec" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mAntialiased</name></member>
+      <member refid="class_q_c_p_layout_element_1a22cb1bb62c452fd802e43ca2524660db" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>marginGroup</name></member>
+      <member refid="class_q_c_p_layout_element_1ac43921c997570389c14a1671bc3ea499" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>marginGroups</name></member>
+      <member refid="class_q_c_p_layout_element_1a85ff977dfcced84eef32d9f819ec9543" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>margins</name></member>
+      <member refid="class_q_c_p_layout_element_1af61c70354d1275778d68206b2a1b2d36" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mAutoMargins</name></member>
+      <member refid="class_q_c_p_axis_rect_1afe7a24d2a2bea98fc552fa826350ba81" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mAxes</name></member>
+      <member refid="class_q_c_p_layout_element_1a1fc85c79e15c2ab8051eccd455fccc4a" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>maximumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1adbd3a00fec44c977150c6be7329eb801" prot="public" virt="virtual"><scope>QCPAxisRect</scope><name>maximumSizeHint</name></member>
+      <member refid="class_q_c_p_axis_rect_1a5748e1a37f63c428e38b0a7724b46259" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mBackgroundBrush</name></member>
+      <member refid="class_q_c_p_axis_rect_1a38fb1a15f43228a0c124553649303722" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mBackgroundPixmap</name></member>
+      <member refid="class_q_c_p_axis_rect_1a5ad835f0fae5d7cc5ada9e063641dbf1" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mBackgroundScaled</name></member>
+      <member refid="class_q_c_p_axis_rect_1a859fd368e794663e346b4f53f35078e9" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mBackgroundScaledMode</name></member>
+      <member refid="class_q_c_p_axis_rect_1ab49a6698194cf0e9e38a1d734c0888a8" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mDragging</name></member>
+      <member refid="class_q_c_p_axis_rect_1a032896b28f83a58010d8d533b78c49df" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mDragStart</name></member>
+      <member refid="class_q_c_p_axis_rect_1a41936cf473ec638bec382f5a40cdb1f3" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mDragStartHorzRange</name></member>
+      <member refid="class_q_c_p_axis_rect_1a1a5ae4c74b8bd46baf91bf4e4f4165f0" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mDragStartVertRange</name></member>
+      <member refid="class_q_c_p_layout_element_1a60ec7f377c26726174d536bffb632002" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>minimumMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1ae71f9230171d2d898e21dc461fc3df03" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>minimumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1aebe14fb71f858c0f98caf8d342a9864a" prot="public" virt="virtual"><scope>QCPAxisRect</scope><name>minimumSizeHint</name></member>
+      <member refid="class_q_c_p_axis_rect_1a255240399e0fd24baad80cbbe46f698a" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mInsetLayout</name></member>
+      <member refid="class_q_c_p_layerable_1aa38ec5891aff0f50b36fd63e9372a0cd" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mLayer</name></member>
+      <member refid="class_q_c_p_layout_element_1aeafbbc1130e02eee663c5326761fc963" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mMarginGroups</name></member>
+      <member refid="class_q_c_p_layout_element_1ac2a32b99ee527ca5dfff9da03628fe94" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a64a387973fd4addac842028c89088998" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mMaximumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a5ba71f25d1af4bb092b28df618538e63" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mMinimumMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1affef747c81632de33f08483b7fd10d01" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mMinimumSize</name></member>
+      <member refid="class_q_c_p_axis_rect_1a6fcb12e052e276d57efbb128be31d6f5" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mNotAADragBackup</name></member>
+      <member refid="class_q_c_p_layout_element_1aa8fef6486cb6ceb7c82cbdd50bc32ee9" prot="protected" virt="virtual"><scope>QCPAxisRect</scope><name>mouseDoubleClickEvent</name></member>
+      <member refid="class_q_c_p_axis_rect_1a4baf3d5dd69166788f6ceda0ea182c6e" prot="protected" virt="virtual"><scope>QCPAxisRect</scope><name>mouseMoveEvent</name></member>
+      <member refid="class_q_c_p_axis_rect_1a77501dbeccdac7256f7979b05077c04e" prot="protected" virt="virtual"><scope>QCPAxisRect</scope><name>mousePressEvent</name></member>
+      <member refid="class_q_c_p_axis_rect_1adf6c99780cea55ab39459a6eaad3a94a" prot="protected" virt="virtual"><scope>QCPAxisRect</scope><name>mouseReleaseEvent</name></member>
+      <member refid="class_q_c_p_layout_element_1a07bb4973379e75cb0fa5b032c1d24afd" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mOuterRect</name></member>
+      <member refid="class_q_c_p_layerable_1af94484cfb7cbbddb7de522e9be71d9a4" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>moveToLayer</name></member>
+      <member refid="class_q_c_p_layerable_1a3291445a980053e2d17a21d15957624e" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mParentLayerable</name></member>
+      <member refid="class_q_c_p_layout_element_1ae7c75c25549608bd688bdb65d4c38066" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mParentLayout</name></member>
+      <member refid="class_q_c_p_layerable_1aa2a528433e44db02b8aef23c1f9f90ed" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mParentPlot</name></member>
+      <member refid="class_q_c_p_axis_rect_1aa9f107f66ca3469ad50ee6cea7c9e237" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mRangeDrag</name></member>
+      <member refid="class_q_c_p_axis_rect_1aeaaa38c6d2030dd5f84461e2596e41e3" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mRangeDragHorzAxis</name></member>
+      <member refid="class_q_c_p_axis_rect_1a3e41dffec18987366f2a8ffd80689c12" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mRangeDragVertAxis</name></member>
+      <member refid="class_q_c_p_axis_rect_1a215eff671d48df2edccc36e7f976f28c" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mRangeZoom</name></member>
+      <member refid="class_q_c_p_axis_rect_1ad08d0250ed7b99de387d0ea6c7fd4dc1" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mRangeZoomFactorHorz</name></member>
+      <member refid="class_q_c_p_axis_rect_1a32f063629581d5bf82b12769940b34ad" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mRangeZoomFactorVert</name></member>
+      <member refid="class_q_c_p_axis_rect_1ae22f882bab20518559f3fbb84243d0ab" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mRangeZoomHorzAxis</name></member>
+      <member refid="class_q_c_p_axis_rect_1a8b9acd16a203a9692bd35a9465f54bc1" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mRangeZoomVertAxis</name></member>
+      <member refid="class_q_c_p_layout_element_1ad8896f05550389f7b9e92c9e6cdf6e01" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mRect</name></member>
+      <member refid="class_q_c_p_axis_rect_1aa74b9415598d59b49290e41e42d7ee27" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mScaledBackgroundPixmap</name></member>
+      <member refid="class_q_c_p_layerable_1a62e3aed8427d6ce3ccf716f285106cb3" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>mVisible</name></member>
+      <member refid="class_q_c_p_layout_element_1a60bbddee2d1230c2414bd776f44d17b8" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>outerRect</name></member>
+      <member refid="class_q_c_p_layerable_1a98d79f5b716d45eac4347befe546d0ec" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>parentLayerable</name></member>
+      <member refid="class_q_c_p_layerable_1ab7e0e94461566093d36ffc0f5312b109" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>parentPlot</name></member>
+      <member refid="class_q_c_p_layout_element_1a1478899e80e8244b411e96ec3b2e5ce2" prot="protected" virt="virtual"><scope>QCPAxisRect</scope><name>parentPlotInitialized</name></member>
+      <member refid="class_q_c_p_axis_rect_1a5b0d629c8de5572945eeae79a142296e" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>plottables</name></member>
+      <member refid="class_q_c_p_axis_rect_1a60b31dece805462c1b82eea2e69ba042" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>QCPAxisRect</name></member>
+      <member refid="class_q_c_p_layerable_1a74c0fa237f29bf0e49565013fc5d1ec0" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>QCPLayerable</name></member>
+      <member refid="class_q_c_p_layout_element_1a8947f0ada17e672aaba3d424cbbb67e3" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>QCPLayoutElement</name></member>
+      <member refid="class_q_c_p_axis_rect_1a1cdf9df76adcfae45261690aa0ca2198" prot="private" virt="non-virtual"><scope>QCPAxisRect</scope><name>QCustomPlot</name></member>
+      <member refid="class_q_c_p_axis_rect_1af24b46954ce27a26b23770cdb8319080" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>rangeDrag</name></member>
+      <member refid="class_q_c_p_axis_rect_1a6d7c22cfc54fac7a3d6ef80b133a8574" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>rangeDragAxis</name></member>
+      <member refid="class_q_c_p_axis_rect_1a3397fc60e5df29089090bc236e9f05f6" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>rangeZoom</name></member>
+      <member refid="class_q_c_p_axis_rect_1a679c63f2b8daccfe6ec5110dce3dd3b6" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>rangeZoomAxis</name></member>
+      <member refid="class_q_c_p_axis_rect_1ae4e6c4d143aacc88d2d3c56f117c2fe1" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>rangeZoomFactor</name></member>
+      <member refid="class_q_c_p_layerable_1a30809f7455e9794bca7b6c737622fa63" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>realVisibility</name></member>
+      <member refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>rect</name></member>
+      <member refid="class_q_c_p_axis_rect_1a03c39cd9704f0d36fb6cf980cdddcbaa" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>removeAxis</name></member>
+      <member refid="class_q_c_p_axis_rect_1a6d0f989fc552aa2b563cf82f8fc81e61" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>right</name></member>
+      <member refid="class_q_c_p_layerable_1a7498c2d0d081cf7cad0fb3bb93aa0e91" prot="protected" virt="virtual"><scope>QCPAxisRect</scope><name>selectEvent</name></member>
+      <member refid="class_q_c_p_layerable_1aa4035e586b7f317a06ba7e74e242a5ea" prot="protected" virt="virtual"><scope>QCPAxisRect</scope><name>selectionCategory</name></member>
+      <member refid="class_q_c_p_layout_element_1a9fcf5d0ea19f2c23b2b528bce2c6f095" prot="public" virt="virtual"><scope>QCPAxisRect</scope><name>selectTest</name></member>
+      <member refid="class_q_c_p_layerable_1a4fd43e89be4a553ead41652565ff0581" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setAntialiased</name></member>
+      <member refid="class_q_c_p_layout_element_1accfda49994e3e6d51ed14504abf9d27d" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setAutoMargins</name></member>
+      <member refid="class_q_c_p_axis_rect_1af615ab5e52b8e0a9a0eff415b6559db5" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setBackground</name></member>
+      <member refid="class_q_c_p_axis_rect_1ac48a2d5d9b7732e73b86605c69c5e4c1" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setBackground</name></member>
+      <member refid="class_q_c_p_axis_rect_1a22a22b8668735438dc06f9a55fe46b33" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setBackground</name></member>
+      <member refid="class_q_c_p_axis_rect_1ae6d36c3e0e968ffb991170a018e7b503" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setBackgroundScaled</name></member>
+      <member refid="class_q_c_p_axis_rect_1a5ef77ea829c9de7ba248e473f48f7305" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setBackgroundScaledMode</name></member>
+      <member refid="class_q_c_p_layerable_1ab0d0da6d2de45a118886d2c8e16d5a54" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setLayer</name></member>
+      <member refid="class_q_c_p_layerable_1ab25a0e7b897993b44447caee0f142083" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setLayer</name></member>
+      <member refid="class_q_c_p_layout_element_1a516e56f76b6bc100e8e71d329866847d" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setMarginGroup</name></member>
+      <member refid="class_q_c_p_layout_element_1a8f450b1f3f992ad576fce2c63d8b79cf" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a74eb5280a737ab44833d506db65efd95" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setMaximumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a03e0e9c48f230217c529b0819f832d84" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setMaximumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a0a8a17abc16b7923159fcc7608f94673" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setMinimumMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a5dd29a3c8bc88440c97c06b67be7886b" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setMinimumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a8e0447614a0bf92de9a7304588c6b96e" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setMinimumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a38975ea13e36de8e53391ce41d94bc0f" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setOuterRect</name></member>
+      <member refid="class_q_c_p_layerable_1aa23c893671f1f6744ac235cf2204cf3a" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>setParentLayerable</name></member>
+      <member refid="class_q_c_p_axis_rect_1ae6aef2f7211ba6097c925dcd26008418" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setRangeDrag</name></member>
+      <member refid="class_q_c_p_axis_rect_1a648cce336bd99daac4a5ca3e5743775d" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setRangeDragAxes</name></member>
+      <member refid="class_q_c_p_axis_rect_1a7960a9d222f1c31d558b064b60f86a31" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setRangeZoom</name></member>
+      <member refid="class_q_c_p_axis_rect_1a9442cca2aa358405f39a64d51eca13d2" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setRangeZoomAxes</name></member>
+      <member refid="class_q_c_p_axis_rect_1a895d7ac745ea614e04056244b3c138ac" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setRangeZoomFactor</name></member>
+      <member refid="class_q_c_p_axis_rect_1ae83d187b03fc6fa4f00765ad50cd3fc3" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setRangeZoomFactor</name></member>
+      <member refid="class_q_c_p_axis_rect_1a5fa906175447b14206954f77fc7f1ef4" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setupFullAxesBox</name></member>
+      <member refid="class_q_c_p_layerable_1a3bed99ddc396b48ce3ebfdc0418744f8" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>setVisible</name></member>
+      <member refid="class_q_c_p_axis_rect_1a871b9fe49e92b39a3cbe29a59e458536" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>size</name></member>
+      <member refid="class_q_c_p_axis_rect_1ac45aef1eb75cea46b241b6303028a607" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>top</name></member>
+      <member refid="class_q_c_p_axis_rect_1a88acbe716bcf5072790a6f95637c40d8" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>topLeft</name></member>
+      <member refid="class_q_c_p_axis_rect_1a232409546394c23b59407bc62fa460a8" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>topRight</name></member>
+      <member refid="class_q_c_p_axis_rect_1a255080a017df9083a60a321ef2ba9ed8" prot="public" virt="virtual"><scope>QCPAxisRect</scope><name>update</name></member>
+      <member refid="class_q_c_p_axis_rect_1a6024ccdc74f5dc0e8a0fe482e5b28a20" prot="protected" virt="non-virtual"><scope>QCPAxisRect</scope><name>updateAxesOffset</name></member>
+      <member refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374d" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>UpdatePhase</name></member>
+      <member refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>upLayout</name></member>
+      <member refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>upMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374dad6119882eba136357c2f627992e527d3" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>upPreparation</name></member>
+      <member refid="class_q_c_p_layerable_1a10a3cc92e0fa63e4a929e61d34e275a7" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>visible</name></member>
+      <member refid="class_q_c_p_axis_rect_1a5acf41fc30aa68ea263246ecfad85c31" prot="protected" virt="virtual"><scope>QCPAxisRect</scope><name>wheelEvent</name></member>
+      <member refid="class_q_c_p_axis_rect_1a45bf5c17f4ca29131b7eb0db06efc259" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>width</name></member>
+      <member refid="class_q_c_p_axis_rect_1a463c44b1856ddbf82eb3f7b582839cd0" prot="public" virt="virtual"><scope>QCPAxisRect</scope><name>~QCPAxisRect</name></member>
+      <member refid="class_q_c_p_layerable_1a4231cf5b3601d6d3a5781283e7a9735b" prot="public" virt="non-virtual"><scope>QCPAxisRect</scope><name>~QCPLayerable</name></member>
+      <member refid="class_q_c_p_layout_element_1a0dc52343920011b3e72d61fc94ed3400" prot="public" virt="virtual"><scope>QCPAxisRect</scope><name>~QCPLayoutElement</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

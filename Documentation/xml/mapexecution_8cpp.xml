@@ -1,0 +1,935 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="mapexecution_8cpp" kind="file" language="C++">
+    <compoundname>mapexecution.cpp</compoundname>
+    <includes refid="mapexecution_8h" local="yes">mapexecution.h</includes>
+    <includes local="no">iostream</includes>
+    <incdepgraph>
+      <node id="1133">
+        <label>QtWidgets/QWidget</label>
+      </node>
+      <node id="1125">
+        <label>QMap</label>
+      </node>
+      <node id="1156">
+        <label>QtNumeric</label>
+      </node>
+      <node id="1079">
+        <label>mapexecution.h</label>
+        <link refid="mapexecution_8h"/>
+        <childnode refid="1080" relation="include">
+        </childnode>
+        <childnode refid="1081" relation="include">
+        </childnode>
+        <childnode refid="1082" relation="include">
+        </childnode>
+        <childnode refid="1083" relation="include">
+        </childnode>
+        <childnode refid="1084" relation="include">
+        </childnode>
+        <childnode refid="1085" relation="include">
+        </childnode>
+        <childnode refid="1086" relation="include">
+        </childnode>
+        <childnode refid="1087" relation="include">
+        </childnode>
+        <childnode refid="1088" relation="include">
+        </childnode>
+        <childnode refid="1115" relation="include">
+        </childnode>
+        <childnode refid="1127" relation="include">
+        </childnode>
+        <childnode refid="1097" relation="include">
+        </childnode>
+        <childnode refid="1129" relation="include">
+        </childnode>
+        <childnode refid="1132" relation="include">
+        </childnode>
+        <childnode refid="1170" relation="include">
+        </childnode>
+        <childnode refid="1092" relation="include">
+        </childnode>
+        <childnode refid="1123" relation="include">
+        </childnode>
+        <childnode refid="1159" relation="include">
+        </childnode>
+        <childnode refid="1171" relation="include">
+        </childnode>
+        <childnode refid="1172" relation="include">
+        </childnode>
+        <childnode refid="1126" relation="include">
+        </childnode>
+      </node>
+      <node id="1172">
+        <label>connectiondialog.h</label>
+        <link refid="connectiondialog_8h"/>
+        <childnode refid="1081" relation="include">
+        </childnode>
+      </node>
+      <node id="1150">
+        <label>QVector2D</label>
+      </node>
+      <node id="1155">
+        <label>limits</label>
+      </node>
+      <node id="1165">
+        <label>websockettransport.h</label>
+        <link refid="websockettransport_8h"/>
+        <childnode refid="1166" relation="include">
+        </childnode>
+      </node>
+      <node id="1161">
+        <label>QWebChannel</label>
+      </node>
+      <node id="1164">
+        <label>websocketclientwrapper.h</label>
+        <link refid="websocketclientwrapper_8h"/>
+        <childnode refid="1100" relation="include">
+        </childnode>
+      </node>
+      <node id="1146">
+        <label>QDateTime</label>
+      </node>
+      <node id="1100">
+        <label>QObject</label>
+      </node>
+      <node id="1085">
+        <label>QWebEngineView</label>
+      </node>
+      <node id="1106">
+        <label>ackpacket.h</label>
+        <link refid="ackpacket_8h"/>
+        <childnode refid="1107" relation="include">
+        </childnode>
+        <childnode refid="1108" relation="include">
+        </childnode>
+      </node>
+      <node id="1087">
+        <label>QList</label>
+      </node>
+      <node id="1096">
+        <label>stdint.h</label>
+      </node>
+      <node id="1114">
+        <label>telemetrypacket.h</label>
+        <link refid="telemetrypacket_8h"/>
+        <childnode refid="1111" relation="include">
+        </childnode>
+        <childnode refid="1108" relation="include">
+        </childnode>
+      </node>
+      <node id="1158">
+        <label>mapplanning.h</label>
+        <link refid="mapplanning_8h"/>
+        <childnode refid="1081" relation="include">
+        </childnode>
+        <childnode refid="1082" relation="include">
+        </childnode>
+        <childnode refid="1083" relation="include">
+        </childnode>
+        <childnode refid="1084" relation="include">
+        </childnode>
+        <childnode refid="1085" relation="include">
+        </childnode>
+        <childnode refid="1122" relation="include">
+        </childnode>
+        <childnode refid="1095" relation="include">
+        </childnode>
+        <childnode refid="1104" relation="include">
+        </childnode>
+        <childnode refid="1127" relation="include">
+        </childnode>
+        <childnode refid="1130" relation="include">
+        </childnode>
+        <childnode refid="1097" relation="include">
+        </childnode>
+        <childnode refid="1126" relation="include">
+        </childnode>
+        <childnode refid="1079" relation="include">
+        </childnode>
+        <childnode refid="1092" relation="include">
+        </childnode>
+        <childnode refid="1159" relation="include">
+        </childnode>
+        <childnode refid="1167" relation="include">
+        </childnode>
+      </node>
+      <node id="1117">
+        <label>QThread</label>
+      </node>
+      <node id="1086">
+        <label>QPair</label>
+      </node>
+      <node id="1151">
+        <label>QStack</label>
+      </node>
+      <node id="1129">
+        <label>maprecap.h</label>
+        <link refid="maprecap_8h"/>
+        <childnode refid="1081" relation="include">
+        </childnode>
+        <childnode refid="1082" relation="include">
+        </childnode>
+        <childnode refid="1083" relation="include">
+        </childnode>
+        <childnode refid="1084" relation="include">
+        </childnode>
+        <childnode refid="1122" relation="include">
+        </childnode>
+        <childnode refid="1095" relation="include">
+        </childnode>
+        <childnode refid="1104" relation="include">
+        </childnode>
+        <childnode refid="1127" relation="include">
+        </childnode>
+        <childnode refid="1130" relation="include">
+        </childnode>
+        <childnode refid="1097" relation="include">
+        </childnode>
+        <childnode refid="1126" relation="include">
+        </childnode>
+        <childnode refid="1092" relation="include">
+        </childnode>
+        <childnode refid="1131" relation="include">
+        </childnode>
+        <childnode refid="1123" relation="include">
+        </childnode>
+      </node>
+      <node id="1154">
+        <label>qmath.h</label>
+      </node>
+      <node id="1111">
+        <label>string</label>
+      </node>
+      <node id="1166">
+        <label>QtWebChannel/QWebChannelAbstractTransport</label>
+      </node>
+      <node id="1089">
+        <label>QPlainTextEdit</label>
+      </node>
+      <node id="1160">
+        <label>QUrl</label>
+      </node>
+      <node id="1088">
+        <label>digitalclock.h</label>
+        <link refid="digitalclock_8h"/>
+        <childnode refid="1089" relation="include">
+        </childnode>
+        <childnode refid="1090" relation="include">
+        </childnode>
+        <childnode refid="1091" relation="include">
+        </childnode>
+        <childnode refid="1092" relation="include">
+        </childnode>
+      </node>
+      <node id="1120">
+        <label>QLinkedList</label>
+      </node>
+      <node id="1097">
+        <label>qcomboboxdelegate.h</label>
+        <link refid="qcomboboxdelegate_8h"/>
+        <childnode refid="1098" relation="include">
+        </childnode>
+        <childnode refid="1082" relation="include">
+        </childnode>
+        <childnode refid="1099" relation="include">
+        </childnode>
+        <childnode refid="1100" relation="include">
+        </childnode>
+        <childnode refid="1101" relation="include">
+        </childnode>
+        <childnode refid="1102" relation="include">
+        </childnode>
+        <childnode refid="1103" relation="include">
+        </childnode>
+      </node>
+      <node id="1119">
+        <label>serverqueue.h</label>
+        <link refid="serverqueue_8h"/>
+        <childnode refid="1087" relation="include">
+        </childnode>
+        <childnode refid="1120" relation="include">
+        </childnode>
+        <childnode refid="1108" relation="include">
+        </childnode>
+        <childnode refid="1106" relation="include">
+        </childnode>
+        <childnode refid="1110" relation="include">
+        </childnode>
+        <childnode refid="1112" relation="include">
+        </childnode>
+        <childnode refid="1114" relation="include">
+        </childnode>
+      </node>
+      <node id="1171">
+        <label>ui_mapexecution.h</label>
+      </node>
+      <node id="1099">
+        <label>QModelIndex</label>
+      </node>
+      <node id="1130">
+        <label>popwindowmp.h</label>
+        <link refid="popwindowmp_8h"/>
+        <childnode refid="1080" relation="include">
+        </childnode>
+      </node>
+      <node id="1131">
+        <label>ui_maprecap.h</label>
+      </node>
+      <node id="1132">
+        <label>missionrecap.h</label>
+        <link refid="missionrecap_8h"/>
+        <childnode refid="1100" relation="include">
+        </childnode>
+        <childnode refid="1133" relation="include">
+        </childnode>
+        <childnode refid="1134" relation="include">
+        </childnode>
+        <childnode refid="1135" relation="include">
+        </childnode>
+        <childnode refid="1136" relation="include">
+        </childnode>
+        <childnode refid="1137" relation="include">
+        </childnode>
+        <childnode refid="1138" relation="include">
+        </childnode>
+        <childnode refid="1139" relation="include">
+        </childnode>
+        <childnode refid="1093" relation="include">
+        </childnode>
+        <childnode refid="1091" relation="include">
+        </childnode>
+        <childnode refid="1140" relation="include">
+        </childnode>
+        <childnode refid="1158" relation="include">
+        </childnode>
+        <childnode refid="1168" relation="include">
+        </childnode>
+        <childnode refid="1169" relation="include">
+        </childnode>
+      </node>
+      <node id="1137">
+        <label>qmediaplayer.h</label>
+      </node>
+      <node id="1134">
+        <label>QtMultimediaWidgets</label>
+      </node>
+      <node id="1167">
+        <label>ui_mapplanning.h</label>
+      </node>
+      <node id="1135">
+        <label>QtGui/QMovie</label>
+      </node>
+      <node id="1148">
+        <label>QFlags</label>
+      </node>
+      <node id="1140">
+        <label>qcustomplot.h</label>
+        <link refid="qcustomplot_8h"/>
+        <childnode refid="1100" relation="include">
+        </childnode>
+        <childnode refid="1141" relation="include">
+        </childnode>
+        <childnode refid="1080" relation="include">
+        </childnode>
+        <childnode refid="1142" relation="include">
+        </childnode>
+        <childnode refid="1143" relation="include">
+        </childnode>
+        <childnode refid="1144" relation="include">
+        </childnode>
+        <childnode refid="1145" relation="include">
+        </childnode>
+        <childnode refid="1124" relation="include">
+        </childnode>
+        <childnode refid="1122" relation="include">
+        </childnode>
+        <childnode refid="1146" relation="include">
+        </childnode>
+        <childnode refid="1147" relation="include">
+        </childnode>
+        <childnode refid="1148" relation="include">
+        </childnode>
+        <childnode refid="1149" relation="include">
+        </childnode>
+        <childnode refid="1150" relation="include">
+        </childnode>
+        <childnode refid="1151" relation="include">
+        </childnode>
+        <childnode refid="1152" relation="include">
+        </childnode>
+        <childnode refid="1153" relation="include">
+        </childnode>
+        <childnode refid="1154" relation="include">
+        </childnode>
+        <childnode refid="1155" relation="include">
+        </childnode>
+        <childnode refid="1156" relation="include">
+        </childnode>
+        <childnode refid="1157" relation="include">
+        </childnode>
+      </node>
+      <node id="1152">
+        <label>QCache</label>
+      </node>
+      <node id="1121">
+        <label>networklistener.h</label>
+        <link refid="networklistener_8h"/>
+        <childnode refid="1100" relation="include">
+        </childnode>
+        <childnode refid="1117" relation="include">
+        </childnode>
+        <childnode refid="1122" relation="include">
+        </childnode>
+        <childnode refid="1118" relation="include">
+        </childnode>
+        <childnode refid="1092" relation="include">
+        </childnode>
+        <childnode refid="1108" relation="include">
+        </childnode>
+      </node>
+      <node id="1142">
+        <label>QPainter</label>
+      </node>
+      <node id="1123">
+        <label>mission.h</label>
+        <link refid="mission_8h"/>
+        <childnode refid="1122" relation="include">
+        </childnode>
+        <childnode refid="1124" relation="include">
+        </childnode>
+        <childnode refid="1086" relation="include">
+        </childnode>
+        <childnode refid="1125" relation="include">
+        </childnode>
+        <childnode refid="1110" relation="include">
+        </childnode>
+        <childnode refid="1114" relation="include">
+        </childnode>
+        <childnode refid="1126" relation="include">
+        </childnode>
+        <childnode refid="1092" relation="include">
+        </childnode>
+      </node>
+      <node id="1144">
+        <label>QMouseEvent</label>
+      </node>
+      <node id="1170">
+        <label>options.h</label>
+        <link refid="options_8h"/>
+        <childnode refid="1080" relation="include">
+        </childnode>
+        <childnode refid="1158" relation="include">
+        </childnode>
+        <childnode refid="1079" relation="include">
+        </childnode>
+        <childnode refid="1132" relation="include">
+        </childnode>
+      </node>
+      <node id="1084">
+        <label>QButtonGroup</label>
+      </node>
+      <node id="1113">
+        <label>string.h</label>
+      </node>
+      <node id="1090">
+        <label>QTime</label>
+      </node>
+      <node id="1138">
+        <label>qvideowidget.h</label>
+      </node>
+      <node id="1095">
+        <label>QApplication</label>
+      </node>
+      <node id="1157">
+        <label>QtPrintSupport</label>
+      </node>
+      <node id="1141">
+        <label>QPointer</label>
+      </node>
+      <node id="1105">
+        <label>QValidator</label>
+      </node>
+      <node id="1081">
+        <label>QDialog</label>
+      </node>
+      <node id="1115">
+        <label>gsserver.h</label>
+        <link refid="gsserver_8h"/>
+        <childnode refid="1116" relation="include">
+        </childnode>
+        <childnode refid="1086" relation="include">
+        </childnode>
+        <childnode refid="1117" relation="include">
+        </childnode>
+        <childnode refid="1118" relation="include">
+        </childnode>
+        <childnode refid="1119" relation="include">
+        </childnode>
+        <childnode refid="1100" relation="include">
+        </childnode>
+        <childnode refid="1121" relation="include">
+        </childnode>
+        <childnode refid="1092" relation="include">
+        </childnode>
+        <childnode refid="1123" relation="include">
+        </childnode>
+      </node>
+      <node id="1149">
+        <label>QDebug</label>
+      </node>
+      <node id="1091">
+        <label>QTimer</label>
+      </node>
+      <node id="1094">
+        <label>vector</label>
+      </node>
+      <node id="1080">
+        <label>QWidget</label>
+      </node>
+      <node id="1102">
+        <label>QLineEdit</label>
+      </node>
+      <node id="1108">
+        <label>packet.h</label>
+        <link refid="packet_8h"/>
+        <childnode refid="1109" relation="include">
+        </childnode>
+        <childnode refid="1107" relation="include">
+        </childnode>
+        <childnode refid="1096" relation="include">
+        </childnode>
+      </node>
+      <node id="1122">
+        <label>QString</label>
+      </node>
+      <node id="1116">
+        <label>QQueue</label>
+      </node>
+      <node id="1118">
+        <label>QUdpSocket</label>
+      </node>
+      <node id="1159">
+        <label>mapwidget.h</label>
+        <link refid="mapwidget_8h"/>
+        <childnode refid="1087" relation="include">
+        </childnode>
+        <childnode refid="1085" relation="include">
+        </childnode>
+        <childnode refid="1160" relation="include">
+        </childnode>
+        <childnode refid="1161" relation="include">
+        </childnode>
+        <childnode refid="1162" relation="include">
+        </childnode>
+        <childnode refid="1163" relation="include">
+        </childnode>
+        <childnode refid="1110" relation="include">
+        </childnode>
+        <childnode refid="1164" relation="include">
+        </childnode>
+        <childnode refid="1165" relation="include">
+        </childnode>
+        <childnode refid="1126" relation="include">
+        </childnode>
+      </node>
+      <node id="1101">
+        <label>QSize</label>
+      </node>
+      <node id="1163">
+        <label>QWebChannelAbstractTransport</label>
+      </node>
+      <node id="1083">
+        <label>QPushButton</label>
+      </node>
+      <node id="1162">
+        <label>QWebSocketServer</label>
+      </node>
+      <node id="1109">
+        <label>time.h</label>
+      </node>
+      <node id="1153">
+        <label>QMargins</label>
+      </node>
+      <node id="1127">
+        <label>tablemodel.h</label>
+        <link refid="tablemodel_8h"/>
+        <childnode refid="1128" relation="include">
+        </childnode>
+        <childnode refid="1087" relation="include">
+        </childnode>
+        <childnode refid="1086" relation="include">
+        </childnode>
+      </node>
+      <node id="1139">
+        <label>qvideosurfaceformat.h</label>
+      </node>
+      <node id="1169">
+        <label>ui_missionrecap.h</label>
+      </node>
+      <node id="1082">
+        <label>QComboBox</label>
+      </node>
+      <node id="1093">
+        <label>iostream</label>
+      </node>
+      <node id="1126">
+        <label>flightpath.h</label>
+        <link refid="flightpath_8h"/>
+        <childnode refid="1087" relation="include">
+        </childnode>
+        <childnode refid="1086" relation="include">
+        </childnode>
+        <childnode refid="1122" relation="include">
+        </childnode>
+        <childnode refid="1110" relation="include">
+        </childnode>
+      </node>
+      <node id="1098">
+        <label>QItemDelegate</label>
+      </node>
+      <node id="1145">
+        <label>QPixmap</label>
+      </node>
+      <node id="1104">
+        <label>QDoubleValidator</label>
+      </node>
+      <node id="1168">
+        <label>videoplayer.h</label>
+        <link refid="videoplayer_8h"/>
+        <childnode refid="1133" relation="include">
+        </childnode>
+        <childnode refid="1134" relation="include">
+        </childnode>
+        <childnode refid="1135" relation="include">
+        </childnode>
+        <childnode refid="1136" relation="include">
+        </childnode>
+        <childnode refid="1137" relation="include">
+        </childnode>
+      </node>
+      <node id="1092">
+        <label>messagebox.h</label>
+        <link refid="messagebox_8h"/>
+        <childnode refid="1093" relation="include">
+        </childnode>
+        <childnode refid="1094" relation="include">
+        </childnode>
+        <childnode refid="1095" relation="include">
+        </childnode>
+        <childnode refid="1086" relation="include">
+        </childnode>
+        <childnode refid="1087" relation="include">
+        </childnode>
+        <childnode refid="1090" relation="include">
+        </childnode>
+        <childnode refid="1096" relation="include">
+        </childnode>
+        <childnode refid="1097" relation="include">
+        </childnode>
+        <childnode refid="1106" relation="include">
+        </childnode>
+        <childnode refid="1110" relation="include">
+        </childnode>
+        <childnode refid="1112" relation="include">
+        </childnode>
+        <childnode refid="1114" relation="include">
+        </childnode>
+      </node>
+      <node id="1103">
+        <label>mapvalidator.h</label>
+        <link refid="mapvalidator_8h"/>
+        <childnode refid="1104" relation="include">
+        </childnode>
+        <childnode refid="1105" relation="include">
+        </childnode>
+      </node>
+      <node id="1112">
+        <label>infopacket.h</label>
+        <link refid="infopacket_8h"/>
+        <childnode refid="1111" relation="include">
+        </childnode>
+        <childnode refid="1113" relation="include">
+        </childnode>
+        <childnode refid="1096" relation="include">
+        </childnode>
+        <childnode refid="1108" relation="include">
+        </childnode>
+      </node>
+      <node id="1107">
+        <label>stdio.h</label>
+      </node>
+      <node id="1143">
+        <label>QPaintEvent</label>
+      </node>
+      <node id="1136">
+        <label>QVideoWidget</label>
+      </node>
+      <node id="1078">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp</label>
+        <link refid="mapexecution.cpp"/>
+        <childnode refid="1079" relation="include">
+        </childnode>
+        <childnode refid="1093" relation="include">
+        </childnode>
+      </node>
+      <node id="1128">
+        <label>QAbstractTableModel</label>
+      </node>
+      <node id="1110">
+        <label>actionpacket.h</label>
+        <link refid="actionpacket_8h"/>
+        <childnode refid="1111" relation="include">
+        </childnode>
+        <childnode refid="1108" relation="include">
+        </childnode>
+      </node>
+      <node id="1124">
+        <label>QVector</label>
+      </node>
+      <node id="1147">
+        <label>QMultiMap</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mapexecution_8h" kindref="compound">mapexecution.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><ref refid="class_map_execution_1afcf6d9187674478b9b24cdb59b832198" kindref="member">MapExecution::MapExecution</ref>(QWidget<sp/>*parent)<sp/>:<ref refid="class_map_execution" kindref="compound">MapExecution</ref>(new<sp/><ref refid="class_flight_path" kindref="compound">FlightPath</ref>(),parent){}</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><ref refid="class_map_execution_1afcf6d9187674478b9b24cdb59b832198" kindref="member">MapExecution::MapExecution</ref>(<ref refid="class_flight_path" kindref="compound">FlightPath</ref>*<sp/>flightPath,<sp/>QWidget<sp/>*parent):</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>QDialog(parent),</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>myServer(&amp;MyMessageBox,&amp;myMission),</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>ui(new<sp/><ref refid="namespace_ui" kindref="compound">Ui</ref>::<ref refid="class_map_execution" kindref="compound">MapExecution</ref>),</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>prevTime(),</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>myFlightPath(*flightPath),</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>myMission(myFlightPath){</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>missionStarted<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_main_window_1a35466a70ed47252a0191168126a352a5" kindref="member">ui</ref>-&gt;setupUi(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>buttonGroup<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QButtonGroup();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_timed_action" kindref="compound">TimedAction</ref><sp/>*a<sp/>:<sp/>myFlightPath){</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>MyMessageBox.addActionPacket(*(a-&gt;first));</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//initate<sp/>clock<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_main_window_1a35466a70ed47252a0191168126a352a5" kindref="member">ui</ref>-&gt;clock-&gt;initiate(MyMessageBox.timer);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_main_window_1a35466a70ed47252a0191168126a352a5" kindref="member">ui</ref>-&gt;StatusConsole-&gt;initiate(&amp;MyMessageBox,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//display<sp/>widgets</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>conTime<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QTimer(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(conTime,<sp/>SIGNAL(timeout()),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SLOT(updateStatusIndicator()));</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>conTime-&gt;start(1000);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(<ref refid="class_main_window_1a35466a70ed47252a0191168126a352a5" kindref="member">ui</ref>-&gt;startButton,<sp/>&amp;QPushButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_map_execution_1ae8b8194207477071903852da2d3ac15f" kindref="member">MapExecution::onStartButtonClicked</ref>);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(<ref refid="class_main_window_1a35466a70ed47252a0191168126a352a5" kindref="member">ui</ref>-&gt;cancelButton,<sp/>&amp;QPushButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_map_execution_1a8ffb26c93c53d54c2ae9c17f27663def" kindref="member">MapExecution::onCancelButtonClicked</ref>);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(<ref refid="class_main_window_1a35466a70ed47252a0191168126a352a5" kindref="member">ui</ref>-&gt;finishButton,<sp/>&amp;QPushButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_map_execution_1a412f115f78b732b0dd50d3064071fd7c" kindref="member">MapExecution::onFinishButtonClicked</ref>);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>myServer.openServer(QHostAddress::LocalHost,20715);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(<ref refid="class_main_window_1a35466a70ed47252a0191168126a352a5" kindref="member">ui</ref>-&gt;mapView,<sp/>&amp;<ref refid="class_map_widget_1a16912518f2b2969faa60c2f7b502600d" kindref="member">MapWidget::JSInitialized</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_map_execution_1aebf5591cd50f0949e87dc47a43349eeb" kindref="member">MapExecution::setupMapPaths</ref>);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(&amp;myServer,<sp/>&amp;<ref refid="class_gs_server_1aaf16a132e06135f8d992a5e7a29bef27" kindref="member">GsServer::packetRecieved</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_map_execution_1a6cc2c0744ca18582fffa402c1d34fa35" kindref="member">MapExecution::receivePacket</ref>);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><ref refid="class_map_execution_1aeaebbbd5ed4a669c28b9b2372a135e9c" kindref="member">MapExecution::~MapExecution</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" kindref="member">ui</ref>-&gt;mapView-&gt;disconnectWebSocket();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" kindref="member">ui</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1a6d3fb3f2c2600e218674b1e2fbc1e9ec" kindref="member">model</ref>;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1a18ed5a89baeb474d551cb68bd600772a" kindref="member">map</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1af8f73763242302e0dfe9c6485528bfdb" kindref="member">conTime</ref>-&gt;deleteLater();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1aebf5591cd50f0949e87dc47a43349eeb" kindref="member">MapExecution::setupMapPaths</ref>(){</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" kindref="member">ui</ref>-&gt;mapView-&gt;sendCreateNewPath(0);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" kindref="member">ui</ref>-&gt;mapView-&gt;addFlightPath(&amp;myFlightPath,0);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" kindref="member">ui</ref>-&gt;mapView-&gt;sendCreateNewPath(1);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">//<sp/>finish<sp/>button</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">//<sp/>redirect<sp/>to<sp/>mission<sp/>recap<sp/>window</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1a412f115f78b732b0dd50d3064071fd7c" kindref="member">MapExecution::onFinishButtonClicked</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;Finish<sp/>button<sp/>clicked!&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" kindref="member">ui</ref>-&gt;mapView-&gt;disconnectWebSocket();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a9cbfe92cbfe0fe7ee433a04a121be766" kindref="member">myServer</ref>.<ref refid="class_gs_server_1a7ca468b85231e88da9b5cafb1320bbb4" kindref="member">closeServer</ref>();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;close();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//MapRecap*<sp/>x<sp/>=<sp/>new<sp/>MapRecap(&amp;myMission);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//x-&gt;showFullScreen();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//this-&gt;deleteLater();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">//<sp/>stop<sp/>button</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Sends<sp/>the<sp/>point<sp/>(999.99,999.99)<sp/>to<sp/>the<sp/>UAV.<sp/>Used<sp/>as<sp/>a<sp/>code<sp/>for<sp/>stop.</highlight></codeline>
+<codeline lineno="72"><highlight class="comment">Function<sp/>added<sp/>by<sp/>Jordan<sp/>Dickson<sp/>March<sp/>9th<sp/>2015.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1a8cbf92235cbe6dc0d767010258ab5efc" kindref="member">MapExecution::on_stopButton_clicked</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_protocol_1_1_action_packet" kindref="compound">Protocol::ActionPacket</ref><sp/>stop;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>stop.<ref refid="class_protocol_1_1_action_packet_1ac59aeacf4f0566ce327bdbacd8594687" kindref="member">SetAction</ref>(<ref refid="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9a11a755d598c0c417f9a36758c3da7481" kindref="member">Protocol::ActionType::Stop</ref>);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a9cbfe92cbfe0fe7ee433a04a121be766" kindref="member">myServer</ref>.<ref refid="class_gs_server_1ae8e04868caa920485facfc4cfda6291e" kindref="member">sendPacket</ref>(&amp;stop,0);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">//<sp/>return<sp/>home<sp/>button</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="comment">//<sp/>redirect<sp/>to<sp/>main<sp/>window</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1a8e3f80d073442f9d27c517b1fdb6379c" kindref="member">MapExecution::on_returnHomeButton_clicked</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_protocol_1_1_action_packet" kindref="compound">Protocol::ActionPacket</ref><sp/>rtnHome;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>rtnHome.<ref refid="class_protocol_1_1_action_packet_1ac59aeacf4f0566ce327bdbacd8594687" kindref="member">SetAction</ref>(<ref refid="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9ae68373c55e2e3d2b783403fba58c7327" kindref="member">Protocol::ActionType::AddWaypoint</ref>);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a9cbfe92cbfe0fe7ee433a04a121be766" kindref="member">myServer</ref>.<ref refid="class_gs_server_1ae8e04868caa920485facfc4cfda6291e" kindref="member">sendPacket</ref>(&amp;rtnHome,0);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">//<sp/>cancel<sp/>button</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">//<sp/>redirect<sp/>to<sp/>mission<sp/>planning</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1a8ffb26c93c53d54c2ae9c17f27663def" kindref="member">MapExecution::onCancelButtonClicked</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ui-&gt;webView-&gt;page()-&gt;mainFrame()-&gt;evaluateJavaScript(&quot;cancelFlight()&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>ui-&gt;webView-&gt;load(QUrl(&quot;qrc:/res/html/mapsPlanning.html&quot;));</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;done(1);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="comment">//<sp/>back<sp/>button</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="comment">//<sp/>redirect<sp/>to<sp/>mission<sp/>planning</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">//<sp/>REPURPOSED<sp/>TO<sp/>BE<sp/>A<sp/>MISSION<sp/>START<sp/>BUTTON</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1ae8b8194207477071903852da2d3ac15f" kindref="member">MapExecution::onStartButtonClicked</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//-old<sp/>code-</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//this-&gt;done(1);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//-start<sp/>button<sp/>code-</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_map_execution_1a7c1440123040a6a9844273e1e1821569" kindref="member">missionStarted</ref>){</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a7c1440123040a6a9844273e1e1821569" kindref="member">missionStarted</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a5f0c7ab18a5fcc4c474eeb5b9707dc61" kindref="member">sendFlightPlan</ref>();</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ui-&gt;webView-&gt;page()-&gt;mainFrame()-&gt;evaluateJavaScript(&quot;startFlight()&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a9cbfe92cbfe0fe7ee433a04a121be766" kindref="member">myServer</ref>.<ref refid="class_gs_server_1a394e75ea0a17eb9a6ac2814ea84b250c" kindref="member">startServer</ref>();</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1a5f0c7ab18a5fcc4c474eeb5b9707dc61" kindref="member">MapExecution::sendFlightPlan</ref>(){</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>std::vector&lt;Protocol::ActionPacket&gt;<sp/>packets<sp/>=<sp/><ref refid="class_map_execution_1ade1432547d600a40172f5f00e4db3a1e" kindref="member">MyMessageBox</ref>.<ref refid="classmessagebox_1afd08c7f717357ee71a666720ff6bb9bc" kindref="member">get_action_packets</ref>();</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="class_protocol_1_1_action_packet" kindref="compound">Protocol::ActionPacket</ref><sp/>pack<sp/>:<sp/>packets){</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pack.SetAction(<ref refid="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9ae68373c55e2e3d2b783403fba58c7327" kindref="member">Protocol::ActionType::AddWaypoint</ref>);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a9cbfe92cbfe0fe7ee433a04a121be766" kindref="member">myServer</ref>.<ref refid="class_gs_server_1ae8e04868caa920485facfc4cfda6291e" kindref="member">sendPacket</ref>(&amp;pack);</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1aae070b94d4318c09aaa4a95b244050c4" kindref="member">MapExecution::drawFlightPath</ref>(<ref refid="class_flight_path" kindref="compound">FlightPath</ref><sp/>*flightPath)<sp/>{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ui-&gt;webView-&gt;page()-&gt;mainFrame()-&gt;evaluateJavaScript(&quot;clearMap()&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//QList&lt;Protocol::Waypoint&gt;<sp/>*points<sp/>=<sp/>flightPath-&gt;getOrderedWaypoints();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//for<sp/>(Protocol::Waypoint<sp/>wp<sp/>:<sp/>*points){</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>sendCoordToJSMap(wp.lat,wp.lon,0);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ui-&gt;webView-&gt;page()-&gt;mainFrame()-&gt;evaluateJavaScript(&quot;plotFlightPlan()&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ui-&gt;webView-&gt;page()-&gt;mainFrame()-&gt;evaluateJavaScript(&quot;plotPolyline()&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//delete<sp/>points;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Since<sp/>c++/JS<sp/>bridges<sp/>are<sp/>broken<sp/>when<sp/>the<sp/>JS<sp/>page<sp/>refreshes<sp/>this<sp/>slot</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>is<sp/>used<sp/>to<sp/>rebruild<sp/>the<sp/>bridge<sp/>each<sp/>time<sp/>when<sp/>triggered<sp/>by<sp/>a</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>javaScriptWindowObjectCleared<sp/>signal<sp/>from<sp/>the<sp/>page<sp/>frame.<sp/>Function</highlight></codeline>
+<codeline lineno="134"><highlight class="comment"><sp/>added<sp/>by<sp/>Jordan<sp/>Dickson<sp/>Feb<sp/>21st<sp/>2015.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1a628fc094b942dbaa21887c58b1f76319" kindref="member">MapExecution::addClickListener</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Creates<sp/>the<sp/>bridge<sp/>called<sp/>cbridge<sp/>between<sp/>the<sp/>java<sp/>script<sp/>object<sp/>and<sp/>this<sp/>class.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ui-&gt;webView-&gt;page()-&gt;mainFrame()-&gt;addToJavaScriptWindowObject(&quot;cbridge&quot;,this);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><ref refid="class_mission" kindref="compound">Mission</ref><sp/><ref refid="class_map_execution_1ab96a28f3c2d98931c94e25cd4d059262" kindref="member">MapExecution::getMyMission</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="140"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1a186288c3bd575e199102d52f6357b16f" kindref="member">myMission</ref>;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1a41eefdc4c0f8c8bec18b11f3eb55f91b" kindref="member">MapExecution::setMyMission</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_mission" kindref="compound">Mission</ref><sp/>&amp;value)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a186288c3bd575e199102d52f6357b16f" kindref="member">myMission</ref><sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>Function<sp/>called<sp/>by<sp/>the<sp/>JavaScript<sp/>to<sp/>add<sp/>the<sp/>map<sp/>data<sp/>from<sp/>mission<sp/>planning.</highlight></codeline>
+<codeline lineno="150"><highlight class="comment">This<sp/>is<sp/>necessary<sp/>because<sp/>data<sp/>cannot<sp/>be<sp/>added<sp/>until<sp/>the<sp/>html<sp/>file<sp/>is<sp/>completely</highlight></codeline>
+<codeline lineno="151"><highlight class="comment">loaded.<sp/>Jordan<sp/>2/21/2015<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1a0fc2a824601c5f09fb8d448f025d4da3" kindref="member">MapExecution::addNewMap</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//std::cout<sp/>&lt;&lt;<sp/>&quot;Add<sp/>new<sp/>map<sp/>called!&quot;<sp/>&lt;&lt;<sp/>std::endl;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//drawFlightPath(&amp;myFlightPath);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/>Sends<sp/>a<sp/>(latitude,longitude)<sp/>pair<sp/>to<sp/>the<sp/>map<sp/>to<sp/>be<sp/>plotted.</highlight></codeline>
+<codeline lineno="158"><highlight class="comment">Used<sp/>for<sp/>telemetry.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1a993abccda8744bb5ad9110b97027d650" kindref="member">MapExecution::plotPosition</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lat,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lng)<sp/>{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//updateTable(lat,lng);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" kindref="member">ui</ref>-&gt;tableView-&gt;appendRow(lat,lng);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" kindref="member">ui</ref>-&gt;mapView-&gt;appendPointToPath(lat,lng,1);</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ui-&gt;webView-&gt;page()-&gt;mainFrame()-&gt;evaluateJavaScript(&quot;plotUAVPosition(&quot;<sp/>+<sp/>QString::number(lat)<sp/>+<sp/>&quot;,&quot;<sp/>+<sp/>QString::number(lng)<sp/>+<sp/>&quot;)&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1abf980f0adb250cd2ef5a99668a793f46" kindref="member">MapExecution::sendCoordToJSMap</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lat,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lng,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>mapID){</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ui-&gt;webView-&gt;page()-&gt;mainFrame()-&gt;evaluateJavaScript(&quot;addFlightPlan(&quot;+QString::number(lat)+&quot;,&quot;+QString::number(lng)+&quot;,&quot;+QString::number(mapID)+&quot;)&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ui-&gt;webView-&gt;page()-&gt;mainFrame()-&gt;evaluateJavaScript(&quot;plotPointOnMap(&quot;+QString::number(lat)+&quot;,&quot;+QString::number(lng)+&quot;,&quot;+QString::number(mapID)+&quot;)&quot;);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1a3bb03858cf15e2f9543a0e169383e13b" kindref="member">MapExecution::updateTable</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lat,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lng)<sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a6d3fb3f2c2600e218674b1e2fbc1e9ec" kindref="member">model</ref>-&gt;<ref refid="class_table_model_1a3bc1eb333f87d13d9bb0fb2b4f7c744a" kindref="member">insertRow</ref>(lng,<sp/>lat);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" kindref="member">ui</ref>-&gt;tableView-&gt;scrollToBottom();</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1a6cc2c0744ca18582fffa402c1d34fa35" kindref="member">MapExecution::receivePacket</ref>(<ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref><sp/>*packet){</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref>*<sp/>incPack<sp/>=<sp/>packet;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75" kindref="member">Protocol::PacketType</ref><sp/>type<sp/>=<sp/>incPack-&gt;<ref refid="class_protocol_1_1_packet_1a3c159ff945d95102ee2a2ba0b93d05d8" kindref="member">get_type</ref>();</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75ab25d8b2099e52bb9300aca6661601b8b" kindref="member">Protocol::PacketType::Ack</ref>){</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;AckPacket<sp/>Recieved&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_protocol_1_1_ack_packet" kindref="compound">Protocol::AckPacket</ref><sp/>*ackPacket<sp/>=<sp/>(<ref refid="class_protocol_1_1_ack_packet" kindref="compound">Protocol::AckPacket</ref>*)incPack;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//myMessageBox-&gt;addAckPacket(*ackPacket);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75a5f221e9a2771c63ef7f696975f16cea4" kindref="member">Protocol::PacketType::Telem</ref>){</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;TelemPacket<sp/>Recieved&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_protocol_1_1_telemetry_packet" kindref="compound">Protocol::TelemetryPacket</ref><sp/>*telemPacket<sp/>=<sp/>(<ref refid="class_protocol_1_1_telemetry_packet" kindref="compound">Protocol::TelemetryPacket</ref>*)incPack;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//myMessageBox-&gt;addTelemetryPacket(*telemPacket);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lat,<sp/>lng;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>alt;</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>telemPacket-&gt;<ref refid="class_protocol_1_1_telemetry_packet_1a1b4a35e86bac0731ab8176cb9371c2a8" kindref="member">GetLocation</ref>(&amp;lat,&amp;lng,&amp;alt);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a993abccda8744bb5ad9110b97027d650" kindref="member">plotPosition</ref>(lat,lng);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(type<sp/>==<sp/><ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75a4059b0251f66a18cb56f544728796875" kindref="member">Protocol::PacketType::Info</ref>){</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;InfoPacket<sp/>Recieved&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref><sp/>*infoPacket<sp/>=<sp/>(<ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref>*)incPack;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//myMessageBox-&gt;addInfoPacket(*infoPacket);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::cout&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;UNEXPECTED<sp/>PACKET<sp/>TYPE<sp/>RECIEVED!&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="comment">/*Change<sp/>status<sp/>indicator<sp/>using<sp/>inputted<sp/>x<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_map_execution_1af846e29b7a32021359fcf66bca46e20b" kindref="member">MapExecution::updateStatusIndicator</ref>()</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_map_execution_1ade1432547d600a40172f5f00e4db3a1e" kindref="member">MyMessageBox</ref>.<ref refid="classmessagebox_1a58df2b6675cad37e6f31b2bc25bcfb0e" kindref="member">get_telem_packets</ref>().empty())</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" kindref="member">ui</ref>-&gt;StatusIndicator-&gt;clear();</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(x)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>0:</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" kindref="member">ui</ref>-&gt;StatusIndicator-&gt;setStyleSheet(</highlight><highlight class="stringliteral">&quot;background-color:green&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" kindref="member">ui</ref>-&gt;StatusIndicator-&gt;appendPlainText(</highlight><highlight class="stringliteral">&quot;\nConnected<sp/>to<sp/>UAV&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>1:</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" kindref="member">ui</ref>-&gt;StatusIndicator-&gt;setStyleSheet(</highlight><highlight class="stringliteral">&quot;background-color:yellow&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>2:</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" kindref="member">ui</ref>-&gt;StatusIndicator-&gt;setStyleSheet(</highlight><highlight class="stringliteral">&quot;background-color:red&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" kindref="member">ui</ref>-&gt;StatusIndicator-&gt;appendPlainText(</highlight><highlight class="stringliteral">&quot;\nNo<sp/>Connection<sp/>to<sp/>UAV<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>QString::number(<ref refid="class_map_execution_1ade1432547d600a40172f5f00e4db3a1e" kindref="member">MyMessageBox</ref>.<ref refid="classmessagebox_1ac738a854bbbcdc5be4fd4df476db724b" kindref="member">timer</ref>.elapsed()/1000));</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_map_execution_1a925121dc8a40872844bd4d4e6d82f3e1" kindref="member">ui</ref>-&gt;StatusIndicator-&gt;setStyleSheet(</highlight><highlight class="stringliteral">&quot;background-color:black;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="225"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="comment">//TODO<sp/>Make<sp/>this<sp/>function<sp/>a<sp/>little<sp/>safer.<sp/>Do<sp/>we<sp/>really<sp/>wanna<sp/>make<sp/>a<sp/>new<sp/>object<sp/>every<sp/>damn<sp/>time?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight><highlight class="comment">//-<sp/>Roman<sp/>Parise</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><ref refid="class_map_recap" kindref="compound">MapRecap</ref><sp/>*<sp/><ref refid="class_map_execution_1a44b75a52f37d3a0487651e75c79aea2a" kindref="member">MapExecution::getMapRecap</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="class_map_recap" kindref="compound">MapRecap</ref>(&amp;<ref refid="class_map_execution_1a186288c3bd575e199102d52f6357b16f" kindref="member">myMission</ref>);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp"/>
+  </compounddef>
+</doxygen>

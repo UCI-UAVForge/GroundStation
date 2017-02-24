@@ -1,0 +1,582 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_q_c_p_color_gradient" kind="class" language="C++" prot="public">
+    <compoundname>QCPColorGradient</compoundname>
+    <includes refid="qcustomplot_8h" local="no">qcustomplot.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="class_q_c_p_color_gradient_1ac5dca17cc24336e6ca176610e7f77fc1" prot="public" static="no">
+        <name>ColorInterpolation</name>
+        <enumvalue id="class_q_c_p_color_gradient_1ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7" prot="public">
+          <name>ciRGB</name>
+          <briefdescription>
+<para>Color channels red, green and blue are linearly interpolated. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_color_gradient_1ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb" prot="public">
+          <name>ciHSV</name>
+          <briefdescription>
+<para>Color channels hue, saturation and value are linearly interpolated (The hue is interpolated over the shortest angle distance) </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Defines the color spaces in which color interpolation between gradient stops can be performed.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_color_gradient_1aa13fda86406e1d896a465a409ae63b38" kindref="member">setColorInterpolation</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1909" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1909" bodyend="1911"/>
+      </memberdef>
+      <memberdef kind="enum" id="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072" prot="public" static="no">
+        <name>GradientPreset</name>
+        <enumvalue id="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072add11ae369a86f3b1b6205ec72e5021fb" prot="public">
+          <name>gpGrayscale</name>
+          <briefdescription>
+<para>Continuous lightness from black to white (suited for non-biased data representation) </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072a4f42e534cf6cff5a29a5388094d099b5" prot="public">
+          <name>gpHot</name>
+          <briefdescription>
+<para>Continuous lightness from black over firey colors to white (suited for non-biased data representation) </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557" prot="public">
+          <name>gpCold</name>
+          <briefdescription>
+<para>Continuous lightness from black over icey colors to white (suited for non-biased data representation) </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072a1bb89351b6def7d220973443fe059c62" prot="public">
+          <name>gpNight</name>
+          <briefdescription>
+<para>Continuous lightness from black over weak blueish colors to white (suited for non-biased data representation) </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072a9e72663bf6b94b65945f7843f24e0721" prot="public">
+          <name>gpCandy</name>
+          <briefdescription>
+<para>Blue over pink to white. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072a382f0b07cec1a59d8a533438aea815d2" prot="public">
+          <name>gpGeography</name>
+          <briefdescription>
+<para>Colors suitable to represent different elevations on geographical maps. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072a4297f4f9e212a819cd65e8e34567182b" prot="public">
+          <name>gpIon</name>
+          <briefdescription>
+<para>Half hue spectrum from black over purple to blue and finally green (creates banding illusion but allows more precise magnitude estimates) </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072af1676b129f9f458ace453f280c731cf7" prot="public">
+          <name>gpThermal</name>
+          <briefdescription>
+<para>Colors suitable for thermal imaging, ranging from dark blue over purple to orange, yellow and white. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072ab7414ce4e36dc3e82e0132a7f0f41b52" prot="public">
+          <name>gpPolar</name>
+          <briefdescription>
+<para>Colors suitable to emphasize polarity around the center, with blue for negative, black in the middle and red for positive values. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072ad63adc100ef46f6b4a8a6deacec4642f" prot="public">
+          <name>gpSpectrum</name>
+          <briefdescription>
+<para>An approximation of the visible light spectrum (creates banding illusion but allows more precise magnitude estimates) </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072a5f8a9e67b64c17ddfe4f069fe2b9fb02" prot="public">
+          <name>gpJet</name>
+          <briefdescription>
+<para>Hue variation similar to a spectrum, often used in numerical visualization (creates banding illusion but allows more precise magnitude estimates) </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130" prot="public">
+          <name>gpHues</name>
+          <briefdescription>
+<para>Full hue cycle, with highest and lowest color red (suitable for periodic data, such as angles and phases, see <ref refid="class_q_c_p_color_gradient_1a39d6448155fc00a219f239220d14bb39" kindref="member">setPeriodic</ref>) </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Defines the available presets that can be loaded with <ref refid="class_q_c_p_color_gradient_1aa0aeec1528241728b9671bf8e60b1622" kindref="member">loadPreset</ref>. See the documentation there for an image of the presets. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1918" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1918" bodyend="1930"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_q_c_p_color_gradient_1a98fb68e359904b2c991fcae3e38a211a" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int QCPColorGradient::mLevelCount</definition>
+        <argsstring></argsstring>
+        <name>mLevelCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1961" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1961" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_color_gradient_1a9e11a2b0974ef289d12c324822bc3a3e" prot="protected" static="no" mutable="no">
+        <type>QMap&lt; double, QColor &gt;</type>
+        <definition>QMap&lt;double, QColor&gt; QCPColorGradient::mColorStops</definition>
+        <argsstring></argsstring>
+        <name>mColorStops</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1962" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1962" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_color_gradient_1a028cef73d863800a9ee93ffd641cce01" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_q_c_p_color_gradient_1ac5dca17cc24336e6ca176610e7f77fc1" kindref="member">ColorInterpolation</ref></type>
+        <definition>ColorInterpolation QCPColorGradient::mColorInterpolation</definition>
+        <argsstring></argsstring>
+        <name>mColorInterpolation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1963" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1963" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_color_gradient_1a4b07deeb20ca1ee2d5ea7e01bf0420af" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool QCPColorGradient::mPeriodic</definition>
+        <argsstring></argsstring>
+        <name>mPeriodic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1964" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1964" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_color_gradient_1af8b5f0739faa5f8295154d47ce38ecff" prot="protected" static="no" mutable="no">
+        <type>QVector&lt; QRgb &gt;</type>
+        <definition>QVector&lt;QRgb&gt; QCPColorGradient::mColorBuffer</definition>
+        <argsstring></argsstring>
+        <name>mColorBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1967" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1967" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_color_gradient_1abacf55e11f67d6722a687af1bb2687bd" prot="protected" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool QCPColorGradient::mColorBufferInvalidated</definition>
+        <argsstring></argsstring>
+        <name>mColorBufferInvalidated</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1968" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1968" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_c_p_color_gradient_1a546e44df5fa1846400a582c041361c85" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPColorGradient::QCPColorGradient</definition>
+        <argsstring>(GradientPreset preset=gpCold)</argsstring>
+        <name>QCPColorGradient</name>
+        <param>
+          <type><ref refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072" kindref="member">GradientPreset</ref></type>
+          <declname>preset</declname>
+          <defval><ref refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557" kindref="member">gpCold</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a new <ref refid="class_q_c_p_color_gradient" kindref="compound">QCPColorGradient</ref> initialized with the colors and color interpolation according to <emphasis>preset</emphasis>.</para><para>The color level count is initialized to 350. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1933" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11191" bodyend="11199"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_color_gradient_1aada47d8206bf2cec77462653bf471c13" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPColorGradient::operator==</definition>
+        <argsstring>(const QCPColorGradient &amp;other) const </argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="class_q_c_p_color_gradient" kindref="compound">QCPColorGradient</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1934" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11202" bodyend="11208"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_color_gradient_1ac641f5d2dc1686201d3cb602c871791d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPColorGradient::operator!=</definition>
+        <argsstring>(const QCPColorGradient &amp;other) const </argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="class_q_c_p_color_gradient" kindref="compound">QCPColorGradient</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1935" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1935" bodyend="1935"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_color_gradient_1ae7537a8e6d0fed3f1928328062bb0f4e" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int QCPColorGradient::levelCount</definition>
+        <argsstring>() const </argsstring>
+        <name>levelCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1938" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1938" bodyend="1938"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_color_gradient_1a64f8aba7826f9c6363aacff8376cef37" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>QMap&lt; double, QColor &gt;</type>
+        <definition>QMap&lt;double, QColor&gt; QCPColorGradient::colorStops</definition>
+        <argsstring>() const </argsstring>
+        <name>colorStops</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1939" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1939" bodyend="1939"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_color_gradient_1a731616fabe6f2e33f71f58dd382359d8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_color_gradient_1ac5dca17cc24336e6ca176610e7f77fc1" kindref="member">ColorInterpolation</ref></type>
+        <definition>ColorInterpolation QCPColorGradient::colorInterpolation</definition>
+        <argsstring>() const </argsstring>
+        <name>colorInterpolation</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1940" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1940" bodyend="1940"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_color_gradient_1a860b7048f877195d2a0fb8d5a7cf5d73" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPColorGradient::periodic</definition>
+        <argsstring>() const </argsstring>
+        <name>periodic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1941" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1941" bodyend="1941"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_color_gradient_1a18da587eb4f7fc788ea28ba15b6a12de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPColorGradient::setLevelCount</definition>
+        <argsstring>(int n)</argsstring>
+        <name>setLevelCount</name>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the number of discretization levels of the color gradient to <emphasis>n</emphasis>. The default is 350 which is typically enough to create a smooth appearance.</para><para><image type="html" name="QCPColorGradient-levelcount.png"></image>
+ </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1944" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11216" bodyend="11228"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_color_gradient_1a724e828aa6f0ba5011a9392477c35d3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPColorGradient::setColorStops</definition>
+        <argsstring>(const QMap&lt; double, QColor &gt; &amp;colorStops)</argsstring>
+        <name>setColorStops</name>
+        <param>
+          <type>const QMap&lt; double, QColor &gt; &amp;</type>
+          <declname>colorStops</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets at which positions from 0 to 1 which color shall occur. The positions are the keys, the colors are the values of the passed QMap <emphasis>colorStops</emphasis>. In between these color stops, the color is interpolated according to <ref refid="class_q_c_p_color_gradient_1aa13fda86406e1d896a465a409ae63b38" kindref="member">setColorInterpolation</ref>.</para><para>A more convenient way to create a custom gradient may be to clear all color stops with <ref refid="class_q_c_p_color_gradient_1a939213e85f0d1279519d555c5fcfb6ad" kindref="member">clearColorStops</ref> and then adding them one by one with <ref refid="class_q_c_p_color_gradient_1a3b48be5e78079db1bb2a1188a4c3390e" kindref="member">setColorStopAt</ref>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_color_gradient_1a939213e85f0d1279519d555c5fcfb6ad" kindref="member">clearColorStops</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1945" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11240" bodyend="11244"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_color_gradient_1a3b48be5e78079db1bb2a1188a4c3390e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPColorGradient::setColorStopAt</definition>
+        <argsstring>(double position, const QColor &amp;color)</argsstring>
+        <name>setColorStopAt</name>
+        <param>
+          <type>double</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>const QColor &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the <emphasis>color</emphasis> the gradient will have at the specified <emphasis>position</emphasis> (from 0 to 1). In between these color stops, the color is interpolated according to <ref refid="class_q_c_p_color_gradient_1aa13fda86406e1d896a465a409ae63b38" kindref="member">setColorInterpolation</ref>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_color_gradient_1a724e828aa6f0ba5011a9392477c35d3a" kindref="member">setColorStops</ref>, <ref refid="class_q_c_p_color_gradient_1a939213e85f0d1279519d555c5fcfb6ad" kindref="member">clearColorStops</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1946" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11252" bodyend="11256"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_color_gradient_1aa13fda86406e1d896a465a409ae63b38" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPColorGradient::setColorInterpolation</definition>
+        <argsstring>(ColorInterpolation interpolation)</argsstring>
+        <name>setColorInterpolation</name>
+        <param>
+          <type><ref refid="class_q_c_p_color_gradient_1ac5dca17cc24336e6ca176610e7f77fc1" kindref="member">ColorInterpolation</ref></type>
+          <declname>interpolation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets whether the colors in between the configured color stops (see <ref refid="class_q_c_p_color_gradient_1a3b48be5e78079db1bb2a1188a4c3390e" kindref="member">setColorStopAt</ref>) shall be interpolated linearly in RGB or in HSV color space.</para><para>For example, a sweep in RGB space from red to green will have a muddy brown intermediate color, whereas in HSV space the intermediate color is yellow. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1947" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11265" bodyend="11272"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_color_gradient_1a39d6448155fc00a219f239220d14bb39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPColorGradient::setPeriodic</definition>
+        <argsstring>(bool enabled)</argsstring>
+        <name>setPeriodic</name>
+        <param>
+          <type>bool</type>
+          <declname>enabled</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets whether data points that are outside the configured data range (e.g. <ref refid="class_q_c_p_color_map_1a980b42837821159786a85b4b7dcb8774" kindref="member">QCPColorMap::setDataRange</ref>) are colored by periodically repeating the color gradient or whether they all have the same color, corresponding to the respective gradient boundary color.</para><para><image type="html" name="QCPColorGradient-periodic.png"></image>
+</para><para>As shown in the image above, gradients that have the same start and end color are especially suitable for a periodic gradient mapping, since they produce smooth color transitions throughout the color map. A preset that has this property is <ref refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130" kindref="member">gpHues</ref>.</para><para>In practice, using periodic color gradients makes sense when the data corresponds to a periodic dimension, such as an angle or a phase. If this is not the case, the color encoding might become ambiguous, because multiple different data values are shown as the same color. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1948" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11289" bodyend="11292"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_color_gradient_1aaf423ceb943e177b0ed2c48c811d83dc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPColorGradient::colorize</definition>
+        <argsstring>(const double *data, const QCPRange &amp;range, QRgb *scanLine, int n, int dataIndexFactor=1, bool logarithmic=false)</argsstring>
+        <name>colorize</name>
+        <param>
+          <type>const double *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref> &amp;</type>
+          <declname>range</declname>
+        </param>
+        <param>
+          <type>QRgb *</type>
+          <declname>scanLine</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>dataIndexFactor</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>logarithmic</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This method is used to quickly convert a <emphasis>data</emphasis> array to colors. The colors will be output in the array <emphasis>scanLine</emphasis>. Both <emphasis>data</emphasis> and <emphasis>scanLine</emphasis> must have the length <emphasis>n</emphasis> when passed to this function. The data range that shall be used for mapping the data value to the gradient is passed in <emphasis>range</emphasis>. <emphasis>logarithmic</emphasis> indicates whether the data values shall be mapped to colors logarithmically.</para><para>if <emphasis>data</emphasis> actually contains 2D-data linearized via <computeroutput>[row*columnCount + column]</computeroutput>, you can set <emphasis>dataIndexFactor</emphasis> to <computeroutput>columnCount</computeroutput> to convert a column instead of a row of the data array, in <emphasis>scanLine</emphasis>. <emphasis>scanLine</emphasis> will remain a regular (1D) array. This works because <emphasis>data</emphasis> is addressed <computeroutput>data[i*dataIndexFactor]</computeroutput>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1951" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11306" bodyend="11370"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_color_gradient_1a0599545c859268b025d2060dea741cea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QRgb</type>
+        <definition>QRgb QCPColorGradient::color</definition>
+        <argsstring>(double position, const QCPRange &amp;range, bool logarithmic=false)</argsstring>
+        <name>color</name>
+        <param>
+          <type>double</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref> &amp;</type>
+          <declname>range</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>logarithmic</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1952" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11381" bodyend="11404"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_color_gradient_1aa0aeec1528241728b9671bf8e60b1622" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPColorGradient::loadPreset</definition>
+        <argsstring>(GradientPreset preset)</argsstring>
+        <name>loadPreset</name>
+        <param>
+          <type><ref refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072" kindref="member">GradientPreset</ref></type>
+          <declname>preset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Clears the current color stops and loads the specified <emphasis>preset</emphasis>. A preset consists of predefined color stops and the corresponding color interpolation method.</para><para>The available presets are: <image type="html" name="QCPColorGradient.png"></image>
+ </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1953" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11413" bodyend="11515"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_color_gradient_1a939213e85f0d1279519d555c5fcfb6ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPColorGradient::clearColorStops</definition>
+        <argsstring>()</argsstring>
+        <name>clearColorStops</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Clears all color stops.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_color_gradient_1a724e828aa6f0ba5011a9392477c35d3a" kindref="member">setColorStops</ref>, <ref refid="class_q_c_p_color_gradient_1a3b48be5e78079db1bb2a1188a4c3390e" kindref="member">setColorStopAt</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1954" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11522" bodyend="11526"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_color_gradient_1abe04e1d1ccab3d7aa78f2924faed4916" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_q_c_p_color_gradient" kindref="compound">QCPColorGradient</ref></type>
+        <definition>QCPColorGradient QCPColorGradient::inverted</definition>
+        <argsstring>() const </argsstring>
+        <name>inverted</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns an inverted gradient. The inverted gradient has all properties as this <ref refid="class_q_c_p_color_gradient" kindref="compound">QCPColorGradient</ref>, but the order of the color stops is inverted.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_color_gradient_1a724e828aa6f0ba5011a9392477c35d3a" kindref="member">setColorStops</ref>, <ref refid="class_q_c_p_color_gradient_1a3b48be5e78079db1bb2a1188a4c3390e" kindref="member">setColorStopAt</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1955" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11534" bodyend="11541"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_q_c_p_color_gradient_1a353f15ab3ab586eebf1f6b58c3e2707b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPColorGradient::updateColorBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>updateColorBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1958" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="11548" bodyend="11607"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Defines a color gradient for use with e.g. <ref refid="class_q_c_p_color_map" kindref="compound">QCPColorMap</ref>. </para>    </briefdescription>
+    <detaileddescription>
+<para>This class describes a color gradient which can be used to encode data with color. For example, <ref refid="class_q_c_p_color_map" kindref="compound">QCPColorMap</ref> and <ref refid="class_q_c_p_color_scale" kindref="compound">QCPColorScale</ref> have <ref refid="class_q_c_p_color_map_1a7313c78360471cead3576341a2c50377" kindref="member">setGradient</ref> methods which take an instance of this class. Colors are set with <ref refid="class_q_c_p_color_gradient_1a3b48be5e78079db1bb2a1188a4c3390e" kindref="member">setColorStopAt(double position, const QColor &amp;color)</ref> with a <emphasis>position</emphasis> from 0 to 1. In between these defined color positions, the color will be interpolated linearly either in RGB or HSV space, see <ref refid="class_q_c_p_color_gradient_1aa13fda86406e1d896a465a409ae63b38" kindref="member">setColorInterpolation</ref>.</para><para>Alternatively, load one of the preset color gradients shown in the image below, with <ref refid="class_q_c_p_color_gradient_1aa0aeec1528241728b9671bf8e60b1622" kindref="member">loadPreset</ref>, or by directly specifying the preset in the constructor.</para><para><image type="html" name="QCPColorGradient.png"></image>
+</para><para>The fact that the <ref refid="class_q_c_p_color_gradient" kindref="compound">ructor</ref> allows directly converting a <ref refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072" kindref="member">GradientPreset</ref> to a <ref refid="class_q_c_p_color_gradient" kindref="compound">QCPColorGradient</ref>, you can also directly pass <ref refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072" kindref="member">GradientPreset</ref> to all the <emphasis>setGradient</emphasis> methods, e.g.: <programlisting><codeline><highlight class="normal">colorMap-&gt;setGradient(QCPColorGradient::gpHot);</highlight></codeline>
+</programlisting></para><para>The total number of levels used in the gradient can be set with <ref refid="class_q_c_p_color_gradient_1a18da587eb4f7fc788ea28ba15b6a12de" kindref="member">setLevelCount</ref>. Whether the color gradient shall be applied periodically (wrapping around) to data values that lie outside the data range specified on the plottable instance can be controlled with <ref refid="class_q_c_p_color_gradient_1a39d6448155fc00a219f239220d14bb39" kindref="member">setPeriodic</ref>. </para>    </detaileddescription>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="1901" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="1900" bodyend="1969"/>
+    <listofallmembers>
+      <member refid="class_q_c_p_color_gradient_1ac5dca17cc24336e6ca176610e7f77fc1af14ae62fcae11ecc07234eeaec5856cb" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>ciHSV</name></member>
+      <member refid="class_q_c_p_color_gradient_1ac5dca17cc24336e6ca176610e7f77fc1a5e30f725c9cfe93999e268a9f92afbe7" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>ciRGB</name></member>
+      <member refid="class_q_c_p_color_gradient_1a939213e85f0d1279519d555c5fcfb6ad" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>clearColorStops</name></member>
+      <member refid="class_q_c_p_color_gradient_1a0599545c859268b025d2060dea741cea" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>color</name></member>
+      <member refid="class_q_c_p_color_gradient_1ac5dca17cc24336e6ca176610e7f77fc1" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>ColorInterpolation</name></member>
+      <member refid="class_q_c_p_color_gradient_1a731616fabe6f2e33f71f58dd382359d8" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>colorInterpolation</name></member>
+      <member refid="class_q_c_p_color_gradient_1aaf423ceb943e177b0ed2c48c811d83dc" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>colorize</name></member>
+      <member refid="class_q_c_p_color_gradient_1a64f8aba7826f9c6363aacff8376cef37" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>colorStops</name></member>
+      <member refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072a9e72663bf6b94b65945f7843f24e0721" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>gpCandy</name></member>
+      <member refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072aec8c001f62c0d5cb853db5fd85309557" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>gpCold</name></member>
+      <member refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072a382f0b07cec1a59d8a533438aea815d2" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>gpGeography</name></member>
+      <member refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072add11ae369a86f3b1b6205ec72e5021fb" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>gpGrayscale</name></member>
+      <member refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072a4f42e534cf6cff5a29a5388094d099b5" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>gpHot</name></member>
+      <member refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072a30efe58407acfb67939032f70213a130" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>gpHues</name></member>
+      <member refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072a4297f4f9e212a819cd65e8e34567182b" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>gpIon</name></member>
+      <member refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072a5f8a9e67b64c17ddfe4f069fe2b9fb02" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>gpJet</name></member>
+      <member refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072a1bb89351b6def7d220973443fe059c62" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>gpNight</name></member>
+      <member refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072ab7414ce4e36dc3e82e0132a7f0f41b52" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>gpPolar</name></member>
+      <member refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072ad63adc100ef46f6b4a8a6deacec4642f" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>gpSpectrum</name></member>
+      <member refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072af1676b129f9f458ace453f280c731cf7" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>gpThermal</name></member>
+      <member refid="class_q_c_p_color_gradient_1aed6569828fee337023670272910c9072" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>GradientPreset</name></member>
+      <member refid="class_q_c_p_color_gradient_1abe04e1d1ccab3d7aa78f2924faed4916" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>inverted</name></member>
+      <member refid="class_q_c_p_color_gradient_1ae7537a8e6d0fed3f1928328062bb0f4e" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>levelCount</name></member>
+      <member refid="class_q_c_p_color_gradient_1aa0aeec1528241728b9671bf8e60b1622" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>loadPreset</name></member>
+      <member refid="class_q_c_p_color_gradient_1af8b5f0739faa5f8295154d47ce38ecff" prot="protected" virt="non-virtual"><scope>QCPColorGradient</scope><name>mColorBuffer</name></member>
+      <member refid="class_q_c_p_color_gradient_1abacf55e11f67d6722a687af1bb2687bd" prot="protected" virt="non-virtual"><scope>QCPColorGradient</scope><name>mColorBufferInvalidated</name></member>
+      <member refid="class_q_c_p_color_gradient_1a028cef73d863800a9ee93ffd641cce01" prot="protected" virt="non-virtual"><scope>QCPColorGradient</scope><name>mColorInterpolation</name></member>
+      <member refid="class_q_c_p_color_gradient_1a9e11a2b0974ef289d12c324822bc3a3e" prot="protected" virt="non-virtual"><scope>QCPColorGradient</scope><name>mColorStops</name></member>
+      <member refid="class_q_c_p_color_gradient_1a98fb68e359904b2c991fcae3e38a211a" prot="protected" virt="non-virtual"><scope>QCPColorGradient</scope><name>mLevelCount</name></member>
+      <member refid="class_q_c_p_color_gradient_1a4b07deeb20ca1ee2d5ea7e01bf0420af" prot="protected" virt="non-virtual"><scope>QCPColorGradient</scope><name>mPeriodic</name></member>
+      <member refid="class_q_c_p_color_gradient_1ac641f5d2dc1686201d3cb602c871791d" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>operator!=</name></member>
+      <member refid="class_q_c_p_color_gradient_1aada47d8206bf2cec77462653bf471c13" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>operator==</name></member>
+      <member refid="class_q_c_p_color_gradient_1a860b7048f877195d2a0fb8d5a7cf5d73" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>periodic</name></member>
+      <member refid="class_q_c_p_color_gradient_1a546e44df5fa1846400a582c041361c85" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>QCPColorGradient</name></member>
+      <member refid="class_q_c_p_color_gradient_1aa13fda86406e1d896a465a409ae63b38" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>setColorInterpolation</name></member>
+      <member refid="class_q_c_p_color_gradient_1a3b48be5e78079db1bb2a1188a4c3390e" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>setColorStopAt</name></member>
+      <member refid="class_q_c_p_color_gradient_1a724e828aa6f0ba5011a9392477c35d3a" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>setColorStops</name></member>
+      <member refid="class_q_c_p_color_gradient_1a18da587eb4f7fc788ea28ba15b6a12de" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>setLevelCount</name></member>
+      <member refid="class_q_c_p_color_gradient_1a39d6448155fc00a219f239220d14bb39" prot="public" virt="non-virtual"><scope>QCPColorGradient</scope><name>setPeriodic</name></member>
+      <member refid="class_q_c_p_color_gradient_1a353f15ab3ab586eebf1f6b58c3e2707b" prot="protected" virt="non-virtual"><scope>QCPColorGradient</scope><name>updateColorBuffer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -6,98 +6,85 @@
 #include "missionplanningwindow.h"
 #include "ui_mainmdidisplay.h"
 #include "mapwidget.h"
-
+#include "missionstatuswindow.h"
+#include "mission.h"
+#include "flightpath.h"
 #include <assert.h>
 
-//FOR NOW...
-#include "mapplanning.h"
-
-#include "maprecap.h"
-
-//TODO Getters and setters. C'mon...
+#include "gscontrolpanel.h"
 
 namespace Ui {
-
-    class MainMDIDisplay;
-
+  class MainMDIDisplay;
 }
 
-class MainMDIDisplay : public QMainWindow {
+enum MDIState{
+    NONE,
+    PLANNING,
+    EXECUTION,
+    RECAP
+};
 
-    Q_OBJECT
+class MainMDIDisplay : public QMainWindow {
+  Q_OBJECT
 
 public:
-
-    explicit MainMDIDisplay(QWidget *parent = 0);
-
-    void addWindow( QWidget * );
-
-    void addWindow( QWidget * , QString );
-
-    ~MainMDIDisplay();
-
-    QtTabTest * getQttWidget() const;
-
-    void setQttWidget( QtTabTest * );
-
-    void clearMapExecution();
-
-    void clearMapRecap();
-
-    //TODO Make this a switch to execution function
-    void changePlanningToExecutionWindow();
-
-    void switchToPlanningWindow();
-
-    void switchToRecapWindow();
+  explicit MainMDIDisplay(QWidget *parent = 0);
+  void addWindow( QWidget * );
+  void addWindow( QWidget * , QString );
+  ~MainMDIDisplay();
 
 private slots:
+  void setupMapPaths();
+  void changeState(MDIState newState);
 
-    void destroy();
+  void startMissionPlanningSlot();
+  void startMissionExecutionSlot();
+  void startMissionRecapSlot();
 
-    void beginMapExecution();
 
-    void clickedFinishButton_MainDisplay();
-
-    void clickedCancelButton_MainDisplay();
-
-    void clickedBackToPlanningButton_MainDisplay();
-
-    void clickedBackButton_MainDisplay();
-
+  void receivePacket(Protocol::Packet* packet);
 private:
+  Ui::MainMDIDisplay *ui;
 
-    Ui::MainMDIDisplay *ui;
+  MDIState myState;
 
-    QtTabTest * qttWidget;
+  //Jordan's vars for state transition
+  FlightPath *myLoadedFlightPath;
+  Mission *myLoadedMission;
 
-    /* Figure out a way so that we only have one MapPlanning object instead of a pointer to one
-        in qttWidget and here. */
+  GsServer* myServer;
+  messagebox* myMessageBox;
+  //end Jordan's vars
 
-    MapPlanning * tempMapPlanningUIWidget;
 
-    MapWidget *map;
 
-    MissionPlanningWindow * missionPlanningWindowUIWidget;
 
-    MapExecution * tempMapExecutionUIWidget;
+  MapWidget* map;
+  TableWidget* table;
+  QWidget* mapExecutionStatusUIWidget;
+  QVBoxLayout* MapExecutionStatusVBoxLayout;
 
-    MapRecap * tempMapRecapUIWidget ;
+  /**
+     * @brief MissionStatusWindow holds StatusWidget and TimerWidget.
+     */
+  MissionStatusWindow msw ;
 
-    QWidget * mapExecutionStatusUIWidget;
+  /**
+     * @brief Network log
+     */
+  messagebox mb ;
 
-    QVBoxLayout * MapExecutionStatusVBoxLayout;
+  GSControlPanel gscp ;
 
-    /* Buttons */
-
-    //TODO Put all the buttons/other UI elements for the GUI here to organize everything in one spot
-
-    QPushButton * backToPlanningButton ;
-
-    /* Tabs */
-
-    QWidget * MapRecapUI_TableTab , * MapRecapUI_GraphTab ;
-
+  void startMissionPlanning();
+  void endMissionPlanning();
+  void startMissionExecution();
+  void endMissionExecution();
+  void startMissionRecap();
+  void endMissionRecap();
+  void plotPosition(double lat, double lng);
 };
+
+
 
 #endif // MAINMDIDISPLAY_H

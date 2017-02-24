@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="missionstatuswindow_8cpp" kind="file" language="C++">
+    <compoundname>missionstatuswindow.cpp</compoundname>
+    <includes refid="missionstatuswindow_8h" local="yes">missionstatuswindow.h</includes>
+    <includes local="yes">ui_missionstatuswindow.h</includes>
+    <incdepgraph>
+      <node id="2225">
+        <label>missionstatuswindow.h</label>
+        <link refid="missionstatuswindow_8h"/>
+        <childnode refid="2226" relation="include">
+        </childnode>
+      </node>
+      <node id="2226">
+        <label>QDialog</label>
+      </node>
+      <node id="2227">
+        <label>ui_missionstatuswindow.h</label>
+      </node>
+      <node id="2224">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionstatuswindow.cpp</label>
+        <link refid="missionstatuswindow.cpp"/>
+        <childnode refid="2225" relation="include">
+        </childnode>
+        <childnode refid="2227" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="missionstatuswindow_8h" kindref="compound">missionstatuswindow.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;ui_missionstatuswindow.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><ref refid="class_mission_status_window_1a7cb42c39b9050b6ab3c5f1dac25cc45d" kindref="member">MissionStatusWindow::MissionStatusWindow</ref>(QWidget<sp/>*parent)<sp/>:</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>QDialog(parent),</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>ui(new<sp/><ref refid="namespace_ui" kindref="compound">Ui</ref>::<ref refid="class_mission_status_window" kindref="compound">MissionStatusWindow</ref>)</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mission_recap_1af3d0841a36bc3d04ff0630ba9e1a40af" kindref="member">ui</ref>-&gt;setupUi(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><ref refid="class_mission_status_window_1ae777603fed5cedc813c7f3e21d10179f" kindref="member">MissionStatusWindow::~MissionStatusWindow</ref>()</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal"><sp/><ref refid="class_mission_status_window_1a0aaf2adaf879db758a4f4bed80b13ec0" kindref="member">ui</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionstatuswindow.cpp"/>
+  </compounddef>
+</doxygen>

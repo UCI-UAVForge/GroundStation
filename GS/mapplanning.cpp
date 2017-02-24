@@ -82,6 +82,6 @@ void MapPlanning::setupMapPaths(){
 
 void MapPlanning::clearTable() {
     ui->tableView->clearTable();
-    /// \todo make the argument mean something (tie it to a variable)
+    /// \todo make the argument in clearFlightPath mean something (tie it to a variable)
     ui->mapView->clearFlightPath(0);
 }

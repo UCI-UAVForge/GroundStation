@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="tablemodel_8cpp" kind="file" language="C++">
+    <compoundname>tablemodel.cpp</compoundname>
+    <includes refid="tablemodel_8h" local="yes">tablemodel.h</includes>
+    <incdepgraph>
+      <node id="3233">
+        <label>QList</label>
+      </node>
+      <node id="3234">
+        <label>QPair</label>
+      </node>
+      <node id="3230">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablemodel.cpp</label>
+        <link refid="tablemodel.cpp"/>
+        <childnode refid="3231" relation="include">
+        </childnode>
+      </node>
+      <node id="3231">
+        <label>tablemodel.h</label>
+        <link refid="tablemodel_8h"/>
+        <childnode refid="3232" relation="include">
+        </childnode>
+        <childnode refid="3233" relation="include">
+        </childnode>
+        <childnode refid="3234" relation="include">
+        </childnode>
+      </node>
+      <node id="3232">
+        <label>QAbstractTableModel</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="tablemodel_8h" kindref="compound">tablemodel.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><ref refid="class_table_model_1ad7d9723995888a77fa2242069fe3e67d" kindref="member">TableModel::TableModel</ref>(QObject<sp/>*parent)</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QAbstractTableModel(parent)</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>columns.push_back(</highlight><highlight class="stringliteral">&quot;Action&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>columns.push_back(</highlight><highlight class="stringliteral">&quot;Longitude<sp/>(X)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>columns.push_back(</highlight><highlight class="stringliteral">&quot;E/W&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>columns.push_back(</highlight><highlight class="stringliteral">&quot;Latitude<sp/>(Y)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>columns.push_back(</highlight><highlight class="stringliteral">&quot;N/S&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>columns.push_back(</highlight><highlight class="stringliteral">&quot;Altitude<sp/>(m)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>columns.push_back(</highlight><highlight class="stringliteral">&quot;Speed<sp/>(mph)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>columns.push_back(</highlight><highlight class="stringliteral">&quot;Behavior&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><ref refid="class_table_model_1ad7d9723995888a77fa2242069fe3e67d" kindref="member">TableModel::TableModel</ref>(QList&lt;QList&lt;QString&gt;<sp/>&gt;<sp/>pairs,<sp/>QObject<sp/>*parent)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QAbstractTableModel(parent)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>listOfPairs<sp/>=<sp/>pairs;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1ac2815f7ad9ece5ffb1abd08a3a567483" kindref="member">TableModel::rowCount</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;parent)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="24"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_UNUSED(parent);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1a236a000a21493bb71dbb6cbeb7a1cde8" kindref="member">listOfPairs</ref>.size();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1a0f07a494fac556e1520b0306c3a50cc0" kindref="member">TableModel::columnCount</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;parent)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="30"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_UNUSED(parent);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1a2ff2b13db2fd19c2602c63260bb597be" kindref="member">columns</ref>.length();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">QVariant<sp/><ref refid="class_table_model_1ab22a19802ca81ba42e1cec670e864183" kindref="member">TableModel::data</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>role)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="36"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!index.isValid())</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QVariant();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index.row()<sp/>&gt;=<sp/><ref refid="class_table_model_1a236a000a21493bb71dbb6cbeb7a1cde8" kindref="member">listOfPairs</ref>.size()<sp/>||<sp/>index.row()<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QVariant();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(role<sp/>==<sp/>Qt::DisplayRole)<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QList&lt;QString&gt;<sp/>pair<sp/>=<sp/><ref refid="class_table_model_1a236a000a21493bb71dbb6cbeb7a1cde8" kindref="member">listOfPairs</ref>.at(index.row());</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pair.value(index.column());</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QVariant();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">QVariant<sp/><ref refid="class_table_model_1a4677a49af807c3b72ca4c1e82971d9ec" kindref="member">TableModel::headerData</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>section,<sp/>Qt::Orientation<sp/>orientation,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>role)</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(role<sp/>!=<sp/>Qt::DisplayRole)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QVariant();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(orientation<sp/>==<sp/>Qt::Horizontal)<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(section<sp/>&lt;<sp/><ref refid="class_table_model_1a0f07a494fac556e1520b0306c3a50cc0" kindref="member">columnCount</ref>(QModelIndex())<sp/>&amp;&amp;<sp/>section<sp/>&gt;=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1a2ff2b13db2fd19c2602c63260bb597be" kindref="member">columns</ref>[section];</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QVariant();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1a7fcf06eebf32f5295fec05cadcdf5320" kindref="member">TableModel::insertRows</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>position,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rows,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index)<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_UNUSED(index);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>beginInsertRows(index,<sp/>position,<sp/>position<sp/>+<sp/>rows<sp/>-<sp/>1);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row<sp/>=<sp/>0;<sp/>row<sp/>&lt;<sp/>rows;<sp/>++row)<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QList&lt;QString&gt;<sp/>pair;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_table_model_1a236a000a21493bb71dbb6cbeb7a1cde8" kindref="member">listOfPairs</ref>.insert(position,<sp/>pair);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>endInsertRows();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1a3bc1eb333f87d13d9bb0fb2b4f7c744a" kindref="member">TableModel::insertRow</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>longitude,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>latitude,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index){</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*This<sp/>function<sp/>takes<sp/>two<sp/>double-type<sp/>inputs<sp/>longitude<sp/>and<sp/>latitude,<sp/>which<sp/>are<sp/>used</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/><sp/><sp/><sp/>to<sp/>add<sp/>a<sp/>new<sp/>row<sp/>the<sp/>the<sp/>TableModel<sp/>with<sp/>pre-entered<sp/>values.<sp/>East/West<sp/>and<sp/>North/South</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/><sp/><sp/>coordinates<sp/>are<sp/>automatically<sp/>generated<sp/>using<sp/>negative<sp/>values<sp/>of<sp/>longitude<sp/>and<sp/>latitude</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/><sp/><sp/><sp/>to<sp/>denote<sp/>West<sp/>and<sp/>South<sp/>respectively.<sp/>This<sp/>function<sp/>always<sp/>returns<sp/>true,<sp/>a<sp/>feature</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/><sp/><sp/><sp/>inherited<sp/>from<sp/>the<sp/>other<sp/>insertRow<sp/>function.<sp/>The<sp/>first<sp/>part<sp/>of<sp/>the<sp/>function<sp/>was<sp/>coppied</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/><sp/><sp/>from<sp/>the<sp/>other<sp/>insertRow<sp/>function.<sp/>The<sp/>second<sp/>part<sp/>was<sp/>written<sp/>by<sp/>Jordan<sp/>Dickson</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/><sp/>Feb<sp/>9th<sp/>2015.*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_UNUSED(index);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1a3bc1eb333f87d13d9bb0fb2b4f7c744a" kindref="member">insertRow</ref><sp/>=<sp/><ref refid="class_table_model_1ac2815f7ad9ece5ffb1abd08a3a567483" kindref="member">rowCount</ref>(index);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>beginInsertRows(index,<sp/>insertRow,<sp/>insertRow);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;QString&gt;<sp/>list;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="class_table_model_1a0f07a494fac556e1520b0306c3a50cc0" kindref="member">columnCount</ref>(QModelIndex());<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_table_model_1a236a000a21493bb71dbb6cbeb7a1cde8" kindref="member">listOfPairs</ref>.push_back(list);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>endInsertRows();</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//&apos;i&apos;<sp/>used<sp/>to<sp/>denote<sp/>the<sp/>last<sp/>row<sp/>of<sp/>the<sp/>table<sp/>(most<sp/>recently<sp/>added<sp/>row)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/><ref refid="class_table_model_1a236a000a21493bb71dbb6cbeb7a1cde8" kindref="member">listOfPairs</ref>.size()-1;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Variables<sp/>used<sp/>in<sp/>the<sp/>table<sp/>to<sp/>denote<sp/>East/West<sp/>and<sp/>North/South</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>eastWest<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;E&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>northSouth<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;N&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//If<sp/>statements<sp/>to<sp/>remove<sp/>negative<sp/>numbers<sp/>if<sp/>any<sp/>and<sp/>change<sp/>direction<sp/>for<sp/>E/W<sp/>and<sp/>N/S</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(longitude<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>longitude<sp/>*=<sp/>-1.0;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>eastWest<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;W&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(latitude<sp/>&lt;<sp/>0){</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>latitude<sp/>*=<sp/>-1.0;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>northSouth<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;S&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//set<sp/>altitude</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>alt<sp/>=<sp/>25;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//set<sp/>velocity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>vel<sp/>=<sp/>20;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Prepare<sp/>variables<sp/>to<sp/>be<sp/>assembled<sp/>into<sp/>the<sp/>list</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="_packet_8cpp_1a5eb35fde07fd79e65bc809fe20571c15" kindref="member">action</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Action<sp/>1&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>longString<sp/>=<sp/>QString::number(longitude,</highlight><highlight class="charliteral">&apos;g&apos;</highlight><highlight class="normal">,10);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>latString<sp/>=<sp/>QString::number(latitude,</highlight><highlight class="charliteral">&apos;g&apos;</highlight><highlight class="normal">,10);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>altString<sp/>=<sp/>QString::number(alt,</highlight><highlight class="charliteral">&apos;g&apos;</highlight><highlight class="normal">,3);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>velString<sp/>=<sp/>QString::number(vel,</highlight><highlight class="charliteral">&apos;g&apos;</highlight><highlight class="normal">,3);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>behaviorString<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Behavior<sp/>1&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Assemble<sp/>the<sp/>new<sp/>QList</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;QString&gt;<sp/>newList;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>newList&lt;&lt;action&lt;&lt;longString&lt;&lt;eastWest&lt;&lt;latString&lt;&lt;northSouth&lt;&lt;altString&lt;&lt;velString&lt;&lt;behaviorString;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Replace<sp/>the<sp/>newest<sp/>row(empty)<sp/>with<sp/>one<sp/>that<sp/>has<sp/>pre-entered<sp/>values</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_table_model_1a236a000a21493bb71dbb6cbeb7a1cde8" kindref="member">listOfPairs</ref>[i]<sp/>=<sp/>newList;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//This<sp/>function<sp/>always<sp/>returns<sp/>ture</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1a3bc1eb333f87d13d9bb0fb2b4f7c744a" kindref="member">TableModel::insertRow</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index)<sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_UNUSED(index);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>insertRow<sp/>=<sp/><ref refid="class_table_model_1ac2815f7ad9ece5ffb1abd08a3a567483" kindref="member">rowCount</ref>(index);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>beginInsertRows(index,<sp/>insertRow,<sp/>insertRow);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;QString&gt;<sp/>list;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="class_table_model_1a0f07a494fac556e1520b0306c3a50cc0" kindref="member">columnCount</ref>(QModelIndex());<sp/>i++)<sp/>{</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>list<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_table_model_1a236a000a21493bb71dbb6cbeb7a1cde8" kindref="member">listOfPairs</ref>.push_back(list);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>endInsertRows();</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1abd1d9fd2aebf4ab22a5bc1f1bc4c446d" kindref="member">TableModel::removeRows</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>position,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rows,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index)</highlight></codeline>
+<codeline lineno="154"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_UNUSED(index);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>beginRemoveRows(index,<sp/>position,<sp/>position<sp/>+<sp/>rows<sp/>-<sp/>1);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row<sp/>=<sp/>0;<sp/>row<sp/>&lt;<sp/>rows;<sp/>++row)<sp/>{</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_table_model_1a236a000a21493bb71dbb6cbeb7a1cde8" kindref="member">listOfPairs</ref>.removeAt(position);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>endRemoveRows();</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1aa5ebe742e8bb1570c2ed8577c41f7c8d" kindref="member">TableModel::setData</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QVariant<sp/>&amp;value,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>role)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(index.isValid()<sp/>&amp;&amp;<sp/>role<sp/>==<sp/>Qt::EditRole)<sp/>{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row<sp/>=<sp/>index.row();</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QList&lt;QString&gt;<sp/>p<sp/>=<sp/><ref refid="class_table_model_1a236a000a21493bb71dbb6cbeb7a1cde8" kindref="member">listOfPairs</ref>.value(row);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>p[index.column()]<sp/>=<sp/>value.toString();</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_table_model_1a236a000a21493bb71dbb6cbeb7a1cde8" kindref="member">listOfPairs</ref>.replace(row,<sp/>p);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>emit(dataChanged(index,<sp/>index));</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal">Qt::ItemFlags<sp/><ref refid="class_table_model_1ac758b15767be92f2ac9e0c4d958d5662" kindref="member">TableModel::flags</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="183"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!index.isValid())</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>Qt::ItemIsEnabled;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QAbstractTableModel::flags(index)<sp/>|<sp/>Qt::ItemIsEditable;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal">QList&lt;<sp/>QList&lt;QString&gt;<sp/>&gt;<sp/><ref refid="class_table_model_1ac5d306166ddda71a3b2deff4245ff1cf" kindref="member">TableModel::getList</ref>()</highlight></codeline>
+<codeline lineno="191"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1a236a000a21493bb71dbb6cbeb7a1cde8" kindref="member">listOfPairs</ref>;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1abd1d9fd2aebf4ab22a5bc1f1bc4c446d" kindref="member">TableModel::removeRows</ref>(QModelIndexList<sp/>indexes)<sp/>{</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/>beginResetModel();</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>qSort(indexes);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>indexes.size()<sp/>-<sp/>1;<sp/>i<sp/>&gt;=<sp/>0<sp/>;<sp/>i--)<sp/>{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_table_model_1a236a000a21493bb71dbb6cbeb7a1cde8" kindref="member">listOfPairs</ref>.removeAt(indexes.at(i).row());</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/>endResetModel();</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="203"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablemodel.cpp"/>
+  </compounddef>
+</doxygen>

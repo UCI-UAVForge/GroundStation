@@ -1,0 +1,560 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_gs_server" kind="class" language="C++" prot="public">
+    <compoundname>GsServer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QThread</basecompoundref>
+    <includes refid="gsserver_8h" local="no">gsserver.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_gs_server_1aee6ff9911df099594d4483cb116ed808" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int GsServer::uav_fd</definition>
+        <argsstring></argsstring>
+        <name>uav_fd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>file descriptor for the UAV. Used to send information over the network. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="114" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gs_server_1a5db50514e830e5d9aeeed83e23472501" prot="public" static="no" mutable="no">
+        <type>unsigned char</type>
+        <definition>unsigned char GsServer::maxPackSize</definition>
+        <argsstring></argsstring>
+        <name>maxPackSize</name>
+        <initializer>= 255</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>the maximum size of a packet that will be sent by this server. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="119" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gs_server_1aa115a3c8f593c29bc6d68f102dbf1941" prot="public" static="no" mutable="no">
+        <type><ref refid="class_network_listener" kindref="compound">NetworkListener</ref></type>
+        <definition>NetworkListener GsServer::networkListener</definition>
+        <argsstring></argsstring>
+        <name>networkListener</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The <ref refid="class_network_listener" kindref="compound">NetworkListener</ref> used by this server to process incoming signals. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="124" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gs_server_1a720185d9a2050ae2d5ebda4e7262ba6e" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool GsServer::running</definition>
+        <argsstring></argsstring>
+        <name>running</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="127" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_gs_server_1a4c1028d1b802470b7fca29b16882e5ad" prot="private" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short GsServer::port</definition>
+        <argsstring></argsstring>
+        <name>port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores the port number of this server. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="132" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gs_server_1a928408a8304c97c11d1655e5e44e0562" prot="private" static="no" mutable="no">
+        <type><ref refid="classmessagebox" kindref="compound">messagebox</ref> *</type>
+        <definition>messagebox* GsServer::myMessageBox</definition>
+        <argsstring></argsstring>
+        <name>myMessageBox</name>
+        <briefdescription>
+<para>myMessageBox is the messagebox from mapexecution that will be used for outgoing packets. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="143" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gs_server_1a3ac60e8ec661841743faae8c0c9e8102" prot="private" static="no" mutable="no">
+        <type><ref refid="class_mission" kindref="compound">Mission</ref> *</type>
+        <definition>Mission* GsServer::myMission</definition>
+        <argsstring></argsstring>
+        <name>myMission</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="145" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gs_server_1a7332175035126c6da81ba9f10cae95e2" prot="private" static="no" mutable="no">
+        <type>QUdpSocket</type>
+        <definition>QUdpSocket GsServer::outSocket</definition>
+        <argsstring></argsstring>
+        <name>outSocket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="147" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gs_server_1a91027c1924f957f5d18a914f7df17abf" prot="private" static="no" mutable="no">
+        <type>QHostAddress</type>
+        <definition>QHostAddress GsServer::target</definition>
+        <argsstring></argsstring>
+        <name>target</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="149" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_gs_server_1a84a20d665e47ffca7edff0f1fe97dc5f" prot="private" static="no" mutable="no">
+        <type><ref refid="class_server_queue" kindref="compound">ServerQueue</ref></type>
+        <definition>ServerQueue GsServer::outPackets</definition>
+        <argsstring></argsstring>
+        <name>outPackets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="151" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" bodystart="151" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_gs_server_1a0931c5e470fcb46548c14996d2d9c853" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GsServer::GsServer</definition>
+        <argsstring>(messagebox *myMessageBox, Mission *myMission)</argsstring>
+        <name>GsServer</name>
+        <param>
+          <type><ref refid="classmessagebox" kindref="compound">messagebox</ref> *</type>
+          <declname>myMessageBox</declname>
+        </param>
+        <param>
+          <type><ref refid="class_mission" kindref="compound">Mission</ref> *</type>
+          <declname>myMission</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new server hosted on the localhost (127.0.0.1) on port 3495.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>myMessageBox</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the messagebox used for outgoing packets </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="38" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.cpp" bodystart="8" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gs_server_1a56461ff8c405720a8cb591c84f61a5bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GsServer::~GsServer</definition>
+        <argsstring>()</argsstring>
+        <name>~GsServer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructor for <ref refid="class_gs_server" kindref="compound">GsServer</ref> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="43" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.cpp" bodystart="18" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gs_server_1aa906d6a7084c03849eadcd31563057e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GsServer::run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Override run to implement thread as a server. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="48" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.cpp" bodystart="51" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gs_server_1abfbbae94e647cc6415b3a460fbabec88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GsServer::recieveAckPacket</definition>
+        <argsstring>(Protocol::AckPacket *ack)</argsstring>
+        <name>recieveAckPacket</name>
+        <param>
+          <type><ref refid="class_protocol_1_1_ack_packet" kindref="compound">Protocol::AckPacket</ref> *</type>
+          <declname>ack</declname>
+        </param>
+        <briefdescription>
+<para>recieveAckPacket </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ack</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="54" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.cpp" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gs_server_1a394e75ea0a17eb9a6ac2814ea84b250c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GsServer::startServer</definition>
+        <argsstring>()</argsstring>
+        <name>startServer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="57" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.cpp" bodystart="32" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gs_server_1a6f73b66c39e5080eb58c80ab355d3c8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GsServer::openServer</definition>
+        <argsstring>()</argsstring>
+        <name>openServer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Opens ther server by hosting it on the default port and listening for connections. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="63" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.cpp" bodystart="22" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gs_server_1aa2acb9071c6c2ef44f5a8fc859576ff6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GsServer::openServer</definition>
+        <argsstring>(QHostAddress target, unsigned int port)</argsstring>
+        <name>openServer</name>
+        <param>
+          <type>QHostAddress</type>
+          <declname>target</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Opens ther server by hosting it on a socket and listening for connections. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="69" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.cpp" bodystart="26" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gs_server_1a7ca468b85231e88da9b5cafb1320bbb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GsServer::closeServer</definition>
+        <argsstring>()</argsstring>
+        <name>closeServer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Closes the server by dropping all current connections and ending the listener thread. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="75" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.cpp" bodystart="42" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gs_server_1a5be5b957f9207e66550fc33fbf2b4df2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GsServer::waitNet</definition>
+        <argsstring>(unsigned millis)</argsstring>
+        <name>waitNet</name>
+        <param>
+          <type>unsigned</type>
+          <declname>millis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>waits for a specified number of milliseconds</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>millis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of milliseconds to wait </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="82" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gs_server_1ae8e04868caa920485facfc4cfda6291e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GsServer::sendPacket</definition>
+        <argsstring>(Protocol::Packet *packet)</argsstring>
+        <name>sendPacket</name>
+        <param>
+          <type><ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref> *</type>
+          <declname>packet</declname>
+        </param>
+        <briefdescription>
+<para>sendPacket adds a packet to the send queue for this server. The default priority is 10. The packet will be sent as soon as the socket is free for sending. Lowest prioirty is sent first. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>packet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the packet to be added into the send queue </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="author"><para>Jordan Dickson </para></simplesect>
+<simplesect kind="date"><para>Feb 5 2016 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="92" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.cpp" bodystart="76" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gs_server_1a3a07e46c4042ff43336ffcafa36f2a3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GsServer::sendPacket</definition>
+        <argsstring>(Protocol::Packet *packet, unsigned int priority)</argsstring>
+        <name>sendPacket</name>
+        <param>
+          <type><ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref> *</type>
+          <declname>packet</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>priority</declname>
+        </param>
+        <briefdescription>
+<para>sendPacket adds a packet to the send queue for this server. The packet will be sent as soon as the socket is free for sending. Lowest priority is sent first. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>packet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the packet to be added into the send queue </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>priority</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the priority of the packet (lowest number sent first) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="date"><para>Feb 5 2016 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="102" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.cpp" bodystart="80" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_gs_server_1aaa42f9bb1c822408a6c030ca880f5a91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GsServer::addPacketToMission</definition>
+        <argsstring>(Protocol::TelemetryPacket packet)</argsstring>
+        <name>addPacketToMission</name>
+        <param>
+          <type><ref refid="class_protocol_1_1_telemetry_packet" kindref="compound">Protocol::TelemetryPacket</ref></type>
+          <declname>packet</declname>
+        </param>
+        <briefdescription>
+<para>packetRecieved adds a TelemetryPacket to this server&apos;s <ref refid="class_mission" kindref="compound">Mission</ref> object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>packet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The telemetryPacket being added. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="109" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.cpp" bodystart="84" bodyend="86"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_gs_server_1a9fbceada3decdaafff7c1d5dda8c8405" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GsServer::sendNextPacket</definition>
+        <argsstring>()</argsstring>
+        <name>sendNextPacket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sends the most significant datagram. </para>        </detaileddescription>
+        <inbodydescription>
+<para><xrefsect id="todo_1_todo000009"><xreftitle>Todo</xreftitle><xrefdescription><para>implement actual ack packet transfer from message box to outPackets.recievAckPacket(AckPacket) </para></xrefdescription></xrefsect></para>        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="137" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.cpp" bodystart="89" bodyend="138"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_gs_server_1a5affc1d47f645639011c2dbf59e6bbb0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GsServer::recivePacket</definition>
+        <argsstring>(Protocol::Packet *packet)</argsstring>
+        <name>recivePacket</name>
+        <param>
+          <type><ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref> *</type>
+          <declname>packet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="154" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.cpp" bodystart="140" bodyend="142"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_gs_server_1aaf16a132e06135f8d992a5e7a29bef27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GsServer::packetRecieved</definition>
+        <argsstring>(Protocol::Packet *packet)</argsstring>
+        <name>packetRecieved</name>
+        <param>
+          <type><ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref> *</type>
+          <declname>packet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="157" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="class_gs_server" kindref="compound">GsServer</ref> is the server object for the ground station. The current implementation will be changing, but this is the first working version.</para><para>I will be cleaning the code and making frequent implementation changes in the near future. The functions and variables however will probably remain stable.</para><para><simplesect kind="author"><para>Jordan Dickson </para></simplesect>
+<simplesect kind="date"><para>1-29-1016 </para></simplesect>
+<simplesect kind="version"><para>2.0 </para></simplesect>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="51">
+        <label>QThread</label>
+      </node>
+      <node id="50">
+        <label>GsServer</label>
+        <link refid="class_gs_server"/>
+        <childnode refid="51" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="60">
+        <label>ServerQueue</label>
+        <link refid="class_server_queue"/>
+      </node>
+      <node id="57">
+        <label>NetworkListener</label>
+        <link refid="class_network_listener"/>
+        <childnode refid="58" relation="public-inheritance">
+        </childnode>
+        <childnode refid="59" relation="usage">
+          <edgelabel>myMessageBox</edgelabel>
+        </childnode>
+        <childnode refid="52" relation="usage">
+          <edgelabel>server</edgelabel>
+        </childnode>
+      </node>
+      <node id="59">
+        <label>messagebox</label>
+        <link refid="classmessagebox"/>
+      </node>
+      <node id="53">
+        <label>QThread</label>
+      </node>
+      <node id="55">
+        <label>FlightPath</label>
+        <link refid="class_flight_path"/>
+        <childnode refid="56" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>Mission</label>
+        <link refid="class_mission"/>
+        <childnode refid="55" relation="usage">
+          <edgelabel>myFlightPath</edgelabel>
+        </childnode>
+      </node>
+      <node id="52">
+        <label>GsServer</label>
+        <link refid="class_gs_server"/>
+        <childnode refid="53" relation="public-inheritance">
+        </childnode>
+        <childnode refid="54" relation="usage">
+          <edgelabel>myMission</edgelabel>
+        </childnode>
+        <childnode refid="57" relation="usage">
+          <edgelabel>networkListener</edgelabel>
+        </childnode>
+        <childnode refid="59" relation="usage">
+          <edgelabel>myMessageBox</edgelabel>
+        </childnode>
+        <childnode refid="60" relation="usage">
+          <edgelabel>outPackets</edgelabel>
+        </childnode>
+      </node>
+      <node id="56">
+        <label>QList&lt; TimedAction * &gt;</label>
+      </node>
+      <node id="58">
+        <label>QUdpSocket</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" line="30" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gsserver.h" bodystart="30" bodyend="158"/>
+    <listofallmembers>
+      <member refid="class_gs_server_1aaa42f9bb1c822408a6c030ca880f5a91" prot="public" virt="non-virtual"><scope>GsServer</scope><name>addPacketToMission</name></member>
+      <member refid="class_gs_server_1a7ca468b85231e88da9b5cafb1320bbb4" prot="public" virt="non-virtual"><scope>GsServer</scope><name>closeServer</name></member>
+      <member refid="class_gs_server_1a0931c5e470fcb46548c14996d2d9c853" prot="public" virt="non-virtual"><scope>GsServer</scope><name>GsServer</name></member>
+      <member refid="class_gs_server_1a5db50514e830e5d9aeeed83e23472501" prot="public" virt="non-virtual"><scope>GsServer</scope><name>maxPackSize</name></member>
+      <member refid="class_gs_server_1a928408a8304c97c11d1655e5e44e0562" prot="private" virt="non-virtual"><scope>GsServer</scope><name>myMessageBox</name></member>
+      <member refid="class_gs_server_1a3ac60e8ec661841743faae8c0c9e8102" prot="private" virt="non-virtual"><scope>GsServer</scope><name>myMission</name></member>
+      <member refid="class_gs_server_1aa115a3c8f593c29bc6d68f102dbf1941" prot="public" virt="non-virtual"><scope>GsServer</scope><name>networkListener</name></member>
+      <member refid="class_gs_server_1a6f73b66c39e5080eb58c80ab355d3c8c" prot="public" virt="non-virtual"><scope>GsServer</scope><name>openServer</name></member>
+      <member refid="class_gs_server_1aa2acb9071c6c2ef44f5a8fc859576ff6" prot="public" virt="non-virtual"><scope>GsServer</scope><name>openServer</name></member>
+      <member refid="class_gs_server_1a84a20d665e47ffca7edff0f1fe97dc5f" prot="private" virt="non-virtual"><scope>GsServer</scope><name>outPackets</name></member>
+      <member refid="class_gs_server_1a7332175035126c6da81ba9f10cae95e2" prot="private" virt="non-virtual"><scope>GsServer</scope><name>outSocket</name></member>
+      <member refid="class_gs_server_1aaf16a132e06135f8d992a5e7a29bef27" prot="public" virt="non-virtual"><scope>GsServer</scope><name>packetRecieved</name></member>
+      <member refid="class_gs_server_1a4c1028d1b802470b7fca29b16882e5ad" prot="private" virt="non-virtual"><scope>GsServer</scope><name>port</name></member>
+      <member refid="class_gs_server_1abfbbae94e647cc6415b3a460fbabec88" prot="public" virt="non-virtual"><scope>GsServer</scope><name>recieveAckPacket</name></member>
+      <member refid="class_gs_server_1a5affc1d47f645639011c2dbf59e6bbb0" prot="private" virt="non-virtual"><scope>GsServer</scope><name>recivePacket</name></member>
+      <member refid="class_gs_server_1aa906d6a7084c03849eadcd31563057e6" prot="public" virt="non-virtual"><scope>GsServer</scope><name>run</name></member>
+      <member refid="class_gs_server_1a720185d9a2050ae2d5ebda4e7262ba6e" prot="public" virt="non-virtual"><scope>GsServer</scope><name>running</name></member>
+      <member refid="class_gs_server_1a9fbceada3decdaafff7c1d5dda8c8405" prot="private" virt="non-virtual"><scope>GsServer</scope><name>sendNextPacket</name></member>
+      <member refid="class_gs_server_1ae8e04868caa920485facfc4cfda6291e" prot="public" virt="non-virtual"><scope>GsServer</scope><name>sendPacket</name></member>
+      <member refid="class_gs_server_1a3a07e46c4042ff43336ffcafa36f2a3a" prot="public" virt="non-virtual"><scope>GsServer</scope><name>sendPacket</name></member>
+      <member refid="class_gs_server_1a394e75ea0a17eb9a6ac2814ea84b250c" prot="public" virt="non-virtual"><scope>GsServer</scope><name>startServer</name></member>
+      <member refid="class_gs_server_1a91027c1924f957f5d18a914f7df17abf" prot="private" virt="non-virtual"><scope>GsServer</scope><name>target</name></member>
+      <member refid="class_gs_server_1aee6ff9911df099594d4483cb116ed808" prot="public" virt="non-virtual"><scope>GsServer</scope><name>uav_fd</name></member>
+      <member refid="class_gs_server_1a5be5b957f9207e66550fc33fbf2b4df2" prot="public" virt="non-virtual"><scope>GsServer</scope><name>waitNet</name></member>
+      <member refid="class_gs_server_1a56461ff8c405720a8cb591c84f61a5bf" prot="public" virt="non-virtual"><scope>GsServer</scope><name>~GsServer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

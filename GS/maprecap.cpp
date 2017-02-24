@@ -1,6 +1,6 @@
 #include "maprecap.h"
 
-MapRecap::MapRecap(QWidget *parent):QDialog(parent), ui(new Ui::MapRecap) {
+MapRecap::MapRecap(QWidget *parent):QDialog(parent), ui(new Ui::MapRecap) , backToPlanningButton(NULL) {
     ui->setupUi(this);
     //buttonGroup = new QButtonGroup();
 
@@ -13,10 +13,6 @@ MapRecap::MapRecap(QWidget *parent):QDialog(parent), ui(new Ui::MapRecap) {
     ui->tableView->setColumnHidden(5, true);
     ui->tableView->setColumnWidth(2, 42);
     ui->tableView->setColumnWidth(4, 42);
-
-    //Initialized to NULL to prevent wasted space since the original GUI does not use these. - Roman Parise
-
-    backToPlanningButton = NULL ;
 
 }
 
