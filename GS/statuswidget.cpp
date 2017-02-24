@@ -3,32 +3,39 @@
 #include <list>
 #include <iostream>
 #include <assert.h>
+#include <QDebug>
 
 #include "StatusWidget.h"
 
+///\todo Get rid of unnecessary includes in missionstatuswindow, statuswidget, and timerwidget.
 
-explicit StatusWidget::StatusWidget(QObject* parent)
+///\todo Why does "explicit" cause problems? i.e. ctor illegal storage class
+/* explicit */ StatusWidget::StatusWidget(QWidget* parent) : QPlainTextEdit( parent )
 {
-    connect(StatusTimer, SIGNAL(timeout()), this, SLOT(showStatus()));
+    //connect(StatusTimer, SIGNAL(timeout()), this, SLOT(showStatus()));
+    connect(&StatusTimer, SIGNAL(timeout()), this, SIGNAL(updateMe()));
 }
 
 StatusWidget::~StatusWidget()
 {
 }
 
-void StatusWidget::initiate(messagebox * mbin)
+void StatusWidget::initiate()
 {
-    mb = mbin;
-    StatusTimer->start(200);
-    showStatus();
+    //Start the timer
+    StatusTimer.start(200);
+    //Clear the GUI
+    this->showStatus( EMPTY_TELEMETRY_PACKET );
 }
 
+/*
 QTimer StatusWidget::getStatusTimer()
 {
     return StatusTimer ;
 }
+*/
 
-void StatusWidget::showStatus()
+void StatusWidget::showStatus( Protocol::TelemetryPacket * tp )
 {
     float vX;
     float vY;
@@ -39,8 +46,7 @@ void StatusWidget::showStatus()
     double lat;
     double lon;
     float alt;
-//    float heading;
-    if (mb->get_telem_packets().empty())
+    if ( tp == EMPTY_TELEMETRY_PACKET )
     {
         clear();
         appendPlainText("Empty: ");
@@ -48,10 +54,9 @@ void StatusWidget::showStatus()
     }
     else
     {
-        Protocol::TelemetryPacket last = mb->get_telem_packets().back();
-        last.GetVelocity(&vX, &vY,&vZ);
-        last.GetLocation(&lat, &lon, &alt );
-        last.GetOrientation(&pitch, &roll, & yaw);
+        tp->GetVelocity(&vX, &vY,&vZ);
+        tp->GetLocation(&lat, &lon, &alt );
+        tp->GetOrientation(&pitch, &roll, & yaw);
         QString text;
         text.append("Location: ");
         text.append(QString::number(lat,'f',2) + ", " + QString::number(lon,'f',2) + ", " + QString::number(alt,'f',2));
@@ -64,7 +69,9 @@ void StatusWidget::showStatus()
     }
 }
 
+/*
 void StatusWidget::setStatusTimer(QTimer newStatusTimer)
 {
     this->StatusTimer = newStatusTimer ;
 }
+*/

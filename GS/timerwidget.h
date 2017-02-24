@@ -22,9 +22,7 @@ public:
 
 	~TimerWidget();
 
-    void showTime();
-
-    void initiate(QTime timein);
+    void initiate();
 
     QTime getTime() const;
 
@@ -33,6 +31,10 @@ public:
     //QTimer getTimeTimer() const;
 
     //void setTimeTimer(QTimer newTimeTimer);
+
+private slots:
+
+    void showTime() ;
 
 };
 #endif

@@ -69,7 +69,7 @@ SOURCES += main.cpp\
     websocketclientwrapper.cpp \
     websockettransport.cpp \
     tablewidget.cpp \
-    #statuswidget.cpp \
+    statuswidget.cpp \
     timerwidget.cpp \
     missionstatuswindow.cpp \
     gscontrolpanel.cpp
@@ -111,7 +111,7 @@ HEADERS  += mainwindow.h \
     websockettransport.h \
     dialog.h \
     tablewidget.h \
-    #statuswidget.h \
+    statuswidget.h \
     timerwidget.h \
     missionstatuswindow.h \
     gscontrolpanel.h

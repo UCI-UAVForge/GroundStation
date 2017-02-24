@@ -51,11 +51,11 @@ void TimerWidget::showTime()
     appendPlainText(text);
 }
 
-void TimerWidget::initiate(QTime timein)
+void TimerWidget::initiate()
 {
-    start = QTime::currentTime().toString("hh:mm:ss");
-    time = timein;
     TimeTimer.start(1000);
+    time = QTime::currentTime();
+    start = time.toString("hh:mm:ss");
     /// \todo Is this showTime necessary?
     showTime();
 }

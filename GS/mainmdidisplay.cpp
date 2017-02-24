@@ -11,6 +11,8 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
 
     ui->mdiArea->setBackground( QBrush( QPixmap( ":/res/images/UAVLogo.png" ) ) );
 
+    ///\todo Just put these in the UI file and promote QWidgets
+
     map = new MapWidget();
     addWindow(map);
 
@@ -22,6 +24,11 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
     addWindow(&gscp);
 
     connect(map, &MapWidget::pointAdded, tw, &TableWidget::appendRow);
+
+    connect( &(this->msw) , SIGNAL( updateStatusWidget() ) , this , SLOT( updateMissionStatus() ) ) ;
+
+    //Testing execution!
+    this->msw.initiateWidgets();
 
 }
 
@@ -405,4 +412,24 @@ void MainMDIDisplay::clickedCancelButton_MainDisplay() {
 
 void MainMDIDisplay::clickedBackButton_MainDisplay() {
     //this->destroy() ;
+}
+
+void MainMDIDisplay::updateMissionStatus() {
+
+    Protocol::TelemetryPacket * mostRecentTelemetryPacket ;
+
+    if (mb.get_telem_packets().empty())
+    {
+        //If messagebox is empty.
+        mostRecentTelemetryPacket = EMPTY_TELEMETRY_PACKET ;
+    }
+    else
+    {
+        ///\todo Is this passing of pointers safe?
+        //Otherwise, fetch the most recent telemetry packet.
+        mostRecentTelemetryPacket = &( mb.get_telem_packets().back() );
+    }
+    //Give this packet to missionstatuswindow. It will know what to do with it.
+    this->msw.setCurrentTelemetryPacket( mostRecentTelemetryPacket );
+
 }

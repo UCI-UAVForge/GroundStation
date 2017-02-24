@@ -16,6 +16,9 @@
 
 #include "maprecap.h"
 
+//Definitions
+#define EMPTY_TELEMETRY_PACKET NULL
+
 //TODO Getters and setters. C'mon...
 
 namespace Ui {
@@ -66,6 +69,8 @@ private slots:
     void clickedBackToPlanningButton_MainDisplay();
 
     void clickedBackButton_MainDisplay();
+
+    void updateMissionStatus() ;
 
 private:
 

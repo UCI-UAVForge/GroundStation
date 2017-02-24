@@ -7,29 +7,30 @@
 #include "QObject.h"
 #include "messagebox.h"
 
+///\todo Make this a definition for the entire project?
+//Definitions
+#define EMPTY_TELEMETRY_PACKET NULL
+
 class StatusWidget : public QPlainTextEdit
 {
+    Q_OBJECT
 private:
 	QTimer StatusTimer;
 
 	QString start;
 
-    messagebox * mb ;
-
 public:
-	explicit StatusWidget(QObject* parent);
+    explicit StatusWidget(QWidget* parent=0);
 
 	~StatusWidget();
 
-	void initiate(messagebox * mbin);
+    void initiate();
 
-	QTimer getStatusTimer();
+    /*QTimer getStatusTimer();
 
-	void setStatusTimer(QTimer newStatusTimer);
+    void setStatusTimer(QTimer newStatusTimer);*/
 
-private slots:
-
-    void showStatus();
+    void showStatus( Protocol::TelemetryPacket * );
 
 signals:
 
