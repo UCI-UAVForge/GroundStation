@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="struct_protocol_1_1_waypoint" kind="struct" language="C++" prot="public">
+    <compoundname>Protocol::Waypoint</compoundname>
+    <includes refid="actionpacket_8h" local="no">actionpacket.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_protocol_1_1_waypoint_1a29b254ffa54a87da980aa2d0a6dd8e1e" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Protocol::Waypoint::lat</definition>
+        <argsstring></argsstring>
+        <name>lat</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="43" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_protocol_1_1_waypoint_1ac5f0dd73ea290deb60ea7464b114faa7" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double Protocol::Waypoint::lon</definition>
+        <argsstring></argsstring>
+        <name>lon</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="44" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_protocol_1_1_waypoint_1a69b7b1c0eeb8629e07fc929a902a91aa" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Protocol::Waypoint::alt</definition>
+        <argsstring></argsstring>
+        <name>alt</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="45" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_protocol_1_1_waypoint_1aa92f0aab1641e5bdb5ea7a9b9d6994ad" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float Protocol::Waypoint::speed</definition>
+        <argsstring></argsstring>
+        <name>speed</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="46" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="42" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" bodystart="42" bodyend="47"/>
+    <listofallmembers>
+      <member refid="struct_protocol_1_1_waypoint_1a69b7b1c0eeb8629e07fc929a902a91aa" prot="public" virt="non-virtual"><scope>Protocol::Waypoint</scope><name>alt</name></member>
+      <member refid="struct_protocol_1_1_waypoint_1a29b254ffa54a87da980aa2d0a6dd8e1e" prot="public" virt="non-virtual"><scope>Protocol::Waypoint</scope><name>lat</name></member>
+      <member refid="struct_protocol_1_1_waypoint_1ac5f0dd73ea290deb60ea7464b114faa7" prot="public" virt="non-virtual"><scope>Protocol::Waypoint</scope><name>lon</name></member>
+      <member refid="struct_protocol_1_1_waypoint_1aa92f0aab1641e5bdb5ea7a9b9d6994ad" prot="public" virt="non-virtual"><scope>Protocol::Waypoint</scope><name>speed</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

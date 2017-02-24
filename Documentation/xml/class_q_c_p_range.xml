@@ -1,0 +1,537 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_q_c_p_range" kind="class" language="C++" prot="public">
+    <compoundname>QCPRange</compoundname>
+    <includes refid="qcustomplot_8h" local="no">qcustomplot.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_q_c_p_range_1aa3aca3edb14f7ca0c85d912647b91745" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPRange::lower</definition>
+        <argsstring></argsstring>
+        <name>lower</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="479" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="479" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_range_1ae44eb3aafe1d0e2ed34b499b6d2e074f" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double QCPRange::upper</definition>
+        <argsstring></argsstring>
+        <name>upper</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="479" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="479" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_q_c_p_range_1ab46d3bc95030ee25efda41b89e2b616b" prot="public" static="yes" mutable="no">
+        <type>const double</type>
+        <definition>const double QCPRange::minRange</definition>
+        <argsstring></argsstring>
+        <name>minRange</name>
+        <initializer>= 1e-280</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Minimum range size (<emphasis>upper</emphasis> - <emphasis>lower</emphasis>) the range changing functions will accept. Smaller intervals would cause errors due to the 11-bit exponent of double precision numbers, corresponding to a minimum magnitude of roughly 1e-308. <simplesect kind="see"><para><ref refid="class_q_c_p_range_1ab38bd4841c77c7bb86c9eea0f142dcc0" kindref="member">validRange</ref>, <ref refid="class_q_c_p_range_1a5ca51e7a2dc5dc0d49527ab171fe1f4f" kindref="member">maxRange</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="509" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="509" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_c_p_range_1a5ca51e7a2dc5dc0d49527ab171fe1f4f" prot="public" static="yes" mutable="no">
+        <type>const double</type>
+        <definition>const double QCPRange::maxRange</definition>
+        <argsstring></argsstring>
+        <name>maxRange</name>
+        <initializer>= 1e250</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum values (negative and positive) the range will accept in range-changing functions. Larger absolute values would cause errors due to the 11-bit exponent of double precision numbers, corresponding to a maximum magnitude of roughly 1e308. Since the number of planck-volumes in the entire visible universe is only ~1e183, this should be enough. <simplesect kind="see"><para><ref refid="class_q_c_p_range_1ab38bd4841c77c7bb86c9eea0f142dcc0" kindref="member">validRange</ref>, <ref refid="class_q_c_p_range_1ab46d3bc95030ee25efda41b89e2b616b" kindref="member">minRange</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="510" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="510" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_c_p_range_1aca158d7e69702cee5d77d10a269b01e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPRange::QCPRange</definition>
+        <argsstring>()</argsstring>
+        <name>QCPRange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Constructs a range with <emphasis>lower</emphasis> and <emphasis>upper</emphasis> set to zero. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="481" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="1309" bodyend="1313"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_range_1a1d9d84d084c8f368fdedd42e0978d405" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPRange::QCPRange</definition>
+        <argsstring>(double lower, double upper)</argsstring>
+        <name>QCPRange</name>
+        <param>
+          <type>double</type>
+          <declname>lower</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>upper</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Constructs a range with the specified <emphasis>lower</emphasis> and <emphasis>upper</emphasis> values. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="482" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="1318" bodyend="1323"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_range_1aa20f91509687505e25bd2ef10d2f0e15" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPRange::operator==</definition>
+        <argsstring>(const QCPRange &amp;other) const </argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="484" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="484" bodyend="484"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_range_1a9b9016ee83dea60573abb9a5ef4cdbcb" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPRange::operator!=</definition>
+        <argsstring>(const QCPRange &amp;other) const </argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref> &amp;</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="485" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="485" bodyend="485"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_range_1afea7c1aa7d08f061cd9bd8832f957df8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref> &amp;</type>
+        <definition>QCPRange &amp; QCPRange::operator+=</definition>
+        <argsstring>(const double &amp;value)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds <emphasis>value</emphasis> to both boundaries of the range. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="487" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="487" bodyend="487"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_range_1a95894bcb15a16a75ca564091374e2191" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref> &amp;</type>
+        <definition>QCPRange &amp; QCPRange::operator-=</definition>
+        <argsstring>(const double &amp;value)</argsstring>
+        <name>operator-=</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Subtracts <emphasis>value</emphasis> from both boundaries of the range. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="488" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="488" bodyend="488"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_range_1a6876aa9620ff2f0f7f1873f998372cef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref> &amp;</type>
+        <definition>QCPRange &amp; QCPRange::operator*=</definition>
+        <argsstring>(const double &amp;value)</argsstring>
+        <name>operator*=</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies both boundaries of the range by <emphasis>value</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="489" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="489" bodyend="489"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_range_1a6137d8682b6835ace840730b4c1e2d63" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref> &amp;</type>
+        <definition>QCPRange &amp; QCPRange::operator/=</definition>
+        <argsstring>(const double &amp;value)</argsstring>
+        <name>operator/=</name>
+        <param>
+          <type>const double &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Divides both boundaries of the range by <emphasis>value</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="490" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="490" bodyend="490"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_range_1afa57c13049b965edb6fd1c00ac56338a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double QCPRange::size</definition>
+        <argsstring>() const </argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the size of the range, i.e. <emphasis>upper-<emphasis>lower</emphasis> </emphasis> </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="498" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="1328" bodyend="1331"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_range_1a3825b53cf17da5de0843c1f3baad07db" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double QCPRange::center</definition>
+        <argsstring>() const </argsstring>
+        <name>center</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the center of the range, i.e. (<emphasis>upper+<emphasis>lower</emphasis>)*0</emphasis>.5 </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="499" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="1336" bodyend="1339"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_range_1af914a7740269b0604d0827c634a878a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPRange::normalize</definition>
+        <argsstring>()</argsstring>
+        <name>normalize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Makes sure <emphasis>lower</emphasis> is numerically smaller than <emphasis>upper</emphasis>. If this is not the case, the values are swapped. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="500" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="1345" bodyend="1349"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_range_1a0fa1bc8048be50d52bea93a8caf08305" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPRange::expand</definition>
+        <argsstring>(const QCPRange &amp;otherRange)</argsstring>
+        <name>expand</name>
+        <param>
+          <type>const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref> &amp;</type>
+          <declname>otherRange</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Expands this range such that <emphasis>otherRange</emphasis> is contained in the new range. It is assumed that both this range and <emphasis>otherRange</emphasis> are normalized (see <ref refid="class_q_c_p_range_1af914a7740269b0604d0827c634a878a9" kindref="member">normalize</ref>).</para><para>If <emphasis>otherRange</emphasis> is already inside the current range, this function does nothing.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_range_1a6437bdf29a7ebc2c88a6045c4e622384" kindref="member">expanded</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="501" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="1359" bodyend="1365"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_range_1a6437bdf29a7ebc2c88a6045c4e622384" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref></type>
+        <definition>QCPRange QCPRange::expanded</definition>
+        <argsstring>(const QCPRange &amp;otherRange) const </argsstring>
+        <name>expanded</name>
+        <param>
+          <type>const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref> &amp;</type>
+          <declname>otherRange</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns an expanded range that contains this and <emphasis>otherRange</emphasis>. It is assumed that both this range and <emphasis>otherRange</emphasis> are normalized (see <ref refid="class_q_c_p_range_1af914a7740269b0604d0827c634a878a9" kindref="member">normalize</ref>).</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_range_1a0fa1bc8048be50d52bea93a8caf08305" kindref="member">expand</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="502" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="1374" bodyend="1379"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_range_1aaf6a9046e78d91eeb8e89584fe46b034" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref></type>
+        <definition>QCPRange QCPRange::sanitizedForLogScale</definition>
+        <argsstring>() const </argsstring>
+        <name>sanitizedForLogScale</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a sanitized version of the range. Sanitized means for logarithmic scales, that the range won&apos;t span the positive and negative sign domain, i.e. contain zero. Further <emphasis>lower</emphasis> will always be numerically smaller (or equal) to <emphasis>upper</emphasis>.</para><para>If the original range does span positive and negative sign domains or contains zero, the returned range will try to approximate the original range as good as possible. If the positive interval of the original range is wider than the negative interval, the returned range will only contain the positive interval, with lower bound set to <emphasis>rangeFac</emphasis> or <emphasis>rangeFac</emphasis> *<emphasis>upper</emphasis>, whichever is closer to zero. Same procedure is used if the negative interval is wider than the positive interval, this time by changing the <emphasis>upper</emphasis> bound. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="503" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="1393" bodyend="1436"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_range_1a1ff029704c29a75adbc1dc36cecaf44c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref></type>
+        <definition>QCPRange QCPRange::sanitizedForLinScale</definition>
+        <argsstring>() const </argsstring>
+        <name>sanitizedForLinScale</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a sanitized version of the range. Sanitized means for linear scales, that <emphasis>lower</emphasis> will always be numerically smaller (or equal) to <emphasis>upper</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="504" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="1442" bodyend="1447"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_range_1a030ce95b527c32e01414d0351347b46d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPRange::contains</definition>
+        <argsstring>(double value) const </argsstring>
+        <name>contains</name>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true when <emphasis>value</emphasis> lies within or exactly on the borders of the range. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="505" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="1452" bodyend="1455"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_q_c_p_range_1af53ea6fb823a4a5897162b865841de04" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref></type>
+        <definition>const QCPRange operator+</definition>
+        <argsstring>(const QCPRange &amp;, double)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref> &amp;</type>
+          <defname>range</defname>
+        </param>
+        <param>
+          <type>double</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds <emphasis>value</emphasis> to both boundaries of the range. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="491" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="542" bodyend="547"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_q_c_p_range_1a9fb2e9941d32001482df670c0d704977" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref></type>
+        <definition>const QCPRange operator+</definition>
+        <argsstring>(double, const QCPRange &amp;)</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>double</type>
+          <defname>value</defname>
+        </param>
+        <param>
+          <type>const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref> &amp;</type>
+          <defname>range</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds <emphasis>value</emphasis> to both boundaries of the range. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="492" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="552" bodyend="557"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_q_c_p_range_1a797f82830b516646da8873f82e39e356" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref></type>
+        <definition>const QCPRange operator-</definition>
+        <argsstring>(const QCPRange &amp;range, double value)</argsstring>
+        <name>operator-</name>
+        <param>
+          <type>const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref> &amp;</type>
+          <declname>range</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Subtracts <emphasis>value</emphasis> from both boundaries of the range. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="493" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="562" bodyend="567"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_q_c_p_range_1a558b1248ff6a9e41fd5b2630555a8acc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref></type>
+        <definition>const QCPRange operator*</definition>
+        <argsstring>(const QCPRange &amp;range, double value)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref> &amp;</type>
+          <declname>range</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies both boundaries of the range by <emphasis>value</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="494" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="572" bodyend="577"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_q_c_p_range_1a5cb2332f6957021f47cc768089f4f090" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref></type>
+        <definition>const QCPRange operator*</definition>
+        <argsstring>(double value, const QCPRange &amp;range)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref> &amp;</type>
+          <declname>range</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Multiplies both boundaries of the range by <emphasis>value</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="495" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="582" bodyend="587"/>
+      </memberdef>
+      <memberdef kind="friend" id="class_q_c_p_range_1a4b366a3a21974c88e09b0d39d4a24a4b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>friend const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref></type>
+        <definition>const QCPRange operator/</definition>
+        <argsstring>(const QCPRange &amp;range, double value)</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref> &amp;</type>
+          <declname>range</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Divides both boundaries of the range by <emphasis>value</emphasis>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="496" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="592" bodyend="597"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_q_c_p_range_1ab38bd4841c77c7bb86c9eea0f142dcc0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPRange::validRange</definition>
+        <argsstring>(double lower, double upper)</argsstring>
+        <name>validRange</name>
+        <param>
+          <type>double</type>
+          <declname>lower</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>upper</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks, whether the specified range is within valid bounds, which are defined as <ref refid="class_q_c_p_range_1a5ca51e7a2dc5dc0d49527ab171fe1f4f" kindref="member">QCPRange::maxRange</ref> and <ref refid="class_q_c_p_range_1ab46d3bc95030ee25efda41b89e2b616b" kindref="member">QCPRange::minRange</ref>. A valid range means: <itemizedlist>
+<listitem><para>range bounds within -maxRange and maxRange </para></listitem>
+<listitem><para>range size above minRange </para></listitem>
+<listitem><para>range size below maxRange </para></listitem>
+</itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="507" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="1465" bodyend="1478"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_range_1a801b964752eaad6219be9d8a651ec2b3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPRange::validRange</definition>
+        <argsstring>(const QCPRange &amp;range)</argsstring>
+        <name>validRange</name>
+        <param>
+          <type>const <ref refid="class_q_c_p_range" kindref="compound">QCPRange</ref> &amp;</type>
+          <declname>range</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. Checks, whether the specified range is within valid bounds, which are defined as <ref refid="class_q_c_p_range_1a5ca51e7a2dc5dc0d49527ab171fe1f4f" kindref="member">QCPRange::maxRange</ref> and <ref refid="class_q_c_p_range_1ab46d3bc95030ee25efda41b89e2b616b" kindref="member">QCPRange::minRange</ref>. A valid range means: <itemizedlist>
+<listitem><para>range bounds within -maxRange and maxRange </para></listitem>
+<listitem><para>range size above minRange </para></listitem>
+<listitem><para>range size below maxRange </para></listitem>
+</itemizedlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="508" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="1489" bodyend="1503"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Represents the range an axis is encompassing. </para>    </briefdescription>
+    <detaileddescription>
+<para>contains a <emphasis>lower</emphasis> and <emphasis>upper</emphasis> double value and provides convenience input, output and modification functions.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_axis_1aebdfea5d44c3a0ad2b4700cd4d25b641" kindref="member">QCPAxis::setRange</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="477" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="476" bodyend="512"/>
+    <listofallmembers>
+      <member refid="class_q_c_p_range_1a3825b53cf17da5de0843c1f3baad07db" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>center</name></member>
+      <member refid="class_q_c_p_range_1a030ce95b527c32e01414d0351347b46d" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>contains</name></member>
+      <member refid="class_q_c_p_range_1a0fa1bc8048be50d52bea93a8caf08305" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>expand</name></member>
+      <member refid="class_q_c_p_range_1a6437bdf29a7ebc2c88a6045c4e622384" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>expanded</name></member>
+      <member refid="class_q_c_p_range_1aa3aca3edb14f7ca0c85d912647b91745" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>lower</name></member>
+      <member refid="class_q_c_p_range_1a5ca51e7a2dc5dc0d49527ab171fe1f4f" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>maxRange</name></member>
+      <member refid="class_q_c_p_range_1ab46d3bc95030ee25efda41b89e2b616b" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>minRange</name></member>
+      <member refid="class_q_c_p_range_1af914a7740269b0604d0827c634a878a9" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>normalize</name></member>
+      <member refid="class_q_c_p_range_1a9b9016ee83dea60573abb9a5ef4cdbcb" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>operator!=</name></member>
+      <member refid="class_q_c_p_range_1a558b1248ff6a9e41fd5b2630555a8acc" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>operator*</name></member>
+      <member refid="class_q_c_p_range_1a5cb2332f6957021f47cc768089f4f090" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>operator*</name></member>
+      <member refid="class_q_c_p_range_1a6876aa9620ff2f0f7f1873f998372cef" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>operator*=</name></member>
+      <member refid="class_q_c_p_range_1af53ea6fb823a4a5897162b865841de04" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>operator+</name></member>
+      <member refid="class_q_c_p_range_1a9fb2e9941d32001482df670c0d704977" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>operator+</name></member>
+      <member refid="class_q_c_p_range_1afea7c1aa7d08f061cd9bd8832f957df8" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>operator+=</name></member>
+      <member refid="class_q_c_p_range_1a797f82830b516646da8873f82e39e356" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>operator-</name></member>
+      <member refid="class_q_c_p_range_1a95894bcb15a16a75ca564091374e2191" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>operator-=</name></member>
+      <member refid="class_q_c_p_range_1a4b366a3a21974c88e09b0d39d4a24a4b" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>operator/</name></member>
+      <member refid="class_q_c_p_range_1a6137d8682b6835ace840730b4c1e2d63" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>operator/=</name></member>
+      <member refid="class_q_c_p_range_1aa20f91509687505e25bd2ef10d2f0e15" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>operator==</name></member>
+      <member refid="class_q_c_p_range_1aca158d7e69702cee5d77d10a269b01e2" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>QCPRange</name></member>
+      <member refid="class_q_c_p_range_1a1d9d84d084c8f368fdedd42e0978d405" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>QCPRange</name></member>
+      <member refid="class_q_c_p_range_1a1ff029704c29a75adbc1dc36cecaf44c" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>sanitizedForLinScale</name></member>
+      <member refid="class_q_c_p_range_1aaf6a9046e78d91eeb8e89584fe46b034" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>sanitizedForLogScale</name></member>
+      <member refid="class_q_c_p_range_1afa57c13049b965edb6fd1c00ac56338a" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>size</name></member>
+      <member refid="class_q_c_p_range_1ae44eb3aafe1d0e2ed34b499b6d2e074f" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>upper</name></member>
+      <member refid="class_q_c_p_range_1ab38bd4841c77c7bb86c9eea0f142dcc0" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>validRange</name></member>
+      <member refid="class_q_c_p_range_1a801b964752eaad6219be9d8a651ec2b3" prot="public" virt="non-virtual"><scope>QCPRange</scope><name>validRange</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

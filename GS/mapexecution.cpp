@@ -96,7 +96,6 @@ void MapExecution::onCancelButtonClicked() {
 // redirect to mission planning
 // REPURPOSED TO BE A MISSION START BUTTON
 void MapExecution::onStartButtonClicked() {
-
     //-old code-
     //this->done(1);
     //-start button code-

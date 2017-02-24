@@ -1,0 +1,350 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="mission_8cpp" kind="file" language="C++">
+    <compoundname>mission.cpp</compoundname>
+    <includes refid="mission_8h" local="yes">mission.h</includes>
+    <incdepgraph>
+      <node id="1901">
+        <label>QMap</label>
+      </node>
+      <node id="1920">
+        <label>QObject</label>
+      </node>
+      <node id="1926">
+        <label>ackpacket.h</label>
+        <link refid="ackpacket_8h"/>
+        <childnode refid="1906" relation="include">
+        </childnode>
+        <childnode refid="1904" relation="include">
+        </childnode>
+      </node>
+      <node id="1910">
+        <label>QList</label>
+      </node>
+      <node id="1907">
+        <label>stdint.h</label>
+      </node>
+      <node id="1908">
+        <label>telemetrypacket.h</label>
+        <link refid="telemetrypacket_8h"/>
+        <childnode refid="1903" relation="include">
+        </childnode>
+        <childnode refid="1904" relation="include">
+        </childnode>
+      </node>
+      <node id="1900">
+        <label>QPair</label>
+      </node>
+      <node id="1903">
+        <label>string</label>
+      </node>
+      <node id="1916">
+        <label>qcomboboxdelegate.h</label>
+        <link refid="qcomboboxdelegate_8h"/>
+        <childnode refid="1917" relation="include">
+        </childnode>
+        <childnode refid="1918" relation="include">
+        </childnode>
+        <childnode refid="1919" relation="include">
+        </childnode>
+        <childnode refid="1920" relation="include">
+        </childnode>
+        <childnode refid="1921" relation="include">
+        </childnode>
+        <childnode refid="1922" relation="include">
+        </childnode>
+        <childnode refid="1923" relation="include">
+        </childnode>
+      </node>
+      <node id="1919">
+        <label>QModelIndex</label>
+      </node>
+      <node id="1897">
+        <label>mission.h</label>
+        <link refid="mission_8h"/>
+        <childnode refid="1898" relation="include">
+        </childnode>
+        <childnode refid="1899" relation="include">
+        </childnode>
+        <childnode refid="1900" relation="include">
+        </childnode>
+        <childnode refid="1901" relation="include">
+        </childnode>
+        <childnode refid="1902" relation="include">
+        </childnode>
+        <childnode refid="1908" relation="include">
+        </childnode>
+        <childnode refid="1909" relation="include">
+        </childnode>
+        <childnode refid="1911" relation="include">
+        </childnode>
+      </node>
+      <node id="1928">
+        <label>string.h</label>
+      </node>
+      <node id="1915">
+        <label>QTime</label>
+      </node>
+      <node id="1914">
+        <label>QApplication</label>
+      </node>
+      <node id="1925">
+        <label>QValidator</label>
+      </node>
+      <node id="1913">
+        <label>vector</label>
+      </node>
+      <node id="1922">
+        <label>QLineEdit</label>
+      </node>
+      <node id="1904">
+        <label>packet.h</label>
+        <link refid="packet_8h"/>
+        <childnode refid="1905" relation="include">
+        </childnode>
+        <childnode refid="1906" relation="include">
+        </childnode>
+        <childnode refid="1907" relation="include">
+        </childnode>
+      </node>
+      <node id="1898">
+        <label>QString</label>
+      </node>
+      <node id="1921">
+        <label>QSize</label>
+      </node>
+      <node id="1896">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.cpp</label>
+        <link refid="mission.cpp"/>
+        <childnode refid="1897" relation="include">
+        </childnode>
+      </node>
+      <node id="1905">
+        <label>time.h</label>
+      </node>
+      <node id="1918">
+        <label>QComboBox</label>
+      </node>
+      <node id="1912">
+        <label>iostream</label>
+      </node>
+      <node id="1909">
+        <label>flightpath.h</label>
+        <link refid="flightpath_8h"/>
+        <childnode refid="1910" relation="include">
+        </childnode>
+        <childnode refid="1900" relation="include">
+        </childnode>
+        <childnode refid="1898" relation="include">
+        </childnode>
+        <childnode refid="1902" relation="include">
+        </childnode>
+      </node>
+      <node id="1917">
+        <label>QItemDelegate</label>
+      </node>
+      <node id="1924">
+        <label>QDoubleValidator</label>
+      </node>
+      <node id="1911">
+        <label>messagebox.h</label>
+        <link refid="messagebox_8h"/>
+        <childnode refid="1912" relation="include">
+        </childnode>
+        <childnode refid="1913" relation="include">
+        </childnode>
+        <childnode refid="1914" relation="include">
+        </childnode>
+        <childnode refid="1900" relation="include">
+        </childnode>
+        <childnode refid="1910" relation="include">
+        </childnode>
+        <childnode refid="1915" relation="include">
+        </childnode>
+        <childnode refid="1907" relation="include">
+        </childnode>
+        <childnode refid="1916" relation="include">
+        </childnode>
+        <childnode refid="1926" relation="include">
+        </childnode>
+        <childnode refid="1902" relation="include">
+        </childnode>
+        <childnode refid="1927" relation="include">
+        </childnode>
+        <childnode refid="1908" relation="include">
+        </childnode>
+      </node>
+      <node id="1923">
+        <label>mapvalidator.h</label>
+        <link refid="mapvalidator_8h"/>
+        <childnode refid="1924" relation="include">
+        </childnode>
+        <childnode refid="1925" relation="include">
+        </childnode>
+      </node>
+      <node id="1927">
+        <label>infopacket.h</label>
+        <link refid="infopacket_8h"/>
+        <childnode refid="1903" relation="include">
+        </childnode>
+        <childnode refid="1928" relation="include">
+        </childnode>
+        <childnode refid="1907" relation="include">
+        </childnode>
+        <childnode refid="1904" relation="include">
+        </childnode>
+      </node>
+      <node id="1906">
+        <label>stdio.h</label>
+      </node>
+      <node id="1902">
+        <label>actionpacket.h</label>
+        <link refid="actionpacket_8h"/>
+        <childnode refid="1903" relation="include">
+        </childnode>
+        <childnode refid="1904" relation="include">
+        </childnode>
+      </node>
+      <node id="1899">
+        <label>QVector</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mission_8h" kindref="compound">mission.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><ref refid="class_mission_1aa5a6ff4fc779338ab01b8f6dd470f4df" kindref="member">Mission::Mission</ref>(){</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mission_1a35bb479196454b53ec05617957b01f85" kindref="member">myFlightPath</ref><sp/>=<sp/><ref refid="class_flight_path" kindref="compound">FlightPath</ref>();</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_mission_1af76ffa1e6c93db10274dfd9b457b373f" kindref="member">initValues</ref>();</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><ref refid="class_mission_1aa5a6ff4fc779338ab01b8f6dd470f4df" kindref="member">Mission::Mission</ref>(<ref refid="class_flight_path" kindref="compound">FlightPath</ref><sp/>flightPath):<sp/>myFlightPath(flightPath){</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;initValues();</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><ref refid="class_mission_1aa5a6ff4fc779338ab01b8f6dd470f4df" kindref="member">Mission::Mission</ref>(QString<sp/>filename){</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_mission_1af76ffa1e6c93db10274dfd9b457b373f" kindref="member">initValues</ref>();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//reuse<sp/>the<sp/>FlightPath&apos;s<sp/>load<sp/>method</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="class_mission_1a35bb479196454b53ec05617957b01f85" kindref="member">myFlightPath</ref><sp/>=<sp/><ref refid="class_flight_path" kindref="compound">FlightPath</ref>(filename+</highlight><highlight class="stringliteral">&quot;_fp&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lines<sp/>=<sp/>10;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>lines;<sp/>i++){</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>heading<sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lat<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lon<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>alt<sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>pitch<sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>roll<sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>yaw<sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>xvel<sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>yvel<sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>zvel<sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(0)-&gt;append(heading);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(1)-&gt;append(lat);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(2)-&gt;append(lon);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(3)-&gt;append(alt);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(4)-&gt;append(pitch);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(5)-&gt;append(roll);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(6)-&gt;append(yaw);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(7)-&gt;append(xvel);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(8)-&gt;append(yvel);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(9)-&gt;append(zvel);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><ref refid="class_mission_1ad1a61b34162393ac42be5955d9772921" kindref="member">Mission::~Mission</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><ref refid="class_flight_path" kindref="compound">FlightPath</ref><sp/>*<ref refid="class_mission_1ae6034451524e6b87062fcb62c89ae458" kindref="member">Mission::getFlightPath</ref>(){</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>&amp;<ref refid="class_mission_1a35bb479196454b53ec05617957b01f85" kindref="member">myFlightPath</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_mission_1af76ffa1e6c93db10274dfd9b457b373f" kindref="member">Mission::initValues</ref>(){</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>10;<sp/>i++){</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.append(</highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QVector&lt;double&gt;);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_mission_1aba7aac52c4313705452dabcce0a6a0d2" kindref="member">Mission::addPacket</ref>(<ref refid="class_protocol_1_1_telemetry_packet" kindref="compound">Protocol::TelemetryPacket</ref><sp/>telemPacket){</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>std::cout&lt;&lt;</highlight><highlight class="stringliteral">&quot;MISSION:<sp/>Recieving<sp/>new<sp/>telem<sp/>packet&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>headingF;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lat,lon;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>alt;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>pitch,roll,yaw;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>xvel,yvel,zvel;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>telemPacket.<ref refid="class_protocol_1_1_telemetry_packet_1a99157743e501e0ad781a7aa55ed9efad" kindref="member">GetHeading</ref>(&amp;headingF);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>telemPacket.<ref refid="class_protocol_1_1_telemetry_packet_1a1b4a35e86bac0731ab8176cb9371c2a8" kindref="member">GetLocation</ref>(&amp;lat,&amp;lon,&amp;alt);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>telemPacket.<ref refid="class_protocol_1_1_telemetry_packet_1ac2cbd3c31a0d9b184a6d8fc79a77a80b" kindref="member">GetOrientation</ref>(&amp;pitch,&amp;roll,&amp;yaw);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>telemPacket.<ref refid="class_protocol_1_1_telemetry_packet_1a5e67607eff1a34ee2747e232c806b8c1" kindref="member">GetVelocity</ref>(&amp;xvel,&amp;yvel,&amp;zvel);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>headingD<sp/>=<sp/>headingF;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(0)-&gt;append(headingD);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(1)-&gt;append(lat);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(2)-&gt;append(lon);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(3)-&gt;append(alt);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(4)-&gt;append(pitch);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(5)-&gt;append(roll);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(6)-&gt;append(yaw);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(7)-&gt;append(xvel);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(8)-&gt;append(yvel);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(9)-&gt;append(zvel);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">//<sp/>values[id][index]<sp/>=<sp/>some<sp/>value<sp/>(double)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">QVector&lt;double&gt;<sp/>*<ref refid="class_mission_1ac6cf2cd13b5be62dec02a4edaba1be25" kindref="member">Mission::getValuesForID</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal">QVector&lt;double&gt;<sp/>*<ref refid="class_mission_1a4377102f1abe6a9f2767fa09a9a8f64e" kindref="member">Mission::getValuesForIndex</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index){</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>QVector&lt;double&gt;<sp/>*rtnList<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QVector&lt;double&gt;();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/>0;<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>&lt;<sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.size();<sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">++){</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rtnList-&gt;append(<ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)-&gt;at(index));</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rtnList;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_mission_1ad2cd66901a48bbb2e042cd14740b3cba" kindref="member">Mission::getValueForIndexAndID</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">)-&gt;at(index);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_mission_1a8e02183538b8e0095f7a6e609149f75d" kindref="member">Mission::save</ref>(QString<sp/>filename){</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Reuse<sp/>the<sp/>FlightPath<sp/>save<sp/>function.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="class_mission_1a35bb479196454b53ec05617957b01f85" kindref="member">myFlightPath</ref>.<ref refid="class_flight_path_1a3a602f9b4b608f506354bf6c711a84eb" kindref="member">save</ref>(filename+</highlight><highlight class="stringliteral">&quot;_fp&quot;</highlight><highlight class="normal">)){</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//return<sp/>false<sp/>if<sp/>saving<sp/>the<sp/>FlightPath<sp/>causes<sp/>an<sp/>error.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(0)-&gt;length();<sp/>i++){</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>index<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>heading<sp/>=<sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(index++)-&gt;at(i);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lat<sp/>=<sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(index++)-&gt;at(i);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lon<sp/>=<sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(index++)-&gt;at(i);;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>alt<sp/>=<sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(index++)-&gt;at(i);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>pitch<sp/>=<sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(index++)-&gt;at(i);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>roll<sp/>=<sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(index++)-&gt;at(i);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>yaw<sp/>=<sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(index++)-&gt;at(i);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>xvel<sp/>=<sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(index++)-&gt;at(i);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>yvel<sp/>=<sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(index++)-&gt;at(i);</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>zvel<sp/>=<sp/><ref refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" kindref="member">values</ref>.at(index++)-&gt;at(i);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.cpp"/>
+  </compounddef>
+</doxygen>

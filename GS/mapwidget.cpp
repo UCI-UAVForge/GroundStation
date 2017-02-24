@@ -64,6 +64,8 @@ void MapWidget::loadStartedSlot() {
     loading= true;
 }
 
+//Public "emitters" used by C++ to communicate with JS
+
 void MapWidget::addPointToMap(double lat, double lng, int index, int pathID){
     emit insertPointToMap(lat,lng,index,pathID);
 }
@@ -78,6 +80,10 @@ void MapWidget::sendSetActivePath(int id){
 
 void MapWidget::sendClearFlightPath(int pathID){
     emit clearFlightPath(pathID);
+}
+
+void MapWidget::sendDisableEditing(){
+    emit disableEditing();
 }
 
 void MapWidget::disconnectWebSocket(){
