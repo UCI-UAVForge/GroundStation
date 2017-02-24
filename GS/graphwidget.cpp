@@ -25,26 +25,25 @@ void GraphWidget::makePlot()
 
 
     QVector<double> * vals = mission->getValuesForIndex(0);
-    QVector<double> * val1 = mission->getValuesForID(6);
+//    QVector<double> * val1 = mission->getValuesForID(6);
+
+//    values.at(0)->append(heading);
+//    values.at(1)->append(lat);
+//    values.at(2)->append(lon);
+//    values.at(3)->append(alt);
+//    values.at(4)->append(pitch);
+//    values.at(5)->append(roll);
+//    values.at(6)->append(yaw);
+//    values.at(7)->append(xvel);
+//    values.at(8)->append(yvel);
+//    values.at(9)->append(zvel);
 
     // Test
-//    this->vX = *((float*)(buffer + offset));// = this->vX;
-//    this->vY = *((float*)(buffer + offset + 4));// = this->vY;
-//    this->vZ = *((float*)(buffer + offset + 8));// = this->vZ;
-//    this->pitch = *((float*)(buffer + offset + 12));// = this->pitch;
-//    this->roll = *((float*)(buffer + offset + 16));// = this->roll;
-//    this->yaw = *((float*)(buffer + offset + 20));// = this->yaw;
-//    this->lat = *((double*)(buffer + offset + 24));// = this->lat;
-//    this->lon = *((double*)(buffer + offset + 32));// = this->lon;
-//    this->alt = *((float*)(buffer + offset + 40));// = this->alt;
-//    this->heading = *((float*)(buffer + offset + 44));// = this->heading;
-
     QTextStream out(stdout);
-    out << "vals size: " << (*vals)[1]<< endl;
-    out << "vals size: " << (*vals)[2]<< endl;
-    out << "vals size: " << (*vals)[3]<< endl;
-
-    out << "val1 size: " << (*val1)[0]<< endl;
+    out << "heading: " << (*vals)[0]<< endl;
+    out << "lat: " << (*vals)[1]<< endl;
+    out << "lon: " << (*vals)[2]<< endl;
+    out << "alt: " << (*vals)[3]<< endl;
 
     ui->customPlot->legend->setVisible(true);
     ui->customPlot->legend->setFont(QFont("Helvetica", 9));
@@ -60,18 +59,25 @@ void GraphWidget::makePlot()
 
     // Generate data
     QVector<double> x(15), y(15);
+    int max = 0;
     for (int j = 0; j < 15; ++j)
     {
-        x[j] = j + 1;
-        y[j] = j + 2;
-//        x[j] = (*vals)[1] + j;
-//        y[j] = (*vals)[2] + j;
+        x[j] = j;
+        y[j] = qrand() % qCeil((*vals)[2]);
+
+        // Save max for scaling
+        if (max > y[j])
+            max = y[j];
+        out << "x" << i << ": " << x[j] << endl;
+        out << "y" << i << ": " << y[j] << endl;
     }
     ui->customPlot->graph()->setData(x, y);
 
     // zoom out a bit:
-    ui->customPlot->yAxis->scaleRange(1.1, ui->customPlot->yAxis->range().center());
-    ui->customPlot->xAxis->scaleRange(1.1, ui->customPlot->xAxis->range().center());
+//    ui->customPlot->yAxis->scaleRange(10, ui->customPlot->yAxis->range().center());
+//    ui->customPlot->yAxis->scaleRange(2, max / 2);
+    ui->customPlot->xAxis->scaleRange(10, ui->customPlot->xAxis->range().center());
+    ui->customPlot->yAxis->rescale();
     // set blank axis lines:
     ui->customPlot->xAxis->setTicks(false);
     ui->customPlot->yAxis->setTicks(true);
@@ -80,37 +86,6 @@ void GraphWidget::makePlot()
     // make top right axes clones of bottom left axes:
     ui->customPlot->axisRect()->setupFullAxesBox();
 
-//    // Generate data
-//    QVector<double> x(101), y(101); //Init with entries 0.100
-//    for(int i = 0; i < 101; ++i)
-//    {
-//        x[i] = i/50.0 - 1; // x goes from -1 to 1
-//        y[i] = x[i] * x[i]; // Quadratic function
-//    }
-
-//    QVector<QCPScatterStyle::ScatterShape> shapes;
-//    shapes << QCPScatterStyle::ssCross;
-//    shapes << QCPScatterStyle::ssPlus;
-//    shapes << QCPScatterStyle::ssDisc;
-
-
-
-//    ui->customPlot->legend->setVisible(true);
-//    ui->customPlot->legend->setFont(QFont("Helvetica", 9));
-//    ui->customPlot->legend->setRowSpacing(-3);
-
-//    // Create graph & assign data to it
-//    ui->customPlot->addGraph();
-//    ui->customPlot->graph(0)->setData(x, y);
-
-//    //Give the axes some labels:
-//    ui->customPlot->xAxis->setLabel("x");
-//    ui->customPlot->yAxis->setLabel("y");
-
-//    //set axes ranges so we see all data
-//    ui->customPlot->xAxis->setRange(-1, 1);
-//    ui->customPlot->yAxis->setRange(0, 1);
-//    ui->customPlot->replot();
 }
 
 Mission* GraphWidget::getNewMission(){
@@ -118,10 +93,10 @@ Mission* GraphWidget::getNewMission(){
 
 
     Protocol::TelemetryPacket tp;
-    tp.SetOrientation(1, 2, 3);
-    tp.SetHeading(20);
-    tp.SetVelocity(15, 16, 17);
-    tp.SetLocation(10,10,40);
+    tp.SetOrientation(1, 2, 3); // pitch, roll, yaw
+    tp.SetHeading(20); // h
+    tp.SetVelocity(15, 16, 17); // vX, vY, vZ
+    tp.SetLocation(10,10,40); // lat, lon, alt
 
     newMission->addPacket(tp);
 
