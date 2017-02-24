@@ -37,12 +37,27 @@ private slots:
   void setupMapPaths();
   void changeState(MDIState newState);
 
+  void startMissionPlanningSlot();
+  void startMissionExecutionSlot();
+  void startMissionRecapSlot();
+
+
+  void receivePacket(Protocol::Packet* packet);
 private:
   Ui::MainMDIDisplay *ui;
 
   MDIState myState;
+
+  //Jordan's vars for state transition
   FlightPath *myLoadedFlightPath;
   Mission *myLoadedMission;
+
+  GsServer* myServer;
+  messagebox* myMessageBox;
+  //end Jordan's vars
+
+
+
 
   MapWidget* map;
   TableWidget* table;
@@ -67,6 +82,7 @@ private:
   void endMissionExecution();
   void startMissionRecap();
   void endMissionRecap();
+  void plotPosition(double lat, double lng);
 };
 
 

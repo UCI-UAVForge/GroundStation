@@ -35,9 +35,11 @@ function initializeMap() {
 
     //Adds the click listener for ploting waypoints
     google.maps.event.addListener(map, 'click', function(event){
-        var len = activePath.getPath().getLength();
-        activePath.getPath().push(event.latLng);
-        cbridge.pointAddedToMap(event.latLng.lat(),event.latLng.lng(),len,activePathID);
+        if(editable){
+            var len = activePath.getPath().getLength();
+            activePath.getPath().push(event.latLng);
+            cbridge.pointAddedToMap(event.latLng.lat(),event.latLng.lng(),len,activePathID);
+        }
     });
     cbridge.finishedLoading();
 }
