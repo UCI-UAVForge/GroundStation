@@ -43,7 +43,7 @@ void DbManager::createOrLoadMissionTable()
     queryStatement += "CREATE TABLE Mission (";
     queryStatement += "heading  REAL,";
     queryStatement += "lat      REAL,";
-    queryStatement += "lan      REAL,";
+    queryStatement += "lon      REAL,";
     queryStatement += "alt      REAL,";
     queryStatement += "pitch    REAL,";
     queryStatement += "roll     REAL,";
@@ -62,7 +62,7 @@ void DbManager::createOrLoadMissionTable()
         MissionData data;
         data.heading = query.value(0).toFloat();
         data.lat = query.value(1).toDouble();
-        data.lan = query.value(2).toDouble();
+        data.lon = query.value(2).toDouble();
         data.alt = query.value(3).toFloat();
         data.pitch = query.value(4).toFloat();
         data.roll = query.value(5).toFloat();
@@ -175,6 +175,22 @@ bool DbManager::open(const QString& fileName, const QString& directory)
     return this->m_db.isOpen();
 }
 
+unsigned char* DbManager::toArray(QVector<unsigned char> vector)
+{
+    unsigned char* charArray = new unsigned char[vector.size()];
+    for (int index = 0; index < vector.size(); ++index)
+        charArray[index] = vector.at(index);
+    return charArray;
+}
+
+QVector<unsigned char> DbManager::toVector(unsigned char* array, size_t size)
+{
+    QVector<unsigned char> vector;
+    for (size_t index = 0; index < size; ++index)
+        vector.push_back(array[index]);
+    return vector;
+}
+
 void DbManager::close()
 {
     this->m_db.close();
@@ -203,11 +219,11 @@ void DbManager::missionSaveToFile()
 
     QSqlQuery query;
     foreach (MissionData data, mission) {
-        query.prepare("INSERT INTO Mission (heading, lat, lan, alt, pitch, roll, yaw, xvel, yvel, zvel)"
-                      "VALUES (:heading, :lat, :lan, :alt, :pitch, :roll, :yaw, :xvel, :yvel, :zvel)");
+        query.prepare("INSERT INTO Mission (heading, lat, lon, alt, pitch, roll, yaw, xvel, yvel, zvel)"
+                      "VALUES (:heading, :lat, :lon, :alt, :pitch, :roll, :yaw, :xvel, :yvel, :zvel)");
         query.bindValue(":heading", data.heading);
         query.bindValue(":lat",     data.lat);
-        query.bindValue(":lan",     data.lan);
+        query.bindValue(":lon",     data.lon);
         query.bindValue(":alt",     data.alt);
         query.bindValue(":pitch",   data.pitch);
         query.bindValue(":roll",    data.roll);

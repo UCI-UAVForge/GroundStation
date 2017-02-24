@@ -20,7 +20,7 @@ int main()
 
         // Mission data.
         MissionData missionData; // Each mission data represents one point.
-        missionData.lan = 1.5;
+        missionData.lon = 1.5;
         missionData.lat = 2.5;
 
         // Save 1
@@ -64,7 +64,7 @@ const unsigned int kDataSize = 40;
 struct MissionData {
     float heading;
     double lat;
-    double lan;
+    double lon;
     float alt;
     float pitch;
     float roll;
@@ -73,11 +73,11 @@ struct MissionData {
     float yvel;
     float zvel;
 
-    MissionData(float heading = 0, double lat = 0, double lan = 0, float alt = 0, float pitch = 0, float roll = 0, float yaw = 0, float xvel = 0, float yvel = 0, float zvel = 0)
+    MissionData(float heading = 0, double lat = 0, double lon = 0, float alt = 0, float pitch = 0, float roll = 0, float yaw = 0, float xvel = 0, float yvel = 0, float zvel = 0)
     {
         this->heading = heading;
         this->lat = lat;
-        this->lan = lan;
+        this->lon = lon;
         this->alt = alt;
         this->pitch = pitch;
         this->roll = roll;
@@ -139,6 +139,12 @@ public:
 
     // Close current database connection.
     void close();
+
+    // Convert vector into array of size 'kDataSize'.
+    static unsigned char* toArray(QVector<unsigned char> vector);
+
+    // Convert array of size 'kDataSize' into vector.
+    static QVector<unsigned char> toVector(unsigned char* array, size_t size);
 
 ////=== Mission Commands ===////
 
