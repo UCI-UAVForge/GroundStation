@@ -4,9 +4,8 @@
 #include "tablewidget.h"
 #include "graphwidget.h"
 
-MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainMDIDisplay),
-
-    MapExecutionStatusVBoxLayout(NULL) , mapExecutionStatusUIWidget(NULL) {
+MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
+    ui(new Ui::MainMDIDisplay) {
 
     ui->setupUi(this);
 
@@ -47,10 +46,6 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new U
 
 
 
-    connect(map, &MapWidget::pointAddedToMap, tw, &TableWidget::appendRow);
-
-
-
     //this->addWindow( this->missionPlanningWindowUIWidget );
 
 }
@@ -81,7 +76,7 @@ void MainMDIDisplay::switchToPlanningWindow() {
     //this->tempMapPlanningUIWidget->ui->webView->load(QUrl("qrc:/res/html/mapsPlanning.html"));
     this->tempMapPlanningUIWidget->clearTable();
     //Add the buttons from MapPlanning to the Mission Planning window
-
+/*
     this->tempMapPlanningUIWidget->ui->backButton->show();
 
     this->tempMapPlanningUIWidget->ui->clearTableButton->show();
@@ -101,7 +96,7 @@ void MainMDIDisplay::switchToPlanningWindow() {
     //this->missionPlanningWindowUIWidget->addButton( this->tempMapPlanningUIWidget->getLoadMissionButton() );
 
     //this->missionPlanningWindowUIWidget->addButton( this->tempMapPlanningUIWidget->getSaveMissionButton() );
-
+*/
 }
 
 QtTabTest * MainMDIDisplay::getQttWidget() const {
@@ -211,7 +206,7 @@ void MainMDIDisplay::changePlanningToExecutionWindow() {
     this->missionPlanningWindowUIWidget->dumpComboBoxes() ;
 
     //TODO CLEAN UP THESE GODDAMN MEMORY LEAKS
-
+/*
     tempMapPlanningUIWidget->ui->executeButton->hide();
 
     tempMapPlanningUIWidget->ui->backButton->hide();
@@ -221,7 +216,7 @@ void MainMDIDisplay::changePlanningToExecutionWindow() {
     tempMapPlanningUIWidget->loadMissionButton->hide();
 
     tempMapPlanningUIWidget->saveMissionButton->hide();
-
+*/
     this->missionPlanningWindowUIWidget->uavComboBox->hide();
 
     this->missionPlanningWindowUIWidget->missionPlanComboBox->hide();
@@ -232,7 +227,8 @@ void MainMDIDisplay::changePlanningToExecutionWindow() {
 
     //TODO Add addButtons function to take a list of buttons in the missionplanningwindow class
 
-    this->missionPlanningWindowUIWidget->addButton( this->tempMapExecutionUIWidget->ui->backButton ) ;
+
+    //this->missionPlanningWindowUIWidget->addButton( this->tempMapExecutionUIWidget->ui->backButton ) ;
 
     this->missionPlanningWindowUIWidget->addButton( this->tempMapExecutionUIWidget->ui->cancelButton );
 
@@ -240,7 +236,7 @@ void MainMDIDisplay::changePlanningToExecutionWindow() {
 
     this->missionPlanningWindowUIWidget->changeTitle( QString( "Mission Execution" ) ) ;
 
-    connect( this->tempMapExecutionUIWidget->ui->backButton, SIGNAL(clicked()), this, SLOT(clickedBackButton_MainDisplay()) );
+    //connect( this->tempMapExecutionUIWidget->ui->backButton, SIGNAL(clicked()), this, SLOT(clickedBackButton_MainDisplay()) );
 
     connect( this->tempMapExecutionUIWidget->ui->cancelButton, SIGNAL(clicked()), this, SLOT(clickedCancelButton_MainDisplay()) );
 
@@ -374,17 +370,17 @@ void MainMDIDisplay::clearMapExecution() {
 
     }
 
-    if ( this->tempMapExecutionUIWidget->ui->backButton != NULL ) {
+    //if ( this->tempMapExecutionUIWidget->ui->backButton != NULL ) {
 
-        this->tempMapExecutionUIWidget->ui->backButton->hide() ;
+    //    this->tempMapExecutionUIWidget->ui->backButton->hide() ;
 
-    }
+    //}
 
-    else {
+    //else {
 
         /* Do nothing */
 
-    }
+    //}
 
     if ( this->tempMapExecutionUIWidget->conTime != NULL ) {
 

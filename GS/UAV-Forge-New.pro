@@ -45,7 +45,6 @@ SOURCES += main.cpp\
     qcomboboxdelegate.cpp \
     videoplayer.cpp \
     gsserver.cpp \
-    gsclient.cpp \
     qcustomplot.cpp\
     networklistener.cpp \
     connectiondialog.cpp \
@@ -82,7 +81,6 @@ HEADERS  += mainwindow.h \
     videoplayer.h \
     net.h \
     gsserver.h \
-    gsclient.h \
     qcustomplot.h\
     networklistener.h \
     connectiondialog.h \
