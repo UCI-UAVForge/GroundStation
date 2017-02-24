@@ -38,6 +38,9 @@ void GraphWidget::makePlot()
 //    values.at(8)->append(yvel);
 //    values.at(9)->append(zvel);
 
+    // Get checkboxes value
+
+
     // Test
     QTextStream out(stdout);
     out << "heading: " << (*vals)[0]<< endl;
@@ -48,6 +51,10 @@ void GraphWidget::makePlot()
     ui->customPlot->legend->setVisible(true);
     ui->customPlot->legend->setFont(QFont("Helvetica", 9));
     QPen pen;
+    QStringList lineNames;
+
+    lineNames << "lsLine" << "lsStepLeft" << "lsStepRight" << "lsStepCenter" << "lsImpulse";
+
 
     int i = 0;
     ui->customPlot->addGraph();
