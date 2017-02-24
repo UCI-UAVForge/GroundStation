@@ -1,6 +1,6 @@
 /**
  * Class: DBManager
- * Date: Feb 10, 2017
+ * Date: Feb 24, 2017
  * Author: Aung(David) Moe
  * Description: Database system for logging system information to/from the drones for the UAVF project.
  * Required: Add 'QT += sql' to 'UAV-Forge-New.pro' file.
@@ -140,10 +140,10 @@ public:
     // Close current database connection.
     void close();
 
-    // Convert vector into array of size 'kDataSize'.
+    // Convert vector into array.
     static unsigned char* toArray(QVector<unsigned char> vector);
 
-    // Convert array of size 'kDataSize' into vector.
+    // Convert array of 'size' into vector.
     static QVector<unsigned char> toVector(unsigned char* array, size_t size);
 
 ////=== Mission Commands ===////

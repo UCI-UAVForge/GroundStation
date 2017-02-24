@@ -8,7 +8,7 @@
 #include <iostream>
 
 
-////=== Constructors/Destructors ===////
+////=== Constructors/Destructors with initialization commands ===////
 
 DbManager::DbManager(const QString& fileName, const QString& directory)
     : fileName(fileName), directory(directory)
@@ -175,6 +175,11 @@ bool DbManager::open(const QString& fileName, const QString& directory)
     return this->m_db.isOpen();
 }
 
+void DbManager::close()
+{
+    this->m_db.close();
+}
+
 unsigned char* DbManager::toArray(QVector<unsigned char> vector)
 {
     unsigned char* charArray = new unsigned char[vector.size()];
@@ -189,11 +194,6 @@ QVector<unsigned char> DbManager::toVector(unsigned char* array, size_t size)
     for (size_t index = 0; index < size; ++index)
         vector.push_back(array[index]);
     return vector;
-}
-
-void DbManager::close()
-{
-    this->m_db.close();
 }
 
 ////=== Mission Commands ===////
