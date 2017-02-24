@@ -8,6 +8,7 @@
 #include "mapwidget.h"
 #include "missionstatuswindow.h"
 #include <assert.h>
+#include "tablewidget.h"
 
 #include "gscontrolpanel.h"
 
@@ -106,6 +107,8 @@ private:
     messagebox mb ;
 
     GSControlPanel gscp ;
+
+    TableWidget tw ;
 
     /* Buttons */
 

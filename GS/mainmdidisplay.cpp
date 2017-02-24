@@ -16,14 +16,18 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
     map = new MapWidget();
     addWindow(map);
 
+    /*
     TableWidget *tw = new TableWidget();
     addWindow(tw);
+    */
+
+    addWindow(&tw);
 
     addWindow(&msw);
 
     addWindow(&gscp);
 
-    connect(map, &MapWidget::pointAdded, tw, &TableWidget::appendRow);
+    connect(map, &MapWidget::pointAdded, &tw, &TableWidget::appendRow);
 
     connect( &(this->msw) , SIGNAL( updateStatusWidget() ) , this , SLOT( updateMissionStatus() ) ) ;
 
@@ -87,9 +91,21 @@ void MainMDIDisplay::addWindow( QWidget * myNewWindowWidget ) {
     /* TODO Default window style should go here by making all of the windows conform to the same
      * stylesheet - Roman Parise */
 
-    /* Second argument - turns off the 'X' in the subwindows */
+    QMdiSubWindow * newWindow = NULL ;
 
-    ui->mdiArea->addSubWindow( myNewWindowWidget , Qt::CustomizeWindowHint | Qt::WindowMinMaxButtonsHint );
+    if ( myNewWindowWidget != NULL ) {
+        /* Second argument - turns off the 'X' in the subwindows */
+        newWindow = ui->mdiArea->addSubWindow( myNewWindowWidget , Qt::CustomizeWindowHint | Qt::WindowMinMaxButtonsHint );
+        ///\todo Better error checking?
+        if ( newWindow != NULL ) {
+            newWindow->setMinimumSize( myNewWindowWidget->width() , myNewWindowWidget->height() );
+            newWindow->adjustSize() ;
+        } else {
+            qDebug() << "Subwindow could not be created to hold widget." ;
+        }
+    } else {
+        qDebug() << "Cannot add window with NULL widget." ;
+    }
 
 }
 
