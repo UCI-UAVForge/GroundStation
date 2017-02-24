@@ -98,6 +98,9 @@ private:
 
     QWidget * MapRecapUI_TableTab , * MapRecapUI_GraphTab ;
 
+    /*Graph Widget*/
+    QWidget * graph;
+
 };
 
 #endif // MAINMDIDISPLAY_H

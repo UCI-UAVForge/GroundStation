@@ -2,6 +2,7 @@
 #include "ui_mainmdidisplay.h"
 #include "mapwidget.h"
 #include "tablewidget.h"
+#include "graphwidget.h"
 
 MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new Ui::MainMDIDisplay),
 
@@ -38,12 +39,19 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent) , ui(new U
     map = new MapWidget();
     addWindow(map);
 
+    graph = new GraphWidget();
+    this->addWindow(graph);
+
     TableWidget *tw = new TableWidget();
     addWindow(tw);
 
+
+
     connect(map, &MapWidget::pointAddedToMap, tw, &TableWidget::appendRow);
 
-    this->addWindow( this->missionPlanningWindowUIWidget );
+
+
+    //this->addWindow( this->missionPlanningWindowUIWidget );
 
 }
 
