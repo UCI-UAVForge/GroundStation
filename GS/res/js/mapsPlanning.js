@@ -7,7 +7,9 @@ var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
         map = new L.Map('map', {center: new L.LatLng(33.6454,-117.8426), zoom: 13});
 
 var drawnItems = new L.FeatureGroup().addTo(map);
-
+var selectedLayers = new L.FeatureGroup().addTo(map);
+var selectedSubPath = [];
+var selectedSubPathLine;
 osm.addTo(map);
 
 //Drawing tools options
@@ -31,7 +33,7 @@ var drawControl = new L.Control.Draw(
 map.addControl(drawControl);
 
 //Fixes a bug where it draws double the points.
-map.on('click');
+//map.on('click');
 
 
 var allPoints,
@@ -54,6 +56,12 @@ function updateTable(layer) {
     }
 }
 
+function clearSelectedLayer() {
+    if (drawnItems.hasLayer(selectedSubPathLine)) {
+        drawnItems.removeLayer(selectedSubPathLine);
+        selectedLayers.clearLayers();
+    }
+}
 
 function addClickListener(layer) {
     layer.on('click', function(){
@@ -61,14 +69,10 @@ function addClickListener(layer) {
         updateTable(layer);
         selectColor(layer);
         selectedLayer = layer;
-        var startPopup = L.popup()
-            .setLatLng(allPoints[0])
-            .setContent("Start")
-            .openOn(map);
     });
 }
 
-function onDraw(event) {
+map.on('draw:created', function(event){
     var layer = event.layer;
     allPoints = layer.getLatLngs();
     selectColor(layer);
@@ -76,9 +80,11 @@ function onDraw(event) {
     drawnItems.addLayer(layer);
     addClickListener(layer);
     updateTable(layer);
-}
+});
 
-map.on('draw:created', onDraw);
+map.on('draw:editstart', function(event){
+    clearSelectedLayer();
+});
 
 map.on('draw:editstop', function(event){
     updateTable(selectedLayer);
@@ -96,12 +102,40 @@ map.on('draw:deleted', function(event){
 
 
 function clearMap() {
-    //Called from the c++ side to refresh the map.
-    //pretty redundant button
     drawnItems.clearLayers();
 }
 
-function addLatLngCoords(lat, lng) {
+
+function addLatLngCoords(lat, lng, id) {
+    if (id === -1) {
+        selectedSubPath.push([lat, lng]);
+    }
+    else {
+        flightPlan.push([lat, lng]);
+    }
+}
+
+function addSelectedSubPath() {
+    clearSelectedLayer();
+    if (selectedSubPath.length != 0) {
+        selectedSubPathLine = L.polyline(selectedSubPath, {color:'yellow', opacity:0.6});
+        var firstWP = new L.Marker(selectedSubPath[0]).addTo(map);
+        var lastWP = new L.Marker(selectedSubPath[selectedSubPath.length - 1]);
+        selectedLayers.addLayer(firstWP).addTo(map);
+        selectedLayers.addLayer(lastWP).addTo(map);
+        drawnItems.addLayer(selectedSubPathLine).addTo(map);
+        drawnItems.eachLayer(function(layer) {
+            layer.redraw();
+        });
+        selectedSubPath = [];
+    }
+}
+
+function addSelectedPath(lat, lng) {
+    flightPlanLine = L.polyline(flightPlan, {opacity:0.6});
+    drawnItems.addLayer(flightPlanLine).addTo(map);
+    map.removeControl(drawControl);
+    map.fitBounds(flightPlanLine.getBounds(), {padding:[50, 50]});
 }
 
 /////execution
@@ -150,11 +184,4 @@ function addDrawControl() {
 }
 
 
-//In case a reload is necessary
-var readyStateCheckInterval = setInterval(function() {
-    if (document.readyState === "complete") {
-        clearInterval(readyStateCheckInterval);
-        cbridge.addNewMap();
-    }
-}, 10);
 

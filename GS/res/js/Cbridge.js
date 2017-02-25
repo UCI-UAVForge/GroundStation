@@ -19,11 +19,13 @@ window.onload = function() {
             // make dialog object accessible globally
             window.cbridge = channel.objects.cbridge;
             cbridge.sendPointToMap.connect(function(lat,lng,id) {
-                addLatLngCoords(lat,lng);
+                addLatLngCoords(lat,lng, id);
             });
-
-            cbridge.clearFlightpath.connect(function(id) {
+            cbridge.clearFlightPath.connect(function(id) {
                 clearMap();
+            });
+            cbridge.flightPathSent.connect(function() {
+                addSelectedSubPath();
             });
         });
         initializeMap();

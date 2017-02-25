@@ -37,6 +37,11 @@ signals:
      * @brief tableUpdated
      */
     void tableUpdated();
+    /**
+     * @brief selectedData
+     * @param latlngs
+     */
+    void selectedData(FlightPath * fp, int index);
 
 public slots:
     /**
@@ -51,10 +56,15 @@ public slots:
      */
     void removeSelectedRows();
 
+
     /**
      * @brief clearTable
      */
     void clearTable();
+    /**
+     * @brief getSelectedData
+     */
+    void getSelectedData();
 };
 
 #endif // TABLEWIDGET_H

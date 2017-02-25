@@ -8,8 +8,8 @@
 #include <iostream>
 #include <QTimer>
 #include <QList>
-
 #include "ackpacket.h"
+#include <QDebug>
 
 MapWidget::MapWidget(QWidget *parent): QWebEngineView(parent),
     server(QStringLiteral("MapServer"), QWebSocketServer::NonSecureMode),
@@ -75,6 +75,10 @@ void MapWidget::clearMap(){
     emit clearFlightPath(0);
 }
 
+void MapWidget::clearTable(){
+    emit tableCleared();
+}
+
 void MapWidget::disconnectWebSocket(){
     server.close();
 }
@@ -84,8 +88,9 @@ void MapWidget::addFlightPath(FlightPath* fp, int index){
 
     for(int i = 0; i < list->length(); i++){
         Protocol::Waypoint wp = list->at(i);
-        emit sendPointToMap(wp.lat,wp.alt,index);
+        emit sendPointToMap(wp.lat,wp.lon,index);
     }
-
+    emit flightPathSent();
     delete list;
 }
+

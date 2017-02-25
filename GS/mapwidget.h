@@ -25,7 +25,7 @@ private:
     QWebSocketServer server;
     WebSocketClientWrapper clientWrapper;
 
-    const QUrl MapURL = QUrl("qrc:/res/html/mapsPlanningGoogle.html");
+    const QUrl MapURL = QUrl("qrc:/res/html/mapsPlanning.html");
 
 
 public:
@@ -102,6 +102,11 @@ public slots:
      */
     void addFlightPath(FlightPath* fp, int index = 0);
 
+    /**
+     * @brief clearTable
+    */
+    void clearTable();
+
 signals:
     /**
      * @brief sendPointToMap
@@ -119,10 +124,20 @@ signals:
     void pointAddedToMap(double lat, double lng, int pathID);
 
     /**
-     * @brief clearFlightpath
+     * @brief clearFlightPath
      * @param pathID
      */
     void clearFlightPath(int pathID);
+
+    /**
+     * @brief tableCleared
+     */
+    void tableCleared();
+
+    /**
+     * @brief flightPathSent
+     */
+    void flightPathSent();
 };
 
 #endif // MAPWIDGET_H
