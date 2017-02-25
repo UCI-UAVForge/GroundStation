@@ -27,7 +27,37 @@ window.onload = function() {
             cbridge.flightPathSent.connect(function() {
                 addSelectedSubPath();
             });
+
+            cbridge.createNewPath.connect(function(id) {
+                createNewPath(id);
+            });
+
+            cbridge.setActivePath.connect(function(id) {
+                setActivePath(id);
+            });
+
+            cbridge.disableEditing.connect(function() {
+                disableEditing();
+            });
+
+            cbridge.appendPointToPath.connect(function(lat, lng, id) {
+                appendPointToPath(lat,lng,id);
+            });
+
+            cbridge.insertPointToMap.connect(function(lat, lng, index, id) {
+                insertPointToMap(lat,lng,index,id);
+            });
+
+            cbridge.removePointFromMap.connect(function(index, id){
+                removePointFromMap(index,id);
+            });
+
+            cbridge.clearFlightPath.connect(function(id){
+                clearFlightPath(id);
+            });
+
+            initializeMap();
         });
-        initializeMap();
+
     }
 }

@@ -46,6 +46,8 @@ public slots:
     void updateTable(double lat, double lng);
     void sendFlightPlan();
     void updateStatusIndicator();
+    void setupMapPaths();
+    void receivePacket(Protocol::Packet* packet);
 
 public:
     MapExecution(FlightPath* flightPath, QWidget *parent = 0);
@@ -65,11 +67,11 @@ public:
     void setMyMission(const Mission &value);
 
 private slots:
-    void on_finishButton_clicked();
+    void onFinishButtonClicked();
     void on_returnHomeButton_clicked();
-    void on_cancelButton_clicked();
+    void onCancelButtonClicked();
     void on_stopButton_clicked();
-    void on_backButton_clicked();
+    void onStartButtonClicked();
     void addClickListener();
 
 private:

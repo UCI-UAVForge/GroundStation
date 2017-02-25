@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_status_widget" kind="class" language="C++" prot="public">
+    <compoundname>StatusWidget</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QPlainTextEdit</basecompoundref>
+    <includes refid="statuswidget_8h" local="no">statuswidget.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_status_widget_1a2b2e34b29945d2ea12a8c05df7577073" prot="private" static="no" mutable="no">
+        <type>QTimer</type>
+        <definition>QTimer StatusWidget::StatusTimer</definition>
+        <argsstring></argsstring>
+        <name>StatusTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.h" line="13" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_status_widget_1aa44ee56a7a1bfc07fea862479f9f243d" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString StatusWidget::start</definition>
+        <argsstring></argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.h" line="15" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_status_widget_1ad2a00a82ccb53786324a2d2638112783" prot="private" static="no" mutable="no">
+        <type><ref refid="classmessagebox" kindref="compound">messagebox</ref> *</type>
+        <definition>messagebox* StatusWidget::mb</definition>
+        <argsstring></argsstring>
+        <name>mb</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.h" line="17" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_status_widget_1a64fbad1ba9c9e7584afc4eae42521878" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>StatusWidget::StatusWidget</definition>
+        <argsstring>(QObject *parent)</argsstring>
+        <name>StatusWidget</name>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.h" line="20" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.cpp" bodystart="10" bodyend="13"/>
+      </memberdef>
+      <memberdef kind="function" id="class_status_widget_1a0991157916d0e53285dd00ff27f4a1c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>StatusWidget::~StatusWidget</definition>
+        <argsstring>()</argsstring>
+        <name>~StatusWidget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.h" line="22" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.cpp" bodystart="15" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_status_widget_1ab4adf6771aca52d05c164e97fa8d06f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StatusWidget::initiate</definition>
+        <argsstring>(messagebox *mbin)</argsstring>
+        <name>initiate</name>
+        <param>
+          <type><ref refid="classmessagebox" kindref="compound">messagebox</ref> *</type>
+          <declname>mbin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.h" line="24" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.cpp" bodystart="19" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="class_status_widget_1a43ed1589a2b314c7f6fcef0b71116244" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QTimer</type>
+        <definition>QTimer StatusWidget::getStatusTimer</definition>
+        <argsstring>()</argsstring>
+        <name>getStatusTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.h" line="26" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.cpp" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="class_status_widget_1a172ab7eb7040df2efa0eef942f90e5b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StatusWidget::setStatusTimer</definition>
+        <argsstring>(QTimer newStatusTimer)</argsstring>
+        <name>setStatusTimer</name>
+        <param>
+          <type>QTimer</type>
+          <declname>newStatusTimer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.h" line="28" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.cpp" bodystart="67" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_status_widget_1a31b621d52573cd10e0a5208d8d46858a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StatusWidget::showStatus</definition>
+        <argsstring>()</argsstring>
+        <name>showStatus</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.h" line="32" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.cpp" bodystart="31" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_status_widget_1aee594f77c101d1601cab25c39df61aa9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StatusWidget::updateMe</definition>
+        <argsstring>()</argsstring>
+        <name>updateMe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.h" line="36" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1120">
+        <label>QPlainTextEdit</label>
+      </node>
+      <node id="1119">
+        <label>StatusWidget</label>
+        <link refid="class_status_widget"/>
+        <childnode refid="1120" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1123">
+        <label>messagebox</label>
+        <link refid="classmessagebox"/>
+      </node>
+      <node id="1122">
+        <label>QPlainTextEdit</label>
+      </node>
+      <node id="1121">
+        <label>StatusWidget</label>
+        <link refid="class_status_widget"/>
+        <childnode refid="1122" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1123" relation="usage">
+          <edgelabel>mb</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.h" line="11" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.h" bodystart="10" bodyend="38"/>
+    <listofallmembers>
+      <member refid="class_status_widget_1a43ed1589a2b314c7f6fcef0b71116244" prot="public" virt="non-virtual"><scope>StatusWidget</scope><name>getStatusTimer</name></member>
+      <member refid="class_status_widget_1ab4adf6771aca52d05c164e97fa8d06f5" prot="public" virt="non-virtual"><scope>StatusWidget</scope><name>initiate</name></member>
+      <member refid="class_status_widget_1ad2a00a82ccb53786324a2d2638112783" prot="private" virt="non-virtual"><scope>StatusWidget</scope><name>mb</name></member>
+      <member refid="class_status_widget_1a172ab7eb7040df2efa0eef942f90e5b0" prot="public" virt="non-virtual"><scope>StatusWidget</scope><name>setStatusTimer</name></member>
+      <member refid="class_status_widget_1a31b621d52573cd10e0a5208d8d46858a" prot="private" virt="non-virtual"><scope>StatusWidget</scope><name>showStatus</name></member>
+      <member refid="class_status_widget_1aa44ee56a7a1bfc07fea862479f9f243d" prot="private" virt="non-virtual"><scope>StatusWidget</scope><name>start</name></member>
+      <member refid="class_status_widget_1a2b2e34b29945d2ea12a8c05df7577073" prot="private" virt="non-virtual"><scope>StatusWidget</scope><name>StatusTimer</name></member>
+      <member refid="class_status_widget_1a64fbad1ba9c9e7584afc4eae42521878" prot="public" virt="non-virtual"><scope>StatusWidget</scope><name>StatusWidget</name></member>
+      <member refid="class_status_widget_1aee594f77c101d1601cab25c39df61aa9" prot="public" virt="non-virtual"><scope>StatusWidget</scope><name>updateMe</name></member>
+      <member refid="class_status_widget_1a0991157916d0e53285dd00ff27f4a1c5" prot="public" virt="non-virtual"><scope>StatusWidget</scope><name>~StatusWidget</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

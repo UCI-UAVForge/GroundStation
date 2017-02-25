@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_mission_status_window" kind="class" language="C++" prot="public">
+    <compoundname>MissionStatusWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QDialog</basecompoundref>
+    <includes refid="missionstatuswindow_8h" local="no">missionstatuswindow.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_mission_status_window_1a0aaf2adaf879db758a4f4bed80b13ec0" prot="private" static="no" mutable="no">
+        <type>Ui::MissionStatusWindow *</type>
+        <definition>Ui::MissionStatusWindow* MissionStatusWindow::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionstatuswindow.h" line="19" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionstatuswindow.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_mission_status_window_1a7cb42c39b9050b6ab3c5f1dac25cc45d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MissionStatusWindow::MissionStatusWindow</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>MissionStatusWindow</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionstatuswindow.h" line="15" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionstatuswindow.cpp" bodystart="4" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_status_window_1ae777603fed5cedc813c7f3e21d10179f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MissionStatusWindow::~MissionStatusWindow</definition>
+        <argsstring>()</argsstring>
+        <name>~MissionStatusWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionstatuswindow.h" line="16" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionstatuswindow.cpp" bodystart="11" bodyend="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="154">
+        <label>MissionStatusWindow</label>
+        <link refid="class_mission_status_window"/>
+        <childnode refid="155" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="155">
+        <label>QDialog</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="156">
+        <label>MissionStatusWindow</label>
+        <link refid="class_mission_status_window"/>
+        <childnode refid="157" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="157">
+        <label>QDialog</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionstatuswindow.h" line="11" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionstatuswindow.h" bodystart="10" bodyend="20"/>
+    <listofallmembers>
+      <member refid="class_mission_status_window_1a7cb42c39b9050b6ab3c5f1dac25cc45d" prot="public" virt="non-virtual"><scope>MissionStatusWindow</scope><name>MissionStatusWindow</name></member>
+      <member refid="class_mission_status_window_1a0aaf2adaf879db758a4f4bed80b13ec0" prot="private" virt="non-virtual"><scope>MissionStatusWindow</scope><name>ui</name></member>
+      <member refid="class_mission_status_window_1ae777603fed5cedc813c7f3e21d10179f" prot="public" virt="non-virtual"><scope>MissionStatusWindow</scope><name>~MissionStatusWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

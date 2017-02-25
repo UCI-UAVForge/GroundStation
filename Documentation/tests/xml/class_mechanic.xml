@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_mechanic" kind="class" language="C++" prot="public">
+    <compoundname>Mechanic</compoundname>
+    <includes refid="_mechanic_8h" local="no">Mechanic.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_mechanic_1a1e29db59ab4d9e179c9d58d4998c305e" prot="private" static="no" mutable="no">
+        <type><ref refid="class_wrench" kindref="compound">Wrench</ref></type>
+        <definition>Wrench Mechanic::MyWrench</definition>
+        <argsstring></argsstring>
+        <name>MyWrench</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/Documentation/tests/Mechanic.h" line="13" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/Documentation/tests/Mechanic.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_mechanic_1a39ae598d740a821ca9c99185e0b3561b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Mechanic::Mechanic</definition>
+        <argsstring>()</argsstring>
+        <name>Mechanic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/Documentation/tests/Mechanic.h" line="7" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mechanic_1a42cc66ad83b498cba1f02d5a9e1e82eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Mechanic::~Mechanic</definition>
+        <argsstring>()</argsstring>
+        <name>~Mechanic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/GroundStation/Documentation/tests/Mechanic.h" line="9" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Roman/Documents/GroundStation/Documentation/tests/Mechanic.h" line="3" column="1" bodyfile="C:/Users/Roman/Documents/GroundStation/Documentation/tests/Mechanic.h" bodystart="3" bodyend="15"/>
+    <listofallmembers>
+      <member refid="class_mechanic_1a39ae598d740a821ca9c99185e0b3561b" prot="public" virt="non-virtual"><scope>Mechanic</scope><name>Mechanic</name></member>
+      <member refid="class_mechanic_1a1e29db59ab4d9e179c9d58d4998c305e" prot="private" virt="non-virtual"><scope>Mechanic</scope><name>MyWrench</name></member>
+      <member refid="class_mechanic_1a42cc66ad83b498cba1f02d5a9e1e82eb" prot="public" virt="non-virtual"><scope>Mechanic</scope><name>~Mechanic</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

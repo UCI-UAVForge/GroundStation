@@ -6,7 +6,7 @@
 #include "mapexecution.h"
 
 DigitalClock::DigitalClock(QWidget *parent)
-    : QPlainTextEdit(parent)
+    : QPlainTextEdit(parent) , TimeTimer( NULL ) , StatusTimer( NULL )
 {
     //setSegmentStyle(Filled);
 
@@ -25,9 +25,33 @@ DigitalClock::~DigitalClock()
      * then deletes it. If you just do "delete StatusTimer" the whole universe implodes.
      * Sorry. I needed to tell somebody this :) */
 
-    //StatusTimer->deleteLater();
+    if ( this->StatusTimer != NULL ) {
 
-    TimeTimer->deleteLater();
+        this->StatusTimer->deleteLater();
+
+        this->StatusTimer = NULL ;
+
+    }
+
+    else {
+
+        /* Do nothing. */
+
+    }
+
+    if ( this->TimeTimer != NULL ) {
+
+        this->TimeTimer->deleteLater();
+
+        this->TimeTimer = NULL ;
+
+    }
+
+    else {
+
+        /* Do nothing. */
+
+    }
 
 }
 

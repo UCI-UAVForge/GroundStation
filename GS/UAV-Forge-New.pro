@@ -47,7 +47,7 @@ SOURCES += main.cpp\
     qcomboboxdelegate.cpp \
     videoplayer.cpp \
     gsserver.cpp \
-    gsclient.cpp \
+    gscontrolpanel.cpp \
     qcustomplot.cpp\
     networklistener.cpp \
     connectiondialog.cpp \
@@ -69,7 +69,11 @@ SOURCES += main.cpp\
     mapwidget.cpp \
     websocketclientwrapper.cpp \
     websockettransport.cpp \
-    tablewidget.cpp
+    tablewidget.cpp \
+    graphwidget.cpp \
+    #statuswidget.cpp \
+    timerwidget.cpp \
+    missionstatuswindow.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
@@ -82,8 +86,8 @@ HEADERS  += mainwindow.h \
     qcomboboxdelegate.h \
     videoplayer.h \
     net.h \
+    gscontrolpanel.h \
     gsserver.h \
-    gsclient.h \
     qcustomplot.h\
     networklistener.h \
     connectiondialog.h \
@@ -107,7 +111,11 @@ HEADERS  += mainwindow.h \
     websocketclientwrapper.h \
     websockettransport.h \
     dialog.h \
-    tablewidget.h
+    tablewidget.h \
+    graphwidget.h \
+    #statuswidget.h \
+    timerwidget.h \
+    missionstatuswindow.h
 
 FORMS    += mainwindow.ui \
     options.ui \
@@ -116,20 +124,22 @@ FORMS    += mainwindow.ui \
     missionrecap.ui \
     tutorial.ui \
     popwindowmp.ui \
+    gscontrolpanel.ui \
     connectiondialog.ui \
     maprecap.ui \
     qttabtest.ui \
     mainmdidisplay.ui \
-    dialog.ui
+    dialog.ui \
+    graphwidget.ui\
+    missionstatuswindow.ui
 
 OTHER_FILES +=
 
 #Uncomment this line, clean the build, run qmake, and then rebuild to use the old GUI.
-DEFINES += OLD_GUI
+#DEFINES += OLD_GUI
 
 RESOURCES += \
     Resources.qrc
 
 #DISTFILES += \
 #    res/html/mapsPlanningGoogle.html
-

@@ -33,11 +33,11 @@ int main(int argc, char *argv[]) {
     QSplashScreen splash(pixmap);
     splash.show();
 
-    #ifndef OLD_GUI
+    //#ifndef OLD_GUI
     MainMDIDisplay x;
-    #else
-    MainWindow x;
-    #endif
+    //#else
+    //MainWindow x;
+    //#endif
 
     //MainWindow x;
     x.showFullScreen();

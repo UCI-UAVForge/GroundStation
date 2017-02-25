@@ -1,7 +1,10 @@
 var uci=new google.maps.LatLng(33.6454,-117.8426);
 var map;
 var flightPath;
-var clickable = false;
+var editable = false;
+var activePathID = 0;
+var paths = [];
+var activePath = paths[0];
 
 //Setup function that creates the initial map state.
 function initializeMap() {
@@ -22,38 +25,88 @@ function initializeMap() {
 
     map = new google.maps.Map(mapCanvas, mapOptions);
 
-    flightPath = new google.maps.Polyline({
-                                              strokeColor:"#0000FF",
-                                              strokeOpacity:0.8,
-                                              strokeWeight:2
-                                          });
+//    flightPath = new google.maps.Polyline({
+//                                              strokeColor:"#0000FF",
+//                                              strokeOpacity:0.8,
+//                                              strokeWeight:2
+//                                          });
 
-    flightPath.setMap(map);
+//    flightPath.setMap(map);
 
     //Adds the click listener for ploting waypoints
     google.maps.event.addListener(map, 'click', function(event){
-        addLatLng(event.latLng);
-        //cbridge.addPointToTable(event.latLng.lat(),event.latLng.lng());
-        cbridge.addPointToTable(event.latLng.lat(),event.latLng.lng());
+        if(editable){
+            var len = activePath.getPath().getLength();
+            activePath.getPath().push(event.latLng);
+            cbridge.pointAddedToMap(event.latLng.lat(),event.latLng.lng(),len,activePathID);
+        }
     });
+    cbridge.finishedLoading();
 }
 
-function addLatLngCoords(lat,lng) {
-    //Used on the c++ side to add a new point to the map.
-    var location = new google.maps.LatLng(lat,lng);
-    addLatLng(location);
-    return "Adding new point.";
+//Interface functions for working with Cbridge.js
+
+/*
+  @brief createNewPath Creates a new GoogleMaps Polyline to act as a flightPath
+  and gives it the specified id.
+  @param id - the id the new path will have
+  @author Jordan Dickson - Feb 15, 2017
+*/
+
+var colors = [
+    "#0000FF",
+    "#FF0000",
+    "#00FF00",
+    "#FF00FF",
+];
+
+function createNewPath(id){
+    console.log("creating new path");
+    if(!paths[id]){
+        //@todo give paths different colors
+        var fp = new google.maps.Polyline({
+                                              strokeColor:colors[id],
+                                              strokeOpacity:0.8,
+                                              strokeWeight:2
+                                          });
+        paths[id] = fp;
+        paths[id].setMap(map);
+    }
 }
 
-function addLatLng(myLocation) {
-    //Adds a new point to the flightpath list by pushing the myLocation tuple to the list.
-    flightPath.getPath().push(myLocation);
+
+function setActivePath(id){
+    activePathID = id;
+    activePath = paths[activePathID];
+    editable = true;
 }
 
-function clearMap() {
-    //Called from the c++ side to refresh the map.
-    //modified by Arash on 2/23/15: it will now clear the map without
-    //changing the zoom level or center of the map
-    //modified by Jordan 5/22/15: no longer needs to reinitialize
-    flightPath.getPath().clear();
+function disableEditing(){
+    editable = false;
+}
+
+function appendPointToPath(lat,lng,id){
+    if(paths[id]){
+        var coord = new google.maps.LatLng(lat,lng);
+        paths[id].getPath().push(coord);
+    }
+}
+
+function insertPointToMap(lat,lng,index,id){
+    if(paths[id]){
+        var coord = new google.maps.LatLng(lat,lng);
+        paths[id].getPath().insertAt(index,coord);
+    }
+}
+
+function removePointFromMap(index, id){
+    if(paths[id]){
+        paths[id].getPath().removeAt(index);
+    }
+}
+
+function clearFlightPath(id){
+    if(paths[id]){
+        paths[id].getPath().clear();
+    }
 }
