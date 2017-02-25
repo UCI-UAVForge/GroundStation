@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_mission" kind="class" language="C++" prot="public">
+    <compoundname>Mission</compoundname>
+    <includes refid="mission_8h" local="no">mission.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_mission_1a35bb479196454b53ec05617957b01f85" prot="private" static="no" mutable="no">
+        <type><ref refid="class_flight_path" kindref="compound">FlightPath</ref></type>
+        <definition>FlightPath Mission::myFlightPath</definition>
+        <argsstring></argsstring>
+        <name>myFlightPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.h" line="41" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" prot="private" static="no" mutable="no">
+        <type>QVector&lt; QVector&lt; double &gt; * &gt;</type>
+        <definition>QVector&lt;QVector&lt;double&gt;* &gt; Mission::values</definition>
+        <argsstring></argsstring>
+        <name>values</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.h" line="43" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_mission_1aa5a6ff4fc779338ab01b8f6dd470f4df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Mission::Mission</definition>
+        <argsstring>()</argsstring>
+        <name>Mission</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.h" line="15" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.cpp" bodystart="3" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_1a3c1cb92197018f64854514616b43f06b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Mission::Mission</definition>
+        <argsstring>(QString filename)</argsstring>
+        <name>Mission</name>
+        <param>
+          <type>QString</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para><xrefsect id="todo_1_todo000012"><xreftitle>Todo</xreftitle><xrefdescription><para>any database initialization and error checking if necesary </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000013"><xreftitle>Todo</xreftitle><xrefdescription><para>get the number of lines in the database </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000014"><xreftitle>Todo</xreftitle><xrefdescription><para>update these lines with values from the database </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000015"><xreftitle>Todo</xreftitle><xrefdescription><para>any remaining database functions for safe file handling if needed </para></xrefdescription></xrefsect></para>        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.h" line="17" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.cpp" bodystart="12" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_1a68bf8cba0c882169d26fb4bcb80c228c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Mission::Mission</definition>
+        <argsstring>(FlightPath flightPath)</argsstring>
+        <name>Mission</name>
+        <param>
+          <type><ref refid="class_flight_path" kindref="compound">FlightPath</ref></type>
+          <declname>flightPath</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.h" line="19" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.cpp" bodystart="8" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_1ad1a61b34162393ac42be5955d9772921" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Mission::~Mission</definition>
+        <argsstring>()</argsstring>
+        <name>~Mission</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.h" line="21" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.cpp" bodystart="51" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_1aba7aac52c4313705452dabcce0a6a0d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Mission::addPacket</definition>
+        <argsstring>(Protocol::TelemetryPacket telemPacket)</argsstring>
+        <name>addPacket</name>
+        <param>
+          <type><ref refid="class_protocol_1_1_telemetry_packet" kindref="compound">Protocol::TelemetryPacket</ref></type>
+          <declname>telemPacket</declname>
+        </param>
+        <briefdescription>
+<para>Extracts data from an input Packet and stores the values in the values field. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>telemPacket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the packet that will be read. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="date"><para>April 8, 2016 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.h" line="28" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.cpp" bodystart="64" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_1ae6034451524e6b87062fcb62c89ae458" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_flight_path" kindref="compound">FlightPath</ref> *</type>
+        <definition>FlightPath * Mission::getFlightPath</definition>
+        <argsstring>()</argsstring>
+        <name>getFlightPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.h" line="31" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.cpp" bodystart="54" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_1ac6cf2cd13b5be62dec02a4edaba1be25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QVector&lt; double &gt; *</type>
+        <definition>QVector&lt; double &gt; * Mission::getValuesForID</definition>
+        <argsstring>(int id)</argsstring>
+        <name>getValuesForID</name>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.h" line="33" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.cpp" bodystart="92" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_1a4377102f1abe6a9f2767fa09a9a8f64e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QVector&lt; double &gt; *</type>
+        <definition>QVector&lt; double &gt; * Mission::getValuesForIndex</definition>
+        <argsstring>(int index)</argsstring>
+        <name>getValuesForIndex</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.h" line="34" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.cpp" bodystart="96" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_1ad2cd66901a48bbb2e042cd14740b3cba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double Mission::getValueForIndexAndID</definition>
+        <argsstring>(int index, int id)</argsstring>
+        <name>getValueForIndexAndID</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.h" line="35" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.cpp" bodystart="104" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="class_mission_1a8e02183538b8e0095f7a6e609149f75d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Mission::save</definition>
+        <argsstring>(QString filename)</argsstring>
+        <name>save</name>
+        <param>
+          <type>QString</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para><xrefsect id="todo_1_todo000016"><xreftitle>Todo</xreftitle><xrefdescription><para>any database initialization and error checking. </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000017"><xreftitle>Todo</xreftitle><xrefdescription><para>write each of the above variables to the database </para></xrefdescription></xrefsect></para><para><xrefsect id="todo_1_todo000018"><xreftitle>Todo</xreftitle><xrefdescription><para>any remaining database functions for safe file handling if needed </para></xrefdescription></xrefsect></para>        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.h" line="37" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.cpp" bodystart="108" bodyend="137"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_mission_1af76ffa1e6c93db10274dfd9b457b373f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Mission::initValues</definition>
+        <argsstring>()</argsstring>
+        <name>initValues</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.cpp" bodystart="58" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="142">
+        <label>FlightPath</label>
+        <link refid="class_flight_path"/>
+        <childnode refid="143" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="141">
+        <label>Mission</label>
+        <link refid="class_mission"/>
+        <childnode refid="142" relation="usage">
+          <edgelabel>myFlightPath</edgelabel>
+        </childnode>
+      </node>
+      <node id="143">
+        <label>QList&lt; TimedAction * &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.h" line="13" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/mission.h" bodystart="13" bodyend="44"/>
+    <listofallmembers>
+      <member refid="class_mission_1aba7aac52c4313705452dabcce0a6a0d2" prot="public" virt="non-virtual"><scope>Mission</scope><name>addPacket</name></member>
+      <member refid="class_mission_1ae6034451524e6b87062fcb62c89ae458" prot="public" virt="non-virtual"><scope>Mission</scope><name>getFlightPath</name></member>
+      <member refid="class_mission_1ad2cd66901a48bbb2e042cd14740b3cba" prot="public" virt="non-virtual"><scope>Mission</scope><name>getValueForIndexAndID</name></member>
+      <member refid="class_mission_1ac6cf2cd13b5be62dec02a4edaba1be25" prot="public" virt="non-virtual"><scope>Mission</scope><name>getValuesForID</name></member>
+      <member refid="class_mission_1a4377102f1abe6a9f2767fa09a9a8f64e" prot="public" virt="non-virtual"><scope>Mission</scope><name>getValuesForIndex</name></member>
+      <member refid="class_mission_1af76ffa1e6c93db10274dfd9b457b373f" prot="private" virt="non-virtual"><scope>Mission</scope><name>initValues</name></member>
+      <member refid="class_mission_1aa5a6ff4fc779338ab01b8f6dd470f4df" prot="public" virt="non-virtual"><scope>Mission</scope><name>Mission</name></member>
+      <member refid="class_mission_1a3c1cb92197018f64854514616b43f06b" prot="public" virt="non-virtual"><scope>Mission</scope><name>Mission</name></member>
+      <member refid="class_mission_1a68bf8cba0c882169d26fb4bcb80c228c" prot="public" virt="non-virtual"><scope>Mission</scope><name>Mission</name></member>
+      <member refid="class_mission_1a35bb479196454b53ec05617957b01f85" prot="private" virt="non-virtual"><scope>Mission</scope><name>myFlightPath</name></member>
+      <member refid="class_mission_1a8e02183538b8e0095f7a6e609149f75d" prot="public" virt="non-virtual"><scope>Mission</scope><name>save</name></member>
+      <member refid="class_mission_1ab7651f836d3c55a59e098e7d9c8b716c" prot="private" virt="non-virtual"><scope>Mission</scope><name>values</name></member>
+      <member refid="class_mission_1ad1a61b34162393ac42be5955d9772921" prot="public" virt="non-virtual"><scope>Mission</scope><name>~Mission</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

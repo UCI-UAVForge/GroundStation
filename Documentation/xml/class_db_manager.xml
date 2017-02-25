@@ -1,0 +1,304 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_db_manager" kind="class" language="C++" prot="public">
+    <compoundname>DbManager</compoundname>
+    <includes refid="dbmanager_8h" local="no">dbmanager.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_db_manager_1a289f7f1c539781db95292c79fb13a632" prot="private" static="no" mutable="no">
+        <type>QSqlDatabase</type>
+        <definition>QSqlDatabase DbManager::m_db</definition>
+        <argsstring></argsstring>
+        <name>m_db</name>
+        <briefdescription>
+<para>getAllWaypoints - Gets all the waypoints for the current mission. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>- All the waypoints in the database. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" line="111" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_db_manager_1a870328e413d2709bce968898660056c0" prot="private" static="no" mutable="no">
+        <type>QVector&lt; <ref refid="struct_mission_data" kindref="compound">MissionData</ref> &gt;</type>
+        <definition>QVector&lt;MissionData&gt; DbManager::mission</definition>
+        <argsstring></argsstring>
+        <name>mission</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" line="112" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_db_manager_1aaae92f26899ce6563a070d00caa83340" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString DbManager::fileName</definition>
+        <argsstring></argsstring>
+        <name>fileName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" line="116" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_db_manager_1a2a20d1a953156c2103bfc216de062cf7" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString DbManager::directory</definition>
+        <argsstring></argsstring>
+        <name>directory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" line="117" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_db_manager_1a3bbf3b6992f5b54dfbc7998e506a5fa3" prot="private" static="no" mutable="no">
+        <type>const QString</type>
+        <definition>const QString DbManager::kDatabaseType</definition>
+        <argsstring></argsstring>
+        <name>kDatabaseType</name>
+        <initializer>= &quot;QSQLITE&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" line="118" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_db_manager_1a8bfbb8102812b262c484fcfa9a864ac9" prot="private" static="no" mutable="no">
+        <type>const QString</type>
+        <definition>const QString DbManager::kFileExtension</definition>
+        <argsstring></argsstring>
+        <name>kFileExtension</name>
+        <initializer>= &quot;.db&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" line="119" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_db_manager_1a7a7271f31d10f555b411dc1c6926e05d" prot="private" static="no" mutable="no">
+        <type>const char</type>
+        <definition>const char DbManager::kPathSeparator</definition>
+        <argsstring></argsstring>
+        <name>kPathSeparator</name>
+        <initializer>=
+
+
+
+                                &apos;/&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" line="120" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_db_manager_1a7f5d145bb4b33b7d08f78a2ceee17a47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DbManager::DbManager</definition>
+        <argsstring>(const QString &amp;fileName=&quot;aDatabase&quot;, const QString &amp;directory=&quot;&quot;)</argsstring>
+        <name>DbManager</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>fileName</declname>
+          <defval>&quot;aDatabase&quot;</defval>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>directory</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para><ref refid="class_db_manager" kindref="compound">DbManager</ref> - Opens a connection with the database from &apos;directory/fileName&apos;. Creates a new database with &apos;fileName&apos; in &apos;directory&apos; if the file doesn&apos;t exist. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The name of the mission file without the extension. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>directory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- The folder where the database file is located. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>- Do not include the fileName&apos;s extension (e.g. mission1.db -&gt; just mission1) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" line="64" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.cpp" bodystart="13" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_db_manager_1ac5cdf8e5e932d1681ab807d8f256374c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DbManager::~DbManager</definition>
+        <argsstring>()</argsstring>
+        <name>~DbManager</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" line="67" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.cpp" bodystart="27" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="class_db_manager_1af26e2cb3fc39656e05f2c9b0cda89d59" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DbManager::isOpen</definition>
+        <argsstring>() const </argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" line="73" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.cpp" bodystart="35" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_db_manager_1ab89634eca6b13b420dda1d56484ae427" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool DbManager::open</definition>
+        <argsstring>(const QString &amp;fileName, const QString &amp;directory)</argsstring>
+        <name>open</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>fileName</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>directory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" line="76" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.cpp" bodystart="40" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="class_db_manager_1a0e118f2a45390cde3a118f8841e0875f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DbManager::close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" line="79" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.cpp" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="class_db_manager_1a962e5ea4e83bb6f65f9d19f82a470687" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DbManager::addMissionData</definition>
+        <argsstring>(MissionData data)</argsstring>
+        <name>addMissionData</name>
+        <param>
+          <type><ref refid="struct_mission_data" kindref="compound">MissionData</ref></type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" line="91" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.cpp" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_db_manager_1adfe91eed71e54ff7d7b2f28d10800efe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const QVector&lt; <ref refid="struct_mission_data" kindref="compound">MissionData</ref> &gt;</type>
+        <definition>const QVector&lt; MissionData &gt; DbManager::getMission</definition>
+        <argsstring>() const </argsstring>
+        <name>getMission</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" line="94" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.cpp" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_db_manager_1afac9da99cb97c29cae46e7488d681d36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DbManager::saveMissionToFile</definition>
+        <argsstring>()</argsstring>
+        <name>saveMissionToFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" line="97" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.cpp" bodystart="110" bodyend="132"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_db_manager_1a69ab0277d6dd71c29838cb16dd2d752f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DbManager::createOrLoadMissionTable</definition>
+        <argsstring>()</argsstring>
+        <name>createOrLoadMissionTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" line="131" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.cpp" bodystart="60" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="class_db_manager_1aca0348a606923c9786212f3af81e43d0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DbManager::clearMissionTable</definition>
+        <argsstring>()</argsstring>
+        <name>clearMissionTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" line="136" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.cpp" bodystart="134" bodyend="139"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_db_manager" kindref="compound">DbManager</ref> class - Interaction to save/load UAVF information will be handled in this class. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" line="53" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h" bodystart="52" bodyend="138"/>
+    <listofallmembers>
+      <member refid="class_db_manager_1a962e5ea4e83bb6f65f9d19f82a470687" prot="public" virt="non-virtual"><scope>DbManager</scope><name>addMissionData</name></member>
+      <member refid="class_db_manager_1aca0348a606923c9786212f3af81e43d0" prot="private" virt="non-virtual"><scope>DbManager</scope><name>clearMissionTable</name></member>
+      <member refid="class_db_manager_1a0e118f2a45390cde3a118f8841e0875f" prot="public" virt="non-virtual"><scope>DbManager</scope><name>close</name></member>
+      <member refid="class_db_manager_1a69ab0277d6dd71c29838cb16dd2d752f" prot="private" virt="non-virtual"><scope>DbManager</scope><name>createOrLoadMissionTable</name></member>
+      <member refid="class_db_manager_1a7f5d145bb4b33b7d08f78a2ceee17a47" prot="public" virt="non-virtual"><scope>DbManager</scope><name>DbManager</name></member>
+      <member refid="class_db_manager_1a2a20d1a953156c2103bfc216de062cf7" prot="private" virt="non-virtual"><scope>DbManager</scope><name>directory</name></member>
+      <member refid="class_db_manager_1aaae92f26899ce6563a070d00caa83340" prot="private" virt="non-virtual"><scope>DbManager</scope><name>fileName</name></member>
+      <member refid="class_db_manager_1adfe91eed71e54ff7d7b2f28d10800efe" prot="public" virt="non-virtual"><scope>DbManager</scope><name>getMission</name></member>
+      <member refid="class_db_manager_1af26e2cb3fc39656e05f2c9b0cda89d59" prot="public" virt="non-virtual"><scope>DbManager</scope><name>isOpen</name></member>
+      <member refid="class_db_manager_1a3bbf3b6992f5b54dfbc7998e506a5fa3" prot="private" virt="non-virtual"><scope>DbManager</scope><name>kDatabaseType</name></member>
+      <member refid="class_db_manager_1a8bfbb8102812b262c484fcfa9a864ac9" prot="private" virt="non-virtual"><scope>DbManager</scope><name>kFileExtension</name></member>
+      <member refid="class_db_manager_1a7a7271f31d10f555b411dc1c6926e05d" prot="private" virt="non-virtual"><scope>DbManager</scope><name>kPathSeparator</name></member>
+      <member refid="class_db_manager_1a289f7f1c539781db95292c79fb13a632" prot="private" virt="non-virtual"><scope>DbManager</scope><name>m_db</name></member>
+      <member refid="class_db_manager_1a870328e413d2709bce968898660056c0" prot="private" virt="non-virtual"><scope>DbManager</scope><name>mission</name></member>
+      <member refid="class_db_manager_1ab89634eca6b13b420dda1d56484ae427" prot="public" virt="non-virtual"><scope>DbManager</scope><name>open</name></member>
+      <member refid="class_db_manager_1afac9da99cb97c29cae46e7488d681d36" prot="public" virt="non-virtual"><scope>DbManager</scope><name>saveMissionToFile</name></member>
+      <member refid="class_db_manager_1ac5cdf8e5e932d1681ab807d8f256374c" prot="public" virt="non-virtual"><scope>DbManager</scope><name>~DbManager</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

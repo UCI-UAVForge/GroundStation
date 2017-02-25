@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_timer_widget" kind="class" language="C++" prot="public">
+    <compoundname>TimerWidget</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QPlainTextEdit</basecompoundref>
+    <includes refid="timerwidget_8h" local="no">timerwidget.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_timer_widget_1a9bd0efab037342ab106882018469ccd3" prot="private" static="no" mutable="no">
+        <type>QTime</type>
+        <definition>QTime TimerWidget::time</definition>
+        <argsstring></argsstring>
+        <name>time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.h" line="13" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_timer_widget_1a1c46e2555ede70519a5765392f3f8142" prot="private" static="no" mutable="no">
+        <type>QTimer</type>
+        <definition>QTimer TimerWidget::TimeTimer</definition>
+        <argsstring></argsstring>
+        <name>TimeTimer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.h" line="15" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_timer_widget_1a808776d552c6855f23460f68fe428326" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString TimerWidget::start</definition>
+        <argsstring></argsstring>
+        <name>start</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.h" line="17" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_timer_widget_1a459f4729f0522983a9b01c88ac3e8e37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TimerWidget::TimerWidget</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>TimerWidget</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="todo_1_todo000023"><xreftitle>Todo</xreftitle><xrefdescription><para>Doxygen comments. Standardize getter and setter methods in <ref refid="class_timer_widget" kindref="compound">TimerWidget</ref> and <ref refid="class_status_widget" kindref="compound">StatusWidget</ref> classes. </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.h" line="20" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.cpp" bodystart="5" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_timer_widget_1a3989d66aa8710930b1205e6201ad23e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TimerWidget::~TimerWidget</definition>
+        <argsstring>()</argsstring>
+        <name>~TimerWidget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.h" line="23" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.cpp" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="class_timer_widget_1ae60da213b39810256792230c34524503" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TimerWidget::showTime</definition>
+        <argsstring>()</argsstring>
+        <name>showTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.h" line="25" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.cpp" bodystart="40" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="class_timer_widget_1a037ac6faafa61e321fdd13960aaef405" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TimerWidget::initiate</definition>
+        <argsstring>(QTime timein)</argsstring>
+        <name>initiate</name>
+        <param>
+          <type>QTime</type>
+          <declname>timein</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para><xrefsect id="todo_1_todo000024"><xreftitle>Todo</xreftitle><xrefdescription><para>Is this showTime necessary? </para></xrefdescription></xrefsect></para>        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.h" line="27" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.cpp" bodystart="54" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="class_timer_widget_1a5c606c2b1ebf5976594583f2d1c2a9f1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QTime</type>
+        <definition>QTime TimerWidget::getTime</definition>
+        <argsstring>() const </argsstring>
+        <name>getTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.h" line="29" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.cpp" bodystart="20" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_timer_widget_1af5fc0b2df4d189a02966806749f8768b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TimerWidget::setTime</definition>
+        <argsstring>(const QTime &amp;value)</argsstring>
+        <name>setTime</name>
+        <param>
+          <type>const QTime &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.h" line="31" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.cpp" bodystart="25" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1147">
+        <label>QPlainTextEdit</label>
+      </node>
+      <node id="1146">
+        <label>TimerWidget</label>
+        <link refid="class_timer_widget"/>
+        <childnode refid="1147" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1149">
+        <label>QPlainTextEdit</label>
+      </node>
+      <node id="1148">
+        <label>TimerWidget</label>
+        <link refid="class_timer_widget"/>
+        <childnode refid="1149" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.h" line="9" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.h" bodystart="8" bodyend="37"/>
+    <listofallmembers>
+      <member refid="class_timer_widget_1a5c606c2b1ebf5976594583f2d1c2a9f1" prot="public" virt="non-virtual"><scope>TimerWidget</scope><name>getTime</name></member>
+      <member refid="class_timer_widget_1a037ac6faafa61e321fdd13960aaef405" prot="public" virt="non-virtual"><scope>TimerWidget</scope><name>initiate</name></member>
+      <member refid="class_timer_widget_1af5fc0b2df4d189a02966806749f8768b" prot="public" virt="non-virtual"><scope>TimerWidget</scope><name>setTime</name></member>
+      <member refid="class_timer_widget_1ae60da213b39810256792230c34524503" prot="public" virt="non-virtual"><scope>TimerWidget</scope><name>showTime</name></member>
+      <member refid="class_timer_widget_1a808776d552c6855f23460f68fe428326" prot="private" virt="non-virtual"><scope>TimerWidget</scope><name>start</name></member>
+      <member refid="class_timer_widget_1a9bd0efab037342ab106882018469ccd3" prot="private" virt="non-virtual"><scope>TimerWidget</scope><name>time</name></member>
+      <member refid="class_timer_widget_1a459f4729f0522983a9b01c88ac3e8e37" prot="public" virt="non-virtual"><scope>TimerWidget</scope><name>TimerWidget</name></member>
+      <member refid="class_timer_widget_1a1c46e2555ede70519a5765392f3f8142" prot="private" virt="non-virtual"><scope>TimerWidget</scope><name>TimeTimer</name></member>
+      <member refid="class_timer_widget_1a3989d66aa8710930b1205e6201ad23e3" prot="public" virt="non-virtual"><scope>TimerWidget</scope><name>~TimerWidget</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

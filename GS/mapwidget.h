@@ -147,6 +147,10 @@ public slots:
      */
     void finishedLoading();
 
+    /**
+     * @brief sendDisableEditing
+     */
+    void sendDisableEditing();
 signals:
     //Qt Signals for general use in C++
     /**

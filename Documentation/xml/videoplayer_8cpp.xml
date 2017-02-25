@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="videoplayer_8cpp" kind="file" language="C++">
+    <compoundname>videoplayer.cpp</compoundname>
+    <includes refid="videoplayer_8h" local="yes">videoplayer.h</includes>
+    <incdepgraph>
+      <node id="3501">
+        <label>QtWidgets/QWidget</label>
+      </node>
+      <node id="3505">
+        <label>qmediaplayer.h</label>
+      </node>
+      <node id="3502">
+        <label>QtMultimediaWidgets</label>
+      </node>
+      <node id="3503">
+        <label>QtGui/QMovie</label>
+      </node>
+      <node id="3499">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/videoplayer.cpp</label>
+        <link refid="videoplayer.cpp"/>
+        <childnode refid="3500" relation="include">
+        </childnode>
+      </node>
+      <node id="3500">
+        <label>videoplayer.h</label>
+        <link refid="videoplayer_8h"/>
+        <childnode refid="3501" relation="include">
+        </childnode>
+        <childnode refid="3502" relation="include">
+        </childnode>
+        <childnode refid="3503" relation="include">
+        </childnode>
+        <childnode refid="3504" relation="include">
+        </childnode>
+        <childnode refid="3505" relation="include">
+        </childnode>
+      </node>
+      <node id="3504">
+        <label>QVideoWidget</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&quot;<ref refid="videoplayer_8h" kindref="compound">videoplayer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"><ref refid="class_video_player_1a1d43337dac90ba3ec1ba178f4b1ddceb" kindref="member">VideoPlayer::VideoPlayer</ref>(QWidget<sp/>*parent)</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QWidget(parent)</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>mediaPlayer(0,<sp/>QMediaPlayer::VideoSurface)</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>playButton(0)</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>positionSlider(0)</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>,<sp/>errorLabel(0)</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>QVideoWidget<sp/>*videoWidget<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QVideoWidget;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>QAbstractButton<sp/>*openButton<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QPushButton(tr(</highlight><highlight class="stringliteral">&quot;Open...&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(openButton,<sp/>SIGNAL(clicked()),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SLOT(openFile()));</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>mediaPlayer.setVideoOutput(videoWidget);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(&amp;mediaPlayer,<sp/>SIGNAL(stateChanged(QMediaPlayer::State)),</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SLOT(mediaStateChanged(QMediaPlayer::State)));</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(&amp;mediaPlayer,<sp/>SIGNAL(positionChanged(qint64)),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SLOT(positionChanged(qint64)));</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(&amp;mediaPlayer,<sp/>SIGNAL(durationChanged(qint64)),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SLOT(durationChanged(qint64)));</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>connect(&amp;mediaPlayer,<sp/>SIGNAL(error(QMediaPlayer::Error)),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>SLOT(handleError()));</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><ref refid="class_video_player_1a84982600649b54d2fa2ddb4efee2349f" kindref="member">VideoPlayer::~VideoPlayer</ref>()</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_video_player_1a13ba0d270e849566f33ceffd7fb425c0" kindref="member">VideoPlayer::play</ref>()</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal">(<ref refid="class_video_player_1ac8db33eca4b05bbfed4ce5dd2a9cfab7" kindref="member">mediaPlayer</ref>.state())<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>QMediaPlayer::PlayingState:</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_video_player_1ac8db33eca4b05bbfed4ce5dd2a9cfab7" kindref="member">mediaPlayer</ref>.pause();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_video_player_1ac8db33eca4b05bbfed4ce5dd2a9cfab7" kindref="member">mediaPlayer</ref>.play();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/videoplayer.cpp"/>
+  </compounddef>
+</doxygen>

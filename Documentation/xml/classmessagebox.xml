@@ -1,0 +1,710 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="classmessagebox" kind="class" language="C++" prot="public">
+    <compoundname>messagebox</compoundname>
+    <includes refid="messagebox_8h" local="no">messagebox.h</includes>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classmessagebox_1a9923a7ec95448c63c3c51fcf094a7cb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class DigitalClock</definition>
+        <argsstring></argsstring>
+        <name>DigitalClock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="33" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classmessagebox_1ac738a854bbbcdc5be4fd4df476db724b" prot="public" static="no" mutable="no">
+        <type>QTime</type>
+        <definition>QTime messagebox::timer</definition>
+        <argsstring></argsstring>
+        <name>timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="89" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classmessagebox_1a7adbd15e5b2a9dbf6dad7c16ac18d305" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_protocol_1_1_ack_packet" kindref="compound">Protocol::AckPacket</ref> &gt;</type>
+        <definition>std::vector&lt;Protocol::AckPacket&gt; messagebox::ackPackets_incoming</definition>
+        <argsstring></argsstring>
+        <name>ackPackets_incoming</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="102" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmessagebox_1ad0e2aac1d4346b025a5e668b33632976" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_protocol_1_1_action_packet" kindref="compound">Protocol::ActionPacket</ref> &gt;</type>
+        <definition>std::vector&lt;Protocol::ActionPacket&gt; messagebox::actionPackets_incoming</definition>
+        <argsstring></argsstring>
+        <name>actionPackets_incoming</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="103" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmessagebox_1aa06ba794e434f5714a622ca94c121d7a" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref> &gt;</type>
+        <definition>std::vector&lt;Protocol::InfoPacket&gt; messagebox::infoPackets_incoming</definition>
+        <argsstring></argsstring>
+        <name>infoPackets_incoming</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="104" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmessagebox_1a0b04ce0c8a621b70c6dc3ce302f0e753" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_protocol_1_1_telemetry_packet" kindref="compound">Protocol::TelemetryPacket</ref> &gt;</type>
+        <definition>std::vector&lt;Protocol::TelemetryPacket&gt; messagebox::telemetryPackets_incoming</definition>
+        <argsstring></argsstring>
+        <name>telemetryPackets_incoming</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="105" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmessagebox_1a1a34f6f62dc6f0f2dff2dc2d7a42fc9a" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref> * &gt;</type>
+        <definition>std::vector&lt;Protocol::Packet *&gt; messagebox::packets_outgoing</definition>
+        <argsstring></argsstring>
+        <name>packets_outgoing</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="107" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmessagebox_1a06c992c37c73627ebbd5120c68e32657" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_protocol_1_1_ack_packet" kindref="compound">Protocol::AckPacket</ref> &gt;</type>
+        <definition>std::vector&lt;Protocol::AckPacket&gt; messagebox::outAckPackets</definition>
+        <argsstring></argsstring>
+        <name>outAckPackets</name>
+        <briefdescription>
+<para>Initialization of vectors that will store outgoing packets which will be sent to the server. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Kevin Phan </para></simplesect>
+<simplesect kind="date"><para>2016-2-05 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="115" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmessagebox_1a78e755e984640f5d46e76a5274e3039e" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_protocol_1_1_action_packet" kindref="compound">Protocol::ActionPacket</ref> &gt;</type>
+        <definition>std::vector&lt;Protocol::ActionPacket&gt; messagebox::outActionPackets</definition>
+        <argsstring></argsstring>
+        <name>outActionPackets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="116" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmessagebox_1a6d8a49db801fc38ed89c3438c1451f8b" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref> &gt;</type>
+        <definition>std::vector&lt;Protocol::InfoPacket&gt; messagebox::outInfoPackets</definition>
+        <argsstring></argsstring>
+        <name>outInfoPackets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="117" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmessagebox_1a6ab4d9acb5406325a0ae0b6e5de170db" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; <ref refid="class_protocol_1_1_telemetry_packet" kindref="compound">Protocol::TelemetryPacket</ref> &gt;</type>
+        <definition>std::vector&lt;Protocol::TelemetryPacket&gt; messagebox::outTelemPackets</definition>
+        <argsstring></argsstring>
+        <name>outTelemPackets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="118" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classmessagebox_1aea3ed46bcf2e14a03a19bd5fb639d9a5" prot="private" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t messagebox::timestamp_offset</definition>
+        <argsstring></argsstring>
+        <name>timestamp_offset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="120" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmessagebox_1aa1982e07048de340df52d2a5f37dd8ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>messagebox::messagebox</definition>
+        <argsstring>()</argsstring>
+        <name>messagebox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="34" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="6" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1ad5e6c9a2d407ebc95415e6ddeb91aba3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void messagebox::load_ack_packet</definition>
+        <argsstring>(uint8_t *buffer, size_t len)</argsstring>
+        <name>load_ack_packet</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="35" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="14" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1afa0a64c35c27e21fab6cbee8055341b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void messagebox::load_action_packet</definition>
+        <argsstring>(Protocol::ActionType atype, double lat, double lon, float alt, float spd)</argsstring>
+        <name>load_action_packet</name>
+        <param>
+          <type><ref refid="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9" kindref="member">Protocol::ActionType</ref></type>
+          <declname>atype</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lon</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>alt</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>spd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="36" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="29" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1af79061031d97b9e3e0e677fe365b2b15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void messagebox::load_action_packet</definition>
+        <argsstring>(double lat, double lon, float alt, float spd)</argsstring>
+        <name>load_action_packet</name>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lon</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>alt</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>spd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="37" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="18" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1a6128a1a53fbba888dccfcab5a5fafa1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void messagebox::load_info_packet</definition>
+        <argsstring>(std::string other)</argsstring>
+        <name>load_info_packet</name>
+        <param>
+          <type>std::string</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="38" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="51" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1a0e3beabe499e7aade0e769ff17ced30d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void messagebox::load_telem_packet</definition>
+        <argsstring>(double lat, double lon)</argsstring>
+        <name>load_telem_packet</name>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lon</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="39" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="56" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1acfa11fc9bcf7c96ddf2478b981be826d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void messagebox::load_telem_packet</definition>
+        <argsstring>(float x, float y, float z, float p, float r, float yaw, double lat, double lon, float alt, float heading)</argsstring>
+        <name>load_telem_packet</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>z</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>yaw</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lon</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>alt</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>heading</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="62" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1a545d9441dccf14adbea8e859628d6425" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void messagebox::load_outAction_packets</definition>
+        <argsstring>(double lat, double lon, float alt, float spd)</argsstring>
+        <name>load_outAction_packets</name>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lon</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>alt</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>spd</declname>
+        </param>
+        <briefdescription>
+<para>Fetches the packets from table and stores them into the outbox where they will sent back. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>&lt;type&gt;</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>double,double,float,float -&gt; sets the waypoint</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="author"><para>Kevin Phan </para></simplesect>
+<simplesect kind="date"><para>2016-2-05 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="49" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="41" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1ad8dd259b5b34d30b241f27172a255575" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void messagebox::addOutActionPacket</definition>
+        <argsstring>(const Protocol::ActionPacket &amp;actionPacket)</argsstring>
+        <name>addOutActionPacket</name>
+        <param>
+          <type>const <ref refid="class_protocol_1_1_action_packet" kindref="compound">Protocol::ActionPacket</ref> &amp;</type>
+          <declname>actionPacket</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="50" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="125" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1ac2463eee5d4c1e5d693f8a96cca0e00f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void messagebox::recieve_initial_info</definition>
+        <argsstring>(Protocol::InfoPacket intip)</argsstring>
+        <name>recieve_initial_info</name>
+        <param>
+          <type><ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref></type>
+          <declname>intip</declname>
+        </param>
+        <briefdescription>
+<para>Takes initial info packet and sets timestamp based on it. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>&lt;type&gt;InfoPacket</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>-&gt; The inital infopacket sent from UAV</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="author"><para>Nathan Brannon </para></simplesect>
+<simplesect kind="date"><para>2016-1-22 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="59" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="70" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1abe5152230ef5e89e0839d9dd866590e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="class_protocol_1_1_ack_packet" kindref="compound">Protocol::AckPacket</ref> &gt;</type>
+        <definition>std::vector&lt; Protocol::AckPacket &gt; messagebox::get_ack_packets</definition>
+        <argsstring>()</argsstring>
+        <name>get_ack_packets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="61" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="75" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1afd08c7f717357ee71a666720ff6bb9bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="class_protocol_1_1_action_packet" kindref="compound">Protocol::ActionPacket</ref> &gt;</type>
+        <definition>std::vector&lt; Protocol::ActionPacket &gt; messagebox::get_action_packets</definition>
+        <argsstring>()</argsstring>
+        <name>get_action_packets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="62" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="79" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1a15a6793bc31aa9bb080c9fbcea14e1af" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref> &gt;</type>
+        <definition>std::vector&lt; Protocol::InfoPacket &gt; messagebox::get_info_packets</definition>
+        <argsstring>()</argsstring>
+        <name>get_info_packets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="63" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="83" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1a58df2b6675cad37e6f31b2bc25bcfb0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="class_protocol_1_1_telemetry_packet" kindref="compound">Protocol::TelemetryPacket</ref> &gt;</type>
+        <definition>std::vector&lt; Protocol::TelemetryPacket &gt; messagebox::get_telem_packets</definition>
+        <argsstring>()</argsstring>
+        <name>get_telem_packets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="64" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="87" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1aa19eb7d103c82c6edabe95052d71e957" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="class_protocol_1_1_ack_packet" kindref="compound">Protocol::AckPacket</ref> &gt;</type>
+        <definition>std::vector&lt; Protocol::AckPacket &gt; messagebox::get_out_ack_packets</definition>
+        <argsstring>()</argsstring>
+        <name>get_out_ack_packets</name>
+        <briefdescription>
+<para>returns the packets from the sending side of messagebox </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="author"><para>Kevin Phan </para></simplesect>
+<simplesect kind="date"><para>2016/1/29 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="73" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="91" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1a49302f9e97d15853ab0bd4293cda3603" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="class_protocol_1_1_action_packet" kindref="compound">Protocol::ActionPacket</ref> &gt;</type>
+        <definition>std::vector&lt; Protocol::ActionPacket &gt; messagebox::get_out_action_packets</definition>
+        <argsstring>()</argsstring>
+        <name>get_out_action_packets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="74" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="95" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1a8630b30babf0555dc17d150ccfe08d8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref> &gt;</type>
+        <definition>std::vector&lt; Protocol::InfoPacket &gt; messagebox::get_out_info_packets</definition>
+        <argsstring>()</argsstring>
+        <name>get_out_info_packets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="75" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="99" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1a5ab4ee4ec8c63b6e4936fed1884fbd87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; <ref refid="class_protocol_1_1_telemetry_packet" kindref="compound">Protocol::TelemetryPacket</ref> &gt;</type>
+        <definition>std::vector&lt; Protocol::TelemetryPacket &gt; messagebox::get_out_telem_packets</definition>
+        <argsstring>()</argsstring>
+        <name>get_out_telem_packets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="76" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="103" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1a356a1119d888a5aea5a70b67bce0132b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void messagebox::addAckPacket</definition>
+        <argsstring>(const Protocol::AckPacket &amp;ackPacket)</argsstring>
+        <name>addAckPacket</name>
+        <param>
+          <type>const <ref refid="class_protocol_1_1_ack_packet" kindref="compound">Protocol::AckPacket</ref> &amp;</type>
+          <declname>ackPacket</declname>
+        </param>
+        <briefdescription>
+<para>Adds fully formed or empty packet into the proper packet container in messagebox. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>&lt;type&gt;Packet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>-&gt; A formed or empty Packets</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="author"><para>Alvin Truong </para></simplesect>
+<simplesect kind="date"><para>2016-1-20</para></simplesect>
+<simplesect kind="see"><para><ref refid="messagebox_8h" kindref="compound">messagebox.h</ref> for more <ref refid="_packet_8cpp_1a6c186652ef80185c56ec149bde0bb363" kindref="member">info</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="85" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="113" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1a75d62bfa9db5b55a60b9e2e0fa164c81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void messagebox::addActionPacket</definition>
+        <argsstring>(const Protocol::ActionPacket &amp;actionPacket)</argsstring>
+        <name>addActionPacket</name>
+        <param>
+          <type>const <ref refid="class_protocol_1_1_action_packet" kindref="compound">Protocol::ActionPacket</ref> &amp;</type>
+          <declname>actionPacket</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="messagebox_8h" kindref="compound">messagebox.h</ref> for more <ref refid="_packet_8cpp_1a6c186652ef80185c56ec149bde0bb363" kindref="member">info</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="86" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="120" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1a27ac98af342131cd148fb4ed2261631f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void messagebox::addTelemetryPacket</definition>
+        <argsstring>(const Protocol::TelemetryPacket &amp;telemPacket)</argsstring>
+        <name>addTelemetryPacket</name>
+        <param>
+          <type>const <ref refid="class_protocol_1_1_telemetry_packet" kindref="compound">Protocol::TelemetryPacket</ref> &amp;</type>
+          <declname>telemPacket</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="messagebox_8h" kindref="compound">messagebox.h</ref> for more <ref refid="_packet_8cpp_1a6c186652ef80185c56ec149bde0bb363" kindref="member">info</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="87" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="130" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classmessagebox_1aa7a826742dd2a22376eaf787d510f064" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void messagebox::addInfoPacket</definition>
+        <argsstring>(const Protocol::InfoPacket &amp;infoPacket)</argsstring>
+        <name>addInfoPacket</name>
+        <param>
+          <type>const <ref refid="class_protocol_1_1_info_packet" kindref="compound">Protocol::InfoPacket</ref> &amp;</type>
+          <declname>infoPacket</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="messagebox_8h" kindref="compound">messagebox.h</ref> for more <ref refid="_packet_8cpp_1a6c186652ef80185c56ec149bde0bb363" kindref="member">info</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="88" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="137" bodyend="140"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classmessagebox_1a4a1e389ec5b0eb7d98b0c65e128bf3f7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>uint32_t</type>
+        <definition>uint32_t messagebox::gs_to_uav_timestamp</definition>
+        <argsstring>()</argsstring>
+        <name>gs_to_uav_timestamp</name>
+        <briefdescription>
+<para>Takes timestamp form timer and subtracts the offset determined form UAV timestamp. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>&lt;type&gt;uint32_t -&gt; Timestamp that will fit with the UAV time</para></simplesect>
+Nathan Brannon <simplesect kind="date"><para>2016-1-22 </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="101" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.cpp" bodystart="107" bodyend="109"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="classmessagebox_1a7e27018e68e04cfe417386d743a58695" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void messagebox::recieve_packet</definition>
+        <argsstring>(Protocol::Packet *packet)</argsstring>
+        <name>recieve_packet</name>
+        <param>
+          <type><ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref> *</type>
+          <declname>packet</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="125" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" line="31" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/messagebox.h" bodystart="31" bodyend="126"/>
+    <listofallmembers>
+      <member refid="classmessagebox_1a7adbd15e5b2a9dbf6dad7c16ac18d305" prot="private" virt="non-virtual"><scope>messagebox</scope><name>ackPackets_incoming</name></member>
+      <member refid="classmessagebox_1ad0e2aac1d4346b025a5e668b33632976" prot="private" virt="non-virtual"><scope>messagebox</scope><name>actionPackets_incoming</name></member>
+      <member refid="classmessagebox_1a356a1119d888a5aea5a70b67bce0132b" prot="public" virt="non-virtual"><scope>messagebox</scope><name>addAckPacket</name></member>
+      <member refid="classmessagebox_1a75d62bfa9db5b55a60b9e2e0fa164c81" prot="public" virt="non-virtual"><scope>messagebox</scope><name>addActionPacket</name></member>
+      <member refid="classmessagebox_1aa7a826742dd2a22376eaf787d510f064" prot="public" virt="non-virtual"><scope>messagebox</scope><name>addInfoPacket</name></member>
+      <member refid="classmessagebox_1ad8dd259b5b34d30b241f27172a255575" prot="public" virt="non-virtual"><scope>messagebox</scope><name>addOutActionPacket</name></member>
+      <member refid="classmessagebox_1a27ac98af342131cd148fb4ed2261631f" prot="public" virt="non-virtual"><scope>messagebox</scope><name>addTelemetryPacket</name></member>
+      <member refid="classmessagebox_1a9923a7ec95448c63c3c51fcf094a7cb7" prot="public" virt="non-virtual"><scope>messagebox</scope><name>DigitalClock</name></member>
+      <member refid="classmessagebox_1abe5152230ef5e89e0839d9dd866590e5" prot="public" virt="non-virtual"><scope>messagebox</scope><name>get_ack_packets</name></member>
+      <member refid="classmessagebox_1afd08c7f717357ee71a666720ff6bb9bc" prot="public" virt="non-virtual"><scope>messagebox</scope><name>get_action_packets</name></member>
+      <member refid="classmessagebox_1a15a6793bc31aa9bb080c9fbcea14e1af" prot="public" virt="non-virtual"><scope>messagebox</scope><name>get_info_packets</name></member>
+      <member refid="classmessagebox_1aa19eb7d103c82c6edabe95052d71e957" prot="public" virt="non-virtual"><scope>messagebox</scope><name>get_out_ack_packets</name></member>
+      <member refid="classmessagebox_1a49302f9e97d15853ab0bd4293cda3603" prot="public" virt="non-virtual"><scope>messagebox</scope><name>get_out_action_packets</name></member>
+      <member refid="classmessagebox_1a8630b30babf0555dc17d150ccfe08d8f" prot="public" virt="non-virtual"><scope>messagebox</scope><name>get_out_info_packets</name></member>
+      <member refid="classmessagebox_1a5ab4ee4ec8c63b6e4936fed1884fbd87" prot="public" virt="non-virtual"><scope>messagebox</scope><name>get_out_telem_packets</name></member>
+      <member refid="classmessagebox_1a58df2b6675cad37e6f31b2bc25bcfb0e" prot="public" virt="non-virtual"><scope>messagebox</scope><name>get_telem_packets</name></member>
+      <member refid="classmessagebox_1a4a1e389ec5b0eb7d98b0c65e128bf3f7" prot="private" virt="non-virtual"><scope>messagebox</scope><name>gs_to_uav_timestamp</name></member>
+      <member refid="classmessagebox_1aa06ba794e434f5714a622ca94c121d7a" prot="private" virt="non-virtual"><scope>messagebox</scope><name>infoPackets_incoming</name></member>
+      <member refid="classmessagebox_1ad5e6c9a2d407ebc95415e6ddeb91aba3" prot="public" virt="non-virtual"><scope>messagebox</scope><name>load_ack_packet</name></member>
+      <member refid="classmessagebox_1afa0a64c35c27e21fab6cbee8055341b1" prot="public" virt="non-virtual"><scope>messagebox</scope><name>load_action_packet</name></member>
+      <member refid="classmessagebox_1af79061031d97b9e3e0e677fe365b2b15" prot="public" virt="non-virtual"><scope>messagebox</scope><name>load_action_packet</name></member>
+      <member refid="classmessagebox_1a6128a1a53fbba888dccfcab5a5fafa1f" prot="public" virt="non-virtual"><scope>messagebox</scope><name>load_info_packet</name></member>
+      <member refid="classmessagebox_1a545d9441dccf14adbea8e859628d6425" prot="public" virt="non-virtual"><scope>messagebox</scope><name>load_outAction_packets</name></member>
+      <member refid="classmessagebox_1a0e3beabe499e7aade0e769ff17ced30d" prot="public" virt="non-virtual"><scope>messagebox</scope><name>load_telem_packet</name></member>
+      <member refid="classmessagebox_1acfa11fc9bcf7c96ddf2478b981be826d" prot="public" virt="non-virtual"><scope>messagebox</scope><name>load_telem_packet</name></member>
+      <member refid="classmessagebox_1aa1982e07048de340df52d2a5f37dd8ac" prot="public" virt="non-virtual"><scope>messagebox</scope><name>messagebox</name></member>
+      <member refid="classmessagebox_1a06c992c37c73627ebbd5120c68e32657" prot="private" virt="non-virtual"><scope>messagebox</scope><name>outAckPackets</name></member>
+      <member refid="classmessagebox_1a78e755e984640f5d46e76a5274e3039e" prot="private" virt="non-virtual"><scope>messagebox</scope><name>outActionPackets</name></member>
+      <member refid="classmessagebox_1a6d8a49db801fc38ed89c3438c1451f8b" prot="private" virt="non-virtual"><scope>messagebox</scope><name>outInfoPackets</name></member>
+      <member refid="classmessagebox_1a6ab4d9acb5406325a0ae0b6e5de170db" prot="private" virt="non-virtual"><scope>messagebox</scope><name>outTelemPackets</name></member>
+      <member refid="classmessagebox_1a1a34f6f62dc6f0f2dff2dc2d7a42fc9a" prot="private" virt="non-virtual"><scope>messagebox</scope><name>packets_outgoing</name></member>
+      <member refid="classmessagebox_1ac2463eee5d4c1e5d693f8a96cca0e00f" prot="public" virt="non-virtual"><scope>messagebox</scope><name>recieve_initial_info</name></member>
+      <member refid="classmessagebox_1a7e27018e68e04cfe417386d743a58695" prot="public" virt="non-virtual"><scope>messagebox</scope><name>recieve_packet</name></member>
+      <member refid="classmessagebox_1a0b04ce0c8a621b70c6dc3ce302f0e753" prot="private" virt="non-virtual"><scope>messagebox</scope><name>telemetryPackets_incoming</name></member>
+      <member refid="classmessagebox_1ac738a854bbbcdc5be4fd4df476db724b" prot="public" virt="non-virtual"><scope>messagebox</scope><name>timer</name></member>
+      <member refid="classmessagebox_1aea3ed46bcf2e14a03a19bd5fb639d9a5" prot="private" virt="non-virtual"><scope>messagebox</scope><name>timestamp_offset</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
