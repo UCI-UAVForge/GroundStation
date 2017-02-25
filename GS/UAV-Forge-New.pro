@@ -68,6 +68,7 @@ SOURCES += main.cpp\
     websocketclientwrapper.cpp \
     websockettransport.cpp \
     tablewidget.cpp \
+    graphwidget.cpp \
     #statuswidget.cpp \
     timerwidget.cpp \
     missionstatuswindow.cpp
@@ -109,6 +110,7 @@ HEADERS  += mainwindow.h \
     websockettransport.h \
     dialog.h \
     tablewidget.h \
+    graphwidget.h \
     #statuswidget.h \
     timerwidget.h \
     missionstatuswindow.h
@@ -126,6 +128,7 @@ FORMS    += mainwindow.ui \
     qttabtest.ui \
     mainmdidisplay.ui \
     dialog.ui \
+    graphwidget.ui\
     missionstatuswindow.ui
 
 OTHER_FILES +=

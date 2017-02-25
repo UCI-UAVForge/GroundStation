@@ -83,8 +83,9 @@ private:
   void startMissionRecap();
   void endMissionRecap();
   void plotPosition(double lat, double lng);
+  
+  QWidget * graph;
+
 };
-
-
 
 #endif // MAINMDIDISPLAY_H

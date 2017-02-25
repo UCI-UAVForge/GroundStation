@@ -2,6 +2,7 @@
 #include "ui_mainmdidisplay.h"
 #include "mapwidget.h"
 #include "tablewidget.h"
+#include "graphwidget.h"
 #include "net.h"
 
 MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
@@ -16,10 +17,11 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
     addWindow(&msw);
     addWindow(&gscp);
 
+    graph = new GraphWidget();
+    this->addWindow(graph);
     connect(&gscp, &GSControlPanel::createMissionButton_clicked, this, &MainMDIDisplay::startMissionPlanningSlot);
     connect(&gscp, &GSControlPanel::startMissionButton_clicked, this, &MainMDIDisplay::startMissionExecutionSlot);
-    //connect(&gscp, &GSControlPanel::createMissionButton_clicked, this, &MainMDIDisplay::startMissionPlanningSlot);
-
+      
     connect(&gscp, &GSControlPanel::exitButton_clicked, this, &MainMDIDisplay::close);
 }
 
