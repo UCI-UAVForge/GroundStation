@@ -24,7 +24,7 @@ void GraphWidget::makePlot()
     Mission* mission = getNewMission();
 
 
-    QVector<double> * vals = mission->getValuesForIndex(0);
+    QVector<double> * vals = mission->getValuesForID(1);
 //    QVector<double> * val1 = mission->getValuesForID(6);
 
 //    values.at(0)->append(heading);
@@ -65,31 +65,32 @@ void GraphWidget::makePlot()
     ui->customPlot->graph()->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 5));
 
     // Generate data
-    QVector<double> x(15), y(15);
+    QVector<double> x(15);//, y(15);
     int max = 0;
-    for (int j = 0; j < 15; ++j)
+    for (int j = 0; j < vals->length(); ++j)
     {
         x[j] = j;
-        y[j] = qrand() % qCeil((*vals)[2]);
 
         // Save max for scaling
-        if (max > y[j])
-            max = y[j];
+        if (max > vals->at(j))
+            max = vals->at(j);
         out << "x" << i << ": " << x[j] << endl;
-        out << "y" << i << ": " << y[j] << endl;
+        out << "y" << i << ": " << vals->at(j) << endl;
     }
-    ui->customPlot->graph()->setData(x, y);
+    ui->customPlot->graph()->setData(x, *vals);
 
     // zoom out a bit:
 //    ui->customPlot->yAxis->scaleRange(10, ui->customPlot->yAxis->range().center());
 //    ui->customPlot->yAxis->scaleRange(2, max / 2);
-    ui->customPlot->xAxis->scaleRange(10, ui->customPlot->xAxis->range().center());
+    ui->customPlot->xAxis->scaleRange(10, 0);
     ui->customPlot->yAxis->rescale();
+
     // set blank axis lines:
     ui->customPlot->xAxis->setTicks(false);
     ui->customPlot->yAxis->setTicks(true);
     ui->customPlot->xAxis->setTickLabels(false);
     ui->customPlot->yAxis->setTickLabels(true);
+
     // make top right axes clones of bottom left axes:
     ui->customPlot->axisRect()->setupFullAxesBox();
 
@@ -98,14 +99,15 @@ void GraphWidget::makePlot()
 Mission* GraphWidget::getNewMission(){
     Mission *newMission = new Mission();
 
+    for(int i = 0; i < 10; i++){
+        Protocol::TelemetryPacket tp;
+        tp.SetOrientation(1, 2, 3); // pitch, roll, yaw
+        tp.SetHeading(20); // h
+        tp.SetVelocity(15, 16, 17); // vX, vY, vZ
+        tp.SetLocation(i,i,40); // lat, lon, alt
 
-    Protocol::TelemetryPacket tp;
-    tp.SetOrientation(1, 2, 3); // pitch, roll, yaw
-    tp.SetHeading(20); // h
-    tp.SetVelocity(15, 16, 17); // vX, vY, vZ
-    tp.SetLocation(10,10,40); // lat, lon, alt
-
-    newMission->addPacket(tp);
+        newMission->addPacket(tp);
+    }
 
     return newMission;
 }
