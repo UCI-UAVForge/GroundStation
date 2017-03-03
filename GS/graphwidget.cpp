@@ -9,7 +9,7 @@ GraphWidget::GraphWidget(QWidget *parent) :
     ui(new Ui::GraphWidget)
 {
     ui->setupUi(this);
-    GraphWidget::makePlot();
+    //GraphWidget::makePlot();
 }
 
 GraphWidget::~GraphWidget()
@@ -18,8 +18,11 @@ GraphWidget::~GraphWidget()
 
 }
 
-void GraphWidget::makePlot()
-{
+void GraphWidget::appendPoint(double x, double y, int id) {
+    //this->data.at(id).append(*x);
+}
+
+void GraphWidget::makePlot(int id) {
     // Create mission
     Mission* mission = getNewMission();
 
@@ -74,8 +77,8 @@ void GraphWidget::makePlot()
         // Save max for scaling
         if (max > vals->at(j))
             max = vals->at(j);
-        out << "x" << i << ": " << x[j] << endl;
-        out << "y" << i << ": " << vals->at(j) << endl;
+        //out << "x" << i << ": " << x[j] << endl;
+        //out << "y" << i << ": " << vals->at(j) << endl;
     }
     ui->customPlot->graph()->setData(x, *vals);
 
