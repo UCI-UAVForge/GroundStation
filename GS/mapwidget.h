@@ -25,7 +25,7 @@ private:
     QWebSocketServer server;
     WebSocketClientWrapper clientWrapper;
 
-    const QUrl MapURL = QUrl("qrc:/res/html/mapsPlanning.html");
+    const QUrl MapURL = QUrl("qrc:/res/html/mapsPlanningLeaflet.html");
 
 
 public:
@@ -113,7 +113,7 @@ public slots:
      * @param fp
      * @param index
      */
-    void addFlightPath(FlightPath* fp, int id = 0);
+    void addFlightPath(FlightPath* fp, int id = 0, QString source = "");
 
     //JavaScript public slots for use with Cbridge.js
     /**
@@ -241,7 +241,8 @@ signals:
     /**
      * @brief flightPathSent
      */
-    void flightPathSent();
+    void flightPathSent(int id, QString source);
+
 };
 
 #endif // MAPWIDGET_H

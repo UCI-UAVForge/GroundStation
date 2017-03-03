@@ -18,14 +18,12 @@ window.onload = function() {
         new QWebChannel(socket, function(channel) {
             // make dialog object accessible globally
             window.cbridge = channel.objects.cbridge;
-            cbridge.sendPointToMap.connect(function(lat,lng,id) {
-                addLatLngCoords(lat,lng, id);
-            });
             cbridge.clearFlightPath.connect(function(id) {
-                clearMap();
+                clearAllPaths();
             });
-            cbridge.flightPathSent.connect(function() {
-                addSelectedSubPath();
+            //Valid source types: tableSelection, table, planning, execution
+            cbridge.flightPathSent.connect(function(id, source) {
+                addPath(source);
             });
 
             cbridge.createNewPath.connect(function(id) {

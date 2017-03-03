@@ -49,12 +49,13 @@ void MainMDIDisplay::setupMapPaths(){
             if(!map){
                 /// \todo handling code for if map does not exist prior to starting execution
                 map->sendCreateNewPath(0);
-                map->addFlightPath(myLoadedFlightPath,0);
+                map->addFlightPath(myLoadedFlightPath,0, "execution");
             } else {
                 qDebug() << "Sending disableEditing!";
                 map->sendDisableEditing();
             }
             map->sendCreateNewPath(1);
+            //map->addFlightPath(myLoadedFlightPath,0, "execution");
             break;
         case RECAP:
             qDebug() << "RECAP";
@@ -134,6 +135,8 @@ void MainMDIDisplay::startMissionPlanning(){
     addWindow(map);
     addWindow(table);
     this->connect(map, &MapWidget::pointAdded, table, &TableWidget::appendRow);
+    this->connect(table, &TableWidget::flightPathSent, map, &MapWidget::addFlightPath);
+    this->connect(map, &MapWidget::tableCleared, table, &TableWidget::clearTable);
     this->connect(map, &MapWidget::JSInitialized, this, &MainMDIDisplay::setupMapPaths);
 }
 
@@ -150,18 +153,13 @@ void MainMDIDisplay::endMissionPlanning(){
 
 void MainMDIDisplay::startMissionExecution(){
     /// \todo add handling for starting MissionExection from any other state
-
-    /// \todo add a clearTable() method to reuse this object
-    delete table;
-    table = new TableWidget();
-    addWindow(table);
-
+    table->clearTable();
+    //changeState(EXECUTION);
     setupMapPaths();
     /// \todo add server startup code here
-
     myMessageBox = new messagebox();
     myServer = new GsServer(myMessageBox, myLoadedMission);
-
+    qDebug()<< "WHY";
     /// \todo change address and port to be located in the net.h file
     myServer->openServer(QHostAddress::LocalHost, 20715);
     connect(myServer, &GsServer::packetRecieved, this, &MainMDIDisplay::receivePacket);
@@ -206,7 +204,10 @@ void MainMDIDisplay::receivePacket(Protocol::Packet* packet){
         double lat, lng;
         float alt;
         telemPacket->GetLocation(&lat,&lng,&alt);
-        plotPosition(lat,lng);
+        table->appendRow(lat, lng);
+        FlightPath *fp = table->getTableAsFlightPath();
+        map->addFlightPath(fp, 0, "execution");
+        //plotPosition(lat,lng);
     } else if (type == Protocol::PacketType::Info){
         std::cout<< "InfoPacket Recieved" << std::endl;
         Protocol::InfoPacket *infoPacket = (Protocol::InfoPacket*)incPack;
@@ -218,6 +219,6 @@ void MainMDIDisplay::receivePacket(Protocol::Packet* packet){
 }
 
 void MainMDIDisplay::plotPosition(double lat, double lng){
-    table->appendRow(lat,lng);
+    //table->appendRow(lat,lng);
     map->appendPointToPath(lat,lng,1);
 }

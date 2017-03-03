@@ -1,4 +1,4 @@
-#include "TimerWidget.h"
+#include "timerwidget.h"
 
 /// \todo Doxygen comments. Standardize getter and setter methods in TimerWidget and StatusWidget classes.
 
