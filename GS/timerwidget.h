@@ -1,8 +1,8 @@
 #ifndef TIMER_WIDGET_H
 #define TIMER_WIDGET_H
 
-#include "QPlainTextEdit.h"
-#include "QTimer.h"
+#include <QPlainTextEdit>
+#include <QTimer>
 #include "QTime"
 
 class TimerWidget : public QPlainTextEdit

@@ -25,7 +25,7 @@ private:
     QWebSocketServer server;
     WebSocketClientWrapper clientWrapper;
 
-    const QUrl MapURL = QUrl("qrc:/res/html/mapsPlanningGoogle.html");
+    const QUrl MapURL = QUrl("qrc:/res/html/mapsPlanningLeaflet.html");
 
 
 public:
@@ -113,7 +113,7 @@ public slots:
      * @param fp
      * @param index
      */
-    void addFlightPath(FlightPath* fp, int id = 0);
+    void addFlightPath(FlightPath* fp, int id = 0, QString source = "");
 
     //JavaScript public slots for use with Cbridge.js
     /**
@@ -148,9 +148,15 @@ public slots:
     void finishedLoading();
 
     /**
+     * @brief clearTable
+    */
+    void clearTable();
+
+    /**
      * @brief sendDisableEditing
      */
     void sendDisableEditing();
+
 signals:
     //Qt Signals for general use in C++
     /**
@@ -226,6 +232,17 @@ signals:
      * @param pathID - The ID of the flight path to be cleared.
      */
     void clearFlightPath(int pathID);
+
+    /**
+     * @brief tableCleared
+     */
+    void tableCleared();
+
+    /**
+     * @brief flightPathSent
+     */
+    void flightPathSent(int id, QString source);
+
 };
 
 #endif // MAPWIDGET_H

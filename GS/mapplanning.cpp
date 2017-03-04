@@ -7,7 +7,10 @@
 
 MapPlanning::MapPlanning(QWidget *parent) : QDialog(parent), ui(new Ui::MapPlanning) {
     ui->setupUi(this);
-    this->connect(ui->mapView, &MapWidget::pointAdded, ui->tableView, &TableWidget::appendRow);
+    //this->connect(ui->mapView, &MapWidget::pointAddedToMap, ui->tableView, &TableWidget::appendRow);
+    //this->connect(ui->tableView, &TableWidget::selectedData, ui->mapView, &MapWidget::addFlightPath);
+    this->connect(ui->mapView, &MapWidget::pointAdded, ui->tableView, &TableWidget::clearTable);
+    this->connect(ui->mapView, &MapWidget::tableCleared, ui->tableView, &TableWidget::clearTable);
     this->connect(ui->mapView, &MapWidget::JSInitialized, this, &MapPlanning::setupMapPaths);
     this->connect(ui->clearTableButton, &QPushButton::clicked, ui->tableView, &TableWidget::clearTable);
     this->connect(ui->clearTableButton, &QPushButton::clicked, ui->mapView, &MapWidget::clearFlightPath);
