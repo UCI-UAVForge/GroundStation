@@ -8,8 +8,8 @@
 #include <iostream>
 #include <QTimer>
 #include <QList>
-
 #include "ackpacket.h"
+#include <QDebug>
 
 MapWidget::MapWidget(QWidget *parent): QWebEngineView(parent),
     server(QStringLiteral("MapServer"), QWebSocketServer::NonSecureMode),
@@ -64,6 +64,8 @@ void MapWidget::loadStartedSlot() {
     loading= true;
 }
 
+//Public "emitters" used by C++ to communicate with JS
+
 void MapWidget::addPointToMap(double lat, double lng, int index, int pathID){
     emit insertPointToMap(lat,lng,index,pathID);
 }
@@ -80,19 +82,25 @@ void MapWidget::sendClearFlightPath(int pathID){
     emit clearFlightPath(pathID);
 }
 
+void MapWidget::sendDisableEditing(){
+    emit disableEditing();
+}
+
+void MapWidget::clearTable(){
+    emit tableCleared();
+}
+
 void MapWidget::disconnectWebSocket(){
     server.close();
 }
 
-void MapWidget::addFlightPath(FlightPath* fp, int id){
+void MapWidget::addFlightPath(FlightPath* fp, int id, QString source){
     QList<Protocol::Waypoint> *list = fp->getOrderedWaypoints();
-
     for(int i = 0; i < list->length(); i++){
         Protocol::Waypoint wp = list->at(i);
-        //addPointToMap(wp.lat,wp.alt,i,id);
         emit appendPointToPath(wp.lat,wp.lon,id);
     }
-
+    emit flightPathSent(id, source);
     delete list;
 }
 
@@ -104,7 +112,6 @@ void MapWidget::pointAddedToMap(double lat, double lng, int index, int pathID){
 }
 
 void MapWidget::pathCleared(int pathID){
-
 }
 
 void MapWidget::pointRemovedFromMap(int index, int pathID){
@@ -115,3 +122,4 @@ void MapWidget::finishedLoading() {
     loading = false;
     emit JSInitialized();
 }
+

@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_table_widget" kind="class" language="C++" prot="public">
+    <compoundname>TableWidget</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QTableView</basecompoundref>
+    <includes refid="tablewidget_8h" local="no">tablewidget.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_table_widget_1ad14823dda2528e9edde49452561c7fe7" prot="private" static="no" mutable="no">
+        <type><ref refid="class_table_model" kindref="compound">TableModel</ref></type>
+        <definition>TableModel TableWidget::model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <briefdescription>
+<para>model - The <ref refid="class_table_model" kindref="compound">TableModel</ref> we get our column names, types, and validator from. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.h" line="31" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_table_widget_1a9e169fb9a5b62629c67cc0576e065f6a" prot="private" static="no" mutable="no">
+        <type><ref refid="class_q_combo_box_delegate" kindref="compound">QComboBoxDelegate</ref></type>
+        <definition>QComboBoxDelegate TableWidget::delegate</definition>
+        <argsstring></argsstring>
+        <name>delegate</name>
+        <briefdescription>
+<para>delegate - The <ref refid="class_q_combo_box_delegate" kindref="compound">QComboBoxDelegate</ref> used to control the E/W and N/S drop-down menues embedded in the table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.h" line="37" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_table_widget_1a53a444c14c52aebcd2b2cc2bde659d73" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TableWidget::TableWidget</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>TableWidget</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Standard QWidget constructor and destructor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.h" line="15" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.cpp" bodystart="4" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="class_table_widget_1a5fb6edc429e21280d8f47faf6fe012fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TableWidget::~TableWidget</definition>
+        <argsstring>()</argsstring>
+        <name>~TableWidget</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.h" line="16" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.cpp" bodystart="9" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_table_widget_1acf7df57ad87a0241daba9f96509ef4df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_flight_path" kindref="compound">FlightPath</ref> *</type>
+        <definition>FlightPath * TableWidget::getTableAsFlightPath</definition>
+        <argsstring>()</argsstring>
+        <name>getTableAsFlightPath</name>
+        <briefdescription>
+<para><ref refid="class_map_planning_1a38f72780859a68815d818b28767c6dfd" kindref="member">MapPlanning::getTableAsFlightPath</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A pointer to a new <ref refid="class_flight_path" kindref="compound">FlightPath</ref> object based on the data in the <ref refid="class_table_widget" kindref="compound">TableWidget</ref>. The <ref refid="class_flight_path" kindref="compound">FlightPath</ref> will contain the points in the same (top-to-bottom) order as they appear in the table.</para></simplesect>
+<xrefsect id="todo_1_todo000022"><xreftitle>Todo</xreftitle><xrefdescription><para>look for optimizations here now that we can access all of the table methods -Jordan </para></xrefdescription></xrefsect></para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.h" line="24" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.cpp" bodystart="33" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_table_widget_1aa53e286c6cea8cb627543b6db289b8cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TableWidget::tableUpdated</definition>
+        <argsstring>()</argsstring>
+        <name>tableUpdated</name>
+        <briefdescription>
+<para>tableUpdated </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.h" line="43" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_table_widget_1afa9b2a89c72a5895134c8f45f39ff514" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TableWidget::appendRow</definition>
+        <argsstring>(double lat, double lng)</argsstring>
+        <name>appendRow</name>
+        <param>
+          <type>double</type>
+          <declname>lat</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>lng</declname>
+        </param>
+        <briefdescription>
+<para>appendRow </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lng</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.h" line="51" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.cpp" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_table_widget_1aa1751d4d1f9d82e4a959260e24a650d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TableWidget::removeSelectedRows</definition>
+        <argsstring>()</argsstring>
+        <name>removeSelectedRows</name>
+        <briefdescription>
+<para>removeSelectedRows </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.h" line="56" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.cpp" bodystart="18" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_table_widget_1a159b1f8816eaa41ff2a4844a8a9f0f55" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TableWidget::clearTable</definition>
+        <argsstring>()</argsstring>
+        <name>clearTable</name>
+        <briefdescription>
+<para>clearTable </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.h" line="61" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.cpp" bodystart="24" bodyend="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1128">
+        <label>TableWidget</label>
+        <link refid="class_table_widget"/>
+        <childnode refid="1129" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1129">
+        <label>QTableView</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1130">
+        <label>TableWidget</label>
+        <link refid="class_table_widget"/>
+        <childnode refid="1131" relation="public-inheritance">
+        </childnode>
+        <childnode refid="1132" relation="usage">
+          <edgelabel>delegate</edgelabel>
+        </childnode>
+        <childnode refid="1134" relation="usage">
+          <edgelabel>model</edgelabel>
+        </childnode>
+      </node>
+      <node id="1134">
+        <label>TableModel</label>
+        <link refid="class_table_model"/>
+        <childnode refid="1135" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1133">
+        <label>QItemDelegate</label>
+      </node>
+      <node id="1131">
+        <label>QTableView</label>
+      </node>
+      <node id="1135">
+        <label>QAbstractTableModel</label>
+      </node>
+      <node id="1132">
+        <label>QComboBoxDelegate</label>
+        <link refid="class_q_combo_box_delegate"/>
+        <childnode refid="1133" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.h" line="11" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.h" bodystart="10" bodyend="62"/>
+    <listofallmembers>
+      <member refid="class_table_widget_1afa9b2a89c72a5895134c8f45f39ff514" prot="public" virt="non-virtual"><scope>TableWidget</scope><name>appendRow</name></member>
+      <member refid="class_table_widget_1a159b1f8816eaa41ff2a4844a8a9f0f55" prot="public" virt="non-virtual"><scope>TableWidget</scope><name>clearTable</name></member>
+      <member refid="class_table_widget_1a9e169fb9a5b62629c67cc0576e065f6a" prot="private" virt="non-virtual"><scope>TableWidget</scope><name>delegate</name></member>
+      <member refid="class_table_widget_1acf7df57ad87a0241daba9f96509ef4df" prot="public" virt="non-virtual"><scope>TableWidget</scope><name>getTableAsFlightPath</name></member>
+      <member refid="class_table_widget_1ad14823dda2528e9edde49452561c7fe7" prot="private" virt="non-virtual"><scope>TableWidget</scope><name>model</name></member>
+      <member refid="class_table_widget_1aa1751d4d1f9d82e4a959260e24a650d3" prot="public" virt="non-virtual"><scope>TableWidget</scope><name>removeSelectedRows</name></member>
+      <member refid="class_table_widget_1aa53e286c6cea8cb627543b6db289b8cf" prot="public" virt="non-virtual"><scope>TableWidget</scope><name>tableUpdated</name></member>
+      <member refid="class_table_widget_1a53a444c14c52aebcd2b2cc2bde659d73" prot="public" virt="non-virtual"><scope>TableWidget</scope><name>TableWidget</name></member>
+      <member refid="class_table_widget_1a5fb6edc429e21280d8f47faf6fe012fa" prot="public" virt="non-virtual"><scope>TableWidget</scope><name>~TableWidget</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

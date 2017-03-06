@@ -1,0 +1,238 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_g_s_control_panel" kind="class" language="C++" prot="public">
+    <compoundname>GSControlPanel</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QDialog</basecompoundref>
+    <includes refid="gscontrolpanel_8h" local="no">gscontrolpanel.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_g_s_control_panel_1ab016ceef3792e4accd6f9cb1f071d1af" prot="private" static="no" mutable="no">
+        <type>Ui::GSControlPanel *</type>
+        <definition>Ui::GSControlPanel* GSControlPanel::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.h" line="44" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_g_s_control_panel_1af4fcf695b7372dce0d53cb6aab6f614c" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GSControlPanel::GSControlPanel</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>GSControlPanel</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Default constructor for <ref refid="class_g_s_control_panel" kindref="compound">GSControlPanel</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.h" line="18" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.cpp" bodystart="8" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="class_g_s_control_panel_1a52c9acf2d18ced290a5128e5577d71c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>GSControlPanel::~GSControlPanel</definition>
+        <argsstring>()</argsstring>
+        <name>~GSControlPanel</name>
+        <briefdescription>
+<para>Default destructor for <ref refid="class_g_s_control_panel" kindref="compound">GSControlPanel</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.h" line="20" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.cpp" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="class_g_s_control_panel_1a1dd77e962e4061a8cb446c5b0167f6e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString GSControlPanel::getMissionNameToSave</definition>
+        <argsstring>()</argsstring>
+        <name>getMissionNameToSave</name>
+        <briefdescription>
+<para>Get the name of the mission the user put in SaveMissionTextBox. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>QString of the mission name to save </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.h" line="22" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.cpp" bodystart="113" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="class_g_s_control_panel_1acf3f260046c6f63e67b6e81cd5f0525b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString GSControlPanel::getMissionNameToLoad</definition>
+        <argsstring>()</argsstring>
+        <name>getMissionNameToLoad</name>
+        <briefdescription>
+<para>Get the name of the mission the user selected in LoadMissionDropdown. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>QString of the mission name to load </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.h" line="24" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.cpp" bodystart="123" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="class_g_s_control_panel_1a428750d1676f9e521be891d62a6fa08b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GSControlPanel::addMissionToLoad</definition>
+        <argsstring>(QString)</argsstring>
+        <name>addMissionToLoad</name>
+        <param>
+          <type>QString</type>
+          <defname>newMissionToLoad</defname>
+        </param>
+        <briefdescription>
+<para>Add a mission to LoadMissionDropdown. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newMissionToLoad</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- name of mission being added to the dropdown menu </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.h" line="26" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.cpp" bodystart="133" bodyend="137"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_g_s_control_panel_1a7854dd3010bf8b133b44e9ff72a935a2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GSControlPanel::on_StartMissionButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_StartMissionButton_clicked</name>
+        <briefdescription>
+<para>What happens when StartMissionButton is clicked. Hides GUI elements related to mission planning and shows GUI elements related to mission execution. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.h" line="30" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.cpp" bodystart="31" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_g_s_control_panel_1a1b8bbf086e86c6b4c15d1cebc9b3a18d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GSControlPanel::on_FinishMissionButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_FinishMissionButton_clicked</name>
+        <briefdescription>
+<para>What happens when FinishMissionButton is clicked. Hides GUI elements related to mission execution and shows GUI elements related to mission planning. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.h" line="32" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.cpp" bodystart="55" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_g_s_control_panel_1a4988ca05aaa99d3de1e9f699d14ce630" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GSControlPanel::on_LoadMissionButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_LoadMissionButton_clicked</name>
+        <briefdescription>
+<para><ref refid="class_g_s_control_panel_1a4988ca05aaa99d3de1e9f699d14ce630" kindref="member">GSControlPanel::on_LoadMissionButton_clicked</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.h" line="34" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.cpp" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_g_s_control_panel_1aa4b0abb2206717db2cd45a88bb39fa85" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GSControlPanel::on_SaveMissionButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_SaveMissionButton_clicked</name>
+        <briefdescription>
+<para><ref refid="class_g_s_control_panel_1aa4b0abb2206717db2cd45a88bb39fa85" kindref="member">GSControlPanel::on_SaveMissionButton_clicked</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.h" line="36" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.cpp" bodystart="84" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_g_s_control_panel_1a2ee4fe9187b1bfcc13b868b76feea3c6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GSControlPanel::on_ClearPointsButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_ClearPointsButton_clicked</name>
+        <briefdescription>
+<para><ref refid="class_g_s_control_panel_1a2ee4fe9187b1bfcc13b868b76feea3c6" kindref="member">GSControlPanel::on_ClearPointsButton_clicked</ref>. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.h" line="38" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.cpp" bodystart="92" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_g_s_control_panel_1a30dfb8691dce9927d4a5ac3215ee1652" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void GSControlPanel::on_ExitButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_ExitButton_clicked</name>
+        <briefdescription>
+<para>What to do when ExitButton is clicked. Exit the program. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.cpp" bodystart="100" bodyend="107"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="46">
+        <label>GSControlPanel</label>
+        <link refid="class_g_s_control_panel"/>
+        <childnode refid="47" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>QDialog</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="48">
+        <label>GSControlPanel</label>
+        <link refid="class_g_s_control_panel"/>
+        <childnode refid="49" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>QDialog</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.h" line="12" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/gscontrolpanel.h" bodystart="12" bodyend="46"/>
+    <listofallmembers>
+      <member refid="class_g_s_control_panel_1a428750d1676f9e521be891d62a6fa08b" prot="public" virt="non-virtual"><scope>GSControlPanel</scope><name>addMissionToLoad</name></member>
+      <member refid="class_g_s_control_panel_1acf3f260046c6f63e67b6e81cd5f0525b" prot="public" virt="non-virtual"><scope>GSControlPanel</scope><name>getMissionNameToLoad</name></member>
+      <member refid="class_g_s_control_panel_1a1dd77e962e4061a8cb446c5b0167f6e1" prot="public" virt="non-virtual"><scope>GSControlPanel</scope><name>getMissionNameToSave</name></member>
+      <member refid="class_g_s_control_panel_1af4fcf695b7372dce0d53cb6aab6f614c" prot="public" virt="non-virtual"><scope>GSControlPanel</scope><name>GSControlPanel</name></member>
+      <member refid="class_g_s_control_panel_1a2ee4fe9187b1bfcc13b868b76feea3c6" prot="private" virt="non-virtual"><scope>GSControlPanel</scope><name>on_ClearPointsButton_clicked</name></member>
+      <member refid="class_g_s_control_panel_1a30dfb8691dce9927d4a5ac3215ee1652" prot="private" virt="non-virtual"><scope>GSControlPanel</scope><name>on_ExitButton_clicked</name></member>
+      <member refid="class_g_s_control_panel_1a1b8bbf086e86c6b4c15d1cebc9b3a18d" prot="private" virt="non-virtual"><scope>GSControlPanel</scope><name>on_FinishMissionButton_clicked</name></member>
+      <member refid="class_g_s_control_panel_1a4988ca05aaa99d3de1e9f699d14ce630" prot="private" virt="non-virtual"><scope>GSControlPanel</scope><name>on_LoadMissionButton_clicked</name></member>
+      <member refid="class_g_s_control_panel_1aa4b0abb2206717db2cd45a88bb39fa85" prot="private" virt="non-virtual"><scope>GSControlPanel</scope><name>on_SaveMissionButton_clicked</name></member>
+      <member refid="class_g_s_control_panel_1a7854dd3010bf8b133b44e9ff72a935a2" prot="private" virt="non-virtual"><scope>GSControlPanel</scope><name>on_StartMissionButton_clicked</name></member>
+      <member refid="class_g_s_control_panel_1ab016ceef3792e4accd6f9cb1f071d1af" prot="private" virt="non-virtual"><scope>GSControlPanel</scope><name>ui</name></member>
+      <member refid="class_g_s_control_panel_1a52c9acf2d18ced290a5128e5577d71c7" prot="public" virt="non-virtual"><scope>GSControlPanel</scope><name>~GSControlPanel</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

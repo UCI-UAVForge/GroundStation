@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="statuswidget_8h" kind="file" language="C++">
+    <compoundname>statuswidget.h</compoundname>
+    <includes local="yes">QPlainTextEdit.h</includes>
+    <includes local="yes">QTimer.h</includes>
+    <includes local="yes">QString.h</includes>
+    <includes local="yes">QObject.h</includes>
+    <includes refid="messagebox_8h" local="yes">messagebox.h</includes>
+    <includedby refid="statuswidget_8cpp" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.cpp</includedby>
+    <incdepgraph>
+      <node id="3213">
+        <label>QObject</label>
+      </node>
+      <node id="3219">
+        <label>ackpacket.h</label>
+        <link refid="ackpacket_8h"/>
+        <childnode refid="3220" relation="include">
+        </childnode>
+        <childnode refid="3221" relation="include">
+        </childnode>
+      </node>
+      <node id="3206">
+        <label>QList</label>
+      </node>
+      <node id="3208">
+        <label>stdint.h</label>
+      </node>
+      <node id="3227">
+        <label>telemetrypacket.h</label>
+        <link refid="telemetrypacket_8h"/>
+        <childnode refid="3224" relation="include">
+        </childnode>
+        <childnode refid="3221" relation="include">
+        </childnode>
+      </node>
+      <node id="3205">
+        <label>QPair</label>
+      </node>
+      <node id="3197">
+        <label>QPlainTextEdit.h</label>
+      </node>
+      <node id="3224">
+        <label>string</label>
+      </node>
+      <node id="3209">
+        <label>qcomboboxdelegate.h</label>
+        <link refid="qcomboboxdelegate_8h"/>
+        <childnode refid="3210" relation="include">
+        </childnode>
+        <childnode refid="3211" relation="include">
+        </childnode>
+        <childnode refid="3212" relation="include">
+        </childnode>
+        <childnode refid="3213" relation="include">
+        </childnode>
+        <childnode refid="3214" relation="include">
+        </childnode>
+        <childnode refid="3215" relation="include">
+        </childnode>
+        <childnode refid="3216" relation="include">
+        </childnode>
+      </node>
+      <node id="3212">
+        <label>QModelIndex</label>
+      </node>
+      <node id="3198">
+        <label>QTimer.h</label>
+      </node>
+      <node id="3226">
+        <label>string.h</label>
+      </node>
+      <node id="3207">
+        <label>QTime</label>
+      </node>
+      <node id="3204">
+        <label>QApplication</label>
+      </node>
+      <node id="3218">
+        <label>QValidator</label>
+      </node>
+      <node id="3203">
+        <label>vector</label>
+      </node>
+      <node id="3199">
+        <label>QString.h</label>
+      </node>
+      <node id="3215">
+        <label>QLineEdit</label>
+      </node>
+      <node id="3221">
+        <label>packet.h</label>
+        <link refid="packet_8h"/>
+        <childnode refid="3222" relation="include">
+        </childnode>
+        <childnode refid="3220" relation="include">
+        </childnode>
+        <childnode refid="3208" relation="include">
+        </childnode>
+      </node>
+      <node id="3214">
+        <label>QSize</label>
+      </node>
+      <node id="3222">
+        <label>time.h</label>
+      </node>
+      <node id="3211">
+        <label>QComboBox</label>
+      </node>
+      <node id="3200">
+        <label>QObject.h</label>
+      </node>
+      <node id="3202">
+        <label>iostream</label>
+      </node>
+      <node id="3210">
+        <label>QItemDelegate</label>
+      </node>
+      <node id="3217">
+        <label>QDoubleValidator</label>
+      </node>
+      <node id="3196">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.h</label>
+        <link refid="statuswidget.h"/>
+        <childnode refid="3197" relation="include">
+        </childnode>
+        <childnode refid="3198" relation="include">
+        </childnode>
+        <childnode refid="3199" relation="include">
+        </childnode>
+        <childnode refid="3200" relation="include">
+        </childnode>
+        <childnode refid="3201" relation="include">
+        </childnode>
+      </node>
+      <node id="3201">
+        <label>messagebox.h</label>
+        <link refid="messagebox_8h"/>
+        <childnode refid="3202" relation="include">
+        </childnode>
+        <childnode refid="3203" relation="include">
+        </childnode>
+        <childnode refid="3204" relation="include">
+        </childnode>
+        <childnode refid="3205" relation="include">
+        </childnode>
+        <childnode refid="3206" relation="include">
+        </childnode>
+        <childnode refid="3207" relation="include">
+        </childnode>
+        <childnode refid="3208" relation="include">
+        </childnode>
+        <childnode refid="3209" relation="include">
+        </childnode>
+        <childnode refid="3219" relation="include">
+        </childnode>
+        <childnode refid="3223" relation="include">
+        </childnode>
+        <childnode refid="3225" relation="include">
+        </childnode>
+        <childnode refid="3227" relation="include">
+        </childnode>
+      </node>
+      <node id="3216">
+        <label>mapvalidator.h</label>
+        <link refid="mapvalidator_8h"/>
+        <childnode refid="3217" relation="include">
+        </childnode>
+        <childnode refid="3218" relation="include">
+        </childnode>
+      </node>
+      <node id="3225">
+        <label>infopacket.h</label>
+        <link refid="infopacket_8h"/>
+        <childnode refid="3224" relation="include">
+        </childnode>
+        <childnode refid="3226" relation="include">
+        </childnode>
+        <childnode refid="3208" relation="include">
+        </childnode>
+        <childnode refid="3221" relation="include">
+        </childnode>
+      </node>
+      <node id="3220">
+        <label>stdio.h</label>
+      </node>
+      <node id="3223">
+        <label>actionpacket.h</label>
+        <link refid="actionpacket_8h"/>
+        <childnode refid="3224" relation="include">
+        </childnode>
+        <childnode refid="3221" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3229">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.cpp</label>
+        <link refid="statuswidget_8cpp"/>
+      </node>
+      <node id="3228">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.h</label>
+        <link refid="statuswidget.h"/>
+        <childnode refid="3229" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_status_widget" prot="public">StatusWidget</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>STATUS_WIDGET_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STATUS_WIDGET_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;QPlainTextEdit.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;QTimer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;QString.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;QObject.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="messagebox_8h" kindref="compound">messagebox.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="class_status_widget" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_status_widget" kindref="compound">StatusWidget</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QPlainTextEdit</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="13" refid="class_status_widget_1a2b2e34b29945d2ea12a8c05df7577073" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QTimer<sp/><ref refid="class_status_widget_1a2b2e34b29945d2ea12a8c05df7577073" kindref="member">StatusTimer</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="class_status_widget_1aa44ee56a7a1bfc07fea862479f9f243d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_status_widget_1aa44ee56a7a1bfc07fea862479f9f243d" kindref="member">start</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_status_widget_1ad2a00a82ccb53786324a2d2638112783" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmessagebox" kindref="compound">messagebox</ref><sp/>*<sp/><ref refid="class_status_widget_1ad2a00a82ccb53786324a2d2638112783" kindref="member">mb</ref><sp/>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_status_widget_1a64fbad1ba9c9e7584afc4eae42521878" kindref="member">StatusWidget</ref>(QObject*<sp/>parent);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_status_widget_1a0991157916d0e53285dd00ff27f4a1c5" kindref="member">~StatusWidget</ref>();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_status_widget_1ab4adf6771aca52d05c164e97fa8d06f5" kindref="member">initiate</ref>(<ref refid="classmessagebox" kindref="compound">messagebox</ref><sp/>*<sp/>mbin);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>QTimer<sp/><ref refid="class_status_widget_1a43ed1589a2b314c7f6fcef0b71116244" kindref="member">getStatusTimer</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_status_widget_1a172ab7eb7040df2efa0eef942f90e5b0" kindref="member">setStatusTimer</ref>(QTimer<sp/>newStatusTimer);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>slots:</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_status_widget_1a31b621d52573cd10e0a5208d8d46858a" kindref="member">showStatus</ref>();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">signals:</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_status_widget_1aee594f77c101d1601cab25c39df61aa9" kindref="member">updateMe</ref>()<sp/>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/statuswidget.h"/>
+  </compounddef>
+</doxygen>

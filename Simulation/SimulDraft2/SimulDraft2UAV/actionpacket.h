@@ -17,7 +17,7 @@
 #define COORDINATOR_ACTIONPACKET_H
 
 #include  <string>
-#include "Packet.h"
+#include "packet.h"
 
 namespace Protocol
 {
@@ -32,12 +32,13 @@ namespace Protocol
 		Shutdown = 15
 	};
 
+
 	typedef struct
 	{
-        double lat = 0;
-        double lon = 0;
-        float alt = 0;
-        float speed = 0;
+        double lat;// = 0;
+        double lon;// = 0;
+        float alt;// = 0;
+        float speed;// = 0;
 	} Waypoint;
 
 	class ActionPacket : public Packet

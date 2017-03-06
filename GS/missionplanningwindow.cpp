@@ -9,6 +9,7 @@ MissionPlanningWindow::MissionPlanningWindow(QWidget *parent) : QDialog(parent)
 {
     // Execute Button
     buttonLayout = new QHBoxLayout();
+    textBoxLayout = new QHBoxLayout();
     executeButton = new QPushButton("Execute");
 
     this->addButton( executeButton );
@@ -38,6 +39,7 @@ MissionPlanningWindow::MissionPlanningWindow(QWidget *parent) : QDialog(parent)
     //Incorporate all GUI elements into superLayout
     this->superLayout = new QVBoxLayout();
     this->superLayout->addLayout( buttonLayout );
+    this->superLayout->addLayout( textBoxLayout );
     this->superLayout->addLayout( layout );
 
     // MissionPlanningWindow Settings
@@ -89,6 +91,26 @@ void MissionPlanningWindow::addComboBox( QComboBox * newComboBox ) {
     this->layout->addWidget( newComboBox );
 
     this->comboBoxList.append( newComboBox );
+
+}
+
+void MissionPlanningWindow::addTextBox( QLineEdit * newLineEdit ) {
+
+    this->textBoxLayout->addWidget( newLineEdit );
+
+    this->textBoxList.append( newLineEdit );
+
+}
+
+//Add textbox with caption written to the left of it.
+//Ex. caption -> "Enter your name: ". In the window: "Enter your name: (newLineEdit goes here)"
+void MissionPlanningWindow::addTextBox( QLineEdit * newLineEdit , QLabel * caption ) {
+
+    this->textBoxLabelList.append( caption ) ;
+
+    this->textBoxLayout->addWidget( caption );
+
+    this->addTextBox( newLineEdit );
 
 }
 
@@ -172,6 +194,20 @@ void MissionPlanningWindow::dumpComboBoxes() {
 void MissionPlanningWindow::changeTitle( QString newWindowTitle ) {
 
     this->setWindowTitle( newWindowTitle );
+
+}
+
+//Return value of uavComboBox
+QString MissionPlanningWindow::getUAV() {
+
+    return this->uavComboBox->currentText() ;
+
+}
+
+//Return value of missionPlanComboBox
+QString MissionPlanningWindow::getMission() {
+
+    return this->missionPlanComboBox->currentText() ;
 
 }
 

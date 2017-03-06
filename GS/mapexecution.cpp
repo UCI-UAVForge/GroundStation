@@ -96,7 +96,6 @@ void MapExecution::onCancelButtonClicked() {
 // redirect to mission planning
 // REPURPOSED TO BE A MISSION START BUTTON
 void MapExecution::onStartButtonClicked() {
-
     //-old code-
     //this->done(1);
     //-start button code-
@@ -188,6 +187,8 @@ void MapExecution::receivePacket(Protocol::Packet *packet){
         float alt;
         telemPacket->GetLocation(&lat,&lng,&alt);
         plotPosition(lat,lng);
+        //send to graph here
+        // ui->graphWidget->plotData(telemPacket);
     } else if (type == Protocol::PacketType::Info){
         std::cout<< "InfoPacket Recieved" << std::endl;
         Protocol::InfoPacket *infoPacket = (Protocol::InfoPacket*)incPack;

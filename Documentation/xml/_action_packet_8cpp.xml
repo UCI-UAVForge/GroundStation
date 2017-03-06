@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="_action_packet_8cpp" kind="file" language="C++">
+    <compoundname>ActionPacket.cpp</compoundname>
+    <includes refid="actionpacket_8h" local="yes">actionpacket.h</includes>
+    <incdepgraph>
+      <node id="48">
+        <label>stdint.h</label>
+      </node>
+      <node id="44">
+        <label>string</label>
+      </node>
+      <node id="42">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/ActionPacket.cpp</label>
+        <link refid="ActionPacket.cpp"/>
+        <childnode refid="43" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>packet.h</label>
+        <link refid="packet_8h"/>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>time.h</label>
+      </node>
+      <node id="47">
+        <label>stdio.h</label>
+      </node>
+      <node id="43">
+        <label>actionpacket.h</label>
+        <link refid="actionpacket_8h"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Copyright<sp/>(c)<sp/>2015:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Jason<sp/>Watkins<sp/>&lt;watkins1@uci.edu&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Permission<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>and/or<sp/>distribute<sp/>this<sp/>software<sp/>for<sp/>any</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">//<sp/>purpose<sp/>with<sp/>or<sp/>without<sp/>fee<sp/>is<sp/>hereby<sp/>granted,<sp/>provided<sp/>that<sp/>the<sp/>above</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>appear<sp/>in<sp/>all<sp/>copies.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;<sp/>AND<sp/>THE<sp/>AUTHOR<sp/>DISCLAIMS<sp/>ALL<sp/>WARRANTIES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">//<sp/>WITH<sp/>REGARD<sp/>TO<sp/>THIS<sp/>SOFTWARE<sp/>INCLUDING<sp/>ALL<sp/>IMPLIED<sp/>WARRANTIES<sp/>OF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>AUTHOR<sp/>BE<sp/>LIABLE<sp/>FOR</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ANY<sp/>SPECIAL,<sp/>DIRECT,<sp/>INDIRECT,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES<sp/>OR<sp/>ANY<sp/>DAMAGES</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>WHATSOEVER<sp/>RESULTING<sp/>FROM<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA<sp/>OR<sp/>PROFITS,<sp/>WHETHER<sp/>IN<sp/>AN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">//<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>NEGLIGENCE<sp/>OR<sp/>OTHER<sp/>TORTIOUS<sp/>ACTION,<sp/>ARISING<sp/>OUT<sp/>OF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>OR<sp/>IN<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>USE<sp/>OR<sp/>PERFORMANCE<sp/>OF<sp/>THIS<sp/>SOFTWARE.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="actionpacket_8h" kindref="compound">actionpacket.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><ref refid="class_protocol_1_1_action_packet_1a9057809acd70d7445a3c79667d6a746c" kindref="member">Protocol::ActionPacket::ActionPacket</ref>(uint8_t*<sp/><ref refid="_packet_handler_8cpp_1aae7966d231efc476384b8aa9c25980f9" kindref="member">buffer</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len)<sp/>:<sp/>ActionPacket()</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>offset<sp/>=<sp/>this-&gt;<ref refid="class_protocol_1_1_packet_1aa5f54d3128f7914383f4d8e8f53fbce4" kindref="member">ReadHeader</ref>(buffer,<sp/>len);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_protocol_1_1_packet_1aa3f97852d443bb9554178384afa24eec" kindref="member">Protocol::Packet::set_type</ref>(<ref refid="namespace_protocol_1a0704fe3e36f425dc9805a6dcc1ea1b75a004bf6c9a40003140292e97330236c53" kindref="member">Protocol::PacketType::Action</ref>);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="_packet_8cpp_1a5eb35fde07fd79e65bc809fe20571c15" kindref="member">action</ref><sp/>=<sp/>*((<ref refid="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9" kindref="member">ActionType</ref>*)(buffer<sp/>+<sp/>offset));</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;waypoint.lat<sp/>=<sp/>*((</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*)(buffer<sp/>+<sp/>offset<sp/>+<sp/>1));</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;waypoint.lon<sp/>=<sp/>*((</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*)(buffer<sp/>+<sp/>offset<sp/>+<sp/>9));</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;waypoint.alt<sp/>=<sp/>*((</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*)(buffer<sp/>+<sp/>offset<sp/>+<sp/>17));</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;waypoint.speed<sp/>=<sp/>*((</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*)(buffer<sp/>+<sp/>offset<sp/>+<sp/>21));</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_protocol_1_1_action_packet_1ac59aeacf4f0566ce327bdbacd8594687" kindref="member">Protocol::ActionPacket::SetAction</ref>(<ref refid="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9" kindref="member">Protocol::ActionType</ref><sp/>a)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;<ref refid="_packet_8cpp_1a5eb35fde07fd79e65bc809fe20571c15" kindref="member">action</ref><sp/>=<sp/>a;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_protocol_1_1_action_packet_1a2f6167c9e92ea9914bf9a39de3fcd3e9" kindref="member">Protocol::ActionPacket::SetWaypoint</ref>(<ref refid="namespace_protocol_1a5a64ef0b3c8cee827111b106b3aaf25a" kindref="member">Waypoint</ref><sp/>wp)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>this-&gt;waypoint<sp/>=<sp/>wp;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><ref refid="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9" kindref="member">Protocol::ActionType</ref><sp/><ref refid="class_protocol_1_1_action_packet_1ae90be2ee603b6968cc1515e32e0e1057" kindref="member">Protocol::ActionPacket::GetAction</ref>()</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="_packet_8cpp_1a5eb35fde07fd79e65bc809fe20571c15" kindref="member">action</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><ref refid="struct_protocol_1_1_waypoint" kindref="compound">Protocol::Waypoint</ref><sp/><ref refid="class_protocol_1_1_action_packet_1a4897181b5915534b25c94f1e4c9d40ba" kindref="member">Protocol::ActionPacket::GetWaypoint</ref>()</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;waypoint;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="class_protocol_1_1_action_packet_1af5963f7c15af8292152df260b188f626" kindref="member">Protocol::ActionPacket::GetBytes</ref>(uint8_t*<sp/>buffer,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>len)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>offset<sp/>=<sp/>this-&gt;WriteHeader(buffer,<sp/>len);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>*(buffer<sp/>+<sp/>offset)<sp/>=<sp/>(uint8_t)this-&gt;<ref refid="_packet_8cpp_1a5eb35fde07fd79e65bc809fe20571c15" kindref="member">action</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>*((</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*)(buffer<sp/>+<sp/>offset<sp/>+<sp/>1))<sp/>=<sp/>this-&gt;waypoint.lat;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>*((</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">*)(buffer<sp/>+<sp/>offset<sp/>+<sp/>9))<sp/>=<sp/>this-&gt;waypoint.lon;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>*((</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*)(buffer<sp/>+<sp/>offset<sp/>+<sp/>17))<sp/>=<sp/>this-&gt;waypoint.alt;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>*((</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">*)(buffer<sp/>+<sp/>offset<sp/>+<sp/>21))<sp/>=<sp/>this-&gt;waypoint.speed;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>offset<sp/>+=<sp/>25;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;SetChecksum(buffer,<sp/>len,<sp/>offset);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ActionPacket.cpp"/>
+  </compounddef>
+</doxygen>

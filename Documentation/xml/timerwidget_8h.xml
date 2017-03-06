@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="timerwidget_8h" kind="file" language="C++">
+    <compoundname>timerwidget.h</compoundname>
+    <includes local="yes">QPlainTextEdit.h</includes>
+    <includes local="yes">QTimer.h</includes>
+    <includes local="yes">QTime</includes>
+    <includedby refid="timerwidget_8cpp" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.cpp</includedby>
+    <incdepgraph>
+      <node id="3379">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.h</label>
+        <link refid="timerwidget.h"/>
+        <childnode refid="3380" relation="include">
+        </childnode>
+        <childnode refid="3381" relation="include">
+        </childnode>
+        <childnode refid="3382" relation="include">
+        </childnode>
+      </node>
+      <node id="3380">
+        <label>QPlainTextEdit.h</label>
+      </node>
+      <node id="3381">
+        <label>QTimer.h</label>
+      </node>
+      <node id="3382">
+        <label>QTime</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3383">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.h</label>
+        <link refid="timerwidget.h"/>
+        <childnode refid="3384" relation="include">
+        </childnode>
+      </node>
+      <node id="3384">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.cpp</label>
+        <link refid="timerwidget_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_timer_widget" prot="public">TimerWidget</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>TIMER_WIDGET_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TIMER_WIDGET_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;QPlainTextEdit.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;QTimer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;QTime&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="class_timer_widget" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_timer_widget" kindref="compound">TimerWidget</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QPlainTextEdit</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="class_timer_widget_1a9bd0efab037342ab106882018469ccd3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QTime<sp/><ref refid="class_timer_widget_1a9bd0efab037342ab106882018469ccd3" kindref="member">time</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="class_timer_widget_1a1c46e2555ede70519a5765392f3f8142" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QTimer<sp/><ref refid="class_timer_widget_1a1c46e2555ede70519a5765392f3f8142" kindref="member">TimeTimer</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="class_timer_widget_1a808776d552c6855f23460f68fe428326" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_timer_widget_1a808776d552c6855f23460f68fe428326" kindref="member">start</ref><sp/>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_timer_widget_1a459f4729f0522983a9b01c88ac3e8e37" kindref="member">TimerWidget</ref>(QWidget<sp/>*<sp/>parent<sp/>=<sp/>0)<sp/>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//explicit<sp/>TimerWidget(QWidget*<sp/>parent<sp/>=<sp/>0);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_timer_widget_1a3989d66aa8710930b1205e6201ad23e3" kindref="member">~TimerWidget</ref>();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_timer_widget_1ae60da213b39810256792230c34524503" kindref="member">showTime</ref>();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_timer_widget_1a037ac6faafa61e321fdd13960aaef405" kindref="member">initiate</ref>(QTime<sp/>timein);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>QTime<sp/><ref refid="class_timer_widget_1a5c606c2b1ebf5976594583f2d1c2a9f1" kindref="member">getTime</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_timer_widget_1af5fc0b2df4d189a02966806749f8768b" kindref="member">setTime</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QTime<sp/>&amp;value);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//QTimer<sp/>getTimeTimer()<sp/>const;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//void<sp/>setTimeTimer(QTimer<sp/>newTimeTimer);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/timerwidget.h"/>
+  </compounddef>
+</doxygen>

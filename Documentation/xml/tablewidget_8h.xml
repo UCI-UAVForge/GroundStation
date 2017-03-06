@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="tablewidget_8h" kind="file" language="C++">
+    <compoundname>tablewidget.h</compoundname>
+    <includes local="no">QWidget</includes>
+    <includes local="no">QTableView</includes>
+    <includes refid="qcomboboxdelegate_8h" local="yes">qcomboboxdelegate.h</includes>
+    <includes refid="tablemodel_8h" local="yes">tablemodel.h</includes>
+    <includes refid="flightpath_8h" local="yes">flightpath.h</includes>
+    <includedby refid="mainmdidisplay_8cpp" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainmdidisplay.cpp</includedby>
+    <includedby refid="mapplanning_8cpp" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp</includedby>
+    <includedby refid="tablewidget_8cpp" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.cpp</includedby>
+    <incdepgraph>
+      <node id="3299">
+        <label>QObject</label>
+      </node>
+      <node id="3307">
+        <label>QList</label>
+      </node>
+      <node id="3316">
+        <label>stdint.h</label>
+      </node>
+      <node id="3308">
+        <label>QPair</label>
+      </node>
+      <node id="3312">
+        <label>string</label>
+      </node>
+      <node id="3295">
+        <label>qcomboboxdelegate.h</label>
+        <link refid="qcomboboxdelegate_8h"/>
+        <childnode refid="3296" relation="include">
+        </childnode>
+        <childnode refid="3297" relation="include">
+        </childnode>
+        <childnode refid="3298" relation="include">
+        </childnode>
+        <childnode refid="3299" relation="include">
+        </childnode>
+        <childnode refid="3300" relation="include">
+        </childnode>
+        <childnode refid="3301" relation="include">
+        </childnode>
+        <childnode refid="3302" relation="include">
+        </childnode>
+      </node>
+      <node id="3298">
+        <label>QModelIndex</label>
+      </node>
+      <node id="3304">
+        <label>QValidator</label>
+      </node>
+      <node id="3293">
+        <label>QWidget</label>
+      </node>
+      <node id="3301">
+        <label>QLineEdit</label>
+      </node>
+      <node id="3313">
+        <label>packet.h</label>
+        <link refid="packet_8h"/>
+        <childnode refid="3314" relation="include">
+        </childnode>
+        <childnode refid="3315" relation="include">
+        </childnode>
+        <childnode refid="3316" relation="include">
+        </childnode>
+      </node>
+      <node id="3292">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.h</label>
+        <link refid="tablewidget.h"/>
+        <childnode refid="3293" relation="include">
+        </childnode>
+        <childnode refid="3294" relation="include">
+        </childnode>
+        <childnode refid="3295" relation="include">
+        </childnode>
+        <childnode refid="3305" relation="include">
+        </childnode>
+        <childnode refid="3309" relation="include">
+        </childnode>
+      </node>
+      <node id="3310">
+        <label>QString</label>
+      </node>
+      <node id="3300">
+        <label>QSize</label>
+      </node>
+      <node id="3314">
+        <label>time.h</label>
+      </node>
+      <node id="3305">
+        <label>tablemodel.h</label>
+        <link refid="tablemodel_8h"/>
+        <childnode refid="3306" relation="include">
+        </childnode>
+        <childnode refid="3307" relation="include">
+        </childnode>
+        <childnode refid="3308" relation="include">
+        </childnode>
+      </node>
+      <node id="3297">
+        <label>QComboBox</label>
+      </node>
+      <node id="3309">
+        <label>flightpath.h</label>
+        <link refid="flightpath_8h"/>
+        <childnode refid="3307" relation="include">
+        </childnode>
+        <childnode refid="3308" relation="include">
+        </childnode>
+        <childnode refid="3310" relation="include">
+        </childnode>
+        <childnode refid="3311" relation="include">
+        </childnode>
+      </node>
+      <node id="3296">
+        <label>QItemDelegate</label>
+      </node>
+      <node id="3303">
+        <label>QDoubleValidator</label>
+      </node>
+      <node id="3294">
+        <label>QTableView</label>
+      </node>
+      <node id="3302">
+        <label>mapvalidator.h</label>
+        <link refid="mapvalidator_8h"/>
+        <childnode refid="3303" relation="include">
+        </childnode>
+        <childnode refid="3304" relation="include">
+        </childnode>
+      </node>
+      <node id="3315">
+        <label>stdio.h</label>
+      </node>
+      <node id="3306">
+        <label>QAbstractTableModel</label>
+      </node>
+      <node id="3311">
+        <label>actionpacket.h</label>
+        <link refid="actionpacket_8h"/>
+        <childnode refid="3312" relation="include">
+        </childnode>
+        <childnode refid="3313" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3319">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp</label>
+        <link refid="mapplanning_8cpp"/>
+      </node>
+      <node id="3320">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.cpp</label>
+        <link refid="tablewidget_8cpp"/>
+      </node>
+      <node id="3318">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainmdidisplay.cpp</label>
+        <link refid="mainmdidisplay_8cpp"/>
+      </node>
+      <node id="3317">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.h</label>
+        <link refid="tablewidget.h"/>
+        <childnode refid="3318" relation="include">
+        </childnode>
+        <childnode refid="3319" relation="include">
+        </childnode>
+        <childnode refid="3320" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_table_widget" prot="public">TableWidget</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>TABLEWIDGET_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TABLEWIDGET_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QWidget&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QTableView&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="qcomboboxdelegate_8h" kindref="compound">qcomboboxdelegate.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="tablemodel_8h" kindref="compound">tablemodel.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="flightpath_8h" kindref="compound">flightpath.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="class_table_widget" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_table_widget" kindref="compound">TableWidget</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QTableView</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_table_widget_1a53a444c14c52aebcd2b2cc2bde659d73" kindref="member">TableWidget</ref>(QWidget<sp/>*parent<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_table_widget_1a5fb6edc429e21280d8f47faf6fe012fa" kindref="member">~TableWidget</ref>();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_flight_path" kindref="compound">FlightPath</ref><sp/>*<ref refid="class_table_widget_1acf7df57ad87a0241daba9f96509ef4df" kindref="member">getTableAsFlightPath</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="31" refid="class_table_widget_1ad14823dda2528e9edde49452561c7fe7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_table_model" kindref="compound">TableModel</ref><sp/><ref refid="class_table_widget_1ad14823dda2528e9edde49452561c7fe7" kindref="member">model</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="class_table_widget_1a9e169fb9a5b62629c67cc0576e065f6a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_q_combo_box_delegate" kindref="compound">QComboBoxDelegate</ref><sp/><ref refid="class_table_widget_1a9e169fb9a5b62629c67cc0576e065f6a" kindref="member">delegate</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal">signals:</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_table_widget_1aa53e286c6cea8cb627543b6db289b8cf" kindref="member">tableUpdated</ref>();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>slots:</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_table_widget_1afa9b2a89c72a5895134c8f45f39ff514" kindref="member">appendRow</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lat,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>lng);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_table_widget_1aa1751d4d1f9d82e4a959260e24a650d3" kindref="member">removeSelectedRows</ref>();</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_table_widget_1a159b1f8816eaa41ff2a4844a8a9f0f55" kindref="member">clearTable</ref>();</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>TABLEWIDGET_H</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.h"/>
+  </compounddef>
+</doxygen>
