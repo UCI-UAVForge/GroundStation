@@ -1,42 +1,20 @@
 #include "TimerWidget.h"
 
 TimerWidget::TimerWidget( QWidget* parent ) : QPlainTextEdit( parent ) , time() , TimeTimer() {
-
     connect(&TimeTimer, SIGNAL(timeout()), this, SLOT(showTime()));
-
 }
 
-//explicit TimerWidget::TimerWidget(QWidget* parent) : QPlainTextEdit(parent)
-//{
-//    connect(&TimeTimer, SIGNAL(timeout()), this, SLOT(showTime()));
-//}
+TimerWidget::~TimerWidget() {}
 
-TimerWidget::~TimerWidget()
-{
-}
-
-QTime TimerWidget::getTime() const
-{
+QTime TimerWidget::getTime() const {
     return time;
 }
 
-void TimerWidget::setTime(const QTime &value)
-{
+void TimerWidget::setTime(const QTime &value) {
     time = value;
 }
 
-//QTimer TimerWidget::getTimeTimer() const
-//{
-//    return TimeTimer ;
-//}
-
-//void TimerWidget::setTimeTimer(QTimer newTimeTimer)
-//{
-//    TimeTimer = newTimeTimer;
-//}
-
-void TimerWidget::showTime()
-{
+void TimerWidget::showTime() {
     QString text;
     text = "Started: ";
     text.append(start);
@@ -49,17 +27,13 @@ void TimerWidget::showTime()
     appendPlainText(text);
 }
 
-void TimerWidget::initiate()
-{
+void TimerWidget::initiate() {
     TimeTimer.start(1000);
     time = QTime::currentTime();
     start = time.toString("hh:mm:ss");
-    /// \todo Is this showTime necessary?
     showTime();
 }
 
 void TimerWidget::stop() {
-
     TimeTimer.stop();
-
 }
