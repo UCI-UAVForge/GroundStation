@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_web_socket_transport" kind="class" language="C++" prot="public">
+    <compoundname>WebSocketTransport</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QWebChannelAbstractTransport</basecompoundref>
+    <includes refid="websockettransport_8h" local="no">websockettransport.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_web_socket_transport_1aeaa3bb047d435aba08b9bbea5c510bc0" prot="private" static="no" mutable="no">
+        <type>QWebSocket *</type>
+        <definition>QWebSocket* WebSocketTransport::m_socket</definition>
+        <argsstring></argsstring>
+        <name>m_socket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/websockettransport.h" line="72" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/websockettransport.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_web_socket_transport_1adc3cc5ba10f10618a2a5514914fd7ff0" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QT_BEGIN_NAMESPACE WebSocketTransport::WebSocketTransport</definition>
+        <argsstring>(QWebSocket *socket)</argsstring>
+        <name>WebSocketTransport</name>
+        <param>
+          <type>QWebSocket *</type>
+          <declname>socket</declname>
+        </param>
+        <briefdescription>
+<para>QWebChannelAbstractSocket implementation that uses a QWebSocket internally. </para>        </briefdescription>
+        <detaileddescription>
+<para>The transport delegates all messages received over the QWebSocket over its textMessageReceived signal. Analogously, all calls to sendTextMessage will be send over the QWebSocket to the remote client.</para><para>Construct the transport object and wrap the given socket.</para><para>The socket is also set as the parent of the transport object. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/websockettransport.h" line="63" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/websockettransport.cpp" bodystart="74" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="class_web_socket_transport_1a5448ab45c8f5366763c1b82693b3da4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>WebSocketTransport::~WebSocketTransport</definition>
+        <argsstring>()</argsstring>
+        <name>~WebSocketTransport</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destroys the <ref refid="class_web_socket_transport" kindref="compound">WebSocketTransport</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/websockettransport.h" line="64" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/websockettransport.cpp" bodystart="87" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="class_web_socket_transport_1a1d6e79bb542a76d3c8fabeb8791ad3e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WebSocketTransport::sendMessage</definition>
+        <argsstring>(const QJsonObject &amp;message) Q_DECL_OVERRIDE</argsstring>
+        <name>sendMessage</name>
+        <param>
+          <type>const QJsonObject &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Serialize the JSON message and send it as a text message via the WebSocket to the client. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/websockettransport.h" line="66" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/websockettransport.cpp" bodystart="95" bodyend="99"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_web_socket_transport_1ac353962d0b80101029216a6bcbe3a660" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WebSocketTransport::textMessageReceived</definition>
+        <argsstring>(const QString &amp;message)</argsstring>
+        <name>textMessageReceived</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>message</declname>
+          <defname>messageData</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Deserialize the stringified JSON messageData and emit messageReceived. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/websockettransport.h" line="69" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/websockettransport.cpp" bodystart="104" bodyend="117"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1164">
+        <label>WebSocketTransport</label>
+        <link refid="class_web_socket_transport"/>
+        <childnode refid="1165" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1165">
+        <label>QWebChannelAbstractTransport</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1166">
+        <label>WebSocketTransport</label>
+        <link refid="class_web_socket_transport"/>
+        <childnode refid="1167" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1167">
+        <label>QWebChannelAbstractTransport</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/websockettransport.h" line="60" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/websockettransport.h" bodystart="59" bodyend="73"/>
+    <listofallmembers>
+      <member refid="class_web_socket_transport_1aeaa3bb047d435aba08b9bbea5c510bc0" prot="private" virt="non-virtual"><scope>WebSocketTransport</scope><name>m_socket</name></member>
+      <member refid="class_web_socket_transport_1a1d6e79bb542a76d3c8fabeb8791ad3e8" prot="public" virt="non-virtual"><scope>WebSocketTransport</scope><name>sendMessage</name></member>
+      <member refid="class_web_socket_transport_1ac353962d0b80101029216a6bcbe3a660" prot="private" virt="non-virtual"><scope>WebSocketTransport</scope><name>textMessageReceived</name></member>
+      <member refid="class_web_socket_transport_1adc3cc5ba10f10618a2a5514914fd7ff0" prot="public" virt="non-virtual"><scope>WebSocketTransport</scope><name>WebSocketTransport</name></member>
+      <member refid="class_web_socket_transport_1a5448ab45c8f5366763c1b82693b3da4e" prot="public" virt="virtual"><scope>WebSocketTransport</scope><name>~WebSocketTransport</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

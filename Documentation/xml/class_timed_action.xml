@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_timed_action" kind="class" language="C++" prot="public">
+    <compoundname>TimedAction</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QPair&lt; Protocol::ActionPacket *, double &gt;</basecompoundref>
+    <includes refid="flightpath_8h" local="no">flightpath.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_timed_action_1a6667b4cc9f2bb66a7869f2a4417f225d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TimedAction::holdsAction</definition>
+        <argsstring></argsstring>
+        <name>holdsAction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="67" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_timed_action_1a8cbfc9905cb844411a871369e9f91509" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TimedAction::holdsWaypoint</definition>
+        <argsstring></argsstring>
+        <name>holdsWaypoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="68" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_timed_action_1a815cffec1a06870104ec6e04542ea988" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>TimedAction::TimedAction</definition>
+        <argsstring>(Protocol::ActionType action, double delay)</argsstring>
+        <name>TimedAction</name>
+        <param>
+          <type><ref refid="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9" kindref="member">Protocol::ActionType</ref></type>
+          <declname>action</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>delay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="70" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" bodystart="70" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="class_timed_action_1a0bf11944217df549bc9ead291bffe4d0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>TimedAction::TimedAction</definition>
+        <argsstring>(Protocol::Waypoint wp, double delay)</argsstring>
+        <name>TimedAction</name>
+        <param>
+          <type><ref refid="struct_protocol_1_1_waypoint" kindref="compound">Protocol::Waypoint</ref></type>
+          <declname>wp</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>delay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="79" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" bodystart="79" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="class_timed_action_1adc140fabcb0074cb26b2ec45329aba22" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TimedAction::hasWaypoint</definition>
+        <argsstring>()</argsstring>
+        <name>hasWaypoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="89" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" bodystart="89" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="class_timed_action_1a8fc6b608826b02309ea063b4222bc149" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool TimedAction::hasAction</definition>
+        <argsstring>()</argsstring>
+        <name>hasAction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="93" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" bodystart="93" bodyend="95"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1142">
+        <label>TimedAction</label>
+        <link refid="class_timed_action"/>
+        <childnode refid="1143" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1143">
+        <label>QPair&lt; Protocol::ActionPacket *, double &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1144">
+        <label>TimedAction</label>
+        <link refid="class_timed_action"/>
+        <childnode refid="1145" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1145">
+        <label>QPair&lt; Protocol::ActionPacket *, double &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" line="65" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/flightpath.h" bodystart="65" bodyend="96"/>
+    <listofallmembers>
+      <member refid="class_timed_action_1a8fc6b608826b02309ea063b4222bc149" prot="public" virt="non-virtual"><scope>TimedAction</scope><name>hasAction</name></member>
+      <member refid="class_timed_action_1adc140fabcb0074cb26b2ec45329aba22" prot="public" virt="non-virtual"><scope>TimedAction</scope><name>hasWaypoint</name></member>
+      <member refid="class_timed_action_1a6667b4cc9f2bb66a7869f2a4417f225d" prot="private" virt="non-virtual"><scope>TimedAction</scope><name>holdsAction</name></member>
+      <member refid="class_timed_action_1a8cbfc9905cb844411a871369e9f91509" prot="private" virt="non-virtual"><scope>TimedAction</scope><name>holdsWaypoint</name></member>
+      <member refid="class_timed_action_1a815cffec1a06870104ec6e04542ea988" prot="public" virt="non-virtual"><scope>TimedAction</scope><name>TimedAction</name></member>
+      <member refid="class_timed_action_1a0bf11944217df549bc9ead291bffe4d0" prot="public" virt="non-virtual"><scope>TimedAction</scope><name>TimedAction</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

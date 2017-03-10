@@ -1,0 +1,302 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_server_queue" kind="class" language="C++" prot="public">
+    <compoundname>ServerQueue</compoundname>
+    <includes refid="serverqueue_8h" local="no">serverqueue.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_server_queue_1ae44a5def3d3c052a1a92584777d8a951" prot="private" static="no" mutable="no">
+        <type>QLinkedList&lt; <ref refid="serverqueue_8h_1a326cffc052cd053ca9cdd401fdd996ad" kindref="member">QueueEntry</ref> * &gt;</type>
+        <definition>QLinkedList&lt;QueueEntry*&gt; ServerQueue::pendingPackets</definition>
+        <argsstring></argsstring>
+        <name>pendingPackets</name>
+        <briefdescription>
+<para>pendingPackets The list of all packets waiting to be sent out over the network. The list should be in order of priority with the lowest values (highest priority) first and larger values (lower priorities) last. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="40" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_server_queue_1a0fd870115c26c00c8a09e05ac502ea60" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="serverqueue_8h_1a326cffc052cd053ca9cdd401fdd996ad" kindref="member">QueueEntry</ref> * &gt;</type>
+        <definition>QList&lt;QueueEntry*&gt; ServerQueue::window</definition>
+        <argsstring></argsstring>
+        <name>window</name>
+        <briefdescription>
+<para>window The (small) List of Packets that this queue will allow to be sent over the network. It will hold the Packets here until higher priority Packets are added, or the Packets held in the list are acknowledged. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="48" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_server_queue_1afb24e3092a45555723b0e184d90280fb" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ServerQueue::windowLen</definition>
+        <argsstring></argsstring>
+        <name>windowLen</name>
+        <briefdescription>
+<para>windowLen The maximum length of window. The number of packets this Queue will send before any are acknowledged. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="54" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_server_queue_1adb7adca838737f11995fe4bb20f18c8d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ServerQueue::updateWindow</definition>
+        <argsstring>()</argsstring>
+        <name>updateWindow</name>
+        <briefdescription>
+<para>updateWindow Updates the contents of the window List by grabbing the highest priority Packets out of pendingPackets until the window if full. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="61" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="25" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_server_queue_1a5a03695a07bd1fe30cf6c2e58f6f8b1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ServerQueue::ServerQueue</definition>
+        <argsstring>()</argsstring>
+        <name>ServerQueue</name>
+        <briefdescription>
+<para><ref refid="class_server_queue" kindref="compound">ServerQueue</ref> Creates a <ref refid="class_server_queue" kindref="compound">ServerQueue</ref> object with the default window length. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="68" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="14" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_server_queue_1a05f53c129a6c445e869904eab8504888" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ServerQueue::ServerQueue</definition>
+        <argsstring>(int windowLen)</argsstring>
+        <name>ServerQueue</name>
+        <param>
+          <type>int</type>
+          <declname>windowLen</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_server_queue" kindref="compound">ServerQueue</ref> Creates a <ref refid="class_server_queue" kindref="compound">ServerQueue</ref> object with the given window length. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>windowLen</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum number of pending packets this queue will allow before it begins to cycle though pending packets. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="76" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="10" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_server_queue_1a59cd46b536b9e86f7c7d93519d5bd983" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ServerQueue::~ServerQueue</definition>
+        <argsstring>()</argsstring>
+        <name>~ServerQueue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_server_queue" kindref="compound">ServerQueue</ref> destructor </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="81" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="18" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="class_server_queue_1aa8335eeeaf56fbe703cb49988b63fb87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ServerQueue::isEmpty</definition>
+        <argsstring>()</argsstring>
+        <name>isEmpty</name>
+        <briefdescription>
+<para>isEmpty </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if the <ref refid="class_server_queue" kindref="compound">ServerQueue</ref> has no packets in it, False otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="87" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="39" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_server_queue_1a715921b0a0067b3d3a1485a824fbbb3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ServerQueue::enqueue</definition>
+        <argsstring>(Protocol::Packet *packet)</argsstring>
+        <name>enqueue</name>
+        <param>
+          <type><ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref> *</type>
+          <declname>packet</declname>
+        </param>
+        <briefdescription>
+<para>enqueue Adds a packet to this <ref refid="class_server_queue" kindref="compound">ServerQueue</ref> with the default priority. The default priority is 10. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>packet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The packet being added to the <ref refid="class_server_queue" kindref="compound">ServerQueue</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="94" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="82" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="class_server_queue_1a9438c6df4c203a32533d3388ae313195" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ServerQueue::enqueue</definition>
+        <argsstring>(Protocol::Packet *packet, unsigned int priority)</argsstring>
+        <name>enqueue</name>
+        <param>
+          <type><ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref> *</type>
+          <declname>packet</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>priority</declname>
+        </param>
+        <briefdescription>
+<para>enqueue Adds a packet to this <ref refid="class_server_queue" kindref="compound">ServerQueue</ref> with the given priority. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>packet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The packet being added to the <ref refid="class_server_queue" kindref="compound">ServerQueue</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>priority</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The prioitity with which this packet will be sent. Low numbers are sent first. When priorities tie, the packet that was added to the queue first will be sent first. The default priority is 10. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="105" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="43" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_server_queue_1aa8678274d8afa980b2995ed3f839a3f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ServerQueue::dequeue</definition>
+        <argsstring>(Protocol::Packet *packet)</argsstring>
+        <name>dequeue</name>
+        <param>
+          <type><ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref> *</type>
+          <declname>packet</declname>
+        </param>
+        <briefdescription>
+<para>dequeue Removes a packet from the <ref refid="class_server_queue" kindref="compound">ServerQueue</ref> if it has already been acknoledged. </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="todo_1_todo000020"><xreftitle>Todo</xreftitle><xrefdescription><para>Implement and test this </para></xrefdescription></xrefsect><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>packet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The packet that will be removed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="113" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="86" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_server_queue_1a8d0d64b34a8e2a342009b496bfe8b196" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ServerQueue::forceDequeue</definition>
+        <argsstring>(Protocol::Packet *packet)</argsstring>
+        <name>forceDequeue</name>
+        <param>
+          <type><ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref> *</type>
+          <declname>packet</declname>
+        </param>
+        <briefdescription>
+<para>forceDequeue Removes a packet from the <ref refid="class_server_queue" kindref="compound">ServerQueue</ref> regardless of if it has been acknolodged. </para>        </briefdescription>
+        <detaileddescription>
+<para><xrefsect id="todo_1_todo000021"><xreftitle>Todo</xreftitle><xrefdescription><para>Implement and test this </para></xrefdescription></xrefsect><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>packet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The packet that will be removed </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="121" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="97" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="class_server_queue_1a4815b1a73a46c6b581bd70a82b04d1b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ServerQueue::recieveAckPacket</definition>
+        <argsstring>(Protocol::AckPacket *ack_pack)</argsstring>
+        <name>recieveAckPacket</name>
+        <param>
+          <type><ref refid="class_protocol_1_1_ack_packet" kindref="compound">Protocol::AckPacket</ref> *</type>
+          <declname>ack_pack</declname>
+        </param>
+        <briefdescription>
+<para>recieveAckPacket Reads the timestamp in ack_pack and compares it to the current pending packets. If there is a match the corresponding Packet is removed from the pending list. If there are no matches, the AckPacket is ignored. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ack_pack</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The incoming AckPacket </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the AckPacket matches one of the pending packets, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="132" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="106" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="class_server_queue_1a89278291c92e8ec01d730407d3f2f806" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="class_protocol_1_1_packet" kindref="compound">Protocol::Packet</ref> *</type>
+        <definition>Protocol::Packet * ServerQueue::getNextPacket</definition>
+        <argsstring>()</argsstring>
+        <name>getNextPacket</name>
+        <briefdescription>
+<para>getNextPacket Internally determines and gets the Packet thst should be sent out next. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The next Packet to send </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="139" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.cpp" bodystart="122" bodyend="136"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_server_queue" kindref="compound">ServerQueue</ref> class is a specialized priority queue-like data structure for holding Packets before they are sent over the network. </para>    </briefdescription>
+    <detaileddescription>
+<para>The enqueue(Packet, int) and <ref refid="class_server_queue_1a89278291c92e8ec01d730407d3f2f806" kindref="member">getNextPacket()</ref> methods are the main way to interact with this class. enqueue-ing packets will insert them into the list at a location corresponding with their priority. getNextPacket will grab the next Packet to send - determined internally by this class.</para><para>Packets come out of the queue lowest priority value first. A priority of 5 will be sent before a priority of 10. If two packets have the same priority, they will be sent in the order that they were added. </para>    </detaileddescription>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" line="32" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/serverqueue.h" bodystart="32" bodyend="140"/>
+    <listofallmembers>
+      <member refid="class_server_queue_1aa8678274d8afa980b2995ed3f839a3f8" prot="public" virt="non-virtual"><scope>ServerQueue</scope><name>dequeue</name></member>
+      <member refid="class_server_queue_1a715921b0a0067b3d3a1485a824fbbb3d" prot="public" virt="non-virtual"><scope>ServerQueue</scope><name>enqueue</name></member>
+      <member refid="class_server_queue_1a9438c6df4c203a32533d3388ae313195" prot="public" virt="non-virtual"><scope>ServerQueue</scope><name>enqueue</name></member>
+      <member refid="class_server_queue_1a8d0d64b34a8e2a342009b496bfe8b196" prot="public" virt="non-virtual"><scope>ServerQueue</scope><name>forceDequeue</name></member>
+      <member refid="class_server_queue_1a89278291c92e8ec01d730407d3f2f806" prot="public" virt="non-virtual"><scope>ServerQueue</scope><name>getNextPacket</name></member>
+      <member refid="class_server_queue_1aa8335eeeaf56fbe703cb49988b63fb87" prot="public" virt="non-virtual"><scope>ServerQueue</scope><name>isEmpty</name></member>
+      <member refid="class_server_queue_1ae44a5def3d3c052a1a92584777d8a951" prot="private" virt="non-virtual"><scope>ServerQueue</scope><name>pendingPackets</name></member>
+      <member refid="class_server_queue_1a4815b1a73a46c6b581bd70a82b04d1b0" prot="public" virt="non-virtual"><scope>ServerQueue</scope><name>recieveAckPacket</name></member>
+      <member refid="class_server_queue_1a5a03695a07bd1fe30cf6c2e58f6f8b1e" prot="public" virt="non-virtual"><scope>ServerQueue</scope><name>ServerQueue</name></member>
+      <member refid="class_server_queue_1a05f53c129a6c445e869904eab8504888" prot="public" virt="non-virtual"><scope>ServerQueue</scope><name>ServerQueue</name></member>
+      <member refid="class_server_queue_1adb7adca838737f11995fe4bb20f18c8d" prot="private" virt="non-virtual"><scope>ServerQueue</scope><name>updateWindow</name></member>
+      <member refid="class_server_queue_1a0fd870115c26c00c8a09e05ac502ea60" prot="private" virt="non-virtual"><scope>ServerQueue</scope><name>window</name></member>
+      <member refid="class_server_queue_1afb24e3092a45555723b0e184d90280fb" prot="private" virt="non-virtual"><scope>ServerQueue</scope><name>windowLen</name></member>
+      <member refid="class_server_queue_1a59cd46b536b9e86f7c7d93519d5bd983" prot="public" virt="non-virtual"><scope>ServerQueue</scope><name>~ServerQueue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

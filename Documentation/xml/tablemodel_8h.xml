@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="tablemodel_8h" kind="file" language="C++">
+    <compoundname>tablemodel.h</compoundname>
+    <includes local="no">QAbstractTableModel</includes>
+    <includes local="no">QList</includes>
+    <includes local="no">QPair</includes>
+    <includedby refid="mapexecution_8h" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h</includedby>
+    <includedby refid="maprecap_8h" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/maprecap.h</includedby>
+    <includedby refid="mapplanning_8h" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h</includedby>
+    <includedby refid="tablewidget_8h" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.h</includedby>
+    <includedby refid="tablemodel_8cpp" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablemodel.cpp</includedby>
+    <incdepgraph>
+      <node id="3238">
+        <label>QList</label>
+      </node>
+      <node id="3239">
+        <label>QPair</label>
+      </node>
+      <node id="3236">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablemodel.h</label>
+        <link refid="tablemodel.h"/>
+        <childnode refid="3237" relation="include">
+        </childnode>
+        <childnode refid="3238" relation="include">
+        </childnode>
+        <childnode refid="3239" relation="include">
+        </childnode>
+      </node>
+      <node id="3237">
+        <label>QAbstractTableModel</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3259">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/popwindowmp.cpp</label>
+        <link refid="popwindowmp_8cpp"/>
+      </node>
+      <node id="3241">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.h</label>
+        <link refid="mapexecution_8h"/>
+        <childnode refid="3242" relation="include">
+        </childnode>
+        <childnode refid="3243" relation="include">
+        </childnode>
+        <childnode refid="3245" relation="include">
+        </childnode>
+        <childnode refid="3246" relation="include">
+        </childnode>
+        <childnode refid="3251" relation="include">
+        </childnode>
+        <childnode refid="3258" relation="include">
+        </childnode>
+        <childnode refid="3259" relation="include">
+        </childnode>
+      </node>
+      <node id="3256">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.cpp</label>
+        <link refid="mapplanning_8cpp"/>
+      </node>
+      <node id="3243">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapplanning.h</label>
+        <link refid="mapplanning_8h"/>
+        <childnode refid="3244" relation="include">
+        </childnode>
+        <childnode refid="3245" relation="include">
+        </childnode>
+        <childnode refid="3246" relation="include">
+        </childnode>
+        <childnode refid="3247" relation="include">
+        </childnode>
+        <childnode refid="3251" relation="include">
+        </childnode>
+        <childnode refid="3256" relation="include">
+        </childnode>
+        <childnode refid="3257" relation="include">
+        </childnode>
+      </node>
+      <node id="3257">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapvalidator.cpp</label>
+        <link refid="mapvalidator_8cpp"/>
+      </node>
+      <node id="3255">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.cpp</label>
+        <link refid="missionrecap_8cpp"/>
+      </node>
+      <node id="3260">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/maprecap.h</label>
+        <link refid="maprecap_8h"/>
+        <childnode refid="3241" relation="include">
+        </childnode>
+        <childnode refid="3246" relation="include">
+        </childnode>
+        <childnode refid="3247" relation="include">
+        </childnode>
+        <childnode refid="3251" relation="include">
+        </childnode>
+        <childnode refid="3261" relation="include">
+        </childnode>
+      </node>
+      <node id="3246">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.h</label>
+        <link refid="qttabtest_8h"/>
+        <childnode refid="3247" relation="include">
+        </childnode>
+        <childnode refid="3250" relation="include">
+        </childnode>
+      </node>
+      <node id="3263">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.cpp</label>
+        <link refid="tablewidget_8cpp"/>
+      </node>
+      <node id="3244">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/missionrecap.h</label>
+        <link refid="missionrecap_8h"/>
+        <childnode refid="3241" relation="include">
+        </childnode>
+        <childnode refid="3245" relation="include">
+        </childnode>
+        <childnode refid="3246" relation="include">
+        </childnode>
+        <childnode refid="3251" relation="include">
+        </childnode>
+        <childnode refid="3255" relation="include">
+        </childnode>
+      </node>
+      <node id="3254">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.cpp</label>
+        <link refid="options_8cpp"/>
+      </node>
+      <node id="3242">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/digitalclock.cpp</label>
+        <link refid="digitalclock_8cpp"/>
+      </node>
+      <node id="3247">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainmdidisplay.h</label>
+        <link refid="mainmdidisplay_8h"/>
+        <childnode refid="3248" relation="include">
+        </childnode>
+        <childnode refid="3249" relation="include">
+        </childnode>
+      </node>
+      <node id="3252">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="3245">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/options.h</label>
+        <link refid="options_8h"/>
+        <childnode refid="3241" relation="include">
+        </childnode>
+        <childnode refid="3246" relation="include">
+        </childnode>
+        <childnode refid="3251" relation="include">
+        </childnode>
+        <childnode refid="3254" relation="include">
+        </childnode>
+      </node>
+      <node id="3249">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainmdidisplay.cpp</label>
+        <link refid="mainmdidisplay_8cpp"/>
+      </node>
+      <node id="3262">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablewidget.h</label>
+        <link refid="tablewidget_8h"/>
+        <childnode refid="3249" relation="include">
+        </childnode>
+        <childnode refid="3256" relation="include">
+        </childnode>
+        <childnode refid="3263" relation="include">
+        </childnode>
+      </node>
+      <node id="3264">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablemodel.cpp</label>
+        <link refid="tablemodel_8cpp"/>
+      </node>
+      <node id="3240">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablemodel.h</label>
+        <link refid="tablemodel.h"/>
+        <childnode refid="3241" relation="include">
+        </childnode>
+        <childnode refid="3260" relation="include">
+        </childnode>
+        <childnode refid="3243" relation="include">
+        </childnode>
+        <childnode refid="3262" relation="include">
+        </childnode>
+        <childnode refid="3264" relation="include">
+        </childnode>
+      </node>
+      <node id="3253">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/tutorial.cpp</label>
+        <link refid="tutorial_8cpp"/>
+      </node>
+      <node id="3250">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/qttabtest.cpp</label>
+        <link refid="qttabtest_8cpp"/>
+      </node>
+      <node id="3251">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="3252" relation="include">
+        </childnode>
+        <childnode refid="3253" relation="include">
+        </childnode>
+      </node>
+      <node id="3258">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/mapexecution.cpp</label>
+        <link refid="mapexecution_8cpp"/>
+      </node>
+      <node id="3248">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="3261">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/maprecap.cpp</label>
+        <link refid="maprecap_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_table_model" prot="public">TableModel</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>TABLEMODEL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TABLEMODEL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QAbstractTableModel&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QPair&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="class_table_model" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_table_model" kindref="compound">TableModel</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QAbstractTableModel</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_table_model_1ad7d9723995888a77fa2242069fe3e67d" kindref="member">TableModel</ref>(QObject<sp/>*parent<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>TableModel(QObject<sp/>*parent<sp/>=<sp/>0,<sp/>String<sp/>title1,<sp/>String<sp/>title2);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_table_model_1ad7d9723995888a77fa2242069fe3e67d" kindref="member">TableModel</ref>(QList&lt;QList&lt;QString&gt;<sp/>&gt;<sp/>listofPairs,<sp/>QObject<sp/>*parent<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1ac2815f7ad9ece5ffb1abd08a3a567483" kindref="member">rowCount</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;parent)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1a0f07a494fac556e1520b0306c3a50cc0" kindref="member">columnCount</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;parent)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>QVariant<sp/><ref refid="class_table_model_1ab22a19802ca81ba42e1cec670e864183" kindref="member">data</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>role)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>QVariant<sp/><ref refid="class_table_model_1a4677a49af807c3b72ca4c1e82971d9ec" kindref="member">headerData</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>section,<sp/>Qt::Orientation<sp/>orientation,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>role)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>Qt::ItemFlags<sp/><ref refid="class_table_model_1ac758b15767be92f2ac9e0c4d958d5662" kindref="member">flags</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1aa5ebe742e8bb1570c2ed8577c41f7c8d" kindref="member">setData</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QVariant<sp/>&amp;value,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>role<sp/>=<sp/>Qt::EditRole);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1a7fcf06eebf32f5295fec05cadcdf5320" kindref="member">insertRows</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>position,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rows,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index<sp/>=<sp/>QModelIndex());</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1a3bc1eb333f87d13d9bb0fb2b4f7c744a" kindref="member">insertRow</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index<sp/>=<sp/>QModelIndex());</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1abd1d9fd2aebf4ab22a5bc1f1bc4c446d" kindref="member">removeRows</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>position,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>rows,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index<sp/>=<sp/>QModelIndex());</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1abd1d9fd2aebf4ab22a5bc1f1bc4c446d" kindref="member">removeRows</ref>(QModelIndexList<sp/>indexes);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;QList&lt;QString&gt;<sp/>&gt;<sp/><ref refid="class_table_model_1ac5d306166ddda71a3b2deff4245ff1cf" kindref="member">getList</ref>();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_table_model_1a3bc1eb333f87d13d9bb0fb2b4f7c744a" kindref="member">insertRow</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>longitude,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>latitude,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index<sp/>=<sp/>QModelIndex());</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//insertRow<sp/>-<sp/>Adds<sp/>a<sp/>row<sp/>to<sp/>the<sp/>table<sp/>with<sp/>pre-entered<sp/>values.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>longitude<sp/>-<sp/>The<sp/>longitude<sp/>value<sp/>added<sp/>with<sp/>the<sp/>row.<sp/>Negative<sp/>values<sp/>denote<sp/>west<sp/>direction.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/>latitude<sp/>-<sp/>The<sp/>latitude<sp/>value<sp/>added<sp/>with<sp/>the<sp/>row.<sp/>Negative<sp/>values<sp/>denote<sp/>south<sp/>direction.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="35" refid="class_table_model_1a236a000a21493bb71dbb6cbeb7a1cde8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;QList&lt;QString&gt;<sp/>&gt;<sp/><ref refid="class_table_model_1a236a000a21493bb71dbb6cbeb7a1cde8" kindref="member">listOfPairs</ref>;</highlight></codeline>
+<codeline lineno="36" refid="class_table_model_1a2ff2b13db2fd19c2602c63260bb597be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QList&lt;QString&gt;<sp/><ref refid="class_table_model_1a2ff2b13db2fd19c2602c63260bb597be" kindref="member">columns</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>TABLEMODEL_H</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/tablemodel.h"/>
+  </compounddef>
+</doxygen>
