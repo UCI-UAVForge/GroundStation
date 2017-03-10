@@ -41,6 +41,12 @@ signals:
      * @brief tableUpdated
      */
     void tableUpdated();
+    /**
+     * @brief tablePathSent
+     * @param fp
+     * @param pathId
+     */
+    void flightPathSent(FlightPath * fp, int id, QString source);
 
 public slots:
     /**
@@ -55,10 +61,15 @@ public slots:
      */
     void removeSelectedRows();
 
+
     /**
      * @brief clearTable
      */
     void clearTable();
+    /**
+     * @brief sendTableSelectionPath
+     */
+    void sendTableSelectionPath();
 };
 
 #endif // TABLEWIDGET_H

@@ -1,4 +1,4 @@
-#include "TimerWidget.h"
+#include "timerwidget.h"
 
 TimerWidget::TimerWidget( QWidget* parent ) : QPlainTextEdit( parent ) , time() , TimeTimer() {
     connect(&TimeTimer, SIGNAL(timeout()), this, SLOT(showTime()));

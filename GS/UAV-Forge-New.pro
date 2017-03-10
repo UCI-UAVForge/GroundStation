@@ -33,6 +33,8 @@ macx {
 TARGET = UAV-Forge-New
 TEMPLATE = app
 
+#PRECOMPILED_HEADER = qcustomplot.h
+
 SOURCES += main.cpp\
     mainwindow.cpp \
     options.cpp \
