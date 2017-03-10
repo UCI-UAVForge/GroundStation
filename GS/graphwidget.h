@@ -3,9 +3,7 @@
 
 #include <QWidget>
 #include <QVector>
-
-#include <qcustomplot.h>
-
+#include "qcustomplot.h"
 #include "mission.h"
 
 namespace Ui {

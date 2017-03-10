@@ -18,6 +18,13 @@ window.onload = function() {
         new QWebChannel(socket, function(channel) {
             // make dialog object accessible globally
             window.cbridge = channel.objects.cbridge;
+            cbridge.clearFlightPath.connect(function(id) {
+                clearAllPaths();
+            });
+            //Valid source types: tableSelection, table, planning, execution
+            cbridge.flightPathSent.connect(function(id, source) {
+                addPath(source);
+            });
 
             cbridge.createNewPath.connect(function(id) {
                 createNewPath(id);

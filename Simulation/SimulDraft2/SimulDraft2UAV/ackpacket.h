@@ -17,7 +17,7 @@
 #define COORDINATOR_ACKPACKET_H
 
 #include "stdio.h"
-#include "Packet.h"
+#include "packet.h"
 
 namespace Protocol
 {
