@@ -10,8 +10,11 @@
 #include "mission.h"
 #include "flightpath.h"
 #include <assert.h>
+#include "tablewidget.h"
 
 #include "gscontrolpanel.h"
+
+#define EMPTY_TELEMETRY_PACKET NULL
 
 namespace Ui {
   class MainMDIDisplay;
@@ -41,8 +44,8 @@ private slots:
   void startMissionExecutionSlot();
   void startMissionRecapSlot();
 
-
   void receivePacket(Protocol::Packet* packet);
+
 private:
   Ui::MainMDIDisplay *ui;
 
@@ -53,11 +56,7 @@ private:
   Mission *myLoadedMission;
 
   GsServer* myServer;
-  messagebox* myMessageBox;
   //end Jordan's vars
-
-
-
 
   MapWidget* map;
   TableWidget* table;
@@ -69,12 +68,9 @@ private:
      */
   MissionStatusWindow msw ;
 
-  /**
-     * @brief Network log
-     */
-  messagebox mb ;
-
   GSControlPanel gscp ;
+
+  TableWidget tw ;
 
   void startMissionPlanning();
   void endMissionPlanning();
