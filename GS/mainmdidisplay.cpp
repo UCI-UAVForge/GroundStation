@@ -12,10 +12,12 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
 
     ui->mdiArea->setBackground(QBrush( QPixmap( ":/res/images/UAVLogo.png" ) ) );
 
-    //startMissionPlanning();
+    ///\todo Just put these in the UI file and promote QWidgets
 
     addWindow(&msw);
     addWindow(&gscp);
+
+    connect( &(this->msw) , SIGNAL( updateStatusWidget() ) , this , SLOT( updateMissionStatus() ) ) ;
 
     graph = new GraphWidget();
     this->addWindow(graph);
@@ -23,6 +25,7 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
     connect(&gscp, &GSControlPanel::startMissionButton_clicked, this, &MainMDIDisplay::startMissionExecutionSlot);
       
     connect(&gscp, &GSControlPanel::exitButton_clicked, this, &MainMDIDisplay::close);
+
 }
 
 MainMDIDisplay::~MainMDIDisplay() {
@@ -70,9 +73,24 @@ void MainMDIDisplay::setupMapPaths(){
 void MainMDIDisplay::addWindow(QWidget* myNewWindowWidget) {
     /* TODO Default window style should go here by making all of the windows conform to the same
      * stylesheet - Roman Parise */
-    /* Second argument - turns off the 'X' in the subwindows */
-    ui->mdiArea->addSubWindow(myNewWindowWidget, Qt::CustomizeWindowHint|Qt::WindowMinMaxButtonsHint);
-    myNewWindowWidget->show();
+
+    QMdiSubWindow * newWindow = NULL ;
+
+    if ( myNewWindowWidget != NULL ) {
+        /* Second argument - turns off the 'X' in the subwindows */
+        newWindow = ui->mdiArea->addSubWindow( myNewWindowWidget , Qt::CustomizeWindowHint | Qt::WindowMinMaxButtonsHint );
+        myNewWindowWidget->show();
+        ///\todo Better error checking?
+        if ( newWindow != NULL ) {
+            newWindow->setMinimumSize( myNewWindowWidget->width() , myNewWindowWidget->height() );
+            newWindow->adjustSize() ;
+        } else {
+            qDebug() << "Subwindow could not be created to hold widget." ;
+        }
+    } else {
+        qDebug() << "Cannot add window with NULL widget." ;
+    }
+
 }
 
 //TODO Right now this function doesn't work due to issues with Qt's private constructors for QMdiSubWindow. - Roman Parise
@@ -157,65 +175,52 @@ void MainMDIDisplay::startMissionExecution(){
     //changeState(EXECUTION);
     setupMapPaths();
     /// \todo add server startup code here
-    myMessageBox = new messagebox();
-    myServer = new GsServer(myMessageBox, myLoadedMission);
-    qDebug()<< "WHY";
+
+    myServer = new GsServer(myLoadedMission);
     /// \todo change address and port to be located in the net.h file
     myServer->openServer(QHostAddress::LocalHost, 20715);
     connect(myServer, &GsServer::packetRecieved, this, &MainMDIDisplay::receivePacket);
 
-    for (TimedAction *a : *myLoadedFlightPath){
-        myMessageBox->addActionPacket(*(a->first));
-    }
-
-    std::vector<Protocol::ActionPacket> packets = myMessageBox->get_action_packets();
-
-    for (Protocol::ActionPacket pack : packets){
-        pack.SetAction(Protocol::ActionType::AddWaypoint);
-        myServer->sendPacket(&pack);
+    for (TimedAction *a : *myLoadedFlightPath) {
+        a->first->SetAction(Protocol::ActionType::AddWaypoint);
+        myServer->sendPacket(a->first);
     }
 
     myServer->startServer();
+    this->msw.initiateWidgets();
 }
 
 void MainMDIDisplay::endMissionExecution(){
 
+    this->msw.stopWidgets() ;
+
+    ///\todo
+
 }
 
 void MainMDIDisplay::startMissionRecap(){
-
+    ///\todo
 }
 
 void MainMDIDisplay::endMissionRecap(){
-
+    ///\todo
 }
 
 void MainMDIDisplay::receivePacket(Protocol::Packet* packet){
+
     Protocol::Packet* incPack = packet;
     Protocol::PacketType type = incPack->get_type();
-    if (type == Protocol::PacketType::Ack){
-        std::cout<< "AckPacket Recieved" << std::endl;
-        Protocol::AckPacket *ackPacket = (Protocol::AckPacket*)incPack;
-        //myMessageBox->addAckPacket(*ackPacket);
-    } else if (type == Protocol::PacketType::Telem){
-        std::cout<< "TelemPacket Recieved" << std::endl;
-        Protocol::TelemetryPacket *telemPacket = (Protocol::TelemetryPacket*)incPack;
-        //myMessageBox->addTelemetryPacket(*telemPacket);
+
+    // Telemetry Packet
+    if (type == Protocol::PacketType::Telem){
         double lat, lng;
         float alt;
-        telemPacket->GetLocation(&lat,&lng,&alt);
-        table->appendRow(lat, lng);
-        FlightPath *fp = table->getTableAsFlightPath();
-        map->addFlightPath(fp, 0, "execution");
-        //plotPosition(lat,lng);
-    } else if (type == Protocol::PacketType::Info){
-        std::cout<< "InfoPacket Recieved" << std::endl;
-        Protocol::InfoPacket *infoPacket = (Protocol::InfoPacket*)incPack;
-        //myMessageBox->addInfoPacket(*infoPacket);
-    } else {
-        std::cout<< "UNEXPECTED PACKET TYPE RECIEVED!" << std::endl;
+        Protocol::TelemetryPacket * currentTelemetryPacket = (Protocol::TelemetryPacket*)incPack;
+        qDebug() << "TelemPacket Recieved" ;
+        currentTelemetryPacket->GetLocation(&lat,&lng,&alt);
+        plotPosition(lat,lng);
+        this->msw.setCurrentTelemetryPacket( currentTelemetryPacket );
     }
-
 }
 
 void MainMDIDisplay::plotPosition(double lat, double lng){

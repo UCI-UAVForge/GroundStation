@@ -33,8 +33,6 @@ macx {
 TARGET = UAV-Forge-New
 TEMPLATE = app
 
-#PRECOMPILED_HEADER = qcustomplot.h
-
 SOURCES += main.cpp\
     mainwindow.cpp \
     options.cpp \
@@ -47,6 +45,7 @@ SOURCES += main.cpp\
     qcomboboxdelegate.cpp \
     videoplayer.cpp \
     gsserver.cpp \
+    gsclient.cpp \
     gscontrolpanel.cpp \
     qcustomplot.cpp\
     networklistener.cpp \
@@ -70,10 +69,10 @@ SOURCES += main.cpp\
     websocketclientwrapper.cpp \
     websockettransport.cpp \
     tablewidget.cpp \
-    statuswidget.cpp \
-    graphwidget.cpp \
+    #statuswidget.cpp \
     timerwidget.cpp \
-    missionstatuswindow.cpp
+    missionstatuswindow.cpp \
+    gscontrolpanel.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
@@ -112,10 +111,10 @@ HEADERS  += mainwindow.h \
     websockettransport.h \
     dialog.h \
     tablewidget.h \
-    graphwidget.h \
-    statuswidget.h \
+    #statuswidget.h \
     timerwidget.h \
-    missionstatuswindow.h
+    missionstatuswindow.h \
+    gscontrolpanel.h
 
 FORMS    += mainwindow.ui \
     options.ui \
@@ -130,8 +129,8 @@ FORMS    += mainwindow.ui \
     qttabtest.ui \
     mainmdidisplay.ui \
     dialog.ui \
-    graphwidget.ui\
-    missionstatuswindow.ui
+    missionstatuswindow.ui \
+    gscontrolpanel.ui
 
 OTHER_FILES +=
 
