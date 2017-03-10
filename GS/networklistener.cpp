@@ -55,16 +55,6 @@ void NetworkListener::processPendingDatagrams(){
         ++pack_number;
 
         ///\todo remove this so that the red line is dependent on telem packets rather than action packets
-
-        /*if (actionPacket->GetAction() == Protocol::ActionType::AddWaypoint){
-            Protocol::TelemetryPacket telem;
-            telem.SetLocation(test_wp.lat,test_wp.lon,test_wp.alt);
-            telem.SetHeading(0.45);
-            telem.SetOrientation(1,2,3);
-            telem.SetVelocity(-10.0,10.0,0);
-            //myMessageBox->addTelemetryPacket(telem);
-            server->sendPacket(&telem,8);
-        }*/
         myMessageBox->addActionPacket(*actionPacket);
     } else if (type == Protocol::PacketType::Telem){
         std::cout<< "TelemPacket Recieved" << std::endl;

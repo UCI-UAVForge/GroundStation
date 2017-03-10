@@ -21,9 +21,10 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
 
     graph = new GraphWidget();
     this->addWindow(graph);
+
     connect(&gscp, &GSControlPanel::createMissionButton_clicked, this, &MainMDIDisplay::startMissionPlanningSlot);
     connect(&gscp, &GSControlPanel::startMissionButton_clicked, this, &MainMDIDisplay::startMissionExecutionSlot);
-      
+    connect(&gscp, &GSControlPanel::finishMissionButton_clicked, this, &MainMDIDisplay::startMissionRecapSlot);
     connect(&gscp, &GSControlPanel::exitButton_clicked, this, &MainMDIDisplay::close);
 
 }
@@ -210,7 +211,17 @@ void MainMDIDisplay::receivePacket(Protocol::Packet* packet){
 
     Protocol::Packet* incPack = packet;
     Protocol::PacketType type = incPack->get_type();
-
+  /*
+<<<<<<< HEAD
+    if (type == Protocol::PacketType::Ack){
+        std::cout<< "AckPacket Recieved" << std::endl;
+        Protocol::AckPacket *ackPacket = (Protocol::AckPacket*)incPack;
+        //myMessageBox->addAckPacket(*ackPacket);
+    } else if (type == Protocol::PacketType::Telem){
+        std::cout<< "TelemPacket Recieved" << std::endl;
+        Protocol::TelemetryPacket *telemPacket = (Protocol::TelemetryPacket*)incPack;
+        myMessageBox->addTelemetryPacket(*telemPacket);
+   */
     // Telemetry Packet
     if (type == Protocol::PacketType::Telem){
         double lat, lng;
