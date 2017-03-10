@@ -3,11 +3,8 @@
 
 #include "QPlainTextEdit.h"
 #include "QTimer.h"
-#include "QString.h"
-#include "QObject.h"
-#include "messagebox.h"
+#include "telemetrypacket.h"
 
-///\todo Make this a definition for the entire project?
 //Definitions
 #define EMPTY_TELEMETRY_PACKET NULL
 
@@ -15,26 +12,25 @@ class StatusWidget : public QPlainTextEdit
 {
     Q_OBJECT
 private:
+    /// \brief Whenever StatusTimer times out, StatusWidget updates its GUI with info from currentTelemetryPacket.
 	QTimer StatusTimer;
-
-	QString start;
-
+    /// \brief Pointer to some TelemetryPacket that reflects current UAV telemetry info
+    Protocol::TelemetryPacket * currentTelemetryPacket ;
 public:
+    /// \brief Default constructor. Takes no arguments.
     explicit StatusWidget(QWidget* parent=0);
-
+    /// \brief Default destructor. Who even uses this?
 	~StatusWidget();
-
+    /// \brief Start the timer and clear the GUI
     void initiate();
-
-    /*QTimer getStatusTimer();
-
-    void setStatusTimer(QTimer newStatusTimer);*/
-
-    void showStatus( Protocol::TelemetryPacket * );
-
-signals:
-
-    void updateMe() ;
-
+    /// \brief Stop the timer.
+    void stop() ;
+    /// \brief Return the content of the TelemetryPacket.
+    Protocol::TelemetryPacket getCurrentTelemetryPacket() ;
+    /// \brief Tell StatusWidget to point to a different TelemetryPacket.
+    void setCurrentTelemetryPacket( Protocol::TelemetryPacket * ) ;
+public slots:
+    /// \brief Slot called whenever StatusWidget updates its GUI. Update the GUI when StatusTimer times out.
+    void showStatus();
 };
 #endif

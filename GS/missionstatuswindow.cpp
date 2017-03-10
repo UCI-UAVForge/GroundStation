@@ -9,7 +9,8 @@ MissionStatusWindow::MissionStatusWindow(QWidget *parent) :
     currentTelemetryPacket( NULL )
 {
     ui->setupUi(this);
-    connect( this->ui->MyStatusWidget , SIGNAL( updateMe() ) , this , SIGNAL( updateStatusWidget() ) ) ;
+    this->currentTelemetryPacket = EMPTY_TELEMETRY_PACKET ;
+    this->ui->MyStatusWidget->setCurrentTelemetryPacket( this->currentTelemetryPacket );
 }
 
 MissionStatusWindow::~MissionStatusWindow()
@@ -23,6 +24,25 @@ void MissionStatusWindow::initiateWidgets() {
     this->initiateStatusWidget();
     // Initiate timer widget
     this->initiateTimerWidget();
+
+}
+
+void MissionStatusWindow::stopWidgets() {
+
+    this->stopStatusWidget() ;
+    this->stopTimerWidget() ;
+
+}
+
+void MissionStatusWindow::stopStatusWidget() {
+
+    this->ui->MyStatusWidget->stop() ;
+
+}
+
+void MissionStatusWindow::stopTimerWidget() {
+
+    this->ui->TimeTimerWidget->stop() ;
 
 }
 
@@ -43,7 +63,6 @@ void MissionStatusWindow::setCurrentTelemetryPacket( Protocol::TelemetryPacket *
 
     this->currentTelemetryPacket = tp ;
 
-    //Pass to StatusWidget. It will know how to parse the telemetry packet.
-    this->ui->MyStatusWidget->showStatus( tp );
+    this->ui->MyStatusWidget->setCurrentTelemetryPacket( this->currentTelemetryPacket );
 
 }

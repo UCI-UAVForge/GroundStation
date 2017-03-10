@@ -1,7 +1,5 @@
 #include "TimerWidget.h"
 
-/// \todo Doxygen comments. Standardize getter and setter methods in TimerWidget and StatusWidget classes.
-
 TimerWidget::TimerWidget( QWidget* parent ) : QPlainTextEdit( parent ) , time() , TimeTimer() {
 
     connect(&TimeTimer, SIGNAL(timeout()), this, SLOT(showTime()));
@@ -58,4 +56,10 @@ void TimerWidget::initiate()
     start = time.toString("hh:mm:ss");
     /// \todo Is this showTime necessary?
     showTime();
+}
+
+void TimerWidget::stop() {
+
+    TimeTimer.stop();
+
 }

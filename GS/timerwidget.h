@@ -20,9 +20,11 @@ public:
     TimerWidget(QWidget * parent = 0) ;
     //explicit TimerWidget(QWidget* parent = 0);
 
-	~TimerWidget();
+    ~TimerWidget();
 
     void initiate();
+
+    void stop();
 
     QTime getTime() const;
 

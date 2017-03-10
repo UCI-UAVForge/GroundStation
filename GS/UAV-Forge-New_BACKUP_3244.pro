@@ -68,8 +68,12 @@ SOURCES += main.cpp\
     websocketclientwrapper.cpp \
     websockettransport.cpp \
     tablewidget.cpp \
+<<<<<<< HEAD
     statuswidget.cpp \
+=======
     graphwidget.cpp \
+    #statuswidget.cpp \
+>>>>>>> e8dbd7717f3d18876ec7f6de5074f66fc6a00f69
     timerwidget.cpp \
     missionstatuswindow.cpp
 
@@ -110,8 +114,12 @@ HEADERS  += mainwindow.h \
     websockettransport.h \
     dialog.h \
     tablewidget.h \
-    graphwidget.h \
+<<<<<<< HEAD
     statuswidget.h \
+=======
+    graphwidget.h \
+    #statuswidget.h \
+>>>>>>> e8dbd7717f3d18876ec7f6de5074f66fc6a00f69
     timerwidget.h \
     missionstatuswindow.h
 

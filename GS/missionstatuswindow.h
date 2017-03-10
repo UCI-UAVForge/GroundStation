@@ -2,6 +2,7 @@
 #define MISSIONSTATUSWINDOW_H
 
 #include <QDialog>
+#include "telemetrypacket.h"
 
 namespace Ui {
 class MissionStatusWindow;
@@ -9,7 +10,7 @@ class MissionStatusWindow;
 
 ///\todo Hmmm... Is that right?
 //Forward declare TelemetryPacket to avoid including useless headers.
-namespace Protocol { class TelemetryPacket; }
+//namespace Protocol { class TelemetryPacket; }
 
 class MissionStatusWindow : public QDialog
 {
@@ -28,6 +29,12 @@ public:
     void initiateTimerWidget() ;
 
     void setCurrentTelemetryPacket( Protocol::TelemetryPacket * ) ;
+
+    void stopWidgets() ;
+
+    void stopStatusWidget() ;
+
+    void stopTimerWidget() ;
 
 signals:
     void updateStatusWidget() ;
