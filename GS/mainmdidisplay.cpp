@@ -213,18 +213,6 @@ void MainMDIDisplay::receivePacket(Protocol::Packet* packet){
 
     Protocol::Packet* incPack = packet;
     Protocol::PacketType type = incPack->get_type();
-  /*
-<<<<<<< HEAD
-    if (type == Protocol::PacketType::Ack){
-        std::cout<< "AckPacket Recieved" << std::endl;
-        Protocol::AckPacket *ackPacket = (Protocol::AckPacket*)incPack;
-        //myMessageBox->addAckPacket(*ackPacket);
-    } else if (type == Protocol::PacketType::Telem){
-        std::cout<< "TelemPacket Recieved" << std::endl;
-        Protocol::TelemetryPacket *telemPacket = (Protocol::TelemetryPacket*)incPack;
-        myMessageBox->addTelemetryPacket(*telemPacket);
-   */
-    // Telemetry Packet
     if (type == Protocol::PacketType::Telem){
         double lat, lng;
         float alt;
@@ -237,14 +225,8 @@ void MainMDIDisplay::receivePacket(Protocol::Packet* packet){
 }
 
 void MainMDIDisplay::plotPosition(double lat, double lng){
-    //qDebug() << "plotting a position";
-    //table->appendRow(lat,lng);
-    //map->appendPointToMap(lat,lng,1);
-
     table->appendRow(lat, lng);
     FlightPath *fp = table->getTableAsFlightPath();
     map->addFlightPath(fp, 0, "execution");
     delete fp;
-
-    //map->appendPointToPath(lat,lng,1);
 }
