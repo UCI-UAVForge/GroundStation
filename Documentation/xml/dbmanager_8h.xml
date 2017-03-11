@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="dbmanager_8h" kind="file" language="C++">
+    <compoundname>dbmanager.h</compoundname>
+    <includes local="no">QString</includes>
+    <includes local="no">QSqlDatabase</includes>
+    <includes local="no">QVector</includes>
+    <includedby refid="dbmanager_8cpp" local="yes">C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.cpp</includedby>
+    <incdepgraph>
+      <node id="140">
+        <label>QSqlDatabase</label>
+      </node>
+      <node id="139">
+        <label>QString</label>
+      </node>
+      <node id="138">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h</label>
+        <link refid="dbmanager.h"/>
+        <childnode refid="139" relation="include">
+        </childnode>
+        <childnode refid="140" relation="include">
+        </childnode>
+        <childnode refid="141" relation="include">
+        </childnode>
+      </node>
+      <node id="141">
+        <label>QVector</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="143">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.cpp</label>
+        <link refid="dbmanager_8cpp"/>
+      </node>
+      <node id="142">
+        <label>C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h</label>
+        <link refid="dbmanager.h"/>
+        <childnode refid="143" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_mission_data" prot="public">MissionData</innerclass>
+    <innerclass refid="class_db_manager" prot="public">DbManager</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="28"><highlight class="preprocessor">#ifndef<sp/>DBMANAGER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DBMANAGER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QString&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QSqlDatabase&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QVector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Represents<sp/>a<sp/>&apos;Mission&apos;<sp/>data.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="struct_mission_data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_mission_data" kindref="compound">MissionData</ref><sp/>{</highlight></codeline>
+<codeline lineno="37" refid="struct_mission_data_1aca98e398b94037e80749d0a9e73dcefe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_mission_data_1aca98e398b94037e80749d0a9e73dcefe" kindref="member">heading</ref>;</highlight></codeline>
+<codeline lineno="38" refid="struct_mission_data_1a36cf42a5d8fd328293d296c67239af9b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_mission_data_1a36cf42a5d8fd328293d296c67239af9b" kindref="member">lat</ref>;</highlight></codeline>
+<codeline lineno="39" refid="struct_mission_data_1a7fcee2655bd219b949d4a697ecc70a67" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="struct_mission_data_1a7fcee2655bd219b949d4a697ecc70a67" kindref="member">lan</ref>;</highlight></codeline>
+<codeline lineno="40" refid="struct_mission_data_1ad4f9f598f5960f26fc8290180a7cfd18" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_mission_data_1ad4f9f598f5960f26fc8290180a7cfd18" kindref="member">alt</ref>;</highlight></codeline>
+<codeline lineno="41" refid="struct_mission_data_1a43974cedf16a4aa6645145224a4c3e77" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_mission_data_1a43974cedf16a4aa6645145224a4c3e77" kindref="member">pitch</ref>;</highlight></codeline>
+<codeline lineno="42" refid="struct_mission_data_1a9fca0a04ef126efa755e91c2a96a536e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_mission_data_1a9fca0a04ef126efa755e91c2a96a536e" kindref="member">roll</ref>;</highlight></codeline>
+<codeline lineno="43" refid="struct_mission_data_1a186d118b99361b39a581ae01cf20e2c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_mission_data_1a186d118b99361b39a581ae01cf20e2c3" kindref="member">yaw</ref>;</highlight></codeline>
+<codeline lineno="44" refid="struct_mission_data_1a6a86665d3ace692fec591d90ef69d7b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_mission_data_1a6a86665d3ace692fec591d90ef69d7b3" kindref="member">xvel</ref>;</highlight></codeline>
+<codeline lineno="45" refid="struct_mission_data_1a0551fec33eeabd071cebf089603ed122" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_mission_data_1a0551fec33eeabd071cebf089603ed122" kindref="member">yvel</ref>;</highlight></codeline>
+<codeline lineno="46" refid="struct_mission_data_1abe305df8910d25abeb1638dd6693081b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="struct_mission_data_1abe305df8910d25abeb1638dd6693081b" kindref="member">zvel</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="class_db_manager" refkind="compound"><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_db_manager" kindref="compound">DbManager</ref></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="56"></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_db_manager_1a7f5d145bb4b33b7d08f78a2ceee17a47" kindref="member">DbManager</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/><ref refid="class_db_manager_1aaae92f26899ce6563a070d00caa83340" kindref="member">fileName</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;aDatabase&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/><ref refid="class_db_manager_1a2a20d1a953156c2103bfc216de062cf7" kindref="member">directory</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Closes<sp/>any<sp/>connection.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_db_manager_1ac5cdf8e5e932d1681ab807d8f256374c" kindref="member">~DbManager</ref>();</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Returns<sp/>true<sp/>if<sp/>a<sp/>database<sp/>is<sp/>connected.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_db_manager_1af26e2cb3fc39656e05f2c9b0cda89d59" kindref="member">isOpen</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Opens<sp/>a<sp/>database<sp/>connection<sp/>to<sp/>&apos;directory/filename&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_db_manager_1ab89634eca6b13b420dda1d56484ae427" kindref="member">open</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/><ref refid="class_db_manager_1aaae92f26899ce6563a070d00caa83340" kindref="member">fileName</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString&amp;<sp/><ref refid="class_db_manager_1a2a20d1a953156c2103bfc216de062cf7" kindref="member">directory</ref>);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Close<sp/>current<sp/>database<sp/>connection.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_db_manager_1a0e118f2a45390cde3a118f8841e0875f" kindref="member">close</ref>();</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Note:<sp/>all<sp/>the<sp/>mission<sp/>commands<sp/>here<sp/>interact<sp/>with<sp/>an<sp/>instance<sp/>variable;<sp/>they</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>do<sp/>not<sp/>alter<sp/>or<sp/>modify<sp/>the<sp/>database.</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"></highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Use<sp/>DbManager::saveMissionToFile()<sp/>to<sp/>save<sp/>the<sp/>instance<sp/>variable<sp/>&apos;mission&apos;<sp/>to<sp/>database.</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>a<sp/>data<sp/>to<sp/>the<sp/>mission.<sp/>Changes<sp/>the<sp/>instance<sp/>variable<sp/>&apos;mission&apos;.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_db_manager_1a962e5ea4e83bb6f65f9d19f82a470687" kindref="member">addMissionData</ref>(<ref refid="struct_mission_data" kindref="compound">MissionData</ref><sp/>data);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>current<sp/>mission<sp/>with<sp/>all<sp/>the<sp/>added<sp/>information.<sp/>Returns<sp/>instance<sp/>variable<sp/>&apos;mission&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QVector&lt;MissionData&gt;<sp/><ref refid="class_db_manager_1adfe91eed71e54ff7d7b2f28d10800efe" kindref="member">getMission</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Save<sp/>mission<sp/>to<sp/>database.<sp/>Modifies<sp/>the<sp/>database.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_db_manager_1afac9da99cb97c29cae46e7488d681d36" kindref="member">saveMissionToFile</ref>();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="comment">//<sp/><sp/><sp/><sp/>QList&lt;Protocol::Waypoint&gt;<sp/>getWaypoints()<sp/>const;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>bool<sp/>addWaypointsToMission(const<sp/>QString&amp;<sp/>missionName,<sp/>QList&lt;Protocol::Waypoint&gt;<sp/>wp);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="111" refid="class_db_manager_1a289f7f1c539781db95292c79fb13a632" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QSqlDatabase<sp/><ref refid="class_db_manager_1a289f7f1c539781db95292c79fb13a632" kindref="member">m_db</ref>;</highlight></codeline>
+<codeline lineno="112" refid="class_db_manager_1a870328e413d2709bce968898660056c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QVector&lt;MissionData&gt;<sp/><ref refid="class_db_manager_1a870328e413d2709bce968898660056c0" kindref="member">mission</ref>;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>File<sp/>Related</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="class_db_manager_1aaae92f26899ce6563a070d00caa83340" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_db_manager_1aaae92f26899ce6563a070d00caa83340" kindref="member">fileName</ref>;</highlight></codeline>
+<codeline lineno="117" refid="class_db_manager_1a2a20d1a953156c2103bfc216de062cf7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/><ref refid="class_db_manager_1a2a20d1a953156c2103bfc216de062cf7" kindref="member">directory</ref>;</highlight></codeline>
+<codeline lineno="118" refid="class_db_manager_1a3bbf3b6992f5b54dfbc7998e506a5fa3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_db_manager_1a3bbf3b6992f5b54dfbc7998e506a5fa3" kindref="member">kDatabaseType</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;QSQLITE&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119" refid="class_db_manager_1a8bfbb8102812b262c484fcfa9a864ac9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_db_manager_1a8bfbb8102812b262c484fcfa9a864ac9" kindref="member">kFileExtension</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;.db&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="120" refid="class_db_manager_1a7a7271f31d10f555b411dc1c6926e05d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="class_db_manager_1a7a7271f31d10f555b411dc1c6926e05d" kindref="member">kPathSeparator</ref><sp/>=</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#ifdef<sp/>_WIN32</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="charliteral">&apos;\\&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>These<sp/>are<sp/>called<sp/>by<sp/>DbManager::createTablesIfDoesntExist()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_db_manager_1a69ab0277d6dd71c29838cb16dd2d752f" kindref="member">createOrLoadMissionTable</ref>();</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Clear<sp/>all<sp/>the<sp/>records<sp/>in<sp/>[Mission]<sp/>database.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_db_manager_1aca0348a606923c9786212f3af81e43d0" kindref="member">clearMissionTable</ref>();</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>DBMANAGER_H</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/dbmanager.h"/>
+  </compounddef>
+</doxygen>

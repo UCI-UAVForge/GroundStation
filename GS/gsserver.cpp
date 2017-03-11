@@ -5,11 +5,14 @@
 #include <iostream>
 #include <string>
 
-GsServer::GsServer(messagebox *myMessageBox, Mission *myMission): networkListener(myMessageBox,this){
+GsServer::GsServer(messagebox *myMessageBox, Mission *myMission):
+    networkListener(myMessageBox,this){
+
     this->myMessageBox = myMessageBox;
     this->myMission = myMission;
     port = NET::SEND_PORT;
     target = NET::TARGET_ADDR;
+    connect(&networkListener, &NetworkListener::packetRecieved, this, &GsServer::recivePacket);
 }
 
 GsServer::~GsServer(){
@@ -78,9 +81,10 @@ void GsServer::sendPacket(Protocol::Packet* packet, unsigned int priority){
     outPackets.enqueue(packet,priority);
 }
 
-void GsServer::packetRecieved(Protocol::TelemetryPacket packet){
+void GsServer::addPacketToMission(Protocol::TelemetryPacket packet){
     myMission->addPacket(packet);
 }
+
 
 void GsServer::sendNextPacket() {
     printf("sending message!\n");
@@ -131,4 +135,8 @@ void GsServer::sendNextPacket() {
     //outPackets.recieveAckPacket(ack);
 
     //END TEST CODE
+}
+
+void GsServer::recivePacket(Protocol::Packet *packet) {
+    emit packetRecieved(packet);
 }

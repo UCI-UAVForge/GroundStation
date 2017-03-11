@@ -34,10 +34,10 @@ namespace Protocol
 
 	typedef struct
 	{
-        double lat = 0;
-        double lon = 0;
-        float alt = 0;
-        float speed = 0;
+        double lat ;
+        double lon ;
+        float alt ;
+        float speed ;
 	} Waypoint;
 
 	class ActionPacket : public Packet

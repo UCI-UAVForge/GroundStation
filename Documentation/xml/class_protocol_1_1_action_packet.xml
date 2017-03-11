@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_protocol_1_1_action_packet" kind="class" language="C++" prot="public">
+    <compoundname>Protocol::ActionPacket</compoundname>
+    <basecompoundref refid="class_protocol_1_1_packet" prot="public" virt="non-virtual">Protocol::Packet</basecompoundref>
+    <includes refid="actionpacket_8h" local="no">actionpacket.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_protocol_1_1_action_packet_1a2789fc0ac609d39d98ad8e0c1c1d63a6" prot="private" static="no" mutable="no">
+        <type><ref refid="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9" kindref="member">ActionType</ref></type>
+        <definition>ActionType Protocol::ActionPacket::action</definition>
+        <argsstring></argsstring>
+        <name>action</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="54" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_protocol_1_1_action_packet_1a4fad543a5728c983ca5abb375b9e8350" prot="private" static="no" mutable="no">
+        <type><ref refid="struct_protocol_1_1_waypoint" kindref="compound">Waypoint</ref></type>
+        <definition>Waypoint Protocol::ActionPacket::waypoint</definition>
+        <argsstring></argsstring>
+        <name>waypoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="55" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_protocol_1_1_action_packet_1a9057809acd70d7445a3c79667d6a746c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>Protocol::ActionPacket::ActionPacket</definition>
+        <argsstring>()</argsstring>
+        <name>ActionPacket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="58" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" bodystart="58" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_action_packet_1ae37774554c838433daa49f2fcd8439a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Protocol::ActionPacket::ActionPacket</definition>
+        <argsstring>(uint8_t *buffer, size_t len)</argsstring>
+        <name>ActionPacket</name>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="60" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ActionPacket.cpp" bodystart="18" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_action_packet_1ac59aeacf4f0566ce327bdbacd8594687" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Protocol::ActionPacket::SetAction</definition>
+        <argsstring>(ActionType a)</argsstring>
+        <name>SetAction</name>
+        <param>
+          <type><ref refid="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9" kindref="member">ActionType</ref></type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="62" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ActionPacket.cpp" bodystart="30" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_action_packet_1a2f6167c9e92ea9914bf9a39de3fcd3e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Protocol::ActionPacket::SetWaypoint</definition>
+        <argsstring>(Waypoint wp)</argsstring>
+        <name>SetWaypoint</name>
+        <param>
+          <type><ref refid="struct_protocol_1_1_waypoint" kindref="compound">Waypoint</ref></type>
+          <declname>wp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="64" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ActionPacket.cpp" bodystart="35" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_action_packet_1ae90be2ee603b6968cc1515e32e0e1057" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespace_protocol_1a95f2e35dc2d8d920f0d7ddaaf122c3b9" kindref="member">ActionType</ref></type>
+        <definition>Protocol::ActionType Protocol::ActionPacket::GetAction</definition>
+        <argsstring>()</argsstring>
+        <name>GetAction</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="66" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ActionPacket.cpp" bodystart="40" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_action_packet_1a4897181b5915534b25c94f1e4c9d40ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_protocol_1_1_waypoint" kindref="compound">Waypoint</ref></type>
+        <definition>Protocol::Waypoint Protocol::ActionPacket::GetWaypoint</definition>
+        <argsstring>()</argsstring>
+        <name>GetWaypoint</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="68" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ActionPacket.cpp" bodystart="45" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="class_protocol_1_1_action_packet_1af5963f7c15af8292152df260b188f626" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>size_t</type>
+        <definition>size_t Protocol::ActionPacket::GetBytes</definition>
+        <argsstring>(uint8_t *buffer, size_t len)</argsstring>
+        <name>GetBytes</name>
+        <reimplements refid="class_protocol_1_1_packet_1a9c89c3d05acc44a5050ebfc756a2cd41">GetBytes</reimplements>
+        <param>
+          <type>uint8_t *</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Stores the byte representation of a packet in the given buffer.</para><para><simplesect kind="author"><para>Jason Watkins </para></simplesect>
+<simplesect kind="date"><para>2015-11-16</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>buffer[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array to write the packet to. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len[in]</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of <computeroutput>buffer</computeroutput>. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="70" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/ActionPacket.cpp" bodystart="50" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="5">
+        <label>Protocol::Packet</label>
+        <link refid="class_protocol_1_1_packet"/>
+      </node>
+      <node id="4">
+        <label>Protocol::ActionPacket</label>
+        <link refid="class_protocol_1_1_action_packet"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="7">
+        <label>Protocol::Packet</label>
+        <link refid="class_protocol_1_1_packet"/>
+      </node>
+      <node id="6">
+        <label>Protocol::ActionPacket</label>
+        <link refid="class_protocol_1_1_action_packet"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>waypoint</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Protocol::Waypoint</label>
+        <link refid="struct_protocol_1_1_waypoint"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" line="52" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/actionpacket.h" bodystart="51" bodyend="71"/>
+    <listofallmembers>
+      <member refid="class_protocol_1_1_action_packet_1a2789fc0ac609d39d98ad8e0c1c1d63a6" prot="private" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>action</name></member>
+      <member refid="class_protocol_1_1_action_packet_1a9057809acd70d7445a3c79667d6a746c" prot="public" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>ActionPacket</name></member>
+      <member refid="class_protocol_1_1_action_packet_1ae37774554c838433daa49f2fcd8439a7" prot="public" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>ActionPacket</name></member>
+      <member refid="class_protocol_1_1_packet_1acbe4f1b9f973d14097814d16fb0cd83a" prot="public" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>get_timestamp</name></member>
+      <member refid="class_protocol_1_1_packet_1a3c159ff945d95102ee2a2ba0b93d05d8" prot="public" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>get_type</name></member>
+      <member refid="class_protocol_1_1_action_packet_1ae90be2ee603b6968cc1515e32e0e1057" prot="public" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>GetAction</name></member>
+      <member refid="class_protocol_1_1_action_packet_1af5963f7c15af8292152df260b188f626" prot="public" virt="virtual"><scope>Protocol::ActionPacket</scope><name>GetBytes</name></member>
+      <member refid="class_protocol_1_1_action_packet_1a4897181b5915534b25c94f1e4c9d40ba" prot="public" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>GetWaypoint</name></member>
+      <member refid="class_protocol_1_1_packet_1ae02347b6d2eee98511ec19343b82e0a7" prot="protected" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>Packet</name></member>
+      <member refid="class_protocol_1_1_packet_1ad327686418aa271121e6a6a8eadebbd4" prot="public" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>Parse</name></member>
+      <member refid="class_protocol_1_1_packet_1aa5f54d3128f7914383f4d8e8f53fbce4" prot="protected" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>ReadHeader</name></member>
+      <member refid="class_protocol_1_1_packet_1aa3f97852d443bb9554178384afa24eec" prot="public" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>set_type</name></member>
+      <member refid="class_protocol_1_1_action_packet_1ac59aeacf4f0566ce327bdbacd8594687" prot="public" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>SetAction</name></member>
+      <member refid="class_protocol_1_1_packet_1adc4ebdbdbcdbaa177ba243c5c654ba18" prot="protected" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>SetChecksum</name></member>
+      <member refid="class_protocol_1_1_action_packet_1a2f6167c9e92ea9914bf9a39de3fcd3e9" prot="public" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>SetWaypoint</name></member>
+      <member refid="class_protocol_1_1_packet_1a2f0a19f4bff82270290e53d31e67db33" prot="protected" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>timestamp</name></member>
+      <member refid="class_protocol_1_1_action_packet_1a4fad543a5728c983ca5abb375b9e8350" prot="private" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>waypoint</name></member>
+      <member refid="class_protocol_1_1_packet_1aa7498c8c70cb8a55617ce588508af81f" prot="protected" virt="non-virtual"><scope>Protocol::ActionPacket</scope><name>WriteHeader</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,591 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.9.1">
+  <compounddef id="class_q_c_p_layout" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>QCPLayout</compoundname>
+    <basecompoundref refid="class_q_c_p_layout_element" prot="public" virt="non-virtual">QCPLayoutElement</basecompoundref>
+    <derivedcompoundref refid="class_q_c_p_layout_grid" prot="public" virt="non-virtual">QCPLayoutGrid</derivedcompoundref>
+    <derivedcompoundref refid="class_q_c_p_layout_inset" prot="public" virt="non-virtual">QCPLayoutInset</derivedcompoundref>
+    <includes refid="qcustomplot_8h" local="no">qcustomplot.h</includes>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="class_q_c_p_layout_1a0790750c7e7f14fdbd960d172655b42b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend class</type>
+        <definition>friend class QCPLayoutElement</definition>
+        <argsstring></argsstring>
+        <name>QCPLayoutElement</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="753" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="753" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_c_p_layout_1a04222e6e1361fd802d48f1a25b7020d4" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QCPLayout::QCPLayout</definition>
+        <argsstring>()</argsstring>
+        <name>QCPLayout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an instance of <ref refid="class_q_c_p_layout" kindref="compound">QCPLayout</ref> and sets default values. Note that since <ref refid="class_q_c_p_layout" kindref="compound">QCPLayout</ref> is an abstract base class, it can&apos;t be instantiated directly. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="723" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2139" bodyend="2141"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_1a34ab477e820537ded7bade4399c482fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QCPLayout::update</definition>
+        <argsstring>(UpdatePhase phase)</argsstring>
+        <name>update</name>
+        <reimplements refid="class_q_c_p_layout_element_1a929c2ec62e0e0e1d8418eaa802e2af9b">update</reimplements>
+        <param>
+          <type><ref refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374d" kindref="member">UpdatePhase</ref></type>
+          <declname>phase</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>First calls the <ref refid="class_q_c_p_layout_element_1a929c2ec62e0e0e1d8418eaa802e2af9b" kindref="member">QCPLayoutElement::update</ref> base class implementation to update the margins on this layout.</para><para>Then calls <ref refid="class_q_c_p_layout_1a165c77f6287ac92e8d03017ad913378b" kindref="member">updateLayout</ref> which subclasses reimplement to reposition and resize their cells.</para><para>Finally, <ref refid="class_q_c_p_layout_1a34ab477e820537ded7bade4399c482fd" kindref="member">update</ref> is called on all child elements. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="726" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2151" bodyend="2166"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_1a51fe2675b53e829130b229bc1f7b0f99" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QList&lt; <ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> * &gt;</type>
+        <definition>QList&lt; QCPLayoutElement * &gt; QCPLayout::elements</definition>
+        <argsstring>(bool recursive) const </argsstring>
+        <name>elements</name>
+        <reimplements refid="class_q_c_p_layout_element_1a311d60d78e62ef8eaaedb1b6ceb9e788">elements</reimplements>
+        <reimplementedby refid="class_q_c_p_layout_grid_1ae9e24e01552f6667b6d05b12a54a4caa">elements</reimplementedby>
+        <param>
+          <type>bool</type>
+          <declname>recursive</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns a list of all child elements in this layout element. If <emphasis>recursive</emphasis> is true, all sub-child elements are included in the list, too.</para><para><simplesect kind="warning"><para>There may be entries with value 0 in the returned list. (For example, <ref refid="class_q_c_p_layout_grid" kindref="compound">QCPLayoutGrid</ref> may have empty cells which yield 0 at the respective index.) </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="727" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2169" bodyend="2187"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_1a39d3e9ef5d9b82ab1885ba1cb9597e56" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>int QCPLayout::elementCount</definition>
+        <argsstring>() const =0</argsstring>
+        <name>elementCount</name>
+        <reimplementedby refid="class_q_c_p_layout_grid_1aa682b1d36660478f665bab3c64e956a9">elementCount</reimplementedby>
+        <reimplementedby refid="class_q_c_p_layout_inset_1a2087b97b9266fd9e0f571a8d3cf709f9">elementCount</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the number of elements/cells in the layout.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_1a51fe2675b53e829130b229bc1f7b0f99" kindref="member">elements</ref>, <ref refid="class_q_c_p_layout_1afa73ca7d859f8a3ee5c73c9b353d2a56" kindref="member">elementAt</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="730" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_1afa73ca7d859f8a3ee5c73c9b353d2a56" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> *</type>
+        <definition>QCPLayoutElement * QCPLayout::elementAt</definition>
+        <argsstring>(int index) const =0</argsstring>
+        <name>elementAt</name>
+        <reimplementedby refid="class_q_c_p_layout_grid_1a26849ee5c47b4c940e8d65e8462f1065">elementAt</reimplementedby>
+        <reimplementedby refid="class_q_c_p_layout_inset_1ab096d07b08f9b5455647f3ba7ff60e27">elementAt</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the element in the cell with the given <emphasis>index</emphasis>. If <emphasis>index</emphasis> is invalid, returns 0.</para><para>Note that even if <emphasis>index</emphasis> is valid, the respective cell may be empty in some layouts (e.g. <ref refid="class_q_c_p_layout_grid" kindref="compound">QCPLayoutGrid</ref>), so this function may return 0 in those cases. You may use this function to check whether a cell is empty or not.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_1a51fe2675b53e829130b229bc1f7b0f99" kindref="member">elements</ref>, <ref refid="class_q_c_p_layout_1a39d3e9ef5d9b82ab1885ba1cb9597e56" kindref="member">elementCount</ref>, <ref refid="class_q_c_p_layout_1a5a79621fa0a6eabb8b520cfc04fb601a" kindref="member">takeAt</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="731" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_1a5a79621fa0a6eabb8b520cfc04fb601a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> *</type>
+        <definition>QCPLayoutElement * QCPLayout::takeAt</definition>
+        <argsstring>(int index)=0</argsstring>
+        <name>takeAt</name>
+        <reimplementedby refid="class_q_c_p_layout_grid_1acc1277394ff8a6432e111ff9463e6375">takeAt</reimplementedby>
+        <reimplementedby refid="class_q_c_p_layout_inset_1ad6756a3b507e20496aaf7f5ca16c47d1">takeAt</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes the element with the given <emphasis>index</emphasis> from the layout and returns it.</para><para>If the <emphasis>index</emphasis> is invalid or the cell with that index is empty, returns 0.</para><para>Note that some layouts don&apos;t remove the respective cell right away but leave an empty cell after successful removal of the layout element. To collapse empty cells, use <ref refid="class_q_c_p_layout_1a41e6ac049143866e8f8b4964efab01b2" kindref="member">simplify</ref>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_1afa73ca7d859f8a3ee5c73c9b353d2a56" kindref="member">elementAt</ref>, <ref refid="class_q_c_p_layout_1ada26cd17e56472b0b4d7fbbc96873e4c" kindref="member">take</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="732" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_1ada26cd17e56472b0b4d7fbbc96873e4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>bool QCPLayout::take</definition>
+        <argsstring>(QCPLayoutElement *element)=0</argsstring>
+        <name>take</name>
+        <reimplementedby refid="class_q_c_p_layout_grid_1a666a9fe9e92054436f9b66eba25cca0c">take</reimplementedby>
+        <reimplementedby refid="class_q_c_p_layout_inset_1a9ac707ccff650633b97f52dd5cddcf49">take</reimplementedby>
+        <param>
+          <type><ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> *</type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes the specified <emphasis>element</emphasis> from the layout and returns true on success.</para><para>If the <emphasis>element</emphasis> isn&apos;t in this layout, returns false.</para><para>Note that some layouts don&apos;t remove the respective cell right away but leave an empty cell after successful removal of the layout element. To collapse empty cells, use <ref refid="class_q_c_p_layout_1a41e6ac049143866e8f8b4964efab01b2" kindref="member">simplify</ref>.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_1a5a79621fa0a6eabb8b520cfc04fb601a" kindref="member">takeAt</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="733" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_1a41e6ac049143866e8f8b4964efab01b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QCPLayout::simplify</definition>
+        <argsstring>()</argsstring>
+        <name>simplify</name>
+        <reimplementedby refid="class_q_c_p_layout_grid_1a08bba60e4acd20165526a8fd7f986b58">simplify</reimplementedby>
+        <reimplementedby refid="class_q_c_p_layout_inset_1abb9eb23bf2d7c587a8abe02d065eae0a">simplify</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Simplifies the layout by collapsing empty cells. The exact behavior depends on subclasses, the default implementation does nothing.</para><para>Not all layouts need simplification. For example, <ref refid="class_q_c_p_layout_inset" kindref="compound">QCPLayoutInset</ref> doesn&apos;t use explicit simplification while <ref refid="class_q_c_p_layout_grid" kindref="compound">QCPLayoutGrid</ref> does. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="734" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2196" bodyend="2198"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_1a2403f684fee3ce47132faaeed00bb066" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPLayout::removeAt</definition>
+        <argsstring>(int index)</argsstring>
+        <name>removeAt</name>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes and deletes the element at the provided <emphasis>index</emphasis>. Returns true on success. If <emphasis>index</emphasis> is invalid or points to an empty cell, returns false.</para><para>This function internally uses <ref refid="class_q_c_p_layout_1a5a79621fa0a6eabb8b520cfc04fb601a" kindref="member">takeAt</ref> to remove the element from the layout and then deletes the returned element.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_1a6c58f537d8086f352576ab7c5b15d0bc" kindref="member">remove</ref>, <ref refid="class_q_c_p_layout_1a5a79621fa0a6eabb8b520cfc04fb601a" kindref="member">takeAt</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="737" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2209" bodyend="2217"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_1a6c58f537d8086f352576ab7c5b15d0bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QCPLayout::remove</definition>
+        <argsstring>(QCPLayoutElement *element)</argsstring>
+        <name>remove</name>
+        <param>
+          <type><ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> *</type>
+          <declname>element</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes and deletes the provided <emphasis>element</emphasis>. Returns true on success. If <emphasis>element</emphasis> is not in the layout, returns false.</para><para>This function internally uses <ref refid="class_q_c_p_layout_1a5a79621fa0a6eabb8b520cfc04fb601a" kindref="member">takeAt</ref> to remove the element from the layout and then deletes the element.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_1a2403f684fee3ce47132faaeed00bb066" kindref="member">removeAt</ref>, <ref refid="class_q_c_p_layout_1ada26cd17e56472b0b4d7fbbc96873e4c" kindref="member">take</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="738" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2228" bodyend="2236"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_1a02883bdf2769b5b227f0232dba1ac4ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayout::clear</definition>
+        <argsstring>()</argsstring>
+        <name>clear</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes and deletes all layout elements in this layout.</para><para><simplesect kind="see"><para><ref refid="class_q_c_p_layout_1a6c58f537d8086f352576ab7c5b15d0bc" kindref="member">remove</ref>, <ref refid="class_q_c_p_layout_1a2403f684fee3ce47132faaeed00bb066" kindref="member">removeAt</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="739" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2243" bodyend="2251"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_q_c_p_layout_1a165c77f6287ac92e8d03017ad913378b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QCPLayout::updateLayout</definition>
+        <argsstring>()</argsstring>
+        <name>updateLayout</name>
+        <reimplementedby refid="class_q_c_p_layout_grid_1a07f8dd7d3d61d7345026621d446042a4">updateLayout</reimplementedby>
+        <reimplementedby refid="class_q_c_p_layout_inset_1a7b33fdd51b18e6db7cea9bfb2d263b4a">updateLayout</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="743" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2281" bodyend="2283"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_1a6218cd7e5c0e30077c1aeaffe55b6145" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayout::sizeConstraintsChanged</definition>
+        <argsstring>() const </argsstring>
+        <name>sizeConstraintsChanged</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Subclasses call this method to report changed (minimum/maximum) size constraints.</para><para>If the parent of this layout is again a <ref refid="class_q_c_p_layout" kindref="compound">QCPLayout</ref>, forwards the call to the parent&apos;s <ref refid="class_q_c_p_layout_1a6218cd7e5c0e30077c1aeaffe55b6145" kindref="member">sizeConstraintsChanged</ref>. If the parent is a QWidget (i.e. is the <ref refid="class_q_custom_plot_1afd280d4d621ae64a106543a545c508d7" kindref="member">QCustomPlot::plotLayout</ref> of <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref>), calls QWidget::updateGeometry, so if the <ref refid="class_q_custom_plot" kindref="compound">QCustomPlot</ref> widget is inside a Qt QLayout, it may update itself and resize cells accordingly. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="746" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2261" bodyend="2267"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_1af6dbbc24156a808da29cd1ec031729a3" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayout::adoptElement</definition>
+        <argsstring>(QCPLayoutElement *el)</argsstring>
+        <name>adoptElement</name>
+        <param>
+          <type><ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> *</type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="747" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2298" bodyend="2309"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_1a4afbb4bef0071f72f91afdac4433a18e" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QCPLayout::releaseElement</definition>
+        <argsstring>(QCPLayoutElement *el)</argsstring>
+        <name>releaseElement</name>
+        <param>
+          <type><ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref> *</type>
+          <declname>el</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="748" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2321" bodyend="2331"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_c_p_layout_1a92d9dcd95e9510b323706ef7fc4ff62e" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QVector&lt; int &gt;</type>
+        <definition>QVector&lt; int &gt; QCPLayout::getSectionSizes</definition>
+        <argsstring>(QVector&lt; int &gt; maxSizes, QVector&lt; int &gt; minSizes, QVector&lt; double &gt; stretchFactors, int totalSize) const </argsstring>
+        <name>getSectionSizes</name>
+        <param>
+          <type>QVector&lt; int &gt;</type>
+          <declname>maxSizes</declname>
+        </param>
+        <param>
+          <type>QVector&lt; int &gt;</type>
+          <declname>minSizes</declname>
+        </param>
+        <param>
+          <type>QVector&lt; double &gt;</type>
+          <declname>stretchFactors</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>totalSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="749" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.cpp" bodystart="2362" bodyend="2473"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The abstract base class for layouts. </para>    </briefdescription>
+    <detaileddescription>
+<para>This is an abstract base class for layout elements whose main purpose is to define the position and size of other child layout elements. In most cases, layouts don&apos;t draw anything themselves (but there are exceptions to this, e.g. <ref refid="class_q_c_p_legend" kindref="compound">QCPLegend</ref>).</para><para><ref refid="class_q_c_p_layout" kindref="compound">QCPLayout</ref> derives from <ref refid="class_q_c_p_layout_element" kindref="compound">QCPLayoutElement</ref>, and thus can itself be nested in other layouts.</para><para><ref refid="class_q_c_p_layout" kindref="compound">QCPLayout</ref> introduces a common interface for accessing and manipulating the child elements. Those functions are most notably <ref refid="class_q_c_p_layout_1a39d3e9ef5d9b82ab1885ba1cb9597e56" kindref="member">elementCount</ref>, <ref refid="class_q_c_p_layout_1afa73ca7d859f8a3ee5c73c9b353d2a56" kindref="member">elementAt</ref>, <ref refid="class_q_c_p_layout_1a5a79621fa0a6eabb8b520cfc04fb601a" kindref="member">takeAt</ref>, <ref refid="class_q_c_p_layout_1ada26cd17e56472b0b4d7fbbc96873e4c" kindref="member">take</ref>, <ref refid="class_q_c_p_layout_1a41e6ac049143866e8f8b4964efab01b2" kindref="member">simplify</ref>, <ref refid="class_q_c_p_layout_1a2403f684fee3ce47132faaeed00bb066" kindref="member">removeAt</ref>, <ref refid="class_q_c_p_layout_1a6c58f537d8086f352576ab7c5b15d0bc" kindref="member">remove</ref> and <ref refid="class_q_c_p_layout_1a02883bdf2769b5b227f0232dba1ac4ee" kindref="member">clear</ref>. Individual subclasses may add more functions to this interface which are more specialized to the form of the layout. For example, <ref refid="class_q_c_p_layout_grid" kindref="compound">QCPLayoutGrid</ref> adds functions that take row and column indices to access cells of the layout grid more conveniently.</para><para>Since this is an abstract base class, you can&apos;t instantiate it directly. Rather use one of its subclasses like <ref refid="class_q_c_p_layout_grid" kindref="compound">QCPLayoutGrid</ref> or <ref refid="class_q_c_p_layout_inset" kindref="compound">QCPLayoutInset</ref>.</para><para>For a general introduction to the layout system, see the dedicated documentation page The Layout System. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="865">
+        <label>QCPLayoutInset</label>
+        <link refid="class_q_c_p_layout_inset"/>
+        <childnode refid="859" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="860">
+        <label>QCPLayoutElement</label>
+        <link refid="class_q_c_p_layout_element"/>
+        <childnode refid="861" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="862">
+        <label>QObject</label>
+      </node>
+      <node id="864">
+        <label>QCPLegend</label>
+        <link refid="class_q_c_p_legend"/>
+        <childnode refid="863" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="859">
+        <label>QCPLayout</label>
+        <link refid="class_q_c_p_layout"/>
+        <childnode refid="860" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="863">
+        <label>QCPLayoutGrid</label>
+        <link refid="class_q_c_p_layout_grid"/>
+        <childnode refid="859" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="861">
+        <label>QCPLayerable</label>
+        <link refid="class_q_c_p_layerable"/>
+        <childnode refid="862" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="880">
+        <label>QCPLayoutInset</label>
+        <link refid="class_q_c_p_layout_inset"/>
+        <childnode refid="866" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="867">
+        <label>QCPLayoutElement</label>
+        <link refid="class_q_c_p_layout_element"/>
+        <childnode refid="868" relation="public-inheritance">
+        </childnode>
+        <childnode refid="866" relation="usage">
+          <edgelabel>mParentLayout</edgelabel>
+        </childnode>
+      </node>
+      <node id="869">
+        <label>QObject</label>
+      </node>
+      <node id="875">
+        <label>QCPRange</label>
+        <link refid="class_q_c_p_range"/>
+      </node>
+      <node id="881">
+        <label>QCPLegend</label>
+        <link refid="class_q_c_p_legend"/>
+        <childnode refid="873" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="877">
+        <label>QCPLineEnding</label>
+        <link refid="class_q_c_p_line_ending"/>
+      </node>
+      <node id="866">
+        <label>QCPLayout</label>
+        <link refid="class_q_c_p_layout"/>
+        <childnode refid="867" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="878">
+        <label>QCPGrid</label>
+        <link refid="class_q_c_p_grid"/>
+        <childnode refid="868" relation="public-inheritance">
+        </childnode>
+        <childnode refid="874" relation="usage">
+          <edgelabel>mParentAxis</edgelabel>
+        </childnode>
+      </node>
+      <node id="876">
+        <label>QCPAxisPainterPrivate</label>
+        <link refid="class_q_c_p_axis_painter_private"/>
+        <childnode refid="877" relation="usage">
+          <edgelabel>lowerEnding</edgelabel>
+          <edgelabel>upperEnding</edgelabel>
+        </childnode>
+        <childnode refid="871" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="872">
+        <label>QWidget</label>
+      </node>
+      <node id="870">
+        <label>QCPLayer</label>
+        <link refid="class_q_c_p_layer"/>
+        <childnode refid="869" relation="public-inheritance">
+        </childnode>
+        <childnode refid="871" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="873">
+        <label>QCPLayoutGrid</label>
+        <link refid="class_q_c_p_layout_grid"/>
+        <childnode refid="866" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="868">
+        <label>QCPLayerable</label>
+        <link refid="class_q_c_p_layerable"/>
+        <childnode refid="869" relation="public-inheritance">
+        </childnode>
+        <childnode refid="870" relation="usage">
+          <edgelabel>mLayer</edgelabel>
+        </childnode>
+        <childnode refid="871" relation="usage">
+          <edgelabel>mParentPlot</edgelabel>
+        </childnode>
+      </node>
+      <node id="874">
+        <label>QCPAxis</label>
+        <link refid="class_q_c_p_axis"/>
+        <childnode refid="868" relation="public-inheritance">
+        </childnode>
+        <childnode refid="875" relation="usage">
+          <edgelabel>mRange</edgelabel>
+        </childnode>
+        <childnode refid="876" relation="usage">
+          <edgelabel>mAxisPainter</edgelabel>
+        </childnode>
+        <childnode refid="878" relation="usage">
+          <edgelabel>mGrid</edgelabel>
+        </childnode>
+        <childnode refid="879" relation="usage">
+          <edgelabel>mAxisRect</edgelabel>
+        </childnode>
+      </node>
+      <node id="879">
+        <label>QCPAxisRect</label>
+        <link refid="class_q_c_p_axis_rect"/>
+        <childnode refid="867" relation="public-inheritance">
+        </childnode>
+        <childnode refid="880" relation="usage">
+          <edgelabel>mInsetLayout</edgelabel>
+        </childnode>
+        <childnode refid="875" relation="usage">
+          <edgelabel>mDragStartVertRange</edgelabel>
+          <edgelabel>mDragStartHorzRange</edgelabel>
+        </childnode>
+      </node>
+      <node id="871">
+        <label>QCustomPlot</label>
+        <link refid="class_q_custom_plot"/>
+        <childnode refid="872" relation="public-inheritance">
+        </childnode>
+        <childnode refid="870" relation="usage">
+          <edgelabel>mCurrentLayer</edgelabel>
+        </childnode>
+        <childnode refid="873" relation="usage">
+          <edgelabel>mPlotLayout</edgelabel>
+        </childnode>
+        <childnode refid="874" relation="usage">
+          <edgelabel>yAxis2</edgelabel>
+          <edgelabel>xAxis2</edgelabel>
+          <edgelabel>xAxis</edgelabel>
+          <edgelabel>yAxis</edgelabel>
+        </childnode>
+        <childnode refid="881" relation="usage">
+          <edgelabel>legend</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" line="720" column="1" bodyfile="C:/Users/Roman/Documents/Mygs/GroundStation/GS/qcustomplot.h" bodystart="719" bodyend="754"/>
+    <listofallmembers>
+      <member refid="class_q_c_p_layout_1af6dbbc24156a808da29cd1ec031729a3" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>adoptElement</name></member>
+      <member refid="class_q_c_p_layerable_1aef5cb4aa899ed9dc9384fd614560291e" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>antialiased</name></member>
+      <member refid="class_q_c_p_layerable_1a62bd552d1a45aa9accb24b310542279e" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>applyAntialiasingHint</name></member>
+      <member refid="class_q_c_p_layout_element_1ad6d2b4bb0291c2441b2e1ca3d5296df5" prot="protected" virt="virtual"><scope>QCPLayout</scope><name>applyDefaultAntialiasingHint</name></member>
+      <member refid="class_q_c_p_layout_element_1a2f499b1179b3126e22d0d7508124ccb3" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>autoMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a005c9f0fe84bc1591a2cf2c46fd477b4" prot="protected" virt="virtual"><scope>QCPLayout</scope><name>calculateAutoMargin</name></member>
+      <member refid="class_q_c_p_layout_1a02883bdf2769b5b227f0232dba1ac4ee" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>clear</name></member>
+      <member refid="class_q_c_p_layerable_1a07a8f746640c3704b09910df297afcba" prot="protected" virt="virtual"><scope>QCPLayout</scope><name>clipRect</name></member>
+      <member refid="class_q_c_p_layerable_1ae546370644a5551c76af739afc008bee" prot="protected" virt="virtual"><scope>QCPLayout</scope><name>deselectEvent</name></member>
+      <member refid="class_q_c_p_layout_element_1a547bcc1e6e2be5645ca781efe0834653" prot="protected" virt="virtual"><scope>QCPLayout</scope><name>draw</name></member>
+      <member refid="class_q_c_p_layout_1afa73ca7d859f8a3ee5c73c9b353d2a56" prot="public" virt="pure-virtual"><scope>QCPLayout</scope><name>elementAt</name></member>
+      <member refid="class_q_c_p_layout_1a39d3e9ef5d9b82ab1885ba1cb9597e56" prot="public" virt="pure-virtual"><scope>QCPLayout</scope><name>elementCount</name></member>
+      <member refid="class_q_c_p_layout_1a51fe2675b53e829130b229bc1f7b0f99" prot="public" virt="virtual"><scope>QCPLayout</scope><name>elements</name></member>
+      <member refid="class_q_c_p_layout_1a92d9dcd95e9510b323706ef7fc4ff62e" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>getSectionSizes</name></member>
+      <member refid="class_q_c_p_layerable_1a8cbe5a0c9a5674249982f5ca5f8e02bc" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>initializeParentPlot</name></member>
+      <member refid="class_q_c_p_layerable_1aea67e8c19145e70d68c286a36f6b8300" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>layer</name></member>
+      <member refid="class_q_c_p_layerable_1abbf8657cedea73ac1c3499b521c90eba" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>layerChanged</name></member>
+      <member refid="class_q_c_p_layout_element_1a6235f5384db871fc6e3387a1bc558b0d" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>layout</name></member>
+      <member refid="class_q_c_p_layerable_1a3ab45a4c76a3333ce42eb217a81733ec" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>mAntialiased</name></member>
+      <member refid="class_q_c_p_layout_element_1a22cb1bb62c452fd802e43ca2524660db" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>marginGroup</name></member>
+      <member refid="class_q_c_p_layout_element_1ac43921c997570389c14a1671bc3ea499" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>marginGroups</name></member>
+      <member refid="class_q_c_p_layout_element_1a85ff977dfcced84eef32d9f819ec9543" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>margins</name></member>
+      <member refid="class_q_c_p_layout_element_1af61c70354d1275778d68206b2a1b2d36" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>mAutoMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a1fc85c79e15c2ab8051eccd455fccc4a" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>maximumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1adbd3a00fec44c977150c6be7329eb801" prot="public" virt="virtual"><scope>QCPLayout</scope><name>maximumSizeHint</name></member>
+      <member refid="class_q_c_p_layout_element_1a60ec7f377c26726174d536bffb632002" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>minimumMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1ae71f9230171d2d898e21dc461fc3df03" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>minimumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1aebe14fb71f858c0f98caf8d342a9864a" prot="public" virt="virtual"><scope>QCPLayout</scope><name>minimumSizeHint</name></member>
+      <member refid="class_q_c_p_layerable_1aa38ec5891aff0f50b36fd63e9372a0cd" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>mLayer</name></member>
+      <member refid="class_q_c_p_layout_element_1aeafbbc1130e02eee663c5326761fc963" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>mMarginGroups</name></member>
+      <member refid="class_q_c_p_layout_element_1ac2a32b99ee527ca5dfff9da03628fe94" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>mMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a64a387973fd4addac842028c89088998" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>mMaximumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a5ba71f25d1af4bb092b28df618538e63" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>mMinimumMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1affef747c81632de33f08483b7fd10d01" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>mMinimumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1aa8fef6486cb6ceb7c82cbdd50bc32ee9" prot="protected" virt="virtual"><scope>QCPLayout</scope><name>mouseDoubleClickEvent</name></member>
+      <member refid="class_q_c_p_layout_element_1a14f4acf58cdb8dd2c6c571479c4c4a40" prot="protected" virt="virtual"><scope>QCPLayout</scope><name>mouseMoveEvent</name></member>
+      <member refid="class_q_c_p_layout_element_1a2d82ea21fe0ee628f177bd824bc51a71" prot="protected" virt="virtual"><scope>QCPLayout</scope><name>mousePressEvent</name></member>
+      <member refid="class_q_c_p_layout_element_1ae526ac828cce1e5bb94eaa85776d7404" prot="protected" virt="virtual"><scope>QCPLayout</scope><name>mouseReleaseEvent</name></member>
+      <member refid="class_q_c_p_layout_element_1a07bb4973379e75cb0fa5b032c1d24afd" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>mOuterRect</name></member>
+      <member refid="class_q_c_p_layerable_1af94484cfb7cbbddb7de522e9be71d9a4" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>moveToLayer</name></member>
+      <member refid="class_q_c_p_layerable_1a3291445a980053e2d17a21d15957624e" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>mParentLayerable</name></member>
+      <member refid="class_q_c_p_layout_element_1ae7c75c25549608bd688bdb65d4c38066" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>mParentLayout</name></member>
+      <member refid="class_q_c_p_layerable_1aa2a528433e44db02b8aef23c1f9f90ed" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>mParentPlot</name></member>
+      <member refid="class_q_c_p_layout_element_1ad8896f05550389f7b9e92c9e6cdf6e01" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>mRect</name></member>
+      <member refid="class_q_c_p_layerable_1a62e3aed8427d6ce3ccf716f285106cb3" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>mVisible</name></member>
+      <member refid="class_q_c_p_layout_element_1a60bbddee2d1230c2414bd776f44d17b8" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>outerRect</name></member>
+      <member refid="class_q_c_p_layerable_1a98d79f5b716d45eac4347befe546d0ec" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>parentLayerable</name></member>
+      <member refid="class_q_c_p_layerable_1ab7e0e94461566093d36ffc0f5312b109" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>parentPlot</name></member>
+      <member refid="class_q_c_p_layout_element_1a1478899e80e8244b411e96ec3b2e5ce2" prot="protected" virt="virtual"><scope>QCPLayout</scope><name>parentPlotInitialized</name></member>
+      <member refid="class_q_c_p_layerable_1a74c0fa237f29bf0e49565013fc5d1ec0" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>QCPLayerable</name></member>
+      <member refid="class_q_c_p_layout_1a04222e6e1361fd802d48f1a25b7020d4" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>QCPLayout</name></member>
+      <member refid="class_q_c_p_layout_1a0790750c7e7f14fdbd960d172655b42b" prot="private" virt="non-virtual"><scope>QCPLayout</scope><name>QCPLayoutElement</name></member>
+      <member refid="class_q_c_p_layout_element_1a8947f0ada17e672aaba3d424cbbb67e3" prot="public" virt="non-virtual" ambiguityscope="QCPLayoutElement::"><scope>QCPLayout</scope><name>QCPLayoutElement</name></member>
+      <member refid="class_q_c_p_layerable_1a30809f7455e9794bca7b6c737622fa63" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>realVisibility</name></member>
+      <member refid="class_q_c_p_layout_element_1affdfea003469aac3d0fac5f4e06171bc" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>rect</name></member>
+      <member refid="class_q_c_p_layout_1a4afbb4bef0071f72f91afdac4433a18e" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>releaseElement</name></member>
+      <member refid="class_q_c_p_layout_1a6c58f537d8086f352576ab7c5b15d0bc" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>remove</name></member>
+      <member refid="class_q_c_p_layout_1a2403f684fee3ce47132faaeed00bb066" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>removeAt</name></member>
+      <member refid="class_q_c_p_layerable_1a7498c2d0d081cf7cad0fb3bb93aa0e91" prot="protected" virt="virtual"><scope>QCPLayout</scope><name>selectEvent</name></member>
+      <member refid="class_q_c_p_layerable_1aa4035e586b7f317a06ba7e74e242a5ea" prot="protected" virt="virtual"><scope>QCPLayout</scope><name>selectionCategory</name></member>
+      <member refid="class_q_c_p_layout_element_1a9fcf5d0ea19f2c23b2b528bce2c6f095" prot="public" virt="virtual"><scope>QCPLayout</scope><name>selectTest</name></member>
+      <member refid="class_q_c_p_layerable_1a4fd43e89be4a553ead41652565ff0581" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>setAntialiased</name></member>
+      <member refid="class_q_c_p_layout_element_1accfda49994e3e6d51ed14504abf9d27d" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>setAutoMargins</name></member>
+      <member refid="class_q_c_p_layerable_1ab0d0da6d2de45a118886d2c8e16d5a54" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>setLayer</name></member>
+      <member refid="class_q_c_p_layerable_1ab25a0e7b897993b44447caee0f142083" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>setLayer</name></member>
+      <member refid="class_q_c_p_layout_element_1a516e56f76b6bc100e8e71d329866847d" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>setMarginGroup</name></member>
+      <member refid="class_q_c_p_layout_element_1a8f450b1f3f992ad576fce2c63d8b79cf" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>setMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a74eb5280a737ab44833d506db65efd95" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>setMaximumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a03e0e9c48f230217c529b0819f832d84" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>setMaximumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a0a8a17abc16b7923159fcc7608f94673" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>setMinimumMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a5dd29a3c8bc88440c97c06b67be7886b" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>setMinimumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a8e0447614a0bf92de9a7304588c6b96e" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>setMinimumSize</name></member>
+      <member refid="class_q_c_p_layout_element_1a38975ea13e36de8e53391ce41d94bc0f" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>setOuterRect</name></member>
+      <member refid="class_q_c_p_layerable_1aa23c893671f1f6744ac235cf2204cf3a" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>setParentLayerable</name></member>
+      <member refid="class_q_c_p_layerable_1a3bed99ddc396b48ce3ebfdc0418744f8" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>setVisible</name></member>
+      <member refid="class_q_c_p_layout_1a41e6ac049143866e8f8b4964efab01b2" prot="public" virt="virtual"><scope>QCPLayout</scope><name>simplify</name></member>
+      <member refid="class_q_c_p_layout_1a6218cd7e5c0e30077c1aeaffe55b6145" prot="protected" virt="non-virtual"><scope>QCPLayout</scope><name>sizeConstraintsChanged</name></member>
+      <member refid="class_q_c_p_layout_1ada26cd17e56472b0b4d7fbbc96873e4c" prot="public" virt="pure-virtual"><scope>QCPLayout</scope><name>take</name></member>
+      <member refid="class_q_c_p_layout_1a5a79621fa0a6eabb8b520cfc04fb601a" prot="public" virt="pure-virtual"><scope>QCPLayout</scope><name>takeAt</name></member>
+      <member refid="class_q_c_p_layout_1a34ab477e820537ded7bade4399c482fd" prot="public" virt="virtual"><scope>QCPLayout</scope><name>update</name></member>
+      <member refid="class_q_c_p_layout_1a165c77f6287ac92e8d03017ad913378b" prot="protected" virt="virtual"><scope>QCPLayout</scope><name>updateLayout</name></member>
+      <member refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374d" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>UpdatePhase</name></member>
+      <member refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374da5d1ccf5d79967c232c3c511796860045" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>upLayout</name></member>
+      <member refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374da288cb59a92280e47261a341f2813e676" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>upMargins</name></member>
+      <member refid="class_q_c_p_layout_element_1a0d83360e05735735aaf6d7983c56374dad6119882eba136357c2f627992e527d3" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>upPreparation</name></member>
+      <member refid="class_q_c_p_layerable_1a10a3cc92e0fa63e4a929e61d34e275a7" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>visible</name></member>
+      <member refid="class_q_c_p_layout_element_1a300521d2fd18a893c1b85f6be11ce2bf" prot="protected" virt="virtual"><scope>QCPLayout</scope><name>wheelEvent</name></member>
+      <member refid="class_q_c_p_layerable_1a4231cf5b3601d6d3a5781283e7a9735b" prot="public" virt="non-virtual"><scope>QCPLayout</scope><name>~QCPLayerable</name></member>
+      <member refid="class_q_c_p_layout_element_1a0dc52343920011b3e72d61fc94ed3400" prot="public" virt="virtual"><scope>QCPLayout</scope><name>~QCPLayoutElement</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

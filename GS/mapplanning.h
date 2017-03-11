@@ -26,28 +26,14 @@ namespace Ui {
 }
 
 class MapPlanning : public QDialog {
-
     Q_OBJECT
-
-    /* Roman Parise - Maybe just make friend functions or something.
-     * MainMDIDisplay is able to access private class variables of MapPlanning. */
-    friend class MainMDIDisplay;
-
 public:
     explicit MapPlanning(QWidget *parent = 0);
     ~MapPlanning();
 
     void updateMap();
 
-    FlightPath *getTableAsFlightPath();
-
-    //QPushButton * getLoadMissionButton() ;
-
-    //QPushButton * getSaveMissionButton() ;
-
-    //void setLoadMissionButton( QPushButton * ) ;
-
-    //void setSaveMissionButton( QPushButton * ) ;
+    FlightPath* getTableAsFlightPath();
 
 public slots:
     void addPointToTable(double lat, double lng);
@@ -56,6 +42,8 @@ public slots:
     //  lng - the longitude value (usually from the JavaScript program).
     void clearTable();
 
+    void setupMapPaths();
+
 private slots:
     void on_executeButton_clicked();
     void on_addButton_clicked();
@@ -63,21 +51,10 @@ private slots:
     void on_deleteButton_clicked();
     void on_updateTableButton_clicked();
 
-    void addClickListener();
-    //addClickListener - Slot mapped to javaScriptWindowObjectCleared() from ui->webView->page()->mainFrame().
     void closeWindow();
 
 private:
     Ui::MapPlanning *ui;
-    QPushButton *del;
-    PopWindowMP *popup;
-    QPushButton *loadMissionButton;
-    QPushButton *saveMissionButton;
-
-signals:
-
-    /* Roman Parise - added to tell external classes and functions that we're ready to start map execution */
-    void timeToStartMapExecution();
 
 };
 

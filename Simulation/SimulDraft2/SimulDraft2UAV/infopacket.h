@@ -19,7 +19,7 @@
 #include <string>
 #include "string.h"
 #include "stdint.h"
-#include "Packet.h"
+#include "packet.h"
 
 namespace Protocol
 {

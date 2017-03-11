@@ -33,6 +33,8 @@ macx {
 TARGET = UAV-Forge-New
 TEMPLATE = app
 
+#PRECOMPILED_HEADER = qcustomplot.h
+
 SOURCES += main.cpp\
     mainwindow.cpp \
     options.cpp \
@@ -45,7 +47,7 @@ SOURCES += main.cpp\
     qcomboboxdelegate.cpp \
     videoplayer.cpp \
     gsserver.cpp \
-    gsclient.cpp \
+    gscontrolpanel.cpp \
     qcustomplot.cpp\
     networklistener.cpp \
     connectiondialog.cpp \
@@ -68,7 +70,10 @@ SOURCES += main.cpp\
     websocketclientwrapper.cpp \
     websockettransport.cpp \
     tablewidget.cpp \
-    graphwidget.cpp
+    graphwidget.cpp \
+    #statuswidget.cpp \
+    timerwidget.cpp \
+    missionstatuswindow.cpp
 
 HEADERS  += mainwindow.h \
     options.h \
@@ -81,8 +86,8 @@ HEADERS  += mainwindow.h \
     qcomboboxdelegate.h \
     videoplayer.h \
     net.h \
+    gscontrolpanel.h \
     gsserver.h \
-    gsclient.h \
     qcustomplot.h\
     networklistener.h \
     connectiondialog.h \
@@ -107,7 +112,10 @@ HEADERS  += mainwindow.h \
     websockettransport.h \
     dialog.h \
     tablewidget.h \
-    graphwidget.h
+    graphwidget.h \
+    #statuswidget.h \
+    timerwidget.h \
+    missionstatuswindow.h
 
 FORMS    += mainwindow.ui \
     options.ui \
@@ -116,12 +124,14 @@ FORMS    += mainwindow.ui \
     missionrecap.ui \
     tutorial.ui \
     popwindowmp.ui \
+    gscontrolpanel.ui \
     connectiondialog.ui \
     maprecap.ui \
     qttabtest.ui \
     mainmdidisplay.ui \
     dialog.ui \
-    graphwidget.ui
+    graphwidget.ui\
+    missionstatuswindow.ui
 
 OTHER_FILES +=
 
@@ -133,4 +143,3 @@ RESOURCES += \
 
 #DISTFILES += \
 #    res/html/mapsPlanningGoogle.html
-
