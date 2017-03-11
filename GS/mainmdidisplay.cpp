@@ -131,7 +131,9 @@ void MainMDIDisplay::changeState(MDIState newState){
         case EXECUTION:
             startMissionExecution();
             break;
-        case RECAP: startMissionRecap(); break;
+        case RECAP:
+            startMissionRecap();
+            break;
         default: break;
     }
 }
@@ -235,6 +237,14 @@ void MainMDIDisplay::receivePacket(Protocol::Packet* packet){
 }
 
 void MainMDIDisplay::plotPosition(double lat, double lng){
+    //qDebug() << "plotting a position";
     //table->appendRow(lat,lng);
-    map->appendPointToPath(lat,lng,1);
+    //map->appendPointToMap(lat,lng,1);
+
+    table->appendRow(lat, lng);
+    FlightPath *fp = table->getTableAsFlightPath();
+    map->addFlightPath(fp, 0, "execution");
+    delete fp;
+
+    //map->appendPointToPath(lat,lng,1);
 }
