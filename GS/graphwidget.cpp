@@ -43,28 +43,8 @@ QCPGraph* GraphWidget::makePlot(int index)
     Mission* mission = getNewMission();
 
     QVector<double> * vals = mission->getValuesForID(1);
-//    QVector<double> * val1 = mission->getValuesForID(6);
-
-//    values.at(0)->append(heading);
-//    values.at(1)->append(lat);
-//    values.at(2)->append(lon);
-//    values.at(3)->append(alt);
-//    values.at(4)->append(pitch);
-//    values.at(5)->append(roll);
-//    values.at(6)->append(yaw);
-//    values.at(7)->append(xvel);
-//    values.at(8)->append(yvel);
-//    values.at(9)->append(zvel);
 
     // Get checkboxes value
-
-
-    // Test
-    QTextStream out(stdout);
-    out << "heading: " << (*vals)[0]<< endl;
-    out << "lat: " << (*vals)[1]<< endl;
-    out << "lon: " << (*vals)[2]<< endl;
-    out << "alt: " << (*vals)[3]<< endl;
 
     ui->customPlot->legend->setVisible(true);
     ui->customPlot->legend->setFont(QFont("Helvetica", 9));
@@ -77,21 +57,16 @@ QCPGraph* GraphWidget::makePlot(int index)
     graph->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 5));
 
     // Generate data
-<<<<<<< HEAD
     QVector<double> x(15), y(15);
     for (int j = 0; j < 15; ++j)
     {
         x[j] = j;
         y[j] = qrand() % qCeil((*vals)[index]);
 
-//            out << "x" << i << ": " << x[j] << endl;
-//            out << "y" << i << ": " << y[j] << endl;
     }
     graph->setData(x, y);
 
     // zoom out a bit:
-
-//        ui->customPlot->xAxis->scaleRange(10, ui->customPlot->xAxis->range().center());
     ui->customPlot->yAxis->rescale();
     ui->customPlot->xAxis->rescale();
 
