@@ -49,7 +49,7 @@ bool MapWidget::ready() {
 }
 
 void MapWidget::appendGPSCoordToPath(double lat, double lng, int pathID) {
-
+    emit appendPointToPath(lat,lng,pathID);
 }
 
 QList<Protocol::Waypoint> *MapWidget::getPath(int pathID) {
@@ -68,6 +68,11 @@ void MapWidget::loadStartedSlot() {
 
 void MapWidget::addPointToMap(double lat, double lng, int index, int pathID){
     emit insertPointToMap(lat,lng,index,pathID);
+}
+
+void MapWidget::appendPointToMap(double lat, double lng, int pathID){
+    qDebug() << "Adding point (" << lat << "," << lng << ") to path " << pathID;
+    emit appendPointToPath(lat,lng,pathID);
 }
 
 void MapWidget::sendCreateNewPath(int id){

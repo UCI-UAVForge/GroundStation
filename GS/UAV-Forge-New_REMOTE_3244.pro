@@ -33,36 +33,34 @@ macx {
 TARGET = UAV-Forge-New
 TEMPLATE = app
 
-#PRECOMPILED_HEADER = qcustomplot.h
-
 SOURCES += main.cpp\
-    #mainwindow.cpp \
-    #options.cpp \
-    #mapplanning.cpp \
+    mainwindow.cpp \
+    options.cpp \
+    mapplanning.cpp \
     tablemodel.cpp \
-    #mapexecution.cpp \
-    #missionrecap.cpp \
-    #tutorial.cpp \
-    #popwindowmp.cpp \
+    mapexecution.cpp \
+    missionrecap.cpp \
+    tutorial.cpp \
+    popwindowmp.cpp \
     qcomboboxdelegate.cpp \
-    #videoplayer.cpp \
+    videoplayer.cpp \
     gsserver.cpp \
     gscontrolpanel.cpp \
     qcustomplot.cpp\
     networklistener.cpp \
-    #connectiondialog.cpp \
+    connectiondialog.cpp \
     messagebox.cpp \
     ActionPacket.cpp \
     InfoPacket.cpp \
     TelemetryPacket.cpp \
     Packet.cpp \
-    #digitalclock.cpp \
+    digitalclock.cpp \
     mapvalidator.cpp \
     serverqueue.cpp \
     mission.cpp \
     flightpath.cpp \
-    #maprecap.cpp \
-    #qttabtest.cpp \
+    maprecap.cpp \
+    qttabtest.cpp \
     mainmdidisplay.cpp \
     missionplanningwindow.cpp \
     dbmanager.cpp \
@@ -70,68 +68,66 @@ SOURCES += main.cpp\
     websocketclientwrapper.cpp \
     websockettransport.cpp \
     tablewidget.cpp \
-    statuswidget.cpp \
     graphwidget.cpp \
+    #statuswidget.cpp \
     timerwidget.cpp \
     missionstatuswindow.cpp
 
-HEADERS  += \
-    #mainwindow.h \
-    #options.h \
-    #mapplanning.h \
+HEADERS  += mainwindow.h \
+    options.h \
+    mapplanning.h \
     tablemodel.h \
-    #mapexecution.h \
-    #missionrecap.h \
-    #tutorial.h \
-    #popwindowmp.h \
+    mapexecution.h \
+    missionrecap.h \
+    tutorial.h \
+    popwindowmp.h \
     qcomboboxdelegate.h \
-    #videoplayer.h \
+    videoplayer.h \
     net.h \
     gscontrolpanel.h \
     gsserver.h \
     qcustomplot.h\
     networklistener.h \
-    #connectiondialog.h \
+    connectiondialog.h \
     messagebox.h \
     actionpacket.h \
     infopacket.h \
     telemetrypacket.h \
     ackpacket.h \
     packet.h \
-    #digitalclock.h \
+    digitalclock.h \
     mapvalidator.h \
     serverqueue.h \
     mission.h \
     flightpath.h \
-    #maprecap.h \
-    #qttabtest.h \
+    maprecap.h \
+    qttabtest.h \
     mainmdidisplay.h \
     missionplanningwindow.h \
     dbmanager.h \
     mapwidget.h \
     websocketclientwrapper.h \
     websockettransport.h \
-    #dialog.h \
+    dialog.h \
     tablewidget.h \
     graphwidget.h \
-    statuswidget.h \
+    #statuswidget.h \
     timerwidget.h \
     missionstatuswindow.h
 
-FORMS    += \
-    #mainwindow.ui \
-    #options.ui \
-    #mapplanning.ui \
-    #mapexecution.ui \
-    #missionrecap.ui \
-    #tutorial.ui \
-    #popwindowmp.ui \
+FORMS    += mainwindow.ui \
+    options.ui \
+    mapplanning.ui \
+    mapexecution.ui \
+    missionrecap.ui \
+    tutorial.ui \
+    popwindowmp.ui \
     gscontrolpanel.ui \
-    #connectiondialog.ui \
-    #maprecap.ui \
+    connectiondialog.ui \
+    maprecap.ui \
     qttabtest.ui \
     mainmdidisplay.ui \
-    #dialog.ui \
+    dialog.ui \
     graphwidget.ui\
     missionstatuswindow.ui
 

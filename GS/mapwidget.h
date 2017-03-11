@@ -96,6 +96,14 @@ public slots:
     void addPointToMap(double lat, double lng, int index, int pathID);
 
     /**
+     * @brief appendPointToMap
+     * @param lat
+     * @param lng
+     * @param pathID
+     */
+    void appendPointToMap(double lat, double lng, int pathID);
+
+    /**
      * @brief clearMap
      * @param pathID
      */

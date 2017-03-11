@@ -38,6 +38,11 @@ public:
     GsServer(messagebox *myMessageBox, Mission *myMission);
 
     /**
+     * GsServer constructor that makes its own messagebox.
+     */
+    GsServer( Mission * myMission ) : GsServer ( new messagebox() , myMission ) { }
+
+    /**
       Destructor for GsServer
      */
     ~GsServer();
