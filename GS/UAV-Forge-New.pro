@@ -56,13 +56,13 @@ SOURCES += main.cpp\
     InfoPacket.cpp \
     TelemetryPacket.cpp \
     Packet.cpp \
-    digitalclock.cpp \
+    #digitalclock.cpp \
     mapvalidator.cpp \
     serverqueue.cpp \
     mission.cpp \
     flightpath.cpp \
     #maprecap.cpp \
-    qttabtest.cpp \
+    #qttabtest.cpp \
     mainmdidisplay.cpp \
     missionplanningwindow.cpp \
     dbmanager.cpp \
@@ -98,20 +98,20 @@ HEADERS  += \
     telemetrypacket.h \
     ackpacket.h \
     packet.h \
-    digitalclock.h \
+    #digitalclock.h \
     mapvalidator.h \
     serverqueue.h \
     mission.h \
     flightpath.h \
     #maprecap.h \
-    qttabtest.h \
+    #qttabtest.h \
     mainmdidisplay.h \
     missionplanningwindow.h \
     dbmanager.h \
     mapwidget.h \
     websocketclientwrapper.h \
     websockettransport.h \
-    dialog.h \
+    #dialog.h \
     tablewidget.h \
     graphwidget.h \
     statuswidget.h \
