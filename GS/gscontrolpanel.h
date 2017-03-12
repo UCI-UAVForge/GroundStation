@@ -16,9 +16,10 @@ class GSControlPanel : public QDialog {
 public:
     explicit GSControlPanel(QWidget *parent = 0);
     ~GSControlPanel();
-    QString getMissionNameToSave() ;
-    QString getMissionNameToLoad() ;
-    void addMissionToLoad( QString ) ;
+    QString getMissionNameToSave();
+    QString getMissionNameToLoad();
+    void addMissionToLoad( QString );
+    void setSelectedMission(QString text);
 
 private slots:
     void on_StartMissionButton_clicked();

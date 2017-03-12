@@ -26,7 +26,22 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
     connect(&gscp, &GSControlPanel::startMissionButton_clicked, this, &MainMDIDisplay::startMissionExecutionSlot);
     connect(&gscp, &GSControlPanel::finishMissionButton_clicked, this, &MainMDIDisplay::startMissionRecapSlot);
     connect(&gscp, &GSControlPanel::exitButton_clicked, this, &MainMDIDisplay::close);
+    connect(&gscp, &GSControlPanel::saveMissionButton_clicked, this, &MainMDIDisplay::saveFlightPath);
+    connect(&gscp, &GSControlPanel::loadMissionButton_clicked, this, &MainMDIDisplay::loadFlightPath);
 
+    // Open folder from the 'Documents' directory.
+    const QString documentDir = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).constFirst();
+    this->folder = documentDir + "/UAVForge";
+    if (!QDir(this->folder).exists())
+        QDir().mkdir(this->folder);
+
+    // Load all the database files.
+    QDir dbFolder(this->folder);
+    dbFolder.setSorting(QDir::SortFlag::Name);
+    QStringList dbFiles = dbFolder.entryList({"*_fp.db"});
+    foreach (QString file, dbFiles) {
+        this->gscp.addMissionToLoad(file.remove(file.length()-6, 6));
+    }
 }
 
 MainMDIDisplay::~MainMDIDisplay() {
@@ -237,4 +252,54 @@ void MainMDIDisplay::receivePacket(Protocol::Packet* packet){
 void MainMDIDisplay::plotPosition(double lat, double lng){
     //table->appendRow(lat,lng);
     map->appendPointToPath(lat,lng,1);
+}
+
+void MainMDIDisplay::loadFlightPath() {
+
+    if (this->gscp.getMissionNameToLoad() == "")
+        return;
+
+    QString fileName = this->gscp.getMissionNameToLoad();
+    QString fullFileName = this->folder + this->kPathSeparator + fileName + "_fp";
+
+    this->myLoadedFlightPath = new FlightPath(fullFileName);
+    this->gscp.setSelectedMission(fileName);
+    this->changeState(MDIState::PLANNING);
+    this->map->addFlightPath(myLoadedFlightPath,0);
+
+    QList<Protocol::Waypoint> *list = this->myLoadedFlightPath->getOrderedWaypoints();
+    foreach (Protocol::Waypoint wp, *list) {
+        this->table->appendRow(wp.lat, wp.lon);
+    };
+
+    delete list;
+    delete this->myLoadedFlightPath;
+    this->myLoadedFlightPath = NULL;
+
+}
+
+void MainMDIDisplay::saveFlightPath() {
+    // This is for flightPath
+    if (this->gscp.getMissionNameToSave() == "")
+        return;
+
+    QString fileName = this->gscp.getMissionNameToSave();
+    QString fullFileName = this->folder + this->kPathSeparator + fileName + "_fp";
+
+    this->myLoadedFlightPath = this->table->getTableAsFlightPath();
+    this->myLoadedFlightPath->save(fullFileName);
+    this->gscp.addMissionToLoad(fileName);
+    this->gscp.setSelectedMission(fileName);
+
+    delete this->myLoadedFlightPath;
+    this->myLoadedFlightPath = NULL;
+
+
+    /* This is for mission, put it in different method after done with testing.
+    QString fileName = "Try1";
+    QString fullFileName = this->folder + this->kPathSeparator + fileName;
+
+    this->myLoadedMission = new Mission(fullFileName);
+    this->myLoadedMission->save(fullFileName);
+    */
 }

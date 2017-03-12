@@ -108,18 +108,18 @@ void DbManager::createOrLoadFlightPathTable()
         this->flightPath.push_back(data);
     }
 
-    foreach (FlightPathData data, this->flightPath)
+    for (int i = 0; i < this->flightPath.length(); ++i)
     {
-        queryStatement = "SELECT * FROM Data ";
+        queryStatement = "SELECT * FROM FlightData ";
         queryStatement += "WHERE actionNum = :actionNum ";
         queryStatement += "ORDER BY data_id ASC;";
         query.prepare(queryStatement);
-        query.bindValue(":actionNum", data.actionNum);
+        query.bindValue(":actionNum", this->flightPath.at(i).actionNum);
         query.exec();
 
         while (query.next())
         {
-            data.data.push_back((unsigned char) query.value(2).toInt());
+            this->flightPath[i].data.push_back((unsigned char) query.value(2).toInt());
         }
     }
 }
@@ -178,6 +178,7 @@ bool DbManager::open(const QString& fileName, const QString& directory)
 void DbManager::close()
 {
     this->m_db.close();
+    qDebug() << "Database: connection closed";
 }
 
 unsigned char* DbManager::toArray(QVector<unsigned char> vector)

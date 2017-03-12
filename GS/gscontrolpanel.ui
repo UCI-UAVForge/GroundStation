@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>618</width>
-    <height>191</height>
+    <width>626</width>
+    <height>225</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -110,7 +110,11 @@
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="LoadMissionDropdown"/>
+          <widget class="QComboBox" name="LoadMissionDropdown">
+           <property name="duplicatesEnabled">
+            <bool>false</bool>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>

@@ -1,5 +1,6 @@
 #include "gscontrolpanel.h"
 #include "ui_gscontrolpanel.h"
+#include "QDebug.h"
 
 /**
  * @brief Default constructor for GSControlPanel
@@ -128,7 +129,7 @@ QString GSControlPanel::getMissionNameToSave() {
  */
 QString GSControlPanel::getMissionNameToLoad() {
 
-    return this->ui->LoadMissionDropdown->itemData( this->ui->LoadMissionDropdown->currentIndex() ).toString() ;
+    return this->ui->LoadMissionDropdown->currentText();
 
 }
 
@@ -138,6 +139,20 @@ QString GSControlPanel::getMissionNameToLoad() {
  */
 void GSControlPanel::addMissionToLoad( QString newMissionToLoad ) {
 
-    this->ui->LoadMissionDropdown->insertItem( this->ui->LoadMissionDropdown->count() , newMissionToLoad );
+    if (this->ui->LoadMissionDropdown->findText(newMissionToLoad) == -1) {
+        this->ui->LoadMissionDropdown->insertItem( this->ui->LoadMissionDropdown->count() , newMissionToLoad );
+    }
 
 }
+
+/**
+ * @brief Sets the LoadMissionDropdown and SaveMission to 'text'.
+ * @param text - the currently selected mission.
+ */
+void GSControlPanel::setSelectedMission(QString text) {
+
+    this->ui->SaveMissionTextBox->setText(text);
+    this->ui->LoadMissionDropdown->setCurrentText(text);
+
+}
+

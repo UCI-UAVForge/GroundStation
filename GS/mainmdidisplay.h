@@ -79,9 +79,18 @@ private:
   void startMissionRecap();
   void endMissionRecap();
   void plotPosition(double lat, double lng);
-  
+  void saveFlightPath();
+  void loadFlightPath();
+
   QWidget * graph;
 
+  QString folder;
+  const char kPathSeparator =
+      #ifdef _WIN32
+                              '\\';
+      #else
+                              '/';
+      #endif
 };
 
 #endif // MAINMDIDISPLAY_H

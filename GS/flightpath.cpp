@@ -80,8 +80,6 @@ QList<Protocol::Waypoint>* FlightPath::getOrderedWaypoints(){
 }
 
 bool FlightPath::save(QString filename){
-
-    /// @todo any database initialization and error checking.
     DbManager db(filename);
     db.flightPathClear();
 
@@ -95,20 +93,11 @@ bool FlightPath::save(QString filename){
         ap->GetBytes(data,40);
         fpData.data = DbManager::toVector(data, 40);
 
-//        int actionNum = i;
-//        double delay = this->at(i)->second;
-//        Protocol::ActionPacket* ap = this->at(i)->first;
-//        unsigned char data[40];
-//        ap->GetBytes(data,40);
-
-        /// @todo write "actionNum", "delay", and "data" variables to the database
         db.flightPathAdd(fpData);
     }
 
-    /// @todo any remaining database functions for safe file handling if needed
     db.flightPathSaveToFile();
     db.close();
-
     return true;
 }
 

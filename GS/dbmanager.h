@@ -177,8 +177,8 @@ public:
 
 private:
     QSqlDatabase m_db;                  // database connection
-    QVector<MissionData> mission;       // the path the drone SHOULD go.
-    QVector<FlightPathData> flightPath; // the path the drone ACTUALLY went.
+    QVector<MissionData> mission;       // the path the drone ACTUALLY go.
+    QVector<FlightPathData> flightPath; // the path the drone SHOULD went.
 
     // File related variables.
     QString fileName;
