@@ -2,7 +2,8 @@
 #define MAINMDIDISPLAY_H
 
 #include <QMainWindow>
-#include "qttabtest.h"
+//#include "qttabtest.h"
+#include "gsserver.h"
 #include "missionplanningwindow.h"
 #include "ui_mainmdidisplay.h"
 #include "mapwidget.h"
@@ -10,6 +11,7 @@
 #include "mission.h"
 #include "flightpath.h"
 #include <assert.h>
+#include "graphwidget.h"
 #include "tablewidget.h"
 
 #include "gscontrolpanel.h"
@@ -79,8 +81,8 @@ private:
   void startMissionRecap();
   void endMissionRecap();
   void plotPosition(double lat, double lng);
-  
-  QWidget * graph;
+
+  GraphWidget * graph;
 
 };
 

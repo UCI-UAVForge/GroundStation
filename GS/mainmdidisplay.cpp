@@ -2,7 +2,6 @@
 #include "ui_mainmdidisplay.h"
 #include "mapwidget.h"
 #include "tablewidget.h"
-#include "graphwidget.h"
 #include "net.h"
 
 MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
@@ -19,11 +18,9 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
 
     connect( &(this->msw) , SIGNAL( updateStatusWidget() ) , this , SLOT( updateMissionStatus() ) ) ;
 
-    graph = new GraphWidget();
-    this->addWindow(graph);
     connect(&gscp, &GSControlPanel::createMissionButton_clicked, this, &MainMDIDisplay::startMissionPlanningSlot);
     connect(&gscp, &GSControlPanel::startMissionButton_clicked, this, &MainMDIDisplay::startMissionExecutionSlot);
-      
+    connect(&gscp, &GSControlPanel::finishMissionButton_clicked, this, &MainMDIDisplay::startMissionRecapSlot);
     connect(&gscp, &GSControlPanel::exitButton_clicked, this, &MainMDIDisplay::close);
 
 }
@@ -78,7 +75,7 @@ void MainMDIDisplay::addWindow(QWidget* myNewWindowWidget) {
 
     if ( myNewWindowWidget != NULL ) {
         /* Second argument - turns off the 'X' in the subwindows */
-        newWindow = ui->mdiArea->addSubWindow( myNewWindowWidget , Qt::CustomizeWindowHint | Qt::WindowMinMaxButtonsHint );
+        newWindow = ui->mdiArea->addSubWindow(myNewWindowWidget, Qt::CustomizeWindowHint | Qt::WindowMinMaxButtonsHint );
         myNewWindowWidget->show();
         ///\todo Better error checking?
         if ( newWindow != NULL ) {
@@ -130,7 +127,9 @@ void MainMDIDisplay::changeState(MDIState newState){
         case EXECUTION:
             startMissionExecution();
             break;
-        case RECAP: startMissionRecap(); break;
+        case RECAP:
+            startMissionRecap();
+            break;
         default: break;
     }
 }
@@ -185,8 +184,11 @@ void MainMDIDisplay::startMissionExecution(){
         a->first->SetAction(Protocol::ActionType::AddWaypoint);
         myServer->sendPacket(a->first);
     }
-
     myServer->startServer();
+
+    graph = new GraphWidget();
+    this->addWindow(graph);
+
     this->msw.initiateWidgets();
 }
 
@@ -210,8 +212,6 @@ void MainMDIDisplay::receivePacket(Protocol::Packet* packet){
 
     Protocol::Packet* incPack = packet;
     Protocol::PacketType type = incPack->get_type();
-
-    // Telemetry Packet
     if (type == Protocol::PacketType::Telem){
         double lat, lng;
         float alt;
@@ -219,11 +219,14 @@ void MainMDIDisplay::receivePacket(Protocol::Packet* packet){
         qDebug() << "TelemPacket Recieved" ;
         currentTelemetryPacket->GetLocation(&lat,&lng,&alt);
         plotPosition(lat,lng);
+        graph->appendTelemPacket(currentTelemetryPacket);
         this->msw.setCurrentTelemetryPacket( currentTelemetryPacket );
     }
 }
 
 void MainMDIDisplay::plotPosition(double lat, double lng){
-    //table->appendRow(lat,lng);
-    map->appendPointToPath(lat,lng,1);
+    table->appendRow(lat, lng);
+    FlightPath *fp = table->getTableAsFlightPath();
+    map->addFlightPath(fp, 0, "execution");
+    delete fp;
 }
