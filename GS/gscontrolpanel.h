@@ -2,12 +2,16 @@
 #define GSCONTROLPANEL_H
 
 #include <QDialog>
+#include "telemetrypacket.h"
+#define EMPTY_TELEMETRY_PACKET NULL
 
 namespace Ui {
-
     class GSControlPanel;
-
 }
+
+enum GSCPState {
+    MainMenuState , LoadFlightpathState , PlanningState , LoadMissionState , ExecutionState , RecapState
+};
 
 class GSControlPanel : public QDialog {
 
@@ -19,6 +23,14 @@ public:
     QString getMissionNameToSave() ;
     QString getMissionNameToLoad() ;
     void addMissionToLoad( QString ) ;
+    QString getFlightpathNameToSave() ;
+    QString getFlightpathNameToLoad() ;
+    void addFlightpathToLoad( QString ) ;
+    void setCurrentTelemetryPacket( Protocol::TelemetryPacket * ) ;
+
+private:
+    Ui::GSControlPanel *ui;
+    GSCPState CurrentState ;
 
 private slots:
     void on_StartMissionButton_clicked();
@@ -28,11 +40,14 @@ private slots:
     void on_ClearPointsButton_clicked();
     void on_ExitButton_clicked();
     void on_CreateMissionButton_clicked();
-
-private:
-    Ui::GSControlPanel *ui;
+    void on_LoadFlightpathButton_clicked();
+    void on_MainMenuButton_clicked();
+    void on_SaveFlightpathButton_clicked();
+    void on_MissionRecapButton_clicked();
+    void updateStateGSCP( ) ;
 
 signals:
+    ///\todo Are these signals redundant? Qt may already provide them. Oh, well...
     void startMissionButton_clicked();
     void finishMissionButton_clicked();
     void loadMissionButton_clicked();
@@ -40,6 +55,21 @@ signals:
     void clearPointsButton_clicked();
     void exitButton_clicked();
     void createMissionButton_clicked();
+    void loadFlightpathButton_clicked();
+    void mainMenuButton_clicked() ;
+    void saveFlightpathButton_clicked() ;
+    void missionRecapButton_clicked() ;
+    /// @brief Used to inform GSControlPanel to update its GUI when it changes state
+    void updateGSCP() ;
+
+    ///These signals are emitted once you enter their corresponding state.
+    void inMainMenuState() ;
+    void inLoadFlightpathState() ;
+    void inPlanningState() ;
+    void inLoadMissionState() ;
+    void inExecutionState() ;
+    void inRecapState() ;
+    void inUndefinedState() ;
 };
 
 #endif // GSCONTROLPANEL_H

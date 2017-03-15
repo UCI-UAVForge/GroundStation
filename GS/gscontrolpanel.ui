@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>618</width>
-    <height>191</height>
+    <width>563</width>
+    <height>374</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>500</width>
+    <height>200</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
@@ -22,6 +28,12 @@
         <layout class="QVBoxLayout" name="StartFinishMissionButtonLayout">
          <item>
           <widget class="QPushButton" name="CreateMissionButton">
+           <property name="minimumSize">
+            <size>
+             <width>82</width>
+             <height>23</height>
+            </size>
+           </property>
            <property name="text">
             <string>Create Mission</string>
            </property>
@@ -29,6 +41,12 @@
          </item>
          <item>
           <widget class="QPushButton" name="StartMissionButton">
+           <property name="minimumSize">
+            <size>
+             <width>82</width>
+             <height>23</height>
+            </size>
+           </property>
            <property name="text">
             <string>Start Mission</string>
            </property>
@@ -36,6 +54,12 @@
          </item>
          <item>
           <widget class="QPushButton" name="FinishMissionButton">
+           <property name="minimumSize">
+            <size>
+             <width>82</width>
+             <height>23</height>
+            </size>
+           </property>
            <property name="text">
             <string>Finish Mission</string>
            </property>
@@ -46,9 +70,15 @@
        <item>
         <layout class="QVBoxLayout" name="LoadMissionButtonLayout">
          <item>
-          <widget class="QPushButton" name="LoadMissionButton">
+          <widget class="QPushButton" name="LoadFlightpathButton">
+           <property name="minimumSize">
+            <size>
+             <width>82</width>
+             <height>23</height>
+            </size>
+           </property>
            <property name="text">
-            <string>Load Mission</string>
+            <string>Load Flightpath</string>
            </property>
           </widget>
          </item>
@@ -57,9 +87,41 @@
        <item>
         <layout class="QVBoxLayout" name="SaveMissionButtonLayout">
          <item>
+          <widget class="QPushButton" name="LoadMissionButton">
+           <property name="minimumSize">
+            <size>
+             <width>82</width>
+             <height>23</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Load Mission</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QPushButton" name="SaveMissionButton">
+           <property name="minimumSize">
+            <size>
+             <width>82</width>
+             <height>23</height>
+            </size>
+           </property>
            <property name="text">
             <string>Save Mission</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="MissionRecapButton">
+           <property name="minimumSize">
+            <size>
+             <width>82</width>
+             <height>23</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Mission Recap</string>
            </property>
           </widget>
          </item>
@@ -69,8 +131,31 @@
         <layout class="QVBoxLayout" name="ClearPointsButtonLayout">
          <item>
           <widget class="QPushButton" name="ClearPointsButton">
+           <property name="minimumSize">
+            <size>
+             <width>82</width>
+             <height>23</height>
+            </size>
+           </property>
            <property name="text">
-            <string>Clear Points</string>
+            <string>Clear Flightpath</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="SaveFlightpathButtonLayout">
+         <item>
+          <widget class="QPushButton" name="SaveFlightpathButton">
+           <property name="minimumSize">
+            <size>
+             <width>82</width>
+             <height>23</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Save Flightpath</string>
            </property>
           </widget>
          </item>
@@ -80,8 +165,27 @@
         <layout class="QVBoxLayout" name="ExitButtonLayout">
          <item>
           <widget class="QPushButton" name="ExitButton">
+           <property name="minimumSize">
+            <size>
+             <width>82</width>
+             <height>23</height>
+            </size>
+           </property>
            <property name="text">
             <string>Exit</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="MainMenuButton">
+           <property name="minimumSize">
+            <size>
+             <width>82</width>
+             <height>23</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Main Menu</string>
            </property>
           </widget>
          </item>
@@ -110,7 +214,14 @@
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="LoadMissionDropdown"/>
+          <widget class="QComboBox" name="LoadMissionDropdown">
+           <property name="minimumSize">
+            <size>
+             <width>212</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -118,6 +229,12 @@
         <layout class="QVBoxLayout" name="SaveMissionTextBoxLayout">
          <item>
           <widget class="QLabel" name="SaveMissionLabel">
+           <property name="minimumSize">
+            <size>
+             <width>212</width>
+             <height>52</height>
+            </size>
+           </property>
            <property name="text">
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Save Mission by Name&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
@@ -125,6 +242,12 @@
          </item>
          <item>
           <widget class="QLineEdit" name="SaveMissionTextBox">
+           <property name="minimumSize">
+            <size>
+             <width>212</width>
+             <height>20</height>
+            </size>
+           </property>
            <property name="placeholderText">
             <string>Enter name of mission here...</string>
            </property>
@@ -134,10 +257,89 @@
        </item>
       </layout>
      </item>
+     <item>
+      <layout class="QHBoxLayout" name="FlightpathChoiceLayout">
+       <item>
+        <layout class="QVBoxLayout" name="LoadFlightpathDropdownLayout">
+         <item>
+          <widget class="QLabel" name="LoadFlightpathLabel">
+           <property name="minimumSize">
+            <size>
+             <width>212</width>
+             <height>52</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>&lt;center&gt;Select Flightpath to Load&lt;/center&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="LoadFlightpathDropdown">
+           <property name="minimumSize">
+            <size>
+             <width>212</width>
+             <height>20</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="SaveFlightpathTextBoxLayout">
+         <item>
+          <widget class="QLabel" name="SaveFlightpathLabel">
+           <property name="minimumSize">
+            <size>
+             <width>212</width>
+             <height>52</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Save Flightpath by Name&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="SaveFlightPathTextBox">
+           <property name="minimumSize">
+            <size>
+             <width>212</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>Enter name of flightpath here...</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="MissionStatusWindowLayout">
+       <item>
+        <widget class="MissionStatusWindow" name="MissionStatusWindowWidget" native="true"/>
+       </item>
+      </layout>
+     </item>
     </layout>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MissionStatusWindow</class>
+   <extends>QWidget</extends>
+   <header>missionstatuswindow.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

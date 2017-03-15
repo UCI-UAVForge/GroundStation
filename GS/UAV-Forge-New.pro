@@ -62,7 +62,7 @@ SOURCES += main.cpp\
     mission.cpp \
     flightpath.cpp \
     #maprecap.cpp \
-    #qttabtest.cpp \
+    qttabtest.cpp \
     mainmdidisplay.cpp \
     missionplanningwindow.cpp \
     dbmanager.cpp \
@@ -104,7 +104,7 @@ HEADERS  += \
     mission.h \
     flightpath.h \
     #maprecap.h \
-    #qttabtest.h \
+    qttabtest.h \
     mainmdidisplay.h \
     missionplanningwindow.h \
     dbmanager.h \

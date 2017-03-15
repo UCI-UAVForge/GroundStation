@@ -8,6 +8,9 @@ GraphWidget::GraphWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::GraphWidget)
 {
+    firstEntry = 0;
+    maxEntries = 50;
+
     ui->setupUi(this);
 //    GraphWidget::makePlot();
 
@@ -61,6 +64,21 @@ GraphWidget::~GraphWidget()
     //}
 }
 
+void GraphWidget::setMaxEntries(unsigned int numberOfEntries){
+    maxEntries = numberOfEntries;
+}
+
+void GraphWidget::setViewport(unsigned int start, unsigned int end){
+    if(start > end){
+        qDebug() << "Reversed viewports are currently unsupported. Swapping 'start' and 'end'";
+        int temp = start;
+        start = end;
+        end = temp;
+    }
+    firstEntry = start;
+    maxEntries = end - start;
+}
+
 void GraphWidget::appendPoint(double x, double y, int id) {
     graphs[id]->addData(x,y);
 }
@@ -81,7 +99,6 @@ void GraphWidget::appendTelemPacket(Protocol::TelemetryPacket* packet){
         time = graphs[0]->data()->lastKey()+1;
     }
 
-    int maxEntries = 50;
     if(graphs[0]->data()->size() > maxEntries){
         for(int i = 0; i < 10; i++){
             graphs[i]->removeDataBefore(time-maxEntries);
