@@ -2,7 +2,6 @@
 #include "ui_mainmdidisplay.h"
 #include "mapwidget.h"
 #include "tablewidget.h"
-#include "graphwidget.h"
 #include "net.h"
 
 MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
@@ -18,9 +17,6 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
     addWindow(&gscp);
 
     connect( &(this->msw) , SIGNAL( updateStatusWidget() ) , this , SLOT( updateMissionStatus() ) ) ;
-
-    graph = new GraphWidget();
-    this->addWindow(graph);
 
     connect(&gscp, &GSControlPanel::createMissionButton_clicked, this, &MainMDIDisplay::startMissionPlanningSlot);
     connect(&gscp, &GSControlPanel::startMissionButton_clicked, this, &MainMDIDisplay::startMissionExecutionSlot);
@@ -79,7 +75,7 @@ void MainMDIDisplay::addWindow(QWidget* myNewWindowWidget) {
 
     if ( myNewWindowWidget != NULL ) {
         /* Second argument - turns off the 'X' in the subwindows */
-        newWindow = ui->mdiArea->addSubWindow( myNewWindowWidget , Qt::CustomizeWindowHint | Qt::WindowMinMaxButtonsHint );
+        newWindow = ui->mdiArea->addSubWindow(myNewWindowWidget, Qt::CustomizeWindowHint | Qt::WindowMinMaxButtonsHint );
         myNewWindowWidget->show();
         ///\todo Better error checking?
         if ( newWindow != NULL ) {
@@ -188,8 +184,11 @@ void MainMDIDisplay::startMissionExecution(){
         a->first->SetAction(Protocol::ActionType::AddWaypoint);
         myServer->sendPacket(a->first);
     }
-
     myServer->startServer();
+
+    graph = new GraphWidget();
+    this->addWindow(graph);
+
     this->msw.initiateWidgets();
 }
 
@@ -220,6 +219,7 @@ void MainMDIDisplay::receivePacket(Protocol::Packet* packet){
         qDebug() << "TelemPacket Recieved" ;
         currentTelemetryPacket->GetLocation(&lat,&lng,&alt);
         plotPosition(lat,lng);
+        graph->appendTelemPacket(currentTelemetryPacket);
         this->msw.setCurrentTelemetryPacket( currentTelemetryPacket );
     }
 }

@@ -19,7 +19,7 @@ GSControlPanel::GSControlPanel(QWidget *parent)
  * @brief Default destructor for GSControlPanel
  */
 GSControlPanel::~GSControlPanel() {
-    delete this->ui;
+    delete ui;
 }
 
 void GSControlPanel::on_CreateMissionButton_clicked() {
