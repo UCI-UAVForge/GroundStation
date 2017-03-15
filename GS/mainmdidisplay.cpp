@@ -17,6 +17,7 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
     connect(&gscp, &GSControlPanel::createMissionButton_clicked, this, &MainMDIDisplay::startMissionPlanningSlot);
     connect(&gscp, &GSControlPanel::startMissionButton_clicked, this, &MainMDIDisplay::startMissionExecutionSlot);
     connect(&gscp, &GSControlPanel::finishMissionButton_clicked, this, &MainMDIDisplay::startMissionRecapSlot);
+    connect(&gscp, &GSControlPanel::mainMenuButton_clicked , this , &MainMDIDisplay::mainMenuSlot );
     connect(&gscp, &GSControlPanel::exitButton_clicked, this, &MainMDIDisplay::close);
 
 }
@@ -96,6 +97,23 @@ void MainMDIDisplay::addWindow(QWidget* myNewWindowWidget, QString windowTitle) 
 }
 
 void MainMDIDisplay::changeState(MDIState newState){
+    //GUI element memory management
+    if ( !( newState == PLANNING || newState == EXECUTION || newState == RECAP ) ) {
+        //Delete QtTabTest, Map, Table, and Graph if not in Planning or execution or recap
+        qtt.deleteTabWidget(map);
+        qtt.deleteTabWidget(table);
+        qtt.deleteTabWidget(graph);
+        QList <QMdiSubWindow*> myList = this->ui->mdiArea->subWindowList() ;
+        for ( int i = 0 ; i<myList.length() ; i++ ) {
+            if ( &qtt == myList.at(i)->widget() ) {
+                myList.at(i)->setVisible(false);
+            }
+        }
+        //map->deleteLater() ;
+        //delete table ;
+        //delete graph ;
+    }
+
     switch(myState){
         case NONE:
             break;
@@ -128,6 +146,7 @@ void MainMDIDisplay::changeState(MDIState newState){
             break;
         default: break;
     }
+
 }
 
 void MainMDIDisplay::startMissionPlanningSlot() {
@@ -140,6 +159,10 @@ void MainMDIDisplay::startMissionExecutionSlot() {
 
 void MainMDIDisplay::startMissionRecapSlot() {
     changeState(MDIState::RECAP);
+}
+
+void MainMDIDisplay::mainMenuSlot() {
+    changeState(MDIState::NONE);
 }
 
 void MainMDIDisplay::startMissionPlanning(){

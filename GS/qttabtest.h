@@ -11,11 +11,6 @@
 #include <QUrl>
 
 #include "options.h"
-#include "tutorial.h"
-#include "mapplanning.h"
-#include "mapexecution.h"
-#include "missionrecap.h"
-#include "maprecap.h"
 #include "connectiondialog.h"
 
 #include "ui_qttabtest.h"
@@ -40,11 +35,12 @@ public:
 
     void deleteTabIndex( int );
 
+    void deleteTabWidget( QWidget * ) ;
+
 private:
 
     Ui::QtTabTest *ui;
-
-    bool isFirstTabEmpty;
+    bool isFirstTabEmpty ;
 
 };
 

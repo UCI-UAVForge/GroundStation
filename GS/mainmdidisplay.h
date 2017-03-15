@@ -47,6 +47,8 @@ private slots:
   void startMissionExecutionSlot();
   void startMissionRecapSlot();
 
+  void mainMenuSlot() ;
+
   void receivePacket(Protocol::Packet* packet);
 
 private:

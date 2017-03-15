@@ -7,9 +7,7 @@
  * Constructor for the main window
  */
 QtTabTest::QtTabTest(QWidget *parent) : QMainWindow( parent ) , ui( new Ui::QtTabTest ) , isFirstTabEmpty( true ) {
-
     ui->setupUi( this );
-
 }
 
 /**
@@ -42,13 +40,9 @@ void QtTabTest::addNewTab( QWidget * myNewTabWidget , QString label ) {
     this->ui->tabWidget->addTab( myNewTabWidget , label );
 
     if ( isFirstTabEmpty == true ) {
-
-        /* If we're still stuck with the default empty first tab in tabWidget, delete it. */
-
-        this->ui->tabWidget->removeTab( 0 );
-
+        /* If we're still stuck with the default empty first tab in tabWidget, remove it. */
+        this->ui->tabWidget->removeTab(0);
         isFirstTabEmpty = false;
-
     }
 
     else {
@@ -60,7 +54,9 @@ void QtTabTest::addNewTab( QWidget * myNewTabWidget , QString label ) {
 }
 
 void QtTabTest::deleteTabIndex( int index ) {
-
     this->ui->tabWidget->removeTab( index );
+}
 
+void QtTabTest::deleteTabWidget( QWidget * qw ) {
+    this->ui->tabWidget->removeTab( this->ui->tabWidget->indexOf(qw) );
 }
