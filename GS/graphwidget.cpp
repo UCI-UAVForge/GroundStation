@@ -104,6 +104,7 @@ void GraphWidget::appendTelemPacket(Protocol::TelemetryPacket* packet){
 void GraphWidget::drawMission(Mission* mission){
     myMission = mission;
     for(int i = 0; i < 10; i++){
+        makePlot(i);
         processClickEvent(i);
     }
 }
@@ -114,7 +115,7 @@ void GraphWidget::makePlot(int index) {
     }
 
     QTextStream out(stdout);
-    graphs[index] = ui->customPlot->addGraph();
+    //graphs[index] = ui->customPlot->addGraph();
     QCPGraph *graph = graphs[index];
     // Create mission
 
