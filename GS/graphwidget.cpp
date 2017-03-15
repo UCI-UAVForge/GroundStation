@@ -10,6 +10,7 @@ GraphWidget::GraphWidget(QWidget *parent) :
 {
     ui->setupUi(this);
     //GraphWidget::makePlot();
+    this->setGeometry(0,0,400,400);
 }
 
 GraphWidget::~GraphWidget()
@@ -28,6 +29,10 @@ void GraphWidget::makePlot(int id) {
 
 
     QVector<double> * vals = mission->getValuesForID(1);
+    QVector<double> * vals2 = mission->getValuesForID(1);
+
+    //vals->
+
 //    QVector<double> * val1 = mission->getValuesForID(6);
 
 //    values.at(0)->append(heading);

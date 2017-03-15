@@ -83,7 +83,7 @@ void MainMDIDisplay::addWindow(QWidget* myNewWindowWidget) {
         myNewWindowWidget->show();
         ///\todo Better error checking?
         if ( newWindow != NULL ) {
-            newWindow->setMinimumSize( myNewWindowWidget->width() , myNewWindowWidget->height() );
+            newWindow->setMinimumSize( myNewWindowWidget->geometry().width() , myNewWindowWidget->geometry().height());
             newWindow->adjustSize() ;
         } else {
             qDebug() << "Subwindow could not be created to hold widget." ;
