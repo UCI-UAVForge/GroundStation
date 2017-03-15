@@ -8,6 +8,10 @@ GraphWidget::GraphWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::GraphWidget)
 {
+    // Set up graphName
+    QString graphName[10] = {"Heading", "Latitude", "Longtitude", "Altitude", "Pitch", "Roll",
+                "Yaw", "Xvel", "Yvel", "Zvel"};
+
     ui->setupUi(this);
 //    GraphWidget::makePlot();
 
@@ -32,7 +36,7 @@ GraphWidget::GraphWidget(QWidget *parent) :
 
         /// \todo Make the names mean something by supporting the following code line
         /// \code graphs[i]->setName(names[i]);
-        graphs[i]->setName("NAME");
+        graphs[i]->setName(graphName[i]);
 
         //graphs[i]->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 5));
         graphs[i]->setVisible(false);
@@ -64,6 +68,7 @@ GraphWidget::~GraphWidget()
 void GraphWidget::appendPoint(double x, double y, int id) {
     graphs[id]->addData(x,y);
 }
+
 
 void GraphWidget::appendTelemPacket(Protocol::TelemetryPacket* packet){
     float heading;
@@ -106,7 +111,9 @@ void GraphWidget::drawMission(Mission* mission){
     myMission = mission;
     for(int i = 0; i < 10; i++){
         processClickEvent(i);
+        makePlot(i);
     }
+
 }
 
 void GraphWidget::makePlot(int index) {
