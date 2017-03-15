@@ -13,11 +13,7 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
 
     ///\todo Just put these in the UI file and promote QWidgets
 
-    addWindow(&msw);
     addWindow(&gscp);
-
-    connect( &(this->msw) , SIGNAL( updateStatusWidget() ) , this , SLOT( updateMissionStatus() ) ) ;
-
     connect(&gscp, &GSControlPanel::createMissionButton_clicked, this, &MainMDIDisplay::startMissionPlanningSlot);
     connect(&gscp, &GSControlPanel::startMissionButton_clicked, this, &MainMDIDisplay::startMissionExecutionSlot);
     connect(&gscp, &GSControlPanel::finishMissionButton_clicked, this, &MainMDIDisplay::startMissionRecapSlot);
@@ -149,8 +145,11 @@ void MainMDIDisplay::startMissionRecapSlot() {
 void MainMDIDisplay::startMissionPlanning(){
     map = new MapWidget();
     table = new TableWidget();
-    addWindow(map);
-    addWindow(table);
+    qtt.addNewTab(map,"Map");
+    qtt.addNewTab(table,"Table");
+    addWindow(&qtt);
+    //addWindow(map);
+    //addWindow(table);
     this->connect(map, &MapWidget::pointAdded, table, &TableWidget::appendRow);
     this->connect(table, &TableWidget::flightPathSent, map, &MapWidget::addFlightPath);
     this->connect(map, &MapWidget::tableCleared, table, &TableWidget::clearTable);
@@ -170,8 +169,10 @@ void MainMDIDisplay::endMissionPlanning(){
 
 void MainMDIDisplay::startMissionExecution(){
     /// \todo add handling for starting MissionExection from any other state
+
     table->clearTable();
     //changeState(EXECUTION);
+
     setupMapPaths();
     /// \todo add server startup code here
 
@@ -187,17 +188,13 @@ void MainMDIDisplay::startMissionExecution(){
     myServer->startServer();
 
     graph = new GraphWidget();
-    this->addWindow(graph);
+    qtt.addNewTab(graph,"Graph");
+    //this->addWindow(graph);
 
-    this->msw.initiateWidgets();
 }
 
 void MainMDIDisplay::endMissionExecution(){
-
-    this->msw.stopWidgets() ;
-
     ///\todo
-
 }
 
 void MainMDIDisplay::startMissionRecap(){
@@ -220,7 +217,7 @@ void MainMDIDisplay::receivePacket(Protocol::Packet* packet){
         currentTelemetryPacket->GetLocation(&lat,&lng,&alt);
         plotPosition(lat,lng);
         graph->appendTelemPacket(currentTelemetryPacket);
-        this->msw.setCurrentTelemetryPacket( currentTelemetryPacket );
+        this->gscp.setCurrentTelemetryPacket( currentTelemetryPacket );
     }
 }
 

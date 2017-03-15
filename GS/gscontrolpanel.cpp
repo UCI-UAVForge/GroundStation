@@ -8,6 +8,10 @@
 GSControlPanel::GSControlPanel(QWidget *parent):QDialog(parent),ui(new Ui::GSControlPanel) {
     // Set up the GUI
     this->ui->setupUi(this);
+    // Embed MissionStatusWindow into the GSControlPanel window.
+    this->ui->MissionStatusWindowWidget->setWindowFlags(Qt::Widget);
+    this->setCurrentTelemetryPacket(EMPTY_TELEMETRY_PACKET);
+    // Whenever GSControlPanel's state is updated, update the GUI accordingly
     connect( this , SIGNAL( updateGSCP() ) , this , SLOT( updateStateGSCP() ) ) ;
     // Initialize current state
     emit updateGSCP() ;
@@ -20,11 +24,15 @@ GSControlPanel::~GSControlPanel() {
     delete ui;
 }
 
+void GSControlPanel::setCurrentTelemetryPacket(Protocol::TelemetryPacket * tp) {
+    this->ui->MissionStatusWindowWidget->setCurrentTelemetryPacket(tp);
+}
+
 /**
  * @brief Transitions from Main Menu to Planning
  */
 void GSControlPanel::on_CreateMissionButton_clicked() {
-    this->CurrentState = Planning ;
+    this->CurrentState = PlanningState ;
     emit updateGSCP() ;
     emit createMissionButton_clicked();
 }
@@ -35,7 +43,7 @@ void GSControlPanel::on_CreateMissionButton_clicked() {
  */
 void GSControlPanel::on_StartMissionButton_clicked() {
     ///\todo Have StartMissionButton be disabled until you have at least one point in your flightpath
-    this->CurrentState = Execution ;
+    this->CurrentState = ExecutionState ;
     emit updateGSCP() ;
     emit startMissionButton_clicked();
 }
@@ -45,7 +53,7 @@ void GSControlPanel::on_StartMissionButton_clicked() {
  * and shows GUI elements related to mission planning.
  */
 void GSControlPanel::on_FinishMissionButton_clicked() {
-    this->CurrentState = Recap ;
+    this->CurrentState = RecapState ;
     emit updateGSCP() ;
     emit finishMissionButton_clicked();
 }
@@ -54,7 +62,7 @@ void GSControlPanel::on_FinishMissionButton_clicked() {
  * @brief GSControlPanel::on_LoadMissionButton_clicked
  */
 void GSControlPanel::on_LoadMissionButton_clicked() {
-    this->CurrentState = LoadMission ;
+    this->CurrentState = LoadMissionState ;
     emit updateGSCP() ;
     emit loadMissionButton_clicked();
 }
@@ -144,11 +152,11 @@ void GSControlPanel::addFlightpathToLoad( QString newFlightpathToLoad ) {
  * @brief GSControlPanel::on_LoadFlightpathButton_clicked
  */
 void GSControlPanel::on_LoadFlightpathButton_clicked() {
-    if ( this->CurrentState == MainMenu ) {
-        this->CurrentState = LoadFlightpath ;
+    if ( this->CurrentState == MainMenuState ) {
+        this->CurrentState = LoadFlightpathState ;
     }
-    else if ( this->CurrentState == LoadFlightpath ) {
-        this->CurrentState = Planning ;
+    else if ( this->CurrentState == LoadFlightpathState ) {
+        this->CurrentState = PlanningState ;
     }
     else {
         // Do nothing.
@@ -161,7 +169,7 @@ void GSControlPanel::on_LoadFlightpathButton_clicked() {
  * @brief GSControlPanel::on_MainMenuButton_clicked
  */
 void GSControlPanel::on_MainMenuButton_clicked() {
-    this->CurrentState = MainMenu ;
+    this->CurrentState = MainMenuState ;
     this->updateGSCP() ;
     emit mainMenuButton_clicked() ;
 }
@@ -178,7 +186,7 @@ void GSControlPanel::on_SaveFlightpathButton_clicked() {
  * @brief GSControlPanel::on_MissionRecapButton_clicked
  */
 void GSControlPanel::on_MissionRecapButton_clicked() {
-    this->CurrentState = Recap ;
+    this->CurrentState = RecapState ;
     this->updateGSCP() ;
     emit missionRecapButton_clicked() ;
 }
@@ -210,7 +218,7 @@ void GSControlPanel::updateStateGSCP() {
     /// - SaveFlightpathTextBox
 
     switch ( this->CurrentState ) {
-        case MainMenu:
+        case MainMenuState:
             this->setWindowTitle( "Main Menu" );
             ui->CreateMissionButton->show() ;
             ui->StartMissionButton->hide() ;
@@ -231,9 +239,11 @@ void GSControlPanel::updateStateGSCP() {
             ui->LoadFlightpathDropdown->hide() ;
             ui->SaveFlightpathLabel->hide() ;
             ui->SaveFlightPathTextBox->hide() ;
+            ui->MissionStatusWindowWidget->hide();
+            ui->MissionStatusWindowWidget->stopWidgets();
             emit inMainMenuState() ;
             break ;
-        case LoadFlightpath:
+        case LoadFlightpathState:
             this->setWindowTitle( "Load Flightpath" );
             ui->CreateMissionButton->hide() ;
             ui->StartMissionButton->hide() ;
@@ -254,9 +264,11 @@ void GSControlPanel::updateStateGSCP() {
             ui->LoadFlightpathDropdown->show() ;
             ui->SaveFlightpathLabel->hide() ;
             ui->SaveFlightPathTextBox->hide() ;
+            ui->MissionStatusWindowWidget->hide();
+            ui->MissionStatusWindowWidget->stopWidgets();
             emit inLoadFlightpathState() ;
             break ;
-        case Planning:
+        case PlanningState:
             this->setWindowTitle( "Planning" );
             ui->CreateMissionButton->hide() ;
             ui->StartMissionButton->show() ;
@@ -277,9 +289,11 @@ void GSControlPanel::updateStateGSCP() {
             ui->LoadFlightpathDropdown->hide() ;
             ui->SaveFlightpathLabel->show() ;
             ui->SaveFlightPathTextBox->show() ;
+            ui->MissionStatusWindowWidget->hide();
+            ui->MissionStatusWindowWidget->stopWidgets();
             emit inPlanningState() ;
             break ;
-        case LoadMission:
+        case LoadMissionState:
             this->setWindowTitle( "Load Mission" );
             ui->CreateMissionButton->hide() ;
             ui->StartMissionButton->hide() ;
@@ -300,9 +314,11 @@ void GSControlPanel::updateStateGSCP() {
             ui->LoadFlightpathDropdown->hide() ;
             ui->SaveFlightpathLabel->hide() ;
             ui->SaveFlightPathTextBox->hide() ;
+            ui->MissionStatusWindowWidget->hide();
+            ui->MissionStatusWindowWidget->stopWidgets();
             emit inLoadMissionState() ;
             break ;
-        case Execution:
+        case ExecutionState:
             this->setWindowTitle( "Execution" );
             ui->CreateMissionButton->hide() ;
             ui->StartMissionButton->hide() ;
@@ -323,9 +339,11 @@ void GSControlPanel::updateStateGSCP() {
             ui->LoadFlightpathDropdown->hide() ;
             ui->SaveFlightpathLabel->hide() ;
             ui->SaveFlightPathTextBox->hide() ;
+            ui->MissionStatusWindowWidget->initiateWidgets();
+            ui->MissionStatusWindowWidget->show();
             emit inExecutionState() ;
             break ;
-        case Recap:
+        case RecapState:
             this->setWindowTitle( "Recap" );
             ui->CreateMissionButton->hide() ;
             ui->StartMissionButton->hide() ;
@@ -346,9 +364,11 @@ void GSControlPanel::updateStateGSCP() {
             ui->LoadFlightpathDropdown->hide() ;
             ui->SaveFlightpathLabel->hide() ;
             ui->SaveFlightPathTextBox->hide() ;
+            ui->MissionStatusWindowWidget->hide();
+            ui->MissionStatusWindowWidget->stopWidgets();
             emit inRecapState() ;
             break ;
-        default:
+        default: //Undefined state
             this->setWindowTitle( "" );
             ui->CreateMissionButton->hide() ;
             ui->StartMissionButton->hide() ;
@@ -369,6 +389,8 @@ void GSControlPanel::updateStateGSCP() {
             ui->LoadFlightpathDropdown->hide() ;
             ui->SaveFlightpathLabel->hide() ;
             ui->SaveFlightPathTextBox->hide() ;
+            ui->MissionStatusWindowWidget->hide();
+            ui->MissionStatusWindowWidget->stopWidgets();
             emit inUndefinedState() ;
             break ;
     }

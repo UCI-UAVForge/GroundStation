@@ -2,15 +2,15 @@
 #define GSCONTROLPANEL_H
 
 #include <QDialog>
+#include "telemetrypacket.h"
+#define EMPTY_TELEMETRY_PACKET NULL
 
 namespace Ui {
-
     class GSControlPanel;
-
 }
 
 enum GSCPState {
-    MainMenu , LoadFlightpath , Planning , LoadMission , Execution , Recap
+    MainMenuState , LoadFlightpathState , PlanningState , LoadMissionState , ExecutionState , RecapState
 };
 
 class GSControlPanel : public QDialog {
@@ -26,6 +26,11 @@ public:
     QString getFlightpathNameToSave() ;
     QString getFlightpathNameToLoad() ;
     void addFlightpathToLoad( QString ) ;
+    void setCurrentTelemetryPacket( Protocol::TelemetryPacket * ) ;
+
+private:
+    Ui::GSControlPanel *ui;
+    GSCPState CurrentState ;
 
 private slots:
     void on_StartMissionButton_clicked();
@@ -41,10 +46,6 @@ private slots:
     void on_MissionRecapButton_clicked();
     void updateStateGSCP( ) ;
 
-private:
-    Ui::GSControlPanel *ui;
-    GSCPState CurrentState ;
-
 signals:
     ///\todo Are these signals redundant? Qt may already provide them. Oh, well...
     void startMissionButton_clicked();
@@ -58,6 +59,7 @@ signals:
     void mainMenuButton_clicked() ;
     void saveFlightpathButton_clicked() ;
     void missionRecapButton_clicked() ;
+    /// @brief Used to inform GSControlPanel to update its GUI when it changes state
     void updateGSCP() ;
 
     ///These signals are emitted once you enter their corresponding state.

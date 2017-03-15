@@ -13,6 +13,7 @@
 #include <assert.h>
 #include "graphwidget.h"
 #include "tablewidget.h"
+#include "qttabtest.h"
 
 #include "gscontrolpanel.h"
 
@@ -65,14 +66,12 @@ private:
   QWidget* mapExecutionStatusUIWidget;
   QVBoxLayout* MapExecutionStatusVBoxLayout;
 
-  /**
-     * @brief MissionStatusWindow holds StatusWidget and TimerWidget.
-     */
-  MissionStatusWindow msw ;
-
   GSControlPanel gscp ;
 
   TableWidget tw ;
+
+  //Temporary tabbed display widget
+  QtTabTest qtt ;
 
   void startMissionPlanning();
   void endMissionPlanning();

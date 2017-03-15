@@ -10,6 +10,9 @@
 
 #include "mission.h"
 
+#include "qttabtest.h"
+#include "gscontrolpanel.h"
+
 int main(int argc, char *argv[]) {
 
     static const int splash_width = 600;
@@ -17,7 +20,6 @@ int main(int argc, char *argv[]) {
     static const QString filename(":/res/images/UAV Forge Logo 2015.svg");
 
     QApplication a(argc, argv);
-
     //Construct and load the SVG image
     QSvgRenderer svg(filename);
     //Calculate the scaled size within a bounded size
@@ -38,7 +40,6 @@ int main(int argc, char *argv[]) {
 
     //Hide the splash screen.
     splash.finish(&x);
-
     return a.exec();
 
 }
