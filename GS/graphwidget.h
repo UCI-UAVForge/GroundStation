@@ -22,6 +22,8 @@ public slots:
     void appendPoint(double x, double y, int id);
     void drawMission(Mission* mission);
     void appendTelemPacket(Protocol::TelemetryPacket* packet);
+    void setMaxEntries(unsigned int numberOfEntries);
+    void setViewport(unsigned int start, unsigned int end);
 
 private slots:
     void on_btn_heading_clicked();
@@ -58,6 +60,9 @@ private:
 
     void makePlot(int index);
     void processClickEvent(int index);
+
+    int firstEntry;
+    int maxEntries;
 
     QCheckBox* checkboxes[10];
     QCPGraph* graphs[10];

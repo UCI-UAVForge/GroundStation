@@ -2,21 +2,22 @@
 #define QTTABTEST_H
 
 #include <QMainWindow>
-#include "options.h"
+//#include "options.h"
 #include <QPropertyAnimation>
 #include <QShortcut>
 #include <QPixmap>
 #include <QDebug>
 #include <iostream>
 #include <QUrl>
+#include <QMdiArea>
 
-#include "options.h"
-#include "tutorial.h"
-#include "mapplanning.h"
-#include "mapexecution.h"
-#include "missionrecap.h"
-#include "maprecap.h"
-#include "connectiondialog.h"
+//#include "options.h"
+//#include "tutorial.h"
+//#include "mapplanning.h"
+//#include "mapexecution.h"
+//#include "missionrecap.h"
+//#include "maprecap.h"
+//#include "connectiondialog.h"
 
 #include "ui_qttabtest.h"
 
@@ -40,6 +41,7 @@ public:
 
     void deleteTabIndex( int );
 
+    void deleteTabWidget(QWidget* qw);
 private:
 
     Ui::QtTabTest *ui;

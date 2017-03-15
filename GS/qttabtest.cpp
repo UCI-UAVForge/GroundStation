@@ -64,3 +64,7 @@ void QtTabTest::deleteTabIndex( int index ) {
     this->ui->tabWidget->removeTab( index );
 
 }
+
+void QtTabTest::deleteTabWidget( QWidget * qw ) {
+    this->ui->tabWidget->removeTab( this->ui->tabWidget->indexOf(qw) );
+}
