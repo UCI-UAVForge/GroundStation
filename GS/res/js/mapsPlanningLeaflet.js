@@ -174,8 +174,6 @@ function disableEditing(){
     paths.addLayer(activePath).addTo(map);
 }
 
-
-
 //function addSelectedPath(lat, lng) {
 //    flightPlanLine = L.polyline(flightPlan, {opacity:0.6});
 //    drawnItems.addLayer(flightPlanLine).addTo(map);
