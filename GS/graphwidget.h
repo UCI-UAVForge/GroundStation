@@ -2,9 +2,8 @@
 #define GRAPHWIDGET_H
 
 #include <QWidget>
-
-#include <qcustomplot.h>
-
+#include <QVector>
+#include "qcustomplot.h"
 #include "mission.h"
 
 namespace Ui {
@@ -18,6 +17,11 @@ class GraphWidget : public QWidget
 public:
     explicit GraphWidget(QWidget *parent = 0);
     ~GraphWidget();
+
+public slots:
+    void appendPoint(double x, double y, int id);
+    void drawMission(Mission* mission);
+    void appendTelemPacket(Protocol::TelemetryPacket* packet);
 
 private slots:
     void on_btn_heading_clicked();
@@ -43,10 +47,20 @@ private slots:
 private:
     Ui::GraphWidget *ui;
 
-    Mission* getNewMission();
+    /**
+     * @brief data A 2d vector of the form data[id][index]. id specifies the graph that
+     * the datapoint belongs to. index specifies the index of the datapoint.
+     */
+    QVector<QVector<double>> data;
 
-    QCPGraph* makePlot(int index);
-    void processClickEvent(QCheckBox* checkbox, QCPGraph** graph, int index);
+    Mission* getNewMission();
+    Mission *myMission;
+
+    void makePlot(int index);
+    void processClickEvent(int index);
+
+    QCheckBox* checkboxes[10];
+    QCPGraph* graphs[10];
 
     QCPGraph* graph_heading;
     QCPGraph* graph_lat;
@@ -58,6 +72,7 @@ private:
     QCPGraph* graph_xvel;
     QCPGraph* graph_yvel;
     QCPGraph* graph_zvel;
+    void updateGraph();
 };
 
 #endif // GRAPHWIDGET_H

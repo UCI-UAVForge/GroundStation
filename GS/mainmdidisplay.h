@@ -2,7 +2,8 @@
 #define MAINMDIDISPLAY_H
 
 #include <QMainWindow>
-#include "qttabtest.h"
+//#include "qttabtest.h"
+#include "gsserver.h"
 #include "missionplanningwindow.h"
 #include "ui_mainmdidisplay.h"
 #include "mapwidget.h"
@@ -10,8 +11,12 @@
 #include "mission.h"
 #include "flightpath.h"
 #include <assert.h>
+#include "graphwidget.h"
+#include "tablewidget.h"
 
 #include "gscontrolpanel.h"
+
+#define EMPTY_TELEMETRY_PACKET NULL
 
 namespace Ui {
   class MainMDIDisplay;
@@ -41,8 +46,8 @@ private slots:
   void startMissionExecutionSlot();
   void startMissionRecapSlot();
 
-
   void receivePacket(Protocol::Packet* packet);
+
 private:
   Ui::MainMDIDisplay *ui;
 
@@ -53,11 +58,7 @@ private:
   Mission *myLoadedMission;
 
   GsServer* myServer;
-  messagebox* myMessageBox;
   //end Jordan's vars
-
-
-
 
   MapWidget* map;
   TableWidget* table;
@@ -69,12 +70,9 @@ private:
      */
   MissionStatusWindow msw ;
 
-  /**
-     * @brief Network log
-     */
-  messagebox mb ;
-
   GSControlPanel gscp ;
+
+  TableWidget tw ;
 
   void startMissionPlanning();
   void endMissionPlanning();
@@ -84,7 +82,7 @@ private:
   void endMissionRecap();
   void plotPosition(double lat, double lng);
   
-  QWidget * graph;
+  GraphWidget * graph;
 
 };
 

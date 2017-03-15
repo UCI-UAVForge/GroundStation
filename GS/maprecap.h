@@ -17,7 +17,7 @@
 //#include "mapexecution.h"
 #include "messagebox.h"
 
-#include "ui_maprecap.h"
+//#include "ui_maprecap.h"
 #include "mission.h"
 
 namespace Ui {
