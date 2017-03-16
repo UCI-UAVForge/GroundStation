@@ -25,6 +25,7 @@ public slots:
     void setMaxEntries(unsigned int numberOfEntries);
     void setViewport(unsigned int start, unsigned int end);
 
+
 private slots:
     void on_btn_heading_clicked();
 
@@ -78,6 +79,7 @@ private:
     QCPGraph* graph_yvel;
     QCPGraph* graph_zvel;
     void updateGraph();
+//    QString graphName[10];
 };
 
 #endif // GRAPHWIDGET_H
