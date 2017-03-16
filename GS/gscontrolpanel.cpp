@@ -1,6 +1,8 @@
 #include "gscontrolpanel.h"
 #include "ui_gscontrolpanel.h"
 
+GSCPState GSControlPanel::persistantState = MainMenuState;
+
 /**
  * @brief Default constructor for GSControlPanel
  * @param parent
@@ -14,7 +16,10 @@ GSControlPanel::GSControlPanel(QWidget *parent):QDialog(parent),ui(new Ui::GSCon
     // Whenever GSControlPanel's state is updated, update the GUI accordingly
     connect( this , SIGNAL( updateGSCP() ) , this , SLOT( updateStateGSCP() ) ) ;
     // Initialize current state
-    emit updateGSCP() ;
+    //static GSCPState persistantState = MainMenuState;
+
+    CurrentState = GSControlPanel::persistantState;
+    emit updateGSCP();
 }
 
 /**
@@ -216,6 +221,8 @@ void GSControlPanel::updateStateGSCP() {
     /// - LoadFlightpathDropdown
     /// - SaveFlightpathLabel
     /// - SaveFlightpathTextBox
+
+    GSControlPanel::persistantState = CurrentState;
 
     switch ( this->CurrentState ) {
         case MainMenuState:
