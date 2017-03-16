@@ -52,8 +52,6 @@ private slots:
   void startMissionRecapSlot();
   void rtnToMainMenu();
 
-  void mainMenuSlot() ;
-
   void receivePacket(Protocol::Packet* packet);
   void showControlPanel();
 private:

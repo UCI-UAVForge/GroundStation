@@ -150,23 +150,6 @@ void MainMDIDisplay::removeWindow(QWidget *targetWidget){
 }
 
 void MainMDIDisplay::changeState(MDIState newState){
-    //GUI element memory management
-    if ( !( newState == PLANNING || newState == EXECUTION || newState == RECAP ) ) {
-        //Delete QtTabTest, Map, Table, and Graph if not in Planning or execution or recap
-        qtt.deleteTabWidget(map);
-        qtt.deleteTabWidget(table);
-        qtt.deleteTabWidget(graph);
-        QList <QMdiSubWindow*> myList = this->ui->mdiArea->subWindowList() ;
-        for ( int i = 0 ; i<myList.length() ; i++ ) {
-            if ( &qtt == myList.at(i)->widget() ) {
-                myList.at(i)->setVisible(false);
-            }
-        }
-        //map->deleteLater() ;
-        //delete table ;
-        //delete graph ;
-    }
-
     switch(myState){
         case NONE:
             break;
