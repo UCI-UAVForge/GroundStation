@@ -12,8 +12,7 @@ GraphWidget::GraphWidget(QWidget *parent) :
     maxEntries = 50;
 
     ui->setupUi(this);
-//    GraphWidget::makePlot();
-
+    this->setGeometry(0,0,400,400);
     checkboxes[0] = ui->btn_heading;
     checkboxes[1] = ui->btn_lat;
     checkboxes[2] = ui->btn_lon;
@@ -122,6 +121,7 @@ void GraphWidget::appendTelemPacket(Protocol::TelemetryPacket* packet){
 void GraphWidget::drawMission(Mission* mission){
     myMission = mission;
     for(int i = 0; i < 10; i++){
+        makePlot(i);
         processClickEvent(i);
     }
 }
@@ -132,7 +132,7 @@ void GraphWidget::makePlot(int index) {
     }
 
     QTextStream out(stdout);
-    graphs[index] = ui->customPlot->addGraph();
+    //graphs[index] = ui->customPlot->addGraph();
     QCPGraph *graph = graphs[index];
     // Create mission
 

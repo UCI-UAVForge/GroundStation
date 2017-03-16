@@ -96,8 +96,13 @@ void MainMDIDisplay::addWindow(QWidget* myNewWindowWidget) {
         myNewWindowWidget->show();
         ///\todo Better error checking?
         if ( newWindow != NULL ) {
+//<<<<<<< HEAD
+//            newWindow->setMinimumSize( myNewWindowWidget->geometry().width() , myNewWindowWidget->geometry().height());
+//           newWindow->adjustSize() ;
+//=======
             newWindow->setMinimumSize( myNewWindowWidget->width() , myNewWindowWidget->height() );
             newWindow->adjustSize();
+//>>>>>>> UCI-UAVForge/master
         } else {
             qDebug() << "Subwindow could not be created to hold widget." ;
         }
