@@ -182,6 +182,7 @@ void MainMDIDisplay::changeState(MDIState newState){
             break;
         default: break;
     }
+
 }
 
 void MainMDIDisplay::startMissionPlanningSlot() {
