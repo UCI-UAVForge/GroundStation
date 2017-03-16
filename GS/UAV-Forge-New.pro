@@ -118,7 +118,7 @@ HEADERS  += tablemodel.h \
     #maprecap.h \
 
 FORMS    += gscontrolpanel.ui \
-    #qttabtest.ui \
+    qttabtest.ui \
     mainmdidisplay.ui \
     graphwidget.ui\
     missionstatuswindow.ui #\

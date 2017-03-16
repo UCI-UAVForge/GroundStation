@@ -72,3 +72,12 @@ FlightPath* TableWidget::getTableAsFlightPath(){
 
     return newFP;
 }
+
+void TableWidget::setEditable(bool editable) {
+    this->editable = editable;
+    this->setEnabled(editable);
+}
+
+bool TableWidget::isEditable(){
+    return editable;
+}

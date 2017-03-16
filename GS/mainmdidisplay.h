@@ -53,6 +53,7 @@ private slots:
   void rtnToMainMenu();
 
   void receivePacket(Protocol::Packet* packet);
+  void showControlPanel();
 private:
   Ui::MainMDIDisplay *ui;
 
@@ -70,9 +71,9 @@ private:
   QWidget* mapExecutionStatusUIWidget;
   QVBoxLayout* MapExecutionStatusVBoxLayout;
 
-  GSControlPanel gscp ;
+  GSControlPanel* gscp ;
 
-  TableWidget tw ;
+  //TableWidget tw ;
 
   //Temporary tabbed display widget
   QtTabTest* qtt ;
