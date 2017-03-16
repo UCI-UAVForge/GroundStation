@@ -8,10 +8,19 @@ GraphWidget::GraphWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::GraphWidget)
 {
-    firstEntry = 0;
-    maxEntries = 50;
+//<<<<<<< master
+    // Set up graphName
+    QString graphName[10] = {"Heading", "Latitude", "Longtitude", "Altitude", "Pitch", "Roll",
+                "Yaw", "Xvel", "Yvel", "Zvel"};
 
     ui->setupUi(this);
+//    GraphWidget::makePlot();
+//=======
+    firstEntry = 0;
+    maxEntries = 50;
+//>>>>>>> master
+
+    //ui->setupUi(this);
     this->setGeometry(0,0,400,400);
     checkboxes[0] = ui->btn_heading;
     checkboxes[1] = ui->btn_lat;
@@ -34,7 +43,7 @@ GraphWidget::GraphWidget(QWidget *parent) :
 
         /// \todo Make the names mean something by supporting the following code line
         /// \code graphs[i]->setName(names[i]);
-        graphs[i]->setName("NAME");
+        graphs[i]->setName(graphName[i]);
 
         //graphs[i]->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 5));
         graphs[i]->setVisible(false);
@@ -82,6 +91,7 @@ void GraphWidget::appendPoint(double x, double y, int id) {
     graphs[id]->addData(x,y);
 }
 
+
 void GraphWidget::appendTelemPacket(Protocol::TelemetryPacket* packet){
     float heading;
     double lat, lon;
@@ -123,7 +133,9 @@ void GraphWidget::drawMission(Mission* mission){
     for(int i = 0; i < 10; i++){
         makePlot(i);
         processClickEvent(i);
+        makePlot(i);
     }
+
 }
 
 void GraphWidget::makePlot(int index) {
