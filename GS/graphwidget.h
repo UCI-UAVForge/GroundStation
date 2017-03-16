@@ -20,9 +20,32 @@ public:
 
 public slots:
     void appendPoint(double x, double y, int id);
+    void drawMission(Mission* mission);
+    void appendTelemPacket(Protocol::TelemetryPacket* packet);
+    void setMaxEntries(unsigned int numberOfEntries);
+    void setViewport(unsigned int start, unsigned int end);
+
 
 private slots:
-    void makePlot(int id);
+    void on_btn_heading_clicked();
+
+    void on_btn_lat_clicked();
+
+    void on_btn_lon_clicked();
+
+    void on_btn_alt_clicked();
+
+    void on_btn_pitch_clicked();
+
+    void on_btn_roll_clicked();
+
+    void on_btn_yaw_clicked();
+
+    void on_btn_xvel_clicked();
+
+    void on_btn_yvel_clicked();
+
+    void on_btn_zvel_clicked();
 
 private:
     Ui::GraphWidget *ui;
@@ -34,6 +57,29 @@ private:
     QVector<QVector<double>> data;
 
     Mission* getNewMission();
+    Mission *myMission;
+
+    void makePlot(int index);
+    void processClickEvent(int index);
+
+    int firstEntry;
+    int maxEntries;
+
+    QCheckBox* checkboxes[10];
+    QCPGraph* graphs[10];
+
+    QCPGraph* graph_heading;
+    QCPGraph* graph_lat;
+    QCPGraph* graph_lon;
+    QCPGraph* graph_alt;
+    QCPGraph* graph_pitch;
+    QCPGraph* graph_roll;
+    QCPGraph* graph_yaw;
+    QCPGraph* graph_xvel;
+    QCPGraph* graph_yvel;
+    QCPGraph* graph_zvel;
+    void updateGraph();
+//    QString graphName[10];
 };
 
 #endif // GRAPHWIDGET_H

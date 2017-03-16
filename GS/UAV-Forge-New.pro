@@ -35,32 +35,22 @@ TEMPLATE = app
 #PRECOMPILED_HEADER = qcustomplot.h
 
 SOURCES += main.cpp\
-    mainwindow.cpp \
-    options.cpp \
-    mapplanning.cpp \
     tablemodel.cpp \
-    mapexecution.cpp \
-    missionrecap.cpp \
-    tutorial.cpp \
-    popwindowmp.cpp \
     qcomboboxdelegate.cpp \
-    videoplayer.cpp \
     gsserver.cpp \
     gscontrolpanel.cpp \
     qcustomplot.cpp\
     networklistener.cpp \
-    connectiondialog.cpp \
     messagebox.cpp \
     ActionPacket.cpp \
     InfoPacket.cpp \
     TelemetryPacket.cpp \
     Packet.cpp \
-    digitalclock.cpp \
+    #digitalclock.cpp \
     mapvalidator.cpp \
     serverqueue.cpp \
     mission.cpp \
     flightpath.cpp \
-    maprecap.cpp \
     qttabtest.cpp \
     mainmdidisplay.cpp \
     missionplanningwindow.cpp \
@@ -72,36 +62,36 @@ SOURCES += main.cpp\
     statuswidget.cpp \
     graphwidget.cpp \
     timerwidget.cpp \
-    missionstatuswindow.cpp
+    missionstatuswindow.cpp #\
+    #mainwindow.cpp \
+    #options.cpp \
+    #mapplanning.cpp \
+    #mapexecution.cpp \
+    #missionrecap.cpp \
+    #tutorial.cpp \
+    #popwindowmp.cpp \
+    #videoplayer.cpp \
+    #connectiondialog.cpp \
+    #maprecap.cpp \
 
-HEADERS  += mainwindow.h \
-    options.h \
-    mapplanning.h \
-    tablemodel.h \
-    mapexecution.h \
-    missionrecap.h \
-    tutorial.h \
-    popwindowmp.h \
+HEADERS  += tablemodel.h \
     qcomboboxdelegate.h \
-    videoplayer.h \
     net.h \
     gscontrolpanel.h \
     gsserver.h \
     qcustomplot.h\
     networklistener.h \
-    connectiondialog.h \
     messagebox.h \
     actionpacket.h \
     infopacket.h \
     telemetrypacket.h \
     ackpacket.h \
     packet.h \
-    digitalclock.h \
+    #digitalclock.h \
     mapvalidator.h \
     serverqueue.h \
     mission.h \
     flightpath.h \
-    maprecap.h \
     qttabtest.h \
     mainmdidisplay.h \
     missionplanningwindow.h \
@@ -109,36 +99,40 @@ HEADERS  += mainwindow.h \
     mapwidget.h \
     websocketclientwrapper.h \
     websockettransport.h \
-    dialog.h \
+    #dialog.h \
     tablewidget.h \
     graphwidget.h \
     statuswidget.h \
     timerwidget.h \
-    missionstatuswindow.h
+    missionstatuswindow.h #\
+    #mainwindow.h \
+    #options.h \
+    #mapplanning.h \
+    #mapexecution.h \
+    #missionrecap.h \
+    #tutorial.h \
+    #popwindowmp.h \
+    #videoplayer.h \
+    #connectiondialog.h \
+    #maprecap.h \
 
-FORMS    += mainwindow.ui \
-    options.ui \
-    mapplanning.ui \
-    mapexecution.ui \
-    missionrecap.ui \
-    tutorial.ui \
-    popwindowmp.ui \
-    gscontrolpanel.ui \
-    connectiondialog.ui \
-    maprecap.ui \
+FORMS    += gscontrolpanel.ui \
     qttabtest.ui \
     mainmdidisplay.ui \
-    dialog.ui \
     graphwidget.ui\
-    missionstatuswindow.ui
+    missionstatuswindow.ui #\
+    #mainwindow.ui \
+    #options.ui \
+    #mapplanning.ui \
+    #mapexecution.ui \
+    #missionrecap.ui \
+    #tutorial.ui \
+    #popwindowmp.ui \
+    #connectiondialog.ui \
+    #maprecap.ui \
+    #dialog.ui \
 
 OTHER_FILES +=
 
-#Uncomment this line, clean the build, run qmake, and then rebuild to use the old GUI.
-#DEFINES += OLD_GUI
-
 RESOURCES += \
     Resources.qrc
-
-#DISTFILES += \
-#    res/html/mapsPlanningGoogle.html

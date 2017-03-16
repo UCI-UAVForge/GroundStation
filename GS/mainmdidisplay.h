@@ -2,7 +2,8 @@
 #define MAINMDIDISPLAY_H
 
 #include <QMainWindow>
-#include "qttabtest.h"
+//#include "qttabtest.h"
+#include "gsserver.h"
 #include "missionplanningwindow.h"
 #include "ui_mainmdidisplay.h"
 #include "mapwidget.h"
@@ -10,7 +11,9 @@
 #include "mission.h"
 #include "flightpath.h"
 #include <assert.h>
+#include "graphwidget.h"
 #include "tablewidget.h"
+#include "qttabtest.h"
 
 #include "gscontrolpanel.h"
 
@@ -35,6 +38,10 @@ public:
   void addWindow( QWidget * );
   void addWindow( QWidget * , QString );
   ~MainMDIDisplay();
+  void removeWindow(QWidget* targetWidget);
+
+public slots:
+  void onWindowClose();
 
 private slots:
   void setupMapPaths();
@@ -43,9 +50,10 @@ private slots:
   void startMissionPlanningSlot();
   void startMissionExecutionSlot();
   void startMissionRecapSlot();
+  void rtnToMainMenu();
 
   void receivePacket(Protocol::Packet* packet);
-
+  void showControlPanel();
 private:
   Ui::MainMDIDisplay *ui;
 
@@ -63,14 +71,12 @@ private:
   QWidget* mapExecutionStatusUIWidget;
   QVBoxLayout* MapExecutionStatusVBoxLayout;
 
-  /**
-     * @brief MissionStatusWindow holds StatusWidget and TimerWidget.
-     */
-  MissionStatusWindow msw ;
+  GSControlPanel* gscp ;
 
-  GSControlPanel gscp ;
+  //TableWidget tw ;
 
-  TableWidget tw ;
+  //Temporary tabbed display widget
+  QtTabTest* qtt ;
 
   void startMissionPlanning();
   void endMissionPlanning();
@@ -82,7 +88,7 @@ private:
   void saveFlightPath();
   void loadFlightPath();
 
-  QWidget * graph;
+  GraphWidget * graph;
 
   QString folder;
   const char kPathSeparator =

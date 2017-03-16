@@ -1,4 +1,5 @@
-#include "mapplanning.h"
+#include "mapvalidator.h"
+#include <QDebug>
 
 MapValidator::MapValidator(double bottom, double top, int decimals, QObject * parent)
     :QDoubleValidator(bottom, top, decimals, parent)
