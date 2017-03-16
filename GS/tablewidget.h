@@ -23,6 +23,18 @@ public:
      */
     FlightPath *getTableAsFlightPath();
 
+    /**
+     * @brief setEditable
+     * @param editable - sets if the user can edit the table by hand or not
+     */
+    void setEditable(bool editable);
+
+    /**
+     * @brief isEditable
+     * @return true if this table can be edited by the user
+     */
+    bool isEditable();
+
 private:
     /**
      * @brief model - The TableModel we get our column names, types,
@@ -35,6 +47,11 @@ private:
      * E/W and N/S drop-down menues embedded in the table.
      */
     QComboBoxDelegate delegate;
+
+    /**
+     * @brief editable
+     */
+    bool editable;
 
 signals:
     /**

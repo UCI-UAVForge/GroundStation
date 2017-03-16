@@ -30,7 +30,8 @@ public:
 
 private:
     Ui::GSControlPanel *ui;
-    GSCPState CurrentState ;
+    GSCPState CurrentState;
+    static GSCPState persistantState;
 
 private slots:
     void on_StartMissionButton_clicked();

@@ -38,6 +38,10 @@ public:
   void addWindow( QWidget * );
   void addWindow( QWidget * , QString );
   ~MainMDIDisplay();
+  void removeWindow(QWidget* targetWidget);
+
+public slots:
+  void onWindowClose();
 
 private slots:
   void setupMapPaths();
@@ -46,11 +50,12 @@ private slots:
   void startMissionPlanningSlot();
   void startMissionExecutionSlot();
   void startMissionRecapSlot();
+  void rtnToMainMenu();
 
   void mainMenuSlot() ;
 
   void receivePacket(Protocol::Packet* packet);
-
+  void showControlPanel();
 private:
   Ui::MainMDIDisplay *ui;
 
@@ -68,12 +73,12 @@ private:
   QWidget* mapExecutionStatusUIWidget;
   QVBoxLayout* MapExecutionStatusVBoxLayout;
 
-  GSControlPanel gscp ;
+  GSControlPanel* gscp ;
 
-  TableWidget tw ;
+  //TableWidget tw ;
 
   //Temporary tabbed display widget
-  QtTabTest qtt ;
+  QtTabTest* qtt ;
 
   void startMissionPlanning();
   void endMissionPlanning();

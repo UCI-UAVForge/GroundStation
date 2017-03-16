@@ -9,22 +9,61 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
 
     ui->setupUi(this);
 
-    ui->mdiArea->setBackground(QBrush( QPixmap( ":/res/images/UAVLogo.png" ) ) );
+    this->connect(this, &MainMDIDisplay::destroyed, this, &MainMDIDisplay::onWindowClose);
+    this->connect(ui->actionShow_Control_Panel, &QAction::triggered, this, &MainMDIDisplay::showControlPanel);
+    //ui->mdiArea->setBackground(QBrush( QPixmap( ":/res/images/UAVLogo.png" ) ) );
+
+    ui->mdiArea->setBackground(QBrush(QPixmap(":/res/UAV_FORGE_LOGO_2.png").scaledToWidth(1600)));
 
     ///\todo Just put these in the UI file and promote QWidgets
-
-    addWindow(&gscp);
-    connect(&gscp, &GSControlPanel::createMissionButton_clicked, this, &MainMDIDisplay::startMissionPlanningSlot);
-    connect(&gscp, &GSControlPanel::startMissionButton_clicked, this, &MainMDIDisplay::startMissionExecutionSlot);
-    connect(&gscp, &GSControlPanel::finishMissionButton_clicked, this, &MainMDIDisplay::startMissionRecapSlot);
-    connect(&gscp, &GSControlPanel::mainMenuButton_clicked , this , &MainMDIDisplay::mainMenuSlot );
-    connect(&gscp, &GSControlPanel::exitButton_clicked, this, &MainMDIDisplay::close);
-
+    showControlPanel();
 }
 
 MainMDIDisplay::~MainMDIDisplay() {
     delete ui;
-    exit(0);
+    //exit(0);
+}
+
+void MainMDIDisplay::showControlPanel(){
+    bool windowShowing = false;
+    for(QMdiSubWindow *w : ui->mdiArea->subWindowList()){
+        if(w->widget() == gscp){
+            windowShowing = true;
+            return;
+        }
+    }
+    if(!windowShowing){
+        this->removeWindow(gscp);
+        gscp = new GSControlPanel();
+        connect(gscp, &GSControlPanel::createMissionButton_clicked, this, &MainMDIDisplay::startMissionPlanningSlot);
+        connect(gscp, &GSControlPanel::startMissionButton_clicked, this, &MainMDIDisplay::startMissionExecutionSlot);
+        connect(gscp, &GSControlPanel::finishMissionButton_clicked, this, &MainMDIDisplay::startMissionRecapSlot);
+        connect(gscp, &GSControlPanel::exitButton_clicked, this, &MainMDIDisplay::close);
+        connect(gscp, &GSControlPanel::mainMenuButton_clicked, this, &MainMDIDisplay::rtnToMainMenu);
+        addWindow(gscp);
+    }
+}
+
+void MainMDIDisplay::onWindowClose(){
+    switch(myState){
+        case PLANNING:
+            map->disconnectWebSocket();
+            break;
+        case EXECUTION:
+            myServer->closeServer();
+            map->disconnectWebSocket();
+            map->disconnect();
+            table->disconnect();
+            graph->disconnect();
+            break;
+        case RECAP:
+            map->disconnectWebSocket();
+            map->disconnect();
+            table->disconnect();
+            graph->disconnect();
+            break;
+        default: break;
+    }
 }
 
 void MainMDIDisplay::setupMapPaths(){
@@ -77,7 +116,7 @@ void MainMDIDisplay::addWindow(QWidget* myNewWindowWidget) {
         ///\todo Better error checking?
         if ( newWindow != NULL ) {
             newWindow->setMinimumSize( myNewWindowWidget->width() , myNewWindowWidget->height() );
-            newWindow->adjustSize() ;
+            newWindow->adjustSize();
         } else {
             qDebug() << "Subwindow could not be created to hold widget." ;
         }
@@ -94,6 +133,20 @@ void MainMDIDisplay::addWindow(QWidget* myNewWindowWidget, QString windowTitle) 
     tempSubWindow.setWidget(myNewWindowWidget);
     tempSubWindow.setWindowTitle(windowTitle);
     addWindow(&tempSubWindow);
+}
+
+
+void MainMDIDisplay::removeWindow(QWidget *targetWidget){
+    QList<QMdiSubWindow*> windowList = ui->mdiArea->subWindowList();
+
+    QMdiSubWindow *targetWindow = NULL;
+
+    for(QMdiSubWindow *w : windowList){
+        if(w->widget() == targetWidget){
+            w->setVisible(false);
+            break;
+        }
+    }
 }
 
 void MainMDIDisplay::changeState(MDIState newState){
@@ -161,16 +214,24 @@ void MainMDIDisplay::startMissionRecapSlot() {
     changeState(MDIState::RECAP);
 }
 
-void MainMDIDisplay::mainMenuSlot() {
+void MainMDIDisplay::rtnToMainMenu(){
     changeState(MDIState::NONE);
+    map->disconnectWebSocket();
+    qtt->deleteTabWidget(map);
+    qtt->deleteTabWidget(table);
+    qtt->deleteTabWidget(graph);
+    removeWindow(qtt);
+    qtt->deleteLater();
 }
 
 void MainMDIDisplay::startMissionPlanning(){
+    qtt = new QtTabTest();
     map = new MapWidget();
     table = new TableWidget();
-    qtt.addNewTab(map,"Map");
-    qtt.addNewTab(table,"Table");
-    addWindow(&qtt);
+    table->setEditable(true);
+    qtt->addNewTab(map,"Map");
+    qtt->addNewTab(table,"Table");
+    addWindow(qtt);
     //addWindow(map);
     //addWindow(table);
     this->connect(map, &MapWidget::pointAdded, table, &TableWidget::appendRow);
@@ -188,6 +249,7 @@ void MainMDIDisplay::endMissionPlanning(){
     qDebug() << "FlightPath contains " << myLoadedFlightPath->length() << " waypoints";
     myLoadedMission = new Mission(*myLoadedFlightPath);
     qDebug() << "Mission contains " << myLoadedMission->getFlightPath()->length() << " waypoints";
+    table->setEditable(false);
 }
 
 void MainMDIDisplay::startMissionExecution(){
@@ -211,25 +273,55 @@ void MainMDIDisplay::startMissionExecution(){
     myServer->startServer();
 
     graph = new GraphWidget();
-    qtt.addNewTab(graph,"Graph");
+    qtt->addNewTab(graph,"Graph");
     //this->addWindow(graph);
 
 }
 
 void MainMDIDisplay::endMissionExecution(){
     ///\todo
+    /// -send stop command
+    /// -shutdown server maybe???
+    /// -stop editing maps, tables, and graphs
+
+
+    Protocol::ActionPacket a1,a2;
+    a1.SetAction(Protocol::ActionType::Stop);
+    //a2.SetAction(Protocol::ActionType::Shutdown);
+    myServer->sendPacket(&a1);
+    //myServer->sendPacket(&a2);
+
+    disconnect(myServer, &GsServer::packetRecieved, this, &MainMDIDisplay::receivePacket);
 }
 
 void MainMDIDisplay::startMissionRecap(){
     ///\todo
+    /// -configure/create maps, tables, and graphs
+
+    if(!myLoadedMission){
+        qDebug() << "Attempted to start MissionRecap without loading a Mission first!";
+        return;
+    }
+
+    if(!qtt){
+        qtt = new QtTabTest();
+        map = new MapWidget();
+        qtt->addNewTab(map, "Map View");
+        table = new TableWidget();
+        qtt->addNewTab(map, "Telemetry Log");
+        graph = new GraphWidget();
+        qtt->addNewTab(map, "Graphs");
+    }
+    table->setEditable(false);
 }
 
 void MainMDIDisplay::endMissionRecap(){
     ///\todo
+    /// delete dynamic objects
+    //removeWindow(qtt);
 }
 
 void MainMDIDisplay::receivePacket(Protocol::Packet* packet){
-
     Protocol::Packet* incPack = packet;
     Protocol::PacketType type = incPack->get_type();
     if (type == Protocol::PacketType::Telem){
@@ -240,7 +332,7 @@ void MainMDIDisplay::receivePacket(Protocol::Packet* packet){
         currentTelemetryPacket->GetLocation(&lat,&lng,&alt);
         plotPosition(lat,lng);
         graph->appendTelemPacket(currentTelemetryPacket);
-        this->gscp.setCurrentTelemetryPacket( currentTelemetryPacket );
+        this->gscp->setCurrentTelemetryPacket( currentTelemetryPacket );
     }
 }
 

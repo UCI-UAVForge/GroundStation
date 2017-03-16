@@ -2,16 +2,14 @@
 #define QTTABTEST_H
 
 #include <QMainWindow>
-#include "options.h"
+//#include "options.h"
 #include <QPropertyAnimation>
 #include <QShortcut>
 #include <QPixmap>
 #include <QDebug>
 #include <iostream>
 #include <QUrl>
-
-#include "options.h"
-#include "connectiondialog.h"
+#include <QMdiArea>
 
 #include "ui_qttabtest.h"
 
@@ -35,8 +33,8 @@ public:
 
     void deleteTabIndex( int );
 
-    void deleteTabWidget( QWidget * ) ;
-
+    void deleteTabWidget(QWidget* qw);
+  
 private:
 
     Ui::QtTabTest *ui;
