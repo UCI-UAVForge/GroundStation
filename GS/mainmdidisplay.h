@@ -13,6 +13,7 @@
 #include <assert.h>
 #include "graphwidget.h"
 #include "tablewidget.h"
+#include "qttabtest.h"
 
 #include "gscontrolpanel.h"
 
@@ -37,6 +38,10 @@ public:
   void addWindow( QWidget * );
   void addWindow( QWidget * , QString );
   ~MainMDIDisplay();
+  void removeWindow(QWidget* targetWidget);
+
+public slots:
+  void onWindowClose();
 
 private slots:
   void setupMapPaths();
@@ -45,9 +50,9 @@ private slots:
   void startMissionPlanningSlot();
   void startMissionExecutionSlot();
   void startMissionRecapSlot();
+  void rtnToMainMenu();
 
   void receivePacket(Protocol::Packet* packet);
-
 private:
   Ui::MainMDIDisplay *ui;
 
@@ -65,14 +70,12 @@ private:
   QWidget* mapExecutionStatusUIWidget;
   QVBoxLayout* MapExecutionStatusVBoxLayout;
 
-  /**
-     * @brief MissionStatusWindow holds StatusWidget and TimerWidget.
-     */
-  MissionStatusWindow msw ;
-
   GSControlPanel gscp ;
 
   TableWidget tw ;
+
+  //Temporary tabbed display widget
+  QtTabTest* qtt ;
 
   void startMissionPlanning();
   void endMissionPlanning();
@@ -81,7 +84,7 @@ private:
   void startMissionRecap();
   void endMissionRecap();
   void plotPosition(double lat, double lng);
-  
+
   GraphWidget * graph;
 
 };

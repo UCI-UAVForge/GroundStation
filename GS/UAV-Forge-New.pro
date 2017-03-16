@@ -52,7 +52,7 @@ SOURCES += main.cpp\
     serverqueue.cpp \
     mission.cpp \
     flightpath.cpp \
-    #qttabtest.cpp \
+    qttabtest.cpp \
     mainmdidisplay.cpp \
     missionplanningwindow.cpp \
     dbmanager.cpp \
@@ -93,7 +93,7 @@ HEADERS  += tablemodel.h \
     serverqueue.h \
     mission.h \
     flightpath.h \
-    #qttabtest.h \
+    qttabtest.h \
     mainmdidisplay.h \
     missionplanningwindow.h \
     dbmanager.h \
