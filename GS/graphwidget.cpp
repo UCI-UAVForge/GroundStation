@@ -8,13 +8,20 @@ GraphWidget::GraphWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::GraphWidget)
 {
+//<<<<<<< master
     // Set up graphName
     QString graphName[10] = {"Heading", "Latitude", "Longtitude", "Altitude", "Pitch", "Roll",
                 "Yaw", "Xvel", "Yvel", "Zvel"};
 
     ui->setupUi(this);
 //    GraphWidget::makePlot();
+//=======
+    firstEntry = 0;
+    maxEntries = 50;
+//>>>>>>> master
 
+    //ui->setupUi(this);
+    this->setGeometry(0,0,400,400);
     checkboxes[0] = ui->btn_heading;
     checkboxes[1] = ui->btn_lat;
     checkboxes[2] = ui->btn_lon;
@@ -65,6 +72,21 @@ GraphWidget::~GraphWidget()
     //}
 }
 
+void GraphWidget::setMaxEntries(unsigned int numberOfEntries){
+    maxEntries = numberOfEntries;
+}
+
+void GraphWidget::setViewport(unsigned int start, unsigned int end){
+    if(start > end){
+        qDebug() << "Reversed viewports are currently unsupported. Swapping 'start' and 'end'";
+        int temp = start;
+        start = end;
+        end = temp;
+    }
+    firstEntry = start;
+    maxEntries = end - start;
+}
+
 void GraphWidget::appendPoint(double x, double y, int id) {
     graphs[id]->addData(x,y);
 }
@@ -86,7 +108,6 @@ void GraphWidget::appendTelemPacket(Protocol::TelemetryPacket* packet){
         time = graphs[0]->data()->lastKey()+1;
     }
 
-    int maxEntries = 50;
     if(graphs[0]->data()->size() > maxEntries){
         for(int i = 0; i < 10; i++){
             graphs[i]->removeDataBefore(time-maxEntries);
@@ -110,6 +131,7 @@ void GraphWidget::appendTelemPacket(Protocol::TelemetryPacket* packet){
 void GraphWidget::drawMission(Mission* mission){
     myMission = mission;
     for(int i = 0; i < 10; i++){
+        makePlot(i);
         processClickEvent(i);
         makePlot(i);
     }
@@ -122,7 +144,7 @@ void GraphWidget::makePlot(int index) {
     }
 
     QTextStream out(stdout);
-    graphs[index] = ui->customPlot->addGraph();
+    //graphs[index] = ui->customPlot->addGraph();
     QCPGraph *graph = graphs[index];
     // Create mission
 
