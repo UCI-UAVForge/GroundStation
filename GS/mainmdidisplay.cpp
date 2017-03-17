@@ -12,7 +12,7 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
     this->connect(this, &MainMDIDisplay::destroyed, this, &MainMDIDisplay::onWindowClose);
     this->connect(ui->actionShow_Control_Panel, &QAction::triggered, this, &MainMDIDisplay::showControlPanel);
     //ui->mdiArea->setBackground(QBrush( QPixmap( ":/res/images/UAVLogo.png" ) ) );
-
+  
     ui->mdiArea->setBackground(QBrush(QPixmap(":/res/UAV_FORGE_LOGO_2.png").scaledToWidth(1600)));
 
     ///\todo Just put these in the UI file and promote QWidgets
@@ -39,6 +39,8 @@ void MainMDIDisplay::showControlPanel(){
         connect(gscp, &GSControlPanel::startMissionButton_clicked, this, &MainMDIDisplay::startMissionExecutionSlot);
         connect(gscp, &GSControlPanel::finishMissionButton_clicked, this, &MainMDIDisplay::startMissionRecapSlot);
         connect(gscp, &GSControlPanel::exitButton_clicked, this, &MainMDIDisplay::close);
+        connect(gscp, &GSControlPanel::loadFlightpathButton_clicked, this, &MainMDIDisplay::loadFlightPath);
+        connect(gscp, &GSControlPanel::saveFlightpathButton_clicked, this, &MainMDIDisplay::saveFlightPath);
         connect(gscp, &GSControlPanel::mainMenuButton_clicked, this, &MainMDIDisplay::rtnToMainMenu);
         addWindow(gscp);
     }
@@ -79,6 +81,14 @@ void MainMDIDisplay::setupMapPaths(){
             qDebug() << "PLANNING";
             map->sendCreateNewPath(0);
             map->sendSetActivePath(0);
+            if(myLoadedFlightPath && myLoadedFlightPath->length()>0){
+                qDebug() << "Pushing path of size:" << myLoadedFlightPath->length();
+                map->addFlightPath(myLoadedFlightPath,0,"preloaded");
+                delete myLoadedFlightPath;
+                myLoadedFlightPath = NULL;
+            } else {
+                qDebug() << "Flight Path object is empty or null";
+            }
             break;
         case EXECUTION:
             qDebug() << "EXECUTION";
@@ -182,6 +192,7 @@ void MainMDIDisplay::changeState(MDIState newState){
             break;
         default: break;
     }
+
 }
 
 void MainMDIDisplay::startMissionPlanningSlot() {
@@ -197,13 +208,15 @@ void MainMDIDisplay::startMissionRecapSlot() {
 }
 
 void MainMDIDisplay::rtnToMainMenu(){
-    changeState(MDIState::NONE);
-    map->disconnectWebSocket();
-    qtt->deleteTabWidget(map);
-    qtt->deleteTabWidget(table);
-    qtt->deleteTabWidget(graph);
-    removeWindow(qtt);
-    qtt->deleteLater();
+    if(myState != NONE){
+        changeState(MDIState::NONE);
+        map->disconnectWebSocket();
+        qtt->deleteTabWidget(map);
+        qtt->deleteTabWidget(table);
+        qtt->deleteTabWidget(graph);
+        removeWindow(qtt);
+        qtt->deleteLater();
+    }
 }
 
 void MainMDIDisplay::startMissionPlanning(){
@@ -323,4 +336,54 @@ void MainMDIDisplay::plotPosition(double lat, double lng){
     FlightPath *fp = table->getTableAsFlightPath();
     map->addFlightPath(fp, 0, "execution");
     delete fp;
+}
+
+void MainMDIDisplay::loadFlightPath() {
+    if (this->gscp->getFlightpathNameToLoad() == "")
+        return;
+
+    qDebug() << "ENTERING LOAD FLIGHTPTH!";
+
+    QString fullFileName = this->gscp->getFlightpathNameToLoad();
+
+    this->changeState(MDIState::PLANNING);
+    if(myLoadedFlightPath){
+        delete myLoadedFlightPath;
+    }
+    this->myLoadedFlightPath = new FlightPath(fullFileName);
+    qDebug() << "Mission Length: " << myLoadedFlightPath->length();
+
+    QList<Protocol::Waypoint> *list = this->myLoadedFlightPath->getOrderedWaypoints();
+    foreach (Protocol::Waypoint wp, *list) {
+        this->table->appendRow(wp.lat, wp.lon);
+    };
+    delete list;
+}
+
+void MainMDIDisplay::saveFlightPath() {
+    // This is for flightPath
+    if (this->gscp->getFlightpathNameToSave() == "")
+        return;
+
+    qDebug() << "ENTERING SAVE FLIGHTPTH!";
+
+    QString fullFileName = this->gscp->getFlightpathNameToSave();
+
+    this->myLoadedFlightPath = this->table->getTableAsFlightPath();
+    this->myLoadedFlightPath->save(fullFileName);
+
+    //this->gscp->addMissionToLoad(fileName);
+    //this->gscp->setSelectedMission(fileName);
+
+    //delete this->myLoadedFlightPath;
+    //this->myLoadedFlightPath = NULL;
+
+
+    /* This is for mission, put it in different method after done with testing.
+    QString fileName = "Try1";
+    QString fullFileName = this->folder + this->kPathSeparator + fileName;
+
+    this->myLoadedMission = new Mission(fullFileName);
+    this->myLoadedMission->save(fullFileName);
+    */
 }

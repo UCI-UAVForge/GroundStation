@@ -85,9 +85,10 @@ private:
   void startMissionRecap();
   void endMissionRecap();
   void plotPosition(double lat, double lng);
+  void saveFlightPath();
+  void loadFlightPath();
 
   GraphWidget * graph;
-
 };
 
 #endif // MAINMDIDISPLAY_H

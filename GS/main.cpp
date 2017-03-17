@@ -11,7 +11,6 @@
 #include "mission.h"
 
 #include "qttabtest.h"
-#include "gscontrolpanel.h"
 
 int main(int argc, char *argv[]) {
 

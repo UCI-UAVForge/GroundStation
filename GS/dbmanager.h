@@ -1,29 +1,55 @@
 /**
  * Class: DBManager
- * Date: Fall 2016
- * Author: Aung(David) Moe, Rayan Ahmed
+ * Date: Feb 24, 2017
+ * Author: Aung(David) Moe
  * Description: Database system for logging system information to/from the drones for the UAVF project.
- *
- *
- * !!!!!! IMPORTANT: Add 'QT += sql' to the .pro file. !!!!!!
- *
- * Example for Mission:
- *  DbManager db("Test1","Database");   // Creates a file Database/Test1.db. The folder must exist
+ * Required: Add 'QT += sql' to 'UAV-Forge-New.pro' file.
+ */
+
+/*
+
+Example using the class:
+
+int main()
+{
+    DbManager db("DbFile");   // Creates or opens a file ./DbFile.db.
     if (db.isOpen())
     {
-        db.addMissionData({});
-        db.addMissionData({2.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1,1.1});
-        db.addMissionData({3.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2,1.2});
-        db.addMissionData({4,1,1,1,1,1,1,1,1,1});
-        db.saveMissionToFile();
+        // Clear any previously loaded values.
+        db.clearAll();
 
-        foreach (MissionData data, db.getMission())
-        {
-            // do something
-        }
- *
- *
- */
+        // Mission data.
+        MissionData missionData; // Each mission data represents one point.
+        missionData.lon = 1.5;
+        missionData.lat = 2.5;
+
+        // Save 1
+        db.missionAdd(missionData);
+        db.missionSaveToFile();
+
+        // Save 2
+        db.missionAdd({});
+        db.missionAdd({4,1,1,1,1,1,1,1,1,1});
+        db.missionSaveToFile();
+
+        // FlightPath data.
+        FlightPathData flightPathData;
+        flightPathData.actionNum = 2;
+        flightPathData.delay = 4;
+        flightPathData.data = {10,11,12};
+
+        // Save 1
+        db.flightPathAdd(flightPathData);
+        db.flightPathSaveToFile();
+
+        // Save 2
+        db.flightPathAdd({});
+        db.flightPathAdd({5,10, {13,14,15}});
+        db.flightPathSaveToFile();
+    }
+    return 0;
+}
+*/
 
 #ifndef DBMANAGER_H
 #define DBMANAGER_H
@@ -32,11 +58,13 @@
 #include <QSqlDatabase>
 #include <QVector>
 
-// Represents a 'Mission' data.
+const unsigned int kDataSize = 40;
+
+// One 'Mission' data represents an actual location point on the map.
 struct MissionData {
     float heading;
     double lat;
-    double lan;
+    double lon;
     float alt;
     float pitch;
     float roll;
@@ -44,11 +72,36 @@ struct MissionData {
     float xvel;
     float yvel;
     float zvel;
+
+    MissionData(float heading = 0, double lat = 0, double lon = 0, float alt = 0, float pitch = 0, float roll = 0, float yaw = 0, float xvel = 0, float yvel = 0, float zvel = 0)
+    {
+        this->heading = heading;
+        this->lat = lat;
+        this->lon = lon;
+        this->alt = alt;
+        this->pitch = pitch;
+        this->roll = roll;
+        this->yaw = yaw;
+        this->xvel = xvel;
+        this->yvel = yvel;
+        this->zvel = zvel;
+    }
 };
 
-/**
- * @brief The DbManager class - Interaction to save/load UAVF information will be handled in this class.
- */
+// One 'FlightPath' data represents a theorectical location point on the map.
+struct FlightPathData {
+    unsigned int actionNum;
+    double delay;
+    QVector<unsigned char> data;
+
+    FlightPathData(unsigned int actionNum = 0, double delay = 0, QVector<unsigned char> data = {})
+    {
+        this->actionNum = actionNum;
+        this->delay = delay;
+        this->data = data;
+    }
+};
+
 class DbManager
 {
 public:
@@ -61,7 +114,7 @@ public:
      * @param directory - The folder where the database file is located.
      * @note - Do not include the fileName's extension (e.g. mission1.db -> just mission1)
      */
-    DbManager(const QString& fileName = "aDatabase", const QString& directory = "");
+    DbManager(const QString& fileName = "unnamed_database", const QString& directory = "");
 
     // Closes any connection.
     ~DbManager();
@@ -69,50 +122,65 @@ public:
 
 ////=== General Commands ===////
 
+    // Saves all the files to the database.
+    void saveAll();
+
+    // Clear all data stored in variables.
+    void clearAll();
+
+    // Clear all data stored in database.
+    void clearAllFiles();
+
     // Returns true if a database is connected.
     bool isOpen() const;
 
-    // Opens a database connection to 'directory/filename'
-    bool open(const QString& fileName, const QString& directory);
+    // Opens and loads from database file 'directory/filename'. Automatically called by the constructor.
+    bool open(const QString& fileName, const QString& directory = "");
 
     // Close current database connection.
     void close();
 
+    // Convert vector into array.
+    static unsigned char* toArray(QVector<unsigned char> vector);
+
+    // Convert array of 'size' into vector.
+    static QVector<unsigned char> toVector(unsigned char* array, size_t size);
+
 ////=== Mission Commands ===////
 
-    /*
-       Note: all the mission commands here interact with an instance variable; they
-       do not alter or modify the database.
+    // Inserts into the variable 'mission'. Does not modify the database.
+    void missionAdd(MissionData newData);
 
-       Use DbManager::saveMissionToFile() to save the instance variable 'mission' to database.
-    */
+    // Returns the variable 'mission'. May not be the same information from database if it was changed.
+    const QVector<MissionData> missionGet() const;
 
-    // Add a data to the mission. Changes the instance variable 'mission'.
-    void addMissionData(MissionData data);
-
-    // Get current mission with all the added information. Returns instance variable 'mission'
-    const QVector<MissionData> getMission() const;
+    // Clears the variable 'mission'.
+    void missionClear();
 
     // Save mission to database. Modifies the database.
-    void saveMissionToFile();
+    void missionSaveToFile();
 
+    // Clears the Mission database.
+    void missionClearFile();
 
+////=== FlightPath Commands ===////
 
+    void flightPathAdd(FlightPathData newData);
 
+    const QVector<FlightPathData> flightPathGet() const;
 
-    /**
-     * @brief getAllWaypoints - Gets all the waypoints for the current mission.
-     * @return - All the waypoints in the database.
-     */
-//    QList<Protocol::Waypoint> getWaypoints() const;
-//    bool addWaypointsToMission(const QString& missionName, QList<Protocol::Waypoint> wp);
+    void flightPathClear();
+
+    void flightPathSaveToFile();
+
+    void flightPathClearFile();
 
 private:
-    QSqlDatabase m_db;
-    QVector<MissionData> mission;
+    QSqlDatabase m_db;                  // database connection
+    QVector<MissionData> mission;       // the path the drone ACTUALLY go.
+    QVector<FlightPathData> flightPath; // the path the drone SHOULD went.
 
-
-    // File Related
+    // File related variables.
     QString fileName;
     QString directory;
     const QString kDatabaseType = "QSQLITE";
@@ -125,16 +193,10 @@ private:
         #endif
 
 
-////=== Constructor/Destructor ===////
-
-    // These are called by DbManager::createTablesIfDoesntExist()
+    // Functions to be run on initializing.
+    void initializeDatabaseSettings();
     void createOrLoadMissionTable();
-
-////=== Mission Commands ===////
-
-    // Clear all the records in [Mission] database.
-    void clearMissionTable();
-
+    void createOrLoadFlightPathTable();
 };
 
 #endif // DBMANAGER_H

@@ -11,14 +11,6 @@
 #include <QUrl>
 #include <QMdiArea>
 
-//#include "options.h"
-//#include "tutorial.h"
-//#include "mapplanning.h"
-//#include "mapexecution.h"
-//#include "missionrecap.h"
-//#include "maprecap.h"
-//#include "connectiondialog.h"
-
 #include "ui_qttabtest.h"
 
 namespace Ui {
@@ -42,11 +34,11 @@ public:
     void deleteTabIndex( int );
 
     void deleteTabWidget(QWidget* qw);
+  
 private:
 
     Ui::QtTabTest *ui;
-
-    bool isFirstTabEmpty;
+    bool isFirstTabEmpty ;
 
 };
 

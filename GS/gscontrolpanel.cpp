@@ -1,5 +1,8 @@
 #include "gscontrolpanel.h"
 #include "ui_gscontrolpanel.h"
+#include "QDebug.h"
+#include <QDir>
+#include <QStandardPaths>
 
 GSCPState GSControlPanel::persistantState = MainMenuState;
 
@@ -117,6 +120,7 @@ QString GSControlPanel::getMissionNameToSave() {
  * @return QString of the mission name to load
  */
 QString GSControlPanel::getMissionNameToLoad() {
+    //return this->ui->LoadMissionDropdown->currentText();
     return this->ui->LoadMissionDropdown->itemData( this->ui->LoadMissionDropdown->currentIndex() ).toString() ;
 }
 
@@ -125,7 +129,10 @@ QString GSControlPanel::getMissionNameToLoad() {
  * @param newMissionToLoad - name of mission being added to the dropdown menu
  */
 void GSControlPanel::addMissionToLoad( QString newMissionToLoad ) {
-    this->ui->LoadMissionDropdown->insertItem( this->ui->LoadMissionDropdown->count() , newMissionToLoad );
+
+    //if (this->ui->LoadMissionDropdown->findText(newMissionToLoad) == -1) {
+        this->ui->LoadMissionDropdown->insertItem( this->ui->LoadMissionDropdown->count() , newMissionToLoad );
+    //}
 }
 
 
@@ -134,7 +141,11 @@ void GSControlPanel::addMissionToLoad( QString newMissionToLoad ) {
  * @return QString of the flightpath name to save
  */
 QString GSControlPanel::getFlightpathNameToSave() {
-    return this->ui->SaveFlightPathTextBox->text() ;
+    QString name = this->ui->SaveFlightPathTextBox->text() ;
+    if(name == ""){
+        return "";
+    }
+    return this->folder + this->kPathSeparator + name + "_fp";
 }
 
 /**
@@ -142,7 +153,11 @@ QString GSControlPanel::getFlightpathNameToSave() {
  * @return QString of the flightpath name to load
  */
 QString GSControlPanel::getFlightpathNameToLoad() {
-    return this->ui->LoadFlightpathDropdown->itemData( this->ui->LoadFlightpathDropdown->currentIndex() ).toString() ;
+    QString name = ui->LoadFlightpathDropdown->currentText();
+    if(name == ""){
+        return "";
+    }
+    return this->folder + this->kPathSeparator + name + "_fp";
 }
 
 /**
@@ -159,15 +174,33 @@ void GSControlPanel::addFlightpathToLoad( QString newFlightpathToLoad ) {
 void GSControlPanel::on_LoadFlightpathButton_clicked() {
     if ( this->CurrentState == MainMenuState ) {
         this->CurrentState = LoadFlightpathState ;
+
+        //Clear the current dropdown menu
+        this->ui->LoadFlightpathDropdown->clear();
+
+        // Open folder from the 'Documents' directory.
+        const QString documentDir = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).constFirst();
+        this->folder = documentDir + "/UAVForge";
+        if (!QDir(this->folder).exists())
+            QDir().mkdir(this->folder);
+
+        // Load all the database files.
+        QDir dbFolder(this->folder);
+        dbFolder.setSorting(QDir::SortFlag::Name);
+        QStringList dbFiles = dbFolder.entryList({"*_fp.db"});
+        foreach (QString file, dbFiles) {
+            addFlightpathToLoad(file.remove(file.length()-6, 6));
+        }
+
     }
     else if ( this->CurrentState == LoadFlightpathState ) {
+        emit loadFlightpathButton_clicked() ;
         this->CurrentState = PlanningState ;
     }
     else {
         // Do nothing.
     }
     this->updateGSCP() ;
-    emit loadFlightpathButton_clicked() ;
 }
 
 /**
@@ -402,3 +435,13 @@ void GSControlPanel::updateStateGSCP() {
             break ;
     }
 }
+
+/**
+ * @brief Sets the LoadMissionDropdown and SaveMission to 'text'.
+ * @param text - the currently selected mission.
+ */
+void GSControlPanel::setSelectedMission(QString text) {
+    this->ui->SaveMissionTextBox->setText(text);
+    this->ui->LoadMissionDropdown->setCurrentText(text);
+}
+
