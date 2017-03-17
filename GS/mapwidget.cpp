@@ -16,7 +16,7 @@ MapWidget::MapWidget(QWidget *parent): QWebEngineView(parent),
     clientWrapper(&server)
 {
     this->connect(this, &MapWidget::loadStarted, this, &MapWidget::loadStartedSlot);
-    this->connect(this, &MapWidget::loadStarted, this, &MapWidget::loadFinishedSlot);
+    //this->connect(this, &MapWidget::loadFinished, this, &MapWidget::loadFinishedSlot);
 
     loading = true;
 
@@ -58,6 +58,7 @@ QList<Protocol::Waypoint> *MapWidget::getPath(int pathID) {
 
 void MapWidget::loadFinishedSlot() {
     //loading = false;
+    //finishedLoading();
 }
 
 void MapWidget::loadStartedSlot() {
@@ -117,6 +118,7 @@ void MapWidget::pointAddedToMap(double lat, double lng, int index, int pathID){
 }
 
 void MapWidget::pathCleared(int pathID){
+
 }
 
 void MapWidget::pointRemovedFromMap(int index, int pathID){

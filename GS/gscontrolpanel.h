@@ -20,6 +20,7 @@ class GSControlPanel : public QDialog {
 public:
     explicit GSControlPanel(QWidget *parent = 0);
     ~GSControlPanel();
+  
     QString getMissionNameToSave() ;
     QString getMissionNameToLoad() ;
     void addMissionToLoad( QString ) ;
@@ -27,11 +28,20 @@ public:
     QString getFlightpathNameToLoad() ;
     void addFlightpathToLoad( QString ) ;
     void setCurrentTelemetryPacket( Protocol::TelemetryPacket * ) ;
+    void setSelectedMission(QString text);
 
 private:
     Ui::GSControlPanel *ui;
     GSCPState CurrentState;
     static GSCPState persistantState;
+
+    QString folder;
+    const char kPathSeparator =
+        #ifdef _WIN32
+                                '\\';
+        #else
+                                '/';
+        #endif
 
 private slots:
     void on_StartMissionButton_clicked();
