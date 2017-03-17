@@ -11,6 +11,7 @@ var tableSelectionPath;             //Path selected on table
 var uavPath;                        //Current UAV Path
 var newPath;                        //Path sent through cbridge
 var newPathPoints= [];                  //Points of newPath
+var planningPath;
 
 //Variables to create leaflet map. Using OSM tiles.
 function initializeMap() {
@@ -39,6 +40,7 @@ function initializeMap() {
                 });
 
     map.addControl(drawControl);
+    cbridge.finishedLoading();
 }
 
 
@@ -142,11 +144,22 @@ function addPath(source) {
         else if(source === "execution") {
             addUAVPath();
         }
+        else if(source === "preloaded"){
+            addPreloadedPath();
+        }
     }
 }
 
+function addPreloadedPath() {
+    removePath(activePath);
+    activePath = L.polyline(newPathPoints, {color:'blue', opacity:0.6});
+    paths.addLayer(activePath).addTo(map);
+    newPathPoints = [];
+}
+
 function addPlanningPath() {
-    var planningPath = L.polyline(newPathPoints, {color:'blue', opacity:0.6});
+    removePath(planningPath);
+    planningPath = L.polyline(newPathPoints, {color:'blue', opacity:0.6});
     paths.addLayer(planningPath).addTo(map);
     newPathPoints = [];
 }

@@ -89,14 +89,6 @@ private:
   void loadFlightPath();
 
   GraphWidget * graph;
-
-  QString folder;
-  const char kPathSeparator =
-      #ifdef _WIN32
-                              '\\';
-      #else
-                              '/';
-      #endif
 };
 
 #endif // MAINMDIDISPLAY_H
