@@ -13,6 +13,11 @@ GSCPState GSControlPanel::persistantState = MainMenuState;
 GSControlPanel::GSControlPanel(QWidget *parent):QDialog(parent),ui(new Ui::GSControlPanel) {
     // Set up the GUI
     this->ui->setupUi(this);
+
+    //temporarily disable these for design review
+    this->ui->LoadMissionButton->setEnabled(false);
+    this->ui->SaveMissionButton->setEnabled(false);
+
     // Embed MissionStatusWindow into the GSControlPanel window.
     this->ui->MissionStatusWindowWidget->setWindowFlags(Qt::Widget);
     this->setCurrentTelemetryPacket(EMPTY_TELEMETRY_PACKET);
