@@ -17,6 +17,8 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
 
     ///\todo Just put these in the UI file and promote QWidgets
     showControlPanel();
+
+    myLoadedFlightPath = NULL;
 }
 
 MainMDIDisplay::~MainMDIDisplay() {
@@ -83,7 +85,8 @@ void MainMDIDisplay::setupMapPaths(){
             qDebug() << "PLANNING";
             map->sendCreateNewPath(0);
             map->sendSetActivePath(0);
-            if(myLoadedFlightPath && myLoadedFlightPath->length()>0){
+
+            if(myLoadedFlightPath && myLoadedFlightPath->length() > 0){
                 qDebug() << "Pushing path of size:" << myLoadedFlightPath->length();
                 map->addFlightPath(myLoadedFlightPath,0,"preloaded");
                 delete myLoadedFlightPath;

@@ -24,6 +24,7 @@ MapWidget::MapWidget(QWidget *parent): QWebEngineView(parent),
 
     // setup the QWebSocketServer
     if (!server.listen(QHostAddress::LocalHost, 20270)) {
+        qDebug() << "Attempted to open 2 MapWidgets!";
         qFatal("Failed to open web socket server.");
     }
 
