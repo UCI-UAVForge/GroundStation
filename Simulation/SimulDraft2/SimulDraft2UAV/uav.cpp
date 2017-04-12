@@ -255,6 +255,7 @@ void UAV::respond_to_action_packet(Protocol::ActionPacket ap)
             QTextStream(stdout) << "STOPPING" << endl;
             uavFlying = false;
             stopAction = true;
+            exit(0);
             break;
         case Protocol::ActionType::Start:
             //if(uavOn && !receivedInfoPacketReq && uavWaypointsReady)

@@ -13,7 +13,7 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
     this->connect(ui->actionShow_Control_Panel, &QAction::triggered, this, &MainMDIDisplay::showControlPanel);
     //ui->mdiArea->setBackground(QBrush( QPixmap( ":/res/images/UAVLogo.png" ) ) );
   
-    ui->mdiArea->setBackground(QBrush(QPixmap(":/res/UAV_FORGE_LOGO_2.png").scaledToWidth(1600)));
+    ui->mdiArea->setBackground(QBrush(QPixmap(":/res/UAV_FORGE_LOGO_2.png").scaledToWidth(1200)));
 
     ///\todo Just put these in the UI file and promote QWidgets
     showControlPanel();
@@ -49,7 +49,9 @@ void MainMDIDisplay::showControlPanel(){
 void MainMDIDisplay::onWindowClose(){
     switch(myState){
         case PLANNING:
-            map->disconnectWebSocket();
+            if(map->isVisible()){
+                map->disconnectWebSocket();
+            }
             break;
         case EXECUTION:
             myServer->closeServer();
@@ -210,12 +212,14 @@ void MainMDIDisplay::startMissionRecapSlot() {
 void MainMDIDisplay::rtnToMainMenu(){
     if(myState != NONE){
         changeState(MDIState::NONE);
-        map->disconnectWebSocket();
-        qtt->deleteTabWidget(map);
-        qtt->deleteTabWidget(table);
-        qtt->deleteTabWidget(graph);
-        removeWindow(qtt);
-        qtt->deleteLater();
+        if(map->isVisible()){
+            map->disconnectWebSocket();
+            qtt->deleteTabWidget(map);
+            qtt->deleteTabWidget(table);
+            qtt->deleteTabWidget(graph);
+            removeWindow(qtt);
+        }
+        //qtt->deleteLater();
     }
 }
 
@@ -240,11 +244,13 @@ void MainMDIDisplay::endMissionPlanning(){
         delete myLoadedFlightPath;
         myLoadedFlightPath = NULL;
     }
-    myLoadedFlightPath = table->getTableAsFlightPath();
-    qDebug() << "FlightPath contains " << myLoadedFlightPath->length() << " waypoints";
-    myLoadedMission = new Mission(*myLoadedFlightPath);
-    qDebug() << "Mission contains " << myLoadedMission->getFlightPath()->length() << " waypoints";
-    table->setEditable(false);
+    if(map->isVisible()){
+        myLoadedFlightPath = table->getTableAsFlightPath();
+        qDebug() << "FlightPath contains " << myLoadedFlightPath->length() << " waypoints";
+        myLoadedMission = new Mission(*myLoadedFlightPath);
+        qDebug() << "Mission contains " << myLoadedMission->getFlightPath()->length() << " waypoints";
+        table->setEditable(false);
+    }
 }
 
 void MainMDIDisplay::startMissionExecution(){
@@ -349,6 +355,7 @@ void MainMDIDisplay::loadFlightPath() {
     this->changeState(MDIState::PLANNING);
     if(myLoadedFlightPath){
         delete myLoadedFlightPath;
+        myLoadedFlightPath = NULL;
     }
     this->myLoadedFlightPath = new FlightPath(fullFileName);
     qDebug() << "Mission Length: " << myLoadedFlightPath->length();
