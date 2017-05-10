@@ -79,7 +79,7 @@ void DbManager::createOrLoadFlightPathTable()
     QSqlQuery query;
     QString queryStatement;
 
-    // Create tables if they doesn't exist.
+    // Create tables if they don't exist.
     queryStatement += "CREATE TABLE FlightPath (";
     queryStatement += "actionNum    INTEGER PRIMARY KEY,";
     queryStatement += "delay        REAL";
@@ -217,6 +217,8 @@ void DbManager::missionClear()
 void DbManager::missionSaveToFile()
 {
     this->missionClearFile(); // First remove old data in the table.
+
+    std::cout << "Saving mission of length: " << mission.length() << "." << std::endl;
 
     QSqlQuery query;
     foreach (MissionData data, mission) {

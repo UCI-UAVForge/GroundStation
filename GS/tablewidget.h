@@ -6,6 +6,7 @@
 #include "qcomboboxdelegate.h"
 #include "tablemodel.h"
 #include "flightpath.h"
+#include "mission.h"
 
 class TableWidget : public QTableView
 {
@@ -34,6 +35,12 @@ public:
      * @return true if this table can be edited by the user
      */
     bool isEditable();
+
+    /**
+     * @brief insertMissionTelem
+     * @param mission
+     */
+    void insertMissionTelem(Mission* mission);
 
 private:
     /**

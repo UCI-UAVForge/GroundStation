@@ -54,6 +54,9 @@ public slots:
      * to 'scroll' to the right, following the most recent data points as they
      * are appened.
      * @param numberOfEntries the maximum number of entries
+     * @warning The current version does not support increasing the maximum number
+     * of entries showing.
+     * @todo fix this someday
      */
     void setMaxEntries(unsigned int numberOfEntries);
 
@@ -62,6 +65,9 @@ public slots:
      * viewport. Values outside this range will be hidden from view.
      * @param start the first x value that will be shown
      * @param end the last x value that will be shown
+     * @warning this function is not ready to be used for setting viewports or
+     * zooming in on certain locations on the graph.
+     * @todo implement this one day
      */
     void setViewport(unsigned int start, unsigned int end);
 
@@ -99,22 +105,25 @@ private:
     /**
      * @brief makePlot
      * @param index
+     * @deprecated
      */
-    void makePlot(int index);
+    //void makePlot(int index);
 
     /**
-     * @brief processClickEvent
+     * @brief processClickEvent checks the status of the check box with the given index
+     * each time this is called. If the box is checked, then the trace with the matching
+     * index will be drawn, otherwise the trace will be hidden.
      * @param index
      */
     void processClickEvent(int index);
 
     /**
-     * @brief firstEntry
+     * @brief firstEntry the index of the first entry that will be drawn
      */
     int firstEntry;
 
     /**
-     * @brief maxEntries
+     * @brief maxEntries the number of entries that will be drawn after the first entry
      */
     int maxEntries;
 
@@ -143,9 +152,8 @@ private:
     QCPGraph* graph_zvel;
 
     /**
-     * @brief updateGraph checks the status of each of the checkboxes and
-     * shows/hides each of the traces as necesary. Also resizes the viewport
-     * to make data viewing easier.
+     * @brief updateGraph resizes the viewport for the graph to make data
+     * viewing easier.
      */
     void updateGraph();
 };

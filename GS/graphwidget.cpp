@@ -8,17 +8,13 @@ GraphWidget::GraphWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::GraphWidget)
 {
-//<<<<<<< master
     // Set up graphName
     QString graphName[10] = {"Heading", "Latitude", "Longtitude", "Altitude", "Pitch", "Roll",
                 "Yaw", "Xvel", "Yvel", "Zvel"};
 
     ui->setupUi(this);
-//    GraphWidget::makePlot();
-//=======
     firstEntry = 0;
-    maxEntries = 50;
-//>>>>>>> master
+    maxEntries = 2000;
 
     //ui->setupUi(this);
     this->setGeometry(0,0,400,400);
@@ -37,12 +33,9 @@ GraphWidget::GraphWidget(QWidget *parent) :
         graphs[i] = ui->customPlot->addGraph();
         //graphs[i] = new QCPGraph(ui->customPlot->xAxis,ui->customPlot->yAxis);
         QPen pen;
-        pen.setColor(QColor(qSin(i*1+1.2)*80+80, qSin(i*0.3+0)*80+80, qSin(i*0.3+1.5)*80+80));
+        pen.setColor(QColor(qSin(i+1.2)*80+80, qSin(i*0.3)*80+80, qSin(i*0.3+1.5)*80+80));
         graphs[i]->setPen(pen);
         graphs[i]->setLineStyle(QCPGraph::lsLine);
-
-        /// \todo Make the names mean something by supporting the following code line
-        /// \code graphs[i]->setName(names[i]);
         graphs[i]->setName(graphName[i]);
 
         //graphs[i]->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 5));
@@ -65,11 +58,6 @@ GraphWidget::GraphWidget(QWidget *parent) :
 GraphWidget::~GraphWidget()
 {
     delete ui;
-    //for(int i = 0; i < 10; i++){
-    //    if(graphs[i]){
-    //        delete graphs[i];
-    //    }
-    //}
 }
 
 void GraphWidget::setMaxEntries(unsigned int numberOfEntries){
@@ -131,13 +119,33 @@ void GraphWidget::appendTelemPacket(Protocol::TelemetryPacket* packet){
 void GraphWidget::drawMission(Mission* mission){
     myMission = mission;
     for(int i = 0; i < 10; i++){
-        makePlot(i);
+        QCPGraph *graph = graphs[i];
+        QVector<double> * vals = mission->getValuesForID(i);
+
+        // Get checkboxes value
+        //ui->customPlot->legend->setVisible(true);
+        //ui->customPlot->legend->setFont(QFont("Helvetica", 9));
+        //QPen pen;
+
+        //pen.setColor(QColor(qSin(index*1+1.2)*80+80, qSin(index*0.3+0)*80+80, qSin(index*0.3+1.5)*80+80));
+        //graph->setPen(pen);
+        //graph->setName("lsLine");
+        //graph->setLineStyle(QCPGraph::lsLine);
+        //graph->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 5));
+
+        // Generate data
+        //QVector<double> x, y;
+        for (int j = 0; j < vals->length(); ++j) {
+            //x.append(j);
+            //y.append((*vals)[j]);
+            graph->addData(j,(*vals)[j]);
+        }
         processClickEvent(i);
-        makePlot(i);
     }
 
 }
 
+/*
 void GraphWidget::makePlot(int index) {
     if(!myMission){
         return; //do nothing
@@ -173,7 +181,7 @@ void GraphWidget::makePlot(int index) {
 
     updateGraph();
 }
-
+*/
 void GraphWidget::updateGraph(){
     // zoom out a bit:
     ui->customPlot->yAxis->rescale(true);
@@ -193,7 +201,6 @@ void GraphWidget::updateGraph(){
 void GraphWidget::processClickEvent(int index) {
     if (checkboxes[index]->isChecked())
     {
-        //makePlot(index);
         graphs[index]->setVisible(true);
         graphs[index]->addToLegend();
     }
@@ -201,10 +208,7 @@ void GraphWidget::processClickEvent(int index) {
     {
         graphs[index]->setVisible(false);
         graphs[index]->removeFromLegend();
-        //ui->customPlot->removeGraph(graphs[index]);
-        //ui->customPlot->removeGraph(graphs[index]);
     }
-    //ui->customPlot->replot(); // Redraw graph
     updateGraph();
 }
 

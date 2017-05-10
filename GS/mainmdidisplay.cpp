@@ -17,8 +17,6 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
 
     ///\todo Just put these in the UI file and promote QWidgets
     showControlPanel();
-
-    myLoadedFlightPath = NULL;
 }
 
 MainMDIDisplay::~MainMDIDisplay() {
@@ -43,6 +41,12 @@ void MainMDIDisplay::showControlPanel(){
         connect(gscp, &GSControlPanel::exitButton_clicked, this, &MainMDIDisplay::close);
         connect(gscp, &GSControlPanel::loadFlightpathButton_clicked, this, &MainMDIDisplay::loadFlightPath);
         connect(gscp, &GSControlPanel::saveFlightpathButton_clicked, this, &MainMDIDisplay::saveFlightPath);
+
+
+        connect(gscp, &GSControlPanel::loadMissionButton_clicked, this, &MainMDIDisplay::loadMission);
+        connect(gscp, &GSControlPanel::saveMissionButton_clicked, this, &MainMDIDisplay::saveMission);
+        connect(gscp, &GSControlPanel::missionRecapButton_clicked, this, &MainMDIDisplay::startMissionRecapSlot);
+
         connect(gscp, &GSControlPanel::mainMenuButton_clicked, this, &MainMDIDisplay::rtnToMainMenu);
         addWindow(gscp);
     }
@@ -86,11 +90,10 @@ void MainMDIDisplay::setupMapPaths(){
             map->sendCreateNewPath(0);
             map->sendSetActivePath(0);
 
-            if(myLoadedFlightPath && myLoadedFlightPath->length() > 0){
-                qDebug() << "Pushing path of size:" << myLoadedFlightPath->length();
-                map->addFlightPath(myLoadedFlightPath,0,"preloaded");
-                delete myLoadedFlightPath;
-                myLoadedFlightPath = NULL;
+            if(myFlightPath.length() > 0) {
+                qDebug() << "Pushing path of size:" << myFlightPath.length();
+                map->addFlightPath(&myFlightPath,0,"preloaded");
+                myFlightPath.clear();
             } else {
                 qDebug() << "Flight Path object is empty or null";
             }
@@ -100,20 +103,27 @@ void MainMDIDisplay::setupMapPaths(){
             if(!map){
                 /// \todo handling code for if map does not exist prior to starting execution
                 map->sendCreateNewPath(0);
-                map->addFlightPath(myLoadedFlightPath,0, "execution");
+                map->addFlightPath(&myFlightPath,0, "execution");
             } else {
                 qDebug() << "Sending disableEditing!";
                 map->sendDisableEditing();
             }
             map->sendCreateNewPath(1);
-            //map->addFlightPath(myLoadedFlightPath,0, "execution");
             break;
         case RECAP:
             qDebug() << "RECAP";
-            /// \todo fill out MapRecap map requirements
+            if(!map){
+                /// \todo handling code for if map does not exist prior to starting execution
+                map->sendCreateNewPath(0);
+                map->addFlightPath(&myFlightPath,0, "execution");
+            } else {
+                qDebug() << "Sending disableEditing!";
+                map->sendDisableEditing();
+            }
+            map->sendCreateNewPath(1);
             break;
         default:
-            qDebug() << "NONE - this is clearly a bug!";
+            qDebug() << "NONE - this is clearly a bug cause by an illegal value for myState!";
             break;
     }
 }
@@ -215,6 +225,8 @@ void MainMDIDisplay::startMissionRecapSlot() {
 void MainMDIDisplay::rtnToMainMenu(){
     if(myState != NONE){
         changeState(MDIState::NONE);
+        myFlightPath.clear();
+
         if(map->isVisible()){
             map->disconnectWebSocket();
             qtt->deleteTabWidget(map);
@@ -243,34 +255,37 @@ void MainMDIDisplay::startMissionPlanning(){
 }
 
 void MainMDIDisplay::endMissionPlanning(){
-    if(myLoadedFlightPath){
-        delete myLoadedFlightPath;
-        myLoadedFlightPath = NULL;
-    }
+    myFlightPath.clear();
     if(map->isVisible()){
-        myLoadedFlightPath = table->getTableAsFlightPath();
-        qDebug() << "FlightPath contains " << myLoadedFlightPath->length() << " waypoints";
-        myLoadedMission = new Mission(*myLoadedFlightPath);
-        qDebug() << "Mission contains " << myLoadedMission->getFlightPath()->length() << " waypoints";
-        table->setEditable(false);
+        FlightPath* fp = table->getTableAsFlightPath();
+        myFlightPath = *fp;
+        delete fp;
+        qDebug() << "FlightPath contains " << myFlightPath.length() << " waypoints";
+        //myLoadedMission = new Mission(myFlightPath);
+        myMission = Mission(myFlightPath);
+
+
+        //qDebug() << "Mission contains " << myLoadedMission->getFlightPath()->length() << " waypoints";
+        qDebug() << "Mission contains " << myMission.getFlightPath()->length() << " waypoints";
     }
 }
 
 void MainMDIDisplay::startMissionExecution(){
     /// \todo add handling for starting MissionExection from any other state
-
+    table->setEditable(false);
     table->clearTable();
     //changeState(EXECUTION);
 
     setupMapPaths();
     /// \todo add server startup code here
 
-    myServer = new GsServer(myLoadedMission);
+    //myServer = new GsServer(myLoadedMission);
+    myServer = new GsServer(&myMission);
     /// \todo change address and port to be located in the net.h file
     myServer->openServer(QHostAddress::LocalHost, 20715);
     connect(myServer, &GsServer::packetRecieved, this, &MainMDIDisplay::receivePacket);
 
-    for (TimedAction *a : *myLoadedFlightPath) {
+    for(TimedAction *a: myFlightPath){
         a->first->SetAction(Protocol::ActionType::AddWaypoint);
         myServer->sendPacket(a->first);
     }
@@ -302,19 +317,28 @@ void MainMDIDisplay::startMissionRecap(){
     ///\todo
     /// -configure/create maps, tables, and graphs
 
-    if(!myLoadedMission){
-        qDebug() << "Attempted to start MissionRecap without loading a Mission first!";
-        return;
-    }
+    //if(!myLoadedMission){
+    //    qDebug() << "Attempted to start MissionRecap without loading a Mission first!";
+    //    return;
+    //}
 
     if(!qtt){
         qtt = new QtTabTest();
+        qtt->setVisible(false);
         map = new MapWidget();
         qtt->addNewTab(map, "Map View");
         table = new TableWidget();
-        qtt->addNewTab(map, "Telemetry Log");
+        qtt->addNewTab(table, "Telemetry Log");
         graph = new GraphWidget();
-        qtt->addNewTab(map, "Graphs");
+        qtt->addNewTab(graph, "Graphs");
+    }
+    this->connect(map, &MapWidget::JSInitialized, this, &MainMDIDisplay::setupMapPaths);
+
+    if(!qtt->isVisible()){
+        addWindow(qtt);
+        this->graph->drawMission(&myMission);
+        this->table->insertMissionTelem(&myMission);
+        this->map->drawMissionTelem(&myMission);
     }
     table->setEditable(false);
 }
@@ -356,14 +380,13 @@ void MainMDIDisplay::loadFlightPath() {
     QString fullFileName = this->gscp->getFlightpathNameToLoad();
 
     this->changeState(MDIState::PLANNING);
-    if(myLoadedFlightPath){
-        delete myLoadedFlightPath;
-        myLoadedFlightPath = NULL;
-    }
-    this->myLoadedFlightPath = new FlightPath(fullFileName);
-    qDebug() << "Mission Length: " << myLoadedFlightPath->length();
 
-    QList<Protocol::Waypoint> *list = this->myLoadedFlightPath->getOrderedWaypoints();
+    myFlightPath = FlightPath(fullFileName);
+    qDebug() << "Mission Length: " << myFlightPath.length();
+    QList<Protocol::Waypoint> *list = myFlightPath.getOrderedWaypoints();
+
+
+
     foreach (Protocol::Waypoint wp, *list) {
         this->table->appendRow(wp.lat, wp.lon);
     };
@@ -379,14 +402,13 @@ void MainMDIDisplay::saveFlightPath() {
 
     QString fullFileName = this->gscp->getFlightpathNameToSave();
 
-    this->myLoadedFlightPath = this->table->getTableAsFlightPath();
-    this->myLoadedFlightPath->save(fullFileName);
+    FlightPath *fp = table->getTableAsFlightPath();
+    myFlightPath = *fp;
+    myFlightPath.save(fullFileName);
+    delete fp;
 
     //this->gscp->addMissionToLoad(fileName);
     //this->gscp->setSelectedMission(fileName);
-
-    //delete this->myLoadedFlightPath;
-    //this->myLoadedFlightPath = NULL;
 
 
     /* This is for mission, put it in different method after done with testing.
@@ -396,4 +418,23 @@ void MainMDIDisplay::saveFlightPath() {
     this->myLoadedMission = new Mission(fullFileName);
     this->myLoadedMission->save(fullFileName);
     */
+}
+
+void MainMDIDisplay::saveMission(){
+    if (this->gscp->getMissionNameToSave() == "")
+        return;
+    qDebug() << "ENTERING SAVE MISSION!";
+    QString fullFileName = this->gscp->getMissionNameToSave();
+    myMission.save(fullFileName);
+}
+
+void MainMDIDisplay::loadMission(){
+    if (this->gscp->getMissionNameToLoad() == "") return;
+    qDebug() << "ENTERING LOAD MISSION!";
+    QString fullFileName = this->gscp->getMissionNameToLoad();
+    //this->changeState(MDIState::RECAP);
+    myMission = Mission(fullFileName);
+    myFlightPath = *(myMission.getFlightPath());
+    qDebug() << "Mission Length: " << myMission.numOfEntries();
+    //this->graph->drawMission(&myMission);
 }

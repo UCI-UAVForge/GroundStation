@@ -33,6 +33,8 @@ Mission::Mission(QString filename){
         values.at(9)->append(data.zvel);
     };
 
+    std::cout << "created mission with " << values.at(0)->size() << " entries." << std::endl;
+
     /// @todo any remaining database functions for safe file handling if needed
     db.close();
 }
@@ -127,4 +129,8 @@ bool Mission::save(QString filename){
     db.close();
 
     return true;
+}
+
+int Mission::numOfEntries(){
+    return values.at(0)->size();
 }

@@ -15,8 +15,8 @@ GSControlPanel::GSControlPanel(QWidget *parent):QDialog(parent),ui(new Ui::GSCon
     this->ui->setupUi(this);
 
     //temporarily disable these for design review
-    this->ui->LoadMissionButton->setEnabled(false);
-    this->ui->SaveMissionButton->setEnabled(false);
+    //this->ui->LoadMissionButton->setEnabled(false);
+    //this->ui->SaveMissionButton->setEnabled(false);
 
     // Embed MissionStatusWindow into the GSControlPanel window.
     this->ui->MissionStatusWindowWidget->setWindowFlags(Qt::Widget);
@@ -76,6 +76,27 @@ void GSControlPanel::on_FinishMissionButton_clicked() {
  */
 void GSControlPanel::on_LoadMissionButton_clicked() {
     this->CurrentState = LoadMissionState ;
+
+
+    //coppied code
+    //Clear the current dropdown menu
+    this->ui->LoadMissionDropdown->clear();
+
+    // Open folder from the 'Documents' directory.
+    const QString documentDir = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).first();
+    this->folder = documentDir + "/UAVForge";
+    if (!QDir(this->folder).exists())
+        QDir().mkdir(this->folder);
+
+    // Load all the database files.
+    QDir dbFolder(this->folder);
+    dbFolder.setSorting(QDir::SortFlag::Name);
+    QStringList dbFiles = dbFolder.entryList({"*_mis.db"});
+    foreach (QString file, dbFiles) {
+        addMissionToLoad(file.remove(file.length()-7, 7));
+    }
+    //end coppied code
+
     emit updateGSCP() ;
     emit loadMissionButton_clicked();
 }
@@ -117,7 +138,11 @@ void GSControlPanel::on_ExitButton_clicked()
  * @return QString of the mission name to save
  */
 QString GSControlPanel::getMissionNameToSave() {
-    return this->ui->SaveMissionTextBox->text() ;
+    QString name = this->ui->SaveMissionTextBox->text() ;
+    if(name == ""){
+        return "";
+    }
+    return this->folder + this->kPathSeparator + name + "_mis";
 }
 
 /**
@@ -125,8 +150,11 @@ QString GSControlPanel::getMissionNameToSave() {
  * @return QString of the mission name to load
  */
 QString GSControlPanel::getMissionNameToLoad() {
-    //return this->ui->LoadMissionDropdown->currentText();
-    return this->ui->LoadMissionDropdown->itemData( this->ui->LoadMissionDropdown->currentIndex() ).toString() ;
+    QString name = ui->LoadMissionDropdown->currentText();
+    if(name == ""){
+        return "";
+    }
+    return this->folder + this->kPathSeparator + name + "_mis";
 }
 
 /**
@@ -184,7 +212,7 @@ void GSControlPanel::on_LoadFlightpathButton_clicked() {
         this->ui->LoadFlightpathDropdown->clear();
 
         // Open folder from the 'Documents' directory.
-        const QString documentDir = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).constFirst();
+        const QString documentDir = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).first();
         this->folder = documentDir + "/UAVForge";
         if (!QDir(this->folder).exists())
             QDir().mkdir(this->folder);
@@ -196,7 +224,6 @@ void GSControlPanel::on_LoadFlightpathButton_clicked() {
         foreach (QString file, dbFiles) {
             addFlightpathToLoad(file.remove(file.length()-6, 6));
         }
-
     }
     else if ( this->CurrentState == LoadFlightpathState ) {
         emit loadFlightpathButton_clicked() ;

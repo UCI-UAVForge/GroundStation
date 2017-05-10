@@ -54,14 +54,16 @@ private slots:
 
   void receivePacket(Protocol::Packet* packet);
   void showControlPanel();
+
+
 private:
   Ui::MainMDIDisplay *ui;
 
   MDIState myState;
 
   //Jordan's vars for state transition
-  FlightPath *myLoadedFlightPath;
-  Mission *myLoadedMission;
+  FlightPath myFlightPath;
+  Mission myMission;
 
   GsServer* myServer;
   //end Jordan's vars
@@ -70,13 +72,12 @@ private:
   TableWidget* table;
   QWidget* mapExecutionStatusUIWidget;
   QVBoxLayout* MapExecutionStatusVBoxLayout;
-
-  GSControlPanel* gscp ;
-
-  //TableWidget tw ;
+  GSControlPanel* gscp;
 
   //Temporary tabbed display widget
   QtTabTest* qtt ;
+
+  GraphWidget * graph;
 
   void startMissionPlanning();
   void endMissionPlanning();
@@ -85,10 +86,11 @@ private:
   void startMissionRecap();
   void endMissionRecap();
   void plotPosition(double lat, double lng);
+
   void saveFlightPath();
   void loadFlightPath();
-
-  GraphWidget * graph;
+  void saveMission();
+  void loadMission();
 };
 
 #endif // MAINMDIDISPLAY_H

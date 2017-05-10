@@ -40,6 +40,5 @@ int main(int argc, char *argv[]) {
     //Hide the splash screen.
     splash.finish(&x);
     return a.exec();
-
 }
 

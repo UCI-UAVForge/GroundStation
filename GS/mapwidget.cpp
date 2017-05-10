@@ -9,6 +9,7 @@
 #include <QTimer>
 #include <QList>
 #include "ackpacket.h"
+#include <math.h>
 #include <QDebug>
 
 MapWidget::MapWidget(QWidget *parent): QWebEngineView(parent),
@@ -131,3 +132,24 @@ void MapWidget::finishedLoading() {
     emit JSInitialized();
 }
 
+void MapWidget::drawMissionTelem(Mission* mission){
+    sendCreateNewPath(1);
+    FlightPath fp;
+    for(int i = 0; i < mission->numOfEntries(); i++){
+        Protocol::Waypoint wp;
+        wp.lat = mission->getValueForIndexAndID(i,1);
+        wp.lon = mission->getValueForIndexAndID(i,2);
+        wp.alt = mission->getValueForIndexAndID(i,3);
+
+        //we currently do not have an easy way to determine the speed of the UAV
+        //wp.speed = 10;
+
+        float xvel = mission->getValueForIndexAndID(i,7);
+        float yvel = mission->getValueForIndexAndID(i,8);
+        float zvel = mission->getValueForIndexAndID(i,9);
+        wp.speed = sqrt(xvel*xvel+yvel*yvel+zvel*zvel);
+        fp.addNavAction(wp,i);
+    }
+    addFlightPath(&fp,0,"execution");
+
+}

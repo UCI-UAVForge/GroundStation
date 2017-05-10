@@ -11,6 +11,7 @@
 #include "websocketclientwrapper.h"
 #include "websockettransport.h"
 #include "flightpath.h"
+#include "mission.h"
 
 /**
  * @brief The MapWidget class
@@ -58,6 +59,14 @@ public:
      * @return An ordered list of all the waypoints in a certain path
      */
     QList<Protocol::Waypoint>* getPath(int pathID);
+
+    /**
+     * @brief drawMission takes the flightpath and telemetry data from a mission
+     * and plots them on the graph.
+     * @param mission The mission object containing the telemetry and flightpath
+     * data
+     */
+    void drawMissionTelem(Mission* mission);
 
 private slots:
     /**
