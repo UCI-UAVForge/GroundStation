@@ -68,8 +68,14 @@ private:
   GsServer* myServer;
   //end Jordan's vars
 
-  MapWidget* map;
-  TableWidget* table;
+  //MapWidget* map;
+  MapWidget myMap;
+
+  //TableWidget* table;
+
+  TableWidget telemTable;
+  TableWidget waypointTable;
+
   QWidget* mapExecutionStatusUIWidget;
   QVBoxLayout* MapExecutionStatusVBoxLayout;
   GSControlPanel* gscp;
@@ -77,7 +83,9 @@ private:
   //Temporary tabbed display widget
   QtTabTest* qtt ;
 
-  GraphWidget * graph;
+  //GraphWidget * graph;
+
+  GraphWidget myGraph;
 
   void startMissionPlanning();
   void endMissionPlanning();
