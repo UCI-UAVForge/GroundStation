@@ -14,7 +14,7 @@
 #include "graphwidget.h"
 #include "tablewidget.h"
 #include "qttabtest.h"
-
+#include "dataobjects.h"
 #include "gscontrolpanel.h"
 
 #define EMPTY_TELEMETRY_PACKET NULL
@@ -52,7 +52,8 @@ private slots:
   void startMissionRecapSlot();
   void rtnToMainMenu();
 
-  void receivePacket(Protocol::Packet* packet);
+  //void receivePacket(Protocol::Packet* packet);
+  void receiveTelemetryData(TelemetryData data);
   void showControlPanel();
 
 

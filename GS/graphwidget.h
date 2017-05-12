@@ -5,6 +5,7 @@
 #include <QVector>
 #include "qcustomplot.h"
 #include "mission.h"
+#include "dataobjects.h"
 
 namespace Ui {
 class GraphWidget;
@@ -70,6 +71,12 @@ public slots:
      * @todo implement this one day
      */
     void setViewport(unsigned int start, unsigned int end);
+
+    /**
+     * @brief appendTelemData
+     * @param data
+     */
+    void appendTelemData(TelemetryData *data);
 
 
 private slots:

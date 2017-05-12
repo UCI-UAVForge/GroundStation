@@ -12,7 +12,8 @@ GsServer::GsServer(messagebox *myMessageBox, Mission *myMission):
     this->myMission = myMission;
     port = NET::SEND_PORT;
     target = NET::TARGET_ADDR;
-    connect(&networkListener, &NetworkListener::packetRecieved, this, &GsServer::recivePacket);
+    //connect(&networkListener, &NetworkListener::packetRecieved, this, &GsServer::recivePacket);
+    connect(&networkListener, &NetworkListener::telemDataRecieved, this, &GsServer::recieveTelemData);
 }
 
 GsServer::~GsServer(){
@@ -43,6 +44,27 @@ void GsServer::closeServer(){
     networkListener.stop();
     running = false;
 }
+
+void GsServer::sendStartSequence() {
+
+}
+
+void GsServer::sendStopSequence() {
+    Protocol::ActionPacket a1,a2;
+    a1.SetAction(Protocol::ActionType::Stop);
+    //a2.SetAction(Protocol::ActionType::Shutdown);
+    sendPacket(&a1);
+    //sendPacket(&a2);
+}
+
+void GsServer::sendFlightPath(FlightPath* fp) {
+    for(TimedAction *a: *fp){
+        a->first->SetAction(Protocol::ActionType::AddWaypoint);
+        sendPacket(a->first);
+    }
+}
+
+
 
 void GsServer::recieveAckPacket(Protocol::AckPacket* ack){
     outPackets.recieveAckPacket(ack);
@@ -137,6 +159,11 @@ void GsServer::sendNextPacket() {
     //END TEST CODE
 }
 
+/*
 void GsServer::recivePacket(Protocol::Packet *packet) {
     emit packetRecieved(packet);
+}*/
+
+void GsServer::recieveTelemData(TelemetryData data) {
+    emit telemDataRecieved(data);
 }

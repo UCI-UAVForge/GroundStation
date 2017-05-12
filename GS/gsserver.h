@@ -11,6 +11,7 @@
 #include "networklistener.h"
 #include "messagebox.h"
 #include "mission.h"
+#include "dataobjects.h"
 
 #define DEFAULT_PRIORITY 10
 
@@ -58,7 +59,9 @@ public:
      */
     void recieveAckPacket(Protocol::AckPacket* ack);
 
-
+    /**
+     * @brief startServer
+     */
     void startServer();
 
     /**
@@ -78,6 +81,25 @@ public:
       listener thread.
      */
     void closeServer();
+
+    /**
+     * @brief sendStartSequence sends the sequence of packets necesary to start
+     * the execution of a mission
+     */
+    void sendStartSequence();
+
+    /**
+     * @brief sendStopSequence sends the sequence of packets necesary to
+     * terminate a mission.
+     */
+    void sendStopSequence();
+
+    /**
+     * @brief sendFlightPath sends all of the waypoints in a flightpath to
+     * the UAV
+     * @param fp A pointer to the FlightPath object containing the waypoints
+     */
+    void sendFlightPath(FlightPath *fp);
 
     /**
       waits for a specified number of milliseconds
@@ -156,10 +178,12 @@ private:
      ServerQueue outPackets;
 
 private slots:
-     void recivePacket(Protocol::Packet* packet);
+     //void recivePacket(Protocol::Packet* packet);
+     void recieveTelemData(TelemetryData data);
 
 signals:
-     void packetRecieved(Protocol::Packet* packet);
+     //void packetRecieved(Protocol::Packet* packet);
+     void telemDataRecieved(TelemetryData data);
 };
 #endif // GSSERVER_H
 

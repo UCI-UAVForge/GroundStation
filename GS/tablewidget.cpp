@@ -82,11 +82,19 @@ bool TableWidget::isEditable(){
     return editable;
 }
 
-void TableWidget::insertMissionTelem(Mission* mission){
+void TableWidget::insertMissionTelem(Mission* mission) {
     for(int i = 0; i < mission->numOfEntries(); i++){
         double lat = mission->getValueForIndexAndID(i,1);
         double lng = mission->getValueForIndexAndID(i,2);
 
         appendRow(lat,lng);
     }
+}
+
+void TableWidget::insertFlightPath(FlightPath* fp) {
+    QList<Protocol::Waypoint> *list = fp->getOrderedWaypoints();
+    foreach (Protocol::Waypoint wp, *list) {
+        appendRow(wp.lat,wp.lon);
+    };
+    delete list;
 }

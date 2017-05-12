@@ -6,6 +6,7 @@
 #include <QString>
 #include <QUdpSocket>
 #include "messagebox.h"
+#include "dataobjects.h"
 
 class GsServer;
 
@@ -28,7 +29,9 @@ signals:
      */
     void sendCoordinates(void);
 
-    void packetRecieved(Protocol::Packet *packet);
+    //void packetRecieved(Protocol::Packet *packet);
+    void telemDataRecieved(TelemetryData data);
+
 private:
     bool listening = true;
     int UAVid;

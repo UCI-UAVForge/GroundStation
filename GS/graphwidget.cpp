@@ -75,11 +75,39 @@ void GraphWidget::setViewport(unsigned int start, unsigned int end){
     maxEntries = end - start;
 }
 
+void GraphWidget::appendTelemData(TelemetryData* data) {
+    int time = 0;
+    if(graphs[0]->data()->size() > 0){
+        time = graphs[0]->data()->lastKey()+1;
+    }
+
+    if(graphs[0]->data()->size() > maxEntries){
+        for(int i = 0; i < 10; i++){
+            graphs[i]->removeDataBefore(time-maxEntries);
+        }
+    }
+
+    graphs[0]->addData(time,data->heading);
+    graphs[1]->addData(time,data->lat);
+    graphs[2]->addData(time,data->lng);
+    graphs[3]->addData(time,data->alt);
+    graphs[4]->addData(time,data->pitch);
+    graphs[5]->addData(time,data->roll);
+    graphs[6]->addData(time,data->yaw);
+    graphs[7]->addData(time,data->xvel);
+    graphs[8]->addData(time,data->yvel);
+    graphs[9]->addData(time,data->zvel);
+
+    updateGraph();
+}
+
 void GraphWidget::appendPoint(double x, double y, int id) {
     graphs[id]->addData(x,y);
 }
 
 
+
+/// \todo REMOVE REFERENCES TO THE PROTOCOL LIBRARY FROM THIS CLASS
 void GraphWidget::appendTelemPacket(Protocol::TelemetryPacket* packet){
     float heading;
     double lat, lon;

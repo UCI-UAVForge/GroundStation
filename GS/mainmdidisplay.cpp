@@ -233,18 +233,14 @@ void MainMDIDisplay::startMissionPlanning(){
     qtt = new QtTabTest();
     //map = new MapWidget();
     ///\todo somehow clear the map
-    //table = new TableWidget();
     telemTable.clearTable();
     waypointTable.clearTable();
 
-    //table->setEditable(true);
     waypointTable.setEditable(true);
     telemTable.setEditable(false);
 
-    //qtt->addNewTab(map,"Map");
     qtt->addNewTab(&myMap,"Map");
 
-    //qtt->addNewTab(table,"Table");
     qtt->addNewTab(&waypointTable,"Waypoint Table");
     addWindow(qtt);
 
@@ -283,19 +279,16 @@ void MainMDIDisplay::startMissionExecution(){
 
     setupMapPaths();
     /// \todo add server startup code here
-
-    //myServer = new GsServer(myLoadedMission);
     myServer = new GsServer(&myMission);
     /// \todo change address and port to be located in the net.h file
     myServer->openServer(QHostAddress::LocalHost, 20715);
-    connect(myServer, &GsServer::packetRecieved, this, &MainMDIDisplay::receivePacket);
+    //connect(myServer, &GsServer::packetRecieved, this, &MainMDIDisplay::receivePacket);
 
-    for(TimedAction *a: myFlightPath){
-        a->first->SetAction(Protocol::ActionType::AddWaypoint);
-        myServer->sendPacket(a->first);
-    }
+    connect(myServer, &GsServer::telemDataRecieved, this, &MainMDIDisplay::receiveTelemetryData);
+    myServer->sendFlightPath(&myFlightPath);
     myServer->startServer();
 
+    /// \todo clear the
     //graph = new GraphWidget();
     qtt->addNewTab(&myGraph, "Graph");
     //qtt->addNewTab(graph,"Graph");
@@ -309,14 +302,8 @@ void MainMDIDisplay::endMissionExecution(){
     /// -shutdown server maybe???
     /// -stop editing maps, tables, and graphs
 
-
-    Protocol::ActionPacket a1,a2;
-    a1.SetAction(Protocol::ActionType::Stop);
-    //a2.SetAction(Protocol::ActionType::Shutdown);
-    myServer->sendPacket(&a1);
-    //myServer->sendPacket(&a2);
-
-    disconnect(myServer, &GsServer::packetRecieved, this, &MainMDIDisplay::receivePacket);
+    myServer->sendStopSequence();
+    disconnect(myServer, &GsServer::telemDataRecieved, this, &MainMDIDisplay::receiveTelemetryData);
 }
 
 void MainMDIDisplay::startMissionRecap(){
@@ -366,29 +353,15 @@ void MainMDIDisplay::endMissionRecap(){
     //removeWindow(qtt);
 }
 
-void MainMDIDisplay::receivePacket(Protocol::Packet* packet){
-    Protocol::Packet* incPack = packet;
-    Protocol::PacketType type = incPack->get_type();
-    if (type == Protocol::PacketType::Telem){
-        double lat, lng;
-        float alt;
-        Protocol::TelemetryPacket * currentTelemetryPacket = (Protocol::TelemetryPacket*)incPack;
-        std::cout << "TelemPacket Recieved" << std::endl;
-        currentTelemetryPacket->GetLocation(&lat,&lng,&alt);
-        plotPosition(lat,lng);
-        //graph->appendTelemPacket(currentTelemetryPacket);
-        myGraph.appendTelemPacket(currentTelemetryPacket);
-        this->gscp->setCurrentTelemetryPacket( currentTelemetryPacket );
-    }
+void MainMDIDisplay::receiveTelemetryData(TelemetryData data) {
+    plotPosition(data.lat, data.lng);
+    myGraph.appendTelemData(&data);
+    gscp->setCurrentTelemetryData(&data);
 }
 
 void MainMDIDisplay::plotPosition(double lat, double lng){
-    //table->appendRow(lat, lng);
-    //FlightPath *fp = table->getTableAsFlightPath();
-
     telemTable.appendRow(lat,lng);
     FlightPath *fp = telemTable.getTableAsFlightPath();
-    //map->addFlightPath(fp, 0, "execution");
     myMap.addFlightPath(fp, 0, "execution");
     delete fp;
 }
@@ -406,13 +379,7 @@ void MainMDIDisplay::loadFlightPath() {
 
     myFlightPath = FlightPath(fullFileName);
     qDebug() << "Mission Length: " << myFlightPath.length();
-    QList<Protocol::Waypoint> *list = myFlightPath.getOrderedWaypoints();
-
-    foreach (Protocol::Waypoint wp, *list) {
-        //this->table->appendRow(wp.lat, wp.lon);
-        waypointTable.appendRow(wp.lat,wp.lon);
-    };
-    delete list;
+    waypointTable.insertFlightPath(&myFlightPath);
 }
 
 void MainMDIDisplay::saveFlightPath() {
@@ -424,23 +391,10 @@ void MainMDIDisplay::saveFlightPath() {
 
     QString fullFileName = this->gscp->getFlightpathNameToSave();
 
-    //FlightPath *fp = table->getTableAsFlightPath();
     FlightPath *fp = waypointTable.getTableAsFlightPath();
     myFlightPath = *fp;
     myFlightPath.save(fullFileName);
     delete fp;
-
-    //this->gscp->addMissionToLoad(fileName);
-    //this->gscp->setSelectedMission(fileName);
-
-
-    /* This is for mission, put it in different method after done with testing.
-    QString fileName = "Try1";
-    QString fullFileName = this->folder + this->kPathSeparator + fileName;
-
-    this->myLoadedMission = new Mission(fullFileName);
-    this->myLoadedMission->save(fullFileName);
-    */
 }
 
 void MainMDIDisplay::saveMission(){
@@ -461,6 +415,5 @@ void MainMDIDisplay::loadMission(){
     qDebug() << "Mission Length: " << myMission.numOfEntries();
     //this->graph->drawMission(&myMission);
 
-    //table->insertMissionTelem(myMission);
     telemTable.insertMissionTelem(&myMission);
 }

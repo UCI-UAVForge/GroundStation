@@ -20,7 +20,7 @@ GSControlPanel::GSControlPanel(QWidget *parent):QDialog(parent),ui(new Ui::GSCon
 
     // Embed MissionStatusWindow into the GSControlPanel window.
     this->ui->MissionStatusWindowWidget->setWindowFlags(Qt::Widget);
-    this->setCurrentTelemetryPacket(EMPTY_TELEMETRY_PACKET);
+    //this->setCurrentTelemetryPacket(EMPTY_TELEMETRY_PACKET);
     // Whenever GSControlPanel's state is updated, update the GUI accordingly
     connect( this , SIGNAL( updateGSCP() ) , this , SLOT( updateStateGSCP() ) ) ;
     // Initialize current state
@@ -37,8 +37,13 @@ GSControlPanel::~GSControlPanel() {
     delete ui;
 }
 
+/*
 void GSControlPanel::setCurrentTelemetryPacket(Protocol::TelemetryPacket * tp) {
     this->ui->MissionStatusWindowWidget->setCurrentTelemetryPacket(tp);
+}*/
+
+void GSControlPanel::setCurrentTelemetryData(TelemetryData* data) {
+    this->ui->MissionStatusWindowWidget->setCurrentTelemetryData(data);
 }
 
 /**

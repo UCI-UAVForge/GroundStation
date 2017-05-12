@@ -5,8 +5,8 @@
 
 MissionStatusWindow::MissionStatusWindow(QWidget *parent) : QDialog(parent),ui(new Ui::MissionStatusWindow) {
     ui->setupUi(this);
-    this->currentTelemetryPacket = EMPTY_TELEMETRY_PACKET ;
-    this->ui->MyStatusWidget->setCurrentTelemetryPacket( this->currentTelemetryPacket );
+    //this->currentTelemetryPacket = EMPTY_TELEMETRY_PACKET ;
+    //this->ui->MyStatusWidget->setCurrentTelemetryPacket( this->currentTelemetryPacket );
 }
 
 MissionStatusWindow::~MissionStatusWindow() {
@@ -39,8 +39,13 @@ void MissionStatusWindow::initiateStatusWidget() {
 void MissionStatusWindow::initiateTimerWidget() {
     this->ui->TimeTimerWidget->initiate();
 }
-
+/*
 void MissionStatusWindow::setCurrentTelemetryPacket( Protocol::TelemetryPacket * tp ) {
-    this->currentTelemetryPacket = tp ;
+    this->currentTelemetryPacket = tp;
     this->ui->MyStatusWidget->setCurrentTelemetryPacket( this->currentTelemetryPacket );
+}*/
+
+void MissionStatusWindow::setCurrentTelemetryData(TelemetryData *data) {
+    this->currentTelemetryData = data;
+    this->ui->MyStatusWidget->setCurrentTelemetryData(this->currentTelemetryData);
 }

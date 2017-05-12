@@ -42,6 +42,12 @@ public:
      */
     void insertMissionTelem(Mission* mission);
 
+    /**
+     * @brief insertFlightPath
+     * @param fp
+     */
+    void insertFlightPath(FlightPath* fp);
+
 private:
     /**
      * @brief model - The TableModel we get our column names, types,
