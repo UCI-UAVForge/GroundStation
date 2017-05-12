@@ -2,6 +2,7 @@
 #define DATAOBJECTS_H
 
 #include "telemetrypacket.h"
+#include "actionpacket.h"
 
 class TelemetryData {
 private:
@@ -14,6 +15,19 @@ public:
     TelemetryData();
 
     ~TelemetryData();
+};
+
+class WaypointData{
+private:
+public:
+    unsigned long wait;
+    double heading, lat, lng, alt, speed;
+
+    WaypointData(Protocol::Waypoint wp);
+    WaypointData();
+
+    ~WaypointData();
+
 };
 
 #endif // DATAOBJECTS_H
