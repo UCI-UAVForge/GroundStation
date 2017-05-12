@@ -4,6 +4,7 @@
 #include "QPlainTextEdit.h"
 #include "QTimer.h"
 #include "telemetrypacket.h"
+#include "dataobjects.h"
 
 //Definitions
 #define EMPTY_TELEMETRY_PACKET NULL
@@ -16,6 +17,9 @@ private:
 	QTimer StatusTimer;
     /// \brief Pointer to some TelemetryPacket that reflects current UAV telemetry info
     Protocol::TelemetryPacket * currentTelemetryPacket ;
+
+    TelemetryData currentTelemetryData;
+
 public:
     /// \brief Default constructor. Takes no arguments.
     explicit StatusWidget(QWidget* parent=0);
@@ -29,6 +33,8 @@ public:
     Protocol::TelemetryPacket getCurrentTelemetryPacket() ;
     /// \brief Tell StatusWidget to point to a different TelemetryPacket.
     void setCurrentTelemetryPacket( Protocol::TelemetryPacket * ) ;
+
+    void setCurrentTelemetryData(TelemetryData *data);
 public slots:
     /// \brief Slot called whenever StatusWidget updates its GUI. Update the GUI when StatusTimer times out.
     void showStatus();

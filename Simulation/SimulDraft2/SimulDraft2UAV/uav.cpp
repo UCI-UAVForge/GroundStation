@@ -1,5 +1,6 @@
 #include "uav.h"
 #include <QDateTime>
+#include <math.h>
 
 typedef unsigned char u_int8_t;
 
@@ -25,6 +26,19 @@ UAV::UAV(QWidget *parent)
     uavLng = -117.8426;
     uavHomeLat = uavLat;
     uavHomeLng = uavLng;
+
+    uavMass = 2.0;
+    uavXAccel = 0.0008;
+    uavYAccel = 0.0008;
+    uavZAccel = 0.1;
+
+    uavPitch = 0;
+    uavRoll = 0;
+    uavYaw = 0;
+    uavXVel = 0;
+    uavYVel = 0;
+    uavZVel = 0;
+    uavAlt = 1;
 
     latLngSpd = .002;
 
@@ -290,19 +304,13 @@ void UAV::send_info_packet()
 
 void UAV::sendCurrentTelem()
 {
-    updateUavLatLng();
+    updateUavPosition();
     Protocol::TelemetryPacket tp(telemSeqNumber++);
-    double velocity_x = qrand() % 30 + 80;
-    double velocity_y = qrand() % 30 + 80;
-    double velocity_z = qrand() % 30 + 80;
-    double altitude = qrand() % 75 + 150;
-    tp.SetVelocity(velocity_x, velocity_y, velocity_z);
-    tp.SetOrientation(4,5,6);
-    tp.SetLocation(uavLat, uavLng, altitude);
-    tp.SetHeading(10);
-
+    tp.SetVelocity(uavXVel,uavYVel,uavZVel);
+    tp.SetOrientation(uavPitch,uavRoll,uavYaw);
+    tp.SetLocation(uavLat, uavLng, uavAlt);
+    tp.SetHeading(uavHeading);
     sendAPacket(&tp);
-    
 }
 
 bool UAV::can_add_waypoint()
@@ -318,34 +326,55 @@ void UAV::addWaypoint(Protocol::ActionPacket ap)
     pointOfInterest.push(wp);
 }
 
-void UAV::updateUavLatLng()
-{
+void UAV::updateUavPosition() {
 
     if(pointOfInterest.empty()){
         return;
     }
-
     Protocol::Waypoint nextPoint = pointOfInterest.front();
+    //latLngSpd = nextPoint.speed;
 
-    if(uavLat < nextPoint.lat && (uavLat + latLngSpd) < nextPoint.lat)
-        uavLat += latLngSpd;
-    else if(uavLat > nextPoint.lat && (uavLat - latLngSpd) > nextPoint.lat)
-        uavLat -= latLngSpd;
-    else if(uavLat < nextPoint.lat && (uavLat + latLngSpd) >= nextPoint.lat)
-        uavLat = nextPoint.lat;
-    else if(uavLat > nextPoint.lat && (uavLat - latLngSpd) <= nextPoint.lat)
-        uavLat = nextPoint.lat;
+    double deltaLng = nextPoint.lon - uavLng;
+    double deltaLat = nextPoint.lat - uavLat;
+    double deltaAlt = nextPoint.alt - uavAlt; //unused
+    double distance = sqrt(deltaLng*deltaLng+deltaLat*deltaLat);
 
-    if(uavLng < nextPoint.lon && (uavLng + latLngSpd) < nextPoint.lon)
-        uavLng += latLngSpd;
-    else if(uavLng > nextPoint.lon && (uavLng - latLngSpd) > nextPoint.lon)
-        uavLng -= latLngSpd;
-    else if(uavLng < nextPoint.lon && (uavLng + latLngSpd) >= nextPoint.lon)
-        uavLng = nextPoint.lon;
-    else if(uavLng > nextPoint.lon && (uavLng -latLngSpd) <= nextPoint.lon)
-        uavLng = nextPoint.lon;
+    double speed = latLngSpd;
+    double altSpeed = 0.2;
 
-    if(!uavFlyingHome && uavLng == nextPoint.lon && uavLat == nextPoint.lat && pointOfInterest.size() > 0)
+    double dLng = deltaLng/distance*speed;
+    double dLat = deltaLat/distance*speed;
+    double dAlt = deltaAlt/fabs(deltaAlt)*altSpeed;
+
+    uavHeading = atan2(dLat,dLng);
+
+    /// \todo change these to be relative to the CG of the UAV
+
+    double dampingC = 0.026*(1000.0/uavAlt)*10000;
+    double damping = 1/(dampingC*speed*speed+1);
+
+    uavXVel += uavXAccel*dLat/speed/uavMass;
+    uavYVel += uavYAccel*dLng/speed/uavMass;
+    uavZVel += uavZAccel*dAlt/altSpeed/uavMass;
+
+    uavXVel *= damping;
+    uavYVel *= damping;
+    uavZVel *= damping*damping;
+
+    uavLat += uavXVel;
+    uavLng += uavYVel;
+    uavAlt += uavZVel;
+
+    uavPitch = 0;
+    uavRoll = 0;
+    uavYaw = uavHeading;
+
+    battery -= 0.1;
+    if(battery < 20.0){
+        send_info_packet();
+    }
+
+    if(!uavFlyingHome && distance < speed && pointOfInterest.size() > 0)
     {
         Protocol::ActionPacket waypointPacket;
         waypointPacket.SetAction(Protocol::ActionType::AddWaypoint);
@@ -363,7 +392,7 @@ void UAV::updateUavLatLng()
         homePoint.lon = uavHomeLng;
         pointOfInterest.push(homePoint);
     }
-    else if(uavFlyingHome && uavLng == nextPoint.lon && uavLat == nextPoint.lat && pointOfInterest.size() > 0)
+    else if(uavFlyingHome && distance < 2*speed && pointOfInterest.size() > 0)
     {
         Protocol::ActionPacket waypointPacket;
         waypointPacket.SetAction(Protocol::ActionType::AddWaypoint);
@@ -378,7 +407,6 @@ void UAV::updateUavLatLng()
         uavFlying = false;
         uavWaypointsReady = false;
     }
-
 }
 
 

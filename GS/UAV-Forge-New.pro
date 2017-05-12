@@ -62,7 +62,8 @@ SOURCES += main.cpp\
     statuswidget.cpp \
     graphwidget.cpp \
     timerwidget.cpp \
-    missionstatuswindow.cpp #\
+    missionstatuswindow.cpp \ #\
+    dataobjects.cpp
     #mainwindow.cpp \
     #options.cpp \
     #mapplanning.cpp \
@@ -104,7 +105,8 @@ HEADERS  += tablemodel.h \
     graphwidget.h \
     statuswidget.h \
     timerwidget.h \
-    missionstatuswindow.h #\
+    missionstatuswindow.h \  #\
+    dataobjects.h
     #mainwindow.h \
     #options.h \
     #mapplanning.h \

@@ -14,7 +14,7 @@
 #include "graphwidget.h"
 #include "tablewidget.h"
 #include "qttabtest.h"
-
+#include "dataobjects.h"
 #include "gscontrolpanel.h"
 
 #define EMPTY_TELEMETRY_PACKET NULL
@@ -52,31 +52,41 @@ private slots:
   void startMissionRecapSlot();
   void rtnToMainMenu();
 
-  void receivePacket(Protocol::Packet* packet);
+  //void receivePacket(Protocol::Packet* packet);
+  void receiveTelemetryData(TelemetryData data);
   void showControlPanel();
+
+
 private:
   Ui::MainMDIDisplay *ui;
 
   MDIState myState;
 
   //Jordan's vars for state transition
-  FlightPath *myLoadedFlightPath;
-  Mission *myLoadedMission;
+  FlightPath myFlightPath;
+  Mission myMission;
 
   GsServer* myServer;
   //end Jordan's vars
 
-  MapWidget* map;
-  TableWidget* table;
+  //MapWidget* map;
+  MapWidget myMap;
+
+  //TableWidget* table;
+
+  TableWidget telemTable;
+  TableWidget waypointTable;
+
   QWidget* mapExecutionStatusUIWidget;
   QVBoxLayout* MapExecutionStatusVBoxLayout;
-
-  GSControlPanel* gscp ;
-
-  //TableWidget tw ;
+  GSControlPanel* gscp;
 
   //Temporary tabbed display widget
   QtTabTest* qtt ;
+
+  //GraphWidget * graph;
+
+  GraphWidget myGraph;
 
   void startMissionPlanning();
   void endMissionPlanning();
@@ -85,10 +95,11 @@ private:
   void startMissionRecap();
   void endMissionRecap();
   void plotPosition(double lat, double lng);
+
   void saveFlightPath();
   void loadFlightPath();
-
-  GraphWidget * graph;
+  void saveMission();
+  void loadMission();
 };
 
 #endif // MAINMDIDISPLAY_H

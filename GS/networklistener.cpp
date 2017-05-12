@@ -63,7 +63,10 @@ void NetworkListener::processPendingDatagrams(){
         ++pack_number;
         myMessageBox->addTelemetryPacket(*telemPacket);
         server->addPacketToMission(*telemPacket);
-        emit this->packetRecieved(telemPacket);
+        //emit this->packetRecieved(telemPacket);
+
+        TelemetryData td(telemPacket);
+        emit telemDataRecieved(td);
     } else if (type == Protocol::PacketType::Info){
         std::cout<< "InfoPacket Recieved" << std::endl;
         Protocol::InfoPacket *infoPacket = (Protocol::InfoPacket*)incPack;

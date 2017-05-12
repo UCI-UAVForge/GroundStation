@@ -136,7 +136,7 @@ private:
      * \author Alvin Truong
      * \date   20160226
      */
-    void updateUavLatLng();
+    void updateUavPosition();
 
     /*
      * \brief  Send Ackpacket based on received timestamp's packet
@@ -156,12 +156,20 @@ private:
     std::queue<Protocol::Waypoint> pointOfInterest;
 
     // Hard coded constants for uav simulation
-    int battery, pointsStorable, currentNumOfPoints;
+    double battery, uavMass, uavXAccel, uavYAccel, uavZAccel;
+    double accelRate;
+
+    int pointsStorable, currentNumOfPoints;
     int telemSeqNumber;
     double latLngSpd;
 
     double uavLat, uavLng;
     double uavHomeLat, uavHomeLng;
+    double uavAlt;
+    double uavHeading;
+    double uavXVel, uavYVel, uavZVel;
+    double uavPitch, uavRoll, uavYaw;
+
     // Timer needed for telemetry every 200ms
     QTimer *timer;
 
