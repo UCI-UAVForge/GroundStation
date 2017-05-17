@@ -34,21 +34,27 @@ TEMPLATE = app
 
 #PRECOMPILED_HEADER = qcustomplot.h
 
+INCLUDEPATH += \
+    $$PWD/GUI \
+    $$PWD/Network \
+    $$PWD/Util \
+    $$PWD/Database
+
 SOURCES += \
     main.cpp \
-    GUI/*.cpp \
-    Network/*.cpp \
-    Util/*.cpp \
-    Database/*.cpp \
+    $$files(GUI/*.cpp, false) \
+    $$files(Util/*.cpp, false) \
+    $$files(Network/*.cpp, false) \
+    $$files(Database/*.cpp, false) \
 
 HEADERS  += \
-    GUI/*.h \
-    Network/*.h \
-    Util/*.h \
-    Database/*.h \
+    $$files(GUI/*.h, false) \
+    $$files(Util/*.h, false) \
+    $$files(Network/*.h, false) \
+    $$files(Database/*.h, false) \
 
 FORMS    += \
-    GUI/*.ui \
+    $$files(GUI/*.ui, false) \
 
 OTHER_FILES +=
 
