@@ -1,6 +1,6 @@
 #include <QDebug>
 #include <QTime>
-#include "StatusWidget.h"
+#include "statuswidget.h"
 
 StatusWidget::StatusWidget(QWidget* parent) : QPlainTextEdit( parent ) {
     connect(&StatusTimer, SIGNAL(timeout()), this, SLOT(showStatus()));

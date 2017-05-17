@@ -1,8 +1,8 @@
 #ifndef STATUS_WIDGET_H
 #define STATUS_WIDGET_H
 
-#include "QPlainTextEdit.h"
-#include "QTimer.h"
+#include <QPlainTextEdit>
+#include <QTimer>
 #include "telemetrypacket.h"
 #include "dataobjects.h"
 

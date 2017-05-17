@@ -1,6 +1,6 @@
 #include "gscontrolpanel.h"
 #include "ui_gscontrolpanel.h"
-#include "QDebug.h"
+#include <QDebug>
 #include <QDir>
 #include <QStandardPaths>
 
