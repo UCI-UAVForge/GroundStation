@@ -171,7 +171,7 @@ private:
 
      Mission *myMission;
 
-     QUdpSocket outSocket;
+     QUdpSocket *outSocket;
 
      QHostAddress target;
 

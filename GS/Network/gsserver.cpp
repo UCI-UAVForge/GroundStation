@@ -10,7 +10,7 @@ GsServer::GsServer(messagebox *myMessageBox, Mission *myMission):
 
     this->myMessageBox = myMessageBox;
     this->myMission = myMission;
-    port = NET::SEND_PORT;
+    port = NET::TARGET_PORT;
     target = NET::TARGET_ADDR;
     //connect(&networkListener, &NetworkListener::packetRecieved, this, &GsServer::recivePacket);
     connect(&networkListener, &NetworkListener::telemDataRecieved, this, &GsServer::recieveTelemData);
@@ -31,13 +31,11 @@ void GsServer::openServer(QHostAddress target, unsigned int port){
 }
 
 void GsServer::startServer(){
-    std::cout << "Server starting..." << std::endl;
     if (running == false){
         std::cout << "Need to open server before it can start" << std::endl;
         return;
     }
-    this->start();
-    networkListener.start();
+    start();
 }
 
 void GsServer::closeServer(){
@@ -64,14 +62,17 @@ void GsServer::sendFlightPath(FlightPath* fp) {
     }
 }
 
-
-
 void GsServer::recieveAckPacket(Protocol::AckPacket* ack){
     outPackets.recieveAckPacket(ack);
 }
 
 void GsServer::run(){
+    std::cout << "Server starting..." << std::endl;
     running = true;
+
+    outSocket = new QUdpSocket();
+
+    networkListener.startListening();
 
     Protocol::ActionPacket setHome;
     setHome.SetAction(Protocol::ActionType::SetHome);
@@ -92,7 +93,9 @@ void GsServer::run(){
         }
         QThread::msleep(2000);
     }
-
+    outSocket->close();
+    std::cout << "Server closing..." << std::endl;
+    delete outSocket;
 }
 
 void GsServer::sendPacket(Protocol::Packet* packet){
@@ -144,8 +147,7 @@ void GsServer::sendNextPacket() {
     }
 
     // Send datagram through UDP socket
-    outSocket.writeDatagram(datagram, target, NET::SEND_PORT);
-
+    outSocket->writeDatagram(datagram, target, NET::TARGET_PORT);
 
     //TEST CODE TO SIMULATE INCOMING ACK PACKETS
     //COMMENT OUT TO USE ACTUAL ACK PACKETS

@@ -8,9 +8,13 @@ namespace NET{
     /// LISTEN_PORT - the port number used for incoming network data
     static const int LISTEN_PORT = 20725;
 
-    /// SEND_PORT - the port number outgoing data is sent to at the target
+    /// TARGET_PORT - the port number outgoing data is sent to at the target
     /// address
-    static const int SEND_PORT = 20735;
+    static const int TARGET_PORT = 20735;
+
+    /// SEND_PORT - the port number that the GS server's outSocket will
+    /// be assigned to
+    static const int SEND_PORT = 20724;
 
     /// PACKET_LENGTH - the maximum length of any single packet
     static const int PACKET_LENGTH = 1000;
