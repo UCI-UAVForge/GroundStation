@@ -13,6 +13,7 @@ GsServer::GsServer(messagebox *myMessageBox, Mission *myMission):
     port = NET::SEND_PORT;
     target = NET::TARGET_ADDR;
     connect(&networkListener, &NetworkListener::packetRecieved, this, &GsServer::recivePacket);
+
 }
 
 GsServer::~GsServer(){
@@ -85,7 +86,6 @@ void GsServer::addPacketToMission(Protocol::TelemetryPacket packet){
     myMission->addPacket(packet);
 }
 
-
 void GsServer::sendNextPacket() {
     printf("sending message!\n");
 
@@ -123,7 +123,6 @@ void GsServer::sendNextPacket() {
 
     // Send datagram through UDP socket
     outSocket.writeDatagram(datagram, target, NET::SEND_PORT);
-
 
     //TEST CODE TO SIMULATE INCOMING ACK PACKETS
     //COMMENT OUT TO USE ACTUAL ACK PACKETS

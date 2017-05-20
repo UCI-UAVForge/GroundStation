@@ -6,6 +6,7 @@
 #include <QString>
 #include <QUdpSocket>
 #include "messagebox.h"
+#include "mavlinkdecoder.h"
 
 class GsServer;
 
@@ -41,6 +42,9 @@ private:
     int UAVid;
     messagebox *myMessageBox;
     //char buffer[];
+
+    QHostAddress groupAddress;
+    MAVLinkDecoder decoder;
 
 private slots:
     void processPendingDatagrams();

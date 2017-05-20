@@ -2,7 +2,6 @@
 #include "net.h"
 #include <QtCore>
 #include <QDebug>
-#include <iostream>
 #include <QString>
 #include "gsserver.h"
 
@@ -13,20 +12,24 @@
 #include "packet.h"
 
 #define BUFSIZE 4096
+#define NOT_LISTENING false
+#define LISTENING true
 
 using namespace std;
 
 NetworkListener::NetworkListener(messagebox *myMessagebox, GsServer* server){
+    this->listening = NOT_LISTENING;
     this->myMessageBox = myMessagebox;
     this->server = server;
-    std::cout << "New NetworkListener created." << std::endl;
-    bind(NET::LISTEN_PORT);
-    listening = true;
+    qDebug() << "New NetworkListener created." ;
+    groupAddress = QHostAddress("239.255.43.21");
+    this->bind(QHostAddress::AnyIPv4, NET::LISTEN_PORT, QUdpSocket::ShareAddress);
+    this->joinMulticastGroup(groupAddress);
 }
 
 NetworkListener::NetworkListener(messagebox *myMessagebox, int UAVid, GsServer* server):NetworkListener(myMessagebox, server) {
     this->UAVid = UAVid;
-    listening = true;
+    this->listening = LISTENING;
 }
 
 NetworkListener::~NetworkListener() {
@@ -36,6 +39,28 @@ NetworkListener::~NetworkListener() {
 void NetworkListener::processPendingDatagrams(){
     static int pack_number = 1;
     QByteArray datagram;
+
+    //NEW CODE
+    mavlink_message_t msg;
+    mavlink_command_long_t cmd;
+    mavlink_status_t status;
+    datagram.resize(this->pendingDatagramSize());
+    this->readDatagram(datagram.data(), datagram.size());
+    for (int i = 0; i < datagram.size(); i++) {
+        if(mavlink_parse_char(1, datagram.data()[i], &msg, &status))
+                qDebug() << msg.msgid;
+                if (msg.msgid == MAVLINK_MSG_ID_COMMAND_LONG) {
+                    mavlink_msg_command_long_decode(&msg, &cmd);
+                }
+    }
+    qDebug() << "Received message";
+    qDebug() << decoder.receiveMessage(msg);
+
+/*
+    statusLabel->setText(tr("Received datagram: \"%1\"")
+                         .arg(datagram.data()));
+    //
+
     datagram.resize(pendingDatagramSize());
     readDatagram(datagram.data(), datagram.size());
 
@@ -71,17 +96,24 @@ void NetworkListener::processPendingDatagrams(){
     } else {
         std::cout<< "UNKNOWN PACKET TYPE RECIEVED!" << std::endl;
     }
+*/
     return;
 }
 void NetworkListener::start(){
+    qDebug() << "Starting NetworkListener." ;
     connect(this,SIGNAL(readyRead()),this,SLOT(processPendingDatagrams()));
+    this->listening = LISTENING;
+    qDebug() << "NetworkListener successfully started." ;
 }
 
 void NetworkListener::stop(){
+    std::cout << "Stopping NetworkListener.";
     //if(isOpen()){
         abort();
     //}
-    disconnect(this,SIGNAL(readyRead()),this,SLOT(processPendingDatagrams()));
-    listening = false;
-    std::cout << "Stopping NetworkListener...";
+    if ( this->listening == LISTENING ) {
+        disconnect(this,SIGNAL(readyRead()),this,SLOT(processPendingDatagrams()));
+    }
+    this->listening = NOT_LISTENING;
+    std::cout << "NetworkListener successfully stopped.";
 }

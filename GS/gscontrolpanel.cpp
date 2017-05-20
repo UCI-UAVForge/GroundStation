@@ -184,7 +184,7 @@ void GSControlPanel::on_LoadFlightpathButton_clicked() {
         this->ui->LoadFlightpathDropdown->clear();
 
         // Open folder from the 'Documents' directory.
-        const QString documentDir = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).constFirst();
+        const QString documentDir = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation).first();
         this->folder = documentDir + "/UAVForge";
         if (!QDir(this->folder).exists())
             QDir().mkdir(this->folder);

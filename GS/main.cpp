@@ -8,9 +8,9 @@
 #include "mainwindow.h"
 #endif
 
+#include "gsserver.h"
 #include "mission.h"
-
-#include "qttabtest.h"
+#include "sender.h"
 
 int main(int argc, char *argv[]) {
 
@@ -19,6 +19,7 @@ int main(int argc, char *argv[]) {
     static const QString filename(":/res/images/UAV Forge Logo 2015.svg");
 
     QApplication a(argc, argv);
+    /*
     //Construct and load the SVG image
     QSvgRenderer svg(filename);
     //Calculate the scaled size within a bounded size
@@ -39,7 +40,17 @@ int main(int argc, char *argv[]) {
 
     //Hide the splash screen.
     splash.finish(&x);
-    return a.exec();
+    */
+
+    Mission * m = new Mission() ;
+    GsServer g(m) ;
+    //Sender s ;
+    g.openServer();
+    g.startServer();
+    //s.show();
+    g.closeServer();
+    return 0;
+    //return a.exec();
 
 }
 
