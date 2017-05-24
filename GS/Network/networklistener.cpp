@@ -21,12 +21,17 @@ NetworkListener::NetworkListener(messagebox *myMessagebox, GsServer* server){
     this->server = server;
     std::cout << "New NetworkListener created." << std::endl;
     bind(NET::LISTEN_PORT);
-    listening = true;
+    listening = false;
+
+    //connect(&startThread,SIGNAL(started()),this,SLOT(start()));
+    //connect(this,SIGNAL(readyRead()),this,SLOT(processPendingDatagrams()));
+
+    connect(this,SIGNAL(readyRead()),this,SLOT(processPendingDatagrams()));
 }
 
 NetworkListener::NetworkListener(messagebox *myMessagebox, int UAVid, GsServer* server):NetworkListener(myMessagebox, server) {
     this->UAVid = UAVid;
-    listening = true;
+    listening = false;
 }
 
 NetworkListener::~NetworkListener() {
@@ -34,6 +39,9 @@ NetworkListener::~NetworkListener() {
 }
 
 void NetworkListener::processPendingDatagrams(){
+    if(!listening){
+        return;
+    }
     static int pack_number = 1;
     QByteArray datagram;
     datagram.resize(pendingDatagramSize());
@@ -76,8 +84,12 @@ void NetworkListener::processPendingDatagrams(){
     }
     return;
 }
+void NetworkListener::startListening(){
+    start();
+}
+
 void NetworkListener::start(){
-    connect(this,SIGNAL(readyRead()),this,SLOT(processPendingDatagrams()));
+    listening = true;
 }
 
 void NetworkListener::stop(){

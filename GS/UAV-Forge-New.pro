@@ -34,105 +34,27 @@ TEMPLATE = app
 
 #PRECOMPILED_HEADER = qcustomplot.h
 
-SOURCES += main.cpp\
-    tablemodel.cpp \
-    qcomboboxdelegate.cpp \
-    gsserver.cpp \
-    gscontrolpanel.cpp \
-    qcustomplot.cpp\
-    networklistener.cpp \
-    messagebox.cpp \
-    ActionPacket.cpp \
-    InfoPacket.cpp \
-    TelemetryPacket.cpp \
-    Packet.cpp \
-    #digitalclock.cpp \
-    mapvalidator.cpp \
-    serverqueue.cpp \
-    mission.cpp \
-    flightpath.cpp \
-    qttabtest.cpp \
-    mainmdidisplay.cpp \
-    missionplanningwindow.cpp \
-    dbmanager.cpp \
-    mapwidget.cpp \
-    websocketclientwrapper.cpp \
-    websockettransport.cpp \
-    tablewidget.cpp \
-    statuswidget.cpp \
-    graphwidget.cpp \
-    timerwidget.cpp \
-    missionstatuswindow.cpp \ #\
-    dataobjects.cpp
-    #mainwindow.cpp \
-    #options.cpp \
-    #mapplanning.cpp \
-    #mapexecution.cpp \
-    #missionrecap.cpp \
-    #tutorial.cpp \
-    #popwindowmp.cpp \
-    #videoplayer.cpp \
-    #connectiondialog.cpp \
-    #maprecap.cpp \
+INCLUDEPATH += \
+    $$PWD/GUI \
+    $$PWD/Network \
+    $$PWD/Util \
+    $$PWD/Database
 
-HEADERS  += tablemodel.h \
-    qcomboboxdelegate.h \
-    net.h \
-    gscontrolpanel.h \
-    gsserver.h \
-    qcustomplot.h\
-    networklistener.h \
-    messagebox.h \
-    actionpacket.h \
-    infopacket.h \
-    telemetrypacket.h \
-    ackpacket.h \
-    packet.h \
-    #digitalclock.h \
-    mapvalidator.h \
-    serverqueue.h \
-    mission.h \
-    flightpath.h \
-    qttabtest.h \
-    mainmdidisplay.h \
-    missionplanningwindow.h \
-    dbmanager.h \
-    mapwidget.h \
-    websocketclientwrapper.h \
-    websockettransport.h \
-    #dialog.h \
-    tablewidget.h \
-    graphwidget.h \
-    statuswidget.h \
-    timerwidget.h \
-    missionstatuswindow.h \  #\
-    dataobjects.h
-    #mainwindow.h \
-    #options.h \
-    #mapplanning.h \
-    #mapexecution.h \
-    #missionrecap.h \
-    #tutorial.h \
-    #popwindowmp.h \
-    #videoplayer.h \
-    #connectiondialog.h \
-    #maprecap.h \
+SOURCES += \
+    main.cpp \
+    $$files(GUI/*.cpp, false) \
+    $$files(Util/*.cpp, false) \
+    $$files(Network/*.cpp, false) \
+    $$files(Database/*.cpp, false) \
 
-FORMS    += gscontrolpanel.ui \
-    qttabtest.ui \
-    mainmdidisplay.ui \
-    graphwidget.ui\
-    missionstatuswindow.ui #\
-    #mainwindow.ui \
-    #options.ui \
-    #mapplanning.ui \
-    #mapexecution.ui \
-    #missionrecap.ui \
-    #tutorial.ui \
-    #popwindowmp.ui \
-    #connectiondialog.ui \
-    #maprecap.ui \
-    #dialog.ui \
+HEADERS  += \
+    $$files(GUI/*.h, false) \
+    $$files(Util/*.h, false) \
+    $$files(Network/*.h, false) \
+    $$files(Database/*.h, false) \
+
+FORMS    += \
+    $$files(GUI/*.ui, false) \
 
 OTHER_FILES +=
 

@@ -37,11 +37,12 @@ private:
     int UAVid;
     messagebox *myMessageBox;
     //char buffer[];
+    QThread startThread;
 
 private slots:
     void processPendingDatagrams();
-public:
     void start();
+public:
     NetworkListener(messagebox *myMessageBox, int UAVid, GsServer* server);
     NetworkListener(messagebox *myMessageBox, GsServer* server);
     //QUdpSocket udpSocket;
@@ -53,6 +54,9 @@ public:
     void stop();
     ~NetworkListener();
     GsServer *server;
+    void startListening();
+
+public slots:
 };
 
 #endif // NETWORKLISTENER_H
