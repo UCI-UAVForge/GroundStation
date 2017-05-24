@@ -10,78 +10,23 @@ uav::uav(QWidget *parent)
     batteryStatus.battery_remaining = 100;
     storageStatus.total_capacity = 20;
     storageStatus.used_capacity = 0;
-    telemSeqNumber = 1;
+    telemSeqNumber = 0;
     uavStatus.lat = 33.6454;
     uavStatus.lon = -117.8426;
     home.latitude = uavStatus.lat;
     home.longitude = uavStatus.lon;
     latLngSpd = .02;
 
+    //Connect udpLink
+    connect(&udpLink, SIGNAL(messageReceived(mavlink_message_t)), this, SLOT(parseCommand(mavlink_message_t)));
+    qDebug() << "Link created. Listening for packets..";
+
     //Create timer, send telemetry packets every 200ms
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(sendCurrentTelem()));
-    timer->start(200);
+    timer->start(1000);
 
-    //Connect receiving socket to packet processing method
-    recvUdpSocket.bind(uav::UAV_PORT_NUM);
-    connect(&recvUdpSocket, SIGNAL(readyRead()),
-                this, SLOT(processPendingDatagrams()));
-    QTextStream(stdout) << "Listening for packets.." << endl;
-}
 
-void uav::sendAllPackets(std::queue<mavlink_message_t> packets) {
-    int size = packets.size();
-    QTextStream(stdout) << "The size of the vector is " << size << endl;
-    for(int i = 0; i < size; ++i) {
-        sendAPacket(packets.front());
-        packets.pop();
-    }
-}
-
-void uav::sendAllPackets(std::vector<mavlink_message_t> packets) {
-    QTextStream(stdout) << "The size of the vector is " << packets.size() << endl;
-    for(auto i = packets.begin(); i != packets.end(); ++i)
-        sendAPacket(*i);
-}
-
-void uav::sendAPacket(mavlink_message_t msg) {
-    QByteArray datagram;
-    uint8_t buf[MAVLINK_MAX_PAYLOAD_LEN];
-
-    //Put mavlink message in buf
-    mavlink_msg_to_send_buffer(buf, &msg);
-    //Put buf in QByteArray datagram
-    datagram = QByteArray((char*)buf, MAVLINK_MAX_PAYLOAD_LEN);
-
-    //Send datagram through sendUdpSocket
-    sendUdpSocket.writeDatagram(datagram.data(), datagram.size(), QHostAddress::LocalHost, uav::GS_PORT_NUM);
-}
-
-void uav::processPendingDatagrams() {
-    QTextStream(stdout) << "Data received" << endl;
-    while (recvUdpSocket.hasPendingDatagrams()) {
-        //Initialize vars for receiving message
-        QByteArray datagram;
-        mavlink_message_t msg;
-        mavlink_status_t status;
-        //Resize datagram and read data from recvUdpSocket
-        datagram.resize(recvUdpSocket.pendingDatagramSize());
-        recvUdpSocket.readDatagram(datagram.data(), datagram.size());
-
-        //Parse using mavlink library
-        for (int i = 0; i < datagram.size(); i++) {
-            if(mavlink_parse_char(1, datagram.data()[i], &msg, &status)) {
-                QTextStream(stdout) << "Message received" << endl;
-                //If msg is a command, decode. Otherwise, use apm_planner decoder
-                if (msg.msgid == MAVLINK_MSG_ID_COMMAND_LONG) {
-                    sendCmdAck(parseCommand(msg));
-                }
-                else {
-                    //QTextStream(stdout) << decoder.receiveMessage(*msg);
-                }
-            }
-        }
-    }
 }
 
 void uav::addWaypoint(Waypoint wp) {
@@ -151,18 +96,19 @@ void uav::sendFlightInfo() {
                                         flightInfo.arming_time_utc,
                                         flightInfo.takeoff_time_utc,
                                         flightInfo.flight_uuid);
-    sendAPacket(msg);
+    udpLink.sendMAVLinkMsg(msg);
     QTextStream(stdout) << "Info Packet Sent" << endl;
 }
 
 void uav::sendCmdAck(mavlink_command_long_t cmdMsg) {
     mavlink_message_t ackMsg;
     mavlink_msg_command_ack_pack(190, 1, &ackMsg, cmdMsg.command, MAV_CMD_ACK_OK);
-    sendAPacket(ackMsg);
+    udpLink.sendMAVLinkMsg(ackMsg);
     QTextStream(stdout) << "Ack Packet Sent" << endl;
 }
 
 void uav::sendCurrentTelem() {
+    timer->setInterval(200);
     updateUAVStatus();
     mavlink_message_t msg;
     mavlink_msg_sim_state_pack(1, 190, &msg, uavStatus.q1,
@@ -176,7 +122,7 @@ void uav::sendCurrentTelem() {
                                uavStatus.alt, uavStatus.std_dev_horz,
                                uavStatus.std_dev_vert, uavStatus.vn,
                                uavStatus.ve, uavStatus.vd);
-    sendAPacket(msg);
+    udpLink.sendMAVLinkMsg(msg);
     telemSeqNumber++;
     QTextStream(stdout) << "Telem Packet #" << telemSeqNumber << " Sent. "
                         << "UAV(Lat,Lon): " << "(" << uavStatus.lat << ", " << uavStatus.lon << ")" << endl;

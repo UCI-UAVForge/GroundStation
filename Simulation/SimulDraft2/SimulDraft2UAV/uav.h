@@ -6,7 +6,9 @@
 #include <QTimer>
 #include <QDebug>
 #include <QTextStream>
+
 #include "mavlink.h"
+#include "link.h"
 
 #include <queue>
 #include <vector>
@@ -25,19 +27,12 @@ class uav : public QObject
     Q_OBJECT
 
 public:
-    const static int GS_PORT_NUM = 20725;
-    const static int UAV_PORT_NUM = 20735;
     uav(QWidget *parent = 0);
-
-    void sendAllPackets(std::vector<mavlink_message_t>);
-    void sendAllPackets(std::queue<mavlink_message_t>);
-    void sendAPacket(mavlink_message_t);
+    link udpLink;
 
 private:
     bool receivedInfoPacketReq, uavWaypointsReady, uavFlying, stopAction, shutdownAction,
          uavOn, uavFlyingHome;
-    QUdpSocket sendUdpSocket;
-    QUdpSocket recvUdpSocket;
 
     mavlink_sim_state_t uavStatus;
     mavlink_battery_status_t batteryStatus;
@@ -50,15 +45,14 @@ private:
     double latLngSpd;
     QTimer *timer;
 
-    mavlink_command_long_t parseCommand(mavlink_message_t);
     void addWaypoint(Waypoint);
     void updateUAVStatus();
     void sendCmdAck(mavlink_command_long_t);
     void sendFlightInfo();
 
 private slots:
-    void processPendingDatagrams();
     void sendCurrentTelem();
+    mavlink_command_long_t parseCommand(mavlink_message_t);
 
 };
 

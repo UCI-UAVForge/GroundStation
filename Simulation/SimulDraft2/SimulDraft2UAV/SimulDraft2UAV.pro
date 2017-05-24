@@ -14,10 +14,12 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     uav.cpp \
+    link.cpp
 
 
 HEADERS  += \
     uav.h \
+    link.h
 
 FORMS    += dialog.ui
 
