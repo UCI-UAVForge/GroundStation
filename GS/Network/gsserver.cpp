@@ -166,6 +166,6 @@ void GsServer::recivePacket(Protocol::Packet *packet) {
     emit packetRecieved(packet);
 }*/
 
-void GsServer::recieveTelemData(TelemetryData data) {
+void GsServer::recieveTelemData(Teleme3tryData data) {
     emit telemDataRecieved(data);
 }

@@ -43,17 +43,22 @@ void link::processPendingDatagrams() {
         QByteArray datagram;
         mavlink_message_t msg;
         mavlink_status_t status;
+        bool msgReceived = false;
         //Resize datagram and read data from recvUdpSocket
         datagram.resize(recvUdpSocket.pendingDatagramSize());
         recvUdpSocket.readDatagram(datagram.data(), datagram.size());
-
         //Parse using mavlink library
         for (int i = 0; i < datagram.size(); i++) {
             if(mavlink_parse_char(1, datagram.data()[i], &msg, &status)) {
                 QTextStream(stdout) << "Message received" << endl;
+                msgReceived = true;
                 emit messageReceived(msg);
             }
         }
+        if (!msgReceived) {
+            QTextStream(stdout) << "Message incomplete" << endl;
+        }
+
     }
 }
 
