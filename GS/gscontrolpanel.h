@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include "telemetrypacket.h"
+#include "dataobjects.h"
 #define EMPTY_TELEMETRY_PACKET NULL
 
 namespace Ui {
@@ -27,7 +28,10 @@ public:
     QString getFlightpathNameToSave() ;
     QString getFlightpathNameToLoad() ;
     void addFlightpathToLoad( QString ) ;
-    void setCurrentTelemetryPacket( Protocol::TelemetryPacket * ) ;
+    //void setCurrentTelemetryPacket( Protocol::TelemetryPacket * ) ;
+
+    void setCurrentTelemetryData(TelemetryData *data);
+
     void setSelectedMission(QString text);
 
 private:

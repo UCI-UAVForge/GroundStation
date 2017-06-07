@@ -44,17 +44,26 @@ void NetworkListener::processPendingDatagrams(){
     mavlink_message_t msg;
     mavlink_command_long_t cmd;
     mavlink_status_t status;
+
     datagram.resize(this->pendingDatagramSize());
     this->readDatagram(datagram.data(), datagram.size());
+
     for (int i = 0; i < datagram.size(); i++) {
-        if(mavlink_parse_char(1, datagram.data()[i], &msg, &status))
-                qDebug() << msg.msgid;
+        if(mavlink_parse_char(1, datagram.data()[i], &msg, &status)) {
+                qDebug() << "Just successfully read a message from the receive udp socket on GS end." ;
+                qDebug() << "Its message id issssss: " << msg.msgid;
                 if (msg.msgid == MAVLINK_MSG_ID_COMMAND_LONG) {
                     mavlink_msg_command_long_decode(&msg, &cmd);
                 }
+                qDebug() << "--------------------------------" ;
+                qDebug() << "Received message";
+
+                QList<QPair<QString,QVariant>> listOfValues = decoder.receiveMessage(msg);
+
+                qDebug() << listOfValues ;
+                qDebug() << "--------------------------------" ;
+        }
     }
-    qDebug() << "Received message";
-    qDebug() << decoder.receiveMessage(msg);
 
 /*
     statusLabel->setText(tr("Received datagram: \"%1\"")
@@ -88,7 +97,10 @@ void NetworkListener::processPendingDatagrams(){
         ++pack_number;
         myMessageBox->addTelemetryPacket(*telemPacket);
         server->addPacketToMission(*telemPacket);
-        emit this->packetRecieved(telemPacket);
+        //emit this->packetRecieved(telemPacket);
+
+        TelemetryData td(telemPacket);
+        emit telemDataRecieved(td);
     } else if (type == Protocol::PacketType::Info){
         std::cout<< "InfoPacket Recieved" << std::endl;
         Protocol::InfoPacket *infoPacket = (Protocol::InfoPacket*)incPack;

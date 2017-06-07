@@ -16,6 +16,7 @@ MAVLinkDecoder::MAVLinkDecoder(QObject *parent) : QObject(parent)
 //    messageFilter.insert(MAVLINK_MSG_ID_HEARTBEAT, false);
 //    messageFilter.insert(MAVLINK_MSG_ID_SYS_STATUS, false);
 //    messageFilter.insert(MAVLINK_MSG_ID_STATUSTEXT, false);
+
     messageFilter.insert(MAVLINK_MSG_ID_COMMAND_LONG, false);
     messageFilter.insert(MAVLINK_MSG_ID_COMMAND_ACK, false);
     messageFilter.insert(MAVLINK_MSG_ID_PARAM_SET, false);
@@ -31,12 +32,13 @@ MAVLinkDecoder::MAVLinkDecoder(QObject *parent) : QObject(parent)
     #ifdef MAVLINK_MSG_ID_DATA_TRANSMISSION_HANDSHAKE
     messageFilter.insert(MAVLINK_MSG_ID_DATA_TRANSMISSION_HANDSHAKE, false);
     #endif
-    messageFilter.insert(MAVLINK_MSG_ID_EXTENDED_MESSAGE, false);
+    //messageFilter.insert(MAVLINK_MSG_ID_EXTENDED_MESSAGE, false);
 
     textMessageFilter.insert(MAVLINK_MSG_ID_DEBUG, false);
     textMessageFilter.insert(MAVLINK_MSG_ID_DEBUG_VECT, false);
     textMessageFilter.insert(MAVLINK_MSG_ID_NAMED_VALUE_FLOAT, false);
     textMessageFilter.insert(MAVLINK_MSG_ID_NAMED_VALUE_INT, false);
+
 //    textMessageFilter.insert(MAVLINK_MSG_ID_HIGHRES_IMU, false);
 
 }
@@ -99,6 +101,11 @@ QList<QPair<QString,QVariant> > MAVLinkDecoder::receiveMessage(mavlink_message_t
     memcpy(receivedMessages+message.msgid, &message, sizeof(mavlink_message_t));
 
     uint8_t msgid = message.msgid;
+
+    qDebug() << "---------------------------------" ;
+    qDebug() << "Now decoding message!" ;
+    qDebug() << "Message received has message id: " << message.msgid ;
+    qDebug() << "---------------------------------" ;
 
     // Handle time sync message
 #ifndef ENABLE_DEBUG_DATALOG_PARSING

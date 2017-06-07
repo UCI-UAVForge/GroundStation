@@ -4,6 +4,7 @@
 #include <signal.h>
 #include <iostream>
 #include <string>
+#include <QDebug>
 
 GsServer::GsServer(messagebox *myMessageBox, Mission *myMission):
     networkListener(myMessageBox,this){
@@ -12,7 +13,7 @@ GsServer::GsServer(messagebox *myMessageBox, Mission *myMission):
     this->myMission = myMission;
     port = NET::SEND_PORT;
     target = NET::TARGET_ADDR;
-    connect(&networkListener, &NetworkListener::packetRecieved, this, &GsServer::recivePacket);
+    connect(&networkListener, &NetworkListener::telemDataRecieved, this, &GsServer::recieveTelemData);
 
 }
 
@@ -45,6 +46,27 @@ void GsServer::closeServer(){
     running = false;
 }
 
+void GsServer::sendStartSequence() {
+
+}
+
+void GsServer::sendStopSequence() {
+    Protocol::ActionPacket a1,a2;
+    a1.SetAction(Protocol::ActionType::Stop);
+    //a2.SetAction(Protocol::ActionType::Shutdown);
+    sendPacket(&a1);
+    //sendPacket(&a2);
+}
+
+void GsServer::sendFlightPath(FlightPath* fp) {
+    for(TimedAction *a: *fp){
+        a->first->SetAction(Protocol::ActionType::AddWaypoint);
+        sendPacket(a->first);
+    }
+}
+
+
+
 void GsServer::recieveAckPacket(Protocol::AckPacket* ack){
     outPackets.recieveAckPacket(ack);
 }
@@ -58,15 +80,15 @@ void GsServer::run(){
     Protocol::ActionPacket start;
     start.SetAction(Protocol::ActionType::Start);
 
-    sendPacket(&setHome,0);
+    //sendPacket(&setHome,0);
 
     // The priority of this packet needs to be 100 if you want to work with simulation
     //sendPacket(&start, 100);
-    sendPacket(&start,1);
+    //sendPacket(&start,1);
 
     while (running){
         if (!outPackets.isEmpty()){
-            sendNextPacket();
+            //sendNextPacket();
             QThread::msleep(100);
         }
         QThread::msleep(2000);
@@ -90,6 +112,27 @@ void GsServer::sendNextPacket() {
     printf("sending message!\n");
 
     Protocol::Packet* packet = outPackets.getNextPacket();
+    //
+    #ifdef QT_DEBUG
+    qDebug() << "Sending packet of type..." ;
+    switch( packet->get_type() ) {
+
+        case Protocol::PacketType::Ack :
+            qDebug() << "AckPacket" ;
+            break ;
+        case Protocol::PacketType::Telem :
+            qDebug() << "TelemPacket" ;
+            break ;
+        case Protocol::PacketType::Action :
+            qDebug() << "ActionPacket" ;
+            break ;
+        case Protocol::PacketType::Info :
+            qDebug() << "InfoPacket" ;
+            break ;
+
+    }
+    #endif
+    //
     if(packet == NULL){
         std::cout<<"No packets left to send!" << std::endl;
         return;
@@ -136,6 +179,11 @@ void GsServer::sendNextPacket() {
     //END TEST CODE
 }
 
+/*
 void GsServer::recivePacket(Protocol::Packet *packet) {
     emit packetRecieved(packet);
+}*/
+
+void GsServer::recieveTelemData(TelemetryData data) {
+    emit telemDataRecieved(data);
 }

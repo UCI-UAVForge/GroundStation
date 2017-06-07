@@ -1,394 +1,277 @@
 #include "uav.h"
-#include <QDateTime>
+#include "common/common/mavlink_msg_global_position_int.h"
 
-typedef unsigned char u_int8_t;
+#define NULL_TIME QTime(0,0,0,0)
 
-int UAV::NUM_RECV_PACKETS = 0;
-UAV::UAV(QWidget *parent)
-//    : QDialog(parent)
-{
-    // Set booleans to simulate UAV state
-    uavOn = false;
-    receivedInfoPacketReq = false;
+uav::uav(QWidget *parent)
+{   
+    //Variables only for this scope. Initialized to meaningless default values.
+    QTime currentTimeTemp = NULL_TIME;
+
+    //Initialize UAV properties
+    uavOn = true;
     uavWaypointsReady = false;
     uavFlying = false;
     uavFlyingHome = false;
-    stopAction = false;
-    shutdownAction = false;
-
-    // Set constants for packets
-    battery = 100;
-    pointsStorable = 20;
+    batteryStatus.battery_remaining = 100;
+    storageStatus.total_capacity = 20;
+    storageStatus.used_capacity = 0;
     telemSeqNumber = 1;
-    currentNumOfPoints = 0;
-    uavLat = 33.6454;
-    uavLng = -117.8426;
-    uavHomeLat = uavLat;
-    uavHomeLng = uavLng;
+    uavStatus.lat = 33.6454;
+    uavStatus.lon = -117.8426;
+    home.latitude = uavStatus.lat;
+    home.longitude = uavStatus.lon;
+    latLngSpd = .02;
 
-    latLngSpd = .002;
-
-    // Set up qtimer for telemetry packets every 200 ms
+    //Create timer, send telemetry packets every 200ms
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(sendCurrentTelem()));
+    timer->start(200);
 
-    // Connect receiving socket to the specified received port
-    recvUdpSocket.bind(UAV::UAV_PORT_NUM);
-//    recvUdpSocket.bind(20175);
+    //Create a QTime object. Keeps track of the timestamp since the system started up.
+    currentTimeTemp = QTime::currentTime();
+    timeSinceBoot = new QTime(currentTimeTemp.hour(),
+                              currentTimeTemp.minute(),
+                              currentTimeTemp.second(),
+                              currentTimeTemp.msec());
+    timeSinceBoot->start();
 
-    // Connect receive socket to call the method to process pending datagrams
+    //Connect receiving socket to packet processing method
+    recvUdpSocket.bind(uav::UAV_PORT_NUM);
     connect(&recvUdpSocket, SIGNAL(readyRead()),
                 this, SLOT(processPendingDatagrams()));
-
     QTextStream(stdout) << "Listening for packets.." << endl;
 }
 
-void UAV::sendAllActionPackets(std::vector<Protocol::Packet*> packets)
-{
-    //QTextStream(stdout) << "The size of the vector is " << packets.size() << endl;
-    for(auto i = packets.begin(); i != packets.end(); ++i)
-    {
-        sendAPacket(*i);
-    }
-
-}
-
-
-void UAV::sendAllActionPackets(std::queue<Protocol::Packet*> packets)
-{
-    //QTextStream(stdout) << "The size of the vector is " << packets.size() << endl;
+void uav::sendAllPackets(std::queue<mavlink_message_t> packets) {
     int size = packets.size();
-    for(int i = 0; i < size; ++i)
-    {
+    QTextStream(stdout) << "The size of the vector is " << size << endl;
+    for(int i = 0; i < size; ++i) {
         sendAPacket(packets.front());
         packets.pop();
     }
-
 }
 
-void UAV::sendAPacket(Protocol::Packet* packet)
-{
+void uav::sendAllPackets(std::vector<mavlink_message_t> packets) {
+    QTextStream(stdout) << "The size of the vector is " << packets.size() << endl;
+    for(auto i = packets.begin(); i != packets.end(); ++i)
+        sendAPacket(*i);
+}
+
+void uav::sendAPacket(mavlink_message_t msg) {
     QByteArray datagram;
-    QDataStream out(&datagram, QIODevice::WriteOnly);
-    out.setVersion(QDataStream::Qt_4_3);
-    
-    // Allocate storage for the packet in the for of u_int8_t
-    u_int8_t storage[UAV::PACKET_LENGTH];
-    
-    // Convert the packet into bytes and store into storage
-    size_t packet_size = packet->GetBytes(storage, UAV::PACKET_LENGTH);
+    uint8_t buf[MAVLINK_MAX_PAYLOAD_LEN];
 
-    // Send bytes inside storage to out datastream
-    for(size_t i =0; i < packet_size; i++)
-    {
-        out << storage[i];
-    }
+    //Put mavlink message in buf
+    mavlink_msg_to_send_buffer(buf, &msg);
+    //Put buf in QByteArray datagram
+    datagram = QByteArray((char*)buf, MAVLINK_MAX_PAYLOAD_LEN);
 
-    // Send datagram through UDP socket
-    sendUdpSocket.writeDatagram(datagram, QHostAddress::LocalHost, UAV::GS_PORT_NUM);
-//    sendUdpSocket.writeDatagram(datagram, QHostAddress('10.0.2.15'), UAV::GS_PORT_NUM);
+    qDebug() << "Just put packet to be sent into a datagram buffer." ;
+    int newMessageId = ( (int)0 ) | ( buf[9] << 16 ) | ( buf[8] << 8 ) | ( buf[7] ) ;
+    qDebug() << "The message id is now" << newMessageId ;
+
+    //Send datagram through sendUdpSocket
+    sendUdpSocket.writeDatagram(datagram.data(), datagram.size(), QHostAddress::LocalHost, uav::GS_PORT_NUM);
 }
 
-
-
-void UAV::processPendingDatagrams()
-{
-    QTextStream(stdout) << "data recieved!" << endl;
-    while(recvUdpSocket.hasPendingDatagrams())
-    {
-        QTextStream(stdout) << "Processing started" << endl;
+void uav::processPendingDatagrams() {
+    QTextStream(stdout) << "Data received" << endl;
+    while (recvUdpSocket.hasPendingDatagrams()) {
+        //Initialize vars for receiving message
         QByteArray datagram;
+        mavlink_message_t msg;
+        mavlink_status_t status;
+        //Resize datagram and read data from recvUdpSocket
         datagram.resize(recvUdpSocket.pendingDatagramSize());
-
-        // Read from the udpSocket while there is a datagram and store into datagram.
         recvUdpSocket.readDatagram(datagram.data(), datagram.size());
 
-        // Validates check sum first and then convert Datagram into proper packet.
-        Protocol::Packet* packet = Protocol::Packet::Parse((uint8_t*)datagram.data(), datagram.size());
-        Protocol::PacketType packet_type = packet->get_type();
-
-            
-
-        // Depending on the type call the proper method to extract packet's information and print
-        if(packet != nullptr)
-        {
-            QTextStream(stdout) << "Packet number " << UAV::NUM_RECV_PACKETS + 1 << endl;
-            switch(packet_type)
-            {
-                case Protocol::PacketType::Action:
-                    print_action_packet(*dynamic_cast<Protocol::ActionPacket*>(packet));
-                    respond_to_action_packet(*dynamic_cast<Protocol::ActionPacket*>(packet));
-                    sendAckPacket(packet, "Action Packet");
-                    break;
-                case Protocol::PacketType::Ack:
-                    print_ack_packet(*dynamic_cast<Protocol::AckPacket*>(packet));
-                    break;
-                case Protocol::PacketType::Info:
-                    print_info_packet(*dynamic_cast<Protocol::InfoPacket*>(packet));
-                    sendAckPacket(packet, "Info Packet");
-                    break;
-                case Protocol::PacketType::Telem:
-                    print_telemetry_packet(*dynamic_cast<Protocol::TelemetryPacket*>(packet));
-                    sendAckPacket(packet, "Telemetry Packet");
-                    break;
-                default:
-                    break;
+        //Parse using mavlink library
+        for (int i = 0; i < datagram.size(); i++) {
+            if(mavlink_parse_char(1, datagram.data()[i], &msg, &status)) {
+                QTextStream(stdout) << "Message received" << endl;
+                //If msg is a command, decode. Otherwise, use apm_planner decoder
+                if (msg.msgid == MAVLINK_MSG_ID_COMMAND_LONG) {
+                    sendCmdAck(parseCommand(msg));
+                }
+                else {
+                    //QTextStream(stdout) << decoder.receiveMessage(*msg);
+                }
             }
-
-            QTextStream(stdout) << ""<< endl;
-            ++UAV::NUM_RECV_PACKETS;
-        }
-        else
-        {
-            QTextStream(stdout) << "ERROR: Packet is invalid" << endl;
         }
     }
 }
 
-void UAV::print_telemetry_packet(Protocol::TelemetryPacket& packet)
-{
-    float   vx, vy, vz,
-            pitch, roll, yaw,
-            heading, alt;
-
-    double  lat, lon;
-
-    // Extract all information from telemetry packet into variables
-    packet.GetVelocity(&vx, &vy, &vz);
-    packet.GetOrientation(&pitch, &roll, &yaw);
-    packet.GetLocation(&lat, &lon, &alt);
-    packet.GetHeading(&heading);
-
-    // Print out information
-    QTextStream(stdout) << "Type: Telemetry Packet" << endl;
-    QTextStream(stdout) << "Velocity x: "   << vx << endl
-                        << "Velocity y: "   << vy << endl
-                        << "Velocity z: "   << vz << endl;
-    QTextStream(stdout) << "Pitch: "        << pitch << endl
-                        << "Roll: "         << roll << endl
-                        << "Yaw: "          << yaw << endl;
-    QTextStream(stdout) << "Latitude: "     << lat << endl
-                        << "Longitude: "    << lon << endl
-                        << "Altitude: "     << alt << endl;
-    QTextStream(stdout) << "Heading: "      << heading << endl;
-
+void uav::addWaypoint(Waypoint wp) {
+    pointOfInterest.push(wp);
 }
 
-//    QTextStream(stdout) << altitude;
-
-void UAV::print_ack_packet(Protocol::AckPacket& packet){
-    QTextStream(stdout) << "Type: AckPacket" << endl;
-
-}
-void UAV::print_action_packet(Protocol::ActionPacket& packet){
-    double 	lat, lon;
-    float	alt, speed;
- 
-    QTextStream(stdout) << "Type: ActionPacket" << endl;
-    Protocol::ActionType type = packet.GetAction();
-
-    switch(type)
-    {
-        case Protocol::ActionType::Start : QTextStream(stdout) << "Start: " << (uint8_t)type << endl; break;
-        case Protocol::ActionType::RequestInfo : QTextStream(stdout) << "Request Info: " << (uint8_t)type << endl; break;
-        case Protocol::ActionType::AddWaypoint : QTextStream(stdout) << "Add Waypoint: " << (uint8_t)type << endl; break;
-        case Protocol::ActionType::SetHome : QTextStream(stdout) << "Set Home: " << (uint8_t)type << endl; break;
-        case Protocol::ActionType::RemoveWaypoint : QTextStream(stdout) << "Remove Waypoint: " << (uint8_t)type << endl; break;
-        case Protocol::ActionType::Stop : QTextStream(stdout) << "Stop: " << (uint8_t)type << endl; break;
-        case Protocol::ActionType::Shutdown : QTextStream(stdout) << "Shutdown: " << (uint8_t)type << endl; break;
-        default :   QTextStream(stdout) << "Unknown Type: " << (uint8_t)type << endl; break;
-    }
-
-    Protocol::Waypoint waypoint = packet.GetWaypoint();
-    lat = waypoint.lat;
-    lon = waypoint.lon;
-    alt = waypoint.alt;
-    speed = waypoint.speed;
-
-    QTextStream(stdout) << "Latitude: " << lat << endl;
-    QTextStream(stdout) << "Longitude: " << lon << endl;
-    QTextStream(stdout) << "Altitude: " << alt << endl;
-    QTextStream(stdout) << "Speed: " << speed << endl;
-
-}
-
-void UAV::print_info_packet(Protocol::InfoPacket &packet){
-    QTextStream(stdout) << "Type: InfoPacket" << endl;
-    QTextStream(stdout) << "Points Storable: " << packet.GetStorable() << endl;
-    QTextStream(stdout) << "Battery State: " << packet.GetBattery() << endl;
-    QTextStream(stdout) << "Other : " << QString::fromStdString(packet.GetOther()) << endl;
- }
-
-
-void UAV::respond_to_action_packet(Protocol::ActionPacket ap)
-{
-    Protocol::ActionType ap_type = ap.GetAction();
-
-    // Simple one packet send first.
-    switch(ap_type)
-    {
-        case Protocol::ActionType::RequestInfo:
+mavlink_command_long_t uav::parseCommand(mavlink_message_t msg) {
+    mavlink_command_long_t cmd;
+    mavlink_msg_command_long_decode(&msg, &cmd);
+    switch(cmd.command) {
+        case MAV_CMD_REQUEST_FLIGHT_INFORMATION:
+            //Send flight information
             if(uavOn)
-                send_info_packet();
-            
-            break;
-        case Protocol::ActionType::AddWaypoint:
-            if(uavOn && can_add_waypoint())
-            {
+                sendFlightInfo();
+        break;
+        case MAV_CMD_NAV_WAYPOINT:
+            //Add new waypoint
+            if (uavOn && storageStatus.used_capacity < storageStatus.total_capacity) {
                 QTextStream(stdout) << "Adding new waypoint" << endl;
+                Waypoint wp;
+                wp.lat = cmd.param5;
+                wp.lon = cmd.param6;
+                wp.alt = cmd.param7;
                 uavWaypointsReady = true;
-                ++currentNumOfPoints;
-                addWaypoint(ap);
+                ++storageStatus.used_capacity;
+                addWaypoint(wp);
             }
-            else
-                QTextStream(stdout) << "Cannot add waypoint." << endl;
-            break;
-        case Protocol::ActionType::SetHome:
-            {
-            Protocol::Waypoint newHome = ap.GetWaypoint();
-            QTextStream(stdout) << "Setting Home: (" << newHome.lat << "," << newHome.lon << ")" << endl;
-            uavHomeLat = newHome.lat;
-            uavHomeLng = newHome.lon;
+            else {
+                QTextStream(stdout) << "Capacity reached/UAV isn'ton";
             }
-            break;
-        case Protocol::ActionType::Stop:
-            QTextStream(stdout) << "STOPPING" << endl;
-            uavFlying = false;
-            stopAction = true;
-            exit(0);
-            break;
-        case Protocol::ActionType::Start:
-            //if(uavOn && !receivedInfoPacketReq && uavWaypointsReady)
-            if(!uavOn)
-            {
+        break;
+        case MAV_CMD_NAV_RETURN_TO_LAUNCH:
+            //Return home
+            QTextStream(stdout) << "Returning Home: (" << home.latitude << "," << home.longitude << ")" << endl;
+        break;
+        case MAV_CMD_DO_SET_HOME:
+            //Set UAV home location
+            home.latitude = cmd.param5;
+            home.longitude = cmd.param6;
+            QTextStream(stdout) << "Set Home: (" << home.latitude << "," << home.longitude << ")" << endl;
+        break;
+        case MAV_CMD_DO_ENGINE_CONTROL:
+            //Start or shut down UAV engine
+            if(cmd.param1 == 0 && uavOn) {
+                QTextStream(stdout) << "SHUTTING DOWN" << endl;
+                shutdownAction = true;
+                uavOn = false;
+                timer->stop();
+            }
+            else if(cmd.param1 == 1 && !uavOn) {
                 QTextStream(stdout) << "STARTING... "<< endl;
                 uavOn = true;
                 uavFlying = true;
                 receivedInfoPacketReq = true;
-                timer->start(200);                
+                timer->start(200);
             }
-            break;
-        case Protocol::ActionType::Shutdown:
-            shutdownAction = true;
-            uavOn = false;
-            timer->stop();
-            break;
-        default:
-            break;
-
+        break;
     }
+    return cmd;
 }
 
-void UAV::send_info_packet()
-{
-    Protocol::InfoPacket ip;
-    ip.SetBattery(battery);
-    ip.SetStorable(pointsStorable);
 
-    sendAPacket(dynamic_cast<Protocol::Packet*>(&ip));
+void uav::sendFlightInfo() {
+    mavlink_message_t msg;
+    mavlink_msg_flight_information_pack(190, 1, &msg,
+                                        flightInfo.time_boot_ms,
+                                        flightInfo.arming_time_utc,
+                                        flightInfo.takeoff_time_utc,
+                                        flightInfo.flight_uuid);
+    sendAPacket(msg);
+    QTextStream(stdout) << "Info Packet Sent" << endl;
 }
 
-void UAV::sendCurrentTelem()
-{
-    updateUavLatLng();
-    Protocol::TelemetryPacket tp(telemSeqNumber++);
-    double velocity_x = qrand() % 30 + 80;
-    double velocity_y = qrand() % 30 + 80;
-    double velocity_z = qrand() % 30 + 80;
-    double altitude = qrand() % 75 + 150;
-    tp.SetVelocity(velocity_x, velocity_y, velocity_z);
-    tp.SetOrientation(4,5,6);
-    tp.SetLocation(uavLat, uavLng, altitude);
-    tp.SetHeading(10);
-
-    sendAPacket(&tp);
-    
+void uav::sendCmdAck(mavlink_command_long_t cmdMsg) {
+    mavlink_message_t ackMsg;
+    mavlink_msg_command_ack_pack(190, 1, &ackMsg, cmdMsg.command, MAV_CMD_ACK_OK);
+    sendAPacket(ackMsg);
+    QTextStream(stdout) << "Ack Packet Sent" << endl;
 }
 
-bool UAV::can_add_waypoint()
-{
-    return currentNumOfPoints + 1 < pointsStorable;
+void uav::sendCurrentTelem() {
+
+    updateUAVStatus();
+    mavlink_message_t msg;
+
+    mavlink_msg_global_position_int_pack(1,190,&msg,timeSinceBoot->elapsed(),
+                                         uavStatus.lat, uavStatus.lon, uavStatus.alt,
+                                         /* NOTE: RELATIVE ALTITUDE IS NOT THE SAME! PLEASE ADJUST! */
+                                         uavStatus.alt,
+                                         /* NOTE: SUPPOSED TO BE X,Y,Z NOT N,E,D! PLEASE ADJUST! */
+                                         uavStatus.vn, uavStatus.ve, uavStatus.vd,
+                                         /* NOTE: CHECK IF YAW IS THE SAME AS HDG!!! */
+                                         uavStatus.yaw);
+
+/*
+    mavlink_msg_sim_state_pack(1, 190, &msg, uavStatus.q1,
+                               uavStatus.q2, uavStatus.q3,
+                               uavStatus.q4, uavStatus.roll,
+                               uavStatus.pitch, uavStatus.yaw,
+                               uavStatus.xacc, uavStatus.yacc,
+                               uavStatus.zacc, uavStatus.xgyro,
+                               uavStatus.ygyro, uavStatus.zgyro,
+                               uavStatus.lat, uavStatus.lon,
+                               uavStatus.alt, uavStatus.std_dev_horz,
+                               uavStatus.std_dev_vert, uavStatus.vn,
+                               uavStatus.ve, uavStatus.vd);
+*/
+    sendAPacket(msg);
+    qDebug() << "Just sent message with message id: " << msg.msgid ;
+    telemSeqNumber++;
+    QTextStream(stdout) << "Telem Packet #" << telemSeqNumber << " Sent. "
+                        << "UAV(Lat,Lon): " << "(" << uavStatus.lat << ", " << uavStatus.lon << ")" << endl;
 }
 
-void UAV::addWaypoint(Protocol::ActionPacket ap)
-{
-    //QTextStream(stdout) << "Waypoint added" << endl;
-    Protocol::Waypoint wp = ap.GetWaypoint();
-    
-    pointOfInterest.push(wp);
-}
+void uav::updateUAVStatus() {
+    //Create simulated telemetry info
+    uavStatus.vn = qrand() % 30 + 80;
+    uavStatus.vd = qrand() % 30 + 80;
+    uavStatus.ve = qrand() % 30 + 80;
+    uavStatus.alt = qrand() % 75 + 150;
 
-void UAV::updateUavLatLng()
-{
-
-    if(pointOfInterest.empty()){
+    //If no waypoints, keep listening
+    if (pointOfInterest.empty()) {
         return;
     }
 
-    Protocol::Waypoint nextPoint = pointOfInterest.front();
+    Waypoint nextPoint = pointOfInterest.front();
 
-    if(uavLat < nextPoint.lat && (uavLat + latLngSpd) < nextPoint.lat)
-        uavLat += latLngSpd;
-    else if(uavLat > nextPoint.lat && (uavLat - latLngSpd) > nextPoint.lat)
-        uavLat -= latLngSpd;
-    else if(uavLat < nextPoint.lat && (uavLat + latLngSpd) >= nextPoint.lat)
-        uavLat = nextPoint.lat;
-    else if(uavLat > nextPoint.lat && (uavLat - latLngSpd) <= nextPoint.lat)
-        uavLat = nextPoint.lat;
+    //If uav is within a certain range of nextPoint, uav goes to nextPoint.
+    //Else it moves towards nextPoint by latLngSpd
+    if (uavStatus.lat + latLngSpd >= nextPoint.lat && uavStatus.lat - latLngSpd <= nextPoint.lat)
+        uavStatus.lat = nextPoint.lat;
+    else if (uavStatus.lat > nextPoint.lat)
+        uavStatus.lat -= latLngSpd;
+    else if (uavStatus.lat < nextPoint.lat)
+        uavStatus.lat += latLngSpd;
 
-    if(uavLng < nextPoint.lon && (uavLng + latLngSpd) < nextPoint.lon)
-        uavLng += latLngSpd;
-    else if(uavLng > nextPoint.lon && (uavLng - latLngSpd) > nextPoint.lon)
-        uavLng -= latLngSpd;
-    else if(uavLng < nextPoint.lon && (uavLng + latLngSpd) >= nextPoint.lon)
-        uavLng = nextPoint.lon;
-    else if(uavLng > nextPoint.lon && (uavLng -latLngSpd) <= nextPoint.lon)
-        uavLng = nextPoint.lon;
+    if (uavStatus.lon + latLngSpd >= nextPoint.lon && uavStatus.lon - latLngSpd <= nextPoint.lon)
+        uavStatus.lon = nextPoint.lon;
+    else if (uavStatus.lon > nextPoint.lon)
+        uavStatus.lon -= latLngSpd;
+    else if (uavStatus.lon < nextPoint.lon)
+        uavStatus.lon += latLngSpd;
 
-    if(!uavFlyingHome && uavLng == nextPoint.lon && uavLat == nextPoint.lat && pointOfInterest.size() > 0)
-    {
-        Protocol::ActionPacket waypointPacket;
-        waypointPacket.SetAction(Protocol::ActionType::AddWaypoint);
-        waypointPacket.SetWaypoint(nextPoint);
-        sendAPacket(&waypointPacket);
-        QTextStream(stdout) << "Destination reached: (" << nextPoint.lat << ", " << nextPoint.lon << "). Sent waypoint packet" << endl;
+    //If uav is at the nextPoint, send packet telling GS that it has reached it's destination
+    if (uavStatus.lon == nextPoint.lon && uavStatus.lat == nextPoint.lat) {
         pointOfInterest.pop();
-    }
-    else if(!uavFlyingHome && pointOfInterest.size() == 0)
-    {
-        QTextStream(stdout) << "Nowhere else to go... Heading Home." << endl;
-        uavFlyingHome = true;
-        Protocol::Waypoint homePoint;
-        homePoint.lat = uavHomeLat;
-        homePoint.lon = uavHomeLng;
-        pointOfInterest.push(homePoint);
-    }
-    else if(uavFlyingHome && uavLng == nextPoint.lon && uavLat == nextPoint.lat && pointOfInterest.size() > 0)
-    {
-        Protocol::ActionPacket waypointPacket;
-        waypointPacket.SetAction(Protocol::ActionType::AddWaypoint);
-        waypointPacket.SetWaypoint(nextPoint);
-        sendAPacket(&waypointPacket);
-        QTextStream(stdout) << "Home reached. Sent waypoint packet" << endl;
-        pointOfInterest.pop();
-    }
-    else if(uavFlyingHome && pointOfInterest.size() == 0)
-    {
-        timer->stop();
-        uavFlying = false;
-        uavWaypointsReady = false;
+        --storageStatus.used_capacity;
+        if(!uavFlyingHome) {
+            QTextStream(stdout) << "Destination reached: (" << nextPoint.lat << ", " << nextPoint.lon << "). Sent waypoint packet" << endl;
+            QTextStream(stdout) << "Next destination: (" << pointOfInterest.front().lat << ", " << pointOfInterest.front().lon << ")." << endl;
+        }
+        else
+            QTextStream(stdout) << "Home reached. Sent waypoint packet" << endl;
     }
 
-}
-
-
-void UAV::sendAckPacket(Protocol::Packet* p, const QString& pt)
-{
-    Protocol::AckPacket ack;
-
-    ack.set_timestamp(p->get_timestamp());
-     
-    QTextStream(stdout) << "Sending ack packet " << pt << " and time: " << p->get_timestamp() << endl;
-
-    sendAPacket(&ack);
+    //After popping, check again whether queue is empty.
+    //If queue is empty, go home. If already home, stop UAV.
+    if (pointOfInterest.empty()) {
+        if (!uavFlyingHome) {
+            QTextStream(stdout) << "Nowhere else to go... Heading Home." << endl;
+            uavFlyingHome = true;
+            Waypoint homePoint;
+            homePoint.lat = home.latitude;
+            homePoint.lon = home.longitude;
+            pointOfInterest.push(homePoint);
+            ++storageStatus.used_capacity;
+        }
+        else {
+            timer->stop();
+            uavFlying = false;
+            uavWaypointsReady = false;
+        }
+    }
 }

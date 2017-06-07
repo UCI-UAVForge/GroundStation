@@ -8,7 +8,7 @@
 #include <QMap>
 #include <QVector>
 #include <QDateTime>
-#include "common/mavlink.h"
+#include "common/common/mavlink.h"
 
 class ConnectionManager;
 

@@ -7,6 +7,7 @@
 #include <QUdpSocket>
 #include "messagebox.h"
 #include "mavlinkdecoder.h"
+#include "dataobjects.h"
 
 class GsServer;
 
@@ -29,14 +30,9 @@ signals:
      */
     void sendCoordinates(void);
 
-    /**
-     * @brief logTelemetry is the signal used to notify the main window that a
-     * telemetry point has been recieved.
-     * @param coordString
-     */
-    void logTelemetry(QString coordString);
+    //void packetRecieved(Protocol::Packet *packet);
+    void telemDataRecieved(TelemetryData data);
 
-    void packetRecieved(Protocol::Packet *packet);
 private:
     bool listening = true;
     int UAVid;

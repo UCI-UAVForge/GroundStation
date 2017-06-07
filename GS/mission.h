@@ -35,6 +35,7 @@ public:
     double getValueForIndexAndID(int index,int id);
 
     bool save(QString filename);
+    int numOfEntries();
 
 private:
     void initValues();

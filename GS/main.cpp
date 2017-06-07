@@ -48,8 +48,7 @@ int main(int argc, char *argv[]) {
     g.openServer();
     g.startServer();
     //s.show();
-    g.closeServer();
-    return 0;
+    return a.exec() ;
     //return a.exec();
 
 }

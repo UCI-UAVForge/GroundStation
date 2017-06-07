@@ -53,7 +53,7 @@
 
 #include <QDialog>
 #include <QHostAddress>
-#include "common/mavlink.h"
+#include "common/common/mavlink.h"
 #include "mavlinkdecoder.h"
 
 QT_BEGIN_NAMESPACE

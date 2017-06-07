@@ -53,7 +53,7 @@
 
 #include <QDialog>
 #include <QHostAddress>
-#include "common/mavlink.h"
+#include "common/common/mavlink.h"
 
 QT_BEGIN_NAMESPACE
 class QDialogButtonBox;
