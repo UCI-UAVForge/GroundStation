@@ -15,9 +15,9 @@ MainMDIDisplay::MainMDIDisplay(QWidget *parent) : QMainWindow(parent),
 
     this->connect(this, &MainMDIDisplay::destroyed, this, &MainMDIDisplay::onWindowClose);
     this->connect(ui->actionShow_Control_Panel, &QAction::triggered, this, &MainMDIDisplay::showControlPanel);
-    //ui->mdiArea->setBackground(QBrush( QPixmap( ":/res/images/UAVLogo.png" ) ) );
-  
-    ui->mdiArea->setBackground(QBrush(QPixmap(":/res/UAV_FORGE_LOGO_2.png").scaledToWidth(1200)));
+//    ui->mdiArea->setBackground(QBrush( QPixmap( ":/res/images/UAVLogo.png" )) );
+//    ui->mdiArea->setBackground(QBrush(QPixmap(":/res/UAV_FORGE_LOGO_2.png").scaled(1920,1080,Qt::IgnoreAspectRatio)));
+    ui->mdiArea->setBackground(QBrush(QPixmap(":/res/images/test.png").scaled(1920,1080,Qt::IgnoreAspectRatio)));
 
     ///\todo Just put these in the UI file and promote QWidgets
     showControlPanel();

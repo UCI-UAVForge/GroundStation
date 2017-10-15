@@ -19,8 +19,8 @@ void StatusWidget::stop() {
 }
 
 void StatusWidget::showStatus() {
-    float vX,vY,vZ,pitch,roll,yaw,alt;
-    double lat,lon;
+//    float vX,vY,vZ,pitch,roll,yaw,alt;
+//    double lat,lon;
     //if ( this->currentTelemetryPacket == EMPTY_TELEMETRY_PACKET ) {
     //    clear();
     //    appendPlainText("Empty: ");
