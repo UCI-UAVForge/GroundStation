@@ -59,6 +59,7 @@ private slots:
     void on_MainMenuButton_clicked();
     void on_SaveFlightpathButton_clicked();
     void on_MissionRecapButton_clicked();
+    void reset_ui();
     void updateStateGSCP( ) ;
 
 signals:
