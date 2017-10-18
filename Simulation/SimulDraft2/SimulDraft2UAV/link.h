@@ -14,8 +14,9 @@ class link: public QObject
     Q_OBJECT
 public:
     link();
-    const static int GS_PORT_NUM = 20725;
-    const static int UAV_PORT_NUM = 20735;
+    ~link();
+    const static int GS_PORT_NUM = 30725;
+    const static int UAV_PORT_NUM = 30735;
 
     void sendAllMAVLinkMsgs(std::vector<mavlink_message_t>);
     void sendAllMAVLinkMsgs(std::queue<mavlink_message_t>);

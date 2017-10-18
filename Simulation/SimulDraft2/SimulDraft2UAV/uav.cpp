@@ -8,8 +8,8 @@ uav::uav(QWidget *parent)
     uavFlying = false;
     uavFlyingHome = false;
     batteryStatus.battery_remaining = 100;
-    storageStatus.total_capacity = 20;
-    storageStatus.used_capacity = 0;
+    //storageStatus.total_capacity = 20;
+    //storageStatus.used_capacity = 0;
     telemSeqNumber = 0;
     uavStatus.lat = 33.6454;
     uavStatus.lon = -117.8426;
@@ -19,14 +19,14 @@ uav::uav(QWidget *parent)
 
     //Connect udpLink
     connect(&udpLink, SIGNAL(messageReceived(mavlink_message_t)), this, SLOT(parseCommand(mavlink_message_t)));
-    sendFlightInfo();
+    //sendFlightInfo();
     QTextStream(stdout) << "Link created. Listening for packets.." << endl;
 
     //Create timer, send telemetry packets every 200ms
     timer = new QTimer(this);
     timeSinceBoot  = new QTime();
     connect(timer, SIGNAL(timeout()), this, SLOT(sendCurrentTelem()));
-    timer->start(200);
+    timer->start(1000);
     timeSinceBoot->start();
 }
 
@@ -39,24 +39,24 @@ uint16_t uav::parseCommand(mavlink_message_t msg) {
         case MAV_CMD_REQUEST_FLIGHT_INFORMATION:
             //Send flight information
             if(uavOn)
-                sendFlightInfo();
+                //sendFlightInfo();
         break;
         case MAV_CMD_NAV_WAYPOINT:
             //Add new waypoint
-            if (uavOn && storageStatus.used_capacity < storageStatus.total_capacity) {
+            //if (uavOn && storageStatus.used_capacity < storageStatus.total_capacity) {
                 Waypoint wp;
                 wp.lat = cmd.param5;
                 wp.lon = cmd.param6;
                 wp.alt = cmd.param7;
                 uavWaypointsReady = true;
-                ++storageStatus.used_capacity;
+          //      ++storageStatus.used_capacity;
                 QTextStream(stdout) << "Adding new waypoint: " << wp.lat << ", " << wp.lon << endl;
                 pointOfInterest.enqueue(wp);
                 result = MAV_RESULT_ACCEPTED;
-            }
-            else {
-                QTextStream(stdout) << "Capacity reached/UAV isn't on";
-            }
+       //     }
+            //else {
+             //   QTextStream(stdout) << "Capacity reached/UAV isn't on";
+            //}
         break;
         case MAV_CMD_NAV_RETURN_TO_LAUNCH:
             //Return home
@@ -94,16 +94,16 @@ uint16_t uav::parseCommand(mavlink_message_t msg) {
 }
 
 
-void uav::sendFlightInfo() {
-    mavlink_message_t msg;
-    mavlink_msg_flight_information_pack(SYSID, COMPID, &msg,
-                                        flightInfo.time_boot_ms,
-                                        flightInfo.arming_time_utc,
-                                        flightInfo.takeoff_time_utc,
-                                        flightInfo.flight_uuid);
-    udpLink.sendMAVLinkMsg(msg);
-    QTextStream(stdout) << "Info Packet Sent" << endl;
-}
+//void uav::sendFlightInfo() {
+//    mavlink_message_t msg;
+//    mavlink_msg_flight_information_pack(SYSID, COMPID, &msg,
+//                                        flightInfo.time_boot_ms,
+//                                        flightInfo.arming_time_utc,
+//                                        flightInfo.takeoff_time_utc,
+//                                        flightInfo.flight_uuid);
+//    udpLink.sendMAVLinkMsg(msg);
+//    QTextStream(stdout) << "Info Packet Sent" << endl;
+//}
 
 void uav::sendCmdAck(uint16_t commandID, uint8_t result) {
     mavlink_message_t ackMsg;
@@ -122,6 +122,20 @@ void uav::sendCurrentTelem() {
     telemSeqNumber++;
     QTextStream(stdout) << "Telem Packet #" << telemSeqNumber << " Sent. " << "Time :" << timeSinceBoot->elapsed()
                         << " UAV(Lat,Lon): " << "(" << uavStatus.lat << ", " << uavStatus.lon << ")" << endl;
+}
+
+void uav::testSend(){
+    mavlink_message_t msg;
+    if (qrand()%100+1 > 50) {
+        uavStatus.lat += 0.1;
+        mavlink_msg_command_long_pack(1, 190, &msg, 1, 1, MAV_CMD_NAV_WAYPOINT, 0, 1, 1, 1, 10, uavStatus.lat, uavStatus.lon,100);
+    }
+    else {
+        uavStatus.lon += 0.1;
+        mavlink_msg_command_long_pack(1, 190, &msg, 1, 1, MAV_CMD_NAV_WAYPOINT, 0, 1, 1, 1, 10, uavStatus.lat, uavStatus.lon ,100);
+    }
+    qDebug() << uavStatus.lat << ", " << uavStatus.lon;
+    udpLink.sendMAVLinkMsg(msg);
 }
 
 void uav::sendSimState() {
@@ -174,7 +188,7 @@ void uav::updateUAVTelem() {
     //If uav is at the nextPoint, send packet telling GS that it has reached it's destination
     if (uavStatus.lon == nextPoint.lon && uavStatus.lat == nextPoint.lat) {
         pointOfInterest.dequeue();
-        --storageStatus.used_capacity;
+        //--storageStatus.used_capacity;
         if(!uavFlyingHome && !pointOfInterest.empty()) {
             QTextStream(stdout) << "Destination reached: (" << nextPoint.lat << ", " << nextPoint.lon << "). Sent waypoint packet" << endl;
             QTextStream(stdout) << "Next destination: (" << pointOfInterest.front().lat << ", " << pointOfInterest.front().lon << ")." << endl;
@@ -192,10 +206,10 @@ void uav::updateUAVTelem() {
             QTextStream(stdout) << "Nowhere else to go... Heading Home." << endl;
             uavFlyingHome = true;
             pointOfInterest.enqueue(homePoint);
-            ++storageStatus.used_capacity;
+            //++storageStatus.used_capacity;
         }
         else {
-            QTextStream(stdout) << "UAV Stopped";
+            QTextStream(stdout) << "UAV Stopped" << endl;
             timer->stop();
             uavFlying = false;
             uavWaypointsReady = false;

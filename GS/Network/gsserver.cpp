@@ -7,7 +7,6 @@
 
 GsServer::GsServer(messagebox *myMessageBox, Mission *myMission):
     networkListener(myMessageBox,this){
-
     this->myMessageBox = myMessageBox;
     this->myMission = myMission;
     port = NET::TARGET_PORT;
@@ -166,6 +165,6 @@ void GsServer::recivePacket(Protocol::Packet *packet) {
     emit packetRecieved(packet);
 }*/
 
-void GsServer::recieveTelemData(Teleme3tryData data) {
+void GsServer::recieveTelemData(TelemetryData data) {
     emit telemDataRecieved(data);
 }

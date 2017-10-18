@@ -35,8 +35,8 @@ private:
 
     mavlink_sim_state_t uavStatus;
     mavlink_battery_status_t batteryStatus;
-    mavlink_storage_information_t storageStatus;
-    mavlink_flight_information_t flightInfo;
+    //mavlink_storage_information_t storageStatus;
+  //  mavlink_flight_information_t flightInfo;
 
     Waypoint homePoint;
 
@@ -59,6 +59,7 @@ private:
 
 private slots:
     void sendCurrentTelem();
+    void testSend();
     uint16_t parseCommand(mavlink_message_t msg);
 
 };

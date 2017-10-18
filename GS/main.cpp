@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
     splash.show();
 
     MainMDIDisplay x;
-    x.showFullScreen();
+    x.showNormal();
 
     //Hide the splash screen.
     splash.finish(&x);

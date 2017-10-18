@@ -26,4 +26,4 @@ FORMS    += dialog.ui
 DISTFILES +=
 CONFIG += c++11
 
-INCLUDEPATH += common/common/
+INCLUDEPATH += ardupilotmav/ardupilotmega/

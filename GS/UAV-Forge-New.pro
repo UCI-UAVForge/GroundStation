@@ -60,3 +60,5 @@ OTHER_FILES +=
 
 RESOURCES += \
     Resources.qrc
+
+INCLUDEPATH += ardupilotmav/ardupilotmega/
