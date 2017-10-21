@@ -3,24 +3,21 @@
 Interop::Interop(std::string username, std::string password)
 {
     QNetworkRequest req;
-    QUrlQuery query;
     QUrl params;
-    QByteArray postData;
 
     networkAccess = new QNetworkAccessManager();
     connect(networkAccess, SIGNAL(finished(QNetworkReply*)),
                this, SLOT(replyFinished(QNetworkReply*)));
 
-    req.setUrl(QUrl("http://localhost:8080"));
+    req.setUrl(QUrl("http://localhost:8000/api/login"));
     req.setHeader(QNetworkRequest::ContentTypeHeader,"application/x-www-form-urlencoded");
 
-    query.addQueryItem("username", QString::fromStdString(username));
-    query.addQueryItem("password", QString::fromStdString(password));
-
-    params.setQuery(query);
-    postData = params.toEncoded(QUrl::RemoveFragment);
+    QByteArray postData;
+    postData.append("username=" + QString::fromStdString(username) + "&");
+    postData.append("password=" + QString::fromStdString(password));
 
     QNetworkReply *reply = networkAccess->post(req, postData);
+
 }
 
 void Interop::replyFinished(QNetworkReply *reply)
@@ -41,7 +38,6 @@ void Interop::replyFinished(QNetworkReply *reply)
 }
 
 QJsonDocument Interop::getMissions() {
-
 }
 
 QJsonDocument Interop::getMission(int id) {
