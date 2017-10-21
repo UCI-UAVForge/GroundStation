@@ -1,5 +1,8 @@
 #include "interop.h"
 #include <iostream>
+#include <QMutex>
+QString ENDPOINT = "http://localhost:8000";
+
 Interop::Interop(std::string username, std::string password)
 {
     QNetworkRequest req;
@@ -7,9 +10,9 @@ Interop::Interop(std::string username, std::string password)
 
     networkAccess = new QNetworkAccessManager();
     connect(networkAccess, SIGNAL(finished(QNetworkReply*)),
-               this, SLOT(replyFinished(QNetworkReply*)));
+               this, SLOT(replyFinished(QNetworkReply *)));
 
-    req.setUrl(QUrl("http://localhost:8000/api/login"));
+    req.setUrl(QUrl(ENDPOINT + "/api/login"));
     req.setHeader(QNetworkRequest::ContentTypeHeader,"application/x-www-form-urlencoded");
 
     QByteArray postData;
@@ -17,7 +20,8 @@ Interop::Interop(std::string username, std::string password)
     postData.append("password=" + QString::fromStdString(password));
 
     QNetworkReply *reply = networkAccess->post(req, postData);
-
+    waitForResponse(reply);
+    qDebug() << "Response: " << reply->readAll();
 }
 
 void Interop::replyFinished(QNetworkReply *reply)
@@ -37,7 +41,19 @@ void Interop::replyFinished(QNetworkReply *reply)
     reply->deleteLater();
 }
 
+void Interop::waitForResponse(QNetworkReply* reply) {
+    while(!reply->isFinished()) {
+        qApp->processEvents();
+    } // spin
+}
+
 QJsonDocument Interop::getMissions() {
+    QNetworkRequest req;
+    req.setUrl(QUrl(ENDPOINT + "/api/missions"));
+    QNetworkReply* reply = networkAccess->get(req);
+    waitForResponse(reply);
+    qDebug() << "Response: " << reply->readAll();
+    return QJsonDocument::fromJson(reply->readAll());
 }
 
 QJsonDocument Interop::getMission(int id) {

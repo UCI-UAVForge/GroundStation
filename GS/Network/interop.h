@@ -45,6 +45,7 @@ private:
     };
 private:
     QNetworkAccessManager* networkAccess;
+    void waitForResponse(QNetworkReply* reply);
 public:
     Interop(std::string username, std::string password);
     QJsonDocument getMissions();
