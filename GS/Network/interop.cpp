@@ -1,6 +1,5 @@
 #include "interop.h"
-#include <iostream>
-#include <QMutex>
+
 QString ENDPOINT = "http://localhost:8000";
 
 Interop::Interop(std::string username, std::string password)
@@ -22,6 +21,7 @@ Interop::Interop(std::string username, std::string password)
     QNetworkReply *reply = networkAccess->post(req, postData);
     waitForResponse(reply);
     qDebug() << "Response: " << reply->readAll();
+    // want to raise an error here if failure
 }
 
 void Interop::replyFinished(QNetworkReply *reply)
@@ -49,9 +49,11 @@ void Interop::waitForResponse(QNetworkReply* reply) {
 
 QJsonDocument Interop::getMissions() {
     QNetworkRequest req;
+
     req.setUrl(QUrl(ENDPOINT + "/api/missions"));
     QNetworkReply* reply = networkAccess->get(req);
     waitForResponse(reply);
+
     qDebug() << "Response: " << reply->readAll();
     return QJsonDocument::fromJson(reply->readAll());
 }
