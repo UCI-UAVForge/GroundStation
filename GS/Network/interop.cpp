@@ -143,8 +143,8 @@ void Interop::updateODLCThumbnail(int id, QImage image) {
     std::vector<HeaderSet> headers;
     headers.push_back(HeaderSet{QNetworkRequest::ContentTypeHeader, "image/jpeg"});
 
-    QNetworkReply *reply = postRequest(ENDPOINT + "/api/telemetry", odlc.toBinaryData(), headers);
-    return QJsonDocument::fromJson(reply->readAll());
+    QNetworkReply *reply = postRequest(ENDPOINT + "/api/odlcs/" + QString::number(id) + "/image", ba, headers);
+    // do something on error
 }
 
 void Interop::deleteODLCThumbnail(int id) {
