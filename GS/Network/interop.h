@@ -1,7 +1,11 @@
 #ifndef INTEROP_H
 #define INTEROP_H
-#import <QtNetwork>
-
+#include <QtNetwork>
+#include <QImage>
+struct HeaderSet {
+    QNetworkRequest::KnownHeaders header;
+    QVariant value;
+};
 class Interop : public QObject
 {
     Q_OBJECT
@@ -46,10 +50,14 @@ private:
 private:
     QNetworkAccessManager* networkAccess;
     void waitForResponse(QNetworkReply* reply);
+    QNetworkReply* sendRequest(QNetworkAccessManager::Operation operation, QString url, QByteArray data = {}, std::vector<HeaderSet> headers = {});
+    QNetworkReply* getRequest(QString url);
+    QNetworkReply* postRequest(QString url, QByteArray data, std::vector<HeaderSet> headers = {});
 public:
     Interop(std::string username, std::string password);
     QJsonDocument getMissions();
     QJsonDocument getMission(int id);
+    QJsonDocument getObstacles();
     void sendTelemetry(float latitude, float longitude, float altitude_msl, float uas_heading);
     QJsonDocument sendODLC(QJsonDocument odlc);
     QJsonDocument getUploadedODLCs();

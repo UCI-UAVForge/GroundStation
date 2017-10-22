@@ -4,40 +4,34 @@ QString ENDPOINT = "http://localhost:8000";
 
 Interop::Interop(std::string username, std::string password)
 {
-    QNetworkRequest req;
-    QUrl params;
-
     networkAccess = new QNetworkAccessManager();
-    connect(networkAccess, SIGNAL(finished(QNetworkReply*)),
-               this, SLOT(replyFinished(QNetworkReply *)));
+    connect(networkAccess, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyFinished(QNetworkReply *)));
 
-    req.setUrl(QUrl(ENDPOINT + "/api/login"));
-    req.setHeader(QNetworkRequest::ContentTypeHeader,"application/x-www-form-urlencoded");
+    std::vector<HeaderSet> headers;
+    headers.push_back(HeaderSet{QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded"});
 
     QByteArray postData;
     postData.append("username=" + QString::fromStdString(username) + "&");
     postData.append("password=" + QString::fromStdString(password));
 
-    QNetworkReply *reply = networkAccess->post(req, postData);
-    waitForResponse(reply);
-    qDebug() << "Response: " << reply->readAll();
+    QNetworkReply *reply = postRequest(ENDPOINT + "/api/login", postData, headers);
     // want to raise an error here if failure
 }
 
 void Interop::replyFinished(QNetworkReply *reply)
 {
-    if(reply->error()) {
-        qDebug() << "ERROR!";
-        qDebug() << reply->errorString();
-    }
-    else {
-        qDebug() << "ContentType: " << reply->header(QNetworkRequest::ContentTypeHeader).toString();
-        qDebug() << "Last Modified: " << reply->header(QNetworkRequest::LastModifiedHeader).toDateTime().toString();;
-        qDebug() << "Content Length: " << reply->header(QNetworkRequest::ContentLengthHeader).toULongLong();
-        qDebug() << "HTTP Code: " << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
-        qDebug() << "HTTP Reason: " << reply->attribute(QNetworkRequest::HttpReasonPhraseAttribute).toString();
-        qDebug() << "Response: " << reply->readAll();
-    }
+//    if(reply->error()) {
+//        qDebug() << "ERROR!";
+//        qDebug() << reply->errorString();
+//    }
+//    else {
+//        qDebug() << "ContentType: " << reply->header(QNetworkRequest::ContentTypeHeader).toString();
+//        qDebug() << "Last Modified: " << reply->header(QNetworkRequest::LastModifiedHeader).toDateTime().toString();;
+//        qDebug() << "Content Length: " << reply->header(QNetworkRequest::ContentLengthHeader).toULongLong();
+//        qDebug() << "HTTP Code: " << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
+//        qDebug() << "HTTP Reason: " << reply->attribute(QNetworkRequest::HttpReasonPhraseAttribute).toString();
+//        qDebug() << "Response: " << reply->peek(reply->bytesAvailable());
+//    }
     reply->deleteLater();
 }
 
@@ -47,35 +41,84 @@ void Interop::waitForResponse(QNetworkReply* reply) {
     } // spin
 }
 
-QJsonDocument Interop::getMissions() {
-    QNetworkRequest req;
+QNetworkReply* Interop::sendRequest(QNetworkAccessManager::Operation operation, QString url, QByteArray data, std::vector<HeaderSet> headers) {
+    QNetworkRequest req{QUrl(url)};
+    for(HeaderSet headerSet : headers) {
+        req.setHeader(headerSet.header, headerSet.value);
+    }
+    QNetworkReply* reply;
 
-    req.setUrl(QUrl(ENDPOINT + "/api/missions"));
-    QNetworkReply* reply = networkAccess->get(req);
+    switch (operation) {
+    case QNetworkAccessManager::GetOperation:
+        reply = networkAccess->get(req);
+        break;
+    case QNetworkAccessManager::PostOperation:
+        reply = networkAccess->post(req, data);
+        break;
+    default:
+        throw std::invalid_argument("operation");
+    }
     waitForResponse(reply);
+    qDebug() << reply->request().url();
+    qDebug() << "Response: " << reply->peek(reply->bytesAvailable());
+    return reply;
+}
 
-    qDebug() << "Response: " << reply->readAll();
+QNetworkReply* Interop::getRequest(QString url)
+{
+    return sendRequest(QNetworkAccessManager::GetOperation, url);
+}
+
+QNetworkReply* Interop::postRequest(QString url, QByteArray data, std::vector<HeaderSet> headers)
+{
+    return sendRequest(QNetworkAccessManager::PostOperation, url, data, headers);
+}
+
+QJsonDocument Interop::getMissions() {
+    QNetworkReply* reply = getRequest(ENDPOINT + "/api/missions");
     return QJsonDocument::fromJson(reply->readAll());
 }
 
 QJsonDocument Interop::getMission(int id) {
+    QNetworkReply* reply = getRequest(ENDPOINT + "/api/missions/" + QString::number(id));
+    return QJsonDocument::fromJson(reply->readAll());
+}
 
+QJsonDocument Interop::getObstacles()
+{
+    QNetworkReply* reply = getRequest(ENDPOINT + "/api/obstacles");
+    return QJsonDocument::fromJson(reply->readAll());
 }
 
 void Interop::sendTelemetry(float latitude, float longitude, float altitude_msl, float uas_heading) {
+    std::vector<HeaderSet> headers;
+    headers.push_back(HeaderSet{QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded"});
 
+    QByteArray postData;
+    postData.append("latitude=" + QString::number(latitude) + "&");
+    postData.append("longitude=" + QString::number(longitude) + "&");
+    postData.append("altitude_msl=" + QString::number(altitude_msl) + "&");
+    postData.append("uas_heading=" + QString::number(uas_heading));
+
+    QNetworkReply *reply = postRequest(ENDPOINT + "/api/telemetry", postData, headers);
 }
 
 QJsonDocument Interop::sendODLC(QJsonDocument odlc) {
+    std::vector<HeaderSet> headers;
+    headers.push_back(HeaderSet{QNetworkRequest::ContentTypeHeader, "application/json"});
 
+    QNetworkReply *reply = postRequest(ENDPOINT + "/api/telemetry", odlc.toBinaryData(), headers);
+    return QJsonDocument::fromJson(reply->readAll());
 }
 
 QJsonDocument Interop::getUploadedODLCs() {
-
+    QNetworkReply* reply = getRequest(ENDPOINT + "/api/odlcs");
+    return QJsonDocument::fromJson(reply->readAll());
 }
 
 QJsonDocument Interop::getUploadedODLC(int id) {
-
+    QNetworkReply* reply = getRequest(ENDPOINT + "/api/odlcs/" + QString::number(id));
+    return QJsonDocument::fromJson(reply->readAll());
 }
 
 QJsonDocument Interop::updateODLC(int id, QJsonDocument data) {
@@ -86,13 +129,23 @@ void Interop::deleteODLC(int id) {
 
 }
 
-//QImage Interop::getODLCThumbnail(int id) {
+QImage Interop::getODLCThumbnail(int id) {
+    QNetworkReply* reply = getRequest(ENDPOINT + "/api/odlcs/" + QString::number(id) + "/image");
+    return QImage();
+}
 
-//}
+void Interop::updateODLCThumbnail(int id, QImage image) {
+    QByteArray ba;
+    QBuffer buffer(&ba);
+    buffer.open(QIODevice::WriteOnly);
+    image.save(&buffer, "JPG");
 
-//void Interop::updateODLCThumbnail(int id, QImage image) {
+    std::vector<HeaderSet> headers;
+    headers.push_back(HeaderSet{QNetworkRequest::ContentTypeHeader, "image/jpeg"});
 
-//}
+    QNetworkReply *reply = postRequest(ENDPOINT + "/api/telemetry", odlc.toBinaryData(), headers);
+    return QJsonDocument::fromJson(reply->readAll());
+}
 
 void Interop::deleteODLCThumbnail(int id) {
 
