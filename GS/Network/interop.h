@@ -53,6 +53,8 @@ private:
     QNetworkReply* sendRequest(QNetworkAccessManager::Operation operation, QString url, QByteArray data = {}, std::vector<HeaderSet> headers = {});
     QNetworkReply* getRequest(QString url);
     QNetworkReply* postRequest(QString url, QByteArray data, std::vector<HeaderSet> headers = {});
+    QNetworkReply* deleteRequest(QString url);
+    QNetworkReply* putRequest(QString url, QByteArray data, std::vector<HeaderSet> headers = {});
 public:
     Interop(std::string username, std::string password);
     QJsonDocument getMissions();

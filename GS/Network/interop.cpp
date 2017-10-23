@@ -55,6 +55,10 @@ QNetworkReply* Interop::sendRequest(QNetworkAccessManager::Operation operation, 
     case QNetworkAccessManager::PostOperation:
         reply = networkAccess->post(req, data);
         break;
+    case QNetworkAccessManager::DeleteOperation:
+        reply = networkAccess->deleteResource(req);
+    case QNetworkAccessManager::PutOperation:
+        reply = networkAccess->put(req, data);
     default:
         throw std::invalid_argument("operation");
     }
@@ -72,6 +76,16 @@ QNetworkReply* Interop::getRequest(QString url)
 QNetworkReply* Interop::postRequest(QString url, QByteArray data, std::vector<HeaderSet> headers)
 {
     return sendRequest(QNetworkAccessManager::PostOperation, url, data, headers);
+}
+
+QNetworkReply* Interop::deleteRequest(QString url)
+{
+    return sendRequest(QNetworkAccessManager::DeleteOperation, url);
+}
+
+QNetworkReply* Interop::putRequest(QString url, QByteArray data, std::vector<HeaderSet> headers)
+{
+    return sendRequest(QNetworkAccessManager::PutOperation, url, data, headers);
 }
 
 QJsonDocument Interop::getMissions() {
@@ -107,7 +121,7 @@ QJsonDocument Interop::sendODLC(QJsonDocument odlc) {
     std::vector<HeaderSet> headers;
     headers.push_back(HeaderSet{QNetworkRequest::ContentTypeHeader, "application/json"});
 
-    QNetworkReply *reply = postRequest(ENDPOINT + "/api/telemetry", odlc.toBinaryData(), headers);
+    QNetworkReply *reply = postRequest(ENDPOINT + "/api/odlcs", odlc.toBinaryData(), headers);
     return QJsonDocument::fromJson(reply->readAll());
 }
 
@@ -122,16 +136,20 @@ QJsonDocument Interop::getUploadedODLC(int id) {
 }
 
 QJsonDocument Interop::updateODLC(int id, QJsonDocument data) {
+    std::vector<HeaderSet> headers;
+    headers.push_back(HeaderSet{QNetworkRequest::ContentTypeHeader, "application/json"});
 
+    QNetworkReply* reply = putRequest(ENDPOINT + "/api/odlcs/" + QString::number(id), data.toBinaryData(), headers);
+    return QJsonDocument::fromJson(reply->readAll());
 }
 
 void Interop::deleteODLC(int id) {
-
+    QNetworkReply* reply = deleteRequest(ENDPOINT + "/api/odlcs/" + QString::number(id));
 }
 
 QImage Interop::getODLCThumbnail(int id) {
     QNetworkReply* reply = getRequest(ENDPOINT + "/api/odlcs/" + QString::number(id) + "/image");
-    return QImage();
+    return QImage::fromData(reply->readAll());
 }
 
 void Interop::updateODLCThumbnail(int id, QImage image) {
@@ -148,5 +166,5 @@ void Interop::updateODLCThumbnail(int id, QImage image) {
 }
 
 void Interop::deleteODLCThumbnail(int id) {
-
+    QNetworkReply* reply = deleteRequest(ENDPOINT + "/api/odlcs/" + QString::number(id));
 }
