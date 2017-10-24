@@ -139,7 +139,7 @@ QJsonDocument Interop::updateODLC(int id, QJsonDocument data) {
     std::vector<HeaderSet> headers;
     headers.push_back(HeaderSet{QNetworkRequest::ContentTypeHeader, "application/json"});
 
-    QNetworkReply* reply = putRequest(ENDPOINT + "/api/odlcs/" + QString::number(id), data.toBinaryData(), headers);
+    QNetworkReply* reply = putRequest(ENDPOINT + "/api/odlcs/" + QString::number(id), data.toJson(), headers);
     return QJsonDocument::fromJson(reply->readAll());
 }
 
