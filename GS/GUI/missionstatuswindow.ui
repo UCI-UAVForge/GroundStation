@@ -17,9 +17,6 @@
    <item row="0" column="0">
     <layout class="QVBoxLayout" name="MissionStatusLayout">
      <item>
-      <widget class="TimerWidget" name="TimeTimerWidget" native="true"/>
-     </item>
-     <item>
       <widget class="StatusWidget" name="MyStatusWidget" native="true"/>
      </item>
     </layout>
@@ -31,12 +28,6 @@
    <class>StatusWidget</class>
    <extends>QWidget</extends>
    <header>statuswidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>TimerWidget</class>
-   <extends>QWidget</extends>
-   <header>timerwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

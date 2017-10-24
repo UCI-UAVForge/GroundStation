@@ -1,12 +1,9 @@
 #include <QApplication>
 #include <QSplashScreen>
 #include <QtSvg>
-//#include "mainmdidisplay.h"
-#ifndef OLD_GUI
+
 #include "mainmdidisplay.h"
-#else
-#include "mainwindow.h"
-#endif
+#include "maindockwindow.h"
 
 #include "mission.h"
 
@@ -35,8 +32,9 @@ int main(int argc, char *argv[]) {
     splash.show();
 
     MainMDIDisplay x;
-    x.showNormal();
-
+    MainDockWindow dockWindow;
+    //x.showNormal();
+    dockWindow.showNormal();
     //Hide the splash screen.
     splash.finish(&x);
     return a.exec();

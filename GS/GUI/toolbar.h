@@ -1,11 +1,15 @@
-#ifndef TOOLBARA_H
-#define TOOLBARA_H
+#ifndef TOOLBAR_H
+#define TOOLBAR_H
+#include <QToolBar>
+#include <QToolButton>
 
-
-class toolbara
+class ToolBar : public QToolBar
 {
 public:
-    toolbara();
+   ToolBar(QWidget * parent = 0);
+
+   void addDockWidget();
+   QToolButton * addButton(const QString &_text);
 };
 
-#endif // TOOLBARA_H
+#endif // TOOLBAR_H

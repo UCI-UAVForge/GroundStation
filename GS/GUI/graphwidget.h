@@ -2,6 +2,7 @@
 #define GRAPHWIDGET_H
 
 #include <QWidget>
+#include <QDockWidget>
 #include <QVector>
 #include "qcustomplot.h"
 #include "mission.h"

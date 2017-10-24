@@ -16,6 +16,7 @@ QT       += webenginewidgets
 QT       += webchannel
 QT       += websockets
 QT       += widgets
+QT       += quickwidgets
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
@@ -62,3 +63,5 @@ RESOURCES += \
     Resources.qrc
 
 INCLUDEPATH += ardupilotmav/ardupilotmega/
+
+DISTFILES +=
