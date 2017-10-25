@@ -56,7 +56,7 @@ private:
     QNetworkReply* deleteRequest(QString url);
     QNetworkReply* putRequest(QString url, const QByteArray& data, std::vector<HeaderSet> headers = {});
 public:
-    Interop(std::string username, std::string password);
+    Interop(const std::string& username, const std::string& password);
     QJsonDocument getMissions();
     QJsonDocument getMission(int id);
     QJsonDocument getObstacles();

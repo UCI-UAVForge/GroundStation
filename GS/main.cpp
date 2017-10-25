@@ -6,6 +6,7 @@
 #include "maindockwindow.h"
 
 #include "mission.h"
+#include "interop.h"
 
 #include "qttabtest.h"
 
@@ -37,6 +38,13 @@ int main(int argc, char *argv[]) {
     dockWindow.showNormal();
     //Hide the splash screen.
     splash.finish(&x);
+    try {
+        Interop interop("testuser", "testpass");
+        interop.getMissions();
+    }
+    catch (std::exception& err) {
+        qCritical() << err.what();
+    }
     return a.exec();
 }
 

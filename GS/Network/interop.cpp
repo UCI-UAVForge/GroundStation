@@ -2,10 +2,10 @@
 
 QString ENDPOINT = "http://localhost:8000";
 
-Interop::Interop(std::string username, std::string password)
+Interop::Interop(const std::string& username, const std::string& password)
 {
     networkAccess = new QNetworkAccessManager();
-    connect(networkAccess, SIGNAL(finished(QNetworkReply*)), this, SLOT(replyFinished(QNetworkReply *)));
+    connect(networkAccess, &QNetworkAccessManager::finished, this, &Interop::replyFinished);
 
     std::vector<HeaderSet> headers;
     headers.push_back(HeaderSet{QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded"});
@@ -16,14 +16,18 @@ Interop::Interop(std::string username, std::string password)
 
     QNetworkReply *reply = postRequest(ENDPOINT + "/api/login", postData, headers);
     // want to raise an error here if failure
+    waitForResponse(reply);
+    if (reply->error()) {
+        throw std::invalid_argument("bad login");
+    }
 }
 
-void Interop::replyFinished(QNetworkReply *reply)
+void Interop::replyFinished(QNetworkReply* reply)
 {
-//    if(reply->error()) {
-//        qDebug() << "ERROR!";
-//        qDebug() << reply->errorString();
-//    }
+    if(reply->error()) {
+        qCritical() << "Something bad happened to one of our requests: " << reply->errorString();
+        qCritical() << reply->error();
+    }
 //    else {
 //        qDebug() << "ContentType: " << reply->header(QNetworkRequest::ContentTypeHeader).toString();
 //        qDebug() << "Last Modified: " << reply->header(QNetworkRequest::LastModifiedHeader).toDateTime().toString();;
