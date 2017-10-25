@@ -41,7 +41,7 @@ void Interop::waitForResponse(QNetworkReply* reply) {
     } // spin
 }
 
-QNetworkReply* Interop::sendRequest(QNetworkAccessManager::Operation operation, QString url, QByteArray data, std::vector<HeaderSet> headers) {
+QNetworkReply* Interop::sendRequest(QNetworkAccessManager::Operation operation, QString url, const QByteArray& data, std::vector<HeaderSet> headers) {
     QNetworkRequest req{QUrl(url)};
     for(HeaderSet headerSet : headers) {
         req.setHeader(headerSet.header, headerSet.value);
@@ -73,7 +73,7 @@ QNetworkReply* Interop::getRequest(QString url)
     return sendRequest(QNetworkAccessManager::GetOperation, url);
 }
 
-QNetworkReply* Interop::postRequest(QString url, QByteArray data, std::vector<HeaderSet> headers)
+QNetworkReply* Interop::postRequest(QString url, const QByteArray& data, std::vector<HeaderSet> headers)
 {
     return sendRequest(QNetworkAccessManager::PostOperation, url, data, headers);
 }
@@ -83,7 +83,7 @@ QNetworkReply* Interop::deleteRequest(QString url)
     return sendRequest(QNetworkAccessManager::DeleteOperation, url);
 }
 
-QNetworkReply* Interop::putRequest(QString url, QByteArray data, std::vector<HeaderSet> headers)
+QNetworkReply* Interop::putRequest(QString url, const QByteArray& data, std::vector<HeaderSet> headers)
 {
     return sendRequest(QNetworkAccessManager::PutOperation, url, data, headers);
 }
@@ -117,7 +117,7 @@ void Interop::sendTelemetry(float latitude, float longitude, float altitude_msl,
     QNetworkReply *reply = postRequest(ENDPOINT + "/api/telemetry", postData, headers);
 }
 
-QJsonDocument Interop::sendODLC(QJsonDocument odlc) {
+QJsonDocument Interop::sendODLC(const QJsonDocument& odlc) {
     std::vector<HeaderSet> headers;
     headers.push_back(HeaderSet{QNetworkRequest::ContentTypeHeader, "application/json"});
 
@@ -135,7 +135,7 @@ QJsonDocument Interop::getUploadedODLC(int id) {
     return QJsonDocument::fromJson(reply->readAll());
 }
 
-QJsonDocument Interop::updateODLC(int id, QJsonDocument data) {
+QJsonDocument Interop::updateODLC(int id, const QJsonDocument& data) {
     std::vector<HeaderSet> headers;
     headers.push_back(HeaderSet{QNetworkRequest::ContentTypeHeader, "application/json"});
 
@@ -152,7 +152,7 @@ QImage Interop::getODLCThumbnail(int id) {
     return QImage::fromData(reply->readAll());
 }
 
-void Interop::updateODLCThumbnail(int id, QImage image) {
+void Interop::updateODLCThumbnail(int id, const QImage& image) {
     QByteArray ba;
     QBuffer buffer(&ba);
     buffer.open(QIODevice::WriteOnly);

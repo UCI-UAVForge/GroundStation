@@ -50,24 +50,24 @@ private:
 private:
     QNetworkAccessManager* networkAccess;
     void waitForResponse(QNetworkReply* reply);
-    QNetworkReply* sendRequest(QNetworkAccessManager::Operation operation, QString url, QByteArray data = {}, std::vector<HeaderSet> headers = {});
+    QNetworkReply* sendRequest(QNetworkAccessManager::Operation operation, QString url, const QByteArray& data = {}, std::vector<HeaderSet> headers = {});
     QNetworkReply* getRequest(QString url);
-    QNetworkReply* postRequest(QString url, QByteArray data, std::vector<HeaderSet> headers = {});
+    QNetworkReply* postRequest(QString url, const QByteArray& data, std::vector<HeaderSet> headers = {});
     QNetworkReply* deleteRequest(QString url);
-    QNetworkReply* putRequest(QString url, QByteArray data, std::vector<HeaderSet> headers = {});
+    QNetworkReply* putRequest(QString url, const QByteArray& data, std::vector<HeaderSet> headers = {});
 public:
     Interop(std::string username, std::string password);
     QJsonDocument getMissions();
     QJsonDocument getMission(int id);
     QJsonDocument getObstacles();
     void sendTelemetry(float latitude, float longitude, float altitude_msl, float uas_heading);
-    QJsonDocument sendODLC(QJsonDocument odlc);
+    QJsonDocument sendODLC(const QJsonDocument& odlc);
     QJsonDocument getUploadedODLCs();
     QJsonDocument getUploadedODLC(int id);
-    QJsonDocument updateODLC(int id, QJsonDocument data);
+    QJsonDocument updateODLC(int id, const QJsonDocument& data);
     void deleteODLC(int id);
     QImage getODLCThumbnail(int id);
-    void updateODLCThumbnail(int id, QImage image);
+    void updateODLCThumbnail(int id, const QImage& image);
     void deleteODLCThumbnail(int id);
 public slots:
     void replyFinished(QNetworkReply *reply);
