@@ -1,12 +1,7 @@
 #include "maindockwindow.h"
 #include "ui_maindockwindow.h"
 #include <QDebug>
-#include <QAction>
-#include <QPushButton>
-#include <QGroupBox>
-#include <QVBoxLayout>
 
-#include "graphwidget.h"
 
 MainDockWindow::MainDockWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -16,13 +11,14 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     toolBar = new ToolBar(this);
     QQuickWidget * mapWidget = createQmlWidget(QUrl("qrc:/res/map.qml"), this);
     centralWidget->addWidget(mapWidget);
-    QDockWidget * graphDock = new QDockWidget("Graph", this);
-    GraphWidget * graphWidget = new GraphWidget(this);
-    graphDock->setWidget(graphWidget);
-    addDockWidget(Qt::BottomDockWidgetArea, graphDock);
-    graphDock->setVisible(false);
-    graphDock->setFixedSize(500, 300);
+    QDockWidget * graphDock = createDockWidget("Graph",Qt::BottomDockWidgetArea, new GraphWidget(this), this);
+    QDockWidget * tableDock = createDockWidget("Table",Qt::BottomDockWidgetArea, new TableWidget(this), this);
+    QDockWidget * timerDock = createDockWidget("Timer",Qt::RightDockWidgetArea, new TimerWidget(this), this);
+    graphDock->setMinimumWidth(500);
+    tableDock->setMinimumWidth(500);
     toolBar->addAction(graphDock->toggleViewAction());
+    toolBar->addAction(tableDock->toggleViewAction());
+    toolBar->addAction(timerDock->toggleViewAction());
     toolBar->addAction("Test find", this, &MainDockWindow::testFind);
     toolBar->addAction("Hide All Widgets", this, &MainDockWindow::hideDockWidgets);
     //toolBar->addAction("Close All Widgets", this, &MainDockWindow::closeDockWidgets);
@@ -30,7 +26,13 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     setCentralWidget(centralWidget);
 }
 
-
+QDockWidget * MainDockWindow::createDockWidget(const QString &title, Qt::DockWidgetArea area, QWidget * child, QWidget * parent) {
+    QDockWidget * dock = new QDockWidget(title, parent);
+    dock->setWidget(child);
+    addDockWidget(area, dock);
+    dock->setVisible(false);
+    return dock;
+}
 
 QQuickWidget * MainDockWindow::createQmlWidget(QUrl qmlSource, QWidget * parent) {
     QQuickWidget * quickWidget = new QQuickWidget(parent);

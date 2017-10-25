@@ -6,9 +6,16 @@
 #include <QStackedWidget>
 #include <QQuickWidget>
 #include <QMenu>
+#include <QAction>
+#include <QPushButton>
+#include <QGroupBox>
+#include <QVBoxLayout>
 
+#include "graphwidget.h"
+#include "tablewidget.h"
 #include "toolbar.h"
 #include "timerwidget.h"
+
 namespace Ui {
 class MainDockWindow;
 }
@@ -24,6 +31,7 @@ public:
     ~MainDockWindow();
 
     QQuickWidget * createQmlWidget(QUrl qmlSource, QWidget * parent = 0);
+    QDockWidget * createDockWidget(const QString &title, Qt::DockWidgetArea area, QWidget * child, QWidget * parent);
     void testFind();
 private slots:
     void hideDockWidgets();
