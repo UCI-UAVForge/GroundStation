@@ -45,7 +45,7 @@ void Interop::waitForResponse(QNetworkReply* reply) {
     } // spin
 }
 
-QNetworkReply* Interop::sendRequest(QNetworkAccessManager::Operation operation, QString url, const QByteArray& data, std::vector<HeaderSet> headers) {
+QNetworkReply* Interop::sendRequest(const QNetworkAccessManager::Operation& operation, const QString& url, const QByteArray& data, const std::vector<HeaderSet>& headers) {
     QNetworkRequest req{QUrl(url)};
     for(HeaderSet headerSet : headers) {
         req.setHeader(headerSet.header, headerSet.value);
@@ -61,10 +61,12 @@ QNetworkReply* Interop::sendRequest(QNetworkAccessManager::Operation operation, 
         break;
     case QNetworkAccessManager::DeleteOperation:
         reply = networkAccess->deleteResource(req);
+        break;
     case QNetworkAccessManager::PutOperation:
         reply = networkAccess->put(req, data);
+        break;
     default:
-        throw std::invalid_argument("operation");
+        throw std::invalid_argument("operation not implemented");
     }
     waitForResponse(reply);
     qDebug() << reply->request().url();
@@ -72,22 +74,22 @@ QNetworkReply* Interop::sendRequest(QNetworkAccessManager::Operation operation, 
     return reply;
 }
 
-QNetworkReply* Interop::getRequest(QString url)
+QNetworkReply* Interop::getRequest(const QString& url)
 {
     return sendRequest(QNetworkAccessManager::GetOperation, url);
 }
 
-QNetworkReply* Interop::postRequest(QString url, const QByteArray& data, std::vector<HeaderSet> headers)
+QNetworkReply* Interop::postRequest(const QString& url, const QByteArray& data, const std::vector<HeaderSet>& headers)
 {
     return sendRequest(QNetworkAccessManager::PostOperation, url, data, headers);
 }
 
-QNetworkReply* Interop::deleteRequest(QString url)
+QNetworkReply* Interop::deleteRequest(const QString& url)
 {
     return sendRequest(QNetworkAccessManager::DeleteOperation, url);
 }
 
-QNetworkReply* Interop::putRequest(QString url, const QByteArray& data, std::vector<HeaderSet> headers)
+QNetworkReply* Interop::putRequest(const QString& url, const QByteArray& data, const std::vector<HeaderSet>& headers)
 {
     return sendRequest(QNetworkAccessManager::PutOperation, url, data, headers);
 }

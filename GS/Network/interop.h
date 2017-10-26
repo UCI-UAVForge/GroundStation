@@ -50,11 +50,11 @@ private:
 private:
     QNetworkAccessManager* networkAccess;
     void waitForResponse(QNetworkReply* reply);
-    QNetworkReply* sendRequest(QNetworkAccessManager::Operation operation, QString url, const QByteArray& data = {}, std::vector<HeaderSet> headers = {});
-    QNetworkReply* getRequest(QString url);
-    QNetworkReply* postRequest(QString url, const QByteArray& data, std::vector<HeaderSet> headers = {});
-    QNetworkReply* deleteRequest(QString url);
-    QNetworkReply* putRequest(QString url, const QByteArray& data, std::vector<HeaderSet> headers = {});
+    QNetworkReply* sendRequest(const QNetworkAccessManager::Operation& operation, const QString& url, const QByteArray& data = {}, const std::vector<HeaderSet>& headers = {});
+    QNetworkReply* getRequest(const QString& url);
+    QNetworkReply* postRequest(const QString& url, const QByteArray& data, const std::vector<HeaderSet>& headers = {});
+    QNetworkReply* deleteRequest(const QString& url);
+    QNetworkReply* putRequest(const QString& url, const QByteArray& data, const std::vector<HeaderSet>& headers = {});
 public:
     Interop(const std::string& username, const std::string& password);
     QJsonDocument getMissions();
@@ -70,6 +70,6 @@ public:
     void updateODLCThumbnail(int id, const QImage& image);
     void deleteODLCThumbnail(int id);
 public slots:
-    void replyFinished(QNetworkReply *reply);
+    void replyFinished(QNetworkReply* reply);
 };
 #endif // INTEROP_H

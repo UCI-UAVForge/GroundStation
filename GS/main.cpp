@@ -41,8 +41,9 @@ int main(int argc, char *argv[]) {
     try {
         Interop interop("testuser", "testpass");
         interop.getMissions();
-    }
-    catch (std::exception& err) {
+        interop.deleteODLC(1);
+    } catch (std::exception& err) {
+        qDebug() << "borked";
         qCritical() << err.what();
     }
     return a.exec();
