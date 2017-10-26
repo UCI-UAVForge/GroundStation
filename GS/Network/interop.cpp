@@ -121,7 +121,7 @@ QJsonDocument Interop::sendODLC(const QJsonDocument& odlc) {
     std::vector<HeaderSet> headers;
     headers.push_back(HeaderSet{QNetworkRequest::ContentTypeHeader, "application/json"});
 
-    QNetworkReply *reply = postRequest(ENDPOINT + "/api/odlcs", odlc.toBinaryData(), headers);
+    QNetworkReply *reply = postRequest(ENDPOINT + "/api/odlcs", odlc.toJson(), headers);
     return QJsonDocument::fromJson(reply->readAll());
 }
 
