@@ -7,6 +7,7 @@
 
 #include "mission.h"
 #include "decoder.h"
+#include "interop.h"
 #include "qttabtest.h"
 #include "interop.h"
 #include <QDebug>
@@ -41,7 +42,19 @@ int main(int argc, char *argv[]) {
    // qDebug() << interop_server.getMission(1);
 
     //Hide the splash screen.
+<<<<<<< HEAD
     splash.finish(&dockWindow);
+=======
+    splash.finish(&x);
+    try {
+        Interop interop("testuser", "testpass");
+        interop.getMissions();
+        interop.deleteODLC(1);
+    } catch (std::exception& err) {
+        qDebug() << "borked";
+        qCritical() << err.what();
+    }
+>>>>>>> origin/master
     return a.exec();
 }
 
