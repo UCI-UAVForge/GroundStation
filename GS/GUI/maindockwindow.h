@@ -15,6 +15,8 @@
 #include "tablewidget.h"
 #include "toolbar.h"
 #include "timerwidget.h"
+#include "timer.h"
+//#include "link.h"
 
 namespace Ui {
 class MainDockWindow;

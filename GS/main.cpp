@@ -6,8 +6,10 @@
 #include "maindockwindow.h"
 
 #include "mission.h"
-
+#include "decoder.h"
 #include "qttabtest.h"
+#include "interop.h"
+#include <QDebug>
 
 int main(int argc, char *argv[]) {
 
@@ -31,12 +33,15 @@ int main(int argc, char *argv[]) {
     QSplashScreen splash(pixmap);
     splash.show();
 
-    MainMDIDisplay x;
+   // MainMDIDisplay x;
     MainDockWindow dockWindow;
     //x.showNormal();
     dockWindow.showNormal();
+   // Interop interop_server("testuser", "testpass");
+   // qDebug() << interop_server.getMission(1);
+
     //Hide the splash screen.
-    splash.finish(&x);
+    splash.finish(&dockWindow);
     return a.exec();
 }
 

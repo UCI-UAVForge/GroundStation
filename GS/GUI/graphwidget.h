@@ -7,6 +7,7 @@
 #include "qcustomplot.h"
 #include "mission.h"
 #include "dataobjects.h"
+#include "mavlink.h"
 
 namespace Ui {
 class GraphWidget;
@@ -43,12 +44,6 @@ public slots:
      */
     void drawMission(Mission* mission);
 
-    /**
-     * @brief appendTelemPacket Takes a single telemetry packet and appends
-     * each of its vaules to the correct trace on the graph
-     * @param packet pointer to the packet that will be appended
-     */
-    void appendTelemPacket(Protocol::TelemetryPacket* packet);
 
     /**
      * @brief setMaxEntries Sets the maximum number of entries allowed in the
@@ -77,7 +72,7 @@ public slots:
      * @brief appendTelemData
      * @param data
      */
-    void appendTelemData(TelemetryData *data);
+    void appendTelemData(mavlink_gps_raw_int_t msg);
 
 
 private slots:
