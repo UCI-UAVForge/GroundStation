@@ -93,58 +93,116 @@ void MainDockWindow::loadMapObjects(QQuickWidget * mapWidget){
 
     //to-do: make the lines between each points!
 
+
+    //-----------------------------------------------------Search Grid Points------------------------------------------------
     QJsonArray temp = mission.get_search_grid_points();
+    QJsonArray pathlat;
+    QJsonArray pathlon;
     for(int i=0; i<temp.size();++i){
+        pathlat.append(temp[i].toObject()["latitude"]);
+        pathlon.append(temp[i].toObject()["longitude"]);
+
         QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
+                Q_ARG(QVariant, ""),
                 Q_ARG(QVariant, "images/blue_pin"),
                 Q_ARG(QVariant, temp[i].toObject()["latitude"].toVariant()),
                 Q_ARG(QVariant, temp[i].toObject()["longitude"].toVariant()));
     }
+    if (temp.size() > 1){
+        pathlat.append(temp[0].toObject()["latitude"]);
+        pathlon.append(temp[0].toObject()["longitude"]);
 
+        QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addLine",
+                                  Q_ARG(QVariant, ""),
+                                  Q_ARG(QVariant, 3),
+                                  Q_ARG(QVariant, "blue"),
+                                  Q_ARG(QVariant, pathlat),
+                                  Q_ARG(QVariant, pathlon),
+                                  Q_ARG(QVariant, temp.size()));
+    }
+    Clear(pathlat);
+    Clear(pathlon);
+
+
+    //-----------------------------------------------------Mission Waypoints------------------------------------------------
     temp = mission.get_mission_waypoints();
     for(int i=0; i<temp.size();++i){
         QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
+                Q_ARG(QVariant, ""),
                 Q_ARG(QVariant, "images/green_pin"),
                 Q_ARG(QVariant, temp[i].toObject()["latitude"].toVariant()),
                 Q_ARG(QVariant, temp[i].toObject()["longitude"].toVariant()));
     }
+    if (temp.size() > 1){
+        pathlat.append(temp[0].toObject()["latitude"]);
+        pathlon.append(temp[0].toObject()["longitude"]);
 
+        QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addLine",
+                                  Q_ARG(QVariant, ""),
+                                  Q_ARG(QVariant, 3),
+                                  Q_ARG(QVariant, "blue"),
+                                  Q_ARG(QVariant, pathlat),
+                                  Q_ARG(QVariant, pathlon),
+                                  Q_ARG(QVariant, temp.size()));
+    }
+    Clear(pathlat);
+    Clear(pathlon);
+
+    //-----------------------------------------------------No-Fly Zone Boundary Points (also contains max/min altitude)------------------------------------------------
     temp = mission.get_fly_zones();
     for(int i=0; i<temp.size();++i){
         QJsonObject temp2 = temp[i].toObject();
-        //temp2 form: {"altitude_msl_max":Qvariable,
-        //             "altitude_msl_min":QVariable,
-        //             "boundary_pts":QJsonArray<QJsonObject> { "latitude":QVariable,
-        //                                                      "longitude":QVariable,
-        //                                                      "order":int
-        //                                                    }
-        //             }
         QJsonArray temp3 = temp2["boundary_pts"].toArray();
         for (int j=0;j<temp3.size();++j){
+            pathlat.append(temp3[j].toObject()["latitude"]);
+            pathlon.append(temp3[j].toObject()["longitude"]);
             QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
+                    Q_ARG(QVariant, ""),
                     Q_ARG(QVariant, "images/yellow_pin"),
                     Q_ARG(QVariant, temp3[j].toObject()["latitude"].toVariant()),
                     Q_ARG(QVariant, temp3[j].toObject()["longitude"].toVariant()));
         }
 
+
+        if (temp3.size() > 1){
+            pathlat.append(temp3[0].toObject()["latitude"]);
+            pathlon.append(temp3[0].toObject()["longitude"]);
+
+            QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addLine",
+                                      Q_ARG(QVariant, ""),
+                                      Q_ARG(QVariant, 3),
+                                      Q_ARG(QVariant, "yellow"),
+                                      Q_ARG(QVariant, pathlat),
+                                      Q_ARG(QVariant, pathlon),
+                                      Q_ARG(QVariant, temp3.size()+1));
+        }
+
     }
 
+    //-----------------------------------------------------Off Axis Odlc Position------------------------------------------------
     QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
+            Q_ARG(QVariant, ""),
             Q_ARG(QVariant, "images/blue_circle"),
             Q_ARG(QVariant, mission.get_off_axis_odlc_pos()["latitude"].toVariant()),
             Q_ARG(QVariant, mission.get_off_axis_odlc_pos()["longitude"].toVariant()));
 
+    //-----------------------------------------------------Emergent Last Known Position------------------------------------------------
     QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
+            Q_ARG(QVariant, ""),
             Q_ARG(QVariant, "images/green_circle"),
             Q_ARG(QVariant, mission.get_emergent_last_known_pos()["latitude"].toVariant()),
             Q_ARG(QVariant, mission.get_emergent_last_known_pos()["longitude"].toVariant()));
 
+    //-----------------------------------------------------Home Position------------------------------------------------
     QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
+            Q_ARG(QVariant, ""),
             Q_ARG(QVariant, "images/tent"),
             Q_ARG(QVariant, mission.get_home_pos()["latitude"].toVariant()),
             Q_ARG(QVariant, mission.get_home_pos()["longitude"].toVariant()));
 
+    //-----------------------------------------------------Air Drop Position------------------------------------------------
     QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
+            Q_ARG(QVariant, ""),
             Q_ARG(QVariant, "images/crosshair"),
             Q_ARG(QVariant, mission.get_air_drop_pos()["latitude"].toVariant()),
             Q_ARG(QVariant, mission.get_air_drop_pos()["longitude"].toVariant()));
@@ -153,6 +211,11 @@ void MainDockWindow::loadMapObjects(QQuickWidget * mapWidget){
 }
 
 
+void MainDockWindow::Clear(QJsonArray &arr){
+    for (int i=0; i<arr.size(); ++i){
+        arr.removeFirst();
+    }
+}
 
 MainDockWindow::~MainDockWindow()
 {

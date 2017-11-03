@@ -69,8 +69,8 @@ QNetworkReply* Interop::sendRequest(const QNetworkAccessManager::Operation& oper
         throw std::invalid_argument("operation not implemented");
     }
     waitForResponse(reply);
-    qDebug() << reply->request().url();
-    qDebug() << "Response: " << reply->peek(reply->bytesAvailable());
+//    qDebug() << reply->request().url();
+//    qDebug() << "Response: " << reply->peek(reply->bytesAvailable());
     return reply;
 }
 

@@ -41,6 +41,7 @@ private slots:
     void hideDockWidgets();
     void closeDockWidgets();
     void loadMapObjects(QQuickWidget * mapWidget);
+    void Clear(QJsonArray &arr);
 
 private:
     Ui::MainDockWindow *ui;
