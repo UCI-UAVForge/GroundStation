@@ -1,6 +1,7 @@
 #include "maindockwindow.h"
 #include "ui_maindockwindow.h"
 #include <QDebug>
+#include <QQuickItem>
 
 #include "link.h"
 #include "decoder.h"
@@ -49,7 +50,6 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     toolBar->addAction("Hide All Widgets", this, &MainDockWindow::hideDockWidgets);
     //toolBar->addAction("Close All Widgets", this, &MainDockWindow::closeDockWidgets);
     addToolBar(toolBar);
-    setCentralWidget(centralWidget);
     loadMapObjects(mapWidget);
 
 }
@@ -85,28 +85,13 @@ void MainDockWindow::closeDockWidgets() {
 }
 
 void MainDockWindow::loadMapObjects(QQuickWidget * mapWidget){
-//    QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "showMarker",
-//            Q_ARG(QVariant, 33.6405),
-//            Q_ARG(QVariant, -117.8943));
-
-    link link;
     Interop interop("testuser", "testpass");
     Mission mission = interop.getMission(1);
 
     if (!mission.isActive())
         return;
 
-
-//    QJsonValue loc = mission.get_fly_zones();
-//    QJsonArray = loc.toArray();
-//    qDebug() << loc[0];
-
-    qDebug() << "search grid points "<< mission.get_search_grid_points();
-    qDebug() << "mission waypoints" << mission.get_mission_waypoints();
-    qDebug() << "fly zones" << mission.get_fly_zones();
-    qDebug() << "emergent" << mission.get_emergent_last_known_pos();
-    qDebug() << "home" << mission.get_home_pos();
-    qDebug() << "air drop" << mission.get_air_drop_pos();
+    //to-do: make the lines between each points!
 
     QJsonArray temp = mission.get_search_grid_points();
     for(int i=0; i<temp.size();++i){

@@ -9,5 +9,5 @@ void ToolBar::addDockWidget() {
 }
 QToolButton* addButton(const QString &_text)
 {
-
+    return nullptr;
 }

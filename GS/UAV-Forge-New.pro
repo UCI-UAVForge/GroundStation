@@ -46,13 +46,15 @@ SOURCES += \
     $$files(GUI/*.cpp, false) \
     $$files(Util/*.cpp, false) \
     $$files(Network/*.cpp, false) \
-    $$files(Database/*.cpp, false)
+    $$files(Database/*.cpp, false) \
+    GUI/testwidget.cpp
 
 HEADERS  += \
     $$files(GUI/*.h, false) \
     $$files(Util/*.h, false) \
     $$files(Network/*.h, false) \
-    $$files(Database/*.h, false)
+    $$files(Database/*.h, false) \
+    GUI/testwidget.h
 
 FORMS    += \
     $$files(GUI/*.ui, false) \
