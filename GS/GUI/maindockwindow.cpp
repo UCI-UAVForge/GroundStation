@@ -3,9 +3,6 @@
 #include <QDebug>
 #include <QQuickItem>
 
-#include "link.h"
-#include "decoder.h"
-#include "infowidget.h"
 
 MainDockWindow::MainDockWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -20,38 +17,41 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     link->startLink();
     Decoder * decoder = new Decoder();
     decoder->setLink(link);
+
+    toolBar = new ToolBar(this);
+
     GraphWidget * graphWidget = new GraphWidget(this);
     QDockWidget * graphDock = createDockWidget("Graph",Qt::BottomDockWidgetArea, graphWidget, this);
     QDockWidget * tableDock = createDockWidget("Table",Qt::BottomDockWidgetArea, new TableWidget(this), this);
     QDockWidget * timerDock = createDockWidget("Timer",Qt::RightDockWidgetArea, new Timer(this), this);
     graphDock->setMinimumWidth(500);
     tableDock->setMinimumWidth(500);
-    //graphWidget->appendTelemData();
- //   timerDock->setFixedSize(200, 100);
-   // timerDock->setFloating(true);
 
     //Connect all widgets to decoder like this.
-    InfoWidget * infoWidget = new InfoWidget(this);
-    connect(decoder, &Decoder::gpsMsgReceived, infoWidget, &InfoWidget::updateTelemetry);
-    connect(decoder, &Decoder::gpsMsgReceived, graphWidget, &GraphWidget::appendTelemData);
-    QDockWidget * infoDock = createDockWidget("Info", Qt::RightDockWidgetArea, infoWidget, this);
-    infoDock->setMaximumHeight(220);
-    infoDock->setMinimumWidth(230);
+    MovementWidget * movementWidget = new MovementWidget(this);
+    StatusWidget * statusWidget = new StatusWidget(this);
+    connect(decoder, &Decoder::gpsReceived, movementWidget, &MovementWidget::updateTelemetry);
+    connect(decoder, &Decoder::attReceived, movementWidget, &MovementWidget::updateAttitude);
+    connect(decoder, &Decoder::gpsReceived, graphWidget, &GraphWidget::appendTelemData);
 
-    toolBar = new ToolBar(this);
-    toolBar->addAction(graphDock->toggleViewAction());
-    toolBar->addAction(tableDock->toggleViewAction());
-    toolBar->addAction(timerDock->toggleViewAction());
-    toolBar->addAction(infoDock->toggleViewAction());
+    QDockWidget * movementDock = createDockWidget("Movement", Qt::RightDockWidgetArea, movementWidget, this);
+    QDockWidget * statusDock = createDockWidget("Status", Qt::RightDockWidgetArea, statusWidget, this);
+    tabifyDockWidget(movementDock, statusDock);
+    movementDock->setMaximumHeight(300);
+    movementDock->setMinimumWidth(230);
     graphDock->setVisible(true);
     tableDock->setVisible(true);
-    infoDock->setVisible(true);
+    timerDock->setVisible(true);
+    movementDock->setVisible(true);
+    statusDock->setVisible(true);
+
     toolBar->addAction("Test find", this, &MainDockWindow::testFind);
     toolBar->addAction("Hide All Widgets", this, &MainDockWindow::hideDockWidgets);
     //toolBar->addAction("Close All Widgets", this, &MainDockWindow::closeDockWidgets);
     addToolBar(toolBar);
-    loadMapObjects(mapWidget);
 
+    loadMapObjects(mapWidget);
+    setStyleSheet("QDockWidget:{background-color:gray;}");
 }
 
 QDockWidget * MainDockWindow::createDockWidget(const QString &title, Qt::DockWidgetArea area, QWidget * child, QWidget * parent) {
@@ -59,6 +59,7 @@ QDockWidget * MainDockWindow::createDockWidget(const QString &title, Qt::DockWid
     dock->setWidget(child);
     addDockWidget(area, dock);
     dock->setVisible(false);
+    toolBar->addAction(dock->toggleViewAction());
     return dock;
 }
 

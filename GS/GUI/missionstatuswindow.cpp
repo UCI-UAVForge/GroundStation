@@ -25,7 +25,7 @@ void MissionStatusWindow::stopWidgets() {
 }
 
 void MissionStatusWindow::stopStatusWidget() {
-    this->ui->MyStatusWidget->stop() ;
+    //this->ui->MyStatusWidget->stop() ;
 }
 
 void MissionStatusWindow::stopTimerWidget() {
@@ -33,7 +33,7 @@ void MissionStatusWindow::stopTimerWidget() {
 }
 
 void MissionStatusWindow::initiateStatusWidget() {
-    this->ui->MyStatusWidget->initiate();
+    //this->ui->MyStatusWidget->initiate();
 }
 
 void MissionStatusWindow::initiateTimerWidget() {
@@ -47,5 +47,5 @@ void MissionStatusWindow::setCurrentTelemetryPacket( Protocol::TelemetryPacket *
 
 void MissionStatusWindow::setCurrentTelemetryData(TelemetryData *data) {
     this->currentTelemetryData = data;
-    this->ui->MyStatusWidget->setCurrentTelemetryData(this->currentTelemetryData);
+    //this->ui->MyStatusWidget->setCurrentTelemetryData(this->currentTelemetryData);
 }

@@ -19,6 +19,9 @@
 #include "mission.h"
 #include "link.h"
 #include "timer.h"
+#include "decoder.h"
+#include "movementwidget.h"
+#include "statuswidget.h"
 
 namespace Ui {
 class MainDockWindow;
@@ -37,6 +40,7 @@ public:
     QQuickWidget * createQmlWidget(QUrl qmlSource, QWidget * parent = 0);
     QDockWidget * createDockWidget(const QString &title, Qt::DockWidgetArea area, QWidget * child, QWidget * parent);
     void testFind();
+
 private slots:
     void hideDockWidgets();
     void closeDockWidgets();

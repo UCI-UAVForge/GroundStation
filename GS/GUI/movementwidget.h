@@ -1,46 +1,25 @@
 #ifndef INFOWIDGET_H
 #define INFOWIDGET_H
 
+
 #include <QWidget>
-#include <QGridLayout>
-#include <QVBoxLayout>
+#include "textbox.h"
 #include "mavlink.h"
-#include <QLabel>
-#include <QGroupBox>
+#include <QHBoxLayout>
 
-struct TextBox : public QWidget {
-    QLabel * text;
-    QLabel * title;
-    TextBox(QString t) {
-        title = new QLabel(t);
-        text = new QLabel("N/A");
-        title->setAlignment(Qt::AlignHCenter);
-        title->setStyleSheet("QLabel {font-size:8pt;}");
-        text->setAlignment(Qt::AlignHCenter);
-        text->setStyleSheet("QLabel {font-size: 14pt; color: blue;}");
-        QVBoxLayout* vbox = new QVBoxLayout();
-        vbox->addWidget(title);
-        vbox->addWidget(text);
-        setLayout(vbox);
-        setStyleSheet("QWidget {background-color: white;}");
-    }
-    void setTxt(QString t) {
-        text->setText(t);
-    }
-};
-
-class InfoWidget : public QWidget
+class MovementWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit InfoWidget(QWidget *parent = nullptr);
+    explicit MovementWidget(QWidget *parent = nullptr);
     QGridLayout *layout;
-    TextBox *alt, *lon, *lat, *vel;
+    TextBox *alt, *lon, *lat, *vel, *pitch, *roll, *yaw;
 
 signals:
 
 public slots:
     void updateTelemetry(mavlink_gps_raw_int_t gps);
+    void updateAttitude(mavlink_attitude_t att);
 };
 
 #endif // INFOWIDGET_H

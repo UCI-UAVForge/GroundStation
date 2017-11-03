@@ -41,7 +41,6 @@ void Link::sendMAVLinkMsg(mavlink_message_t msg) {
 }
 
 void Link::processPendingDatagrams() {
-    QTextStream(stdout) << "Data received" << endl;
     while (recvUdpSocket->hasPendingDatagrams()) {
         //Initialize vars for receiving message
         QByteArray datagram;
@@ -54,7 +53,6 @@ void Link::processPendingDatagrams() {
         //Parse using mavlink library
         for (int i = 0; i < datagram.size(); i++) {
             if(mavlink_parse_char(1, datagram.data()[i], &msg, &status)) {
-                QTextStream(stdout) << "Message received" << endl;
                 msgReceived = true;
                 emit messageReceived(msg);
             }
