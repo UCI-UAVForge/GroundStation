@@ -8,21 +8,22 @@
 #include <vector>
 #include "mavlink.h"
 
-class link: public QObject
+class Link: public QObject
 {
     Q_OBJECT
 public:
-    link();
     const static int GS_PORT_NUM = 30725;
     const static int UAV_PORT_NUM = 30735;
+    Link();
 
+    void startLink();
     void sendAllMAVLinkMsgs(std::vector<mavlink_message_t>);
     void sendAllMAVLinkMsgs(std::queue<mavlink_message_t>);
     void sendMAVLinkMsg(mavlink_message_t);
 
 private:
-    QUdpSocket sendUdpSocket;
-    QUdpSocket recvUdpSocket;
+    QUdpSocket * sendUdpSocket;
+    QUdpSocket * recvUdpSocket;
 
 private slots:
     void processPendingDatagrams();
