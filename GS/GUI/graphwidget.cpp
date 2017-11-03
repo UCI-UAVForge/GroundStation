@@ -4,8 +4,6 @@
 
 #include "telemetrypacket.h"
 
-#include <QDebug>
-
 GraphWidget::GraphWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::GraphWidget)
@@ -77,7 +75,7 @@ void GraphWidget::setViewport(unsigned int start, unsigned int end){
     maxEntries = end - start;
 }
 
-void GraphWidget::appendTelemData(mavlink_gps_raw_int_t msg) {
+void GraphWidget::appendTelemData(TelemetryData* data) {
     int time = 0;
     if(graphs[0]->data()->size() > 0){
         time = graphs[0]->data()->lastKey()+1;
@@ -88,18 +86,17 @@ void GraphWidget::appendTelemData(mavlink_gps_raw_int_t msg) {
             graphs[i]->removeDataBefore(time-maxEntries);
         }
     }
-    qDebug() << time;
-    graphs[1]->removeDataBefore(time-20);
-    graphs[0]->addData(time,msg.epv);
-    graphs[1]->addData(time,msg.lat/1000000);
-    graphs[2]->addData(time,(float)msg.lon/1000000);
-    graphs[3]->addData(time,(float)msg.alt/1000);
-   // graphs[4]->addData(time,data->pitch);
-   // graphs[5]->addData(time,data->roll);
-   // graphs[6]->addData(time,data->yaw);
-   // graphs[7]->addData(time,data->xvel);
-   // graphs[8]->addData(time,data->yvel);
-   // graphs[9]->addData(time,data->zvel);
+
+    graphs[0]->addData(time,data->heading);
+    graphs[1]->addData(time,data->lat);
+    graphs[2]->addData(time,data->lng);
+    graphs[3]->addData(time,data->alt);
+    graphs[4]->addData(time,data->pitch);
+    graphs[5]->addData(time,data->roll);
+    graphs[6]->addData(time,data->yaw);
+    graphs[7]->addData(time,data->xvel);
+    graphs[8]->addData(time,data->yvel);
+    graphs[9]->addData(time,data->zvel);
 
     updateGraph();
 }
@@ -108,12 +105,67 @@ void GraphWidget::appendPoint(double x, double y, int id) {
     graphs[id]->addData(x,y);
 }
 
+
+
+/// \todo REMOVE REFERENCES TO THE PROTOCOL LIBRARY FROM THIS CLASS
+void GraphWidget::appendTelemPacket(Protocol::TelemetryPacket* packet){
+    float heading;
+    double lat, lon;
+    float alt, pitch,roll,yaw,xvel,yvel,zvel;
+
+    //int ts = packet->get_timestamp();
+    packet->GetHeading(&heading);
+    packet->GetLocation(&lat,&lon,&alt);
+    packet->GetOrientation(&pitch,&roll,&yaw);
+    packet->GetVelocity(&xvel,&yvel,&zvel);
+
+    int time = 0;
+    if(graphs[0]->data()->size() > 0){
+        time = graphs[0]->data()->lastKey()+1;
+    }
+
+    if(graphs[0]->data()->size() > maxEntries){
+        for(int i = 0; i < 10; i++){
+            graphs[i]->removeDataBefore(time-maxEntries);
+        }
+    }
+
+    graphs[0]->addData(time,heading);
+    graphs[1]->addData(time,lat);
+    graphs[2]->addData(time,lon);
+    graphs[3]->addData(time,alt);
+    graphs[4]->addData(time,pitch);
+    graphs[5]->addData(time,roll);
+    graphs[6]->addData(time,yaw);
+    graphs[7]->addData(time,xvel);
+    graphs[8]->addData(time,yvel);
+    graphs[9]->addData(time,zvel);
+
+    updateGraph();
+}
+
 void GraphWidget::drawMission(Mission* mission){
     myMission = mission;
     for(int i = 0; i < 10; i++){
         QCPGraph *graph = graphs[i];
         QVector<double> * vals = mission->getValuesForID(i);
+
+        // Get checkboxes value
+        //ui->customPlot->legend->setVisible(true);
+        //ui->customPlot->legend->setFont(QFont("Helvetica", 9));
+        //QPen pen;
+
+        //pen.setColor(QColor(qSin(index*1+1.2)*80+80, qSin(index*0.3+0)*80+80, qSin(index*0.3+1.5)*80+80));
+        //graph->setPen(pen);
+        //graph->setName("lsLine");
+        //graph->setLineStyle(QCPGraph::lsLine);
+        //graph->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 5));
+
+        // Generate data
+        //QVector<double> x, y;
         for (int j = 0; j < vals->length(); ++j) {
+            //x.append(j);
+            //y.append((*vals)[j]);
             graph->addData(j,(*vals)[j]);
         }
         processClickEvent(i);
@@ -121,10 +173,53 @@ void GraphWidget::drawMission(Mission* mission){
 
 }
 
+/*
+void GraphWidget::makePlot(int index) {
+    if(!myMission){
+        return; //do nothing
+    }
+
+    QTextStream out(stdout);
+    //graphs[index] = ui->customPlot->addGraph();
+    QCPGraph *graph = graphs[index];
+    // Create mission
+
+    Mission* mission = myMission;
+
+    QVector<double> * vals = mission->getValuesForID(index);
+
+    // Get checkboxes value
+    ui->customPlot->legend->setVisible(true);
+    ui->customPlot->legend->setFont(QFont("Helvetica", 9));
+    QPen pen;
+
+    pen.setColor(QColor(qSin(index*1+1.2)*80+80, qSin(index*0.3+0)*80+80, qSin(index*0.3+1.5)*80+80));
+    graph->setPen(pen);
+    graph->setName("lsLine");
+    graph->setLineStyle(QCPGraph::lsLine);
+    graph->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 5));
+
+    // Generate data
+    QVector<double> x, y;
+    for (int j = 0; j < vals->length(); ++j) {
+        x.append(j);
+        y.append((*vals)[j]);
+    }
+    graph->setData(x, y);
+
+    updateGraph();
+}
+*/
 void GraphWidget::updateGraph(){
     // zoom out a bit:
     ui->customPlot->yAxis->rescale(true);
     ui->customPlot->xAxis->rescale(true);
+
+    // set blank axis lines:
+    //ui->customPlot->xAxis->setTicks(false);
+    //ui->customPlot->yAxis->setTicks(true);
+    //ui->customPlot->xAxis->setTickLabels(false);
+    //ui->customPlot->yAxis->setTickLabels(true);
 
     // make top right axes clones of bottom left axes:
     ui->customPlot->axisRect()->setupFullAxesBox();

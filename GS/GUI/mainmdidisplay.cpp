@@ -355,7 +355,7 @@ void MainMDIDisplay::endMissionRecap(){
 
 void MainMDIDisplay::receiveTelemetryData(TelemetryData data) {
     plotPosition(data.lat, data.lng);
-    //myGraph.appendTelemData(&data);
+    myGraph.appendTelemData(&data);
     gscp->setCurrentTelemetryData(&data);
 }
 

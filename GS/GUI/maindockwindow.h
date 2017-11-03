@@ -18,7 +18,6 @@
 #include "interop.h"
 #include "mission.h"
 #include "link.h"
-#include "timer.h"
 
 namespace Ui {
 class MainDockWindow;
