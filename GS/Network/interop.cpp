@@ -18,7 +18,7 @@ Interop::Interop(const std::string& username, const std::string& password)
     // want to raise an error here if failure
     waitForResponse(reply);
     if (reply->error()) {
-        throw std::invalid_argument("bad login");
+        throw reply->error();
     }
 }
 

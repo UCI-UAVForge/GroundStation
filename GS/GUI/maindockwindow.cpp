@@ -50,7 +50,11 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     //toolBar->addAction("Close All Widgets", this, &MainDockWindow::closeDockWidgets);
     addToolBar(toolBar);
 
-    loadMapObjects(mapWidget);
+    try {
+        loadMapObjects(mapWidget);
+    } catch (QNetworkReply::NetworkError err) {
+        qDebug() << "! Not loading map objects: " << err;
+    }
     setStyleSheet("QDockWidget:{background-color:gray;}");
 }
 
