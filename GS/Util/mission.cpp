@@ -1,5 +1,6 @@
 #include "mission.h"
 #include "dbmanager.h"
+#include <QDebug>
 
 Mission::Mission(){
     myFlightPath = FlightPath();
@@ -8,6 +9,23 @@ Mission::Mission(){
 
 Mission::Mission(FlightPath flightPath): myFlightPath(flightPath){
     this->initValues();
+}
+
+Mission::Mission(QJsonDocument document):
+    jsonDoc(document)
+{
+
+    QJsonObject obj = jsonDoc.object();
+    off_axis_odlc_pos = obj["off_axis_odlc_pos"].toObject();
+    search_grid_points = obj["search_grid_points"].toArray();
+    mission_waypoints = obj["mission_waypoints"].toArray();
+    fly_zones = obj["fly_zones"].toArray();
+    emergent_last_known_pos = obj["emergent_last_known_pos"].toObject();
+    active = obj["active"].toBool();
+    id = obj["id"].toInt();
+    home_pos = obj["home_pos"].toObject();
+    air_drop_pos = obj["home_pos"].toObject();
+
 }
 
 Mission::Mission(QString filename){
@@ -133,4 +151,41 @@ bool Mission::save(QString filename){
 
 int Mission::numOfEntries(){
     return values.at(0)->size();
+}
+
+
+QJsonObject Mission::get_off_axis_odlc_pos(){
+    return off_axis_odlc_pos;
+}
+
+QJsonArray Mission::get_search_grid_points(){
+    return search_grid_points;
+}
+
+QJsonArray Mission::get_mission_waypoints(){
+    return mission_waypoints;
+}
+
+QJsonArray Mission::get_fly_zones(){
+    return fly_zones;
+}
+
+QJsonObject Mission::get_emergent_last_known_pos(){
+    return emergent_last_known_pos;
+}
+
+bool Mission::isActive(){
+    return active;
+}
+
+int Mission::get_id(){
+    return id;
+}
+
+QJsonObject Mission::get_home_pos(){
+    return home_pos;
+}
+
+QJsonObject Mission::get_air_drop_pos(){
+    return air_drop_pos;
 }

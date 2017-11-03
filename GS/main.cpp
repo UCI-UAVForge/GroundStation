@@ -5,14 +5,13 @@
 #include "mainmdidisplay.h"
 #include "maindockwindow.h"
 
-#include "mission.h"
 
 #include "qttabtest.h"
 
 int main(int argc, char *argv[]) {
 
     static const int splash_width = 600;
-    static const int splash_height = 450;
+    static const int splash_height = 217;
     static const QString filename(":/res/images/UAV Forge Logo 2015.svg");
 
     QApplication a(argc, argv);
@@ -31,12 +30,13 @@ int main(int argc, char *argv[]) {
     QSplashScreen splash(pixmap);
     splash.show();
 
-    MainMDIDisplay x;
+
+//    MainMDIDisplay x;
     MainDockWindow dockWindow;
     //x.showNormal();
     dockWindow.showNormal();
     //Hide the splash screen.
-    splash.finish(&x);
+//    splash.finish(&x);
     return a.exec();
 }
 

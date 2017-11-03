@@ -15,6 +15,9 @@
 #include "tablewidget.h"
 #include "toolbar.h"
 #include "timerwidget.h"
+#include "interop.h"
+#include "mission.h"
+#include "link.h"
 
 namespace Ui {
 class MainDockWindow;
@@ -36,6 +39,7 @@ public:
 private slots:
     void hideDockWidgets();
     void closeDockWidgets();
+    void loadMapObjects(QQuickWidget * mapWidget);
 
 private:
     Ui::MainDockWindow *ui;
