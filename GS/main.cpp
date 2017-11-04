@@ -36,7 +36,7 @@ int main(int argc, char *argv[]) {
     //x.showNormal();
     dockWindow.showNormal();
     //Hide the splash screen.
-//    splash.finish(&x);
+    splash.finish(&dockWindow);
     return a.exec();
 }
 
