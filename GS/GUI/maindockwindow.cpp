@@ -96,7 +96,7 @@ void MainDockWindow::loadMapObjects(QQuickWidget * mapWidget){
     if (!mission.isActive())
         return;
 
-    //to-do: make the lines between each points!
+
 
 
     //-----------------------------------------------------Search Grid Points------------------------------------------------

@@ -46,10 +46,12 @@ Rectangle {
                                     import QtLocation 5.6;
                                     import QtPositioning 5.6;
                                     MapQuickItem{id:marker" + id + ";
-                                    sourceItem: Image{id:image;
-                                                width:30;height:30;
-                                                fillMode:Image.PreserveAspectFit;
-                                                source: \""+img+".png\"}
+                                                anchorPoint.x: image.width/5;
+                                                anchorPoint.y: image.height;
+                                                sourceItem: Image{id:image;
+                                                            width:30;height:30;
+                                                            fillMode:Image.PreserveAspectFit;
+                                                            source: \""+img+".png\"}
                                     coordinate: QtPositioning.coordinate(" + lat + "," + lon + ")}", map)
 
             map.addMapItem(test)
