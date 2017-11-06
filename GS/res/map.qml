@@ -40,14 +40,14 @@ Rectangle {
 //        }
 
 
-        function addMarker(id,img,lat,lon){
+        function addMarker(id,img,lat,lon,x,y){
             test = Qt.createQmlObject("
                                     import QtQuick 2.0;
                                     import QtLocation 5.6;
                                     import QtPositioning 5.6;
                                     MapQuickItem{id:marker" + id + ";
-                                                anchorPoint.x: image.width/5;
-                                                anchorPoint.y: image.height;
+                                                anchorPoint.x: image.width" + x + ";
+                                                anchorPoint.y: image.height" + y + ";
                                                 sourceItem: Image{id:image;
                                                             width:30;height:30;
                                                             fillMode:Image.PreserveAspectFit;
