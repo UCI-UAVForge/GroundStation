@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
     //Render the SVG to the pixmap
     svg.render(&painter, pixmap.rect());
     //Construct and show the splash screen
-   // QSplashScreen splash(pixmap);
+    QSplashScreen splash(pixmap);
    // splash.show();
 
 
@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
     //x.showNormal();
     dockWindow.showNormal();
     //Hide the splash screen.
-//    splash.finish(&x);
+    splash.finish(&dockWindow);
     return a.exec();
 }
 

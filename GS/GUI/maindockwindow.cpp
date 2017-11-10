@@ -121,7 +121,7 @@ void MainDockWindow::loadMapObjects(QQuickWidget * mapWidget){
     if (!mission.isActive())
         return;
 
-    //to-do: make the lines between each points!
+
 
 
     //-----------------------------------------------------Search Grid Points------------------------------------------------
@@ -136,7 +136,9 @@ void MainDockWindow::loadMapObjects(QQuickWidget * mapWidget){
                 Q_ARG(QVariant, ""),
                 Q_ARG(QVariant, "images/blue_pin"),
                 Q_ARG(QVariant, temp[i].toObject()["latitude"].toVariant()),
-                Q_ARG(QVariant, temp[i].toObject()["longitude"].toVariant()));
+                Q_ARG(QVariant, temp[i].toObject()["longitude"].toVariant()),
+                Q_ARG(QVariant, "/2"),
+                Q_ARG(QVariant, ""));
     }
     if (temp.size() > 1){
         pathlat.append(temp[0].toObject()["latitude"]);
@@ -161,7 +163,9 @@ void MainDockWindow::loadMapObjects(QQuickWidget * mapWidget){
                 Q_ARG(QVariant, ""),
                 Q_ARG(QVariant, "images/green_pin"),
                 Q_ARG(QVariant, temp[i].toObject()["latitude"].toVariant()),
-                Q_ARG(QVariant, temp[i].toObject()["longitude"].toVariant()));
+                Q_ARG(QVariant, temp[i].toObject()["longitude"].toVariant()),
+                Q_ARG(QVariant, "/2"),
+                Q_ARG(QVariant, ""));
     }
     if (temp.size() > 1){
         pathlat.append(temp[0].toObject()["latitude"]);
@@ -190,7 +194,9 @@ void MainDockWindow::loadMapObjects(QQuickWidget * mapWidget){
                     Q_ARG(QVariant, ""),
                     Q_ARG(QVariant, "images/yellow_pin"),
                     Q_ARG(QVariant, temp3[j].toObject()["latitude"].toVariant()),
-                    Q_ARG(QVariant, temp3[j].toObject()["longitude"].toVariant()));
+                    Q_ARG(QVariant, temp3[j].toObject()["longitude"].toVariant()),
+                    Q_ARG(QVariant, "/2"),
+                    Q_ARG(QVariant, ""));
         }
 
 
@@ -214,28 +220,36 @@ void MainDockWindow::loadMapObjects(QQuickWidget * mapWidget){
             Q_ARG(QVariant, ""),
             Q_ARG(QVariant, "images/blue_circle"),
             Q_ARG(QVariant, mission.get_off_axis_odlc_pos()["latitude"].toVariant()),
-            Q_ARG(QVariant, mission.get_off_axis_odlc_pos()["longitude"].toVariant()));
+            Q_ARG(QVariant, mission.get_off_axis_odlc_pos()["longitude"].toVariant()),
+            Q_ARG(QVariant, "/2"),
+            Q_ARG(QVariant, "/2"));
 
     //-----------------------------------------------------Emergent Last Known Position------------------------------------------------
     QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
             Q_ARG(QVariant, ""),
             Q_ARG(QVariant, "images/green_circle"),
             Q_ARG(QVariant, mission.get_emergent_last_known_pos()["latitude"].toVariant()),
-            Q_ARG(QVariant, mission.get_emergent_last_known_pos()["longitude"].toVariant()));
+            Q_ARG(QVariant, mission.get_emergent_last_known_pos()["longitude"].toVariant()),
+            Q_ARG(QVariant, "/2"),
+            Q_ARG(QVariant, "/2"));
 
     //-----------------------------------------------------Home Position------------------------------------------------
     QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
             Q_ARG(QVariant, ""),
             Q_ARG(QVariant, "images/tent"),
             Q_ARG(QVariant, mission.get_home_pos()["latitude"].toVariant()),
-            Q_ARG(QVariant, mission.get_home_pos()["longitude"].toVariant()));
+            Q_ARG(QVariant, mission.get_home_pos()["longitude"].toVariant()),
+            Q_ARG(QVariant, "/2"),
+            Q_ARG(QVariant, "/2"));
 
     //-----------------------------------------------------Air Drop Position------------------------------------------------
     QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
             Q_ARG(QVariant, ""),
             Q_ARG(QVariant, "images/crosshair"),
             Q_ARG(QVariant, mission.get_air_drop_pos()["latitude"].toVariant()),
-            Q_ARG(QVariant, mission.get_air_drop_pos()["longitude"].toVariant()));
+            Q_ARG(QVariant, mission.get_air_drop_pos()["longitude"].toVariant()),
+            Q_ARG(QVariant, "/2"),
+            Q_ARG(QVariant, "/2"));
 
 
 }

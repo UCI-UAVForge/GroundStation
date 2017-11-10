@@ -34,7 +34,7 @@ Rectangle {
         Component.onCompleted: {
                     for( var i_type in supportedMapTypes ) {
                         console.log(supportedMapTypes[i_type].name);
-                        if(supportedMapTypes[i_type].name.localeCompare( "Car Navigation Map" ) === 0 ) {
+                        if(supportedMapTypes[i_type].name.localeCompare( "Terrain" ) === 0 ) {
                             activeMapType = supportedMapTypes[i_type]
                         }
                     }
@@ -51,16 +51,18 @@ Rectangle {
 //        }
 
 
-        function addMarker(id,img,lat,lon){
+        function addMarker(id,img,lat,lon,x,y){
             test = Qt.createQmlObject("
                                     import QtQuick 2.0;
                                     import QtLocation 5.6;
                                     import QtPositioning 5.6;
                                     MapQuickItem{id:marker" + id + ";
-                                    sourceItem: Image{id:image;
-                                                width:30;height:30;
-                                                fillMode:Image.PreserveAspectFit;
-                                                source: \""+img+".png\"}
+                                                anchorPoint.x: image.width" + x + ";
+                                                anchorPoint.y: image.height" + y + ";
+                                                sourceItem: Image{id:image;
+                                                            width:30;height:30;
+                                                            fillMode:Image.PreserveAspectFit;
+                                                            source: \""+img+".png\"}
                                     coordinate: QtPositioning.coordinate(" + lat + "," + lon + ")}", map)
 
             map.addMapItem(test)
