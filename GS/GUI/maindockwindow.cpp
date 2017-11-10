@@ -52,8 +52,8 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     //qfi_ASI * asiWidget = new qfi_ASI(this);
     //QDockWidget * asi = createDockWidget("asi", Qt::RightDockWidgetArea, asiWidget, this);
    //3 asi->setVisible(true);
-    tlink = new TcpLink();
-    decoder->setLink(tlink);
+   // tlink = new TcpLink();
+   // decoder->setLink(tlink);
 
     toolBar->addAction("Test find", this, &MainDockWindow::testFind);
     toolBar->addAction("Hide All Widgets", this, &MainDockWindow::hideDockWidgets);

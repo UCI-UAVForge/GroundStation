@@ -11,7 +11,7 @@ Rectangle {
     objectName:"rect"
     Plugin {
         id: mapPlugin
-        name: "googlemaps" // "mapboxgl", "esri", ...
+        name: "esri" // "mapboxgl", "esri", ...
         // specify plugin parameters if necessary
         // PluginParameter {
         //     name:
@@ -34,7 +34,7 @@ Rectangle {
         Component.onCompleted: {
                     for( var i_type in supportedMapTypes ) {
                         console.log(supportedMapTypes[i_type].name);
-                        if(supportedMapTypes[i_type].name.localeCompare( "Terrain" ) === 0 ) {
+                        if(supportedMapTypes[i_type].name.localeCompare( "World Imagery" ) === 0 ) {
                             activeMapType = supportedMapTypes[i_type]
                         }
                     }
