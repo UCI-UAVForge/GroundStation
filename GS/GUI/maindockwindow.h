@@ -17,11 +17,12 @@
 #include "timerwidget.h"
 #include "interop.h"
 #include "mission.h"
-#include "link.h"
+#include "udplink.h"
 #include "timer.h"
 #include "decoder.h"
 #include "movementwidget.h"
 #include "statuswidget.h"
+#include "tcplink.h"
 
 namespace Ui {
 class MainDockWindow;
@@ -34,12 +35,16 @@ class MainDockWindow : public QMainWindow
 public:
     QStackedWidget * centralWidget;
     QToolBar * toolBar;
+    UdpLink * link;
+    TcpLink * tlink;
     explicit MainDockWindow(QWidget *parent = 0);
     ~MainDockWindow();
 
     QQuickWidget * createQmlWidget(QUrl qmlSource, QWidget * parent = 0);
     QDockWidget * createDockWidget(const QString &title, Qt::DockWidgetArea area, QWidget * child, QWidget * parent);
     void testFind();
+    void testMav();
+    void sendCommand();
 
 private slots:
     void hideDockWidgets();

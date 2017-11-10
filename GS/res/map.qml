@@ -11,12 +11,16 @@ Rectangle {
     objectName:"rect"
     Plugin {
         id: mapPlugin
-        name: "osm" // "mapboxgl", "esri", ...
+        name: "googlemaps" // "mapboxgl", "esri", ...
         // specify plugin parameters if necessary
         // PluginParameter {
         //     name:
         //     value:
         // }
+      //  PluginParameter {name:"here.app_id"; value: "hFarTBZF6AzJvLKzd55C"}
+       // PluginParameter {name: "here.token"; value: "h_jMLCAluu0BmDSWXExNyw"}
+      //  PluginParameter {name: "here.mapping.highdpi_tiles"; value:"true"}
+       // PluginParameter { name:"googlemaps.maps.apikey"; value: "AIzaSyAjYKn9mABOOi_NRjaJjsx5JhOU8IjLmJQ"}
     }
     signal qmlSignal(string wow);
     Map {
@@ -27,7 +31,14 @@ Rectangle {
         center: QtPositioning.coordinate(38.14792, -76.427995) //the place            //(33.6405, -117.8443) // Irvine
         zoomLevel: 14
       //  signal qmlSignal(string v)
-
+        Component.onCompleted: {
+                    for( var i_type in supportedMapTypes ) {
+                        console.log(supportedMapTypes[i_type].name);
+                        if(supportedMapTypes[i_type].name.localeCompare( "Car Navigation Map" ) === 0 ) {
+                            activeMapType = supportedMapTypes[i_type]
+                        }
+                    }
+                }
         property MapQuickItem test
         property MapPolyline test2
         property var text
@@ -75,8 +86,8 @@ Rectangle {
 
             test2 = Qt.createQmlObject(text, map)
             map.addMapItem(test2)
-
         }
+
 
     }
 

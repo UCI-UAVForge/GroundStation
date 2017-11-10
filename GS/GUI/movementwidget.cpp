@@ -27,8 +27,8 @@ MovementWidget::MovementWidget(QWidget *parent) : QWidget(parent)
 
 void MovementWidget::updateTelemetry(mavlink_gps_raw_int_t gps) {
     alt->setTxt(QString::number((float)gps.alt/1000,'f', 3));
-    lat->setTxt(QString::number((float)gps.lat/1000000, 'f', 3));
-    lon->setTxt(QString::number((float)gps.lon/1000000, 'f', 3));
+    lat->setTxt(QString::number((float)gps.lat/10000000, 'f', 3));
+    lon->setTxt(QString::number((float)gps.lon/10000000, 'f', 3));
     vel->setTxt(QString::number(gps.vel));
 }
 
@@ -36,5 +36,4 @@ void MovementWidget::updateAttitude(mavlink_attitude_t att) {
     pitch->setTxt(QString::number(att.pitch));
     roll->setTxt(QString::number(att.roll));
     yaw->setTxt(QString::number(att.yaw));
-    yaw->layout();
 }

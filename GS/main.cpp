@@ -6,8 +6,6 @@
 #include "maindockwindow.h"
 
 
-#include "qttabtest.h"
-
 int main(int argc, char *argv[]) {
 
     static const int splash_width = 600;
@@ -27,8 +25,8 @@ int main(int argc, char *argv[]) {
     //Render the SVG to the pixmap
     svg.render(&painter, pixmap.rect());
     //Construct and show the splash screen
-    QSplashScreen splash(pixmap);
-    splash.show();
+   // QSplashScreen splash(pixmap);
+   // splash.show();
 
 
 //    MainMDIDisplay x;

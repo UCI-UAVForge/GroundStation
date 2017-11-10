@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QQuickItem>
 
+#include "qfi_ASI.h"
 
 MainDockWindow::MainDockWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -13,12 +14,14 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     centralWidget->addWidget(mapWidget);
     setCentralWidget(centralWidget);
 
-    Link * link = new Link();
+    link = new UdpLink(QHostAddress::LocalHost, 5761, QHostAddress("127.0.0.1"), 14550);
     link->startLink();
     Decoder * decoder = new Decoder();
     decoder->setLink(link);
 
     toolBar = new ToolBar(this);
+
+    Timer * timer = new Timer(this);
 
     GraphWidget * graphWidget = new GraphWidget(this);
     QDockWidget * graphDock = createDockWidget("Graph",Qt::BottomDockWidgetArea, graphWidget, this);
@@ -33,6 +36,7 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     connect(decoder, &Decoder::gpsReceived, movementWidget, &MovementWidget::updateTelemetry);
     connect(decoder, &Decoder::attReceived, movementWidget, &MovementWidget::updateAttitude);
     connect(decoder, &Decoder::gpsReceived, graphWidget, &GraphWidget::appendTelemData);
+    connect(decoder, &Decoder::heartbeatReceived, statusWidget, &StatusWidget::updateHeartbeat);
 
     QDockWidget * movementDock = createDockWidget("Movement", Qt::RightDockWidgetArea, movementWidget, this);
     QDockWidget * statusDock = createDockWidget("Status", Qt::RightDockWidgetArea, statusWidget, this);
@@ -45,10 +49,18 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     movementDock->setVisible(true);
     statusDock->setVisible(true);
 
+    //qfi_ASI * asiWidget = new qfi_ASI(this);
+    //QDockWidget * asi = createDockWidget("asi", Qt::RightDockWidgetArea, asiWidget, this);
+   //3 asi->setVisible(true);
+    tlink = new TcpLink();
+    decoder->setLink(tlink);
+
     toolBar->addAction("Test find", this, &MainDockWindow::testFind);
     toolBar->addAction("Hide All Widgets", this, &MainDockWindow::hideDockWidgets);
+    toolBar->addAction("test mav", this, &MainDockWindow::sendCommand);
     //toolBar->addAction("Close All Widgets", this, &MainDockWindow::closeDockWidgets);
     addToolBar(toolBar);
+    connect(timer, &Timer::timeChanged, this, &MainDockWindow::testMav);
 
     try {
         loadMapObjects(mapWidget);
@@ -56,6 +68,19 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
         qDebug() << "! Not loading map objects: " << err;
     }
     setStyleSheet("QDockWidget:{background-color:gray;}");
+}
+
+void MainDockWindow::testMav() {
+    mavlink_message_t heart;
+    mavlink_msg_heartbeat_pack(255, 1 , &heart, 6, 8, 8, 0, 0);
+    link->sendMsg(heart);
+}
+
+void MainDockWindow::sendCommand() {
+    mavlink_message_t msg;
+    mavlink_message_t msg2;
+    mavlink_msg_mission_item_pack(255, 1 , &msg, 1, 0, 1, MAV_FRAME_MISSION, MAV_CMD_NAV_WAYPOINT, 1, 1, 10, 5, 0, 0, 121,38, 1000);
+    link->sendMsg(msg);
 }
 
 QDockWidget * MainDockWindow::createDockWidget(const QString &title, Qt::DockWidgetArea area, QWidget * child, QWidget * parent) {

@@ -13,7 +13,6 @@
 #include <assert.h>
 #include "graphwidget.h"
 #include "tablewidget.h"
-#include "qttabtest.h"
 #include "dataobjects.h"
 #include "gscontrolpanel.h"
 
@@ -81,8 +80,6 @@ private:
   QVBoxLayout* MapExecutionStatusVBoxLayout;
   GSControlPanel* gscp;
 
-  //Temporary tabbed display widget
-  QtTabTest* qtt ;
 
   //GraphWidget * graph;
 

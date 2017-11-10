@@ -213,24 +213,23 @@ void MainMDIDisplay::rtnToMainMenu(){
         changeState(MDIState::NONE);
         myFlightPath.clear();
 
-        //if(map->isVisible()){
-            //map->disconnectWebSocket();
-            myMap.disconnectWebSocket();
-            //qtt->deleteTabWidget(map);
-            qtt->deleteTabWidget(&myMap);
-            //qtt->deleteTabWidget(table);
-            qtt->deleteTabWidget(&telemTable);
-            qtt->deleteTabWidget(&waypointTable);
-            //qtt->deleteTabWidget(graph);
-            qtt->deleteTabWidget(&myGraph);
-            removeWindow(qtt);
-        //}
-        //qtt->deleteLater();
+//        //if(map->isVisible()){
+//            //map->disconnectWebSocket();
+//            myMap.disconnectWebSocket();
+//            //qtt->deleteTabWidget(map);
+//            qtt->deleteTabWidget(&myMap);
+//            //qtt->deleteTabWidget(table);
+//            qtt->deleteTabWidget(&telemTable);
+//            qtt->deleteTabWidget(&waypointTable);
+//            //qtt->deleteTabWidget(graph);
+//            qtt->deleteTabWidget(&myGraph);
+//            removeWindow(qtt);
+//        //}
+//        //qtt->deleteLater();
     }
 }
 
 void MainMDIDisplay::startMissionPlanning(){
-    qtt = new QtTabTest();
     //map = new MapWidget();
     ///\todo somehow clear the map
     telemTable.clearTable();
@@ -239,10 +238,10 @@ void MainMDIDisplay::startMissionPlanning(){
     waypointTable.setEditable(true);
     telemTable.setEditable(false);
 
-    qtt->addNewTab(&myMap,"Map");
+//    qtt->addNewTab(&myMap,"Map");
 
-    qtt->addNewTab(&waypointTable,"Waypoint Table");
-    addWindow(qtt);
+//    qtt->addNewTab(&waypointTable,"Waypoint Table");
+//    addWindow(qtt);
 
     connect(&myMap, &MapWidget::pointAdded, &waypointTable, &TableWidget::appendRow);
     connect(&waypointTable, &TableWidget::flightPathSent, &myMap, &MapWidget::addFlightPath);
@@ -273,7 +272,7 @@ void MainMDIDisplay::startMissionExecution(){
     waypointTable.setEditable(false);
     telemTable.setEditable(false);
 
-    qtt->addNewTab(&telemTable,"Telemetry Table");
+    //qtt->addNewTab(&telemTable,"Telemetry Table");
 
     //changeState(EXECUTION);
 
@@ -290,7 +289,7 @@ void MainMDIDisplay::startMissionExecution(){
 
     /// \todo clear the
     //graph = new GraphWidget();
-    qtt->addNewTab(&myGraph, "Graph");
+    //qtt->addNewTab(&myGraph, "Graph");
     //qtt->addNewTab(graph,"Graph");
     //this->addWindow(graph);
 
@@ -315,33 +314,33 @@ void MainMDIDisplay::startMissionRecap(){
     //    return;
     //}
 
-    if(!qtt){
-        qtt = new QtTabTest();
-        qtt->setVisible(false);
-        //map = new MapWidget();
-        //qtt->addNewTab(map, "Map View");
-        qtt->addNewTab(&myMap, "Map View");
-        //table = new TableWidget();
-        //qtt->addNewTab(table, "Telemetry Log");
-        telemTable.clearTable();
-        waypointTable.clearTable();
-        qtt->addNewTab(&telemTable, "Telemetry Log");
-        qtt->addNewTab(&waypointTable, "Waypoint Log");
-        //graph = new GraphWidget();
-        //qtt->addNewTab(graph, "Graph");
-        qtt->addNewTab(&myGraph, "Graph");
-    }
+//    if(!qtt){
+//        qtt = new QtTabTest();
+//        qtt->setVisible(false);
+//        //map = new MapWidget();
+//        //qtt->addNewTab(map, "Map View");
+//        qtt->addNewTab(&myMap, "Map View");
+//        //table = new TableWidget();
+//        //qtt->addNewTab(table, "Telemetry Log");
+//        telemTable.clearTable();
+//        waypointTable.clearTable();
+//        qtt->addNewTab(&telemTable, "Telemetry Log");
+//        qtt->addNewTab(&waypointTable, "Waypoint Log");
+//        //graph = new GraphWidget();
+//        //qtt->addNewTab(graph, "Graph");
+//        qtt->addNewTab(&myGraph, "Graph");
+  //  }
     //this->connect(map, &MapWidget::JSInitialized, this, &MainMDIDisplay::setupMapPaths);
 
-    if(!qtt->isVisible()){
-        addWindow(qtt);
-        //this->graph->drawMission(&myMission);
-        myGraph.drawMission(&myMission);
-        //this->table->insertMissionTelem(&myMission);
-        telemTable.insertMissionTelem(&myMission);
-        //this->map->drawMissionTelem(&myMission);
-        myMap.drawMissionTelem(&myMission);
-    }
+//    if(!qtt->isVisible()){
+//        addWindow(qtt);
+//        //this->graph->drawMission(&myMission);
+//        myGraph.drawMission(&myMission);
+//        //this->table->insertMissionTelem(&myMission);
+//        telemTable.insertMissionTelem(&myMission);
+//        //this->map->drawMissionTelem(&myMission);
+//        myMap.drawMissionTelem(&myMission);
+  //  }
     //table->setEditable(false);
     telemTable.setEditable(false);
     waypointTable.setEditable(false);

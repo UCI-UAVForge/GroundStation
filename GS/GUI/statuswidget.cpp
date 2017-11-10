@@ -12,5 +12,10 @@ StatusWidget::StatusWidget(QWidget* parent) : QWidget( parent ) {
 
 void StatusWidget::updateStatus(mavlink_sys_status_t status) {
     battery->setTxt(QString::number(status.battery_remaining) + "%");
+   // qDebug() << status;
+}
+
+void StatusWidget::updateHeartbeat(mavlink_heartbeat_t heartbeat) {
+   // qDebug() << heartbeat.system_status;
 }
 

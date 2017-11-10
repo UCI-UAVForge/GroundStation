@@ -19,6 +19,7 @@ public:
 
 public slots:
     void updateStatus(mavlink_sys_status_t status);
+    void updateHeartbeat(mavlink_heartbeat_t heartbeat);
 
 };
 #endif

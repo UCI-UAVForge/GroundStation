@@ -1,46 +1,52 @@
-#include "link.h"
+#include "udplink.h"
 
-Link::Link() {
+UdpLink::UdpLink(QHostAddress uavHost, int uavPort, QHostAddress gcsHost, int gcsPort) {
+    UAV_PORT = uavPort;
+    GCS_PORT = gcsPort;
+    UAV_HOST = uavHost;
+    GCS_HOST = gcsHost;
 }
 
-void Link::startLink() {
+void UdpLink::startLink() {
     recvUdpSocket = new QUdpSocket(this);
     sendUdpSocket = new QUdpSocket(this);
-    recvUdpSocket->bind(GS_PORT_NUM);
-    connect(recvUdpSocket, SIGNAL(readyRead()),
-                this, SLOT(processPendingDatagrams()));
+    recvUdpSocket->bind(GCS_PORT);
+    sendUdpSocket->connectToHost(UAV_HOST, UAV_PORT);
+    connect(recvUdpSocket, &QUdpSocket::readyRead,
+                this, &UdpLink::readUdpData);
     qDebug() << "Link started";
 }
 
-void Link::sendAllMAVLinkMsgs(std::queue<mavlink_message_t> packets) {
+void UdpLink::sendAllMAVLinkMsgs(std::queue<mavlink_message_t> packets) {
     int size = packets.size();
     QTextStream(stdout) << "The size of the vector is " << size << endl;
     for(int i = 0; i < size; ++i) {
-        sendMAVLinkMsg(packets.front());
+        sendMsg(packets.front());
         packets.pop();
     }
 }
 
-void Link::sendAllMAVLinkMsgs(std::vector<mavlink_message_t> packets) {
+void UdpLink::sendAllMAVLinkMsgs(std::vector<mavlink_message_t> packets) {
     QTextStream(stdout) << "The size of the vector is " << packets.size() << endl;
     for(auto i = packets.begin(); i != packets.end(); ++i)
-        sendMAVLinkMsg(*i);
+        sendMsg(*i);
 }
 
-void Link::sendMAVLinkMsg(mavlink_message_t msg) {
+void UdpLink::sendMsg(mavlink_message_t msg) {
     QByteArray datagram;
     uint8_t buf[MAVLINK_MAX_PAYLOAD_LEN];
-
+    uint8_t len;
     //Put mavlink message in buf
-    mavlink_msg_to_send_buffer(buf, &msg);
+    len = mavlink_msg_to_send_buffer(buf, &msg);
     //Put buf in QByteArray datagram
-    datagram = QByteArray((char*)buf, MAVLINK_MAX_PAYLOAD_LEN);
+    datagram = QByteArray((char*)buf, len);
 
     //Send datagram through sendUdpSocket
-    sendUdpSocket->writeDatagram(datagram.data(), datagram.size(), QHostAddress::LocalHost, UAV_PORT_NUM);
+    sendUdpSocket->write(datagram.data(), datagram.size());
+  //  sendUdpSocket->writeDatagram(datagram.data(), datagram.size(), UAV_HOST, UAV_PORT);
 }
 
-void Link::processPendingDatagrams() {
+void UdpLink::readUdpData() {
     while (recvUdpSocket->hasPendingDatagrams()) {
         //Initialize vars for receiving message
         QByteArray datagram;

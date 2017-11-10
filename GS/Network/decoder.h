@@ -2,22 +2,25 @@
 #define DECODER_H
 
 #include <QObject>
-#include "link.h"
+#include "udplink.h"
+#include "tcplink.h"
 
 class Decoder : public QObject
 {
     Q_OBJECT
 public:
-    Link * link;
+    UdpLink * link;
     explicit Decoder(QObject *parent = nullptr);
 
-    bool setLink(Link * l);
+    bool setLink(UdpLink * l);
+    bool setLink(TcpLink * l);
     mavlink_gps_raw_int_t parseGPS(mavlink_message_t msg);
     mavlink_sys_status_t parseStatus(mavlink_message_t msg);
     mavlink_system_time_t parseSysTime(mavlink_message_t msg);
 
 
 signals:
+    void heartbeatReceived(mavlink_heartbeat_t heartbeat);
     void gpsReceived(mavlink_gps_raw_int_t gps);
     void infoReceived(mavlink_field_info_t info);
     void statusReceived(mavlink_sys_status_t status);
