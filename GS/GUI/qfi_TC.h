@@ -1,5 +1,5 @@
 /***************************************************************************//**
- * @file qfi_ASI.h
+ * @file qfi_TC.h
  * @author  Marek M. Cel <marekcel@marekcel.pl>
  *
  * @section LICENSE
@@ -45,8 +45,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  ******************************************************************************/
-#ifndef QFI_ASI_H
-#define QFI_ASI_H
+#ifndef QFI_TC_H
+#define QFI_TC_H
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -56,18 +56,18 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 
-/** Airspeed Indicator widget. */
-class qfi_ASI : public QGraphicsView
+/** Turn Coordinator widget. */
+class qfi_TC : public QGraphicsView
 {
     Q_OBJECT
 
 public:
 
     /** Constructor. */
-    qfi_ASI( QWidget *parent = 0 );
+    qfi_TC( QWidget *parent = 0 );
 
     /** Destructor. */
-    virtual ~qfi_ASI();
+    virtual ~qfi_TC();
 
     /** Reinitiates widget. */
     void reinit();
@@ -75,8 +75,11 @@ public:
     /** Refreshes (redraws) widget. */
     void update();
 
-    /** @param airspeed [kts] */
-    void setAirspeed( float airspeed );
+    /** @param turn rate [deg/s] */
+    void setTurnRate( float turnRate );
+
+    /** @param slip/skid ball angle [deg] */
+    void setSlipSkid( float slipSkid );
 
 protected:
 
@@ -87,11 +90,15 @@ private:
 
     QGraphicsScene *m_scene;
 
-    QGraphicsSvgItem *m_itemFace;
-    QGraphicsSvgItem *m_itemHand;
+    QGraphicsSvgItem *m_itemBack;
+    QGraphicsSvgItem *m_itemBall;
+    QGraphicsSvgItem *m_itemFace_1;
+    QGraphicsSvgItem *m_itemFace_2;
+    QGraphicsSvgItem *m_itemMark;
     QGraphicsSvgItem *m_itemCase;
 
-    float m_airspeed;
+    float m_turnRate;
+    float m_slipSkid;
 
     float m_scaleX;
     float m_scaleY;
@@ -99,10 +106,14 @@ private:
     const int m_originalHeight;
     const int m_originalWidth;
 
-    QPointF m_originalAsiCtr;
+    QPointF m_originalMarkCtr;
+    QPointF m_originalBallCtr;
 
-    const int m_faceZ;
-    const int m_handZ;
+    const int m_backZ;
+    const int m_ballZ;
+    const int m_face1Z;
+    const int m_face2Z;
+    const int m_markZ;
     const int m_caseZ;
 
     void init();
@@ -114,4 +125,4 @@ private:
 
 ////////////////////////////////////////////////////////////////////////////////
 
-#endif // QFI_ASI_H
+#endif // QFI_TC_H

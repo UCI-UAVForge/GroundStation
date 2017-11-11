@@ -47,21 +47,23 @@ SOURCES += \
     $$files(Util/*.cpp, false) \
     $$files(Network/*.cpp, false) \
     $$files(Database/*.cpp, false) \
+    GUI/qfi_ASI.cpp \
+    GUI/qfi_PFD.cpp \
+    GUI/qfiwidget.cpp
 
 HEADERS  += \
     $$files(GUI/*.h, false) \
     $$files(Util/*.h, false) \
     $$files(Network/*.h, false) \
     $$files(Database/*.h, false) \
+    GUI/qfi_PFD.h \
+    GUI/qfi_TC.h \
+    GUI/qfiwidget.h
 
 FORMS    += \
     $$files(GUI/*.ui, false) \
-
-OTHER_FILES +=
 
 RESOURCES += \
     Resources.qrc
 
 INCLUDEPATH += ardupilotmav/ardupilotmega/
-
-DISTFILES +=
