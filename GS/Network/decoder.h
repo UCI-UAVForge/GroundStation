@@ -14,9 +14,7 @@ public:
 
     bool setLink(UdpLink * l);
     bool setLink(TcpLink * l);
-    mavlink_gps_raw_int_t parseGPS(mavlink_message_t msg);
-    mavlink_sys_status_t parseStatus(mavlink_message_t msg);
-    mavlink_system_time_t parseSysTime(mavlink_message_t msg);
+    void parseCmdAck(mavlink_command_ack_t);
 
 
 signals:
@@ -26,6 +24,14 @@ signals:
     void statusReceived(mavlink_sys_status_t status);
     void sysTimeReceived(mavlink_system_time_t sysTime);
     void attReceived(mavlink_attitude_t att);
+    void batteryReceived(mavlink_battery_status_t battery);
+    void windReceived(mavlink_wind_t wind);
+    void pressureReceived(mavlink_scaled_pressure_t pressure);
+    void navReceived(mavlink_nav_controller_output_t nav);
+
+    void armSuccess();
+    void armFailed();
+    void modeChanged();
 
 public slots:
     void parseMessage(mavlink_message_t);

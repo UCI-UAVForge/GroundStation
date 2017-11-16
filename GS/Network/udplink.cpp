@@ -7,6 +7,14 @@ UdpLink::UdpLink(QHostAddress uavHost, int uavPort, QHostAddress gcsHost, int gc
     GCS_HOST = gcsHost;
 }
 
+int UdpLink::getPort() {
+   return UAV_PORT;
+}
+
+QHostAddress UdpLink::getHost() {
+    return UAV_HOST;
+}
+
 void UdpLink::startLink() {
     recvUdpSocket = new QUdpSocket(this);
     sendUdpSocket = new QUdpSocket(this);

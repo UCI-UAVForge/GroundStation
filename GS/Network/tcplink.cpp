@@ -4,7 +4,7 @@ TcpLink::TcpLink()
 {
     tcp = new QTcpSocket();
     connect(tcp, SIGNAL(readyRead()), this, SLOT(readTcpData()));
-    tcp->connectToHost(QHostAddress("127.0.0.1"), 5761);
+    tcp->connectToHost(QHostAddress("127.0.0.1"), 5760);
 }
 
 
@@ -31,7 +31,7 @@ void TcpLink::readTcpData() {
         if(mavlink_parse_char(1, datagram.data()[i], &msg, &status)) {
             msgReceived = true;
             emit messageReceived(msg);
-            qDebug() << msg.msgid;
+          //  qDebug() << msg.msgid;
         }
     }
     if (!msgReceived) {

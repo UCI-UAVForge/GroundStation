@@ -2,7 +2,6 @@
 #include <QSplashScreen>
 #include <QtSvg>
 
-#include "mainmdidisplay.h"
 #include "maindockwindow.h"
 
 

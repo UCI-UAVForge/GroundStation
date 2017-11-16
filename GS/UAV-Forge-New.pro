@@ -56,6 +56,9 @@ HEADERS  += \
 
 FORMS    += \
     $$files(GUI/*.ui, false) \
+    GUI/actionwidget.ui \
+    GUI/movementwidget.ui \
+    GUI/statuswidget.ui
 
 OTHER_FILES +=
 
