@@ -1,4 +1,5 @@
 #include "qfiwidget.h"
+#include <QDebug>
 
 QFIWidget::QFIWidget( QWidget *parent ) :
         QWidget( parent )
@@ -23,4 +24,43 @@ QFIWidget::QFIWidget( QWidget *parent ) :
 //    layout->addWidget(m_tc);
 
     setLayout(layout);
+}
+
+/*
+PFD Instrument:
+Roll - Attitude
+Pitch - Attitude
+FlightPathMarker
+    AOA - X
+    Sideslip - X
+TurnRate - X
+BarH/V - X
+DotH/V - X
+Altitude - VFR_Hud
+Pressure - Scaled Pressure
+Airspeed - VFR_Hud
+MachNo - X
+Heading - VFR_Hud
+ClimbRate - VFR_Hud
+*/
+
+void QFIWidget::updateVFR(mavlink_vfr_hud_t vfr)
+{
+    this->setAirspeed(vfr.airspeed);
+    this->setAltitude(vfr.alt);
+    this->setClimbRate(vfr.climb);
+    this->setHeading(vfr.heading);
+    this->update();
+}
+
+void QFIWidget::updateAttitude(mavlink_attitude_t att)
+{
+    this->setRoll(att.roll);
+    this->setPitch(att.pitch);
+    this->update();
+}
+
+void QFIWidget::updatePressure(mavlink_scaled_pressure_t p)
+{
+    this->setPressure(p.press_abs);
 }

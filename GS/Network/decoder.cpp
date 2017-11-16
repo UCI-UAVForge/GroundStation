@@ -45,10 +45,16 @@ void Decoder::parseMessage(mavlink_message_t msg) {
             mavlink_msg_attitude_decode(&msg, &att);
             emit(attReceived(att));
         break;
+        case 32:
+            mavlink_local_position_ned_t l_pos;
+            mavlink_msg_local_position_ned_decode(&msg, &l_pos);
+            emit(localPositionReceived(l_pos));
+        break;
         case 33:
             mavlink_global_position_int_t gps_int;
             mavlink_msg_global_position_int_decode(&msg, &gps_int);
         //    qDebug() << gps_int.lat << "," << gps_int.lon;
+        break;
         case 42:
            // qDebug() << "CURRENT MISSION IS";
             mavlink_mission_current_t mcurrent;
@@ -65,6 +71,12 @@ void Decoder::parseMessage(mavlink_message_t msg) {
             mavlink_nav_controller_output_t nav;
             mavlink_msg_nav_controller_output_decode(&msg, &nav);
             emit(navReceived(nav));
+        break;
+        case 74:
+            mavlink_vfr_hud_t vfr_hud;
+            mavlink_msg_vfr_hud_decode(&msg, &vfr_hud);
+            emit(vfrHudReceived(vfr_hud));
+        break;
         case 77:
             qDebug() << "ACK";
             mavlink_command_ack_t cmdack;
@@ -73,7 +85,9 @@ void Decoder::parseMessage(mavlink_message_t msg) {
             qDebug() << "CMD: " << cmdack.command << " RESULT: " << cmdack.result;
         break;
         case 87:
-            //pos stuff
+            mavlink_position_target_global_int_t pos_target_global;
+            mavlink_msg_position_target_global_int_decode(&msg, &pos_target_global);
+            // Vx-z data -> 0
         break;
         case 147:
             mavlink_battery_status_t battery;

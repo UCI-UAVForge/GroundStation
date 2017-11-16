@@ -21,7 +21,7 @@
 #include "interop.h"
 #include "mission.h"
 #include "obstacles.h"
-#include "link.h"
+#include "tcplink.h"
 #include "udplink.h"
 #include "timer.h"
 #include "decoder.h"

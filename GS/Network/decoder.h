@@ -28,6 +28,8 @@ signals:
     void windReceived(mavlink_wind_t wind);
     void pressureReceived(mavlink_scaled_pressure_t pressure);
     void navReceived(mavlink_nav_controller_output_t nav);
+    void vfrHudReceived(mavlink_vfr_hud_t vfr);
+    void localPositionReceived(mavlink_local_position_ned_t);\
 
     void armSuccess();
     void armFailed();

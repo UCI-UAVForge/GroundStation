@@ -5,6 +5,7 @@
 #include <QVBoxLayout>
 #include "qfi_PFD.h"
 #include "qfi_TC.h"
+#include "mavlink.h"
 
 
 class QFIWidget : public QWidget
@@ -17,7 +18,7 @@ public:
     inline void update()
     {
         m_pfd->update();
-        m_tc->update();
+//        m_tc->update();
     }
 
     inline void setRoll( float roll )
@@ -38,7 +39,7 @@ public:
     inline void setSlipSkid( float slipSkid )
     {
         m_pfd->setSlipSkid( slipSkid );
-        m_tc->setSlipSkid( slipSkid );
+//        m_tc->setSlipSkid( slipSkid );
     }
 
     inline void setDevH( float devH )
@@ -61,7 +62,7 @@ public:
     inline void setPressure( float pressure )
     {
         // qfi_PFD Units: STD Standard, IN Inches of Mercury
-        m_pfd->setPressure(pressure, qfi_PFD::PressureUnit::STD);
+        m_pfd->setPressure(pressure, qfi_PFD::PressureUnit::MB);
     }
 
     inline void setAirspeed( float airspeed )
@@ -82,13 +83,18 @@ public:
     inline void setTurnRate( float turnRate )
     {
         m_pfd->setTurnRate( turnRate );
-        m_tc->setTurnRate( turnRate );
+//        m_tc->setTurnRate( turnRate );
     }
 
     inline void setClimbRate( float climbRate )
     {
         m_pfd->setClimbRate( climbRate );
     }
+
+public slots:
+    void updateVFR(mavlink_vfr_hud_t vfr);
+    void updateAttitude(mavlink_attitude_t att);
+    void updatePressure(mavlink_scaled_pressure_t p);
 
 private:
     qfi_PFD     *m_pfd;

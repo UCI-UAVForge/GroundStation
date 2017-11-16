@@ -32,6 +32,7 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     actionWidget->setLink(link);
     MovementWidget * movementWidget = new MovementWidget(this);
     StatusWidget * statusWidget = new StatusWidget(this);
+    QFIWidget * qfiWidget = new QFIWidget(this);
     statusWidget->setLink(link);
 
     QDockWidget * graphDock = createDockWidget("Graph",Qt::BottomDockWidgetArea, graphWidget, this);
@@ -42,6 +43,7 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
 
 
     //Connect all widgets to decoder like this.
+    QDockWidget * qfiDock = createDockWidget("Flight Display", Qt::RightDockWidgetArea, qfiWidget, this);
     QDockWidget * actionDock = createDockWidget("Actions", Qt::RightDockWidgetArea, actionWidget, this);
     QDockWidget * movementDock = createDockWidget("Movement", Qt::RightDockWidgetArea, movementWidget, this);
     QDockWidget * statusDock = createDockWidget("Status", Qt::RightDockWidgetArea, statusWidget, this);
@@ -49,8 +51,13 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     graphDock->setMinimumWidth(500);
     tableDock->setMinimumWidth(500);
     //Connect all widgets to decoder like this;
+
+    connect(decoder, &Decoder::vfrHudReceived, qfiWidget, &QFIWidget::updateVFR);
+    connect(decoder, &Decoder::attReceived, qfiWidget, &QFIWidget::updateAttitude);
+    connect(decoder, &Decoder::pressureReceived, qfiWidget, &QFIWidget::updatePressure);
     connect(decoder, &Decoder::gpsReceived, movementWidget, &MovementWidget::updateTelemetry);
     connect(decoder, &Decoder::attReceived, movementWidget, &MovementWidget::updateAttitude);
+    connect(decoder, &Decoder::localPositionReceived, movementWidget, &MovementWidget::updateLocalPosition);
     connect(decoder, &Decoder::gpsReceived, graphWidget, &GraphWidget::appendTelemData);
     connect(decoder, &Decoder::heartbeatReceived, statusWidget, &StatusWidget::updateHeartbeat);
     connect(decoder, &Decoder::armSuccess, actionWidget, &ActionWidget::toggleArmButton);
@@ -67,14 +74,11 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     timerDock->setVisible(true);
     movementDock->setVisible(true);
     actionDock->setVisible(true);
+    qfiDock->setVisible(true);
 
 
    // tlink = new TcpLink();
    // decoder->setLink(tlink);
-    // Flight Instruments
-    QFIWidget * qfiWidget = new QFIWidget(this);
-    QDockWidget * qfiDock = createDockWidget("FI", Qt::LeftDockWidgetArea, qfiWidget, this);
-    qfiDock->setFloating(true);
 
     toolBar->addAction("Hide All Widgets", this, &MainDockWindow::hideDockWidgets);
     toolBar->addAction("setmode", this, &MainDockWindow::sendCommand);

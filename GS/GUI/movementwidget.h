@@ -25,6 +25,7 @@ signals:
 public slots:
     void updateTelemetry(mavlink_gps_raw_int_t gps);
     void updateAttitude(mavlink_attitude_t att);
+    void updateLocalPosition(mavlink_local_position_ned_t l_pos);
 };
 
 #endif // INFOWIDGET_H
