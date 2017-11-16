@@ -108,7 +108,7 @@ void missionDetailsWindow::loadNewMission(int i){
     home_pos->setLatLon(QString::number(mission.get_home_pos()["latitude"].toDouble()),QString::number(mission.get_home_pos()["longitude"].toDouble()));
     air_drop_pos->setLatLon(QString::number(mission.get_air_drop_pos()["latitude"].toDouble()),QString::number(mission.get_air_drop_pos()["longitude"].toDouble()));
     currLayout=posLayout;
-//    mission.loadMissionObjects(mapWidget);
+    mission.loadMissionObjects(mapWidget);
 }
 
 void missionDetailsWindow::showsgpLayout(){

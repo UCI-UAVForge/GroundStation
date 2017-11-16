@@ -12,11 +12,7 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     ui(new Ui::MainDockWindow)
 {
 
-    try{
-        interop = new Interop("testuser","testpass");
-    } catch (QNetworkReply::NetworkError err) {
-        qDebug() << "! Not loading map objects: " << err;
-    }
+
     ui->setupUi(this);
     centralWidget = new QStackedWidget(this);
     QQuickWidget * mapWidget = createQmlWidget(QUrl("qrc:/res/map.qml"), this);
@@ -40,16 +36,12 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
 
     QDockWidget * graphDock = createDockWidget("Graph",Qt::BottomDockWidgetArea, graphWidget, this);
     QDockWidget * tableDock = createDockWidget("Table",Qt::BottomDockWidgetArea, new TableWidget(this), this);
-    QDockWidget * missionDetailsDock = createDockWidget("Mission Details",Qt::BottomDockWidgetArea, new missionDetailsWindow(this,interop,mapWidget), this);
-    QDockWidget * timerDock = createDockWidget("Timer",Qt::RightDockWidgetArea, new Timer(this), this);
+    QDockWidget * timerDock = createDockWidget("Timer",Qt::RightDockWidgetArea, timer, this);
     graphDock->setMinimumWidth(500);
     tableDock->setMinimumWidth(500);
-    missionDetailsDock->setMinimumWidth(500);
+
 
     //Connect all widgets to decoder like this.
-    MovementWidget * movementWidget = new MovementWidget(this);
-    StatusWidget * statusWidget = new StatusWidget(this);
-    QDockWidget * timerDock = createDockWidget("Timer",Qt::RightDockWidgetArea, timer, this);
     QDockWidget * actionDock = createDockWidget("Actions", Qt::RightDockWidgetArea, actionWidget, this);
     QDockWidget * movementDock = createDockWidget("Movement", Qt::RightDockWidgetArea, movementWidget, this);
     QDockWidget * statusDock = createDockWidget("Status", Qt::RightDockWidgetArea, statusWidget, this);
@@ -72,7 +64,6 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     movementDock->setMinimumWidth(230);
     graphDock->setVisible(true);
     tableDock->setVisible(true);
-    missionDetailsDock->setVisible(true);
     timerDock->setVisible(true);
     movementDock->setVisible(true);
     actionDock->setVisible(true);
@@ -94,12 +85,20 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
 
 //    Mission mission = interop->getMission(1);
 //    mission.loadMissionObjects(mapWidget);
-    Obstacles obstacles = interop->getObstacles();
-    obstacles.loadStationaryObjects(mapWidget);
-    qDebug()<<mapWidget;
+    try{
+        interop = new Interop("testuser","testpass");
+        QDockWidget * missionDetailsDock = createDockWidget("Mission Details",Qt::BottomDockWidgetArea, new missionDetailsWindow(this,interop,mapWidget), this);
+        missionDetailsDock->setVisible(true);
+        Obstacles obstacles = interop->getObstacles();
+        obstacles.loadStationaryObjects(mapWidget);
+        qDebug()<<mapWidget;
+    } catch (QNetworkReply::NetworkError err) {
+        qDebug() << "! Not loading map objects: " << err;
+    }
+
 //    std::thread update_mov_obj(whatever,1);
     try {
-        loadMapObjects(mapWidget);
+ //       loadMapObjects(mapWidget);
     } catch (QNetworkReply::NetworkError err) {
         qDebug() << "! Not loading map objects: " << err;
     }

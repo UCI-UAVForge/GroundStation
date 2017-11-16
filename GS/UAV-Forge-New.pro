@@ -57,7 +57,6 @@ HEADERS  += \
 FORMS    += \
     $$files(GUI/*.ui, false) \
 
-
 OTHER_FILES +=
 
 RESOURCES += \

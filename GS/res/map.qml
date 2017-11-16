@@ -11,8 +11,8 @@ Rectangle {
     objectName:"rect"
     Plugin {
         id: mapPlugin
-        name: "esri" // "mapboxgl", "esri", ...
-        // specify plugin parameters if necessary
+        name: "mapboxgl" // "mapboxgl", "esri", ...
+        // specify plugi parameters if necessary
         // PluginParameter {
         //     name:
         //     value:
@@ -34,7 +34,7 @@ Rectangle {
         Component.onCompleted: {
                     for( var i_type in supportedMapTypes ) {
                         console.log(supportedMapTypes[i_type].name);
-                        if(supportedMapTypes[i_type].name.localeCompare( "World Imagery" ) === 0 ) {
+                        if(supportedMapTypes[i_type].name.localeCompare( "mapbox://styles/mapbox/satellite-streets-v10" ) === 0 ) {
                             activeMapType = supportedMapTypes[i_type]
                         }
                     }
