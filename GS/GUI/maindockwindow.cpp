@@ -60,6 +60,11 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
 
    // tlink = new TcpLink();
    // decoder->setLink(tlink);
+    // Flight Instruments
+    QFIWidget * qfiWidget = new QFIWidget(this);
+    QDockWidget * qfiDock = createDockWidget("FI", Qt::LeftDockWidgetArea, qfiWidget, this);
+    qfiDock->setFloating(true);
+
     toolBar->addAction("Hide All Widgets", this, &MainDockWindow::hideDockWidgets);
     toolBar->addAction("setmode", this, &MainDockWindow::sendCommand);
 

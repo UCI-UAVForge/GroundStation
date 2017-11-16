@@ -24,6 +24,7 @@
 #include "statuswidget.h"
 #include "tcplink.h"
 #include "actionwidget.h"
+#include "qfiwidget.h"
 
 namespace Ui {
 class MainDockWindow;
