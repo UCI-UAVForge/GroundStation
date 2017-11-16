@@ -10,6 +10,9 @@
 #include <QPushButton>
 #include <QGroupBox>
 #include <QVBoxLayout>
+#include <thread>
+#include <QDebug>
+#include <QQuickItem>
 
 #include "graphwidget.h"
 #include "tablewidget.h"
@@ -17,11 +20,14 @@
 #include "timerwidget.h"
 #include "interop.h"
 #include "mission.h"
+#include "obstacles.h"
 #include "link.h"
 #include "timer.h"
 #include "decoder.h"
 #include "movementwidget.h"
 #include "statuswidget.h"
+#include "missiondetailswindow.h"
+
 
 namespace Ui {
 class MainDockWindow;
@@ -44,11 +50,11 @@ public:
 private slots:
     void hideDockWidgets();
     void closeDockWidgets();
-    void loadMapObjects(QQuickWidget * mapWidget);
-    void Clear(QJsonArray &arr);
+    void updateMovingObjects(QQuickWidget * mapWidget);
 
 private:
     Ui::MainDockWindow *ui;
+    Interop * interop;
 };
 
 #endif // MAINDOCKWINDOW_H

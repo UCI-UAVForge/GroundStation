@@ -1,13 +1,15 @@
 #ifndef MISSION_H
 #define MISSION_H
 
-#include <QString>
-#include <QVector>
-#include <QPair>
-#include <QMap>
+//#include <QString>
+//#include <QVector>
+//#include <QPair>
+//#include <QMap>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
+#include <QQuickWidget>
+#include <QQuickItem>
 #include "actionpacket.h"
 #include "telemetrypacket.h"
 #include "flightpath.h"
@@ -22,7 +24,6 @@ public:
 
     Mission(FlightPath flightPath);
 
-    ~Mission();
 
     /** @brief Extracts data from an input Packet and stores the values in
      * the values field.
@@ -50,9 +51,11 @@ public:
     int get_id();
     QJsonObject get_home_pos();
     QJsonObject get_air_drop_pos();
+    void loadMissionObjects(QQuickWidget * mapWidget);
 
 private:
     void initValues();
+    void Clear(QJsonArray &arr);
     FlightPath myFlightPath;
     QJsonDocument jsonDoc;
     QJsonObject off_axis_odlc_pos;

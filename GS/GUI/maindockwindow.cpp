@@ -1,13 +1,17 @@
 #include "maindockwindow.h"
 #include "ui_maindockwindow.h"
-#include <QDebug>
-#include <QQuickItem>
 
 
 MainDockWindow::MainDockWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainDockWindow)
 {
+
+    try{
+        interop = new Interop("testuser","testpass");
+    } catch (QNetworkReply::NetworkError err) {
+        qDebug() << "! Not loading map objects: " << err;
+    }
     centralWidget = new QStackedWidget(this);
     QQuickWidget * mapWidget = createQmlWidget(QUrl("qrc:/res/map.qml"), this);
     centralWidget->addWidget(mapWidget);
@@ -23,9 +27,11 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     GraphWidget * graphWidget = new GraphWidget(this);
     QDockWidget * graphDock = createDockWidget("Graph",Qt::BottomDockWidgetArea, graphWidget, this);
     QDockWidget * tableDock = createDockWidget("Table",Qt::BottomDockWidgetArea, new TableWidget(this), this);
+    QDockWidget * missionDetailsDock = createDockWidget("Mission Details",Qt::BottomDockWidgetArea, new missionDetailsWindow(this,interop,mapWidget), this);
     QDockWidget * timerDock = createDockWidget("Timer",Qt::RightDockWidgetArea, new Timer(this), this);
     graphDock->setMinimumWidth(500);
     tableDock->setMinimumWidth(500);
+    missionDetailsDock->setMinimumWidth(500);
 
     //Connect all widgets to decoder like this.
     MovementWidget * movementWidget = new MovementWidget(this);
@@ -41,6 +47,7 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     movementDock->setMinimumWidth(230);
     graphDock->setVisible(true);
     tableDock->setVisible(true);
+    missionDetailsDock->setVisible(true);
     timerDock->setVisible(true);
     movementDock->setVisible(true);
     statusDock->setVisible(true);
@@ -50,13 +57,14 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     //toolBar->addAction("Close All Widgets", this, &MainDockWindow::closeDockWidgets);
     addToolBar(toolBar);
 
-    try {
-        loadMapObjects(mapWidget);
-    } catch (QNetworkReply::NetworkError err) {
-        qDebug() << "! Not loading map objects: " << err;
-    }
-    setStyleSheet("QDockWidget:{background-color:gray;}");
+//    Mission mission = interop->getMission(1);
+//    mission.loadMissionObjects(mapWidget);
+    Obstacles obstacles = interop->getObstacles();
+    obstacles.loadStationaryObjects(mapWidget);
+    qDebug()<<mapWidget;
+//    std::thread update_mov_obj(whatever,1);
 }
+
 
 QDockWidget * MainDockWindow::createDockWidget(const QString &title, Qt::DockWidgetArea area, QWidget * child, QWidget * parent) {
     QDockWidget * dock = new QDockWidget(title, parent);
@@ -89,151 +97,10 @@ void MainDockWindow::closeDockWidgets() {
     }
 }
 
-void MainDockWindow::loadMapObjects(QQuickWidget * mapWidget){
-    Interop interop("testuser", "testpass");
-    Mission mission = interop.getMission(1);
 
-    if (!mission.isActive())
-        return;
-
-
-
-
-    //-----------------------------------------------------Search Grid Points------------------------------------------------
-    QJsonArray temp = mission.get_search_grid_points();
-    QJsonArray pathlat;
-    QJsonArray pathlon;
-    for(int i=0; i<temp.size();++i){
-        pathlat.append(temp[i].toObject()["latitude"]);
-        pathlon.append(temp[i].toObject()["longitude"]);
-
-        QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
-                Q_ARG(QVariant, ""),
-                Q_ARG(QVariant, "images/blue_pin"),
-                Q_ARG(QVariant, temp[i].toObject()["latitude"].toVariant()),
-                Q_ARG(QVariant, temp[i].toObject()["longitude"].toVariant()),
-                Q_ARG(QVariant, "/2"),
-                Q_ARG(QVariant, ""));
-    }
-    if (temp.size() > 1){
-        pathlat.append(temp[0].toObject()["latitude"]);
-        pathlon.append(temp[0].toObject()["longitude"]);
-
-        QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addLine",
-                                  Q_ARG(QVariant, ""),
-                                  Q_ARG(QVariant, 3),
-                                  Q_ARG(QVariant, "blue"),
-                                  Q_ARG(QVariant, pathlat),
-                                  Q_ARG(QVariant, pathlon),
-                                  Q_ARG(QVariant, temp.size()));
-    }
-    Clear(pathlat);
-    Clear(pathlon);
-
-
-    //-----------------------------------------------------Mission Waypoints------------------------------------------------
-    temp = mission.get_mission_waypoints();
-    for(int i=0; i<temp.size();++i){
-        QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
-                Q_ARG(QVariant, ""),
-                Q_ARG(QVariant, "images/green_pin"),
-                Q_ARG(QVariant, temp[i].toObject()["latitude"].toVariant()),
-                Q_ARG(QVariant, temp[i].toObject()["longitude"].toVariant()),
-                Q_ARG(QVariant, "/2"),
-                Q_ARG(QVariant, ""));
-    }
-    if (temp.size() > 1){
-        pathlat.append(temp[0].toObject()["latitude"]);
-        pathlon.append(temp[0].toObject()["longitude"]);
-
-        QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addLine",
-                                  Q_ARG(QVariant, ""),
-                                  Q_ARG(QVariant, 3),
-                                  Q_ARG(QVariant, "blue"),
-                                  Q_ARG(QVariant, pathlat),
-                                  Q_ARG(QVariant, pathlon),
-                                  Q_ARG(QVariant, temp.size()));
-    }
-    Clear(pathlat);
-    Clear(pathlon);
-
-    //-----------------------------------------------------No-Fly Zone Boundary Points (also contains max/min altitude)------------------------------------------------
-    temp = mission.get_fly_zones();
-    for(int i=0; i<temp.size();++i){
-        QJsonObject temp2 = temp[i].toObject();
-        QJsonArray temp3 = temp2["boundary_pts"].toArray();
-        for (int j=0;j<temp3.size();++j){
-            pathlat.append(temp3[j].toObject()["latitude"]);
-            pathlon.append(temp3[j].toObject()["longitude"]);
-            QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
-                    Q_ARG(QVariant, ""),
-                    Q_ARG(QVariant, "images/yellow_pin"),
-                    Q_ARG(QVariant, temp3[j].toObject()["latitude"].toVariant()),
-                    Q_ARG(QVariant, temp3[j].toObject()["longitude"].toVariant()),
-                    Q_ARG(QVariant, "/2"),
-                    Q_ARG(QVariant, ""));
-        }
-
-
-        if (temp3.size() > 1){
-            pathlat.append(temp3[0].toObject()["latitude"]);
-            pathlon.append(temp3[0].toObject()["longitude"]);
-
-            QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addLine",
-                                      Q_ARG(QVariant, ""),
-                                      Q_ARG(QVariant, 3),
-                                      Q_ARG(QVariant, "yellow"),
-                                      Q_ARG(QVariant, pathlat),
-                                      Q_ARG(QVariant, pathlon),
-                                      Q_ARG(QVariant, temp3.size()+1));
-        }
-
-    }
-
-    //-----------------------------------------------------Off Axis Odlc Position------------------------------------------------
-    QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
-            Q_ARG(QVariant, ""),
-            Q_ARG(QVariant, "images/blue_circle"),
-            Q_ARG(QVariant, mission.get_off_axis_odlc_pos()["latitude"].toVariant()),
-            Q_ARG(QVariant, mission.get_off_axis_odlc_pos()["longitude"].toVariant()),
-            Q_ARG(QVariant, "/2"),
-            Q_ARG(QVariant, "/2"));
-
-    //-----------------------------------------------------Emergent Last Known Position------------------------------------------------
-    QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
-            Q_ARG(QVariant, ""),
-            Q_ARG(QVariant, "images/green_circle"),
-            Q_ARG(QVariant, mission.get_emergent_last_known_pos()["latitude"].toVariant()),
-            Q_ARG(QVariant, mission.get_emergent_last_known_pos()["longitude"].toVariant()),
-            Q_ARG(QVariant, "/2"),
-            Q_ARG(QVariant, "/2"));
-
-    //-----------------------------------------------------Home Position------------------------------------------------
-    QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
-            Q_ARG(QVariant, ""),
-            Q_ARG(QVariant, "images/tent"),
-            Q_ARG(QVariant, mission.get_home_pos()["latitude"].toVariant()),
-            Q_ARG(QVariant, mission.get_home_pos()["longitude"].toVariant()),
-            Q_ARG(QVariant, "/2"),
-            Q_ARG(QVariant, "/2"));
-
-    //-----------------------------------------------------Air Drop Position------------------------------------------------
-    QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
-            Q_ARG(QVariant, ""),
-            Q_ARG(QVariant, "images/crosshair"),
-            Q_ARG(QVariant, mission.get_air_drop_pos()["latitude"].toVariant()),
-            Q_ARG(QVariant, mission.get_air_drop_pos()["longitude"].toVariant()),
-            Q_ARG(QVariant, "/2"),
-            Q_ARG(QVariant, "/2"));
-
-
-}
-
-
-void MainDockWindow::Clear(QJsonArray &arr){
-    for (int i=0; i<arr.size(); ++i){
-        arr.removeFirst();
-    }
+void MainDockWindow::updateMovingObjects(QQuickWidget * mapWidget){
+    Obstacles obstacles = interop->getObstacles();
+    obstacles.updateMovingObjects(mapWidget);
 }
 
 MainDockWindow::~MainDockWindow()
