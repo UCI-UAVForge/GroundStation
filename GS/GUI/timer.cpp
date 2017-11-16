@@ -5,7 +5,7 @@ Timer::Timer(QWidget *parent)
     : QLCDNumber(parent)
 {
     setSegmentStyle(Filled);
-    QTimer *timer = new QTimer(this);
+    timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(showTime()));
     timer->start(1000);
     time.setHMS(0,0,0);
@@ -19,4 +19,7 @@ void Timer::showTime()
     *local = local->addMSecs(time.elapsed());
     QString text = local->toString("mm:ss");
     display(text);
+  //  timer->setInterval(3000);
+    emit(timeChanged());
 }
+

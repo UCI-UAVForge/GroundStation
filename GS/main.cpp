@@ -2,11 +2,8 @@
 #include <QSplashScreen>
 #include <QtSvg>
 
-#include "mainmdidisplay.h"
 #include "maindockwindow.h"
 
-
-#include "qttabtest.h"
 
 int main(int argc, char *argv[]) {
 
@@ -28,7 +25,7 @@ int main(int argc, char *argv[]) {
     svg.render(&painter, pixmap.rect());
     //Construct and show the splash screen
     QSplashScreen splash(pixmap);
-    splash.show();
+   // splash.show();
 
 
 //    MainMDIDisplay x;

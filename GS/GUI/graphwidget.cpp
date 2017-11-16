@@ -88,7 +88,7 @@ void GraphWidget::appendTelemData(mavlink_gps_raw_int_t msg) {
             graphs[i]->removeDataBefore(time-maxEntries);
         }
     }
-    qDebug() << time;
+    //qDebug() << time;
     graphs[0]->removeDataBefore(time-20);
     graphs[1]->removeDataBefore(time-20);
     graphs[2]->removeDataBefore(time-20);

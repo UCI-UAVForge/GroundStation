@@ -6,6 +6,8 @@
 
 #include "textbox.h"
 #include "mavlink.h"
+#include "ui_statuswidget.h"
+#include "udplink.h"
 
 class StatusWidget : public QWidget
 {
@@ -13,12 +15,13 @@ class StatusWidget : public QWidget
 public:
     /// \brief Default constructor. Takes no arguments.
     explicit StatusWidget(QWidget* parent=0);
-
-    QGridLayout * layout;
-    TextBox *battery;
+    Ui::StatusWidget ui;
+    UdpLink * link;
+    void setLink(UdpLink * l);
 
 public slots:
-    void updateStatus(mavlink_sys_status_t status);
+    void updateBattery(mavlink_battery_status_t battery);
+    void updateHeartbeat(mavlink_heartbeat_t heartbeat);
 
 };
 #endif

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ActionWidget</class>
+ <widget class="QWidget" name="ActionWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>308</width>
+    <height>160</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton:pressed {
+	color:rgb(108, 108, 108);
+}
+QPushButton {
+    border: 0px solid rgb(200,200,200);
+    border-radius: 4px;
+    background-color:rgb(200, 200, 200);
+    min-width: 80px;
+	min-height: 30px;
+	color: black
+}
+</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="3" column="2">
+    <widget class="QPushButton" name="guidedButton">
+     <property name="text">
+      <string>GUIDED</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="3">
+    <widget class="QPushButton" name="autoButton">
+     <property name="text">
+      <string>AUTO</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="3">
+    <widget class="QPushButton" name="armButton">
+     <property name="autoFillBackground">
+      <bool>false</bool>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton:pressed {
+    border-style: inset;
+}</string>
+     </property>
+     <property name="text">
+      <string>DISARMED</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QPushButton" name="manualButton">
+     <property name="text">
+      <string>MANUAL</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

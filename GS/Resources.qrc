@@ -40,8 +40,48 @@
         <file>res/images/crosshair.png</file>
         <file>res/images/yellow_pin.png</file>
         <file>res/images/blue_circle.png</file>
+        <file>res/asi/asi.svg</file>
+        <file>res/asi/asi_case.svg</file>
+        <file>res/asi/asi_face.svg</file>
+        <file>res/asi/asi_hand.svg</file>
         <file>res/images/red_pin.png</file>
         <file>res/images/red_circle.png</file>
         <file>res/marker.qml</file>
+        <file>res/pfd/pfd.svg</file>
+        <file>res/pfd/pfd_adi_back.svg</file>
+        <file>res/pfd/pfd_adi_barh.svg</file>
+        <file>res/pfd/pfd_adi_barv.svg</file>
+        <file>res/pfd/pfd_adi_doth.svg</file>
+        <file>res/pfd/pfd_adi_dotv.svg</file>
+        <file>res/pfd/pfd_adi_ladd.svg</file>
+        <file>res/pfd/pfd_adi_mark.svg</file>
+        <file>res/pfd/pfd_adi_mask.svg</file>
+        <file>res/pfd/pfd_adi_path.svg</file>
+        <file>res/pfd/pfd_adi_roll.svg</file>
+        <file>res/pfd/pfd_adi_scaleh.svg</file>
+        <file>res/pfd/pfd_adi_scalev.svg</file>
+        <file>res/pfd/pfd_adi_slip.svg</file>
+        <file>res/pfd/pfd_adi_turn.svg</file>
+        <file>res/pfd/pfd_alt_back.svg</file>
+        <file>res/pfd/pfd_alt_frame.svg</file>
+        <file>res/pfd/pfd_alt_ground.svg</file>
+        <file>res/pfd/pfd_alt_scale.svg</file>
+        <file>res/pfd/pfd_asi_back.svg</file>
+        <file>res/pfd/pfd_asi_frame.svg</file>
+        <file>res/pfd/pfd_asi_scale.svg</file>
+        <file>res/pfd/pfd_back.svg</file>
+        <file>res/pfd/pfd_hsi_back.svg</file>
+        <file>res/pfd/pfd_hsi_face.svg</file>
+        <file>res/pfd/pfd_hsi_marks.svg</file>
+        <file>res/pfd/pfd_mask.svg</file>
+        <file>res/pfd/pfd_vsi_arrow.svg</file>
+        <file>res/pfd/pfd_vsi_scale.svg</file>
+        <file>res/tc/tc.svg</file>
+        <file>res/tc/tc_back.svg</file>
+        <file>res/tc/tc_ball.svg</file>
+        <file>res/tc/tc_case.svg</file>
+        <file>res/tc/tc_face_1.svg</file>
+        <file>res/tc/tc_face_2.svg</file>
+        <file>res/tc/tc_mark.svg</file>
     </qresource>
 </RCC>
