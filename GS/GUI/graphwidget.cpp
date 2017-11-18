@@ -1,9 +1,6 @@
 #include "graphwidget.h"
 #include "ui_graphwidget.h"
 #include <QTextStream> //For debugging
-
-#include "telemetrypacket.h"
-
 #include <QDebug>
 
 GraphWidget::GraphWidget(QWidget *parent) :

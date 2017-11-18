@@ -2,7 +2,6 @@
 #include "ui_maindockwindow.h"
 #include <QDebug>
 #include <QQuickItem>
-#include "mapwidget.h"
 #include "qfi_ASI.h"
 #include <QtCore>
 #include "textbox.h"
@@ -41,12 +40,14 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     graphDock->setMinimumWidth(500);
     tableDock->setMinimumWidth(500);
 
-
+    QFIWidget * qfiWidget = new QFIWidget(this);
+    QDockWidget * qfiDock = createDockWidget("FI", Qt::LeftDockWidgetArea, qfiWidget, this);
+    qfiDock->setVisible(true);
     //Connect all widgets to decoder like this.
     QDockWidget * qfiDock = createDockWidget("Flight Display", Qt::RightDockWidgetArea, qfiWidget, this);
     QDockWidget * actionDock = createDockWidget("Actions", Qt::RightDockWidgetArea, actionWidget, this);
     QDockWidget * movementDock = createDockWidget("Movement", Qt::RightDockWidgetArea, movementWidget, this);
-    QDockWidget * statusDock = createDockWidget("Status", Qt::RightDockWidgetArea, statusWidget, this);
+    QDockWidget * statusDock = createDockWidget("Status", Qt::LeftDockWidgetArea, statusWidget, this);
 
     graphDock->setMinimumWidth(500);
     tableDock->setMinimumWidth(500);
@@ -60,17 +61,17 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     connect(decoder, &Decoder::localPositionReceived, movementWidget, &MovementWidget::updateLocalPosition);
     connect(decoder, &Decoder::gpsReceived, graphWidget, &GraphWidget::appendTelemData);
     connect(decoder, &Decoder::heartbeatReceived, statusWidget, &StatusWidget::updateHeartbeat);
-    connect(decoder, &Decoder::armSuccess, actionWidget, &ActionWidget::toggleArmButton);
-    connect(decoder, &Decoder::armFailed, actionWidget, &ActionWidget::armFailed);
+    connect(decoder, &Decoder::heartbeatReceived, actionWidget, &ActionWidget::toggleArmButton);
+    //connect(decoder, &Decoder::armFailed, actionWidget, &ActionWidget::armFailed);
     connect(decoder, &Decoder::heartbeatReceived, actionWidget, &ActionWidget::toggleModeButtons);
     connect(decoder, &Decoder::batteryReceived, statusWidget, &StatusWidget::updateBattery);
 
 
-    tabifyDockWidget(movementDock, statusDock);
+    statusDock->setVisible(true);
     movementDock->setMaximumHeight(300);
     movementDock->setMinimumWidth(230);
     graphDock->setVisible(true);
-    tableDock->setVisible(true);
+  //  tableDock->setVisible(true);
     timerDock->setVisible(true);
     movementDock->setVisible(true);
     actionDock->setVisible(true);
@@ -119,7 +120,7 @@ void MainDockWindow::testMav() {
 
 void MainDockWindow::sendCommand() {
     mavlink_message_t msg;
-    mavlink_message_t msg2;
+
     mavlink_msg_set_mode_pack(255,  1 , &msg, 1, 1, 10);
     //mavlink_msg_mission_set_current_pack(255,1, &msg, 1, 0, 3);
    // mavlink_msg_mission_item_pack(255, 1 , &msg, 1, 0, 0, MAV_FRAME_MISSION, MAV_CMD_NAV_WAYPOINT, 1, 1, 10, 5, 0, 0, 12.21,38, 1000);

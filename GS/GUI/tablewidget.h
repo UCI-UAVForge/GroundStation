@@ -5,7 +5,7 @@
 #include <QTableView>
 #include "qcomboboxdelegate.h"
 #include "tablemodel.h"
-#include "flightpath.h"
+
 #include "mission.h"
 
 class TableWidget : public QTableView
@@ -22,8 +22,6 @@ public:
      * in the TableWidget. The FlightPath will contain the points in
      * the same (top-to-bottom) order as they appear in the table.
      */
-    FlightPath *getTableAsFlightPath();
-
     /**
      * @brief setEditable
      * @param editable - sets if the user can edit the table by hand or not
@@ -46,7 +44,6 @@ public:
      * @brief insertFlightPath
      * @param fp
      */
-    void insertFlightPath(FlightPath* fp);
 
 private:
     /**
@@ -76,7 +73,6 @@ signals:
      * @param fp
      * @param pathId
      */
-    void flightPathSent(FlightPath * fp, int id, QString source);
 
 public slots:
     /**

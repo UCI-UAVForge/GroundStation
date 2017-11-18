@@ -16,20 +16,18 @@ void ActionWidget::setLink(UdpLink *l) {
 
 void ActionWidget::setArm() {
     mavlink_message_t msg;
-    if (!armed)
-        mavlink_msg_command_long_pack(255, 1, &msg, 1, 0, 400, 1, 1, 0, 0, 0, 0, 0, 0);
-    else
-        mavlink_msg_command_long_pack(255, 1, &msg, 1, 0, 400, 1, 0, 0, 0, 0, 0, 0, 0);
+    mavlink_msg_command_long_pack(255, 1, &msg, 1, 0, 400, 1, !armed, 0, 0, 0, 0, 0, 0);
     link->sendMsg(msg);
 }
 
-void ActionWidget::setButtonOn(QPushButton * button) {
-   button->setStyleSheet("QPushButton{background-color: rgb(169, 248, 157)}");
+void ActionWidget::setButtonColor(QPushButton * button, QString color) {
+   button->setStyleSheet("QPushButton{background-color: " + color + "} QPushButton:pressed{background-color: rgb(235, 235, 235)}");
 }
 
 void ActionWidget::setButtonOff(QPushButton * button) {
-    button->setStyleSheet("QPushButton{background-color:rgb(200, 200, 200)};");
+    button->setStyleSheet("QPushButton{background-color:rgb(200, 200, 200)} QPushButton:pressed{background-color: rgb(235, 235, 235)}");
 }
+
 
 void ActionWidget::setButtonsOff(QVector<QPushButton*> buttonList) {
     for(int i = 0; i < buttonList.size(); i++) {
@@ -37,25 +35,22 @@ void ActionWidget::setButtonsOff(QVector<QPushButton*> buttonList) {
     }
 }
 
-void ActionWidget::toggleArmButton() {
-    if (!armed) {
-        armed = true;
-        ui.armButton->setText("ARMED");
-        setButtonOn(ui.armButton);
-    }
-    else {
-        armed = false;
-        ui.armButton->setText("DISARMED");
-        setButtonOff(ui.armButton);
-    }
-}
-
-void ActionWidget::armFailed() {
-    ui.armButton->setStyleSheet("QPushButton{background-color:rgb(180,10, 10)};");
-    if (!armed) {
-        ui.armButton->setText("FAILED TO ARM");
-    } else {
-        ui.armButton->setText("FAILED TO DISARM");
+void ActionWidget::toggleArmButton(mavlink_heartbeat_t heartbeat) {
+    switch(heartbeat.base_mode) {
+        case 81: case 89:
+            if (armed) {
+                armed = false;
+                ui.armButton->setText("DISARMED");
+                setButtonColor(ui.armButton, "rgb(255, 80, 83)");
+            }
+        break;
+        case 209: case 217:
+            if (!armed) {
+                armed = true;
+                ui.armButton->setText("ARMED");
+                setButtonColor(ui.armButton, "rgb(169, 248, 157)");
+            }
+        break;
     }
 }
 
@@ -79,17 +74,16 @@ void ActionWidget::setAuto() {
 void ActionWidget::toggleModeButtons(mavlink_heartbeat_t heartbeat) {
     if (mode != heartbeat.custom_mode) {
         setButtonsOff(modeButtons);
-        qDebug()<< heartbeat.custom_mode;
         mode = heartbeat.custom_mode;
         switch(heartbeat.custom_mode) {
             case 0:
-                setButtonOn(ui.manualButton);
+                setButtonColor(ui.manualButton, "rgb(169, 248, 157)");
             break;
             case 10:
-                setButtonOn(ui.autoButton);
+                setButtonColor(ui.autoButton, "rgb(169, 248, 157)");
             break;
             case 15:
-                setButtonOn(ui.guidedButton);
+                setButtonColor(ui.guidedButton, "rgb(169, 248, 157)");
             break;
             default:
             break;

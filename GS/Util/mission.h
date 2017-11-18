@@ -10,11 +10,6 @@
 #include <QJsonArray>
 #include <QQuickWidget>
 #include <QQuickItem>
-#include "actionpacket.h"
-#include "telemetrypacket.h"
-#include "flightpath.h"
-#include "messagebox.h"
-
 class Mission {
 public:
     Mission();
@@ -22,18 +17,12 @@ public:
     Mission(QString filename);
     Mission(QJsonDocument document);
 
-    Mission(FlightPath flightPath);
-
-
     /** @brief Extracts data from an input Packet and stores the values in
      * the values field.
      *  @param telemPacket A pointer to the packet that will be read.
      *  @date April 8, 2016
      */
-    void addPacket(Protocol::TelemetryPacket telemPacket);
 
-
-    FlightPath *getFlightPath();
 
     QVector<double> *getValuesForID(int id);
     QVector<double> *getValuesForIndex(int index);
@@ -56,7 +45,6 @@ public:
 private:
     void initValues();
     void Clear(QJsonArray &arr);
-    FlightPath myFlightPath;
     QJsonDocument jsonDoc;
     QJsonObject off_axis_odlc_pos;
     QJsonArray search_grid_points;

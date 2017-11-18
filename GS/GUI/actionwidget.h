@@ -21,7 +21,7 @@ public:
     uint8_t mode = -1;
     QVector<QPushButton*> modeButtons;
 
-    void setButtonOn(QPushButton * button);
+    void setButtonColor(QPushButton * button, QString color);
     void setButtonOff(QPushButton * button);
     void setButtonsOff(QVector<QPushButton*> buttonList);
 
@@ -30,8 +30,7 @@ public:
     void setGuided();
     void setAuto();
 
-    void toggleArmButton();
-    void armFailed();
+    void toggleArmButton(mavlink_heartbeat_t heartbeat);
     void toggleModeButtons(mavlink_heartbeat_t heartbeat);
 signals:
 

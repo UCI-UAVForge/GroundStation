@@ -2,7 +2,6 @@
 #define MISSIONSTATUSWINDOW_H
 
 #include <QDialog>
-#include "telemetrypacket.h"
 #include "dataobjects.h"
 
 namespace Ui {

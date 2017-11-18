@@ -52,7 +52,10 @@ public slots:
      * are appened.
      * @param numberOfEntries the maximum number of entries
      * @warning The current version does not support increasing the maximum number
-     * of entries showing.
+     * of eQPushButton:checked{
+
+    background-color: rgb(131, 255, 64);
+}ntries showing.
      * @todo fix this someday
      */
     void setMaxEntries(unsigned int numberOfEntries);
