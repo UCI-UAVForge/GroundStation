@@ -40,11 +40,8 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     graphDock->setMinimumWidth(500);
     tableDock->setMinimumWidth(500);
 
-    QFIWidget * qfiWidget = new QFIWidget(this);
-    QDockWidget * qfiDock = createDockWidget("FI", Qt::LeftDockWidgetArea, qfiWidget, this);
-    qfiDock->setVisible(true);
-    //Connect all widgets to decoder like this.
-    QDockWidget * qfiDock = createDockWidget("Flight Display", Qt::RightDockWidgetArea, qfiWidget, this);
+
+    QDockWidget * qfiDock = createDockWidget("Flight Display", Qt::LeftDockWidgetArea, qfiWidget, this);
     QDockWidget * actionDock = createDockWidget("Actions", Qt::RightDockWidgetArea, actionWidget, this);
     QDockWidget * movementDock = createDockWidget("Movement", Qt::RightDockWidgetArea, movementWidget, this);
     QDockWidget * statusDock = createDockWidget("Status", Qt::LeftDockWidgetArea, statusWidget, this);

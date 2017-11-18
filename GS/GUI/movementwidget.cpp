@@ -1,5 +1,5 @@
 #include "movementwidget.h"
-#include <qDebug>
+#include <QDebug>
 
 MovementWidget::MovementWidget(QWidget *parent) : QWidget(parent)
 {
