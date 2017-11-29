@@ -3,6 +3,7 @@
 #include <QTextStream> //For debugging
 #include <QDebug>
 
+
 GraphWidget::GraphWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::GraphWidget)
@@ -86,10 +87,10 @@ void GraphWidget::appendTelemData(mavlink_gps_raw_int_t msg) {
         }
     }
     //qDebug() << time;
-    graphs[0]->removeDataBefore(time-20);
-    graphs[1]->removeDataBefore(time-20);
-    graphs[2]->removeDataBefore(time-20);
-    graphs[3]->removeDataBefore(time-20);
+    graphs[0]->removeDataBefore(time-200);
+    graphs[1]->removeDataBefore(time-200);
+    graphs[2]->removeDataBefore(time-200);
+    graphs[3]->removeDataBefore(time-200);
     graphs[0]->addData(time,msg.epv);
     graphs[1]->addData(time,msg.lat/1000000);
     graphs[2]->addData(time,(float)msg.lon/1000000);

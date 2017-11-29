@@ -1,23 +1,21 @@
-#ifndef LINK_H
-#define LINK_H
+#ifndef UDPLINK_H
+#define UDPLINK_H
 
-#include <QDebug>
 #include <QUdpSocket>
-#include <QObject>
 #include <queue>
 #include <vector>
 #include "mavlink.h"
+#include "link.h"
+#include <QHostAddress>
 
-class UdpLink: public QObject
+class UdpLink: public Link
 {
-    Q_OBJECT
 public:
-    UdpLink(QHostAddress uavHost, int uavPort, QHostAddress gcsHost, int gcsPort);
-
+    UdpLink();
     void startLink();
     void sendAllMAVLinkMsgs(std::vector<mavlink_message_t>);
     void sendAllMAVLinkMsgs(std::queue<mavlink_message_t>);
-    void sendMsg(mavlink_message_t);
+    void sendData(mavlink_message_t);
 
     int getPort();
     QHostAddress getHost();
@@ -26,15 +24,13 @@ private:
     QUdpSocket * sendUdpSocket;
     QUdpSocket * recvUdpSocket;
 
-    int GCS_PORT;
-    int UAV_PORT;
-    QHostAddress GCS_HOST;
-    QHostAddress UAV_HOST;
+    int GCS_PORT = 14550;
+    int UAV_PORT = 5761;
+    QHostAddress GCS_HOST = QHostAddress::LocalHost;
+    QHostAddress UAV_HOST = QHostAddress::LocalHost;
 
 private slots:
-    void readUdpData();
-signals:
-    void messageReceived(mavlink_message_t msg);
+    void recvData();
 };
 
 #endif // LINK_H

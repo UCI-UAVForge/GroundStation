@@ -2,18 +2,16 @@
 #define DECODER_H
 
 #include <QObject>
-#include "udplink.h"
-#include "tcplink.h"
+#include "link.h"
+
 
 class Decoder : public QObject
 {
     Q_OBJECT
 public:
-    UdpLink * link;
     explicit Decoder(QObject *parent = nullptr);
-
-    bool setLink(UdpLink * l);
-    bool setLink(TcpLink * l);
+    Link * link;
+    bool setLink(Link * l);
     void parseCmdAck(mavlink_command_ack_t);
 
 
@@ -29,7 +27,9 @@ signals:
     void pressureReceived(mavlink_scaled_pressure_t pressure);
     void navReceived(mavlink_nav_controller_output_t nav);
     void vfrHudReceived(mavlink_vfr_hud_t vfr);
-    void localPositionReceived(mavlink_local_position_ned_t);\
+    void localPositionReceived(mavlink_local_position_ned_t);
+    void statTextReceived(mavlink_statustext_t);
+    void mrequestReceived(mavlink_mission_request_t mrequest);
 
     void armSuccess();
     void armFailed();

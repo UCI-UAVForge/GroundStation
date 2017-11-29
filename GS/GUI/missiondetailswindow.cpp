@@ -34,9 +34,9 @@ missionDetailsWindow::missionDetailsWindow(QWidget *parent, Interop *interop,QQu
     layout->addLayout(currLayout,0,2,4,8);
 
 
+
     setLayout(layout);
 }
-
 
 
 
@@ -98,7 +98,7 @@ void missionDetailsWindow::updateMission(){
 }
 
 void missionDetailsWindow::loadNewMission(int i){
-    Mission mission = interop->getMission(i);
+    mission.setMission(interop->getMission(i));
 
     QJsonValue test = mission.get_air_drop_pos()["latitude"];
 //    qDebug()<<mission.get_air_drop_pos()["latitude"];

@@ -2,16 +2,13 @@
 #include "dbmanager.h"
 #include <QDebug>
 
+Mission::Mission(QObject *parent) : QObject(parent){}
 
+//Mission::Mission(){
+//    this->initValues();
+//}
 
-Mission::Mission(){
-    this->initValues();
-}
-
-Mission::Mission(QJsonDocument document):
-    jsonDoc(document)
-{
-
+void Mission::setMission(QJsonDocument jsonDoc) {
     QJsonObject obj = jsonDoc.object();
     off_axis_odlc_pos = obj["off_axis_odlc_pos"].toObject();
     search_grid_points = obj["search_grid_points"].toArray();
@@ -22,35 +19,44 @@ Mission::Mission(QJsonDocument document):
     id = obj["id"].toInt();
     home_pos = obj["home_pos"].toObject();
     air_drop_pos = obj["home_pos"].toObject();
-
-}
-
-Mission::Mission(QString filename){
-    this->initValues();
-
-
-    /// @todo any database initialization and error checking if necesary
-    DbManager db(filename);
-
-    /// @todo update these lines with values from the database
-    foreach (MissionData data, db.missionGet()) {
-        values.at(0)->append(data.heading);
-        values.at(1)->append(data.lat);
-        values.at(2)->append(data.lon);
-        values.at(3)->append(data.alt);
-        values.at(4)->append(data.pitch);
-        values.at(5)->append(data.roll);
-        values.at(6)->append(data.yaw);
-        values.at(7)->append(data.xvel);
-        values.at(8)->append(data.yvel);
-        values.at(9)->append(data.zvel);
-    };
-
-  /// @todo any remaining database functions for safe file handling if needed
-    db.close();
+    qDebug() << mission_waypoints;
 }
 
 
+//Mission::Mission(QString filename){
+//    this->initValues();
+
+
+//    /// @todo any database initialization and error checking if necesary
+//    DbManager db(filename);
+
+//    /// @todo update these lines with values from the database
+//    foreach (MissionData data, db.missionGet()) {
+//        values.at(0)->append(data.heading);
+//        values.at(1)->append(data.lat);
+//        values.at(2)->append(data.lon);
+//        values.at(3)->append(data.alt);
+//        values.at(4)->append(data.pitch);
+//        values.at(5)->append(data.roll);
+//        values.at(6)->append(data.yaw);
+//        values.at(7)->append(data.xvel);
+//        values.at(8)->append(data.yvel);
+//        values.at(9)->append(data.zvel);
+//    };
+
+//  /// @todo any remaining database functions for safe file handling if needed
+//    db.close();
+//}
+
+void Mission::loadWaypoint(mavlink_mission_request_t mrequest) {
+    float params[7] = {0, 0, 0, 0, -35.3609161377, 149.1624603271, 40.40};
+    int cmd = 16;
+    if (mrequest.seq == 0) {
+        cmd = 22;
+    }
+    cmd =22;
+    emit (loadToUAV(mrequest.seq, cmd, params));
+}
 
 
 void Mission::initValues(){

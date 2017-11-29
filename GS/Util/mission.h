@@ -1,22 +1,21 @@
 #ifndef MISSION_H
 #define MISSION_H
 
-//#include <QString>
-//#include <QVector>
-//#include <QPair>
-//#include <QMap>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
 #include <QQuickWidget>
 #include <QQuickItem>
-class Mission {
+#include "mavlink.h"
+#include "link.h"
+#include <QObject>
+
+class Mission : public QObject {
+    Q_OBJECT
 public:
-    Mission();
-
-    Mission(QString filename);
-    Mission(QJsonDocument document);
-
+    explicit Mission(QObject *parent = nullptr);
+    //Mission(QString filename);
+   // Mission(QJsonDocument document);
     /** @brief Extracts data from an input Packet and stores the values in
      * the values field.
      *  @param telemPacket A pointer to the packet that will be read.
@@ -30,6 +29,8 @@ public:
 
     bool save(QString filename);
     int numOfEntries();
+    void loadWaypoint(mavlink_mission_request_t mrequest);
+    void setMission(QJsonDocument jsonDoc);
 
     QJsonObject get_off_axis_odlc_pos();
     QJsonArray get_search_grid_points();
@@ -41,6 +42,9 @@ public:
     QJsonObject get_home_pos();
     QJsonObject get_air_drop_pos();
     void loadMissionObjects(QQuickWidget * mapWidget);
+
+signals:
+    void loadToUAV(int seq, int cmd, float params[]);
 
 private:
     void initValues();
@@ -57,6 +61,8 @@ private:
     QJsonObject air_drop_pos;
 
     QVector<QVector<double>* > values;
+
+
 };
 
 #endif // MISSION_H

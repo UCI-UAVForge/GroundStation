@@ -2,13 +2,16 @@
 
 TcpLink::TcpLink()
 {
+
+}
+
+void TcpLink::startLink() {
     tcp = new QTcpSocket();
-    connect(tcp, SIGNAL(readyRead()), this, SLOT(readTcpData()));
+    connect(tcp, &QTcpSocket::readyRead, this, &TcpLink::recvData);
     tcp->connectToHost(QHostAddress("127.0.0.1"), 5760);
 }
 
-
-void TcpLink::sendMsg(mavlink_message_t msg) {
+void TcpLink::sendData(mavlink_message_t msg) {
     QByteArray datagram;
     uint8_t buf[MAVLINK_MAX_PAYLOAD_LEN];
     uint8_t len;
@@ -22,7 +25,7 @@ void TcpLink::sendMsg(mavlink_message_t msg) {
     }
 }
 
-void TcpLink::readTcpData() {
+void TcpLink::recvData() {
     bool msgReceived = false;
     QByteArray datagram = tcp->readAll();
     mavlink_message_t msg;
@@ -31,7 +34,6 @@ void TcpLink::readTcpData() {
         if(mavlink_parse_char(1, datagram.data()[i], &msg, &status)) {
             msgReceived = true;
             emit messageReceived(msg);
-          //  qDebug() << msg.msgid;
         }
     }
     if (!msgReceived) {

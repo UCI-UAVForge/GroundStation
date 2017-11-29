@@ -13,6 +13,7 @@
 #include <thread>
 #include <QDebug>
 #include <QQuickItem>
+#include <QtCharts>
 
 #include "graphwidget.h"
 #include "tablewidget.h"
@@ -21,16 +22,19 @@
 #include "interop.h"
 #include "mission.h"
 #include "obstacles.h"
-#include "tcplink.h"
-#include "udplink.h"
 #include "timer.h"
 #include "decoder.h"
 #include "movementwidget.h"
 #include "statuswidget.h"
 #include "missiondetailswindow.h"
-#include "tcplink.h"
 #include "actionwidget.h"
 #include "qfiwidget.h"
+#include "messagewidget.h"
+
+
+#include "encoder.h"
+#include "tcplink.h"
+#include "udplink.h"
 
 namespace Ui {
 class MainDockWindow;
@@ -43,17 +47,22 @@ class MainDockWindow : public QMainWindow
 public:
     QStackedWidget * centralWidget;
     QToolBar * toolBar;
-    UdpLink * link;
-    TcpLink * tlink;
+    Link * link;
+   // Link * tlink;
+    Mission * mission;
     explicit MainDockWindow(QWidget *parent = 0);
     ~MainDockWindow();
 
     QQuickWidget * createQmlWidget(QUrl qmlSource, QWidget * parent = 0);
     QDockWidget * createDockWidget(const QString &title, Qt::DockWidgetArea area, QWidget * child, QWidget * parent);
     void testFind();
-    void testMav();
-    void sendCommand();
+    void test();
 
+    void addToolBarButtons();
+    void connectDecoder(Decoder * decoder);
+    void connectEncoder(Encoder * encoder);
+signals:
+    void what(int i);
 private slots:
     void hideDockWidgets();
     void closeDockWidgets();

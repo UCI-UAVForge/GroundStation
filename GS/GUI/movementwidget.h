@@ -3,7 +3,6 @@
 
 
 #include <QWidget>
-#include "textbox.h"
 #include "mavlink.h"
 #include "ui_movementwidget.h"
 #include <QHBoxLayout>
@@ -15,9 +14,7 @@ class MovementWidget : public QWidget
 public:
     explicit MovementWidget(QWidget *parent = nullptr);
     QGridLayout *layout;
-    TextBox *alt, *lon, *lat, *vel, *pitch, *roll, *yaw;
     Ui::MovementWidget ui;
-
     void mousePressEvent(QMouseEvent *) override;
 
 signals:

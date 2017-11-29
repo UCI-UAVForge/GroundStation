@@ -4,17 +4,18 @@
 #include "mavlink.h"
 #include <QTcpSocket>
 #include <QHostAddress>
-class TcpLink : public QObject
+#include "link.h"
+
+class TcpLink : public Link
 {
-    Q_OBJECT
 public:
     QTcpSocket * tcp;
     TcpLink();
-    void sendMsg(mavlink_message_t);
-public slots:
-    void readTcpData();
-signals:
-    void messageReceived(mavlink_message_t);
+    void startLink();
+    void sendData(mavlink_message_t msg);
+
+private slots:
+    void recvData();
 };
 
 #endif // TCPLINK_H

@@ -2,12 +2,8 @@
 #include <QDebug>
 Decoder::Decoder(QObject *parent) : QObject(parent){}
 
-bool Decoder::setLink(UdpLink * l) {
-    return connect(l, &UdpLink::messageReceived,  this, &Decoder::parseMessage);
-}
-
-bool Decoder::setLink(TcpLink * l) {
-    return connect(l, &TcpLink::messageReceived,  this, &Decoder::parseMessage);
+bool Decoder::setLink(Link * l) {
+    return connect(l, &Link::messageReceived, this, &Decoder::parseMessage);
 }
 
 void Decoder::parseMessage(mavlink_message_t msg) {
@@ -55,11 +51,15 @@ void Decoder::parseMessage(mavlink_message_t msg) {
             mavlink_msg_global_position_int_decode(&msg, &gps_int);
         //    qDebug() << gps_int.lat << "," << gps_int.lon;
         break;
+        case 40:
+            mavlink_mission_request_t mrequest;
+            mavlink_msg_mission_request_decode(&msg, &mrequest);
+            emit (mrequestReceived(mrequest));
         case 42:
            // qDebug() << "CURRENT MISSION IS";
             mavlink_mission_current_t mcurrent;
             mavlink_msg_mission_current_decode(&msg, &mcurrent);
-          //  qDebug() << mcurrent.seq;
+           // qDebug() << mcurrent.seq;
         break;
         case 44:
             qDebug() << "MISSION COUNT RECEIVED";
@@ -102,9 +102,14 @@ void Decoder::parseMessage(mavlink_message_t msg) {
             mavlink_msg_wind_decode(&msg, &wind);
             emit(windReceived(wind));
         break;
+        case 253:
+            mavlink_statustext_t stattext;
+            mavlink_msg_statustext_decode(&msg, &stattext);
+            emit(statTextReceived(stattext));
+        break;
         default:
             //qDebug() << "Message not supported";
-           qDebug() << msg.msgid;
+          // qDebug() << msg.msgid;
             break;
     }
 }

@@ -29,8 +29,7 @@ private:
     QLabel * title, *titleb,*titlec,*titled;
     posLayoutBox *off_axis_odlc_pos, *emergent_last_known_pos, *home_pos, *air_drop_pos;
     fzLayoutBox *fz;
-
-
+    Mission mission;
     clickableQLabel * createTitleBox(QString t);
     QLabel * createTextBox(QString t);
     void createposLayout();

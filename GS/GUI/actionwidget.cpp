@@ -3,21 +3,15 @@
 ActionWidget::ActionWidget(QWidget *parent) : QWidget(parent)
 {
     ui.setupUi(this);
-    connect(ui.armButton, &QPushButton::clicked, this, &ActionWidget::setArm);
+    connect(ui.armButton, &QPushButton::clicked, this, &ActionWidget::armClicked);
     connect(ui.manualButton, &QPushButton::clicked, this, &ActionWidget::setManual);
     connect(ui.guidedButton, &QPushButton::clicked, this, &ActionWidget::setGuided);
     connect(ui.autoButton, &QPushButton::clicked, this, &ActionWidget::setAuto);
     modeButtons << ui.manualButton << ui.guidedButton << ui.autoButton;
 }
 
-void ActionWidget::setLink(UdpLink *l) {
-    link = l;
-}
-
-void ActionWidget::setArm() {
-    mavlink_message_t msg;
-    mavlink_msg_command_long_pack(255, 1, &msg, 1, 0, 400, 1, !armed, 0, 0, 0, 0, 0, 0);
-    link->sendMsg(msg);
+void ActionWidget::armClicked() {
+    emit setArm(armed);
 }
 
 void ActionWidget::setButtonColor(QPushButton * button, QString color) {
@@ -25,7 +19,7 @@ void ActionWidget::setButtonColor(QPushButton * button, QString color) {
 }
 
 void ActionWidget::setButtonOff(QPushButton * button) {
-    button->setStyleSheet("QPushButton{background-color:rgb(200, 200, 200)} QPushButton:pressed{background-color: rgb(235, 235, 235)}");
+    setButtonColor(button, "rgb(200, 200, 200)");
 }
 
 
@@ -52,22 +46,6 @@ void ActionWidget::toggleArmButton(mavlink_heartbeat_t heartbeat) {
             }
         break;
     }
-}
-
-void ActionWidget::setManual() {
-    mavlink_message_t msg;
-    mavlink_msg_set_mode_pack(255,  1 , &msg, 1, 1, 0);
-    link->sendMsg(msg);
-}
-void ActionWidget::setGuided() {
-    mavlink_message_t msg;
-    mavlink_msg_set_mode_pack(255,  1 , &msg, 1, 1, 15);
-    link->sendMsg(msg);
-}
-void ActionWidget::setAuto() {
-    mavlink_message_t msg;
-    mavlink_msg_set_mode_pack(255,  1 , &msg, 1, 1, 10);
-    link->sendMsg(msg);
 }
 
 

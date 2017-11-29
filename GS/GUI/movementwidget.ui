@@ -45,7 +45,7 @@ QLabel#alt, QLabel#loc{
 QLabel#velX, QLabel#velY,QLabel#velZ,QLabel#pitch, QLabel#roll, QLabel#yaw{
 	padding-top:8px;
 	padding-bottom:8px;
-	font-size:11pt;
+	font-size:10pt;
 	background-color: rgb(240, 240, 240);
 };
 </string>
@@ -164,7 +164,7 @@ QLabel#velX, QLabel#velY,QLabel#velZ,QLabel#pitch, QLabel#roll, QLabel#yaw{
      </property>
     </widget>
    </item>
-   <item row="4" column="1" colspan="3">
+   <item row="5" column="1" colspan="3">
     <layout class="QGridLayout" name="gridLayout_2">
      <property name="horizontalSpacing">
       <number>7</number>
@@ -176,7 +176,7 @@ QLabel#velX, QLabel#velY,QLabel#velZ,QLabel#pitch, QLabel#roll, QLabel#yaw{
       <widget class="QLabel" name="velY">
        <property name="font">
         <font>
-         <pointsize>11</pointsize>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -197,7 +197,7 @@ QLabel#velX, QLabel#velY,QLabel#velZ,QLabel#pitch, QLabel#roll, QLabel#yaw{
       <widget class="QLabel" name="velX">
        <property name="font">
         <font>
-         <pointsize>11</pointsize>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -268,7 +268,7 @@ QLabel#velX, QLabel#velY,QLabel#velZ,QLabel#pitch, QLabel#roll, QLabel#yaw{
       <widget class="QLabel" name="velZ">
        <property name="font">
         <font>
-         <pointsize>11</pointsize>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -311,6 +311,22 @@ QLabel#velX, QLabel#velY,QLabel#velZ,QLabel#pitch, QLabel#roll, QLabel#yaw{
       </widget>
      </item>
     </layout>
+   </item>
+   <item row="6" column="2">
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::MinimumExpanding</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>0</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>

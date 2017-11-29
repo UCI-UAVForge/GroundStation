@@ -75,12 +75,6 @@ signals:
      */
 
 public slots:
-    /**
-     * @brief appendRow
-     * @param lat
-     * @param lng
-     */
-    void appendRow(double lat, double lng);
 
     /**
      * @brief removeSelectedRows
@@ -92,10 +86,6 @@ public slots:
      * @brief clearTable
      */
     void clearTable();
-    /**
-     * @brief sendTableSelectionPath
-     */
-    void sendTableSelectionPath();
 };
 
 #endif // TABLEWIDGET_H

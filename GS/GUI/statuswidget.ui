@@ -10,6 +10,12 @@
     <height>300</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
@@ -17,11 +23,11 @@
    <string notr="true">QLabel{
 	color:black;
 	padding:5px;
-	background-color:rgb(211, 211, 211)
+	background-color:rgb(211, 211, 211);
 }
 
 QLabel#batTitle{
-	background-color:rgb(175, 225, 129);
+	background-color: rgb(13, 232, 196);
 	qproperty-alignment: AlignCenter;
 }
 QLabel#connectionTitle {
@@ -33,8 +39,9 @@ QLabel#bat, QLabel#connection{
 	padding-right:5px;
 	padding-top:8px;
 	padding-bottom:8px;
-	font: 12pt;
-	background-color: rgb(240, 240, 240);
+	font: 11pt;
+	background-color: rgb(240,240,240);
+
 }
 
 </string>
@@ -48,6 +55,12 @@ QLabel#bat, QLabel#connection{
    </property>
    <item row="0" column="0">
     <widget class="QLabel" name="batTitle">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="text">
       <string>Battery</string>
      </property>
@@ -56,8 +69,43 @@ QLabel#bat, QLabel#connection{
      </property>
     </widget>
    </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="connectionTitle">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Connection</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="2">
+    <widget class="QLabel" name="connection">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>Disconnected</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
    <item row="0" column="1" colspan="2">
     <widget class="QLabel" name="bat">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="text">
       <string>N/A</string>
      </property>
@@ -66,22 +114,18 @@ QLabel#bat, QLabel#connection{
      </property>
     </widget>
    </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="connectionTitle">
-     <property name="text">
-      <string>Connection</string>
+   <item row="2" column="0">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
      </property>
-    </widget>
-   </item>
-   <item row="1" column="1" colspan="2">
-    <widget class="QLabel" name="connection">
-     <property name="text">
-      <string>Disconnected</string>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>0</height>
+      </size>
      </property>
-     <property name="alignment">
-      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-     </property>
-    </widget>
+    </spacer>
    </item>
   </layout>
  </widget>
