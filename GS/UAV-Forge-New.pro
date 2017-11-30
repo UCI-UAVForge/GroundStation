@@ -48,10 +48,12 @@ SOURCES += \
     $$files(Util/*.cpp, false) \
     $$files(Network/*.cpp, false) \
     $$files(Database/*.cpp, false) \
+    $$files(Util/*.c, false) \
 
 HEADERS  += \
     $$files(GUI/*.h, false) \
     $$files(Util/*.h, false) \
+    $$files(Util/*.hpp, false) \
     $$files(Network/*.h, false) \
     $$files(Database/*.h, false) \
 
