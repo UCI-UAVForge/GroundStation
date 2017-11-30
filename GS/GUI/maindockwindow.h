@@ -30,6 +30,7 @@
 #include "actionwidget.h"
 #include "qfiwidget.h"
 #include "messagewidget.h"
+#include "seriallink.h"
 
 
 #include "encoder.h"

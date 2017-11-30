@@ -16,9 +16,12 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     centralWidget->addWidget(mapWidget);
     setCentralWidget(centralWidget);
 
-    link = new UdpLink();
-    link->startLink();
+//    link = new UdpLink();
+//    link->startLink();
     mission = new Mission();
+
+    link = new seriallink();
+    link->startLink();
 
     Decoder * decoder = new Decoder();
     decoder->setLink(link);
