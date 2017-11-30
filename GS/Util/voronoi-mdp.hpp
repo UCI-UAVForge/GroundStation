@@ -4,7 +4,7 @@
 #include <vector>
 #include "kmedoid.h"
 #include "point.hpp"
-constexpr long POINTS = 1000000;
+constexpr long POINTS = 100;
 static std::vector<Point> get_range(double resolution_distance) {
     std::vector<Point> v(POINTS);
     // generate space matrix points
@@ -21,7 +21,9 @@ static std::vector<Point> get_range(double resolution_distance) {
 
 static double global_occupancy_score(Point p, std::vector<Obstacles> obstacles) {
     int k = obstacles.size();
-
+    if (k == 0) {
+        return 0;
+    }
     double score = 0;
     for (Obstacles o : obstacles) {
         if (p.intersects(o)) {
@@ -34,22 +36,23 @@ static double global_occupancy_score(Point p, std::vector<Obstacles> obstacles) 
 }
 
 static double local_occupancy_score(Point p, std::vector<Obstacles> obstacles) {
-    double score = 0;
-    double x,y,z;
-    x = p.x;
-    y = p.y;
-    z = p.z;
-    for (int i = x-1; i <= x+1; ++i) {
-        for (int j = y-1; j <= y+1; ++j) {
-            for (int k = z-1; k <= z+1; ++k) {
-                score += global_occupancy_score(Point{(double)i,(double)j,(double)k}, obstacles);
-            }
-        }
-    }
-    return score;
+//    double score = 0;
+//    double x,y,z;
+//    x = p.x;
+//    y = p.y;
+//    z = p.z;
+//    for (int i = x-1; i <= x+1; ++i) {
+//        for (int j = y-1; j <= y+1; ++j) {
+//            for (int k = z-1; k <= z+1; ++k) {
+//                score += global_occupancy_score(Point{(double)i,(double)j,(double)k}, obstacles);
+//            }
+//        }
+//    }
+//    return score;
+    return global_occupancy_score(p, obstacles);
 }
 
-static std::map<std::vector<double>, double> gen_map(std::vector<Point> goals, std::vector<Obstacles> obstacles) {
+static std::vector<Point> gen_path(std::vector<Point> goals, std::vector<Obstacles> obstacles) {
     // uav params
     float TURNING_RADIUS = 22; // in meters
     float DELTA = 0.7; // 70% chance of crashing???
@@ -77,6 +80,7 @@ static std::map<std::vector<double>, double> gen_map(std::vector<Point> goals, s
         }
     }
 
+
     // generate milestones with K-Medoids sampling
     int count = sample_list.size();
     point p, pt = (point)malloc(sizeof(point_t) * count);
@@ -95,36 +99,42 @@ static std::map<std::vector<double>, double> gen_map(std::vector<Point> goals, s
     // sort milestones by distance from source point
 
     // generate A* through milestones
-    AStarSearch<Point> astarsearch;
-    Point nodeStart = Point(sample_list.front());
-    Point nodeEnd = Point(sample_list.back());
-    astarsearch.SetStartAndGoalStates( nodeStart, nodeEnd );
+    std::vector<Point> path;
+    for (int i = 1; i < goals.size(); ++i) {
+        AStarSearch<Point> astarsearch;
+        Point nodeStart = goals[i-1];
+        Point nodeEnd = goals[i];
+        nodeStart.setSuccessor(&nodeEnd);
+        astarsearch.SetStartAndGoalStates(nodeStart, nodeEnd);
 
-    unsigned int SearchState;
+        unsigned int SearchState;
 
-    do {
-        astarsearch.SearchStep();
-    }
-    while( SearchState == AStarSearch<Point>::SEARCH_STATE_SEARCHING );
-
-    if( SearchState == AStarSearch<Point>::SEARCH_STATE_SUCCEEDED ) {
-        Point* node = astarsearch.GetSolutionStart();
-        cout << "Displaying solution\n";
-        int steps = 0;
-        node->PrintNodeInfo();
-        for( ;; )
-        {
-            node = astarsearch.GetSolutionNext();
-            if( !node ) break;
-            node->PrintNodeInfo();
-            steps ++;
+        do {
+            SearchState = astarsearch.SearchStep();
         }
-        cout << "Solution steps " << steps << endl;
-        // Once you're done with the solution you can free the nodes up
-        astarsearch.FreeSolutionNodes();
+        while( SearchState == AStarSearch<Point>::SEARCH_STATE_SEARCHING );
+
+        if( SearchState == AStarSearch<Point>::SEARCH_STATE_SUCCEEDED ) {
+            qDebug() << "succeeded";
+            Point* node = astarsearch.GetSolutionStart();
+            int steps = 0;
+            node->PrintNodeInfo();
+            for( ;; )
+            {
+                node = astarsearch.GetSolutionNext();
+                if( !node ) break;
+                path.push_back(*node);
+                qDebug() << node->x;
+                node->PrintNodeInfo();
+                steps ++;
+            }
+            // Once you're done with the solution you can free the nodes up
+//            astarsearch.FreeSolutionNodes();
+        }
+        else if( SearchState == AStarSearch<Point>::SEARCH_STATE_FAILED ) {
+            cout << "Search terminated. Did not find goal state\n";
+        }
     }
-    else if( SearchState == AStarSearch<Point>::SEARCH_STATE_FAILED ) {
-        cout << "Search terminated. Did not find goal state\n";
-    }
-    astarsearch.EnsureMemoryFreed();
+
+    return path;
 }

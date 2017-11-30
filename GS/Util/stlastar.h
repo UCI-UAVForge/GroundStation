@@ -245,7 +245,6 @@ public: // methods
 
                         // delete nodes that aren't needed for the solution
                         FreeUnusedNodes();
-
                         m_State = SEARCH_STATE_SUCCEEDED;
 
                         return m_State;

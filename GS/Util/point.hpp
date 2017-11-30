@@ -1,6 +1,7 @@
 #ifndef POINT_HPP
 #define POINT_HPP
 #include "stlastar.h"
+#include <cstdio>
 template<typename T>
 using triple = std::tuple<T, T, T>;
 
@@ -17,15 +18,22 @@ public:
     static double euclidian_distance(Point a, Point b) {
         return sqrt(std::pow(a.x - b.x, 2) + std::pow(a.y - b.y, 2) + std::pow(a.z - b.z, 2));
     }
+    void setSuccessor(Point* p) { successor = p; }
 
     // astar methods
+    Point* successor = nullptr;
     float GoalDistanceEstimate( Point &nodeGoal );
     bool IsGoal( Point &nodeGoal );
     bool GetSuccessors( AStarSearch<Point> *astarsearch, Point *parent_node );
     float GetCost( Point &successor );
     bool IsSameState( Point &rhs );
 
-    void PrintNodeInfo();
+    void PrintNodeInfo(FILE *stream) {
+//        fprintf(stream, "x: %s, y: %s, z: %s\n", x, y, z);
+    }
+    void PrintNodeInfo() {
+//        PrintNodeInfo(stdout);
+    }
 };
 
 bool Point::intersects(Point p) {
@@ -75,13 +83,17 @@ bool Point::IsGoal( Point &nodeGoal ) {
     return (x == nodeGoal.x) && (y == nodeGoal.y) && (z = nodeGoal.z);
 }
 bool Point::GetSuccessors( AStarSearch<Point> *astarsearch, Point *parent_node ) {
+    if (successor) {
+        astarsearch->AddSuccessor(*successor);
+        return true;
+    }
     return false;
 }
 float Point::GetCost( Point &successor ) {
     return GoalDistanceEstimate(successor);
 }
 bool Point::IsSameState( Point &rhs ) {
-    return IsGoal(rhs);
+    return (x == rhs.x) && (y == rhs.y) && (z = rhs.z);
 }
 
 #endif // POINT_HPP

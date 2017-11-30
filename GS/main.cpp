@@ -3,7 +3,7 @@
 #include <QtSvg>
 
 #include "maindockwindow.h"
-
+#include "voronoi-mdp.hpp"
 
 int main(int argc, char *argv[]) {
 
@@ -25,15 +25,17 @@ int main(int argc, char *argv[]) {
     svg.render(&painter, pixmap.rect());
     //Construct and show the splash screen
     QSplashScreen splash(pixmap);
-   // splash.show();
-
+    // splash.show();
+    gen_path(std::vector<Point>{Point{1,1,1}, Point{1,1,1}, Point{3,3,3}}, std::vector<Obstacles>());
 
 //    MainMDIDisplay x;
+    /*
     MainDockWindow dockWindow;
     //x.showNormal();
     dockWindow.showNormal();
     //Hide the splash screen.
     splash.finish(&dockWindow);
+    */
     return a.exec();
 }
 
