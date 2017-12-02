@@ -4,16 +4,13 @@
 #include <vector>
 #include "kmedoid.h"
 #include "point.hpp"
-<<<<<<< HEAD:GS/Util/voronoi-mdp.cpp
-const long NPOINTS = 1000000;
-=======
+
 constexpr long POINTS = 100;
->>>>>>> refs/remotes/origin/master:GS/Util/voronoi-mdp.hpp
 static std::vector<Point> get_range(double resolution_distance) {
-    std::vector<Point> v(NPOINTS);
+    std::vector<Point> v(POINTS);
     // generate space matrix points
     // let's just generate random points for now
-    for (int i = 0; i < NPOINTS; ++i) {
+    for (int i = 0; i < POINTS; ++i) {
         float alpha = randf(2 * M_PI);
         float beta = randf(2 * M_PI);
         float gamma = randf(2 * M_PI);

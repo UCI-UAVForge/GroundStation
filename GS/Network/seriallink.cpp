@@ -1,31 +1,45 @@
 #include "seriallink.h"
 #include <QDebug>
+#include <QSerialPortInfo>
 
-seriallink::seriallink(){
+SerialLink::SerialLink(){
 
 }
-void seriallink::startLink() {
-    link = new QSerialPort();
-    link->setPortName("COM4");
-    link->setBaudRate(QSerialPort::Baud9600);
-    link->setDataBits(QSerialPort::Data8);
-    link->setParity(QSerialPort::NoParity);
-    link->setStopBits(QSerialPort::OneStop);
-    link->setFlowControl(QSerialPort::NoFlowControl);
-    if (link->open(QIODevice::ReadWrite)) {
-        qDebug() << "Connected";
-    } else {
-       qDebug() << "no.";
+void SerialLink::startLink() {
+    serialPort = new QSerialPort();
+    for (auto e: QSerialPortInfo::availablePorts()) {
+        qDebug() << "Serial Port: " << e.portName();
+        serialPort->setPortName(e.portName());
     }
-    connect(link, &QSerialPort::readyRead, this, &seriallink::recvData);
+    serialPort->setBaudRate(QSerialPort::Baud57600);
+    serialPort->setDataBits(QSerialPort::Data8);
+    serialPort->setParity(QSerialPort::NoParity);
+    serialPort->setStopBits(QSerialPort::OneStop);
+    serialPort->setFlowControl(QSerialPort::NoFlowControl);
+    if (serialPort->open(QIODevice::ReadWrite)) {
+        qDebug() <<"works";
+    }
+    else {
+        qDebug() << serialPort->errorString();
+    }
+    connect(serialPort, &QSerialPort::readyRead, this, &SerialLink::recvData);
 }
-void seriallink::sendData(mavlink_message_t msg) {}
+void SerialLink::sendData(mavlink_message_t msg) {
+    QByteArray datagram;
+    uint8_t buf[MAVLINK_MAX_PAYLOAD_LEN];
+    uint8_t len;
+    len = mavlink_msg_to_send_buffer(buf, &msg);
+    datagram = QByteArray((char*)buf, len);
+    if (serialPort->isOpen()) {
+        serialPort->write(datagram);
+    }
+}
 
-void seriallink::recvData() {
+void SerialLink::recvData() {
     bool msgReceived = false;
     mavlink_message_t msg;
     mavlink_status_t status;
-    QByteArray datagram  = link->readAll();// probably have to do with the readall()
+    QByteArray datagram  = serialPort->readAll();// probably have to do with the readall()
     for (int i = 0; i < datagram.size(); i++) { // size of the packet
         if(mavlink_parse_char(1, datagram.data()[i], &msg, &status)) {
             msgReceived = true;
@@ -33,6 +47,6 @@ void seriallink::recvData() {
         }
     }
     if (!msgReceived) {
-        //QTextStream(stdout) << "Message incomplete" << endl;
+        QTextStream(stdout) << "Message incomplete" << endl;
     }
 }
