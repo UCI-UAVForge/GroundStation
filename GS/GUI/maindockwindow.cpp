@@ -20,7 +20,7 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
 //    link->startLink();
     mission = new Mission();
 
-    link = new seriallink();
+    link = new SerialLink();
     link->startLink();
 
     Decoder * decoder = new Decoder();

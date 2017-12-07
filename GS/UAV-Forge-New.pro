@@ -11,8 +11,6 @@ QT       += core \
             network
 QT       += svg
 QT       += sql
-QT       += webengine
-QT       += webenginewidgets
 QT       += webchannel
 QT       += websockets
 QT       += widgets

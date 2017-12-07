@@ -29,13 +29,12 @@ int main(int argc, char *argv[]) {
     gen_path(std::vector<Point>{Point{1,1,1}, Point{1,1,1}, Point{3,3,3}}, std::vector<Obstacles>());
 
 //    MainMDIDisplay x;
-    /*
     MainDockWindow dockWindow;
     //x.showNormal();
     dockWindow.showNormal();
     //Hide the splash screen.
     splash.finish(&dockWindow);
-    */
+
     return a.exec();
 }
 

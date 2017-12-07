@@ -3,7 +3,7 @@
 #include <math.h>
 
 typedef struct { double x, y, z; int group; } point_t, *point;
-float M_PI = 3.14159265;
+
 
 double randf(double m)
 {

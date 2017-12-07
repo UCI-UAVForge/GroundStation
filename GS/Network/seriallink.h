@@ -6,10 +6,10 @@
 #include <QtSerialPort/QSerialPort>
 #include "mavlink.h"
 
-class seriallink : public Link {
+class SerialLink : public Link {
 public:
-    QSerialPort * link;
-    seriallink();
+    QSerialPort * serialPort;
+    SerialLink();
     void startLink();
     void sendData(mavlink_message_t msg);
     void recvData();

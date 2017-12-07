@@ -12,6 +12,7 @@ void Decoder::parseMessage(mavlink_message_t msg) {
             mavlink_heartbeat_t heartbeat;
             mavlink_msg_heartbeat_decode(&msg, &heartbeat);
             emit(heartbeatReceived(heartbeat));
+            qDebug() << heartbeat.custom_mode;
         break;
         case 1:
             mavlink_sys_status_t status;
@@ -109,7 +110,7 @@ void Decoder::parseMessage(mavlink_message_t msg) {
         break;
         default:
             //qDebug() << "Message not supported";
-          // qDebug() << msg.msgid;
+        //   qDebug() << msg.msgid;
             break;
     }
 }
