@@ -8,7 +8,8 @@ Mission::Mission(QObject *parent) : QObject(parent){}
 //    this->initValues();
 //}
 
-void Mission::setMission(QJsonDocument jsonDoc) {
+void Mission::setMission(QJsonDocument jsonD) {
+    jsonDoc = jsonD;
     QJsonObject obj = jsonDoc.object();
     off_axis_odlc_pos = obj["off_axis_odlc_pos"].toObject();
     search_grid_points = obj["search_grid_points"].toArray();
@@ -19,7 +20,6 @@ void Mission::setMission(QJsonDocument jsonDoc) {
     id = obj["id"].toInt();
     home_pos = obj["home_pos"].toObject();
     air_drop_pos = obj["home_pos"].toObject();
-    qDebug() << mission_waypoints;
 }
 
 
@@ -178,7 +178,8 @@ void Mission::loadMissionObjects(QQuickWidget * mapWidget){
                 Q_ARG(QVariant, search_grid_points[i].toObject()["latitude"].toVariant()),
                 Q_ARG(QVariant, search_grid_points[i].toObject()["longitude"].toVariant()),
                 Q_ARG(QVariant, "/2"),
-                Q_ARG(QVariant, ""));
+                Q_ARG(QVariant, ""),
+                Q_ARG(QVariant, "1"));
     }
     if (search_grid_points.size() > 1){
         pathlat.append(search_grid_points[0].toObject()["latitude"]);
@@ -190,10 +191,11 @@ void Mission::loadMissionObjects(QQuickWidget * mapWidget){
                                   Q_ARG(QVariant, "blue"),
                                   Q_ARG(QVariant, pathlat),
                                   Q_ARG(QVariant, pathlon),
-                                  Q_ARG(QVariant, search_grid_points.size()));
+                                  Q_ARG(QVariant, search_grid_points.size()),
+                                  Q_ARG(QVariant, "1"));
     }
-    Clear(pathlat);
-    Clear(pathlon);
+    clearArr(pathlat);
+    clearArr(pathlon);
 
 
     //-----------------------------------------------------Mission Waypoints------------------------------------------------
@@ -204,7 +206,8 @@ void Mission::loadMissionObjects(QQuickWidget * mapWidget){
                 Q_ARG(QVariant, mission_waypoints[i].toObject()["latitude"].toVariant()),
                 Q_ARG(QVariant, mission_waypoints[i].toObject()["longitude"].toVariant()),
                 Q_ARG(QVariant, "/2"),
-                Q_ARG(QVariant, ""));
+                Q_ARG(QVariant, ""),
+                Q_ARG(QVariant, "1"));
     }
     if (mission_waypoints.size() > 1){
         pathlat.append(mission_waypoints[0].toObject()["latitude"]);
@@ -216,10 +219,11 @@ void Mission::loadMissionObjects(QQuickWidget * mapWidget){
                                   Q_ARG(QVariant, "blue"),
                                   Q_ARG(QVariant, pathlat),
                                   Q_ARG(QVariant, pathlon),
-                                  Q_ARG(QVariant, mission_waypoints.size()));
+                                  Q_ARG(QVariant, mission_waypoints.size()),
+                                  Q_ARG(QVariant, "1"));
     }
-    Clear(pathlat);
-    Clear(pathlon);
+    clearArr(pathlat);
+    clearArr(pathlon);
 
     //-----------------------------------------------------No-Fly Zone Boundary Points (also contains max/min altitude)------------------------------------------------
     for(int i=0; i<fly_zones.size();++i){
@@ -234,7 +238,8 @@ void Mission::loadMissionObjects(QQuickWidget * mapWidget){
                     Q_ARG(QVariant, temp3[j].toObject()["latitude"].toVariant()),
                     Q_ARG(QVariant, temp3[j].toObject()["longitude"].toVariant()),
                     Q_ARG(QVariant, "/2"),
-                    Q_ARG(QVariant, ""));
+                    Q_ARG(QVariant, ""),
+                    Q_ARG(QVariant, "1"));
         }
 
 
@@ -248,7 +253,8 @@ void Mission::loadMissionObjects(QQuickWidget * mapWidget){
                                       Q_ARG(QVariant, "yellow"),
                                       Q_ARG(QVariant, pathlat),
                                       Q_ARG(QVariant, pathlon),
-                                      Q_ARG(QVariant, temp3.size()+1));
+                                      Q_ARG(QVariant, temp3.size()+1),
+                                      Q_ARG(QVariant, "1"));
         }
 
     }
@@ -260,7 +266,8 @@ void Mission::loadMissionObjects(QQuickWidget * mapWidget){
             Q_ARG(QVariant, off_axis_odlc_pos["latitude"].toVariant()),
             Q_ARG(QVariant, off_axis_odlc_pos["longitude"].toVariant()),
             Q_ARG(QVariant, "/2"),
-            Q_ARG(QVariant, "/2"));
+            Q_ARG(QVariant, "/2"),
+            Q_ARG(QVariant, "1"));
 
     //-----------------------------------------------------Emergent Last Known Position------------------------------------------------
     QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
@@ -269,7 +276,8 @@ void Mission::loadMissionObjects(QQuickWidget * mapWidget){
             Q_ARG(QVariant, emergent_last_known_pos["latitude"].toVariant()),
             Q_ARG(QVariant, emergent_last_known_pos["longitude"].toVariant()),
             Q_ARG(QVariant, "/2"),
-            Q_ARG(QVariant, "/2"));
+            Q_ARG(QVariant, "/2"),
+            Q_ARG(QVariant, "1"));
 
     //-----------------------------------------------------Home Position------------------------------------------------
     QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
@@ -278,7 +286,8 @@ void Mission::loadMissionObjects(QQuickWidget * mapWidget){
             Q_ARG(QVariant, home_pos["latitude"].toVariant()),
             Q_ARG(QVariant, home_pos["longitude"].toVariant()),
             Q_ARG(QVariant, "/2"),
-            Q_ARG(QVariant, "/2"));
+            Q_ARG(QVariant, "/2"),
+            Q_ARG(QVariant, "1"));
 
     //-----------------------------------------------------Air Drop Position------------------------------------------------
     QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
@@ -287,13 +296,34 @@ void Mission::loadMissionObjects(QQuickWidget * mapWidget){
             Q_ARG(QVariant, air_drop_pos["latitude"].toVariant()),
             Q_ARG(QVariant, air_drop_pos["longitude"].toVariant()),
             Q_ARG(QVariant, "/2"),
-            Q_ARG(QVariant, "/2"));
+            Q_ARG(QVariant, "/2"),
+            Q_ARG(QVariant, "1"));
 
 
 }
 
-void Mission::Clear(QJsonArray &arr){
+void Mission::clearArr(QJsonArray &arr){
     for (int i=0; i<arr.size(); ++i){
         arr.removeFirst();
     }
+}
+
+
+void Mission::clearMission(QQuickWidget * mapWidget){
+    int size = mapWidget->rootObject()->childItems().back()->childItems().length();
+    for (int i=0; i<size; ++i){
+        if (mapWidget->rootObject()->childItems().back()->childItems()[i]->property("someNumber") == 1){
+            delete mapWidget->rootObject()->childItems().back()->childItems()[i];
+            --i;
+            --size;
+        }
+    }
+}
+
+void Mission::printJDoc(){
+    qDebug()<<jsonDoc;
+}
+
+bool Mission::DNE(){
+    return jsonDoc.isEmpty();
 }

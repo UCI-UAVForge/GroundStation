@@ -4,11 +4,17 @@
 MovementWidget::MovementWidget(QWidget *parent) : QWidget(parent)
 {
     ui.setupUi(this);
+    uav = new UAV();
+}
+
+MovementWidget::~MovementWidget(){
+
 }
 
 void MovementWidget::updateTelemetry(mavlink_gps_raw_int_t gps) {
     ui.alt->setText(QString::number((float)gps.alt/1000,'f', 4) + " m.");
     ui.loc->setText(QString::number((float)gps.lat/10000000, 'f', 4) + ", " + QString::number((float)gps.lon/10000000, 'f', 4));
+    uav->updateUAV((float)gps.lat/10000000, (float)gps.lon/10000000);
 }
 
 void MovementWidget::updateAttitude(mavlink_attitude_t att) {
@@ -37,4 +43,8 @@ void MovementWidget::mousePressEvent(QMouseEvent *event) {
 
 //    }
 
+}
+
+void MovementWidget::setUAVMap(QQuickWidget *map){
+    uav->setWidget(map);
 }

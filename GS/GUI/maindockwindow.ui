@@ -62,7 +62,7 @@ QToolButton:hover {
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -161,6 +161,15 @@ QToolButton:hover {
     <bool>false</bool>
    </attribute>
   </widget>
+  <widget class="QDockWidget" name="FlightPathDock">
+   <property name="windowTitle">
+    <string>FlightPath</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="FlightPathWidget" name="flightPathWidget"/>
+  </widget>
   <zorder>actionDock</zorder>
   <zorder>timerDock</zorder>
   <zorder>statusDock</zorder>
@@ -168,6 +177,7 @@ QToolButton:hover {
   <zorder>qfiDock</zorder>
   <zorder>graphDock</zorder>
   <zorder>messageDock</zorder>
+  <zorder>FlightPathDock</zorder>
  </widget>
  <customwidgets>
   <customwidget>
@@ -210,6 +220,12 @@ QToolButton:hover {
    <class>MessageWidget</class>
    <extends>QWidget</extends>
    <header>messagewidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FlightPathWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">flightpathwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

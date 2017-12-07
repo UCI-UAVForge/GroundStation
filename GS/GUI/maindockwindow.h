@@ -27,6 +27,7 @@
 #include "movementwidget.h"
 #include "statuswidget.h"
 #include "missiondetailswindow.h"
+#include "flightpathwidget.h"
 #include "actionwidget.h"
 #include "qfiwidget.h"
 #include "messagewidget.h"

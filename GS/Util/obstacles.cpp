@@ -35,7 +35,8 @@ void Obstacles::loadStationaryObjects(QQuickWidget * mapWidget){
                 Q_ARG(QVariant, stationary_obstacles[i].toObject()["latitude"].toVariant()),
                 Q_ARG(QVariant, stationary_obstacles[i].toObject()["longitude"].toVariant()),
                 Q_ARG(QVariant, "/2"),
-                Q_ARG(QVariant, "/2"));
+                Q_ARG(QVariant, "/2"),
+                Q_ARG(QVariant, "0"));
     }
 }
 
@@ -50,6 +51,7 @@ void Obstacles::updateMovingObjects(QQuickWidget * mapWidget){
                 Q_ARG(QVariant, moving_obstacles[i].toObject()["latitude"].toVariant()),
                 Q_ARG(QVariant, moving_obstacles[i].toObject()["longitude"].toVariant()),
                 Q_ARG(QVariant, "/2"),
-                Q_ARG(QVariant, "/2"));
+                Q_ARG(QVariant, "/2"),
+                Q_ARG(QVariant, "0"));
     }
 }
