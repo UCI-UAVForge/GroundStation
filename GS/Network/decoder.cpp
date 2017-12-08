@@ -23,9 +23,10 @@ void Decoder::parseMessage(mavlink_message_t msg) {
             mavlink_system_time_t systime;
             mavlink_msg_system_time_decode(&msg, &systime);
         break;
-        case MAVLINK_MSG_ID_GPS2_RAW:
+        case MAVLINK_MSG_ID_GPS_RAW_INT:
             mavlink_gps_raw_int_t gps;
             mavlink_msg_gps_raw_int_decode(&msg, &gps);
+            qDebug() << "AHJSFJ";
             emit(gpsReceived(gps));
         break;
         case MAVLINK_MSG_ID_SCALED_IMU:
@@ -118,11 +119,11 @@ void Decoder::parseMessage(mavlink_message_t msg) {
 void Decoder::parseCmdAck(mavlink_command_ack_t cmdAck) {
     switch(cmdAck.command) {
         case MAV_CMD_DO_SET_MODE:
-            if(cmdAck.result == 0)
+            if(cmdAck.result == MAV_RESULT_ACCEPTED)
                 emit(modeChanged());
         break;
         case MAV_CMD_COMPONENT_ARM_DISARM:
-            if(cmdAck.result == 0)
+            if(cmdAck.result == MAV_RESULT_ACCEPTED)
                 emit(armSuccess());
             else
                 emit(armFailed());
