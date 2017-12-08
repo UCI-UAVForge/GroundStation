@@ -8,6 +8,13 @@ void UAV::setWidget(QQuickWidget * map){
 }
 
 void UAV::updateUAV(float x, float y){
+    for (int i=0; i<size; ++i){
+        if (mapWidget->rootObject()->childItems().back()->childItems()[i]->property("someNumber") == 2){
+            delete mapWidget->rootObject()->childItems().back()->childItems()[i];
+            --i;
+            --size;
+        }
+    }
     QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
             Q_ARG(QVariant, ""),
             Q_ARG(QVariant, "images/red_circle"),
@@ -15,5 +22,5 @@ void UAV::updateUAV(float x, float y){
             Q_ARG(QVariant, y),
             Q_ARG(QVariant, "/2"),
             Q_ARG(QVariant, "/2"),
-            Q_ARG(QVariant, "Mission"));
+            Q_ARG(QVariant, "2"));
 }
