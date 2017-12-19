@@ -39,8 +39,8 @@ void SerialLink::recvData() {
     bool msgReceived = false;
     mavlink_message_t msg;
     mavlink_status_t status;
-    QByteArray datagram  = serialPort->readAll();// probably have to do with the readall()
-    for (int i = 0; i < datagram.size(); i++) { // size of the packet
+    QByteArray datagram  = serialPort->readAll();
+    for (int i = 0; i < datagram.size(); i++) {
         if(mavlink_parse_char(1, datagram.data()[i], &msg, &status)) {
             msgReceived = true;
             emit messageReceived(msg);

@@ -12,7 +12,7 @@ void Decoder::parseMessage(mavlink_message_t msg) {
             mavlink_heartbeat_t heartbeat;
             mavlink_msg_heartbeat_decode(&msg, &heartbeat);
             emit(heartbeatReceived(heartbeat));
-            qDebug() << heartbeat.custom_mode;
+            qDebug() << "decoder.cpp::" << heartbeat.custom_mode;
         break;
         case 1:
             mavlink_sys_status_t status;
@@ -63,16 +63,31 @@ void Decoder::parseMessage(mavlink_message_t msg) {
            // qDebug() << mcurrent.seq;
         break;
         case 44:
-            qDebug() << "MISSION COUNT RECEIVED";
             mavlink_mission_count_t mcount;
             mavlink_msg_mission_count_decode(&msg, &mcount);
             qDebug() << mcount.count;
+            qDebug() << "DECODER:MISSION COUNT RECEIVED";
+            emit(missionCountReceived(mcount));
+        break;
+        case 45:
+            mavlink_mission_clear_all_t mission_clear_all;
+            mavlink_msg_mission_clear_all_decode(&msg, &mission_clear_all);
+            emit(mClearAllReceived(mission_clear_all));
+        break;
+        case 47:
+            mavlink_mission_ack_t mission_ack;
+            mavlink_msg_mission_ack_decode(&msg, &mission_ack);
+            emit(mAckReceived(mission_ack));
         break;
         case 62:
             mavlink_nav_controller_output_t nav;
             mavlink_msg_nav_controller_output_decode(&msg, &nav);
             emit(navReceived(nav));
         break;
+        case 73:
+            mavlink_mission_item_int_t mission_item;
+            mavlink_msg_mission_item_int_decode(&msg, &mission_item);
+            emit(missionItemReceived(mission_item));
         case 74:
             mavlink_vfr_hud_t vfr_hud;
             mavlink_msg_vfr_hud_decode(&msg, &vfr_hud);
@@ -109,8 +124,8 @@ void Decoder::parseMessage(mavlink_message_t msg) {
             emit(statTextReceived(stattext));
         break;
         default:
-            //qDebug() << "Message not supported";
-        //   qDebug() << msg.msgid;
+//            qDebug() << "Message not supported";
+//            qDebug() << msg.msgid;
             break;
     }
 }

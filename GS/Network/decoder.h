@@ -30,6 +30,10 @@ signals:
     void localPositionReceived(mavlink_local_position_ned_t);
     void statTextReceived(mavlink_statustext_t);
     void mrequestReceived(mavlink_mission_request_t mrequest);
+    void mAckReceived(mavlink_mission_ack_t mission_ack);
+    void mClearAllReceived(mavlink_mission_clear_all_t mission_clear_all);
+    void missionCountReceived(mavlink_mission_count_t mcount);
+    void missionItemReceived(mavlink_mission_item_int_t mission_item);
 
     void armSuccess();
     void armFailed();

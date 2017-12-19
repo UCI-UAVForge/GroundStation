@@ -5,12 +5,12 @@
 #include "kmedoid.h"
 #include "point.hpp"
 
-constexpr long POINTS = 100;
+const long NPOINTS = 100;
 static std::vector<Point> get_range(double resolution_distance) {
-    std::vector<Point> v(POINTS);
+    std::vector<Point> v(NPOINTS);
     // generate space matrix points
     // let's just generate random points for now
-    for (int i = 0; i < POINTS; ++i) {
+    for (int i = 0; i < NPOINTS; ++i) {
         float alpha = randf(2 * M_PI);
         float beta = randf(2 * M_PI);
         float gamma = randf(2 * M_PI);

@@ -2,7 +2,6 @@
 #include "ui_maindockwindow.h"
 #include <QDebug>
 #include <QQuickItem>
-#include "qfi_ASI.h"
 #include <QtCore>
 #include <QMargins>
 
@@ -16,12 +15,12 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     centralWidget->addWidget(mapWidget);
     setCentralWidget(centralWidget);
 
-//    link = new UdpLink();
-//    link->startLink();
+    link = new UdpLink();
+    link->startLink();
     mission = new Mission();
 
-    link = new SerialLink();
-    link->startLink();
+//    link = new SerialLink();
+//    link->startLink();
 
     Decoder * decoder = new Decoder();
     decoder->setLink(link);
@@ -53,6 +52,14 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     }
     ui->actionWidget->setAttribute(Qt::WA_TranslucentBackground);
     ui->actionDock->setAttribute(Qt::WA_TranslucentBackground);
+
+    Waypoint * waypoint = new Waypoint(this);
+    connectWaypoint(waypoint);
+    if (waypoint->clearAllWaypoints() == 1) {
+        qDebug() << "GOOD JOB :D";
+    } else {
+        qDebug() << "Not cleared :C";
+    }
 }
 
 void MainDockWindow::addToolBarButtons() {
@@ -80,11 +87,21 @@ void MainDockWindow::connectDecoder(Decoder * decoder) {
 void MainDockWindow::connectEncoder(Encoder * encoder) {
     connect(ui->actionWidget, &ActionWidget::setArm, encoder, &Encoder::sendArm);
     connect(ui->actionWidget, &ActionWidget::setAuto, encoder, &Encoder::sendSetAuto);
-    connect(ui->actionWidget, &ActionWidget::setGuided, encoder, &Encoder::sendSetGuided);
+    connect(ui->actionWidget, &ActionWidget::setGuided, encoder, &Encoder::sendClearAll);
     connect(ui->actionWidget, &ActionWidget::setManual, encoder, &Encoder::sendSetManual);
     connect(mission, &Mission::loadToUAV, encoder, &Encoder::sendMissionItem);
     connect(this, &MainDockWindow::what, encoder, &Encoder::sendMissionCount);
 
+}
+
+void MainDockWindow::connectWaypoint(Waypoint * waypoint) {
+    connect(waypoint, &Waypoint::reqClearAll, encoder, &Encoder::sendClearAll);
+    connect(waypoint, &Waypoint::reqList, encoder, &Encoder::sendWP_RequestList);
+    connect(waypoint, &Waypoint::reqWP, encoder, &Encoder::sendWP_Request);
+    connect(waypoint, &Waypoint::sendAck, encoder, &Encoder::sendWP_ACK);
+    connect(decoder, &Decoder::mAckReceived, waypoint, &Waypoint::updateMissionAck);
+    connect(decoder, &Decoder::missionCountReceived, waypoint, &Waypoint::updateMissionCount);
+    connect(decoder, &Decoder::missionItemReceived, waypoint, &Waypoint::updateMissionItem);)
 }
 
 void MainDockWindow::test() {

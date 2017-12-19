@@ -48,6 +48,7 @@ SOURCES += \
     $$files(Network/*.cpp, false) \
     $$files(Database/*.cpp, false) \
     $$files(Util/*.c, false) \
+    Network/wyp.cpp
 
 HEADERS  += \
     $$files(GUI/*.h, false) \
@@ -55,6 +56,7 @@ HEADERS  += \
     $$files(Util/*.hpp, false) \
     $$files(Network/*.h, false) \
     $$files(Database/*.h, false) \
+    Network/wyp.h
 
 FORMS    += \
     $$files(GUI/*.ui, false) \

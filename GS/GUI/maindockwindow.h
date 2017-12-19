@@ -31,8 +31,7 @@
 #include "qfiwidget.h"
 #include "messagewidget.h"
 #include "seriallink.h"
-
-
+#include "wyp.h"
 #include "encoder.h"
 #include "tcplink.h"
 #include "udplink.h"
@@ -62,6 +61,7 @@ public:
     void addToolBarButtons();
     void connectDecoder(Decoder * decoder);
     void connectEncoder(Encoder * encoder);
+    void connectWaypoint(Waypoint * waypoint);
 signals:
     void what(int i);
 private slots:
