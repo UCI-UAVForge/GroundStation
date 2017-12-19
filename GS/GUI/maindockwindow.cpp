@@ -39,14 +39,12 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     QLabel * n = new QLabel();
     bdock->setTitleBarWidget(n);
 
+    ui->movementWidget->setUAVMap(mapWidget);
     try{
         interop = new Interop("testuser","testpass");
-        missionDetailsWindow * mdw = new missionDetailsWindow(this,interop,mapWidget);
-        QDockWidget * missionDetailsDock = createDockWidget("Mission Details",Qt::BottomDockWidgetArea, mdw, this);
-        missionDetailsDock->setVisible(true);
+        ui->flightPathWidget->updateStuff(interop,mapWidget);
         Obstacles obstacles = interop->getObstacles();
         obstacles.loadStationaryObjects(mapWidget);
-        qDebug()<<mapWidget;
     } catch (QNetworkReply::NetworkError err) {
         qDebug() << "! Not loading map objects: " << err;
     }
@@ -74,6 +72,7 @@ void MainDockWindow::connectDecoder(Decoder * decoder) {
     connect(decoder, &Decoder::attReceived, ui->qfiWidget, &QFIWidget::updateAttitude);
     connect(decoder, &Decoder::pressureReceived, ui->qfiWidget, &QFIWidget::updatePressure);
     connect(decoder, &Decoder::gpsReceived, ui->movementWidget, &MovementWidget::updateTelemetry);
+    //connect (decoder, &Decoder::gpsReceived, uav, &UAV::updatepos);
     connect(decoder, &Decoder::attReceived, ui->movementWidget, &MovementWidget::updateAttitude);
     connect(decoder, &Decoder::localPositionReceived, ui->movementWidget, &MovementWidget::updateLocalPosition);
     connect(decoder, &Decoder::gpsReceived, ui->graphWidget, &GraphWidget::appendTelemData);

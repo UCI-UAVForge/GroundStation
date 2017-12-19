@@ -6,6 +6,7 @@
 #include "mavlink.h"
 #include "ui_movementwidget.h"
 #include <QHBoxLayout>
+#include "uav.h"
 #include <QDebug>
 
 class MovementWidget : public QWidget
@@ -13,9 +14,13 @@ class MovementWidget : public QWidget
     Q_OBJECT
 public:
     explicit MovementWidget(QWidget *parent = nullptr);
+    ~MovementWidget();
     QGridLayout *layout;
     Ui::MovementWidget ui;
     void mousePressEvent(QMouseEvent *) override;
+    void setUAVMap(QQuickWidget * map);
+private:
+    UAV * uav;
 
 signals:
 

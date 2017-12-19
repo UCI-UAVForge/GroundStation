@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MissionDetailsWindow</class>
+ <widget class="QWidget" name="MissionDetailsWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="Mission_">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton:pressed {
+    border-style: inset;
+}</string>
+   </property>
+   <property name="text">
+    <string>Mission _</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="SearchGridPoints">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>90</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton:pressed {
+    border-style: inset;
+}</string>
+   </property>
+   <property name="text">
+    <string>Search Grid Points</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="MissionWayPoints">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>160</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton:pressed {
+    border-style: inset;
+}</string>
+   </property>
+   <property name="text">
+    <string>Mission Way Points</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="FlyZones">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>230</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton:pressed {
+    border-style: inset;
+}</string>
+   </property>
+   <property name="text">
+    <string>Fly Zones</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

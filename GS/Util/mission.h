@@ -42,13 +42,16 @@ public:
     QJsonObject get_home_pos();
     QJsonObject get_air_drop_pos();
     void loadMissionObjects(QQuickWidget * mapWidget);
+    void clearMission(QQuickWidget * mapWidget);
+    void printJDoc();
+    bool DNE();
 
 signals:
     void loadToUAV(int seq, int cmd, float params[]);
 
 private:
     void initValues();
-    void Clear(QJsonArray &arr);
+    void clearArr(QJsonArray &arr);
     QJsonDocument jsonDoc;
     QJsonObject off_axis_odlc_pos;
     QJsonArray search_grid_points;
