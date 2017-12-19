@@ -78,7 +78,7 @@ void Encoder::sendSetInitialising() {
     link->sendData(msg);
 }
 
-void Encoder::sendMissionCount(int count) {
+void Encoder::sendMissionCount(uint16_t count) {
     mavlink_message_t msg;
     mavlink_msg_mission_count_pack(SYS, COM, &msg, 1, 0, count);
     link->sendData(msg);
@@ -99,24 +99,29 @@ void Encoder::sendMissionItem(int seq, int cmd, float params[]) {
 void Encoder::sendClearAll() {
     mavlink_message_t msg;
     mavlink_msg_mission_clear_all_pack(SYS, COM, &msg, 1, 0);
-    qDebug() << "encoder.cpp:: Request to clear all waypoints to be sent";
     link->sendData(msg);
 }
 
-void Encoder::sendWP_RequestList() {
+void Encoder::sendMissionRequestList() {
     mavlink_message_t msg;
     mavlink_msg_mission_request_list_pack(SYS, COM, &msg, 1, 0);
     link->sendData(msg);
 }
 
-void Encoder::sendWP_Request(uint16_t i) {
+void Encoder::sendMissionRequest(uint16_t i) {
     mavlink_message_t msg;
     mavlink_msg_mission_request_pack(SYS, COM, &msg, 1, 0, i);
     link->sendData(msg);
 }
 
-void Encoder::sendWP_ACK(uint16_t type) {
+void Encoder::sendMissionACK(uint16_t type) {
     mavlink_message_t msg;
     mavlink_msg_mission_ack_pack(SYS, COM, &msg, 1, 0, type);
+    link->sendData(msg);
 }
 
+void Encoder::sendMissionSetCurrent(uint16_t seq) {
+    mavlink_message_t msg;
+    mavlink_msg_mission_set_current_pack(SYS, COM, &msg, 1, 0, seq);
+    link->sendData(msg);
+}

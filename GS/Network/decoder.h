@@ -34,6 +34,7 @@ signals:
     void mClearAllReceived(mavlink_mission_clear_all_t mission_clear_all);
     void missionCountReceived(mavlink_mission_count_t mcount);
     void missionItemReceived(mavlink_mission_item_int_t mission_item);
+    void missionCurrentReceived(mavlink_mission_current_t mission_current);
 
     void armSuccess();
     void armFailed();

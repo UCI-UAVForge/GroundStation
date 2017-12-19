@@ -61,6 +61,7 @@ void Decoder::parseMessage(mavlink_message_t msg) {
            // qDebug() << "CURRENT MISSION IS";
             mavlink_mission_current_t mcurrent;
             mavlink_msg_mission_current_decode(&msg, &mcurrent);
+            emit(missionCurrentReceived(mcurrent));
            // qDebug() << mcurrent.seq;
         break;
         case MAVLINK_MSG_ID_MISSION_COUNT:
@@ -70,12 +71,12 @@ void Decoder::parseMessage(mavlink_message_t msg) {
             qDebug() << "DECODER:MISSION COUNT RECEIVED";
             emit(missionCountReceived(mcount));
         break;
-        case 45:
+        case MAVLINK_MSG_ID_MISSION_CLEAR_ALL:
             mavlink_mission_clear_all_t mission_clear_all;
             mavlink_msg_mission_clear_all_decode(&msg, &mission_clear_all);
             emit(mClearAllReceived(mission_clear_all));
         break;
-        case 47:
+        case MAVLINK_MSG_ID_MISSION_ACK:
             mavlink_mission_ack_t mission_ack;
             mavlink_msg_mission_ack_decode(&msg, &mission_ack);
             emit(mAckReceived(mission_ack));
@@ -85,7 +86,7 @@ void Decoder::parseMessage(mavlink_message_t msg) {
             mavlink_msg_nav_controller_output_decode(&msg, &nav);
             emit(navReceived(nav));
         break;
-        case 73:
+        case MAVLINK_MSG_ID_MISSION_ITEM_INT:
             mavlink_mission_item_int_t mission_item;
             mavlink_msg_mission_item_int_decode(&msg, &mission_item);
             emit(missionItemReceived(mission_item));

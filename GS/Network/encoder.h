@@ -28,13 +28,13 @@ public:
     void sendSetRTL();
     void sendSetLoiter();
     void sendSetInitialising();
-    void sendMissionCount(int count);
+    void sendMissionCount(uint16_t count);
     void sendMissionItem(int seq, int cmd, float params[]);
     void sendClearAll();
-    void sendWP_RequestList();
-    void sendWP_Request(uint16_t i);
-    void sendWP_ACK(uint16_t type);
-
+    void sendMissionRequestList();
+    void sendMissionRequest(uint16_t i);
+    void sendMissionACK(uint16_t type);
+    void sendMissionSetCurrent(uint16_t seq);
 
 signals:
 

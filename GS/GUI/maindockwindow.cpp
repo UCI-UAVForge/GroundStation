@@ -15,12 +15,12 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     centralWidget->addWidget(mapWidget);
     setCentralWidget(centralWidget);
 
-    link = new UdpLink();
-    link->startLink();
+//    link = new UdpLink();
+//    link->startLink();
     mission = new Mission();
 
-//    link = new SerialLink();
-//    link->startLink();
+    link = new SerialLink();
+    link->startLink();
 
     Decoder * decoder = new Decoder();
     decoder->setLink(link);
@@ -96,12 +96,16 @@ void MainDockWindow::connectEncoder(Encoder * encoder) {
 
 void MainDockWindow::connectWaypoint(Waypoint * waypoint, Encoder * encoder, Decoder * decoder) {
     connect(waypoint, &Waypoint::reqClearAll, encoder, &Encoder::sendClearAll);
-    connect(waypoint, &Waypoint::reqList, encoder, &Encoder::sendWP_RequestList);
-    connect(waypoint, &Waypoint::reqWP, encoder, &Encoder::sendWP_Request);
-    connect(waypoint, &Waypoint::sendAck, encoder, &Encoder::sendWP_ACK);
+    connect(waypoint, &Waypoint::reqList, encoder, &Encoder::sendMissionRequestList);
+    connect(waypoint, &Waypoint::reqWP, encoder, &Encoder::sendMissionRequest);
+    connect(waypoint, &Waypoint::sendAck, encoder, &Encoder::sendMissionACK);
+    connect(waypoint, &Waypoint::sendWP, encoder, &Encoder::sendMissionItem);
+    connect(waypoint, &Waypoint::sendWPCount, encoder, &Encoder::sendMissionCount);
+    connect(waypoint, &Waypoint::sendWPSetCurrent, encoder, &Encoder::sendMissionSetCurrent);
     connect(decoder, &Decoder::mAckReceived, waypoint, &Waypoint::updateMissionAck);
     connect(decoder, &Decoder::missionCountReceived, waypoint, &Waypoint::updateMissionCount);
     connect(decoder, &Decoder::missionItemReceived, waypoint, &Waypoint::updateMissionItem);
+    connect(decoder, &Decoder::missionCurrentReceived, waypoint, &Waypoint::updateMissionCurrent);
 }
 
 void MainDockWindow::test() {
