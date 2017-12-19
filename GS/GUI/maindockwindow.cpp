@@ -53,8 +53,9 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     ui->actionWidget->setAttribute(Qt::WA_TranslucentBackground);
     ui->actionDock->setAttribute(Qt::WA_TranslucentBackground);
 
+    // WAYPOINT PROTOCOL TEST
     Waypoint * waypoint = new Waypoint(this);
-    connectWaypoint(waypoint);
+    connectWaypoint(waypoint, encoder, decoder);
     if (waypoint->clearAllWaypoints() == 1) {
         qDebug() << "GOOD JOB :D";
     } else {
@@ -94,14 +95,14 @@ void MainDockWindow::connectEncoder(Encoder * encoder) {
 
 }
 
-void MainDockWindow::connectWaypoint(Waypoint * waypoint) {
+void MainDockWindow::connectWaypoint(Waypoint * waypoint, Encoder * encoder, Decoder * decoder) {
     connect(waypoint, &Waypoint::reqClearAll, encoder, &Encoder::sendClearAll);
     connect(waypoint, &Waypoint::reqList, encoder, &Encoder::sendWP_RequestList);
     connect(waypoint, &Waypoint::reqWP, encoder, &Encoder::sendWP_Request);
     connect(waypoint, &Waypoint::sendAck, encoder, &Encoder::sendWP_ACK);
     connect(decoder, &Decoder::mAckReceived, waypoint, &Waypoint::updateMissionAck);
     connect(decoder, &Decoder::missionCountReceived, waypoint, &Waypoint::updateMissionCount);
-    connect(decoder, &Decoder::missionItemReceived, waypoint, &Waypoint::updateMissionItem);)
+    connect(decoder, &Decoder::missionItemReceived, waypoint, &Waypoint::updateMissionItem);
 }
 
 void MainDockWindow::test() {

@@ -61,7 +61,7 @@ public:
     void addToolBarButtons();
     void connectDecoder(Decoder * decoder);
     void connectEncoder(Encoder * encoder);
-    void connectWaypoint(Waypoint * waypoint);
+    void connectWaypoint(Waypoint * waypoint, Encoder * encoder, Decoder * decoder);
 signals:
     void what(int i);
 private slots:
