@@ -37,7 +37,6 @@ class Waypoint : public QObject
 
 public:
     Waypoint(QObject *parent);
-    void setEncoder(Encoder& encoder);
     int clearAllWaypoints();
     WP* readWaypointsList();
     int writeWaypoints(const WP * waypoints, uint16_t size);
@@ -57,7 +56,7 @@ public slots:
     void updateMissionCount(mavlink_mission_count_t mCount);
     void updateMissionItem(mavlink_mission_item_int_t mission_item);
     void updateMissionRequest(mavlink_mission_request_int_t mission_request);
-    void updateMissionCurrent(mavlink_mission_current_t mcount);
+    void updateMissionCurrent(mavlink_mission_current_t mCurrent);
 
 private:
     bool timeout = false;

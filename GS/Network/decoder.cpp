@@ -12,7 +12,7 @@ void Decoder::parseMessage(mavlink_message_t msg) {
             mavlink_heartbeat_t heartbeat;
             mavlink_msg_heartbeat_decode(&msg, &heartbeat);
             emit(heartbeatReceived(heartbeat));
-            qDebug() << "decoder.cpp::" << heartbeat.custom_mode;
+            qDebug() << "decoder.cpp:: heartbeat.custom_mode->" << heartbeat.custom_mode;
         break;
         case MAVLINK_MSG_ID_SYS_STATUS:
             mavlink_sys_status_t status;
@@ -24,9 +24,9 @@ void Decoder::parseMessage(mavlink_message_t msg) {
             mavlink_msg_system_time_decode(&msg, &systime);
         break;
         case MAVLINK_MSG_ID_GPS_RAW_INT:
+            //qDebug() << "decoder.cpp: gpsrawint received";
             mavlink_gps_raw_int_t gps;
             mavlink_msg_gps_raw_int_decode(&msg, &gps);
-            qDebug() << "AHJSFJ";
             emit(gpsReceived(gps));
         break;
         case MAVLINK_MSG_ID_SCALED_IMU:

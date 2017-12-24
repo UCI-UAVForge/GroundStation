@@ -15,12 +15,16 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     centralWidget->addWidget(mapWidget);
     setCentralWidget(centralWidget);
 
-//    link = new UdpLink();
-//    link->startLink();
+    // UDP Link for SITL
+    link = new UdpLink();
+    link->startLink();
+
+    // Serial link for RF900
+    //    link = new SerialLink();
+    //    link->startLink();
+
     mission = new Mission();
 
-    link = new SerialLink();
-    link->startLink();
 
     Decoder * decoder = new Decoder();
     decoder->setLink(link);

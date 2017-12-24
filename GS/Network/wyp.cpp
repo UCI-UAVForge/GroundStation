@@ -142,7 +142,7 @@ void Waypoint::updateMissionRequest(mavlink_mission_request_int_t mission_reques
     currentRequestedMission = mission_request.seq;
 }
 
-void Waypoint::updateMissionCurrent(mavlink_mission_current_t mcount) {
+void Waypoint::updateMissionCurrent(mavlink_mission_current_t mCurrent) {
     timeout = false;
-    currentRequestedMission = mcount.seq;
+    currentRequestedMission = mCurrent.seq;
 }
