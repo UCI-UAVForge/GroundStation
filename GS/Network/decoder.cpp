@@ -126,6 +126,10 @@ void Decoder::parseMessage(mavlink_message_t msg) {
             mavlink_msg_statustext_decode(&msg, &stattext);
             emit(statTextReceived(stattext));
         break;
+        case MAVLINK_MSG_ID_HIGHRES_IMU:
+            mavlink_highres_imu_t hrimu;
+            mavlink_msg_highres_imu_decode(&msg, &hrimu);
+            emit(hrimu);
         default:
 //            qDebug() << "Message not supported";
 //            qDebug() << msg.msgid;
