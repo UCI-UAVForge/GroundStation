@@ -20,6 +20,8 @@ class Waypoint : public QObject
         count = 3,
         setCurrent = 4
     };
+
+public:
     struct WP {
         uint16_t id;
         uint8_t frame;
@@ -35,7 +37,6 @@ class Waypoint : public QObject
         float z;
     };
 
-public:
     Waypoint(QObject *parent);
     int clearAllWaypoints();
     WP* readWaypointsList();
@@ -66,7 +67,7 @@ private:
     int nPoints = 0;
     uint16_t currentRequestedMission;
     WP savedWP;
-    void requestAttempt(int request_type, uint16_t n = std::numeric_limits<uint16_t>::max());
+    void requestAttempt(short request_type, uint16_t n = std::numeric_limits<uint16_t>::max());
     void sendWaypoint(const WP& waypoint);
 };
 

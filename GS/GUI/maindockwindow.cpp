@@ -16,12 +16,12 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     setCentralWidget(centralWidget);
 
     // UDP Link for SITL
-    link = new UdpLink();
-    link->startLink();
+//    link = new UdpLink();
+//    link->startLink();
 
     // Serial link for RF900
-    //    link = new SerialLink();
-    //    link->startLink();
+        link = new SerialLink();
+        link->startLink();
 
     mission = new Mission();
 
@@ -58,10 +58,12 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     // WAYPOINT PROTOCOL TEST
     Waypoint * waypoint = new Waypoint(this);
     connectWaypoint(waypoint, encoder, decoder);
+    Waypoint::WP* wplist = waypoint->readWaypointsList();
+    qDebug() << "! Waypoint test read->" << wplist;
     if (waypoint->clearAllWaypoints() == 1) {
-        qDebug() << "GOOD JOB :D";
+        qDebug() << "! Waypoint test cleared. GOOD JOB :D";
     } else {
-        qDebug() << "Not cleared :C";
+        qDebug() << "! Waypoint test not cleared :C";
     }
 }
 
