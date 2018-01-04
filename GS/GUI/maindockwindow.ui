@@ -60,22 +60,7 @@ QToolButton:hover {
   <property name="dockNestingEnabled">
    <bool>false</bool>
   </property>
-  <widget class="MapWidget" name="mapWidget">
-   <widget class="QDockWidget" name="FlightPathDock">
-    <property name="geometry">
-     <rect>
-      <x>401</x>
-      <y>567</y>
-      <width>399</width>
-      <height>35</height>
-     </rect>
-    </property>
-    <property name="windowTitle">
-     <string>FlightPath</string>
-    </property>
-    <widget class="FlightPathWidget" name="flightPathWidget"/>
-   </widget>
-  </widget>
+  <widget class="MapWidget" name="mapWidget"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -236,12 +221,6 @@ QToolButton:hover {
    <class>MessageWidget</class>
    <extends>QWidget</extends>
    <header>messagewidget.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>FlightPathWidget</class>
-   <extends>QWidget</extends>
-   <header>flightpathwidget.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
