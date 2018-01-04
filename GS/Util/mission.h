@@ -10,18 +10,34 @@
 #include "link.h"
 #include <QObject>
 
+
+struct FlyZone {
+    qreal max_alt;
+    qreal min_alt;
+    QList<QVector2D> * boundary_points;
+};
+
+struct MissionWaypoints {
+    QList<int> * actions;
+    QList<QVector3D> * waypoints;
+};
+
 class Mission : public QObject {
     Q_OBJECT
 public:
     explicit Mission(QObject *parent = nullptr);
-    //Mission(QString filename);
-   // Mission(QJsonDocument document);
-    /** @brief Extracts data from an input Packet and stores the values in
-     * the values field.
-     *  @param telemPacket A pointer to the packet that will be read.
-     *  @date April 8, 2016
-     */
 
+    Mission(QJsonObject);
+
+    int id;
+    bool active;
+    QVector2D home_pos;
+    QVector2D air_drop_pos;
+    QVector2D off_axis_odlc_pos;
+    QVector2D emergent_last_known_pos;
+    MissionWaypoints mission_waypoints;
+    QList<QVector3D> * search_grid_points;
+    QList<FlyZone> * fly_zones;
 
     QVector<double> *getValuesForID(int id);
     QVector<double> *getValuesForIndex(int index);
@@ -52,20 +68,14 @@ signals:
 private:
     void initValues();
     void clearArr(QJsonArray &arr);
-    QJsonDocument jsonDoc;
-    QJsonObject off_axis_odlc_pos;
-    QJsonArray search_grid_points;
-    QJsonArray mission_waypoints;
-    QJsonArray fly_zones;
-    QJsonObject emergent_last_known_pos;
-    bool active;
-    int id;
-    QJsonObject home_pos;
-    QJsonObject air_drop_pos;
 
-    QVector<QVector<double>* > values;
+    QVector2D posToPoint(QJsonObject obj);
+    QVector3D posTo3DPoint(QJsonObject obj);
 
-
+    MissionWaypoints setMissionWaypoints(QJsonArray pointArray);
+    QList<FlyZone> * setFlyZones(QJsonArray flyZoneArray);
+    QList<QVector2D> * setPoints(QJsonArray pointArray);
+    QList<QVector3D> * set3DPoints(QJsonArray pointArray);
 };
 
 #endif // MISSION_H

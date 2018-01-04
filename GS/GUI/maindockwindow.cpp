@@ -10,21 +10,17 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     ui(new Ui::MainDockWindow)
 {
     ui->setupUi(this);
-    centralWidget = new QStackedWidget(this);
-    QQuickWidget * mapWidget = createQmlWidget(QUrl("qrc:/res/map.qml"), this);
-    centralWidget->addWidget(mapWidget);
-    setCentralWidget(centralWidget);
-
+    ui->graphDock->hide();
     // UDP Link for SITL
     link = new UdpLink();
     link->startLink();
 
-    // Serial link for RF900
-    //    link = new SerialLink();
-    //    link->startLink();
+//     Serial link for RF900
+//        link = new SerialLink();
+//        link->startLink();
 
     mission = new Mission();
-
+    uavButton = new UAVButton(this);
 
     Decoder * decoder = new Decoder();
     decoder->setLink(link);
@@ -36,39 +32,38 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
 
     addToolBarButtons();
 
-    QPushButton * p;
-    p = new QPushButton("send test mission");
-    connect(p, &QPushButton::clicked, this, &MainDockWindow::test);
-    QDockWidget * bdock = createDockWidget("send mission",Qt::BottomDockWidgetArea, p, this);
-    QLabel * n = new QLabel();
-    bdock->setTitleBarWidget(n);
+    QWidget* spacer = new QWidget();
+    LoginWidget * loginWidget = new LoginWidget(this);
+    spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    ui->toolBar->addWidget(spacer);
+    ui->toolBar->addWidget(loginWidget);
+    ui->toolBar->addWidget(uavButton);
 
-    ui->movementWidget->setUAVMap(mapWidget);
-    try{
-        interop = new Interop("testuser","testpass");
-        ui->flightPathWidget->updateStuff(interop,mapWidget);
-        Obstacles obstacles = interop->getObstacles();
-        obstacles.loadStationaryObjects(mapWidget);
-    } catch (QNetworkReply::NetworkError err) {
-        qDebug() << "! Not loading map objects: " << err;
-    }
-    ui->actionWidget->setAttribute(Qt::WA_TranslucentBackground);
-    ui->actionDock->setAttribute(Qt::WA_TranslucentBackground);
+    connect(loginWidget, &LoginWidget::connectionSuccess, ui->missionWidget, &MissionWidget::getMissions);
+    connect(ui->missionWidget, &MissionWidget::drawMission, ui->mapWidget, &MapWidget::drawMission);
 
     // WAYPOINT PROTOCOL TEST
-    Waypoint * waypoint = new Waypoint(this);
-    connectWaypoint(waypoint, encoder, decoder);
-    if (waypoint->clearAllWaypoints() == 1) {
-        qDebug() << "GOOD JOB :D";
-    } else {
-        qDebug() << "Not cleared :C";
-    }
+   // Waypoint * waypoint = new Waypoint(this);
+    //connectWaypoint(waypoint, encoder, decoder);
+//    if (waypoint->clearAllWaypoints() == 1) {
+//        qDebug() << "GOOD JOB :D";
+//    } else {
+//        qDebug() << "Not cleared :C";
+//    }
 }
 
 void MainDockWindow::addToolBarButtons() {
     foreach(QDockWidget * dw, this->findChildren<QDockWidget*>()) {
        ui->toolBar->addAction(dw->toggleViewAction());
     }
+}
+
+void MainDockWindow::addInteropLogin() {
+    QWidget* spacer = new QWidget();
+    LoginWidget * loginWidget = new LoginWidget();
+    spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    ui->toolBar->addWidget(spacer);
+    ui->toolBar->addWidget(loginWidget);
 }
 
 void MainDockWindow::connectDecoder(Decoder * decoder) {
@@ -80,12 +75,13 @@ void MainDockWindow::connectDecoder(Decoder * decoder) {
     connect(decoder, &Decoder::attReceived, ui->movementWidget, &MovementWidget::updateAttitude);
     connect(decoder, &Decoder::localPositionReceived, ui->movementWidget, &MovementWidget::updateLocalPosition);
     connect(decoder, &Decoder::gpsReceived, ui->graphWidget, &GraphWidget::appendTelemData);
-    connect(decoder, &Decoder::heartbeatReceived, ui->statusWidget, &StatusWidget::updateHeartbeat);
     connect(decoder, &Decoder::heartbeatReceived, ui->actionWidget, &ActionWidget::toggleArmButton);
     connect(decoder, &Decoder::heartbeatReceived, ui->actionWidget, &ActionWidget::toggleModeButtons);
-    connect(decoder, &Decoder::batteryReceived, ui->statusWidget, &StatusWidget::updateBattery);
     connect(decoder, &Decoder::statTextReceived, ui->messageWidget, &MessageWidget::updateMessages);
     connect(decoder, &Decoder::mrequestReceived, mission, &Mission::loadWaypoint);
+
+    connect(decoder, &Decoder::heartbeatReceived, uavButton, &UAVButton::updateHeartbeat);
+    connect(decoder, &Decoder::batteryReceived, uavButton, &UAVButton::updateBattery);
 }
 
 void MainDockWindow::connectEncoder(Encoder * encoder) {
@@ -94,8 +90,6 @@ void MainDockWindow::connectEncoder(Encoder * encoder) {
     connect(ui->actionWidget, &ActionWidget::setGuided, encoder, &Encoder::sendClearAll);
     connect(ui->actionWidget, &ActionWidget::setManual, encoder, &Encoder::sendSetManual);
     connect(mission, &Mission::loadToUAV, encoder, &Encoder::sendMissionItem);
-    connect(this, &MainDockWindow::what, encoder, &Encoder::sendMissionCount);
-
 }
 
 void MainDockWindow::connectWaypoint(Waypoint * waypoint, Encoder * encoder, Decoder * decoder) {

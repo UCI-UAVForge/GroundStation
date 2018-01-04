@@ -49,13 +49,14 @@ SOURCES += \
     $$files(Database/*.cpp, false) \
     $$files(Util/*.c, false) \
 
+
 HEADERS  += \
     $$files(GUI/*.h, false) \
     $$files(Util/*.h, false) \
     $$files(Util/*.hpp, false) \
     $$files(Network/*.h, false) \
     $$files(Database/*.h, false) \
-    Network/wyp.h
+
 
 FORMS    += \
     $$files(GUI/*.ui, false) \

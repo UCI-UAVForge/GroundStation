@@ -110,15 +110,7 @@ void GraphWidget::appendPoint(double x, double y, int id) {
 }
 
 void GraphWidget::drawMission(Mission* mission){
-    myMission = mission;
-    for(int i = 0; i < 10; i++){
-        QCPGraph *graph = graphs[i];
-        QVector<double> * vals = mission->getValuesForID(i);
-        for (int j = 0; j < vals->length(); ++j) {
-            graph->addData(j,(*vals)[j]);
-        }
-        processClickEvent(i);
-    }
+
 
 }
 

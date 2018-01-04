@@ -1,5 +1,5 @@
 #include "uav.h"
-#include <qDebug>
+#include <QDebug>
 
 UAV::UAV()
 {}

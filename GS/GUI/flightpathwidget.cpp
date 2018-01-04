@@ -1,7 +1,10 @@
 #include "flightpathwidget.h"
 #include "ui_flightpathwidget.h"
 
-FlightPathWidget::FlightPathWidget(QWidget *parent) : QWidget(parent), ui(new Ui::FlightPathWidget), interop(nullptr), mapWidget(nullptr)
+FlightPathWidget::FlightPathWidget(QWidget *parent) : QWidget(parent),
+    ui(new Ui::FlightPathWidget),
+    interop(nullptr),
+    mapWidget(nullptr)
 {
     ui->setupUi(this);
     QMenu * menu = buildMenu();
@@ -81,14 +84,14 @@ void FlightPathWidget::clearMissions(){
 }
 
 void FlightPathWidget::loadNewMission(int i){
-    mission.clearMission(mapWidget);
-    if (interop!=nullptr)
-        mission.setMission(interop->getMission(i));
-    if (mapWidget!=nullptr && !mission.DNE()){
-        mission.clearMission(mapWidget);
-        mission.loadMissionObjects(mapWidget);
-    }
-    ui->Mission_->setText("Mission "+QString::number(i));
+//    mission.clearMission(mapWidget);
+//    if (interop!=nullptr)
+//        mission.setMission(interop->getMission(i));
+//    if (mapWidget!=nullptr && !mission.DNE()){
+//        mission.clearMission(mapWidget);
+//        mission.loadMissionObjects(mapWidget);
+//    }
+//    ui->Mission_->setText("Mission "+QString::number(i));
 
 }
 

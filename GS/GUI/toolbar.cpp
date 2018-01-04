@@ -1,14 +1,14 @@
 #include "toolbar.h"
+#include "ui_toolbar.h"
 
-ToolBar::ToolBar(QWidget * parent)
+ToolBar::ToolBar(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::ToolBar)
 {
-    //setStyleSheet("color:blue; QToolBar {color: blue; border: 0px}");
+    ui->setupUi(this);
 }
 
-void ToolBar::addDockWidget() {
-
-}
-QToolButton* addButton(const QString &_text)
+ToolBar::~ToolBar()
 {
-    return nullptr;
+    delete ui;
 }

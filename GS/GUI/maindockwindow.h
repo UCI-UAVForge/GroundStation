@@ -16,7 +16,6 @@
 #include <QtCharts>
 
 #include "graphwidget.h"
-#include "tablewidget.h"
 #include "toolbar.h"
 #include "timerwidget.h"
 #include "interop.h"
@@ -35,6 +34,10 @@
 #include "encoder.h"
 #include "tcplink.h"
 #include "udplink.h"
+#include "missionwidget.h"
+#include "loginwidget.h"
+#include "uavbutton.h"
+#include "mapwidget.h"
 
 namespace Ui {
 class MainDockWindow;
@@ -46,10 +49,9 @@ class MainDockWindow : public QMainWindow
 
 public:
     QStackedWidget * centralWidget;
-    QToolBar * toolBar;
     Link * link;
-   // Link * tlink;
     Mission * mission;
+    UAVButton * uavButton;
     explicit MainDockWindow(QWidget *parent = 0);
     ~MainDockWindow();
 
@@ -59,6 +61,7 @@ public:
     void test();
 
     void addToolBarButtons();
+    void addInteropLogin();
     void connectDecoder(Decoder * decoder);
     void connectEncoder(Encoder * encoder);
     void connectWaypoint(Waypoint * waypoint, Encoder * encoder, Decoder * decoder);

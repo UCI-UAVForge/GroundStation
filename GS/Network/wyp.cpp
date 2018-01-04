@@ -1,5 +1,5 @@
 #include "wyp.h"
-#include <qDebug>
+#include <QDebug>
 
 Waypoint::Waypoint(QObject *parent) : QObject(parent) {
 }

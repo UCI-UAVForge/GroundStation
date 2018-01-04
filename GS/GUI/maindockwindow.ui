@@ -14,7 +14,11 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QDockWidget {
+   <string notr="true">QPushButton {
+	padding:4px;
+}
+
+QDockWidget {
 	color:rgb(0, 255, 213);
 	background-color:rgba(40,40,40, 90);
 	border:10px;
@@ -36,6 +40,7 @@ QToolButton {
 	padding:2px;
 	border-radius:1px;
 	border: 0px solid;
+	font: bold
 }
 QToolButton:checked {
 	color:white;
@@ -55,14 +60,29 @@ QToolButton:hover {
   <property name="dockNestingEnabled">
    <bool>false</bool>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="MapWidget" name="mapWidget">
+   <widget class="QDockWidget" name="FlightPathDock">
+    <property name="geometry">
+     <rect>
+      <x>401</x>
+      <y>567</y>
+      <width>399</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="windowTitle">
+     <string>FlightPath</string>
+    </property>
+    <widget class="FlightPathWidget" name="flightPathWidget"/>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>
@@ -81,16 +101,13 @@ QToolButton:hover {
    </attribute>
    <widget class="Timer" name="timerWidget"/>
   </widget>
-  <widget class="QDockWidget" name="statusDock">
-   <property name="windowTitle">
-    <string>Status</string>
-   </property>
-   <attribute name="dockWidgetArea">
-    <number>1</number>
-   </attribute>
-   <widget class="StatusWidget" name="statusWidget"/>
-  </widget>
   <widget class="QDockWidget" name="movementDock">
+   <property name="font">
+    <font>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
    <property name="windowTitle">
     <string>Movement</string>
    </property>
@@ -125,7 +142,7 @@ QToolButton:hover {
   </widget>
   <widget class="QDockWidget" name="graphDock">
    <property name="enabled">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="windowTitle">
     <string>Graph</string>
@@ -145,6 +162,12 @@ QToolButton:hover {
    <widget class="MessageWidget" name="messageWidget"/>
   </widget>
   <widget class="QToolBar" name="toolBar">
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="windowTitle">
     <string>toolBar</string>
    </property>
@@ -161,31 +184,24 @@ QToolButton:hover {
     <bool>false</bool>
    </attribute>
   </widget>
-  <widget class="QDockWidget" name="FlightPathDock">
+  <widget class="QDockWidget" name="missionDock">
    <property name="windowTitle">
-    <string>FlightPath</string>
+    <string>Missions</string>
    </property>
    <attribute name="dockWidgetArea">
-    <number>8</number>
+    <number>1</number>
    </attribute>
-   <widget class="FlightPathWidget" name="flightPathWidget"/>
+   <widget class="MissionWidget" name="missionWidget"/>
   </widget>
   <zorder>actionDock</zorder>
   <zorder>timerDock</zorder>
-  <zorder>statusDock</zorder>
   <zorder>movementDock</zorder>
   <zorder>qfiDock</zorder>
   <zorder>graphDock</zorder>
   <zorder>messageDock</zorder>
-  <zorder>FlightPathDock</zorder>
+  <zorder>missionDock</zorder>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>StatusWidget</class>
-   <extends>QWidget</extends>
-   <header>statuswidget.h</header>
-   <container>1</container>
-  </customwidget>
   <customwidget>
    <class>ActionWidget</class>
    <extends>QWidget</extends>
@@ -225,7 +241,19 @@ QToolButton:hover {
   <customwidget>
    <class>FlightPathWidget</class>
    <extends>QWidget</extends>
-   <header location="global">flightpathwidget.h</header>
+   <header>flightpathwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MapWidget</class>
+   <extends>QWidget</extends>
+   <header>mapwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MissionWidget</class>
+   <extends>QWidget</extends>
+   <header>missionwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -3,6 +3,7 @@ import QtQuick.Window 2.0
 import QtLocation 5.6
 import QtPositioning 5.6
 
+
 Rectangle {
     id: main
     width:512
@@ -11,18 +12,9 @@ Rectangle {
     objectName:"rect"
     Plugin {
         id: mapPlugin
-        name: "esri" // "mapboxgl", "esri", ...
-        // specify plugi parameters if necessary
-        // PluginParameter {
-        //     name:
-        //     value:
-        // }
-      //  PluginParameter {name:"here.app_id"; value: "hFarTBZF6AzJvLKzd55C"}
-       // PluginParameter {name: "here.token"; value: "h_jMLCAluu0BmDSWXExNyw"}
-      //  PluginParameter {name: "here.mapping.highdpi_tiles"; value:"true"}
-       // PluginParameter { name:"googlemaps.maps.apikey"; value: "AIzaSyAjYKn9mABOOi_NRjaJjsx5JhOU8IjLmJQ"}
+        name: "esri"
     }
-    signal qmlSignal(string wow);
+
     Map {
         id: map
         objectName:"map"
@@ -30,18 +22,70 @@ Rectangle {
         plugin: mapPlugin
         center: QtPositioning.coordinate(38.14792, -76.427995) //the place            //(33.6405, -117.8443) // Irvine
         zoomLevel: 14
-      //  signal qmlSignal(string v)
         Component.onCompleted: {
                     for( var i_type in supportedMapTypes ) {
-                        console.log(supportedMapTypes[i_type].name);
+                     //   console.log(supportedMapTypes[i_type].name);
                         if(supportedMapTypes[i_type].name.localeCompare( "World Imagery" ) === 0 ) {
                             activeMapType = supportedMapTypes[i_type]
                         }
                     }
                 }
         property MapQuickItem test
+        property MapCircle newPoint
         property MapPolyline test2
         property var text
+
+        Component {
+            id: mapMarker
+            MapCircle {
+                radius: 25
+                border.width: 0
+            }
+        }
+
+        Component {
+            id: mapLine
+            MapPolyline {
+                line.width: 3
+            }
+        }
+
+        Component {
+            id: mapPolygon
+            MapPolygon {
+            border.width: 0
+            }
+        }
+
+        function drawPoint(point, color) {
+             var p = mapMarker.createObject(map,
+                         {"center.latitude": point.x,
+                          "center.longitude" : point.y,
+                          "color" : color})
+             map.addMapItem(p);
+        }
+
+        function drawPolyline(points, color) {
+            var line = mapLine.createObject(map, {"line.color": color})
+            for (var i = 0; i < points.length; i++){
+                 line.addCoordinate(QtPositioning.coordinate(points[i].x, points[i].y));
+            }
+            map.addMapItem(line);
+        }
+
+        function drawPolygon(points, color) {
+            var polygon = mapPolygon.createObject(map, {"color": color})
+            for (var i = 0; i < points.length; i++){
+                 polygon.addCoordinate(QtPositioning.coordinate(points[i].x, points[i].y));
+            }
+            map.addMapItem(polygon);
+        }
+
+        function clearMap() {
+            map.clearMapItems();
+
+        }
+
 
         MapQuickItem{id:plane;
                     anchorPoint.x: image.width;

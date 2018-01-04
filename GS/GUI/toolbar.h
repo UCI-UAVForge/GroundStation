@@ -1,15 +1,22 @@
 #ifndef TOOLBAR_H
 #define TOOLBAR_H
-#include <QToolBar>
-#include <QToolButton>
 
-class ToolBar : public QToolBar
+#include <QWidget>
+
+namespace Ui {
+class ToolBar;
+}
+
+class ToolBar : public QWidget
 {
-public:
-   ToolBar(QWidget * parent = 0);
+    Q_OBJECT
 
-   void addDockWidget();
-   QToolButton * addButton(const QString &_text);
+public:
+    explicit ToolBar(QWidget *parent = 0);
+    ~ToolBar();
+
+private:
+    Ui::ToolBar *ui;
 };
 
 #endif // TOOLBAR_H

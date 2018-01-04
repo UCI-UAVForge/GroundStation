@@ -18,7 +18,7 @@ public:
     QGridLayout *layout;
     Ui::MovementWidget ui;
     void mousePressEvent(QMouseEvent *) override;
-    void setUAVMap(QQuickWidget * map);
+   // void setUAVMap(QQuickWidget * map);
 private:
     UAV * uav;
 
