@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QVBoxLayout>
+#include <QtMath>
 #include "qfi_PFD.h"
 #include "qfi_TC.h"
 #include "mavlink.h"
@@ -99,6 +100,7 @@ public slots:
 private:
     qfi_PFD     *m_pfd;
     qfi_TC      *m_tc;
+    const int SOUNDSPEED = 343; // Speed of sound in m/s
 };
 
 #endif // QFIWIDGET_H

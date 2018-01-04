@@ -17,7 +17,7 @@ int Waypoint::clearAllWaypoints() {
     return 0;
 }
 
-// Not tested
+// Not tested - tested with no waypoints
 Waypoint::WP *Waypoint::readWaypointsList() {
     // Returns nullptr when unsuccessful or empty waypoint list
     timeout = true;
@@ -75,11 +75,11 @@ int Waypoint::setCurrentWaypoint(uint16_t seq) {
     return 0;
 }
 
-void Waypoint::requestAttempt(int request_type, uint16_t n) {
+void Waypoint::requestAttempt(short request_type, uint16_t n) {
     QTimer timer;
     QEventLoop loop;
     for (int i = 0; i < numAttempts && timeout; i++) {
-        if (i > 0) qDebug() << "REQUEST FAILED! RETRY ATTEMPT " << i+1;
+        if (i > 0) qDebug() << "REQUEST TYPE:" << request_type << "FAILED! RETRY ATTEMPT" << i+1;
         switch(request_type) {
         case REQUEST_TYPE::clear: emit(reqClearAll()); break;
         case REQUEST_TYPE::list: emit(reqList()); break;

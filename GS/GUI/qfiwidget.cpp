@@ -12,6 +12,10 @@ QFIWidget::QFIWidget( QWidget *parent ) :
     m_pfd->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     m_pfd->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     m_pfd->setFixedSize(250,250);
+    m_pfd->setBarH(0,false);
+    m_pfd->setBarV(0,false);
+    m_pfd->setDotH(0,false);
+    m_pfd->setDotV(0,false);
     layout->addWidget(m_pfd);
     layout->setSizeConstraint(QLayout::SetFixedSize);
 
@@ -39,7 +43,7 @@ DotH/V - X
 Altitude - VFR_Hud
 Pressure - Scaled Pressure
 Airspeed - VFR_Hud
-MachNo - X
+MachNo - VFR_Hud
 Heading - VFR_Hud
 ClimbRate - VFR_Hud
 */
@@ -50,17 +54,20 @@ void QFIWidget::updateVFR(mavlink_vfr_hud_t vfr)
     this->setAltitude(vfr.alt);
     this->setClimbRate(vfr.climb);
     this->setHeading(vfr.heading);
+    this->setMachNo(vfr.airspeed/SOUNDSPEED);
     this->update();
 }
 
 void QFIWidget::updateAttitude(mavlink_attitude_t att)
 {
-    this->setRoll(att.roll);
-    this->setPitch(att.pitch);
+    this->setRoll(qRadiansToDegrees(att.roll));
+    this->setPitch(qRadiansToDegrees(att.pitch));
     this->update();
 }
 
 void QFIWidget::updatePressure(mavlink_scaled_pressure_t p)
 {
+    // Need to fix units
     this->setPressure(p.press_abs);
+    this->update();
 }
