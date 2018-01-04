@@ -11,13 +11,13 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->graphDock->hide();
-    // UDP Link for SITL
-//    link = new UdpLink();
-//    link->startLink();
+   //  UDP Link for SITL
+    link = new UdpLink();
+    link->startLink();
 
 //     Serial link for RF900
-        link = new SerialLink();
-        link->startLink();
+     //   link = new SerialLink();
+     //   link->startLink();
 
     mission = new Mission();
     uavButton = new UAVButton(this);

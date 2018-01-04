@@ -1,7 +1,5 @@
 #include "dataobjects.h"
 
-
-
 TelemetryData::TelemetryData() {
     time = 0;
     heading = 0;

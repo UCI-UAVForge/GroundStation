@@ -1,5 +1,6 @@
 #include "missionwidget.h"
 #include "ui_missionwidget.h"
+#include "qtmaterialraisedbutton.h"
 #include <QDebug>
 MissionWidget::MissionWidget(QWidget *parent) :
     QWidget(parent),
@@ -11,6 +12,7 @@ MissionWidget::MissionWidget(QWidget *parent) :
     ui->missionList->lineEdit()->setReadOnly(true);
     ui->missionList->lineEdit()->setAlignment(Qt::AlignCenter);
     connect(ui->loadButton, &QPushButton::clicked, this, &MissionWidget::loadMission);
+    ui->clearButton->setBackgroundColor(QColor(255, 80, 83));
 }
 
 bool MissionWidget::hasMission() {

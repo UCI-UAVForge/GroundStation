@@ -23,17 +23,7 @@
    <double>1.000000000000000</double>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-QPushButton:pressed {
-	background-color: rgb(235,235,235)
-}
-QPushButton {
-border: 0px solid rgb(200,200,200);
-border-radius: 1px;
-background-color:rgb(255, 80, 83);
-padding:4px;
-	color: white;
-}</string>
+   <string notr="true"/>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="spacing">
@@ -52,7 +42,7 @@ padding:4px;
     <number>0</number>
    </property>
    <item>
-    <widget class="QPushButton" name="uavButton">
+    <widget class="CustomRaisedButton" name="uavButton">
      <property name="minimumSize">
       <size>
        <width>80</width>
@@ -75,6 +65,13 @@ padding:4px;
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CustomRaisedButton</class>
+   <extends>QPushButton</extends>
+   <header>customraisedbutton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
