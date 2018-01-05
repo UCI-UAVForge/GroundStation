@@ -81,6 +81,10 @@ Rectangle {
             map.addMapItem(polygon);
         }
 
+        function updateCenter(lat, lon) {
+            map.center = QtPositioning.coordinate(lat, lon);
+        }
+
         function clearMap() {
             map.clearMapItems();
 

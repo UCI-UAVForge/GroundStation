@@ -7,6 +7,7 @@
 #include "interop.h"
 #include "obstacles.h"
 #include "mapwidget.h"
+#include "wyp.h"
 #include <QLineEdit>
 #include <QStandardItemModel>
 #include <QHeaderView>
@@ -22,6 +23,9 @@ class MissionWidget : public QWidget
 public:
     explicit MissionWidget(QWidget *parent = 0);
 
+    void writeButtonClicked();
+    void readButtonClicked();
+    void clearButtonClicked();
     bool hasMission();
     void loadMission();
     void getMissions(Interop * i);
@@ -36,8 +40,17 @@ public:
 
 signals:
     void drawMission(Mission * selectedMission);
+    void clearMissions();
+    void readMissionsSignal();
+    void writeMissionsSignal(Waypoint::WP * waypoints, uint16_t size);
+
+public slots:
+    void readMissions(Waypoint::WP * waypoints, uint16_t size);
+    void writeMissionsStatus(bool success);
 
 private:
+    Waypoint::WP* constructWaypoints(const Mission& mission);
+
     Ui::MissionWidget *ui;
 };
 

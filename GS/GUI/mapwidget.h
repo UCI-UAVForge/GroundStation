@@ -18,6 +18,7 @@ public:
     void drawPolygon(QVariantList points,QColor color = QColor(0,0,0,255));
     void clearMap();
     void drawMission(Mission * mission);
+    void updateCenter(double lat, double lon);
 
 private:
     template <typename T>

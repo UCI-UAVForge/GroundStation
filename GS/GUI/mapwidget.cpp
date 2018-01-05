@@ -40,3 +40,9 @@ void MapWidget::drawMission(Mission * mission) {
         drawPolygon(toQVariantList(mission->fly_zones->at(i).boundary_points), QColor(0, 255, 0, 50));
 
 }
+
+void MapWidget::updateCenter(double lat, double lon) {
+    QMetaObject::invokeMethod(map, "updateCenter",
+            Q_ARG(QVariant, lat),
+            Q_ARG(QVariant, lon));
+}

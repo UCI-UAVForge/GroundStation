@@ -90,7 +90,7 @@ void Encoder::sendMissionItem(int seq, int cmd, float params[]) {
     if (seq == 0) {
         curr = 1;
     }
-    qDebug() << seq << "," << cmd << "," << curr;
+    qDebug() << "Encoder::sendMissionItem ->" << seq << "," << cmd << "," << curr;
     mavlink_msg_mission_item_pack(SYS, COM, &msg, 1, 0, seq, 3, cmd, curr, 1, params[0],
                                   params[1], params[2], params[3], params[4], params[5], params[6]);
     link->sendData(msg);
