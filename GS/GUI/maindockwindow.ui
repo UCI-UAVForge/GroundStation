@@ -35,6 +35,7 @@ QDockWidget {
 	color:rgb(0, 255, 213);
 	background-color:rgb(40,40,40);
 	border:10px;
+	padding-bottom:10px;
 }
 QMainWindow{
 background-color: rgb(40, 40, 40);
@@ -154,7 +155,7 @@ QToolButton:hover {
     </size>
    </property>
    <property name="floating">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="windowTitle">
     <string>Graph</string>
@@ -181,6 +182,9 @@ QToolButton:hover {
    <widget class="MessageWidget" name="messageWidget"/>
   </widget>
   <widget class="QToolBar" name="toolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="font">
     <font>
      <weight>75</weight>
@@ -204,6 +208,9 @@ QToolButton:hover {
    </attribute>
   </widget>
   <widget class="QDockWidget" name="missionDock">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="windowTitle">
     <string>Missions</string>
    </property>

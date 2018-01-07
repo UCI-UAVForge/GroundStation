@@ -7,7 +7,7 @@ LoginWidget::LoginWidget(QWidget *parent) :
 {
     ui->setupUi(this);
     connect(ui->loginButton, &QPushButton::clicked, this, &LoginWidget::attemptConnection);
-    ui->loginButton->setBackgroundColor(QColor(255, 80, 83));
+    //ui->loginButton->setBackgroundColor(QColor(255, 80, 83));
     ui->login->setMaximumWidth(0);
     slide = new QPropertyAnimation(ui->login, "maximumWidth");
     connect(slide, &QPropertyAnimation::finished, this, &LoginWidget::toggleSlide);

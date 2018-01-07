@@ -42,7 +42,7 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="CustomRaisedButton" name="uavButton">
+    <widget class="QPushButton" name="uavButton">
      <property name="minimumSize">
       <size>
        <width>80</width>
@@ -65,13 +65,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>CustomRaisedButton</class>
-   <extends>QPushButton</extends>
-   <header>customraisedbutton.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -24,6 +24,10 @@
 	outline: 0;
 }
 
+Line {
+	padding: 5px;
+}
+
 QLabel {
 	color:rgb(240,240,240);
 }
@@ -79,6 +83,9 @@ QTableView {
         </property>
         <property name="editable">
          <bool>false</bool>
+        </property>
+        <property name="currentText">
+         <string/>
         </property>
         <property name="sizeAdjustPolicy">
          <enum>QComboBox::AdjustToContents</enum>
@@ -142,6 +149,13 @@ QTableView {
      </attribute>
     </widget>
    </item>
+   <item row="2" column="0">
+    <widget class="Line" name="line">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
    <item row="5" column="0">
     <layout class="QGridLayout" name="gridLayout">
      <item row="1" column="2">
@@ -184,13 +198,6 @@ QTableView {
       </widget>
      </item>
     </layout>
-   </item>
-   <item row="2" column="0">
-    <widget class="Line" name="line">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
    </item>
   </layout>
  </widget>

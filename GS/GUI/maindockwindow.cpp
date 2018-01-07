@@ -43,15 +43,15 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     connect(ui->missionWidget, &MissionWidget::drawMission, ui->mapWidget, &MapWidget::drawMission);
 
     // WAYPOINT PROTOCOL TEST
-    Waypoint * waypoint = new Waypoint(this);
-    connectWaypoint(waypoint, encoder, decoder);
-    Waypoint::WP* wplist = waypoint->readWaypointsList();
-    qDebug() << "! Waypoint test read->" << wplist;
-    if (waypoint->clearAllWaypoints() == 1) {
-        qDebug() << "! Waypoint test cleared. GOOD JOB :D";
-    } else {
-        qDebug() << "! Waypoint test not cleared :C";
-    }
+//    Waypoint * waypoint = new Waypoint(this);
+//    connectWaypoint(waypoint, encoder, decoder);
+//    Waypoint::WP* wplist = waypoint->readWaypointsList();
+//    qDebug() << "! Waypoint test read->" << wplist;
+//    if (waypoint->clearAllWaypoints() == 1) {
+//        qDebug() << "! Waypoint test cleared. GOOD JOB :D";
+//    } else {
+//        qDebug() << "! Waypoint test not cleared :C";
+//    }
 }
 
 void MainDockWindow::addToolBarButtons() {
@@ -84,6 +84,8 @@ void MainDockWindow::connectDecoder(Decoder * decoder) {
 
     connect(decoder, &Decoder::heartbeatReceived, uavButton, &UAVButton::updateHeartbeat);
     connect(decoder, &Decoder::batteryReceived, uavButton, &UAVButton::updateBattery);
+
+    connect(decoder, &Decoder::gpsReceived, ui->mapWidget, &MapWidget::updateUAVPosition);
 }
 
 void MainDockWindow::connectEncoder(Encoder * encoder) {

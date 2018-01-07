@@ -36,9 +36,10 @@ void MissionWidget::loadMission() {
 QStandardItemModel * MissionWidget::createMissionModel(Mission * mission) {
     QList<QVector3D> * waypoints = mission->mission_waypoints.waypoints;
     QStandardItemModel *model = new QStandardItemModel;
-    model->setHorizontalHeaderLabels(QList<QString>({"LAT/LNG", " ALT ", " CMD "}));
+    model->setHorizontalHeaderLabels(QList<QString>({"LAT,LON", " ALT ", " CMD "}));
     for (int i = 0; i < waypoints->size(); i++) {
-        QStandardItem * latlng = new QStandardItem(QString("%0, %1").arg(waypoints->at(i).x()).arg(waypoints->at(i).y()));
+        QString coords = QGeoCoordinate(waypoints->at(i).x(), waypoints->at(i).y()).toString(QGeoCoordinate::DegreesWithHemisphere);
+        QStandardItem * latlng = new QStandardItem(coords);
         QStandardItem * alt = new QStandardItem(QString("%0 m.").arg(waypoints->at(i).z()));
         QStandardItem * action = new QStandardItem(QString("%0").arg(mission->mission_waypoints.actions->at(i)));
         QList<QStandardItem*> row({latlng, alt, action});

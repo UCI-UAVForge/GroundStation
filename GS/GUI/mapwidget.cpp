@@ -24,6 +24,17 @@ void MapWidget::drawPolygon(QVariantList points, QColor color) {
            Q_ARG(QVariant, color));
 }
 
+void MapWidget::updateUAVPosition(mavlink_gps_raw_int_t gps) {
+    if (gps.lat != currentUAVlat && gps.lon != currentUAVlon) {
+        currentUAVlat = gps.lat; currentUAVlon = gps.lon;
+        QString coords = QGeoCoordinate((float)gps.lat/10000000, (float)gps.lon/10000000).toString(QGeoCoordinate::DegreesWithHemisphere);
+
+        this->rootObject()->setProperty("coords", QVariant(coords));
+        QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavPosition"), "updateUAVPosition",
+               Q_ARG(QVariant, coords));
+    }
+}
+
 void MapWidget::clearMap() {
     QMetaObject::invokeMethod(map, "clearMap");
 }
