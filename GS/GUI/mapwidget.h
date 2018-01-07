@@ -20,6 +20,7 @@ public:
     void updateUAVPosition(mavlink_gps_raw_int_t gps);
     void clearMap();
     void drawMission(Mission * mission);
+    void updateCenter(double lat, double lon);
 
     int32_t currentUAVlat;
     int32_t currentUAVlon;

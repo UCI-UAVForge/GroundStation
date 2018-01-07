@@ -18,7 +18,6 @@ class Waypoint : public QObject
         list = 1,
         waypoint = 2,
         count = 3,
-        setCurrent = 4
     };
 
 public:
@@ -37,10 +36,10 @@ public:
         float z;
     };
 
-    Waypoint(QObject *parent);
-    int clearAllWaypoints();
-    WP* readWaypointsList();
-    int writeWaypoints(const WP * waypoints, uint16_t size);
+    Waypoint();
+    void clearAllWaypoints();
+    void readWaypointsList();
+    void writeWaypoints(const WP * waypoints, uint16_t size);
     int setCurrentWaypoint(uint16_t seq);
 
 signals:
@@ -52,6 +51,9 @@ signals:
     void sendWP(int seq, int cmd, float params[]);
     void sendWPSetCurrent(uint16_t seq);
 
+    void waypointsReceived(WP * waypoints, uint16_t size);
+    void waypointsWriteStatus(bool success);
+
 public slots:
     void updateMissionAck(mavlink_mission_ack_t mission_ack);
     void updateMissionCount(mavlink_mission_count_t mCount);
@@ -61,6 +63,7 @@ public slots:
 
 private:
     bool timeout = false;
+    bool missionCurrentTimeout = false;
     bool ackFlag = false;
     int numAttempts = 10;
     int msTimeout = 50;
@@ -68,6 +71,7 @@ private:
     uint16_t currentRequestedMission;
     WP savedWP;
     void requestAttempt(short request_type, uint16_t n = std::numeric_limits<uint16_t>::max());
+    void requestWaypointSet(uint16_t seq);
     void sendWaypoint(const WP& waypoint);
 };
 

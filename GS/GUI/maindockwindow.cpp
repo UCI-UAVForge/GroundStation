@@ -11,7 +11,7 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->graphDock->hide();
-   //  UDP Link for SITL
+    // UDP Link for SITL
     link = new UdpLink();
     link->startLink();
 
@@ -42,16 +42,8 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     connect(loginWidget, &LoginWidget::connectionSuccess, ui->missionWidget, &MissionWidget::getMissions);
     connect(ui->missionWidget, &MissionWidget::drawMission, ui->mapWidget, &MapWidget::drawMission);
 
-    // WAYPOINT PROTOCOL TEST
-//    Waypoint * waypoint = new Waypoint(this);
-//    connectWaypoint(waypoint, encoder, decoder);
-//    Waypoint::WP* wplist = waypoint->readWaypointsList();
-//    qDebug() << "! Waypoint test read->" << wplist;
-//    if (waypoint->clearAllWaypoints() == 1) {
-//        qDebug() << "! Waypoint test cleared. GOOD JOB :D";
-//    } else {
-//        qDebug() << "! Waypoint test not cleared :C";
-//    }
+    Waypoint * waypoint = new Waypoint();
+    connectWaypoint(waypoint, encoder, decoder);
 }
 
 void MainDockWindow::addToolBarButtons() {
@@ -104,10 +96,17 @@ void MainDockWindow::connectWaypoint(Waypoint * waypoint, Encoder * encoder, Dec
     connect(waypoint, &Waypoint::sendWP, encoder, &Encoder::sendMissionItem);
     connect(waypoint, &Waypoint::sendWPCount, encoder, &Encoder::sendMissionCount);
     connect(waypoint, &Waypoint::sendWPSetCurrent, encoder, &Encoder::sendMissionSetCurrent);
+
     connect(decoder, &Decoder::mAckReceived, waypoint, &Waypoint::updateMissionAck);
     connect(decoder, &Decoder::missionCountReceived, waypoint, &Waypoint::updateMissionCount);
     connect(decoder, &Decoder::missionItemReceived, waypoint, &Waypoint::updateMissionItem);
     connect(decoder, &Decoder::missionCurrentReceived, waypoint, &Waypoint::updateMissionCurrent);
+
+    connect(ui->missionWidget, &MissionWidget::clearMissions, waypoint, &Waypoint::clearAllWaypoints);
+    connect(ui->missionWidget, &MissionWidget::readMissionsSignal, waypoint, &Waypoint::readWaypointsList);
+    connect(ui->missionWidget, &MissionWidget::writeMissionsSignal, waypoint, &Waypoint::writeWaypoints);
+    connect(waypoint, &Waypoint::waypointsReceived, ui->missionWidget, &MissionWidget::readMissions);
+    connect(waypoint, &Waypoint::waypointsWriteStatus, ui->missionWidget, &MissionWidget::writeMissionsStatus);
 }
 
 void MainDockWindow::test() {

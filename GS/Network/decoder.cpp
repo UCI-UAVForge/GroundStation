@@ -234,7 +234,7 @@ void Decoder::parseMessage(mavlink_message_t msg) {
 //            emit(batteryReceived(battery));
 //        break;
         default:
-            qDebug() << "!*** Message not supported::msgid=" << msg.msgid << "***!";
+//            qDebug() << "!*** Message not supported::msgid=" << msg.msgid << "***!";
             break;
     }
 }

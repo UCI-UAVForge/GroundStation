@@ -13,6 +13,9 @@ MissionWidget::MissionWidget(QWidget *parent) :
     ui->missionList->lineEdit()->setAlignment(Qt::AlignCenter);
     connect(ui->loadButton, &QPushButton::clicked, this, &MissionWidget::loadMission);
     ui->clearButton->setBackgroundColor(QColor(255, 80, 83));
+    connect(ui->writeButton, &QPushButton::clicked, this, &MissionWidget::writeButtonClicked);
+    connect(ui->readButton, &QPushButton::clicked, this, &MissionWidget::readButtonClicked);
+    connect(ui->clearButton, &QPushButton::clicked, this, &MissionWidget::clearButtonClicked);
 }
 
 bool MissionWidget::hasMission() {
@@ -31,6 +34,36 @@ void MissionWidget::loadMission() {
                 c, QHeaderView::ResizeToContents);
         }
     }
+}
+
+void MissionWidget::writeButtonClicked() {
+    // Writes only the first mission in the mission vector
+    qDebug() << "MissionWidget::writeButtonClicked" << missions->at(0)->mission_waypoints.waypoints->length();
+    if (missions->empty()) qDebug() << "MissionWidget::writeButtonClicked -> empty mission vector";
+    else
+        emit(writeMissionsSignal(constructWaypoints(*missions->at(0)),
+                              missions->at(0)->mission_waypoints.waypoints->length()));
+}
+void MissionWidget::readButtonClicked() {
+    emit(readMissionsSignal());
+}
+void MissionWidget::clearButtonClicked() {
+    emit(clearMissions());
+}
+
+void MissionWidget::readMissions(Waypoint::WP * waypoints, uint16_t size) {
+    qDebug() << "!-----------------------!";
+    qDebug() << "MissionWidget::readMissions test";
+    qDebug() << "Mission waypoints length:" << size;
+    for (uint16_t i = 0; i < size; i++) {
+        qDebug() << "Waypoint" << i << "->" << waypoints[i].x;
+    }
+    qDebug() << "!-----------------------!";
+}
+
+void MissionWidget::writeMissionsStatus(bool success) {
+    if (success) qDebug() << "Write Missions Successful";
+    else qDebug() << "Write Missions failed";
 }
 
 QStandardItemModel * MissionWidget::createMissionModel(Mission * mission) {
@@ -63,6 +96,27 @@ void MissionWidget::getMissions(Interop * i) {
 //void MissionWidget::getObstacles(Interop * i) {
 //    Obstacles obstacles = interop->getObstacles();
 //    obstacles.loadStationaryObjects(mapWidget);
+
+Waypoint::WP* MissionWidget::constructWaypoints(const Mission& mission) {
+    Waypoint::WP* waypoints = new Waypoint::WP[missions->length()];
+    for (uint16_t i = 0; i < mission.mission_waypoints.waypoints->length(); i++) {
+        Waypoint::WP wp;
+        qDebug() << "MissionWidget::constructWaypoints -> Temporary placeholder values. MUST change for actual flight";
+//        TEMPORARY VALUES. NEEDS TO BE MODIFIED FOR ACTUAL FLIGHT
+        wp.id = i;
+        wp.command = 16;
+        wp.autocontinue = 1;
+        wp.current = 0;
+        wp.param1 = 0;
+        wp.param2 = 10;
+        wp.param3 = 0;
+        wp.x = mission.mission_waypoints.waypoints->at(i).x();
+        wp.y = mission.mission_waypoints.waypoints->at(i).y();
+        wp.z = mission.mission_waypoints.waypoints->at(i).z();
+        waypoints[i] = wp;
+    }
+    return waypoints;
+}
 
 MissionWidget::~MissionWidget()
 {
