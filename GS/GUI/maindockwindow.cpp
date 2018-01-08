@@ -74,7 +74,7 @@ void MainDockWindow::connectDecoder(Decoder * decoder) {
     connect(decoder, &Decoder::heartbeatReceived, uavButton, &UAVButton::updateHeartbeat);
     connect(decoder, &Decoder::batteryReceived, uavButton, &UAVButton::updateBattery);
 
-    connect(decoder, &Decoder::gpsReceived, ui->mapWidget, &MapWidget::updateUAVvPosition);
+    connect(decoder, &Decoder::gps_intReceived, ui->mapWidget, &MapWidget::updateUAVPosition);
 }
 
 void MainDockWindow::connectEncoder(Encoder * encoder) {
