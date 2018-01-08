@@ -93,7 +93,7 @@ QTableView {
        </widget>
       </item>
       <item>
-       <widget class="CustomRaisedButton" name="loadButton">
+       <widget class="QPushButton" name="loadButton">
         <property name="font">
          <font>
           <weight>75</weight>
@@ -159,7 +159,7 @@ QTableView {
    <item row="5" column="0">
     <layout class="QGridLayout" name="gridLayout">
      <item row="1" column="2">
-      <widget class="CustomRaisedButton" name="clearButton">
+      <widget class="QPushButton" name="clearButton">
        <property name="font">
         <font>
          <weight>75</weight>
@@ -172,7 +172,7 @@ QTableView {
       </widget>
      </item>
      <item row="1" column="0">
-      <widget class="CustomRaisedButton" name="writeButton">
+      <widget class="QPushButton" name="writeButton">
        <property name="font">
         <font>
          <weight>75</weight>
@@ -185,7 +185,7 @@ QTableView {
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="CustomRaisedButton" name="readButton">
+      <widget class="QPushButton" name="readButton">
        <property name="font">
         <font>
          <weight>75</weight>
@@ -201,13 +201,6 @@ QTableView {
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>CustomRaisedButton</class>
-   <extends>QPushButton</extends>
-   <header>customraisedbutton.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

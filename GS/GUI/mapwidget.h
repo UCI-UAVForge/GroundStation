@@ -20,7 +20,7 @@ public:
     void drawPoint(QVector2D point, QColor color);
     void drawPolyline(QVariantList points, QColor color);
     void drawPolygon(QVariantList points,QColor color = QColor(0,0,0,255));
-    void updateUAVPosition(mavlink_gps_raw_int_t gps);
+    void updateUAVvPosition(mavlink_gps_raw_int_t gps);
     void clearMap();
     void drawMission(Mission * mission);
     void drawUAV(double lat, double lon, double heading);
@@ -33,7 +33,7 @@ public:
         blinkUAV = blinkUAV ? false : true;
     }
 
-    void removeUAV();
+    void testRemoveUAV();
 
     int32_t currentUAVlat;
     int32_t currentUAVlon;

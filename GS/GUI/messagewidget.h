@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include "mavlink.h"
-#include "qtmaterialscrollbar.h"
+//#include "qtmaterialscrollbar.h"
 
 namespace Ui {
 class MessageWidget;

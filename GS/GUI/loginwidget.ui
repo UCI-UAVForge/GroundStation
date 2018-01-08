@@ -104,7 +104,7 @@
     </widget>
    </item>
    <item>
-    <widget class="CustomRaisedButton" name="loginButton">
+    <widget class="QPushButton" name="loginButton">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -133,13 +133,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>CustomRaisedButton</class>
-   <extends>QPushButton</extends>
-   <header>customraisedbutton.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

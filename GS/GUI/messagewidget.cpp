@@ -8,9 +8,9 @@ MessageWidget::MessageWidget(QWidget *parent) :
     ui->setupUi(this);
     QListWidgetItem * q = new QListWidgetItem("Message Widget Ready");
     ui->listWidget->addItem(q);
-    QtMaterialScrollBar * scrollBar = new QtMaterialScrollBar(this);
-    scrollBar->setHideOnMouseOut(false);
-    ui->listWidget->setVerticalScrollBar(scrollBar);
+    //QtMaterialScrollBar * scrollBar = new QtMaterialScrollBar(this);
+    //scrollBar->setHideOnMouseOut(false);
+    //ui->listWidget->setVerticalScrollBar(scrollBar);
 }
 
 void MessageWidget::updateMessages(mavlink_statustext_t stattext) {

@@ -32,11 +32,11 @@ void LoginWidget::attemptConnection() {
                 slide->setEndValue(0);
                 slide->start();
                 ui->loginButton->setText("INTEROP");
-                ui->loginButton->setBackgroundColor(QColor(60, 200, 103));
-                ui->loginButton->setOverlayStyle(Material::NoOverlay);
-                ui->loginButton->setRippleStyle(Material::NoRipple);
-                //ui->loginButton->setEnabled(false);
-               // ui->loginButton->setStyleSheet("QPushButton{background-color: rgb(60, 200, 103);}");
+//                ui->loginButton->setBackgroundColor(QColor(60, 200, 103));
+//                ui->loginButton->setOverlayStyle(Material::NoOverlay);
+//                ui->loginButton->setRippleStyle(Material::NoRipple);
+                ui->loginButton->setEnabled(false);
+                ui->loginButton->setStyleSheet("QPushButton{background-color: rgb(60, 200, 103);}");
                 emit (connectionSuccess(interop));
             }
             catch (QNetworkReply::NetworkError err) {

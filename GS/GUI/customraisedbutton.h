@@ -1,10 +1,11 @@
 #ifndef CUSTOMRAISEDBUTTON_H
 #define CUSTOMRAISEDBUTTON_H
 
-#include "qtmaterialraisedbutton.h"
+#include <QWidget>
+//#include "qtmaterialraisedbutton.h"
 
 
-class CustomRaisedButton : public QtMaterialRaisedButton
+class CustomRaisedButton : public QWidget
 {
 public:
     explicit CustomRaisedButton(QWidget * parent = 0);
