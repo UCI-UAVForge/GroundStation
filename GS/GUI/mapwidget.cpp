@@ -41,8 +41,52 @@ void MapWidget::drawMission(Mission * mission) {
 
 }
 
+void MapWidget::drawUAV(double lat, double lon, double heading) {
+    QMetaObject::invokeMethod(map, "drawUAV",
+            Q_ARG(QVariant, lat),
+            Q_ARG(QVariant, lon),
+            Q_ARG(QVariant, heading));
+}
+
 void MapWidget::updateCenter(double lat, double lon) {
     QMetaObject::invokeMethod(map, "updateCenter",
             Q_ARG(QVariant, lat),
             Q_ARG(QVariant, lon));
+}
+
+void MapWidget::testRemoveUAV() {
+    QMetaObject::invokeMethod(map, "removeUAV");
+}
+
+void MapWidget::updateUAV() {
+    if (blinkUAV) {
+        QTimer timer;
+        QEventLoop loop;
+
+        drawUAV(uav_latitude, uav_longitude, uav_heading);
+
+        timer.setSingleShot(true);
+        connect(&timer, SIGNAL(timeout()), &loop, SLOT(quit()));
+        timer.start(50);
+        loop.exec();
+
+        testRemoveUAV();
+
+        timer.setSingleShot(true);
+        connect(&timer, SIGNAL(timeout()), &loop, SLOT(quit()));
+        timer.start(50);
+        loop.exec();
+
+        drawUAV(uav_latitude, uav_longitude, uav_heading);
+    } else drawUAV(uav_latitude, uav_longitude, uav_heading);
+}
+
+void MapWidget::updateUAVPosition(mavlink_global_position_int_t gps_int) {
+    uav_latitude = gps_int.lat/10000000;
+    uav_longitude = gps_int.lon/10000000;
+    uav_heading = gps_int.hdg == UINT16_MAX ? 0 : gps_int.hdg/100;
+    if (updateConstant) {
+        updateCenter(uav_latitude, uav_longitude);
+        updateUAV();
+    }
 }

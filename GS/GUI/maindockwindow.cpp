@@ -11,6 +11,7 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->graphDock->hide();
+
     // UDP Link for SITL
     link = new UdpLink();
     link->startLink();
@@ -41,9 +42,6 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
 
     connect(loginWidget, &LoginWidget::connectionSuccess, ui->missionWidget, &MissionWidget::getMissions);
     connect(ui->missionWidget, &MissionWidget::drawMission, ui->mapWidget, &MapWidget::drawMission);
-
-    Waypoint * waypoint = new Waypoint();
-    connectWaypoint(waypoint, encoder, decoder);
 }
 
 void MainDockWindow::addToolBarButtons() {
@@ -65,7 +63,6 @@ void MainDockWindow::connectDecoder(Decoder * decoder) {
     connect(decoder, &Decoder::attReceived, ui->qfiWidget, &QFIWidget::updateAttitude);
     connect(decoder, &Decoder::pressureReceived, ui->qfiWidget, &QFIWidget::updatePressure);
     connect(decoder, &Decoder::gpsReceived, ui->movementWidget, &MovementWidget::updateTelemetry);
-    //connect (decoder, &Decoder::gpsReceived, uav, &UAV::updatepos);
     connect(decoder, &Decoder::attReceived, ui->movementWidget, &MovementWidget::updateAttitude);
     connect(decoder, &Decoder::localPositionReceived, ui->movementWidget, &MovementWidget::updateLocalPosition);
     connect(decoder, &Decoder::gpsReceived, ui->graphWidget, &GraphWidget::appendTelemData);
@@ -76,6 +73,8 @@ void MainDockWindow::connectDecoder(Decoder * decoder) {
 
     connect(decoder, &Decoder::heartbeatReceived, uavButton, &UAVButton::updateHeartbeat);
     connect(decoder, &Decoder::batteryReceived, uavButton, &UAVButton::updateBattery);
+
+    connect(decoder, &Decoder::gps_intReceived, ui->mapWidget, &MapWidget::updateUAVPosition);
 }
 
 void MainDockWindow::connectEncoder(Encoder * encoder) {

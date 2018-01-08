@@ -59,8 +59,7 @@ void Decoder::parseMessage(mavlink_message_t msg) {
         case MAVLINK_MSG_ID_GLOBAL_POSITION_INT: //33
             mavlink_global_position_int_t gps_int;
             mavlink_msg_global_position_int_decode(&msg, &gps_int);
-//            emit(gps_intReceived(gps_int));
-//            qDebug() << "decoder.cpp::globalpositionint->" << gps_int.lat << "," << gps_int.lon;
+            emit(gps_intReceived(gps_int));
         break;
         case MAVLINK_MSG_ID_RC_CHANNELS_RAW: //35
             mavlink_rc_channels_raw_t rc_channels_raw;

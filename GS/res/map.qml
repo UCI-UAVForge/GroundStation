@@ -85,20 +85,30 @@ Rectangle {
             map.center = QtPositioning.coordinate(lat, lon);
         }
 
+        function drawUAV(lat, lon, heading) {
+            map.removeMapItem(plane);
+            plane.coordinate = QtPositioning.coordinate(lat, lon)
+            plane.rotation = 90 - heading
+            map.addMapItem(plane)
+        }
+
+        function removeUAV() {
+            map.removeMapItem(plane)
+        }
+
         function clearMap() {
             map.clearMapItems();
-
         }
 
 
         MapQuickItem{id:plane;
-                    anchorPoint.x: image.width;
-                    anchorPoint.y: image.height/2;
-                    sourceItem: Image{id:image;
-                                width:30;height:30;
-                                fillMode:Image.PreserveAspectFit;
-                                source: "plane.png"}
-                    }
+                    anchorPoint.x: image.width/4;
+                    anchorPoint.y: image.height;
+                    sourceItem: Image {id:image;
+                                width:25;height:25;
+                                fillMode:Image.PreserveAspectFit
+                                source: "images/Plane.png"}
+        }
 
         function addMarker(id,img,lat,lon,x,y,type){
             test = Qt.createQmlObject("
@@ -145,9 +155,6 @@ Rectangle {
 
         }
 
-
     }
-
-
 }
 
