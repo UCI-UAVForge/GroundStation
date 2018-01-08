@@ -11,6 +11,7 @@
 #include <QLineEdit>
 #include <QStandardItemModel>
 #include <QHeaderView>
+#include <QGeoCoordinate>
 
 namespace Ui {
 class MissionWidget;

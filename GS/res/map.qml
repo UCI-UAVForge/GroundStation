@@ -10,6 +10,7 @@ Rectangle {
     height:512
     visible: true
     objectName:"rect"
+    property alias coords: uavPosition.text
     Plugin {
         id: mapPlugin
         name: "esri"
@@ -100,7 +101,6 @@ Rectangle {
             map.clearMapItems();
         }
 
-
         MapQuickItem{id:plane;
                     anchorPoint.x: image.width/4;
                     anchorPoint.y: image.height;
@@ -155,6 +155,36 @@ Rectangle {
 
         }
 
+    }
+    Rectangle {
+        id: mapinfo
+        Text {
+            text: "UAV POSITION"
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            color: "white"
+            font.bold: true
+            anchors.margins:5
+        }
+
+        Text {
+            id: uavPosition
+            objectName: "uavPosition"
+            text: "No Data Received"
+            color: "white"
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.bottom: parent.bottom
+            anchors.margins: 5
+            function updateUAVPosition(coords) {
+                uavPosition.text = coords;
+            }
+        }
+        color: Qt.rgba(0, 0, 0, 0.55)
+        width: 220; height: 42;
+        anchors.top: parent.top
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.margins: 15
+        radius: 5
     }
 }
 

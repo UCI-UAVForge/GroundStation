@@ -11,12 +11,11 @@ QT       += core \
             network
 QT       += svg
 QT       += sql
-QT       += webchannel
-QT       += websockets
 QT       += widgets
 QT       += quickwidgets
 QT       += charts
 QT       += serialport
+QT       += positioning
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
@@ -30,9 +29,11 @@ CONFIG += c++11
 macx {
     QMAKE_MAC_SDK = macosx10.12
 }
-TARGET = UAV-Forge-New
-TEMPLATE = app
 
+TEMPLATE = app
+TARGET = UAV-Forge-New
+
+#TEMPLATE = app
 #PRECOMPILED_HEADER = qcustomplot.h
 
 INCLUDEPATH += \
@@ -68,5 +69,19 @@ RESOURCES += \
 
 INCLUDEPATH += ardupilotmav/ardupilotmega/
 
+
 DISTFILES +=
 
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/components/release/ -lcomponents
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/components/debug/ -lcomponents
+else:unix: LIBS += -L$$PWD/components/ -lcomponents
+
+INCLUDEPATH += $$PWD/components
+DEPENDPATH += $$PWD/components
+
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/components/release/libcomponents.a
+else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/components/debug/libcomponents.a
+else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/components/release/components.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/components/debug/components.lib
+else:unix: PRE_TARGETDEPS += $$PWD/components/libcomponents.a

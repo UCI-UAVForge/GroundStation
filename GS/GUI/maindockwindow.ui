@@ -10,18 +10,32 @@
     <height>602</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <pointsize>9</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton {
-	padding:4px;
+   <string notr="true">
+QPushButton:pressed {
+	background-color: rgb(235,235,235)
+}
+QPushButton {
+border: 0px solid rgb(200,200,200);
+border-radius: 1px;
+background-color:rgb(255, 80, 83);
+padding:4px;
+	color: white;
 }
 
 QDockWidget {
 	color:rgb(0, 255, 213);
-	background-color:rgba(40,40,40, 90);
+	background-color:rgb(40,40,40);
 	border:10px;
+	padding-bottom:10px;
 }
 QMainWindow{
 background-color: rgb(40, 40, 40);
@@ -38,7 +52,7 @@ QToolBar {
 QToolButton {
 	color:rgb(220,220,220);
 	padding:2px;
-	border-radius:1px;
+	border-radius:3px;
 	border: 0px solid;
 	font: bold
 }
@@ -72,6 +86,11 @@ QToolButton:hover {
    </property>
   </widget>
   <widget class="QDockWidget" name="timerDock">
+   <property name="font">
+    <font>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="floating">
     <bool>false</bool>
    </property>
@@ -127,6 +146,15 @@ QToolButton:hover {
   </widget>
   <widget class="QDockWidget" name="graphDock">
    <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>400</width>
+     <height>35</height>
+    </size>
+   </property>
+   <property name="floating">
     <bool>false</bool>
    </property>
    <property name="windowTitle">
@@ -135,7 +163,14 @@ QToolButton:hover {
    <attribute name="dockWidgetArea">
     <number>8</number>
    </attribute>
-   <widget class="GraphWidget" name="graphWidget"/>
+   <widget class="GraphWidget" name="graphWidget">
+    <property name="minimumSize">
+     <size>
+      <width>400</width>
+      <height>0</height>
+     </size>
+    </property>
+   </widget>
   </widget>
   <widget class="QDockWidget" name="messageDock">
    <property name="windowTitle">
@@ -147,6 +182,9 @@ QToolButton:hover {
    <widget class="MessageWidget" name="messageWidget"/>
   </widget>
   <widget class="QToolBar" name="toolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="font">
     <font>
      <weight>75</weight>
@@ -170,6 +208,9 @@ QToolButton:hover {
    </attribute>
   </widget>
   <widget class="QDockWidget" name="missionDock">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="windowTitle">
     <string>Missions</string>
    </property>

@@ -17,8 +17,8 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     link->startLink();
 
 //     Serial link for RF900
-//        link = new SerialLink();
-//        link->startLink();
+     //   link = new SerialLink();
+     //   link->startLink();
 
     mission = new Mission();
     uavButton = new UAVButton(this);

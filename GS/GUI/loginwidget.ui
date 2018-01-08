@@ -20,16 +20,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton:pressed {
-	background-color: rgb(235,235,235)
-}
-QPushButton {
-border: 0px solid rgb(200,200,200);
-border-radius: 1px;
-background-color:rgb(255, 80, 83);
-padding:4px;
-	color: white
-}</string>
+   <string notr="true"/>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="spacing">
@@ -49,6 +40,15 @@ padding:4px;
    </property>
    <item alignment="Qt::AlignRight">
     <widget class="QWidget" name="login" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <property name="leftMargin">
        <number>0</number>
@@ -104,7 +104,7 @@ padding:4px;
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="loginButton">
+    <widget class="CustomRaisedButton" name="loginButton">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
        <horstretch>0</horstretch>
@@ -133,6 +133,13 @@ padding:4px;
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>CustomRaisedButton</class>
+   <extends>QPushButton</extends>
+   <header>customraisedbutton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

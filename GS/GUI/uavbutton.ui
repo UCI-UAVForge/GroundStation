@@ -23,17 +23,7 @@
    <double>1.000000000000000</double>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-QPushButton:pressed {
-	background-color: rgb(235,235,235)
-}
-QPushButton {
-border: 0px solid rgb(200,200,200);
-border-radius: 1px;
-background-color:rgb(255, 80, 83);
-padding:4px;
-	color: white;
-}</string>
+   <string notr="true"/>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="spacing">

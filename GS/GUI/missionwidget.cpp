@@ -1,5 +1,6 @@
 #include "missionwidget.h"
 #include "ui_missionwidget.h"
+#include "qtmaterialraisedbutton.h"
 #include <QDebug>
 MissionWidget::MissionWidget(QWidget *parent) :
     QWidget(parent),
@@ -11,6 +12,7 @@ MissionWidget::MissionWidget(QWidget *parent) :
     ui->missionList->lineEdit()->setReadOnly(true);
     ui->missionList->lineEdit()->setAlignment(Qt::AlignCenter);
     connect(ui->loadButton, &QPushButton::clicked, this, &MissionWidget::loadMission);
+    ui->clearButton->setBackgroundColor(QColor(255, 80, 83));
     connect(ui->writeButton, &QPushButton::clicked, this, &MissionWidget::writeButtonClicked);
     connect(ui->readButton, &QPushButton::clicked, this, &MissionWidget::readButtonClicked);
     connect(ui->clearButton, &QPushButton::clicked, this, &MissionWidget::clearButtonClicked);
@@ -67,9 +69,10 @@ void MissionWidget::writeMissionsStatus(bool success) {
 QStandardItemModel * MissionWidget::createMissionModel(Mission * mission) {
     QList<QVector3D> * waypoints = mission->mission_waypoints.waypoints;
     QStandardItemModel *model = new QStandardItemModel;
-    model->setHorizontalHeaderLabels(QList<QString>({"LAT/LNG", " ALT ", " CMD "}));
+    model->setHorizontalHeaderLabels(QList<QString>({"LAT,LON", " ALT ", " CMD "}));
     for (int i = 0; i < waypoints->size(); i++) {
-        QStandardItem * latlng = new QStandardItem(QString("%0, %1").arg(waypoints->at(i).x()).arg(waypoints->at(i).y()));
+        QString coords = QGeoCoordinate(waypoints->at(i).x(), waypoints->at(i).y()).toString(QGeoCoordinate::DegreesWithHemisphere);
+        QStandardItem * latlng = new QStandardItem(coords);
         QStandardItem * alt = new QStandardItem(QString("%0 m.").arg(waypoints->at(i).z()));
         QStandardItem * action = new QStandardItem(QString("%0").arg(mission->mission_waypoints.actions->at(i)));
         QList<QStandardItem*> row({latlng, alt, action});
