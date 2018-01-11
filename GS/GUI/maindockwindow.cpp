@@ -13,12 +13,11 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     ui->graphDock->hide();
 
     // UDP Link for SITL
-    link = new UdpLink();
-    link->startLink();
+ //   link = new UdpLink();
 
 //     Serial link for RF900
-     //   link = new SerialLink();
-     //   link->startLink();
+       link = new SerialLink();
+       link->startLink();
 
     mission = new Mission();
     uavButton = new UAVButton(this);
@@ -62,7 +61,7 @@ void MainDockWindow::connectDecoder(Decoder * decoder) {
     connect(decoder, &Decoder::vfrHudReceived, ui->qfiWidget, &QFIWidget::updateVFR);
     connect(decoder, &Decoder::attReceived, ui->qfiWidget, &QFIWidget::updateAttitude);
     connect(decoder, &Decoder::pressureReceived, ui->qfiWidget, &QFIWidget::updatePressure);
-    connect(decoder, &Decoder::gpsReceived, ui->movementWidget, &MovementWidget::updateTelemetry);
+    connect(decoder, &Decoder::vfrHudReceived, ui->movementWidget, &MovementWidget::updateTelemetry);
     connect(decoder, &Decoder::attReceived, ui->movementWidget, &MovementWidget::updateAttitude);
     connect(decoder, &Decoder::localPositionReceived, ui->movementWidget, &MovementWidget::updateLocalPosition);
     connect(decoder, &Decoder::gpsReceived, ui->graphWidget, &GraphWidget::appendTelemData);

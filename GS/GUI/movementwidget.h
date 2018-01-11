@@ -18,14 +18,13 @@ public:
     QGridLayout *layout;
     Ui::MovementWidget ui;
     void mousePressEvent(QMouseEvent *) override;
-   // void setUAVMap(QQuickWidget * map);
 private:
     UAV * uav;
 
 signals:
 
 public slots:
-    void updateTelemetry(mavlink_gps_raw_int_t gps);
+    void updateTelemetry(mavlink_vfr_hud_t vfr_hud);
     void updateAttitude(mavlink_attitude_t att);
     void updateLocalPosition(mavlink_local_position_ned_t l_pos);
 };

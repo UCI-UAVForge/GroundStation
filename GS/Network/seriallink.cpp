@@ -5,12 +5,14 @@
 SerialLink::SerialLink(){
 
 }
+
 void SerialLink::startLink() {
     serialPort = new QSerialPort();
     for (auto e: QSerialPortInfo::availablePorts()) {
-        qDebug() << "Serial Port: " << e.portName();
-        serialPort->setPortName(e.portName());
+        qInfo() << "Serial Port: " << e.portName();
+       // serialPort->setPortName(e.portName());
     }
+    serialPort->setPortName("ttyACM0");
     serialPort->setBaudRate(QSerialPort::Baud57600);
     serialPort->setDataBits(QSerialPort::Data8);
     serialPort->setParity(QSerialPort::NoParity);
