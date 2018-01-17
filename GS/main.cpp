@@ -3,7 +3,8 @@
 #include <QtSvg>
 
 #include "maindockwindow.h"
-#include "voronoi-mdp.hpp"
+#include "plan_mission.hpp"
+#include "point.hpp"
 
 int main(int argc, char *argv[]) {
 
@@ -26,7 +27,7 @@ int main(int argc, char *argv[]) {
     //Construct and show the splash screen
     QSplashScreen splash(pixmap);
     // splash.show();
-    gen_path(std::vector<Point>{Point{1,1,1}, Point{1,1,1}, Point{3,3,3}}, std::vector<Obstacles>());
+//    gen_path(std::vector<Point>{Point{1,1,1}, Point{1,1,1}, Point{3,3,3}}, std::vector<Obstacles>());
 
 //    MainMDIDisplay x;
     MainDockWindow dockWindow;
