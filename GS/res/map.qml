@@ -89,7 +89,7 @@ Rectangle {
         function drawUAV(lat, lon, heading) {
             map.removeMapItem(plane);
             plane.coordinate = QtPositioning.coordinate(lat, lon)
-            plane.rotation = 90 - heading
+            plane.rotation = heading
             map.addMapItem(plane)
         }
 
@@ -105,7 +105,7 @@ Rectangle {
                     anchorPoint.x: image.width/4;
                     anchorPoint.y: image.height;
                     sourceItem: Image {id:image;
-                                width:25;height:25;
+                                width:30;height:30;
                                 fillMode:Image.PreserveAspectFit
                                 source: "images/Plane.png"}
         }
@@ -173,14 +173,28 @@ Rectangle {
             text: "No Data Received"
             color: "white"
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.bottom: parent.bottom
+            anchors.centerIn: parent
             anchors.margins: 5
             function updateUAVPosition(coords) {
                 uavPosition.text = coords;
             }
         }
+
+        Text {
+            id: uavHeading
+            objectName: "uavHeading"
+            text: ""
+            color: "white"
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.bottom: parent.bottom
+            anchors.margins: 5
+            function updateUAVHeading(heading) {
+                uavHeading.text = heading;
+            }
+        }
+
         color: Qt.rgba(0, 0, 0, 0.55)
-        width: 220; height: 42;
+        width: 220; height: 63;
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.margins: 15

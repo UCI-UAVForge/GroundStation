@@ -24,16 +24,18 @@ void MapWidget::drawPolygon(QVariantList points, QColor color) {
            Q_ARG(QVariant, color));
 }
 
-void MapWidget::updateUAVvPosition(mavlink_gps_raw_int_t gps) {
-    if (gps.lat != currentUAVlat && gps.lon != currentUAVlon) {
-        currentUAVlat = gps.lat; currentUAVlon = gps.lon;
-        QString coords = QGeoCoordinate((float)gps.lat/10000000, (float)gps.lon/10000000).toString(QGeoCoordinate::DegreesWithHemisphere);
+// Delete
+//void MapWidget::updateUAVvPosition(mavlink_gps_raw_int_t gps) {
+//    qDebug() << "mapWidget updateUAVvPosition";
+//    if (gps.lat != currentUAVlat && gps.lon != currentUAVlon) {
+//        currentUAVlat = gps.lat; currentUAVlon = gps.lon;
+//        QString coords = QGeoCoordinate((float)gps.lat/10000000, (float)gps.lon/10000000).toString(QGeoCoordinate::DegreesWithHemisphere);
 
-        this->rootObject()->setProperty("coords", QVariant(coords));
-        QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavPosition"), "updateUAVPosition",
-               Q_ARG(QVariant, coords));
-    }
-}
+//        this->rootObject()->setProperty("coords", QVariant(coords));
+//        QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavPosition"), "updateUAVPosition",
+//               Q_ARG(QVariant, coords));
+//    }
+//}
 
 void MapWidget::clearMap() {
     QMetaObject::invokeMethod(map, "clearMap");
@@ -65,14 +67,12 @@ void MapWidget::updateCenter(double lat, double lon) {
             Q_ARG(QVariant, lon));
 }
 
-void MapWidget::testRemoveUAV() {
-    QMetaObject::invokeMethod(map, "removeUAV");
-}
-
 void MapWidget::updateUAV() {
     if (blinkUAV) {
         QTimer timer;
         QEventLoop loop;
+
+        QMetaObject::invokeMethod(map, "removeUAV");
 
         drawUAV(uav_latitude, uav_longitude, uav_heading);
 
@@ -81,7 +81,7 @@ void MapWidget::updateUAV() {
         timer.start(50);
         loop.exec();
 
-        testRemoveUAV();
+        QMetaObject::invokeMethod(map, "removeUAV");
 
         timer.setSingleShot(true);
         connect(&timer, SIGNAL(timeout()), &loop, SLOT(quit()));
@@ -93,11 +93,66 @@ void MapWidget::updateUAV() {
 }
 
 void MapWidget::updateUAVPosition(mavlink_global_position_int_t gps_int) {
-    uav_latitude = gps_int.lat/10000000;
-    uav_longitude = gps_int.lon/10000000;
-    uav_heading = gps_int.hdg == UINT16_MAX ? 0 : gps_int.hdg/100;
-    updateUAV();
-    if (updateConstant) {
+    if (gps_int.lat/10000000 != uav_latitude && gps_int.lon/10000000 != uav_longitude) {
+        uav_latitude = gps_int.lat/10000000;
+        uav_longitude = gps_int.lon/10000000;
+        QString coords = QGeoCoordinate(uav_latitude, uav_longitude).toString(QGeoCoordinate::DegreesWithHemisphere);
+
+        this->rootObject()->setProperty("coords", QVariant(coords));
+        QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavPosition"), "updateUAVPosition",
+               Q_ARG(QVariant, coords));
+    }
+    if (gps_int.hdg/100 != uav_heading) {
+        if (gps_int.hdg == UINT16_MAX)
+            qDebug() << "Unable to received accurate heading data from UAV, UAV default heading: North";
+        else
+            uav_heading = gps_int.hdg/100;
+        QString heading = headingToCompass(uav_heading);
+        this->rootObject()->setProperty("heading", QVariant(heading));
+        QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavHeading"), "updateUAVHeading",
+                Q_ARG(QVariant, heading));
+    }
+    if (updateUAVConstant) {
+        updateUAV();
+    }
+    if (updateCenterConstant) {
         updateCenter(uav_latitude, uav_longitude);
     }
+}
+
+QString MapWidget::headingToCompass(double heading) {
+    QString compass = "Compass bearing: ";
+    if ((heading<360 && heading>348.75) || (heading>=0 && heading<=11.25))
+        return compass.append("N");
+    if (heading>11.25 && heading<=33.75)
+        return compass.append("NNE");
+    if (heading>33.75 && heading<=56.25)
+        return compass.append("NE");
+    if (heading>56.25 && heading<=78.75)
+        return compass.append("ENE");
+    if (heading>78.75 && heading<=101.25)
+        return compass.append("E");
+    if (heading>101.25 && heading<=123.75)
+        return compass.append("ESE");
+    if (heading>123.75 && heading<=146.25)
+        return compass.append("SE");
+    if (heading>146.25 && heading<=168.75)
+        return compass.append("SSE");
+    if (heading>168.75 && heading<=191.25)
+        return compass.append("S");
+    if (heading>191.25 && heading<=213.75)
+        return compass.append("SSW");
+    if (heading>213.75 && heading<=236.25)
+        return compass.append("SW");
+    if (heading>236.25 && heading<=258.75)
+        return compass.append("WSW");
+    if (heading>258.75 && heading<=281.25)
+        return compass.append("W");
+    if (heading>281.25 && heading<=303.75)
+        return compass.append("WNW");
+    if (heading>303.75 && heading<=326.25)
+        return compass.append("NW");
+    if (heading>326.25 && heading<=348.75)
+        return compass.append("NNW");
+    return "MapWidget::headingToCompass - Greater than 359";
 }
