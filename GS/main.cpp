@@ -3,8 +3,8 @@
 #include <QtSvg>
 
 #include "maindockwindow.h"
-#include "plan_mission.hpp"
-#include "point.hpp"
+//#include "plan_mission.hpp"
+//#include "point.hpp"
 
 int main(int argc, char *argv[]) {
 
