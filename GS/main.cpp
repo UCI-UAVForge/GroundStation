@@ -3,6 +3,7 @@
 #include <QtSvg>
 
 #include "maindockwindow.h"
+
 //#include "plan_mission.hpp"
 //#include "point.hpp"
 
@@ -27,7 +28,11 @@ int main(int argc, char *argv[]) {
     //Construct and show the splash screen
     QSplashScreen splash(pixmap);
     // splash.show();
-//    gen_path(std::vector<Point>{Point{1,1,1}, Point{1,1,1}, Point{3,3,3}}, std::vector<Obstacles>());
+//    PlanMission pm;
+//    pm.add_goal_point(Point{1,1,1});
+//    pm.add_goal_point(Point{1,1,1});
+//    pm.add_goal_point(Point{3,3,3});
+//    pm.get_path(Point{1,1,1});
 
 //    MainMDIDisplay x;
     MainDockWindow dockWindow;

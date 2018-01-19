@@ -134,7 +134,7 @@ void Waypoint::sendWaypoint(const WP& waypoint) {
     QEventLoop loop;
     for (int i = 0; i < numAttempts && timeout; i++) {
         if (i>0) qDebug() << "REQUEST::SENDWP FAILED! RETRY ATTEMPT " << i+1;
-        float params[] = {waypoint.param1, waypoint.param2, waypoint.param3, waypoint.param4, waypoint.x, waypoint.y, waypoint.z};
+        float params[] = {waypoint.param1, waypoint.param2, waypoint.param3, waypoint.param4, (float)waypoint.x, (float)waypoint.y, (float)waypoint.z};
         emit(sendWP(waypoint.id, waypoint.command, params));
         timer.setSingleShot(true);
         connect(&timer, SIGNAL(timeout()), &loop, SLOT(quit()));
