@@ -8,8 +8,16 @@ private:
     double z;
 
 public:
-    Vect();
-    Vect(double, double, double);
+    Vect() {
+        x = 0;
+        y = 0;
+        z = 0;
+    }
+    Vect(double x, double y, double z) {
+        this->x = x;
+        this->y = y;
+        this->z = z;
+    }
 
     double getX() { return x; }
     double getY() { return y; }
@@ -61,16 +69,4 @@ public:
         return Vect(x / other.x, y / other.y, z / other.z);
     }
 };
-
-Vect::Vect() {
-    x = 0;
-    y = 0;
-    z = 0;
-}
-
-Vect::Vect(double x, double y, double z) {
-    this->x = x;
-    this->y = y;
-    this->z = z;
-}
 #endif // VECT_H
