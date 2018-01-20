@@ -47,18 +47,19 @@ private:
         }
         return newList;
     }
-    QString headingToCompass(double heading);
+    QString headingToCompass(int heading);
     bool updateCenterConstant = false;
     bool updateUAVConstant = true;
     bool blinkUAV = false;
     double uav_latitude = 0;
     double uav_longitude = 0;
-    double uav_heading = 0;
+    int uav_heading = 0;
 
 //signals:
 
 public slots:
-    void updateUAVPosition(mavlink_global_position_int_t gps_int);
+    void updateUAVPosition(mavlink_gps_raw_int_t gps);
+    void updateUAVHeading(mavlink_vfr_hud_t vfr);
 };
 
 #endif // MAPWIDGET_H

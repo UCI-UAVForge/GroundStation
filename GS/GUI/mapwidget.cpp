@@ -92,25 +92,15 @@ void MapWidget::updateUAV() {
     } else drawUAV(uav_latitude, uav_longitude, uav_heading);
 }
 
-void MapWidget::updateUAVPosition(mavlink_global_position_int_t gps_int) {
-    if (gps_int.lat/10000000 != uav_latitude && gps_int.lon/10000000 != uav_longitude) {
-        uav_latitude = gps_int.lat/10000000;
-        uav_longitude = gps_int.lon/10000000;
+void MapWidget::updateUAVPosition(mavlink_gps_raw_int_t gps) {
+    if ((double)gps.lat/10000000 != uav_latitude && (double)gps.lon/10000000 != uav_longitude) {
+        uav_latitude = (double)gps.lat/10000000;
+        uav_longitude = (double)gps.lon/10000000;
         QString coords = QGeoCoordinate(uav_latitude, uav_longitude).toString(QGeoCoordinate::DegreesWithHemisphere);
 
         this->rootObject()->setProperty("coords", QVariant(coords));
         QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavPosition"), "updateUAVPosition",
                Q_ARG(QVariant, coords));
-    }
-    if (gps_int.hdg/100 != uav_heading) {
-        if (gps_int.hdg == UINT16_MAX)
-            qDebug() << "Unable to received accurate heading data from UAV, UAV default heading: North";
-        else
-            uav_heading = gps_int.hdg/100;
-        QString heading = headingToCompass(uav_heading);
-        this->rootObject()->setProperty("heading", QVariant(heading));
-        QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavHeading"), "updateUAVHeading",
-                Q_ARG(QVariant, heading));
     }
     if (updateUAVConstant) {
         updateUAV();
@@ -120,7 +110,28 @@ void MapWidget::updateUAVPosition(mavlink_global_position_int_t gps_int) {
     }
 }
 
-QString MapWidget::headingToCompass(double heading) {
+void MapWidget::updateUAVHeading(mavlink_vfr_hud_t vfr) {
+    if (vfr.heading != uav_heading) {
+        uav_heading = vfr.heading;
+        QString heading = headingToCompass(uav_heading);
+        this->rootObject()->setProperty("heading", QVariant(heading));
+        QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavHeading"), "updateUAVHeading",
+                Q_ARG(QVariant, heading));
+    }
+}
+
+//if (gps_int.hdg/100 != uav_heading) {
+//    if (gps_int.hdg == UINT16_MAX)
+//        qDebug() << "Unable to received accurate heading data from UAV, UAV default heading: North";
+//    else
+//        uav_heading = gps_int.hdg/100;
+//    QString heading = headingToCompass(uav_heading);
+//    this->rootObject()->setProperty("heading", QVariant(heading));
+//    QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavHeading"), "updateUAVHeading",
+//            Q_ARG(QVariant, heading));
+//}
+
+QString MapWidget::headingToCompass(int heading) {
     QString compass = "Compass bearing: ";
     if ((heading<360 && heading>348.75) || (heading>=0 && heading<=11.25))
         return compass.append("N");

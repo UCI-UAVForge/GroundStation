@@ -12,7 +12,7 @@ void SerialLink::startLink() {
         qInfo() << "Serial Port: " << e.portName();
        // serialPort->setPortName(e.portName());
     }
-    serialPort->setPortName("ttyACM0");
+    serialPort->setPortName("COM4");
     serialPort->setBaudRate(QSerialPort::Baud57600);
     serialPort->setDataBits(QSerialPort::Data8);
     serialPort->setParity(QSerialPort::NoParity);
