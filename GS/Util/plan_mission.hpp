@@ -15,15 +15,15 @@ class PlanMission
 {
     private:
         std::vector<Point> goal_points;
-        std::vector<Obstacles> obstacles_z;
+        Obstacles obstacles_z;
         std::vector<QPolygon> search_areas;
 
-        std::vector<Point> pathfind(Point start, Point end, std::vector<Obstacles> obstacles);
+        std::vector<Point> pathfind(Point start, Point end, Obstacles obstacles);
     public:
         PlanMission();
         // too lazy to implement ordering for these objects
         void add_goal_point(Point p);
-        void add_obstacle(Obstacles o);
+        void set_obstacles(Obstacles o);
         void add_serach_area(QPolygon poly);
         std::vector<Point> get_path(Point start_point);
 };

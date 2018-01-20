@@ -3,7 +3,7 @@ const int WORLD_WIDTH = 10000;
 const int WORLD_HEIGHT = 10000;
 const int WORLD_Z = 10000;
 const int END_DIST_THRESHOLD = 30;
-RRT::RRT(Point start, Point end, std::vector<Obstacles> obstacles)
+RRT::RRT(Point start, Point end, Obstacles obstacles)
 {
     this->obstacles = obstacles;
     startPos = Vect(start.x, start.y, start.z);

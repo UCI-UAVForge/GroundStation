@@ -18,7 +18,7 @@ struct Node {
 class RRT
 {
 public:
-    RRT(Point start, Point end, std::vector<Obstacles>);
+    RRT(Point start, Point end, Obstacles o);
     void initialize();
     Node* getRandomNode();
     Node* nearest(Vect point);
@@ -29,7 +29,7 @@ public:
     void setStepSize(int step);
     void setMaxIterations(int iter);
     void deleteNodes(Node *root);
-    std::vector<Obstacles> obstacles;
+    Obstacles obstacles;
     std::vector<Node *> nodes;
     std::vector<Node *> path;
     Node *root, *lastNode;
