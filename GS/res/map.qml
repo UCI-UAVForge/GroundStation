@@ -110,50 +110,6 @@ Rectangle {
                                 source: "images/Plane.png"}
         }
 
-        function addMarker(id,img,lat,lon,x,y,type){
-            test = Qt.createQmlObject("
-                                    import QtQuick 2.0;
-                                    import QtLocation 5.6;
-                                    import QtPositioning 5.6;
-                                    MapQuickItem{id:marker" + id + ";
-                                                property int someNumber: " + type + ";
-                                                anchorPoint.x: image.width" + x + ";
-                                                anchorPoint.y: image.height" + y + ";
-                                                sourceItem: Image{id:image;
-                                                            width:30;height:30;
-                                                            fillMode:Image.PreserveAspectFit;
-                                                            source: \""+img+".png\"}
-                                    coordinate: QtPositioning.coordinate(" + lat + "," + lon + ")}", map)
-
-            map.addMapItem(test)
-        }
-
-        function addLine(id, width, color, pathlat, pathlon, size, type){
-            text = "
-                    import QtQuick 2.0;
-                    import QtLocation 5.6;
-
-                    MapPolyline{id:image" + id + ";
-                                property int someNumber: "+type+";
-                                line.width: " + width + ";
-                                line.color: '" + color + "'
-                                path: ["
-
-            for (var i=0; i<size; ++i){
-                if (i!=0)
-                    text += ","
-                text += "{ latitude: " + pathlat[i] + ", longitude:" + pathlon[i] + "}"
-            }
-
-            text += "]}"
-
-            test2 = Qt.createQmlObject(text, map)
-            map.addMapItem(test2)
-        }
-
-        function remove(type){
-
-        }
 
     }
     Rectangle {
