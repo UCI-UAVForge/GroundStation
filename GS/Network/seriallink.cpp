@@ -49,6 +49,6 @@ void SerialLink::recvData() {
         }
     }
     if (!msgReceived) {
-        QTextStream(stdout) << "Message incomplete" << endl;
+        //QTextStream(stdout) << "Message incomplete" << endl;
     }
 }

@@ -5,10 +5,7 @@
 #include <QTimer>
 #include <QEventLoop>
 #include <limits>
-#include "encoder.h"
-#include "decoder.h"
 #include "mavlink.h"
-
 
 class Waypoint : public QObject
 {
@@ -22,6 +19,7 @@ class Waypoint : public QObject
 
 public:
     struct WP {
+        // Note: id refers to seq
         uint16_t id;
         uint8_t frame;
         uint16_t command;
@@ -35,12 +33,11 @@ public:
         int32_t y;
         float z;
     };
-
     Waypoint();
     void clearAllWaypoints();
     void readWaypointsList();
     void writeWaypoints(const WP * waypoints, uint16_t size);
-    int setCurrentWaypoint(uint16_t seq);
+//    int setCurrentWaypoint(uint16_t seq);
 
 signals:
     void reqClearAll();
@@ -48,8 +45,9 @@ signals:
     void reqWP(uint16_t i);
     void sendAck(uint16_t type);
     void sendWPCount(uint16_t count);
-    void sendWP(int seq, int cmd, float params[]);
-    void sendWPSetCurrent(uint16_t seq);
+    //void sendWP(int seq, int cmd, float params[]);
+    void sendWP(WP waypoint);
+//    void sendWPSetCurrent(uint16_t seq);
 
     void waypointsReceived(WP * waypoints, uint16_t size);
     void waypointsWriteStatus(bool success);
@@ -57,22 +55,31 @@ signals:
 public slots:
     void updateMissionAck(mavlink_mission_ack_t mission_ack);
     void updateMissionCount(mavlink_mission_count_t mCount);
-    void updateMissionItem(mavlink_mission_item_int_t mission_item);
-    void updateMissionRequest(mavlink_mission_request_int_t mission_request);
-    void updateMissionCurrent(mavlink_mission_current_t mCurrent);
+    void updateMissionItem(mavlink_mission_item_t mission_item);
+    void updateMissionRequest(mavlink_mission_request_t mission_request);
+//    void updateMissionCurrent(mavlink_mission_current_t mCurrent);
 
 private:
-    bool timeout = false;
+    bool clearTimeout;
+    bool writeAck;
+    bool reqFlag;
+    bool countFlag;
+    bool readFlag;
+    bool writeFlag;
     bool missionCurrentTimeout = false;
     bool ackFlag = false;
     int numAttempts = 10;
     int msTimeout = 50;
-    int nPoints = 0;
+    uint16_t nPoints = 0;
     uint16_t currentRequestedMission;
     WP savedWP;
-    void requestAttempt(short request_type, uint16_t n = std::numeric_limits<uint16_t>::max());
-    void requestWaypointSet(uint16_t seq);
+
     void sendWaypoint(const WP& waypoint);
+    void requestClear();
+    void sendCount(uint16_t n);
+    void requestWaypoint(uint16_t n);
+    void requestCount();
+    void pause();
 };
 
 #endif // WYP_H

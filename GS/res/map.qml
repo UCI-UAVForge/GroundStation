@@ -105,7 +105,7 @@ Rectangle {
                     anchorPoint.x: image.width/4;
                     anchorPoint.y: image.height;
                     sourceItem: Image {id:image;
-                                width:30;height:30;
+                                width:70;height:70;
                                 fillMode:Image.PreserveAspectFit
                                 source: "images/Plane.png"}
         }

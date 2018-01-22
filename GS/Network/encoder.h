@@ -4,6 +4,7 @@
 #include <QObject>
 #include "mavlink.h"
 #include "link.h"
+#include "wyp.h"
 
 class Encoder : public QObject
 {
@@ -29,7 +30,8 @@ public:
     void sendSetLoiter();
     void sendSetInitialising();
     void sendMissionCount(uint16_t count);
-    void sendMissionItem(int seq, int cmd, float params[]);
+//    void sendMissionItem(int seq, int cmd, float params[]);
+    void sendMissionItem(Waypoint::WP waypoint);
     void sendClearAll();
     void sendMissionRequestList();
     void sendMissionRequest(uint16_t i);

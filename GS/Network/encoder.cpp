@@ -1,7 +1,7 @@
 #include "encoder.h"
 #include <QDebug>
 Encoder::Encoder(QObject *parent) : QObject(parent){
-
+    //Waypoint::WP* waypoints = new Waypoint::WP[missions->length()];
 }
 void Encoder::setLink(Link *l) {
     link = l;
@@ -84,15 +84,24 @@ void Encoder::sendMissionCount(uint16_t count) {
     link->sendData(msg);
 }
 
-void Encoder::sendMissionItem(int seq, int cmd, float params[]) {
+//void Encoder::sendMissionItem(int seq, int cmd, float params[]) {
+//    mavlink_message_t msg;
+//    int curr = 0;
+//    if (seq == 0) {
+//        curr = 1;
+//    }
+//    qDebug() << "Encoder::sendMissionItem ->" << seq << "," << cmd << "," << curr;
+//    mavlink_msg_mission_item_pack(SYS, COM, &msg, 1, 0, seq, 3, cmd, curr, 1, params[0],
+//                                  params[1], params[2], params[3], params[4], params[5], params[6]);
+//    link->sendData(msg);
+//}
+
+void Encoder::sendMissionItem(Waypoint::WP waypoint) {
     mavlink_message_t msg;
-    int curr = 0;
-    if (seq == 0) {
-        curr = 1;
-    }
-    qDebug() << "Encoder::sendMissionItem ->" << seq << "," << cmd << "," << curr;
-    mavlink_msg_mission_item_pack(SYS, COM, &msg, 1, 0, seq, 3, cmd, curr, 1, params[0],
-                                  params[1], params[2], params[3], params[4], params[5], params[6]);
+    mavlink_msg_mission_item_pack(SYS, COM, &msg, 1, 0, waypoint.id, 3, waypoint.command,
+                                  waypoint.current, waypoint.autocontinue, waypoint.param1,
+                                  waypoint.param2, waypoint.param3, waypoint.param4, waypoint.x,
+                                  waypoint.y, waypoint.z);
     link->sendData(msg);
 }
 
@@ -115,6 +124,7 @@ void Encoder::sendMissionRequest(uint16_t i) {
 }
 
 void Encoder::sendMissionACK(uint16_t type) {
+    qDebug() << "! ** Encoder::sending mission ack";
     mavlink_message_t msg;
     mavlink_msg_mission_ack_pack(SYS, COM, &msg, 1, 0, type);
     link->sendData(msg);

@@ -38,11 +38,13 @@ void MissionWidget::loadMission() {
 
 void MissionWidget::writeButtonClicked() {
     // Writes only the first mission in the mission vector
-    qDebug() << "MissionWidget::writeButtonClicked" << missions->at(0)->mission_waypoints.waypoints->length();
-    if (missions->empty()) qDebug() << "MissionWidget::writeButtonClicked -> empty mission vector";
-    else
-        emit(writeMissionsSignal(constructWaypoints(*missions->at(0)),
-                              missions->at(0)->mission_waypoints.waypoints->length()));
+//    if (missions->empty()) qDebug() << "MissionWidget::writeButtonClicked -> empty mission vector";
+//    else
+//        emit(writeMissionsSignal(constructWaypoints(*missions->at(0)),
+//                              missions->at(0)->mission_waypoints.waypoints->length()));
+
+    // Writing CUSTOM TEST missions TODO Revert
+    emit(writeMissionsSignal(testWaypoints(), 3));
 }
 void MissionWidget::readButtonClicked() {
     emit(readMissionsSignal());
@@ -56,7 +58,7 @@ void MissionWidget::readMissions(Waypoint::WP * waypoints, uint16_t size) {
     qDebug() << "MissionWidget::readMissions test";
     qDebug() << "Mission waypoints length:" << size;
     for (uint16_t i = 0; i < size; i++) {
-        qDebug() << "Waypoint" << i << "->" << waypoints[i].x;
+        qDebug() << "Waypoint" << waypoints[i].id << "->" << waypoints[i].x << waypoints[i].y << waypoints[i].z;
     }
     qDebug() << "!-----------------------!";
 }
@@ -121,4 +123,26 @@ Waypoint::WP* MissionWidget::constructWaypoints(const Mission& mission) {
 MissionWidget::~MissionWidget()
 {
     delete ui;
+}
+
+
+// TEST WAYPOINTS TODO: delete
+Waypoint::WP* MissionWidget::testWaypoints() {
+    Waypoint::WP* waypoints = new Waypoint::WP[3];
+    for (int i = 0; i < 3; i++) {
+        Waypoint::WP wp;
+        wp.id = i;
+        wp.command = 16;
+        wp.autocontinue = 1;
+        wp.current = 0;
+        wp.param1 = 0;
+        wp.param2 = 10;
+        wp.param3 = 0;
+        wp.param4 = 0;
+        wp.x = i + 1;
+        wp.y = i + 1;
+        wp.z = i + 1;
+        waypoints[i] = wp;
+    }
+    return waypoints;
 }

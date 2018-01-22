@@ -71,11 +71,17 @@ void Decoder::parseMessage(mavlink_message_t msg) {
             mavlink_msg_servo_output_raw_decode(&msg, &servo_output);
 //            emit(servo_outputReceived(servo_output));
         break;
-        // Not tested w/ Pixhawk. Needed for waypoint protocol
-//        case MAVLINK_MSG_ID_MISSION_REQUEST: //40
-//            mavlink_mission_request_t mrequest;
-//            mavlink_msg_mission_request_decode(&msg, &mrequest);
-//            emit (mrequestReceived(mrequest));
+        case MAVLINK_MSG_ID_MISSION_ITEM: //39
+            mavlink_mission_item_t mission_item;
+            mavlink_msg_mission_item_decode(&msg, &mission_item);
+            qDebug() << "! ** decoder mission";
+            qDebug() << mission_item.x << mission_item.y << mission_item.z << mission_item.seq;
+            emit(missionItemReceived(mission_item));
+        break;
+        case MAVLINK_MSG_ID_MISSION_REQUEST: //40
+            mavlink_mission_request_t mrequest;
+            mavlink_msg_mission_request_decode(&msg, &mrequest);
+            emit (mrequestReceived(mrequest));
         case MAVLINK_MSG_ID_MISSION_CURRENT: //42
             mavlink_mission_current_t mcurrent;
             mavlink_msg_mission_current_decode(&msg, &mcurrent);
@@ -85,7 +91,6 @@ void Decoder::parseMessage(mavlink_message_t msg) {
         case MAVLINK_MSG_ID_MISSION_COUNT: //44
             mavlink_mission_count_t mcount;
             mavlink_msg_mission_count_decode(&msg, &mcount);
-            qDebug() << "decoder.cpp:mission count->" << mcount.count;
             emit(missionCountReceived(mcount));
         break;
         case MAVLINK_MSG_ID_MISSION_ACK: //47
@@ -103,12 +108,6 @@ void Decoder::parseMessage(mavlink_message_t msg) {
             mavlink_msg_rc_channels_decode(&msg, &rc_channels);
 //            emit(rc_channelsReceived(rc_channels));
         break;
-        // Not tested w/ Pixhawk. Needed for waypoint protocol
-//        case MAVLINK_MSG_ID_MISSION_ITEM_INT: //73
-//            mavlink_mission_item_int_t mission_item;
-//            mavlink_msg_mission_item_int_decode(&msg, &mission_item);
-//            emit(missionItemReceived(mission_item));
-//        break;
         case MAVLINK_MSG_ID_VFR_HUD: //74
             mavlink_vfr_hud_t vfr_hud;
             mavlink_msg_vfr_hud_decode(&msg, &vfr_hud);
