@@ -8,6 +8,8 @@
 #include <QQuickWidget>
 #include <QQuickItem>
 
+#include "point.hpp"
+
 class Obstacles
 {
 public:
@@ -19,6 +21,7 @@ public:
     QJsonArray get_stationary_obstacles();
     void loadStationaryObjects(QQuickWidget * mapWidget);
     void updateMovingObjects(QQuickWidget * mapWidget);
+    bool segmentIntersectsObstacles(Point a, Point b);
 private:
 
     QJsonDocument jsonDoc;
