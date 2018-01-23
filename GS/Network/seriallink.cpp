@@ -10,6 +10,7 @@ void SerialLink::startLink() {
     serialPort = new QSerialPort();
     for (auto e: QSerialPortInfo::availablePorts()) {
         qInfo() << "Serial Port: " << e.portName();
+        e.description();
        // serialPort->setPortName(e.portName());
     }
     serialPort->setPortName("ttyACM0");

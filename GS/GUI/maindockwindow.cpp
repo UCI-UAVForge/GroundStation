@@ -13,10 +13,10 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     ui->graphDock->hide();
 
     // UDP Link for SITL
- //   link = new UdpLink();
+    link = new UdpLink();
 
 //     Serial link for RF900
-       link = new SerialLink();
+  //     link = new SerialLink();
        link->startLink();
 
     mission = new Mission();

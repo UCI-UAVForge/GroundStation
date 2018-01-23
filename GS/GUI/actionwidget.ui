@@ -14,16 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton:pressed {
-	background-color: rgb(235,235,235)
-}
-QPushButton {
-border: 0px solid rgb(200,200,200);
-border-radius: 1px;
-background-color:rgb(200, 200, 200);
-padding:6px;
-	color: black
-}
+   <string notr="true">
 QPushButton#armButton {
 	background-color:rgb(255, 80, 83);
 }
@@ -39,6 +30,12 @@ QPushButton#armButton:pressed {
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="3" column="2">
     <widget class="QPushButton" name="guidedButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
       <string>GUIDED</string>
      </property>
@@ -46,6 +43,12 @@ QPushButton#armButton:pressed {
    </item>
    <item row="3" column="3">
     <widget class="QPushButton" name="autoButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
       <string>AUTO</string>
      </property>
@@ -53,6 +56,12 @@ QPushButton#armButton:pressed {
    </item>
    <item row="1" column="1" colspan="3">
     <widget class="QPushButton" name="armButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
@@ -74,6 +83,12 @@ QPushButton#armButton:pressed {
    </item>
    <item row="3" column="1">
     <widget class="QPushButton" name="manualButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
       <string>MANUAL</string>
      </property>
