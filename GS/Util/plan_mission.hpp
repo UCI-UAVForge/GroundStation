@@ -25,7 +25,7 @@ class PlanMission
         void add_goal_point(Point p);
         void set_obstacles(Obstacles o);
         void add_serach_area(QPolygon poly);
-        std::vector<Point> get_path(Point start_point);
+        QList<QVector3D> get_path(Point start_point);
 };
 
 #endif // PLANMISSION_HPP
