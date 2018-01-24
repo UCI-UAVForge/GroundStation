@@ -7,7 +7,6 @@ LoginWidget::LoginWidget(QWidget *parent) :
 {
     ui->setupUi(this);
     connect(ui->loginButton, &QPushButton::clicked, this, &LoginWidget::attemptConnection);
-    //ui->loginButton->setBackgroundColor(QColor(255, 80, 83));
     ui->login->setMaximumWidth(0);
     slide = new QPropertyAnimation(ui->login, "maximumWidth");
     connect(slide, &QPropertyAnimation::finished, this, &LoginWidget::toggleSlide);
@@ -17,6 +16,7 @@ void LoginWidget::toggleSlide() {
     slideout = slideout ? slideout : !slideout;
 }
 
+//Attempt to login to interop server
 void LoginWidget::attemptConnection() {
     if (!connected) {
         if (!slideout) {
@@ -32,9 +32,6 @@ void LoginWidget::attemptConnection() {
                 slide->setEndValue(0);
                 slide->start();
                 ui->loginButton->setText("INTEROP");
-//                ui->loginButton->setBackgroundColor(QColor(60, 200, 103));
-//                ui->loginButton->setOverlayStyle(Material::NoOverlay);
-//                ui->loginButton->setRippleStyle(Material::NoRipple);
                 ui->loginButton->setEnabled(false);
                 ui->loginButton->setStyleSheet("QPushButton{background-color: rgb(60, 200, 103);}");
                 emit (connectionSuccess(interop));

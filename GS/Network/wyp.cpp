@@ -1,162 +1,182 @@
 #include "wyp.h"
 #include <QDebug>
 
+/*
+ * Waypoint/Mission Protocol
+ * Default number of connection attempts = 10
+ * Default number of ms for timeout = 50
+*/
+
+// TODO: set current waypoint!
+
 Waypoint::Waypoint() {}
 
-// Waypoint protocol
-// Default number of attempts = 10; msTimeout = 50
+// Public
 
-// Tested
 void Waypoint::clearAllWaypoints() {
-    timeout = true;
-    requestAttempt(REQUEST_TYPE::clear);
-    if (!timeout) qDebug() << "All waypoints cleared";
+    clearTimeout = true;
+    requestClear();
+    if (!clearTimeout) qDebug() << "Missions cleared."; // Success
     else {
-        timeout = false;
-        qDebug() << "Waypoint::clearAllWaypoints -> Waypoints not cleared";
+        clearTimeout = false;
+        qDebug() << "Missions clear request timed out.";
     }
 }
 
-// Tested w/ one waypoint
+void Waypoint::writeWaypoints(const WP *waypoints, uint16_t size) {
+    writeAck = false;
+    currentRequestedMission = std::numeric_limits<uint16_t>::max();
+    // Note: will not work if the size is equal to uint16 max
+
+    // Send number of waypoints to emit
+    reqFlag = true;
+    sendCount(size);
+    if (reqFlag) {
+        qDebug() << "Send Mission count timed out.";
+        emit(waypointsWriteStatus(false));
+        return;
+    }
+
+    // Send Missions
+    for (uint16_t i = 0; i < size; i++) {
+        if (currentRequestedMission != i) {
+            qDebug() << "Send mission out of sync! (Received:"
+                << currentRequestedMission << ") (Sending:" << i << ")";
+            emit(waypointsWriteStatus(false));
+            return;
+        }
+        if (writeAck) {
+            qDebug() << "Received mission ack before transaction completed.";
+            emit(waypointsWriteStatus(false));
+            return;
+        }
+
+        reqFlag = true;
+        sendWaypoint(waypoints[i]);
+        if (i != size-1 && reqFlag) {   // ackFlag set instead at last waypoint
+            qDebug () << "Write mission timed out.";
+            emit(waypointsWriteStatus(false));
+            return;
+        }
+    }
+
+    // Check for mission ack
+    for (short i = 0; i < numAttempts && !writeAck; i++)
+        pause();
+    if (!writeAck) {
+        qDebug() << "Post-write mission ack not received.";
+        emit(waypointsWriteStatus(false));
+        return;
+    }
+    emit(waypointsWriteStatus(true));
+}
+
 void Waypoint::readWaypointsList() {
-    // Returns nullptr when unsuccessful or empty waypoint list
-    timeout = true;
     nPoints = 0;
-    requestAttempt(REQUEST_TYPE::list);
-    if (timeout){
+    countFlag = true;
+
+    // Request mission count
+    requestCount();
+    if (countFlag) {
         emit(waypointsReceived(nullptr, 0));
         return;
     }
-    if (nPoints==0) {
+    if (nPoints == 0) {
         emit(sendAck(0));
         emit(waypointsReceived(nullptr, 0));
         return;
     }
-    WP *waypoints = new WP[nPoints];
-    for (int i = 0; i < nPoints; i++) {
-        timeout = true;
-        requestAttempt(REQUEST_TYPE::waypoint, i);
-        if (timeout){
+
+    qDebug() << "Read count received::" << nPoints;
+
+    // Request each mission
+    WP * waypoints = new WP[nPoints];
+    for (uint16_t i = 0; i < nPoints; i++) {
+        readFlag = true;
+        requestWaypoint(i);
+        if (readFlag) {
             emit(waypointsReceived(nullptr, 0));
             return;
         }
         waypoints[i] = savedWP;
     }
-    emit(sendAck(0)); // MAV_MISSION_RESULTS=0 "Accepted OK"
-    emit(waypointsReceived(waypoints, nPoints));
+    emit(sendAck(0));
+    emit(waypointsReceived(waypoints, nPoints)); // Successful read
+}
+/*
+ * Problem: Waypoint read will still receive mission items even when there
+ * is no mission request. First mission it receives is its current position
+*/
+
+// Private and Signaling
+
+void Waypoint::requestClear() {
+    for (short i = 0; i < numAttempts && clearTimeout; i++) {
+        if (i > 0) qDebug() << "Clear Missions request failed... Retry attempt" << i+1;
+        emit(reqClearAll());
+        pause();
+    }
 }
 
-// Not tested
-void Waypoint::writeWaypoints(const WP * waypoints, uint16_t size) {
-    ackFlag = false;
-    currentRequestedMission = std::numeric_limits<uint16_t>::max();
-    timeout = true;
-    requestAttempt(REQUEST_TYPE::count, size);
-    if (timeout){
-        qDebug() << "Waypoint::writeWaypoints -> Mission count req timed out";
-        emit(waypointsWriteStatus(false));
-        return;
+void Waypoint::sendCount(uint16_t n) {
+    for (short i = 0; i < numAttempts && reqFlag; i++) {
+        if (i > 0) qDebug() << "Send Mission Count request failed... Retry attempt" << i+1;
+        emit(sendWPCount(n));
+        pause();
     }
-    qDebug() << "Waypoint::writeWaypoints ->" << ackFlag << currentRequestedMission << size;
-    for (uint16_t i = 0; i<size; i++) {
-        if (currentRequestedMission != i) {
-            qDebug() << "Waypoint::writeWaypoints -> WP seq not matched:: (Received:" << currentRequestedMission
-                     << ") (Sending:" << i << ")";
-            emit(waypointsWriteStatus(false));
-            return;
-        }
-        if (ackFlag) {
-            qDebug() << "Waypoint::writeWaypoints -> ack before transaction completed";
-            emit(waypointsWriteStatus(false));
-            return;
-        }
-        timeout = true;
-        sendWaypoint(waypoints[i]);
-        qDebug() << "Waypoint::writeWaypoints ->" << i << "waypoint sent";
-        if (timeout) {
-            qDebug() << "Waypoint::writeWaypoints -> Mission request req timed out";
-            emit(waypointsWriteStatus(false));
-            return;
-        }
-    }
-    if (ackFlag) {
-        emit(waypointsWriteStatus(true));
-        return;
-    }
-    emit(waypointsWriteStatus(false));
-    qDebug() << "Waypoint::writeWaypoints -> Mission ack not received";
-    return;
 }
 
-// Not tested
-int Waypoint::setCurrentWaypoint(uint16_t seq) {
-    currentRequestedMission = std::numeric_limits<uint16_t>::max();
-    missionCurrentTimeout = true;
-    requestWaypointSet(seq);
-    if (!missionCurrentTimeout && currentRequestedMission == seq) return 1;
-    return 0;
+void Waypoint::sendWaypoint(const WP &waypoint) {
+    for (short i = 0; i < numAttempts && reqFlag && !writeAck; i++) {
+        if (i > 0) qDebug() << "Send Mission failed... Retry attempt" << i+1;
+        emit(sendWP(waypoint));
+        pause();
+    }
 }
 
-void Waypoint::requestAttempt(short request_type, uint16_t n) {
+void Waypoint::requestWaypoint(uint16_t n) {
+    for (short i = 0; i < numAttempts && readFlag; i++) {
+        if (i > 0) qDebug() << "Mission" << n << "request failed... Retry attempt" << i+1;
+        emit(reqWP(n));
+        pause();
+    }
+}
+
+void Waypoint::requestCount() {
+    for (short i = 0;i < numAttempts && countFlag; i++) {
+        if (i > 0) qDebug() << "Count request failed.. Retry attempt" << i+1;
+        emit(reqList());
+        pause();
+    }
+}
+
+void Waypoint::pause() {
     QTimer timer;
     QEventLoop loop;
-    for (int i = 0; i < numAttempts && timeout; i++) {
-        if (i > 0) qDebug() << "REQUEST TYPE:" << request_type << "FAILED! RETRY ATTEMPT" << i+1;
-        switch(request_type) {
-        case REQUEST_TYPE::clear: emit(reqClearAll()); break;
-        case REQUEST_TYPE::list: emit(reqList()); break;
-        case REQUEST_TYPE::waypoint: emit(reqWP(n)); break;
-        case REQUEST_TYPE::count: emit(sendWPCount(n)); break;
-        default: qDebug() << "Waypoint::requestAttempt() RequestType error";
-        }
-        timer.setSingleShot(true);
-        connect(&timer, SIGNAL(timeout()), &loop, SLOT(quit()));
-        timer.start(msTimeout);
-        loop.exec();
-    }
-}
-
-void Waypoint::requestWaypointSet(uint16_t seq) {
-    QTimer timer;
-    QEventLoop loop;
-    for (int i = 0; i < numAttempts && missionCurrentTimeout; i++) {
-        if (i > 0) qDebug() << "REQUEST SET WAYPOINT FAILED! RETRY ATTEMPT" << i+1;
-        emit(sendWPSetCurrent(seq));
-        timer.setSingleShot(true);
-        connect(&timer, SIGNAL(timeout()), &loop, SLOT(quit()));
-        timer.start(msTimeout);
-        loop.exec();
-    }
-}
-
-void Waypoint::sendWaypoint(const WP& waypoint) {
-    QTimer timer;
-    QEventLoop loop;
-    for (int i = 0; i < numAttempts && timeout; i++) {
-        if (i>0) qDebug() << "REQUEST::SENDWP FAILED! RETRY ATTEMPT " << i+1;
-        float params[] = {waypoint.param1, waypoint.param2, waypoint.param3, waypoint.param4, waypoint.x, waypoint.y, waypoint.z};
-        emit(sendWP(waypoint.id, waypoint.command, params));
-        timer.setSingleShot(true);
-        connect(&timer, SIGNAL(timeout()), &loop, SLOT(quit()));
-        timer.start(msTimeout);
-        loop.exec();
-    }
+    timer.setSingleShot(true);
+    connect(&timer, SIGNAL(timeout()), &loop, SLOT(quit()));
+    timer.start(msTimeout);
+    loop.exec();
 }
 
 void Waypoint::updateMissionAck(mavlink_mission_ack_t mission_ack) {
     if (mission_ack.type == 0) {
-        ackFlag = true;
-        timeout = false;
+//        qDebug() << "! * mission ack";
+        clearTimeout = false;
+        writeAck = true;
     }
 }
 
-void Waypoint::updateMissionCount(mavlink_mission_count_t mCount) {
-    timeout = false;
-    nPoints = mCount.count;
+void Waypoint::updateMissionRequest(mavlink_mission_request_t mission_request) {
+    if (currentRequestedMission != mission_request.seq) {
+//        qDebug() << "! * Updated mission req" << mission_request.seq;
+        currentRequestedMission = mission_request.seq;
+        reqFlag = false;
+    }
 }
 
-void Waypoint::updateMissionItem(mavlink_mission_item_int_t mission_item) {
-    timeout = false;
+void Waypoint::updateMissionItem(mavlink_mission_item_t mission_item) {
+//    qDebug() << "! * Updated mission item";
     savedWP.id = mission_item.seq;
     savedWP.frame = mission_item.frame;
     savedWP.command = mission_item.command;
@@ -169,16 +189,11 @@ void Waypoint::updateMissionItem(mavlink_mission_item_int_t mission_item) {
     savedWP.x = mission_item.x;
     savedWP.y = mission_item.y;
     savedWP.z = mission_item.z;
+    readFlag = false;
 }
 
-void Waypoint::updateMissionRequest(mavlink_mission_request_int_t mission_request) {
-    // Problem for write Waypoint: not receiving signal
-    qDebug() << "Waypoint::updateMissionRequest";
-    timeout = false;
-    currentRequestedMission = mission_request.seq;
-}
-
-void Waypoint::updateMissionCurrent(mavlink_mission_current_t mCurrent) {
-    timeout = false;
-    currentRequestedMission = mCurrent.seq;
+void Waypoint::updateMissionCount(mavlink_mission_count_t mCount) {
+//    qDebug() << "! * update mission count" << mCount.count;
+    nPoints = mCount.count;
+    countFlag = false;
 }

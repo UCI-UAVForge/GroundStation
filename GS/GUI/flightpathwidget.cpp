@@ -79,7 +79,7 @@ void FlightPathWidget::mission4(){
 }
 
 void FlightPathWidget::clearMissions(){
-    mission.clearMission(mapWidget);
+    //mission.clearMission(mapWidget);
     ui->Mission_->setText("No Mission");
 }
 

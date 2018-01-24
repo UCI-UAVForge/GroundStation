@@ -18,7 +18,7 @@ UAVButton::UAVButton(QWidget *parent) :
 
 }
 
-void UAVButton::updateBattery(mavlink_battery_status_t battery) {
+void UAVButton::updateBattery(mavlink_sys_status_t battery) {
     ui->uavButton->setText("UAV: " + QString::number(battery.battery_remaining) + "%");
     if (battery.battery_remaining < 30) {
         changeColor = QColor(Qt::red);

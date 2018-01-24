@@ -20,14 +20,17 @@ public:
     void drawPoint(QVector2D point, QColor color);
     void drawPolyline(QVariantList points, QColor color);
     void drawPolygon(QVariantList points,QColor color = QColor(0,0,0,255));
-    void updateUAVvPosition(mavlink_gps_raw_int_t gps);
+//    void updateUAVvPosition(mavlink_gps_raw_int_t gps);
     void clearMap();
     void drawMission(Mission * mission);
     void drawUAV(double lat, double lon, double heading);
     void updateCenter(double lat, double lon);
     void updateUAV();
-    inline void toggleUpdateConstant() {
-        updateConstant = updateConstant ? false : true;
+    inline void toggleUpdateCenterConstant() {
+        updateCenterConstant = updateCenterConstant ? false : true;
+    }
+    inline void toggleUpdateUAVConstant() {
+        updateUAVConstant = updateUAVConstant ? false : true;
     }
     inline void toggleBlinkUAV() {
         blinkUAV = blinkUAV ? false : true;
@@ -35,8 +38,6 @@ public:
 
     void testRemoveUAV();
 
-    int32_t currentUAVlat;
-    int32_t currentUAVlon;
 private:
     template <typename T>
     QVariantList toQVariantList(const QList<T> * list ) {
@@ -46,17 +47,19 @@ private:
         }
         return newList;
     }
-    bool updateConstant = false;
-    double uav_latitude;
-    double uav_longitude;
-    double uav_heading;
-
+    QString headingToCompass(int heading);
+    bool updateCenterConstant = true;
+    bool updateUAVConstant = true;
     bool blinkUAV = false;
+    double uav_latitude = 0;
+    double uav_longitude = 0;
+    int uav_heading = 0;
 
 //signals:
 
 public slots:
-    void updateUAVPosition(mavlink_global_position_int_t gps_int);
+    void updateUAVPosition(mavlink_gps_raw_int_t gps);
+    void updateUAVHeading(mavlink_vfr_hud_t vfr);
 };
 
 #endif // MAPWIDGET_H

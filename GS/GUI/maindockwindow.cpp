@@ -17,6 +17,7 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
 
 //     Serial link for RF900
   //     link = new SerialLink();
+
        link->startLink();
 
     mission = new Mission();
@@ -29,6 +30,9 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     Encoder * encoder = new Encoder();
     encoder->setLink(link);
     connectEncoder(encoder);
+
+    Waypoint * waypoint = new Waypoint();
+    connectWaypoint(waypoint, encoder, decoder);
 
     addToolBarButtons();
 
@@ -68,12 +72,13 @@ void MainDockWindow::connectDecoder(Decoder * decoder) {
     connect(decoder, &Decoder::heartbeatReceived, ui->actionWidget, &ActionWidget::toggleArmButton);
     connect(decoder, &Decoder::heartbeatReceived, ui->actionWidget, &ActionWidget::toggleModeButtons);
     connect(decoder, &Decoder::statTextReceived, ui->messageWidget, &MessageWidget::updateMessages);
-    connect(decoder, &Decoder::mrequestReceived, mission, &Mission::loadWaypoint);
+//    connect(decoder, &Decoder::mrequestReceived, mission, &Mission::loadWaypoint);
 
     connect(decoder, &Decoder::heartbeatReceived, uavButton, &UAVButton::updateHeartbeat);
-    connect(decoder, &Decoder::batteryReceived, uavButton, &UAVButton::updateBattery);
+    connect(decoder, &Decoder::statusReceived, uavButton, &UAVButton::updateBattery);
 
-    connect(decoder, &Decoder::gps_intReceived, ui->mapWidget, &MapWidget::updateUAVPosition);
+    connect(decoder, &Decoder::gpsReceived, ui->mapWidget, &MapWidget::updateUAVPosition);
+    connect(decoder, &Decoder::vfrHudReceived, ui->mapWidget, &MapWidget::updateUAVHeading);
 }
 
 void MainDockWindow::connectEncoder(Encoder * encoder) {
@@ -81,7 +86,7 @@ void MainDockWindow::connectEncoder(Encoder * encoder) {
     connect(ui->actionWidget, &ActionWidget::setAuto, encoder, &Encoder::sendSetAuto);
     connect(ui->actionWidget, &ActionWidget::setGuided, encoder, &Encoder::sendClearAll);
     connect(ui->actionWidget, &ActionWidget::setManual, encoder, &Encoder::sendSetManual);
-    connect(mission, &Mission::loadToUAV, encoder, &Encoder::sendMissionItem);
+//    connect(mission, &Mission::lSoadToUAV, encoder, &Encoder::sendMissionItem);
 }
 
 void MainDockWindow::connectWaypoint(Waypoint * waypoint, Encoder * encoder, Decoder * decoder) {
@@ -91,12 +96,13 @@ void MainDockWindow::connectWaypoint(Waypoint * waypoint, Encoder * encoder, Dec
     connect(waypoint, &Waypoint::sendAck, encoder, &Encoder::sendMissionACK);
     connect(waypoint, &Waypoint::sendWP, encoder, &Encoder::sendMissionItem);
     connect(waypoint, &Waypoint::sendWPCount, encoder, &Encoder::sendMissionCount);
-    connect(waypoint, &Waypoint::sendWPSetCurrent, encoder, &Encoder::sendMissionSetCurrent);
+//    connect(waypoint, &Waypoint::sendWPSetCurrent, encoder, &Encoder::sendMissionSetCurrent);
 
     connect(decoder, &Decoder::mAckReceived, waypoint, &Waypoint::updateMissionAck);
     connect(decoder, &Decoder::missionCountReceived, waypoint, &Waypoint::updateMissionCount);
     connect(decoder, &Decoder::missionItemReceived, waypoint, &Waypoint::updateMissionItem);
-    connect(decoder, &Decoder::missionCurrentReceived, waypoint, &Waypoint::updateMissionCurrent);
+//    connect(decoder, &Decoder::missionCurrentReceived, waypoint, &Waypoint::updateMissionCurrent);
+    connect(decoder, &Decoder::mrequestReceived, waypoint, &Waypoint::updateMissionRequest);
 
     connect(ui->missionWidget, &MissionWidget::clearMissions, waypoint, &Waypoint::clearAllWaypoints);
     connect(ui->missionWidget, &MissionWidget::readMissionsSignal, waypoint, &Waypoint::readWaypointsList);

@@ -21,7 +21,7 @@ Rectangle {
         objectName:"map"
         anchors.fill: parent
         plugin: mapPlugin
-        center: QtPositioning.coordinate(38.14792, -76.427995) //the place            //(33.6405, -117.8443) // Irvine
+        center: QtPositioning.coordinate(33.6405, -117.8443) //the place 38.14792, -76.427995            //(33.6405, -117.8443) // Irvine
         zoomLevel: 14
         Component.onCompleted: {
                     for( var i_type in supportedMapTypes ) {
@@ -89,7 +89,7 @@ Rectangle {
         function drawUAV(lat, lon, heading) {
             map.removeMapItem(plane);
             plane.coordinate = QtPositioning.coordinate(lat, lon)
-            plane.rotation = 90 - heading
+            plane.rotation = heading
             map.addMapItem(plane)
         }
 
@@ -105,55 +105,11 @@ Rectangle {
                     anchorPoint.x: image.width/4;
                     anchorPoint.y: image.height;
                     sourceItem: Image {id:image;
-                                width:25;height:25;
+                                width:70;height:70;
                                 fillMode:Image.PreserveAspectFit
                                 source: "images/Plane.png"}
         }
 
-        function addMarker(id,img,lat,lon,x,y,type){
-            test = Qt.createQmlObject("
-                                    import QtQuick 2.0;
-                                    import QtLocation 5.6;
-                                    import QtPositioning 5.6;
-                                    MapQuickItem{id:marker" + id + ";
-                                                property int someNumber: " + type + ";
-                                                anchorPoint.x: image.width" + x + ";
-                                                anchorPoint.y: image.height" + y + ";
-                                                sourceItem: Image{id:image;
-                                                            width:30;height:30;
-                                                            fillMode:Image.PreserveAspectFit;
-                                                            source: \""+img+".png\"}
-                                    coordinate: QtPositioning.coordinate(" + lat + "," + lon + ")}", map)
-
-            map.addMapItem(test)
-        }
-
-        function addLine(id, width, color, pathlat, pathlon, size, type){
-            text = "
-                    import QtQuick 2.0;
-                    import QtLocation 5.6;
-
-                    MapPolyline{id:image" + id + ";
-                                property int someNumber: "+type+";
-                                line.width: " + width + ";
-                                line.color: '" + color + "'
-                                path: ["
-
-            for (var i=0; i<size; ++i){
-                if (i!=0)
-                    text += ","
-                text += "{ latitude: " + pathlat[i] + ", longitude:" + pathlon[i] + "}"
-            }
-
-            text += "]}"
-
-            test2 = Qt.createQmlObject(text, map)
-            map.addMapItem(test2)
-        }
-
-        function remove(type){
-
-        }
 
     }
     Rectangle {
@@ -173,14 +129,28 @@ Rectangle {
             text: "No Data Received"
             color: "white"
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.bottom: parent.bottom
+            anchors.centerIn: parent
             anchors.margins: 5
             function updateUAVPosition(coords) {
                 uavPosition.text = coords;
             }
         }
+
+        Text {
+            id: uavHeading
+            objectName: "uavHeading"
+            text: ""
+            color: "white"
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.bottom: parent.bottom
+            anchors.margins: 5
+            function updateUAVHeading(heading) {
+                uavHeading.text = heading;
+            }
+        }
+
         color: Qt.rgba(0, 0, 0, 0.55)
-        width: 220; height: 42;
+        width: 220; height: 63;
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.margins: 15

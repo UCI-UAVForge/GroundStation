@@ -19,7 +19,7 @@ public:
     explicit UAVButton(QWidget *parent = 0);
     ~UAVButton();
 
-    void updateBattery(mavlink_battery_status_t battery);
+    void updateBattery(mavlink_sys_status_t battery);
     void updateHeartbeat(mavlink_heartbeat_t heartbeat);
     bool downbeat = false;
     QPropertyAnimation * pulse;

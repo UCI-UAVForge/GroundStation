@@ -53,6 +53,9 @@ private:
     Waypoint::WP* constructWaypoints(const Mission& mission);
 
     Ui::MissionWidget *ui;
+
+    // TEST TODO: Delete
+    Waypoint::WP* testWaypoints();
 };
 
 #endif // MISSIONWIDGET_H

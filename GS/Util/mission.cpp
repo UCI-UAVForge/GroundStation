@@ -30,17 +30,24 @@ QList<FlyZone> * Mission::setFlyZones(QJsonArray flyZoneArray) {
     return fly_zones;
 }
 
+
+
 MissionWaypoints Mission::setMissionWaypoints(QJsonArray pointArray) {
     MissionWaypoints missionWaypoints = MissionWaypoints();
     missionWaypoints.waypoints = set3DPoints(pointArray);
     missionWaypoints.actions = new QList<int>();
+
+
     for (int i = 0; i < missionWaypoints.waypoints->size();i++) {
-        if (i == 0)
+        if (i == 0) {
             missionWaypoints.actions->append(MAV_CMD_NAV_TAKEOFF);
-        else if (i == missionWaypoints.waypoints->size() -1)
+        }
+        else if (i == missionWaypoints.waypoints->size() -1) {
             missionWaypoints.actions->append(MAV_CMD_NAV_LAND);
-        else
+        }
+        else {
             missionWaypoints.actions->append(MAV_CMD_NAV_WAYPOINT);
+        }
     }
     return missionWaypoints;
 }
@@ -72,20 +79,6 @@ QVector2D Mission::posToPoint(QJsonObject obj) {
     return QVector2D(obj["latitude"].toDouble(), obj["longitude"].toDouble());
 }
 
-void Mission::setMission(QJsonDocument jsonD) {
-//    jsonDoc = jsonD;
-//    QJsonObject obj = jsonDoc.object();
-//    off_axis_odlc_pos = obj["off_axis_odlc_pos"].toObject();
-//    search_grid_points = obj["search_grid_points"].toArray();
-//    mission_waypoints = obj["mission_waypoints"].toArray();
-//    fly_zones = obj["fly_zones"].toArray();
-//    emergent_last_known_pos = obj["emergent_last_known_pos"].toObject();
-//    active = obj["active"].toBool();
-//    id = obj["id"].toInt();
-//    home_pos = obj["home_pos"].toObject();
-//    air_drop_pos = obj["home_pos"].toObject();
-}
-
 
 void Mission::loadWaypoint(mavlink_mission_request_t mrequest) {
     float params[7] = {0, 0, 0, 0, -35.3609161377, 149.1624603271, 40.40};
@@ -98,205 +91,15 @@ void Mission::loadWaypoint(mavlink_mission_request_t mrequest) {
 }
 
 
+Point Mission::toECEF(double lat, double lon, double alt) {
+    // WGS84 ellipsoid constants:
+    double a = 6378.137;
+    double e = 8.1819190842622e-2;
+    // prime vertical radius of curvature
+    double N = a / sqrt(1 - pow(e, 2) * pow(sin(lat), 2));
 
-//QJsonObject Mission::get_off_axis_odlc_pos(){
-//    return off_axis_odlc_pos;
-//}
-
-//QJsonArray Mission::get_search_grid_points(){
-//    return search_grid_points;
-//}
-//QJsonArray Mission::get_mission_waypoints(){
-//    return mission_waypoints;
-//}
-
-//QJsonArray Mission::get_fly_zones(){
-//    return fly_zones;
-//}
-
-//QJsonObject Mission::get_emergent_last_known_pos(){
-//    return emergent_last_known_pos;
-//}
-
-//bool Mission::isActive(){
-//    return active;
-//}
-
-//int Mission::get_id(){
-//    return id;
-//}
-
-//QJsonObject Mission::get_home_pos(){
-//    return home_pos;
-//}
-
-//QJsonObject Mission::get_air_drop_pos(){
-//    return air_drop_pos;
-//}
-
-void Mission::loadMissionObjects(QQuickWidget * mapWidget){
-//    if (!active)
-//        return;
-
-//    //-----------------------------------------------------Search Grid Points------------------------------------------------
-//    QJsonArray pathlat;
-//    QJsonArray pathlon;
-//    for(int i=0; i<search_grid_points.size();++i){
-//        pathlat.append(search_grid_points[i].toObject()["latitude"]);
-//        pathlon.append(search_grid_points[i].toObject()["longitude"]);
-
-//        QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
-//                Q_ARG(QVariant, ""),
-//                Q_ARG(QVariant, "images/blue_pin"),
-//                Q_ARG(QVariant, search_grid_points[i].toObject()["latitude"].toVariant()),
-//                Q_ARG(QVariant, search_grid_points[i].toObject()["longitude"].toVariant()),
-//                Q_ARG(QVariant, "/2"),
-//                Q_ARG(QVariant, ""),
-//                Q_ARG(QVariant, "1"));
-//    }
-//    if (search_grid_points.size() > 1){
-//        pathlat.append(search_grid_points[0].toObject()["latitude"]);
-//        pathlon.append(search_grid_points[0].toObject()["longitude"]);
-
-//        QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addLine",
-//                                  Q_ARG(QVariant, ""),
-//                                  Q_ARG(QVariant, 3),
-//                                  Q_ARG(QVariant, "blue"),
-//                                  Q_ARG(QVariant, pathlat),
-//                                  Q_ARG(QVariant, pathlon),
-//                                  Q_ARG(QVariant, search_grid_points.size()),
-//                                  Q_ARG(QVariant, "1"));
-//    }
-//    clearArr(pathlat);
-//    clearArr(pathlon);
-
-
-//    //-----------------------------------------------------Mission Waypoints------------------------------------------------
-//    for(int i=0; i<mission_waypoints.size();++i){
-//        QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
-//                Q_ARG(QVariant, ""),
-//                Q_ARG(QVariant, "images/green_pin"),
-//                Q_ARG(QVariant, mission_waypoints[i].toObject()["latitude"].toVariant()),
-//                Q_ARG(QVariant, mission_waypoints[i].toObject()["longitude"].toVariant()),
-//                Q_ARG(QVariant, "/2"),
-//                Q_ARG(QVariant, ""),
-//                Q_ARG(QVariant, "1"));
-//    }
-//    if (mission_waypoints.size() > 1){
-//        pathlat.append(mission_waypoints[0].toObject()["latitude"]);
-//        pathlon.append(mission_waypoints[0].toObject()["longitude"]);
-
-//        QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addLine",
-//                                  Q_ARG(QVariant, ""),
-//                                  Q_ARG(QVariant, 3),
-//                                  Q_ARG(QVariant, "blue"),
-//                                  Q_ARG(QVariant, pathlat),
-//                                  Q_ARG(QVariant, pathlon),
-//                                  Q_ARG(QVariant, mission_waypoints.size()),
-//                                  Q_ARG(QVariant, "1"));
-//    }
-//    clearArr(pathlat);
-//    clearArr(pathlon);
-
-//    //-----------------------------------------------------No-Fly Zone Boundary Points (also contains max/min altitude)------------------------------------------------
-//    for(int i=0; i<fly_zones.size();++i){
-//        QJsonObject temp2 = fly_zones[i].toObject();
-//        QJsonArray temp3 = temp2["boundary_pts"].toArray();
-//        for (int j=0;j<temp3.size();++j){
-//            pathlat.append(temp3[j].toObject()["latitude"]);
-//            pathlon.append(temp3[j].toObject()["longitude"]);
-//            QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
-//                    Q_ARG(QVariant, ""),
-//                    Q_ARG(QVariant, "images/yellow_pin"),
-//                    Q_ARG(QVariant, temp3[j].toObject()["latitude"].toVariant()),
-//                    Q_ARG(QVariant, temp3[j].toObject()["longitude"].toVariant()),
-//                    Q_ARG(QVariant, "/2"),
-//                    Q_ARG(QVariant, ""),
-//                    Q_ARG(QVariant, "1"));
-//        }
-
-
-//        if (temp3.size() > 1){
-//            pathlat.append(temp3[0].toObject()["latitude"]);
-//            pathlon.append(temp3[0].toObject()["longitude"]);
-
-//            QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addLine",
-//                                      Q_ARG(QVariant, ""),
-//                                      Q_ARG(QVariant, 3),
-//                                      Q_ARG(QVariant, "yellow"),
-//                                      Q_ARG(QVariant, pathlat),
-//                                      Q_ARG(QVariant, pathlon),
-//                                      Q_ARG(QVariant, temp3.size()+1),
-//                                      Q_ARG(QVariant, "1"));
-//        }
-
-//    }
-
-//    //-----------------------------------------------------Off Axis Odlc Position------------------------------------------------
-//    QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
-//            Q_ARG(QVariant, ""),
-//            Q_ARG(QVariant, "images/blue_circle"),
-//            Q_ARG(QVariant, off_axis_odlc_pos["latitude"].toVariant()),
-//            Q_ARG(QVariant, off_axis_odlc_pos["longitude"].toVariant()),
-//            Q_ARG(QVariant, "/2"),
-//            Q_ARG(QVariant, "/2"),
-//            Q_ARG(QVariant, "1"));
-
-//    //-----------------------------------------------------Emergent Last Known Position------------------------------------------------
-//    QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
-//            Q_ARG(QVariant, ""),
-//            Q_ARG(QVariant, "images/green_circle"),
-//            Q_ARG(QVariant, emergent_last_known_pos["latitude"].toVariant()),
-//            Q_ARG(QVariant, emergent_last_known_pos["longitude"].toVariant()),
-//            Q_ARG(QVariant, "/2"),
-//            Q_ARG(QVariant, "/2"),
-//            Q_ARG(QVariant, "1"));
-
-//    //-----------------------------------------------------Home Position------------------------------------------------
-//    QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
-//            Q_ARG(QVariant, ""),
-//            Q_ARG(QVariant, "images/tent"),
-//            Q_ARG(QVariant, home_pos["latitude"].toVariant()),
-//            Q_ARG(QVariant, home_pos["longitude"].toVariant()),
-//            Q_ARG(QVariant, "/2"),
-//            Q_ARG(QVariant, "/2"),
-//            Q_ARG(QVariant, "1"));
-
-//    //-----------------------------------------------------Air Drop Position------------------------------------------------
-//    QMetaObject::invokeMethod(mapWidget->rootObject()->childItems().back(), "addMarker",
-//            Q_ARG(QVariant, ""),
-//            Q_ARG(QVariant, "images/crosshair"),
-//            Q_ARG(QVariant, air_drop_pos["latitude"].toVariant()),
-//            Q_ARG(QVariant, air_drop_pos["longitude"].toVariant()),
-//            Q_ARG(QVariant, "/2"),
-//            Q_ARG(QVariant, "/2"),
-//            Q_ARG(QVariant, "1"));
-
-
+    double x = (N+alt) * cos(lat) * cos(lon);
+    double y = (N+alt) * cos(lat) * sin(lon);
+    double z = ((1-pow(e,2)) * N + alt) * sin(lat);
+    return Point{x, y, z};
 }
-
-void Mission::clearArr(QJsonArray &arr){
-    for (int i=0; i<arr.size(); ++i){
-        arr.removeFirst();
-    }
-}
-
-
-void Mission::clearMission(QQuickWidget * mapWidget){
-    int size = mapWidget->rootObject()->childItems().back()->childItems().length();
-    for (int i=0; i<size; ++i){
-        if (mapWidget->rootObject()->childItems().back()->childItems()[i]->property("someNumber") == 1){
-            delete mapWidget->rootObject()->childItems().back()->childItems()[i];
-            --i;
-            --size;
-        }
-    }
-}
-
-void Mission::printJDoc(){
-    //qDebug()<<jsonDoc;
-}
-
-//bool Mission::DNE(){
-//  //  return jsonDoc.isEmpty();
-//}

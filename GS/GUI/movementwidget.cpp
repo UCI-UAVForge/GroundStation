@@ -49,6 +49,3 @@ void MovementWidget::mousePressEvent(QMouseEvent *event) {
 
 }
 
-//void MovementWidget::setUAVMap(QQuickWidget *map){
-////    uav->setWidget(map);
-//}

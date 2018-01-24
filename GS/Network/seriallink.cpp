@@ -13,7 +13,7 @@ void SerialLink::startLink() {
         e.description();
        // serialPort->setPortName(e.portName());
     }
-    serialPort->setPortName("ttyACM0");
+    serialPort->setPortName("COM4");
     serialPort->setBaudRate(QSerialPort::Baud57600);
     serialPort->setDataBits(QSerialPort::Data8);
     serialPort->setParity(QSerialPort::NoParity);
@@ -50,6 +50,6 @@ void SerialLink::recvData() {
         }
     }
     if (!msgReceived) {
-        QTextStream(stdout) << "Message incomplete" << endl;
+        //QTextStream(stdout) << "Message incomplete" << endl;
     }
 }

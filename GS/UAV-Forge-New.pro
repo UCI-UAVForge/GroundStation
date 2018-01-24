@@ -45,10 +45,10 @@ INCLUDEPATH += \
 SOURCES += \
     main.cpp \
     $$files(GUI/*.cpp, false) \
+    $$files(Util/*.c, false) \
     $$files(Util/*.cpp, false) \
     $$files(Network/*.cpp, false) \
-    $$files(Database/*.cpp, false) \
-    $$files(Util/*.c, false) \
+    $$files(Database/*.cpp, false)
 
 
 HEADERS  += \
@@ -56,7 +56,7 @@ HEADERS  += \
     $$files(Util/*.h, false) \
     $$files(Util/*.hpp, false) \
     $$files(Network/*.h, false) \
-    $$files(Database/*.h, false) \
+    $$files(Database/*.h, false)
 
 
 FORMS    += \
