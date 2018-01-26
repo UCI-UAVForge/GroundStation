@@ -1,8 +1,8 @@
 #include "rrt.h"
-const int WORLD_WIDTH = 10000;
-const int WORLD_HEIGHT = 10000;
-const int WORLD_Z = 10000;
-const int END_DIST_THRESHOLD = 30;
+const int WORLD_WIDTH = 1000;
+const int WORLD_HEIGHT = 1000;
+const int WORLD_Z = 1000;
+const int END_DIST_THRESHOLD = 1;
 RRT::RRT(Point start, Point end, Obstacles obstacles)
 {
     this->obstacles = obstacles;
@@ -14,7 +14,7 @@ RRT::RRT(Point start, Point end, Obstacles obstacles)
     lastNode = root;
     nodes.push_back(root);
     step_size = 3;
-    max_iter = 30000;
+    max_iter = 100000;
 }
 
 /**
@@ -37,13 +37,13 @@ Node* RRT::getRandomNode()
 {
     // compile pls
     Node* ret;
-    Vect point(qrand() * WORLD_WIDTH, qrand() * WORLD_HEIGHT, qrand() * WORLD_Z);
+    Vect point(drand48() * WORLD_WIDTH, drand48() * WORLD_HEIGHT, drand48() * WORLD_Z);
     if (point.getX() >= 0 && point.getX() <= WORLD_WIDTH && point.getX() >= 0 && point.getY() <= WORLD_HEIGHT) {
         ret = new Node;
         ret->position = point;
         return ret;
     }
-    return NULL;
+    //return NULL;
 }
 
 /**

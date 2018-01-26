@@ -28,19 +28,19 @@ int main(int argc, char *argv[]) {
     QSplashScreen splash(pixmap);
     // splash.show();
     PlanMission pm;
-    pm.add_goal_point(Point::fromGeodetic(38.143, -76.43199876559223, 189.56748784643966));
-    pm.add_goal_point(Point::fromGeodetic(38.142, -76.43199876559223, 189.56748784643966));
+    pm.add_goal_point(Point::fromGeodetic(38.14254, -76.43409, 0));
+    pm.add_goal_point(Point::fromGeodetic(38.14468, -76.42799, 0));
     QString sb = "{"
                  "    \"moving_obstacles\": ["
                  "        {"
                  "            \"altitude_msl\": 189.56748784643966,"
-                 "            \"latitude\": 38.141826869853645,"
+                 "            \"latitude\": 34.141826869853645,"
                  "            \"longitude\": -76.43199876559223,"
                  "            \"sphere_radius\": 150.0"
                  "        },"
                  "        {"
                  "            \"altitude_msl\": 250.0,"
-                 "            \"latitude\": 38.14923628783763,"
+                 "            \"latitude\": 34.14923628783763,"
                  "            \"longitude\": -76.43238529543882,"
                  "            \"sphere_radius\": 150.0"
                  "        }"
@@ -49,19 +49,19 @@ int main(int argc, char *argv[]) {
                  "        {"
                  "            \"cylinder_height\": 750.0,"
                  "            \"cylinder_radius\": 300.0,"
-                 "            \"latitude\": 38.141826869853645,"
+                 "            \"latitude\": 34.141826869853645,"
                  "            \"longitude\": -76.43199876559223"
                  "        },"
                  "        {"
                  "            \"cylinder_height\": 400.0,"
                  "            \"cylinder_radius\": 100.0,"
-                 "            \"latitude\": 38.149156,"
+                 "            \"latitude\": 34.149156,"
                  "            \"longitude\": -76.430622"
                  "        }"
                  "    ]"
                  "}";
     pm.set_obstacles(QJsonDocument::fromJson(sb.toUtf8()));
-    pm.get_path(Point::fromGeodetic(38.141, -76.43199876559223, 189.56748784643966));
+    qDebug() << pm.get_path(Point::fromGeodetic(38.14468, -76.42799, 0));
 //    MainMDIDisplay x;
     MainDockWindow dockWindow;
     //x.showNormal();
