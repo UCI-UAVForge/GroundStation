@@ -56,31 +56,12 @@ void Obstacles::updateMovingObjects(QQuickWidget * mapWidget){
     }
 }
 
-Point toECEF(QVariant qlat, QVariant qlon, QVariant qalt) {
-    double lat = qlat.toDouble();
-    double lon = qlon.toDouble();
-    double alt = qalt.toDouble();
-
-    // WGS84 ellipsoid constants:
-    double a = 6378.137;
-    double e = 8.1819190842622e-2;
-    // prime vertical radius of curvature
-    double N = a / sqrt(1 - pow(e, 2) * pow(sin(lat), 2));
-
-    double x = (N+alt) * cos(lat) * cos(lon);
-    double y = (N+alt) * cos(lat) * sin(lon);
-    double z = ((1-pow(e,2)) * N + alt) * sin(lat);
-    qInfo() << "ECEF: " << Point{x, y, z};
-    return Point{x, y, z};
-}
-
 // https://math.stackexchange.com/a/980131
 bool Obstacles::segmentIntersectsObstacles(Point a, Point b) {
-    qInfo() << "a: " << a;
-    qInfo() << "b: " << b;
     for (QJsonValueRef o : stationary_obstacles) {
         QJsonObject obstacle = o.toObject();
-        Point cyl_center = toECEF(obstacle["latitude"].toVariant(), obstacle["longitude"].toVariant (), 189.56748784643966);
+        Point cyl_center = Point::fromGeodetic(obstacle["latitude"].toDouble(), obstacle["longitude"].toDouble(), 0);
+        qInfo() << "obstacle: " << cyl_center;
         double radius = obstacle["cylinder_radius"].toDouble();
         // ignore the z-axis for now
         double x_min = fmin(a.x, b.x);

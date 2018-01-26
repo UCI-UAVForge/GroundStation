@@ -8,8 +8,8 @@ std::vector<Point> PlanMission::pathfind(Point start, Point end, Obstacles obsta
             Node *qNearest = rrt->nearest(q->position);
             if (rrt->distance(q->position, qNearest->position) > rrt->step_size) {
                 Vect newConfig = rrt->newConfig(q, qNearest);
-                Point a{newConfig.getX(), newConfig.getY(), newConfig.getZ()};
-                Point b{qNearest->position.getX(), qNearest->position.getY(), qNearest->position.getZ()};
+                Point a = Point::fromECEF(newConfig.getX(), newConfig.getY(), newConfig.getZ());
+                Point b = Point::fromECEF(qNearest->position.getX(), qNearest->position.getY(), qNearest->position.getZ());
                 if (!rrt->obstacles.segmentIntersectsObstacles(a, b)) {
                     Node *qNew = new Node;
                     qNew->position = newConfig;
@@ -18,7 +18,7 @@ std::vector<Point> PlanMission::pathfind(Point start, Point end, Obstacles obsta
             }
         }
         if (rrt->reached()) {
-            qInfo() << "Reached Destination!";
+            qInfo() << "RRT found a solution";
             break;
         }
     }
@@ -37,8 +37,7 @@ std::vector<Point> PlanMission::pathfind(Point start, Point end, Obstacles obsta
     while (q != NULL) {
         rrt->path.push_back(q);
         Vect pos = q->position;
-        qInfo() << pos.getX() << " " << pos.getY() << " " << pos.getZ();
-        result.push_back(Point(pos.getX(), pos.getY(), pos.getZ()));
+        result.push_back(Point::fromECEF(pos.getX(), pos.getY(), pos.getZ()));
         q = q->parent;
     }
     return result;
@@ -54,7 +53,7 @@ void PlanMission::set_obstacles(Obstacles o) {
 void PlanMission::add_serach_area(QPolygon poly) {
     search_areas.push_back(poly);
 }
-std::vector<Point> PlanMission::get_path(Point start_point) {
+QList<QVector3D> PlanMission::get_path(Point start_point) {
     auto sort_func = [&](Point a, Point b) { return Point::euclidian_distance(start_point, a) > Point::euclidian_distance(start_point, b); };
     std::vector<Point> path;
     std::vector<Point> prelim_path;
@@ -84,7 +83,7 @@ std::vector<Point> PlanMission::get_path(Point start_point) {
     for (Point p : prelim_path) {
         // if segment defined by <last_point, p> intersects cylinder o {
         if (obstacles_z.segmentIntersectsObstacles(last_point, p)) {
-            qInfo() << "we borked";
+            qInfo() << "we borked; starting RRT";
             // pathfind around obstacles
             std::vector<Point> detour = pathfind(last_point, p, obstacles_z);
             path.insert(path.end(), detour.begin(), detour.end());
@@ -94,5 +93,12 @@ std::vector<Point> PlanMission::get_path(Point start_point) {
         path.push_back(p);
         qInfo() << "p: " << p;
     }
-    return path;
+
+    // inefficient but lets just do like this for now
+    QList<QVector3D> qlist_qvector3d;
+    for (Point p : path) {
+        qlist_qvector3d.append(p.toGeodetic());
+    }
+    qInfo() << "done with path";
+    return qlist_qvector3d;
 }
