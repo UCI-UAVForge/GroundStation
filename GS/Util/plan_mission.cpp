@@ -72,8 +72,8 @@ QList<QVector3D> PlanMission::get_path(Point start_point) {
     // gen search path
 
     // generate prelim serach path
-        std::vector<Point> pts = remaining_points;
-        for (Point p : remaining_points) {
+    std::vector<Point> pts = remaining_points;
+    for (Point p : remaining_points) {
         // sort
         std::make_heap(pts.begin(), pts.end(),
                         sort_func);
@@ -83,12 +83,12 @@ QList<QVector3D> PlanMission::get_path(Point start_point) {
         Point next = pts.back();
         pts.pop_back();
         qInfo() << "prelim: " << next;
-        prelim_path.push_back(next);
+        prelim_path.push_back(p);
     }
 
     // pathfind around obstacles
     Point last_point = start_point;
-    for (Point p : prelim_path) {
+    for (Point p : remaining_points) {
         qInfo() << last_point.toGeodetic() << " -> " << p.toGeodetic();
         // if segment defined by <last_point, p> intersects cylinder o {
         if (obstacles_z.segmentIntersectsObstacles(last_point, p)) {
@@ -105,7 +105,7 @@ QList<QVector3D> PlanMission::get_path(Point start_point) {
             last_point = p;
         }
         path.push_back(p);
-        qInfo() << "p: " << p;
+        qInfo() << "p: " << p.toGeodetic();
     }
 
     // inefficient but lets just do like this for now

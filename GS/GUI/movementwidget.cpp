@@ -15,8 +15,8 @@ void MovementWidget::updateTelemetry(mavlink_vfr_hud_t vfr_hud) {
   //  ui.alt->setText(QString::number((float)gps.alt/1000,'f', 4) + " m.");
    // ui.loc->setText(QString::number((float)gps.lat/10000000, 'f', 4) + ", " + QString::number((float)gps.lon/10000000, 'f', 4));
     ui.alt->setText(QString::number(vfr_hud.alt));
-    ui.velX->setText(QString::number(vfr_hud.groundspeed));
-    ui.velY->setText(QString::number(vfr_hud.airspeed));
+    ui.gSpeed->setText(QString::number(vfr_hud.groundspeed));
+    ui.airSpeed->setText(QString::number(vfr_hud.airspeed));
   //  uav->updateUAV((float)gps.lat/10000000, (float)gps.lon/10000000);
 }
 

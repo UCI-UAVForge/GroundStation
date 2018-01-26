@@ -36,8 +36,6 @@ MissionWaypoints Mission::setMissionWaypoints(QJsonArray pointArray) {
     MissionWaypoints missionWaypoints = MissionWaypoints();
     missionWaypoints.waypoints = set3DPoints(pointArray);
     missionWaypoints.actions = new QList<int>();
-
-
     for (int i = 0; i < missionWaypoints.waypoints->size();i++) {
         if (i == 0) {
             missionWaypoints.actions->append(MAV_CMD_NAV_TAKEOFF);
@@ -72,7 +70,7 @@ QList<QVector3D> * Mission::set3DPoints(QJsonArray pointArray) {
 }
 
 QVector3D Mission::posTo3DPoint(QJsonObject obj) {
-    return QVector3D(posToPoint(obj), obj["altitude"].toDouble());
+    return QVector3D(posToPoint(obj), obj["altitude_msl"].toDouble());
 }
 
 QVector2D Mission::posToPoint(QJsonObject obj) {
@@ -91,15 +89,3 @@ void Mission::loadWaypoint(mavlink_mission_request_t mrequest) {
 }
 
 
-Point Mission::toECEF(double lat, double lon, double alt) {
-    // WGS84 ellipsoid constants:
-    double a = 6378.137;
-    double e = 8.1819190842622e-2;
-    // prime vertical radius of curvature
-    double N = a / sqrt(1 - pow(e, 2) * pow(sin(lat), 2));
-
-    double x = (N+alt) * cos(lat) * cos(lon);
-    double y = (N+alt) * cos(lat) * sin(lon);
-    double z = ((1-pow(e,2)) * N + alt) * sin(lat);
-    return Point{x, y, z};
-}

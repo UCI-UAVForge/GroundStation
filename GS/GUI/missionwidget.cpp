@@ -27,6 +27,7 @@ void MissionWidget::loadMission() {
     if (hasMission()) {
         PlanMission pm;
         Mission * selectedMission = missions->at(ui->missionList->currentIndex());
+        currentMission = selectedMission;
         for (int i = 1; i < selectedMission->mission_waypoints.waypoints->size(); i++) {
             QVector3D point = selectedMission->mission_waypoints.waypoints->at(i);
             qDebug() << "X: " << point.x() << " Y: " << point.y() << " Z: " << point.z();
@@ -85,7 +86,8 @@ void MissionWidget::writeButtonClicked() {
 //                              missions->at(0)->mission_waypoints.waypoints->length()));
 
     // Writing CUSTOM TEST missions TODO Revert
-    emit(writeMissionsSignal(testWaypoints(), 3));
+    qDebug() << currentMission->mission_waypoints.waypoints->length();
+    emit(writeMissionsSignal(testWaypoints(), currentMission->mission_waypoints.waypoints->length()+1));
 }
 void MissionWidget::readButtonClicked() {
     emit(readMissionsSignal());
@@ -171,8 +173,22 @@ MissionWidget::~MissionWidget()
 Waypoint::WP* MissionWidget::testWaypoints() {
     // TEST WAYPOINTS TODO: delete
         int num_waypoints = 6;
-        Waypoint::WP* waypoints = new Waypoint::WP[num_waypoints];
+        Waypoint::WP* waypoints = new Waypoint::WP[currentMission->mission_waypoints.waypoints->length()+1];
         // Home
+        for (int i = 1; i < currentMission->mission_waypoints.waypoints->length()+1 ; i++) {
+            waypoints[i].autocontinue = 1;
+            waypoints[i].command = currentMission->mission_waypoints.actions->at(i-1);
+            waypoints[i].current = 0;
+            waypoints[i].param1 = 0;
+            waypoints[i].param2 = 0;
+            waypoints[i].param3 = 0;
+            waypoints[i].param4 = 0;
+            waypoints[i].x = currentMission->mission_waypoints.waypoints->at(i-1).x();
+            waypoints[i].y = currentMission->mission_waypoints.waypoints->at(i-1).y();
+            waypoints[i].z = currentMission->mission_waypoints.waypoints->at(i-1).z();
+            waypoints[i].id = i;
+            waypoints[i].frame = 3;
+        }
         waypoints[0].autocontinue = 1;
         waypoints[0].command = 16;
         waypoints[0].current = 0;
@@ -186,61 +202,61 @@ Waypoint::WP* MissionWidget::testWaypoints() {
         waypoints[0].id = 0;
         waypoints[0].frame = 0;
 
-        // Takeoff
-        waypoints[1].autocontinue = 1;
-        waypoints[1].command = 22;
-        waypoints[1].current = 0;
-        waypoints[1].frame = 3;
-        waypoints[1].id = 1;
-        waypoints[1].param1 = 15;
-        waypoints[1].param2 = 0;
-        waypoints[1].param3 = 0;
-        waypoints[1].param4 = 0;
-        waypoints[1].x = 33.6405;
-        waypoints[1].y = -117.8443;
-        waypoints[1].z = 50;
+//        // Takeoff
+//        waypoints[1].autocontinue = 1;
+//        waypoints[1].command = 22;
+//        waypoints[1].current = 0;
+//        waypoints[1].frame = 3;
+//        waypoints[1].id = 1;
+//        waypoints[1].param1 = 15;
+//        waypoints[1].param2 = 0;
+//        waypoints[1].param3 = 0;
+//        waypoints[1].param4 = 0;
+//        waypoints[1].x = 33.6405;
+//        waypoints[1].y = -117.8443;
+//        waypoints[1].z = 50;
 
-        for (int i = 2; i < 5; i++) {
-            waypoints[i].autocontinue = 1;
-            waypoints[i].command = 16;
-            waypoints[i].current = 0;
-            waypoints[i].frame = 3;
-            waypoints[i].id = i;
-            waypoints[i].param1 = 0;
-            waypoints[i].param2 = 0;
-            waypoints[i].param3 = 0;
-            waypoints[i].param4 = 0;
-            waypoints[i].x = 33.6405;
-            waypoints[i].y = -117.8443;
-            waypoints[i].z = 50;
-        }
-        // Loiter
+//        for (int i = 2; i < 5; i++) {
+//            waypoints[i].autocontinue = 1;
+//            waypoints[i].command = 16;
+//            waypoints[i].current = 0;
+//            waypoints[i].frame = 3;
+//            waypoints[i].id = i;
+//            waypoints[i].param1 = 0;
+//            waypoints[i].param2 = 0;
+//            waypoints[i].param3 = 0;
+//            waypoints[i].param4 = 0;
+//            waypoints[i].x = 33.6405;
+//            waypoints[i].y = -117.8443;
+//            waypoints[i].z = 50;
+//        }
+//        // Loiter
+////        waypoints[2].autocontinue = 1;
+////        waypoints[2].command = 19;
+////        waypoints[2].current = 0;
+////        waypoints[2].frame = 3;
+////        waypoints[2].id = 2;
+////        waypoints[2].param1 = 20;
+////        waypoints[2].param2 = 0;
+////        waypoints[2].param3 = 1;
+////        waypoints[2].param4 = 1;
+////        waypoints[2].x = -35.36326;
+////        waypoints[2].y = 149.16524;
+////        waypoints[2].z = 50;
+
+//        // Land
 //        waypoints[2].autocontinue = 1;
-//        waypoints[2].command = 19;
+//        waypoints[2].command = 21;
 //        waypoints[2].current = 0;
 //        waypoints[2].frame = 3;
 //        waypoints[2].id = 2;
-//        waypoints[2].param1 = 20;
-//        waypoints[2].param2 = 0;
-//        waypoints[2].param3 = 1;
-//        waypoints[2].param4 = 1;
-//        waypoints[2].x = -35.36326;
-//        waypoints[2].y = 149.16524;
-//        waypoints[2].z = 50;
-
-        // Land
-        waypoints[2].autocontinue = 1;
-        waypoints[2].command = 21;
-        waypoints[2].current = 0;
-        waypoints[2].frame = 3;
-        waypoints[2].id = 2;
-        waypoints[2].param1 = 25;
-        waypoints[2].param2 = 2;
-        waypoints[2].param3 = 0;
-        waypoints[2].param4 = 0;
-        waypoints[2].x = 33.6405;
-        waypoints[2].y = -117.8443;
-        waypoints[2].z = 0;
+//        waypoints[2].param1 = 25;
+//        waypoints[2].param2 = 2;
+//        waypoints[2].param3 = 0;
+//        waypoints[2].param4 = 0;
+//        waypoints[2].x = 33.6405;
+//        waypoints[2].y = -117.8443;
+//        waypoints[2].z = 0;
 
     return waypoints;
 }

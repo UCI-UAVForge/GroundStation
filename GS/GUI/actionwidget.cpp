@@ -42,7 +42,7 @@ void ActionWidget::toggleArmButton(mavlink_heartbeat_t heartbeat) {
             if (!armed) {
                 armed = true;
                 ui.armButton->setText("ARMED");
-                setButtonColor(ui.armButton, "rgb(169, 248, 157)");
+                setButtonColor(ui.armButton, "rgb(60, 200, 103)");
             }
         break;
     }
@@ -55,13 +55,13 @@ void ActionWidget::toggleModeButtons(mavlink_heartbeat_t heartbeat) {
         mode = heartbeat.custom_mode;
         switch(heartbeat.custom_mode) {
             case 0:
-                setButtonColor(ui.manualButton, "rgb(169, 248, 157)");
+                setButtonColor(ui.manualButton, "rgb(60, 200, 103)");
             break;
             case 10:
-                setButtonColor(ui.autoButton, "rgb(169, 248, 157)");
+                setButtonColor(ui.autoButton, "rgb(60, 200, 103)");
             break;
             case 15:
-                setButtonColor(ui.guidedButton, "rgb(169, 248, 157)");
+                setButtonColor(ui.guidedButton, "rgb(60, 200, 103)");
             break;
             default:
             break;

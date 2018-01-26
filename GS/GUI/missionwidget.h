@@ -33,6 +33,7 @@ public:
     QStandardItemModel * createMissionModel(Mission * mission);
 
     QVector<Mission*> * missions;
+    Mission * currentMission;
     QStandardItemModel * model;
     Obstacles obstacles;
     MapWidget * mapWidget;
