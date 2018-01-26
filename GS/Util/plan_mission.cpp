@@ -1,15 +1,19 @@
 #include "plan_mission.hpp"
 
 std::vector<Point> PlanMission::pathfind(Point start, Point end, Obstacles obstacles) {
+    qInfo() << "pathfind";
+    qInfo() << start.toGeodetic();
+    qInfo() << start.toGeodetic();
     std::unique_ptr<RRT> rrt{new RRT(start, end, obstacles)};
     for(int i = 0; i < rrt->max_iter; i++) {
         Node *q = rrt->getRandomNode();
         if (q) {
             Node *qNearest = rrt->nearest(q->position);
+            qInfo() << "dist: " << rrt->distance(q->position, qNearest->position);
             if (rrt->distance(q->position, qNearest->position) > rrt->step_size) {
                 Vect newConfig = rrt->newConfig(q, qNearest);
-                Point a = Point::fromECEF(newConfig.getX(), newConfig.getY(), newConfig.getZ());
-                Point b = Point::fromECEF(qNearest->position.getX(), qNearest->position.getY(), qNearest->position.getZ());
+                Point a = Point::fromECEF(qNearest->position.getX(), qNearest->position.getY(), qNearest->position.getZ());
+                Point b = Point::fromECEF(newConfig.getX(), newConfig.getY(), newConfig.getZ());
                 if (!rrt->obstacles.segmentIntersectsObstacles(a, b)) {
                     Node *qNew = new Node;
                     qNew->position = newConfig;
@@ -18,6 +22,7 @@ std::vector<Point> PlanMission::pathfind(Point start, Point end, Obstacles obsta
             }
         }
         if (rrt->reached()) {
+            qInfo() << Point::fromECEF(q->position.getX(), q->position.getY(), q->position.getZ()).toGeodetic();
             qInfo() << "RRT found a solution";
             break;
         }
@@ -37,7 +42,9 @@ std::vector<Point> PlanMission::pathfind(Point start, Point end, Obstacles obsta
     while (q != NULL) {
         rrt->path.push_back(q);
         Vect pos = q->position;
-        result.push_back(Point::fromECEF(pos.getX(), pos.getY(), pos.getZ()));
+        Point p = Point::fromECEF(pos.getX(), pos.getY(), pos.getZ());
+        result.push_back(p);
+        qInfo() << "rrt backtrack:" << p.toGeodetic();
         q = q->parent;
     }
     return result;
@@ -54,9 +61,10 @@ void PlanMission::add_serach_area(QPolygon poly) {
     search_areas.push_back(poly);
 }
 QList<QVector3D> PlanMission::get_path(Point start_point) {
-    auto sort_func = [&](Point a, Point b) { return Point::euclidian_distance(start_point, a) > Point::euclidian_distance(start_point, b); };
     std::vector<Point> path;
     std::vector<Point> prelim_path;
+    prelim_path.push_back(start_point);
+    auto sort_func = [&](Point a, Point b) { return Point::euclidian_distance(prelim_path.back(), a) > Point::euclidian_distance(prelim_path.back(), b); };
     std::vector<Point> remaining_points(goal_points.begin(), goal_points.end());
     qInfo() << "start: " << start_point;
     // add search areas to remaining_points
@@ -81,15 +89,21 @@ QList<QVector3D> PlanMission::get_path(Point start_point) {
     // pathfind around obstacles
     Point last_point = start_point;
     for (Point p : prelim_path) {
+        qInfo() << last_point.toGeodetic() << " -> " << p.toGeodetic();
         // if segment defined by <last_point, p> intersects cylinder o {
         if (obstacles_z.segmentIntersectsObstacles(last_point, p)) {
             qInfo() << "we borked; starting RRT";
             // pathfind around obstacles
             std::vector<Point> detour = pathfind(last_point, p, obstacles_z);
+            for (Point p : detour) {
+                qInfo() << "detour:";
+                qInfo() << p.toGeodetic();
+            }
             path.insert(path.end(), detour.begin(), detour.end());
-            break;
+            last_point = detour.back();
+        } else {
+            last_point = p;
         }
-        last_point = p;
         path.push_back(p);
         qInfo() << "p: " << p;
     }
