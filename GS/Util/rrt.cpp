@@ -14,7 +14,7 @@ RRT::RRT(Point start, Point end, Obstacles obstacles)
     lastNode = root;
     nodes.push_back(root);
     step_size = 3;
-    max_iter = 30000;
+    max_iter = 100000;
 }
 
 /**
