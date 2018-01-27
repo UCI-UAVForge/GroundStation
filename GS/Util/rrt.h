@@ -21,8 +21,9 @@ public:
     RRT(Point start, Point end, Obstacles o);
     void initialize();
     Node* getRandomNode();
+    Node* perturb(double x, double y, double z, double dist);
     Node* nearest(Vect point);
-    int distance(Vect &p, Vect &q);
+    double distance(Vect &p, Vect &q);
     Vect newConfig(Node *q, Node *qNearest);
     void add(Node *qNearest, Node *qNew);
     bool reached();

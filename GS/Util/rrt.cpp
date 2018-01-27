@@ -1,8 +1,8 @@
 #include "rrt.h"
-const int WORLD_WIDTH = 1000;
-const int WORLD_HEIGHT = 1000;
-const int WORLD_Z = 1000;
-const int END_DIST_THRESHOLD = 1;
+const int WORLD_WIDTH = 7e6;
+const int WORLD_HEIGHT = 6e6;
+const int WORLD_Z = 5e6;
+const int END_DIST_THRESHOLD = 20;
 RRT::RRT(Point start, Point end, Obstacles obstacles)
 {
     this->obstacles = obstacles;
@@ -14,7 +14,7 @@ RRT::RRT(Point start, Point end, Obstacles obstacles)
     lastNode = root;
     nodes.push_back(root);
     step_size = 3;
-    max_iter = 100000;
+    max_iter = 10000;
 }
 
 /**
@@ -30,6 +30,14 @@ void RRT::initialize()
 }
 
 /**
+ * @brief getRand
+ * @return uniformly distributed number from [-1, 1)
+ */
+static double getRand() {
+    return 2 * (drand48() - 0.5);
+}
+
+/**
  * @brief Generate a random node in the field.
  * @return
  */
@@ -37,13 +45,17 @@ Node* RRT::getRandomNode()
 {
     // compile pls
     Node* ret;
-    Vect point(drand48() * WORLD_WIDTH, drand48() * WORLD_HEIGHT, drand48() * WORLD_Z);
-    if (point.getX() >= 0 && point.getX() <= WORLD_WIDTH && point.getX() >= 0 && point.getY() <= WORLD_HEIGHT) {
-        ret = new Node;
-        ret->position = point;
-        return ret;
-    }
-    //return NULL;
+    Vect point(getRand() * WORLD_WIDTH, getRand() * WORLD_HEIGHT, getRand() * WORLD_Z);
+    ret = new Node;
+    ret->position = point;
+    return ret;
+}
+
+Node* RRT::perturb(double x, double y, double z, double dist) {
+    Node* ret = new Node;
+    Vect point(getRand()*dist + x, getRand()*dist + y, getRand()*dist + z);
+    ret->position = point;
+    return ret;
 }
 
 /**
@@ -52,10 +64,10 @@ Node* RRT::getRandomNode()
  * @param q
  * @return
  */
-int RRT::distance(Vect &p, Vect &q)
+double RRT::distance(Vect &p, Vect &q)
 {
     Vect v = p - q;
-    return sqrt(powf(v.getX(), 2) + powf(v.getY(), 2));
+    return sqrt(powf(v.getX(), 2) + powf(v.getY(), 2) + powf(v.getZ(), 2));
 }
 
 /**

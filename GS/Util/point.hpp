@@ -18,7 +18,7 @@ static QString qsld(const double ld)
 class Point
 {
     // WGS84 constants
-    static constexpr double RADIUS = 637.8137;
+    static constexpr double RADIUS = 6378137;
     static constexpr double FLATTENING_DENOM = 298.257223563;
     static constexpr double FLATTENING = 1/FLATTENING_DENOM;
     static constexpr double POLAR_RADIUS = RADIUS * (1 - FLATTENING);
@@ -36,7 +36,7 @@ class Point
     }
 private:
     Point(double x, double y, double z) : x{x}, y{y}, z{z} {
-        qInfo() << "construct: " << qsld(x) << " " << qsld(y) << " " << qsld(z);
+//        qInfo() << "construct: " << qsld(x) << " " << qsld(y) << " " << qsld(z);
     }
 public:
     Point();
@@ -87,7 +87,6 @@ public:
         if (x < 0 && y > 0) {
             lon = lon + M_PI;
         }
-        qInfo() << qsld(lat * 180.0/M_PI) << " " << qsld(lon * 180.0/M_PI) << " " << qsld(alt);
         return QVector3D(lat * 180.0/M_PI, lon * 180.0/M_PI, alt);
     }
 

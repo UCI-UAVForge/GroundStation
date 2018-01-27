@@ -5,12 +5,14 @@ std::vector<Point> PlanMission::pathfind(Point start, Point end, Obstacles obsta
     qInfo() << start.toGeodetic();
     qInfo() << start.toGeodetic();
     std::unique_ptr<RRT> rrt{new RRT(start, end, obstacles)};
+    double dist = rrt->distance(rrt->startPos, rrt->endPos) * 1.25;
     for(int i = 0; i < rrt->max_iter; i++) {
-        Node *q = rrt->getRandomNode();
+        Node *q = rrt->perturb(start.x, start.y, start.z, dist);
         if (q) {
             Node *qNearest = rrt->nearest(q->position);
-            qInfo() << "dist: " << rrt->distance(q->position, qNearest->position);
-            if (rrt->distance(q->position, qNearest->position) > rrt->step_size) {
+            qInfo() << "trying: " << Point::fromECEF(q->position.getX(), q->position.getY(), q->position.getZ()).toGeodetic();
+            qInfo() << "distance to nearest node: " << rrt->distance(q->position, qNearest->position);
+            if (rrt->distance(q->position, qNearest->position) < 30) {
                 Vect newConfig = rrt->newConfig(q, qNearest);
                 Point a = Point::fromECEF(qNearest->position.getX(), qNearest->position.getY(), qNearest->position.getZ());
                 Point b = Point::fromECEF(newConfig.getX(), newConfig.getY(), newConfig.getZ());
@@ -96,10 +98,11 @@ QList<QVector3D> PlanMission::get_path(Point start_point) {
             // pathfind around obstacles
             std::vector<Point> detour = pathfind(last_point, p, obstacles_z);
             for (Point p : detour) {
-                qInfo() << "detour:";
-                qInfo() << p.toGeodetic();
+                qInfo() << "detour: " << p.toGeodetic();
             }
-            path.insert(path.end(), detour.begin(), detour.end());
+            if (detour.size() > 1) {
+                path.insert(path.end(), detour.begin(), detour.end());
+            }
             last_point = detour.back();
         } else {
             last_point = p;
@@ -110,7 +113,9 @@ QList<QVector3D> PlanMission::get_path(Point start_point) {
 
     // inefficient but lets just do like this for now
     QList<QVector3D> qlist_qvector3d;
+    qInfo() << "da path";
     for (Point p : path) {
+        qInfo() << p.toGeodetic();
         qlist_qvector3d.append(p.toGeodetic());
     }
     qInfo() << "done with path";
