@@ -61,18 +61,18 @@ bool Obstacles::segmentIntersectsObstacles(Point a, Point b) {
     for (QJsonValueRef o : stationary_obstacles) {
         QJsonObject obstacle = o.toObject();
         Point cyl_center = Point::fromGeodetic(obstacle["latitude"].toDouble(), obstacle["longitude"].toDouble(), 0);
-        qInfo() << "obstacle: " << cyl_center;
+        qInfo() << "obstacle: " << cyl_center.toGeodetic();
         double radius = obstacle["cylinder_radius"].toDouble();
         // ignore the z-axis for now
         double x_min = fmin(a.x, b.x);
         double x_max = fmax(a.x, b.x);
         double y_min = fmin(a.y, b.y);
         double y_max = fmax(a.y, b.y);
-        qInfo() << x_min << " " << x_max;
-        qInfo() << y_min << " " << y_max;
-        for (double x = x_min; x < x_max; x += 0.01) {
-            for (double y = y_min; y < y_max; y += 0.01) {
-                if (pow(x - cyl_center.x, 2) + pow(y - cyl_center.y, 2) < pow(radius, 2)) {
+        double rsqr = pow(radius, 2);
+        for (double x = x_min; x < x_max; x += 30) {
+            double xsqr = pow(x - cyl_center.x, 2);
+            for (double y = y_min; y < y_max; y += 30) {
+                if (xsqr + pow(y - cyl_center.y, 2) < rsqr) {
                     // should check z and cylinder height
                     return true;
                 }

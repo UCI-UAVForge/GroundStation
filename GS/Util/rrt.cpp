@@ -2,7 +2,7 @@
 const int WORLD_WIDTH = 7e6;
 const int WORLD_HEIGHT = 6e6;
 const int WORLD_Z = 5e6;
-const int END_DIST_THRESHOLD = 20;
+const int END_DIST_THRESHOLD = 500;
 RRT::RRT(Point start, Point end, Obstacles obstacles)
 {
     this->obstacles = obstacles;
@@ -13,8 +13,8 @@ RRT::RRT(Point start, Point end, Obstacles obstacles)
     root->position = startPos;
     lastNode = root;
     nodes.push_back(root);
-    step_size = 3;
-    max_iter = 10000;
+    step_size = 50;
+    max_iter = 1000;
 }
 
 /**
@@ -53,7 +53,7 @@ Node* RRT::getRandomNode()
 
 Node* RRT::perturb(double x, double y, double z, double dist) {
     Node* ret = new Node;
-    Vect point(getRand()*dist + x, getRand()*dist + y, getRand()*dist + z);
+    Vect point(getRand()*dist + x, getRand()*dist + y, z);
     ret->position = point;
     return ret;
 }
@@ -77,14 +77,18 @@ double RRT::distance(Vect &p, Vect &q)
  */
 Node* RRT::nearest(Vect point)
 {
-    float minDist = 1e9;
+    double minDist = 1e9;
     Node *closest = NULL;
-    for(int i = 0; i < (int)nodes.size(); i++) {
-        float dist = distance(point, nodes[i]->position);
+    for(size_t i = 0; i < nodes.size(); ++i) {
+        double dist = distance(point, nodes[i]->position);
         if (dist < minDist) {
             minDist = dist;
             closest = nodes[i];
         }
+    }
+    if(closest) {
+        qInfo() << "selected nearest: " << Point::fromECEF(closest->position.getX(), closest->position.getY(), closest->position.getZ()).toGeodetic()
+                << "with dist" << minDist << "out of:" << nodes.size();
     }
     return closest;
 }

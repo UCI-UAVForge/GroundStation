@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <memory>
 #include <set>
+#include <stack>
 
 #include <QPolygon>
 
@@ -18,7 +19,7 @@ class PlanMission
         Obstacles obstacles_z;
         std::vector<QPolygon> search_areas;
 
-        std::vector<Point> pathfind(Point start, Point end, Obstacles obstacles);
+        std::stack<Point> pathfind(Point start, Point end, Obstacles obstacles);
     public:
         PlanMission();
         // too lazy to implement ordering for these objects
