@@ -66,6 +66,9 @@ public:
     }
 
     Vect operator / (const Vect &other) {
+        if (z == 0 || other.z == 0) {
+            return Vect(x / other.x, y / other.y, 0);
+        }
         return Vect(x / other.x, y / other.y, z / other.z);
     }
 };
