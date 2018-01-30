@@ -25,13 +25,13 @@ bool MissionWidget::hasMission() {
 
 void MissionWidget::loadMission() {
     if (hasMission()) {
-        PlanMission pm;
+//        PlanMission pm;
         Mission * selectedMission = missions->at(ui->missionList->currentIndex());
         currentMission = selectedMission;
         for (int i = 1; i < selectedMission->mission_waypoints.waypoints->size(); i++) {
             QVector3D point = selectedMission->mission_waypoints.waypoints->at(i);
             qDebug() << "X: " << point.x() << " Y: " << point.y() << " Z: " << point.z();
-            pm.add_goal_point(Point::fromGeodetic(point.x(), point.y(), point.z()));
+//            pm.add_goal_point(Point::fromGeodetic(point.x(), point.y(), point.z()));
         }
         QVector3D start_point = selectedMission->mission_waypoints.waypoints->at(0);
         qDebug() << "Start X: " << start_point.x() << " Y: " << start_point.y() << " Z: " << start_point.z();
@@ -65,8 +65,8 @@ void MissionWidget::loadMission() {
                      "        }"
                      "    ]"
                      "}";
-        pm.set_obstacles(QJsonDocument::fromJson(sb.toUtf8()));
-        qDebug() << pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()));
+//        pm.set_obstacles(QJsonDocument::fromJson(sb.toUtf8()));
+//        qDebug() << pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()));
         emit (drawMission(selectedMission));
         model = createMissionModel(selectedMission);
         ui->missionTable->setModel(model);

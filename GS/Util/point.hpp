@@ -24,8 +24,8 @@ static  double rad2deg(double rad) {
 class Point
 {
     // WGS84 constants
-    static constexpr double RADIUS = 6378137;
-    static constexpr double FLATTENING_DENOM = 298.257223563;
+    static constexpr double RADIUS = 6378137 / 50;
+    static constexpr double FLATTENING_DENOM = 298.25722356 / 50;
     static constexpr double FLATTENING = 1/FLATTENING_DENOM;
     static constexpr double POLAR_RADIUS = RADIUS * (1 - FLATTENING);
     static constexpr double WGS84_a = RADIUS;

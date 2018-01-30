@@ -8,7 +8,6 @@
 
 #include <QPolygon>
 
-#include "rrt.h"
 #include "obstacles.h"
 #include "point.hpp"
 
@@ -19,7 +18,7 @@ class PlanMission
         Obstacles obstacles_z;
         std::vector<QPolygon> search_areas;
 
-        std::stack<Point> pathfind(Point start, Point end, Obstacles obstacles);
+        std::vector<std::pair<double, double>> pathfind(double start_lat, double start_lon, double end_lat, double end_lon, Obstacles obstacles);
     public:
         PlanMission();
         // too lazy to implement ordering for these objects
