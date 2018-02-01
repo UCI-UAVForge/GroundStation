@@ -13,8 +13,8 @@ TEMPLATE = lib
 #lz4_dummy.depends = lib/lz4.c
 #lz4_dummy.recurse_target = true
 ##LIBS+=-L..
-#SOURCES += \
-#    lib/lz4.c \
+SOURCES += \
+    lib/lz4.c
 #    lib/lz4hc.c
 
 #HEADERS += \
@@ -22,4 +22,4 @@ TEMPLATE = lib
 #    lib/lz4hc.h
 #lz4_dummy.commands = echo $$PWD
 
-QMAKE_PRE_LINK = echo $$PWD && cd $$PWD && make -f $$PWD/Makefile
+QMAKE_PRE_LINK = echo $$PWD && cd $$PWD && make -f $$PWD/Makefile liblz4.a
