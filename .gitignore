@@ -541,3 +541,7 @@ Documentation/tests/
 # Unit Tests #
 ##############
 GS/UnitTests/
+
+!GS/3rdparty/lz4/*
+!GS/3rdparty/lz4/lib/*
+
