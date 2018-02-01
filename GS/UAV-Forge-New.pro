@@ -86,15 +86,15 @@ else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$OUT_PW
 else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$OUT_PWD/3rdparty/rrt/debug/rrt.lib
 else:unix: PRE_TARGETDEPS += $$OUT_PWD/3rdparty/rrt/librrt.a
 
-win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/3rdparty/flann/release/ -llz4
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/3rdparty/flann/debug/ -llz4
-else:unix: LIBS += -L$$OUT_PWD/3rdparty/flann/ -llz4
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/3rdparty/lz4/lib/release/ -llz4
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/3rdparty/lz4/lib/debug/ -llz4
+else:unix: LIBS += -L$$PWD/3rdparty/lz4/lib/ -llz4
 
-INCLUDEPATH += $$PWD/3rdparty/flann
-DEPENDPATH += $$PWD/3rdparty/flann
+INCLUDEPATH += $$PWD/3rdparty/lz4
+DEPENDPATH += $$PWD/3rdparty/lz4
 
-win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$OUT_PWD/3rdparty/flann/release/liblz4.a
-else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$OUT_PWD/3rdparty/flann/debug/liblz4.a
-else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$OUT_PWD/3rdparty/flann/release/lz4.lib
-else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$OUT_PWD/3rdparty/flann/debug/lz4.lib
-else:unix: PRE_TARGETDEPS += $$OUT_PWD/3rdparty/flann/liblz4.a
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/3rdparty/lz4/lib/release/liblz4.a
+else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/3rdparty/lz4/lib/debug/liblz4.a
+else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/3rdparty/lz4/lib/release/lz4.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/3rdparty/lz4/lib/debug/lz4.lib
+else:unix: PRE_TARGETDEPS += $$PWD/3rdparty/lz4/lib/liblz4.a
