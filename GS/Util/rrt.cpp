@@ -34,7 +34,7 @@ void RRT::initialize()
  * @return uniformly distributed number from [-1, 1)
  */
 static double getRand() {
-    return 2 * (drand48() - 0.5);
+    return 2 * ((rand() / (RAND_MAX + 1.0)) - 0.5);
 }
 
 /**

@@ -101,13 +101,33 @@ Rectangle {
             map.clearMapItems();
         }
 
+        function incUAVsize() {
+            for (var i=0;i<map.mapItems.length;i++)
+                if (map.mapItems[i].objectName === 'plane')
+                    map.mapItems[i].uavsize += 5;
+        }
+        function decUAVsize() {
+            for (var i=0;i<map.mapItems.length;i++)
+                if (map.mapItems[i].objectName === 'plane')
+                    map.mapItems[i].uavsize -= 5;
+        }
+
         MapQuickItem{id:plane;
-                    anchorPoint.x: image.width/4;
-                    anchorPoint.y: image.height;
+                    objectName: 'plane'
+                    property int uavsize: 50
+                    anchorPoint.x: image.width/2;
+                    anchorPoint.y: image.height/2;
                     sourceItem: Image {id:image;
-                                width:70;height:70;
+                                width:plane.uavsize;height:plane.uavsize;
                                 fillMode:Image.PreserveAspectFit
                                 source: "images/Plane.png"}
+                    MouseArea {
+                        anchors.fill: parent
+                        hoverEnabled: true
+                        onEntered: {
+                            console.log("Mouse over plane");
+                        }
+                    }
         }
 
 
@@ -153,6 +173,47 @@ Rectangle {
         width: 220; height: 63;
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
+        anchors.margins: 15
+        radius: 5
+    }
+
+    Rectangle {
+        id: planesettings
+        Text {
+            id: increaseUAVSize
+            objectName: "increaseUAVSize"
+            text: "+"
+            font.pointSize: 18
+            font.bold: true
+            color: "white"
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: parent.top
+            anchors.margins: 5
+            MouseArea {
+                anchors.fill: parent
+                onClicked: { map.incUAVsize() }
+            }
+        }
+        Text {
+            id: decreaseUAVSize
+            objectName: "decreaseUAVSize"
+            text: "-"
+            font.pointSize: 18
+            font.bold: true
+            color: "white"
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.bottom: parent.bottom
+            anchors.margins: 5
+            MouseArea {
+                anchors.fill: parent
+                onClicked: { map.decUAVsize() }
+            }
+        }
+
+        color: Qt.rgba(0, 0, 0, 0.55)
+        width: 50; height: 70
+        anchors.bottom: parent.bottom
+        anchors.right: parent.right
         anchors.margins: 15
         radius: 5
     }
