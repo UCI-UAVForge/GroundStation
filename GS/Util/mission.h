@@ -11,7 +11,6 @@
 #include <QObject>
 #include "wyp.h"
 
-#include "plan_mission.hpp"
 #include "point.hpp"
 
 
