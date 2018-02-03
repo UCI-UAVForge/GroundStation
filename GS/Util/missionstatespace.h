@@ -7,20 +7,21 @@
 class MissionStateSpace : public RRT::GridStateSpace
 {
 private:
-    QPolygon flyzone;
+    QPolygonF flyzone;
 public:
     MissionStateSpace(double width, double height, int discretizedWidth,
                       int discretizedHeight, FlyZone flyzone)
         : RRT::GridStateSpace(width, height, discretizedWidth, discretizedHeight)
     {
-        QVector<QPoint> newList;
+        QVector<QPointF> newList;
         for(const QVector2D item: *flyzone.boundary_points) {
-            newList << item.toPoint();
+            newList << item.toPointF();
         }
-        this->flyzone = QPolygon(newList);
+        this->flyzone = QPolygonF(newList);
     }
     bool stateValid(const Eigen::Vector2d& pt) const {
-        return RRT::GridStateSpace::stateValid(pt) && flyzone.containsPoint(QPoint(pt.x(), pt.y()), Qt::OddEvenFill);
+        bool dd = flyzone.containsPoint(QPointF(pt.x()/1000, -pt.y()/1000), Qt::WindingFill);
+        return RRT::GridStateSpace::stateValid(pt) && dd;
     }
 };
 

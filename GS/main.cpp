@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
                 "    ]"
                 "}";
     pm.set_obstacles(QJsonDocument::fromJson(sb.toUtf8()));
-    qDebug() << pm.get_path(Point::fromGeodetic(38.14468, -76.42799, 0));
+ //   qDebug() << pm.get_path(Point::fromGeodetic(38.14468, -76.42799, 0));
 //    MainMDIDisplay x;
     MainDockWindow dockWindow;
     //x.showNormal();

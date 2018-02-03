@@ -11,13 +11,13 @@ double meters_to_deg(double meters, double latitude)
     return meters / (111.32 * 1000 * cos(latitude * (M_PI / 180)));
 }
 double SCALE_CONSTANT = 1000;
-std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, double start_lon, double end_lat, double end_lon, Obstacles obstacles, FlyZone flyzone) {
+std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, double start_lon, double end_lat, double end_lon, Obstacles obstacles, QList<FlyZone>* flyzones) {
     int dimensions = 2;
 
     Eigen::Vector2d size(90000,90000);
     std::vector<Eigen::Vector2d> _previousSolution;
 
-    std::shared_ptr<MissionStateSpace> _stateSpace(new MissionStateSpace(size.x(), size.y(), 20, 20, flyzone));
+    std::shared_ptr<MissionStateSpace> _stateSpace(new MissionStateSpace(size.x(), size.y(), 20, 20, FlyZone(flyzones->at(0))));
     std::shared_ptr<RRT::BiRRT<Eigen::Vector2d>> _biRRT = std::make_shared<RRT::BiRRT<Eigen::Vector2d>>(_stateSpace, RRT::hash, dimensions);
 
     auto _waypointCacheMaxSize = 15;
@@ -82,7 +82,7 @@ void PlanMission::add_serach_area(QPolygon poly) {
     search_areas.push_back(poly);
 }
 
-QList<QVector3D> PlanMission::get_path(Point start_point, FlyZone flyzone) {
+QList<QVector3D> * PlanMission::get_path(Point start_point, QList<FlyZone>* flyzones) {
     std::vector<Point> path;
     std::vector<Point> prelim_path;
     prelim_path.push_back(start_point);
@@ -116,11 +116,13 @@ QList<QVector3D> PlanMission::get_path(Point start_point, FlyZone flyzone) {
         if (obstacles_z.segmentIntersectsObstacles(last_point, p)) {
             qInfo() << "we borked; starting RRT";
             // pathfind around obstacles
-            auto detour = pathfind(last_point.toGeodetic()[0], last_point.toGeodetic()[1], p.toGeodetic()[0], p.toGeodetic()[1], obstacles_z, flyzone);
-            for (auto it = detour.begin()+1; it != detour.end(); ++it) {
-                qInfo() << it->first/SCALE_CONSTANT << "/" << it->second/SCALE_CONSTANT;
-                qInfo() << Point::fromGeodetic(it->first/SCALE_CONSTANT, it->second/SCALE_CONSTANT, 0);
-                path.push_back(Point::fromGeodetic(it->first/SCALE_CONSTANT, it->second/SCALE_CONSTANT, 0));
+            auto detour = pathfind(last_point.toGeodetic()[0], last_point.toGeodetic()[1], p.toGeodetic()[0], p.toGeodetic()[1], obstacles_z, flyzones);
+            if (detour.size() > 1) {
+                for (auto it = detour.begin()+1; it != detour.end(); ++it) {
+                    qInfo() << it->first/SCALE_CONSTANT << "/" << it->second/SCALE_CONSTANT;
+                    qInfo() << Point::fromGeodetic(it->first/SCALE_CONSTANT, it->second/SCALE_CONSTANT, 0);
+                    path.push_back(Point::fromGeodetic(it->first/SCALE_CONSTANT, it->second/SCALE_CONSTANT, 0));
+                }
             }
             if (path.size() > 0) {
                 last_point = path.back();

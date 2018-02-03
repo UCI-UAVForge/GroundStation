@@ -66,7 +66,8 @@ void MissionWidget::loadMission() {
                      "    ]"
                      "}";
         pm.set_obstacles(QJsonDocument::fromJson(sb.toUtf8()));
-        selectedMission->mission_waypoints.waypoints = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()));
+        selectedMission->mission_waypoints.waypoints = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()),
+                                                                   selectedMission->fly_zones);
         for (int i = 1; i < selectedMission->mission_waypoints.waypoints->size(); i++) {
             if (selectedMission->mission_waypoints.actions->size() != selectedMission->mission_waypoints.waypoints->size()) {
                 selectedMission->mission_waypoints.actions->append(0);
