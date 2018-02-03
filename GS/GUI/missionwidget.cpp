@@ -25,13 +25,13 @@ bool MissionWidget::hasMission() {
 
 void MissionWidget::loadMission() {
     if (hasMission()) {
-//        PlanMission pm;
+        PlanMission pm;
         Mission * selectedMission = missions->at(ui->missionList->currentIndex());
         currentMission = selectedMission;
         for (int i = 1; i < selectedMission->mission_waypoints.waypoints->size(); i++) {
             QVector3D point = selectedMission->mission_waypoints.waypoints->at(i);
             qDebug() << "X: " << point.x() << " Y: " << point.y() << " Z: " << point.z();
-//            pm.add_goal_point(Point::fromGeodetic(point.x(), point.y(), point.z()));
+            pm.add_goal_point(Point::fromGeodetic(point.x(), point.y(), point.z()));
         }
         QVector3D start_point = selectedMission->mission_waypoints.waypoints->at(0);
         qDebug() << "Start X: " << start_point.x() << " Y: " << start_point.y() << " Z: " << start_point.z();
@@ -53,20 +53,25 @@ void MissionWidget::loadMission() {
                      "    \"stationary_obstacles\": ["
                      "        {"
                      "            \"cylinder_height\": 750.0,"
-                     "            \"cylinder_radius\": 300.0,"
-                     "            \"latitude\": 34.141826869853645,"
+                     "            \"cylinder_radius\": 10000.0,"
+                     "            \"latitude\": 38.141826869853645,"
                      "            \"longitude\": -76.43199876559223"
                      "        },"
                      "        {"
                      "            \"cylinder_height\": 400.0,"
-                     "            \"cylinder_radius\": 100.0,"
-                     "            \"latitude\": 34.149156,"
+                     "            \"cylinder_radius\": 10000.0,"
+                     "            \"latitude\": 38.149156,"
                      "            \"longitude\": -76.430622"
                      "        }"
                      "    ]"
                      "}";
-//        pm.set_obstacles(QJsonDocument::fromJson(sb.toUtf8()));
-//        qDebug() << pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()));
+        pm.set_obstacles(QJsonDocument::fromJson(sb.toUtf8()));
+        selectedMission->mission_waypoints.waypoints = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()));
+        for (int i = 1; i < selectedMission->mission_waypoints.waypoints->size(); i++) {
+            if (selectedMission->mission_waypoints.actions->size() != selectedMission->mission_waypoints.waypoints->size()) {
+                selectedMission->mission_waypoints.actions->append(0);
+            }
+        }
         emit (drawMission(selectedMission));
         model = createMissionModel(selectedMission);
         ui->missionTable->setModel(model);

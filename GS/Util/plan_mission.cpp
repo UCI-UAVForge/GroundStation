@@ -32,7 +32,7 @@ std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, d
     //  setup birrt
     _biRRT->setStartState(_startPos);
     _biRRT->setGoalState(_goalPos);
-    _biRRT->setMaxStepSize(1);
+    _biRRT->setMaxStepSize(10);
     _biRRT->setGoalMaxDist(.1);
 
     // set obstacles
@@ -64,7 +64,7 @@ std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, d
                 qInfo() << v.x() << " " << v.y();
                 result.push_back(std::pair<double, double>(v.x(), v.y()));
             }
-//            RRT::SmoothPath<Eigen::Vector2d>(_previousSolution, *_stateSpace);
+            RRT::SmoothPath<Eigen::Vector2d>(_previousSolution, *_stateSpace);
 
             break;
         }
@@ -82,7 +82,7 @@ void PlanMission::set_obstacles(Obstacles o) {
 void PlanMission::add_serach_area(QPolygon poly) {
     search_areas.push_back(poly);
 }
-QList<QVector3D> PlanMission::get_path(Point start_point) {
+QList<QVector3D>* PlanMission::get_path(Point start_point) {
     std::vector<Point> path;
     std::vector<Point> prelim_path;
     prelim_path.push_back(start_point);
@@ -134,11 +134,12 @@ QList<QVector3D> PlanMission::get_path(Point start_point) {
     }
 
     // inefficient but lets just do like this for now
-    QList<QVector3D> qlist_qvector3d;
+    QList<QVector3D>* qlist_qvector3d = new QList<QVector3D>();
     qInfo() << "da path";
     for (Point p : path) {
         qInfo() << p.toGeodetic();
-        qlist_qvector3d.append(p.QVectorGeodetic());
+        //qlist_qvector3d->append(p.QVectorGeodetic());
+        qlist_qvector3d->append(QVector3D(p.toGeodetic().at(0), p.toGeodetic().at(1) * -1, 0));
     }
     qInfo() << "done with path";
     return qlist_qvector3d;

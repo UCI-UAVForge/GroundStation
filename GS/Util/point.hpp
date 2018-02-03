@@ -42,7 +42,7 @@ class Point
     }
 private:
     Point(double x, double y, double z) : x{x}, y{y}, z{z} {
-        if (isnan(z)) { z = 0; }
+        if (std::isnan(z)) { z = 0; }
 //        qInfo() << "construct: " << qsld(x) << " " << qsld(y) << " " << qsld(z);
     }
 public:
@@ -116,9 +116,6 @@ public:
         u = sin((lat2r - lat1r)/2);
         v = sin((lon2r - lon1r)/2);
         double dist = 2.0 * RADIUS * asin(sqrt(u * u + cos(lat1r) * cos(lat2r) * v * v));
-        if (isnan(dist)) {
-            throw;
-        }
         return dist;
     }
 };
