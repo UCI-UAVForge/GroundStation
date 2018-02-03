@@ -53,20 +53,26 @@ void MissionWidget::loadMission() {
                      "    \"stationary_obstacles\": ["
                      "        {"
                      "            \"cylinder_height\": 750.0,"
-                     "            \"cylinder_radius\": 300.0,"
-                     "            \"latitude\": 34.141826869853645,"
+                     "            \"cylinder_radius\": 10000.0,"
+                     "            \"latitude\": 38.141826869853645,"
                      "            \"longitude\": -76.43199876559223"
                      "        },"
                      "        {"
                      "            \"cylinder_height\": 400.0,"
-                     "            \"cylinder_radius\": 100.0,"
-                     "            \"latitude\": 34.149156,"
+                     "            \"cylinder_radius\": 10000.0,"
+                     "            \"latitude\": 38.149156,"
                      "            \"longitude\": -76.430622"
                      "        }"
                      "    ]"
                      "}";
         pm.set_obstacles(QJsonDocument::fromJson(sb.toUtf8()));
-        qDebug() << pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()));
+        selectedMission->mission_waypoints.waypoints = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()),
+                                                                   selectedMission->fly_zones);
+        for (int i = 1; i < selectedMission->mission_waypoints.waypoints->size(); i++) {
+            if (selectedMission->mission_waypoints.actions->size() != selectedMission->mission_waypoints.waypoints->size()) {
+                selectedMission->mission_waypoints.actions->append(0);
+            }
+        }
         emit (drawMission(selectedMission));
         model = createMissionModel(selectedMission);
         ui->missionTable->setModel(model);

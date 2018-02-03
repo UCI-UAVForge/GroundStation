@@ -69,5 +69,32 @@ RESOURCES += \
 
 INCLUDEPATH += ardupilotmav/ardupilotmega/
 
-
 DISTFILES +=
+
+INCLUDEPATH += 3rdparty/
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/3rdparty/rrt/release/ -lrrt
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/3rdparty/rrt/debug/ -lrrt
+else:unix: LIBS += -L$$OUT_PWD/3rdparty/rrt/ -lrrt
+
+INCLUDEPATH += $$PWD/3rdparty/rrt
+DEPENDPATH += $$PWD/3rdparty/rrt
+
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$OUT_PWD/3rdparty/rrt/release/librrt.a
+else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$OUT_PWD/3rdparty/rrt/debug/librrt.a
+else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$OUT_PWD/3rdparty/rrt/release/rrt.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$OUT_PWD/3rdparty/rrt/debug/rrt.lib
+else:unix: PRE_TARGETDEPS += $$OUT_PWD/3rdparty/rrt/librrt.a
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/3rdparty/lz4/lib/release/ -llz4
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/3rdparty/lz4/lib/debug/ -llz4
+else:unix: LIBS += -L$$PWD/3rdparty/lz4/lib/ -llz4
+
+INCLUDEPATH += $$PWD/3rdparty/lz4
+DEPENDPATH += $$PWD/3rdparty/lz4
+
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/3rdparty/lz4/lib/release/liblz4.a
+else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/3rdparty/lz4/lib/debug/liblz4.a
+else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/3rdparty/lz4/lib/release/lz4.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/3rdparty/lz4/lib/debug/lz4.lib
+else:unix: PRE_TARGETDEPS += $$PWD/3rdparty/lz4/lib/liblz4.a

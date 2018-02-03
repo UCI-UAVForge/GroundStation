@@ -1,57 +1,73 @@
 #include "plan_mission.hpp"
 #include <stack>
+#include <memory>
+#include "missionstatespace.h"
+#include <rrt/2dplane/2dplane.hpp>
+#include <rrt/BiRRT.hpp>
+#include <rrt/planning/Path.hpp>
+#include <Eigen/src/Core/Matrix.h>
+double meters_to_deg(double meters, double latitude)
+{
+    return meters / (111.32 * 1000 * cos(latitude * (M_PI / 180)));
+}
+double SCALE_CONSTANT = 1000;
+std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, double start_lon, double end_lat, double end_lon, Obstacles obstacles, QList<FlyZone>* flyzones) {
+    int dimensions = 2;
 
-std::stack<Point> PlanMission::pathfind(Point start, Point end, Obstacles obstacles) {
-    qInfo() << "pathfind";
-    qInfo() << start.toGeodetic();
-    std::unique_ptr<RRT> rrt{new RRT(start, end, obstacles)};
-    double dist = rrt->distance(rrt->startPos, rrt->endPos);
-    for(int i = 0; i < rrt->max_iter; i++) {
-        Node *q = rrt->perturb(start.x, start.y, start.z, dist);
-        if (q) {
-            Node *qNearest = rrt->nearest(q->position);
-            if (!qNearest) { continue; }
-            qInfo() << "trying: " << Point::fromECEF(q->position.getX(), q->position.getY(), q->position.getZ()).toGeodetic();
-            qInfo() << "distance to nearest node: " << rrt->distance(q->position, qNearest->position);
-            if (rrt->distance(q->position, qNearest->position) > rrt->step_size) {
-                Vect newConfig = rrt->newConfig(q, qNearest);
-                Point a = Point::fromECEF(qNearest->position.getX(), qNearest->position.getY(), qNearest->position.getZ());
-                Point b = Point::fromECEF(newConfig.getX(), newConfig.getY(), newConfig.getZ());
-                if (!rrt->obstacles.segmentIntersectsObstacles(a, b)) {
-                    Node *qNew = new Node;
-                    qNew->position = newConfig;
-                    rrt->add(qNearest, qNew);
-                }
+    Eigen::Vector2d size(90000,90000);
+    std::vector<Eigen::Vector2d> _previousSolution;
+
+    std::shared_ptr<MissionStateSpace> _stateSpace(new MissionStateSpace(size.x(), size.y(), 20, 20, FlyZone(flyzones->at(0))));
+    std::shared_ptr<RRT::BiRRT<Eigen::Vector2d>> _biRRT = std::make_shared<RRT::BiRRT<Eigen::Vector2d>>(_stateSpace, RRT::hash, dimensions);
+
+    auto _waypointCacheMaxSize = 15;
+
+    Eigen::Vector2d _startPos = Eigen::Vector2d(start_lat*SCALE_CONSTANT, abs(start_lon)*SCALE_CONSTANT);
+    Eigen::Vector2d _goalPos = Eigen::Vector2d(end_lat*SCALE_CONSTANT, abs(end_lon)*SCALE_CONSTANT);
+//    Eigen::Vector2d _startPos = Eigen::Vector2d(1, 1);
+//    Eigen::Vector2d _goalPos = Eigen::Vector2d(30, 30);
+    qInfo() << _startPos.x() << " " << _startPos.y();
+    qInfo() << _goalPos.x() << " " << _goalPos.y();
+    //  setup birrt
+    _biRRT->setStartState(_startPos);
+    _biRRT->setGoalState(_goalPos);
+    _biRRT->setMaxStepSize(10);
+    _biRRT->setGoalMaxDist(.1);
+
+    // set obstacles
+    for (QJsonValueRef o : obstacles.get_stationary_obstacles()) {
+        QJsonObject obstacle = o.toObject();
+        double obs_lat = obstacle["latitude"].toDouble();
+        double obs_lon = obstacle["longitude"].toDouble();
+        double radius = obstacle["cylinder_radius"].toDouble();
+        double delta = meters_to_deg(radius, obs_lat);
+        delta *= SCALE_CONSTANT;
+        obs_lat *= SCALE_CONSTANT;
+        obs_lon *= SCALE_CONSTANT;
+        // ignore the z-axis for now
+        for (double x = obs_lat-delta; x < obs_lat+delta; ++x) {
+            for (double y = obs_lon-delta; y < obs_lon+delta; ++y) {
+                _stateSpace->obstacleGrid().obstacleAt(x, y);
             }
         }
-        if (rrt->reached()) {
-            qInfo() << Point::fromECEF(q->position.getX(), q->position.getY(), q->position.getZ()).toGeodetic();
-            qInfo() << "RRT found a solution";
+    }
+
+
+    std::vector<std::pair<double, double>> result;
+    for (int i = 0; i < 1000; i++) {
+        _biRRT->grow();
+        if (_biRRT->startSolutionNode() != nullptr) {
+            qInfo() << "we did it";
+            auto _previousSolution = _biRRT->getPath();
+            for (Eigen::Vector2d v : _biRRT->getPath()) {
+                qInfo() << v.x() << " " << v.y();
+                result.push_back(std::pair<double, double>(v.x(), v.y()));
+            }
+            RRT::SmoothPath<Eigen::Vector2d>(_previousSolution, *_stateSpace);
+
             break;
         }
     }
-    Node *q;
-    if (rrt->reached()) {
-        q = rrt->lastNode;
-    }
-    else
-    {
-        // if not reached yet, then shortestPath will start from the closest node to end point.
-        q = rrt->nearest(rrt->endPos);
-        qInfo() << "Exceeded max iterations! Path may intersect obstacle!";
-        qInfo() << "rrt has " << rrt->nodes.size() << " nodes in its memory";
-    }
-    // generate shortest path to destination.
-    std::stack<Point> result;
-    while (q != NULL) {
-        rrt->path.push_back(q);
-        Vect pos = q->position;
-        Point p = Point::fromECEF(pos.getX(), pos.getY(), pos.getZ());
-        result.push(p);
-        qInfo() << "rrt backtrack:" << p.toGeodetic();
-        q = q->parent;
-    }
-    rrt->deleteNodes(rrt->root);
     return result;
 }
 PlanMission::PlanMission() {}
@@ -65,7 +81,8 @@ void PlanMission::set_obstacles(Obstacles o) {
 void PlanMission::add_serach_area(QPolygon poly) {
     search_areas.push_back(poly);
 }
-QList<QVector3D> PlanMission::get_path(Point start_point) {
+
+QList<QVector3D> * PlanMission::get_path(Point start_point, QList<FlyZone>* flyzones) {
     std::vector<Point> path;
     std::vector<Point> prelim_path;
     prelim_path.push_back(start_point);
@@ -99,11 +116,13 @@ QList<QVector3D> PlanMission::get_path(Point start_point) {
         if (obstacles_z.segmentIntersectsObstacles(last_point, p)) {
             qInfo() << "we borked; starting RRT";
             // pathfind around obstacles
-            std::stack<Point> detour = pathfind(last_point, p, obstacles_z);
-            detour.pop();
-            for (size_t i = 0; i < detour.size(); ++i) {
-                path.push_back(detour.top());
-                detour.pop();
+            auto detour = pathfind(last_point.toGeodetic()[0], last_point.toGeodetic()[1], p.toGeodetic()[0], p.toGeodetic()[1], obstacles_z, flyzones);
+            if (detour.size() > 1) {
+                for (auto it = detour.begin()+1; it != detour.end(); ++it) {
+                    qInfo() << it->first/SCALE_CONSTANT << "/" << it->second/SCALE_CONSTANT;
+                    qInfo() << Point::fromGeodetic(it->first/SCALE_CONSTANT, it->second/SCALE_CONSTANT, 0);
+                    path.push_back(Point::fromGeodetic(it->first/SCALE_CONSTANT, it->second/SCALE_CONSTANT, 0));
+                }
             }
             if (path.size() > 0) {
                 last_point = path.back();
@@ -112,17 +131,17 @@ QList<QVector3D> PlanMission::get_path(Point start_point) {
             }
         } else {
             last_point = p;
+            path.push_back(p);
         }
-        path.push_back(p);
-        qInfo() << "p: " << p.toGeodetic();
     }
 
     // inefficient but lets just do like this for now
-    QList<QVector3D> qlist_qvector3d;
+    QList<QVector3D>* qlist_qvector3d = new QList<QVector3D>();
     qInfo() << "da path";
     for (Point p : path) {
         qInfo() << p.toGeodetic();
-        qlist_qvector3d.append(p.QVectorGeodetic());
+        //qlist_qvector3d->append(p.QVectorGeodetic());
+        qlist_qvector3d->append(QVector3D(p.toGeodetic().at(0), p.toGeodetic().at(1) * -1, 0));
     }
     qInfo() << "done with path";
     return qlist_qvector3d;
