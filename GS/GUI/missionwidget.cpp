@@ -2,6 +2,7 @@
 #include "ui_missionwidget.h"
 //#include "qtmaterialraisedbutton.h"
 #include <QDebug>
+#include <QFile> // Testing purposes
 #include "point.hpp"
 #include "plan_mission.hpp"
 MissionWidget::MissionWidget(QWidget *parent) :
@@ -24,7 +25,60 @@ bool MissionWidget::hasMission() {
 }
 
 void MissionWidget::loadMission() {
-    if (hasMission()) {
+    /* TEST MISSION LOAD */
+    if (test_mission) {
+        qDebug() << "test_mission == true: LOADING TEST MISSION";
+        PlanMission pm;
+        currentMission = new Mission(testReadJSON());
+        for (int i = 1; i < currentMission->mission_waypoints.waypoints->size(); i++) {
+            QVector3D point = currentMission->mission_waypoints.waypoints->at(i);
+            qDebug() << "X: " << point.x() << " Y: " << point.y() << " Z: " << point.z();
+            pm.add_goal_point(Point::fromGeodetic(point.x(), point.y(), point.z()));
+        }
+        QVector3D start_point = currentMission->mission_waypoints.waypoints->at(0);
+        qDebug() << "Start X: " << start_point.x() << " Y: " << start_point.y() << " Z: " << start_point.z();
+        QString sb = "{"
+                     "    \"moving_obstacles\": ["
+                     "        {"
+                     "            \"altitude_msl\": 189.56748784643966,"
+                     "            \"latitude\": 34.141826869853645,"
+                     "            \"longitude\": -76.43199876559223,"
+                     "            \"sphere_radius\": 150.0"
+                     "        },"
+                     "        {"
+                     "            \"altitude_msl\": 250.0,"
+                     "            \"latitude\": 34.14923628783763,"
+                     "            \"longitude\": -76.43238529543882,"
+                     "            \"sphere_radius\": 150.0"
+                     "        }"
+                     "    ],"
+                     "    \"stationary_obstacles\": ["
+                     "        {"
+                     "            \"cylinder_height\": 750.0,"
+                     "            \"cylinder_radius\": 10000.0,"
+                     "            \"latitude\": 38.141826869853645,"
+                     "            \"longitude\": -76.43199876559223"
+                     "        },"
+                     "        {"
+                     "            \"cylinder_height\": 400.0,"
+                     "            \"cylinder_radius\": 10000.0,"
+                     "            \"latitude\": 38.149156,"
+                     "            \"longitude\": -76.430622"
+                     "        }"
+                     "    ]"
+                     "}";
+//        pm.set_obstacles(QJsonDocument::fromJson(sb.toUtf8()));
+//        currentMission->mission_waypoints.waypoints = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()),
+//                                                                  currentMission->fly_zones);
+        currentMission->setActions_std(); // Standard mission to hit all waypoints and land at last waypoint.
+        emit(drawMission(currentMission));
+        // Model
+        QStandardItemModel * genmodel = createMissionModel(currentMission);
+        setTableModel(ui->generatedMission, genmodel);
+    }
+
+    /* Load interop mission */
+    if (hasMission() && !test_mission) {
         PlanMission pm;
         Mission * selectedMission = missions->at(ui->missionList->currentIndex());
         currentMission = selectedMission;
@@ -96,10 +150,9 @@ void MissionWidget::writeButtonClicked() {
 //    else
 //        emit(writeMissionsSignal(constructWaypoints(*missions->at(0)),
 //                              missions->at(0)->mission_waypoints.waypoints->length()));
-
-    // Writing CUSTOM TEST missions TODO Revert
-    qDebug() << currentMission->mission_waypoints.waypoints->length();
-    emit(writeMissionsSignal(testWaypoints(), currentMission->mission_waypoints.waypoints->length()+1));
+//    qDebug() << currentMission->mission_waypoints.waypoints->length();
+    emit(writeMissionsSignal(currentMission->constructWaypoints(), currentMission->waypointLength()));
+//    emit(writeMissionsSignal(testWaypoints(), currentMission->mission_waypoints.waypoints->length()+1));
 }
 void MissionWidget::readButtonClicked() {
     emit(readMissionsSignal());
@@ -144,36 +197,40 @@ QStandardItemModel * MissionWidget::createMissionModel(Mission * mission) {
 void MissionWidget::getMissions(Interop * i) {
     QJsonArray interopMissions = i->getMissions().array();
     for (int j = 0; j < interopMissions.size(); j++) {
+        // testOutputJSON(interopMissions.at(j).toObject(), j);
         missions->append(new Mission(interopMissions.at(j).toObject()));
         ui->missionList->addItem("Mission " + QString::number(j+1));
         ui->missionList->setItemData(j, Qt::AlignCenter, Qt::TextAlignmentRole);
     }
 }
 
+void MissionWidget::testOutputJSON(QJsonObject o, int i) {
+    qDebug() << "MissionWidget::testOutput - OUTPUT JSON FILE";
+    QFile file(QDir::currentPath() + "/../../GroundStation/GS/res/missionout_" + QString::number(i) + ".json");
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        qWarning("Couldn't open write file");
+        return;
+    }
+    file.write(QJsonDocument(o).toJson());
+}
+
+QJsonObject MissionWidget::testReadJSON() {
+    qDebug() << "MissionWidget::readJSON - INPUT JSON FILE";
+    QFile load(QDir::currentPath() + "/../../GroundStation/GS/res/test_mission.json");
+
+    if (!load.open(QIODevice::ReadOnly)) {
+        qWarning("Couldn't open file");
+        QJsonObject null;
+        return null;
+    }
+    QByteArray data = load.readAll();
+    QJsonDocument doc(QJsonDocument::fromJson(data));
+    return doc.object();
+}
+
 //void MissionWidget::getObstacles(Interop * i) {
 //    Obstacles obstacles = interop->getObstacles();
 //    obstacles.loadStationaryObjects(mapWidget);
-
-Waypoint::WP* MissionWidget::constructWaypoints(const Mission& mission) {
-    Waypoint::WP* waypoints = new Waypoint::WP[missions->length()];
-    for (uint16_t i = 0; i < mission.mission_waypoints.waypoints->length(); i++) {
-        Waypoint::WP wp;
-        qDebug() << "MissionWidget::constructWaypoints -> Temporary placeholder values. MUST change for actual flight";
-//        TEMPORARY VALUES. NEEDS TO BE MODIFIED FOR ACTUAL FLIGHT
-        wp.id = i;
-        wp.command = 16;
-        wp.autocontinue = 1;
-        wp.current = 0;
-        wp.param1 = 0;
-        wp.param2 = 10;
-        wp.param3 = 0;
-        wp.x = mission.mission_waypoints.waypoints->at(i).x();
-        wp.y = mission.mission_waypoints.waypoints->at(i).y();
-        wp.z = mission.mission_waypoints.waypoints->at(i).z();
-        waypoints[i] = wp;
-    }
-    return waypoints;
-}
 
 MissionWidget::~MissionWidget()
 {

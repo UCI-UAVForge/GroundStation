@@ -88,4 +88,54 @@ void Mission::loadWaypoint(mavlink_mission_request_t mrequest) {
     emit (loadToUAV(mrequest.seq, cmd, params));
 }
 
+Waypoint::WP* Mission::constructWaypoints() {
+    // MissionWaypoints - actions = command?
+    qDebug() << "Mission::constructWaypoints() -> Temporary untested parameters set";
+    uint16_t len = mission_waypoints.waypoints->length();
+    Waypoint::WP* waypoints = new Waypoint::WP[len+1];
 
+    /* Home Position WP */
+    Waypoint::WP wp;
+    wp.id = 0;
+    wp.command = 22; // I don't know if it matters here
+    wp.autocontinue = 1;
+    wp.current = 0;
+    wp.param1 = 0;
+    wp.param2 = 10;
+    wp.param3 = 0;
+    wp.x = home_pos.x();
+    wp.y = home_pos.y();
+    wp.z = 0;
+    waypoints[0] = wp;
+
+    for (uint16_t i = 1; i <= len; i++) {
+        Waypoint::WP wp;
+        wp.id = i;
+        wp.command = mission_waypoints.actions->at(i-1);
+        wp.autocontinue = 1;
+        wp.current = 0;
+        wp.param1 = 0;
+        wp.param2 = 10;
+        wp.param3 = 0;
+        wp.x = mission_waypoints.waypoints->at(i-1).x();
+        wp.y = mission_waypoints.waypoints->at(i-1).y();
+        wp.z = mission_waypoints.waypoints->at(i-1).z();
+        waypoints[i] = wp;
+    }
+    return waypoints;
+}
+
+uint16_t Mission::waypointLength() {
+    return mission_waypoints.waypoints->length();
+}
+
+// Set standard action. First/Last-Takeoff/Land.
+// All other WP. 16=wp,21=land.22=takeoff
+void Mission::setActions_std() {
+    mission_waypoints.actions = new QList<int>();
+    for (uint16_t i = 0; i < this->waypointLength(); i++) {
+        if (i==0) mission_waypoints.actions->append(22);
+        else if (i==this->waypointLength()-1) mission_waypoints.actions->append(21);
+        else mission_waypoints.actions->append(16);
+    }
+}

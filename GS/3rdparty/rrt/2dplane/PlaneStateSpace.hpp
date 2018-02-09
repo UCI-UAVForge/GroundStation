@@ -15,7 +15,7 @@ public:
         : _width(width), _height(height) {}
 
     POINT_CLASS randomState() const {
-        return POINT_CLASS(drand48() * width(), drand48() * height());
+        return POINT_CLASS((rand() / (RAND_MAX + 1.0)) * width(), (rand() / (RAND_MAX + 1.0)) * height());
     }
 
     POINT_CLASS intermediateState(const POINT_CLASS& source,

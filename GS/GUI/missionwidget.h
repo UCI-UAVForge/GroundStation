@@ -40,6 +40,8 @@ public:
     Obstacles obstacles;
     MapWidget * mapWidget;
 
+    bool test_mission = true;
+
     ~MissionWidget();
 
 signals:
@@ -53,7 +55,8 @@ public slots:
     void writeMissionsStatus(bool success);
 
 private:
-    Waypoint::WP* constructWaypoints(const Mission& mission);
+    void testOutputJSON(QJsonObject o, int i);
+    QJsonObject testReadJSON();
 
     Ui::MissionWidget *ui;
 
