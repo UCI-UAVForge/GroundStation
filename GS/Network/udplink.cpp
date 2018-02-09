@@ -12,14 +12,21 @@ QHostAddress UdpLink::getHost() {
     return UAV_HOST;
 }
 
-void UdpLink::startLink() {
+void UdpLink::startLink(QString hostport) {
     recvUdpSocket = new QUdpSocket(this);
     sendUdpSocket = new QUdpSocket(this);
     recvUdpSocket->bind(GCS_PORT);
-    sendUdpSocket->connectToHost(UAV_HOST, UAV_PORT);
+    QStringList hp = hostport.split(':');
+    if (hp.length() == 2)
+        sendUdpSocket->connectToHost(QHostAddress(hp[0]), hp[1].toInt());
+    if (!sendUdpSocket->isOpen()) {
+        emit(connectError(sendUdpSocket->errorString()));
+    } else {
+        qDebug() << "Link started";
+    }
     connect(recvUdpSocket, &QUdpSocket::readyRead,
                 this, &UdpLink::recvData);
-    qDebug() << "Link started";
+
 }
 
 void UdpLink::sendAllMAVLinkMsgs(std::queue<mavlink_message_t> packets) {
@@ -72,6 +79,11 @@ void UdpLink::recvData() {
         }
 
     }
+}
+
+void UdpLink::closeLink() {
+    sendUdpSocket->close();
+    recvUdpSocket->close();
 }
 
 

@@ -25,7 +25,7 @@ public:
 private:
     Ui::LoginWidget *ui;
 signals:
-    void connectionSuccess(Interop * interop);
+    void loginSuccess(Interop * interop);
 
 };
 

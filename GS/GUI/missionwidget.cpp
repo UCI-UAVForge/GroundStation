@@ -28,9 +28,11 @@ void MissionWidget::loadMission() {
         PlanMission pm;
         Mission * selectedMission = missions->at(ui->missionList->currentIndex());
         currentMission = selectedMission;
+        emit (drawMission(selectedMission));
+        QStandardItemModel * interopModel = createMissionModel(selectedMission);
+        setTableModel(ui->interopMission, interopModel);
         for (int i = 1; i < selectedMission->mission_waypoints.waypoints->size(); i++) {
             QVector3D point = selectedMission->mission_waypoints.waypoints->at(i);
-            qDebug() << "X: " << point.x() << " Y: " << point.y() << " Z: " << point.z();
             pm.add_goal_point(Point::fromGeodetic(point.x(), point.y(), point.z()));
         }
         QVector3D start_point = selectedMission->mission_waypoints.waypoints->at(0);
@@ -54,8 +56,8 @@ void MissionWidget::loadMission() {
                      "        {"
                      "            \"cylinder_height\": 750.0,"
                      "            \"cylinder_radius\": 10000.0,"
-                     "            \"latitude\": 38.141826869853645,"
-                     "            \"longitude\": -76.43199876559223"
+                     "            \"latitude\": 33.6511,"
+                     "            \"longitude\": -117.852"
                      "        },"
                      "        {"
                      "            \"cylinder_height\": 400.0,"
@@ -74,13 +76,17 @@ void MissionWidget::loadMission() {
             }
         }
         emit (drawMission(selectedMission));
-        model = createMissionModel(selectedMission);
-        ui->missionTable->setModel(model);
-        ui->missionTable->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
-        for (int c = 1; c < ui->missionTable->horizontalHeader()->count(); ++c) {
-            ui->missionTable->horizontalHeader()->setSectionResizeMode(
-                c, QHeaderView::ResizeToContents);
-        }
+        QStandardItemModel * genmodel = createMissionModel(selectedMission);
+        setTableModel(ui->generatedMission, genmodel);
+    }
+}
+
+void MissionWidget::setTableModel(QTableView * tableView, QStandardItemModel * model) {
+    tableView->setModel(model);
+    tableView->horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
+    for (int c = 1; c < tableView->horizontalHeader()->count(); ++c) {
+        tableView->horizontalHeader()->setSectionResizeMode(
+            c, QHeaderView::ResizeToContents);
     }
 }
 
@@ -207,62 +213,5 @@ Waypoint::WP* MissionWidget::testWaypoints() {
         waypoints[0].z = 584.1;
         waypoints[0].id = 0;
         waypoints[0].frame = 0;
-
-//        // Takeoff
-//        waypoints[1].autocontinue = 1;
-//        waypoints[1].command = 22;
-//        waypoints[1].current = 0;
-//        waypoints[1].frame = 3;
-//        waypoints[1].id = 1;
-//        waypoints[1].param1 = 15;
-//        waypoints[1].param2 = 0;
-//        waypoints[1].param3 = 0;
-//        waypoints[1].param4 = 0;
-//        waypoints[1].x = 33.6405;
-//        waypoints[1].y = -117.8443;
-//        waypoints[1].z = 50;
-
-//        for (int i = 2; i < 5; i++) {
-//            waypoints[i].autocontinue = 1;
-//            waypoints[i].command = 16;
-//            waypoints[i].current = 0;
-//            waypoints[i].frame = 3;
-//            waypoints[i].id = i;
-//            waypoints[i].param1 = 0;
-//            waypoints[i].param2 = 0;
-//            waypoints[i].param3 = 0;
-//            waypoints[i].param4 = 0;
-//            waypoints[i].x = 33.6405;
-//            waypoints[i].y = -117.8443;
-//            waypoints[i].z = 50;
-//        }
-//        // Loiter
-////        waypoints[2].autocontinue = 1;
-////        waypoints[2].command = 19;
-////        waypoints[2].current = 0;
-////        waypoints[2].frame = 3;
-////        waypoints[2].id = 2;
-////        waypoints[2].param1 = 20;
-////        waypoints[2].param2 = 0;
-////        waypoints[2].param3 = 1;
-////        waypoints[2].param4 = 1;
-////        waypoints[2].x = -35.36326;
-////        waypoints[2].y = 149.16524;
-////        waypoints[2].z = 50;
-
-//        // Land
-//        waypoints[2].autocontinue = 1;
-//        waypoints[2].command = 21;
-//        waypoints[2].current = 0;
-//        waypoints[2].frame = 3;
-//        waypoints[2].id = 2;
-//        waypoints[2].param1 = 25;
-//        waypoints[2].param2 = 2;
-//        waypoints[2].param3 = 0;
-//        waypoints[2].param4 = 0;
-//        waypoints[2].x = 33.6405;
-//        waypoints[2].y = -117.8443;
-//        waypoints[2].z = 0;
-
     return waypoints;
 }

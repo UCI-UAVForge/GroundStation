@@ -10,9 +10,10 @@ class SerialLink : public Link {
 public:
     QSerialPort * serialPort;
     SerialLink();
-    void startLink();
+    void startLink(QString hostport);
     void sendData(mavlink_message_t msg);
     void recvData();
+    void closeLink();
 signals:
    // void messageReceived(mavlink_message_t);
 

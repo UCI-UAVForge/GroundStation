@@ -7,6 +7,7 @@
 #include <QGraphicsColorizeEffect>
 #include "QTime"
 #include "QTimer"
+#include "connectionwidget.h"
 namespace Ui {
 class UAVButton;
 }
@@ -26,8 +27,12 @@ public:
     QGraphicsColorizeEffect * eEffect;
     QColor changeColor;
     QTimer * timer;
+    ConnectionWidget * connWidget;
     void timeout();
-    void doit();
+    void openConnection();
+signals:
+    void openConn();
+    void changeStatus(QString status);
 private:
     Ui::UAVButton *ui;
 };

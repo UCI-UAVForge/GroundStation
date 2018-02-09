@@ -11,8 +11,9 @@ class TcpLink : public Link
 public:
     QTcpSocket * tcp;
     TcpLink();
-    void startLink();
+    void startLink(QString hostport);
     void sendData(mavlink_message_t msg);
+    void closeLink();
 
 private slots:
     void recvData();
