@@ -20,6 +20,7 @@ public:
     QList<QVector3D> * uavPath;
     void drawPoint(QVector2D point, QColor color);
     void drawPolyline(QVariantList points, QColor color);
+    void drawPolyline(QList<QVector3D> * points, QColor color);
     void drawPolygon(QVariantList points,QColor color = QColor(0,0,0,255));
 //    void updateUAVvPosition(mavlink_gps_raw_int_t gps);
     void clearMap();

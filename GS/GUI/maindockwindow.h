@@ -62,7 +62,7 @@ public:
     void testFind();
     void test();
 
-    void changeLink(Link * link);
+    void changeLink(Link * link, QString hostport);
     void showConnWidget();
     void addToolBarButtons();
     void addInteropLogin();

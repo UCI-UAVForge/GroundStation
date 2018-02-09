@@ -19,6 +19,7 @@ void UdpLink::startLink(QString hostport) {
     QStringList hp = hostport.split(':');
     if (hp.length() == 2)
         sendUdpSocket->connectToHost(QHostAddress(hp[0]), hp[1].toInt());
+    qDebug() << hp[0];
     if (!sendUdpSocket->isOpen()) {
         emit(connectError(sendUdpSocket->errorString()));
     } else {

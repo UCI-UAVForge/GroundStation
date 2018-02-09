@@ -20,20 +20,18 @@ void ConnectionWidget::connectUAV() {
     switch (buttons->checkedId()) {
         case 0:
             newLink = new TcpLink();
-            newLink->startLink(ui->tcp->text());
+            emit(connectTo(newLink, ui->tcp->text()));
         break;
         case 1:
             newLink = new UdpLink();
-            newLink->startLink(ui->udp->text());
+            emit(connectTo(newLink, ui->udp->text()));
         break;
         case 2:
             newLink = new SerialLink();
-            //connect(newLink, &Link::connectError, this, &ConnectionWidget::setStatus);
-            newLink->startLink(ui->serialBox->currentText());
+            emit(connectTo(newLink, ui->serialBox->currentText()));
         break;
         default: break;
     }
-    emit(connectTo(newLink));
 }
 
 void ConnectionWidget::refresh() {

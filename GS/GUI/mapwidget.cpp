@@ -19,6 +19,10 @@ void MapWidget::drawPolyline(QVariantList points, QColor color){
             Q_ARG(QVariant, color));
 }
 
+void MapWidget::drawPolyline(QList<QVector3D> * points, QColor color) {
+    drawPolyline(toQVariantList(points), color);
+}
+
 void MapWidget::drawPolygon(QVariantList points, QColor color) {
     QMetaObject::invokeMethod(map, "drawPolygon",
            Q_ARG(QVariant, QVariant::fromValue(points)),

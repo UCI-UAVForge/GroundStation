@@ -35,6 +35,10 @@ QPushButton#writeButton{
 	background-color:rgb(44, 56, 127)
 }
 
+QTabWidget {
+	background-color:rgb(40,40,40);
+}
+
 QHeaderView {
 	background-color:rgb(40,40,40);
 	color:rgb(240,240,240);
@@ -121,7 +125,7 @@ QTableView {
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
-       <string>Tab 1</string>
+       <string>Interop</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
@@ -157,9 +161,9 @@ QTableView {
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tab_2">
+     <widget class="QWidget" name="tab2">
       <attribute name="title">
-       <string>Tab 2</string>
+       <string>Generated</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="0" column="0">

@@ -28,7 +28,7 @@ public:
     void setStatus(QString status);
 
 signals:
-    void connectTo(Link * newLink);
+    void connectTo(Link * newLink, QString hostport);
 private:
 };
 

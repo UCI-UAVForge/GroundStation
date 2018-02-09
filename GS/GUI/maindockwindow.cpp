@@ -59,11 +59,12 @@ void MainDockWindow::addToolBarButtons() {
 void MainDockWindow::showConnWidget() {
     ui->connDock->show();
 }
-void MainDockWindow::changeLink(Link * link) {
+void MainDockWindow::changeLink(Link * link, QString hostport) {
     this->link->closeLink();
+    this->link = link;
+    link->startLink(hostport);
     decoder->setLink(link);
     encoder->setLink(link);
-    this->link = link;
 }
 
 void MainDockWindow::addInteropLogin() {
