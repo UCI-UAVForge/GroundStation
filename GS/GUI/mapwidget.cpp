@@ -47,11 +47,19 @@ void MapWidget::drawMission(Mission * mission) {
     drawPoint(mission->air_drop_pos, QColor(0, 230, 230));
     drawPoint(mission->off_axis_odlc_pos, QColor(10,10, 200));
     drawPoint(mission->emergent_last_known_pos, QColor(0,0,0));
-    drawPolyline(toQVariantList(mission->mission_waypoints.waypoints), QColor("blue"));
-    drawPolygon(toQVariantList(mission->search_grid_points), QColor("yellow"));
-    for (int i = 0; i < mission->fly_zones->size(); i++)
-        drawPolygon(toQVariantList(mission->fly_zones->at(i).boundary_points), QColor(0, 255, 0, 50));
-
+    drawPolyline(toQVariantList(mission->mission_waypoints.waypoints), QColor("red"));
+    if (!mission->search_grid_points->empty()) {
+        drawPolygon(toQVariantList(mission->search_grid_points), QColor(0, 0, 255, 40));
+        mission->search_grid_points->append(mission->search_grid_points->first());
+        drawPolyline(toQVariantList(mission->search_grid_points), QColor(0, 0, 255));
+        mission->search_grid_points->removeLast();
+    }
+    for (int i = 0; i < mission->fly_zones->size(); i++) {
+        drawPolygon(toQVariantList(mission->fly_zones->at(i).boundary_points), QColor(0, 255, 0, 40));
+        mission->fly_zones->at(i).boundary_points->append(mission->fly_zones->at(i).boundary_points->first());
+        drawPolyline(toQVariantList(mission->fly_zones->at(i).boundary_points), QColor(0,255,0));
+        mission->fly_zones->at(i).boundary_points->removeLast();
+    }
 }
 
 void MapWidget::drawUAV(double lat, double lon, double heading) {

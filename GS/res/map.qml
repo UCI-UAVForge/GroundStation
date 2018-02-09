@@ -183,7 +183,7 @@ Rectangle {
             id: increaseUAVSize
             objectName: "increaseUAVSize"
             text: "+"
-            font.pointSize: 18
+            font.pointSize: 16
             font.bold: true
             color: "white"
             anchors.horizontalCenter: parent.horizontalCenter
@@ -198,12 +198,12 @@ Rectangle {
             id: decreaseUAVSize
             objectName: "decreaseUAVSize"
             text: "-"
-            font.pointSize: 18
+            font.pointSize: 23
             font.bold: true
             color: "white"
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.bottom: parent.bottom
-            anchors.margins: 5
+            anchors.margins: 0
             MouseArea {
                 anchors.fill: parent
                 onClicked: { map.decUAVsize() }

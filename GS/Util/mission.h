@@ -45,6 +45,9 @@ public:
     void loadWaypoint(mavlink_mission_request_t mrequest);
     void printJDoc();
     Point toECEF(double lat, double lon, double alt);
+    Waypoint::WP* constructWaypoints();
+    uint16_t waypointLength();
+    void setActions_std();
 
 signals:
     void loadToUAV(int seq, int cmd, float params[]);
