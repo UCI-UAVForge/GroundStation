@@ -103,7 +103,7 @@ QPushButton {
         <item row="0" column="1">
          <widget class="QLineEdit" name="tcp">
           <property name="text">
-           <string>localhost:5760</string>
+           <string>127.0.0.1:5760</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -113,7 +113,7 @@ QPushButton {
         <item row="1" column="1">
          <widget class="QLineEdit" name="udp">
           <property name="text">
-           <string>localhost:5761</string>
+           <string>127.0.0.1:5761</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>

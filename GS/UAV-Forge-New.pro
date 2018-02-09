@@ -88,7 +88,8 @@ else:unix: PRE_TARGETDEPS += $$OUT_PWD/3rdparty/rrt/librrt.a
 
 
 
-unix|win32: LIBS += -L$$PWD/3rdparty/lz4/lib/dll/ -lliblz4
+win32: LIBS += -L$$PWD/3rdparty/lz4/lib/dll/ -lliblz4
+unix: LIBS += -L$$PWD/3rdparty/lz4/lib/ -llz4
 
 INCLUDEPATH += $$PWD/3rdparty/lz4/lib/dll/
 DEPENDPATH += $$PWD/3rdparty/lz4/lib/dll/
