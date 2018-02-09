@@ -34,7 +34,7 @@ void LoginWidget::attemptConnection() {
                 ui->loginButton->setText("INTEROP");
                 ui->loginButton->setEnabled(false);
                 ui->loginButton->setStyleSheet("QPushButton{background-color: rgb(60, 200, 103);}");
-                emit (connectionSuccess(interop));
+                emit (loginSuccess(interop));
             }
             catch (QNetworkReply::NetworkError err) {
                 qDebug() << "Failure";

@@ -4,6 +4,7 @@ MapWidget::MapWidget(QWidget *parent) : QQuickWidget(parent) {
     setResizeMode(QQuickWidget::SizeRootObjectToView);
     setSource(QUrl("qrc:/res/map.qml"));
     map = this->rootObject()->findChild<QObject*>("map");
+    uavPath = new QList<QVector3D>();
 }
 
 void MapWidget::drawPoint(QVector2D point, QColor color) {
@@ -42,7 +43,7 @@ void MapWidget::clearMap() {
 }
 
 void MapWidget::drawMission(Mission * mission) {
-    clearMap();
+    //clearMap();
     drawPoint(mission->home_pos, QColor(255, 0, 0));
     drawPoint(mission->air_drop_pos, QColor(0, 230, 230));
     drawPoint(mission->off_axis_odlc_pos, QColor(10,10, 200));

@@ -12,6 +12,7 @@
 #include <QStandardItemModel>
 #include <QHeaderView>
 #include <QGeoCoordinate>
+#include <QTableView>
 
 namespace Ui {
 class MissionWidget;
@@ -31,6 +32,7 @@ public:
     void loadMission();
     void getMissions(Interop * i);
     QStandardItemModel * createMissionModel(Mission * mission);
+    void setTableModel(QTableView * tableView, QStandardItemModel * model);
 
     QVector<Mission*> * missions;
     Mission * currentMission;

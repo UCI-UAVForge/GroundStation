@@ -11,23 +11,25 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->graphDock->hide();
+    ui->connDock->hide();
 
     // UDP Link for SITL
-    link = new UdpLink();
+  //  link = new UdpLink();
 
 //     Serial link for RF900
-  //     link = new SerialLink();
+    link = new SerialLink();
+    link->startLink("tty1:USB0");
 
-       link->startLink();
-
+    connect(ui->connWidget, &ConnectionWidget::connectTo, this, &MainDockWindow::changeLink);
     mission = new Mission();
     uavButton = new UAVButton(this);
+    connect(uavButton, &UAVButton::openConn, this, &MainDockWindow::showConnWidget);
 
-    Decoder * decoder = new Decoder();
+    decoder = new Decoder();
     decoder->setLink(link);
     connectDecoder(decoder);
 
-    Encoder * encoder = new Encoder();
+    encoder = new Encoder();
     encoder->setLink(link);
     connectEncoder(encoder);
 
@@ -43,14 +45,25 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     ui->toolBar->addWidget(loginWidget);
     ui->toolBar->addWidget(uavButton);
 
-    connect(loginWidget, &LoginWidget::connectionSuccess, ui->missionWidget, &MissionWidget::getMissions);
+    connect(loginWidget, &LoginWidget::loginSuccess, ui->missionWidget, &MissionWidget::getMissions);
     connect(ui->missionWidget, &MissionWidget::drawMission, ui->mapWidget, &MapWidget::drawMission);
 }
 
 void MainDockWindow::addToolBarButtons() {
     foreach(QDockWidget * dw, this->findChildren<QDockWidget*>()) {
-       ui->toolBar->addAction(dw->toggleViewAction());
+       if (!dw->findChild<ConnectionWidget*>())
+            ui->toolBar->addAction(dw->toggleViewAction());
     }
+}
+
+void MainDockWindow::showConnWidget() {
+    ui->connDock->show();
+}
+void MainDockWindow::changeLink(Link * link) {
+    this->link->closeLink();
+    decoder->setLink(link);
+    encoder->setLink(link);
+    this->link = link;
 }
 
 void MainDockWindow::addInteropLogin() {

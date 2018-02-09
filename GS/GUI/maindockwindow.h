@@ -50,6 +50,8 @@ class MainDockWindow : public QMainWindow
 public:
     QStackedWidget * centralWidget;
     Link * link;
+    Decoder * decoder;
+    Encoder * encoder;
     Mission * mission;
     UAVButton * uavButton;
     explicit MainDockWindow(QWidget *parent = 0);
@@ -60,6 +62,8 @@ public:
     void testFind();
     void test();
 
+    void changeLink(Link * link);
+    void showConnWidget();
     void addToolBarButtons();
     void addInteropLogin();
     void connectDecoder(Decoder * decoder);

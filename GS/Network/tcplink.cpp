@@ -5,10 +5,16 @@ TcpLink::TcpLink()
 
 }
 
-void TcpLink::startLink() {
+void TcpLink::startLink(QString hostport) {
     tcp = new QTcpSocket();
     connect(tcp, &QTcpSocket::readyRead, this, &TcpLink::recvData);
-    tcp->connectToHost(QHostAddress("127.0.0.1"), 5760);
+    QStringList hp = hostport.split(':');
+    tcp->connectToHost(QHostAddress(hp[0]), hp[1].toInt());
+    if (!tcp->isOpen()) {
+        emit(connectError(tcp->errorString()));
+    } else {
+        qDebug() << "Link started";
+    }
 }
 
 void TcpLink::sendData(mavlink_message_t msg) {
@@ -39,4 +45,8 @@ void TcpLink::recvData() {
     if (!msgReceived) {
         QTextStream(stdout) << "Message incomplete" << endl;
     }
+}
+
+void TcpLink::closeLink() {
+    tcp->close();
 }

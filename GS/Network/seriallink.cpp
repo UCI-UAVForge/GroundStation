@@ -6,24 +6,18 @@ SerialLink::SerialLink(){
 
 }
 
-void SerialLink::startLink() {
+void SerialLink::startLink(QString hostport) {
     serialPort = new QSerialPort();
-    for (auto e: QSerialPortInfo::availablePorts()) {
-        qInfo() << "Serial Port: " << e.portName();
-        e.description();
-       // serialPort->setPortName(e.portName());
-    }
-    serialPort->setPortName("COM4");
+    serialPort->setPortName(hostport);
     serialPort->setBaudRate(QSerialPort::Baud57600);
     serialPort->setDataBits(QSerialPort::Data8);
     serialPort->setParity(QSerialPort::NoParity);
     serialPort->setStopBits(QSerialPort::OneStop);
     serialPort->setFlowControl(QSerialPort::NoFlowControl);
     if (serialPort->open(QIODevice::ReadWrite)) {
-        qDebug() <<"works";
-    }
-    else {
-        qDebug() << serialPort->errorString();
+        qDebug() << "Link started";
+    } else {
+        emit(connectError(serialPort->errorString()));
     }
     connect(serialPort, &QSerialPort::readyRead, this, &SerialLink::recvData);
 }
@@ -52,4 +46,8 @@ void SerialLink::recvData() {
     if (!msgReceived) {
         //QTextStream(stdout) << "Message incomplete" << endl;
     }
+}
+
+void SerialLink::closeLink() {
+    serialPort->close();
 }

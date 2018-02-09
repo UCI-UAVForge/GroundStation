@@ -214,6 +214,15 @@ QToolButton:hover {
    </attribute>
    <widget class="MissionWidget" name="missionWidget"/>
   </widget>
+  <widget class="QDockWidget" name="connDock">
+   <property name="floating">
+    <bool>true</bool>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="ConnectionWidget" name="connWidget"/>
+  </widget>
   <zorder>actionDock</zorder>
   <zorder>timerDock</zorder>
   <zorder>movementDock</zorder>
@@ -221,6 +230,7 @@ QToolButton:hover {
   <zorder>graphDock</zorder>
   <zorder>messageDock</zorder>
   <zorder>missionDock</zorder>
+  <zorder>connDock</zorder>
  </widget>
  <customwidgets>
   <customwidget>
@@ -269,6 +279,12 @@ QToolButton:hover {
    <class>MissionWidget</class>
    <extends>QWidget</extends>
    <header>missionwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ConnectionWidget</class>
+   <extends>QWidget</extends>
+   <header>connectionwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

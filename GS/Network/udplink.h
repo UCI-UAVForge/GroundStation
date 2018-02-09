@@ -12,11 +12,11 @@ class UdpLink: public Link
 {
 public:
     UdpLink();
-    void startLink();
+    void startLink(QString hostport);
     void sendAllMAVLinkMsgs(std::vector<mavlink_message_t>);
     void sendAllMAVLinkMsgs(std::queue<mavlink_message_t>);
     void sendData(mavlink_message_t);
-
+    void closeLink();
     int getPort();
     QHostAddress getHost();
 
