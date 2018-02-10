@@ -8,6 +8,7 @@ class MissionStateSpace : public RRT::GridStateSpace
 {
 private:
     QPolygonF flyzone;
+    std::vector<QPolygonF> obstacle_polys;
 public:
     MissionStateSpace(double width, double height, int discretizedWidth,
                       int discretizedHeight, FlyZone flyzone)
@@ -20,8 +21,21 @@ public:
         this->flyzone = QPolygonF(newList);
     }
     bool stateValid(const Eigen::Vector2d& pt) const {
-        bool dd = flyzone.containsPoint(QPointF(pt.x()/1000, -pt.y()/1000), Qt::WindingFill);
-        return RRT::GridStateSpace::stateValid(pt) && dd;
+        QPointF non_scaled_curr_point = QPointF(pt.x(), pt.y());
+        QPointF curr_point = QPointF(pt.x()/1000, -pt.y()/1000);
+        bool dd = flyzone.containsPoint(curr_point, Qt::WindingFill);
+        bool no_obstacles = true;
+        for (QPolygonF o : obstacle_polys) {
+            if (o.containsPoint(non_scaled_curr_point, Qt::WindingFill)) {
+                no_obstacles = false;
+                break;
+            }
+        }
+        return RRT::GridStateSpace::stateValid(pt) && dd && no_obstacles;
+    }
+
+    void addObstacle(QPolygonF poly) {
+        obstacle_polys.push_back(poly);
     }
 };
 

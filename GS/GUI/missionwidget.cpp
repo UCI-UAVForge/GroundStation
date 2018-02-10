@@ -67,9 +67,9 @@ void MissionWidget::loadMission() {
                      "        }"
                      "    ]"
                      "}";
-//        pm.set_obstacles(QJsonDocument::fromJson(sb.toUtf8()));
-//        currentMission->mission_waypoints.waypoints = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()),
-//                                                                  currentMission->fly_zones);
+        pm.set_obstacles(QJsonDocument::fromJson(sb.toUtf8()));
+        currentMission->mission_waypoints.waypoints = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()),
+                                                                  currentMission->fly_zones);
         currentMission->setActions_std(); // Standard mission to hit all waypoints and land at last waypoint.
         emit(drawMission(currentMission));
         // Model

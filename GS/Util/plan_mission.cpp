@@ -41,15 +41,13 @@ std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, d
         double obs_lon = obstacle["longitude"].toDouble();
         double radius = obstacle["cylinder_radius"].toDouble();
         double delta = meters_to_deg(radius, obs_lat);
-        delta *= SCALE_CONSTANT;
-        obs_lat *= SCALE_CONSTANT;
-        obs_lon *= SCALE_CONSTANT;
-        // ignore the z-axis for now
-        for (double x = obs_lat-delta; x < obs_lat+delta; ++x) {
-            for (double y = obs_lon-delta; y < obs_lon+delta; ++y) {
-                _stateSpace->obstacleGrid().obstacleAt(x, y);
-            }
+
+
+        QVector<QPointF> obstacle_footprint_points;
+        for (double theta = 0; theta < 2*M_PI; theta += M_PI/360) {
+            obstacle_footprint_points << QPointF(obs_lat + (delta * cos(theta)), obs_lon + (delta * sin(theta)));
         }
+        _stateSpace->addObstacle(QPolygonF(obstacle_footprint_points));
     }
 
 
