@@ -216,8 +216,7 @@ void MissionWidget::testOutputJSON(QJsonObject o, int i) {
 
 QJsonObject MissionWidget::testReadJSON() {
     qDebug() << "MissionWidget::readJSON - INPUT JSON FILE";
-    QFile load(QDir::currentPath() + "/../../GroundStation/GS/res/test_mission.json");
-
+    QFile load(":/res/test_mission.json");
     if (!load.open(QIODevice::ReadOnly)) {
         qWarning("Couldn't open file");
         QJsonObject null;
