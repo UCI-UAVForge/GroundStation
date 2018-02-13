@@ -24,7 +24,7 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     mission = new Mission();
     uavButton = new UAVButton(this);
     connect(uavButton, &UAVButton::openConn, this, &MainDockWindow::showConnWidget);
-
+    connect(uavButton, &UAVButton::changeStatus, ui->connWidget, &ConnectionWidget::setStatus);
     decoder = new Decoder();
     decoder->setLink(link);
     connectDecoder(decoder);

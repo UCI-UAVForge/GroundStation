@@ -1,6 +1,6 @@
 #ifndef STATUS_WIDGET_H
 #define STATUS_WIDGET_H
-
+//no longer in use
 #include <QWidget>
 #include <QGridLayout>
 

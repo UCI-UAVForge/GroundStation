@@ -218,6 +218,9 @@ QToolButton:hover {
    <property name="floating">
     <bool>true</bool>
    </property>
+   <property name="windowTitle">
+    <string>Connection</string>
+   </property>
    <attribute name="dockWidgetArea">
     <number>1</number>
    </attribute>
