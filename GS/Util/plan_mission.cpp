@@ -6,12 +6,8 @@
 #include <rrt/BiRRT.hpp>
 #include <rrt/planning/Path.hpp>
 #include <Eigen/src/Core/Matrix.h>
-double meters_to_deg(double meters, double latitude)
-{
-    return meters / (111.32 * 1000 * cos(latitude * (M_PI / 180)));
-}
 double SCALE_CONSTANT = 1000;
-std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, double start_lon, double end_lat, double end_lon, Obstacles obstacles, QList<FlyZone>* flyzones) {
+std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, double start_lon, double end_lat, double end_lon, QList<FlyZone>* flyzones) {
     int dimensions = 2;
 
     Eigen::Vector2d size(90000,90000);
@@ -31,25 +27,13 @@ std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, d
     //  setup birrt
     _biRRT->setStartState(_startPos);
     _biRRT->setGoalState(_goalPos);
-    _biRRT->setMaxStepSize(10);
+    _biRRT->setMaxStepSize(100);
     _biRRT->setGoalMaxDist(.1);
 
     // set obstacles
-    for (QJsonValueRef o : obstacles.get_stationary_obstacles()) {
-        QJsonObject obstacle = o.toObject();
-        double obs_lat = obstacle["latitude"].toDouble();
-        double obs_lon = obstacle["longitude"].toDouble();
-        double radius = obstacle["cylinder_radius"].toDouble();
-        double delta = meters_to_deg(radius, obs_lat);
-
-
-        QVector<QPointF> obstacle_footprint_points;
-        for (double theta = 0; theta < 2*M_PI; theta += M_PI/360) {
-            obstacle_footprint_points << QPointF(obs_lat + (delta * cos(theta)), obs_lon + (delta * sin(theta)));
-        }
-        _stateSpace->addObstacle(QPolygonF(obstacle_footprint_points));
-    }
-
+    for (QPolygonF obst_poly : get_obstacles()) {
+         _stateSpace->addObstacle(obst_poly);
+    };
 
     std::vector<std::pair<double, double>> result;
     for (int i = 0; i < 1000; i++) {
@@ -82,8 +66,9 @@ void PlanMission::add_serach_area(QPolygon poly) {
 
 QList<QVector3D> * PlanMission::get_path(Point start_point, QList<FlyZone>* flyzones) {
     std::vector<Point> path;
+//    path.push_back(start_point);
     std::vector<Point> prelim_path;
-    prelim_path.push_back(start_point);
+//    prelim_path.push_back(start_point);
     auto sort_func = [&](Point a, Point b) { return Point::euclidian_distance(prelim_path.back(), a) > Point::euclidian_distance(prelim_path.back(), b); };
     std::vector<Point> remaining_points(goal_points.begin(), goal_points.end());
     qInfo() << "start: " << start_point;
@@ -108,13 +93,26 @@ QList<QVector3D> * PlanMission::get_path(Point start_point, QList<FlyZone>* flyz
 
     // pathfind around obstacles
     Point last_point = start_point;
+    QList<QPolygonF> obstacle_polys = get_obstacles();
+
     for (Point p : remaining_points) {
         qInfo() << last_point.toGeodetic() << " -> " << p.toGeodetic();
         // if segment defined by <last_point, p> intersects cylinder o {
-        if (obstacles_z.segmentIntersectsObstacles(last_point, p)) {
+        bool intersects = false;
+        QPolygonF segment;
+        segment.append(QPointF(last_point.toGeodetic()[0], last_point.toGeodetic()[1]));
+        segment.append(QPointF(p.toGeodetic()[0], p.toGeodetic()[1]));
+        for (QPolygonF obst_poly : obstacle_polys) {
+            if (obst_poly.intersects(segment)) {
+                intersects = true;
+                break;
+            }
+        }
+        if (intersects) {
+//        if (obstacles_z.segmentIntersectsObstacles(last_point, p)) {
             qInfo() << "we borked; starting RRT";
             // pathfind around obstacles
-            auto detour = pathfind(last_point.toGeodetic()[0], last_point.toGeodetic()[1], p.toGeodetic()[0], p.toGeodetic()[1], obstacles_z, flyzones);
+            auto detour = pathfind(last_point.toGeodetic()[0], last_point.toGeodetic()[1], p.toGeodetic()[0], p.toGeodetic()[1], flyzones);
             if (detour.size() > 1) {
                 for (auto it = detour.begin()+1; it != detour.end(); ++it) {
                     qInfo() << it->first/SCALE_CONSTANT << "/" << it->second/SCALE_CONSTANT;

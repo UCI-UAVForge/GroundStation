@@ -29,6 +29,13 @@ void MapWidget::drawPolygon(QVariantList points, QColor color) {
            Q_ARG(QVariant, color));
 }
 
+void MapWidget::drawPolygonF(QPolygonF points, QColor color) {
+    QVariantList newList;
+    for(QPointF item: points.toList()) {
+        newList << item;
+    }
+    drawPolygon(newList, color);
+}
 // Delete
 //void MapWidget::updateUAVvPosition(mavlink_gps_raw_int_t gps) {
 //    qDebug() << "mapWidget updateUAVvPosition";

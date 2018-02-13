@@ -47,6 +47,7 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
 
     connect(loginWidget, &LoginWidget::loginSuccess, ui->missionWidget, &MissionWidget::getMissions);
     connect(ui->missionWidget, &MissionWidget::drawMission, ui->mapWidget, &MapWidget::drawMission);
+    connect(ui->missionWidget, &MissionWidget::drawObstacle, ui->mapWidget, &MapWidget::drawPolygonF);
 }
 
 void MainDockWindow::addToolBarButtons() {

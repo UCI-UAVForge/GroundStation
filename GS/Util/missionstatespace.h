@@ -26,7 +26,7 @@ public:
         bool dd = flyzone.containsPoint(curr_point, Qt::WindingFill);
         bool no_obstacles = true;
         for (QPolygonF o : obstacle_polys) {
-            if (o.containsPoint(non_scaled_curr_point, Qt::WindingFill)) {
+            if (o.containsPoint(curr_point, Qt::WindingFill)) {
                 no_obstacles = false;
                 break;
             }

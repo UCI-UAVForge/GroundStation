@@ -55,15 +55,15 @@ void MissionWidget::loadMission() {
                      "    \"stationary_obstacles\": ["
                      "        {"
                      "            \"cylinder_height\": 750.0,"
-                     "            \"cylinder_radius\": 10000.0,"
+                     "            \"cylinder_radius\": 10.0,"
                      "            \"latitude\": 38.141826869853645,"
                      "            \"longitude\": -76.43199876559223"
                      "        },"
                      "        {"
                      "            \"cylinder_height\": 400.0,"
-                     "            \"cylinder_radius\": 10000.0,"
-                     "            \"latitude\": 38.149156,"
-                     "            \"longitude\": -76.430622"
+                     "            \"cylinder_radius\": 115.0,"
+                     "            \"latitude\": 38.1427,"
+                     "            \"longitude\": -76.43"
                      "        }"
                      "    ]"
                      "}";
@@ -72,6 +72,9 @@ void MissionWidget::loadMission() {
                                                                   currentMission->fly_zones);
         currentMission->setActions_std(); // Standard mission to hit all waypoints and land at last waypoint.
         emit(drawMission(currentMission));
+        for (QPolygonF obst_poly : pm.get_obstacles()) {
+            emit(drawObstacle(obst_poly, QColor("red")));
+        }
         // Model
         QStandardItemModel * genmodel = createMissionModel(currentMission);
         setTableModel(ui->generatedMission, genmodel);
