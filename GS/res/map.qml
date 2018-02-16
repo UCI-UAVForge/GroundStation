@@ -41,6 +41,16 @@ Rectangle {
             MapCircle {
                 radius: 25
                 border.width: 0
+                MouseArea {
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    onEntered: {
+                        console.log("Mouse over home");
+                    }
+                    onExited: {
+                        console.log("Mouse left");
+                    }
+                }
             }
         }
 
@@ -58,12 +68,30 @@ Rectangle {
             }
         }
 
+        Component {
+            id: mapLabel
+            MapRectangle {
+                Text {
+                    id: label
+                    text: qsTr("test")
+                }
+            }
+        }
+
         function drawPoint(point, color) {
              var p = mapMarker.createObject(map,
                          {"center.latitude": point.x,
                           "center.longitude" : point.y,
                           "color" : color})
              map.addMapItem(p);
+        }
+
+        function drawHomePoint(point) {
+            var p = mapMarker.createObject(map,
+                        {"center.latitude": point.x,
+                         "center.longitude": pointy,
+                         "color": "red"})
+            map.addMapItem(p)
         }
 
         function drawPolyline(points, color) {
@@ -102,14 +130,18 @@ Rectangle {
         }
 
         function incUAVsize() {
-            for (var i=0;i<map.mapItems.length;i++)
+            for (var i=0;i<map.mapItems.length;i++) {
                 if (map.mapItems[i].objectName === 'plane')
                     map.mapItems[i].uavsize += 5;
+                    break;
+            }
         }
         function decUAVsize() {
-            for (var i=0;i<map.mapItems.length;i++)
+            for (var i=0;i<map.mapItems.length;i++) {
                 if (map.mapItems[i].objectName === 'plane')
                     map.mapItems[i].uavsize -= 5;
+                    break;
+            }
         }
 
         MapQuickItem{id:plane;
@@ -121,13 +153,6 @@ Rectangle {
                                 width:plane.uavsize;height:plane.uavsize;
                                 fillMode:Image.PreserveAspectFit
                                 source: "images/Plane.png"}
-                    MouseArea {
-                        anchors.fill: parent
-                        hoverEnabled: true
-                        onEntered: {
-                            console.log("Mouse over plane");
-                        }
-                    }
         }
 
 
