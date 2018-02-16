@@ -8,14 +8,13 @@ UAVButton::UAVButton(QWidget *parent) :
     ui->setupUi(this);
     eEffect= new QGraphicsColorizeEffect(ui->uavButton);
     eEffect->setColor(QColor(Qt::red));
+    eEffect->setEnabled(false);
+    ui->uavButton->setGraphicsEffect(eEffect);
     changeColor = QColor(Qt::blue);
     pulse = new QPropertyAnimation(eEffect,"color");
-    connWidget = new ConnectionWidget();
     connect(ui->uavButton, &QPushButton::clicked, this, &UAVButton::openConnection);
-    connect(this, &UAVButton::changeStatus, connWidget, &ConnectionWidget::setStatus);
-    //ui->uavButton->setBackgroundColor(QColor(255, 80, 83));
     timer = new QTimer(this);
-    timer->start(10000);
+    timer->start(timeoutMS);
     connect(timer, &QTimer::timeout, this, &UAVButton::timeout);
 
 }
@@ -29,8 +28,8 @@ void UAVButton::updateBattery(mavlink_sys_status_t battery) {
 
 void UAVButton::timeout() {
     ui->uavButton->setText("CONNECT");
-    ui->uavButton->setGraphicsEffect(nullptr);
-    emit(changeStatus("Connection timeout"));
+    eEffect->setEnabled(false);
+    emit(changeStatus("Disconnected"));
 }
 
 void UAVButton::openConnection() {
@@ -38,9 +37,9 @@ void UAVButton::openConnection() {
 }
 
 void UAVButton::updateHeartbeat(mavlink_heartbeat_t heartbeat) {
-    timer->start(10000);
-    emit(changeStatus("CONNECTED TO UAV"));
-    ui->uavButton->setGraphicsEffect(eEffect);
+    timer->start(timeoutMS);
+    emit(changeStatus("Connected"));
+    eEffect->setEnabled(true);
     if (!downbeat) {
         downbeat = true;
         pulse->setDuration(300);

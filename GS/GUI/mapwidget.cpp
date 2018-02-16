@@ -5,6 +5,9 @@ MapWidget::MapWidget(QWidget *parent) : QQuickWidget(parent) {
     setSource(QUrl("qrc:/res/map.qml"));
     map = this->rootObject()->findChild<QObject*>("map");
     uavPath = new QList<QVector3D>();
+    timer = new QTimer();
+    timer->start(timeoutMS);
+    connect(timer, &QTimer::timeout, this, &MapWidget::timeout);
 }
 
 void MapWidget::drawPoint(QVector2D point, QColor color) {
@@ -29,18 +32,17 @@ void MapWidget::drawPolygon(QVariantList points, QColor color) {
            Q_ARG(QVariant, color));
 }
 
-// Delete
-//void MapWidget::updateUAVvPosition(mavlink_gps_raw_int_t gps) {
-//    qDebug() << "mapWidget updateUAVvPosition";
-//    if (gps.lat != currentUAVlat && gps.lon != currentUAVlon) {
-//        currentUAVlat = gps.lat; currentUAVlon = gps.lon;
-//        QString coords = QGeoCoordinate((float)gps.lat/10000000, (float)gps.lon/10000000).toString(QGeoCoordinate::DegreesWithHemisphere);
+void MapWidget::drawPolygonF(QPolygonF points, QColor color) {
+    QVariantList newList;
+    for(QPointF item: points.toList()) {
+        newList << item;
+    }
+    drawPolygon(newList, color);
+}
 
-//        this->rootObject()->setProperty("coords", QVariant(coords));
-//        QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavPosition"), "updateUAVPosition",
-//               Q_ARG(QVariant, coords));
-//    }
-//}
+void MapWidget::timeout() {
+    QMetaObject::invokeMethod(map, "removeUAV");
+}
 
 void MapWidget::clearMap() {
     QMetaObject::invokeMethod(map, "clearMap");
@@ -94,6 +96,7 @@ void MapWidget::updateCenter(double lat, double lon) {
             Q_ARG(QVariant, lon));
 }
 
+
 void MapWidget::updateUAV() {
     if (blinkUAV) {
         QTimer timer;
@@ -120,15 +123,13 @@ void MapWidget::updateUAV() {
 }
 
 void MapWidget::updateUAVPosition(mavlink_gps_raw_int_t gps) {
-    if ((double)gps.lat/10000000 != uav_latitude && (double)gps.lon/10000000 != uav_longitude) {
-        uav_latitude = (double)gps.lat/10000000;
-        uav_longitude = (double)gps.lon/10000000;
-        QString coords = QGeoCoordinate(uav_latitude, uav_longitude).toString(QGeoCoordinate::DegreesWithHemisphere);
-
-        this->rootObject()->setProperty("coords", QVariant(coords));
-        QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavPosition"), "updateUAVPosition",
-               Q_ARG(QVariant, coords));
-    }
+    timer->setInterval(timeoutMS);
+    uav_latitude = (double)gps.lat/10000000;
+    uav_longitude = (double)gps.lon/10000000;
+    QString coords = QGeoCoordinate(uav_latitude, uav_longitude).toString(QGeoCoordinate::DegreesWithHemisphere);
+    this->rootObject()->setProperty("coords", QVariant(coords));
+    QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavPosition"), "updateUAVPosition",
+            Q_ARG(QVariant, coords));
     if (updateUAVConstant) {
         updateUAV();
     }
@@ -137,26 +138,14 @@ void MapWidget::updateUAVPosition(mavlink_gps_raw_int_t gps) {
     }
 }
 
-void MapWidget::updateUAVHeading(mavlink_vfr_hud_t vfr) {
-    if (vfr.heading != uav_heading) {
-        uav_heading = vfr.heading;
-        QString heading = headingToCompass(uav_heading);
-        this->rootObject()->setProperty("heading", QVariant(heading));
-        QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavHeading"), "updateUAVHeading",
-                Q_ARG(QVariant, heading));
-    }
-}
 
-//if (gps_int.hdg/100 != uav_heading) {
-//    if (gps_int.hdg == UINT16_MAX)
-//        qDebug() << "Unable to received accurate heading data from UAV, UAV default heading: North";
-//    else
-//        uav_heading = gps_int.hdg/100;
-//    QString heading = headingToCompass(uav_heading);
-//    this->rootObject()->setProperty("heading", QVariant(heading));
-//    QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavHeading"), "updateUAVHeading",
-//            Q_ARG(QVariant, heading));
-//}
+void MapWidget::updateUAVHeading(mavlink_vfr_hud_t vfr) {
+    uav_heading = vfr.heading;
+    QString heading = headingToCompass(uav_heading);
+    this->rootObject()->setProperty("heading", QVariant(heading));
+    QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavHeading"), "updateUAVHeading",
+               Q_ARG(QVariant, heading));
+}
 
 QString MapWidget::headingToCompass(int heading) {
     QString compass = "Compass bearing: ";

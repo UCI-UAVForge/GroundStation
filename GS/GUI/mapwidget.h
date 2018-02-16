@@ -14,31 +14,6 @@
 class MapWidget : public QQuickWidget
 {
     Q_OBJECT
-public:
-    explicit MapWidget(QWidget * parent = nullptr);
-    QObject * map;
-    QList<QVector3D> * uavPath;
-    void drawPoint(QVector2D point, QColor color);
-    void drawPolyline(QVariantList points, QColor color);
-    void drawPolyline(QList<QVector3D> * points, QColor color);
-    void drawPolygon(QVariantList points,QColor color = QColor(0,0,0,255));
-//    void updateUAVvPosition(mavlink_gps_raw_int_t gps);
-    void clearMap();
-    void drawMission(Mission * mission);
-    void drawUAV(double lat, double lon, double heading);
-    void updateCenter(double lat, double lon);
-    void updateUAV();
-    inline void toggleUpdateCenterConstant() {
-        updateCenterConstant = updateCenterConstant ? false : true;
-    }
-    inline void toggleUpdateUAVConstant() {
-        updateUAVConstant = updateUAVConstant ? false : true;
-    }
-    inline void toggleBlinkUAV() {
-        blinkUAV = blinkUAV ? false : true;
-    }
-
-    void testRemoveUAV();
 
 private:
     template <typename T>
@@ -56,6 +31,35 @@ private:
     double uav_latitude = 0;
     double uav_longitude = 0;
     int uav_heading = 0;
+    QTimer * timer;
+    int timeoutMS = 3000;
+
+public:
+    explicit MapWidget(QWidget * parent = nullptr);
+    QObject * map;
+    QList<QVector3D> * uavPath;
+    void drawPoint(QVector2D point, QColor color);
+    void drawPolyline(QVariantList points, QColor color);
+    void drawPolyline(QList<QVector3D> * points, QColor color);
+    void drawPolygonF(QPolygonF points, QColor color);
+    void drawPolygon(QVariantList points, QColor color);
+    void clearMap();
+    void drawMission(Mission * mission);
+    void drawUAV(double lat, double lon, double heading);
+    void updateCenter(double lat, double lon);
+    void updateUAV();
+    void timeout();
+    inline void toggleUpdateCenterConstant() {
+        updateCenterConstant = updateCenterConstant ? false : true;
+    }
+    inline void toggleUpdateUAVConstant() {
+        updateUAVConstant = updateUAVConstant ? false : true;
+    }
+    inline void toggleBlinkUAV() {
+        blinkUAV = blinkUAV ? false : true;
+    }
+
+    void testRemoveUAV();
 
 //signals:
 

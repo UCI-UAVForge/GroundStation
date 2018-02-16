@@ -84,6 +84,10 @@
         <file>res/tc/tc_face_2.svg</file>
         <file>res/tc/tc_mark.svg</file>
         <file>res/test_mission.json</file>
+<<<<<<< HEAD
         <file>res/test_obstacles.json</file>
+=======
+        <file>res/TooltipArea.qml</file>
+>>>>>>> 82048e565c8d8ade759c2a1175dd2ccace853b3c
     </qresource>
 </RCC>

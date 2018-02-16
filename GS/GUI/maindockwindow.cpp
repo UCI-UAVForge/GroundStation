@@ -24,7 +24,7 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     mission = new Mission();
     uavButton = new UAVButton(this);
     connect(uavButton, &UAVButton::openConn, this, &MainDockWindow::showConnWidget);
-
+    connect(uavButton, &UAVButton::changeStatus, ui->connWidget, &ConnectionWidget::setStatus);
     decoder = new Decoder();
     decoder->setLink(link);
     connectDecoder(decoder);
@@ -47,6 +47,7 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
 
     connect(loginWidget, &LoginWidget::loginSuccess, ui->missionWidget, &MissionWidget::getMissions);
     connect(ui->missionWidget, &MissionWidget::drawMission, ui->mapWidget, &MapWidget::drawMission);
+    connect(ui->missionWidget, &MissionWidget::drawObstacle, ui->mapWidget, &MapWidget::drawPolygonF);
 }
 
 void MainDockWindow::addToolBarButtons() {

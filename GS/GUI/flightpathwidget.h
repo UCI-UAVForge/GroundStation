@@ -1,6 +1,8 @@
 #ifndef FLIGHTPATHWIDGET_H
 #define FLIGHTPATHWIDGET_H
 
+//no longer in use
+
 #include <QWidget>
 #include <vector>
 #include <QMenu>

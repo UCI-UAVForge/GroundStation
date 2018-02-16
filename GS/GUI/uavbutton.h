@@ -27,7 +27,7 @@ public:
     QGraphicsColorizeEffect * eEffect;
     QColor changeColor;
     QTimer * timer;
-    ConnectionWidget * connWidget;
+    int timeoutMS = 3000;
     void timeout();
     void openConnection();
 signals:

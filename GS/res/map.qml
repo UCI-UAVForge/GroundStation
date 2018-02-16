@@ -1,7 +1,10 @@
-import QtQuick 2.0
+import QtQuick 2.2
 import QtQuick.Window 2.0
 import QtLocation 5.6
 import QtPositioning 5.6
+import QtQuick.Controls 1.2 //QtQuick Components
+import QtQuick.Dialogs 1.1 //Dialogs
+import "../res"
 
 
 Rectangle {
@@ -11,6 +14,8 @@ Rectangle {
     visible: true
     objectName:"rect"
     property alias coords: uavPosition.text
+    property bool centerUAV
+
     Plugin {
         id: mapPlugin
         name: "esri"
@@ -109,9 +114,17 @@ Rectangle {
             }
             map.addMapItem(polygon);
         }
+        function changeMapInfoColor(color) {
+            for (var i=0;i<map.mapItems.length;i++)
+                if (map.mapItems[i].objectName === 'mapinfo')
+                    map.mapItems[i].uavsize -= 5;
+        }
+
 
         function updateCenter(lat, lon) {
-            map.center = QtPositioning.coordinate(lat, lon);
+            if (centerUAV) {
+                map.center = QtPositioning.coordinate(lat, lon);
+            }
         }
 
         function drawUAV(lat, lon, heading) {
@@ -123,6 +136,8 @@ Rectangle {
 
         function removeUAV() {
             map.removeMapItem(plane)
+            uavHeading.text = ""
+            uavPosition.text = "No Data Received"
         }
 
         function clearMap() {
@@ -130,19 +145,12 @@ Rectangle {
         }
 
         function incUAVsize() {
-            for (var i=0;i<map.mapItems.length;i++) {
-                if (map.mapItems[i].objectName === 'plane')
-                    map.mapItems[i].uavsize += 5;
-                    break;
-            }
+            plane.uavsize += 5;
         }
         function decUAVsize() {
-            for (var i=0;i<map.mapItems.length;i++) {
-                if (map.mapItems[i].objectName === 'plane')
-                    map.mapItems[i].uavsize -= 5;
-                    break;
-            }
+            plane.uavsize -= 5;
         }
+
 
         MapQuickItem{id:plane;
                     objectName: 'plane'
@@ -159,6 +167,7 @@ Rectangle {
     }
     Rectangle {
         id: mapinfo
+        objectName: "mapInfo"
         Text {
             text: "UAV POSITION"
             anchors.horizontalCenter: parent.horizontalCenter
@@ -195,51 +204,69 @@ Rectangle {
         }
 
         color: Qt.rgba(0, 0, 0, 0.55)
-        width: 220; height: 63;
+        width: 200; height: 63;
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.margins: 15
         radius: 5
+        function toggleCenter(lat, lon) {
+            if(centerUAV) {
+                centerUAV = false;
+                mapinfo.color = Qt.rgba(0, 0, 0, 0.55);
+            } else {
+                centerUAV = true;
+                mapinfo.color = "#AA116611"
+            }
+        }
+        TooltipArea {
+            text: "Toggle focus on UAV"
+            onClicked: {mapinfo.toggleCenter()}
+        }
+
     }
+
 
     Rectangle {
         id: planesettings
-        Text {
+        Rectangle {
             id: increaseUAVSize
-            objectName: "increaseUAVSize"
-            text: "+"
-            font.pointSize: 16
-            font.bold: true
-            color: "white"
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: parent.top
-            anchors.margins: 5
-            MouseArea {
-                anchors.fill: parent
-                onClicked: { map.incUAVsize() }
+            Text {
+                text: "+"
+                font.pointSize: 16
+                font.bold: true
+                color: "white"
+                anchors.centerIn: parent
             }
+            TooltipArea {
+                text: "Increase UAV size"
+                onClicked: {map.incUAVsize()}
+            }
+            anchors.top:parent.top
+            width: 35; height: 30
+            color: "transparent"
         }
-        Text {
+        Rectangle {
             id: decreaseUAVSize
-            objectName: "decreaseUAVSize"
-            text: "-"
-            font.pointSize: 23
-            font.bold: true
-            color: "white"
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.bottom: parent.bottom
-            anchors.margins: 0
-            MouseArea {
-                anchors.fill: parent
-                onClicked: { map.decUAVsize() }
+            Text {
+                text: "-"
+                font.pointSize: 23
+                font.bold: true
+                color: "white"
+                anchors.centerIn: parent
             }
+            TooltipArea {
+                text: "Decrease UAV size"
+                onClicked: { map.decUAVsize()}
+            }
+            anchors.bottom:parent.bottom
+            color: "transparent"
+            width: 35; height: 30
         }
-
-        color: Qt.rgba(0, 0, 0, 0.55)
-        width: 50; height: 70
+        width: 35; height: 60
         anchors.bottom: parent.bottom
         anchors.right: parent.right
         anchors.margins: 15
+        color: Qt.rgba(0, 0, 0, 0.55)
         radius: 5
     }
 }

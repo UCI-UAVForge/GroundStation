@@ -39,28 +39,25 @@ void MissionWidget::loadMission() {
     if (hasMission()) {
         PlanMission pm;
         Mission * selectedMission = missions->at(ui->missionList->currentIndex());
-        currentMission = selectedMission;
-        emit (drawMission(selectedMission));
-//        QStandardItemModel * interopModel = createMissionModel(selectedMission);
-//        setTableModel(ui->interopMission, interopModel);
         for (int i = 1; i < selectedMission->mission_waypoints.waypoints->size(); i++) {
             QVector3D point = selectedMission->mission_waypoints.waypoints->at(i);
+            qDebug() << "X: " << point.x() << " Y: " << point.y() << " Z: " << point.z();
             pm.add_goal_point(Point::fromGeodetic(point.x(), point.y(), point.z()));
         }
         QVector3D start_point = selectedMission->mission_waypoints.waypoints->at(0);
         qDebug() << "Start X: " << start_point.x() << " Y: " << start_point.y() << " Z: " << start_point.z();
 
-//        pm.set_obstacles(Obstacles(testReadJSON_obstacle()));
-//        selectedMission->mission_waypoints.waypoints = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()),
-//                                                                   selectedMission->fly_zones);
-        for (int i = 1; i < selectedMission->mission_waypoints.waypoints->size(); i++) {
-            if (selectedMission->mission_waypoints.actions->size() != selectedMission->mission_waypoints.waypoints->size()) {
-                selectedMission->mission_waypoints.actions->append(0);
-            }
+        pm.set_obstacles(Obstacles(testReadJSON_obstacle()));
+        selectedMission->mission_waypoints.waypoints = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()),
+                                                                   selectedMission->fly_zones);
+        selectedMission->setActions_std();
+        emit(drawMission(selectedMission));
+        for (QPolygonF obst_poly : pm.get_obstacles()) {
+            emit(drawObstacle(obst_poly, QColor("red")));
         }
-        emit (drawMission(selectedMission));
         QStandardItemModel * genmodel = createMissionModel(selectedMission);
         setTableModel(ui->generatedMission, genmodel);
+        currentMission = selectedMission;
     }
 }
 
