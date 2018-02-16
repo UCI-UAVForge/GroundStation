@@ -16,7 +16,7 @@ class PlanMission
     private:
         std::vector<Point> goal_points;
         Obstacles obstacles_z;
-        std::vector<QPolygon> search_areas;
+        std::vector<QPolygonF> search_areas;
         double meters_to_deg(double meters, double latitude)
         {
             return (meters / (111.32 * 1000 * cos(latitude * (M_PI / 180))));
@@ -44,8 +44,18 @@ class PlanMission
             }
             return polys;
         }
-        void add_serach_area(QPolygon poly);
+        void add_serach_area(QPolygonF poly);
         QList<QVector3D> * get_path(Point start_point, QList<FlyZone>* flyzones);
+        static bool poly_intersects(QPolygonF a, QPolygonF b) {
+#if QT_VERSION < QT_VERSION_CHECK(5, 10, 0)
+            QPainterPath subject; subject.addPolygon(a);
+            QPainterPath clip; clip.addPolygon(b);
+            return subject.intersects(clip);
+#else
+            // literally the same code as above why are we doing this
+            return a.intersects(b);
+#endif
+        }
 };
 
 #endif // PLANMISSION_HPP

@@ -60,7 +60,7 @@ void PlanMission::add_goal_point(Point p) {
 void PlanMission::set_obstacles(Obstacles o) {
     obstacles_z = o;
 }
-void PlanMission::add_serach_area(QPolygon poly) {
+void PlanMission::add_serach_area(QPolygonF poly) {
     search_areas.push_back(poly);
 }
 
@@ -103,7 +103,7 @@ QList<QVector3D> * PlanMission::get_path(Point start_point, QList<FlyZone>* flyz
         segment.append(QPointF(last_point.toGeodetic()[0], last_point.toGeodetic()[1]));
         segment.append(QPointF(p.toGeodetic()[0], p.toGeodetic()[1]));
         for (QPolygonF obst_poly : obstacle_polys) {
-            if (obst_poly.intersects(segment)) {
+            if (PlanMission::poly_intersects(obst_poly, segment)) {
                 intersects = true;
                 break;
             }
