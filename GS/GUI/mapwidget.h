@@ -38,7 +38,7 @@ public:
     explicit MapWidget(QWidget * parent = nullptr);
     QObject * map;
     QList<QVector3D> * uavPath;
-    void drawPoint(QVector2D point, QColor color);
+    void drawPoint(QVector2D point, QString label, QColor color, int radius = 20);
     void drawPolyline(QVariantList points, QColor color);
     void drawPolyline(QList<QVector3D> * points, QColor color);
     void drawPolygonF(QPolygonF points, QColor color);

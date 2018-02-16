@@ -1,11 +1,11 @@
-import QtQuick 2.2
+import QtQuick 2.0
 import QtQuick.Window 2.0
 import QtLocation 5.6
 import QtPositioning 5.6
 import QtQuick.Controls 1.2 //QtQuick Components
 import QtQuick.Dialogs 1.1 //Dialogs
-import "../res"
-
+import QtQuick.Controls.Styles 1.4
+import QtGraphicalEffects 1.0
 
 Rectangle {
     id: main
@@ -46,6 +46,9 @@ Rectangle {
             MapCircle {
                 radius: 25
                 border.width: 0
+                TooltipArea {
+                    text:"beans";
+                }
             }
         }
 
@@ -59,15 +62,18 @@ Rectangle {
         Component {
             id: mapPolygon
             MapPolygon {
-            border.width: 0
+                border.width: 0
             }
         }
 
-        function drawPoint(point, color) {
+        function drawPoint(point, label, color, radius) {
              var p = mapMarker.createObject(map,
                          {"center.latitude": point.x,
                           "center.longitude" : point.y,
-                          "color" : color})
+                          "color" : color,
+                          "radius" : radius
+                          "text": label})
+             p.createComponent(TooltipArea, {"text":label});
              map.addMapItem(p);
         }
 
@@ -141,10 +147,8 @@ Rectangle {
                         }
                     }
         }
-
-
     }
-    Rectangle {
+    Rectangle{
         id: mapinfo
         objectName: "mapInfo"
         Text {
@@ -189,19 +193,13 @@ Rectangle {
         anchors.margins: 15
         radius: 5
         function toggleCenter(lat, lon) {
-            if(centerUAV) {
-                centerUAV = false;
-                mapinfo.color = Qt.rgba(0, 0, 0, 0.55);
-            } else {
-                centerUAV = true;
-                mapinfo.color = "#AA116611"
-            }
+            centerUAV = centerUAV ? false:true;
+            mapinfo.color = centerUAV ? "#AA116611" : Qt.rgba(0, 0, 0, 0.55);
         }
         TooltipArea {
             text: "Toggle focus on UAV"
             onClicked: {mapinfo.toggleCenter()}
         }
-
     }
 
 
@@ -210,6 +208,7 @@ Rectangle {
         Rectangle {
             id: increaseUAVSize
             Text {
+                id:incTxt
                 text: "+"
                 font.pointSize: 16
                 font.bold: true
@@ -219,6 +218,8 @@ Rectangle {
             TooltipArea {
                 text: "Increase UAV size"
                 onClicked: {map.incUAVsize()}
+                onEntered: incTxt.color = "#b8fcbf"
+                onExited: incTxt.color = "white"
             }
             anchors.top:parent.top
             width: 35; height: 30
@@ -227,6 +228,7 @@ Rectangle {
         Rectangle {
             id: decreaseUAVSize
             Text {
+                id:decTxt
                 text: "-"
                 font.pointSize: 23
                 font.bold: true
@@ -236,6 +238,8 @@ Rectangle {
             TooltipArea {
                 text: "Decrease UAV size"
                 onClicked: { map.decUAVsize()}
+                onEntered: decTxt.color = "#fcbfb8"
+                onExited: decTxt.color = "white"
             }
             anchors.bottom:parent.bottom
             color: "transparent"

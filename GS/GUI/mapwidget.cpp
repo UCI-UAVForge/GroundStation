@@ -10,10 +10,12 @@ MapWidget::MapWidget(QWidget *parent) : QQuickWidget(parent) {
     connect(timer, &QTimer::timeout, this, &MapWidget::timeout);
 }
 
-void MapWidget::drawPoint(QVector2D point, QColor color) {
+void MapWidget::drawPoint(QVector2D point, QString label, QColor color, int radius) {
     QMetaObject::invokeMethod(map, "drawPoint",
             Q_ARG(QVariant, point),
-            Q_ARG(QVariant, color));
+            Q_ARG(QVariant, label),
+            Q_ARG(QVariant, color),
+            Q_ARG(QVariant, radius));
 }
 
 void MapWidget::drawPolyline(QVariantList points, QColor color){
@@ -49,23 +51,26 @@ void MapWidget::clearMap() {
 }
 
 void MapWidget::drawMission(Mission * mission) {
-    //clearMap();
-    drawPoint(mission->home_pos, QColor(255, 0, 0));
-    drawPoint(mission->air_drop_pos, QColor(0, 230, 230));
-    drawPoint(mission->off_axis_odlc_pos, QColor(10,10, 200));
-    drawPoint(mission->emergent_last_known_pos, QColor(0,0,0));
-    drawPolyline(toQVariantList(mission->mission_waypoints.waypoints), QColor("red"));
-    if (!mission->search_grid_points->empty()) {
-        drawPolygon(toQVariantList(mission->search_grid_points), QColor(0, 0, 255, 40));
-        mission->search_grid_points->append(mission->search_grid_points->first());
-        drawPolyline(toQVariantList(mission->search_grid_points), QColor(0, 0, 255));
-        mission->search_grid_points->removeLast();
-    }
+    clearMap();
     for (int i = 0; i < mission->fly_zones->size(); i++) {
         drawPolygon(toQVariantList(mission->fly_zones->at(i).boundary_points), QColor(0, 255, 0, 40));
         mission->fly_zones->at(i).boundary_points->append(mission->fly_zones->at(i).boundary_points->first());
-        drawPolyline(toQVariantList(mission->fly_zones->at(i).boundary_points), QColor(0,255,0));
-        mission->fly_zones->at(i).boundary_points->removeLast();
+        //drawPolyline(toQVariantList(mission->fly_zones->at(i).boundary_points), QColor(0,255,0));
+        //mission->fly_zones->at(i).boundary_points->removeLast();
+    }
+    if (!mission->search_grid_points->empty()) {
+        drawPolygon(toQVariantList(mission->search_grid_points), QColor(0, 0, 255, 40));
+        mission->search_grid_points->append(mission->search_grid_points->first());
+        //drawPolyline(toQVariantList(mission->search_grid_points), QColor(0, 0, 255));
+        //mission->search_grid_points->removeLast();
+    }
+    drawPoint(mission->home_pos, "home", QColor(255, 0, 0));
+    drawPoint(mission->air_drop_pos, "air_drop", QColor(0, 230, 230));
+    drawPoint(mission->off_axis_odlc_pos, "off_axis", QColor(10,10, 200));
+    //drawPoint(mission->emergent_last_known_pos, "QColor(0,0,0));
+    drawPolyline(toQVariantList(mission->mission_waypoints.waypoints), QColor("red"));
+    for (int i = 0; i < mission->mission_waypoints.waypoints->size(); i++) {
+        //drawPoint(mission->mission_waypoints.waypoints->at(i).toVector2D(), QColor(0,0,50), 10);
     }
 }
 

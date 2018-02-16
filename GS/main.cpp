@@ -66,7 +66,7 @@ int main(int argc, char *argv[]) {
 //    MainMDIDisplay x;
     MainDockWindow dockWindow;
     //x.showNormal();
-    dockWindow.showNormal();
+    dockWindow.showFullScreen();
     //Hide the splash screen.
     splash.finish(&dockWindow);
 
