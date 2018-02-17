@@ -58,20 +58,32 @@ void MapWidget::drawMission(Mission * mission) {
         //drawPolyline(toQVariantList(mission->fly_zones->at(i).boundary_points), QColor(0,255,0));
         //mission->fly_zones->at(i).boundary_points->removeLast();
     }
+    /* Search Grid Points */
     if (!mission->search_grid_points->empty()) {
         drawPolygon(toQVariantList(mission->search_grid_points), QColor(0, 0, 255, 40));
         mission->search_grid_points->append(mission->search_grid_points->first());
         //drawPolyline(toQVariantList(mission->search_grid_points), QColor(0, 0, 255));
         //mission->search_grid_points->removeLast();
     }
+
+    /* Home position */
     drawPoint(mission->home_pos, "home", QColor(255, 0, 0));
+
+    /* Air Drop Point */
     drawPoint(mission->air_drop_pos, "air_drop", QColor(0, 230, 230));
+
+    /* Off Axis ODLC Position */
     drawPoint(mission->off_axis_odlc_pos, "off_axis", QColor(10,10, 200));
-    //drawPoint(mission->emergent_last_known_pos, "QColor(0,0,0));
-    drawPolyline(toQVariantList(mission->mission_waypoints.waypoints), QColor("red"));
-    for (int i = 0; i < mission->mission_waypoints.waypoints->size(); i++) {
+
+    /* Emergent hiker */
+    //drawPoint(mission->emergent_last_known_pos, QColor(0,0,0));
+
+    /* Waypoints */
+    drawPolyline(toQVariantList(mission->mission_waypoints.waypoints), QColor("blue"));
+    //for (int i = 0; i < mission->mission_waypoints.waypoints->size(); i++) {
         //drawPoint(mission->mission_waypoints.waypoints->at(i).toVector2D(), QColor(0,0,50), 10);
-    }
+
+
 }
 
 void MapWidget::drawUAV(double lat, double lon, double heading) {

@@ -54,10 +54,12 @@ signals:
 public slots:
     void readMissions(Waypoint::WP * waypoints, uint16_t size);
     void writeMissionsStatus(bool success);
+    void updateInteropMission(int index);
 
 private:
     void testOutputJSON(QJsonObject o, int i);
-    QJsonObject testReadJSON();
+    QJsonObject testReadJSON_mission();
+    QJsonDocument testReadJSON_obstacle();
 
     Ui::MissionWidget *ui;
 

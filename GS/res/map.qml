@@ -44,7 +44,7 @@ Rectangle {
         Component {
             id: mapMarker
             MapCircle {
-                radius: 25
+                radius: r
                 border.width: 0
                 TooltipArea {
                     text:"beans";
@@ -71,10 +71,17 @@ Rectangle {
                          {"center.latitude": point.x,
                           "center.longitude" : point.y,
                           "color" : color,
-                          "radius" : radius
+                          "radius" : radius,
                           "text": label})
-             p.createComponent(TooltipArea, {"text":label});
              map.addMapItem(p);
+        }
+
+        function drawHomePoint(point) {
+            var p = mapMarker.createObject(map,
+                        {"center.latitude": point.x,
+                         "center.longitude": pointy,
+                         "color": "red"})
+            map.addMapItem(p)
         }
 
         function drawPolyline(points, color) {
@@ -139,13 +146,6 @@ Rectangle {
                                 width:plane.uavsize;height:plane.uavsize;
                                 fillMode:Image.PreserveAspectFit
                                 source: "images/Plane.png"}
-                    MouseArea {
-                        anchors.fill: parent
-                        hoverEnabled: true
-                        onEntered: {
-                            console.log("Mouse over plane");
-                        }
-                    }
         }
     }
     Rectangle{
