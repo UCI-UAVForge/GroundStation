@@ -14,8 +14,13 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
+   <string notr="true">QPushButton {
+	background-color:rgb(241, 241, 241);
+	color:rgb(30,30,30);
+}
+
 QPushButton#armButton {
+	color:rgb(255,255,255);
 	background-color:rgb(255, 80, 83);
 }
 
@@ -28,6 +33,58 @@ QPushButton#armButton:pressed {
 </string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
+   <item row="3" column="1">
+    <widget class="QPushButton" name="manualButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>MANUAL</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="2">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="4" column="1">
+    <widget class="QPushButton" name="circleButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>CIRCLE</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="3">
+    <widget class="QPushButton" name="rtlButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>RTL</string>
+     </property>
+    </widget>
+   </item>
    <item row="3" column="2">
     <widget class="QPushButton" name="guidedButton">
      <property name="font">
@@ -81,8 +138,8 @@ QPushButton#armButton:pressed {
      </property>
     </widget>
    </item>
-   <item row="3" column="1">
-    <widget class="QPushButton" name="manualButton">
+   <item row="4" column="2">
+    <widget class="QPushButton" name="stabilizeButton">
      <property name="font">
       <font>
        <weight>75</weight>
@@ -90,22 +147,74 @@ QPushButton#armButton:pressed {
       </font>
      </property>
      <property name="text">
-      <string>MANUAL</string>
+      <string>STABILIZE</string>
      </property>
     </widget>
    </item>
-   <item row="4" column="2">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
+   <item row="5" column="3">
+    <widget class="QPushButton" name="initButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
      </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
+     <property name="text">
+      <string>INIT</string>
      </property>
-    </spacer>
+    </widget>
+   </item>
+   <item row="6" column="2">
+    <widget class="QPushButton" name="fbwbButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>FWB B</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QPushButton" name="fbwaButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>FBW A</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QPushButton" name="cruiseButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>CRUISE</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="2">
+    <widget class="QPushButton" name="loiterButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>LOITER</string>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

@@ -96,12 +96,11 @@ void MainDockWindow::connectDecoder(Decoder * decoder) {
     connect(decoder, &Decoder::vfrHudReceived, ui->mapWidget, &MapWidget::updateUAVHeading);
 }
 
+
+
 void MainDockWindow::connectEncoder(Encoder * encoder) {
     connect(ui->actionWidget, &ActionWidget::setArm, encoder, &Encoder::sendArm);
-    connect(ui->actionWidget, &ActionWidget::setAuto, encoder, &Encoder::sendSetAuto);
-    connect(ui->actionWidget, &ActionWidget::setGuided, encoder, &Encoder::sendClearAll);
-    connect(ui->actionWidget, &ActionWidget::setManual, encoder, &Encoder::sendSetManual);
-//    connect(mission, &Mission::lSoadToUAV, encoder, &Encoder::sendMissionItem);
+    connect(ui->actionWidget, &ActionWidget::setMode, encoder, &Encoder::sendMode);
 }
 
 void MainDockWindow::connectWaypoint(Waypoint * waypoint, Encoder * encoder, Decoder * decoder) {

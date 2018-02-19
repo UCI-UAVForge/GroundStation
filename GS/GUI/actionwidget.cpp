@@ -3,13 +3,33 @@
 ActionWidget::ActionWidget(QWidget *parent) : QWidget(parent)
 {
     ui.setupUi(this);
+    activeColor = "rgb(60,200,103)";
     connect(ui.armButton, &QPushButton::clicked, this, &ActionWidget::armClicked);
-    connect(ui.manualButton, &QPushButton::clicked, this, &ActionWidget::setManual);
-    connect(ui.guidedButton, &QPushButton::clicked, this, &ActionWidget::setGuided);
-    connect(ui.autoButton, &QPushButton::clicked, this, &ActionWidget::setAuto);
-    modeButtons << ui.manualButton << ui.guidedButton << ui.autoButton;
+    modeButtons.insert(ui.manualButton, Modes::MANUAL);
+    modeButtons.insert(ui.circleButton, Modes::CIRCLE);
+    modeButtons.insert(ui.guidedButton, Modes::GUIDED);
+    modeButtons.insert(ui.autoButton, Modes::AUTO);
+    modeButtons.insert(ui.stabilizeButton, Modes::STABILIZE);
+    modeButtons.insert(ui.rtlButton, Modes::RTL);
+    modeButtons.insert(ui.fbwaButton, Modes::FBWA);
+    modeButtons.insert(ui.fbwbButton, Modes::FBWB);
+    modeButtons.insert(ui.cruiseButton, Modes::CRUISE);
+    modeButtons.insert(ui.loiterButton, Modes::LOITER);
+    modeButtons.insert(ui.initButton, Modes::INITIALISING);
+
+    foreach(QPushButton * p, this->findChildren<QPushButton*>()) {
+       if (p->objectName() != "armButton") {
+           connect(p, &QPushButton::clicked, this, &ActionWidget::modeClicked);
+       }
+    }
 }
 
+void ActionWidget::modeClicked() {
+    QPushButton* buttonSender = qobject_cast<QPushButton*>(sender());
+    int m = modeButtons.value(buttonSender);
+    qDebug() << "MODE:  " << m;
+    emit setMode(m);
+}
 void ActionWidget::armClicked() {
     emit setArm(armed);
 }
@@ -23,7 +43,7 @@ void ActionWidget::setButtonOff(QPushButton * button) {
 }
 
 
-void ActionWidget::setButtonsOff(QVector<QPushButton*> buttonList) {
+void ActionWidget::setButtonsOff(QList<QPushButton*> buttonList) {
     for(int i = 0; i < buttonList.size(); i++) {
         setButtonOff(buttonList.at(i));
     }
@@ -42,30 +62,17 @@ void ActionWidget::toggleArmButton(mavlink_heartbeat_t heartbeat) {
             if (!armed) {
                 armed = true;
                 ui.armButton->setText("ARMED");
-                setButtonColor(ui.armButton, "rgb(60, 200, 103)");
+                setButtonColor(ui.armButton, activeColor);
             }
         break;
     }
 }
 
-
 void ActionWidget::toggleModeButtons(mavlink_heartbeat_t heartbeat) {
     if (mode != heartbeat.custom_mode) {
-        setButtonsOff(modeButtons);
+        setButtonsOff(modeButtons.keys());
         mode = heartbeat.custom_mode;
-        switch(heartbeat.custom_mode) {
-            case 0:
-                setButtonColor(ui.manualButton, "rgb(60, 200, 103)");
-            break;
-            case 10:
-                setButtonColor(ui.autoButton, "rgb(60, 200, 103)");
-            break;
-            case 15:
-                setButtonColor(ui.guidedButton, "rgb(60, 200, 103)");
-            break;
-            default:
-            break;
-        }
+        setButtonColor(modeButtons.key(heartbeat.custom_mode), activeColor);
     }
 }
 
