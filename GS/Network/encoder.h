@@ -18,19 +18,8 @@ public:
     int COM;
 
     void sendArm(bool armed);
-    void sendSetGuided();
-    void sendSetAuto();
-    void sendSetManual();
-    void sendSetCircle();
-    void sendSetStabilize();
-    void sendSetFBWA();
-    void sendSetFBWB();
-    void sendSetCruise();
-    void sendSetRTL();
-    void sendSetLoiter();
-    void sendSetInitialising();
+    void sendMode(int mode);
     void sendMissionCount(uint16_t count);
-//    void sendMissionItem(int seq, int cmd, float params[]);
     void sendMissionItem(Waypoint::WP waypoint);
     void sendClearAll();
     void sendMissionRequestList();
