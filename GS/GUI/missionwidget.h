@@ -49,7 +49,7 @@ signals:
     void drawObstacle(QPolygonF poly, QColor color);
     void clearMissions();
     void readMissionsSignal();
-    void writeMissionsSignal(Waypoint::WP * waypoints, uint16_t size);
+    void writeMissionsSignal(QVector<Waypoint::WP> waypoints, uint16_t size);
 
 public slots:
     void readMissions(Waypoint::WP * waypoints, uint16_t size);
