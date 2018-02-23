@@ -41,8 +41,8 @@ public:
     void drawPoint(QVector2D point, QString label, QColor color, int radius = 20);
     void drawPolyline(QVariantList points, QColor color);
     void drawPolyline(QList<QVector3D> * points, QColor color);
-    void drawPolygonF(QPolygonF points, QColor color);
-    void drawPolygon(QVariantList points, QColor color);
+    void drawPolygonF(QPolygonF points, QColor color, QString label);
+    void drawPolygon(QVariantList points, QColor color, QString label);
     void clearMap();
     void drawMission(Mission * mission);
     void drawUAV(double lat, double lon, double heading);

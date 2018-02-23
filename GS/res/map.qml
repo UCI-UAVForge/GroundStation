@@ -1,11 +1,12 @@
-import QtQuick 2.0
+import QtQuick 2.4
 import QtQuick.Window 2.0
-import QtLocation 5.6
+//import QtLocation 5.6
 import QtPositioning 5.6
 import QtQuick.Controls 1.2 //QtQuick Components
 import QtQuick.Dialogs 1.1 //Dialogs
 import QtQuick.Controls.Styles 1.4
 import QtGraphicalEffects 1.0
+import QtLocation 5.6
 
 Rectangle {
     id: main
@@ -30,24 +31,54 @@ Rectangle {
         zoomLevel: 14
         Component.onCompleted: {
                     for( var i_type in supportedMapTypes ) {
-                     //   console.log(supportedMapTypes[i_type].name);
                         if(supportedMapTypes[i_type].name.localeCompare( "World Imagery" ) === 0 ) {
                             activeMapType = supportedMapTypes[i_type]
                         }
                     }
                 }
-        property MapQuickItem test
-        property MapCircle newPoint
-        property MapPolyline test2
-        property var text
+
+        property var activeItemColor: "white";
+
+        MouseArea {
+            anchors.fill:parent;
+            onClicked: {
+                map.setItemsInactive();
+                itemLabelRect.visible = false;
+            }
+        }
+
+        MapPolyline {
+            id: uavPath;
+            objectName: "polyline";
+            line.width: 4;
+            line.color: "red";
+            path: []
+            property var original_color: "red";
+            MouseArea {
+                anchors.fill:parent;
+                onClicked: {
+                    itemLabel.text = "UAV Path";
+                    itemLabelRect.visible = true;
+                    map.setItemsInactive();
+                    parent.line.color = map.activeItemColor;
+                }
+            }
+
+        }
 
         Component {
             id: mapMarker
             MapCircle {
-                radius: r
+                objectName: "marker"
                 border.width: 0
-                TooltipArea {
-                    text:"beans";
+                antialiasing: true
+                MouseArea {
+                    anchors.fill:parent;
+                    onClicked: {
+                        map.setItemsInactive();
+                        //parent.border.width = 2;
+                        //parent.border.color = map.activeItemColor;
+                    }
                 }
             }
         }
@@ -55,56 +86,104 @@ Rectangle {
         Component {
             id: mapLine
             MapPolyline {
+                objectName: "polyline";
                 line.width: 3
+                property string label;
+                property var original_color;
+                MouseArea {
+                    anchors.fill:parent;
+                    onClicked: {
+                        itemLabel.text = label;
+                        itemLabelRect.visible = true;
+                        map.setItemsInactive();
+                        parent.line.color = map.activeItemColor;
+                    }
+                }
             }
         }
 
         Component {
             id: mapPolygon
             MapPolygon {
+                objectName: "polygon"
                 border.width: 0
+                property string label;
+                MouseArea {
+                    anchors.fill:parent;
+                    onClicked: {
+                        itemLabel.text = label;
+                        itemLabelRect.visible = true;
+                        map.setItemsInactive();
+                        parent.border.width = 2;
+                        parent.border.color = map.activeItemColor;
+                    }
+                }
+                antialiasing: true
+            }
+        }
+
+        Component {
+            id: pointLabel;
+            MapQuickItem {
+                id: item;
+                property string label;
+                sourceItem: Text{
+                    text: label;
+                    color:"#242424"
+                    font.bold: true
+                    styleColor: "#ECECEC"
+                    style: Text.Outline
+                    antialiasing: true
+                }
+                antialiasing: true
+                anchorPoint: Qt.point(sourceItem.width/2, sourceItem.height/2)
             }
         }
 
         function drawPoint(point, label, color, radius) {
-             var p = mapMarker.createObject(map,
+            var p = mapMarker.createObject(map,
                          {"center.latitude": point.x,
                           "center.longitude" : point.y,
                           "color" : color,
-                          "radius" : radius,
-                          "text": label})
-             map.addMapItem(p);
-        }
-
-        function drawHomePoint(point) {
-            var p = mapMarker.createObject(map,
-                        {"center.latitude": point.x,
-                         "center.longitude": pointy,
-                         "color": "red"})
-            map.addMapItem(p)
+                          "radius" : radius})
+            map.addMapItem(p);
+            var pl = pointLabel.createObject(map,
+                         {"label": label,
+                          "coordinate": QtPositioning.coordinate(point.x, point.y)})
+            map.addMapItem(pl);
         }
 
         function drawPolyline(points, color) {
-            var line = mapLine.createObject(map, {"line.color": color})
+            var line = mapLine.createObject(map, {"original_color": color,"label": "Mission Path", "line.color": color})
             for (var i = 0; i < points.length; i++){
                  line.addCoordinate(QtPositioning.coordinate(points[i].x, points[i].y));
             }
             map.addMapItem(line);
         }
 
-        function drawPolygon(points, color) {
-            var polygon = mapPolygon.createObject(map, {"color": color})
+        function drawPolygon(points, color, label) {
+            var polygon = mapPolygon.createObject(map, {"color": color, "label":label})
             for (var i = 0; i < points.length; i++){
                  polygon.addCoordinate(QtPositioning.coordinate(points[i].x, points[i].y));
             }
             map.addMapItem(polygon);
         }
+
         function changeMapInfoColor(color) {
             for (var i=0;i<map.mapItems.length;i++)
                 if (map.mapItems[i].objectName === 'mapinfo')
                     map.mapItems[i].uavsize -= 5;
         }
 
+        function setItemsInactive() {
+            for (var i=0;i<map.mapItems.length;i++) {
+                if (map.mapItems[i].objectName === 'polygon')
+                    map.mapItems[i].border.width = 0;
+                if (map.mapItems[i].objectName === 'polyline') {
+                    map.mapItems[i].line.color = map.mapItems[i].original_color;
+                }
+            }
+        }
 
         function updateCenter(lat, lon) {
             if (centerUAV) {
@@ -116,6 +195,7 @@ Rectangle {
             map.removeMapItem(plane);
             plane.coordinate = QtPositioning.coordinate(lat, lon)
             plane.rotation = heading
+            uavPath.addCoordinate(plane.coordinate);
             map.addMapItem(plane)
         }
 
@@ -148,6 +228,11 @@ Rectangle {
                                 source: "images/Plane.png"}
         }
     }
+
+    PlaneSettings {
+        map: map
+    }
+
     Rectangle{
         id: mapinfo
         objectName: "mapInfo"
@@ -202,55 +287,24 @@ Rectangle {
         }
     }
 
-
     Rectangle {
-        id: planesettings
-        Rectangle {
-            id: increaseUAVSize
-            Text {
-                id:incTxt
-                text: "+"
-                font.pointSize: 16
-                font.bold: true
-                color: "white"
-                anchors.centerIn: parent
-            }
-            TooltipArea {
-                text: "Increase UAV size"
-                onClicked: {map.incUAVsize()}
-                onEntered: incTxt.color = "#b8fcbf"
-                onExited: incTxt.color = "white"
-            }
-            anchors.top:parent.top
-            width: 35; height: 30
-            color: "transparent"
+        id: itemLabelRect;
+        width: 100;
+        height:30;
+        visible: false;
+        radius: 5;
+        Text {
+            anchors.centerIn: parent;
+            id:itemLabel;
+            color:"white";
+            font.bold: true;
         }
-        Rectangle {
-            id: decreaseUAVSize
-            Text {
-                id:decTxt
-                text: "-"
-                font.pointSize: 23
-                font.bold: true
-                color: "white"
-                anchors.centerIn: parent
-            }
-            TooltipArea {
-                text: "Decrease UAV size"
-                onClicked: { map.decUAVsize()}
-                onEntered: decTxt.color = "#fcbfb8"
-                onExited: decTxt.color = "white"
-            }
-            anchors.bottom:parent.bottom
-            color: "transparent"
-            width: 35; height: 30
-        }
-        width: 35; height: 60
-        anchors.bottom: parent.bottom
-        anchors.right: parent.right
-        anchors.margins: 15
-        color: Qt.rgba(0, 0, 0, 0.55)
-        radius: 5
+        color: Qt.rgba(0,0,0,0.55);
+        anchors.horizontalCenter: parent.horizontalCenter;
+        anchors.bottom: parent.bottom;
+        anchors.margins: 15;
+
     }
+
 }
 

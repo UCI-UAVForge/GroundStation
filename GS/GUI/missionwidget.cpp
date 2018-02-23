@@ -53,7 +53,7 @@ void MissionWidget::loadMission() {
         selectedMission->setActions_std();
         emit(drawMission(selectedMission));
         for (QPolygonF obst_poly : pm.get_obstacles()) {
-            emit(drawObstacle(obst_poly, QColor("red")));
+            emit(drawObstacle(obst_poly, QColor("red"), "Obstacle"));
         }
         QStandardItemModel * genmodel = createMissionModel(selectedMission);
         setTableModel(ui->generatedMission, genmodel);

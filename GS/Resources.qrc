@@ -86,5 +86,6 @@
         <file>res/test_mission.json</file>
         <file>res/test_obstacles.json</file>
         <file>res/TooltipArea.qml</file>
+        <file>res/PlaneSettings.qml</file>
     </qresource>
 </RCC>

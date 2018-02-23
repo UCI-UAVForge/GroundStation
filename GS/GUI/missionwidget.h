@@ -46,7 +46,7 @@ public:
 
 signals:
     void drawMission(Mission * selectedMission);
-    void drawObstacle(QPolygonF poly, QColor color);
+    void drawObstacle(QPolygonF poly, QColor color, QString label);
     void clearMissions();
     void readMissionsSignal();
     void writeMissionsSignal(Waypoint::WP * waypoints, uint16_t size);

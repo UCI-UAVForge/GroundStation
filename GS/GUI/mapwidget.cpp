@@ -28,18 +28,19 @@ void MapWidget::drawPolyline(QList<QVector3D> * points, QColor color) {
     drawPolyline(toQVariantList(points), color);
 }
 
-void MapWidget::drawPolygon(QVariantList points, QColor color) {
+void MapWidget::drawPolygon(QVariantList points, QColor color, QString label) {
     QMetaObject::invokeMethod(map, "drawPolygon",
            Q_ARG(QVariant, QVariant::fromValue(points)),
-           Q_ARG(QVariant, color));
+           Q_ARG(QVariant, color),
+           Q_ARG(QVariant, label));
 }
 
-void MapWidget::drawPolygonF(QPolygonF points, QColor color) {
+void MapWidget::drawPolygonF(QPolygonF points, QColor color, QString label) {
     QVariantList newList;
     for(QPointF item: points.toList()) {
         newList << item;
     }
-    drawPolygon(newList, color);
+    drawPolygon(newList, color, label);
 }
 
 void MapWidget::timeout() {
@@ -53,27 +54,29 @@ void MapWidget::clearMap() {
 void MapWidget::drawMission(Mission * mission) {
     clearMap();
     for (int i = 0; i < mission->fly_zones->size(); i++) {
-        drawPolygon(toQVariantList(mission->fly_zones->at(i).boundary_points), QColor(0, 255, 0, 40));
-        mission->fly_zones->at(i).boundary_points->append(mission->fly_zones->at(i).boundary_points->first());
+        drawPolygon(toQVariantList(mission->fly_zones->at(i).boundary_points),
+                    QColor(0,255,0, 70), "Fly Zone #" + QString::number(i));
+        //mission->fly_zones->at(i).boundary_points->append(mission->fly_zones->at(i).boundary_points->first());
         //drawPolyline(toQVariantList(mission->fly_zones->at(i).boundary_points), QColor(0,255,0));
         //mission->fly_zones->at(i).boundary_points->removeLast();
     }
+
     /* Search Grid Points */
     if (!mission->search_grid_points->empty()) {
-        drawPolygon(toQVariantList(mission->search_grid_points), QColor(0, 0, 255, 40));
-        mission->search_grid_points->append(mission->search_grid_points->first());
+        drawPolygon(toQVariantList(mission->search_grid_points), QColor(0,0,255, 70), "Search Grid");
+        //mission->search_grid_points->append(mission->search_grid_points->first());
         //drawPolyline(toQVariantList(mission->search_grid_points), QColor(0, 0, 255));
         //mission->search_grid_points->removeLast();
     }
 
     /* Home position */
-    drawPoint(mission->home_pos, "home", QColor(255, 0, 0));
+    drawPoint(mission->home_pos, "Home", QColor(166,240,84));
 
     /* Air Drop Point */
-    drawPoint(mission->air_drop_pos, "air_drop", QColor(0, 230, 230));
+    drawPoint(mission->air_drop_pos, "Air Drop", QColor(102,194,255));
 
     /* Off Axis ODLC Position */
-    drawPoint(mission->off_axis_odlc_pos, "off_axis", QColor(10,10, 200));
+    drawPoint(mission->off_axis_odlc_pos, "Off Axis ODLC", QColor(255,127,0));
 
     /* Emergent hiker */
     //drawPoint(mission->emergent_last_known_pos, QColor(0,0,0));

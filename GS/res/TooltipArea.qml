@@ -12,7 +12,6 @@ MouseArea {
 
     anchors.fill: parent
     hoverEnabled: _root.enabled
-
     onExited: Tooltip.hideText()
     onCanceled: Tooltip.hideText()
     //onHoveredChanged: hovered ? _root.opacity = 0 : _root.opacity = .2;

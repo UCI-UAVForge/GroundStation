@@ -16,6 +16,7 @@ QT       += quickwidgets
 QT       += charts
 QT       += serialport
 QT       += positioning
+QT       += quick
 
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
