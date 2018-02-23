@@ -544,5 +544,6 @@ GS/UnitTests/
 
 !GS/3rdparty/lz4/*
 !GS/3rdparty/lz4/lib/*
+!GS/3rdparty/lz4/lib/dll/*
 !GS/3rdparty/Eigen/*
 GS/3rdparty/Eigen/.DS_Store

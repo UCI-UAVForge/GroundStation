@@ -22,4 +22,4 @@ SOURCES += \
 #    lib/lz4hc.h
 #lz4_dummy.commands = echo $$PWD
 
-QMAKE_PRE_LINK = echo $$PWD && cd $$PWD && make -f $$PWD/Makefile lib
+unix:QMAKE_PRE_LINK = echo $$PWD && cd $$PWD && make -f $$PWD/Makefile lib
