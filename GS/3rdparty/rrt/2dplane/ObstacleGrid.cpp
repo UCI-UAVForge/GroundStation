@@ -16,8 +16,7 @@ ObstacleGrid::ObstacleGrid(double width, double height, int discretizedWidth,
 
     _obstacles =
         (bool*)malloc(sizeof(bool) * discretizedWidth * discretizedHeight);
-    printf("%d",sizeof(bool) * discretizedWidth * discretizedHeight);
-    perror("obstmalloc:");
+
     clear();
 }
 

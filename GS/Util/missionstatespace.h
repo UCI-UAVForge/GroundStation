@@ -33,7 +33,21 @@ public:
         }
         return RRT::GridStateSpace::stateValid(pt) && dd && no_obstacles;
     }
-
+    bool transitionValid(const Eigen::Vector2d& from,
+                         const Eigen::Vector2d& to) const {
+        bool intersects = false;
+        QPolygonF segment;
+        segment.append(QPointF(from.x()/1000, -from.y()/1000));
+        segment.append(QPointF(to.x()/1000, -to.y()/1000));
+//        qDebug() << segment;
+        for (QPolygonF obst_poly : obstacle_polys) {
+            if (PlanMission::poly_intersects(obst_poly, segment)) {
+                intersects = true;
+                break;
+            }
+        }
+        return RRT::GridStateSpace::transitionValid(from, to) && !intersects;
+    }
     void addObstacle(QPolygonF poly) {
         obstacle_polys.push_back(poly);
     }

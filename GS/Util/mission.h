@@ -31,6 +31,7 @@ public:
     explicit Mission(QObject *parent = nullptr);
 
     Mission(QJsonObject);
+    Mission(const Mission& mission); // Copy Constructor
 
     int id;
     bool active;
@@ -45,7 +46,7 @@ public:
     void loadWaypoint(mavlink_mission_request_t mrequest);
     void printJDoc();
     Point toECEF(double lat, double lon, double alt);
-    Waypoint::WP* constructWaypoints();
+    QVector<Waypoint::WP> constructWaypoints();
     uint16_t waypointLength();
     void setActions_std();
 

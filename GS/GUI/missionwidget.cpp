@@ -38,7 +38,9 @@ bool MissionWidget::hasMission() {
 void MissionWidget::loadMission() {
     if (hasMission()) {
         PlanMission pm;
+
         Mission * selectedMission = missions->at(ui->missionList->currentIndex());
+
         for (int i = 1; i < selectedMission->mission_waypoints.waypoints->size(); i++) {
             QVector3D point = selectedMission->mission_waypoints.waypoints->at(i);
             qDebug() << "X: " << point.x() << " Y: " << point.y() << " Z: " << point.z();
@@ -47,10 +49,15 @@ void MissionWidget::loadMission() {
         QVector3D start_point = selectedMission->mission_waypoints.waypoints->at(0);
         qDebug() << "Start X: " << start_point.x() << " Y: " << start_point.y() << " Z: " << start_point.z();
 
+        // Currently not working - path finding returns 0
         pm.set_obstacles(Obstacles(testReadJSON_obstacle()));
-        selectedMission->mission_waypoints.waypoints = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()),
-                                                                   selectedMission->fly_zones);
+//        selectedMission->mission_waypoints.waypoints = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()),
+//                                                                   selectedMission->fly_zones);
+
         selectedMission->setActions_std();
+        // TODO Delete waypoints length print below
+        qDebug() << "Waypoints Length missionWidget::loadMission" << selectedMission->waypointLength() << "//" <<
+                    missions->at(ui->missionList->currentIndex())->waypointLength();
         emit(drawMission(selectedMission));
         for (QPolygonF obst_poly : pm.get_obstacles()) {
             emit(drawObstacle(obst_poly, QColor("red"), "Obstacle"));

@@ -5,6 +5,7 @@
 #include <QTimer>
 #include <QEventLoop>
 #include <limits>
+#include <QVector>
 #include "mavlink.h"
 
 class Waypoint : public QObject
@@ -36,7 +37,7 @@ public:
     Waypoint();
     void clearAllWaypoints();
     void readWaypointsList();
-    void writeWaypoints(const WP * waypoints, uint16_t size);
+    void writeWaypoints(const QVector<WP>& waypoints, uint16_t size);
 //    int setCurrentWaypoint(uint16_t seq);
 
 signals:

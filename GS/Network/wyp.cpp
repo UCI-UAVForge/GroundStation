@@ -23,7 +23,7 @@ void Waypoint::clearAllWaypoints() {
     }
 }
 
-void Waypoint::writeWaypoints(const WP *waypoints, uint16_t size) {
+void Waypoint::writeWaypoints(const QVector<WP>& waypoints, uint16_t size) {
     writeAck = false;
     currentRequestedMission = std::numeric_limits<uint16_t>::max();
     // Note: will not work if the size is equal to uint16 max
@@ -52,7 +52,7 @@ void Waypoint::writeWaypoints(const WP *waypoints, uint16_t size) {
         }
 
         reqFlag = true;
-        sendWaypoint(waypoints[i]);
+        sendWaypoint(waypoints.at(i));
         if (i != size-1 && reqFlag) {   // ackFlag set instead at last waypoint
             qDebug () << "Write mission timed out.";
             emit(waypointsWriteStatus(false));

@@ -18,6 +18,18 @@ Mission::Mission(QJsonObject obj) {
     fly_zones = setFlyZones(obj["fly_zones"].toArray());
 }
 
+Mission::Mission(const Mission& mission) : QObject(parent()) {
+    this->id = mission.id;
+    this->active = mission.active;
+    this->home_pos = mission.home_pos;
+    this->air_drop_pos = mission.air_drop_pos;
+    this->off_axis_odlc_pos = mission.off_axis_odlc_pos;
+    this->emergent_last_known_pos = mission.emergent_last_known_pos;
+    this->mission_waypoints = mission.mission_waypoints;
+    this->search_grid_points = mission.search_grid_points;
+    this->fly_zones = mission.fly_zones;
+}
+
 QList<FlyZone> * Mission::setFlyZones(QJsonArray flyZoneArray) {
     QList<FlyZone> * fly_zones = new QList<FlyZone>();
     for (int i = 0; i < flyZoneArray.size(); i++) {
@@ -88,12 +100,13 @@ void Mission::loadWaypoint(mavlink_mission_request_t mrequest) {
     emit (loadToUAV(mrequest.seq, cmd, params));
 }
 
-Waypoint::WP* Mission::constructWaypoints() {
+QVector<Waypoint::WP> Mission::constructWaypoints() {
     // MissionWaypoints - actions = command?
     qDebug() << "Mission::constructWaypoints() -> Temporary untested parameters set";
     uint16_t len = mission_waypoints.waypoints->length();
-    Waypoint::WP* waypoints = new Waypoint::WP[len+1];
+    QVector<Waypoint::WP> waypoints;
 
+    // The first waypoint does not matter - thrown from mavlink
     /* Home Position WP */
     Waypoint::WP wp;
     wp.id = 0;
@@ -106,36 +119,63 @@ Waypoint::WP* Mission::constructWaypoints() {
     wp.x = home_pos.x();
     wp.y = home_pos.y();
     wp.z = 0;
-    waypoints[0] = wp;
+    waypoints.append(wp);
 
-    for (uint16_t i = 1; i <= len; i++) {
+    wp.id = 1;
+    wp.command = 22;
+    wp.autocontinue = 1;
+    wp.current = 0;
+    wp.param1 = 45;
+    wp.param2 = 0;
+    wp.param3 = 0;
+    wp.x = this->home_pos.x();
+    wp.y = this->home_pos.y();
+    wp.z = 0;
+    waypoints.append(wp);
+
+    // Takeoff from home position
+
+    for (uint16_t i = 2; i <= len + 1; i++) {
         Waypoint::WP wp;
         wp.id = i;
-        wp.command = mission_waypoints.actions->at(i-1);
+        wp.command = mission_waypoints.actions->at(i-2);
         wp.autocontinue = 1;
         wp.current = 0;
         wp.param1 = 0;
-        wp.param2 = 10;
+        wp.param2 = 5;
         wp.param3 = 0;
-        wp.x = mission_waypoints.waypoints->at(i-1).x();
-        wp.y = mission_waypoints.waypoints->at(i-1).y();
-        wp.z = mission_waypoints.waypoints->at(i-1).z();
-        waypoints[i] = wp;
+        wp.x = mission_waypoints.waypoints->at(i-2).x();
+        wp.y = mission_waypoints.waypoints->at(i-2).y();
+        wp.z = mission_waypoints.waypoints->at(i-2).z();
+        waypoints.append(wp);
     }
+
+    qDebug() << "Mission::constructWaypoints set last point as home_pos w/ land";
+    // Return to home position
+    wp.id = len + 2;
+    wp.command = 21;
+    wp.autocontinue = 1;
+    wp.current = 0;
+    wp.param1 = 0;
+    wp.param2 = 1; // 1 = opportunistic precision landing
+    wp.param3 = 0; // Empty
+    wp.x = this->home_pos.x();
+    wp.y = this->home_pos.y();
+    wp.z = 0;
+    waypoints.append(wp);
+
     return waypoints;
 }
 
 uint16_t Mission::waypointLength() {
-    return mission_waypoints.waypoints->length();
+    return mission_waypoints.waypoints->length() + 3;
 }
 
-// Set standard action. First/Last-Takeoff/Land.
+// Set standard action. Take off first point and land at home
 // All other WP. 16=wp,21=land.22=takeoff
 void Mission::setActions_std() {
     mission_waypoints.actions = new QList<int>();
     for (uint16_t i = 0; i < this->waypointLength(); i++) {
-        if (i==0) mission_waypoints.actions->append(22);
-        else if (i==this->waypointLength()-1) mission_waypoints.actions->append(21);
-        else mission_waypoints.actions->append(16);
+        mission_waypoints.actions->append(16);
     }
 }
