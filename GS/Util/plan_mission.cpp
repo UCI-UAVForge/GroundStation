@@ -41,12 +41,12 @@ std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, d
         if (_biRRT->startSolutionNode() != nullptr) {
             qInfo() << "we did it";
             auto _previousSolution = _biRRT->getPath();
-            for (Eigen::Vector2d v : _biRRT->getPath()) {
+            RRT::SmoothPath<Eigen::Vector2d>(_previousSolution, *_stateSpace);
+
+            for (Eigen::Vector2d v : _previousSolution) {
                 qInfo() << v.x() << " " << v.y();
                 result.push_back(std::pair<double, double>(v.x(), v.y()));
             }
-            RRT::SmoothPath<Eigen::Vector2d>(_previousSolution, *_stateSpace);
-
             break;
         }
     }
