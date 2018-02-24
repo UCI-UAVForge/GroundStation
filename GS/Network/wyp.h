@@ -46,7 +46,6 @@ signals:
     void reqWP(uint16_t i);
     void sendAck(uint16_t type);
     void sendWPCount(uint16_t count);
-    //void sendWP(int seq, int cmd, float params[]);
     void sendWP(WP waypoint);
 //    void sendWPSetCurrent(uint16_t seq);
 

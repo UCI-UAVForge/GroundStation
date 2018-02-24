@@ -49,15 +49,16 @@ MissionWaypoints Mission::setMissionWaypoints(QJsonArray pointArray) {
     missionWaypoints.waypoints = set3DPoints(pointArray);
     missionWaypoints.actions = new QList<int>();
     for (int i = 0; i < missionWaypoints.waypoints->size();i++) {
-        if (i == 0) {
-            missionWaypoints.actions->append(MAV_CMD_NAV_TAKEOFF);
-        }
-        else if (i == missionWaypoints.waypoints->size() -1) {
-            missionWaypoints.actions->append(MAV_CMD_NAV_LAND);
-        }
-        else {
-            missionWaypoints.actions->append(MAV_CMD_NAV_WAYPOINT);
-        }
+        missionWaypoints.actions->append(MAV_CMD_NAV_WAYPOINT);
+//        if (i == 0) {
+//            missionWaypoints.actions->append(MAV_CMD_NAV_TAKEOFF);
+//        }
+//        else if (i == missionWaypoints.waypoints->size() -1) {
+//            missionWaypoints.actions->append(MAV_CMD_NAV_LAND);
+//        }
+//        else {
+//            missionWaypoints.actions->append(MAV_CMD_NAV_WAYPOINT);
+//        }
     }
     return missionWaypoints;
 }
@@ -101,8 +102,6 @@ void Mission::loadWaypoint(mavlink_mission_request_t mrequest) {
 }
 
 QVector<Waypoint::WP> Mission::constructWaypoints() {
-    // MissionWaypoints - actions = command?
-    qDebug() << "Mission::constructWaypoints() -> Temporary untested parameters set";
     uint16_t len = mission_waypoints.waypoints->length();
     QVector<Waypoint::WP> waypoints;
 
@@ -110,14 +109,14 @@ QVector<Waypoint::WP> Mission::constructWaypoints() {
     /* Home Position WP */
     Waypoint::WP wp;
     wp.id = 0;
-    wp.command = 22; // I don't know if it matters here
+    wp.command = 16;
     wp.autocontinue = 1;
     wp.current = 0;
     wp.param1 = 0;
-    wp.param2 = 10;
+    wp.param2 = 0;
     wp.param3 = 0;
-    wp.x = home_pos.x();
-    wp.y = home_pos.y();
+    wp.x = 0;
+    wp.y = 0;
     wp.z = 0;
     waypoints.append(wp);
 
@@ -130,10 +129,9 @@ QVector<Waypoint::WP> Mission::constructWaypoints() {
     wp.param3 = 0;
     wp.x = this->home_pos.x();
     wp.y = this->home_pos.y();
-    wp.z = 0;
+    wp.z = 75;
     waypoints.append(wp);
-
-    // Takeoff from home position
+    // Takeoff from home position to 75 altitude
 
     for (uint16_t i = 2; i <= len + 1; i++) {
         Waypoint::WP wp;
@@ -171,9 +169,7 @@ uint16_t Mission::waypointLength() {
     return mission_waypoints.waypoints->length() + 3;
 }
 
-// Set standard action. Take off first point and land at home
-// All other WP. 16=wp,21=land.22=takeoff
-void Mission::setActions_std() {
+void Mission::setActions_wp() {
     mission_waypoints.actions = new QList<int>();
     for (uint16_t i = 0; i < this->waypointLength(); i++) {
         mission_waypoints.actions->append(16);

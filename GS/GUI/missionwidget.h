@@ -29,13 +29,15 @@ public:
     void readButtonClicked();
     void clearButtonClicked();
     bool hasMission();
+    void drawCurrentMission();
     void loadMission();
     void getMissions(Interop * i);
     QStandardItemModel * createMissionModel(Mission * mission);
     void setTableModel(QTableView * tableView, QStandardItemModel * model);
 
     QVector<Mission*> * missions;
-    Mission * currentMission;
+    Mission * generatedMission;
+    Mission * interopMission;
     QStandardItemModel * model;
     Obstacles obstacles;
     MapWidget * mapWidget;

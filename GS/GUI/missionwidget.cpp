@@ -15,6 +15,7 @@ MissionWidget::MissionWidget(QWidget *parent) :
     ui->missionList->lineEdit()->setReadOnly(true);
     ui->missionList->lineEdit()->setAlignment(Qt::AlignCenter);
     connect(ui->loadButton, &QPushButton::clicked, this, &MissionWidget::loadMission);
+    connect(ui->drawButton, &QPushButton::clicked, this, &MissionWidget::drawCurrentMission);
     connect(ui->writeButton, &QPushButton::clicked, this, &MissionWidget::writeButtonClicked);
     connect(ui->readButton, &QPushButton::clicked, this, &MissionWidget::readButtonClicked);
     connect(ui->clearButton, &QPushButton::clicked, this, &MissionWidget::clearButtonClicked);
@@ -33,6 +34,21 @@ MissionWidget::MissionWidget(QWidget *parent) :
 
 bool MissionWidget::hasMission() {
     return missions->size() > 0;
+}
+
+void MissionWidget::drawCurrentMission() {
+    if (hasMission()) {
+        if (ui->tabWidget->currentIndex() == 1 && generatedMission != nullptr) {
+            drawMission(generatedMission);
+            PlanMission pm;
+            pm.set_obstacles(Obstacles(testReadJSON_obstacle()));
+            for (QPolygonF obst_poly : pm.get_obstacles()) {
+                emit(drawObstacle(obst_poly, QColor("red"), "Obstacle"));
+            }
+        }
+        else
+            drawMission(interopMission);
+    }
 }
 
 void MissionWidget::loadMission() {
@@ -59,17 +75,9 @@ void MissionWidget::loadMission() {
         waypoints->append(start_point);
         waypoints->append(*path);
 
-        selectedMission->setActions_std();
-        // TODO Delete waypoints length print below
-        qDebug() << "Waypoints Length missionWidget::loadMission" << selectedMission->waypointLength() << "//" <<
-                    missions->at(ui->missionList->currentIndex())->waypointLength();
-        emit(drawMission(selectedMission));
-        for (QPolygonF obst_poly : pm.get_obstacles()) {
-            emit(drawObstacle(obst_poly, QColor("red"), "Obstacle"));
-        }
         QStandardItemModel * genmodel = createMissionModel(selectedMission);
         setTableModel(ui->generatedMission, genmodel);
-        currentMission = selectedMission;
+        generatedMission = selectedMission;
     }
 }
 
@@ -83,7 +91,12 @@ void MissionWidget::setTableModel(QTableView * tableView, QStandardItemModel * m
 }
 
 void MissionWidget::writeButtonClicked() {
-    emit(writeMissionsSignal(currentMission->constructWaypoints(), currentMission->waypointLength()));
+    if (hasMission()) {
+        if (ui->tabWidget->currentIndex() == 1 && generatedMission != nullptr)
+            emit(writeMissionsSignal(generatedMission->constructWaypoints(), generatedMission->waypointLength()));
+        else
+            emit(writeMissionsSignal(interopMission->constructWaypoints(), interopMission->waypointLength()));
+    }
 }
 void MissionWidget::readButtonClicked() {
     emit(readMissionsSignal());
@@ -93,13 +106,14 @@ void MissionWidget::clearButtonClicked() {
 }
 
 void MissionWidget::readMissions(Waypoint::WP * waypoints, uint16_t size) {
-    qDebug() << "!-----------------------!";
-    qDebug() << "MissionWidget::readMissions test";
-    qDebug() << "Mission waypoints length:" << size;
+    qInfo() << "!-----------------------!";
+    qInfo() << "MissionWidget::readMissions test";
+    qInfo() << "Mission waypoints length:" << size;
     for (uint16_t i = 0; i < size; i++) {
-        qDebug() << "Waypoint" << waypoints[i].id << "->" << waypoints[i].x << waypoints[i].y << waypoints[i].z;
+        qInfo() << "Waypoint" << waypoints[i].id << "->" << waypoints[i].x << waypoints[i].y << waypoints[i].z;
+        qInfo() << "Waypoint action ->" << waypoints[i].command;
     }
-    qDebug() << "!-----------------------!";
+    qInfo() << "!-----------------------!";
 }
 
 void MissionWidget::writeMissionsStatus(bool success) {
@@ -178,6 +192,7 @@ QJsonDocument MissionWidget::testReadJSON_obstacle() {
 void MissionWidget::updateInteropMission(int index) {
     QStandardItemModel * missionModel= createMissionModel(missions->at(index));
     setTableModel(ui->interopMission, missionModel);
+    interopMission = missions->at(index);
 }
 
 MissionWidget::~MissionWidget()
