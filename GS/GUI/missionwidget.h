@@ -60,7 +60,7 @@ public slots:
 
 private:
     void testOutputJSON(QJsonObject o, int i);
-    QJsonObject testReadJSON_mission();
+    QJsonObject testReadJSON_mission(QString n);
     QJsonDocument testReadJSON_obstacle();
 
     Ui::MissionWidget *ui;

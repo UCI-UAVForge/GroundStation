@@ -22,9 +22,14 @@ MissionWidget::MissionWidget(QWidget *parent) :
     connect(ui->missionList, SIGNAL(currentIndexChanged(int)), this, SLOT(updateInteropMission(int)));
 
     if (test_mission) {
-        missions->append(new Mission(testReadJSON_mission()));
-        ui->missionList->addItem("*TEST MISSION*");
+        missions->append(new Mission(testReadJSON_mission("2")));
+        ui->missionList->addItem("*TEST MISSION2*");
         ui->missionList->setItemData(0, Qt::AlignCenter, Qt::TextAlignmentRole);
+
+        missions->append(new Mission(testReadJSON_mission("")));
+        ui->missionList->addItem("*TEST MISSION*");
+        ui->missionList->setItemData(1, Qt::AlignCenter, Qt::TextAlignmentRole);
+
 
         QStandardItemModel * test_mission_model = createMissionModel(missions->at(ui->missionList->currentIndex()));
         setTableModel(ui->interopMission, test_mission_model);
@@ -55,25 +60,27 @@ void MissionWidget::loadMission() {
     if (hasMission()) {
         PlanMission pm;
 
-        Mission * selectedMission = missions->at(ui->missionList->currentIndex());
+//        Mission * selectedMission = missions->at(ui->missionList->currentIndex());
+        Mission * selectedMission = interopMission;
 
-        for (int i = 1; i < selectedMission->mission_waypoints.waypoints->size(); i++) {
-            QVector3D point = selectedMission->mission_waypoints.waypoints->at(i);
-            qDebug() << "X: " << point.x() << " Y: " << point.y() << " Z: " << point.z();
-            pm.add_goal_point(Point::fromGeodetic(point.x(), point.y(), point.z()));
-        }
-        QVector3D start_point = selectedMission->mission_waypoints.waypoints->at(0);
-        qDebug() << "Start X: " << start_point.x() << " Y: " << start_point.y() << " Z: " << start_point.z();
+//        for (int i = 1; i < selectedMission->mission_waypoints.waypoints->size(); i++) {
+//            QVector3D point = selectedMission->mission_waypoints.waypoints->at(i);
+//            qDebug() << "X: " << point.x() << " Y: " << point.y() << " Z: " << point.z();
+//            pm.add_goal_point(Point::fromGeodetic(point.x(), point.y(), point.z()));
+//        }
+//        QVector3D start_point = selectedMission->mission_waypoints.waypoints->at(0);
+//        qDebug() << "Start X: " << start_point.x() << " Y: " << start_point.y() << " Z: " << start_point.z();
 
-        // Currently not working - path finding returns 0
-        pm.set_obstacles(Obstacles(testReadJSON_obstacle()));
-        QList<QVector3D>* waypoints = selectedMission->mission_waypoints.waypoints;
-        waypoints->clear();
-        QList<QVector3D>* path = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()),
-                                 selectedMission->fly_zones);
-        waypoints->reserve(waypoints->size() + std::distance(path->begin(), path->end()) + 1);
-        waypoints->append(start_point);
-        waypoints->append(*path);
+////         Currently not working - path finding returns 0
+////        pm.set_obstacles(Obstacles(testReadJSON_obstacle()));
+//        QList<QVector3D>* waypoints = selectedMission->mission_waypoints.waypoints;
+//        waypoints->clear();
+//        QList<QVector3D>* path = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()),
+//                                 selectedMission->fly_zones);
+//        waypoints->reserve(waypoints->size() + std::distance(path->begin(), path->end()) + 1);
+//        waypoints->append(start_point);
+//        waypoints->append(*path);
+//        selectedMission->setActions_wp();
 
         QStandardItemModel * genmodel = createMissionModel(selectedMission);
         setTableModel(ui->generatedMission, genmodel);
@@ -160,9 +167,9 @@ void MissionWidget::testOutputJSON(QJsonObject o, int i) {
     }
     file.write(QJsonDocument(o).toJson());
 }
-QJsonObject MissionWidget::testReadJSON_mission() {
+QJsonObject MissionWidget::testReadJSON_mission(QString n) {
     qDebug() << "MissionWidget::readJSON_mission - INPUT JSON FILE";
-    QFile load(":/res/test_mission.json");
+    QFile load(":/res/test_mission"+n+".json");
     if (!load.open(QIODevice::ReadOnly)) {
         qWarning("Couldn't open mission file");
         QJsonObject null;
