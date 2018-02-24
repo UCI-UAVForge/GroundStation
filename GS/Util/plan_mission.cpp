@@ -27,8 +27,8 @@ std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, d
     //  setup birrt
     _biRRT->setStartState(_startPos);
     _biRRT->setGoalState(_goalPos);
-    _biRRT->setMaxStepSize(100);
-    _biRRT->setGoalMaxDist(.1);
+    _biRRT->setMaxStepSize(PlanMission::meters_to_deg(50, _startPos.x()) * SCALE_CONSTANT);
+    _biRRT->setGoalMaxDist(PlanMission::meters_to_deg(20, _goalPos.x()) * SCALE_CONSTANT);
 
     // set obstacles
     for (QPolygonF obst_poly : get_obstacles()) {
@@ -36,12 +36,12 @@ std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, d
     };
 
     std::vector<std::pair<double, double>> result;
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < 200000; i++) {
         _biRRT->grow();
         if (_biRRT->startSolutionNode() != nullptr) {
             qInfo() << "we did it";
             auto _previousSolution = _biRRT->getPath();
-            RRT::SmoothPath<Eigen::Vector2d>(_previousSolution, *_stateSpace);
+//            RRT::SmoothPath<Eigen::Vector2d>(_previousSolution, *_stateSpace);
 
             for (Eigen::Vector2d v : _previousSolution) {
                 qInfo() << v.x() << " " << v.y();

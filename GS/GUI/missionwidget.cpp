@@ -51,8 +51,13 @@ void MissionWidget::loadMission() {
 
         // Currently not working - path finding returns 0
         pm.set_obstacles(Obstacles(testReadJSON_obstacle()));
-//        selectedMission->mission_waypoints.waypoints = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()),
-//                                                                   selectedMission->fly_zones);
+        QList<QVector3D>* waypoints = selectedMission->mission_waypoints.waypoints;
+        waypoints->clear();
+        QList<QVector3D>* path = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()),
+                                 selectedMission->fly_zones);
+        waypoints->reserve(waypoints->size() + std::distance(path->begin(), path->end()) + 1);
+        waypoints->append(start_point);
+        waypoints->append(*path);
 
         selectedMission->setActions_std();
         // TODO Delete waypoints length print below
