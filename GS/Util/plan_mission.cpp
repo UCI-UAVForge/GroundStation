@@ -80,8 +80,8 @@ QList<QVector3D> * PlanMission::get_path(Point start_point, QList<FlyZone>* flyz
     std::vector<Point> pts = remaining_points;
     for (Point p : remaining_points) {
         // sort
-        std::make_heap(pts.begin(), pts.end(),
-                        sort_func);
+//        std::make_heap(pts.begin(), pts.end(),
+//                        sort_func);
 
         // pop
         std::pop_heap(pts.begin(), pts.end());
@@ -134,10 +134,12 @@ QList<QVector3D> * PlanMission::get_path(Point start_point, QList<FlyZone>* flyz
     // inefficient but lets just do like this for now
     QList<QVector3D>* qlist_qvector3d = new QList<QVector3D>();
     qInfo() << "da path";
+    int sign = start_point.toGeodetic().at(1) < 0 ? -1 : 1;
     for (Point p : path) {
         qInfo() << p.toGeodetic();
         //qlist_qvector3d->append(p.QVectorGeodetic());
-        qlist_qvector3d->append(QVector3D(p.toGeodetic().at(0), p.toGeodetic().at(1) * -1, 0));
+        qlist_qvector3d->append(QVector3D(p.toGeodetic().at(0),
+                                          abs(p.toGeodetic().at(1)) * sign, 0));
     }
     qInfo() << "done with path";
     return qlist_qvector3d;

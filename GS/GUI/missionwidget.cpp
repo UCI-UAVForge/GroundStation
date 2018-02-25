@@ -63,24 +63,24 @@ void MissionWidget::loadMission() {
 //        Mission * selectedMission = missions->at(ui->missionList->currentIndex());
         Mission * selectedMission = interopMission;
 
-//        for (int i = 1; i < selectedMission->mission_waypoints.waypoints->size(); i++) {
-//            QVector3D point = selectedMission->mission_waypoints.waypoints->at(i);
-//            qDebug() << "X: " << point.x() << " Y: " << point.y() << " Z: " << point.z();
-//            pm.add_goal_point(Point::fromGeodetic(point.x(), point.y(), point.z()));
-//        }
-//        QVector3D start_point = selectedMission->mission_waypoints.waypoints->at(0);
-//        qDebug() << "Start X: " << start_point.x() << " Y: " << start_point.y() << " Z: " << start_point.z();
+        for (int i = 1; i < selectedMission->mission_waypoints.waypoints->size(); i++) {
+            QVector3D point = selectedMission->mission_waypoints.waypoints->at(i);
+            qDebug() << "X: " << point.x() << " Y: " << point.y() << " Z: " << point.z();
+            pm.add_goal_point(Point::fromGeodetic(point.x(), point.y(), point.z()));
+        }
+        QVector3D start_point = selectedMission->mission_waypoints.waypoints->at(0);
+        qDebug() << "Start X: " << start_point.x() << " Y: " << start_point.y() << " Z: " << start_point.z();
 
-////         Currently not working - path finding returns 0
-////        pm.set_obstacles(Obstacles(testReadJSON_obstacle()));
-//        QList<QVector3D>* waypoints = selectedMission->mission_waypoints.waypoints;
-//        waypoints->clear();
-//        QList<QVector3D>* path = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()),
-//                                 selectedMission->fly_zones);
-//        waypoints->reserve(waypoints->size() + std::distance(path->begin(), path->end()) + 1);
-//        waypoints->append(start_point);
-//        waypoints->append(*path);
-//        selectedMission->setActions_wp();
+//         Currently not working - path finding returns 0
+        pm.set_obstacles(Obstacles(testReadJSON_obstacle()));
+        QList<QVector3D>* waypoints = selectedMission->mission_waypoints.waypoints;
+        waypoints->clear();
+        QList<QVector3D>* path = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()),
+                                 selectedMission->fly_zones);
+        waypoints->reserve(waypoints->size() + std::distance(path->begin(), path->end()) + 1);
+        waypoints->append(start_point);
+        waypoints->append(*path);
+        selectedMission->setActions_wp();
 
         QStandardItemModel * genmodel = createMissionModel(selectedMission);
         setTableModel(ui->generatedMission, genmodel);
