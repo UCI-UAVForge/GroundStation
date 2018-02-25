@@ -10,7 +10,7 @@ double SCALE_CONSTANT = 1000;
 std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, double start_lon, double end_lat, double end_lon, QList<FlyZone>* flyzones) {
     int dimensions = 2;
 
-    Eigen::Vector2d size(90000,90000);
+    Eigen::Vector2d size(90000,200000);
     std::vector<Eigen::Vector2d> _previousSolution;
 
     std::shared_ptr<MissionStateSpace> _stateSpace(new MissionStateSpace(size.x(), size.y(), 20, 20, FlyZone(flyzones->at(0))));
@@ -20,8 +20,9 @@ std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, d
 
     Eigen::Vector2d _startPos = Eigen::Vector2d(start_lat*SCALE_CONSTANT, abs(start_lon)*SCALE_CONSTANT);
     Eigen::Vector2d _goalPos = Eigen::Vector2d(end_lat*SCALE_CONSTANT, abs(end_lon)*SCALE_CONSTANT);
-//    Eigen::Vector2d _startPos = Eigen::Vector2d(1, 1);
-//    Eigen::Vector2d _goalPos = Eigen::Vector2d(30, 30);
+    _stateSpace->endpoints[0] = _startPos;
+    _stateSpace->endpoints[1] = _goalPos;
+
     qInfo() << _startPos.x() << " " << _startPos.y();
     qInfo() << _goalPos.x() << " " << _goalPos.y();
     //  setup birrt
@@ -41,7 +42,7 @@ std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, d
         if (_biRRT->startSolutionNode() != nullptr) {
             qInfo() << "we did it";
             auto _previousSolution = _biRRT->getPath();
-//            RRT::SmoothPath<Eigen::Vector2d>(_previousSolution, *_stateSpace);
+            RRT::SmoothPath<Eigen::Vector2d>(_previousSolution, *_stateSpace);
 
             for (Eigen::Vector2d v : _previousSolution) {
                 qInfo() << v.x() << " " << v.y();
