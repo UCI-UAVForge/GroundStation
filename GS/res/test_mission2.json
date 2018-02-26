@@ -14,24 +14,39 @@
             "altitude_msl_min": 0,
             "boundary_pts": [
                 {
-                    "latitude": 33.771037,
-                    "longitude": -117.698634,
+                    "latitude": 33.771489,
+                    "longitude": -117.697271,
                     "order": 1
                 },
                 {
-                    "latitude": 33.773541,
-                    "longitude": -117.698758,
+                    "latitude": 33.772246,
+                    "longitude": -117.697138,
                     "order": 2
                 },
-				{
-                    "latitude": 33.773085,
-                    "longitude": -117.692601,
+                {
+                    "latitude": 33.772777,
+                    "longitude": -117.695966,
                     "order": 3
                 },
                 {
-                    "latitude": 33.770730,
-                    "longitude": -117.692708,
+                    "latitude": 33.772761,
+                    "longitude": -117.692767,
                     "order": 4
+                },
+                {
+                    "latitude": 33.772064,
+                    "longitude": -117.691954,
+                    "order": 5
+                },
+                {
+                    "latitude": 33.771404,
+                    "longitude": -117.692346,
+                    "order": 6
+                },
+                {
+                    "latitude": 33.770906,
+                    "longitude": -117.694586,
+                    "order": 7
                 }
             ]
         }
@@ -43,49 +58,28 @@
     "id": 2,
     "mission_waypoints": [
         {
-            "altitude_msl": 200,
-            "latitude": 33.771503,
-            "longitude": -117.697382,
+            "altitude_msl": 65,
+            "latitude": 33.771691,
+            "longitude": -117.697012,
             "order": 1
         },
         {
-            "altitude_msl": 200,
-            "latitude": 33.772162,
-            "longitude": -117.697336,
+            "altitude_msl": 65,
+            "latitude": 33.772456,
+            "longitude": -117.695471,
             "order": 2
         },
         {
-            "altitude_msl": 200,
-            "latitude": 33.772147,
-            "longitude": -117.693916,
+            "altitude_msl": 65,
+            "latitude": 33.772555,
+            "longitude": -117.692930,
             "order": 3
         },
         {
-            "altitude_msl": 200,
+            "altitude_msl": 65,
             "latitude": 33.771189,
             "longitude": -117.693883,
             "order": 4
         }
-    ],
-	 "search_grid_points": [
-        {
-            "altitude_msl": 200,
-            "latitude": 33.771037,
-            "longitude": -117.698634,
-            "order": 1
-        },
-		{
-            "altitude_msl": 200,
-            "latitude": 33.773541,
-            "longitude": -117.698758,
-            "order": 2
-        },
-		{
-            "altitude_msl": 200,
-            "latitude": 33.773085,
-            "longitude": -117.692601,
-            "order": 3
-        }
-		
     ]
 }

@@ -140,7 +140,7 @@ QVector<Waypoint::WP> Mission::constructWaypoints() {
         wp.autocontinue = 1;
         wp.current = 0;
         wp.param1 = 0;
-        wp.param2 = 5;
+        wp.param2 = 30;
         wp.param3 = 0;
         wp.x = mission_waypoints.waypoints->at(i-2).x();
         wp.y = mission_waypoints.waypoints->at(i-2).y();
@@ -150,16 +150,17 @@ QVector<Waypoint::WP> Mission::constructWaypoints() {
 
     qDebug() << "Mission::constructWaypoints set last point as home_pos w/ land";
     // Return to home position
+    // CHANGE TO LOITER CENTER
     wp.id = len + 2;
-    wp.command = 21;
+    wp.command = 17;
     wp.autocontinue = 1;
     wp.current = 0;
     wp.param1 = 0;
-    wp.param2 = 1; // 1 = opportunistic precision landing
-    wp.param3 = 0; // Empty
-    wp.x = this->home_pos.x();
-    wp.y = this->home_pos.y();
-    wp.z = 0;
+    wp.param2 = 0; // 1 = opportunistic precision landing
+    wp.param3 = 40; // loiter radius
+    wp.x = 33.771945;
+    wp.y = -117.694765;
+    wp.z = 65;
     waypoints.append(wp);
 
     return waypoints;

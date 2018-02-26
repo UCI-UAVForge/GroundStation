@@ -195,7 +195,7 @@ Rectangle {
             map.removeMapItem(plane);
             plane.coordinate = QtPositioning.coordinate(lat, lon)
             plane.rotation = heading
-            uavPath.addCoordinate(plane.coordinate);
+           // uavPath.addCoordinate(plane.coordinate);
             map.addMapItem(plane)
         }
 

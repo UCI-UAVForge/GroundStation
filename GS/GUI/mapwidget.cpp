@@ -52,7 +52,7 @@ void MapWidget::clearMap() {
 }
 
 void MapWidget::drawMission(Mission * mission) {
-    clearMap();
+    //clearMap();
     for (int i = 0; i < mission->fly_zones->size(); i++) {
         drawPolygon(toQVariantList(mission->fly_zones->at(i).boundary_points),
                     QColor(0,255,0, 70), "Fly Zone #" + QString::number(i));
