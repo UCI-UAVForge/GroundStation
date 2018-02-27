@@ -36,6 +36,7 @@ signals:
     void missionItemReceived(mavlink_mission_item_t mission_item);
     void missionCurrentReceived(mavlink_mission_current_t mission_current);
     void gps_intReceived(mavlink_global_position_int_t gps_int);
+    void armReceived(bool armState);
 
     void armSuccess();
     void armFailed();

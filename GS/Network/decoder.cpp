@@ -11,6 +11,14 @@ void Decoder::parseMessage(mavlink_message_t msg) {
         case MAVLINK_MSG_ID_HEARTBEAT: //0
             mavlink_heartbeat_t heartbeat;
             mavlink_msg_heartbeat_decode(&msg, &heartbeat);
+            switch(heartbeat.base_mode) {
+                case 81: case 89:
+                    emit(armReceived(false));     //unarmed
+                break;
+                case 209: case 217:
+                    emit(armReceived(true));      //armed
+                break;
+            }
             emit(heartbeatReceived(heartbeat));
 //            qDebug() << "decoder.cpp:: heartbeat.custom_mode->" << heartbeat.custom_mode;
         break;

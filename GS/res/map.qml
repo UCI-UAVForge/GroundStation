@@ -1,6 +1,5 @@
 import QtQuick 2.4
 import QtQuick.Window 2.0
-//import QtLocation 5.6
 import QtPositioning 5.6
 import QtQuick.Controls 1.2 //QtQuick Components
 import QtQuick.Dialogs 1.1 //Dialogs
@@ -38,6 +37,7 @@ Rectangle {
                 }
 
         property var activeItemColor: "white";
+        property bool armState : false;
 
         MouseArea {
             anchors.fill:parent;
@@ -46,25 +46,24 @@ Rectangle {
                 itemLabelRect.visible = false;
             }
         }
-
-        MapPolyline {
-            id: uavPath;
-            objectName: "polyline";
-            line.width: 4;
-            line.color: "red";
-            path: []
-            property var original_color: "red";
-            MouseArea {
-                anchors.fill:parent;
-                onClicked: {
-                    itemLabel.text = "UAV Path";
-                    itemLabelRect.visible = true;
-                    map.setItemsInactive();
-                    parent.line.color = map.activeItemColor;
+            MapPolyline {
+                id: uavPath;
+                objectName: "uavPath";
+                line.width: 4;
+                line.color: "red";
+                path: []
+                property var original_color: "red";
+                MouseArea {
+                    anchors.fill:parent;
+                    onClicked: {
+                        itemLabel.text = "UAV Path";
+                        itemLabelRect.visible = true;
+                        map.setItemsInactive();
+                        parent.line.color = map.activeItemColor;
+                    }
                 }
             }
 
-        }
 
         Component {
             id: mapMarker
@@ -87,9 +86,11 @@ Rectangle {
             id: mapLine
             MapPolyline {
                 objectName: "polyline";
-                line.width: 3
+                line.width: 4
                 property string label;
                 property var original_color;
+                antialiasing: true;
+                path: [];
                 MouseArea {
                     anchors.fill:parent;
                     onClicked: {
@@ -179,9 +180,17 @@ Rectangle {
             for (var i=0;i<map.mapItems.length;i++) {
                 if (map.mapItems[i].objectName === 'polygon')
                     map.mapItems[i].border.width = 0;
-                if (map.mapItems[i].objectName === 'polyline') {
+                if (map.mapItems[i].objectName === 'polyline'
+                        || map.mapItems[i].objectName === 'uavPath') {
                     map.mapItems[i].line.color = map.mapItems[i].original_color;
                 }
+            }
+        }
+
+        function updateArmState(state) {
+            armState = state;
+            if (armState) {
+                map.addMapItem(uavPath);
             }
         }
 
@@ -193,10 +202,12 @@ Rectangle {
 
         function drawUAV(lat, lon, heading) {
             map.removeMapItem(plane);
-            plane.coordinate = QtPositioning.coordinate(lat, lon)
-            plane.rotation = heading
-            uavPath.addCoordinate(plane.coordinate);
-            map.addMapItem(plane)
+            plane.coordinate = QtPositioning.coordinate(lat, lon);
+            plane.rotation = heading;
+            if (armState) {
+                uavPath.addCoordinate(plane.coordinate);
+            }
+            map.addMapItem(plane);
         }
 
         function removeUAV() {
@@ -216,6 +227,11 @@ Rectangle {
             plane.uavsize -= 5;
         }
 
+        function clearUAVPath() {
+            while (uavPath.pathLength() > 0) {
+                uavPath.removeCoordinate(0);
+            }
+        }
 
         MapQuickItem{id:plane;
                     objectName: 'plane'
@@ -304,6 +320,29 @@ Rectangle {
         anchors.bottom: parent.bottom;
         anchors.margins: 15;
 
+    }
+    Rectangle {
+        id: clearMapButton;
+        width: 80;
+        height:30;
+        radius: 5;
+        Text {
+            anchors.centerIn: parent;
+            text: "Clear Map";
+            color:"white";
+            font.bold: true;
+        }
+        color: Qt.rgba(0,0,0,0.55);
+        anchors.bottom: parent.bottom
+        anchors.left: parent.left
+        anchors.margins: 15;
+        TooltipArea {
+            text: "Clear map of all objects."
+            onClicked: {
+                map.clearUAVPath();
+                map.clearMap();
+            }
+        }
     }
 
 }

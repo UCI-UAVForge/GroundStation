@@ -94,6 +94,8 @@ void MainDockWindow::connectDecoder(Decoder * decoder) {
 
     connect(decoder, &Decoder::gpsReceived, ui->mapWidget, &MapWidget::updateUAVPosition);
     connect(decoder, &Decoder::vfrHudReceived, ui->mapWidget, &MapWidget::updateUAVHeading);
+
+    connect(decoder, &Decoder::armReceived, ui->mapWidget, &MapWidget::updateArmState);
 }
 
 

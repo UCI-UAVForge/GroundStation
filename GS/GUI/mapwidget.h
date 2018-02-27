@@ -48,6 +48,7 @@ public:
     void drawUAV(double lat, double lon, double heading);
     void updateCenter(double lat, double lon);
     void updateUAV();
+    void updateArmState(bool state);
     void timeout();
     inline void toggleUpdateCenterConstant() {
         updateCenterConstant = updateCenterConstant ? false : true;

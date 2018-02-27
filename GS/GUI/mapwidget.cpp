@@ -43,6 +43,11 @@ void MapWidget::drawPolygonF(QPolygonF points, QColor color, QString label) {
     drawPolygon(newList, color, label);
 }
 
+void MapWidget::updateArmState(bool state) {
+    QMetaObject::invokeMethod(map, "updateArmState",
+            Q_ARG(QVariant, state));
+}
+
 void MapWidget::timeout() {
     QMetaObject::invokeMethod(map, "removeUAV");
 }
@@ -52,21 +57,14 @@ void MapWidget::clearMap() {
 }
 
 void MapWidget::drawMission(Mission * mission) {
-    clearMap();
     for (int i = 0; i < mission->fly_zones->size(); i++) {
         drawPolygon(toQVariantList(mission->fly_zones->at(i).boundary_points),
                     QColor(0,255,0, 70), "Fly Zone #" + QString::number(i));
-        //mission->fly_zones->at(i).boundary_points->append(mission->fly_zones->at(i).boundary_points->first());
-        //drawPolyline(toQVariantList(mission->fly_zones->at(i).boundary_points), QColor(0,255,0));
-        //mission->fly_zones->at(i).boundary_points->removeLast();
     }
 
     /* Search Grid Points */
     if (!mission->search_grid_points->empty()) {
         drawPolygon(toQVariantList(mission->search_grid_points), QColor(0,0,255, 70), "Search Grid");
-        //mission->search_grid_points->append(mission->search_grid_points->first());
-        //drawPolyline(toQVariantList(mission->search_grid_points), QColor(0, 0, 255));
-        //mission->search_grid_points->removeLast();
     }
 
     /* Home position */
@@ -79,7 +77,7 @@ void MapWidget::drawMission(Mission * mission) {
     drawPoint(mission->off_axis_odlc_pos, "Off Axis ODLC", QColor(255,127,0));
 
     /* Emergent hiker */
-    //drawPoint(mission->emergent_last_known_pos, QColor(0,0,0));
+    drawPoint(mission->emergent_last_known_pos, "Emergent LK Pos", QColor(0,0,0));
 
     /* Waypoints */
     drawPolyline(toQVariantList(mission->mission_waypoints.waypoints), QColor("blue"));
