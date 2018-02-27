@@ -10,7 +10,7 @@ double SCALE_CONSTANT = 1000;
 std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, double start_lon, double end_lat, double end_lon, QList<FlyZone>* flyzones) {
     int dimensions = 2;
 
-    Eigen::Vector2d size(90000,90000);
+    Eigen::Vector2d size(90000,200000);
     std::vector<Eigen::Vector2d> _previousSolution;
 
     std::shared_ptr<MissionStateSpace> _stateSpace(new MissionStateSpace(size.x(), size.y(), 20, 20, FlyZone(flyzones->at(0))));
@@ -20,15 +20,16 @@ std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, d
 
     Eigen::Vector2d _startPos = Eigen::Vector2d(start_lat*SCALE_CONSTANT, abs(start_lon)*SCALE_CONSTANT);
     Eigen::Vector2d _goalPos = Eigen::Vector2d(end_lat*SCALE_CONSTANT, abs(end_lon)*SCALE_CONSTANT);
-//    Eigen::Vector2d _startPos = Eigen::Vector2d(1, 1);
-//    Eigen::Vector2d _goalPos = Eigen::Vector2d(30, 30);
+    _stateSpace->endpoints[0] = _startPos;
+    _stateSpace->endpoints[1] = _goalPos;
+
     qInfo() << _startPos.x() << " " << _startPos.y();
     qInfo() << _goalPos.x() << " " << _goalPos.y();
     //  setup birrt
     _biRRT->setStartState(_startPos);
     _biRRT->setGoalState(_goalPos);
-    _biRRT->setMaxStepSize(100);
-    _biRRT->setGoalMaxDist(.1);
+    _biRRT->setMaxStepSize(PlanMission::meters_to_deg(50, _startPos.x()) * SCALE_CONSTANT);
+    _biRRT->setGoalMaxDist(PlanMission::meters_to_deg(20, _goalPos.x()) * SCALE_CONSTANT);
 
     // set obstacles
     for (QPolygonF obst_poly : get_obstacles()) {
@@ -36,7 +37,7 @@ std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, d
     };
 
     std::vector<std::pair<double, double>> result;
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < 200000; i++) {
         _biRRT->grow();
         if (_biRRT->startSolutionNode() != nullptr) {
             qInfo() << "we did it";
@@ -80,8 +81,8 @@ QList<QVector3D> * PlanMission::get_path(Point start_point, QList<FlyZone>* flyz
     std::vector<Point> pts = remaining_points;
     for (Point p : remaining_points) {
         // sort
-        std::make_heap(pts.begin(), pts.end(),
-                        sort_func);
+//        std::make_heap(pts.begin(), pts.end(),
+//                        sort_func);
 
         // pop
         std::pop_heap(pts.begin(), pts.end());
@@ -134,10 +135,12 @@ QList<QVector3D> * PlanMission::get_path(Point start_point, QList<FlyZone>* flyz
     // inefficient but lets just do like this for now
     QList<QVector3D>* qlist_qvector3d = new QList<QVector3D>();
     qInfo() << "da path";
+    int sign = start_point.toGeodetic().at(1) < 0 ? -1 : 1;
     for (Point p : path) {
         qInfo() << p.toGeodetic();
         //qlist_qvector3d->append(p.QVectorGeodetic());
-        qlist_qvector3d->append(QVector3D(p.toGeodetic().at(0), p.toGeodetic().at(1) * -1, 0));
+        qlist_qvector3d->append(QVector3D(p.toGeodetic().at(0),
+                                          abs(p.toGeodetic().at(1)) * sign, 0));
     }
     qInfo() << "done with path";
     return qlist_qvector3d;

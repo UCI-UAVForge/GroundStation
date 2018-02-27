@@ -29,13 +29,15 @@ public:
     void readButtonClicked();
     void clearButtonClicked();
     bool hasMission();
+    void drawCurrentMission();
     void loadMission();
     void getMissions(Interop * i);
     QStandardItemModel * createMissionModel(Mission * mission);
     void setTableModel(QTableView * tableView, QStandardItemModel * model);
 
     QVector<Mission*> * missions;
-    Mission * currentMission;
+    Mission * generatedMission;
+    Mission * interopMission;
     QStandardItemModel * model;
     Obstacles obstacles;
     MapWidget * mapWidget;
@@ -58,7 +60,7 @@ public slots:
 
 private:
     void testOutputJSON(QJsonObject o, int i);
-    QJsonObject testReadJSON_mission();
+    QJsonObject testReadJSON_mission(QString n);
     QJsonDocument testReadJSON_obstacle();
 
     Ui::MissionWidget *ui;

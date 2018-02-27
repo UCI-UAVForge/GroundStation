@@ -3,9 +3,6 @@
 #include <QtSvg>
 
 #include "maindockwindow.h"
-
-#include "plan_mission.hpp"
-#include "point.hpp"
 int main(int argc, char *argv[]) {
 
     static const int splash_width = 600;
@@ -27,46 +24,10 @@ int main(int argc, char *argv[]) {
     //Construct and show the splash screen
     QSplashScreen splash(pixmap);
     // splash.show();
-    PlanMission pm;
-    pm.add_goal_point(Point::fromGeodetic(38.14254, -76.43409, 0));
-    pm.add_goal_point(Point::fromGeodetic(38.14468, -76.42799, 0));
-    QString sb ="{"
-                "    \"moving_obstacles\": ["
-                "        {"
-                "            \"altitude_msl\": 189.56748784643966,"
-                "            \"latitude\": 34.141826869853645,"
-                "            \"longitude\": -76.43199876559223,"
-                "            \"sphere_radius\": 150.0"
-                "        },"
-                "        {"
-                "            \"altitude_msl\": 250.0,"
-                "            \"latitude\": 34.14923628783763,"
-                "            \"longitude\": -76.43238529543882,"
-                "            \"sphere_radius\": 150.0"
-                "        }"
-                "    ],"
-                "    \"stationary_obstacles\": ["
-                "        {"
-                "            \"cylinder_height\": 750.0,"
-                "            \"cylinder_radius\": 100.0,"
-                "            \"latitude\": 18.143,"
-                "            \"longitude\":  -76.433"
-
-                "        },"
-                "        {"
-                "            \"cylinder_height\": 400.0,"
-                "            \"cylinder_radius\": 50.0,"
-                "            \"latitude\": 18.149156,"
-                "            \"longitude\": -76.430622"
-                "        }"
-                "    ]"
-                "}";
-    pm.set_obstacles(QJsonDocument::fromJson(sb.toUtf8()));
-//    qDebug() << pm.get_path(Point::fromGeodetic(38.14468, -76.42799, 0));
 //    MainMDIDisplay x;
     MainDockWindow dockWindow;
     //x.showNormal();
-    dockWindow.showFullScreen();
+    dockWindow.showMaximized();
     //Hide the splash screen.
     splash.finish(&dockWindow);
 

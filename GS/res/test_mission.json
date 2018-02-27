@@ -42,12 +42,12 @@
     },
     "id": 1,
     "mission_waypoints": [
-		{
-			"altitude_msl": 200,
-			"latitude": 38.142773,
-			"longitude": -76.427995,
-			"order": 1
-		},
+        {
+            "altitude_msl": 200,
+            "latitude": 38.142773,
+            "longitude": -76.427995,
+            "order": 1
+        },
         {
             "altitude_msl": 200,
             "latitude": 38.142544,
