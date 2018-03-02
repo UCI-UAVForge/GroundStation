@@ -16,6 +16,19 @@ void MessageWidget::updateMessages(mavlink_statustext_t stattext) {
     ui->listWidget->scrollToBottom();
 }
 
+void MessageWidget::updateMessages_str(QString text) {
+    QListWidgetItem * message = new QListWidgetItem(text);
+    ui->listWidget->addItem(message);
+    ui->listWidget->scrollToBottom();
+}
+
+void MessageWidget::updateClearMission(bool success) {
+    if (success)
+        updateMessages_str(QString("Missions cleared."));
+    else
+        updateMessages_str(QString("Mission clear request unsuccessful."));
+}
+
 MessageWidget::~MessageWidget()
 {
     delete ui;

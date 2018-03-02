@@ -51,6 +51,7 @@ signals:
 
     void waypointsReceived(WP * waypoints, uint16_t size);
     void waypointsWriteStatus(bool success);
+    void waypointsClearStatus(bool success);
 
 public slots:
     void updateMissionAck(mavlink_mission_ack_t mission_ack);

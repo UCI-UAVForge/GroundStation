@@ -16,10 +16,9 @@ Waypoint::Waypoint() {}
 void Waypoint::clearAllWaypoints() {
     clearTimeout = true;
     requestClear();
-    if (!clearTimeout) qDebug() << "Missions cleared."; // Success
+    if (!clearTimeout) emit(waypointsClearStatus(true));
     else {
-        clearTimeout = false;
-        qDebug() << "Missions clear request timed out.";
+        emit(waypointsClearStatus(false));
     }
 }
 

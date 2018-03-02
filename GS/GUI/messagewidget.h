@@ -18,6 +18,11 @@ public:
     ~MessageWidget();
 
     void updateMessages(mavlink_statustext_t stattext);
+    void updateMessages_str(QString text);
+
+public slots:
+    void updateClearMission(bool success);
+
 private:
     Ui::MessageWidget *ui;
 };

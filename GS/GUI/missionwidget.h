@@ -13,6 +13,9 @@
 #include <QHeaderView>
 #include <QGeoCoordinate>
 #include <QTableView>
+#include "point.hpp"
+#include "plan_mission.hpp"
+#include <QFile>
 
 namespace Ui {
 class MissionWidget;
@@ -36,8 +39,8 @@ public:
     void setTableModel(QTableView * tableView, QStandardItemModel * model);
 
     QVector<Mission*> * missions;
-    Mission * generatedMission;
-    Mission * interopMission;
+    Mission * generatedMission = nullptr;
+    Mission * interopMission = nullptr;
     QStandardItemModel * model;
     Obstacles obstacles;
     MapWidget * mapWidget;
@@ -52,6 +55,7 @@ signals:
     void clearMissions();
     void readMissionsSignal();
     void writeMissionsSignal(QVector<Waypoint::WP> waypoints, uint16_t size);
+    void clearMap();
 
 public slots:
     void readMissions(Waypoint::WP * waypoints, uint16_t size);

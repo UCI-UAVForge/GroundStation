@@ -48,6 +48,7 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     connect(loginWidget, &LoginWidget::loginSuccess, ui->missionWidget, &MissionWidget::getMissions);
     connect(ui->missionWidget, &MissionWidget::drawMission, ui->mapWidget, &MapWidget::drawMission);
     connect(ui->missionWidget, &MissionWidget::drawObstacle, ui->mapWidget, &MapWidget::drawPolygonF);
+    connect(ui->missionWidget, &MissionWidget::clearMap, ui->mapWidget, &MapWidget::clearMap);
 }
 
 void MainDockWindow::addToolBarButtons() {
@@ -125,6 +126,7 @@ void MainDockWindow::connectWaypoint(Waypoint * waypoint, Encoder * encoder, Dec
     connect(ui->missionWidget, &MissionWidget::writeMissionsSignal, waypoint, &Waypoint::writeWaypoints);
     connect(waypoint, &Waypoint::waypointsReceived, ui->missionWidget, &MissionWidget::readMissions);
     connect(waypoint, &Waypoint::waypointsWriteStatus, ui->missionWidget, &MissionWidget::writeMissionsStatus);
+    connect(waypoint, &Waypoint::waypointsClearStatus, ui->messageWidget, &MessageWidget::updateClearMission);
 }
 
 void MainDockWindow::test() {

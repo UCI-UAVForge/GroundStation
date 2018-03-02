@@ -2,9 +2,7 @@
 #include "ui_missionwidget.h"
 //#include "qtmaterialraisedbutton.h"
 #include <QDebug>
-#include <QFile> // Testing purposes
-#include "point.hpp"
-#include "plan_mission.hpp"
+
 MissionWidget::MissionWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MissionWidget)
@@ -22,11 +20,11 @@ MissionWidget::MissionWidget(QWidget *parent) :
     connect(ui->missionList, SIGNAL(currentIndexChanged(int)), this, SLOT(updateInteropMission(int)));
 
     if (test_mission) {
-        missions->append(new Mission(testReadJSON_mission("2")));
-        ui->missionList->addItem("*TEST MISSION2*");
+        missions->append(new Mission(testReadJSON_mission("2"), testReadJSON_obstacle()));
+        ui->missionList->addItem("*TEST MISSION_FT*");
         ui->missionList->setItemData(0, Qt::AlignCenter, Qt::TextAlignmentRole);
 
-        missions->append(new Mission(testReadJSON_mission("")));
+        missions->append(new Mission(testReadJSON_mission(""), testReadJSON_obstacle()));
         ui->missionList->addItem("*TEST MISSION*");
         ui->missionList->setItemData(1, Qt::AlignCenter, Qt::TextAlignmentRole);
 
@@ -34,7 +32,6 @@ MissionWidget::MissionWidget(QWidget *parent) :
         QStandardItemModel * test_mission_model = createMissionModel(missions->at(ui->missionList->currentIndex()));
         setTableModel(ui->interopMission, test_mission_model);
     }
-
 }
 
 bool MissionWidget::hasMission() {
@@ -42,49 +39,57 @@ bool MissionWidget::hasMission() {
 }
 
 void MissionWidget::drawCurrentMission() {
+    emit(clearMap());
     if (hasMission()) {
-        if (ui->tabWidget->currentIndex() == 1 && generatedMission != nullptr) {
+        if (ui->tabWidget->currentIndex() == 1 && generatedMission) {
             drawMission(generatedMission);
-            PlanMission pm;
-            pm.set_obstacles(Obstacles(testReadJSON_obstacle()));
-            for (QPolygonF obst_poly : pm.get_obstacles()) {
+            for (QPolygonF obst_poly : generatedMission->get_obstacles()) {
                 emit(drawObstacle(obst_poly, QColor("red"), "Obstacle"));
             }
         }
-        else
+        else {
+            for (QPolygonF obst_poly : interopMission->get_obstacles()) {
+                emit(drawObstacle(obst_poly, QColor("red"), "Obstacle"));
+            }
             drawMission(interopMission);
+        }
     }
 }
 
 void MissionWidget::loadMission() {
     if (hasMission()) {
         PlanMission pm;
-
-//        Mission * selectedMission = missions->at(ui->missionList->currentIndex());
-        Mission * selectedMission = interopMission;
-
-        for (int i = 1; i < selectedMission->mission_waypoints.waypoints->size(); i++) {
-            QVector3D point = selectedMission->mission_waypoints.waypoints->at(i);
+        if (!generatedMission)
+            generatedMission = new Mission(*interopMission);
+        else {
+            delete generatedMission;
+            generatedMission = new Mission(*interopMission);
+        }
+        for (int i = 1; i < generatedMission->mission_waypoints.waypoints->size(); i++) {
+            QVector3D point = generatedMission->mission_waypoints.waypoints->at(i);
             qDebug() << "X: " << point.x() << " Y: " << point.y() << " Z: " << point.z();
             pm.add_goal_point(Point::fromGeodetic(point.x(), point.y(), point.z()));
         }
-        QVector3D start_point = selectedMission->mission_waypoints.waypoints->at(0);
+        QVector3D start_point = generatedMission->mission_waypoints.waypoints->at(0);
         qDebug() << "Start X: " << start_point.x() << " Y: " << start_point.y() << " Z: " << start_point.z();
 
 //         Currently not working - path finding returns 0
-        pm.set_obstacles(Obstacles(testReadJSON_obstacle()));
-        QList<QVector3D>* waypoints = selectedMission->mission_waypoints.waypoints;
+        pm.set_obstacles(generatedMission->obstacles);
+        QList<QVector3D>* waypoints = generatedMission->mission_waypoints.waypoints;
         waypoints->clear();
         QList<QVector3D>* path = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()),
-                                 selectedMission->fly_zones);
+                                 generatedMission->fly_zones);
         waypoints->reserve(waypoints->size() + std::distance(path->begin(), path->end()) + 1);
         waypoints->append(start_point);
         waypoints->append(*path);
-        selectedMission->setActions_wp();
+        generatedMission->setActions_wp();
 
-        QStandardItemModel * genmodel = createMissionModel(selectedMission);
+        QStandardItemModel * genmodel = createMissionModel(generatedMission);
         setTableModel(ui->generatedMission, genmodel);
-        generatedMission = selectedMission;
+
+        // Test
+        QStandardItemModel * intmodel = createMissionModel(interopMission);
+        setTableModel(ui->interopMission, intmodel);
     }
 }
 

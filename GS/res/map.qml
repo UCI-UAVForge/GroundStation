@@ -26,7 +26,7 @@ Rectangle {
         objectName:"map"
         anchors.fill: parent
         plugin: mapPlugin
-        center: QtPositioning.coordinate(38.14792, -76.427995) //the place 38.14792, -76.427995            //(33.6405, -117.8443) // Irvine
+        center: QtPositioning.coordinate(33.771175, -117.695560) //the place 38.14792, -76.427995            //(33.6405, -117.8443) // Irvine
         zoomLevel: 14
         Component.onCompleted: {
                     for( var i_type in supportedMapTypes ) {
