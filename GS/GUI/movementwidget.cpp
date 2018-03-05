@@ -21,11 +21,8 @@ void MovementWidget::updateAttitude(mavlink_attitude_t att) {
 // Attitude -> Roll/Yaw/Pitch
 }
 
-void MovementWidget::updateLocalPosition(mavlink_local_position_ned_t l_pos) {
-    // Velocity's units are unclear
-  //  ui.velX->setText(QString::number((float) l_pos.vx * 1000, 'f', 1));
- //   ui.velY->setText(QString::number((float) l_pos.vy * 1000, 'f', 1));
-  //  ui.velZ->setText(QString::number((float) l_pos.vz * 1000, 'f', 1));
+void MovementWidget::updateGlobalPosition(mavlink_global_position_int_t g_pos) {
+    ui.altRel->setText(QString::number((float)g_pos.relative_alt/1000, 'f', 2));
 }
 
 

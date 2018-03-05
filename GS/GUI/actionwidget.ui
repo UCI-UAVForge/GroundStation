@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>308</width>
-    <height>160</height>
+    <height>163</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,26 +15,31 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QPushButton {
-	background-color:rgb(241, 241, 241);
-	color:rgb(30,30,30);
+	background-color:rgb(60, 60, 60);
+	color:rgb(255,255,255);
 }
 
 QPushButton#armButton {
 	color:rgb(255,255,255);
 	background-color:rgb(255, 80, 83);
 }
-
 QPushButton#armButton:pressed {
-	background-color: rgb(235,235,235)
+	background-color: rgb(200,200,200)
 }
 
+QPushButton:pressed {
+	background-color: rgb(120,120,120)
+}
+QPushButton:hover:!pressed {
+	background-color: rgb(80,80,80)
+}
 
 
 </string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="3" column="1">
-    <widget class="QPushButton" name="manualButton">
+   <item row="5" column="2">
+    <widget class="QPushButton" name="stabilizeButton">
      <property name="font">
       <font>
        <weight>75</weight>
@@ -42,46 +47,7 @@ QPushButton#armButton:pressed {
       </font>
      </property>
      <property name="text">
-      <string>MANUAL</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="2">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="4" column="1">
-    <widget class="QPushButton" name="circleButton">
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>CIRCLE</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="3">
-    <widget class="QPushButton" name="rtlButton">
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>RTL</string>
+      <string>STABILIZE</string>
      </property>
     </widget>
    </item>
@@ -95,6 +61,110 @@ QPushButton#armButton:pressed {
      </property>
      <property name="text">
       <string>GUIDED</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QPushButton" name="manualButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>MANUAL</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="2">
+    <widget class="QPushButton" name="loiterButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>LOITER</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="2">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="5" column="1">
+    <widget class="QPushButton" name="circleButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>CIRCLE</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="2">
+    <widget class="QPushButton" name="fbwbButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>FWB B</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QPushButton" name="fbwaButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>FBW A</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QPushButton" name="cruiseButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>CRUISE</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="3">
+    <widget class="QPushButton" name="rtlButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>RTL</string>
      </property>
     </widget>
    </item>
@@ -138,21 +208,11 @@ QPushButton#armButton:pressed {
      </property>
     </widget>
    </item>
-   <item row="4" column="2">
-    <widget class="QPushButton" name="stabilizeButton">
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>STABILIZE</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="3">
+   <item row="6" column="3">
     <widget class="QPushButton" name="initButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="font">
       <font>
        <weight>75</weight>
@@ -161,58 +221,6 @@ QPushButton#armButton:pressed {
      </property>
      <property name="text">
       <string>INIT</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="2">
-    <widget class="QPushButton" name="fbwbButton">
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>FWB B</string>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="1">
-    <widget class="QPushButton" name="fbwaButton">
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>FBW A</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="1">
-    <widget class="QPushButton" name="cruiseButton">
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>CRUISE</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="2">
-    <widget class="QPushButton" name="loiterButton">
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>LOITER</string>
      </property>
     </widget>
    </item>

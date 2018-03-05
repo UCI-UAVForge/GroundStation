@@ -43,7 +43,7 @@ public:
 
     void armClicked();
     void modeClicked();
-    void toggleArmButton(mavlink_heartbeat_t heartbeat);
+    void toggleArmButton(bool armState);
     void toggleModeButtons(mavlink_heartbeat_t heartbeat);
 
 signals:

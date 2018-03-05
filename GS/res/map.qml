@@ -339,7 +339,7 @@ Rectangle {
         TooltipArea {
             text: "Clear map of all objects."
             onClicked: {
-                map.clearUAVPath();z
+                map.clearUAVPath();
                 map.clearMap();
             }
         }

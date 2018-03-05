@@ -39,7 +39,7 @@ void ActionWidget::setButtonColor(QPushButton * button, QString color) {
 }
 
 void ActionWidget::setButtonOff(QPushButton * button) {
-    setButtonColor(button, "rgb(200, 200, 200)");
+    setButtonColor(button, "rgb(60, 60, 60)");
 }
 
 
@@ -49,22 +49,17 @@ void ActionWidget::setButtonsOff(QList<QPushButton*> buttonList) {
     }
 }
 
-void ActionWidget::toggleArmButton(mavlink_heartbeat_t heartbeat) {
-    switch(heartbeat.base_mode) {
-        case 81: case 89:
-            if (armed) {
-                armed = false;
-                ui.armButton->setText("DISARMED");
-                setButtonColor(ui.armButton, "rgb(255, 80, 83)");
-            }
-        break;
-        case 209: case 217:
-            if (!armed) {
-                armed = true;
-                ui.armButton->setText("ARMED");
-                setButtonColor(ui.armButton, activeColor);
-            }
-        break;
+void ActionWidget::toggleArmButton(bool armState) {
+    if (armed != armState) {
+        armed = armState;
+        if (!armed) {
+            ui.armButton->setText("DISARMED");
+            setButtonColor(ui.armButton, "rgb(255, 80, 83)");
+        }
+        else {
+            ui.armButton->setText("ARMED");
+            setButtonColor(ui.armButton, activeColor);
+        }
     }
 }
 

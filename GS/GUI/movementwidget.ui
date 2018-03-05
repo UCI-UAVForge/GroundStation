@@ -26,7 +26,7 @@
 	background-color:rgb(211, 211, 211)
 }
 
-QLabel#altTitle{
+QLabel#altTitle,  QLabel#altRelTitle{
 	background-color:rgb(147, 194, 255)
 }
 
@@ -34,7 +34,7 @@ QLabel#locTitle {
 	background-color:rgb(175, 225, 129)
 }
 
-QLabel#alt, QLabel#loc{
+QLabel#alt, QLabel#loc, QLabel#altRel{
 	padding-right:5px;
 	padding-top:8px;
 	padding-bottom:8px;
@@ -90,7 +90,7 @@ QLabel#gSpeed, QLabel#airSpeed{
      </property>
     </widget>
    </item>
-   <item row="4" column="1" colspan="3">
+   <item row="5" column="1" colspan="3">
     <layout class="QGridLayout" name="gridLayout_2">
      <property name="horizontalSpacing">
       <number>7</number>
@@ -155,7 +155,7 @@ QLabel#gSpeed, QLabel#airSpeed{
         </size>
        </property>
        <property name="text">
-        <string>Airspeed</string>
+        <string>Airspeed(m/s)</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -180,7 +180,7 @@ QLabel#gSpeed, QLabel#airSpeed{
         </size>
        </property>
        <property name="text">
-        <string>Groundspeed</string>
+        <string>Groundspeed(m/s)</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -192,7 +192,7 @@ QLabel#gSpeed, QLabel#airSpeed{
      </item>
     </layout>
    </item>
-   <item row="5" column="2">
+   <item row="6" column="2">
     <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -223,10 +223,30 @@ QLabel#gSpeed, QLabel#airSpeed{
       <number>1</number>
      </property>
      <property name="text">
-      <string>Altitude </string>
+      <string>Altitude(m) </string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLabel" name="altRelTitle">
+     <property name="text">
+      <string>Alt. Rel. (m)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2" colspan="2">
+    <widget class="QLabel" name="altRel">
+     <property name="layoutDirection">
+      <enum>Qt::LeftToRight</enum>
+     </property>
+     <property name="text">
+      <string>N/A</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
      </property>
     </widget>
    </item>

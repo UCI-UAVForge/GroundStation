@@ -83,12 +83,9 @@ void MainDockWindow::connectDecoder(Decoder * decoder) {
     connect(decoder, &Decoder::pressureReceived, ui->qfiWidget, &QFIWidget::updatePressure);
     connect(decoder, &Decoder::vfrHudReceived, ui->movementWidget, &MovementWidget::updateTelemetry);
     connect(decoder, &Decoder::attReceived, ui->movementWidget, &MovementWidget::updateAttitude);
-    connect(decoder, &Decoder::localPositionReceived, ui->movementWidget, &MovementWidget::updateLocalPosition);
     connect(decoder, &Decoder::gpsReceived, ui->graphWidget, &GraphWidget::appendTelemData);
-    connect(decoder, &Decoder::heartbeatReceived, ui->actionWidget, &ActionWidget::toggleArmButton);
     connect(decoder, &Decoder::heartbeatReceived, ui->actionWidget, &ActionWidget::toggleModeButtons);
     connect(decoder, &Decoder::statTextReceived, ui->messageWidget, &MessageWidget::updateMessages);
-//    connect(decoder, &Decoder::mrequestReceived, mission, &Mission::loadWaypoint);
 
     connect(decoder, &Decoder::heartbeatReceived, uavButton, &UAVButton::updateHeartbeat);
     connect(decoder, &Decoder::statusReceived, uavButton, &UAVButton::updateBattery);
@@ -97,6 +94,8 @@ void MainDockWindow::connectDecoder(Decoder * decoder) {
     connect(decoder, &Decoder::vfrHudReceived, ui->mapWidget, &MapWidget::updateUAVHeading);
 
     connect(decoder, &Decoder::armReceived, ui->mapWidget, &MapWidget::updateArmState);
+    connect(decoder, &Decoder::armReceived, ui->actionWidget, &ActionWidget::toggleArmButton);
+    connect(decoder, &Decoder::gps_intReceived, ui->movementWidget, &MovementWidget::updateGlobalPosition);
 }
 
 

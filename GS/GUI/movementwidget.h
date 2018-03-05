@@ -26,7 +26,7 @@ signals:
 public slots:
     void updateTelemetry(mavlink_vfr_hud_t vfr_hud);
     void updateAttitude(mavlink_attitude_t att);
-    void updateLocalPosition(mavlink_local_position_ned_t l_pos);
+    void updateGlobalPosition(mavlink_global_position_int_t g_pos);
 };
 
 #endif // INFOWIDGET_H

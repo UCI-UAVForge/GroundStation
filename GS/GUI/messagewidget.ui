@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">QListWidget {
 	background-color:rgb(60,60,60);
-	color:rgb(240,240,240);
+	color:rgb(255,255,255);
 	border:0px;
 }</string>
   </property>

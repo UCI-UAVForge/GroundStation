@@ -9,7 +9,10 @@
 
 // TODO: set current waypoint!
 
-Waypoint::Waypoint() {}
+Waypoint::Waypoint() {
+
+
+}
 
 // Public
 
