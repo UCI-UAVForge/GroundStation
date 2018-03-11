@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        #map {
+            height: 100%;
+            width: 80%;
+            float: left;
+        }
+        #sidebar {
+            margin: 0 -5px;
+            width: 20%;
+            float: right;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="sidebar">
+        Mode:
+        <form>
+            <input type="radio" id="polyline" name="mode" value="polyline" checked onclick="redraw()">
+            <label for="polyline">PolyLINE</label>
+            <br>
+            <input type="radio" id="polygon" name="mode" value="polygon" onclick="redraw()">
+            <label for="polygon">PolyGONE</label>
+        </form>
+        <br>
+        <hr>
+        <br>
+        Output: <br>
+        <textarea id="txt" rows="50" readonly></textarea>
+    </div>
+    <script>
+        var map;
+        // var coords = [];
+        var markers = [];
+
+        function initMap() {
+            // Create a map object and specify the DOM element for display.
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 33.771175, lng: -117.695560 },
+                // Set mapTypeId to SATELLITE in order
+                // to activate satellite imagery.
+                mapTypeId: 'satellite',
+                zoom: 16
+            });
+            map.addListener('click', function(event) {
+                addMarker(event.latLng);
+            });
+        }
+
+        function addMarker(location) {
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                draggable: true
+            });
+            marker._i = markers.length;
+            marker.addListener('dblclick', function() {
+                console.log(this._i);
+                this.setMap(null);
+                // coords.splice(this._i, 1);
+                markers.splice(this._i, 1);
+                redraw();
+            });
+            marker.addListener('drag', function() {
+                redraw();
+            });
+            // coords.push(location);
+            markers.push(marker);
+            redraw();
+        }
+
+        var polyline = null;
+        var polygon = null;
+        function redraw() {
+            if (polyline !== null) { polyline.setMap(null); }
+            if (polygon !== null) { polygon.setMap(null); }
+
+            var mode = document.querySelector('input[name="mode"]:checked').value;
+            var txtarea = document.getElementById("txt");
+
+            var objs = [];
+            var length = markers.length;
+            var coords = [];
+            for (var i = 0; i < length; ++i) {
+                var obj = {};
+                var pos = markers[i].getPosition();
+                coords.push(pos);
+                obj["latitude"] = pos.lat();
+                obj["longitude"] = pos.lng();
+                obj["order"] = i;
+                objs.push(obj);
+            }
+
+            var obj = {};
+            if (mode === "polyline") {
+                for (var i = 0; i < length; ++i) {
+                    objs[i]["altitude_msl"] = 65;
+                }
+                obj["mission_maypoints"] = objs;
+                polyline = new google.maps.Polyline({
+                    path: coords,
+                    strokeColor: '#000000',
+                    strokeOpacity: 1.0,
+                    strokeWeight: 3,
+                    map: map
+                });
+            }
+            else if (mode === "polygon") {
+                obj["boundary_pts"] = objs;
+                polygon = new google.maps.Polygon({
+                    paths: [coords],
+                    strokeColor: '#FF0000',
+                    strokeOpacity: 0.8,
+                    strokeWeight: 2,
+                    fillColor: '#FF0000',
+                    fillOpacity: 0.35,
+                    map: map
+                });
+            }
+
+            txtarea.innerHTML = JSON.stringify(obj).slice(1, -1);
+        }
+    </script>
+    <!-- api key not required for localhost -->
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer></script>
+  </body>
+</html>
