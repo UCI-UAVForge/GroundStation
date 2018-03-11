@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "interop.h"
+#include "style.h"
 
 namespace Ui {
 class LoginWidget;
@@ -20,6 +21,8 @@ public:
     bool connected = false;
     QPropertyAnimation * slide;
     void toggleSlide();
+
+    Style style;
     ~LoginWidget();
 
 private:

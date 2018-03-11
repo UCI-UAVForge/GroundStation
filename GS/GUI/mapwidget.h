@@ -43,6 +43,7 @@ public:
     void drawPolyline(QList<QVector3D> * points, QColor color);
     void drawPolygonF(QPolygonF points, QColor color, QString label);
     void drawPolygon(QVariantList points, QColor color, QString label);
+    void drawWaypoints(QList<QVector2D> * wps);
     void clearMap();
     void drawMission(Mission * mission);
     void drawUAV(double lat, double lon, double heading);

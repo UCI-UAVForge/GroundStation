@@ -13,7 +13,6 @@
 #include <thread>
 #include <QDebug>
 #include <QQuickItem>
-#include <QtCharts>
 
 #include "graphwidget.h"
 #include "toolbar.h"

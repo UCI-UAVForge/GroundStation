@@ -1,6 +1,7 @@
 #include "loginwidget.h"
 #include "ui_loginwidget.h"
 
+
 LoginWidget::LoginWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::LoginWidget)
@@ -8,8 +9,11 @@ LoginWidget::LoginWidget(QWidget *parent) :
     ui->setupUi(this);
     connect(ui->loginButton, &QPushButton::clicked, this, &LoginWidget::attemptConnection);
     ui->login->setMaximumWidth(0);
+    style = Style();
+    style.setButtonOff(ui->loginButton);
     slide = new QPropertyAnimation(ui->login, "maximumWidth");
     connect(slide, &QPropertyAnimation::finished, this, &LoginWidget::toggleSlide);
+
 }
 
 void LoginWidget::toggleSlide() {
@@ -33,7 +37,7 @@ void LoginWidget::attemptConnection() {
                 slide->start();
                 ui->loginButton->setText("INTEROP");
                 ui->loginButton->setEnabled(false);
-                ui->loginButton->setStyleSheet("QPushButton{background-color: rgb(60, 200, 103);}");
+                style.setButtonOn(ui->loginButton);
                 emit (loginSuccess(interop));
             }
             catch (QNetworkReply::NetworkError err) {

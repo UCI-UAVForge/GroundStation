@@ -16,6 +16,7 @@
 #include "point.hpp"
 #include "plan_mission.hpp"
 #include <QFile>
+#include "style.h"
 
 namespace Ui {
 class MissionWidget;
@@ -45,12 +46,15 @@ public:
     Obstacles obstacles;
     MapWidget * mapWidget;
 
+    Style style;
+
     bool test_mission = true;
 
     ~MissionWidget();
 
 signals:
     void drawMission(Mission * selectedMission);
+    void drawWaypoints(QList<QVector2D> * wps);
     void drawObstacle(QPolygonF poly, QColor color, QString label);
     void clearMissions();
     void readMissionsSignal();

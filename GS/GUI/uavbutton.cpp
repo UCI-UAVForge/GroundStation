@@ -6,12 +6,14 @@ UAVButton::UAVButton(QWidget *parent) :
     ui(new Ui::UAVButton)
 {
     ui->setupUi(this);
+    style = Style();
     eEffect= new QGraphicsColorizeEffect(ui->uavButton);
     eEffect->setColor(QColor(Qt::red));
     eEffect->setEnabled(false);
     ui->uavButton->setGraphicsEffect(eEffect);
     changeColor = QColor(Qt::blue);
-    pulse = new QPropertyAnimation(eEffect,"color");
+    style.setButtonOff(ui->uavButton);
+    pulse = new QPropertyAnimation(eEffect, "color");
     connect(ui->uavButton, &QPushButton::clicked, this, &UAVButton::openConnection);
     timer = new QTimer(this);
     timer->start(timeoutMS);

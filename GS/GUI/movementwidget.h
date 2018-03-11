@@ -8,6 +8,7 @@
 #include <QHBoxLayout>
 #include "uav.h"
 #include <QDebug>
+#include "style.h"
 
 class MovementWidget : public QWidget
 {
@@ -18,15 +19,19 @@ public:
     QGridLayout *layout;
     Ui::MovementWidget ui;
     void mousePressEvent(QMouseEvent *) override;
-private:
-    UAV * uav;
+    bool altFt;
+    bool relAltFt;
+    Style style;
 
 signals:
-
+    void addAlt();
 public slots:
     void updateTelemetry(mavlink_vfr_hud_t vfr_hud);
     void updateAttitude(mavlink_attitude_t att);
     void updateGlobalPosition(mavlink_global_position_int_t g_pos);
+
+    void toggleAltUnits();
+    void toggleRelAltUnits();
 };
 
 #endif // INFOWIDGET_H

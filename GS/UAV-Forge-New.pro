@@ -13,7 +13,6 @@ QT       += svg
 QT       += sql
 QT       += widgets
 QT       += quickwidgets
-QT       += charts
 QT       += serialport
 QT       += positioning
 QT       += quick
@@ -49,15 +48,14 @@ SOURCES += \
     $$files(Util/*.c, false) \
     $$files(Util/*.cpp, false) \
     $$files(Network/*.cpp, false) \
-    $$files(Database/*.cpp, false)
-
+    $$files(Database/*.cpp, false) \
 
 HEADERS  += \
     $$files(GUI/*.h, false) \
     $$files(Util/*.h, false) \
     $$files(Util/*.hpp, false) \
     $$files(Network/*.h, false) \
-    $$files(Database/*.h, false)
+    $$files(Database/*.h, false) \
 
 
 FORMS    += \

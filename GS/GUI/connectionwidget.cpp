@@ -6,6 +6,7 @@ ConnectionWidget::ConnectionWidget(QWidget *parent) :
     ui(new Ui::ConnectionWidget)
 {
     ui->setupUi(this);
+    style = Style();
     connect(ui->connectButton, &QPushButton::clicked, this, &ConnectionWidget::connectUAV);
     connect(ui->refreshButton, &QPushButton::clicked, this, &ConnectionWidget::refresh);
     ui->serialButton->setChecked(true);
@@ -13,6 +14,10 @@ ConnectionWidget::ConnectionWidget(QWidget *parent) :
     buttons->addButton(ui->tcpButton, 0);
     buttons->addButton(ui->udpButton, 1);
     buttons->addButton(ui->serialButton, 2);
+
+    style.setButtonDefault(ui->connectButton);
+    style.setButtonDefault(ui->refreshButton);
+
 }
 
 void ConnectionWidget::connectUAV() {

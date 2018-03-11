@@ -19,11 +19,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-QPushButton:pressed {
-	background-color: rgb(235,235,235);
-}
-QPushButton {
+   <string notr="true">QPushButton {
 border: 0px solid rgb(200,200,200);
 border-radius: 3px;
 background-color:rgb(255, 80, 83);
@@ -168,6 +164,12 @@ QToolButton:hover {
    </widget>
   </widget>
   <widget class="QDockWidget" name="messageDock">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="windowTitle">
     <string>Messages</string>
    </property>

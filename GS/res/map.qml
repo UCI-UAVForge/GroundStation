@@ -75,8 +75,6 @@ Rectangle {
                     anchors.fill:parent;
                     onClicked: {
                         map.setItemsInactive();
-                        //parent.border.width = 2;
-                        //parent.border.color = map.activeItemColor;
                     }
                 }
             }
@@ -339,8 +337,8 @@ Rectangle {
         TooltipArea {
             text: "Clear map of all objects."
             onClicked: {
-                map.clearUAVPath();
                 map.clearMap();
+                map.clearUAVPath();
             }
         }
     }

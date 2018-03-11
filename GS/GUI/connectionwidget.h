@@ -9,6 +9,7 @@
 #include "seriallink.h"
 #include "tcplink.h"
 #include "udplink.h"
+#include "style.h"
 
 namespace Ui {
 class ConnectionWidget;
@@ -26,6 +27,8 @@ public:
     QButtonGroup * buttons;
     Ui::ConnectionWidget *ui;
     void setStatus(QString status);
+
+    Style style;
 
 signals:
     void connectTo(Link * newLink, QString hostport);

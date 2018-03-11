@@ -8,6 +8,8 @@
 #include "QTime"
 #include "QTimer"
 #include "connectionwidget.h"
+#include "style.h"
+
 namespace Ui {
 class UAVButton;
 }
@@ -19,7 +21,7 @@ class UAVButton : public QWidget
 public:
     explicit UAVButton(QWidget *parent = 0);
     ~UAVButton();
-
+    Style style;
     void updateBattery(mavlink_sys_status_t battery);
     void updateHeartbeat(mavlink_heartbeat_t heartbeat);
     bool downbeat = false;

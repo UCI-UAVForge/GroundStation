@@ -14,26 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QPushButton {
-	background-color:rgb(60, 60, 60);
-	color:rgb(255,255,255);
-}
-
-QPushButton#armButton {
-	color:rgb(255,255,255);
-	background-color:rgb(255, 80, 83);
-}
-QPushButton#armButton:pressed {
-	background-color: rgb(200,200,200)
-}
-
-QPushButton:pressed {
-	background-color: rgb(120,120,120)
-}
-QPushButton:hover:!pressed {
-	background-color: rgb(80,80,80)
-}
-
+   <string notr="true">
 
 </string>
   </property>
@@ -211,7 +192,7 @@ QPushButton:hover:!pressed {
    <item row="6" column="3">
     <widget class="QPushButton" name="initButton">
      <property name="enabled">
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
      <property name="font">
       <font>
@@ -221,6 +202,19 @@ QPushButton:hover:!pressed {
      </property>
      <property name="text">
       <string>INIT</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="3">
+    <widget class="QPushButton" name="tuneButton">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>TUNE</string>
      </property>
     </widget>
    </item>

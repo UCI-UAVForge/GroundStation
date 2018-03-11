@@ -10,6 +10,7 @@
 #include <QVector>
 #include <QMap>
 #include <QList>
+#include "style.h"
 
 
 class ActionWidget : public QWidget
@@ -26,19 +27,17 @@ class ActionWidget : public QWidget
         CRUISE = 7,
         RTL = 11,
         LOITER = 12,
-        INITIALISING = 16
+        INITIALISING = 16,
+        AUTOTUNE = 8
     };
 public:
     explicit ActionWidget(QWidget *parent = nullptr);
     Ui::ActionWidget ui;
     bool armed;
     uint8_t mode = -1;
-    QString activeColor;
     QMap<QPushButton*, int> modeButtons;
+    Style style;
 
-
-    void setButtonColor(QPushButton * button, QString color);
-    void setButtonOff(QPushButton * button);
     void setButtonsOff(QList<QPushButton*> buttonList);
 
     void armClicked();

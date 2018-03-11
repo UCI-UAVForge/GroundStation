@@ -30,7 +30,6 @@ int main(int argc, char *argv[]) {
     dockWindow.showMaximized();
     //Hide the splash screen.
     splash.finish(&dockWindow);
-
     return a.exec();
 }
 

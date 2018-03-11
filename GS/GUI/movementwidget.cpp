@@ -4,17 +4,35 @@
 MovementWidget::MovementWidget(QWidget *parent) : QWidget(parent)
 {
     ui.setupUi(this);
-    uav = new UAV();
+    style = Style();
+    foreach(QPushButton * p, this->findChildren<QPushButton*>()) {
+       style.setButtonColor(p, QColor(40,40,40));
+    }
+    connect(ui.alt, &QPushButton::clicked, this, &MovementWidget::toggleAltUnits);
+    connect(ui.relAlt, &QPushButton::clicked, this, &MovementWidget::toggleRelAltUnits);
+
 }
 
 MovementWidget::~MovementWidget(){
 
 }
 
+void MovementWidget::toggleAltUnits() {
+    altFt = altFt ? false : true;
+}
+
+void MovementWidget::toggleRelAltUnits() {
+    relAltFt = relAltFt ? false : true;
+}
+
 void MovementWidget::updateTelemetry(mavlink_vfr_hud_t vfr_hud) {
-    ui.alt->setText(QString::number(vfr_hud.alt));
-    ui.gSpeed->setText(QString::number(vfr_hud.groundspeed));
-    ui.airSpeed->setText(QString::number(vfr_hud.airspeed));
+    if (altFt) {
+        ui.alt->setText(QString::number(vfr_hud.alt * 3.28084) + " ft.");
+    } else {
+        ui.alt->setText(QString::number(vfr_hud.alt) + " m.");
+    }
+    ui.gSpeed->setText(QString::number(vfr_hud.groundspeed, 'f', 2) + " m/s.");
+    ui.airSpeed->setText(QString::number(vfr_hud.airspeed, 'f', 2) + " m/s.");
 }
 
 void MovementWidget::updateAttitude(mavlink_attitude_t att) {
@@ -22,7 +40,10 @@ void MovementWidget::updateAttitude(mavlink_attitude_t att) {
 }
 
 void MovementWidget::updateGlobalPosition(mavlink_global_position_int_t g_pos) {
-    ui.altRel->setText(QString::number((float)g_pos.relative_alt/1000, 'f', 2));
+    if (relAltFt)
+        ui.relAlt->setText(QString::number((float)g_pos.relative_alt/1000 * 3.28084, 'f', 2) + " ft.");
+    else
+        ui.relAlt->setText(QString::number((float)g_pos.relative_alt/1000, 'f', 2) + " m.");
 }
 
 

@@ -8,6 +8,7 @@ MissionWidget::MissionWidget(QWidget *parent) :
     ui(new Ui::MissionWidget)
 {
     ui->setupUi(this);
+    style = Style();
     missions = new QVector<Mission*>();
     ui->missionList->setEditable(true);
     ui->missionList->lineEdit()->setReadOnly(true);
@@ -18,6 +19,14 @@ MissionWidget::MissionWidget(QWidget *parent) :
     connect(ui->readButton, &QPushButton::clicked, this, &MissionWidget::readButtonClicked);
     connect(ui->clearButton, &QPushButton::clicked, this, &MissionWidget::clearButtonClicked);
     connect(ui->missionList, SIGNAL(currentIndexChanged(int)), this, SLOT(updateInteropMission(int)));
+
+    foreach(QPushButton * p, this->findChildren<QPushButton*>()) {
+        if (p->objectName() == "clearButton") {
+            style.setButtonOff(p);
+        } else {
+            style.setButtonDefault(p);
+        }
+    }
 
     if (test_mission) {
         missions->append(new Mission(testReadJSON_mission("2"), testReadJSON_obstacle()));
@@ -121,10 +130,13 @@ void MissionWidget::readMissions(Waypoint::WP * waypoints, uint16_t size) {
     qInfo() << "!-----------------------!";
     qInfo() << "MissionWidget::readMissions test";
     qInfo() << "Mission waypoints length:" << size;
+    QList<QVector2D> * wps = new QList<QVector2D>();
     for (uint16_t i = 0; i < size; i++) {
+        wps->append(QVector2D(waypoints[i].x, waypoints[i].y));
         qInfo() << "Waypoint" << waypoints[i].id << "->" << waypoints[i].x << waypoints[i].y << waypoints[i].z;
         qInfo() << "Waypoint action ->" << waypoints[i].command;
     }
+    emit(drawWaypoints(wps));
     qInfo() << "!-----------------------!";
 }
 

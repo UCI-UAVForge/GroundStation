@@ -12,6 +12,7 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->graphDock->hide();
     ui->connDock->hide();
+    ui->timerDock->hide();
 
     // UDP Link for SITL
   //  link = new UdpLink();
@@ -49,6 +50,8 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     connect(ui->missionWidget, &MissionWidget::drawMission, ui->mapWidget, &MapWidget::drawMission);
     connect(ui->missionWidget, &MissionWidget::drawObstacle, ui->mapWidget, &MapWidget::drawPolygonF);
     connect(ui->missionWidget, &MissionWidget::clearMap, ui->mapWidget, &MapWidget::clearMap);
+
+    connect(ui->missionWidget, &MissionWidget::drawWaypoints, ui->mapWidget, &MapWidget::drawWaypoints);
 }
 
 void MainDockWindow::addToolBarButtons() {

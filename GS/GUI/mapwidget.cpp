@@ -55,6 +55,13 @@ void MapWidget::timeout() {
 void MapWidget::clearMap() {
     QMetaObject::invokeMethod(map, "clearMap");
 }
+void MapWidget::drawWaypoints(QList<QVector2D> * waypoints) {
+    /* Waypoints */
+    clearMap();
+    drawPolyline(toQVariantList(waypoints), QColor("blue"));
+    for (int i = 0; i < waypoints->size(); i++)
+        drawPoint(waypoints->at(i), QString::number(i+1),QColor(235,255,0), 10);
+}
 
 void MapWidget::drawMission(Mission * mission) {
     for (int i = 0; i < mission->fly_zones->size(); i++) {
@@ -81,8 +88,8 @@ void MapWidget::drawMission(Mission * mission) {
 
     /* Waypoints */
     drawPolyline(toQVariantList(mission->mission_waypoints.waypoints), QColor("blue"));
-    //for (int i = 0; i < mission->mission_waypoints.waypoints->size(); i++) {
-        //drawPoint(mission->mission_waypoints.waypoints->at(i).toVector2D(), QColor(0,0,50), 10);
+    for (int i = 0; i < mission->mission_waypoints.waypoints->size(); i++)
+        drawPoint(mission->mission_waypoints.waypoints->at(i).toVector2D(), QString::number(i+1),QColor(235,255,0), 10);
 
 
 }
