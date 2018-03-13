@@ -49,6 +49,7 @@ public:
     Style style;
 
     bool test_mission = true;
+    void keyPressEvent( QKeyEvent *k );
 
     ~MissionWidget();
 

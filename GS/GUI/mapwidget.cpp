@@ -60,7 +60,7 @@ void MapWidget::drawWaypoints(QList<QVector2D> * waypoints) {
     clearMap();
     drawPolyline(toQVariantList(waypoints), QColor("blue"));
     for (int i = 0; i < waypoints->size(); i++)
-        drawPoint(waypoints->at(i), QString::number(i+1),QColor(235,255,0), 10);
+        drawPoint(waypoints->at(i), QString::number(i+1),QColor(235,255,0), 30);
 }
 
 void MapWidget::drawMission(Mission * mission) {
@@ -87,11 +87,11 @@ void MapWidget::drawMission(Mission * mission) {
     drawPoint(mission->emergent_last_known_pos, "Emergent LK Pos", QColor(0,0,0));
 
     /* Waypoints */
-    drawPolyline(toQVariantList(mission->mission_waypoints.waypoints), QColor("blue"));
+    drawPolyline(toQVariantList(mission->mission_waypoints.waypoints), QColor("#bdc3c7"));
     for (int i = 0; i < mission->mission_waypoints.waypoints->size(); i++)
-        drawPoint(mission->mission_waypoints.waypoints->at(i).toVector2D(), QString::number(i+1),QColor(235,255,0), 10);
-
-
+        drawPoint(mission->mission_waypoints.waypoints->at(i).toVector2D(),
+                  QString::number(i+1),
+                  QColor("#2980b9"), 20);
 }
 
 void MapWidget::drawUAV(double lat, double lon, double heading) {
@@ -137,10 +137,10 @@ void MapWidget::updateUAVPosition(mavlink_gps_raw_int_t gps) {
     timer->setInterval(timeoutMS);
     uav_latitude = (double)gps.lat/10000000;
     uav_longitude = (double)gps.lon/10000000;
-    QString coords = QGeoCoordinate(uav_latitude, uav_longitude).toString(QGeoCoordinate::DegreesWithHemisphere);
-    this->rootObject()->setProperty("coords", QVariant(coords));
-    QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavPosition"), "updateUAVPosition",
-            Q_ARG(QVariant, coords));
+//    QString coords = QGeoCoordinate(uav_latitude, uav_longitude).toString(QGeoCoordinate::DegreesWithHemisphere);
+//    this->rootObject()->setProperty("coords", QVariant(coords));
+//    QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavPosition"), "updateUAVPosition",
+//            Q_ARG(QVariant, coords));
     if (updateUAVConstant) {
         updateUAV();
     }
@@ -152,10 +152,10 @@ void MapWidget::updateUAVPosition(mavlink_gps_raw_int_t gps) {
 
 void MapWidget::updateUAVHeading(mavlink_vfr_hud_t vfr) {
     uav_heading = vfr.heading;
-    QString heading = headingToCompass(uav_heading);
-    this->rootObject()->setProperty("heading", QVariant(heading));
-    QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavHeading"), "updateUAVHeading",
-               Q_ARG(QVariant, heading));
+//    QString heading = headingToCompass(uav_heading);
+//    this->rootObject()->setProperty("heading", QVariant(heading));
+//    QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavHeading"), "updateUAVHeading",
+//               Q_ARG(QVariant, heading));
 }
 
 QString MapWidget::headingToCompass(int heading) {

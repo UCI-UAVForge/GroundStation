@@ -5,7 +5,7 @@ import QtQuick.Controls 1.2 //QtQuick Components
 import QtQuick.Dialogs 1.1 //Dialogs
 import QtQuick.Controls.Styles 1.4
 import QtGraphicalEffects 1.0
-import QtLocation 5.6
+import QtLocation 5.9
 
 Rectangle {
     id: main
@@ -13,7 +13,6 @@ Rectangle {
     height:512
     visible: true
     objectName:"rect"
-    property alias coords: uavPosition.text
     property bool centerUAV
 
     Plugin {
@@ -25,6 +24,7 @@ Rectangle {
         id: map
         objectName:"map"
         anchors.fill: parent
+        antialiasing: true
         plugin: mapPlugin
         center: QtPositioning.coordinate(33.771175, -117.695560) //the place 38.14792, -76.427995            //(33.6405, -117.8443) // Irvine
         zoomLevel: 14
@@ -39,11 +39,14 @@ Rectangle {
         property var activeItemColor: "white";
         property bool armState : false;
 
+        Component {
+            id:wp;
+            Waypoint {}
+        }
         MouseArea {
             anchors.fill:parent;
             onClicked: {
                 map.setItemsInactive();
-                itemLabelRect.visible = false;
             }
         }
             MapPolyline {
@@ -51,19 +54,24 @@ Rectangle {
                 objectName: "uavPath";
                 line.width: 4;
                 line.color: "red";
+                smooth: true;
                 path: []
                 property var original_color: "red";
                 MouseArea {
                     anchors.fill:parent;
                     onClicked: {
-                        itemLabel.text = "UAV Path";
-                        itemLabelRect.visible = true;
+                        itemInfo.label = "UAV Path";
+                        itemInfo.visible = true;
                         map.setItemsInactive();
                         parent.line.color = map.activeItemColor;
                     }
                 }
             }
 
+       MissionPath {
+           id: missionPath
+           objectName: "missionPath"
+       }
 
         Component {
             id: mapMarker
@@ -84,23 +92,24 @@ Rectangle {
             id: mapLine
             MapPolyline {
                 objectName: "polyline";
-                line.width: 4
+                line.width: 6
                 property string label;
                 property var original_color;
                 antialiasing: true;
+                smooth: true;
+                opacity:0.7;
                 path: [];
                 MouseArea {
                     anchors.fill:parent;
                     onClicked: {
-                        itemLabel.text = label;
-                        itemLabelRect.visible = true;
+                        itemInfo.label = label;
+                        itemInfo.visible = true;
                         map.setItemsInactive();
                         parent.line.color = map.activeItemColor;
                     }
                 }
             }
         }
-
         Component {
             id: mapPolygon
             MapPolygon {
@@ -110,8 +119,9 @@ Rectangle {
                 MouseArea {
                     anchors.fill:parent;
                     onClicked: {
-                        itemLabel.text = label;
-                        itemLabelRect.visible = true;
+                        //areaInfo.visible = false;
+                        waypointInfo.label = label;
+                        waypointInfo.visible = true;
                         map.setItemsInactive();
                         parent.border.width = 2;
                         parent.border.color = map.activeItemColor;
@@ -121,43 +131,21 @@ Rectangle {
             }
         }
 
-        Component {
-            id: pointLabel;
-            MapQuickItem {
-                id: item;
-                property string label;
-                sourceItem: Text{
-                    text: label;
-                    color:"#242424"
-                    font.bold: true
-                    styleColor: "#ECECEC"
-                    style: Text.Outline
-                    antialiasing: true
-                }
-                antialiasing: true
-                anchorPoint: Qt.point(sourceItem.width/2, sourceItem.height/2)
-            }
-        }
-
         function drawPoint(point, label, color, radius) {
-            var p = mapMarker.createObject(map,
-                         {"center.latitude": point.x,
-                          "center.longitude" : point.y,
-                          "color" : color,
-                          "radius" : radius})
-            map.addMapItem(p);
-            var pl = pointLabel.createObject(map,
-                         {"label": label,
-                          "coordinate": QtPositioning.coordinate(point.x, point.y)})
-            map.addMapItem(pl);
+            var waypt = wp.createObject(map,
+                        {"r": radius, "pt_color": color,
+                         "label":label, "coordinate": QtPositioning.coordinate(point.x, point.y)});
+            map.addMapItem(waypt);
         }
 
         function drawPolyline(points, color) {
             var line = mapLine.createObject(map, {"original_color": color,"label": "Mission Path", "line.color": color})
             for (var i = 0; i < points.length; i++){
                  line.addCoordinate(QtPositioning.coordinate(points[i].x, points[i].y));
+                 missionPath.addCoordinate(QtPositioning.coordinate(points[i].x, points[i].y));
             }
-            map.addMapItem(line);
+            map.addMapItem(missionPath);
+            //map.addMapItem(line);
         }
 
         function drawPolygon(points, color, label) {
@@ -168,19 +156,18 @@ Rectangle {
             map.addMapItem(polygon);
         }
 
-        function changeMapInfoColor(color) {
-            for (var i=0;i<map.mapItems.length;i++)
-                if (map.mapItems[i].objectName === 'mapinfo')
-                    map.mapItems[i].uavsize -= 5;
-        }
-
         function setItemsInactive() {
+            waypointInfo.visible = false;
+            pathInfo.visible = false;
             for (var i=0;i<map.mapItems.length;i++) {
-                if (map.mapItems[i].objectName === 'polygon')
-                    map.mapItems[i].border.width = 0;
-                if (map.mapItems[i].objectName === 'polyline'
-                        || map.mapItems[i].objectName === 'uavPath') {
-                    map.mapItems[i].line.color = map.mapItems[i].original_color;
+                var item = map.mapItems[i];
+                var name = item.objectName;
+                if (name === 'point')
+                    item.sourceItem.border.width = 0;
+                if (name === 'polygon')
+                    item.border.width = 0;
+                if (name === 'polyline' || name === 'uavPath' || name === 'missionPath') {
+                    item.line.color = item.original_color;
                 }
             }
         }
@@ -199,47 +186,37 @@ Rectangle {
         }
 
         function drawUAV(lat, lon, heading) {
-            map.removeMapItem(plane);
-            plane.coordinate = QtPositioning.coordinate(lat, lon);
-            plane.rotation = heading;
+            map.removeMapItem(uav);
+            uavInfo.visible = true;
+            uav.coordinate = QtPositioning.coordinate(lat, lon);
+            uav.rotation = heading;
             if (armState) {
-                uavPath.addCoordinate(plane.coordinate);
+                uavPath.addCoordinate(uav.coordinate);
             }
-            map.addMapItem(plane);
+            map.addMapItem(uav);
         }
 
         function removeUAV() {
-            map.removeMapItem(plane)
-            uavHeading.text = ""
-            uavPosition.text = "No Data Received"
+            map.removeMapItem(uav)
+            uavInfo.visible = false;
         }
 
         function clearMap() {
+            clearPath(missionPath);
             map.clearMapItems();
         }
 
         function incUAVsize() {
-            plane.uavsize += 5;
+            uav.uavsize += 5;
         }
         function decUAVsize() {
-            plane.uavsize -= 5;
+            uav.uavsize -= 5;
         }
 
-        function clearUAVPath() {
-            while (uavPath.pathLength() > 0) {
-                uavPath.removeCoordinate(0);
+        function clearPath(path) {
+            while (path.pathLength() > 0) {
+                path.removeCoordinate(0);
             }
-        }
-
-        MapQuickItem{id:plane;
-                    objectName: 'plane'
-                    property int uavsize: 50
-                    anchorPoint.x: image.width/2;
-                    anchorPoint.y: image.height/2;
-                    sourceItem: Image {id:image;
-                                width:plane.uavsize;height:plane.uavsize;
-                                fillMode:Image.PreserveAspectFit
-                                source: "images/Plane.png"}
         }
     }
 
@@ -247,78 +224,38 @@ Rectangle {
         map: map
     }
 
-    Rectangle{
-        id: mapinfo
-        objectName: "mapInfo"
-        Text {
-            text: "UAV POSITION"
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: parent.top
-            color: "white"
-            font.bold: true
-            anchors.margins:5
-        }
+    UAV {
+        id:uav;
+    }
 
-        Text {
-            id: uavPosition
-            objectName: "uavPosition"
-            text: "No Data Received"
-            color: "white"
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.centerIn: parent
-            anchors.margins: 5
-            function updateUAVPosition(coords) {
-                uavPosition.text = coords;
-            }
-        }
-
-        Text {
-            id: uavHeading
-            objectName: "uavHeading"
-            text: ""
-            color: "white"
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.bottom: parent.bottom
-            anchors.margins: 5
-            function updateUAVHeading(heading) {
-                uavHeading.text = heading;
-            }
-        }
-
-        color: Qt.rgba(0, 0, 0, 0.55)
-        width: 200; height: 63;
-        anchors.top: parent.top
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.margins: 15
-        radius: 5
+    UAVInfo {
+        id:uavInfo;
+        visible: false;
+        label: "UAV Position"
         function toggleCenter(lat, lon) {
             centerUAV = centerUAV ? false:true;
-            mapinfo.color = centerUAV ? "#AA116611" : Qt.rgba(0, 0, 0, 0.55);
+            uavInfo.color = centerUAV ? "#AA116611" : Qt.rgba(0, 0, 0, 0.55);
         }
         TooltipArea {
             text: "Toggle focus on UAV"
-            onClicked: {mapinfo.toggleCenter()}
+            onClicked: {uavInfo.toggleCenter()}
         }
     }
 
-    Rectangle {
-        id: itemLabelRect;
-        width: 100;
-        height:30;
+    WaypointInfo {
+        id:waypointInfo;
         visible: false;
-        radius: 5;
-        Text {
-            anchors.centerIn: parent;
-            id:itemLabel;
-            color:"white";
-            font.bold: true;
+        TooltipArea {
+            text: "Click to center at waypoint"
+            onClicked: {map.center = waypointInfo.coord;}
         }
-        color: Qt.rgba(0,0,0,0.55);
-        anchors.horizontalCenter: parent.horizontalCenter;
-        anchors.bottom: parent.bottom;
-        anchors.margins: 15;
-
     }
+
+    PathInfo {
+        id: pathInfo;
+        visible: false;
+    }
+
     Rectangle {
         id: clearMapButton;
         width: 80;
@@ -338,10 +275,10 @@ Rectangle {
             text: "Clear map of all objects."
             onClicked: {
                 map.clearMap();
-                map.clearUAVPath();
+                map.clearPath(uavPath);
+                map.clearPath(missionPath);
             }
         }
     }
-
 }
 

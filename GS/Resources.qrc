@@ -46,7 +46,6 @@
         <file>res/asi/asi_hand.svg</file>
         <file>res/images/red_pin.png</file>
         <file>res/images/red_circle.png</file>
-        <file>res/marker.qml</file>
         <file>res/pfd/pfd.svg</file>
         <file>res/pfd/pfd_adi_back.svg</file>
         <file>res/pfd/pfd_adi_barh.svg</file>
@@ -88,5 +87,13 @@
         <file>res/test_obstacles.json</file>
         <file>res/TooltipArea.qml</file>
         <file>res/PlaneSettings.qml</file>
+        <file>res/Waypoint.qml</file>
+        <file>res/ItemInfo.qml</file>
+        <file>res/WaypointInfo.qml</file>
+        <file>res/PathInfo.qml</file>
+        <file>res/MissionPath.qml</file>
+        <file>res/Path.qml</file>
+        <file>res/UAVInfo.qml</file>
+        <file>res/UAV.qml</file>
     </qresource>
 </RCC>

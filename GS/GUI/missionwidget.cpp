@@ -172,6 +172,29 @@ void MissionWidget::getMissions(Interop * i) {
     }
 }
 
+void MissionWidget::keyPressEvent( QKeyEvent *k )
+{
+    switch ( k->key() )
+    {
+        case Qt::Key_Up:
+            qDebug() << "UP";
+            break;
+        case Qt::Key_Down:
+            qDebug() << "DOWN";
+            break;
+        case Qt::Key_Left:
+            qDebug() << "LEFT";
+            break;
+        case Qt::Key_Right:
+            qDebug() << "RIGHT";
+            break;
+    default:
+            qDebug() << k->key() << endl;
+            break;
+    }
+}
+
+
 // // *********************************  // //
 // // *** Test JSON Files Retrieval ***  // //
 // // *********************************  // //
@@ -223,3 +246,5 @@ MissionWidget::~MissionWidget()
 {
     delete ui;
 }
+
+
