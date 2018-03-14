@@ -37,6 +37,7 @@ Rectangle {
                 }
 
         property var activeItemColor: "white";
+        property var waypoints : [];
         property bool armState : false;
 
         Component {
@@ -133,9 +134,16 @@ Rectangle {
 
         function drawPoint(point, label, color, radius) {
             var waypt = wp.createObject(map,
-                        {"r": radius, "pt_color": color,
+                        {"r": radius, "pt_color": color, "objectName": label,
                          "label":label, "coordinate": QtPositioning.coordinate(point.x, point.y)});
+            waypoints.push(waypt);
             map.addMapItem(waypt);
+        }
+
+        function destroyWaypoints() {
+            while (waypoints.length > 0) {
+                waypoints.pop().destroy();
+            }
         }
 
         function drawPolyline(points, color) {
@@ -159,11 +167,13 @@ Rectangle {
         function setItemsInactive() {
             waypointInfo.visible = false;
             pathInfo.visible = false;
+            for (var i=0; i < waypoints.length; i++) {
+               waypoints[i].sourceItem.border.width = 0;
+            }
+
             for (var i=0;i<map.mapItems.length;i++) {
                 var item = map.mapItems[i];
                 var name = item.objectName;
-                if (name === 'point')
-                    item.sourceItem.border.width = 0;
                 if (name === 'polygon')
                     item.border.width = 0;
                 if (name === 'polyline' || name === 'uavPath' || name === 'missionPath') {
@@ -202,6 +212,7 @@ Rectangle {
         }
 
         function clearMap() {
+            destroyWaypoints();
             clearPath(missionPath);
             map.clearMapItems();
         }
@@ -217,6 +228,11 @@ Rectangle {
             while (path.pathLength() > 0) {
                 path.removeCoordinate(0);
             }
+        }
+
+        function clearMissionPath() {
+            clearPath(missionPath);
+            destroyWaypoints();
         }
     }
 

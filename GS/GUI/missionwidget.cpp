@@ -20,6 +20,9 @@ MissionWidget::MissionWidget(QWidget *parent) :
     connect(ui->clearButton, &QPushButton::clicked, this, &MissionWidget::clearButtonClicked);
     connect(ui->missionList, SIGNAL(currentIndexChanged(int)), this, SLOT(updateInteropMission(int)));
 
+    connect(ui->interopMission, &MissionTable::selectWaypoint, this, &MissionWidget::selectWaypoint);
+    connect(ui->interopMission, &MissionTable::moveWaypoint, this, &MissionWidget::moveWaypoint);
+
     foreach(QPushButton * p, this->findChildren<QPushButton*>()) {
         if (p->objectName() == "clearButton") {
             style.setButtonOff(p);
@@ -39,7 +42,7 @@ MissionWidget::MissionWidget(QWidget *parent) :
 
 
         QStandardItemModel * test_mission_model = createMissionModel(missions->at(ui->missionList->currentIndex()));
-        setTableModel(ui->interopMission, test_mission_model);
+        ui->interopMission->setTableModel(test_mission_model);
     }
 }
 
@@ -98,8 +101,28 @@ void MissionWidget::loadMission() {
 
         // Test
         QStandardItemModel * intmodel = createMissionModel(interopMission);
-        setTableModel(ui->interopMission, intmodel);
+        ui->interopMission->setTableModel(intmodel);
     }
+}
+
+void MissionWidget::moveWaypoint(int wpNum, int key) {
+    QVector3D wp = interopMission->mission_waypoints.waypoints->at(wpNum);
+    switch (key) {
+        case Qt::Key_Up:
+            wp.setX(wp.x()+0.0001);
+        break;
+        case Qt::Key_Down:
+            wp.setX(wp.x()-0.0001);
+        break;
+        case Qt::Key_Left:
+            wp.setY(wp.y()-0.0001);
+        break;
+        case Qt::Key_Right:
+            wp.setY(wp.y()+0.0001);
+        break;
+    }
+    interopMission->mission_waypoints.waypoints->replace(wpNum, wp);
+    emit(moveWaypointSignal(wpNum, wp));
 }
 
 void MissionWidget::setTableModel(QTableView * tableView, QStandardItemModel * model) {
@@ -148,13 +171,21 @@ void MissionWidget::writeMissionsStatus(bool success) {
 QStandardItemModel * MissionWidget::createMissionModel(Mission * mission) {
     QList<QVector3D> * waypoints = mission->mission_waypoints.waypoints;
     QStandardItemModel *model = new QStandardItemModel;
-    model->setHorizontalHeaderLabels(QList<QString>({"LAT,LON", " ALT ", " CMD "}));
+    model->setHorizontalHeaderLabels(QList<QString>({"CMD", " ALT ", " CMD# "}));
     for (int i = 0; i < waypoints->size(); i++) {
-        QString coords = QGeoCoordinate(waypoints->at(i).x(), waypoints->at(i).y()).toString(QGeoCoordinate::DegreesWithHemisphere);
-        QStandardItem * latlng = new QStandardItem(coords);
+       // QString coords = QGeoCoordinate(waypoints->at(i).x(), waypoints->at(i).y()).toString(QGeoCoordinate::DegreesWithHemisphere);
+        QString act;
+        switch (mission->mission_waypoints.actions->at(i)) {
+            case 16:
+                act = "Waypoint";
+            break;
+        case 22:
+                act = "Takeoff";
+        }
+        QStandardItem * action = new QStandardItem(act);
         QStandardItem * alt = new QStandardItem(QString("%0 m.").arg(waypoints->at(i).z()));
-        QStandardItem * action = new QStandardItem(QString("%0").arg(mission->mission_waypoints.actions->at(i)));
-        QList<QStandardItem*> row({latlng, alt, action});
+        QStandardItem * actionNum = new QStandardItem(QString("%0").arg(mission->mission_waypoints.actions->at(i)));
+        QList<QStandardItem*> row({action, alt, actionNum});
         for (int j = 0; j < row.size(); j++) {
             row.at(j)->setTextAlignment(Qt::AlignCenter);
         }
@@ -169,28 +200,6 @@ void MissionWidget::getMissions(Interop * i) {
         missions->append(new Mission(interopMissions.at(j).toObject()));
         ui->missionList->addItem("Mission " + QString::number(j+1));
         ui->missionList->setItemData(j, Qt::AlignCenter, Qt::TextAlignmentRole);
-    }
-}
-
-void MissionWidget::keyPressEvent( QKeyEvent *k )
-{
-    switch ( k->key() )
-    {
-        case Qt::Key_Up:
-            qDebug() << "UP";
-            break;
-        case Qt::Key_Down:
-            qDebug() << "DOWN";
-            break;
-        case Qt::Key_Left:
-            qDebug() << "LEFT";
-            break;
-        case Qt::Key_Right:
-            qDebug() << "RIGHT";
-            break;
-    default:
-            qDebug() << k->key() << endl;
-            break;
     }
 }
 
@@ -238,7 +247,7 @@ QJsonDocument MissionWidget::testReadJSON_obstacle() {
 
 void MissionWidget::updateInteropMission(int index) {
     QStandardItemModel * missionModel= createMissionModel(missions->at(index));
-    setTableModel(ui->interopMission, missionModel);
+    ui->interopMission->setTableModel(missionModel);
     interopMission = missions->at(index);
 }
 

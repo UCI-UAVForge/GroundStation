@@ -67,7 +67,7 @@ QTableView {
    <item row="2" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab">
       <attribute name="title">
@@ -75,9 +75,12 @@ QTableView {
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
-        <widget class="QTableView" name="interopMission">
+        <widget class="MissionTable" name="interopMission">
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="tabKeyNavigation">
+          <bool>true</bool>
          </property>
          <property name="textElideMode">
           <enum>Qt::ElideMiddle</enum>
@@ -254,6 +257,13 @@ QTableView {
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MissionTable</class>
+   <extends>QTableView</extends>
+   <header location="global">missiontable.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -68,6 +68,8 @@ public:
 public slots:
     void updateUAVPosition(mavlink_gps_raw_int_t gps);
     void updateUAVHeading(mavlink_vfr_hud_t vfr);
+    void selectWaypoint(int wpNum);
+    void moveWaypoint(int wpNum, QVector3D coords);
 };
 
 #endif // MAPWIDGET_H

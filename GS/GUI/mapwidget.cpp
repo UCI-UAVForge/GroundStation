@@ -10,6 +10,17 @@ MapWidget::MapWidget(QWidget *parent) : QQuickWidget(parent) {
     connect(timer, &QTimer::timeout, this, &MapWidget::timeout);
 }
 
+void MapWidget::moveWaypoint(int wpNum, QVector3D newCoords) {
+    QObject * wp = this->rootObject()->findChild<QObject*>(QString::number(wpNum+1));
+    QMetaObject::invokeMethod(wp, "moveTo",
+         Q_ARG(QVariant, newCoords));
+}
+
+void MapWidget::selectWaypoint(int wpNum) {
+     QObject * wp = this->rootObject()->findChild<QObject*>(QString::number(wpNum+1));
+     QMetaObject::invokeMethod(wp, "setActive");
+}
+
 void MapWidget::drawPoint(QVector2D point, QString label, QColor color, int radius) {
     QMetaObject::invokeMethod(map, "drawPoint",
             Q_ARG(QVariant, point),

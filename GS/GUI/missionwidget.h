@@ -49,7 +49,6 @@ public:
     Style style;
 
     bool test_mission = true;
-    void keyPressEvent( QKeyEvent *k );
 
     ~MissionWidget();
 
@@ -62,10 +61,14 @@ signals:
     void writeMissionsSignal(QVector<Waypoint::WP> waypoints, uint16_t size);
     void clearMap();
 
+    void selectWaypoint(int wpNum);
+    void moveWaypointSignal(int wpNum, QVector3D newCoord);
+
 public slots:
     void readMissions(Waypoint::WP * waypoints, uint16_t size);
     void writeMissionsStatus(bool success);
     void updateInteropMission(int index);
+    void moveWaypoint(int wpNum, int key);
 
 private:
     void testOutputJSON(QJsonObject o, int i);
