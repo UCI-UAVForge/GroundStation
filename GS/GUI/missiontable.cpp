@@ -22,21 +22,31 @@ void MissionTable::setTableModel(QStandardItemModel * model) {
 
 
 void MissionTable::selectChanged(const QItemSelection & selected, const QItemSelection & deselected) {
-    current = selected.indexes().at(0).row();
-    emit(selectWaypoint(selected.indexes().at(0).row()));
-    qDebug() << current;
+    if (selected.indexes().length() > 0) {
+        current = selected.indexes().at(0).row();
+        emit(selectWaypoint(current));
+    }
 }
 
+void MissionTable::focusInEvent(QFocusEvent* e) {
+    emit(editMode(true));
+}
+void MissionTable::focusOutEvent(QFocusEvent *event) {
+    selectionModel()->clearSelection();
+    emit(editMode(false));
+}
 
 void MissionTable::keyPressEvent( QKeyEvent *k ) {
-    int selectedRow = selectionModel()->selectedRows(0).at(0).row();
-    if (k->key() == Qt::Key_Tab) {
-        int nextRow = selectedRow + 1;
-        if (nextRow >= model()->rowCount()) {
-            nextRow = 0;
+    if (selectionModel()->selectedRows(0).length() > 0) {
+        int selectedRow = selectionModel()->selectedRows(0).at(0).row();
+        if (k->key() == Qt::Key_Tab) {
+            int nextRow = selectedRow + 1;
+            if (nextRow >= model()->rowCount()) {
+                nextRow = 0;
+            }
+            selectionModel()->select(model()->index(nextRow, 0),
+                                     QItemSelectionModel::ClearAndSelect|QItemSelectionModel::Rows );
         }
-        selectionModel()->select(model()->index(nextRow, 0),
-                                 QItemSelectionModel::ClearAndSelect|QItemSelectionModel::Rows );
+        emit(moveWaypoint(current, k->key()));
     }
-    emit(moveWaypoint(current, k->key()));
 }

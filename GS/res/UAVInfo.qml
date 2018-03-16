@@ -4,7 +4,6 @@ ItemInfo {
     width: 155; height: 80;
     anchors.right: parent.right;
     anchors.top: parent.top;
-    anchors.margins: 15;
     Item {
         anchors.fill: parent;
         Column {

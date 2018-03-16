@@ -10,15 +10,36 @@ MapWidget::MapWidget(QWidget *parent) : QQuickWidget(parent) {
     connect(timer, &QTimer::timeout, this, &MapWidget::timeout);
 }
 
+
+
 void MapWidget::moveWaypoint(int wpNum, QVector3D newCoords) {
-    QObject * wp = this->rootObject()->findChild<QObject*>(QString::number(wpNum+1));
+    QObject * wp = this->rootObject()->findChild<QObject*>(QString::number(wpNum));
     QMetaObject::invokeMethod(wp, "moveTo",
          Q_ARG(QVariant, newCoords));
 }
 
 void MapWidget::selectWaypoint(int wpNum) {
-     QObject * wp = this->rootObject()->findChild<QObject*>(QString::number(wpNum+1));
+     QObject * wp = this->rootObject()->findChild<QObject*>(QString::number(wpNum));
      QMetaObject::invokeMethod(wp, "setActive");
+}
+
+void MapWidget::addWaypoint(QVector3D point, int wpNum, QColor color, int radius) {
+    QMetaObject::invokeMethod(map, "addWaypoint",
+            Q_ARG(QVariant, point),
+            Q_ARG(QVariant, wpNum),
+            Q_ARG(QVariant, color),
+            Q_ARG(QVariant, radius));
+}
+
+void MapWidget::addMissionPath(Mission * mission) {
+    QList<QVector3D> * waypoints = mission->mission_waypoints.waypoints;
+    QMetaObject::invokeMethod(map, "addMissionPath", Q_ARG(QVariant, toQVariantList(waypoints)));
+    for (int i = 0; i < waypoints->size(); i++)
+        addWaypoint(waypoints->at(i), i, QColor("#2980b9"), 20);
+}
+
+void MapWidget::changeEditMode(bool editing) {
+    QMetaObject::invokeMethod(map, "changeEditMode", Q_ARG(QVariant, editing));
 }
 
 void MapWidget::drawPoint(QVector2D point, QString label, QColor color, int radius) {
@@ -98,11 +119,7 @@ void MapWidget::drawMission(Mission * mission) {
     drawPoint(mission->emergent_last_known_pos, "Emergent LK Pos", QColor(0,0,0));
 
     /* Waypoints */
-    drawPolyline(toQVariantList(mission->mission_waypoints.waypoints), QColor("#bdc3c7"));
-    for (int i = 0; i < mission->mission_waypoints.waypoints->size(); i++)
-        drawPoint(mission->mission_waypoints.waypoints->at(i).toVector2D(),
-                  QString::number(i+1),
-                  QColor("#2980b9"), 20);
+    addMissionPath(mission);
 }
 
 void MapWidget::drawUAV(double lat, double lon, double heading) {
@@ -148,10 +165,6 @@ void MapWidget::updateUAVPosition(mavlink_gps_raw_int_t gps) {
     timer->setInterval(timeoutMS);
     uav_latitude = (double)gps.lat/10000000;
     uav_longitude = (double)gps.lon/10000000;
-//    QString coords = QGeoCoordinate(uav_latitude, uav_longitude).toString(QGeoCoordinate::DegreesWithHemisphere);
-//    this->rootObject()->setProperty("coords", QVariant(coords));
-//    QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavPosition"), "updateUAVPosition",
-//            Q_ARG(QVariant, coords));
     if (updateUAVConstant) {
         updateUAV();
     }
@@ -163,10 +176,6 @@ void MapWidget::updateUAVPosition(mavlink_gps_raw_int_t gps) {
 
 void MapWidget::updateUAVHeading(mavlink_vfr_hud_t vfr) {
     uav_heading = vfr.heading;
-//    QString heading = headingToCompass(uav_heading);
-//    this->rootObject()->setProperty("heading", QVariant(heading));
-//    QMetaObject::invokeMethod(this->rootObject()->findChild<QObject*>("uavHeading"), "updateUAVHeading",
-//               Q_ARG(QVariant, heading));
 }
 
 QString MapWidget::headingToCompass(int heading) {

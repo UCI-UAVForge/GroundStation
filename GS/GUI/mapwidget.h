@@ -38,6 +38,10 @@ public:
     explicit MapWidget(QWidget * parent = nullptr);
     QObject * map;
     QList<QVector3D> * uavPath;
+
+    void addWaypoint(QVector3D point, int wpNum, QColor color, int radius);
+    void addMissionPath(Mission * mission);
+
     void drawPoint(QVector2D point, QString label, QColor color, int radius = 20);
     void drawPolyline(QVariantList points, QColor color);
     void drawPolyline(QList<QVector3D> * points, QColor color);
@@ -70,6 +74,7 @@ public slots:
     void updateUAVHeading(mavlink_vfr_hud_t vfr);
     void selectWaypoint(int wpNum);
     void moveWaypoint(int wpNum, QVector3D coords);
+    void changeEditMode(bool editing);
 };
 
 #endif // MAPWIDGET_H

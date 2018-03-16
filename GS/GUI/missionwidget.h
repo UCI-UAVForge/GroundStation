@@ -62,6 +62,7 @@ signals:
     void clearMap();
 
     void selectWaypoint(int wpNum);
+    void editMode(bool editing);
     void moveWaypointSignal(int wpNum, QVector3D newCoord);
 
 public slots:

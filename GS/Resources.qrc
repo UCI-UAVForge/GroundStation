@@ -95,5 +95,8 @@
         <file>res/Path.qml</file>
         <file>res/UAVInfo.qml</file>
         <file>res/UAV.qml</file>
+        <file>res/UAVPath.qml</file>
+        <file>res/Point.qml</file>
+        <file>res/PointInfo.qml</file>
     </qresource>
 </RCC>

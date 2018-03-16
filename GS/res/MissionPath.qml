@@ -14,6 +14,7 @@ MapPolyline {
         anchors.fill:parent;
         onClicked: {
             map.setItemsInactive();
+            map.prevSelection = parent;
             pathInfo.visible = true;
             pathInfo.label = "Mission Path";
             pathInfo.distance = distance;

@@ -39,77 +39,38 @@ Rectangle {
         property var activeItemColor: "white";
         property var waypoints : [];
         property bool armState : false;
+        property var prevSelection;
+        property var prevWaypoint;
 
-        Component {
-            id:wp;
-            Waypoint {}
-        }
         MouseArea {
             anchors.fill:parent;
             onClicked: {
                 map.setItemsInactive();
             }
         }
-            MapPolyline {
-                id: uavPath;
-                objectName: "uavPath";
-                line.width: 4;
-                line.color: "red";
-                smooth: true;
-                path: []
-                property var original_color: "red";
-                MouseArea {
-                    anchors.fill:parent;
-                    onClicked: {
-                        itemInfo.label = "UAV Path";
-                        itemInfo.visible = true;
-                        map.setItemsInactive();
-                        parent.line.color = map.activeItemColor;
-                    }
-                }
-            }
+
+       UAVPath {
+           id: uavPath;
+       }
 
        MissionPath {
            id: missionPath
            objectName: "missionPath"
        }
 
+       Component {
+           id: wp
+           Waypoint {}
+       }
+
         Component {
-            id: mapMarker
-            MapCircle {
-                objectName: "marker"
-                border.width: 0
-                antialiasing: true
-                MouseArea {
-                    anchors.fill:parent;
-                    onClicked: {
-                        map.setItemsInactive();
-                    }
-                }
-            }
+            id:pt
+            Point{}
         }
 
         Component {
             id: mapLine
-            MapPolyline {
-                objectName: "polyline";
-                line.width: 6
-                property string label;
-                property var original_color;
-                antialiasing: true;
-                smooth: true;
-                opacity:0.7;
-                path: [];
-                MouseArea {
-                    anchors.fill:parent;
-                    onClicked: {
-                        itemInfo.label = label;
-                        itemInfo.visible = true;
-                        map.setItemsInactive();
-                        parent.line.color = map.activeItemColor;
-                    }
-                }
-            }
+            Path {}
         }
         Component {
             id: mapPolygon
@@ -132,10 +93,18 @@ Rectangle {
             }
         }
 
-        function drawPoint(point, label, color, radius) {
+        function addMissionPath(points) {
+            clearMissionPath();
+            for (var i = 0; i < points.length; i++){
+                 missionPath.addCoordinate(QtPositioning.coordinate(points[i].x, points[i].y));
+            }
+            map.addMapItem(missionPath);
+        }
+
+        function addWaypoint(point, wpNum, color, radius) {
             var waypt = wp.createObject(map,
-                        {"r": radius, "pt_color": color, "objectName": label,
-                         "label":label, "coordinate": QtPositioning.coordinate(point.x, point.y)});
+                        {"r": radius, "pt_color": color, "objectName": wpNum,
+                         "label":parseInt(wpNum)+1, "coordinate": QtPositioning.coordinate(point.x, point.y)});
             waypoints.push(waypt);
             map.addMapItem(waypt);
         }
@@ -146,14 +115,19 @@ Rectangle {
             }
         }
 
+        function drawPoint(coords, label, color, radius) {
+            var point = pt.createObject(map,
+                        {"r": radius, "pt_color": color,
+                         "label":label, "coordinate": QtPositioning.coordinate(coords.x, coords.y)});
+            map.addMapItem(point);
+        }
+
         function drawPolyline(points, color) {
             var line = mapLine.createObject(map, {"original_color": color,"label": "Mission Path", "line.color": color})
             for (var i = 0; i < points.length; i++){
                  line.addCoordinate(QtPositioning.coordinate(points[i].x, points[i].y));
-                 missionPath.addCoordinate(QtPositioning.coordinate(points[i].x, points[i].y));
             }
-            map.addMapItem(missionPath);
-            //map.addMapItem(line);
+            map.addMapItem(line);
         }
 
         function drawPolygon(points, color, label) {
@@ -167,19 +141,24 @@ Rectangle {
         function setItemsInactive() {
             waypointInfo.visible = false;
             pathInfo.visible = false;
-            for (var i=0; i < waypoints.length; i++) {
-               waypoints[i].sourceItem.border.width = 0;
-            }
-
-            for (var i=0;i<map.mapItems.length;i++) {
-                var item = map.mapItems[i];
-                var name = item.objectName;
+            pointInfo.visible = false;
+            if (prevSelection != null) {
+                var name = prevSelection.objectName;
+                if (name === 'point')
+                    prevSelection.sourceItem.border.width = 0;
                 if (name === 'polygon')
-                    item.border.width = 0;
+                    prevSelection.border.width = 0;
                 if (name === 'polyline' || name === 'uavPath' || name === 'missionPath') {
-                    item.line.color = item.original_color;
+                    prevSelection.line.color = prevSelection.original_color;
                 }
             }
+            if (prevWaypoint != null) {
+                prevWaypoint.sourceItem.border.width = 0;
+            }
+        }
+
+        function changeEditMode(editing) {
+            edit.visible = editing;
         }
 
         function updateArmState(state) {
@@ -244,6 +223,16 @@ Rectangle {
         id:uav;
     }
 
+    ItemInfo {
+        id: edit;
+        color: "orange"
+        width: 80; height: 27;
+        anchors.horizontalCenter: parent.horizontalCenter;
+        anchors.top: parent.top;
+        visible: false;
+        label: "Edit Mode"
+    }
+
     UAVInfo {
         id:uavInfo;
         visible: false;
@@ -255,6 +244,15 @@ Rectangle {
         TooltipArea {
             text: "Toggle focus on UAV"
             onClicked: {uavInfo.toggleCenter()}
+        }
+    }
+
+    PointInfo {
+        id:pointInfo;
+        visible: false;
+        TooltipArea {
+            text: "Click to center at point"
+            onClicked: {map.center = pointInfo.coord;}
         }
     }
 
@@ -272,21 +270,11 @@ Rectangle {
         visible: false;
     }
 
-    Rectangle {
+    ItemInfo {
         id: clearMapButton;
-        width: 80;
-        height:30;
-        radius: 5;
-        Text {
-            anchors.centerIn: parent;
-            text: "Clear Map";
-            color:"white";
-            font.bold: true;
-        }
-        color: Qt.rgba(0,0,0,0.55);
-        anchors.bottom: parent.bottom
-        anchors.left: parent.left
-        anchors.margins: 15;
+        width: 80; height:30;
+        anchors.bottom: parent.bottom; anchors.left: parent.left;
+        label: "Clear Map";
         TooltipArea {
             text: "Clear map of all objects."
             onClicked: {

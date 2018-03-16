@@ -22,6 +22,7 @@ MissionWidget::MissionWidget(QWidget *parent) :
 
     connect(ui->interopMission, &MissionTable::selectWaypoint, this, &MissionWidget::selectWaypoint);
     connect(ui->interopMission, &MissionTable::moveWaypoint, this, &MissionWidget::moveWaypoint);
+    connect(ui->interopMission, &MissionTable::editMode, this, &MissionWidget::editMode);
 
     foreach(QPushButton * p, this->findChildren<QPushButton*>()) {
         if (p->objectName() == "clearButton") {
@@ -97,7 +98,8 @@ void MissionWidget::loadMission() {
         generatedMission->setActions_wp();
 
         QStandardItemModel * genmodel = createMissionModel(generatedMission);
-        setTableModel(ui->generatedMission, genmodel);
+        //setTableModel(ui->generatedMission, genmodel);
+        ui->generatedMission->setTableModel(genmodel);
 
         // Test
         QStandardItemModel * intmodel = createMissionModel(interopMission);

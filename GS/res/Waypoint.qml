@@ -3,27 +3,27 @@ import QtLocation 5.9
 import QtPositioning 5.8
 
 MapQuickItem {
-        id: waypoint
-        objectName: "point"
+        id: waypoint;
         property string label;
         property int r;
         property string pt_color;
 
         function moveTo(newCoord) {
             waypoint.coordinate = QtPositioning.coordinate(newCoord.x, newCoord.y);
-            missionPath.replaceCoordinate(parseInt(label)-1, waypoint.coordinate);
+            missionPath.replaceCoordinate(parseInt(objectName), waypoint.coordinate);
             setActive();
         }
 
         function setActive(){
             var coord = waypoint.coordinate.toString().split(",");
-            var nextCoord = missionPath.coordinateAt(parseInt(label));
+            var nextCoord = missionPath.coordinateAt(parseInt(objectName)+1);
             waypointInfo.label = "Waypoint #" + label;
             waypointInfo.coord = waypoint.coordinate;
             waypointInfo.lat = coord[0];
             waypointInfo.lon = coord[1];
             waypointInfo.heading = waypoint.coordinate.azimuthTo(nextCoord);
             map.setItemsInactive();
+            map.prevWaypoint = waypoint;
             waypointInfo.visible = true;
             pt.border.width = 2;
             pt.border.color = map.activeItemColor;

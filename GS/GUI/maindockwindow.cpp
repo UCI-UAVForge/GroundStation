@@ -54,6 +54,7 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     connect(ui->missionWidget, &MissionWidget::drawWaypoints, ui->mapWidget, &MapWidget::drawWaypoints);
     connect(ui->missionWidget, &MissionWidget::selectWaypoint, ui->mapWidget, &MapWidget::selectWaypoint);
     connect(ui->missionWidget, &MissionWidget::moveWaypointSignal, ui->mapWidget, &MapWidget::moveWaypoint);
+    connect(ui->missionWidget, &MissionWidget::editMode, ui->mapWidget, &MapWidget::changeEditMode);
 }
 
 void MainDockWindow::addToolBarButtons() {
