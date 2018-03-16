@@ -20,10 +20,12 @@ MissionWidget::MissionWidget(QWidget *parent) :
     connect(ui->clearButton, &QPushButton::clicked, this, &MissionWidget::clearButtonClicked);
     connect(ui->missionList, SIGNAL(currentIndexChanged(int)), this, SLOT(updateInteropMission(int)));
 
-    connect(ui->interopMission, &MissionTable::selectWaypoint, this, &MissionWidget::selectWaypoint);
-    connect(ui->interopMission, &MissionTable::moveWaypoint, this, &MissionWidget::moveWaypoint);
-    connect(ui->interopMission, &MissionTable::editMode, this, &MissionWidget::editMode);
 
+    foreach(MissionTable * table, this->findChildren<MissionTable*>()) {
+        connect(table, &MissionTable::selectWaypoint, this, &MissionWidget::selectWaypoint);
+        connect(table, &MissionTable::moveWaypoint, this, &MissionWidget::moveWaypoint);
+        connect(table, &MissionTable::editMode, this, &MissionWidget::editMode);
+    }
     foreach(QPushButton * p, this->findChildren<QPushButton*>()) {
         if (p->objectName() == "clearButton") {
             style.setButtonOff(p);
