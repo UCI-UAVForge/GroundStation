@@ -92,7 +92,7 @@ void MapWidget::drawWaypoints(QList<QVector2D> * waypoints) {
     clearMap();
     drawPolyline(toQVariantList(waypoints), QColor("blue"));
     for (int i = 0; i < waypoints->size(); i++)
-        drawPoint(waypoints->at(i), QString::number(i+1),QColor(235,255,0), 30);
+        drawPoint(waypoints->at(i), QString::number(i),QColor(235,255,0), 30);
 }
 
 void MapWidget::drawMission(Mission * mission) {

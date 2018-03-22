@@ -9,7 +9,7 @@
 #include "mavlink.h"
 #include "link.h"
 #include <QObject>
-#include "wyp.h"
+#include "waypoint.h"
 #include "obstacles.h"
 
 #include "point.hpp"

@@ -29,7 +29,7 @@
 #include "qfiwidget.h"
 #include "messagewidget.h"
 #include "seriallink.h"
-#include "wyp.h"
+#include "waypoint.h"
 #include "encoder.h"
 #include "tcplink.h"
 #include "udplink.h"

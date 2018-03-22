@@ -82,8 +82,6 @@ void Decoder::parseMessage(mavlink_message_t msg) {
         case MAVLINK_MSG_ID_MISSION_ITEM: //39
             mavlink_mission_item_t mission_item;
             mavlink_msg_mission_item_decode(&msg, &mission_item);
-            qDebug() << "! ** decoder mission";
-            qDebug() << mission_item.x << mission_item.y << mission_item.z << mission_item.seq;
             emit(missionItemReceived(mission_item));
         break;
         case MAVLINK_MSG_ID_MISSION_REQUEST: //40
@@ -94,7 +92,6 @@ void Decoder::parseMessage(mavlink_message_t msg) {
             mavlink_mission_current_t mcurrent;
             mavlink_msg_mission_current_decode(&msg, &mcurrent);
             emit(missionCurrentReceived(mcurrent));
-//            qDebug() << "decoder.cpp::currentMission->" << mcurrent.seq;
         break;
         case MAVLINK_MSG_ID_MISSION_COUNT: //44
             mavlink_mission_count_t mcount;
@@ -224,21 +221,6 @@ void Decoder::parseMessage(mavlink_message_t msg) {
             mavlink_msg_highres_imu_decode(&msg, &hrimu);
             emit(hrimu);
         break;
-        // Not received from Pixhawk
-//        case MAVLINK_MSG_ID_SCALED_IMU: //26
-//            mavlink_raw_imu_t imu;
-//            mavlink_msg_raw_imu_decode(&msg, &imu);
-//        break;
-//        case MAVLINK_MSG_ID_MISSION_CLEAR_ALL: //45
-//            mavlink_mission_clear_all_t mission_clear_all;
-//            mavlink_msg_mission_clear_all_decode(&msg, &mission_clear_all);
-//            emit(mClearAllReceived(mission_clear_all));
-//        break;
-//        case MAVLINK_MSG_ID_BATTERY_STATUS: //147
-//            mavlink_battery_status_t battery;
-//            mavlink_msg_battery_status_decode(&msg, &battery);
-//            emit(batteryReceived(battery));
-//        break;
         default:
 //            qDebug() << "!*** Message not supported::msgid=" << msg.msgid << "***!";
             break;

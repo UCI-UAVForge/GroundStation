@@ -1,4 +1,4 @@
-#include "wyp.h"
+#include "waypoint.h"
 #include <QDebug>
 
 /*
@@ -7,12 +7,7 @@
  * Default number of ms for timeout = 50
 */
 
-// TODO: set current waypoint!
-
-Waypoint::Waypoint() {
-
-
-}
+Waypoint::Waypoint() {}
 
 // Public
 
@@ -74,6 +69,7 @@ void Waypoint::writeWaypoints(const QVector<WP>& waypoints, uint16_t size) {
 }
 
 void Waypoint::readWaypointsList() {
+    // * Bug: Still receive missions in multiples of 5
     nPoints = 0;
     countFlag = true;
 
@@ -105,10 +101,25 @@ void Waypoint::readWaypointsList() {
     emit(sendAck(0));
     emit(waypointsReceived(waypoints, nPoints)); // Successful read
 }
-/*
- * Problem: Waypoint read will still receive mission items even when there
- * is no mission request. First mission it receives is its current position
-*/
+
+void Waypoint::setCurrentWaypoint(uint16_t index) {
+    setCurrentWaypointFlag = false;
+    setCurrentIndex = index;
+    for (short i = 0;i < numAttempts && !setCurrentWaypointFlag; i++) {
+        if (i > 0) qDebug() << "Count request failed.. Retry attempt" << i+1;
+        emit(sendWPSetCurrent(index));
+        pause();
+    }
+    if (!setCurrentWaypointFlag) {
+        // didn't work
+        qDebug() << "Waypoint set current didn't worked";
+    }
+    else {
+        // it worked
+        qDebug() << "Waypoint set current worked";
+        setCurrentIndex = UINT16_MAX;
+    }
+}
 
 // Private and Signaling
 
@@ -198,4 +209,9 @@ void Waypoint::updateMissionCount(mavlink_mission_count_t mCount) {
 //    qDebug() << "! * update mission count" << mCount.count;
     nPoints = mCount.count;
     countFlag = false;
+}
+
+void Waypoint::updateCurrent(mavlink_mission_current_t curr) {
+    if (curr.seq == setCurrentIndex)
+        setCurrentWaypointFlag = true;
 }

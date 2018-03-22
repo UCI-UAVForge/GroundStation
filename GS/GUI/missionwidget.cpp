@@ -13,12 +13,14 @@ MissionWidget::MissionWidget(QWidget *parent) :
     ui->missionList->setEditable(true);
     ui->missionList->lineEdit()->setReadOnly(true);
     ui->missionList->lineEdit()->setAlignment(Qt::AlignCenter);
-    connect(ui->loadButton, &QPushButton::clicked, this, &MissionWidget::loadMission);
-    connect(ui->drawButton, &QPushButton::clicked, this, &MissionWidget::drawCurrentMission);
+    ui->setCurrentValue->setRange(0,0);
+    connect(ui->generateButton, &QPushButton::clicked, this, &MissionWidget::generateMission);
     connect(ui->writeButton, &QPushButton::clicked, this, &MissionWidget::writeButtonClicked);
     connect(ui->readButton, &QPushButton::clicked, this, &MissionWidget::readButtonClicked);
     connect(ui->clearButton, &QPushButton::clicked, this, &MissionWidget::clearButtonClicked);
+    connect(ui->setCurrentButton, &QPushButton::clicked, this, &MissionWidget::setCurrentButtonClicked);
     connect(ui->missionList, SIGNAL(currentIndexChanged(int)), this, SLOT(updateInteropMission(int)));
+    connect(ui->tabWidget, SIGNAL(tabBarClicked(int)), this, SLOT(updateDraw(int)));
 
 
     foreach(MissionTable * table, this->findChildren<MissionTable*>()) {
@@ -34,7 +36,9 @@ MissionWidget::MissionWidget(QWidget *parent) :
         }
     }
 
+
     if (test_mission) {
+        qInfo() << "LOADING TEST";
         missions->append(new Mission(testReadJSON_mission("2"), testReadJSON_obstacle()));
         ui->missionList->addItem("*TEST MISSION_FT*");
         ui->missionList->setItemData(0, Qt::AlignCenter, Qt::TextAlignmentRole);
@@ -46,6 +50,8 @@ MissionWidget::MissionWidget(QWidget *parent) :
 
         QStandardItemModel * test_mission_model = createMissionModel(missions->at(ui->missionList->currentIndex()));
         ui->interopMission->setTableModel(test_mission_model);
+        interopMission = missions->front();
+        ui->setCurrentValue->setRange(1, interopMission->waypointLength()-1);
     }
 }
 
@@ -53,25 +59,27 @@ bool MissionWidget::hasMission() {
     return missions->size() > 0;
 }
 
-void MissionWidget::drawCurrentMission() {
+void MissionWidget::updateDraw(int index) {
+    if (index == -1) return;
     emit(clearMap());
     if (hasMission()) {
-        if (ui->tabWidget->currentIndex() == 1 && generatedMission) {
+        if (index == 1 && generatedMission) {
             drawMission(generatedMission);
             for (QPolygonF obst_poly : generatedMission->get_obstacles()) {
                 emit(drawObstacle(obst_poly, QColor("red"), "Obstacle"));
             }
         }
-        else {
+        else if (index == 0){
             for (QPolygonF obst_poly : interopMission->get_obstacles()) {
                 emit(drawObstacle(obst_poly, QColor("red"), "Obstacle"));
             }
             drawMission(interopMission);
         }
+        else {} // Map Clears
     }
 }
 
-void MissionWidget::loadMission() {
+void MissionWidget::generateMission() {
     if (hasMission()) {
         PlanMission pm;
         if (!generatedMission)
@@ -152,6 +160,9 @@ void MissionWidget::readButtonClicked() {
 void MissionWidget::clearButtonClicked() {
     emit(clearMissions());
 }
+void MissionWidget::setCurrentButtonClicked() {
+    emit(setCurrentMision(ui->setCurrentValue->value()));
+}
 
 void MissionWidget::readMissions(Waypoint::WP * waypoints, uint16_t size) {
     qInfo() << "!-----------------------!";
@@ -212,7 +223,6 @@ void MissionWidget::getMissions(Interop * i) {
 // // *** Test JSON Files Retrieval ***  // //
 // // *********************************  // //
 void MissionWidget::testOutputJSON(QJsonObject o, int i) {
-    qDebug() << "MissionWidget::testOutput - OUTPUT JSON FILE";
     QFile file(QDir::currentPath() + "/../../GroundStation/GS/res/missionout_" + QString::number(i) + ".json");
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
         qWarning("Couldn't open write file");
@@ -221,7 +231,6 @@ void MissionWidget::testOutputJSON(QJsonObject o, int i) {
     file.write(QJsonDocument(o).toJson());
 }
 QJsonObject MissionWidget::testReadJSON_mission(QString n) {
-    qDebug() << "MissionWidget::readJSON_mission - INPUT JSON FILE";
     QFile load(":/res/test_mission"+n+".json");
     if (!load.open(QIODevice::ReadOnly)) {
         qWarning("Couldn't open mission file");
@@ -233,7 +242,6 @@ QJsonObject MissionWidget::testReadJSON_mission(QString n) {
     return doc.object();
 }
 QJsonDocument MissionWidget::testReadJSON_obstacle() {
-    qDebug() << "MissionWidget::readJSON_obstacle - INPUT JSON FILE";
     QFile load(":/res/test_obstacles.json");
     if (!load.open(QIODevice::ReadOnly)) {
         qWarning("Couldn't open obstacles file");
@@ -245,14 +253,11 @@ QJsonDocument MissionWidget::testReadJSON_obstacle() {
     return doc;
 }
 
-//void MissionWidget::getObstacles(Interop * i) {
-//    Obstacles obstacles = interop->getObstacles();
-//    obstacles.loadStationaryObjects(mapWidget);
-
 void MissionWidget::updateInteropMission(int index) {
     QStandardItemModel * missionModel= createMissionModel(missions->at(index));
     ui->interopMission->setTableModel(missionModel);
     interopMission = missions->at(index);
+    updateDraw(ui->tabWidget->currentIndex());
 }
 
 MissionWidget::~MissionWidget()

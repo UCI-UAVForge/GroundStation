@@ -20,8 +20,7 @@ class Waypoint : public QObject
 
 public:
     struct WP {
-        // Note: id refers to seq
-        uint16_t id;
+        uint16_t id; // seq
         uint8_t frame;
         uint16_t command;
         uint8_t current;
@@ -38,6 +37,7 @@ public:
     void clearAllWaypoints();
     void readWaypointsList();
     void writeWaypoints(const QVector<WP>& waypoints, uint16_t size);
+    void setCurrentWaypoint(uint16_t index);
 //    int setCurrentWaypoint(uint16_t seq);
 
 signals:
@@ -47,7 +47,7 @@ signals:
     void sendAck(uint16_t type);
     void sendWPCount(uint16_t count);
     void sendWP(WP waypoint);
-//    void sendWPSetCurrent(uint16_t seq);
+    void sendWPSetCurrent(uint16_t seq);
 
     void waypointsReceived(WP * waypoints, uint16_t size);
     void waypointsWriteStatus(bool success);
@@ -58,7 +58,7 @@ public slots:
     void updateMissionCount(mavlink_mission_count_t mCount);
     void updateMissionItem(mavlink_mission_item_t mission_item);
     void updateMissionRequest(mavlink_mission_request_t mission_request);
-//    void updateMissionCurrent(mavlink_mission_current_t mCurrent);
+    void updateCurrent(mavlink_mission_current_t curr);
 
 private:
     bool clearTimeout;
@@ -67,11 +67,16 @@ private:
     bool countFlag;
     bool readFlag;
     bool writeFlag;
+    bool setCurrentWaypointFlag;
     bool missionCurrentTimeout = false;
     bool ackFlag = false;
+
+    /* Pause and Retry Attempts*/
     int numAttempts = 10;
     int msTimeout = 50;
+
     uint16_t nPoints = 0;
+    uint16_t setCurrentIndex = UINT16_MAX;
     uint16_t currentRequestedMission;
     WP savedWP;
 

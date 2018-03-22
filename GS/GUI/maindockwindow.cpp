@@ -118,17 +118,18 @@ void MainDockWindow::connectWaypoint(Waypoint * waypoint, Encoder * encoder, Dec
     connect(waypoint, &Waypoint::sendAck, encoder, &Encoder::sendMissionACK);
     connect(waypoint, &Waypoint::sendWP, encoder, &Encoder::sendMissionItem);
     connect(waypoint, &Waypoint::sendWPCount, encoder, &Encoder::sendMissionCount);
-//    connect(waypoint, &Waypoint::sendWPSetCurrent, encoder, &Encoder::sendMissionSetCurrent);
+    connect(waypoint, &Waypoint::sendWPSetCurrent, encoder, &Encoder::sendMissionSetCurrent);
 
     connect(decoder, &Decoder::mAckReceived, waypoint, &Waypoint::updateMissionAck);
     connect(decoder, &Decoder::missionCountReceived, waypoint, &Waypoint::updateMissionCount);
     connect(decoder, &Decoder::missionItemReceived, waypoint, &Waypoint::updateMissionItem);
-//    connect(decoder, &Decoder::missionCurrentReceived, waypoint, &Waypoint::updateMissionCurrent);
+    connect(decoder, &Decoder::missionCurrentReceived, waypoint, &Waypoint::updateCurrent);
     connect(decoder, &Decoder::mrequestReceived, waypoint, &Waypoint::updateMissionRequest);
 
     connect(ui->missionWidget, &MissionWidget::clearMissions, waypoint, &Waypoint::clearAllWaypoints);
     connect(ui->missionWidget, &MissionWidget::readMissionsSignal, waypoint, &Waypoint::readWaypointsList);
     connect(ui->missionWidget, &MissionWidget::writeMissionsSignal, waypoint, &Waypoint::writeWaypoints);
+    connect(ui->missionWidget, &MissionWidget::setCurrentMision, waypoint, &Waypoint::setCurrentWaypoint);
     connect(waypoint, &Waypoint::waypointsReceived, ui->missionWidget, &MissionWidget::readMissions);
     connect(waypoint, &Waypoint::waypointsWriteStatus, ui->missionWidget, &MissionWidget::writeMissionsStatus);
     connect(waypoint, &Waypoint::waypointsClearStatus, ui->messageWidget, &MessageWidget::updateClearMission);

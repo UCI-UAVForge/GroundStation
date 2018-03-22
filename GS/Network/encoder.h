@@ -4,7 +4,7 @@
 #include <QObject>
 #include "mavlink.h"
 #include "link.h"
-#include "wyp.h"
+#include "waypoint.h"
 
 class Encoder : public QObject
 {

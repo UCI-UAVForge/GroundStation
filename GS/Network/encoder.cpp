@@ -59,6 +59,7 @@ void Encoder::sendMissionACK(uint16_t type) {
     link->sendData(msg);
 }
 
+
 void Encoder::sendMissionSetCurrent(uint16_t seq) {
     mavlink_message_t msg;
     mavlink_msg_mission_set_current_pack(SYS, COM, &msg, 1, 0, seq);
