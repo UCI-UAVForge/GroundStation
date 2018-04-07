@@ -49,6 +49,8 @@ SOURCES += \
     $$files(Util/*.cpp, false) \
     $$files(Network/*.cpp, false) \
     $$files(Database/*.cpp, false) \
+    Util/missionpath.cpp \
+    Util/waypt.cpp
 
 HEADERS  += \
     $$files(GUI/*.h, false) \
@@ -56,10 +58,12 @@ HEADERS  += \
     $$files(Util/*.hpp, false) \
     $$files(Network/*.h, false) \
     $$files(Database/*.h, false) \
+    Util/missionpath.h \
+    Util/waypt.h
 
 
 FORMS    += \
-    $$files(GUI/*.ui, false) \
+    $$files(GUI/*.ui, false)
 
 OTHER_FILES +=
 

@@ -11,7 +11,7 @@
 #include <QObject>
 #include "waypoint.h"
 #include "obstacles.h"
-
+#include "missionpath.h"
 #include "point.hpp"
 
 
@@ -42,6 +42,9 @@ public:
     QVector2D off_axis_odlc_pos;
     QVector2D emergent_last_known_pos;
     MissionWaypoints mission_waypoints;
+    MissionPath mission_path;
+    MissionPath interopPath;
+    MissionPath generatedPath;
     QList<QVector3D> * search_grid_points;
     QList<FlyZone> * fly_zones;
     Obstacles obstacles;
@@ -62,7 +65,7 @@ private:
     QVector2D posToPoint(QJsonObject obj);
     QVector3D posTo3DPoint(QJsonObject obj);
 
-    MissionWaypoints setMissionWaypoints(QJsonArray pointArray);
+    MissionPath setMissionPath(QJsonArray pointArray);
     QList<FlyZone> * setFlyZones(QJsonArray flyZoneArray);
     QList<QVector2D> * setPoints(QJsonArray pointArray);
     QList<QVector3D> * set3DPoints(QJsonArray pointArray);

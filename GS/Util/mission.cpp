@@ -12,7 +12,7 @@ Mission::Mission(QJsonObject obj) {
     air_drop_pos = posToPoint(obj["air_drop_pos"].toObject());
     off_axis_odlc_pos = posToPoint(obj["off_axis_odlc_pos"].toObject());
     emergent_last_known_pos = posToPoint(obj["emergent_last_known_pos"].toObject());
-    mission_waypoints = setMissionWaypoints(obj["mission_waypoints"].toArray());
+    interopPath = setMissionPath(obj["mission_waypoints"].toArray());
     search_grid_points = set3DPoints(obj["search_grid_points"].toArray());
     fly_zones = setFlyZones(obj["fly_zones"].toArray());
 }
@@ -24,7 +24,7 @@ Mission::Mission(QJsonObject mission_obj, QJsonDocument obstacles_doc) {
     air_drop_pos = posToPoint(mission_obj["air_drop_pos"].toObject());
     off_axis_odlc_pos = posToPoint(mission_obj["off_axis_odlc_pos"].toObject());
     emergent_last_known_pos = posToPoint(mission_obj["emergent_last_known_pos"].toObject());
-    mission_waypoints = setMissionWaypoints(mission_obj["mission_waypoints"].toArray());
+    interopPath = setMissionPath(mission_obj["mission_waypoints"].toArray());
     search_grid_points = set3DPoints(mission_obj["search_grid_points"].toArray());
     fly_zones = setFlyZones(mission_obj["fly_zones"].toArray());
     obstacles = Obstacles(obstacles_doc);
@@ -75,23 +75,15 @@ QList<FlyZone> * Mission::setFlyZones(QJsonArray flyZoneArray) {
 
 
 
-MissionWaypoints Mission::setMissionWaypoints(QJsonArray pointArray) {
-    MissionWaypoints missionWaypoints = MissionWaypoints();
-    missionWaypoints.waypoints = set3DPoints(pointArray);
-    missionWaypoints.actions = new QList<int>();
-    for (int i = 0; i < missionWaypoints.waypoints->size();i++) {
-        missionWaypoints.actions->append(MAV_CMD_NAV_WAYPOINT);
-//        if (i == 0) {
-//            missionWaypoints.actions->append(MAV_CMD_NAV_TAKEOFF);
-//        }
-//        else if (i == missionWaypoints.waypoints->size() -1) {
-//            missionWaypoints.actions->append(MAV_CMD_NAV_LAND);
-//        }
-//        else {
-//            missionWaypoints.actions->append(MAV_CMD_NAV_WAYPOINT);
-//        }
+MissionPath Mission::setMissionPath(QJsonArray pointArray) {
+    MissionPath missionPath = MissionPath();
+    for(int i = 0; i < pointArray.size(); ++i){
+        QVector3D coords = posTo3DPoint(pointArray[i].toObject());
+        Waypt waypt = Waypoint(coords);
+        int order = pointArray[i].toObject()["order"].toInt()-1;
+        missionPath.addWaypoint(waypt, order);
     }
-    return missionWaypoints;
+    return missionPath;
 }
 
 

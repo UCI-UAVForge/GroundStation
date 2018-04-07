@@ -28,6 +28,7 @@ MissionWidget::MissionWidget(QWidget *parent) :
         connect(table, &MissionTable::moveWaypoint, this, &MissionWidget::moveWaypoint);
         connect(table, &MissionTable::editMode, this, &MissionWidget::editMode);
     }
+
     foreach(QPushButton * p, this->findChildren<QPushButton*>()) {
         if (p->objectName() == "clearButton") {
             style.setButtonOff(p);
@@ -35,7 +36,6 @@ MissionWidget::MissionWidget(QWidget *parent) :
             style.setButtonDefault(p);
         }
     }
-
 
     if (test_mission) {
         qInfo() << "LOADING TEST";
@@ -78,6 +78,8 @@ void MissionWidget::updateDraw(int index) {
         else {} // Map Clears
     }
 }
+
+
 
 void MissionWidget::generateMission() {
     if (hasMission()) {
@@ -183,6 +185,8 @@ void MissionWidget::writeMissionsStatus(bool success) {
     else qDebug() << "Write Missions failed";
 }
 
+
+
 QStandardItemModel * MissionWidget::createMissionModel(Mission * mission) {
     QList<QVector3D> * waypoints = mission->mission_waypoints.waypoints;
     QStandardItemModel *model = new QStandardItemModel;
@@ -260,8 +264,7 @@ void MissionWidget::updateInteropMission(int index) {
     updateDraw(ui->tabWidget->currentIndex());
 }
 
-MissionWidget::~MissionWidget()
-{
+MissionWidget::~MissionWidget() {
     delete ui;
 }
 
