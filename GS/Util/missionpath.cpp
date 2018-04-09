@@ -8,20 +8,40 @@ MissionPath::MissionPath(QList<Waypt> waypoints, int currentWaypoint) {
     this->currentWaypoint = currentWaypoint;
 }
 
-MissionPath::addWaypoint(Waypt waypoint){
-   waypoints->append(waypoint);
+void MissionPath::addWaypoint(Waypt waypoint){
+   waypoints.append(waypoint);
 }
 
-MissionPath::addWaypoint(Waypt waypoint, int order) {
-    waypoints->insert(order, waypoint);
+void MissionPath::addWaypoint(Waypt waypoint, int order) {
+    waypoints.insert(order, waypoint);
 }
 
-MissionPath::removeWaypoint(int order) {
-   waypoints->removeAt(order);
+void MissionPath::removeWaypoint(int order) {
+   waypoints.removeAt(order);
 }
 
-MissionPath::setCurrent(int i) {
-    if (waypoints->size() > i) {
+void MissionPath::setCurrent(int i) {
+    if (waypoints.size() > i) {
         currentWaypoint = i;
     }
+}
+
+uint16_t MissionPath::length() {
+    waypoints.length();
+}
+
+QVector<Waypoint::WP> MissionPath::generateWaypoints(uint16_t startingSeq) {
+    QVector<Waypoint::WP> path;
+    uint16_t seq = startingSeq;
+    for (int i = 0; i < waypoints.length(); i++) {
+        path.append(waypoints[i].generateWP(seq++));
+    }
+}
+
+QList<QVector3D>* MissionPath::toList() {
+    QList<QVector3D> *list = new QList<QVector3D>();
+    for (int i = 0; i < waypoints.length(); i++) {
+        list->append(waypoints.at(i).coords);
+    }
+    return list;
 }

@@ -13,6 +13,7 @@ Mission::Mission(QJsonObject obj) {
     off_axis_odlc_pos = posToPoint(obj["off_axis_odlc_pos"].toObject());
     emergent_last_known_pos = posToPoint(obj["emergent_last_known_pos"].toObject());
     interopPath = setMissionPath(obj["mission_waypoints"].toArray());
+    generatedPath = interopPath;
     search_grid_points = set3DPoints(obj["search_grid_points"].toArray());
     fly_zones = setFlyZones(obj["fly_zones"].toArray());
 }
@@ -25,24 +26,22 @@ Mission::Mission(QJsonObject mission_obj, QJsonDocument obstacles_doc) {
     off_axis_odlc_pos = posToPoint(mission_obj["off_axis_odlc_pos"].toObject());
     emergent_last_known_pos = posToPoint(mission_obj["emergent_last_known_pos"].toObject());
     interopPath = setMissionPath(mission_obj["mission_waypoints"].toArray());
+    generatedPath = interopPath;
     search_grid_points = set3DPoints(mission_obj["search_grid_points"].toArray());
     fly_zones = setFlyZones(mission_obj["fly_zones"].toArray());
     obstacles = Obstacles(obstacles_doc);
 }
 
 Mission::Mission(const Mission& mission) {
+    /* I don't think we need a copy mission anymore */
     this->id = mission.id;
     this->active = mission.active;
     this->home_pos = mission.home_pos;
     this->air_drop_pos = mission.air_drop_pos;
     this->off_axis_odlc_pos = mission.off_axis_odlc_pos;
     this->emergent_last_known_pos = mission.emergent_last_known_pos;
-    MissionWaypoints wp = MissionWaypoints();
-    wp.waypoints = new QList<QVector3D>();
-    wp.actions = new QList<int>();
-    *wp.waypoints = *(mission.mission_waypoints.waypoints);
-    *wp.actions = *(mission.mission_waypoints.actions);
-    this->mission_waypoints = wp;
+    this->interopPath = mission.interopPath;
+    this->generatedPath = mission.generatedPath;
     this->search_grid_points = new QList<QVector3D>();
     for (int i=0; i<mission.search_grid_points->size(); ++i) {
         this->search_grid_points->append(mission.search_grid_points->at(i));
@@ -73,19 +72,16 @@ QList<FlyZone> * Mission::setFlyZones(QJsonArray flyZoneArray) {
     return fly_zones;
 }
 
-
-
 MissionPath Mission::setMissionPath(QJsonArray pointArray) {
     MissionPath missionPath = MissionPath();
     for(int i = 0; i < pointArray.size(); ++i){
         QVector3D coords = posTo3DPoint(pointArray[i].toObject());
-        Waypt waypt = Waypoint(coords);
+        Waypt waypt = Waypt(coords);
         int order = pointArray[i].toObject()["order"].toInt()-1;
         missionPath.addWaypoint(waypt, order);
     }
     return missionPath;
 }
-
 
 QList<QVector2D> * Mission::setPoints(QJsonArray pointArray) {
     QList<QVector2D> * points = new QList<QVector2D>();
@@ -113,91 +109,26 @@ QVector2D Mission::posToPoint(QJsonObject obj) {
     return QVector2D(obj["latitude"].toDouble(), obj["longitude"].toDouble());
 }
 
-
-void Mission::loadWaypoint(mavlink_mission_request_t mrequest) {
-    float params[7] = {0, 0, 0, 0, -35.3609161377, 149.1624603271, 40.40};
-    int cmd = 16;
-    if (mrequest.seq == 0) {
-        cmd = 22;
-    }
-    cmd =22;
-    emit (loadToUAV(mrequest.seq, cmd, params));
-}
-
-QVector<Waypoint::WP> Mission::constructWaypoints() {
-    uint16_t len = mission_waypoints.waypoints->length();
+QVector<Waypoint::WP> Mission::constructWaypoints(bool interop) {
+    uint16_t len = interop ? interopPath.length() : generatedPath.length();
     QVector<Waypoint::WP> waypoints;
 
-    // The first waypoint does not matter - thrown from mavlink
-    /* Home Position WP */
-    Waypoint::WP wp;
-    wp.id = 0;
-    wp.command = 16;
-    wp.autocontinue = 1;
-    wp.current = 0;
-    wp.param1 = 0;
-    wp.param2 = 0;
-    wp.param3 = 0;
-    wp.x = 0;
-    wp.y = 0;
-    wp.z = 0;
-    waypoints.append(wp);
+    waypoints.append(missionPrologue());
+    waypoints.append(generateTakeoff());
+    if (interop) waypoints.append(interopPath.generateWaypoints(2));
+    else waypoints.append(generatedPath.generateWaypoints(2));
 
-    wp.id = 1;
-    wp.command = 22;
-    wp.autocontinue = 1;
-    wp.current = 0;
-    wp.param1 = 45;
-    wp.param2 = 0;
-    wp.param3 = 0;
-    wp.x = this->home_pos.x();
-    wp.y = this->home_pos.y();
-    wp.z = 75;
-    waypoints.append(wp);
-    // Takeoff from home position to 75 altitude
-
-    for (uint16_t i = 2; i <= len + 1; i++) {
-        Waypoint::WP wp;
-        wp.id = i;
-        wp.command = mission_waypoints.actions->at(i-2);
-        wp.autocontinue = 1;
-        wp.current = 0;
-        wp.param1 = 0;
-        wp.param2 = 30;
-        wp.param3 = 0;
-        wp.x = mission_waypoints.waypoints->at(i-2).x();
-        wp.y = mission_waypoints.waypoints->at(i-2).y();
-        wp.z = mission_waypoints.waypoints->at(i-2).z();
-        waypoints.append(wp);
-    }
-
-    qDebug() << "Mission::constructWaypoints set last point as home_pos w/ land";
-    // Return to home position
-    // CHANGE TO LOITER CENTER
-    wp.id = len + 2;
-    wp.command = 17;
-    wp.autocontinue = 1;
-    wp.current = 0;
-    wp.param1 = 0;
-    wp.param2 = 0; // 1 = opportunistic precision landing
-    wp.param3 = 40; // loiter radius
-    wp.x = 33.771945;
-    wp.y = -117.694765;
-    wp.z = 65;
-    waypoints.append(wp);
+    // TODO: add Landing
 
     return waypoints;
 }
 
-uint16_t Mission::waypointLength() {
-    return mission_waypoints.waypoints->length() + 3;
-}
-
-void Mission::setActions_wp() {
-    mission_waypoints.actions = new QList<int>();
-    for (uint16_t i = 0; i < this->waypointLength(); i++) {
-        mission_waypoints.actions->append(16);
-    }
+uint16_t Mission::completeMissionLength(bool interop) {
+    int missionPrologue = 1;
+    int takeoff = 1;
+    int waypoints = interop ? interopPath.length() : generatedPath.length();
+    int landing = 0; // TODO landing
+    return missionPrologue + takeoff + waypoints + landing;
 }
 
 Obstacles Mission::getObstacles() {
@@ -220,4 +151,15 @@ QList<QPolygonF> Mission::get_obstacles() {
         polys.append(QPolygonF(obstacle_footprint_points));
     }
     return polys;
+}
+
+Waypoint::WP Mission::missionPrologue() {
+    Waypoint::WP wp = {0,0,16,0,1,0,0,0,0,0,0,0};
+    return wp;
+}
+
+Waypoint::WP Mission::generateTakeoff() {
+    Waypoint::WP wp = {1, 0, 22, 0, 1, takeoff.pitch, 0, 0, takeoff.yawAngle,
+                      home_pos.x(), home_pos.y(), takeoff.altitude};
+    return wp;
 }

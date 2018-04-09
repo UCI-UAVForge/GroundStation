@@ -3,6 +3,7 @@
 
 #include "waypt.h";
 #include <QList>;
+#include "waypoint.h";
 
 class MissionPath {
 
@@ -16,6 +17,9 @@ public:
     void addWaypoint(Waypt waypoint, int order);
     void removeWaypoint(int order);
     void setCurrent(int i);
+    uint16_t length();
+    QVector<Waypoint::WP> generateWaypoints(uint16_t startingSeq);
+    QList<QVector3D>* toList();
 };
 
 #endif // MISSIONPATH_H

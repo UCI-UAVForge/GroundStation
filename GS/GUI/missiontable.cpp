@@ -9,12 +9,6 @@ MissionTable::MissionTable(QWidget *parent) : QTableView(parent)
 
 }
 
-void MissionWidget::setPath(MissionPath path) {
-
-}
-
-
-
 void MissionTable::setTableModel(QStandardItemModel * model) {
     setModel(model);
     horizontalHeader()->setSectionResizeMode(0, QHeaderView::Stretch);
@@ -25,11 +19,6 @@ void MissionTable::setTableModel(QStandardItemModel * model) {
     connect(selectionModel(), &QItemSelectionModel::selectionChanged,
                 this, &MissionTable::selectChanged);
 }
-
-//void MissionTable::addWaypoint() {
-
-//}
-
 
 void MissionTable::selectChanged(const QItemSelection & selected, const QItemSelection & deselected) {
     if (selected.indexes().length() > 0) {

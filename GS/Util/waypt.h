@@ -2,6 +2,7 @@
 #define WAYPT_H
 
 #include <QVector3D>
+#include "waypoint.h"
 
 class Waypt
 {
@@ -16,15 +17,7 @@ public:
     float param3;
     float param4;
 
-    parameter shit!
-    tahahahahahhahahahhahahaha tahahahahahhahah tahahahah tahahha tahah tah taha
-    hahhahahaha
-    tahahhahahaha
-    tahahahha
-    ahah
-    ahah
-    ah
-    ah
+    Waypoint::WP generateWP(uint16_t seq);
 };
 
 #endif // WAYPT_H

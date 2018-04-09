@@ -13,6 +13,7 @@
 #include "obstacles.h"
 #include "missionpath.h"
 #include "point.hpp"
+#include "waypt.h"
 
 
 struct FlyZone {
@@ -21,9 +22,10 @@ struct FlyZone {
     QList<QVector2D> * boundary_points;
 };
 
-struct MissionWaypoints {
-    QList<int> * actions;
-    QList<QVector3D> * waypoints;
+struct MissionTakeoff {
+    float altitude;
+    float pitch;
+    float yawAngle;
 };
 
 class Mission : public QObject {
@@ -41,21 +43,19 @@ public:
     QVector2D air_drop_pos;
     QVector2D off_axis_odlc_pos;
     QVector2D emergent_last_known_pos;
-    MissionWaypoints mission_waypoints;
-    MissionPath mission_path;
     MissionPath interopPath;
     MissionPath generatedPath;
+    MissionTakeoff takeoff;
     QList<QVector3D> * search_grid_points;
     QList<FlyZone> * fly_zones;
     Obstacles obstacles;
 
     QList<QPolygonF> get_obstacles();
-    void loadWaypoint(mavlink_mission_request_t mrequest);
     void printJDoc();
     Point toECEF(double lat, double lon, double alt);
-    QVector<Waypoint::WP> constructWaypoints();
-    uint16_t waypointLength();
-    void setActions_wp();
+    QVector<Waypoint::WP> constructWaypoints(bool interop);
+    uint16_t completeMissionLength(bool interop);
+//    void setActions_wp();
     Obstacles getObstacles();
 
 signals:
@@ -73,6 +73,8 @@ private:
     {
         return (meters / (111.32 * 1000 * cos(latitude * (M_PI / 180))));
     }
+    Waypoint::WP missionPrologue();
+    Waypoint::WP generateTakeoff();
 };
 
 #endif // MISSION_H

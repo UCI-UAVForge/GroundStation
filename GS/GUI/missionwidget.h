@@ -36,12 +36,11 @@ public:
     bool hasMission();
     void generateMission();
     void getMissions(Interop * i);
-    QStandardItemModel * createMissionModel(Mission * mission);
+    QStandardItemModel *createMissionModel(MissionPath path);
     void setTableModel(QTableView * tableView, QStandardItemModel * model);
 
-    QVector<Mission*> * missions;
-    Mission * generatedMission = nullptr;
-    Mission * interopMission = nullptr;
+    QVector<Mission*> missions;
+    Mission *mission;
     QStandardItemModel * model;
     Obstacles obstacles;
     MapWidget * mapWidget;
@@ -53,7 +52,7 @@ public:
     ~MissionWidget();
 
 signals:
-    void drawMission(Mission * selectedMission);
+    void drawMission(Mission *selectedMission, MissionPath path);
     void drawWaypoints(QList<QVector2D> * wps);
     void drawObstacle(QPolygonF poly, QColor color, QString label);
     void clearMissions();
@@ -69,8 +68,9 @@ signals:
 public slots:
     void readMissions(Waypoint::WP * waypoints, uint16_t size);
     void writeMissionsStatus(bool success);
-    void updateInteropMission(int index);
+    void updateMission(int index);
     void updateDraw(int index);
+    void updateSetCurrentLen(int index);
     void moveWaypoint(int wpNum, int key);
 
 private:

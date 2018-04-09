@@ -23,6 +23,9 @@ signals:
     void moveWaypoint(int wpNum, int key);
     void selectWaypoint(int wpNum);
     void editMode(bool editing);
+
+private:
+    bool isInterop;
 };
 
 #endif // MISSIONTABLE_H

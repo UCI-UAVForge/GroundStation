@@ -23,9 +23,6 @@ void Waypoint::clearAllWaypoints() {
 void Waypoint::writeWaypoints(const QVector<WP>& waypoints, uint16_t size) {
     writeAck = false;
     currentRequestedMission = std::numeric_limits<uint16_t>::max();
-    // Note: will not work if the size is equal to uint16 max
-
-    // Send number of waypoints to emit
     reqFlag = true;
     sendCount(size);
     if (reqFlag) {
@@ -33,8 +30,6 @@ void Waypoint::writeWaypoints(const QVector<WP>& waypoints, uint16_t size) {
         emit(waypointsWriteStatus(false));
         return;
     }
-
-    // Send Missions
     for (uint16_t i = 0; i < size; i++) {
         if (currentRequestedMission != i) {
             qDebug() << "Send mission out of sync! (Received:"
@@ -50,14 +45,12 @@ void Waypoint::writeWaypoints(const QVector<WP>& waypoints, uint16_t size) {
 
         reqFlag = true;
         sendWaypoint(waypoints.at(i));
-        if (i != size-1 && reqFlag) {   // ackFlag set instead at last waypoint
+        if (i != size-1 && reqFlag) {
             qDebug () << "Write mission timed out.";
             emit(waypointsWriteStatus(false));
             return;
         }
     }
-
-    // Check for mission ack
     for (short i = 0; i < numAttempts && !writeAck; i++)
         pause();
     if (!writeAck) {
@@ -72,8 +65,6 @@ void Waypoint::readWaypointsList() {
     // * Bug: Still receive missions in multiples of 5
     nPoints = 0;
     countFlag = true;
-
-    // Request mission count
     requestCount();
     if (countFlag) {
         emit(waypointsReceived(nullptr, 0));
@@ -84,10 +75,6 @@ void Waypoint::readWaypointsList() {
         emit(waypointsReceived(nullptr, 0));
         return;
     }
-
-    qDebug() << "Read count received::" << nPoints;
-
-    // Request each mission
     WP * waypoints = new WP[nPoints];
     for (uint16_t i = 0; i < nPoints; i++) {
         readFlag = true;
@@ -99,7 +86,7 @@ void Waypoint::readWaypointsList() {
         waypoints[i] = savedWP;
     }
     emit(sendAck(0));
-    emit(waypointsReceived(waypoints, nPoints)); // Successful read
+    emit(waypointsReceived(waypoints, nPoints));
 }
 
 void Waypoint::setCurrentWaypoint(uint16_t index) {

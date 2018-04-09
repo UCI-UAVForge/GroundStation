@@ -9,7 +9,6 @@ MissionWidget::MissionWidget(QWidget *parent) :
 {
     ui->setupUi(this);
     style = Style();
-    missions = new QVector<Mission*>();
     ui->missionList->setEditable(true);
     ui->missionList->lineEdit()->setReadOnly(true);
     ui->missionList->lineEdit()->setAlignment(Qt::AlignCenter);
@@ -19,9 +18,9 @@ MissionWidget::MissionWidget(QWidget *parent) :
     connect(ui->readButton, &QPushButton::clicked, this, &MissionWidget::readButtonClicked);
     connect(ui->clearButton, &QPushButton::clicked, this, &MissionWidget::clearButtonClicked);
     connect(ui->setCurrentButton, &QPushButton::clicked, this, &MissionWidget::setCurrentButtonClicked);
-    connect(ui->missionList, SIGNAL(currentIndexChanged(int)), this, SLOT(updateInteropMission(int)));
+    connect(ui->missionList, SIGNAL(currentIndexChanged(int)), this, SLOT(updateMission(int)));
     connect(ui->tabWidget, SIGNAL(tabBarClicked(int)), this, SLOT(updateDraw(int)));
-
+    connect(ui->tabWidget, SIGNAL(tabBarClicked(int)), this, SLOT(updateSetCurrentLen(int)));
 
     foreach(MissionTable * table, this->findChildren<MissionTable*>()) {
         connect(table, &MissionTable::selectWaypoint, this, &MissionWidget::selectWaypoint);
@@ -39,88 +38,86 @@ MissionWidget::MissionWidget(QWidget *parent) :
 
     if (test_mission) {
         qInfo() << "LOADING TEST";
-        missions->append(new Mission(testReadJSON_mission("2"), testReadJSON_obstacle()));
+        missions.append(new Mission(testReadJSON_mission("2"), testReadJSON_obstacle()));
         ui->missionList->addItem("*TEST MISSION_FT*");
         ui->missionList->setItemData(0, Qt::AlignCenter, Qt::TextAlignmentRole);
 
-        missions->append(new Mission(testReadJSON_mission(""), testReadJSON_obstacle()));
+        missions.append(new Mission(testReadJSON_mission(""), testReadJSON_obstacle()));
         ui->missionList->addItem("*TEST MISSION*");
         ui->missionList->setItemData(1, Qt::AlignCenter, Qt::TextAlignmentRole);
 
+        mission = missions[0];
+        QStandardItemModel *interopModel = createMissionModel(mission->interopPath);
+        QStandardItemModel *generatedModel = createMissionModel(mission->generatedPath);
+        ui->interopMission->setTableModel(interopModel);
+        ui->generatedMission->setTableModel(generatedModel);
 
-        QStandardItemModel * test_mission_model = createMissionModel(missions->at(ui->missionList->currentIndex()));
-        ui->interopMission->setTableModel(test_mission_model);
-        interopMission = missions->front();
-        ui->setCurrentValue->setRange(1, interopMission->waypointLength()-1);
+        ui->setCurrentValue->setRange(1, mission->completeMissionLength(true));
     }
 }
 
 bool MissionWidget::hasMission() {
-    return missions->size() > 0;
+    return missions.size() > 0;
 }
 
 void MissionWidget::updateDraw(int index) {
     if (index == -1) return;
     emit(clearMap());
+    for (QPolygonF obst_poly : mission->get_obstacles()) {
+        emit(drawObstacle(obst_poly, QColor("red"), "Obstacle"));
+    }
     if (hasMission()) {
-        if (index == 1 && generatedMission) {
-            drawMission(generatedMission);
-            for (QPolygonF obst_poly : generatedMission->get_obstacles()) {
-                emit(drawObstacle(obst_poly, QColor("red"), "Obstacle"));
-            }
+        if (index == 1) {
+            drawMission(mission, mission->generatedPath);
         }
         else if (index == 0){
-            for (QPolygonF obst_poly : interopMission->get_obstacles()) {
-                emit(drawObstacle(obst_poly, QColor("red"), "Obstacle"));
-            }
-            drawMission(interopMission);
+            drawMission(mission, mission->interopPath);
         }
-        else {} // Map Clears
+        else {}
     }
 }
 
-
+void MissionWidget::updateSetCurrentLen(int index) {
+    if (index == -1) return;
+    if (index == 1) ui->setCurrentValue->setRange(1, mission->completeMissionLength(false));
+    else if(index == 0) ui->setCurrentValue->setRange(1, mission->completeMissionLength(true));
+}
 
 void MissionWidget::generateMission() {
     if (hasMission()) {
         PlanMission pm;
-        if (!generatedMission)
-            generatedMission = new Mission(*interopMission);
-        else {
-            delete generatedMission;
-            generatedMission = new Mission(*interopMission);
-        }
-        for (int i = 1; i < generatedMission->mission_waypoints.waypoints->size(); i++) {
-            QVector3D point = generatedMission->mission_waypoints.waypoints->at(i);
-            qDebug() << "X: " << point.x() << " Y: " << point.y() << " Z: " << point.z();
+
+        /* Path Finding */
+        for (int i = 1; i < mission->generatedPath.waypoints.size(); i++) {
+            QVector3D point = mission->generatedPath.waypoints.at(i).coords;
             pm.add_goal_point(Point::fromGeodetic(point.x(), point.y(), point.z()));
         }
-        QVector3D start_point = generatedMission->mission_waypoints.waypoints->at(0);
-        qDebug() << "Start X: " << start_point.x() << " Y: " << start_point.y() << " Z: " << start_point.z();
-
-//         Currently not working - path finding returns 0
-        pm.set_obstacles(generatedMission->obstacles);
-        QList<QVector3D>* waypoints = generatedMission->mission_waypoints.waypoints;
-        waypoints->clear();
+        QVector3D start_point = mission->generatedPath.waypoints.at(0).coords;
+        pm.set_obstacles(mission->obstacles);
         QList<QVector3D>* path = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()),
-                                 generatedMission->fly_zones);
-        waypoints->reserve(waypoints->size() + std::distance(path->begin(), path->end()) + 1);
-        waypoints->append(start_point);
-        waypoints->append(*path);
-        generatedMission->setActions_wp();
+                                 mission->fly_zones);
+        mission->generatedPath.waypoints.clear();
+        mission->generatedPath.waypoints.reserve(mission->generatedPath.waypoints.size()
+                                                + std::distance(path->begin(),
+                                                                path->end()) + 1);
+        mission->generatedPath.addWaypoint(Waypt(start_point));
+        foreach(QVector3D coords, *path) {
+            mission->generatedPath.addWaypoint(Waypt(coords));
+        }
 
-        QStandardItemModel * genmodel = createMissionModel(generatedMission);
-        //setTableModel(ui->generatedMission, genmodel);
-        ui->generatedMission->setTableModel(genmodel);
+        // TODO: Create generatedPath model for mission table.
+//        QStandardItemModel * genmodel = createMissionModel(generatedMission);
+//        //setTableModel(ui->generatedMission, genmodel);
+//        ui->generatedMission->setTableModel(genmodel);
 
-        // Test
-        QStandardItemModel * intmodel = createMissionModel(interopMission);
-        ui->interopMission->setTableModel(intmodel);
+//        // Test
+//        QStandardItemModel * intmodel = createMissionModel(interopMission);
+//        ui->interopMission->setTableModel(intmodel);
     }
 }
 
 void MissionWidget::moveWaypoint(int wpNum, int key) {
-    QVector3D wp = interopMission->mission_waypoints.waypoints->at(wpNum);
+    QVector3D wp = mission->interopPath.waypoints.at(wpNum).coords;
     switch (key) {
         case Qt::Key_Up:
             wp.setX(wp.x()+0.0001);
@@ -135,7 +132,7 @@ void MissionWidget::moveWaypoint(int wpNum, int key) {
             wp.setY(wp.y()+0.0001);
         break;
     }
-    interopMission->mission_waypoints.waypoints->replace(wpNum, wp);
+    mission->interopPath.waypoints[wpNum].coords = wp;
     emit(moveWaypointSignal(wpNum, wp));
 }
 
@@ -150,10 +147,12 @@ void MissionWidget::setTableModel(QTableView * tableView, QStandardItemModel * m
 
 void MissionWidget::writeButtonClicked() {
     if (hasMission()) {
-        if (ui->tabWidget->currentIndex() == 1 && generatedMission != nullptr)
-            emit(writeMissionsSignal(generatedMission->constructWaypoints(), generatedMission->waypointLength()));
+        if (ui->tabWidget->currentIndex() == 1)
+            emit(writeMissionsSignal(mission->constructWaypoints(false),
+                                     mission->completeMissionLength(false)));
         else
-            emit(writeMissionsSignal(interopMission->constructWaypoints(), interopMission->waypointLength()));
+            emit(writeMissionsSignal(mission->constructWaypoints(true),
+                                     mission->completeMissionLength(true)));
     }
 }
 void MissionWidget::readButtonClicked() {
@@ -179,32 +178,24 @@ void MissionWidget::readMissions(Waypoint::WP * waypoints, uint16_t size) {
     emit(drawWaypoints(wps));
     qInfo() << "!-----------------------!";
 }
-
 void MissionWidget::writeMissionsStatus(bool success) {
     if (success) qDebug() << "Write Missions Successful";
     else qDebug() << "Write Missions failed";
 }
 
-
-
-QStandardItemModel * MissionWidget::createMissionModel(Mission * mission) {
-    QList<QVector3D> * waypoints = mission->mission_waypoints.waypoints;
+QStandardItemModel *MissionWidget::createMissionModel(MissionPath path) {
     QStandardItemModel *model = new QStandardItemModel;
-    model->setHorizontalHeaderLabels(QList<QString>({"CMD", " ALT ", " CMD# "}));
-    for (int i = 0; i < waypoints->size(); i++) {
-       // QString coords = QGeoCoordinate(waypoints->at(i).x(), waypoints->at(i).y()).toString(QGeoCoordinate::DegreesWithHemisphere);
-        QString act;
-        switch (mission->mission_waypoints.actions->at(i)) {
-            case 16:
-                act = "Waypoint";
-            break;
-        case 22:
-                act = "Takeoff";
-        }
-        QStandardItem * action = new QStandardItem(act);
-        QStandardItem * alt = new QStandardItem(QString("%0 m.").arg(waypoints->at(i).z()));
-        QStandardItem * actionNum = new QStandardItem(QString("%0").arg(mission->mission_waypoints.actions->at(i)));
-        QList<QStandardItem*> row({action, alt, actionNum});
+    QList<Waypt> wps = path.waypoints;
+    model->setHorizontalHeaderLabels(QList<QString>({"CMD#", " ALT ", " 1 ", " 2 ", " 3 ", " 4 "}));
+    for (int i = 0; i < path.length(); i++) {
+        QStandardItem * action = new QStandardItem(QString("%0").arg(wps.at(i).action));
+        QStandardItem * alt = new QStandardItem(QString("%0 m.").arg(wps.at(i).coords.z()));
+        QStandardItem * param1 = new QStandardItem(QString("%0").arg(wps.at(i).param1));
+        QStandardItem * param2 = new QStandardItem(QString("%0").arg(wps.at(i).param2));
+        QStandardItem * param3 = new QStandardItem(QString("%0").arg(wps.at(i).param3));
+        QStandardItem * param4 = new QStandardItem(QString("%0").arg(wps.at(i).param4));
+        QList<QStandardItem*> row({action, alt, param1, param2,
+                                  param3, param4});
         for (int j = 0; j < row.size(); j++) {
             row.at(j)->setTextAlignment(Qt::AlignCenter);
         }
@@ -213,10 +204,10 @@ QStandardItemModel * MissionWidget::createMissionModel(Mission * mission) {
     return model;
 }
 
-void MissionWidget::getMissions(Interop * i) {
+void MissionWidget::getMissions(Interop *i) {
     QJsonArray interopMissions = i->getMissions().array();
     for (int j = 0; j < interopMissions.size(); j++) {
-        missions->append(new Mission(interopMissions.at(j).toObject()));
+        missions.append(new Mission(interopMissions.at(j).toObject()));
         ui->missionList->addItem("Mission " + QString::number(j+1));
         ui->missionList->setItemData(j, Qt::AlignCenter, Qt::TextAlignmentRole);
     }
@@ -257,10 +248,12 @@ QJsonDocument MissionWidget::testReadJSON_obstacle() {
     return doc;
 }
 
-void MissionWidget::updateInteropMission(int index) {
-    QStandardItemModel * missionModel= createMissionModel(missions->at(index));
-    ui->interopMission->setTableModel(missionModel);
-    interopMission = missions->at(index);
+void MissionWidget::updateMission(int index) {
+    QStandardItemModel *interopModel = createMissionModel(missions.at(index)->interopPath);
+    QStandardItemModel *generatedModel = createMissionModel(missions.at(index)->generatedPath);
+    ui->interopMission->setTableModel(interopModel);
+    ui->generatedMission->setTableModel(generatedModel);
+    mission = missions.at(index);
     updateDraw(ui->tabWidget->currentIndex());
 }
 

@@ -53,7 +53,6 @@ void Encoder::sendMissionRequest(uint16_t i) {
 }
 
 void Encoder::sendMissionACK(uint16_t type) {
-    qDebug() << "! ** Encoder::sending mission ack";
     mavlink_message_t msg;
     mavlink_msg_mission_ack_pack(SYS, COM, &msg, 1, 0, type);
     link->sendData(msg);

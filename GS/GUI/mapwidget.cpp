@@ -31,8 +31,8 @@ void MapWidget::addWaypoint(QVector3D point, int wpNum, QColor color, int radius
             Q_ARG(QVariant, radius));
 }
 
-void MapWidget::addMissionPath(Mission * mission) {
-    QList<QVector3D> * waypoints = mission->mission_waypoints.waypoints;
+void MapWidget::addMissionPath(MissionPath missionPath) {
+    QList<QVector3D> *waypoints = missionPath.toList();
     QMetaObject::invokeMethod(map, "addMissionPath", Q_ARG(QVariant, toQVariantList(waypoints)));
     for (int i = 0; i < waypoints->size(); i++)
         addWaypoint(waypoints->at(i), i, QColor("#2980b9"), 20);
@@ -95,7 +95,7 @@ void MapWidget::drawWaypoints(QList<QVector2D> * waypoints) {
         drawPoint(waypoints->at(i), QString::number(i),QColor(235,255,0), 30);
 }
 
-void MapWidget::drawMission(Mission * mission) {
+void MapWidget::drawMission(Mission *mission, MissionPath path) {
     for (int i = 0; i < mission->fly_zones->size(); i++) {
         drawPolygon(toQVariantList(mission->fly_zones->at(i).boundary_points),
                     QColor(0,255,0, 70), "Fly Zone #" + QString::number(i));
@@ -119,7 +119,7 @@ void MapWidget::drawMission(Mission * mission) {
     drawPoint(mission->emergent_last_known_pos, "Emergent LK Pos", QColor(0,0,0));
 
     /* Waypoints */
-    addMissionPath(mission);
+    addMissionPath(path);
 }
 
 void MapWidget::drawUAV(double lat, double lon, double heading) {

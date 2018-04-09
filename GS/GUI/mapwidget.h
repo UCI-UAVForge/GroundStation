@@ -40,7 +40,7 @@ public:
     QList<QVector3D> * uavPath;
 
     void addWaypoint(QVector3D point, int wpNum, QColor color, int radius);
-    void addMissionPath(Mission * mission);
+    void addMissionPath(MissionPath missionPath);
 
     void drawPoint(QVector2D point, QString label, QColor color, int radius = 20);
     void drawPolyline(QVariantList points, QColor color);
@@ -49,7 +49,7 @@ public:
     void drawPolygon(QVariantList points, QColor color, QString label);
     void drawWaypoints(QList<QVector2D> * wps);
     void clearMap();
-    void drawMission(Mission * mission);
+    void drawMission(Mission *selectedMission, MissionPath path);
     void drawUAV(double lat, double lon, double heading);
     void updateCenter(double lat, double lon);
     void updateUAV();
