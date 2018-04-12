@@ -8,6 +8,7 @@ MissionWidget::MissionWidget(QWidget *parent) :
     ui(new Ui::MissionWidget)
 {
     ui->setupUi(this);
+    loadCount=0;
     style = Style();
     ui->missionList->setEditable(true);
     ui->missionList->lineEdit()->setReadOnly(true);
@@ -18,6 +19,9 @@ MissionWidget::MissionWidget(QWidget *parent) :
     connect(ui->readButton, &QPushButton::clicked, this, &MissionWidget::readButtonClicked);
     connect(ui->clearButton, &QPushButton::clicked, this, &MissionWidget::clearButtonClicked);
     connect(ui->setCurrentButton, &QPushButton::clicked, this, &MissionWidget::setCurrentButtonClicked);
+
+    connect(ui->saveButton,&QPushButton::clicked, this, &MissionWidget::saveMission);
+    connect(ui->loadButton,&QPushButton::clicked, this, &MissionWidget::loadMission);
 
     foreach(MissionTable * table, this->findChildren<MissionTable*>()) {
         connect(table, &MissionTable::selectWaypoint, this, &MissionWidget::selectWaypoint);
@@ -34,11 +38,11 @@ MissionWidget::MissionWidget(QWidget *parent) :
         }
     }
 
-    if (test_mission) {
-        qInfo() << "LOADING TEST";
-        missions.append(new Mission(testReadJSON_mission("2"), testReadJSON_obstacle()));
-        ui->missionList->addItem("*TEST MISSION_FT*");
-        ui->missionList->setItemData(0, Qt::AlignCenter, Qt::TextAlignmentRole);
+    //Hard coded loaded missions
+    qInfo() << "LOADING TEST";
+    loadJSON_mission(":/res/test_mission2.json",loadCount++);
+    loadJSON_mission(":/res/test_mission.json",loadCount++);
+
 
         missions.append(new Mission(testReadJSON_mission(""), testReadJSON_obstacle()));
         ui->missionList->addItem("*TEST MISSION*");
@@ -48,7 +52,6 @@ MissionWidget::MissionWidget(QWidget *parent) :
         QStandardItemModel * model = createMissionModel(mission->generatedPath);
         ui->generatedMission->setTableModel(model);
         ui->setCurrentValue->setRange(1, mission->completeMissionLength(true));
-    }
 }
 
 bool MissionWidget::hasMission() {
@@ -146,6 +149,14 @@ void MissionWidget::setCurrentButtonClicked() {
     emit(setCurrentMision(ui->setCurrentValue->value()));
 }
 
+//void MissionWidget::saveButtonClicked() {
+//    emit(saveMission());
+//}
+
+//void MissionWidget::loadButtonClicked() {
+//    emit(loadMission());
+//}
+
 void MissionWidget::readMissions(Waypoint::WP * waypoints, uint16_t size) {
     qInfo() << "!-----------------------!";
     qInfo() << "MissionWidget::readMissions test";
@@ -185,6 +196,15 @@ QStandardItemModel *MissionWidget::createMissionModel(MissionPath path) {
     return model;
 }
 
+void MissionWidget::updateMission(int index) {
+    QStandardItemModel *interopModel = createMissionModel(missions.at(index)->interopPath);
+    QStandardItemModel *generatedModel = createMissionModel(missions.at(index)->generatedPath);
+    ui->interopMission->setTableModel(interopModel);
+    ui->generatedMission->setTableModel(generatedModel);
+    mission = missions.at(index);
+    updateDraw(ui->tabWidget->currentIndex());
+}
+
 void MissionWidget::getMissions(Interop *i) {
     QJsonArray interopMissions = i->getMissions().array();
     for (int j = 0; j < interopMissions.size(); j++) {
@@ -192,6 +212,41 @@ void MissionWidget::getMissions(Interop *i) {
         ui->missionList->addItem("Mission " + QString::number(j+1));
         ui->missionList->setItemData(j, Qt::AlignCenter, Qt::TextAlignmentRole);
     }
+}
+
+void MissionWidget::saveMission() {
+    QString filename = QFileDialog::getSaveFileName(this,
+            tr("Load Mission"), QDir::currentPath() + "/../../GroundStation/GS/res",
+            tr("Json Files (*.json)"));
+    QFile file(filename);
+    if (!file.open(QIODevice::WriteOnly)){
+        qWarning("Couldn't open write file");
+        return;
+    }
+    file.write(mission->toJson().toJson());
+    file.close();
+}
+
+void MissionWidget::loadMission() {
+    QString filename = QFileDialog::getOpenFileName(this,
+            tr("Load Mission"), QDir::currentPath() + "/../../GroundStation/GS/res",
+            tr("Json Files (*.json)"));
+    loadJSON_mission(filename,loadCount++);
+}
+
+void MissionWidget::loadJSON_mission(QString n, int num) {
+    QFile file(n);
+    if (!file.open(QIODevice::ReadOnly)) {
+        qWarning("Couldn't open mission file");
+        QJsonObject null;
+        return;
+    }
+    QByteArray data = file.readAll();
+    file.close();
+    QJsonDocument doc(QJsonDocument::fromJson(data));
+    missions.append(new Mission(doc.object(), testReadJSON_obstacle()));
+    ui->missionList->addItem("Loaded Mission " + QString::number(num));
+    ui->missionList->setItemData(1, Qt::AlignCenter, Qt::TextAlignmentRole);
 }
 
 

@@ -46,28 +46,28 @@ Mission::Mission(const Mission& mission) {
     for (int i=0; i<mission.search_grid_points->size(); ++i) {
         this->search_grid_points->append(mission.search_grid_points->at(i));
     }
-    QList<FlyZone>* fly = new QList<FlyZone>();
-    for (int i=0; i<mission.fly_zones->size(); ++i) {
-        FlyZone* f = new FlyZone();
-        f->max_alt = mission.fly_zones->at(i).max_alt;
-        f->min_alt = mission.fly_zones->at(i).min_alt;
-        f->boundary_points = new QList<QVector2D>();
-        for (int j=0; j<mission.fly_zones->at(i).boundary_points->size(); ++j)
-            f->boundary_points->append(mission.fly_zones->at(i).boundary_points->at(j));
-        fly->append(*f);
+    QList<FlyZone> fly;
+    for (int i=0; i<mission.fly_zones.size(); ++i) {
+        FlyZone f;
+        f.max_alt = mission.fly_zones.at(i).max_alt;
+        f.min_alt = mission.fly_zones.at(i).min_alt;
+        f.boundary_points;
+        for (int j=0; j<mission.fly_zones.at(i).boundary_points.size(); ++j)
+            f.boundary_points.append(mission.fly_zones.at(i).boundary_points.at(j));
+        fly.append(f);
     }
     this->fly_zones = fly;
     this->obstacles = mission.obstacles;
 }
 
-QList<FlyZone> * Mission::setFlyZones(QJsonArray flyZoneArray) {
-    QList<FlyZone> * fly_zones = new QList<FlyZone>();
+QList<FlyZone> Mission::setFlyZones(QJsonArray flyZoneArray) {
+    QList<FlyZone> fly_zones;
     for (int i = 0; i < flyZoneArray.size(); i++) {
-        FlyZone fly_zone = FlyZone();
+        FlyZone fly_zone;
         fly_zone.max_alt = flyZoneArray[i].toObject()["altitude_msl_max"].toDouble();
         fly_zone.min_alt = flyZoneArray[i].toObject()["altitude_msl_max"].toDouble();
         fly_zone.boundary_points = setPoints(flyZoneArray[i].toObject()["boundary_pts"].toArray());
-        fly_zones->append(fly_zone);
+        fly_zones.append(fly_zone);
     }
     return fly_zones;
 }
@@ -83,10 +83,10 @@ MissionPath Mission::setMissionPath(QJsonArray pointArray) {
     return missionPath;
 }
 
-QList<QVector2D> * Mission::setPoints(QJsonArray pointArray) {
-    QList<QVector2D> * points = new QList<QVector2D>();
+QList<QVector2D> Mission::setPoints(QJsonArray pointArray) {
+    QList<QVector2D> points;
     for(int i = 0; i < pointArray.size(); ++i){
-       points->insert(pointArray[i].toObject()["order"].toInt()-1,
+       points.insert(pointArray[i].toObject()["order"].toInt()-1,
                                   posToPoint(pointArray[i].toObject()));
     }
     return points;
@@ -107,6 +107,13 @@ QVector3D Mission::posTo3DPoint(QJsonObject obj) {
 
 QVector2D Mission::posToPoint(QJsonObject obj) {
     return QVector2D(obj["latitude"].toDouble(), obj["longitude"].toDouble());
+}
+
+QJsonValue Mission::pointToPos(QVector2D point) {
+    QJsonObject temp;
+    temp["latitude"] = point.x();
+    temp["longitude"] = point.y();
+    return QJsonValue(temp);
 }
 
 QVector<Waypoint::WP> Mission::constructWaypoints(bool interop) {
@@ -132,6 +139,47 @@ uint16_t Mission::completeMissionLength(bool interop) {
 
 Obstacles Mission::getObstacles() {
     return obstacles;
+}
+
+QJsonDocument Mission::toJson() {
+    QJsonObject obj;
+    obj["id"] = QJsonValue(id);
+    obj["active"] = QJsonValue(active);
+    obj["home_pos"] = pointToPos(home_pos);
+    obj["air_drop_pos"] = pointToPos(air_drop_pos);
+    obj["off_axis_odlc_pos"] = pointToPos(off_axis_odlc_pos);
+    obj["emergent_last_known_pos"] = pointToPos(emergent_last_known_pos);
+    QList<Waypt> *waypoints = &(interopPath.waypoints);
+    QJsonArray meow;
+    for (int i = 0; i < waypoints->length(); i++) {
+        QJsonObject temp;
+        QVector3D coord = waypoints->at(i).coords;
+        temp["latitude"] = QJsonValue(coord.x());
+        temp["longitude"] = QJsonValue(coord.y());
+        temp["altitude_msl"] = QJsonValue(coord.z());
+        temp["order"] = QJsonValue(i+1);
+        meow.append(temp);
+    }
+    obj["mission_waypoints"] = QJsonValue(meow);
+//    obj["search_grid_points"] = QJsonValue(search_grid_points);
+    QJsonArray meow2;
+    for (int i = 0; i<fly_zones.length(); i++) {
+        QJsonObject temp;
+        FlyZone *zone = &fly_zones[i];
+        temp["altitude_msl_max"]=zone->max_alt;
+        temp["altitude_msl_min"]=zone->min_alt;
+        QJsonArray temp2;
+        for (int j=0; j<zone->boundary_points.length(); j++) {
+            QJsonObject temp3;
+            temp3["latitude"] = QJsonValue(zone->boundary_points[j].x());
+            temp3["longitude"] = QJsonValue(zone->boundary_points[j].y());
+            temp3["order"] = QJsonValue(j+1);
+            temp2.append(temp3);
+        }
+    }
+    QJsonDocument doc;
+    doc.setObject(obj);
+    return doc;
 }
 
 QList<QPolygonF> Mission::get_obstacles() {

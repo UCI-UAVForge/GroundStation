@@ -7,13 +7,13 @@
 #include <rrt/planning/Path.hpp>
 #include <Eigen/src/Core/Matrix.h>
 double SCALE_CONSTANT = 1000;
-std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, double start_lon, double end_lat, double end_lon, QList<FlyZone>* flyzones) {
+std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, double start_lon, double end_lat, double end_lon, QList<FlyZone> flyzones) {
     int dimensions = 2;
 
     Eigen::Vector2d size(90000,200000);
     std::vector<Eigen::Vector2d> _previousSolution;
 
-    std::shared_ptr<MissionStateSpace> _stateSpace(new MissionStateSpace(size.x(), size.y(), 20, 20, FlyZone(flyzones->at(0))));
+    std::shared_ptr<MissionStateSpace> _stateSpace(new MissionStateSpace(size.x(), size.y(), 20, 20, FlyZone(flyzones.at(0))));
     std::shared_ptr<RRT::BiRRT<Eigen::Vector2d>> _biRRT = std::make_shared<RRT::BiRRT<Eigen::Vector2d>>(_stateSpace, RRT::hash, dimensions);
 
     auto _waypointCacheMaxSize = 15;
@@ -65,7 +65,7 @@ void PlanMission::add_serach_area(QPolygonF poly) {
     search_areas.push_back(poly);
 }
 
-QList<QVector3D> * PlanMission::get_path(Point start_point, QList<FlyZone>* flyzones) {
+QList<QVector3D> * PlanMission::get_path(Point start_point, QList<FlyZone> flyzones) {
     std::vector<Point> path;
 //    path.push_back(start_point);
     std::vector<Point> prelim_path;

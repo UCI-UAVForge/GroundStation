@@ -101,8 +101,8 @@ void MapWidget::drawWaypoints(QList<QVector2D> * waypoints) {
 }
 
 void MapWidget::drawMission(Mission *mission, MissionPath path) {
-    for (int i = 0; i < mission->fly_zones->size(); i++) {
-        drawPolygon(toQVariantList(mission->fly_zones->at(i).boundary_points),
+    for (int i = 0; i < mission->fly_zones.size(); i++) {
+        drawPolygon(toQVariantList(&(mission->fly_zones.at(i).boundary_points)),
                     QColor(0,255,0, 70), "Fly Zone #" + QString::number(i));
     }
 

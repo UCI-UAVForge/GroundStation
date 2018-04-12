@@ -16,7 +16,7 @@ public:
         : RRT::GridStateSpace(width, height, discretizedWidth, discretizedHeight)
     {
         QVector<QPointF> newList;
-        for(const QVector2D item: *flyzone.boundary_points) {
+        for(const QVector2D item: flyzone.boundary_points) {
             newList << item.toPointF();
         }
         this->flyzone = QPolygonF(newList);

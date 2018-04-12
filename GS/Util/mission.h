@@ -19,7 +19,7 @@
 struct FlyZone {
     qreal max_alt;
     qreal min_alt;
-    QList<QVector2D> * boundary_points;
+    QList<QVector2D> boundary_points;
 };
 
 struct MissionTakeoff {
@@ -48,7 +48,7 @@ public:
     MissionPath generatedPath;
     MissionTakeoff takeoff;
     QList<QVector3D> * search_grid_points;
-    QList<FlyZone> * fly_zones;
+    QList<FlyZone> fly_zones;
     Obstacles obstacles;
 
     QList<QPolygonF> get_obstacles();
@@ -58,6 +58,7 @@ public:
     uint16_t completeMissionLength(bool interop);
 //    void setActions_wp();
     Obstacles getObstacles();
+    QJsonDocument toJson();
 
 signals:
     void loadToUAV(int seq, int cmd, float params[]);
@@ -65,10 +66,11 @@ signals:
 private:
     QVector2D posToPoint(QJsonObject obj);
     QVector3D posTo3DPoint(QJsonObject obj);
+    QJsonValue pointToPos(QVector2D point);
 
     MissionPath setMissionPath(QJsonArray pointArray);
-    QList<FlyZone> * setFlyZones(QJsonArray flyZoneArray);
-    QList<QVector2D> * setPoints(QJsonArray pointArray);
+    QList<FlyZone> setFlyZones(QJsonArray flyZoneArray);
+    QList<QVector2D> setPoints(QJsonArray pointArray);
     QList<QVector3D> * set3DPoints(QJsonArray pointArray);
     double meters_to_deg(double meters, double latitude)
     {
