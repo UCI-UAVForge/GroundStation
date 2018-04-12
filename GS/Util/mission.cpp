@@ -110,13 +110,12 @@ QVector2D Mission::posToPoint(QJsonObject obj) {
 }
 
 QVector<Waypoint::WP> Mission::constructWaypoints(bool interop) {
-    uint16_t len = interop ? interopPath.length() : generatedPath.length();
+    uint16_t len = generatedPath.length();
     QVector<Waypoint::WP> waypoints;
 
     waypoints.append(missionPrologue());
     waypoints.append(generateTakeoff());
-    if (interop) waypoints.append(interopPath.generateWaypoints(2));
-    else waypoints.append(generatedPath.generateWaypoints(2));
+    waypoints.append(generatedPath.generateWaypoints(2));
 
     // TODO: add Landing
 

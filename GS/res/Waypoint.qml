@@ -8,6 +8,11 @@ MapQuickItem {
         property int r;
         property string pt_color;
 
+        function remove(coord) {
+            missionPath.removeCoordinate(coord);
+
+        }
+
         function moveTo(newCoord) {
             waypoint.coordinate = QtPositioning.coordinate(newCoord.x, newCoord.y);
             missionPath.replaceCoordinate(parseInt(objectName), waypoint.coordinate);

@@ -43,6 +43,7 @@ public:
     QVector2D air_drop_pos;
     QVector2D off_axis_odlc_pos;
     QVector2D emergent_last_known_pos;
+    MissionPath mission_path;
     MissionPath interopPath;
     MissionPath generatedPath;
     MissionTakeoff takeoff;

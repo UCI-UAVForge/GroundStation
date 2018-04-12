@@ -74,6 +74,7 @@ public slots:
     void updateUAVHeading(mavlink_vfr_hud_t vfr);
     void selectWaypoint(int wpNum);
     void moveWaypoint(int wpNum, QVector3D coords);
+    void removeWaypoint(int wpNum, QVector3D coords);
     void changeEditMode(bool editing);
 };
 

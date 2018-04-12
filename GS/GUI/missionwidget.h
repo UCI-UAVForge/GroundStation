@@ -64,14 +64,16 @@ signals:
     void selectWaypoint(int wpNum);
     void editMode(bool editing);
     void moveWaypointSignal(int wpNum, QVector3D newCoord);
+    void removeWaypointSignal(int wpNum, QVector3D coord);
 
 public slots:
     void readMissions(Waypoint::WP * waypoints, uint16_t size);
     void writeMissionsStatus(bool success);
     void updateMission(int index);
-    void updateDraw(int index);
-    void updateSetCurrentLen(int index);
+    void updateDraw();
+    void updateSetCurrentLen();
     void moveWaypoint(int wpNum, int key);
+    void removeWaypoint(int wpNum);
 
 private:
     void testOutputJSON(QJsonObject o, int i);

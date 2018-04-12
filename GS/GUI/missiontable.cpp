@@ -38,14 +38,22 @@ void MissionTable::focusOutEvent(QFocusEvent *event) {
 
 void MissionTable::keyPressEvent( QKeyEvent *k ) {
     if (selectionModel()->selectedRows(0).length() > 0) {
-        int selectedRow = selectionModel()->selectedRows(0).at(0).row();
         if (k->key() == Qt::Key_Tab) {
+            int selectedRow = selectionModel()->selectedRows(0).at(0).row();
             int nextRow = selectedRow + 1;
             if (nextRow >= model()->rowCount()) {
                 nextRow = 0;
             }
             selectionModel()->select(model()->index(nextRow, 0),
                                      QItemSelectionModel::ClearAndSelect|QItemSelectionModel::Rows );
+        }
+        if (k->key() == Qt::Key_A) {
+            emit(addWaypoint(current));
+            return;
+        }
+        if (k->key() == Qt::Key_R) {
+            emit(removeWaypoint(current));
+            return;
         }
         emit(moveWaypoint(current, k->key()));
     }

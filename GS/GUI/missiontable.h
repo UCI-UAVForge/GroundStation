@@ -21,6 +21,8 @@ public:
 
 signals:
     void moveWaypoint(int wpNum, int key);
+    void addWaypoint(int wpNum);
+    void removeWaypoint(int wpNum);
     void selectWaypoint(int wpNum);
     void editMode(bool editing);
 

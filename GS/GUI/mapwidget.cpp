@@ -11,6 +11,11 @@ MapWidget::MapWidget(QWidget *parent) : QQuickWidget(parent) {
 }
 
 
+void MapWidget::removeWaypoint(int wpNum, QVector3D coord) {
+    QObject * wp = this->rootObject()->findChild<QObject*>(QString::number(wpNum));
+    QMetaObject::invokeMethod(wp, "remove",
+         Q_ARG(QVariant, coord));
+}
 
 void MapWidget::moveWaypoint(int wpNum, QVector3D newCoords) {
     QObject * wp = this->rootObject()->findChild<QObject*>(QString::number(wpNum));
