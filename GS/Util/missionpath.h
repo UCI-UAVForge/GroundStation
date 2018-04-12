@@ -20,6 +20,7 @@ public:
     uint16_t length();
     QVector<Waypoint::WP> generateWaypoints(uint16_t startingSeq);
     QList<QVector3D>* toList();
+    QJsonValue toQJsonValue();
 };
 
 #endif // MISSIONPATH_H

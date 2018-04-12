@@ -1,6 +1,7 @@
 #ifndef MISSIONWIDGET_H
 #define MISSIONWIDGET_H
 
+#include <QFileDialog>
 #include <QWidget>
 #include "interop.h"
 #include "mission.h"
@@ -33,6 +34,10 @@ public:
     void readButtonClicked();
     void clearButtonClicked();
     void setCurrentButtonClicked();
+//    void saveButtonClicked();
+//    void loadButtonClicked();
+    void saveMission();
+    void loadMission();
     bool hasMission();
     void generateMission();
     void getMissions(Interop * i);
@@ -65,6 +70,8 @@ signals:
     void editMode(bool editing);
     void moveWaypointSignal(int wpNum, QVector3D newCoord);
 
+
+
 public slots:
     void readMissions(Waypoint::WP * waypoints, uint16_t size);
     void writeMissionsStatus(bool success);
@@ -74,9 +81,11 @@ public slots:
     void moveWaypoint(int wpNum, int key);
 
 private:
+    void loadJSON_mission(QString n, int num);
     void testOutputJSON(QJsonObject o, int i);
     QJsonObject testReadJSON_mission(QString n);
     QJsonDocument testReadJSON_obstacle();
+    int loadCount;
 
     Ui::MissionWidget *ui;
 
