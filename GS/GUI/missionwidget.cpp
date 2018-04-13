@@ -195,12 +195,10 @@ QStandardItemModel *MissionWidget::createMissionModel(MissionPath path) {
 }
 
 void MissionWidget::updateMission(int index) {
-    QStandardItemModel *interopModel = createMissionModel(missions.at(index)->interopPath);
-    QStandardItemModel *generatedModel = createMissionModel(missions.at(index)->generatedPath);
-    ui->interopMission->setTableModel(interopModel);
-    ui->generatedMission->setTableModel(generatedModel);
+    QStandardItemModel * model = createMissionModel(missions.at(index)->generatedPath);
+    ui->generatedMission->setTableModel(model);
     mission = missions.at(index);
-    updateDraw(ui->tabWidget->currentIndex());
+    updateDraw();
 }
 
 void MissionWidget::getMissions(Interop *i) {
@@ -280,13 +278,6 @@ QJsonDocument MissionWidget::testReadJSON_obstacle() {
     QByteArray data = load.readAll();
     QJsonDocument doc(QJsonDocument::fromJson(data));
     return doc;
-}
-
-void MissionWidget::updateMission(int index) {
-    QStandardItemModel * model = createMissionModel(missions.at(index)->generatedPath);
-    ui->generatedMission->setTableModel(model);
-    mission = missions.at(index);
-    updateDraw();
 }
 
 MissionWidget::~MissionWidget() {
