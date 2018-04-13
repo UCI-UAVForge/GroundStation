@@ -27,7 +27,7 @@ Rectangle {
         antialiasing: true
         plugin: mapPlugin
         center: QtPositioning.coordinate(33.771175, -117.695560) //the place 38.14792, -76.427995            //(33.6405, -117.8443) // Irvine
-        zoomLevel: 14
+        zoomLevel: 18
         Component.onCompleted: {
                     for( var i_type in supportedMapTypes ) {
                         if(supportedMapTypes[i_type].name.localeCompare( "World Imagery" ) === 0 ) {

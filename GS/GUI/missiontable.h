@@ -17,6 +17,7 @@ public:
     void focusOutEvent(QFocusEvent * e);
     int current;
     void selectChanged(const QItemSelection & selected, const QItemSelection & deselected);
+    void modelChanged(QAbstractItemModel *model);
     void setTableModel(QStandardItemModel * model);
 
 signals:

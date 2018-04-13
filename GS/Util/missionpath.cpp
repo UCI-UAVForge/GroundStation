@@ -27,7 +27,7 @@ void MissionPath::setCurrent(int i) {
 }
 
 uint16_t MissionPath::length() {
-    waypoints.length();
+    return waypoints.length();
 }
 
 QVector<Waypoint::WP> MissionPath::generateWaypoints(uint16_t startingSeq) {
@@ -36,6 +36,7 @@ QVector<Waypoint::WP> MissionPath::generateWaypoints(uint16_t startingSeq) {
     for (int i = 0; i < waypoints.length(); i++) {
         path.append(waypoints[i].generateWP(seq++));
     }
+    return path;
 }
 
 QList<QVector3D>* MissionPath::toList() {
@@ -44,4 +45,14 @@ QList<QVector3D>* MissionPath::toList() {
         list->append(waypoints.at(i).coords);
     }
     return list;
+}
+
+void MissionPath::setDefaultLanding(QList<QVector3D> landingPath, QVector2D landingPoint, float abortAlt) {
+    waypoints.clear();
+    foreach(QVector3D coords, landingPath) {
+        waypoints.append(Waypt(coords));
+    }
+    Waypt land;
+    land.setDefaultLanding(landingPoint, abortAlt);
+    waypoints.append(land);
 }

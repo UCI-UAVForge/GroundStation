@@ -41,7 +41,7 @@ public:
     bool hasMission();
     void generateMission();
     void getMissions(Interop * i);
-    QStandardItemModel *createMissionModel(MissionPath path);
+    QStandardItemModel *createMissionModel(const Mission *mission);
     void setTableModel(QTableView * tableView, QStandardItemModel * model);
 
     QVector<Mission*> missions;
@@ -57,7 +57,7 @@ public:
     ~MissionWidget();
 
 signals:
-    void drawMission(Mission *selectedMission, MissionPath path);
+    void drawMission(Mission *selectedMission);
     void drawWaypoints(QList<QVector2D> * wps);
     void drawObstacle(QPolygonF poly, QColor color, QString label);
     void clearMissions();

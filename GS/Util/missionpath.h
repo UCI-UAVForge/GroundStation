@@ -1,9 +1,9 @@
 #ifndef MISSIONPATH_H
 #define MISSIONPATH_H
 
-#include "waypt.h";
-#include <QList>;
-#include "waypoint.h";
+#include "waypt.h"
+#include <QList>
+#include "waypoint.h"
 
 class MissionPath {
 
@@ -21,6 +21,7 @@ public:
     QVector<Waypoint::WP> generateWaypoints(uint16_t startingSeq);
     QList<QVector3D>* toList();
     QJsonValue toQJsonValue();
+    void setDefaultLanding(QList<QVector3D> landingPath, QVector2D landingPoint, float abortAlt);
 };
 
 #endif // MISSIONPATH_H

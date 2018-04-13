@@ -19,6 +19,7 @@ MissionWidget::MissionWidget(QWidget *parent) :
     connect(ui->readButton, &QPushButton::clicked, this, &MissionWidget::readButtonClicked);
     connect(ui->clearButton, &QPushButton::clicked, this, &MissionWidget::clearButtonClicked);
     connect(ui->setCurrentButton, &QPushButton::clicked, this, &MissionWidget::setCurrentButtonClicked);
+    connect(ui->missionList, SIGNAL(currentIndexChanged(int)), this, SLOT(updateMission(int)));
 
     connect(ui->saveButton,&QPushButton::clicked, this, &MissionWidget::saveMission);
     connect(ui->loadButton,&QPushButton::clicked, this, &MissionWidget::loadMission);
@@ -44,14 +45,14 @@ MissionWidget::MissionWidget(QWidget *parent) :
     loadJSON_mission("://res/test_mission.json",loadCount++);
 
 
-        missions.append(new Mission(testReadJSON_mission(""), testReadJSON_obstacle()));
-        ui->missionList->addItem("*TEST MISSION*");
-        ui->missionList->setItemData(1, Qt::AlignCenter, Qt::TextAlignmentRole);
+    missions.append(new Mission(testReadJSON_mission(""), testReadJSON_obstacle()));
+    ui->missionList->addItem("*TEST MISSION*");
+    ui->missionList->setItemData(1, Qt::AlignCenter, Qt::TextAlignmentRole);
 
-        mission = missions[0];
-        QStandardItemModel * model = createMissionModel(mission->generatedPath);
-        ui->generatedMission->setTableModel(model);
-        ui->setCurrentValue->setRange(1, mission->completeMissionLength(true));
+    mission = missions[0];
+    QStandardItemModel * model = createMissionModel(mission);
+    ui->generatedMission->setTableModel(model);
+    ui->setCurrentValue->setRange(1, mission->completeMissionLength() - 1);
 }
 
 bool MissionWidget::hasMission() {
@@ -63,11 +64,11 @@ void MissionWidget::updateDraw() {
     for (QPolygonF obst_poly : mission->get_obstacles()) {
         emit(drawObstacle(obst_poly, QColor("red"), "Obstacle"));
     }
-    drawMission(mission, mission->generatedPath);
+    drawMission(mission);
 }
 
 void MissionWidget::updateSetCurrentLen() {
-    ui->setCurrentValue->setRange(1, mission->completeMissionLength(false));
+    ui->setCurrentValue->setRange(1, mission->completeMissionLength() - 1);
 }
 
 void MissionWidget::generateMission() {
@@ -76,15 +77,19 @@ void MissionWidget::generateMission() {
         /* Path Finding */
         QVector3D start_point = mission->generatedPath.waypoints.at(0).coords;
         QList<QVector3D>* path = pm.get_path();
+
+        /* Replace with Coordinate add/remove only */
         mission->generatedPath.waypoints.clear();
         mission->generatedPath.waypoints.reserve(mission->generatedPath.waypoints.size()
                                                 + std::distance(path->begin(),
                                                                 path->end()) + 1);
-        mission->generatedPath.addWaypoint(Waypt(start_point));
+        mission->generatedPath.addWaypoint(Waypt(start_point)); // <- we don't want to use this thingy
         foreach(QVector3D coords, *path) {
             mission->generatedPath.addWaypoint(Waypt(coords));
         }
 
+        ui->generatedMission->setTableModel(createMissionModel(mission));
+        updateDraw();
         // TODO: Create generatedPath model for mission table.
 //        QStandardItemModel * genmodel = createMissionModel(generatedMission);
 //        //setTableModel(ui->generatedMission, genmodel);
@@ -96,30 +101,14 @@ void MissionWidget::generateMission() {
 void MissionWidget::removeWaypoint(int wpNum) {
     QVector3D wp = mission->generatedPath.waypoints.at(wpNum).coords;
     mission->generatedPath.waypoints.removeAt(wpNum);
-    QStandardItemModel * model = createMissionModel(mission->generatedPath);
+    QStandardItemModel * model = createMissionModel(mission);
     ui->generatedMission->setTableModel(model);
     updateDraw();
     emit(removeWaypointSignal(wpNum, wp));
 }
 
 void MissionWidget::moveWaypoint(int wpNum, int key) {
-    QVector3D wp = mission->generatedPath.waypoints.at(wpNum).coords;
-    switch (key) {
-        case Qt::Key_Up:
-            wp.setX(wp.x()+0.0001);
-        break;
-        case Qt::Key_Down:
-            wp.setX(wp.x()-0.0001);
-        break;
-        case Qt::Key_Left:
-            wp.setY(wp.y()-0.0001);
-        break;
-        case Qt::Key_Right:
-            wp.setY(wp.y()+0.0001);
-        break;
-    }
-    mission->generatedPath.waypoints[wpNum].coords = wp;
-    emit(moveWaypointSignal(wpNum, wp));
+    emit(moveWaypointSignal(wpNum, mission->moveWaypoint(wpNum, key)));
 }
 
 void MissionWidget::setTableModel(QTableView * tableView, QStandardItemModel * model) {
@@ -133,8 +122,8 @@ void MissionWidget::setTableModel(QTableView * tableView, QStandardItemModel * m
 
 void MissionWidget::writeButtonClicked() {
     if (hasMission()) {
-        emit(writeMissionsSignal(mission->constructWaypoints(false),
-                                 mission->completeMissionLength(false)));
+        emit(writeMissionsSignal(mission->constructWaypoints(),
+                                 mission->completeMissionLength()));
     }
 }
 void MissionWidget::readButtonClicked() {
@@ -173,17 +162,19 @@ void MissionWidget::writeMissionsStatus(bool success) {
     else qDebug() << "Write Missions failed";
 }
 
-QStandardItemModel *MissionWidget::createMissionModel(MissionPath path) {
+QStandardItemModel *MissionWidget::createMissionModel(const Mission *mission) {
     QStandardItemModel *model = new QStandardItemModel;
-    QList<Waypt> wps = path.waypoints;
+    QList<Waypt> wp({mission->takeoff});
+    wp.append(mission->generatedPath.waypoints);
+    wp.append(mission->landing.waypoints);
     model->setHorizontalHeaderLabels(QList<QString>({"CMD#", " ALT ", " 1 ", " 2 ", " 3 ", " 4 "}));
-    for (int i = 0; i < path.length(); i++) {
-        QStandardItem * action = new QStandardItem(QString("%0").arg(wps.at(i).action));
-        QStandardItem * alt = new QStandardItem(QString("%0 m.").arg(wps.at(i).coords.z()));
-        QStandardItem * param1 = new QStandardItem(QString("%0").arg(wps.at(i).param1));
-        QStandardItem * param2 = new QStandardItem(QString("%0").arg(wps.at(i).param2));
-        QStandardItem * param3 = new QStandardItem(QString("%0").arg(wps.at(i).param3));
-        QStandardItem * param4 = new QStandardItem(QString("%0").arg(wps.at(i).param4));
+    for (int i = 0; i < wp.length(); i++) {
+        QStandardItem * action = new QStandardItem(QString("%0").arg(wp.at(i).action));
+        QStandardItem * alt = new QStandardItem(QString("%0").arg(wp.at(i).coords.z()));
+        QStandardItem * param1 = new QStandardItem(QString("%0").arg(wp.at(i).param1));
+        QStandardItem * param2 = new QStandardItem(QString("%0").arg(wp.at(i).param2));
+        QStandardItem * param3 = new QStandardItem(QString("%0").arg(wp.at(i).param3));
+        QStandardItem * param4 = new QStandardItem(QString("%0").arg(wp.at(i).param4));
         QList<QStandardItem*> row({action, alt, param1, param2,
                                   param3, param4});
         for (int j = 0; j < row.size(); j++) {
@@ -195,7 +186,7 @@ QStandardItemModel *MissionWidget::createMissionModel(MissionPath path) {
 }
 
 void MissionWidget::updateMission(int index) {
-    QStandardItemModel * model = createMissionModel(missions.at(index)->generatedPath);
+    QStandardItemModel * model = createMissionModel(missions.at(index));
     ui->generatedMission->setTableModel(model);
     mission = missions.at(index);
     updateDraw();

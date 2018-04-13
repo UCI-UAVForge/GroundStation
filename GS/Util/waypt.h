@@ -2,11 +2,13 @@
 #define WAYPT_H
 
 #include <QVector3D>
+#include <QVector2D>
 #include "waypoint.h"
 
 class Waypt
 {
 public:
+    Waypt();
     Waypt(QVector3D coords);
     QVector3D coords;
     int action;
@@ -18,6 +20,8 @@ public:
     float param4;
 
     Waypoint::WP generateWP(uint16_t seq);
+    void setDefaultTakeoff(float alt, float pitchAngle);
+    void setDefaultLanding(QVector2D landingPoint, float abortAlt);
 };
 
 #endif // WAYPT_H

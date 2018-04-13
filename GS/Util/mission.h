@@ -13,19 +13,12 @@
 #include "obstacles.h"
 #include "missionpath.h"
 #include "point.hpp"
-#include "waypt.h"
 
 
 struct FlyZone {
     qreal max_alt;
     qreal min_alt;
     QList<QVector2D> boundary_points;
-};
-
-struct MissionTakeoff {
-    float altitude;
-    float pitch;
-    float yawAngle;
 };
 
 class Mission : public QObject {
@@ -35,7 +28,6 @@ public:
 
     Mission(QJsonObject);
     Mission(QJsonObject mission_obj, QJsonDocument obstacles_doc);
-    Mission(const Mission& mission);
 
     int id;
     bool active;
@@ -43,22 +35,24 @@ public:
     QVector2D air_drop_pos;
     QVector2D off_axis_odlc_pos;
     QVector2D emergent_last_known_pos;
-    MissionPath mission_path;
     MissionPath interopPath;
     MissionPath generatedPath;
-    MissionTakeoff takeoff;
     QList<QVector3D> * search_grid_points;
     QList<FlyZone> fly_zones;
     Obstacles obstacles;
+    Waypt takeoff;
+    MissionPath landing;
 
     QList<QPolygonF> get_obstacles();
     void printJDoc();
     Point toECEF(double lat, double lon, double alt);
-    QVector<Waypoint::WP> constructWaypoints(bool interop);
-    uint16_t completeMissionLength(bool interop);
+    QVector<Waypoint::WP> constructWaypoints();
+    uint16_t completeMissionLength();
 //    void setActions_wp();
     Obstacles getObstacles();
     QJsonDocument toJson();
+    QList<QVector3D> *toList();
+    QVector3D moveWaypoint(int index, int key);
 
 signals:
     void loadToUAV(int seq, int cmd, float params[]);
@@ -77,7 +71,6 @@ private:
         return (meters / (111.32 * 1000 * cos(latitude * (M_PI / 180))));
     }
     Waypoint::WP missionPrologue();
-    Waypoint::WP generateTakeoff();
 };
 
 #endif // MISSION_H
