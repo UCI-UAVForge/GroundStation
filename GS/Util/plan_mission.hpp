@@ -22,8 +22,11 @@ class PlanMission
             return (meters / (111.32 * 1000 * cos(latitude * (M_PI / 180))));
         }
         std::vector<std::pair<double, double>> pathfind(double start_lat, double start_lon, double end_lat, double end_lon, QList<FlyZone> flyzones);
+        Mission* mission;
     public:
-        PlanMission();
+        PlanMission(Mission* m) {
+            mission = m;
+        }
         // too lazy to implement ordering for these objects
         void add_goal_point(Point p);
         void set_obstacles(Obstacles o);
@@ -45,7 +48,7 @@ class PlanMission
             return polys;
         }
         void add_serach_area(QPolygonF poly);
-        QList<QVector3D> * get_path(Point start_point, QList<FlyZone> flyzones);
+        QList<QVector3D> * get_path();
         static bool poly_intersects(QPolygonF a, QPolygonF b) {
 #if QT_VERSION < QT_VERSION_CHECK(5, 10, 0)
             QPainterPath subject; subject.addPolygon(a);

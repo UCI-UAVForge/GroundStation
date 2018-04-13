@@ -40,8 +40,8 @@ MissionWidget::MissionWidget(QWidget *parent) :
 
     //Hard coded loaded missions
     qInfo() << "LOADING TEST";
-    loadJSON_mission(":/res/test_mission2.json",loadCount++);
-    loadJSON_mission(":/res/test_mission.json",loadCount++);
+    loadJSON_mission("://res/test_mission2.json",loadCount++);
+    loadJSON_mission("://res/test_mission.json",loadCount++);
 
 
         missions.append(new Mission(testReadJSON_mission(""), testReadJSON_obstacle()));
@@ -72,25 +72,23 @@ void MissionWidget::updateSetCurrentLen() {
 
 void MissionWidget::generateMission() {
     if (hasMission()) {
-        PlanMission pm;
+        PlanMission pm(mission);
+        /* Path Finding */
+        QVector3D start_point = mission->generatedPath.waypoints.at(0).coords;
+        QList<QVector3D>* path = pm.get_path();
+        mission->generatedPath.waypoints.clear();
+        mission->generatedPath.waypoints.reserve(mission->generatedPath.waypoints.size()
+                                                + std::distance(path->begin(),
+                                                                path->end()) + 1);
+        mission->generatedPath.addWaypoint(Waypt(start_point));
+        foreach(QVector3D coords, *path) {
+            mission->generatedPath.addWaypoint(Waypt(coords));
+        }
 
-//        /* Path Finding */
-//        for (int i = 1; i < mission->generatedPath.waypoints.size(); i++) {
-//            QVector3D point = mission->generatedPath.waypoints.at(i).coords;
-//            pm.add_goal_point(Point::fromGeodetic(point.x(), point.y(), point.z()));
-//        }
-//        QVector3D start_point = mission->generatedPath.waypoints.at(0).coords;
-//        pm.set_obstacles(mission->obstacles);
-//        QList<QVector3D>* path = pm.get_path(Point::fromGeodetic(start_point.x(), start_point.y(), start_point.z()),
-//                                 mission->fly_zones);
-//        mission->generatedPath.waypoints.clear();
-//        mission->generatedPath.waypoints.reserve(mission->generatedPath.waypoints.size()
-//                                                + std::distance(path->begin(),
-//                                                                path->end()) + 1);
-//        mission->generatedPath.addWaypoint(Waypt(start_point));
-//        foreach(QVector3D coords, *path) {
-//            mission->generatedPath.addWaypoint(Waypt(coords));
-//        }
+        // TODO: Create generatedPath model for mission table.
+//        QStandardItemModel * genmodel = createMissionModel(generatedMission);
+//        //setTableModel(ui->generatedMission, genmodel);
+//        ui->generatedMission->setTableModel(genmodel);
 
     }
 }

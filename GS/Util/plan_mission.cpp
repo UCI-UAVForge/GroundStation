@@ -53,7 +53,6 @@ std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, d
     }
     return result;
 }
-PlanMission::PlanMission() {}
 // too lazy to implement ordering for these objects
 void PlanMission::add_goal_point(Point p) {
     goal_points.push_back(p);
@@ -65,7 +64,15 @@ void PlanMission::add_serach_area(QPolygonF poly) {
     search_areas.push_back(poly);
 }
 
-QList<QVector3D> * PlanMission::get_path(Point start_point, QList<FlyZone> flyzones) {
+QList<QVector3D> * PlanMission::get_path() {
+    QList<FlyZone> flyzones = mission->fly_zones;
+    for (int i = 1; i < mission->interopPath.waypoints.size(); i++) {
+        QVector3D point = mission->interopPath.waypoints.at(i).coords;
+        add_goal_point(Point::fromGeodetic(point.x(), point.y(), point.z()));
+    }
+    QVector3D start_point_q3d = mission->interopPath.waypoints.at(0).coords;
+    Point start_point = Point::fromGeodetic(start_point_q3d.x(), start_point_q3d.y(), start_point_q3d.z());
+    set_obstacles(mission->obstacles);
     std::vector<Point> path;
 //    path.push_back(start_point);
     std::vector<Point> prelim_path;
@@ -75,7 +82,21 @@ QList<QVector3D> * PlanMission::get_path(Point start_point, QList<FlyZone> flyzo
     qInfo() << "start: " << start_point;
     // add search areas to remaining_points
     // generate rectangle
+    QList<QVector3D>* waypoints = mission->search_grid_points;
+    QVector<QPointF> list;
+    for (int i = 0; i < waypoints->length(); i++) {
+        list.append(waypoints->at(i).toPointF());
+    }
+    QRectF bounding_rect = QPolygonF().boundingRect();
     // gen search path
+    QPointF tl = bounding_rect.topLeft();
+    QPointF br = bounding_rect.bottomRight();
+    float delta = meters_to_deg(80, start_point_q3d.x());
+    for (float i = tl.x(); i < br.x(); i+delta) {
+        for (float j = tl.y(); j < br.y(); j+delta) {
+            remaining_points.push_back(Point::fromGeodetic(i, j, start_point_q3d.z()));
+        }
+    }
 
     // generate prelim serach path
     std::vector<Point> pts = remaining_points;
