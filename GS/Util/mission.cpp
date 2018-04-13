@@ -20,6 +20,8 @@ Mission::Mission(QJsonObject obj) {
     takeoff.setDefaultTakeoff(20, 45);
     QList<QVector3D> landingPath({QVector3D(33.770980, -117.694640, 5)});
     landing.setDefaultLanding(landingPath, QVector2D(33.771031, -117.694890), 15);
+
+    generatedPath.waypoints.append(landing.waypoints);
 }
 
 Mission::Mission(QJsonObject mission_obj, QJsonDocument obstacles_doc) {
@@ -38,6 +40,8 @@ Mission::Mission(QJsonObject mission_obj, QJsonDocument obstacles_doc) {
     takeoff.setDefaultTakeoff(20, 45);
     QList<QVector3D> landingPath({QVector3D(33.770980, -117.694640, 5)});
     landing.setDefaultLanding(landingPath, QVector2D(33.771031, -117.694890), 15);
+
+    generatedPath.waypoints.append(landing.waypoints);
 }
 
 QList<FlyZone> Mission::setFlyZones(QJsonArray flyZoneArray) {
@@ -103,7 +107,6 @@ QVector<Waypoint::WP> Mission::constructWaypoints() {
     waypoints.append(missionPrologue());
     waypoints.append(takeoff.generateWP(1));
     waypoints.append(generatedPath.generateWaypoints(2));
-    waypoints.append(landing.generateWaypoints(len + 2));
 
     return waypoints;
 }
@@ -112,8 +115,7 @@ uint16_t Mission::completeMissionLength() {
     int missionPrologue = 1;
     int takeoffLen = 1;
     int waypoints = generatedPath.length();
-    int landingLen = landing.length();
-    return missionPrologue + takeoffLen + waypoints + landingLen;
+    return missionPrologue + takeoffLen + waypoints;
 }
 
 Obstacles Mission::getObstacles() {
@@ -189,52 +191,28 @@ QList<QVector3D> *Mission::toList() {
     list->append(QVector3D(home_pos)); // Takeoff
     foreach (Waypt wp, generatedPath.waypoints)
         list->append(wp.coords);
-    foreach(Waypt l, landing.waypoints)
-        list->append(l.coords);
     return list;
 }
 
 QVector3D Mission::moveWaypoint(int wpNum, int key) {
     if (wpNum == 1) // Takeoff unmodifiable
         return QVector3D(home_pos);
-    if (wpNum > generatedPath.length() + 1) { // Landing
-        int index = wpNum - generatedPath.length() - 2;
-        QVector3D l = landing.waypoints.at(index).coords;
-        switch (key) {
-            case Qt::Key_Up:
-                l.setX(l.x()+0.00001);
-            break;
-            case Qt::Key_Down:
-                l.setX(l.x()-0.00001);
-            break;
-            case Qt::Key_Left:
-                l.setY(l.y()-0.00001);
-            break;
-            case Qt::Key_Right:
-                l.setY(l.y()+0.00001);
-            break;
-        }
-        landing.waypoints[index].coords = l;
-        return l;
+    int index = wpNum - 2;
+    QVector3D wp = generatedPath.waypoints.at(index).coords;
+    switch (key) {
+        case Qt::Key_Up:
+            wp.setX(wp.x()+0.00001);
+        break;
+        case Qt::Key_Down:
+            wp.setX(wp.x()-0.00001);
+        break;
+        case Qt::Key_Left:
+            wp.setY(wp.y()-0.00001);
+        break;
+        case Qt::Key_Right:
+            wp.setY(wp.y()+0.00001);
+        break;
     }
-    else { // Waypoints
-        int index = wpNum - 2;
-        QVector3D wp = generatedPath.waypoints.at(index).coords;
-        switch (key) {
-            case Qt::Key_Up:
-                wp.setX(wp.x()+0.00001);
-            break;
-            case Qt::Key_Down:
-                wp.setX(wp.x()-0.00001);
-            break;
-            case Qt::Key_Left:
-                wp.setY(wp.y()-0.00001);
-            break;
-            case Qt::Key_Right:
-                wp.setY(wp.y()+0.00001);
-            break;
-        }
-        generatedPath.waypoints[index].coords = wp;
-        return wp;
-    }
+    generatedPath.waypoints[index].coords = wp;
+    return wp;
 }

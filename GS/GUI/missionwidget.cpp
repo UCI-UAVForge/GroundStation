@@ -87,14 +87,9 @@ void MissionWidget::generateMission() {
         foreach(QVector3D coords, *path) {
             mission->generatedPath.addWaypoint(Waypt(coords));
         }
-
-        ui->generatedMission->setTableModel(createMissionModel(mission));
+        mission->generatedPath.waypoints.append(mission->landing.waypoints);
         updateDraw();
-        // TODO: Create generatedPath model for mission table.
-//        QStandardItemModel * genmodel = createMissionModel(generatedMission);
-//        //setTableModel(ui->generatedMission, genmodel);
-//        ui->generatedMission->setTableModel(genmodel);
-
+        ui->generatedMission->setTableModel(createMissionModel(mission));
     }
 }
 
@@ -166,7 +161,6 @@ QStandardItemModel *MissionWidget::createMissionModel(const Mission *mission) {
     QStandardItemModel *model = new QStandardItemModel;
     QList<Waypt> wp({mission->takeoff});
     wp.append(mission->generatedPath.waypoints);
-    wp.append(mission->landing.waypoints);
     model->setHorizontalHeaderLabels(QList<QString>({"CMD#", " ALT ", " 1 ", " 2 ", " 3 ", " 4 "}));
     for (int i = 0; i < wp.length(); i++) {
         QStandardItem * action = new QStandardItem(QString("%0").arg(wp.at(i).action));
