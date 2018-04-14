@@ -95,6 +95,7 @@ Rectangle {
 
         function addMissionPath(points) {
             clearMissionPath();
+//            clearMap();
             for (var i = 0; i < points.length; i++){
                  missionPath.addCoordinate(QtPositioning.coordinate(points[i].x, points[i].y));
             }
@@ -105,6 +106,7 @@ Rectangle {
             var waypt = wp.createObject(map,
                         {"r": radius, "pt_color": color, "objectName": wpNum,
                          "label":parseInt(wpNum)+1, "coordinate": QtPositioning.coordinate(point.x, point.y)});
+          //  missionPath.addCoordinate(QtPositioning.coordinate(points.x, points.y));
             waypoints.push(waypt);
             map.addMapItem(waypt);
         }

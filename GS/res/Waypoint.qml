@@ -9,7 +9,7 @@ MapQuickItem {
         property string pt_color;
 
         function remove(coord) {
-            missionPath.removeCoordinate(coord);
+//            missionPath.removeCoordinate(coord);
 
         }
 
