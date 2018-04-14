@@ -83,12 +83,14 @@ public slots:
     void moveWaypoint(int wpNum, int key);
     void removeWaypoint(int wpNum);
     void changeParams(QStandardItem * item);
+    void addWaypoint(int wpNum);
 
 private:
     void loadJSON_mission(QString n, int num);
     void testOutputJSON(QJsonObject o, int i);
     QJsonObject testReadJSON_mission(QString n);
     QJsonDocument testReadJSON_obstacle();
+    QVector2D findMidPoint(QVector3D a, QVector3D b);
     int loadCount;
 
     Ui::MissionWidget *ui;

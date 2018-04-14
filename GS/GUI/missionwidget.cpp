@@ -28,6 +28,7 @@ MissionWidget::MissionWidget(QWidget *parent) :
         connect(table, &MissionTable::selectWaypoint, this, &MissionWidget::selectWaypoint);
         connect(table, &MissionTable::moveWaypoint, this, &MissionWidget::moveWaypoint);
         connect(table, &MissionTable::removeWaypoint, this, &MissionWidget::removeWaypoint);
+        connect(table, &MissionTable::addWaypoint, this, &MissionWidget::addWaypoint);
         connect(table, &MissionTable::editMode, this, &MissionWidget::editMode);
         connect(table, &MissionTable::changeParams, this, &MissionWidget::changeParams);
     }
@@ -128,6 +129,31 @@ void MissionWidget::removeWaypoint(int wpNum) {
     QStandardItemModel * model = createMissionModel(mission);
     ui->generatedMission->setTableModel(model);
     updateDraw();
+}
+
+void MissionWidget::addWaypoint(int wpNum) {
+    if (wpNum == mission->generatedPath.length()-1) return;
+    QVector3D curr_wp = mission->generatedPath.waypoints.at(wpNum).coords;
+    QVector3D next_wp = mission->generatedPath.waypoints.at(wpNum+1).coords;
+    Waypt wp(findMidPoint(curr_wp, next_wp));
+    mission->generatedPath.waypoints.insert(wpNum+1, wp);
+    ui->generatedMission->setTableModel(createMissionModel(mission));
+    updateDraw();
+}
+
+QVector2D MissionWidget::findMidPoint(QVector3D a, QVector3D b) {
+    float lat_a = qDegreesToRadians(a.x());
+    float lat_b = qDegreesToRadians(b.x());
+    float lon_a = qDegreesToRadians(a.y());
+    float lon_b = qDegreesToRadians(b.y());
+    float bx = cos(lat_b) * cos(lon_b - lon_a);
+    float by = cos(lat_b) * sin(lon_b - lon_a);
+    float latMid = atan2(sin(lat_a) + sin(lat_b),
+                         sqrt((cos(lat_a)+bx)*
+                              (cos(lat_a)+bx) + by*by));
+    float lonMid = lon_a + atan2(by, cos(lat_a) + bx);
+    return QVector2D(qRadiansToDegrees(latMid),
+                     qRadiansToDegrees(lonMid));
 }
 
 void MissionWidget::moveWaypoint(int wpNum, int key) {

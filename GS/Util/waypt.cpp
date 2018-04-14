@@ -14,6 +14,17 @@ Waypt::Waypt(QVector3D coords) {
     this->param4 = 0;
 }
 
+Waypt::Waypt(QVector2D coords) {
+    this->coords = QVector3D(coords.x(), coords.y(), 65);
+    this->action = MAV_CMD_NAV_WAYPOINT;
+    this->speed = 20;
+    this->autocontinue = 1;
+    this->param1 = 0;
+    this->param2 = 15;
+    this->param3 = 0;
+    this->param4 = 0;
+}
+
 Waypoint::WP Waypt::generateWP(uint16_t seq) {
     Waypoint::WP wp;
     wp.id = seq;
