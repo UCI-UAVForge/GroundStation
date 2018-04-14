@@ -6,7 +6,6 @@ MissionTable::MissionTable(QWidget *parent) : QTableView(parent)
     setSelectionBehavior(QAbstractItemView::SelectRows);
     setSelectionMode(QAbstractItemView::SingleSelection);
     horizontalHeader()->show();
-
 }
 
 void MissionTable::setTableModel(QStandardItemModel * model) {
@@ -18,7 +17,15 @@ void MissionTable::setTableModel(QStandardItemModel * model) {
     }
     connect(selectionModel(), &QItemSelectionModel::selectionChanged,
                 this, &MissionTable::selectChanged);
+    connect(model, &QStandardItemModel::itemChanged, this, &MissionTable::changeParams);
 }
+
+//void MissionTable::changeParams(QStandardItem * item) {
+//    qDebug() << item->row();
+//    qDebug() << item->column();
+//    emit(changeParamsSignal()
+//    qDebug() << "PARAM CHANGE";
+//}
 
 void MissionTable::selectChanged(const QItemSelection & selected, const QItemSelection & deselected) {
     if (selected.indexes().length() > 0) {

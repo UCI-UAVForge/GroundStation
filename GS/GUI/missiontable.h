@@ -20,12 +20,15 @@ public:
     void modelChanged(QAbstractItemModel *model);
     void setTableModel(QStandardItemModel * model);
 
+    //void changeParams(QStandardItem * item);
+
 signals:
     void moveWaypoint(int wpNum, int key);
     void addWaypoint(int wpNum);
     void removeWaypoint(int wpNum);
     void selectWaypoint(int wpNum);
     void editMode(bool editing);
+    void changeParams(QStandardItem *item);
 
 private:
     bool isInterop;

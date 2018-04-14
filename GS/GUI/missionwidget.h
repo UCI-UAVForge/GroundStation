@@ -44,6 +44,7 @@ public:
     QStandardItemModel *createMissionModel(const Mission *mission);
     void setTableModel(QTableView * tableView, QStandardItemModel * model);
 
+
     QVector<Mission*> missions;
     Mission *mission;
     QStandardItemModel * model;
@@ -81,6 +82,7 @@ public slots:
     void updateSetCurrentLen();
     void moveWaypoint(int wpNum, int key);
     void removeWaypoint(int wpNum);
+    void changeParams(QStandardItem * item);
 
 private:
     void loadJSON_mission(QString n, int num);

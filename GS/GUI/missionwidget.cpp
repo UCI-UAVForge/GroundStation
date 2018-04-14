@@ -29,6 +29,7 @@ MissionWidget::MissionWidget(QWidget *parent) :
         connect(table, &MissionTable::moveWaypoint, this, &MissionWidget::moveWaypoint);
         connect(table, &MissionTable::removeWaypoint, this, &MissionWidget::removeWaypoint);
         connect(table, &MissionTable::editMode, this, &MissionWidget::editMode);
+        connect(table, &MissionTable::changeParams, this, &MissionWidget::changeParams);
     }
 
     foreach(QPushButton * p, this->findChildren<QPushButton*>()) {
@@ -53,6 +54,33 @@ MissionWidget::MissionWidget(QWidget *parent) :
     QStandardItemModel * model = createMissionModel(mission);
     ui->generatedMission->setTableModel(model);
     ui->setCurrentValue->setRange(1, mission->generatedPath.length());
+}
+
+void MissionWidget::changeParams(QStandardItem * item) {
+    Waypt wp = mission->generatedPath.waypoints.at(item->row());
+    qDebug() << item->data(Qt::DisplayRole).toInt();
+    qDebug() << item->row() << "col: " << item->column();
+    switch(item->column()) {
+       case 0:
+          wp.action = item->data(Qt::DisplayRole).toInt();
+       break;
+       case 1:
+          wp.coords.setZ(item->data(Qt::DisplayRole).toFloat());
+       break;
+       case 2:
+          wp.param1 = item->data(Qt::DisplayRole).toFloat();
+       break;
+       case 3:
+           wp.param2 = item->data(Qt::DisplayRole).toFloat();
+       break;
+       case 4:
+            wp.param3 = item->data(Qt::DisplayRole).toFloat();
+       break;
+       case 5:
+            wp.param4 = item->data(Qt::DisplayRole).toFloat();
+       break;
+    }
+    mission->generatedPath.waypoints.replace(item->row(), wp);
 }
 
 bool MissionWidget::hasMission() {
@@ -96,12 +124,10 @@ void MissionWidget::generateMission() {
 
 void MissionWidget::removeWaypoint(int wpNum) {
     if (wpNum == 0) return;
-    QVector3D wp = mission->generatedPath.waypoints.at(wpNum).coords;
     mission->generatedPath.waypoints.removeAt(wpNum);
     QStandardItemModel * model = createMissionModel(mission);
     ui->generatedMission->setTableModel(model);
     updateDraw();
-    emit(removeWaypointSignal(wpNum, wp));
 }
 
 void MissionWidget::moveWaypoint(int wpNum, int key) {
