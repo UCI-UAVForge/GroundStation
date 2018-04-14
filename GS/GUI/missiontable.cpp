@@ -22,7 +22,7 @@ void MissionTable::setTableModel(QStandardItemModel * model) {
 
 void MissionTable::selectChanged(const QItemSelection & selected, const QItemSelection & deselected) {
     if (selected.indexes().length() > 0) {
-        current = selected.indexes().at(0).row() + 1;
+        current = selected.indexes().at(0).row();
         emit(selectWaypoint(current));
     }
 }

@@ -30,8 +30,8 @@ Waypoint::WP Waypt::generateWP(uint16_t seq) {
     return wp;
 }
 
-void Waypt::setDefaultTakeoff(float alt, float pitchAngle) {
-    this->coords = QVector3D(0, 0, alt);
+void Waypt::setDefaultTakeoff(float alt, float pitchAngle, QVector2D home_pos) {
+    this->coords = QVector3D(home_pos.x(), home_pos.y(), alt);
     this->action = MAV_CMD_NAV_TAKEOFF;
     this->speed = 0;
     this->autocontinue = 1;

@@ -18,15 +18,13 @@ void MapWidget::removeWaypoint(int wpNum, QVector3D coord) {
 }
 
 void MapWidget::moveWaypoint(int wpNum, QVector3D newCoords) {
-    int index = wpNum - 1; // Waypoints always [1,x]
-    QObject * wp = this->rootObject()->findChild<QObject*>(QString::number(index));
+    QObject * wp = this->rootObject()->findChild<QObject*>(QString::number(wpNum));
     QMetaObject::invokeMethod(wp, "moveTo",
          Q_ARG(QVariant, newCoords));
 }
 
 void MapWidget::selectWaypoint(int wpNum) {
-     int index = wpNum - 1; // Waypoints always [1,x]
-     QObject * wp = this->rootObject()->findChild<QObject*>(QString::number(index));
+     QObject * wp = this->rootObject()->findChild<QObject*>(QString::number(wpNum));
      QMetaObject::invokeMethod(wp, "setActive");
 }
 

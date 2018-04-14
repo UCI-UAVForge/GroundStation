@@ -52,7 +52,7 @@ MissionWidget::MissionWidget(QWidget *parent) :
     mission = missions[0];
     QStandardItemModel * model = createMissionModel(mission);
     ui->generatedMission->setTableModel(model);
-    ui->setCurrentValue->setRange(1, mission->completeMissionLength() - 1);
+    ui->setCurrentValue->setRange(1, mission->generatedPath.length());
 }
 
 bool MissionWidget::hasMission() {
@@ -68,14 +68,14 @@ void MissionWidget::updateDraw() {
 }
 
 void MissionWidget::updateSetCurrentLen() {
-    ui->setCurrentValue->setRange(1, mission->completeMissionLength() - 1);
+    ui->setCurrentValue->setRange(1, mission->generatedPath.length());
 }
 
 void MissionWidget::generateMission() {
     if (hasMission()) {
         PlanMission pm(mission);
         /* Path Finding */
-        QVector3D start_point = mission->generatedPath.waypoints.at(0).coords;
+        QVector3D start_point = mission->interopPath.waypoints.at(0).coords;
         QList<QVector3D>* path = pm.get_path();
 
         /* Replace with Coordinate add/remove only */
@@ -88,12 +88,14 @@ void MissionWidget::generateMission() {
             mission->generatedPath.addWaypoint(Waypt(coords));
         }
         mission->generatedPath.waypoints.append(mission->landing.waypoints);
+        mission->generatedPath.waypoints.prepend(mission->takeoff);
         updateDraw();
         ui->generatedMission->setTableModel(createMissionModel(mission));
     }
 }
 
 void MissionWidget::removeWaypoint(int wpNum) {
+    if (wpNum == 0) return;
     QVector3D wp = mission->generatedPath.waypoints.at(wpNum).coords;
     mission->generatedPath.waypoints.removeAt(wpNum);
     QStandardItemModel * model = createMissionModel(mission);
@@ -119,6 +121,7 @@ void MissionWidget::writeButtonClicked() {
     if (hasMission()) {
         emit(writeMissionsSignal(mission->constructWaypoints(),
                                  mission->completeMissionLength()));
+        updateSetCurrentLen();
     }
 }
 void MissionWidget::readButtonClicked() {
@@ -159,8 +162,7 @@ void MissionWidget::writeMissionsStatus(bool success) {
 
 QStandardItemModel *MissionWidget::createMissionModel(const Mission *mission) {
     QStandardItemModel *model = new QStandardItemModel;
-    QList<Waypt> wp({mission->takeoff});
-    wp.append(mission->generatedPath.waypoints);
+    QList<Waypt> wp = mission->generatedPath.waypoints;
     model->setHorizontalHeaderLabels(QList<QString>({"CMD#", " ALT ", " 1 ", " 2 ", " 3 ", " 4 "}));
     for (int i = 0; i < wp.length(); i++) {
         QStandardItem * action = new QStandardItem(QString("%0").arg(wp.at(i).action));

@@ -20,7 +20,7 @@ public:
     float param4;
 
     Waypoint::WP generateWP(uint16_t seq);
-    void setDefaultTakeoff(float alt, float pitchAngle);
+    void setDefaultTakeoff(float alt, float pitchAngle, QVector2D home_pos);
     void setDefaultLanding(QVector2D landingPoint, float abortAlt);
 };
 
