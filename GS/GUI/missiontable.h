@@ -23,7 +23,7 @@ public:
     //void changeParams(QStandardItem * item);
 
 signals:
-    void moveWaypoint(int wpNum, int key);
+    void moveWaypoint(int wpNum, QKeyEvent * k);
     void addWaypoint(int wpNum);
     void removeWaypoint(int wpNum);
     void selectWaypoint(int wpNum);

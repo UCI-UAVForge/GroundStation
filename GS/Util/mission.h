@@ -52,7 +52,7 @@ public:
     Obstacles getObstacles();
     QJsonDocument toJson();
     QList<QVector3D> *toList();
-    QVector3D moveWaypoint(int index, int key);
+    QVector3D moveWaypoint(int index, QKeyEvent * k);
 
 signals:
     void loadToUAV(int seq, int cmd, float params[]);

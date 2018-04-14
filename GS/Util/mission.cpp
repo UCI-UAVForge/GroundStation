@@ -192,22 +192,26 @@ QList<QVector3D> *Mission::toList() {
     return list;
 }
 
-QVector3D Mission::moveWaypoint(int wpNum, int key) {
+QVector3D Mission::moveWaypoint(int wpNum, QKeyEvent * k) {
+    double modifier = 0.00001;
+    if (k->modifiers() & Qt::ShiftModifier) {
+        modifier = 0.0002;
+    }
     if (wpNum == 0) // Takeoff unmodifiable
         return QVector3D(home_pos);
     QVector3D wp = generatedPath.waypoints.at(wpNum).coords;
-    switch (key) {
+    switch (k->key()) {
         case Qt::Key_Up:
-            wp.setX(wp.x()+0.00001);
+            wp.setX(wp.x()+modifier);
         break;
         case Qt::Key_Down:
-            wp.setX(wp.x()-0.00001);
+            wp.setX(wp.x()-modifier);
         break;
         case Qt::Key_Left:
-            wp.setY(wp.y()-0.00001);
+            wp.setY(wp.y()-modifier);
         break;
         case Qt::Key_Right:
-            wp.setY(wp.y()+0.00001);
+            wp.setY(wp.y()+modifier);
         break;
     }
     generatedPath.waypoints[wpNum].coords = wp;

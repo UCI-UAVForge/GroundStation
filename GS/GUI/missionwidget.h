@@ -80,7 +80,7 @@ public slots:
     void updateMission(int index);
     void updateDraw();
     void updateSetCurrentLen();
-    void moveWaypoint(int wpNum, int key);
+    void moveWaypoint(int wpNum, QKeyEvent * k);
     void removeWaypoint(int wpNum);
     void changeParams(QStandardItem * item);
     void addWaypoint(int wpNum);

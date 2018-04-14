@@ -139,6 +139,8 @@ void MissionWidget::addWaypoint(int wpNum) {
     mission->generatedPath.waypoints.insert(wpNum+1, wp);
     ui->generatedMission->setTableModel(createMissionModel(mission));
     updateDraw();
+    ui->generatedMission->selectRow(wpNum+1);
+
 }
 
 QVector2D MissionWidget::findMidPoint(QVector3D a, QVector3D b) {
@@ -156,8 +158,8 @@ QVector2D MissionWidget::findMidPoint(QVector3D a, QVector3D b) {
                      qRadiansToDegrees(lonMid));
 }
 
-void MissionWidget::moveWaypoint(int wpNum, int key) {
-    emit(moveWaypointSignal(wpNum, mission->moveWaypoint(wpNum, key)));
+void MissionWidget::moveWaypoint(int wpNum, QKeyEvent * k) {
+    emit(moveWaypointSignal(wpNum, mission->moveWaypoint(wpNum, k)));
 }
 
 void MissionWidget::setTableModel(QTableView * tableView, QStandardItemModel * model) {
