@@ -10,6 +10,7 @@ class Waypt
 public:
     Waypt();
     Waypt(QVector3D coords);
+    Waypt(QVector2D coords);
     QVector3D coords;
     int action;
     double speed;
