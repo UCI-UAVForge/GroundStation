@@ -46,7 +46,20 @@ void MissionTable::focusOutEvent(QFocusEvent *event) {
 
 void MissionTable::keyPressEvent( QKeyEvent *k ) {
     if (selectionModel()->selectedRows(0).length() > 0) {
-        if (k->key() == Qt::Key_Tab) {
+        if (k->modifiers() & Qt::ControlModifier) {
+            if (k->key() == Qt::Key_Tab) {
+                qDebug() << "CONTROL TAB";
+                int selectedRow = selectionModel()->selectedRows(0).at(0).row();
+                int nextRow = selectedRow -1;
+                if (nextRow < 0) {
+                    nextRow = model()->rowCount() - 1;
+                }
+                qDebug() << "next row: " << nextRow;
+                selectionModel()->select(model()->index(nextRow, 0),
+                                         QItemSelectionModel::ClearAndSelect|QItemSelectionModel::Rows );
+            }
+        }
+        else if (k->key() == Qt::Key_Tab) {
             int selectedRow = selectionModel()->selectedRows(0).at(0).row();
             int nextRow = selectedRow + 1;
             if (nextRow >= model()->rowCount()) {

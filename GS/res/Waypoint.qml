@@ -30,8 +30,6 @@ MapQuickItem {
             map.setItemsInactive();
             map.prevWaypoint = waypoint;
             waypointInfo.visible = true;
-            console.log("here");
-            console.log(wp.label);
             pt.border.width = 2;
             pt.border.color = map.activeItemColor;
         }

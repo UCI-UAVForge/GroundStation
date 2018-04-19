@@ -99,11 +99,9 @@ void Waypoint::setCurrentWaypoint(uint16_t index) {
     }
     if (!setCurrentWaypointFlag) {
         // didn't work
-        qDebug() << "Waypoint set current didn't worked";
     }
     else {
         // it worked
-        qDebug() << "Waypoint set current worked";
         setCurrentIndex = UINT16_MAX;
     }
 }

@@ -1,7 +1,7 @@
 import QtQuick 2.0
 
 ItemInfo {
-    width: 155; height: 80;
+    width: 155; height: 90;
     anchors.right: parent.right;
     anchors.top: parent.top;
     Item {
