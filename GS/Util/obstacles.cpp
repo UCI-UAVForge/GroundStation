@@ -14,7 +14,6 @@ Obstacles::Obstacles(QJsonDocument document):
     stationary_obstacles = obj["stationary_obstacles"].toArray();
 }
 
-
 QJsonArray Obstacles::get_moving_obstacles(){
     return moving_obstacles;
 }

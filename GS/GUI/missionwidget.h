@@ -86,11 +86,8 @@ public slots:
     void addWaypoint(int wpNum);
 
 private:
-    void loadJSON_mission(QString n, int num);
-    void testOutputJSON(QJsonObject o, int i);
-    QJsonObject testReadJSON_mission(QString n);
-    QJsonDocument testReadJSON_obstacle();
     QVector2D findMidPoint(QVector3D a, QVector3D b);
+    void loadInteropMission(QString m, QString o,int num);
     int loadCount;
 
     Ui::MissionWidget *ui;

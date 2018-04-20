@@ -26,7 +26,8 @@ class Mission : public QObject {
 public:
     explicit Mission(QObject *parent = nullptr);
 
-    Mission(QJsonObject);
+    Mission(bool therewasaweirdoverloadederror);
+    Mission(QJsonObject obj);
     Mission(QJsonObject mission_obj, QJsonDocument obstacles_doc);
 
     int id;
@@ -50,9 +51,11 @@ public:
     uint16_t completeMissionLength();
 //    void setActions_wp();
     Obstacles getObstacles();
-    QJsonDocument toJson();
     QList<QVector3D> *toList();
     QVector3D moveWaypoint(int index, QKeyEvent * k);
+    void loadJson(QJsonObject obj);
+    void loadInteropJson(QJsonObject &obj);
+    QJsonDocument toJson();
 
 signals:
     void loadToUAV(int seq, int cmd, float params[]);
@@ -63,6 +66,7 @@ private:
     QJsonValue pointToPos(QVector2D point);
 
     MissionPath setMissionPath(QJsonArray pointArray);
+    MissionPath setMissionPath2(QJsonArray pointArray);
     QList<FlyZone> setFlyZones(QJsonArray flyZoneArray);
     QList<QVector2D> setPoints(QJsonArray pointArray);
     QList<QVector3D> * set3DPoints(QJsonArray pointArray);

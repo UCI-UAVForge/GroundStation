@@ -43,13 +43,8 @@ MissionWidget::MissionWidget(QWidget *parent) :
 
     //Hard coded loaded missions
     qInfo() << "LOADING TEST";
-    loadJSON_mission("://res/test_mission2.json",loadCount++);
-    loadJSON_mission("://res/test_mission.json",loadCount++);
-
-
-    missions.append(new Mission(testReadJSON_mission(""), testReadJSON_obstacle()));
-    ui->missionList->addItem("*TEST MISSION*");
-    ui->missionList->setItemData(1, Qt::AlignCenter, Qt::TextAlignmentRole);
+    loadInteropMission("://res/test_mission2.json",":/res/test_obstacles.json",loadCount++);
+    loadInteropMission("://res/test_mission.json",":/res/test_obstacles.json",loadCount++);
 
     mission = missions[0];
     QStandardItemModel * model = createMissionModel(mission);
@@ -268,11 +263,7 @@ void MissionWidget::loadMission() {
     QString filename = QFileDialog::getOpenFileName(this,
             tr("Load Mission"), QDir::currentPath() + "/../../GroundStation/GS/res",
             tr("Json Files (*.json)"));
-    loadJSON_mission(filename,loadCount++);
-}
-
-void MissionWidget::loadJSON_mission(QString n, int num) {
-    QFile file(n);
+    QFile file(filename);
     if (!file.open(QIODevice::ReadOnly)) {
         qWarning("Couldn't open mission file");
         QJsonObject null;
@@ -281,44 +272,38 @@ void MissionWidget::loadJSON_mission(QString n, int num) {
     QByteArray data = file.readAll();
     file.close();
     QJsonDocument doc(QJsonDocument::fromJson(data));
-    missions.append(new Mission(doc.object(), testReadJSON_obstacle()));
-    ui->missionList->addItem("Loaded Mission " + QString::number(num));
+    Mission* temp = new Mission(false);
+    temp->loadJson(doc.object());
+
+    missions.append(temp);
+    ui->missionList->addItem("Loaded Mission " + QString::number(loadCount++));
     ui->missionList->setItemData(1, Qt::AlignCenter, Qt::TextAlignmentRole);
 }
 
-
-// // *********************************  // //
-// // *** Test JSON Files Retrieval ***  // //
-// // *********************************  // //
-void MissionWidget::testOutputJSON(QJsonObject o, int i) {
-    QFile file(QDir::currentPath() + "/../../GroundStation/GS/res/missionout_" + QString::number(i) + ".json");
-    if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        qWarning("Couldn't open write file");
-        return;
-    }
-    file.write(QJsonDocument(o).toJson());
-}
-QJsonObject MissionWidget::testReadJSON_mission(QString n) {
-    QFile load(":/res/test_mission"+n+".json");
-    if (!load.open(QIODevice::ReadOnly)) {
+void MissionWidget::loadInteropMission(QString m, QString o, int num) {
+    QFile file(m);
+    if (!file.open(QIODevice::ReadOnly)) {
         qWarning("Couldn't open mission file");
         QJsonObject null;
-        return null;
+        return;
     }
-    QByteArray data = load.readAll();
+    QByteArray data = file.readAll();
+    file.close();
     QJsonDocument doc(QJsonDocument::fromJson(data));
-    return doc.object();
-}
-QJsonDocument MissionWidget::testReadJSON_obstacle() {
-    QFile load(":/res/test_obstacles.json");
-    if (!load.open(QIODevice::ReadOnly)) {
+
+    QFile file2(o);
+    if (!file2.open(QIODevice::ReadOnly)) {
         qWarning("Couldn't open obstacles file");
         QJsonDocument null;
-        return null;
+        return;
     }
-    QByteArray data = load.readAll();
-    QJsonDocument doc(QJsonDocument::fromJson(data));
-    return doc;
+    data = file2.readAll();
+    file.close();
+    QJsonDocument doc2(QJsonDocument::fromJson(data));
+
+    missions.append(new Mission(doc.object(), doc2));
+    ui->missionList->addItem("Loaded Mission " + QString::number(num));
+    ui->missionList->setItemData(1, Qt::AlignCenter, Qt::TextAlignmentRole);
 }
 
 MissionWidget::~MissionWidget() {
