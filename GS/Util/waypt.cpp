@@ -15,7 +15,7 @@ Waypt::Waypt(QVector3D coords) {
 }
 
 Waypt::Waypt(QVector2D coords) {
-    this->coords = QVector3D(coords.x(), coords.y(), 65);
+    this->coords = QVector3D(coords.x(), coords.y(), 30);
     this->action = MAV_CMD_NAV_WAYPOINT;
     this->speed = 20;
     this->autocontinue = 1;

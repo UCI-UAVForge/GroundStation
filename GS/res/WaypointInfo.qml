@@ -2,7 +2,7 @@ import QtQuick 2.0
 import QtLocation 5.9
 
 ItemInfo {
-    width: 155; height: 80
+    width: 155; height: 90
     anchors.horizontalCenter: parent.horizontalCenter;
     anchors.bottom: parent.bottom;
     property string lat;

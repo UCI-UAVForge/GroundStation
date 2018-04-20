@@ -18,6 +18,7 @@ void SerialLink::startLink(QString hostport) {
         qDebug() << "Link started";
     } else {
         emit(connectError(serialPort->errorString()));
+        qDebug() << serialPort->errorString();
     }
     connect(serialPort, &QSerialPort::readyRead, this, &SerialLink::recvData);
 }
