@@ -21,6 +21,7 @@ public:
     void mousePressEvent(QMouseEvent *) override;
     bool altFt;
     bool relAltFt;
+    bool ClimbFt;
     Style style;
 
 signals:
@@ -32,6 +33,7 @@ public slots:
 
     void toggleAltUnits();
     void toggleRelAltUnits();
+    void toggleClimbUnits();
 };
 
 #endif // INFOWIDGET_H

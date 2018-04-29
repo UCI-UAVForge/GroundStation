@@ -41,6 +41,8 @@ MissionWidget::MissionWidget(QWidget *parent) :
             style.setButtonDefault(p);
         }
     }
+    style.setButtonOff(ui->dropButton);
+    dropArmed = true;
 
     //Hard coded loaded missions
     qInfo() << "LOADING TEST";
@@ -55,7 +57,16 @@ MissionWidget::MissionWidget(QWidget *parent) :
 }
 
 void MissionWidget::dropIt() {
-    emit(dropSignal());
+    if (dropArmed) {
+        emit(dropSignal(1700));
+        style.setButtonOn(ui->dropButton);
+        dropArmed = false;
+    }
+    else if (!dropArmed) {
+        emit(dropSignal(1100));
+        style.setButtonOff(ui->dropButton);
+        dropArmed = true;
+    }
 }
 
 void MissionWidget::changeParams(QStandardItem * item) {

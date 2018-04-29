@@ -10,11 +10,11 @@ MovementWidget::MovementWidget(QWidget *parent) : QWidget(parent)
     }
     connect(ui.alt, &QPushButton::clicked, this, &MovementWidget::toggleAltUnits);
     connect(ui.relAlt, &QPushButton::clicked, this, &MovementWidget::toggleRelAltUnits);
+    connect(ui.Climb, &QPushButton::clicked, this, &MovementWidget::toggleClimbUnits);
 
 }
 
 MovementWidget::~MovementWidget(){
-
 }
 
 void MovementWidget::toggleAltUnits() {
@@ -25,6 +25,10 @@ void MovementWidget::toggleRelAltUnits() {
     relAltFt = relAltFt ? false : true;
 }
 
+void MovementWidget::toggleClimbUnits() {
+    ClimbFt = !ClimbFt;
+}
+
 void MovementWidget::updateTelemetry(mavlink_vfr_hud_t vfr_hud) {
     if (altFt) {
         ui.alt->setText(QString::number(vfr_hud.alt * 3.28084) + " ft.");
@@ -33,6 +37,7 @@ void MovementWidget::updateTelemetry(mavlink_vfr_hud_t vfr_hud) {
     }
     ui.gSpeed->setText(QString::number(vfr_hud.groundspeed, 'f', 2) + " m/s.");
     ui.airSpeed->setText(QString::number(vfr_hud.airspeed, 'f', 2) + " m/s.");
+    ui.Climb->setText(QString::number(vfr_hud.climb, 'f', 2) + " m/s.");
 }
 
 void MovementWidget::updateAttitude(mavlink_attitude_t att) {
