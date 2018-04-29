@@ -86,7 +86,15 @@ else:unix: PRE_TARGETDEPS += $$OUT_PWD/3rdparty/rrt/librrt.a
 
 
 
-win32: LIBS += -L$$PWD/3rdparty/lz4/lib/dll/ -lliblz4
+win32 {
+win32:contains(QMAKE_HOST.arch, x86_64):{
+    #for win64
+    LIBS += -L$$PWD/3rdparty/lz4/lib/dll64/ -lliblz4
+} else {
+    #for win32
+    LIBS += -L$$PWD/3rdparty/lz4/lib/dll32/ -lliblz4
+}
+}
 unix: LIBS += -L$$PWD/3rdparty/lz4/lib/ -llz4
 
 INCLUDEPATH += $$PWD/3rdparty/lz4/lib/dll/
