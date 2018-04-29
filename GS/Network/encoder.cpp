@@ -64,3 +64,9 @@ void Encoder::sendMissionSetCurrent(uint16_t seq) {
     mavlink_msg_mission_set_current_pack(SYS, COM, &msg, 1, 0, seq);
     link->sendData(msg);
 }
+
+void Encoder::sendSetServo() {
+    mavlink_message_t msg;
+    mavlink_msg_command_long_pack(SYS, COM, &msg, 1, 0, 183, 1, 6, 1500, 3, 3, 0, 0, 0);
+    link->sendData(msg);
+}
