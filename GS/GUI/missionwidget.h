@@ -71,7 +71,7 @@ signals:
     void editMode(bool editing);
     void moveWaypointSignal(int wpNum, QVector3D newCoord);
     void removeWaypointSignal(int wpNum, QVector3D coord);
-
+    void dropSignal();
 
 
 public slots:
@@ -84,6 +84,7 @@ public slots:
     void removeWaypoint(int wpNum);
     void changeParams(QStandardItem * item);
     void addWaypoint(int wpNum);
+    void dropIt();
 
 private:
     QVector2D findMidPoint(QVector3D a, QVector3D b);

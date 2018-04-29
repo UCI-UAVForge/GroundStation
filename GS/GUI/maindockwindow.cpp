@@ -110,6 +110,7 @@ void MainDockWindow::connectDecoder(Decoder * decoder) {
 void MainDockWindow::connectEncoder(Encoder * encoder) {
     connect(ui->actionWidget, &ActionWidget::setArm, encoder, &Encoder::sendArm);
     connect(ui->actionWidget, &ActionWidget::setMode, encoder, &Encoder::sendMode);
+    connect(ui->missionWidget, &MissionWidget::dropSignal, encoder, &Encoder::sendSetServo);
 }
 
 void MainDockWindow::connectWaypoint(Waypoint * waypoint, Encoder * encoder, Decoder * decoder) {

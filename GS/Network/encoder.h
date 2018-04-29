@@ -26,6 +26,7 @@ public:
     void sendMissionRequest(uint16_t i);
     void sendMissionACK(uint16_t type);
     void sendMissionSetCurrent(uint16_t seq);
+    void sendSetServo();
 
 signals:
 

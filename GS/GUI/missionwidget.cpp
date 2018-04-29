@@ -19,6 +19,7 @@ MissionWidget::MissionWidget(QWidget *parent) :
     connect(ui->readButton, &QPushButton::clicked, this, &MissionWidget::readButtonClicked);
     connect(ui->clearButton, &QPushButton::clicked, this, &MissionWidget::clearButtonClicked);
     connect(ui->setCurrentButton, &QPushButton::clicked, this, &MissionWidget::setCurrentButtonClicked);
+    connect(ui->dropButton, &QPushButton::clicked, this, &MissionWidget::dropIt);
     connect(ui->missionList, SIGNAL(currentIndexChanged(int)), this, SLOT(updateMission(int)));
 
     connect(ui->saveButton,&QPushButton::clicked, this, &MissionWidget::saveMission);
@@ -53,6 +54,10 @@ MissionWidget::MissionWidget(QWidget *parent) :
     updateDraw();
 }
 
+void MissionWidget::dropIt() {
+    emit(dropSignal());
+}
+
 void MissionWidget::changeParams(QStandardItem * item) {
     Waypt wp = mission->generatedPath.waypoints.at(item->row());
     qDebug() << item->data(Qt::DisplayRole).toInt();
@@ -79,6 +84,8 @@ void MissionWidget::changeParams(QStandardItem * item) {
     }
     mission->generatedPath.waypoints.replace(item->row(), wp);
 }
+
+
 
 bool MissionWidget::hasMission() {
     return missions.size() > 0;
