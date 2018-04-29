@@ -30,7 +30,6 @@ void MissionTable::setTableModel(QStandardItemModel * model) {
 void MissionTable::selectChanged(const QItemSelection & selected, const QItemSelection & deselected) {
     if (selected.indexes().length() > 0) {
         current = selected.indexes().at(0).row();
-        qDebug() << "current sel: " << current;
         emit(selectWaypoint(current));
     }
 }
