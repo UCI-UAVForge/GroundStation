@@ -2,8 +2,11 @@
 
 MapWidget::MapWidget(QWidget *parent) : QQuickWidget(parent) {
     setResizeMode(QQuickWidget::SizeRootObjectToView);
+
     setSource(QUrl("qrc:/res/map.qml"));
+//mis
     map = this->rootObject()->findChild<QObject*>("map");
+
     uavPath = new QList<QVector3D>();
     timer = new QTimer();
     timer->start(timeoutMS);

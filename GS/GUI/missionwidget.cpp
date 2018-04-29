@@ -50,6 +50,7 @@ MissionWidget::MissionWidget(QWidget *parent) :
     QStandardItemModel * model = createMissionModel(mission);
     ui->generatedMission->setTableModel(model);
     ui->setCurrentValue->setRange(1, mission->generatedPath.length());
+    updateDraw();
 }
 
 void MissionWidget::changeParams(QStandardItem * item) {
