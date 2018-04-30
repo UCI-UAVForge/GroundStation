@@ -41,6 +41,8 @@ MissionWidget::MissionWidget(QWidget *parent) :
             style.setButtonDefault(p);
         }
     }
+    style.setButtonOff(ui->dropButton);
+    dropArmed = true;
 
     //Hard coded loaded missions
     qInfo() << "LOADING TEST";
@@ -51,10 +53,20 @@ MissionWidget::MissionWidget(QWidget *parent) :
     QStandardItemModel * model = createMissionModel(mission);
     ui->generatedMission->setTableModel(model);
     ui->setCurrentValue->setRange(1, mission->generatedPath.length());
+    //updateDraw();
 }
 
 void MissionWidget::dropIt() {
-    emit(dropSignal());
+    if (dropArmed) {
+        emit(dropSignal(1700));
+        style.setButtonOn(ui->dropButton);
+        dropArmed = false;
+    }
+    else if (!dropArmed) {
+        emit(dropSignal(1100));
+        style.setButtonOff(ui->dropButton);
+        dropArmed = true;
+    }
 }
 
 void MissionWidget::changeParams(QStandardItem * item) {

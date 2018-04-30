@@ -71,7 +71,7 @@ signals:
     void editMode(bool editing);
     void moveWaypointSignal(int wpNum, QVector3D newCoord);
     void removeWaypointSignal(int wpNum, QVector3D coord);
-    void dropSignal();
+    void dropSignal(int pwm);
 
 
 public slots:
@@ -90,6 +90,7 @@ private:
     QVector2D findMidPoint(QVector3D a, QVector3D b);
     void loadInteropMission(QString m, QString o,int num);
     int loadCount;
+    bool dropArmed;
 
     Ui::MissionWidget *ui;
 
