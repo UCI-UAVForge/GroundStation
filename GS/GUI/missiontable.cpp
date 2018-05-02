@@ -1,5 +1,6 @@
 #include "missiontable.h"
 #include <QDebug>
+#include <QThread>
 
 MissionTable::MissionTable(QWidget *parent) : QTableView(parent)
 {
@@ -69,6 +70,8 @@ void MissionTable::keyPressEvent( QKeyEvent *k ) {
         }
         if (k->key() == Qt::Key_A) {
             emit(addWaypoint(current));
+
+
             return;
         }
         if (k->key() == Qt::Key_R) {

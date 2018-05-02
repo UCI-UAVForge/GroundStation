@@ -27,8 +27,9 @@ void MapWidget::moveWaypoint(int wpNum, QVector3D newCoords) {
 }
 
 void MapWidget::selectWaypoint(int wpNum) {
-     QObject * wp = this->rootObject()->findChild<QObject*>(QString::number(wpNum));
-     QMetaObject::invokeMethod(wp, "setActive");
+     /*QObject * wp = this->rootObject()->findChild<QObject*>(QString::number(wpNum));
+     QMetaObject::invokeMethod(wp, "setActive");*/
+     QMetaObject::invokeMethod(map,"setActive",Q_ARG(QVariant,wpNum));
 }
 
 void MapWidget::addWaypoint(QVector3D point, int wpNum, QColor color, int radius) {

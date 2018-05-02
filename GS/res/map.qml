@@ -109,7 +109,28 @@ Rectangle {
           //  missionPath.addCoordinate(QtPositioning.coordinate(points.x, points.y));
             waypoints.push(waypt);
             map.addMapItem(waypt);
+           // waypt.setActive();
         }
+        function setActive(wpNum){
+            var waypoint = waypoints[wpNum];
+            waypoint.setActive();
+            /*
+            var coord = waypoint.coordinate.toString().split(",");
+            var nextCoord = missionPath.coordinateAt(parseInt(objectName)+1);
+            waypointInfo.label = "Waypoint #" + label;
+            waypointInfo.coord = waypoint.coordinate;
+            waypointInfo.lat = coord[0];
+            waypointInfo.lon = coord[1];
+            waypointInfo.heading = waypoint.coordinate.azimuthTo(nextCoord);
+            map.setItemsInactive();
+            map.prevWaypoint = waypoint;
+            waypointInfo.visible = true;
+            pt.border.width = 2;
+            pt.border.color = map.activeItemColor;
+            console.log("set Active",waypoint, "coord",waypoint.coordinate);
+            */
+        }
+
 
         function destroyWaypoints() {
             while (waypoints.length > 0) {

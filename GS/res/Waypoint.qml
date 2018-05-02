@@ -32,7 +32,13 @@ MapQuickItem {
             waypointInfo.visible = true;
             pt.border.width = 2;
             pt.border.color = map.activeItemColor;
+            console.log("set Active",waypoint, "coord",waypoint.coordinate);
         }
+        //DEBUG
+        /*
+        Component.onCompleted:
+            console.log("construct waypt",waypoint, "coord", waypoint.coordinate)
+        */
 
         sourceItem:
             Rectangle { id:pt;
