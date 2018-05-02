@@ -2,7 +2,7 @@
 #include "ui_missionwidget.h"
 //#include "qtmaterialraisedbutton.h"
 #include <QDebug>
-
+#include <QThread>
 MissionWidget::MissionWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MissionWidget)
@@ -152,11 +152,18 @@ void MissionWidget::addWaypoint(int wpNum) {
     QVector3D curr_wp = mission->generatedPath.waypoints.at(wpNum).coords;
     QVector3D next_wp = mission->generatedPath.waypoints.at(wpNum+1).coords;
     Waypt wp(findMidPoint(curr_wp, next_wp));
+    //qDebug()<<"prev Qlist memaddress"<< mission;
     mission->generatedPath.waypoints.insert(wpNum+1, wp);
     ui->generatedMission->setTableModel(createMissionModel(mission));
+   // QThread::msleep(500);
     updateDraw();
-    ui->generatedMission->selectRow(wpNum+1);
 
+
+   // ui->generatedMission->selectRow(wpNum);
+    //ui->generatedMission->clearSelection();
+    //qDebug()<<"prev Qlist memaddress"<< mission;
+
+    ui->generatedMission->selectRow(wpNum+1);
 }
 
 QVector2D MissionWidget::findMidPoint(QVector3D a, QVector3D b) {
