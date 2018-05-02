@@ -52,7 +52,7 @@ MissionWidget::MissionWidget(QWidget *parent) :
     mission = missions[0];
     QStandardItemModel * model = createMissionModel(mission);
     ui->generatedMission->setTableModel(model);
-    ui->setCurrentValue->setRange(1, mission->generatedPath.length());
+    ui->setCurrentValue->setRange(1, mission->generatedPath.waypoints.length());
     //updateDraw();
 }
 
@@ -71,8 +71,6 @@ void MissionWidget::dropIt() {
 
 void MissionWidget::changeParams(QStandardItem * item) {
     Waypt wp = mission->generatedPath.waypoints.at(item->row());
-    qDebug() << item->data(Qt::DisplayRole).toInt();
-    qDebug() << item->row() << "col: " << item->column();
     switch(item->column()) {
        case 0:
           wp.action = item->data(Qt::DisplayRole).toInt();
@@ -91,6 +89,10 @@ void MissionWidget::changeParams(QStandardItem * item) {
        break;
        case 5:
             wp.param4 = item->data(Qt::DisplayRole).toFloat();
+       break;
+       case 6:
+            wp.speed = item->data(Qt::DisplayRole).toFloat();
+            wp.changeSpeed = true;
        break;
     }
     mission->generatedPath.waypoints.replace(item->row(), wp);
@@ -111,7 +113,7 @@ void MissionWidget::updateDraw() {
 }
 
 void MissionWidget::updateSetCurrentLen() {
-    ui->setCurrentValue->setRange(1, mission->generatedPath.length());
+    ui->setCurrentValue->setRange(1, mission->generatedPath.waypoints.length());
 }
 
 void MissionWidget::generateMission() {
@@ -146,7 +148,7 @@ void MissionWidget::removeWaypoint(int wpNum) {
 }
 
 void MissionWidget::addWaypoint(int wpNum) {
-    if (wpNum == mission->generatedPath.length()-1) return;
+    if (wpNum == mission->generatedPath.waypoints.length()-1) return;
     QVector3D curr_wp = mission->generatedPath.waypoints.at(wpNum).coords;
     QVector3D next_wp = mission->generatedPath.waypoints.at(wpNum+1).coords;
     Waypt wp(findMidPoint(curr_wp, next_wp));
@@ -187,8 +189,7 @@ void MissionWidget::setTableModel(QTableView * tableView, QStandardItemModel * m
 
 void MissionWidget::writeButtonClicked() {
     if (hasMission()) {
-        emit(writeMissionsSignal(mission->constructWaypoints(),
-                                 mission->completeMissionLength()));
+        emit(writeMissionsSignal(mission->constructWaypoints()));
         updateSetCurrentLen();
     }
 }
@@ -199,7 +200,7 @@ void MissionWidget::clearButtonClicked() {
     emit(clearMissions());
 }
 void MissionWidget::setCurrentButtonClicked() {
-    emit(setCurrentMision(ui->setCurrentValue->value()));
+    emit(setCurrentMision(mission->generatedPath.getSeq(ui->setCurrentValue->value())));
 }
 
 //void MissionWidget::saveButtonClicked() {
@@ -231,7 +232,7 @@ void MissionWidget::writeMissionsStatus(bool success) {
 QStandardItemModel *MissionWidget::createMissionModel(const Mission *mission) {
     QStandardItemModel *model = new QStandardItemModel;
     QList<Waypt> wp = mission->generatedPath.waypoints;
-    model->setHorizontalHeaderLabels(QList<QString>({"CMD#", " ALT ", " 1 ", " 2 ", " 3 ", " 4 "}));
+    model->setHorizontalHeaderLabels(QList<QString>({"CMD#", " ALT ", " 1 ", " 2 ", " 3 ", " 4 ", " SPD "}));
     for (int i = 0; i < wp.length(); i++) {
         QStandardItem * action = new QStandardItem(QString("%0").arg(wp.at(i).action));
         QStandardItem * alt = new QStandardItem(QString("%0").arg(wp.at(i).coords.z()));
@@ -239,8 +240,10 @@ QStandardItemModel *MissionWidget::createMissionModel(const Mission *mission) {
         QStandardItem * param2 = new QStandardItem(QString("%0").arg(wp.at(i).param2));
         QStandardItem * param3 = new QStandardItem(QString("%0").arg(wp.at(i).param3));
         QStandardItem * param4 = new QStandardItem(QString("%0").arg(wp.at(i).param4));
+        QStandardItem * spd = wp.at(i).changeSpeed ? new QStandardItem(QString("%0").arg(wp.at(i).speed)) :
+                                                         new QStandardItem(QString("0"));
         QList<QStandardItem*> row({action, alt, param1, param2,
-                                  param3, param4});
+                                  param3, param4, spd});
         for (int j = 0; j < row.size(); j++) {
             row.at(j)->setTextAlignment(Qt::AlignCenter);
         }

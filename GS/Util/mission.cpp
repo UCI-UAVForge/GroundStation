@@ -10,25 +10,19 @@ Mission::Mission(QObject *parent) : QObject(parent){
 }
 
 Mission::Mission(bool therewasaweirdoverloadederror) {
-    /* Default takeoff+landing */
-    takeoff.setDefaultTakeoff(20, 45, home_pos);
-    QList<QVector3D> landingPath({QVector3D(33.770980, -117.694640, 5)});
-    landing.setDefaultLanding(landingPath, QVector2D(33.771031, -117.694890), 15);
+    defaultLandingTakeoff();
 
-    generatedPath.waypoints.append(landing.waypoints);
     generatedPath.waypoints.prepend(takeoff);
+    generatedPath.waypoints.append(landing.waypoints);
 }
 
 
 Mission::Mission(QJsonObject obj) {
     loadInteropJson(obj);
-    /* Default takeoff+landing */
-    takeoff.setDefaultTakeoff(20, 45, home_pos);
-    QList<QVector3D> landingPath({QVector3D(33.770980, -117.694640, 5)});
-    landing.setDefaultLanding(landingPath, QVector2D(33.771031, -117.694890), 15);
+    defaultLandingTakeoff();
 
-    generatedPath.waypoints.append(landing.waypoints);
     generatedPath.waypoints.prepend(takeoff);
+    generatedPath.waypoints.append(landing.waypoints);
 }
 
 Mission::Mission(QJsonObject mission_obj, QJsonDocument obstacles_doc) {
@@ -149,8 +143,15 @@ Obstacles Mission::getObstacles() {
 
 
 //--------------------------------------------------------
-//                          ?????
+//                          Mission Stuffs
 //--------------------------------------------------------
+
+void Mission::defaultLandingTakeoff() {
+    takeoff.setDefaultTakeoff(20, 45, home_pos);
+    QList<QVector3D> landingPath({QVector3D(33.770980, -117.694640, 5)});
+    landing.setDefaultLanding(landingPath, QVector2D(33.771031, -117.694890), 15);
+}
+
 QVector<Waypoint::WP> Mission::constructWaypoints() {
     QVector<Waypoint::WP> waypoints;
 
@@ -159,15 +160,6 @@ QVector<Waypoint::WP> Mission::constructWaypoints() {
 
     return waypoints;
 }
-
-
-
-uint16_t Mission::completeMissionLength() {
-    int missionPrologue = 1;
-    int waypoints = generatedPath.length();
-    return missionPrologue + waypoints;
-}
-
 
 QList<QPolygonF> Mission::get_obstacles() {
     QList<QPolygonF> polys;

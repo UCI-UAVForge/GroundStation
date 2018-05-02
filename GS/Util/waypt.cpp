@@ -12,6 +12,7 @@ Waypt::Waypt(QVector3D coords) {
     this->param2 = 15;
     this->param3 = 0;
     this->param4 = 0;
+    this->changeSpeed = false;
 }
 
 Waypt::Waypt(QVector2D coords) {
@@ -23,6 +24,7 @@ Waypt::Waypt(QVector2D coords) {
     this->param2 = 15;
     this->param3 = 0;
     this->param4 = 0;
+    this->changeSpeed = false;
 }
 
 Waypoint::WP Waypt::generateWP(uint16_t seq) {
@@ -38,6 +40,22 @@ Waypoint::WP Waypt::generateWP(uint16_t seq) {
     wp.x = coords.x();
     wp.y = coords.y();
     wp.z = coords.z();
+    return wp;
+}
+
+Waypoint::WP Waypt::setSpeed(uint16_t seq) {
+    Waypoint::WP wp;
+    wp.id = seq;
+    wp.frame = 0;
+    wp.command = 178;
+    wp.autocontinue = autocontinue;
+    wp.param1 = 0;
+    wp.param2 = speed;
+    wp.param3 = -1;
+    wp.param4 = 0;
+    wp.x = 0;
+    wp.y = 0;
+    wp.z = 0;
     return wp;
 }
 

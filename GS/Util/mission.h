@@ -48,7 +48,6 @@ public:
     void printJDoc();
     Point toECEF(double lat, double lon, double alt);
     QVector<Waypoint::WP> constructWaypoints();
-    uint16_t completeMissionLength();
 //    void setActions_wp();
     Obstacles getObstacles();
     QList<QVector3D> *toList();
@@ -70,6 +69,7 @@ private:
     QList<FlyZone> setFlyZones(QJsonArray flyZoneArray);
     QList<QVector2D> setPoints(QJsonArray pointArray);
     QList<QVector3D> * set3DPoints(QJsonArray pointArray);
+    void defaultLandingTakeoff();
     double meters_to_deg(double meters, double latitude)
     {
         return (meters / (111.32 * 1000 * cos(latitude * (M_PI / 180))));

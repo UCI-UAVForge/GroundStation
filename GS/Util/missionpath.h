@@ -17,11 +17,11 @@ public:
     void addWaypoint(Waypt waypoint, int order);
     void removeWaypoint(int order);
     void setCurrent(int i);
-    uint16_t length();
     QVector<Waypoint::WP> generateWaypoints(uint16_t startingSeq);
     QList<QVector3D>* toList();
     QJsonValue toQJsonValue();
     void setDefaultLanding(QList<QVector3D> landingPath, QVector2D landingPoint, float abortAlt);
+    uint16_t getSeq(uint16_t cmdSeq);
 };
 
 #endif // MISSIONPATH_H

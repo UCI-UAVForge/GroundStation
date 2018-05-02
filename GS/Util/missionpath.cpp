@@ -1,4 +1,5 @@
 #include "missionpath.h"
+#include <QDebug>
 
 MissionPath::MissionPath() {
 }
@@ -26,15 +27,13 @@ void MissionPath::setCurrent(int i) {
     }
 }
 
-uint16_t MissionPath::length() {
-    return waypoints.length();
-}
-
 QVector<Waypoint::WP> MissionPath::generateWaypoints(uint16_t startingSeq) {
     QVector<Waypoint::WP> path;
     uint16_t seq = startingSeq;
     for (int i = 0; i < waypoints.length(); i++) {
         path.append(waypoints[i].generateWP(seq++));
+        if (waypoints.at(i).changeSpeed && waypoints.at(i).action == 16)
+            path.append(waypoints[i].setSpeed(seq++));
     }
     return path;
 }
@@ -55,4 +54,13 @@ void MissionPath::setDefaultLanding(QList<QVector3D> landingPath, QVector2D land
     Waypt land;
     land.setDefaultLanding(landingPoint, abortAlt);
     waypoints.append(land);
+}
+
+uint16_t MissionPath::getSeq(uint16_t cmdSeq) {
+    uint16_t seq = cmdSeq - 1;
+    for (int i = 0; i < cmdSeq - 1; i++) {
+        if (waypoints.at(i).changeSpeed)
+            seq++;
+    }
+    return seq;
 }

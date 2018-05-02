@@ -64,7 +64,7 @@ signals:
     void clearMissions();
     void setCurrentMision(uint16_t i);
     void readMissionsSignal();
-    void writeMissionsSignal(QVector<Waypoint::WP> waypoints, uint16_t size);
+    void writeMissionsSignal(QVector<Waypoint::WP> waypoints);
     void clearMap();
 
     void selectWaypoint(int wpNum);

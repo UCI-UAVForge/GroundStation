@@ -36,7 +36,7 @@ public:
     Waypoint();
     void clearAllWaypoints();
     void readWaypointsList();
-    void writeWaypoints(const QVector<WP>& waypoints, uint16_t size);
+    void writeWaypoints(const QVector<WP>& waypoints);
     void setCurrentWaypoint(uint16_t index);
 //    int setCurrentWaypoint(uint16_t seq);
 

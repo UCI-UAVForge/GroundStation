@@ -20,7 +20,8 @@ void Waypoint::clearAllWaypoints() {
     }
 }
 
-void Waypoint::writeWaypoints(const QVector<WP>& waypoints, uint16_t size) {
+void Waypoint::writeWaypoints(const QVector<WP>& waypoints) {
+    uint16_t size = waypoints.length();
     writeAck = false;
     currentRequestedMission = std::numeric_limits<uint16_t>::max();
     reqFlag = true;
