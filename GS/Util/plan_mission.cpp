@@ -87,14 +87,23 @@ QList<QVector3D> * PlanMission::get_path() {
     for (int i = 0; i < waypoints->length(); i++) {
         list.append(waypoints->at(i).toPointF());
     }
-    QRectF bounding_rect = QPolygonF().boundingRect();
+    QRectF bounding_rect = QPolygonF(list).boundingRect();
     // gen search path
     QPointF tl = bounding_rect.topLeft();
     QPointF br = bounding_rect.bottomRight();
-    float delta = meters_to_deg(80, start_point_q3d.x());
-    for (float i = tl.x(); i < br.x(); i+delta) {
-        for (float j = tl.y(); j < br.y(); j+delta) {
-            remaining_points.push_back(Point::fromGeodetic(i, j, start_point_q3d.z()));
+    float delta = meters_to_deg(30, start_point_q3d.y());
+    qInfo() << "bounding box:";
+    QVector<QPointF> newList;
+    for(const QVector2D item: flyzones.at(0).boundary_points) {
+        newList << item.toPointF();
+    }
+    QPolygonF flyzone_poly = QPolygonF(newList);
+    for (float i = tl.x(); i < br.x(); i+=delta) {
+        for (float j = tl.y(); j < br.y(); j+=delta) {
+            Point candidate = Point::fromGeodetic(i, j, start_point_q3d.z());
+            if(flyzone_poly.containsPoint(QPointF(i,j), Qt::WindingFill)) {
+                remaining_points.push_back(candidate);
+            }
         }
     }
 
