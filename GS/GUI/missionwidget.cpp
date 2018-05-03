@@ -91,8 +91,11 @@ void MissionWidget::changeParams(QStandardItem * item) {
             wp.param4 = item->data(Qt::DisplayRole).toFloat();
        break;
        case 6:
-            wp.speed = item->data(Qt::DisplayRole).toFloat();
-            wp.changeSpeed = true;
+            float spd = item->data(Qt::DisplayRole).toFloat();
+            if (sped != 0) {
+                wp.speed = spd;
+                wp.changeSpeed = true;
+            }
        break;
     }
     mission->generatedPath.waypoints.replace(item->row(), wp);
