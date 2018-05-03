@@ -49,6 +49,8 @@ SOURCES += \
     $$files(Util/*.cpp, false) \
     $$files(Network/*.cpp, false) \
     $$files(Database/*.cpp, false) \
+    $$files(res/*.qml, false) \
+    $$files(res/*.json, false)
 
 HEADERS  += \
     $$files(GUI/*.h, false) \

@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/">
+    <qresource>
         <file>res/html/missionRecap.html</file>
         <file>res/buttons/Mission_Execution_Button_Type_1.png</file>
         <file>res/buttons/Mission_Planning_Button_Type_1.png</file>
@@ -82,21 +82,5 @@
         <file>res/tc/tc_face_1.svg</file>
         <file>res/tc/tc_face_2.svg</file>
         <file>res/tc/tc_mark.svg</file>
-        <file>res/test_mission.json</file>
-        <file>res/test_mission2.json</file>
-        <file>res/test_obstacles.json</file>
-        <file>res/TooltipArea.qml</file>
-        <file>res/PlaneSettings.qml</file>
-        <file>res/Waypoint.qml</file>
-        <file>res/ItemInfo.qml</file>
-        <file>res/WaypointInfo.qml</file>
-        <file>res/PathInfo.qml</file>
-        <file>res/MissionPath.qml</file>
-        <file>res/Path.qml</file>
-        <file>res/UAVInfo.qml</file>
-        <file>res/UAV.qml</file>
-        <file>res/UAVPath.qml</file>
-        <file>res/Point.qml</file>
-        <file>res/PointInfo.qml</file>
     </qresource>
 </RCC>
