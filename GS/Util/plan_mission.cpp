@@ -138,8 +138,8 @@ QList<QVector3D> * PlanMission::get_path() {
             if (detour.size() > 1) {
                 for (auto it = detour.begin()+1; it != detour.end(); ++it) {
                     qInfo() << it->first/SCALE_CONSTANT << "/" << it->second/SCALE_CONSTANT;
-                    qInfo() << Point::fromGeodetic(it->first/SCALE_CONSTANT, it->second/SCALE_CONSTANT, 0);
-                    path.push_back(Point::fromGeodetic(it->first/SCALE_CONSTANT, it->second/SCALE_CONSTANT, 0));
+                    qInfo() << Point::fromGeodetic(it->first/SCALE_CONSTANT, it->second/SCALE_CONSTANT, p.toGeodetic()[2]);
+                    path.push_back(Point::fromGeodetic(it->first/SCALE_CONSTANT, it->second/SCALE_CONSTANT, p.toGeodetic()[2]));
                 }
             }
             if (path.size() > 0) {
@@ -161,7 +161,7 @@ QList<QVector3D> * PlanMission::get_path() {
         qInfo() << p.toGeodetic();
         //qlist_qvector3d->append(p.QVectorGeodetic());
         qlist_qvector3d->append(QVector3D(p.toGeodetic().at(0),
-                                          abs(p.toGeodetic().at(1)) * sign, 0));
+                                          abs(p.toGeodetic().at(1)) * sign, p.toGeodetic().at(2)));
     }
     qInfo() << "done with path";
     return qlist_qvector3d;
