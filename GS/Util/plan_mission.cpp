@@ -87,14 +87,23 @@ QList<QVector3D> * PlanMission::get_path() {
     for (int i = 0; i < waypoints->length(); i++) {
         list.append(waypoints->at(i).toPointF());
     }
-    QRectF bounding_rect = QPolygonF().boundingRect();
+    QRectF bounding_rect = QPolygonF(list).boundingRect();
     // gen search path
     QPointF tl = bounding_rect.topLeft();
     QPointF br = bounding_rect.bottomRight();
-    float delta = meters_to_deg(80, start_point_q3d.x());
-    for (float i = tl.x(); i < br.x(); i+delta) {
-        for (float j = tl.y(); j < br.y(); j+delta) {
-            remaining_points.push_back(Point::fromGeodetic(i, j, start_point_q3d.z()));
+    float delta = meters_to_deg(30, start_point_q3d.y());
+    qInfo() << "bounding box:";
+    QVector<QPointF> newList;
+    for(const QVector2D item: flyzones.at(0).boundary_points) {
+        newList << item.toPointF();
+    }
+    QPolygonF flyzone_poly = QPolygonF(newList);
+    for (float i = tl.x(); i < br.x(); i+=delta) {
+        for (float j = tl.y(); j < br.y(); j+=delta) {
+            Point candidate = Point::fromGeodetic(i, j, start_point_q3d.z());
+            if(flyzone_poly.containsPoint(QPointF(i,j), Qt::WindingFill)) {
+                remaining_points.push_back(candidate);
+            }
         }
     }
 
@@ -138,8 +147,8 @@ QList<QVector3D> * PlanMission::get_path() {
             if (detour.size() > 1) {
                 for (auto it = detour.begin()+1; it != detour.end(); ++it) {
                     qInfo() << it->first/SCALE_CONSTANT << "/" << it->second/SCALE_CONSTANT;
-                    qInfo() << Point::fromGeodetic(it->first/SCALE_CONSTANT, it->second/SCALE_CONSTANT, 0);
-                    path.push_back(Point::fromGeodetic(it->first/SCALE_CONSTANT, it->second/SCALE_CONSTANT, 0));
+                    qInfo() << Point::fromGeodetic(it->first/SCALE_CONSTANT, it->second/SCALE_CONSTANT, p.toGeodetic()[2]);
+                    path.push_back(Point::fromGeodetic(it->first/SCALE_CONSTANT, it->second/SCALE_CONSTANT, p.toGeodetic()[2]));
                 }
             }
             if (path.size() > 0) {
@@ -161,7 +170,7 @@ QList<QVector3D> * PlanMission::get_path() {
         qInfo() << p.toGeodetic();
         //qlist_qvector3d->append(p.QVectorGeodetic());
         qlist_qvector3d->append(QVector3D(p.toGeodetic().at(0),
-                                          abs(p.toGeodetic().at(1)) * sign, 0));
+                                          abs(p.toGeodetic().at(1)) * sign, p.toGeodetic().at(2)));
     }
     qInfo() << "done with path";
     return qlist_qvector3d;
