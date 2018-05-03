@@ -92,7 +92,7 @@ void MissionWidget::changeParams(QStandardItem * item) {
        break;
        case 6:
             float spd = item->data(Qt::DisplayRole).toFloat();
-            if (sped != 0) {
+            if (spd != 0) {
                 wp.speed = spd;
                 wp.changeSpeed = true;
             }
