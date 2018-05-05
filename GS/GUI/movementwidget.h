@@ -22,6 +22,8 @@ public:
     bool altFt;
     bool relAltFt;
     bool ClimbFt;
+    bool groundSpdKnots;
+    bool airSpdKIAS;
     Style style;
 
 signals:
@@ -34,6 +36,11 @@ public slots:
     void toggleAltUnits();
     void toggleRelAltUnits();
     void toggleClimbUnits();
+    void toggleGroundSpdUnits();
+    void toggleAirSpdUnits();
+
+private:
+    float metersToKnots(float meters);
 };
 
 #endif // INFOWIDGET_H
