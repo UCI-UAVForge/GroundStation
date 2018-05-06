@@ -11,7 +11,10 @@ MovementWidget::MovementWidget(QWidget *parent) : QWidget(parent)
     connect(ui.alt, &QPushButton::clicked, this, &MovementWidget::toggleAltUnits);
     connect(ui.relAlt, &QPushButton::clicked, this, &MovementWidget::toggleRelAltUnits);
     connect(ui.Climb, &QPushButton::clicked, this, &MovementWidget::toggleClimbUnits);
-
+    connect(ui.gSpeed, &QPushButton::clicked, this, &MovementWidget::toggleGroundSpdUnits);
+    connect(ui.airSpeed, &QPushButton::clicked, this, &MovementWidget::toggleAirSpdUnits);
+    groundSpdKnots = false;
+    airSpdKIAS = false;
 }
 
 MovementWidget::~MovementWidget(){
@@ -29,14 +32,28 @@ void MovementWidget::toggleClimbUnits() {
     ClimbFt = !ClimbFt;
 }
 
+void MovementWidget::toggleGroundSpdUnits() {
+    groundSpdKnots = groundSpdKnots ? false : true;
+}
+
+void MovementWidget::toggleAirSpdUnits() {
+    airSpdKIAS = airSpdKIAS ? false : true;
+}
+
 void MovementWidget::updateTelemetry(mavlink_vfr_hud_t vfr_hud) {
     if (altFt) {
         ui.alt->setText(QString::number(vfr_hud.alt * 3.28084) + " ft.");
     } else {
         ui.alt->setText(QString::number(vfr_hud.alt) + " m.");
     }
-    ui.gSpeed->setText(QString::number(vfr_hud.groundspeed, 'f', 2) + " m/s.");
-    ui.airSpeed->setText(QString::number(vfr_hud.airspeed, 'f', 2) + " m/s.");
+    if (groundSpdKnots)
+        ui.gSpeed->setText(QString::number(metersToKnots(vfr_hud.groundspeed), 'f', 2) + " knots.");
+    else
+        ui.gSpeed->setText(QString::number(vfr_hud.groundspeed, 'f', 2) + " m/s.");
+    if (airSpdKIAS)
+        ui.airSpeed->setText(QString::number(metersToKnots(vfr_hud.airspeed), 'f', 2) + " KIAS.");
+    else
+        ui.airSpeed->setText(QString::number(vfr_hud.airspeed, 'f', 2) + " m/s.");
     ui.Climb->setText(QString::number(vfr_hud.climb, 'f', 2) + " m/s.");
 }
 
@@ -67,5 +84,9 @@ void MovementWidget::mousePressEvent(QMouseEvent *event) {
 
 //    }
 
+}
+
+float MovementWidget::metersToKnots(float meters) {
+    return meters * 1.94384;
 }
 
