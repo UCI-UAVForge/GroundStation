@@ -40,7 +40,7 @@ Mission::Mission(QJsonObject mission_obj, QJsonDocument obstacles_doc) {
 //--------------------------------------------------------
 //                          Loading
 //--------------------------------------------------------
-void Mission::loadJson(QJsonObject obj){
+void Mission::loadJson(QJsonObject obj, QJsonDocument obstacles_doc){
     id                      = obj["id"].toInt();
     active                  = obj["active"].toBool();
     home_pos                = posToPoint(obj["home_pos"].toObject());
@@ -53,6 +53,8 @@ void Mission::loadJson(QJsonObject obj){
 
     search_grid_points      = set3DPoints(obj["search_grid_points"].toArray());
     fly_zones = setFlyZones(obj["fly_zones"].toArray());
+
+    obstacles = Obstacles(obstacles_doc);
 }
 
 void Mission::loadInteropJson(QJsonObject &obj){

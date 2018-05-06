@@ -34,8 +34,6 @@ public:
     void readButtonClicked();
     void clearButtonClicked();
     void setCurrentButtonClicked();
-//    void saveButtonClicked();
-//    void loadButtonClicked();
     void saveMission();
     void loadMission();
     bool hasMission();
@@ -89,6 +87,8 @@ public slots:
 private:
     QVector2D findMidPoint(QVector3D a, QVector3D b);
     void loadInteropMission(QString m, QString o,int num);
+    void loadhardMission(QString m, QString o,int num);
+    QString path(QString m);
     int loadCount;
     bool dropArmed;
 

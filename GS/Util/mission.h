@@ -52,7 +52,7 @@ public:
     Obstacles getObstacles();
     QList<QVector3D> *toList();
     QVector3D moveWaypoint(int index, QKeyEvent * k);
-    void loadJson(QJsonObject obj);
+    void loadJson(QJsonObject obj, QJsonDocument obstacles_doc);
     void loadInteropJson(QJsonObject &obj);
     QJsonDocument toJson();
 

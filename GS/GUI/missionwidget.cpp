@@ -12,7 +12,6 @@ MissionWidget::MissionWidget(QWidget *parent) :
     style = Style();
     ui->missionList->setEditable(true);
     ui->missionList->lineEdit()->setReadOnly(true);
-    ui->missionList->lineEdit()->setAlignment(Qt::AlignCenter);
     ui->setCurrentValue->setRange(0,0);
     connect(ui->generateButton, &QPushButton::clicked, this, &MissionWidget::generateMission);
     connect(ui->writeButton, &QPushButton::clicked, this, &MissionWidget::writeButtonClicked);
@@ -48,11 +47,15 @@ MissionWidget::MissionWidget(QWidget *parent) :
     qInfo() << "LOADING TEST";
     loadInteropMission("://res/test_mission2.json",":/res/test_obstacles.json",loadCount++);
     loadInteropMission("://res/test_mission.json",":/res/test_obstacles.json",loadCount++);
+    loadhardMission(path("/Missions/meow.json"),path("/Missions/obstacles.json"),loadCount++);
 
-    mission = missions[0];
-    QStandardItemModel * model = createMissionModel(mission);
-    ui->generatedMission->setTableModel(model);
-    ui->setCurrentValue->setRange(1, mission->generatedPath.waypoints.length());
+    //-----------------------------------------------------------------
+    //Select which mission here
+    updateMission(2);
+    ui->setCurrentValue->setRange(3, mission->generatedPath.waypoints.length());
+    ui->missionList->setCurrentIndex(2);
+    //----------------------------------------------------------------
+
     //updateDraw();
 }
 
@@ -213,14 +216,6 @@ void MissionWidget::setCurrentButtonClicked() {
     emit(setCurrentMision(mission->generatedPath.getSeq(ui->setCurrentValue->value())));
 }
 
-//void MissionWidget::saveButtonClicked() {
-//    emit(saveMission());
-//}
-
-//void MissionWidget::loadButtonClicked() {
-//    emit(loadMission());
-//}
-
 void MissionWidget::readMissions(Waypoint::WP * waypoints, uint16_t size) {
     qInfo() << "!-----------------------!";
     qInfo() << "MissionWidget::readMissions test";
@@ -280,7 +275,7 @@ void MissionWidget::getMissions(Interop *i) {
 
 void MissionWidget::saveMission() {
     QString filename = QFileDialog::getSaveFileName(this,
-            tr("Load Mission"), QDir::currentPath() + "/../../GroundStation/GS/res",
+            tr("Load Mission"), path("/Missions"),
             tr("Json Files (*.json)"));
     QFile file(filename);
     if (!file.open(QIODevice::WriteOnly)){
@@ -293,7 +288,7 @@ void MissionWidget::saveMission() {
 
 void MissionWidget::loadMission() {
     QString filename = QFileDialog::getOpenFileName(this,
-            tr("Load Mission"), QDir::currentPath() + "/../../GroundStation/GS/res",
+            tr("Load Mission"), path("/Missions"),
             tr("Json Files (*.json)"));
     QFile file(filename);
     if (!file.open(QIODevice::ReadOnly)) {
@@ -305,11 +300,58 @@ void MissionWidget::loadMission() {
     file.close();
     QJsonDocument doc(QJsonDocument::fromJson(data));
     Mission* temp = new Mission(false);
-    temp->loadJson(doc.object());
 
+
+    filename = QFileDialog::getOpenFileName(this,
+            tr("Load Mission"), path("/Missions"),
+            tr("Json Files (*.json)"));
+    QFile file2(filename);
+    if (!file.open(QIODevice::ReadOnly)) {
+        qWarning("Couldn't open mission file");
+        QJsonObject null;
+        return;
+    }
+    data = file2.readAll();
+    file.close();
+    QJsonDocument doc2(QJsonDocument::fromJson(data));
+
+    temp->loadJson(doc.object(), doc2);
     missions.append(temp);
     ui->missionList->addItem("Loaded Mission " + QString::number(loadCount++));
-    ui->missionList->setItemData(1, Qt::AlignCenter, Qt::TextAlignmentRole);
+    ui->missionList->setItemData(loadCount+1, Qt::AlignCenter, Qt::TextAlignmentRole);
+}
+
+void MissionWidget::loadhardMission(QString m, QString o, int num) {
+    QFile file(m);
+    if (!file.open(QIODevice::ReadOnly)) {
+        qWarning("Couldn't open mission file");
+        QJsonObject null;
+        return;
+    }
+    QByteArray data = file.readAll();
+    file.close();
+    QJsonDocument doc(QJsonDocument::fromJson(data));
+    Mission* temp = new Mission(false);
+
+
+    QFile file2(o);
+    if (!file2.open(QIODevice::ReadOnly)) {
+        qWarning("Couldn't open obstacles file");
+        QJsonDocument null;
+        return;
+    }
+    data = file2.readAll();
+    file.close();
+    QJsonDocument doc2(QJsonDocument::fromJson(data));
+
+
+    temp->loadJson(doc.object(), doc2);
+    missions.append(temp);
+    ui->missionList->addItem("Loaded Mission " + QString::number(num));
+}
+
+QString MissionWidget::path(QString m) {
+    return QDir::currentPath() + "/../../GroundStation/GS" + m;
 }
 
 void MissionWidget::loadInteropMission(QString m, QString o, int num) {
@@ -335,7 +377,6 @@ void MissionWidget::loadInteropMission(QString m, QString o, int num) {
 
     missions.append(new Mission(doc.object(), doc2));
     ui->missionList->addItem("Loaded Mission " + QString::number(num));
-    ui->missionList->setItemData(1, Qt::AlignCenter, Qt::TextAlignmentRole);
 }
 
 MissionWidget::~MissionWidget() {
