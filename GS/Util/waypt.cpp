@@ -6,13 +6,12 @@ Waypt::Waypt() {
 Waypt::Waypt(QVector3D coords) {
     this->coords = coords;
     this->action = MAV_CMD_NAV_WAYPOINT;
-    this->speed = 20; // TODO: IDK WUT VALUE
+    this->speed = 20;
     this->autocontinue = 1;
     this->param1 = 0;
     this->param2 = 15;
     this->param3 = 0;
     this->param4 = 0;
-    this->changeSpeed = false;
 }
 
 Waypt::Waypt(QVector2D coords) {
@@ -24,7 +23,6 @@ Waypt::Waypt(QVector2D coords) {
     this->param2 = 15;
     this->param3 = 0;
     this->param4 = 0;
-    this->changeSpeed = false;
 }
 
 Waypoint::WP Waypt::generateWP(uint16_t seq) {

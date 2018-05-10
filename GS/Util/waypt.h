@@ -14,7 +14,7 @@ public:
     QVector3D coords;
     int action;
     double speed;
-    bool changeSpeed;
+    bool changeSpeed = false;
     uint8_t autocontinue;
     float param1;
     float param2;

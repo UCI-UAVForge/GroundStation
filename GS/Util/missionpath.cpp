@@ -57,10 +57,11 @@ void MissionPath::setDefaultLanding(QList<QVector3D> landingPath, QVector2D land
 }
 
 uint16_t MissionPath::getSeq(uint16_t cmdSeq) {
-    uint16_t seq = cmdSeq - 1;
+    uint16_t seq = cmdSeq;
     for (int i = 0; i < cmdSeq - 1; i++) {
-        if (waypoints.at(i).changeSpeed)
+        if (waypoints.at(i).changeSpeed) {
             seq++;
+        }
     }
     return seq;
 }

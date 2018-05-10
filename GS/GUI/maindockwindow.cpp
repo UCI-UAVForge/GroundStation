@@ -47,6 +47,9 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     ui->toolBar->addWidget(uavButton);
 
     connect(loginWidget, &LoginWidget::loginSuccess, ui->missionWidget, &MissionWidget::getMissions);
+    connect(decoder, &Decoder::gpsReceived, loginWidget, &LoginWidget::updateGPS);
+    connect(decoder, &Decoder::vfrHudReceived, loginWidget, &LoginWidget::updateVFR);
+//    connect(waypoint, &Waypoint::ongoingMission, loginWidget, &LoginWidget::missionChange);
     connect(ui->missionWidget, &MissionWidget::drawMission, ui->mapWidget, &MapWidget::drawMission);
     connect(ui->missionWidget, &MissionWidget::drawObstacle, ui->mapWidget, &MapWidget::drawPolygonF);
     connect(ui->missionWidget, &MissionWidget::clearMap, ui->mapWidget, &MapWidget::clearMap);

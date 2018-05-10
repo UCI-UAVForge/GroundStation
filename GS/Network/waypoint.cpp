@@ -12,15 +12,18 @@ Waypoint::Waypoint() {}
 // Public
 
 void Waypoint::clearAllWaypoints() {
+//    emit(ongoingMission(true));
     clearTimeout = true;
     requestClear();
     if (!clearTimeout) emit(waypointsClearStatus(true));
     else {
         emit(waypointsClearStatus(false));
     }
+//    emit(ongoingMission(false));
 }
 
 void Waypoint::writeWaypoints(const QVector<WP>& waypoints) {
+//    emit(ongoingMission(true));
     uint16_t size = waypoints.length();
     writeAck = false;
     currentRequestedMission = std::numeric_limits<uint16_t>::max();
@@ -60,10 +63,12 @@ void Waypoint::writeWaypoints(const QVector<WP>& waypoints) {
         return;
     }
     emit(waypointsWriteStatus(true));
+//    emit(ongoingMission(false));
 }
 
 void Waypoint::readWaypointsList() {
     // * Bug: Still receive missions in multiples of 5
+//    emit(ongoingMission(true));
     nPoints = 0;
     countFlag = true;
     requestCount();
@@ -88,9 +93,11 @@ void Waypoint::readWaypointsList() {
     }
     emit(sendAck(0));
     emit(waypointsReceived(waypoints, nPoints));
+//    emit(ongoingMission(false));
 }
 
 void Waypoint::setCurrentWaypoint(uint16_t index) {
+//    emit(ongoingMission(true));
     setCurrentWaypointFlag = false;
     setCurrentIndex = index;
     for (short i = 0;i < numAttempts && !setCurrentWaypointFlag; i++) {
@@ -105,6 +112,7 @@ void Waypoint::setCurrentWaypoint(uint16_t index) {
         // it worked
         setCurrentIndex = UINT16_MAX;
     }
+//    emit(ongoingMission(false));
 }
 
 // Private and Signaling

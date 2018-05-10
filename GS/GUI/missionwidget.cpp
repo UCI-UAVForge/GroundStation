@@ -52,7 +52,7 @@ MissionWidget::MissionWidget(QWidget *parent) :
     //-----------------------------------------------------------------
     //Select which mission here
     updateMission(2);
-    ui->setCurrentValue->setRange(3, mission->generatedPath.waypoints.length());
+    ui->setCurrentValue->setRange(1, mission->generatedPath.waypoints.length());
     ui->missionList->setCurrentIndex(2);
     //----------------------------------------------------------------
 

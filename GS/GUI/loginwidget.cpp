@@ -29,7 +29,6 @@ void LoginWidget::attemptConnection() {
             slide->start();        //pulse->setEndValue(0);
         }
         else {
-            connected = true;
             try {
                 interop = new Interop(ui->user->text().toStdString(), ui->pass->text().toStdString());
                 slide->setDuration(500);
@@ -44,9 +43,26 @@ void LoginWidget::attemptConnection() {
                 qDebug() << "Failure";
                 connected = false;
             }
+            connected = true;
         }
     }
 }
+
+void LoginWidget::updateGPS(mavlink_gps_raw_int_t gps) {
+    UAVlat = (float)gps.lat/10000000;
+    UAVlon = (float)gps.lon/10000000;
+    if (connected)
+        interop->sendTelemetry(UAVlat, UAVlon, UAValt, (float)UAVheading);
+}
+
+void LoginWidget::updateVFR(mavlink_vfr_hud_t vfr) {
+    UAValt = vfr.alt;
+    UAVheading = vfr.heading;
+}
+
+//void LoginWidget::missionChange(bool change) {
+//    ongoingMission = change ? false : true;
+//}
 
 LoginWidget::~LoginWidget()
 {

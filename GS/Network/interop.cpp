@@ -114,6 +114,7 @@ void Interop::sendTelemetry(float latitude, float longitude, float altitude_msl,
     std::vector<HeaderSet> headers;
     headers.push_back(HeaderSet{QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded"});
 
+//    qDebug() << latitude << longitude << altitude_msl << uas_heading;
     QByteArray postData;
     postData.append("latitude=" + QString::number(latitude) + "&");
     postData.append("longitude=" + QString::number(longitude) + "&");
