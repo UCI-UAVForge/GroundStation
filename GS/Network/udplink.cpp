@@ -55,7 +55,10 @@ void UdpLink::sendData(mavlink_message_t msg) {
     datagram = QByteArray((char*)buf, len);
 
     //Send datagram through sendUdpSocket
-    sendUdpSocket->write(datagram.data(), datagram.size());
+    qint64 write_size = sendUdpSocket->write(datagram.data(), datagram.size());
+    if (write_size == -1) {
+       QTextStream(stdout) << "Failed a write" << endl;
+    }
 }
 
 void UdpLink::recvData() {
@@ -64,21 +67,19 @@ void UdpLink::recvData() {
         QByteArray datagram;
         mavlink_message_t msg;
         mavlink_status_t status;
-        bool msgReceived = false;
         //Resize datagram and read data from recvUdpSocket
         datagram.resize(recvUdpSocket->pendingDatagramSize());
-        recvUdpSocket->readDatagram(datagram.data(), datagram.size());
-        //Parse using mavlink library
-        for (int i = 0; i < datagram.size(); i++) {
-            if(mavlink_parse_char(1, datagram.data()[i], &msg, &status)) {
-                msgReceived = true;
-                emit messageReceived(msg);
+        qint64 recv_size = recvUdpSocket->readDatagram(datagram.data(), datagram.size());
+        if (recv_size == -1) {
+            QTextStream(stdout) << "Message incomplete" << endl;
+        } else {
+            //Parse using mavlink library
+            for (int i = 0; i < datagram.size(); i++) {
+                if(mavlink_parse_char(1, datagram.data()[i], &msg, &status)) {
+                    emit messageReceived(msg);
+                }
             }
         }
-        if (!msgReceived) {
-            QTextStream(stdout) << "Message incomplete" << endl;
-        }
-
     }
 }
 
