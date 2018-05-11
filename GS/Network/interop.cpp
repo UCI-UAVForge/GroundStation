@@ -28,14 +28,14 @@ void Interop::replyFinished(QNetworkReply* reply)
         qCritical() << "Something bad happened to one of our requests: " << reply->errorString();
         qCritical() << reply->error();
     }
-//    else {
+    else {
 //        qDebug() << "ContentType: " << reply->header(QNetworkRequest::ContentTypeHeader).toString();
 //        qDebug() << "Last Modified: " << reply->header(QNetworkRequest::LastModifiedHeader).toDateTime().toString();;
 //        qDebug() << "Content Length: " << reply->header(QNetworkRequest::ContentLengthHeader).toULongLong();
 //        qDebug() << "HTTP Code: " << reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt();
 //        qDebug() << "HTTP Reason: " << reply->attribute(QNetworkRequest::HttpReasonPhraseAttribute).toString();
 //        qDebug() << "Response: " << reply->peek(reply->bytesAvailable());
-//    }
+    }
     reply->deleteLater();
 }
 
@@ -55,6 +55,7 @@ QNetworkReply* Interop::sendRequest(const QNetworkAccessManager::Operation& oper
     switch (operation) {
     case QNetworkAccessManager::GetOperation:
         reply = networkAccess->get(req);
+        waitForResponse(reply);
         break;
     case QNetworkAccessManager::PostOperation:
         reply = networkAccess->post(req, data);
@@ -68,7 +69,7 @@ QNetworkReply* Interop::sendRequest(const QNetworkAccessManager::Operation& oper
     default:
         throw std::invalid_argument("operation not implemented");
     }
-    waitForResponse(reply);
+//    waitForResponse(reply); // Might be needed for delete and put operations but mission write/read breaks w/ Post
 //    qDebug() << reply->request().url();
 //    qDebug() << "Response: " << reply->peek(reply->bytesAvailable());
     return reply;
