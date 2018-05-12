@@ -65,6 +65,7 @@ QNetworkReply* Interop::sendRequest(const QNetworkAccessManager::Operation& oper
         break;
     case QNetworkAccessManager::PutOperation:
         reply = networkAccess->put(req, data);
+        waitForResponse(reply);
         break;
     default:
         throw std::invalid_argument("operation not implemented");

@@ -69,6 +69,7 @@ private:
     QList<FlyZone> setFlyZones(QJsonArray flyZoneArray);
     QList<QVector2D> setPoints(QJsonArray pointArray);
     QList<QVector3D> * set3DPoints(QJsonArray pointArray);
+    float toMeters(float feet);
     void defaultLandingTakeoff();
     double meters_to_deg(double meters, double latitude)
     {

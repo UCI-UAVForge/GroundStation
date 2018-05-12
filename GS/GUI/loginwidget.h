@@ -29,17 +29,18 @@ public:
 
 private:
     Ui::LoginWidget *ui;
+    float toFeet(float meters);
     float UAVlat;
     float UAVlon;
     float UAValt;
-    int UAVheading;
+    float UAVheading;
 //    bool ongoingMission;
 signals:
     void loginSuccess(Interop * interop);
 
 public slots:
     void updateGPS(mavlink_gps_raw_int_t gps);
-    void updateVFR(mavlink_vfr_hud_t vfr);
+    void updatePOS(mavlink_global_position_int_t g_pos);
 //    void missionChange(bool change);
 
 };

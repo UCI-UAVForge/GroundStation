@@ -45,8 +45,9 @@ MissionWidget::MissionWidget(QWidget *parent) :
 
     //Hard coded loaded missions
     qInfo() << "LOADING TEST";
-    loadInteropMission("://res/test_mission2.json",":/res/test_obstacles.json",loadCount++);
-    loadInteropMission("://res/test_mission.json",":/res/test_obstacles.json",loadCount++);
+    loadInteropMission("://res/test_mission2.json", ":/res/test_obstacles.json", loadCount++);
+    loadInteropMission("://res/test_mission.json", ":/res/test_obstacles.json", loadCount++);
+    loadInteropMission("://res/full_mission1.json", ":/res/test_obstacles.json", loadCount++);
     loadhardMission(path("/Missions/meow.json"),path("/Missions/obstacles.json"),loadCount++);
 
     //-----------------------------------------------------------------
@@ -157,7 +158,7 @@ void MissionWidget::addWaypoint(int wpNum) {
     if (wpNum == mission->generatedPath.waypoints.length()-1) return;
     QVector3D curr_wp = mission->generatedPath.waypoints.at(wpNum).coords;
     QVector3D next_wp = mission->generatedPath.waypoints.at(wpNum+1).coords;
-    Waypt wp(findMidPoint(curr_wp, next_wp));
+    Waypt wp(QVector3D(findMidPoint(curr_wp, next_wp), curr_wp.z()));
     //qDebug()<<"prev Qlist memaddress"<< mission;
     mission->generatedPath.waypoints.insert(wpNum+1, wp);
     ui->generatedMission->setTableModel(createMissionModel(mission));
@@ -267,7 +268,7 @@ void MissionWidget::updateMission(int index) {
 void MissionWidget::getMissions(Interop *i) {
     QJsonArray interopMissions = i->getMissions().array();
     for (int j = 0; j < interopMissions.size(); j++) {
-        missions.append(new Mission(interopMissions.at(j).toObject()));
+        missions.append(new Mission(interopMissions.at(j).toObject(), i->getObstacles()));
         ui->missionList->addItem("Mission " + QString::number(j+1));
         ui->missionList->setItemData(j, Qt::AlignCenter, Qt::TextAlignmentRole);
     }

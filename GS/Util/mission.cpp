@@ -28,10 +28,7 @@ Mission::Mission(QJsonObject obj) {
 Mission::Mission(QJsonObject mission_obj, QJsonDocument obstacles_doc) {
     loadInteropJson(mission_obj);
     obstacles = Obstacles(obstacles_doc);
-    /* Default takeoff+landing */
-    takeoff.setDefaultTakeoff(20, 45, home_pos);
-    QList<QVector3D> landingPath({QVector3D(33.770980, -117.694640, 5)});
-    landing.setDefaultLanding(landingPath, QVector2D(33.771031, -117.694890), 15);
+    defaultLandingTakeoff();
 
     generatedPath.waypoints.append(landing.waypoints);
     generatedPath.waypoints.prepend(takeoff);
@@ -94,6 +91,7 @@ MissionPath Mission::setMissionPath(QJsonArray pointArray) {
     MissionPath missionPath = MissionPath();
     for(int i = 0; i < pointArray.size(); ++i){
         QVector3D coords = posTo3DPoint(pointArray[i].toObject());
+        coords.setZ(toMeters(coords.z()));
         Waypt waypt = Waypt(coords);
         int order = pointArray[i].toObject()["order"].toInt()-1;
         missionPath.addWaypoint(waypt, order);
@@ -106,7 +104,7 @@ MissionPath Mission::setMissionPath2(QJsonArray pointArray) {
     for(int i = 0; i < pointArray.size(); ++i){
         QJsonObject temp = pointArray[i].toObject();
         Waypt waypt;
-        waypt.coords = QVector3D(temp["x"].toDouble(),temp["y"].toDouble(),temp["z"].toDouble());
+        waypt.coords = QVector3D(temp["x"].toDouble(),temp["y"].toDouble(),toMeters(temp["z"].toDouble()));
         waypt.action = temp["action"].toInt();
         waypt.speed = temp["speed"].toDouble();
         waypt.autocontinue = temp["autocontinue"].toInt();
@@ -149,8 +147,8 @@ Obstacles Mission::getObstacles() {
 //--------------------------------------------------------
 
 void Mission::defaultLandingTakeoff() {
-    takeoff.setDefaultTakeoff(20, 45, home_pos);
-    QList<QVector3D> landingPath({QVector3D(33.770980, -117.694640, 5)});
+    takeoff.setDefaultTakeoff(10, 45, home_pos);
+    QList<QVector3D> landingPath({QVector3D(33.7708, -117.694, 15)});
     landing.setDefaultLanding(landingPath, QVector2D(33.771031, -117.694890), 15);
 }
 
@@ -169,7 +167,7 @@ QList<QPolygonF> Mission::get_obstacles() {
         QJsonObject obstacle = o.toObject();
         double obs_lat = obstacle["latitude"].toDouble();
         double obs_lon = obstacle["longitude"].toDouble();
-        double radius = obstacle["cylinder_radius"].toDouble();
+        double radius = toMeters(obstacle["cylinder_radius"].toDouble());
         double delta = meters_to_deg(radius, obs_lat);
 
         QVector<QPointF> obstacle_footprint_points;
@@ -296,4 +294,8 @@ QJsonValue Mission::pointToPos(QVector2D point) {
     temp["latitude"] = point.x();
     temp["longitude"] = point.y();
     return QJsonValue(temp);
+}
+
+float Mission::toMeters(float feet) {
+    return feet * 0.3048;
 }
