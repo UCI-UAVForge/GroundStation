@@ -318,7 +318,7 @@ void MissionWidget::loadMission() {
 
     temp->loadJson(doc.object(), doc2);
     missions.append(temp);
-    ui->missionList->addItem("Loaded Mission " + QString::number(loadCount++));
+    ui->missionList->addItem(filename + QString::number(loadCount++));
     ui->missionList->setItemData(loadCount+1, Qt::AlignCenter, Qt::TextAlignmentRole);
 }
 

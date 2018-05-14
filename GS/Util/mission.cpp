@@ -147,9 +147,12 @@ Obstacles Mission::getObstacles() {
 //--------------------------------------------------------
 
 void Mission::defaultLandingTakeoff() {
-    takeoff.setDefaultTakeoff(10, 45, home_pos);
-    QList<QVector3D> landingPath({QVector3D(33.7708, -117.694, 15)});
-    landing.setDefaultLanding(landingPath, QVector2D(33.771031, -117.694890), 15);
+    takeoff.setDefaultTakeoff(10, 35, home_pos);
+    QList<QVector3D> landingPath({QVector3D(33.77146530151367, -117.69239807128906, 45),
+                                 QVector3D(33.770931243896484, -117.69322204589844, 35),
+                                 QVector3D(33.770896911621094, -117.69420623779297, 25),
+                                 QVector3D(33.770957946777344, -117.69458770751953, 15)});
+    landing.setDefaultLanding(landingPath, QVector2D(33.771156311035156, -117.69544982910156), 15);
 }
 
 QVector<Waypoint::WP> Mission::constructWaypoints() {
@@ -242,7 +245,7 @@ QJsonDocument Mission::toJson() {
         QVector3D * coord = &(pt.coords);
         temp["x"] = QJsonValue(coord->x());
         temp["y"] = QJsonValue(coord->y());
-        temp["z"] = QJsonValue(coord->z());
+        temp["z"] = QJsonValue(toFeet(coord->z()));
         temp["action"] = QJsonValue(pt.action);
         temp["speed"] = QJsonValue(pt.speed);
         temp["autocontinue"] = QJsonValue(pt.autocontinue);
@@ -298,4 +301,8 @@ QJsonValue Mission::pointToPos(QVector2D point) {
 
 float Mission::toMeters(float feet) {
     return feet * 0.3048;
+}
+
+float Mission::toFeet(float meters) {
+    return meters * 3.28084;
 }

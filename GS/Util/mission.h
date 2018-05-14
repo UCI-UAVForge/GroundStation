@@ -70,6 +70,7 @@ private:
     QList<QVector2D> setPoints(QJsonArray pointArray);
     QList<QVector3D> * set3DPoints(QJsonArray pointArray);
     float toMeters(float feet);
+    float toFeet(float meters);
     void defaultLandingTakeoff();
     double meters_to_deg(double meters, double latitude)
     {
