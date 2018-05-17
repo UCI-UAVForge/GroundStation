@@ -32,7 +32,7 @@ std::vector<std::pair<double, double>> PlanMission::pathfind(double start_lat, d
     _biRRT->setGoalMaxDist(PlanMission::meters_to_deg(20, _goalPos.x()) * SCALE_CONSTANT);
 
     // set obstacles
-    for (QPolygonF obst_poly : get_obstacles()) {
+    for (QPolygonF obst_poly : mission->get_obstacles()) {
          _stateSpace->addObstacle(obst_poly);
     };
 
@@ -66,8 +66,9 @@ void PlanMission::add_serach_area(QPolygonF poly) {
 
 QList<QVector3D> * PlanMission::get_path() {
     QList<FlyZone> flyzones = mission->fly_zones;
-    for (int i = 1; i < mission->interopPath.waypoints.size(); i++) {
+    for (int i = 0; i < mission->interopPath.waypoints.size(); i++) {
         QVector3D point = mission->interopPath.waypoints.at(i).coords;
+        qInfo() << "goal: " << point;
         add_goal_point(Point::fromGeodetic(point.x(), point.y(), point.z()));
     }
     QVector3D start_point_q3d = mission->interopPath.waypoints.at(0).coords;
@@ -87,21 +88,26 @@ QList<QVector3D> * PlanMission::get_path() {
     for (int i = 0; i < waypoints->length(); i++) {
         list.append(waypoints->at(i).toPointF());
     }
-    QRectF bounding_rect = QPolygonF(list).boundingRect();
+    QPolygonF bounding_poly = QPolygonF(list);
+    QRectF bounding_rect = bounding_poly.boundingRect();
     // gen search path
     QPointF tl = bounding_rect.topLeft();
     QPointF br = bounding_rect.bottomRight();
-    float delta = meters_to_deg(30, start_point_q3d.y());
+    float delta = abs(meters_to_deg(30, start_point_q3d.y()));
+    float delta_x = (tl.x() - br.x() < 0) ? delta : -delta;
+    float delta_y = (tl.y() - br.y() < 0) ? delta : -delta;
     qInfo() << "bounding box:";
     QVector<QPointF> newList;
     for(const QVector2D item: flyzones.at(0).boundary_points) {
         newList << item.toPointF();
     }
     QPolygonF flyzone_poly = QPolygonF(newList);
-    for (float i = tl.x(); i < br.x(); i+=delta) {
-        for (float j = tl.y(); j < br.y(); j+=delta) {
+    for (float i = tl.x(); i < br.x(); i+=delta_x) {
+        for (float j = tl.y(); j < br.y(); j+=delta_y) {
             Point candidate = Point::fromGeodetic(i, j, start_point_q3d.z());
-            if(flyzone_poly.containsPoint(QPointF(i,j), Qt::WindingFill)) {
+            QPointF candidate_qptf = QPointF(i,j);
+            if(flyzone_poly.containsPoint(candidate_qptf, Qt::WindingFill) &&
+                    bounding_poly.containsPoint(candidate_qptf, Qt::WindingFill)) {
                 remaining_points.push_back(candidate);
             }
         }
@@ -118,7 +124,7 @@ QList<QVector3D> * PlanMission::get_path() {
         std::pop_heap(pts.begin(), pts.end());
         Point next = pts.back();
         pts.pop_back();
-        qInfo() << "prelim: " << next;
+        qInfo() << "prelim: " << next.toGeodetic();
         prelim_path.push_back(p);
     }
 
@@ -150,7 +156,11 @@ QList<QVector3D> * PlanMission::get_path() {
                     qInfo() << Point::fromGeodetic(it->first/SCALE_CONSTANT, it->second/SCALE_CONSTANT, p.toGeodetic()[2]);
                     path.push_back(Point::fromGeodetic(it->first/SCALE_CONSTANT, it->second/SCALE_CONSTANT, p.toGeodetic()[2]));
                 }
+            } else {
+                qInfo() << "dropped " << p.toGeodetic();
             }
+
+
             if (path.size() > 0) {
                 last_point = path.back();
             } else {
