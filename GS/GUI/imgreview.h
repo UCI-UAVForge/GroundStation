@@ -17,10 +17,10 @@ public:
     ~ImgReview();
 
 private:
-    Ui::ImgReview *ui;
+
     ImgWidget* ImgContainer;
     PropertyWidget* PropertyContainer;
-
+    Ui::ImgReview *ui;
 public slots:
     void ImgEditingEnable();
     void ImgSave();
@@ -31,6 +31,10 @@ public slots:
     void PropertySave();
     //void PropertySend();
     //void PropertyNext();
+    QPushButton* ImgSendButton();
+    QPushButton* ImgNextButton();
+    QPushButton* PropertySendButton();
+    QPushButton* PropertyNextButton();
 };
 
 #endif // IMGREVIEW_H

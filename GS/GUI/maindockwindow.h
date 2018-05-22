@@ -70,6 +70,7 @@ public:
     void connectDecoder(Decoder * decoder);
     void connectEncoder(Encoder * encoder);
     void connectWaypoint(Waypoint * waypoint, Encoder * encoder, Decoder * decoder);
+    bool eventFilter(QObject *watched, QEvent *event);
 
 signals:
     void what(int i);

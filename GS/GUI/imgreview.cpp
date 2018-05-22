@@ -48,6 +48,26 @@ void ImgReview::PropertySave()
     PropertyContainer->saveProperty();
 }
 
+QPushButton *ImgReview::ImgSendButton()
+{
+    return ui->ISendButton;
+}
+
+QPushButton *ImgReview::ImgNextButton()
+{
+    return ui->INextButton;
+}
+
+QPushButton *ImgReview::PropertySendButton()
+{
+    return ui->PSendButton;
+}
+
+QPushButton *ImgReview::PropertyNextButton()
+{
+    return ui->PNextButton;
+}
+
 ImgReview::~ImgReview()
 {
     delete ui;
