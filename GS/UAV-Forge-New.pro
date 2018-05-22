@@ -48,7 +48,8 @@ SOURCES += \
     $$files(Util/*.c, false) \
     $$files(Util/*.cpp, false) \
     $$files(Network/*.cpp, false) \
-    $$files(Database/*.cpp, false)
+    $$files(Database/*.cpp, false) \
+
 
 HEADERS  += \
     $$files(GUI/*.h, false) \
@@ -57,8 +58,10 @@ HEADERS  += \
     $$files(Network/*.h, false) \
     $$files(Database/*.h, false) \
 
+
 FORMS    += \
-    $$files(GUI/*.ui, false)
+    $$files(GUI/*.ui, false) \
+
 
 OTHER_FILES +=
 

@@ -38,6 +38,8 @@
 #include "uavbutton.h"
 #include "mapwidget.h"
 
+#include "imgreview.h"
+
 namespace Ui {
 class MainDockWindow;
 }
@@ -68,16 +70,19 @@ public:
     void connectDecoder(Decoder * decoder);
     void connectEncoder(Encoder * encoder);
     void connectWaypoint(Waypoint * waypoint, Encoder * encoder, Decoder * decoder);
+    bool eventFilter(QObject *watched, QEvent *event);
+
 signals:
     void what(int i);
 private slots:
     void hideDockWidgets();
     void closeDockWidgets();
     void updateMovingObjects(QQuickWidget * mapWidget);
-
+    void addImgReview();
 private:
     Ui::MainDockWindow *ui;
     Interop * interop;
+    ImgReview *imageReviewWidget;
 };
 
 #endif // MAINDOCKWINDOW_H

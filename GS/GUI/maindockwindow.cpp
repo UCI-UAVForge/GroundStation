@@ -7,7 +7,8 @@
 
 MainDockWindow::MainDockWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainDockWindow)
+    ui(new Ui::MainDockWindow),
+    imageReviewWidget(new ImgReview())
 {
     ui->setupUi(this);
     ui->graphDock->hide();
@@ -38,6 +39,18 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     connectWaypoint(waypoint, encoder, decoder);
 
     addToolBarButtons();
+    //install event filter
+
+    imageReviewWidget->ImgNextButton()->installEventFilter(this);
+    imageReviewWidget->ImgSendButton()->installEventFilter(this);
+    imageReviewWidget->PropertySendButton()->installEventFilter(this);
+    imageReviewWidget->PropertyNextButton()->installEventFilter(this);
+
+    // my widget
+
+    QAction*imgreview_clicked =  ui->toolBar->addAction("Image Review");
+    connect(imgreview_clicked,SIGNAL(triggered()),this,SLOT(addImgReview()));
+    // end
 
     QWidget* spacer = new QWidget();
     LoginWidget * loginWidget = new LoginWidget(this);
@@ -138,6 +151,48 @@ void MainDockWindow::connectWaypoint(Waypoint * waypoint, Encoder * encoder, Dec
     connect(waypoint, &Waypoint::waypointsReceived, ui->missionWidget, &MissionWidget::readMissions);
     connect(waypoint, &Waypoint::waypointsWriteStatus, ui->missionWidget, &MissionWidget::writeMissionsStatus);
     connect(waypoint, &Waypoint::waypointsClearStatus, ui->messageWidget, &MessageWidget::updateClearMission);
+}
+
+bool MainDockWindow::eventFilter(QObject *watched, QEvent *event)
+{
+
+    if(watched== imageReviewWidget->PropertySendButton())
+    {
+        if(event->type()==QEvent::MouseButtonPress)
+        {
+            QMouseEvent* mouseevent = static_cast<QMouseEvent*>(event);
+            if(mouseevent->button()==Qt::LeftButton)
+            {
+                QFile file;
+                file.setFileName("new_property.json");
+                file.open(QIODevice::ReadOnly | QIODevice::Text);
+                //qDebug()<<"opened!";
+                QString settings = file.readAll();
+                file.close();
+                qDebug()<<"ya "<<settings;
+                interop->sendODLC(QJsonDocument::fromJson(settings.toUtf8()));
+            }
+        }
+    }
+    else if(watched== imageReviewWidget->ImgSendButton())
+    {
+        if(event->type()==QEvent::MouseButtonPress)
+        {
+            QMouseEvent* mouseevent = static_cast<QMouseEvent*>(event);
+            if(mouseevent->button()==Qt::LeftButton)
+            {
+                qDebug()<<"image send!";
+                interop->updateODLCThumbnail(1,QImage("new_img.jpeg"));
+            }
+        }
+    }
+    return QMainWindow::eventFilter(watched,event);
+}
+
+void MainDockWindow::addImgReview()
+{
+    imageReviewWidget->show();
+    //qDebug()<<"triggered!";
 }
 
 void MainDockWindow::test() {
