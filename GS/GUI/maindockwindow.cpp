@@ -7,7 +7,8 @@
 
 MainDockWindow::MainDockWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainDockWindow)
+    ui(new Ui::MainDockWindow),
+    imageReviewWidget(new ImgReview())
 {
     ui->setupUi(this);
     ui->graphDock->hide();
@@ -38,6 +39,14 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     connectWaypoint(waypoint, encoder, decoder);
 
     addToolBarButtons();
+
+    // my widget
+
+    QAction*imgreview_clicked =  ui->toolBar->addAction("Image Review");
+    connect(imgreview_clicked,SIGNAL(triggered()),this,SLOT(addImgReview()));
+    //hide();
+    //imageReviewWidget->show();
+    // end
 
     QWidget* spacer = new QWidget();
     LoginWidget * loginWidget = new LoginWidget(this);
@@ -138,6 +147,12 @@ void MainDockWindow::connectWaypoint(Waypoint * waypoint, Encoder * encoder, Dec
     connect(waypoint, &Waypoint::waypointsReceived, ui->missionWidget, &MissionWidget::readMissions);
     connect(waypoint, &Waypoint::waypointsWriteStatus, ui->missionWidget, &MissionWidget::writeMissionsStatus);
     connect(waypoint, &Waypoint::waypointsClearStatus, ui->messageWidget, &MessageWidget::updateClearMission);
+}
+
+void MainDockWindow::addImgReview()
+{
+    imageReviewWidget->show();
+    //qDebug()<<"triggered!";
 }
 
 void MainDockWindow::test() {
