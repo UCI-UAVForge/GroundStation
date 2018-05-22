@@ -170,7 +170,7 @@ bool MainDockWindow::eventFilter(QObject *watched, QEvent *event)
                 QString settings = file.readAll();
                 file.close();
                 qDebug()<<"ya "<<settings;
-                //interop->sendODLC(QJsonDocument::fromJson(settings.toUtf8()));
+                interop->sendODLC(QJsonDocument::fromJson(settings.toUtf8()));
             }
         }
     }
@@ -182,7 +182,7 @@ bool MainDockWindow::eventFilter(QObject *watched, QEvent *event)
             if(mouseevent->button()==Qt::LeftButton)
             {
                 qDebug()<<"image send!";
-              //  interop->updateODLCThumbnail(1,QImage("new_img.jpeg"));
+                interop->updateODLCThumbnail(1,QImage("new_img.jpeg"));
             }
         }
     }
