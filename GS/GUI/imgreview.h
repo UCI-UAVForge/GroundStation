@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "imgwidget.h"
 #include "propertywidget.h"
+#include "style.h"
 namespace Ui {
 class ImgReview;
 }
@@ -20,7 +21,8 @@ private:
 
     ImgWidget* ImgContainer;
     PropertyWidget* PropertyContainer;
-    Ui::ImgReview *ui;
+    Ui::ImgReview * ui;
+    Style style;
 public slots:
     void ImgEditingEnable();
     void ImgSave();

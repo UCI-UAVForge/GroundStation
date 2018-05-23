@@ -228,6 +228,18 @@ QToolButton:hover {
    </attribute>
    <widget class="ConnectionWidget" name="connWidget"/>
   </widget>
+  <widget class="QDockWidget" name="imgRevDock">
+   <property name="floating">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>Image</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="ImgReview" name="imgReview"/>
+  </widget>
   <zorder>actionDock</zorder>
   <zorder>timerDock</zorder>
   <zorder>movementDock</zorder>
@@ -236,6 +248,7 @@ QToolButton:hover {
   <zorder>messageDock</zorder>
   <zorder>missionDock</zorder>
   <zorder>connDock</zorder>
+  <zorder>imgRevDock</zorder>
  </widget>
  <customwidgets>
   <customwidget>
@@ -290,6 +303,12 @@ QToolButton:hover {
    <class>ConnectionWidget</class>
    <extends>QWidget</extends>
    <header>connectionwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ImgReview</class>
+   <extends>QWidget</extends>
+   <header>imgreview.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

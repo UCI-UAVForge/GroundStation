@@ -27,7 +27,6 @@ public:
     QButtonGroup * buttons;
     Ui::ConnectionWidget *ui;
     void setStatus(QString status);
-
     Style style;
 
 signals:
