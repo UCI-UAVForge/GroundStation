@@ -13,11 +13,24 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+<<<<<<< HEAD
   <layout class="QHBoxLayout" name="horizontalLayout">
    <item>
     <widget class="QTextEdit" name="textEdit"/>
    </item>
   </layout>
+=======
+  <widget class="QTextEdit" name="textEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>301</width>
+     <height>551</height>
+    </rect>
+   </property>
+  </widget>
+>>>>>>> imgview
  </widget>
  <resources/>
  <connections/>

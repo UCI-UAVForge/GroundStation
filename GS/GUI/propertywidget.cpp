@@ -1,12 +1,12 @@
 #include "propertywidget.h"
 #include "ui_propertywidget.h"
-
+#include <QDir>
 PropertyWidget::PropertyWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::PropertyWidget)
 {
     ui->setupUi(this);
-    loadProperty("test_property.json");
+    loadProperty(QDir::currentPath() + "/../../GroundStation/GS/res/test_property.json");
     DisplayProperty();
 
 }
@@ -20,7 +20,8 @@ void PropertyWidget::loadProperty(QString filename)
 {
     QFile file;
     file.setFileName(filename);
-    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        qDebug()<<"failed";
     qDebug()<<"opened!";
 
     QTextStream ReadFile(&file);
@@ -52,6 +53,11 @@ void PropertyWidget::resetProperty()
  qDebug()<<"start reset";
  newDoc = new QTextDocument(settings);
  ui->textEdit->setDocument(newDoc);
+}
+
+QTextDocument* PropertyWidget::getTextDocument()
+{
+    return ui->textEdit->document();
 }
 
 void PropertyWidget::DisplayProperty()

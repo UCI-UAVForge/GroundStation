@@ -4,7 +4,7 @@
 #include <QQuickItem>
 #include <QtCore>
 #include <QMargins>
-
+#include <QRegExp>
 MainDockWindow::MainDockWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainDockWindow)
@@ -159,6 +159,7 @@ bool MainDockWindow::eventFilter(QObject *watched, QEvent *event)
 
     if(watched== imageReviewWidget->PropertySendButton())
     {
+
         if(event->type()==QEvent::MouseButtonPress)
         {
             QMouseEvent* mouseevent = static_cast<QMouseEvent*>(event);
@@ -168,10 +169,19 @@ bool MainDockWindow::eventFilter(QObject *watched, QEvent *event)
                 file.setFileName("new_property.json");
                 file.open(QIODevice::ReadOnly | QIODevice::Text);
                 //qDebug()<<"opened!";
-                QString settings = file.readAll();
+                //QString json = file.readAll();
+                QString json = imageReviewWidget->PropertyContainer->newDoc->toPlainText();
+                json.remove(QRegExp("[\\n\\t\\r ]"));
                 file.close();
-                qDebug()<<"ya "<<settings;
-                interop->sendODLC(QJsonDocument::fromJson(settings.toUtf8()));
+
+                qDebug()<<"ya "<<json;
+                QJsonDocument jdoc = QJsonDocument::fromJson(json.toUtf8());
+                QString tempstr = QString::fromStdString(jdoc.toBinaryData().toStdString());
+                QJsonObject obj{{"alphanumeric","A"},{"color","orange"}};
+                //if(loginWidget.)
+                    QMessageBox(this);
+                //else
+                    interop->sendODLC(QJsonDocument(obj));
             }
         }
     }
@@ -182,8 +192,11 @@ bool MainDockWindow::eventFilter(QObject *watched, QEvent *event)
             QMouseEvent* mouseevent = static_cast<QMouseEvent*>(event);
             if(mouseevent->button()==Qt::LeftButton)
             {
-                qDebug()<<"image send!";
-                interop->updateODLCThumbnail(1,QImage("new_img.jpeg"));
+                if(interop==nullptr)
+                    QMessageBox(this);
+                else
+                    qDebug()<<"image send!";
+                //interop->updateODLCThumbnail(1,QImage("new_img.jpeg"));
             }
         }
     }

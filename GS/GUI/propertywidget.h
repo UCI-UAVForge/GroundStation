@@ -23,12 +23,14 @@ public:
     void loadProperty(QString filename);
     void saveProperty();
     void resetProperty();
-
-private:
-    Ui::PropertyWidget *ui;
     QJsonDocument ImgProperty;
     QJsonObject PropertyObject;
     QTextDocument* orgDoc,*newDoc;
+    QTextDocument* getTextDocument();
+private:
+    Ui::PropertyWidget *ui;
+
+
     QString settings;
     void DisplayProperty();
 };
