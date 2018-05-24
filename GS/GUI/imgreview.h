@@ -18,15 +18,8 @@ public:
     ~ImgReview();
     ImgWidget* ImgContainer;
     PropertyWidget* PropertyContainer;
-<<<<<<< HEAD
     Ui::ImgReview * ui;
     Style style;
-=======
-private:
-
-
-    Ui::ImgReview *ui;
->>>>>>> imgview
 public slots:
     void ImgEditingEnable();
     void ImgSave();
