@@ -65,3 +65,13 @@ uint16_t MissionPath::getSeq(uint16_t cmdSeq) {
     }
     return seq;
 }
+
+uint16_t MissionPath::getIndex(uint16_t seq) {
+    uint16_t index = seq;
+    for (int i = 0; i < waypoints.length(); i++) {
+        if (waypoints.at(i).changeSpeed) {
+            index--;
+        }
+    }
+    return index;
+}

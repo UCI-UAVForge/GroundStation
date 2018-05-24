@@ -83,6 +83,7 @@ public slots:
     void changeParams(QStandardItem * item);
     void addWaypoint(int wpNum);
     void dropIt();
+    void updateCurrentMission(mavlink_mission_current_t curr);
 
 private:
     QVector2D findMidPoint(QVector3D a, QVector3D b);

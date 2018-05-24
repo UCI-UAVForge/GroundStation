@@ -380,6 +380,10 @@ void MissionWidget::loadInteropMission(QString m, QString o, int num) {
     ui->missionList->addItem("Loaded Mission " + QString::number(num));
 }
 
+void MissionWidget::updateCurrentMission(mavlink_mission_current_t curr) {
+    ui->currentMissionDisplay->display(mission->generatedPath.getIndex(curr.seq));
+}
+
 MissionWidget::~MissionWidget() {
     delete ui;
 }
