@@ -69,28 +69,13 @@ Rectangle {
         }
 
         Component {
+            id: polygon
+            Polygon{}
+        }
+
+        Component {
             id: mapLine
             Path {}
-        }
-        Component {
-            id: mapPolygon
-            MapPolygon {
-                objectName: "polygon"
-                border.width: 0
-                property string label;
-                MouseArea {
-                    anchors.fill:parent;
-                    onClicked: {
-                        //areaInfo.visible = false;
-                        waypointInfo.label = label;
-                        waypointInfo.visible = true;
-                        map.setItemsInactive();
-                        parent.border.width = 2;
-                        parent.border.color = map.activeItemColor;
-                    }
-                }
-                antialiasing: true
-            }
         }
 
         function addMissionPath(points) {
@@ -154,14 +139,16 @@ Rectangle {
         }
 
         function drawPolygon(points, color, label) {
-            var polygon = mapPolygon.createObject(map, {"color": color, "label":label})
+            var polyg = polygon.createObject(map, {"color": color, "label":label})
+        //    map.addMapItem(polyg);
+//            var polygon = mapPolygon.createObject(map, {"color": color, "label":label})
             for (var i = 0; i < points.length; i++){
-                 polygon.addCoordinate(QtPositioning.coordinate(points[i].x, points[i].y));
+                polyg.addCoordinate(QtPositioning.coordinate(points[i].x, points[i].y));
             }
-            map.addMapItem(polygon);
+           map.addMapItem(polyg);
         }
 
-        function setItemsInactive() {
+        function setItemsInactive(d) {
             waypointInfo.visible = false;
             pathInfo.visible = false;
             pointInfo.visible = false;

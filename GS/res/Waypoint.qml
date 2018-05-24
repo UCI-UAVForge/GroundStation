@@ -27,12 +27,13 @@ MapQuickItem {
             waypointInfo.lat = coord[0];
             waypointInfo.lon = coord[1];
             waypointInfo.heading = waypoint.coordinate.azimuthTo(nextCoord);
+            waypointInfo.distanceToNext = waypoint.coordinate.distanceTo(nextCoord);
             map.setItemsInactive();
             map.prevWaypoint = waypoint;
             waypointInfo.visible = true;
             pt.border.width = 2;
             pt.border.color = map.activeItemColor;
-            console.log("set Active",waypoint, "coord",waypoint.coordinate);
+          //  console.log("set Active",waypoint, "coord",waypoint.coordinate);
         }
         //DEBUG
         /*

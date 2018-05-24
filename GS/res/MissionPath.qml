@@ -17,6 +17,10 @@ MapPolyline {
             map.prevSelection = parent;
             pathInfo.visible = true;
             pathInfo.label = "Mission Path";
+            var distance = 0;
+            for (var i = 1; i < parent.pathLength(); i++) {
+                distance += parent.coordinateAt(i-1).distanceTo(parent.coordinateAt(i));
+            }
             pathInfo.distance = distance;
             parent.line.color = map.activeItemColor;
         }

@@ -11,7 +11,7 @@ ItemInfo {
             anchors.bottom: parent.bottom;
             anchors.horizontalCenter: parent.horizontalCenter;
             anchors.bottomMargin: 8;
-            Text { text: '<b>Distance:</b> ' + distance; color: "white";}
+            Text { text: '<b>Distance:</b> ' + Math.round(distance*100)/100 + ' m.'; color: "white";}
         }
     }
 }

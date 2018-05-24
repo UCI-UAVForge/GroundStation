@@ -8,6 +8,7 @@ ItemInfo {
     property string lat;
     property string lon;
     property int heading;
+    property var distanceToNext;
     property var coord;
     Item {
         anchors.fill: parent;
@@ -18,6 +19,7 @@ ItemInfo {
             Text { text: '<b>Lat:</b> ' + lat; color: "white";}
             Text { text: '<b>Lon:</b> ' + lon; color: "white";}
             Text { text: '<b>Heading:</b> ' + headingToCompass(heading); color: "white";}
+            Text { text: '<b>Next Point: </b> ' + Math.round(distanceToNext*100)/100 + " m."; color: "white";}
         }
     }
 }
