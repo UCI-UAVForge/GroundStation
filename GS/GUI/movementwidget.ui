@@ -35,6 +35,19 @@ QPushButton {
 }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="8" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="font">
+      <font>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Relative Altitude:</string>
+     </property>
+    </widget>
+   </item>
    <item row="10" column="0">
     <widget class="QLabel" name="velYTitle">
      <property name="sizePolicy">
@@ -66,60 +79,8 @@ QPushButton {
      </property>
     </widget>
    </item>
-   <item row="7" column="0">
-    <widget class="QLabel" name="label">
-     <property name="font">
-      <font>
-       <weight>50</weight>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Altitude:</string>
-     </property>
-    </widget>
-   </item>
-   <item row="8" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="font">
-      <font>
-       <weight>50</weight>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Relative Altitude:</string>
-     </property>
-    </widget>
-   </item>
    <item row="9" column="2">
     <widget class="QPushButton" name="gSpeed">
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>N/A</string>
-     </property>
-    </widget>
-   </item>
-   <item row="10" column="2">
-    <widget class="QPushButton" name="airSpeed">
-     <property name="font">
-      <font>
-       <weight>75</weight>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>N/A</string>
-     </property>
-    </widget>
-   </item>
-   <item row="7" column="2">
-    <widget class="QPushButton" name="alt">
      <property name="font">
       <font>
        <weight>75</weight>
@@ -141,6 +102,13 @@ QPushButton {
      </property>
      <property name="text">
       <string>N/A</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
+    <widget class="QLabel" name="ClimbTitle">
+     <property name="text">
+      <string>Climb:</string>
      </property>
     </widget>
    </item>
@@ -175,6 +143,45 @@ QPushButton {
      </property>
     </widget>
    </item>
+   <item row="10" column="2">
+    <widget class="QPushButton" name="airSpeed">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>N/A</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="2">
+    <widget class="QPushButton" name="alt">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>N/A</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Altitude:</string>
+     </property>
+    </widget>
+   </item>
    <item row="11" column="2">
     <widget class="QPushButton" name="Climb">
      <property name="font">
@@ -188,10 +195,29 @@ QPushButton {
      </property>
     </widget>
    </item>
-   <item row="11" column="0">
-    <widget class="QLabel" name="ClimbTitle">
+   <item row="12" column="0">
+    <widget class="QLabel" name="thrTitle">
+     <property name="font">
+      <font>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
      <property name="text">
-      <string>Climb:</string>
+      <string>Throttle:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="2">
+    <widget class="QPushButton" name="throttle">
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>N/A</string>
      </property>
     </widget>
    </item>
