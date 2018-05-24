@@ -7,13 +7,13 @@
 #include <QRegExp>
 MainDockWindow::MainDockWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainDockWindow)
+    ui(new Ui::MainDockWindow),
+    imageReviewWidget(new ImgReview())
 {
     ui->setupUi(this);
     ui->graphDock->hide();
     ui->connDock->hide();
     ui->timerDock->hide();
-    ui->imgRevDock->hide();
 
     // UDP Link for SITL
   //  link = new UdpLink();
@@ -41,15 +41,15 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     addToolBarButtons();
     //install event filter
 
-//    imageReviewWidget->ImgNextButton()->installEventFilter(this);
-//    imageReviewWidget->ImgSendButton()->installEventFilter(this);
-//    imageReviewWidget->PropertySendButton()->installEventFilter(this);
-//    imageReviewWidget->PropertyNextButton()->installEventFilter(this);
+    imageReviewWidget->ImgNextButton()->installEventFilter(this);
+    imageReviewWidget->ImgSendButton()->installEventFilter(this);
+    imageReviewWidget->PropertySendButton()->installEventFilter(this);
+    imageReviewWidget->PropertyNextButton()->installEventFilter(this);
 
     // my widget
 
-    //QAction*imgreview_clicked =  ui->toolBar->addAction("Image Review");
-    //connect(imgreview_clicked,SIGNAL(triggered()),this,SLOT(addImgReview()));
+    QAction*imgreview_clicked =  ui->toolBar->addAction("Image Review");
+    connect(imgreview_clicked,SIGNAL(triggered()),this,SLOT(addImgReview()));
     // end
 
     QWidget* spacer = new QWidget();
