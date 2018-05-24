@@ -4,6 +4,6 @@
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    UAV uav;
+    uav UAV;
     return a.exec();
 }

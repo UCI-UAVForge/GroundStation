@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ImgReview</class>
+ <widget class="QWidget" name="ImgReview">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1246</width>
+    <height>814</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ImgReview</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0" rowspan="2" colspan="2">
+      <widget class="ImgWidget" name="ImgContainer" native="true">
+       <property name="maximumSize">
+        <size>
+         <width>1000</width>
+         <height>800</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="PropertyWidget" name="PropertyContainer" native="true"/>
+     </item>
+     <item row="1" column="2">
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="ISendButton">
+         <property name="text">
+          <string>Send_img</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="IResetButton">
+         <property name="text">
+          <string>Reset_img</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="ISaveButton">
+         <property name="text">
+          <string>Save_img</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QPushButton" name="IEditButton">
+         <property name="text">
+          <string>Edit_img</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QPushButton" name="INextButton">
+         <property name="text">
+          <string>Next_img</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QPushButton" name="PNextButton">
+         <property name="text">
+          <string>Next_property</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="PSaveButton">
+         <property name="text">
+          <string>Save_property</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="PSendButton">
+         <property name="text">
+          <string>Send_property</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="PresetButton">
+         <property name="text">
+          <string>Reset_property</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PropertyWidget</class>
+   <extends>QWidget</extends>
+   <header location="global">propertywidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ImgWidget</class>
+   <extends>QWidget</extends>
+   <header>imgwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

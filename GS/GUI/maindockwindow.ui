@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainDockWindow</class>
+ <widget class="QMainWindow" name="MainDockWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>602</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>9</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton {
+border: 0px solid rgb(200,200,200);
+border-radius: 3px;
+background-color:rgb(255, 80, 83);
+padding:4px;
+	color: white;
+}
+
+QDockWidget {
+	color:rgb(0, 255, 213);
+	background-color:rgb(40,40,40);
+	border:10px;
+	padding-bottom:10px;
+}
+QMainWindow{
+background-color: rgb(40, 40, 40);
+color:rgb(242, 240, 237);
+}
+
+QToolBar {
+    background-color: rgb(40, 40,40);
+	border: 0px solid rgb(200,200,200);
+	margin-top:6px;
+	margin-bottom:6px;
+    spacing: 7px; /* spacing between items in the tool bar */
+}
+QToolButton {
+	color:rgb(220,220,220);
+	padding:2px;
+	border-radius:3px;
+	border: 0px solid;
+	font: bold
+}
+QToolButton:checked {
+	color:white;
+	background-color: rgb(6, 102, 86);
+}
+QToolButton:hover {
+	color:white;
+	background-color:rgb(0, 139, 116);
+}</string>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>false</bool>
+  </property>
+  <widget class="MapWidget" name="mapWidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QDockWidget" name="timerDock">
+   <property name="floating">
+    <bool>false</bool>
+   </property>
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="windowTitle">
+    <string>Timer</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="Timer" name="timerWidget"/>
+  </widget>
+  <widget class="QDockWidget" name="movementDock">
+   <property name="font">
+    <font>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="windowTitle">
+    <string>Movement</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="MovementWidget" name="movementWidget"/>
+  </widget>
+  <widget class="QDockWidget" name="qfiDock">
+   <property name="windowTitle">
+    <string>PFD</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QFIWidget" name="qfiWidget"/>
+  </widget>
+  <widget class="QDockWidget" name="actionDock">
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::AllDockWidgetAreas</set>
+   </property>
+   <property name="windowTitle">
+    <string>Actions</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="ActionWidget" name="actionWidget"/>
+  </widget>
+  <widget class="QDockWidget" name="graphDock">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>400</width>
+     <height>35</height>
+    </size>
+   </property>
+   <property name="floating">
+    <bool>false</bool>
+   </property>
+   <property name="windowTitle">
+    <string>Graph</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>8</number>
+   </attribute>
+   <widget class="GraphWidget" name="graphWidget">
+    <property name="minimumSize">
+     <size>
+      <width>400</width>
+      <height>0</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="messageDock">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="windowTitle">
+    <string>Messages</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="MessageWidget" name="messageWidget"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="movable">
+    <bool>false</bool>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonFollowStyle</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QDockWidget" name="missionDock">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>Missions</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="MissionWidget" name="missionWidget"/>
+  </widget>
+  <widget class="QDockWidget" name="connDock">
+   <property name="floating">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>Connection</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="ConnectionWidget" name="connWidget"/>
+  </widget>
+  <widget class="QDockWidget" name="imgRevDock">
+   <property name="floating">
+    <bool>true</bool>
+   </property>
+   <property name="windowTitle">
+    <string>Image</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="ImgReview" name="imgReview"/>
+  </widget>
+  <zorder>actionDock</zorder>
+  <zorder>timerDock</zorder>
+  <zorder>movementDock</zorder>
+  <zorder>qfiDock</zorder>
+  <zorder>graphDock</zorder>
+  <zorder>messageDock</zorder>
+  <zorder>missionDock</zorder>
+  <zorder>connDock</zorder>
+  <zorder>imgRevDock</zorder>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ActionWidget</class>
+   <extends>QWidget</extends>
+   <header>actionwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Timer</class>
+   <extends>QWidget</extends>
+   <header>timer.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QFIWidget</class>
+   <extends>QWidget</extends>
+   <header>qfiwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MovementWidget</class>
+   <extends>QWidget</extends>
+   <header>movementwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>GraphWidget</class>
+   <extends>QWidget</extends>
+   <header>graphwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MessageWidget</class>
+   <extends>QWidget</extends>
+   <header>messagewidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MapWidget</class>
+   <extends>QWidget</extends>
+   <header>mapwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MissionWidget</class>
+   <extends>QWidget</extends>
+   <header>missionwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ConnectionWidget</class>
+   <extends>QWidget</extends>
+   <header>connectionwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ImgReview</class>
+   <extends>QWidget</extends>
+   <header>imgreview.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

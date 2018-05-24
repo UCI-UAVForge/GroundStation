@@ -14,20 +14,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     uav.cpp \
-    ActionPacket.cpp \
-    InfoPacket.cpp \
-    Packet.cpp \
-    TelemetryPacket.cpp
+    link.cpp
+
 
 HEADERS  += \
     uav.h \
-    Packet.h \
-    TelemetryPacket.h \
-    ActionPacket.h \
-    AckPacket.h \
-    InfoPacket.h
+    link.h
 
 FORMS    += dialog.ui
 
 DISTFILES +=
 CONFIG += c++11
+
+INCLUDEPATH += ardupilotmav/ardupilotmega/

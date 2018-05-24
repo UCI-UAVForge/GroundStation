@@ -2,10 +2,12 @@
 #define GRAPHWIDGET_H
 
 #include <QWidget>
+#include <QDockWidget>
 #include <QVector>
 #include "qcustomplot.h"
 #include "mission.h"
 #include "dataobjects.h"
+#include "mavlink.h"
 
 namespace Ui {
 class GraphWidget;
@@ -42,12 +44,6 @@ public slots:
      */
     void drawMission(Mission* mission);
 
-    /**
-     * @brief appendTelemPacket Takes a single telemetry packet and appends
-     * each of its vaules to the correct trace on the graph
-     * @param packet pointer to the packet that will be appended
-     */
-    void appendTelemPacket(Protocol::TelemetryPacket* packet);
 
     /**
      * @brief setMaxEntries Sets the maximum number of entries allowed in the
@@ -56,7 +52,10 @@ public slots:
      * are appened.
      * @param numberOfEntries the maximum number of entries
      * @warning The current version does not support increasing the maximum number
-     * of entries showing.
+     * of eQPushButton:checked{
+
+    background-color: rgb(131, 255, 64);
+}ntries showing.
      * @todo fix this someday
      */
     void setMaxEntries(unsigned int numberOfEntries);
@@ -76,7 +75,7 @@ public slots:
      * @brief appendTelemData
      * @param data
      */
-    void appendTelemData(TelemetryData *data);
+    void appendTelemData(mavlink_gps_raw_int_t msg);
 
 
 private slots:

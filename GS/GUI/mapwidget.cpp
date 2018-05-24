@@ -1,155 +1,224 @@
-/**
-  @author Jordan Dickson
-  */
-
 #include "mapwidget.h"
-#include <QWebSocket>
-#include <QWebSocketServer>
-#include <iostream>
-#include <QTimer>
-#include <QList>
-#include "ackpacket.h"
-#include <math.h>
-#include <QDebug>
 
-MapWidget::MapWidget(QWidget *parent): QWebEngineView(parent),
-    server(QStringLiteral("MapServer"), QWebSocketServer::NonSecureMode),
-    clientWrapper(&server)
-{
-    this->connect(this, &MapWidget::loadStarted, this, &MapWidget::loadStartedSlot);
-    //this->connect(this, &MapWidget::loadFinished, this, &MapWidget::loadFinishedSlot);
+MapWidget::MapWidget(QWidget *parent) : QQuickWidget(parent) {
+    setResizeMode(QQuickWidget::SizeRootObjectToView);
 
-    loading = true;
+    setSource(QUrl("qrc:/res/map.qml"));
+//mis
+    map = this->rootObject()->findChild<QObject*>("map");
 
-    lists = new QList<QList<Protocol::Waypoint> >;
+    uavPath = new QList<QVector3D>();
+    timer = new QTimer();
+    timer->start(timeoutMS);
+    connect(timer, &QTimer::timeout, this, &MapWidget::timeout);
+}
 
-    // setup the QWebSocketServer
-    if (!server.listen(QHostAddress::LocalHost, 20270)) {
-        qDebug() << "Attempted to open 2 MapWidgets!";
-        qFatal("Failed to open web socket server.");
+
+void MapWidget::removeWaypoint(int wpNum, QVector3D coord) {
+    QObject * wp = this->rootObject()->findChild<QObject*>(QString::number(wpNum));
+    QMetaObject::invokeMethod(wp, "remove",
+         Q_ARG(QVariant, coord));
+}
+
+void MapWidget::moveWaypoint(int wpNum, QVector3D newCoords) {
+    QObject * wp = this->rootObject()->findChild<QObject*>(QString::number(wpNum));
+    QMetaObject::invokeMethod(wp, "moveTo",
+         Q_ARG(QVariant, newCoords));
+}
+
+void MapWidget::selectWaypoint(int wpNum) {
+     /*QObject * wp = this->rootObject()->findChild<QObject*>(QString::number(wpNum));
+     QMetaObject::invokeMethod(wp, "setActive");*/
+     QMetaObject::invokeMethod(map,"setActive",Q_ARG(QVariant,wpNum));
+}
+
+void MapWidget::addWaypoint(QVector3D point, int wpNum, QColor color, int radius) {
+    QMetaObject::invokeMethod(map, "addWaypoint",
+            Q_ARG(QVariant, point),
+            Q_ARG(QVariant, wpNum),
+            Q_ARG(QVariant, color),
+            Q_ARG(QVariant, radius));
+}
+
+void MapWidget::addMissionPath(QList<QVector3D> *missionPath) {
+    QMetaObject::invokeMethod(map, "addMissionPath", Q_ARG(QVariant, toQVariantList(missionPath)));
+    for (int i = 0; i < missionPath->size(); i++)
+        addWaypoint(missionPath->at(i), i, QColor("#2980b9"), 20);
+}
+
+void MapWidget::changeEditMode(bool editing) {
+    QMetaObject::invokeMethod(map, "changeEditMode", Q_ARG(QVariant, editing));
+}
+
+void MapWidget::drawPoint(QVector2D point, QString label, QColor color, int radius) {
+    QMetaObject::invokeMethod(map, "drawPoint",
+            Q_ARG(QVariant, point),
+            Q_ARG(QVariant, label),
+            Q_ARG(QVariant, color),
+            Q_ARG(QVariant, radius));
+}
+
+void MapWidget::drawPolyline(QVariantList points, QColor color){
+    QMetaObject::invokeMethod(map, "drawPolyline",
+            Q_ARG(QVariant, QVariant::fromValue(points)),
+            Q_ARG(QVariant, color));
+}
+
+void MapWidget::drawPolyline(QList<QVector3D> * points, QColor color) {
+    drawPolyline(toQVariantList(points), color);
+}
+
+void MapWidget::drawPolygon(QVariantList points, QColor color, QString label) {
+    QMetaObject::invokeMethod(map, "drawPolygon",
+           Q_ARG(QVariant, QVariant::fromValue(points)),
+           Q_ARG(QVariant, color),
+           Q_ARG(QVariant, label));
+}
+
+void MapWidget::drawPolygonF(QPolygonF points, QColor color, QString label) {
+    QVariantList newList;
+    for(QPointF item: points.toList()) {
+        newList << item;
+    }
+    drawPolygon(newList, color, label);
+}
+
+void MapWidget::updateArmState(bool state) {
+    QMetaObject::invokeMethod(map, "updateArmState",
+            Q_ARG(QVariant, state));
+}
+
+void MapWidget::timeout() {
+    QMetaObject::invokeMethod(map, "removeUAV");
+}
+
+void MapWidget::clearMap() {
+    QMetaObject::invokeMethod(map, "clearMap");
+}
+void MapWidget::drawWaypoints(QList<QVector2D> * waypoints) {
+    /* Waypoints */
+    clearMap();
+    drawPolyline(toQVariantList(waypoints), QColor("blue"));
+    for (int i = 0; i < waypoints->size(); i++)
+        drawPoint(waypoints->at(i), QString::number(i),QColor(235,255,0), 30);
+}
+
+void MapWidget::drawMission(Mission *mission) {
+    for (int i = 0; i < mission->fly_zones.size(); i++) {
+        drawPolygon(toQVariantList(&(mission->fly_zones.at(i).boundary_points)),
+                    QColor(0,255,0, 70), "Fly Zone #" + QString::number(i));
     }
 
-    // setup the channel
-    QObject::connect(&clientWrapper, &WebSocketClientWrapper::clientConnected,
-                     &channel, &QWebChannel::connectTo);
-
-    // setup the dialog and publish it to the QWebChannel
-    channel.registerObject(QStringLiteral("cbridge"), this);
-
-    // open a browser window with the client HTML page
-    load(MapURL);
-}
-
-MapWidget::~MapWidget() {
-    //we might need the destructor to delete each of the inner lists...
-        //but then again maybe not... that's what testing is for
-    delete lists;
-}
-
-bool MapWidget::ready() {
-    return !loading;
-}
-
-void MapWidget::appendGPSCoordToPath(double lat, double lng, int pathID) {
-    emit appendPointToPath(lat,lng,pathID);
-}
-
-QList<Protocol::Waypoint> *MapWidget::getPath(int pathID) {
-    return new QList<Protocol::Waypoint>();
-}
-
-void MapWidget::loadFinishedSlot() {
-    //loading = false;
-    //finishedLoading();
-}
-
-void MapWidget::loadStartedSlot() {
-    loading= true;
-}
-
-//Public "emitters" used by C++ to communicate with JS
-
-void MapWidget::addPointToMap(double lat, double lng, int index, int pathID){
-    emit insertPointToMap(lat,lng,index,pathID);
-}
-
-void MapWidget::appendPointToMap(double lat, double lng, int pathID){
-    qDebug() << "Adding point (" << lat << "," << lng << ") to path " << pathID;
-    emit appendPointToPath(lat,lng,pathID);
-}
-
-void MapWidget::sendCreateNewPath(int id){
-    emit createNewPath(id);
-}
-
-void MapWidget::sendSetActivePath(int id){
-    emit setActivePath(id);
-}
-
-void MapWidget::sendClearFlightPath(int pathID){
-    emit clearFlightPath(pathID);
-}
-
-void MapWidget::sendDisableEditing(){
-    emit disableEditing();
-}
-
-void MapWidget::clearTable(){
-    emit tableCleared();
-}
-
-void MapWidget::disconnectWebSocket(){
-    server.close();
-}
-
-void MapWidget::addFlightPath(FlightPath* fp, int id, QString source){
-    QList<Protocol::Waypoint> *list = fp->getOrderedWaypoints();
-    for(int i = 0; i < list->length(); i++){
-        Protocol::Waypoint wp = list->at(i);
-        emit appendPointToPath(wp.lat,wp.lon,id);
+    /* Search Grid Points */
+    if (!mission->search_grid_points->empty()) {
+        drawPolygon(toQVariantList(mission->search_grid_points), QColor(0,0,255, 70), "Search Grid");
     }
-    emit flightPathSent(id, source);
-    delete list;
+
+    /* Home position */
+    drawPoint(mission->home_pos, "Home", QColor(166,240,84));
+
+    /* Air Drop Point */
+    drawPoint(mission->air_drop_pos, "Air Drop", QColor(102,194,255));
+
+    /* Off Axis ODLC Position */
+    drawPoint(mission->off_axis_odlc_pos, "Off Axis ODLC", QColor(255,127,0));
+
+    /* Emergent hiker */
+    drawPoint(mission->emergent_last_known_pos, "Emergent LK Pos", QColor(0,0,0));
+
+    /* Waypoints */
+    addMissionPath(mission->toList());
 }
 
-//Public slots called by JavaScript
-
-void MapWidget::pointAddedToMap(double lat, double lng, int index, int pathID){
-    /// \todo include index in this signal
-    emit pointAdded(lat,lng,pathID);
+void MapWidget::drawUAV(double lat, double lon, double heading) {
+    QMetaObject::invokeMethod(map, "drawUAV",
+            Q_ARG(QVariant, lat),
+            Q_ARG(QVariant, lon),
+            Q_ARG(QVariant, heading));
 }
 
-void MapWidget::pathCleared(int pathID){
-
+void MapWidget::updateCenter(double lat, double lon) {
+    QMetaObject::invokeMethod(map, "updateCenter",
+            Q_ARG(QVariant, lat),
+            Q_ARG(QVariant, lon));
 }
 
-void MapWidget::pointRemovedFromMap(int index, int pathID){
 
+void MapWidget::updateUAV() {
+    if (blinkUAV) {
+        QTimer timer;
+        QEventLoop loop;
+
+        QMetaObject::invokeMethod(map, "removeUAV");
+
+        drawUAV(uav_latitude, uav_longitude, uav_heading);
+
+        timer.setSingleShot(true);
+        connect(&timer, SIGNAL(timeout()), &loop, SLOT(quit()));
+        timer.start(50);
+        loop.exec();
+
+        QMetaObject::invokeMethod(map, "removeUAV");
+
+        timer.setSingleShot(true);
+        connect(&timer, SIGNAL(timeout()), &loop, SLOT(quit()));
+        timer.start(50);
+        loop.exec();
+
+        drawUAV(uav_latitude, uav_longitude, uav_heading);
+    } else drawUAV(uav_latitude, uav_longitude, uav_heading);
 }
 
-void MapWidget::finishedLoading() {
-    loading = false;
-    emit JSInitialized();
-}
-
-void MapWidget::drawMissionTelem(Mission* mission){
-    sendCreateNewPath(1);
-    FlightPath fp;
-    for(int i = 0; i < mission->numOfEntries(); i++){
-        Protocol::Waypoint wp;
-        wp.lat = mission->getValueForIndexAndID(i,1);
-        wp.lon = mission->getValueForIndexAndID(i,2);
-        wp.alt = mission->getValueForIndexAndID(i,3);
-
-        //we currently do not have an easy way to determine the speed of the UAV
-        //wp.speed = 10;
-
-        float xvel = mission->getValueForIndexAndID(i,7);
-        float yvel = mission->getValueForIndexAndID(i,8);
-        float zvel = mission->getValueForIndexAndID(i,9);
-        wp.speed = sqrt(xvel*xvel+yvel*yvel+zvel*zvel);
-        fp.addNavAction(wp,i);
+void MapWidget::updateUAVPosition(mavlink_gps_raw_int_t gps) {
+    timer->setInterval(timeoutMS);
+    uav_latitude = (double)gps.lat/10000000;
+    uav_longitude = (double)gps.lon/10000000;
+    if (updateUAVConstant) {
+        updateUAV();
     }
-    addFlightPath(&fp,0,"execution");
+    if (updateCenterConstant) {
+        updateCenter(uav_latitude, uav_longitude);
+    }
+}
 
+
+void MapWidget::updateUAVHeading(mavlink_vfr_hud_t vfr) {
+    uav_heading = vfr.heading;
+}
+
+QString MapWidget::headingToCompass(int heading) {
+    QString compass = "Compass bearing: ";
+    if ((heading<360 && heading>348.75) || (heading>=0 && heading<=11.25))
+        return compass.append("N");
+    if (heading>11.25 && heading<=33.75)
+        return compass.append("NNE");
+    if (heading>33.75 && heading<=56.25)
+        return compass.append("NE");
+    if (heading>56.25 && heading<=78.75)
+        return compass.append("ENE");
+    if (heading>78.75 && heading<=101.25)
+        return compass.append("E");
+    if (heading>101.25 && heading<=123.75)
+        return compass.append("ESE");
+    if (heading>123.75 && heading<=146.25)
+        return compass.append("SE");
+    if (heading>146.25 && heading<=168.75)
+        return compass.append("SSE");
+    if (heading>168.75 && heading<=191.25)
+        return compass.append("S");
+    if (heading>191.25 && heading<=213.75)
+        return compass.append("SSW");
+    if (heading>213.75 && heading<=236.25)
+        return compass.append("SW");
+    if (heading>236.25 && heading<=258.75)
+        return compass.append("WSW");
+    if (heading>258.75 && heading<=281.25)
+        return compass.append("W");
+    if (heading>281.25 && heading<=303.75)
+        return compass.append("WNW");
+    if (heading>303.75 && heading<=326.25)
+        return compass.append("NW");
+    if (heading>326.25 && heading<=348.75)
+        return compass.append("NNW");
+    return "MapWidget::headingToCompass - Greater than 359";
 }

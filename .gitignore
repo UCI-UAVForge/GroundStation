@@ -45,7 +45,6 @@ Thumbs.db
 *.creator.user*
 *.qbs.user*
 *.qmlproject.user*
-*.json
 /src/app/Info.plist
 app_version.h
 /src/plugins/coreplugin/ide_version.h
@@ -541,3 +540,4 @@ Documentation/tests/
 # Unit Tests #
 ##############
 GS/UnitTests/
+

@@ -1,0 +1,109 @@
+{
+    "active": true,
+    "air_drop_pos": {
+        "latitude": 33.771268,
+        "longitude": -117.6952893
+    },
+    "emergent_last_known_pos": {
+        "latitude": 33.772167,
+        "longitude": -117.694036
+    },
+    "fly_zones": [
+        {
+            "altitude_msl_max": 200,
+            "altitude_msl_min": 100,
+            "boundary_pts": [
+                {
+                    "latitude": 33.771489,
+                    "longitude": -117.697271,
+                    "order": 1
+                },
+                {
+                    "latitude": 33.772861,
+                    "longitude": -117.697181,
+                    "order": 2
+                },
+                {
+                    "latitude": 33.773612,
+                    "longitude": -117.694824,
+                    "order": 3
+                },
+                {
+                    "latitude": 33.772993,
+                    "longitude": -117.692263,
+                    "order": 4
+                },
+                {
+                    "latitude": 33.772184,
+                    "longitude": -117.691839,
+                    "order": 5
+                },
+                {
+                    "latitude": 33.770280,
+                    "longitude": -117.692678,
+                    "order": 6
+                },
+                {
+                    "latitude": 33.770906,
+                    "longitude": -117.694586,
+                    "order": 7
+                }
+            ]
+        }
+    ],
+    "home_pos": {
+        "latitude": 33.771175,
+        "longitude": -117.695560
+    },
+    "id": 10,
+    "mission_waypoints": [
+        {
+            "altitude_msl": 200,
+            "latitude": 33.772467,
+            "longitude": -117.696376,
+            "order": 1
+        },
+        {
+            "altitude_msl": 200,
+            "latitude":33.7725261,
+            "longitude":-117.6948232,
+            "order": 2
+        },
+        {
+            "altitude_msl": 200,
+            "latitude": 33.771906,
+            "longitude": -117.692546,
+            "order": 3
+        }
+    ],
+    "off_axis_odlc_pos": {
+        "latitude": 33.771745,
+        "longitude": -117.692415
+    },
+    "search_grid_points": [
+        {
+            "altitude_msl": 200,
+            "latitude": 33.771560,
+            "longitude": -117.696239,
+            "order": 1
+        },
+        {
+            "altitude_msl": 200,
+            "latitude": 33.772457,
+            "longitude": -117.695783,
+            "order": 2
+        },
+        {
+            "altitude_msl": 200,
+            "latitude": 33.772443,
+            "longitude": -117.693047,
+            "order": 3
+        },
+        {
+            "altitude_msl": 200,
+            "latitude": 33.771235,
+            "longitude": -117.693540,
+            "order": 4
+        }
+    ]
+}

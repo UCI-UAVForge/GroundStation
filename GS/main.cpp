@@ -1,21 +1,12 @@
 #include <QApplication>
 #include <QSplashScreen>
 #include <QtSvg>
-//#include "mainmdidisplay.h"
-#ifndef OLD_GUI
-#include "mainmdidisplay.h"
-#else
-#include "mainwindow.h"
-#endif
 
-#include "mission.h"
-
-#include "qttabtest.h"
-
+#include "maindockwindow.h"
 int main(int argc, char *argv[]) {
 
     static const int splash_width = 600;
-    static const int splash_height = 450;
+    static const int splash_height = 217;
     static const QString filename(":/res/images/UAV Forge Logo 2015.svg");
 
     QApplication a(argc, argv);
@@ -32,13 +23,13 @@ int main(int argc, char *argv[]) {
     svg.render(&painter, pixmap.rect());
     //Construct and show the splash screen
     QSplashScreen splash(pixmap);
-    splash.show();
-
-    MainMDIDisplay x;
-    x.showFullScreen();
-
+    // splash.show();
+//    MainMDIDisplay x;
+    MainDockWindow dockWindow;
+    //x.showNormal();
+    dockWindow.showMaximized();
     //Hide the splash screen.
-    splash.finish(&x);
+    splash.finish(&dockWindow);
     return a.exec();
 }
 
