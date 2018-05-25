@@ -97,7 +97,8 @@ void ImgWidget::ResetFocusPoint()
 void ImgWidget::LoadImg()
 {
 
-    img.load(QDir::currentPath()+"/field_image.png");
+    //img.load(QDir::currentPath()+"/field_image.png");
+    img.load(QDir::currentPath() + "/../../GroundStation/GS/res/field_image.png");
     img = img.scaled(ContainerSize);
 }
 
@@ -110,7 +111,8 @@ void ImgWidget::UndoEdit()
 
 void ImgWidget::ImgSave()
 {
-    if (!newimg.save("new_img.jpeg"))
+   // if (!newimg.save("new_img.jpeg"))
+   if (!newimg.save(QDir::currentPath() + "/../../GroundStation/GS/res/new_image.png"))
         QMessageBox(QMessageBox::Warning, "image not saved", "image not saved, try again");
 }
 

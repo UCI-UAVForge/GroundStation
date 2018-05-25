@@ -180,6 +180,7 @@ bool MainDockWindow::eventFilter(QObject *watched, QEvent *event)
                 QString tempstr = QString::fromStdString(jdoc.toBinaryData().toStdString());
                 QJsonObject obj{{"alphanumeric","A"},{"color","orange"}};
                 //if(loginWidget.)
+                //interop->sendODLC(QJsonDocument::fromBinaryData(json.toUtf8()));
                 interop->sendODLC(QJsonDocument(obj));
             }
         }

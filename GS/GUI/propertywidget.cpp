@@ -35,7 +35,8 @@ void PropertyWidget::loadProperty(QString filename)
 
 void PropertyWidget::saveProperty()
 {
-    QString filename = "new_property.json";
+    //QString filename = "new_property.json";
+    QString filename = QDir::currentPath() + "/../../GroundStation/GS/res/new_property.json";
     QFile newfile(filename);
     if ( newfile.open(QIODevice::WriteOnly) )
      {
