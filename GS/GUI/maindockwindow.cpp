@@ -5,6 +5,7 @@
 #include <QtCore>
 #include <QMargins>
 #include <QRegExp>
+#include <QRegularExpression>
 MainDockWindow::MainDockWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainDockWindow),
@@ -179,9 +180,7 @@ bool MainDockWindow::eventFilter(QObject *watched, QEvent *event)
                 QString tempstr = QString::fromStdString(jdoc.toBinaryData().toStdString());
                 QJsonObject obj{{"alphanumeric","A"},{"color","orange"}};
                 //if(loginWidget.)
-                    QMessageBox(this);
-                //else
-                    interop->sendODLC(QJsonDocument(obj));
+                interop->sendODLC(QJsonDocument(obj));
             }
         }
     }
@@ -192,10 +191,7 @@ bool MainDockWindow::eventFilter(QObject *watched, QEvent *event)
             QMouseEvent* mouseevent = static_cast<QMouseEvent*>(event);
             if(mouseevent->button()==Qt::LeftButton)
             {
-                if(interop==nullptr)
-                    QMessageBox(this);
-                else
-                    qDebug()<<"image send!";
+                 qDebug()<<"image send!";
                 //interop->updateODLCThumbnail(1,QImage("new_img.jpeg"));
             }
         }
