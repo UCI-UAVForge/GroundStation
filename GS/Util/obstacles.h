@@ -14,17 +14,14 @@ class Obstacles
 {
 public:
     Obstacles();
-    Obstacles(QJsonDocument document);
+    Obstacles(QJsonObject obj);
 
-
-    QJsonArray get_moving_obstacles();
+    void set_stationary_obstacles(QJsonArray arr);
+//    QJsonArray get_moving_obstacles();
     QJsonArray get_stationary_obstacles();
-    void loadStationaryObjects(QQuickWidget * mapWidget);
-    void updateMovingObjects(QQuickWidget * mapWidget);
+    QJsonObject get_obj();
     bool segmentIntersectsObstacles(Point a, Point b);
 private:
-
-    QJsonDocument jsonDoc;
     QJsonArray moving_obstacles;
     QJsonArray stationary_obstacles;
 };

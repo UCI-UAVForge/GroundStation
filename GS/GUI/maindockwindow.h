@@ -77,7 +77,7 @@ signals:
 private slots:
     void hideDockWidgets();
     void closeDockWidgets();
-    void updateMovingObjects(QQuickWidget * mapWidget);
+//    void updateMovingObjects(QQuickWidget * mapWidget);
     void addImgReview();
 private:
     Ui::MainDockWindow *ui;

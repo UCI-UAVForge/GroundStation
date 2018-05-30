@@ -26,9 +26,8 @@ class Mission : public QObject {
 public:
     explicit Mission(QObject *parent = nullptr);
 
-    Mission(bool therewasaweirdoverloadederror);
     Mission(QJsonObject obj);
-    Mission(QJsonObject mission_obj, QJsonDocument obstacles_doc);
+    Mission(QJsonObject mission_obj, QJsonObject obs_obj);
 
     int id;
     bool active;
@@ -49,10 +48,10 @@ public:
     Point toECEF(double lat, double lon, double alt);
     QVector<Waypoint::WP> constructWaypoints();
 //    void setActions_wp();
-    Obstacles getObstacles();
+//    Obstacles getObstacles();
     QList<QVector3D> *toList();
     QVector3D moveWaypoint(int index, QKeyEvent * k);
-    void loadJson(QJsonObject obj, QJsonDocument obstacles_doc);
+    void loadJson(QJsonObject obj);
     void loadInteropJson(QJsonObject &obj);
     QJsonDocument toJson();
 

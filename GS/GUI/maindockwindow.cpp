@@ -242,10 +242,10 @@ void MainDockWindow::closeDockWidgets() {
 }
 
 
-void MainDockWindow::updateMovingObjects(QQuickWidget * mapWidget){
-    Obstacles obstacles = interop->getObstacles();
-    obstacles.updateMovingObjects(mapWidget);
-}
+//void MainDockWindow::updateMovingObjects(QQuickWidget * mapWidget){
+//    Obstacles obstacles = interop->getObstacles();
+//    obstacles.updateMovingObjects(mapWidget);
+//}
 
 MainDockWindow::~MainDockWindow()
 {

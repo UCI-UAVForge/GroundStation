@@ -178,18 +178,6 @@
     "obstacles": [
         {
             "cylinder_height": 750,
-            "cylinder_radius": 80,
-            "latitude": 38.141826869853645,
-            "longitude": -76.43199876559223
-        },
-        {
-            "cylinder_height": 400,
-            "cylinder_radius": 115,
-            "latitude": 38.1427,
-            "longitude": -76.43
-        },
-        {
-            "cylinder_height": 750,
             "cylinder_radius": 100,
             "latitude": 33.77253064193668,
             "longitude": -117.69542409721822
