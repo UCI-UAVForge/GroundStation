@@ -84,14 +84,22 @@ public slots:
     void addWaypoint(int wpNum);
     void dropIt();
     void updateCurrentMission(mavlink_mission_current_t curr);
+    void updateVFR(mavlink_vfr_hud_t vfr);
+    void updateGPS(mavlink_gps_raw_int_t gps);
 
 private:
     QVector2D findMidPoint(QVector3D a, QVector3D b);
     void loadInteropMission(QString m, QString o,int num);
     void loadhardMission(QString m, int num);
     QString path(QString m);
+    void armAutoDrop();
     int loadCount;
     bool dropArmed;
+    bool armDrop; // For Automatic Drop
+
+    float airspeed = 0;
+    float alt = 0;
+    QGeoCoordinate landingPoint;
 
     Ui::MissionWidget *ui;
 
