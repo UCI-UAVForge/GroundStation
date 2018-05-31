@@ -19,9 +19,11 @@ ImgReview::ImgReview(QWidget *parent) :
     connect(ui->IEditButton,SIGNAL(clicked()),this,SLOT(ImgEditingEnable()));
     connect(ui->IResetButton,SIGNAL(clicked()),this,SLOT(ImgReset()));
     connect(ui->ISaveButton,SIGNAL(clicked()),this,SLOT(ImgSave()));
+    connect(ui->INextButton,SIGNAL(clicked()),this,SLOT(ImgNext()));
+    connect(ui->IEditButton,SIGNAL(clicked()),this,SLOT(ImgEditingEnable()));
     connect(ui->PresetButton,SIGNAL(clicked()),this,SLOT(PropertyReset()));
     connect(ui->PSaveButton,SIGNAL(clicked()),this,SLOT(PropertySave()));
-    connect(ui->IEditButton,SIGNAL(clicked()),this,SLOT(ImgEditingEnable()));
+    connect(ui->PNextButton,SIGNAL(clicked()),this,SLOT(PropertyNext()));
 }
 void ImgReview::ImgEditingEnable()
 {
@@ -38,6 +40,11 @@ void ImgReview::ImgReset()
     ImgContainer->UndoEdit();
 }
 
+void ImgReview::ImgNext()
+{
+    ImgContainer->LoadNextImg();
+}
+
 void ImgReview::PropertyReset()
 {
     PropertyContainer->resetProperty();
@@ -46,6 +53,11 @@ void ImgReview::PropertyReset()
 void ImgReview::PropertySave()
 {
     PropertyContainer->saveProperty();
+}
+
+void ImgReview::PropertyNext()
+{
+    PropertyContainer->loadNextProperty();
 }
 
 QPushButton *ImgReview::ImgSendButton()

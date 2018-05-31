@@ -20,7 +20,8 @@ class PropertyWidget : public QWidget
 public:
     explicit PropertyWidget(QWidget *parent = 0);
     ~PropertyWidget();
-    void loadProperty(QString filename);
+    void loadProperty();
+    void loadNextProperty();
     void saveProperty();
     void resetProperty();
     QJsonDocument ImgProperty;
@@ -29,7 +30,7 @@ public:
     QTextDocument* getTextDocument();
 private:
     Ui::PropertyWidget *ui;
-
+    int propertyNum=1;
 
     QString settings;
     void DisplayProperty();

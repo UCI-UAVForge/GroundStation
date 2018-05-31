@@ -18,6 +18,7 @@ public:
     QImage img,newimg;
     void setEditMode();
     void LoadImg();
+    void LoadNextImg();
     void UndoEdit();
     void ImgSave();
     ~ImgWidget();
@@ -28,6 +29,7 @@ private:
     QPoint endpoint = QPoint(0, 0);
     bool EditEnable = false;
     bool MouseHolding = false;
+    int imgNum = 1;
     void CropToFill();
     QSize ContainerSize;
     void ResetFocusPoint();

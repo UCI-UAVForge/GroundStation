@@ -12,7 +12,6 @@ ImgWidget::ImgWidget(QWidget *parent) :
     ui->setupUi(this);
     ContainerSize = this->size();
     LoadImg();
-    newimg = img;
 }
 void ImgWidget::paintEvent(QPaintEvent* e)
 {
@@ -55,23 +54,13 @@ void ImgWidget::mouseMoveEvent(QMouseEvent* event)
 
 void ImgWidget::mouseReleaseEvent(QMouseEvent* event)
 {
-    //QMessageBox box(this);
 
     if ( MouseHolding)
     {
         endpoint = event->pos();
         MouseHolding = false;
         update();
-        //QThread::sleep(2);
         CropToFill();
-
-        /*
-        QPainter painter(this);
-        QPen pen(Qt::black);
-        pen.setWidth(6);
-        pen.setCosmetic(true);
-        QRect selectArea(lastpoint,endpoint);
-        painter.drawRect(selectArea);*/
     }
 }
 
@@ -98,8 +87,18 @@ void ImgWidget::LoadImg()
 {
 
     //img.load(QDir::currentPath()+"/field_image.png");
-    img.load(QDir::currentPath() + "/../../GroundStation/GS/res/field_image.png");
+    img.load(QDir::currentPath() + "/../../GroundStation/GS/res/img" +QString::number(imgNum)+".png");
     img = img.scaled(ContainerSize);
+    newimg = img;
+}
+
+void ImgWidget::LoadNextImg()
+{
+    //not bound check, could load null image if exceed existing max number
+    qDebug()<<"load next image";
+    imgNum++;
+    LoadImg();
+    update();
 }
 
 void ImgWidget::UndoEdit()

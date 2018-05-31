@@ -23,11 +23,11 @@ public slots:
     void ImgSave();
     void ImgReset();
     // void ImgSend();
-    // void ImgNext();
+    void ImgNext();
     void PropertyReset();
     void PropertySave();
     //void PropertySend();
-    //void PropertyNext();
+    void PropertyNext();
     QPushButton* ImgSendButton();
     QPushButton* ImgNextButton();
     QPushButton* PropertySendButton();

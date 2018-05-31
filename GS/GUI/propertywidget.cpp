@@ -6,7 +6,7 @@ PropertyWidget::PropertyWidget(QWidget *parent) :
     ui(new Ui::PropertyWidget)
 {
     ui->setupUi(this);
-    loadProperty(QDir::currentPath() + "/../../GroundStation/GS/res/test_property.json");
+    loadProperty();
     DisplayProperty();
 
 }
@@ -16,8 +16,9 @@ PropertyWidget::~PropertyWidget()
     delete ui;
 }
 
-void PropertyWidget::loadProperty(QString filename)
+void PropertyWidget::loadProperty()
 {
+    QString filename = QDir::currentPath() + "/../../GroundStation/GS/res/test_property" + QString::number(propertyNum)+".json";
     QFile file;
     file.setFileName(filename);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
@@ -31,6 +32,13 @@ void PropertyWidget::loadProperty(QString filename)
     ImgProperty = QJsonDocument::fromJson(settings.toUtf8());
     PropertyObject = ImgProperty.object();
     newDoc = new QTextDocument(settings);
+}
+
+void PropertyWidget::loadNextProperty()
+{
+    propertyNum++;
+    loadProperty();
+    DisplayProperty();
 }
 
 void PropertyWidget::saveProperty()
