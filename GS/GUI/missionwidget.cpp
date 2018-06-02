@@ -18,6 +18,7 @@ MissionWidget::MissionWidget(QWidget *parent) :
     connect(ui->readButton, &QPushButton::clicked, this, &MissionWidget::readButtonClicked);
     connect(ui->clearButton, &QPushButton::clicked, this, &MissionWidget::clearButtonClicked);
     connect(ui->setCurrentButton, &QPushButton::clicked, this, &MissionWidget::setCurrentButtonClicked);
+    connect(ui->armDropButton, &QPushButton::clicked, this, &MissionWidget::armAutoDrop);
     connect(ui->dropButton, &QPushButton::clicked, this, &MissionWidget::dropIt);
     connect(ui->missionList, SIGNAL(currentIndexChanged(int)), this, SLOT(updateMission(int)));
 
@@ -41,7 +42,9 @@ MissionWidget::MissionWidget(QWidget *parent) :
         }
     }
     style.setButtonOff(ui->dropButton);
-    dropArmed = true;
+    style.setButtonOff(ui->armDropButton);
+    dropArmed = false;
+    armDrop = false;
 
     //Hard coded loaded missions
     qInfo() << "LOADING TEST";
@@ -57,19 +60,19 @@ MissionWidget::MissionWidget(QWidget *parent) :
     ui->missionList->setCurrentIndex(0);
     //----------------------------------------------------------------
 
-    //updateDraw();
+    landingPoint = QGeoCoordinate((double)mission->air_drop_pos.x(), (double)mission->air_drop_pos.y());
 }
 
 void MissionWidget::dropIt() {
-    if (dropArmed) {
+    if (!dropArmed) {
         emit(dropSignal(1700));
         style.setButtonOn(ui->dropButton);
-        dropArmed = false;
+        dropArmed = true;
     }
-    else if (!dropArmed) {
+    else if (dropArmed) {
         emit(dropSignal(1100));
         style.setButtonOff(ui->dropButton);
-        dropArmed = true;
+        dropArmed = false;
     }
 }
 
@@ -353,6 +356,31 @@ void MissionWidget::loadInteropMission(QString m, QString o, int num) {
 
 void MissionWidget::updateCurrentMission(mavlink_mission_current_t curr) {
     ui->currentMissionDisplay->display(mission->generatedPath.getIndex(curr.seq));
+}
+
+void MissionWidget::armAutoDrop() {
+    if (!armDrop) {
+        armDrop = true;
+        style.setButtonOn(ui->armDropButton);
+    } else {
+        armDrop = false;
+        style.setButtonOff(ui->armDropButton);
+    }
+}
+
+void MissionWidget::updateVFR(mavlink_vfr_hud_t vfr) {
+    airspeed = vfr.airspeed;
+    alt = vfr.alt;
+}
+
+void MissionWidget::updateGPS(mavlink_gps_raw_int_t gps) {
+    if (armDrop) {
+        qreal distance = landingPoint.distanceTo(QGeoCoordinate(gps.lat, gps.lon, gps.alt));
+        double d = sqrt(2 * alt / 9.8) * airspeed;
+        if (abs(distance - d) < 10) {
+            dropIt();
+        }
+    }
 }
 
 MissionWidget::~MissionWidget() {

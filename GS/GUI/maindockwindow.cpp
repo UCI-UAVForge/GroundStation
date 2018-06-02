@@ -72,6 +72,8 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     connect(ui->missionWidget, &MissionWidget::moveWaypointSignal, ui->mapWidget, &MapWidget::moveWaypoint);
     connect(ui->missionWidget, &MissionWidget::removeWaypointSignal, ui->mapWidget, &MapWidget::removeWaypoint);
     connect(ui->missionWidget, &MissionWidget::editMode, ui->mapWidget, &MapWidget::changeEditMode);
+    connect(decoder, &Decoder::gpsReceived, ui->missionWidget, &MissionWidget::updateGPS);
+    connect(decoder, &Decoder::vfrHudReceived, ui->missionWidget, &MissionWidget::updateVFR);
     connect(decoder, &Decoder::missionCurrentReceived, ui->missionWidget, &MissionWidget::updateCurrentMission);
     ui->missionWidget->updateDraw();
 }
