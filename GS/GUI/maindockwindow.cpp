@@ -42,10 +42,10 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     addToolBarButtons();
     //install event filter
 
-    imageReviewWidget->ImgNextButton()->installEventFilter(this);
+//    imageReviewWidget->ImgNextButton()->installEventFilter(this);
     imageReviewWidget->ImgSendButton()->installEventFilter(this);
     imageReviewWidget->PropertySendButton()->installEventFilter(this);
-    imageReviewWidget->PropertyNextButton()->installEventFilter(this);
+ //   imageReviewWidget->PropertyNextButton()->installEventFilter(this);
 
     // my widget
 

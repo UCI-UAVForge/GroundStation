@@ -66,20 +66,6 @@
         </property>
        </widget>
       </item>
-      <item row="5" column="0">
-       <widget class="QPushButton" name="INextButton">
-        <property name="text">
-         <string>Next_img</string>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="1">
-       <widget class="QPushButton" name="PNextButton">
-        <property name="text">
-         <string>Next_property</string>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="1">
        <widget class="QPushButton" name="PSaveButton">
         <property name="text">
@@ -98,6 +84,13 @@
        <widget class="QPushButton" name="PresetButton">
         <property name="text">
          <string>Reset_property</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0" colspan="2">
+       <widget class="QPushButton" name="NextButton">
+        <property name="text">
+         <string>Next</string>
         </property>
        </widget>
       </item>

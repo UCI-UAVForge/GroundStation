@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "imgwidget.h"
 #include "propertywidget.h"
+#include "style.h"
 namespace Ui {
 class ImgReview;
 }
@@ -29,9 +30,9 @@ public slots:
     //void PropertySend();
     void PropertyNext();
     QPushButton* ImgSendButton();
-    QPushButton* ImgNextButton();
+    //QPushButton* ImgNextButton();
     QPushButton* PropertySendButton();
-    QPushButton* PropertyNextButton();
+  //  QPushButton* PropertyNextButton();
 };
 
 #endif // IMGREVIEW_H

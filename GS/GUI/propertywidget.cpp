@@ -1,6 +1,7 @@
 #include "propertywidget.h"
 #include "ui_propertywidget.h"
 #include <QDir>
+#include <QFile>
 PropertyWidget::PropertyWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::PropertyWidget)
@@ -37,6 +38,10 @@ void PropertyWidget::loadProperty()
 void PropertyWidget::loadNextProperty()
 {
     propertyNum++;
+    if(!QFile::exists(QDir::currentPath() + "/../../GroundStation/GS/res/test_property" + QString::number(propertyNum)+".json"))
+    {
+        propertyNum=1;
+    }
     loadProperty();
     DisplayProperty();
 }
@@ -44,7 +49,7 @@ void PropertyWidget::loadNextProperty()
 void PropertyWidget::saveProperty()
 {
     //QString filename = "new_property.json";
-    QString filename = QDir::currentPath() + "/../../GroundStation/GS/res/new_property.json";
+    QString filename = QDir::currentPath() + "/../../GroundStation/GS/res/test_property" + QString::number(propertyNum)+".json";
     QFile newfile(filename);
     if ( newfile.open(QIODevice::WriteOnly) )
      {

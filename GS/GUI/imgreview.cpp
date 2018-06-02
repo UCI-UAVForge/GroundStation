@@ -19,11 +19,16 @@ ImgReview::ImgReview(QWidget *parent) :
     connect(ui->IEditButton,SIGNAL(clicked()),this,SLOT(ImgEditingEnable()));
     connect(ui->IResetButton,SIGNAL(clicked()),this,SLOT(ImgReset()));
     connect(ui->ISaveButton,SIGNAL(clicked()),this,SLOT(ImgSave()));
-    connect(ui->INextButton,SIGNAL(clicked()),this,SLOT(ImgNext()));
+    connect(ui->NextButton,SIGNAL(clicked()),this,SLOT(ImgNext()));
     connect(ui->IEditButton,SIGNAL(clicked()),this,SLOT(ImgEditingEnable()));
     connect(ui->PresetButton,SIGNAL(clicked()),this,SLOT(PropertyReset()));
     connect(ui->PSaveButton,SIGNAL(clicked()),this,SLOT(PropertySave()));
-    connect(ui->PNextButton,SIGNAL(clicked()),this,SLOT(PropertyNext()));
+    connect(ui->NextButton,SIGNAL(clicked()),this,SLOT(PropertyNext()));
+
+   /* Style style = Style();
+    foreach(QPushButton * p, this->findChildren<QPushButton*>()) {
+          style.setButtonDefault(p);
+       }*/
 }
 void ImgReview::ImgEditingEnable()
 {
@@ -64,22 +69,22 @@ QPushButton *ImgReview::ImgSendButton()
 {
     return ui->ISendButton;
 }
-
+/*
 QPushButton *ImgReview::ImgNextButton()
 {
-    return ui->INextButton;
+    return ui->NextButton;
 }
-
+*/
 QPushButton *ImgReview::PropertySendButton()
 {
     return ui->PSendButton;
 }
-
+/*
 QPushButton *ImgReview::PropertyNextButton()
 {
     return ui->PNextButton;
 }
-
+*/
 ImgReview::~ImgReview()
 {
     delete ui;

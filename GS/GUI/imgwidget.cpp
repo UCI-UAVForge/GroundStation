@@ -5,6 +5,7 @@
 #include <QThread>
 #include <QDebug>
 #include <QDir>
+#include <QFile>
 ImgWidget::ImgWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ImgWidget)
@@ -95,8 +96,12 @@ void ImgWidget::LoadImg()
 void ImgWidget::LoadNextImg()
 {
     //not bound check, could load null image if exceed existing max number
-    qDebug()<<"load next image";
+    //qDebug()<<"load next image";
     imgNum++;
+    if(!QFile::exists(QDir::currentPath() + "/../../GroundStation/GS/res/img" +QString::number(imgNum)+".png"))
+    {
+        imgNum=1;
+    }
     LoadImg();
     update();
 }
@@ -111,7 +116,7 @@ void ImgWidget::UndoEdit()
 void ImgWidget::ImgSave()
 {
    // if (!newimg.save("new_img.jpeg"))
-   if (!newimg.save(QDir::currentPath() + "/../../GroundStation/GS/res/new_image.png"))
+   if (!newimg.save(QDir::currentPath() + "/../../GroundStation/GS/res/img"+QString::number(imgNum)+".jpeg"));
         QMessageBox(QMessageBox::Warning, "image not saved", "image not saved, try again");
 }
 
