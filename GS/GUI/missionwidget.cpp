@@ -370,14 +370,18 @@ void MissionWidget::armAutoDrop() {
 
 void MissionWidget::updateVFR(mavlink_vfr_hud_t vfr) {
     airspeed = vfr.airspeed;
-    alt = vfr.alt;
+}
+
+void MissionWidget::updateGPSINT(mavlink_global_position_int_t gps_int) {
+    alt = (double)gps_int.relative_alt;
 }
 
 void MissionWidget::updateGPS(mavlink_gps_raw_int_t gps) {
-    if (armDrop) {
+    if (armDrop) { // Method 1
         qreal distance = landingPoint.distanceTo(QGeoCoordinate(gps.lat, gps.lon, gps.alt));
-        double d = sqrt(2 * alt / 9.8) * airspeed;
-        if (abs(distance - d) < 10) {
+        double d = sqrt(2 * alt / 9.8) * airspeed; // Method 1
+        // double d = airspeed * sqrt(1.8898 * 100 / 500) / 9.8; // Method 2
+        if (abs(distance - d) <= 10) {
             dropIt();
         }
     }

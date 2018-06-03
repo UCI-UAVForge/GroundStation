@@ -86,6 +86,7 @@ public slots:
     void updateCurrentMission(mavlink_mission_current_t curr);
     void updateVFR(mavlink_vfr_hud_t vfr);
     void updateGPS(mavlink_gps_raw_int_t gps);
+    void updateGPSINT(mavlink_global_position_int_t gps_int);
 
 private:
     QVector2D findMidPoint(QVector3D a, QVector3D b);
@@ -98,7 +99,7 @@ private:
     bool armDrop; // For Automatic Drop
 
     float airspeed = 0;
-    float alt = 0;
+    double alt = 0;
     QGeoCoordinate landingPoint;
 
     Ui::MissionWidget *ui;
