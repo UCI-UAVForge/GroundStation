@@ -9,7 +9,8 @@
 MainDockWindow::MainDockWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainDockWindow),
-    imageReviewWidget(new ImgReview())
+    imageReviewWidget(new ImgReview()),
+    interopConnected(false)
 {
     ui->setupUi(this);
     ui->graphDock->hide();
@@ -61,6 +62,7 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     ui->toolBar->addWidget(uavButton);
 
     connect(loginWidget, &LoginWidget::loginSuccess, ui->missionWidget, &MissionWidget::getMissions);
+    connect(loginWidget,&LoginWidget::loginSuccess, this,&MainDockWindow::interopConnect);
     connect(decoder, &Decoder::gpsReceived, loginWidget, &LoginWidget::updateGPS);
     connect(decoder, &Decoder::gps_intReceived, loginWidget, &LoginWidget::updatePOS);
     connect(ui->missionWidget, &MissionWidget::drawMission, ui->mapWidget, &MapWidget::drawMission);
@@ -168,22 +170,30 @@ bool MainDockWindow::eventFilter(QObject *watched, QEvent *event)
             QMouseEvent* mouseevent = static_cast<QMouseEvent*>(event);
             if(mouseevent->button()==Qt::LeftButton)
             {
+                if(!interopConnected)
+                    QMessageBox(QMessageBox::Warning, "interop not connected", "connect interop first and try again");
+                else
+
+                {
                 QFile file;
-                file.setFileName("new_property.json");
+                file.setFileName(imageReviewWidget->PropertyContainer->propertyfileName());
                 file.open(QIODevice::ReadOnly | QIODevice::Text);
                 //qDebug()<<"opened!";
                 //QString json = file.readAll();
                 QString json = imageReviewWidget->PropertyContainer->newDoc->toPlainText();
-                json.remove(QRegExp("[\\n\\t\\r ]"));
+                //json.remove(QRegExp("[\\n\\t\\r ]"));
                 file.close();
 
                 qDebug()<<"ya "<<json;
-                QJsonDocument jdoc = QJsonDocument::fromJson(json.toUtf8());
-                QString tempstr = QString::fromStdString(jdoc.toBinaryData().toStdString());
-                QJsonObject obj{{"alphanumeric","A"},{"color","orange"}};
+                //QJsonDocument jdoc = QJsonDocument::fromJson(json.toUtf8());
+                //QString tempstr = QString::fromStdString(jdoc.toBinaryData().toStdString());
+                QJsonObject obj{{"alphanumeric","A"},{"color","orange"},{"type","standard"}};
                 //if(loginWidget.)
-                //interop->sendODLC(QJsonDocument::fromBinaryData(json.toUtf8()));
+                QByteArray jsonbyte= json.toUtf8();
+                //interop->sendODLC(QJsonDocument::fromBinaryData(jsonbyte));
+                QJsonDocument tempjdoc = QJsonDocument(obj);
                 interop->sendODLC(QJsonDocument(obj));
+                }
             }
         }
     }
@@ -206,6 +216,12 @@ void MainDockWindow::addImgReview()
 {
     imageReviewWidget->show();
     //qDebug()<<"triggered!";
+}
+
+void MainDockWindow::interopConnect(Interop *i)
+{
+    interop = i;
+    interopConnected=true;
 }
 
 void MainDockWindow::test() {

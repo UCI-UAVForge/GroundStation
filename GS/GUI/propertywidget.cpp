@@ -74,6 +74,11 @@ QTextDocument* PropertyWidget::getTextDocument()
     return ui->textEdit->document();
 }
 
+QString PropertyWidget::propertyfileName()
+{
+    return QDir::currentPath() + "/../../GroundStation/GS/res/test_property" + QString::number(propertyNum)+".json";
+}
+
 void PropertyWidget::DisplayProperty()
 { 
     ui->textEdit->setDocument(newDoc);

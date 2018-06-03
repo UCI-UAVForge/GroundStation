@@ -19,6 +19,8 @@ public:
     explicit LoginWidget(QWidget *parent = 0);
     Interop * interop;
     void attemptConnection();
+//    Interop* attemptConnection();
+
     bool slideout = false;
     bool connected = false;
     QPropertyAnimation * slide;

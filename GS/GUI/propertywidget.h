@@ -28,6 +28,7 @@ public:
     QJsonObject PropertyObject;
     QTextDocument* orgDoc,*newDoc;
     QTextDocument* getTextDocument();
+    QString propertyfileName();
 private:
     Ui::PropertyWidget *ui;
     int propertyNum=1;
