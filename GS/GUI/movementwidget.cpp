@@ -55,6 +55,7 @@ void MovementWidget::updateTelemetry(mavlink_vfr_hud_t vfr_hud) {
     else
         ui.airSpeed->setText(QString::number(vfr_hud.airspeed, 'f', 2) + " m/s.");
     ui.Climb->setText(QString::number(vfr_hud.climb, 'f', 2) + " m/s.");
+    ui.throttle->setText(QString::number(vfr_hud.throttle) + " %.");
 }
 
 void MovementWidget::updateAttitude(mavlink_attitude_t att) {

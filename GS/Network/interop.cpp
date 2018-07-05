@@ -24,6 +24,7 @@ Interop::Interop(const std::string& username, const std::string& password)
 
 void Interop::replyFinished(QNetworkReply* reply)
 {
+    qDebug()<<reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toString()<<reply->attribute(QNetworkRequest::HttpReasonPhraseAttribute).toString();
     if(reply->error()) {
         qCritical() << "Something bad happened to one of our requests: " << reply->errorString();
         qCritical() << reply->error();
@@ -129,7 +130,8 @@ void Interop::sendTelemetry(float latitude, float longitude, float altitude_msl,
 QJsonDocument Interop::sendODLC(const QJsonDocument& odlc) {
     std::vector<HeaderSet> headers;
     headers.push_back(HeaderSet{QNetworkRequest::ContentTypeHeader, "application/json"});
-
+    //QByteArray temp = odlc.toJson(QJsonDocument::Compact);
+  //  QNetworkReply *reply = postRequest(ENDPOINT + "/api/odlcs", temp, headers);
     QNetworkReply *reply = postRequest(ENDPOINT + "/api/odlcs", odlc.toJson(), headers);
     return QJsonDocument::fromJson(reply->readAll());
 }

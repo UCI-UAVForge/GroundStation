@@ -5,6 +5,7 @@
 #include <QThread>
 #include <QDebug>
 #include <QDir>
+#include <QFile>
 ImgWidget::ImgWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::ImgWidget)
@@ -12,7 +13,6 @@ ImgWidget::ImgWidget(QWidget *parent) :
     ui->setupUi(this);
     ContainerSize = this->size();
     LoadImg();
-    newimg = img;
 }
 void ImgWidget::paintEvent(QPaintEvent* e)
 {
@@ -55,23 +55,13 @@ void ImgWidget::mouseMoveEvent(QMouseEvent* event)
 
 void ImgWidget::mouseReleaseEvent(QMouseEvent* event)
 {
-    //QMessageBox box(this);
 
     if ( MouseHolding)
     {
         endpoint = event->pos();
         MouseHolding = false;
         update();
-        //QThread::sleep(2);
         CropToFill();
-
-        /*
-        QPainter painter(this);
-        QPen pen(Qt::black);
-        pen.setWidth(6);
-        pen.setCosmetic(true);
-        QRect selectArea(lastpoint,endpoint);
-        painter.drawRect(selectArea);*/
     }
 }
 
@@ -97,8 +87,23 @@ void ImgWidget::ResetFocusPoint()
 void ImgWidget::LoadImg()
 {
 
-    img.load(QDir::currentPath()+"/field_image.png");
+    //img.load(QDir::currentPath()+"/field_image.png");
+    img.load(QDir::currentPath() + "/../../GroundStation/GS/res/img" +QString::number(imgNum)+".png");
     img = img.scaled(ContainerSize);
+    newimg = img;
+}
+
+void ImgWidget::LoadNextImg()
+{
+    //not bound check, could load null image if exceed existing max number
+    //qDebug()<<"load next image";
+    imgNum++;
+    if(!QFile::exists(QDir::currentPath() + "/../../GroundStation/GS/res/img" +QString::number(imgNum)+".png"))
+    {
+        imgNum=1;
+    }
+    LoadImg();
+    update();
 }
 
 void ImgWidget::UndoEdit()
@@ -110,7 +115,8 @@ void ImgWidget::UndoEdit()
 
 void ImgWidget::ImgSave()
 {
-    if (!newimg.save("new_img.jpeg"))
+   // if (!newimg.save("new_img.jpeg"))
+   if (!newimg.save(QDir::currentPath() + "/../../GroundStation/GS/res/img"+QString::number(imgNum)+".jpeg"));
         QMessageBox(QMessageBox::Warning, "image not saved", "image not saved, try again");
 }
 

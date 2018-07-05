@@ -20,15 +20,19 @@ class PropertyWidget : public QWidget
 public:
     explicit PropertyWidget(QWidget *parent = 0);
     ~PropertyWidget();
-    void loadProperty(QString filename);
+    void loadProperty();
+    void loadNextProperty();
     void saveProperty();
     void resetProperty();
-
-private:
-    Ui::PropertyWidget *ui;
     QJsonDocument ImgProperty;
     QJsonObject PropertyObject;
     QTextDocument* orgDoc,*newDoc;
+    QTextDocument* getTextDocument();
+    QString propertyfileName();
+private:
+    Ui::PropertyWidget *ui;
+    int propertyNum=1;
+
     QString settings;
     void DisplayProperty();
 };

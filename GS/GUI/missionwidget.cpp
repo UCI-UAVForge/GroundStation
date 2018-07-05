@@ -18,6 +18,7 @@ MissionWidget::MissionWidget(QWidget *parent) :
     connect(ui->readButton, &QPushButton::clicked, this, &MissionWidget::readButtonClicked);
     connect(ui->clearButton, &QPushButton::clicked, this, &MissionWidget::clearButtonClicked);
     connect(ui->setCurrentButton, &QPushButton::clicked, this, &MissionWidget::setCurrentButtonClicked);
+    connect(ui->armDropButton, &QPushButton::clicked, this, &MissionWidget::armAutoDrop);
     connect(ui->dropButton, &QPushButton::clicked, this, &MissionWidget::dropIt);
     connect(ui->missionList, SIGNAL(currentIndexChanged(int)), this, SLOT(updateMission(int)));
 
@@ -41,35 +42,37 @@ MissionWidget::MissionWidget(QWidget *parent) :
         }
     }
     style.setButtonOff(ui->dropButton);
-    dropArmed = true;
+    style.setButtonOff(ui->armDropButton);
+    dropArmed = false;
+    armDrop = false;
 
     //Hard coded loaded missions
     qInfo() << "LOADING TEST";
-    loadInteropMission("://res/test_mission2.json", ":/res/test_obstacles.json", loadCount++);
-    loadInteropMission("://res/test_mission.json", ":/res/test_obstacles.json", loadCount++);
-    loadInteropMission("://res/full_mission1.json", ":/res/test_obstacles.json", loadCount++);
-    loadhardMission(path("/Missions/meow.json"),path("/Missions/obstacles.json"),loadCount++);
+//    loadInteropMission("://res/test_mission2.json", ":/res/test_obstacles.json", loadCount++);
+//    loadInteropMission("://res/test_mission.json", ":/res/test_obstacles.json", loadCount++);
+//    loadInteropMission("://res/full_mission1.json", ":/res/test_obstacles.json", loadCount++);
+    loadhardMission(path("/Missions/full_mission1.json"),loadCount++);
 
     //-----------------------------------------------------------------
     //Select which mission here
-    updateMission(2);
+    updateMission(0);
     ui->setCurrentValue->setRange(1, mission->generatedPath.waypoints.length());
-    ui->missionList->setCurrentIndex(2);
+    ui->missionList->setCurrentIndex(0);
     //----------------------------------------------------------------
 
-    //updateDraw();
+    landingPoint = QGeoCoordinate((double)mission->air_drop_pos.x(), (double)mission->air_drop_pos.y());
 }
 
 void MissionWidget::dropIt() {
-    if (dropArmed) {
+    if (!dropArmed) {
         emit(dropSignal(1700));
         style.setButtonOn(ui->dropButton);
-        dropArmed = false;
+        dropArmed = true;
     }
-    else if (!dropArmed) {
+    else if (dropArmed) {
         emit(dropSignal(1100));
         style.setButtonOff(ui->dropButton);
-        dropArmed = true;
+        dropArmed = false;
     }
 }
 
@@ -268,9 +271,8 @@ void MissionWidget::updateMission(int index) {
 void MissionWidget::getMissions(Interop *i) {
     QJsonArray interopMissions = i->getMissions().array();
     for (int j = 0; j < interopMissions.size(); j++) {
-        missions.append(new Mission(interopMissions.at(j).toObject(), i->getObstacles()));
-        ui->missionList->addItem("Mission " + QString::number(j+1));
-        ui->missionList->setItemData(j, Qt::AlignCenter, Qt::TextAlignmentRole);
+        missions.append(new Mission(interopMissions.at(j).toObject(), i->getObstacles().object()));
+        ui->missionList->addItem("Loaded Mission " + QString::number(loadCount++));
     }
 }
 
@@ -300,29 +302,14 @@ void MissionWidget::loadMission() {
     QByteArray data = file.readAll();
     file.close();
     QJsonDocument doc(QJsonDocument::fromJson(data));
-    Mission* temp = new Mission(false);
 
-
-    filename = QFileDialog::getOpenFileName(this,
-            tr("Load Mission"), path("/Missions"),
-            tr("Json Files (*.json)"));
-    QFile file2(filename);
-    if (!file.open(QIODevice::ReadOnly)) {
-        qWarning("Couldn't open mission file");
-        QJsonObject null;
-        return;
-    }
-    data = file2.readAll();
-    file.close();
-    QJsonDocument doc2(QJsonDocument::fromJson(data));
-
-    temp->loadJson(doc.object(), doc2);
+    Mission* temp = new Mission(doc.object());
     missions.append(temp);
-    ui->missionList->addItem(filename + QString::number(loadCount++));
+    ui->missionList->addItem("Loaded Mission " + QString::number(loadCount++));
     ui->missionList->setItemData(loadCount+1, Qt::AlignCenter, Qt::TextAlignmentRole);
 }
 
-void MissionWidget::loadhardMission(QString m, QString o, int num) {
+void MissionWidget::loadhardMission(QString m, int num) {
     QFile file(m);
     if (!file.open(QIODevice::ReadOnly)) {
         qWarning("Couldn't open mission file");
@@ -332,22 +319,9 @@ void MissionWidget::loadhardMission(QString m, QString o, int num) {
     QByteArray data = file.readAll();
     file.close();
     QJsonDocument doc(QJsonDocument::fromJson(data));
-    Mission* temp = new Mission(false);
 
 
-    QFile file2(o);
-    if (!file2.open(QIODevice::ReadOnly)) {
-        qWarning("Couldn't open obstacles file");
-        QJsonDocument null;
-        return;
-    }
-    data = file2.readAll();
-    file.close();
-    QJsonDocument doc2(QJsonDocument::fromJson(data));
-
-
-    temp->loadJson(doc.object(), doc2);
-    missions.append(temp);
+    missions.append(new Mission(doc.object()));
     ui->missionList->addItem("Loaded Mission " + QString::number(num));
 }
 
@@ -376,8 +350,41 @@ void MissionWidget::loadInteropMission(QString m, QString o, int num) {
     file.close();
     QJsonDocument doc2(QJsonDocument::fromJson(data));
 
-    missions.append(new Mission(doc.object(), doc2));
+    missions.append(new Mission(doc.object(), doc2.object()));
     ui->missionList->addItem("Loaded Mission " + QString::number(num));
+}
+
+void MissionWidget::updateCurrentMission(mavlink_mission_current_t curr) {
+    ui->currentMissionDisplay->display(mission->generatedPath.getIndex(curr.seq));
+}
+
+void MissionWidget::armAutoDrop() {
+    if (!armDrop) {
+        armDrop = true;
+        style.setButtonOn(ui->armDropButton);
+    } else {
+        armDrop = false;
+        style.setButtonOff(ui->armDropButton);
+    }
+}
+
+void MissionWidget::updateVFR(mavlink_vfr_hud_t vfr) {
+    airspeed = vfr.airspeed;
+}
+
+void MissionWidget::updateGPSINT(mavlink_global_position_int_t gps_int) {
+    alt = (double)gps_int.relative_alt;
+}
+
+void MissionWidget::updateGPS(mavlink_gps_raw_int_t gps) {
+    if (armDrop) { // Method 1
+        qreal distance = landingPoint.distanceTo(QGeoCoordinate(gps.lat, gps.lon, gps.alt));
+        double d = sqrt(2 * alt / 9.8) * airspeed; // Method 1
+        // double d = airspeed * sqrt(1.8898 * 100 / 500) / 9.8; // Method 2
+        if (abs(distance - d) <= 10) {
+            dropIt();
+        }
+    }
 }
 
 MissionWidget::~MissionWidget() {

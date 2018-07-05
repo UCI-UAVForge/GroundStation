@@ -100,5 +100,16 @@
         <file>res/PointInfo.qml</file>
         <file>res/full_mission1.json</file>
         <file>res/Polygon.qml</file>
+	<file>res/img1.png</file>
+	<file>res/img2.png</file>
+	<file>res/img3.png</file>
+	<file>res/img4.png</file>
+	<file>res/img5.png</file>
+        <file>res/test_property1.json</file>
+        <file>res/test_property2.json</file>
+        <file>res/test_property3.json</file>
+        <file>res/test_property4.json</file>
+        <file>res/test_property5.json</file>
+        <file>res/new_property.json</file>
     </qresource>
 </RCC>

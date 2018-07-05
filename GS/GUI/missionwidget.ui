@@ -169,22 +169,6 @@ QTableView {
    </item>
    <item row="8" column="0">
     <layout class="QGridLayout" name="gridLayout">
-     <item row="3" column="0">
-      <widget class="QSpinBox" name="setCurrentValue"/>
-     </item>
-     <item row="3" column="1" colspan="2">
-      <widget class="QPushButton" name="setCurrentButton">
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>SET CURRENT</string>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="2">
       <widget class="QPushButton" name="clearButton">
        <property name="font">
@@ -224,7 +208,26 @@ QTableView {
        </property>
       </widget>
      </item>
-     <item row="4" column="0" colspan="3">
+     <item row="4" column="2">
+      <widget class="QPushButton" name="setCurrentButton">
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>SET CURRENT</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QSpinBox" name="setCurrentValue"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLCDNumber" name="currentMissionDisplay"/>
+     </item>
+     <item row="5" column="2">
       <widget class="QPushButton" name="dropButton">
        <property name="font">
         <font>
@@ -237,6 +240,19 @@ QTableView {
        </property>
        <property name="text">
         <string>Drop It</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0" colspan="2">
+      <widget class="QPushButton" name="armDropButton">
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>ARM DROP</string>
        </property>
       </widget>
      </item>

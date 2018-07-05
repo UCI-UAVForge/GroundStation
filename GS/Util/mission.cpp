@@ -9,25 +9,15 @@
 Mission::Mission(QObject *parent) : QObject(parent){
 }
 
-Mission::Mission(bool therewasaweirdoverloadederror) {
-    defaultLandingTakeoff();
-
-    generatedPath.waypoints.prepend(takeoff);
-    generatedPath.waypoints.append(landing.waypoints);
-}
 
 
 Mission::Mission(QJsonObject obj) {
-    loadInteropJson(obj);
-    defaultLandingTakeoff();
-
-    generatedPath.waypoints.prepend(takeoff);
-    generatedPath.waypoints.append(landing.waypoints);
+    loadJson(obj);
 }
 
-Mission::Mission(QJsonObject mission_obj, QJsonDocument obstacles_doc) {
+Mission::Mission(QJsonObject mission_obj, QJsonObject obs_obj) {
     loadInteropJson(mission_obj);
-    obstacles = Obstacles(obstacles_doc);
+    obstacles = Obstacles(obs_obj);
     defaultLandingTakeoff();
 
     generatedPath.waypoints.append(landing.waypoints);
@@ -37,7 +27,7 @@ Mission::Mission(QJsonObject mission_obj, QJsonDocument obstacles_doc) {
 //--------------------------------------------------------
 //                          Loading
 //--------------------------------------------------------
-void Mission::loadJson(QJsonObject obj, QJsonDocument obstacles_doc){
+void Mission::loadJson(QJsonObject obj){
     id                      = obj["id"].toInt();
     active                  = obj["active"].toBool();
     home_pos                = posToPoint(obj["home_pos"].toObject());
@@ -50,8 +40,8 @@ void Mission::loadJson(QJsonObject obj, QJsonDocument obstacles_doc){
 
     search_grid_points      = set3DPoints(obj["search_grid_points"].toArray());
     fly_zones = setFlyZones(obj["fly_zones"].toArray());
-
-    obstacles = Obstacles(obstacles_doc);
+    obstacles = Obstacles();
+    obstacles.set_stationary_obstacles(obj["obstacles"].toArray());
 }
 
 void Mission::loadInteropJson(QJsonObject &obj){
@@ -137,9 +127,9 @@ QList<QVector3D> * Mission::set3DPoints(QJsonArray pointArray) {
     return points;
 }
 
-Obstacles Mission::getObstacles() {
-    return obstacles;
-}
+//Obstacles Mission::getObstacles() {
+//    return obstacles;
+//}
 
 
 //--------------------------------------------------------
@@ -149,9 +139,9 @@ Obstacles Mission::getObstacles() {
 void Mission::defaultLandingTakeoff() {
     takeoff.setDefaultTakeoff(10, 35, home_pos);
     QList<QVector3D> landingPath({QVector3D(33.77146530151367, -117.69239807128906, 45),
-                                 QVector3D(33.770931243896484, -117.69322204589844, 35),
-                                 QVector3D(33.770896911621094, -117.69420623779297, 25),
-                                 QVector3D(33.770957946777344, -117.69458770751953, 15)});
+                                 QVector3D(33.770931243896484, -117.69322204589844, 33),
+                                 QVector3D(33.770896911621094, -117.69420623779297, 20),
+                                 QVector3D(33.770957946777344, -117.69458770751953, 10)});
     landing.setDefaultLanding(landingPath, QVector2D(33.771156311035156, -117.69544982910156), 15);
 }
 
@@ -265,6 +255,7 @@ QJsonDocument Mission::toJson() {
         temp["longitude"] = QJsonValue(search_grid_points->at(i).y());
         temp["altitude_msl"] = QJsonValue(search_grid_points->at(i).z());
         temp["order"] = QJsonValue(i+1);
+        meow2.append(temp);
     }
     obj["search_grid_points"] = meow2;
 
@@ -286,6 +277,8 @@ QJsonDocument Mission::toJson() {
         meow3.append(temp);
     }
     obj["fly_zones"] = meow3;
+    obj["obstacles"] = obstacles.get_stationary_obstacles();
+
 
     QJsonDocument doc;
     doc.setObject(obj);

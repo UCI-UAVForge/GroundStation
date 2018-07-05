@@ -48,6 +48,34 @@ void LoginWidget::attemptConnection() {
     }
 }
 
+//Interop* LoginWidget::attemptConnection() {
+//    if (!connected) {
+//        if (!slideout) {
+//            slide->setDuration(500);
+//            slide->setEndValue(700);
+//            slide->start();        //pulse->setEndValue(0);
+//        }
+//        else {
+//            try {
+//                interop = new Interop(ui->user->text().toStdString(), ui->pass->text().toStdString());
+//                slide->setDuration(500);
+//                slide->setEndValue(0);
+//                slide->start();
+//                ui->loginButton->setText("INTEROP");
+//                ui->loginButton->setEnabled(false);
+//                style.setButtonOn(ui->loginButton);
+//                emit (loginSuccess(interop));
+//            }
+//            catch (QNetworkReply::NetworkError err) {
+//                qDebug() << "Failure";
+//                connected = false;
+//            }
+//            connected = true;
+//            return interop;
+//        }
+//    }
+//}
+
 void LoginWidget::updateGPS(mavlink_gps_raw_int_t gps) {
     UAVlat = (float)gps.lat/10000000;
     UAVlon = (float)gps.lon/10000000;

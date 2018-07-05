@@ -77,12 +77,14 @@ signals:
 private slots:
     void hideDockWidgets();
     void closeDockWidgets();
-    void updateMovingObjects(QQuickWidget * mapWidget);
+//    void updateMovingObjects(QQuickWidget * mapWidget);
     void addImgReview();
+    void interopConnect(Interop *i);
 private:
     Ui::MainDockWindow *ui;
     Interop * interop;
     ImgReview *imageReviewWidget;
+    bool interopConnected;
 };
 
 #endif // MAINDOCKWINDOW_H

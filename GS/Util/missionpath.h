@@ -22,6 +22,7 @@ public:
     QJsonValue toQJsonValue();
     void setDefaultLanding(QList<QVector3D> landingPath, QVector2D landingPoint, float abortAlt);
     uint16_t getSeq(uint16_t cmdSeq);
+    uint16_t getIndex(uint16_t seq);
 };
 
 #endif // MISSIONPATH_H

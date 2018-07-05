@@ -4,16 +4,18 @@
 #include <QQuickItem>
 #include <QtCore>
 #include <QMargins>
-
+#include <QRegExp>
+#include <QRegularExpression>
 MainDockWindow::MainDockWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainDockWindow)
+    ui(new Ui::MainDockWindow),
+    imageReviewWidget(new ImgReview()),
+    interopConnected(false)
 {
     ui->setupUi(this);
     ui->graphDock->hide();
     ui->connDock->hide();
     ui->timerDock->hide();
-    ui->imgRevDock->hide();
 
     // UDP Link for SITL
   //  link = new UdpLink();
@@ -42,14 +44,14 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     //install event filter
 
 //    imageReviewWidget->ImgNextButton()->installEventFilter(this);
-//    imageReviewWidget->ImgSendButton()->installEventFilter(this);
-//    imageReviewWidget->PropertySendButton()->installEventFilter(this);
-//    imageReviewWidget->PropertyNextButton()->installEventFilter(this);
+    imageReviewWidget->ImgSendButton()->installEventFilter(this);
+    imageReviewWidget->PropertySendButton()->installEventFilter(this);
+ //   imageReviewWidget->PropertyNextButton()->installEventFilter(this);
 
     // my widget
 
-    //QAction*imgreview_clicked =  ui->toolBar->addAction("Image Review");
-    //connect(imgreview_clicked,SIGNAL(triggered()),this,SLOT(addImgReview()));
+    QAction*imgreview_clicked =  ui->toolBar->addAction("Image Review");
+    connect(imgreview_clicked,SIGNAL(triggered()),this,SLOT(addImgReview()));
     // end
 
     QWidget* spacer = new QWidget();
@@ -60,6 +62,7 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     ui->toolBar->addWidget(uavButton);
 
     connect(loginWidget, &LoginWidget::loginSuccess, ui->missionWidget, &MissionWidget::getMissions);
+    connect(loginWidget,&LoginWidget::loginSuccess, this,&MainDockWindow::interopConnect);
     connect(decoder, &Decoder::gpsReceived, loginWidget, &LoginWidget::updateGPS);
     connect(decoder, &Decoder::gps_intReceived, loginWidget, &LoginWidget::updatePOS);
     connect(ui->missionWidget, &MissionWidget::drawMission, ui->mapWidget, &MapWidget::drawMission);
@@ -71,6 +74,10 @@ MainDockWindow::MainDockWindow(QWidget *parent) :
     connect(ui->missionWidget, &MissionWidget::moveWaypointSignal, ui->mapWidget, &MapWidget::moveWaypoint);
     connect(ui->missionWidget, &MissionWidget::removeWaypointSignal, ui->mapWidget, &MapWidget::removeWaypoint);
     connect(ui->missionWidget, &MissionWidget::editMode, ui->mapWidget, &MapWidget::changeEditMode);
+    connect(decoder, &Decoder::gpsReceived, ui->missionWidget, &MissionWidget::updateGPS);
+    connect(decoder, &Decoder::vfrHudReceived, ui->missionWidget, &MissionWidget::updateVFR);
+    connect(decoder, &Decoder::gps_intReceived, ui->missionWidget, &MissionWidget::updateGPSINT);
+    connect(decoder, &Decoder::missionCurrentReceived, ui->missionWidget, &MissionWidget::updateCurrentMission);
     ui->missionWidget->updateDraw();
 }
 
@@ -158,19 +165,36 @@ bool MainDockWindow::eventFilter(QObject *watched, QEvent *event)
 
     if(watched== imageReviewWidget->PropertySendButton())
     {
+
         if(event->type()==QEvent::MouseButtonPress)
         {
             QMouseEvent* mouseevent = static_cast<QMouseEvent*>(event);
             if(mouseevent->button()==Qt::LeftButton)
             {
+                if(!interopConnected)
+                    QMessageBox(QMessageBox::Warning, "interop not connected", "connect interop first and try again");
+                else
+
+                {
                 QFile file;
-                file.setFileName("new_property.json");
+                file.setFileName(imageReviewWidget->PropertyContainer->propertyfileName());
                 file.open(QIODevice::ReadOnly | QIODevice::Text);
                 //qDebug()<<"opened!";
-                QString settings = file.readAll();
+                //QString json = file.readAll();
+                QString json = imageReviewWidget->PropertyContainer->newDoc->toPlainText();
+                //json.remove(QRegExp("[\\n\\t\\r ]"));
                 file.close();
-                qDebug()<<"ya "<<settings;
-                interop->sendODLC(QJsonDocument::fromJson(settings.toUtf8()));
+
+                qDebug()<<"ya "<<json;
+                //QJsonDocument jdoc = QJsonDocument::fromJson(json.toUtf8());
+                //QString tempstr = QString::fromStdString(jdoc.toBinaryData().toStdString());
+                QJsonObject obj{{"alphanumeric","A"},{"color","orange"},{"type","standard"}};
+                //if(loginWidget.)
+                QByteArray jsonbyte= json.toUtf8();
+                //interop->sendODLC(QJsonDocument::fromBinaryData(jsonbyte));
+                QJsonDocument tempjdoc = QJsonDocument(obj);
+                interop->sendODLC(QJsonDocument(obj));
+                }
             }
         }
     }
@@ -181,8 +205,8 @@ bool MainDockWindow::eventFilter(QObject *watched, QEvent *event)
             QMouseEvent* mouseevent = static_cast<QMouseEvent*>(event);
             if(mouseevent->button()==Qt::LeftButton)
             {
-                qDebug()<<"image send!";
-                interop->updateODLCThumbnail(1,QImage("new_img.jpeg"));
+                 qDebug()<<"image send!";
+                //interop->updateODLCThumbnail(1,QImage("new_img.jpeg"));
             }
         }
     }
@@ -193,6 +217,12 @@ void MainDockWindow::addImgReview()
 {
     imageReviewWidget->show();
     //qDebug()<<"triggered!";
+}
+
+void MainDockWindow::interopConnect(Interop *i)
+{
+    interop = i;
+    interopConnected=true;
 }
 
 void MainDockWindow::test() {
@@ -231,10 +261,10 @@ void MainDockWindow::closeDockWidgets() {
 }
 
 
-void MainDockWindow::updateMovingObjects(QQuickWidget * mapWidget){
-    Obstacles obstacles = interop->getObstacles();
-    obstacles.updateMovingObjects(mapWidget);
-}
+//void MainDockWindow::updateMovingObjects(QQuickWidget * mapWidget){
+//    Obstacles obstacles = interop->getObstacles();
+//    obstacles.updateMovingObjects(mapWidget);
+//}
 
 MainDockWindow::~MainDockWindow()
 {
